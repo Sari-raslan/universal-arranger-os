@@ -3,6 +3,7 @@ import asyncio
 import edge_tts
 import numpy as np
 from moviepy.editor import *
+from moviepy.audio.AudioClip import AudioArrayClip
 
 OUT = "ai-videos/output"
 os.makedirs(OUT, exist_ok=True)
