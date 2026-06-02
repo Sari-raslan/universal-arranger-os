@@ -1,0 +1,15 @@
+﻿name: UAOS Media Ops CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate repository
+        run: echo "UAOS Media Ops CI Running"
