@@ -1,8 +1,9 @@
-﻿name: Deploy AE Platform Site
+﻿name: Deploy UAOS Site
 
 on:
   push:
-    branches: [ master ]
+    branches:
+      - master
 
 permissions:
   contents: read
@@ -11,9 +12,6 @@ permissions:
 
 jobs:
   deploy:
-    environment:
-      name: github-pages
-
     runs-on: ubuntu-latest
 
     steps:
@@ -23,6 +21,6 @@ jobs:
 
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: public
+          path: ./docs
 
       - uses: actions/deploy-pages@v4
