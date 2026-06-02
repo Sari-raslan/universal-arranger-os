@@ -1,16 +1,28 @@
-﻿# UAOS Media Operations
+﻿# Universal Arranger OS
 
-Media operations repository for UAOS.
+Official product by AE Platform
 
-## Areas
-- Demo videos
-- TikTok / YouTube / Instagram
-- Ads
-- Branding
-- Store images
-- Trailers
-- Launch campaigns
-- Social automation
-- Promo assets
-- Demo songs
-- Motion graphics
+Website:
+https://aeplatform.app
+
+Support:
+admin@aeplatform.app
+
+## Overview
+
+AI-powered music creation platform for converting:
+- singing
+- humming
+- melodies
+- musical ideas
+
+into:
+- MIDI
+- arrangements
+- DAW-ready workflows
+- export pipelines
+- AI-assisted composition
+
+## Status
+
+Early Access MVP
