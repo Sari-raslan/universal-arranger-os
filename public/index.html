@@ -1,38 +1,205 @@
 ﻿<!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Universal Arranger OS | AE Platform</title>
 <style>
-body{font-family:Arial;background:#08080c;color:white;text-align:center;margin:0;padding:60px}
-.box{max-width:900px;margin:auto}
-.card{background:#15151d;padding:28px;border-radius:18px;margin:22px 0}
-h1{font-size:56px}
-p{font-size:20px;line-height:1.6}
-a{display:inline-block;margin:12px;padding:16px 28px;border-radius:12px;text-decoration:none;font-weight:bold}
-.primary{background:white;color:black}
-.secondary{border:1px solid white;color:white}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:Inter,Arial,sans-serif;
+  background:
+    radial-gradient(circle at top left,#3b2cff55,transparent 35%),
+    radial-gradient(circle at top right,#00d4ff33,transparent 35%),
+    #06070d;
+  color:white;
+}
+nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:24px 7%;
+}
+.logo{font-weight:800;font-size:22px}
+.navlinks a{color:#cfd3ff;text-decoration:none;margin-left:22px}
+.hero{
+  padding:70px 7% 40px;
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:50px;
+  align-items:center;
+}
+.badge{
+  display:inline-block;
+  padding:8px 14px;
+  border:1px solid #6f78ff;
+  border-radius:999px;
+  color:#cfd3ff;
+  margin-bottom:20px;
+}
+h1{
+  font-size:68px;
+  line-height:1.02;
+  margin:0 0 22px;
+  letter-spacing:-2px;
+}
+.gradient{
+  background:linear-gradient(90deg,#fff,#8ee9ff,#9b8cff);
+  -webkit-background-clip:text;
+  color:transparent;
+}
+p{
+  color:#cfd3df;
+  font-size:20px;
+  line-height:1.65;
+}
+.actions{margin-top:30px}
+.btn{
+  display:inline-block;
+  padding:17px 28px;
+  border-radius:14px;
+  font-weight:800;
+  text-decoration:none;
+  margin:8px 10px 8px 0;
+}
+.primary{background:white;color:#05060a}
+.secondary{border:1px solid #ffffff55;color:white}
+.visual{
+  background:linear-gradient(145deg,#15182a,#090a12);
+  border:1px solid #ffffff1a;
+  border-radius:28px;
+  padding:28px;
+  box-shadow:0 30px 80px #0008;
+}
+.wave{
+  height:220px;
+  border-radius:22px;
+  background:
+    linear-gradient(90deg,#6c63ff,#00d4ff),
+    repeating-linear-gradient(90deg,transparent 0 18px,#ffffff22 18px 22px);
+  mask:linear-gradient(#000,#000);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:28px;
+  font-weight:900;
+}
+.grid{
+  padding:50px 7%;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:22px;
+}
+.card{
+  background:#111421cc;
+  border:1px solid #ffffff14;
+  border-radius:22px;
+  padding:28px;
+}
+.card h3{font-size:24px;margin-top:0}
+.section{
+  padding:60px 7%;
+  text-align:center;
+}
+.pricing{
+  max-width:520px;
+  margin:30px auto;
+  background:linear-gradient(145deg,#171a2b,#0b0d16);
+  border:1px solid #ffffff22;
+  border-radius:28px;
+  padding:36px;
+}
+.price{font-size:54px;font-weight:900}
+footer{
+  padding:40px 7%;
+  color:#8f95ad;
+  border-top:1px solid #ffffff12;
+}
+@media(max-width:900px){
+  .hero{grid-template-columns:1fr}
+  h1{font-size:46px}
+  .grid{grid-template-columns:1fr}
+}
 </style>
 </head>
 <body>
-<div class="box">
-<h1>Universal Arranger OS</h1>
-<p>AI music creation platform by AE Platform.</p>
-<p>Sing, hum, or play a musical idea. UAOS turns it into MIDI, chords, arrangements, and DAW-ready workflows.</p>
 
-<a class="primary" href="https://www.paypal.com/ncp/payment/ZB63CA66C98AN" target="_blank">Join Early Access - 19 EUR</a>
-<a class="secondary" href="mailto:=UAOS Early Access">Contact Support</a>
+<nav>
+  <div class="logo">AE Platform</div>
+  <div class="navlinks">
+    <a href="#features">Features</a>
+    <a href="#pricing">Early Access</a>
+    <a href="mailto:admin@aeplatform.app">Contact</a>
+  </div>
+</nav>
 
-<div class="card">
-<h2>Features</h2>
-<p>Voice to MIDI  Melody to Chords  AI Arrangement  DAW Export  MIDI Controller Mode</p>
-</div>
+<section class="hero">
+  <div>
+    <div class="badge">Early Access MVP is live</div>
+    <h1>Turn your <span class="gradient">voice into music</span>.</h1>
+    <p>
+      Universal Arranger OS helps musicians, producers, and creators transform singing,
+      humming, melodies, and musical ideas into MIDI, chords, arrangements, and DAW-ready workflows.
+    </p>
+    <div class="actions">
+      <a class="btn primary" href="https://www.paypal.com/ncp/payment/ZB63CA66C98AN" target="_blank">Join Early Access — 19 EUR</a>
+      <a class="btn secondary" href="#features">See Features</a>
+    </div>
+  </div>
 
-<div class="card">
-<h2>Official</h2>
-<p>Website: https://aeplatform.app</p>
-<p>Support: admin@aeplatform.app</p>
-</div>
-</div>
+  <div class="visual">
+    <div class="wave">Voice → MIDI → Arrangement</div>
+    <p>
+      Capture an idea. Convert it. Arrange it. Export it.
+    </p>
+  </div>
+</section>
+
+<section class="grid" id="features">
+  <div class="card">
+    <h3>Voice to MIDI</h3>
+    <p>Sing or hum a melody and convert it into clean MIDI concepts for production.</p>
+  </div>
+  <div class="card">
+    <h3>AI Arrangement</h3>
+    <p>Generate chords, bass, drums, and musical structure from a simple idea.</p>
+  </div>
+  <div class="card">
+    <h3>DAW-ready Workflow</h3>
+    <p>Prepare exports for producers using MIDI, stems, and future DAW project workflows.</p>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Built for fast musical ideas</h2>
+  <p>
+    UAOS is designed for creators who do not want to lose ideas.
+    Record the melody now. Build the arrangement next.
+  </p>
+</section>
+
+<section class="section" id="pricing">
+  <h2>Founding Early Access</h2>
+  <div class="pricing">
+    <div class="price">19€</div>
+    <p>One-time early access support package.</p>
+    <p>Includes prototype access, updates, feature previews, and feedback channel.</p>
+    <a class="btn primary" href="https://www.paypal.com/ncp/payment/ZB63CA66C98AN" target="_blank">Get Early Access</a>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Launch status</h2>
+  <p>
+    Public MVP is live. We are onboarding first musicians, producers, beatmakers, and creators.
+  </p>
+</section>
+
+<footer>
+  <p>Universal Arranger OS by AE Platform</p>
+  <p>Support: admin@aeplatform.app</p>
+</footer>
+
 </body>
 </html>
