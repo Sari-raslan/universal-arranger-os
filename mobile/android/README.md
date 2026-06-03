@@ -1,27 +1,26 @@
-﻿# UAOS Android Launch Package
-
-Package name suggestion:
-app.aeplatform.uaos
+﻿# UAOS Android Package
 
 App name:
 Universal Arranger OS
 
-Developer:
-AE Platform
+Package:
+app.aeplatform.uaos
+
+Languages:
+English, Arabic, German, Spanish, French, Turkish
+
+Type:
+PWA/WebView-ready MVP
 
 Website:
 https://sari-raslan.github.io/universal-arranger-os/
 
-Support:
-admin@aeplatform.app
+Payment:
+https://www.paypal.com/ncp/payment/ZB63CA66C98AN
 
-Status:
-Android launch scaffold prepared.
-
-Required before Google Play release:
+Required for Google Play:
 - Google Play Developer account
-- Signed Android App Bundle .aab
+- Signed AAB build
 - Privacy policy URL
 - Screenshots
 - App icon
-- Store listing

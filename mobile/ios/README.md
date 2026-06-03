@@ -1,27 +1,24 @@
-﻿# UAOS iOS Launch Package
-
-Bundle ID suggestion:
-app.aeplatform.uaos
+﻿# UAOS iOS Package
 
 App name:
 Universal Arranger OS
 
-Developer:
-AE Platform
+Bundle ID:
+app.aeplatform.uaos
+
+Languages:
+English, Arabic, German, Spanish, French, Turkish
+
+Type:
+PWA/WebView-ready MVP
 
 Website:
 https://sari-raslan.github.io/universal-arranger-os/
 
-Support:
-admin@aeplatform.app
-
-Status:
-iOS launch scaffold prepared.
-
-Required before App Store release:
+Required for App Store:
 - Apple Developer account
 - Xcode archive
 - App Store Connect listing
-- Privacy nutrition labels
+- Privacy labels
 - Screenshots
 - App icon

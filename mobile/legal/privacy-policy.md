@@ -1,16 +1,14 @@
 ﻿# UAOS Privacy Policy Draft
 
-Universal Arranger OS by AE Platform is currently an Early Access MVP.
+Universal Arranger OS by AE Platform is an Early Access MVP.
 
 We may collect:
-- Contact email if provided
-- Payment confirmation through external payment providers
-- Basic usage feedback
-- Uploaded demo files only if users intentionally provide them
+- Email if provided
+- Payment confirmation from payment providers
+- Usage feedback
+- Demo uploads only when provided by the user
 
 We do not sell personal data.
-
-Payment processing is handled by external providers such as PayPal or Stripe.
 
 Support:
 admin@aeplatform.app
