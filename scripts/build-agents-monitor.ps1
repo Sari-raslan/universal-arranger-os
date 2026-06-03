@@ -1,50 +1,27 @@
 ﻿$Repo = "C:\Users\ssare\Documents\Codex\2026-06-02\github-plugin-github-openai-curated-inspe\uaos-media-ops"
 cd $Repo
 
-$tasks = Get-ScheduledTask | Where-Object { $_.TaskName -like "*UAOS*" } | Select-Object TaskName, State
 $videoCount = (Get-ChildItem "ai-videos\output_v2\*.mp4" -ErrorAction SilentlyContinue).Count
 $hasWebsite = Test-Path "docs\index.html"
 $hasLogo = Test-Path "assets\uaos-logo.svg"
-$hasMobile = Test-Path "mobile\android\README.md"
-$hasIOS = Test-Path "mobile\ios\README.md"
+$hasMobile = (Test-Path "mobile\android\README.md") -and (Test-Path "mobile\ios\README.md")
 $hasPWA = Test-Path "mobile\pwa\manifest.json"
+$hasMonitor = Test-Path "monitor\agents-dashboard.html"
+$hasPayPal = $true
 $gitStatus = git status --short
 $lastCommit = git log -1 --pretty=format:"%h - %s"
-$runs = gh run list --repo Sari-raslan/universal-arranger-os --limit 5 2>$null
+$runs = gh run list --repo Sari-raslan/universal-arranger-os --limit 6 2>$null
+$agents = Get-Process powershell -ErrorAction SilentlyContinue | Select-Object Id,CPU,StartTime,ProcessName | Out-String
+$now = Get-Date
 
-function StatusText($ok) {
-    if ($ok) { return "READY" } else { return "MISSING" }
-}
+function BoolText($x){ if($x){"READY"}else{"MISSING"} }
+function BoolClass($x){ if($x){"ok"}else{"bad"} }
+function Percent($x){ if($x){100}else{20} }
 
-function StatusClass($ok) {
-    if ($ok) { return "ok" } else { return "bad" }
-}
-
-$taskRows = ""
-if ($tasks.Count -eq 0) {
-    $taskRows = "<tr><td>No UAOS scheduled agents found</td><td class='warn'>NOT RUNNING</td></tr>"
-} else {
-    foreach ($t in $tasks) {
-        $cls = if ($t.State -eq "Running") { "ok" } elseif ($t.State -eq "Ready") { "warn" } else { "bad" }
-        $taskRows += "<tr><td>$($t.TaskName)</td><td class='$cls'>$($t.State)</td></tr>"
-    }
-}
-
-$todo = @(
-    "Upload best videos to TikTok, YouTube Shorts, X",
-    "Connect aeplatform.app DNS to Vercel",
-    "Finish Instagram account",
-    "Create real backend auth",
-    "Connect payment webhook",
-    "Build real cloud Voice-to-MIDI API",
-    "Prepare Google Play developer account",
-    "Prepare Apple Developer account"
-)
-
-$todoHtml = ""
-foreach ($i in $todo) {
-    $todoHtml += "<li>$i</li>"
-}
+$readyCount = 0
+$total = 7
+foreach($x in @($hasWebsite,$hasLogo,($videoCount -gt 0),$hasMobile,$hasPWA,$hasMonitor,$hasPayPal)){ if($x){$readyCount++} }
+$overall = [math]::Round(($readyCount / $total) * 100)
 
 $html = @"
 <!DOCTYPE html>
@@ -52,85 +29,107 @@ $html = @"
 <head>
 <meta charset="UTF-8">
 <meta http-equiv="refresh" content="15">
-<title>UAOS Agent Control Center</title>
+<title>UAOS Command Center</title>
 <style>
-body{font-family:Arial;background:#050616;color:white;margin:0;padding:28px}
-h1{font-size:42px;margin-bottom:6px}
-p{color:#cfd5ee}
+*{box-sizing:border-box}
+body{
+margin:0;
+font-family:Segoe UI,Arial,sans-serif;
+background:
+radial-gradient(circle at top left,#5b2cff55,transparent 30%),
+radial-gradient(circle at top right,#00c8ff44,transparent 30%),
+#050616;
+color:white;
+padding:28px;
+}
+.header{display:flex;justify-content:space-between;align-items:center;margin-bottom:24px}
+h1{font-size:44px;margin:0}
+.badge{padding:10px 16px;border:1px solid #ffffff33;border-radius:999px;background:#11162dcc}
 .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-.card{background:#11162d;border:1px solid #ffffff20;border-radius:20px;padding:22px}
+.card{background:#11162dcc;border:1px solid #ffffff22;border-radius:22px;padding:22px;box-shadow:0 20px 60px #0005}
 .big{font-size:30px;font-weight:900}
 .ok{color:#34ff91}.warn{color:#ffd166}.bad{color:#ff5c7a}
+.progress{height:12px;background:#070a15;border-radius:999px;overflow:hidden;margin-top:12px}
+.bar{height:100%;background:linear-gradient(90deg,#2f82ff,#d94cff);border-radius:999px}
 table{width:100%;border-collapse:collapse;background:#0c1022;border-radius:16px;overflow:hidden}
 td,th{padding:14px;border-bottom:1px solid #ffffff12;text-align:left}
-pre{white-space:pre-wrap;background:#080b18;padding:18px;border-radius:14px;max-height:260px;overflow:auto}
+pre{white-space:pre-wrap;background:#080b18;padding:18px;border-radius:14px;max-height:230px;overflow:auto}
 a{color:#80dfff}
-ul{line-height:1.8}
-@media(max-width:900px){.grid{grid-template-columns:1fr}}
+.section{margin-top:28px}
+ul{line-height:1.9}
+.pill{display:inline-block;padding:7px 11px;border-radius:999px;background:#0c1022;border:1px solid #ffffff22;margin:4px}
+@media(max-width:1000px){.grid{grid-template-columns:1fr}.header{display:block}}
 </style>
 </head>
 <body>
 
-<h1> UAOS Agent Control Center</h1>
-<p>Auto-refresh every 15 seconds  Generated: $(Get-Date)</p>
-
-<div class="grid">
-<div class="card"><h2>Website</h2><div class="big $(StatusClass $hasWebsite)">$(StatusText $hasWebsite)</div><p>docs/index.html</p></div>
-<div class="card"><h2>Logo</h2><div class="big $(StatusClass $hasLogo)">$(StatusText $hasLogo)</div><p>assets/uaos-logo.svg</p></div>
-<div class="card"><h2>Videos</h2><div class="big ok">$videoCount MP4</div><p>ai-videos/output_v2</p></div>
-<div class="card"><h2>Payment</h2><div class="big ok">READY</div><p>PayPal early access</p></div>
-
-<div class="card"><h2>Android</h2><div class="big $(StatusClass $hasMobile)">$(StatusText $hasMobile)</div><p>mobile/android</p></div>
-<div class="card"><h2>iOS</h2><div class="big $(StatusClass $hasIOS)">$(StatusText $hasIOS)</div><p>mobile/ios</p></div>
-<div class="card"><h2>PWA</h2><div class="big $(StatusClass $hasPWA)">$(StatusText $hasPWA)</div><p>manifest.json</p></div>
-<div class="card"><h2>Launch</h2><div class="big warn">PUBLISH NEXT</div><p>Manual social upload</p></div>
+<div class="header">
+  <div>
+    <h1>🎛️ UAOS Command Center</h1>
+    <p>Autonomous launch monitor · Auto-refresh every 15 seconds</p>
+  </div>
+  <div class="badge">Updated: $now</div>
 </div>
 
-<h2> Scheduled Agents</h2>
-<table>
-<tr><th>Agent</th><th>Status</th></tr>
-$taskRows
-</table>
-
-<h2> Live Links</h2>
 <div class="card">
-<p><b>Website:</b> <a href="https://sari-raslan.github.io/universal-arranger-os/">https://sari-raslan.github.io/universal-arranger-os/</a></p>
-<p><b>Payment:</b> <a href="https://www.paypal.com/ncp/payment/ZB63CA66C98AN">https://www.paypal.com/ncp/payment/ZB63CA66C98AN</a></p>
-<p><b>GitHub:</b> <a href="https://github.com/Sari-raslan/universal-arranger-os">https://github.com/Sari-raslan/universal-arranger-os</a></p>
-<p><b>TikTok:</b> <a href="https://www.tiktok.com/@aeplatformapp">https://www.tiktok.com/@aeplatformapp</a></p>
-<p><b>X:</b> <a href="https://x.com/aeplatformapp">https://x.com/aeplatformapp</a></p>
-<p><b>YouTube:</b> <a href="https://www.youtube.com/@aeplatformapp">https://www.youtube.com/@aeplatformapp</a></p>
+<h2>Overall Launch Readiness</h2>
+<div class="big">$overall%</div>
+<div class="progress"><div class="bar" style="width:$overall%"></div></div>
 </div>
 
-<h2> What is Ready</h2>
-<div class="card">
+<div class="section grid">
+<div class="card"><h2>Website</h2><div class="big $(BoolClass $hasWebsite)">$(BoolText $hasWebsite)</div><div class="progress"><div class="bar" style="width:$(Percent $hasWebsite)%"></div></div></div>
+<div class="card"><h2>Logo</h2><div class="big $(BoolClass $hasLogo)">$(BoolText $hasLogo)</div><div class="progress"><div class="bar" style="width:$(Percent $hasLogo)%"></div></div></div>
+<div class="card"><h2>Videos</h2><div class="big ok">$videoCount MP4</div><div class="progress"><div class="bar" style="width:100%"></div></div></div>
+<div class="card"><h2>PayPal</h2><div class="big ok">READY</div><div class="progress"><div class="bar" style="width:100%"></div></div></div>
+
+<div class="card"><h2>Android/iOS</h2><div class="big $(BoolClass $hasMobile)">$(BoolText $hasMobile)</div><div class="progress"><div class="bar" style="width:$(Percent $hasMobile)%"></div></div></div>
+<div class="card"><h2>PWA</h2><div class="big $(BoolClass $hasPWA)">$(BoolText $hasPWA)</div><div class="progress"><div class="bar" style="width:$(Percent $hasPWA)%"></div></div></div>
+<div class="card"><h2>Monitor</h2><div class="big $(BoolClass $hasMonitor)">$(BoolText $hasMonitor)</div><div class="progress"><div class="bar" style="width:$(Percent $hasMonitor)%"></div></div></div>
+<div class="card"><h2>Social Launch</h2><div class="big warn">MANUAL</div><div class="progress"><div class="bar" style="width:65%"></div></div></div>
+</div>
+
+<div class="section card">
+<h2>Live Links</h2>
+<span class="pill"><a href="https://sari-raslan.github.io/universal-arranger-os/">Website</a></span>
+<span class="pill"><a href="https://www.paypal.com/ncp/payment/4PHMPZL66YEG8">PayPal Pro</a></span>
+<span class="pill"><a href="https://github.com/Sari-raslan/universal-arranger-os">GitHub</a></span>
+<span class="pill"><a href="https://www.tiktok.com/@aeplatformapp">TikTok</a></span>
+<span class="pill"><a href="https://x.com/aeplatformapp">X</a></span>
+<span class="pill"><a href="https://www.youtube.com/@aeplatformapp">YouTube</a></span>
+</div>
+
+<div class="section card">
+<h2>Agents / PowerShell Processes</h2>
+<pre>$agents</pre>
+</div>
+
+<div class="section card">
+<h2>Remaining Work</h2>
 <ul>
-<li>Landing page</li>
-<li>Music logo</li>
-<li>PayPal payment link</li>
-<li>Multilingual content</li>
-<li>Demo videos</li>
-<li>Android/iOS/PWA scaffolds</li>
-<li>GitHub Actions</li>
-<li>Social brand accounts</li>
+<li>Upload best videos manually to TikTok / YouTube Shorts / X</li>
+<li>Finish DNS for aeplatform.app</li>
+<li>Create real backend auth</li>
+<li>Connect PayPal webhook verification</li>
+<li>Build real cloud Voice-to-MIDI API</li>
+<li>Prepare Google Play and Apple Developer accounts</li>
 </ul>
 </div>
 
-<h2> Remaining Work</h2>
-<div class="card">
-<ul>
-$todoHtml
-</ul>
-</div>
-
-<h2> Git Status</h2>
+<div class="section card">
+<h2>Git Status</h2>
 <pre>$gitStatus</pre>
+</div>
 
-<h2> Last Commit</h2>
+<div class="section card">
+<h2>Last Commit</h2>
 <pre>$lastCommit</pre>
+</div>
 
-<h2> Latest GitHub Runs</h2>
+<div class="section card">
+<h2>Latest GitHub Runs</h2>
 <pre>$runs</pre>
+</div>
 
 </body>
 </html>

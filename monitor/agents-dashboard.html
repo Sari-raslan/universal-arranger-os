@@ -3,85 +3,115 @@
 <head>
 <meta charset="UTF-8">
 <meta http-equiv="refresh" content="15">
-<title>UAOS Agent Control Center</title>
+<title>UAOS Command Center</title>
 <style>
-body{font-family:Arial;background:#050616;color:white;margin:0;padding:28px}
-h1{font-size:42px;margin-bottom:6px}
-p{color:#cfd5ee}
+*{box-sizing:border-box}
+body{
+margin:0;
+font-family:Segoe UI,Arial,sans-serif;
+background:
+radial-gradient(circle at top left,#5b2cff55,transparent 30%),
+radial-gradient(circle at top right,#00c8ff44,transparent 30%),
+#050616;
+color:white;
+padding:28px;
+}
+.header{display:flex;justify-content:space-between;align-items:center;margin-bottom:24px}
+h1{font-size:44px;margin:0}
+.badge{padding:10px 16px;border:1px solid #ffffff33;border-radius:999px;background:#11162dcc}
 .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-.card{background:#11162d;border:1px solid #ffffff20;border-radius:20px;padding:22px}
+.card{background:#11162dcc;border:1px solid #ffffff22;border-radius:22px;padding:22px;box-shadow:0 20px 60px #0005}
 .big{font-size:30px;font-weight:900}
 .ok{color:#34ff91}.warn{color:#ffd166}.bad{color:#ff5c7a}
+.progress{height:12px;background:#070a15;border-radius:999px;overflow:hidden;margin-top:12px}
+.bar{height:100%;background:linear-gradient(90deg,#2f82ff,#d94cff);border-radius:999px}
 table{width:100%;border-collapse:collapse;background:#0c1022;border-radius:16px;overflow:hidden}
 td,th{padding:14px;border-bottom:1px solid #ffffff12;text-align:left}
-pre{white-space:pre-wrap;background:#080b18;padding:18px;border-radius:14px;max-height:260px;overflow:auto}
+pre{white-space:pre-wrap;background:#080b18;padding:18px;border-radius:14px;max-height:230px;overflow:auto}
 a{color:#80dfff}
-ul{line-height:1.8}
-@media(max-width:900px){.grid{grid-template-columns:1fr}}
+.section{margin-top:28px}
+ul{line-height:1.9}
+.pill{display:inline-block;padding:7px 11px;border-radius:999px;background:#0c1022;border:1px solid #ffffff22;margin:4px}
+@media(max-width:1000px){.grid{grid-template-columns:1fr}.header{display:block}}
 </style>
 </head>
 <body>
 
-<h1> UAOS Agent Control Center</h1>
-<p>Auto-refresh every 15 seconds  Generated: 06/03/2026 14:14:54</p>
-
-<div class="grid">
-<div class="card"><h2>Website</h2><div class="big ok">READY</div><p>docs/index.html</p></div>
-<div class="card"><h2>Logo</h2><div class="big ok">READY</div><p>assets/uaos-logo.svg</p></div>
-<div class="card"><h2>Videos</h2><div class="big ok">4 MP4</div><p>ai-videos/output_v2</p></div>
-<div class="card"><h2>Payment</h2><div class="big ok">READY</div><p>PayPal early access</p></div>
-
-<div class="card"><h2>Android</h2><div class="big ok">READY</div><p>mobile/android</p></div>
-<div class="card"><h2>iOS</h2><div class="big ok">READY</div><p>mobile/ios</p></div>
-<div class="card"><h2>PWA</h2><div class="big ok">READY</div><p>manifest.json</p></div>
-<div class="card"><h2>Launch</h2><div class="big warn">PUBLISH NEXT</div><p>Manual social upload</p></div>
+<div class="header">
+  <div>
+    <h1>🎛️ UAOS Command Center</h1>
+    <p>Autonomous launch monitor · Auto-refresh every 15 seconds</p>
+  </div>
+  <div class="badge">Updated: 06/03/2026 16:22:24</div>
 </div>
 
-<h2> Scheduled Agents</h2>
-<table>
-<tr><th>Agent</th><th>Status</th></tr>
-<tr><td>UAOSBackgroundAgent</td><td class='warn'>Ready</td></tr>
-</table>
-
-<h2> Live Links</h2>
 <div class="card">
-<p><b>Website:</b> <a href="https://sari-raslan.github.io/universal-arranger-os/">https://sari-raslan.github.io/universal-arranger-os/</a></p>
-<p><b>Payment:</b> <a href="https://www.paypal.com/ncp/payment/ZB63CA66C98AN">https://www.paypal.com/ncp/payment/ZB63CA66C98AN</a></p>
-<p><b>GitHub:</b> <a href="https://github.com/Sari-raslan/universal-arranger-os">https://github.com/Sari-raslan/universal-arranger-os</a></p>
-<p><b>TikTok:</b> <a href="https://www.tiktok.com/@aeplatformapp">https://www.tiktok.com/@aeplatformapp</a></p>
-<p><b>X:</b> <a href="https://x.com/aeplatformapp">https://x.com/aeplatformapp</a></p>
-<p><b>YouTube:</b> <a href="https://www.youtube.com/@aeplatformapp">https://www.youtube.com/@aeplatformapp</a></p>
+<h2>Overall Launch Readiness</h2>
+<div class="big">100%</div>
+<div class="progress"><div class="bar" style="width:100%"></div></div>
 </div>
 
-<h2> What is Ready</h2>
-<div class="card">
+<div class="section grid">
+<div class="card"><h2>Website</h2><div class="big ok">READY</div><div class="progress"><div class="bar" style="width:100%"></div></div></div>
+<div class="card"><h2>Logo</h2><div class="big ok">READY</div><div class="progress"><div class="bar" style="width:100%"></div></div></div>
+<div class="card"><h2>Videos</h2><div class="big ok">4 MP4</div><div class="progress"><div class="bar" style="width:100%"></div></div></div>
+<div class="card"><h2>PayPal</h2><div class="big ok">READY</div><div class="progress"><div class="bar" style="width:100%"></div></div></div>
+
+<div class="card"><h2>Android/iOS</h2><div class="big ok">READY</div><div class="progress"><div class="bar" style="width:100%"></div></div></div>
+<div class="card"><h2>PWA</h2><div class="big ok">READY</div><div class="progress"><div class="bar" style="width:100%"></div></div></div>
+<div class="card"><h2>Monitor</h2><div class="big ok">READY</div><div class="progress"><div class="bar" style="width:100%"></div></div></div>
+<div class="card"><h2>Social Launch</h2><div class="big warn">MANUAL</div><div class="progress"><div class="bar" style="width:65%"></div></div></div>
+</div>
+
+<div class="section card">
+<h2>Live Links</h2>
+<span class="pill"><a href="https://sari-raslan.github.io/universal-arranger-os/">Website</a></span>
+<span class="pill"><a href="https://www.paypal.com/ncp/payment/4PHMPZL66YEG8">PayPal Pro</a></span>
+<span class="pill"><a href="https://github.com/Sari-raslan/universal-arranger-os">GitHub</a></span>
+<span class="pill"><a href="https://www.tiktok.com/@aeplatformapp">TikTok</a></span>
+<span class="pill"><a href="https://x.com/aeplatformapp">X</a></span>
+<span class="pill"><a href="https://www.youtube.com/@aeplatformapp">YouTube</a></span>
+</div>
+
+<div class="section card">
+<h2>Agents / PowerShell Processes</h2>
+<pre>
+   Id CPU      StartTime           ProcessName
+   -- ---      ---------           -----------
+ 6516                              powershell 
+17452 2,640625 03.06.2026 16:21:23 powershell 
+21320 0,71875  03.06.2026 16:21:52 powershell 
+
+
+</pre>
+</div>
+
+<div class="section card">
+<h2>Remaining Work</h2>
 <ul>
-<li>Landing page</li>
-<li>Music logo</li>
-<li>PayPal payment link</li>
-<li>Multilingual content</li>
-<li>Demo videos</li>
-<li>Android/iOS/PWA scaffolds</li>
-<li>GitHub Actions</li>
-<li>Social brand accounts</li>
+<li>Upload best videos manually to TikTok / YouTube Shorts / X</li>
+<li>Finish DNS for aeplatform.app</li>
+<li>Create real backend auth</li>
+<li>Connect PayPal webhook verification</li>
+<li>Build real cloud Voice-to-MIDI API</li>
+<li>Prepare Google Play and Apple Developer accounts</li>
 </ul>
 </div>
 
-<h2> Remaining Work</h2>
-<div class="card">
-<ul>
-<li>Upload best videos to TikTok, YouTube Shorts, X</li><li>Connect aeplatform.app DNS to Vercel</li><li>Finish Instagram account</li><li>Create real backend auth</li><li>Connect payment webhook</li><li>Build real cloud Voice-to-MIDI API</li><li>Prepare Google Play developer account</li><li>Prepare Apple Developer account</li>
-</ul>
+<div class="section card">
+<h2>Git Status</h2>
+<pre> M agents/uaos-master-autonomous-agent.ps1  M logs/master-agent.pid  M scripts/build-agents-monitor.ps1</pre>
 </div>
 
-<h2> Git Status</h2>
-<pre> M logs/master-autonomous-agent.log</pre>
+<div class="section card">
+<h2>Last Commit</h2>
+<pre>8481842 - Add UAOS mobile deployment pipeline</pre>
+</div>
 
-<h2> Last Commit</h2>
-<pre>546bd3e - Add UAOS Instruments sampler and synthetic piano engine</pre>
-
-<h2> Latest GitHub Runs</h2>
-<pre>completed	success	Add UAOS Instruments sampler and synthetic piano engine	UAOS Media Ops CI	master	push	26883976275	7s	2026-06-03T12:13:31Z completed	success	Add UAOS Instruments sampler and synthetic piano engine	Deploy UAOS Site	master	push	26883976131	17s	2026-06-03T12:13:30Z completed	success	Add UAOS Studio DAW research and analysis engine	Deploy UAOS Site	master	push	26883594677	27s	2026-06-03T12:05:41Z completed	success	Add UAOS Studio DAW research and analysis engine	UAOS Media Ops CI	master	push	26883594639	9s	2026-06-03T12:05:41Z completed	success	Set AE Platform official domain and remove personal branding	Deploy UAOS Site	master	push	26875218516	17s	2026-06-03T09:13:09Z</pre>
+<div class="section card">
+<h2>Latest GitHub Runs</h2>
+<pre>completed	success	Add UAOS mobile deployment pipeline	UAOS Media Ops CI	auto/full-agent-build-20260603-141840	push	26884600584	8s	2026-06-03T12:26:03Z completed	success	Add UAOS Instruments sampler and synthetic piano engine	UAOS Media Ops CI	auto/full-agent-build-20260603-141840	push	26884248737	12s	2026-06-03T12:19:00Z completed	success	Add UAOS Instruments sampler and synthetic piano engine	UAOS Media Ops CI	master	push	26883976275	7s	2026-06-03T12:13:31Z completed	success	Add UAOS Instruments sampler and synthetic piano engine	Deploy UAOS Site	master	push	26883976131	17s	2026-06-03T12:13:30Z completed	success	Add UAOS Studio DAW research and analysis engine	Deploy UAOS Site	master	push	26883594677	27s	2026-06-03T12:05:41Z completed	success	Add UAOS Studio DAW research and analysis engine	UAOS Media Ops CI	master	push	26883594639	9s	2026-06-03T12:05:41Z</pre>
+</div>
 
 </body>
 </html>
