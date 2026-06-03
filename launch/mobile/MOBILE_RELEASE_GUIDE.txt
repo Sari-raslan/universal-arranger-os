@@ -1,0 +1,35 @@
+﻿# UAOS MOBILE RELEASE GUIDE
+
+Android package:
+app.aeplatform.uaos
+
+App name:
+Universal Arranger OS
+
+Official domain:
+https://aeplatform.app
+
+Store targets:
+- Google Play
+- Apple App Store
+
+Next Steps:
+
+1. Android Studio:
+npx cap open android
+
+2. Xcode:
+npx cap open ios
+
+3. Build Android release:
+Build > Generate Signed Bundle/APK
+
+4. Output:
+AAB for Google Play
+
+5. iOS:
+Archive in Xcode
+Upload with App Store Connect
+
+Important:
+Use official UAOS logo and screenshots.
