@@ -13,7 +13,7 @@ Type:
 PWA/WebView-ready MVP
 
 Website:
-https://sari-raslan.github.io/universal-arranger-os/
+https://AE Platform.github.io/universal-arranger-os/
 
 Payment:
 https://www.paypal.com/ncp/payment/ZB63CA66C98AN
@@ -24,3 +24,4 @@ Required for Google Play:
 - Privacy policy URL
 - Screenshots
 - App icon
+

@@ -7,3 +7,4 @@
   pro: "Pro",
   join: "Join Early Access"
 }
+

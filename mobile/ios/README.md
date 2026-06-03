@@ -13,7 +13,7 @@ Type:
 PWA/WebView-ready MVP
 
 Website:
-https://sari-raslan.github.io/universal-arranger-os/
+https://AE Platform.github.io/universal-arranger-os/
 
 Required for App Store:
 - Apple Developer account
@@ -22,3 +22,4 @@ Required for App Store:
 - Privacy labels
 - Screenshots
 - App icon
+

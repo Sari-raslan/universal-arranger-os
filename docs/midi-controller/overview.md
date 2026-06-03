@@ -11,3 +11,4 @@ Allow UAOS to work with MIDI controllers.
 - Quantization
 - Loop generation
 - Realtime AI accompaniment
+

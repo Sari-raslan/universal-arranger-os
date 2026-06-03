@@ -4,7 +4,7 @@ Status:
 LIVE
 
 Website:
-https://sari-raslan.github.io/universal-arranger-os/
+https://AE Platform.github.io/universal-arranger-os/
 
 Payment:
 https://www.paypal.com/ncp/payment/ZB63CA66C98AN
@@ -40,7 +40,7 @@ Turn singing, humming, melodies, and musical ideas into:
 Early Access is now open.
 
 Website:
-https://sari-raslan.github.io/universal-arranger-os/
+https://AE Platform.github.io/universal-arranger-os/
 
 Join Early Access:
 https://www.paypal.com/ncp/payment/ZB63CA66C98AN
@@ -48,3 +48,4 @@ https://www.paypal.com/ncp/payment/ZB63CA66C98AN
 Built for musicians, producers, beatmakers, singers, and creators.
 
 #UAOS #AEPlatform #MusicAI #MIDI #MusicProduction #Producer #AItools
+

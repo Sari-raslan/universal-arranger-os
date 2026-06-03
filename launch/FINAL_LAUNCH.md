@@ -20,3 +20,4 @@ Ollama / Llama local agent supported
 
 Status:
 Public MVP launch ready
+
