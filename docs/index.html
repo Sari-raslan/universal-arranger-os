@@ -3,79 +3,66 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Universal Arranger OS | AE Platform</title>
+<title>Universal Arranger OS is Live | AE Platform</title>
 <style>
-*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:#06070d;color:white}
-section{padding:60px 7%}.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
-h1{font-size:60px;line-height:1.05}.grad{background:linear-gradient(90deg,#fff,#80eaff,#8b7cff);-webkit-background-clip:text;color:transparent}
-p{font-size:20px;line-height:1.6;color:#ccd2e8}.btn{display:inline-block;padding:16px 26px;border-radius:14px;margin:8px;text-decoration:none;font-weight:bold}
-.primary{background:white;color:#08080c}.secondary{border:1px solid #fff;color:white}.card{background:#111421;border:1px solid #ffffff1a;border-radius:22px;padding:26px;margin:18px 0}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.price{font-size:42px;font-weight:900}
-input,button{padding:14px;border-radius:10px;border:0;margin:8px}button{font-weight:bold;cursor:pointer}
-@media(max-width:900px){.hero,.grid{grid-template-columns:1fr}h1{font-size:42px}}
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:radial-gradient(circle at top left,#3b2cff66,transparent 35%),radial-gradient(circle at top right,#00d4ff44,transparent 35%),#06070d;color:white}
+section{padding:70px 7%}
+.hero{min-height:90vh;display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+.badge{display:inline-block;padding:9px 15px;border:1px solid #8b8cff;border-radius:999px;color:#dce0ff;margin-bottom:20px}
+h1{font-size:70px;line-height:1.02;margin:0 0 22px;letter-spacing:-2px}
+.grad{background:linear-gradient(90deg,#fff,#8ee9ff,#9b8cff);-webkit-background-clip:text;color:transparent}
+p{font-size:20px;line-height:1.65;color:#d1d6ea}
+.btn{display:inline-block;padding:17px 28px;border-radius:14px;margin:8px 10px 8px 0;text-decoration:none;font-weight:900}
+.primary{background:white;color:#06070d}.secondary{border:1px solid #ffffff66;color:white}
+.card{background:#111421cc;border:1px solid #ffffff1a;border-radius:24px;padding:28px;margin:18px 0}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.visual{background:linear-gradient(145deg,#15182a,#090a12);border:1px solid #ffffff22;border-radius:28px;padding:30px;box-shadow:0 30px 80px #0008}
+.wave{height:260px;border-radius:24px;background:linear-gradient(135deg,#6c63ff,#00d4ff);display:flex;align-items:center;justify-content:center;font-size:30px;font-weight:900;text-align:center}
+.price{font-size:46px;font-weight:900}
+footer{padding:35px 7%;border-top:1px solid #ffffff12;color:#9aa1bd}
+@media(max-width:900px){.hero,.grid{grid-template-columns:1fr}h1{font-size:44px}}
 </style>
 </head>
 <body>
 
 <section class="hero">
 <div>
-<h1>Turn your <span class="grad">voice into music</span>.</h1>
-<p>Universal Arranger OS converts singing, humming, and melodies into MIDI, chords, arrangements, and DAW-ready workflows.</p>
-<a class="btn primary" href="https://www.paypal.com/ncp/payment/ZB63CA66C98AN">Join Creator  19.99</a>
-<a class="btn secondary" href="#demo">Try Demo</a>
+<div class="badge">Official Launch  Early Access Open</div>
+<h1>Universal Arranger OS is <span class="grad">live</span>.</h1>
+<p>AI-powered music creation platform by AE Platform. Turn singing, humming, melodies, and musical ideas into MIDI, chord progressions, arrangements, and DAW-ready workflows.</p>
+<a class="btn primary" href="https://www.paypal.com/ncp/payment/ZB63CA66C98AN" target="_blank">Join Early Access  19.99</a>
+<a class="btn secondary" href="#features">Explore Features</a>
 </div>
-<div class="card">
-<h2>Live MVP Demo</h2>
-<p>Upload a WAV/MP3 idea and simulate Voice  MIDI processing.</p>
-<input id="audio" type="file" accept="audio/*">
-<button onclick="demo()">Analyze Audio</button>
-<p id="result"></p>
+
+<div class="visual">
+<div class="wave">Voice  MIDI  Chords  Arrangement</div>
+<p>Built for musicians, producers, beatmakers, singers, and creators.</p>
 </div>
 </section>
 
-<section id="demo">
-<h2>How it works</h2>
+<section id="features">
+<h2>What UAOS does</h2>
 <div class="grid">
-<div class="card"><h3>1. Capture</h3><p>Sing, hum, upload, or play a musical idea.</p></div>
-<div class="card"><h3>2. Convert</h3><p>UAOS detects pitch, rhythm, key, and MIDI note concepts.</p></div>
-<div class="card"><h3>3. Arrange</h3><p>Generate chords, bass, drums, structure, and DAW workflow.</p></div>
+<div class="card"><h3>Voice to MIDI</h3><p>Convert singing and humming into MIDI concepts for production.</p></div>
+<div class="card"><h3>AI Arrangement</h3><p>Generate chords, structure, bass, drums, and arrangement ideas.</p></div>
+<div class="card"><h3>DAW Workflow</h3><p>Prepare music ideas for DAW-ready creative workflows.</p></div>
 </div>
 </section>
 
 <section>
 <h2>Plans</h2>
 <div class="grid">
-<div class="card"><h3>Free</h3><div class="price">0</div><p>Demo access, limited exports, community updates.</p></div>
-<div class="card"><h3>Creator</h3><div class="price">19.99</div><p>MIDI exports, arrangement tools, early access.</p><a class="btn primary" href="https://www.paypal.com/ncp/payment/ZB63CA66C98AN">Get Creator</a></div>
-<div class="card"><h3>Pro</h3><div class="price">49.99</div><p>Advanced arranger, commercial use, realtime roadmap.</p></div>
+<div class="card"><h3>Free</h3><div class="price">0</div><p>Demo access and limited previews.</p></div>
+<div class="card"><h3>Creator</h3><div class="price">19.99</div><p>Early access, updates, prototype previews, and feedback channel.</p><a class="btn primary" href="https://www.paypal.com/ncp/payment/ZB63CA66C98AN">Get Creator</a></div>
+<div class="card"><h3>Pro</h3><div class="price">49.99</div><p>Advanced roadmap access, commercial usage, and priority features.</p></div>
 </div>
 </section>
 
-<section>
-<h2>Dashboard Preview</h2>
-<div class="card">
-<p>Status: Public MVP</p>
-<p>Exports today: <span id="exports">0</span> / 3 free</p>
-<p>Mode: Demo simulation</p>
-</div>
-</section>
-
-<script>
-let exportsUsed=Number(localStorage.getItem("uaos_exports")||0);
-document.getElementById("exports").innerText=exportsUsed;
-
-function demo(){
- const file=document.getElementById("audio").files[0];
- if(!file){alert("Choose an audio file first");return}
- if(exportsUsed>=3){document.getElementById("result").innerHTML="Free limit reached. Upgrade to Creator.";return}
- exportsUsed++;
- localStorage.setItem("uaos_exports",exportsUsed);
- document.getElementById("exports").innerText=exportsUsed;
- document.getElementById("result").innerHTML=
- "Processing complete: detected melody concept, estimated tempo, generated MIDI preview, suggested chords: Am  F  C  G";
- localStorage.setItem("uaos_last_demo",JSON.stringify({file:file.name,date:new Date().toISOString()}));
-}
-</script>
+<footer>
+<p>Universal Arranger OS by AE Platform</p>
+<p>Support: admin@aeplatform.app</p>
+</footer>
 
 </body>
 </html>
