@@ -1,11 +1,16 @@
-﻿# UAOS Backend MVP
+﻿# UAOS Backend Roadmap
 
-## Current
-Static demo + client-side usage limits.
+Current MVP:
+- Landing page
+- Demo upload UI
+- Pricing
+- PayPal payment
+- Voice-to-MIDI prototype
+- AI video system
 
-## Next
-- Real upload endpoint
+Next production modules:
 - Auth
-- Payment verification
-- Voice-to-MIDI cloud worker
-- User dashboard
+- Database
+- Real upload API
+- MIDI processing worker
+- Subscription verification
