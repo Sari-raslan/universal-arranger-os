@@ -1,9 +1,125 @@
-﻿<!doctype html>
-<html><head><meta charset="utf-8"><meta http-equiv="refresh" content="5"><title>UAOS Fixed Monitor</title>
-<style>body{font-family:Segoe UI,Arial;background:#050616;color:white;padding:30px}.card{background:#11162d;border:1px solid #ffffff22;border-radius:20px;padding:22px;margin:16px 0}.ok{color:#34ff91}.warn{color:#ffd166}</style></head>
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="refresh" content="15">
+<title>UAOS Command Center</title>
+<style>
+*{box-sizing:border-box}
+body{
+margin:0;
+font-family:Segoe UI,Arial,sans-serif;
+background:
+radial-gradient(circle at top left,#5b2cff55,transparent 30%),
+radial-gradient(circle at top right,#00c8ff44,transparent 30%),
+#050616;
+color:white;
+padding:28px;
+}
+.header{display:flex;justify-content:space-between;align-items:center;margin-bottom:24px}
+h1{font-size:44px;margin:0}
+.badge{padding:10px 16px;border:1px solid #ffffff33;border-radius:999px;background:#11162dcc}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.card{background:#11162dcc;border:1px solid #ffffff22;border-radius:22px;padding:22px;box-shadow:0 20px 60px #0005}
+.big{font-size:30px;font-weight:900}
+.ok{color:#34ff91}.warn{color:#ffd166}.bad{color:#ff5c7a}
+.progress{height:12px;background:#070a15;border-radius:999px;overflow:hidden;margin-top:12px}
+.bar{height:100%;background:linear-gradient(90deg,#2f82ff,#d94cff);border-radius:999px}
+table{width:100%;border-collapse:collapse;background:#0c1022;border-radius:16px;overflow:hidden}
+td,th{padding:14px;border-bottom:1px solid #ffffff12;text-align:left}
+pre{white-space:pre-wrap;background:#080b18;padding:18px;border-radius:14px;max-height:230px;overflow:auto}
+a{color:#80dfff}
+.section{margin-top:28px}
+ul{line-height:1.9}
+.pill{display:inline-block;padding:7px 11px;border-radius:999px;background:#0c1022;border:1px solid #ffffff22;margin:4px}
+@media(max-width:1000px){.grid{grid-template-columns:1fr}.header{display:block}}
+</style>
+</head>
 <body>
-<h1>UAOS Fixed Status</h1>
-<div class="card"><h2 class="ok">Website Fixed</h2><p>Logo inline. Buttons are normal PayPal links. Arabic RTL fixed.</p></div>
-<div class="card"><h2 class="ok">Links</h2><p><a href="https://sari-raslan.github.io/universal-arranger-os/">Website</a></p></div>
-<div class="card"><h2 class="warn">Remaining</h2><p>DNS aeplatform.app still must be fixed in Namecheap manually.</p></div>
-</body></html>
+
+<div class="header">
+  <div>
+    <h1>🎛️ UAOS Command Center</h1>
+    <p>Autonomous launch monitor · Auto-refresh every 15 seconds</p>
+  </div>
+  <div class="badge">Updated: 06/04/2026 00:58:14</div>
+</div>
+
+<div class="card">
+<h2>Overall Launch Readiness</h2>
+<div class="big">100%</div>
+<div class="progress"><div class="bar" style="width:100%"></div></div>
+</div>
+
+<div class="section grid">
+<div class="card"><h2>Website</h2><div class="big ok">READY</div><div class="progress"><div class="bar" style="width:100%"></div></div></div>
+<div class="card"><h2>Logo</h2><div class="big ok">READY</div><div class="progress"><div class="bar" style="width:100%"></div></div></div>
+<div class="card"><h2>Videos</h2><div class="big ok">4 MP4</div><div class="progress"><div class="bar" style="width:100%"></div></div></div>
+<div class="card"><h2>PayPal</h2><div class="big ok">READY</div><div class="progress"><div class="bar" style="width:100%"></div></div></div>
+
+<div class="card"><h2>Android/iOS</h2><div class="big ok">READY</div><div class="progress"><div class="bar" style="width:100%"></div></div></div>
+<div class="card"><h2>PWA</h2><div class="big ok">READY</div><div class="progress"><div class="bar" style="width:100%"></div></div></div>
+<div class="card"><h2>Monitor</h2><div class="big ok">READY</div><div class="progress"><div class="bar" style="width:100%"></div></div></div>
+<div class="card"><h2>Social Launch</h2><div class="big warn">MANUAL</div><div class="progress"><div class="bar" style="width:65%"></div></div></div>
+</div>
+
+<div class="section card">
+<h2>Live Links</h2>
+<span class="pill"><a href="https://sari-raslan.github.io/universal-arranger-os/">Website</a></span>
+<span class="pill"><a href="https://www.paypal.com/ncp/payment/4PHMPZL66YEG8">PayPal Pro</a></span>
+<span class="pill"><a href="https://github.com/Sari-raslan/universal-arranger-os">GitHub</a></span>
+<span class="pill"><a href="https://www.tiktok.com/@aeplatformapp">TikTok</a></span>
+<span class="pill"><a href="https://x.com/aeplatformapp">X</a></span>
+<span class="pill"><a href="https://www.youtube.com/@aeplatformapp">YouTube</a></span>
+</div>
+
+<div class="section card">
+<h2>Agents / PowerShell Processes</h2>
+<pre>
+   Id      CPU StartTime           ProcessName
+   --      --- ---------           -----------
+ 3892  0,53125 04.06.2026 00:57:58 powershell 
+ 8348 0,734375 04.06.2026 00:57:57 powershell 
+ 9696 1,109375 04.06.2026 00:57:57 powershell 
+10396 0,796875 04.06.2026 00:57:56 powershell 
+11776  0,96875 04.06.2026 00:57:57 powershell 
+12248 0,796875 04.06.2026 00:57:57 powershell 
+13400  0,78125 04.06.2026 00:57:58 powershell 
+14068 0,859375 04.06.2026 00:57:56 powershell 
+15336  0,84375 04.06.2026 00:57:57 powershell 
+15492 0,453125 04.06.2026 00:57:55 powershell 
+15744 0,796875 04.06.2026 00:56:57 powershell 
+
+
+</pre>
+</div>
+
+<div class="section card">
+<h2>Remaining Work</h2>
+<ul>
+<li>Upload best videos manually to TikTok / YouTube Shorts / X</li>
+<li>Finish DNS for aeplatform.app</li>
+<li>Create real backend auth</li>
+<li>Connect PayPal webhook verification</li>
+<li>Build real cloud Voice-to-MIDI API</li>
+<li>Prepare Google Play and Apple Developer accounts</li>
+</ul>
+</div>
+
+<div class="section card">
+<h2>Git Status</h2>
+<pre>?? logs/single-master-agent.log</pre>
+</div>
+
+<div class="section card">
+<h2>Last Commit</h2>
+<pre>8a52ee0 - Reduce disk usage and enable single stable startup agent</pre>
+</div>
+
+<div class="section card">
+<h2>Latest GitHub Runs</h2>
+<pre>completed	success	Reduce disk usage and enable single stable startup agent	Deploy UAOS Site	master	push	26918027410	20s	2026-06-03T22:51:21Z completed	success	Reduce disk usage and enable single stable startup agent	UAOS Media Ops CI	master	push	26918027385	10s	2026-06-03T22:51:21Z completed	success	Fix buttons and add official logo background layer	Deploy UAOS Site	master	push	26916335723	20s	2026-06-03T22:14:08Z completed	success	Fix buttons and add official logo background layer	UAOS Media Ops CI	master	push	26916335700	10s	2026-06-03T22:14:08Z completed	success	Emergency fix stable working UAOS website	Deploy UAOS Site	master	push	26915701655	20s	2026-06-03T22:00:36Z completed	success	Emergency fix stable working UAOS website	UAOS Media Ops CI	master	push	26915701104	11s	2026-06-03T22:00:35Z</pre>
+</div>
+
+</body>
+</html>
