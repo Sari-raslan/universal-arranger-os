@@ -3,65 +3,211 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Universal Arranger OS is Live | AE Platform</title>
+<title>Universal Arranger OS | AE Platform</title>
 <style>
 *{box-sizing:border-box}
-body{margin:0;font-family:Arial,sans-serif;background:radial-gradient(circle at top left,#3b2cff66,transparent 35%),radial-gradient(circle at top right,#00d4ff44,transparent 35%),#06070d;color:white}
-section{padding:70px 7%}
-.hero{min-height:90vh;display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
-.badge{display:inline-block;padding:9px 15px;border:1px solid #8b8cff;border-radius:999px;color:#dce0ff;margin-bottom:20px}
-h1{font-size:70px;line-height:1.02;margin:0 0 22px;letter-spacing:-2px}
-.grad{background:linear-gradient(90deg,#fff,#8ee9ff,#9b8cff);-webkit-background-clip:text;color:transparent}
-p{font-size:20px;line-height:1.65;color:#d1d6ea}
-.btn{display:inline-block;padding:17px 28px;border-radius:14px;margin:8px 10px 8px 0;text-decoration:none;font-weight:900}
-.primary{background:white;color:#06070d}.secondary{border:1px solid #ffffff66;color:white}
-.card{background:#111421cc;border:1px solid #ffffff1a;border-radius:24px;padding:28px;margin:18px 0}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.visual{background:linear-gradient(145deg,#15182a,#090a12);border:1px solid #ffffff22;border-radius:28px;padding:30px;box-shadow:0 30px 80px #0008}
-.wave{height:260px;border-radius:24px;background:linear-gradient(135deg,#6c63ff,#00d4ff);display:flex;align-items:center;justify-content:center;font-size:30px;font-weight:900;text-align:center}
+body{
+  margin:0;
+  font-family:Inter,Arial,sans-serif;
+  color:white;
+  background:
+    radial-gradient(circle at 80% 20%,#6f2cff66,transparent 30%),
+    radial-gradient(circle at 15% 10%,#1188ff55,transparent 28%),
+    #050616;
+  overflow-x:hidden;
+}
+body:before{
+  content:"      ";
+  position:fixed;
+  inset:0;
+  font-size:90px;
+  color:#ffffff12;
+  letter-spacing:35px;
+  line-height:220px;
+  pointer-events:none;
+  animation:float 18s linear infinite;
+}
+@keyframes float{from{transform:translateY(0)}to{transform:translateY(-220px)}}
+nav{
+  position:relative;z-index:2;
+  display:flex;justify-content:space-between;align-items:center;
+  padding:26px 7%;
+}
+.logo{display:flex;gap:14px;align-items:center}
+.logo-icon{
+  width:62px;height:62px;border-radius:18px;
+  background:linear-gradient(135deg,#2f7cff,#d84cff);
+  display:grid;place-items:center;
+  font-size:36px;box-shadow:0 0 35px #8f4cffaa;
+}
+.logo b{font-size:28px}
+.logo span{display:block;color:#bfc7ff;font-size:14px}
+nav a{color:#d8ddff;text-decoration:none;margin-left:24px;font-weight:700}
+.nav-btn{border:1px solid #ffffff44;padding:12px 20px;border-radius:14px}
+
+.hero{
+  position:relative;z-index:2;
+  display:grid;grid-template-columns:1.05fr .95fr;
+  gap:46px;align-items:center;
+  padding:70px 7% 40px;
+}
+.badge{
+  display:inline-flex;align-items:center;gap:8px;
+  border:1px solid #7a7cff;
+  color:#dbe0ff;
+  padding:10px 18px;border-radius:999px;
+  background:#121631aa;
+}
+h1{
+  font-size:76px;line-height:1.02;margin:24px 0;
+  letter-spacing:-3px;
+}
+.grad{
+  background:linear-gradient(90deg,#3f8cff,#ff58e8);
+  -webkit-background-clip:text;color:transparent;
+}
+p{font-size:20px;line-height:1.65;color:#ccd2ee}
+.btn{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:17px 28px;border-radius:16px;
+  text-decoration:none;font-weight:900;margin:10px 12px 10px 0;
+}
+.primary{background:linear-gradient(90deg,#2e82ff,#d94cff);color:white;box-shadow:0 0 35px #7b4cff88}
+.secondary{border:1px solid #ffffff44;color:white;background:#0e1228aa}
+
+.visual{
+  position:relative;
+  background:linear-gradient(145deg,#11162f,#080b18);
+  border:1px solid #ffffff1f;
+  border-radius:30px;
+  padding:26px;
+  box-shadow:0 40px 100px #000a;
+}
+.treble{
+  position:absolute;left:-55px;top:-70px;
+  font-size:190px;color:#ffffffcc;
+  text-shadow:0 0 35px #7ad7ff;
+}
+.notes{
+  position:absolute;right:-35px;top:-25px;
+  font-size:60px;color:#5edcff;
+  text-shadow:0 0 35px #5edcff;
+}
+.daw{
+  margin-left:50px;
+  border:1px solid #ffffff22;border-radius:18px;
+  overflow:hidden;background:#070a15;
+}
+.daw-top{height:52px;background:#11182f;display:flex;align-items:center;gap:12px;padding:0 18px}
+.dot{width:11px;height:11px;border-radius:50%;background:#7385ff}
+.track{display:grid;grid-template-columns:110px 1fr;border-top:1px solid #ffffff12}
+.label{padding:16px;color:#b9c2ff;background:#0c1022}
+.timeline{display:flex;gap:8px;padding:13px}
+.clip{height:28px;border-radius:7px;background:linear-gradient(90deg,#6a47ff,#c24cff);flex:1}
+.clip.blue{background:linear-gradient(90deg,#2f7cff,#3fdcff)}
+.clip.gold{background:linear-gradient(90deg,#ffb72f,#ffdf70)}
+.piano{
+  height:135px;margin-top:26px;
+  background:repeating-linear-gradient(90deg,#fff 0 42px,#111 42px 55px,#fff 55px 85px);
+  border-radius:22px;transform:perspective(600px) rotateX(18deg);
+  box-shadow:0 25px 60px #7b4cff55;
+}
+.stats{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:16px;
+  padding:20px 7%;
+}
+.stat,.card,.pricing{
+  background:#10152bcc;border:1px solid #ffffff17;
+  border-radius:22px;padding:24px;
+}
+.stat{display:flex;gap:14px;align-items:center}
+.stat i{font-size:34px;color:#b962ff}
+.section{position:relative;z-index:2;padding:60px 7%;text-align:center}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:30px}
+.card h3{font-size:24px}
+.icon{font-size:42px;color:#69dfff}
+.prices{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:30px}
 .price{font-size:46px;font-weight:900}
-footer{padding:35px 7%;border-top:1px solid #ffffff12;color:#9aa1bd}
-@media(max-width:900px){.hero,.grid{grid-template-columns:1fr}h1{font-size:44px}}
+.popular{outline:2px solid #a455ff;box-shadow:0 0 40px #a455ff55}
+footer{padding:40px 7%;border-top:1px solid #ffffff12;color:#9aa1bd}
+@media(max-width:950px){
+  .hero,.grid,.prices,.stats{grid-template-columns:1fr}
+  h1{font-size:46px}
+  nav{flex-direction:column;gap:20px}
+}
 </style>
 </head>
 <body>
 
+<nav>
+  <div class="logo">
+    <div class="logo-icon"></div>
+    <div><b>UAOS</b><span>Universal Arranger OS by AE Platform</span></div>
+  </div>
+  <div>
+    <a href="#features">Features</a>
+    <a href="#pricing">Pricing</a>
+    <a class="nav-btn" href="mailto:admin@aeplatform.app">Contact</a>
+  </div>
+</nav>
+
 <section class="hero">
-<div>
-<div class="badge">Official Launch  Early Access Open</div>
-<h1>Universal Arranger OS is <span class="grad">live</span>.</h1>
-<p>AI-powered music creation platform by AE Platform. Turn singing, humming, melodies, and musical ideas into MIDI, chord progressions, arrangements, and DAW-ready workflows.</p>
-<a class="btn primary" href="https://www.paypal.com/ncp/payment/ZB63CA66C98AN" target="_blank">Join Early Access  19.99</a>
-<a class="btn secondary" href="#features">Explore Features</a>
-</div>
+  <div>
+    <div class="badge"> Official Launch  Early Access Open</div>
+    <h1>Turn Your Ideas <span class="grad">Into Music.</span> </h1>
+    <p>
+      Sing, hum, or play a melody. Universal Arranger OS turns it into MIDI, chords,
+      arrangements, and DAW-ready workflows with AI-powered music tools.
+    </p>
+    <a class="btn primary" href="https://www.paypal.com/ncp/payment/ZB63CA66C98AN"> Join Early Access  19.99</a>
+    <a class="btn secondary" href="#demo"> Watch Demo</a>
+  </div>
 
-<div class="visual">
-<div class="wave">Voice  MIDI  Chords  Arrangement</div>
-<p>Built for musicians, producers, beatmakers, singers, and creators.</p>
-</div>
+  <div class="visual" id="demo">
+    <div class="treble"></div>
+    <div class="notes"> </div>
+    <div class="daw">
+      <div class="daw-top"><span class="dot"></span><b>UAOS Arrangement Engine</b></div>
+      <div class="track"><div class="label">Voice</div><div class="timeline"><div class="clip blue"></div><div class="clip blue"></div><div class="clip blue"></div></div></div>
+      <div class="track"><div class="label">Melody</div><div class="timeline"><div class="clip"></div><div class="clip"></div><div class="clip"></div></div></div>
+      <div class="track"><div class="label">Chords</div><div class="timeline"><div class="clip blue"></div><div class="clip blue"></div><div class="clip blue"></div></div></div>
+      <div class="track"><div class="label">Drums</div><div class="timeline"><div class="clip gold"></div><div class="clip gold"></div><div class="clip gold"></div></div></div>
+    </div>
+    <div class="piano"></div>
+  </div>
 </section>
 
-<section id="features">
-<h2>What UAOS does</h2>
-<div class="grid">
-<div class="card"><h3>Voice to MIDI</h3><p>Convert singing and humming into MIDI concepts for production.</p></div>
-<div class="card"><h3>AI Arrangement</h3><p>Generate chords, structure, bass, drums, and arrangement ideas.</p></div>
-<div class="card"><h3>DAW Workflow</h3><p>Prepare music ideas for DAW-ready creative workflows.</p></div>
+<div class="stats">
+  <div class="stat"><i></i><div><b>Voice to MIDI</b><br><span>Sing ideas faster</span></div></div>
+  <div class="stat"><i></i><div><b>AI Arrangement</b><br><span>Chords and structure</span></div></div>
+  <div class="stat"><i></i><div><b>DAW Ready</b><br><span>Producer workflows</span></div></div>
+  <div class="stat"><i></i><div><b>Music First</b><br><span>Built for creators</span></div></div>
 </div>
+
+<section class="section" id="features">
+  <h2>Everything You Need to Create</h2>
+  <p>Powerful AI tools that understand music.</p>
+  <div class="grid">
+    <div class="card"><div class="icon"></div><h3>Voice to MIDI</h3><p>Convert singing or humming into MIDI melodies.</p></div>
+    <div class="card"><div class="icon"></div><h3>Chord Generator</h3><p>AI suggests chord progressions that fit your melody.</p></div>
+    <div class="card"><div class="icon"></div><h3>AI Arrangement</h3><p>Build full arrangements with bass, drums, and harmony.</p></div>
+    <div class="card"><div class="icon"></div><h3>DAW Workflow</h3><p>Export and continue in your favorite DAW.</p></div>
+    <div class="card"><div class="icon"></div><h3>Cloud Projects</h3><p>Save, access, and sync your ideas anytime.</p></div>
+    <div class="card"><div class="icon"></div><h3>Export Options</h3><p>Export MIDI, audio stems, and project concepts.</p></div>
+  </div>
 </section>
 
-<section>
-<h2>Plans</h2>
-<div class="grid">
-<div class="card"><h3>Free</h3><div class="price">0</div><p>Demo access and limited previews.</p></div>
-<div class="card"><h3>Creator</h3><div class="price">19.99</div><p>Early access, updates, prototype previews, and feedback channel.</p><a class="btn primary" href="https://www.paypal.com/ncp/payment/ZB63CA66C98AN">Get Creator</a></div>
-<div class="card"><h3>Pro</h3><div class="price">49.99</div><p>Advanced roadmap access, commercial usage, and priority features.</p></div>
-</div>
+<section class="section" id="pricing">
+  <h2>Choose Your Plan</h2>
+  <div class="prices">
+    <div class="pricing"><h3>Free</h3><div class="price">0</div><p>Demo access and limited previews.</p></div>
+    <div class="pricing popular"><h3>Creator</h3><div class="price">19.99</div><p>Early access, MIDI tools, updates, and feedback channel.</p><a class="btn primary" href="https://www.paypal.com/ncp/payment/ZB63CA66C98AN">Get Creator</a></div>
+    <div class="pricing"><h3>Pro</h3><div class="price">49.99</div><p>Advanced AI arranger, commercial usage, priority roadmap.</p></div>
+  </div>
 </section>
 
 <footer>
-<p>Universal Arranger OS by AE Platform</p>
-<p>Support: admin@aeplatform.app</p>
+  <p>Universal Arranger OS by AE Platform  Support: admin@aeplatform.app</p>
 </footer>
 
 </body>
