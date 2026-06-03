@@ -431,6 +431,37 @@ footer{
 </style>
 </head>
 <body>
+<style>
+.floating-notes{
+position:fixed;
+inset:0;
+pointer-events:none;
+overflow:hidden;
+z-index:0;
+}
+.note{
+position:absolute;
+font-size:40px;
+opacity:.12;
+animation:floatNote linear infinite;
+}
+@keyframes floatNote{
+from{transform:translateY(100vh) rotate(0deg)}
+to{transform:translateY(-120vh) rotate(360deg)}
+}
+.glow{
+box-shadow:0 0 30px #7b61ff;
+}
+</style>
+
+<div class='floating-notes'>
+<div class='note' style='left:5%;animation-duration:20s'></div>
+<div class='note' style='left:18%;animation-duration:14s'></div>
+<div class='note' style='left:32%;animation-duration:17s'></div>
+<div class='note' style='left:48%;animation-duration:22s'></div>
+<div class='note' style='left:67%;animation-duration:16s'></div>
+<div class='note' style='left:80%;animation-duration:19s'></div>
+</div>
 
 <div class="music-sky">
   <div class="note" style="left:8%;animation-delay:0s"></div>
@@ -562,3 +593,4 @@ footer{
 
 </body>
 </html>
+
