@@ -3,7 +3,8 @@ const { app, BrowserWindow } = require('electron');
 function createWindow() {
   const win = new BrowserWindow({
     width: 1400,
-    height: 900
+    height: 900,
+    title: 'Universal Arranger OS'
   });
 
   win.loadURL(process.env.UAOS_DESKTOP_URL || 'http://localhost:5173');
