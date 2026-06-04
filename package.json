@@ -10,8 +10,8 @@
     "desktop": "electron desktop/main.cjs",
     "desktop:start": "electron electron/main.cjs",
     "frontend:build": "cd frontend && npm run build",
-    "desktop:build": "cd frontend && npm run build && electron-builder",
-    "release:win": "cd frontend && npm run build && electron-builder --win nsis portable",
+    "desktop:build": "npm --prefix frontend run build && electron-builder",
+    "release:win": "npm --prefix frontend run build && electron-builder --win nsis portable",
     "build": "npm --prefix frontend run build",
     "test": "node tests/regression.test.js"
   },
