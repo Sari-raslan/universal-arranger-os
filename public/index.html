@@ -149,6 +149,37 @@ footer{padding:36px 7%;border-top:1px solid #ffffff12;color:#aab0cc}
 <div class="card"><h3>Early Access</h3><p>Join now and help shape the product roadmap.</p></div>
 </div>
 </section>
+<section class="section" id="feedback">
+<h2>Join Early Access Feedback</h2>
+<p>Leave your email and what you want UAOS to build next.</p>
+
+<div class="demo-box">
+<label>Email</label>
+<input id="email" type="email" placeholder="you@example.com">
+
+<label>What do you want UAOS to do?</label>
+<input id="idea" type="text" placeholder="Voice to MIDI, chords, full arrangement...">
+
+<a class="btn primary" href="javascript:void(0)" onclick="saveFeedback()">Send Feedback</a>
+
+<div class="result" id="feedbackResult">
+Saved locally. You can also email: admin@aeplatform.app
+</div>
+</div>
+</section>
+
+<script>
+function saveFeedback(){
+  const email = document.getElementById("email").value;
+  const idea = document.getElementById("idea").value;
+  localStorage.setItem("uaos_feedback", JSON.stringify({
+    email,
+    idea,
+    date:new Date().toISOString()
+  }));
+  document.getElementById("feedbackResult").style.display="block";
+}
+</script>
 <footer>UAOS by AE Platform  admin@aeplatform.app</footer>
 
 <script>
@@ -163,6 +194,7 @@ setLang(localStorage.getItem('uaos_lang')||'en')
 </script>
 </body>
 </html>
+
 
 
 
