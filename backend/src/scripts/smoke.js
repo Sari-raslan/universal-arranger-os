@@ -27,3 +27,4 @@ if (library.length) {
 
 console.log(`Smoke passed: ${library.length} library item(s), ${supportedExtensions.length} supported extension(s).`);
 
+
