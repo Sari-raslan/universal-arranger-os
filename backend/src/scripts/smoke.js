@@ -1,4 +1,4 @@
-import path from 'node:path';
+﻿import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { analyzePath, supportedExtensions } from '../services/analyzer.js';
 import { listLibraryItems } from '../services/library.js';
@@ -26,3 +26,4 @@ if (library.length) {
 }
 
 console.log(`Smoke passed: ${library.length} library item(s), ${supportedExtensions.length} supported extension(s).`);
+
