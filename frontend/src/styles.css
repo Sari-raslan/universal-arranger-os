@@ -168,6 +168,36 @@ h4 {
   display: none;
 }
 
+.multiUpload {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.multiDropzone {
+  min-height: 132px;
+  border: 2px dashed #667063;
+  border-radius: 8px;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 22px;
+  background: #f2f7ee;
+  cursor: pointer;
+}
+
+.multiDropzone h2,
+.multiDropzone p,
+.uploadMessage {
+  margin-bottom: 0;
+}
+
+.multiDropzone p,
+.uploadMessage {
+  color: #667063;
+  font-size: 0.92rem;
+}
+
 .searchField {
   display: grid;
   grid-template-columns: 18px minmax(0, 1fr);
