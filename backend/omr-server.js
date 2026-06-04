@@ -10,11 +10,12 @@ import { analyzeSheetImage } from './omr/sheet-analyzer.js';
 const app = express();
 const uploadDir = path.join(process.cwd(), 'uploads', 'sheetmusic');
 const midiDir = path.join(process.cwd(), 'generated-midi');
+const allowedOrigin = process.env.CORS_ORIGIN || 'http://localhost:5173';
 
 await fs.mkdir(uploadDir, { recursive: true });
 await fs.mkdir(midiDir, { recursive: true });
 
-app.use(cors());
+app.use(cors({ origin: allowedOrigin }));
 app.use('/generated-midi', express.static(midiDir));
 
 const upload = multer({
