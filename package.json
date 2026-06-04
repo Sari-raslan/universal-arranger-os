@@ -1,0 +1,13 @@
+{
+  "name": "keyboard-manager",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "npm --prefix backend start",
+    "smoke": "node backend/src/scripts/smoke.js",
+    "smoke:sar": "node backend/src/scripts/smoke-sar-set.js",
+    "build": "npm --prefix frontend run build",
+    "test": "node tests/regression.test.js"
+  }
+}
