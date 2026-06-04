@@ -4,6 +4,7 @@ import multer from 'multer';
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import Database from 'better-sqlite3';
 import { analyzePath, supportedExtensions } from './services/analyzer.js';
 import { ensureDir, listLibraryItems, removeLibraryItem, safeName } from './services/library.js';
 
@@ -12,6 +13,17 @@ const rootDir = path.resolve(__dirname, '..', '..');
 const samplesDir = path.join(rootDir, 'samples');
 const docsDir = path.join(rootDir, 'docs');
 const uploadsDir = path.join(samplesDir, 'uploads');
+const db = new Database(path.join(rootDir, 'backend', 'uaos.db'));
+
+db.prepare(`
+  CREATE TABLE IF NOT EXISTS library_uploads (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    filename TEXT NOT NULL,
+    stored_name TEXT NOT NULL,
+    type TEXT,
+    created_at TEXT NOT NULL
+  )
+`).run();
 
 await ensureDir(samplesDir);
 await ensureDir(docsDir);
@@ -43,14 +55,52 @@ app.get('/api/status', (_req, res) => {
   });
 });
 
-app.post('/api/upload', upload.single('file'), async (req, res) => {
+app.get('/api/health', (_req, res) => {
+  res.json({ ok: true, service: 'UAOS Backend' });
+});
+
+app.post('/api/upload', upload.fields([{ name: 'file', maxCount: 1 }, { name: 'files', maxCount: 100 }]), async (req, res) => {
   try {
-    if (!req.file) return res.status(400).json({ error: 'No file uploaded.' });
-    const analysis = await analyzePath(req.file.path, { rootDir: samplesDir });
-    res.status(201).json(analysis);
+    const uploadedFiles = [
+      ...(req.files?.file || []),
+      ...(req.files?.files || [])
+    ];
+    if (!uploadedFiles.length) return res.status(400).json({ error: 'No file uploaded.' });
+
+    const stmt = db.prepare('INSERT INTO library_uploads (filename, stored_name, type, created_at) VALUES (?, ?, ?, ?)');
+    const analyses = [];
+    for (const file of uploadedFiles) {
+      stmt.run(
+        file.originalname,
+        path.basename(file.path),
+        path.extname(file.originalname).toLowerCase(),
+        new Date().toISOString()
+      );
+      analyses.push(await analyzePath(file.path, { rootDir: samplesDir }));
+    }
+
+    if (analyses.length === 1 && req.files?.file?.length) {
+      res.status(201).json(analyses[0]);
+      return;
+    }
+
+    res.status(201).json({
+      uploaded: analyses.length,
+      files: analyses.map((analysis) => ({
+        id: analysis.id,
+        file: analysis.name,
+        type: analysis.extension || '',
+        parser: analysis.parser || analysis.kind
+      }))
+    });
   } catch (error) {
     res.status(500).json({ error: 'Upload failed.', detail: error.message });
   }
+});
+
+app.get('/api/library/uploads', (_req, res) => {
+  const rows = db.prepare('SELECT * FROM library_uploads ORDER BY id DESC').all();
+  res.json(rows);
 });
 
 app.get('/api/library', async (_req, res) => {

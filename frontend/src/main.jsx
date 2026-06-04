@@ -2,6 +2,7 @@ import React, { useEffect, useMemo, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import { Activity, ArrowDown, ArrowUp, Check, ChevronDown, ChevronRight, Copy, Download, FileAudio, FolderOpen, HardDriveUpload, Keyboard, RefreshCw, Search, Trash2, Usb } from 'lucide-react';
 import { selectExplorerState } from './explorerState.js';
+import MultiFileUpload from './components/MultiFileUpload.jsx';
 import './styles.css';
 
 const API = import.meta.env.VITE_API_URL || 'http://localhost:4000';
@@ -137,6 +138,7 @@ function App() {
             <HardDriveUpload size={19} />
             <h2>Upload / رفع ملف</h2>
           </div>
+          <MultiFileUpload onUploaded={loadLibrary} />
           <label className="dropzone">
             <input type="file" onChange={(event) => uploadFile(event.target.files?.[0])} />
             <span>Choose MIDI, SysEx, style, set, backup, package, or unknown binary file</span>
