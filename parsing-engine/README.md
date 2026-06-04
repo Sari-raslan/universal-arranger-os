@@ -1,4 +1,4 @@
-SUPPORTED FORMATS
+SUPPORTED:
 
 - SET
 - STY
@@ -6,4 +6,10 @@ SUPPORTED FORMATS
 - KMP
 - PAD
 
-Phase 3 parsing engine scaffold.
+PHASE 4 PARSING ENGINE
+
+TODO:
+- KORG SET parser
+- Yamaha style parser
+- MIDI metadata parser
+- PAD parser
