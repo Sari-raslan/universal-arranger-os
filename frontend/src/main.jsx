@@ -6,6 +6,7 @@ import MultiFileUpload from './components/MultiFileUpload.jsx';
 import LibraryBrowser from './components/LibraryBrowser.jsx';
 import MidiPreview from './components/MidiPreview.jsx';
 import SheetMusicUpload from './components/SheetMusicUpload.jsx';
+import LiveAudioToMidiArranger from './components/LiveAudioToMidiArranger.jsx';
 import './styles.css';
 
 const API = import.meta.env.VITE_API_URL || 'http://localhost:3001';
@@ -144,6 +145,7 @@ function App() {
           <MultiFileUpload onUploaded={loadLibrary} />
           <MidiPreview />
           <SheetMusicUpload />
+          <LiveAudioToMidiArranger />
           <LibraryBrowser />
           <label className="dropzone">
             <input type="file" onChange={(event) => uploadFile(event.target.files?.[0])} />
