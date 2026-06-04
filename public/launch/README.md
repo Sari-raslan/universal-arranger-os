@@ -1,22 +1,16 @@
-﻿# UAOS Official Invitation
+# UAOS Official Links
 
-Official invitation card and launch links.
+Website:
+https://github.com/Sari-raslan/universal-arranger-os
 
-## Website
-https://uaos.app
+GitHub:
+https://github.com/Sari-raslan/universal-arranger-os
 
-## Intro Video
-Generated using Google VEO Pro.
+Download:
+https://github.com/Sari-raslan/universal-arranger-os/releases
 
-Video link:
-PASTE_VIDEO_LINK_HERE
+Payment:
+PASTE_REAL_PAYPAL_PAYMENT_LINK_HERE
 
-## Social Platforms
-- Instagram: https://instagram.com/uaos.app
-- X: https://x.com/uaos_app
-- Facebook: https://facebook.com/uaos.app
-- YouTube: https://youtube.com/@uaos.app
-- TikTok: https://tiktok.com/@uaos.app
-
-## Invitation Asset
-public/launch/uaos-invitation.png
+Video:
+PASTE_REAL_VIDEO_LINK_HERE
