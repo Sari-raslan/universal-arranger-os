@@ -8,6 +8,8 @@
     "smoke": "node backend/src/scripts/smoke.js",
     "smoke:sar": "node backend/src/scripts/smoke-sar-set.js",
     "desktop": "electron desktop/main.cjs",
+    "desktop:start": "electron electron/main.cjs",
+    "frontend:build": "npm --prefix frontend run build",
     "build": "npm --prefix frontend run build",
     "test": "node tests/regression.test.js"
   },
