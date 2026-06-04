@@ -9,10 +9,13 @@
     "smoke:sar": "node backend/src/scripts/smoke-sar-set.js",
     "desktop": "electron desktop/main.cjs",
     "desktop:start": "electron electron/main.cjs",
-    "frontend:build": "npm --prefix frontend run build",
+    "frontend:build": "cd frontend && npm run build",
+    "desktop:build": "cd frontend && npm run build && electron-builder",
+    "release:win": "cd frontend && npm run build && electron-builder --win nsis portable",
     "build": "npm --prefix frontend run build",
     "test": "node tests/regression.test.js"
   },
+  "main": "electron/main.cjs",
   "dependencies": {
     "@capacitor/android": "^6.2.1",
     "@capacitor/cli": "^6.2.1",
@@ -20,8 +23,33 @@
     "@capacitor/ios": "^6.0.0"
   },
   "devDependencies": {
-    "electron": "^42.3.3",
-    "electron-builder": "^26.8.1",
+    "electron": "^30.0.0",
+    "electron-builder": "^24.0.0",
     "playwright": "^1.60.0"
+  },
+  "build": {
+    "appId": "com.universalarranger.os",
+    "productName": "Universal Arranger OS",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "electron/**/*",
+      "frontend/dist/**/*",
+      "package.json"
+    ],
+    "win": {
+      "target": [
+        "nsis",
+        "portable"
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Universal Arranger OS"
+    }
   }
 }
