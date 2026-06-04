@@ -3,9 +3,12 @@ import { createRoot } from 'react-dom/client';
 import { Activity, ArrowDown, ArrowUp, Check, ChevronDown, ChevronRight, Copy, Download, FileAudio, FolderOpen, HardDriveUpload, Keyboard, RefreshCw, Search, Trash2, Usb } from 'lucide-react';
 import { selectExplorerState } from './explorerState.js';
 import MultiFileUpload from './components/MultiFileUpload.jsx';
+import LibraryBrowser from './components/LibraryBrowser.jsx';
+import MidiPreview from './components/MidiPreview.jsx';
+import SheetMusicUpload from './components/SheetMusicUpload.jsx';
 import './styles.css';
 
-const API = import.meta.env.VITE_API_URL || 'http://localhost:4000';
+const API = import.meta.env.VITE_API_URL || 'http://localhost:3001';
 
 function App() {
   const [status, setStatus] = useState(null);
@@ -139,6 +142,9 @@ function App() {
             <h2>Upload / رفع ملف</h2>
           </div>
           <MultiFileUpload onUploaded={loadLibrary} />
+          <MidiPreview />
+          <SheetMusicUpload />
+          <LibraryBrowser />
           <label className="dropzone">
             <input type="file" onChange={(event) => uploadFile(event.target.files?.[0])} />
             <span>Choose MIDI, SysEx, style, set, backup, package, or unknown binary file</span>

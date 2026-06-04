@@ -4,6 +4,46 @@ import path from 'node:path';
 export const supportedExtensions = ['.mid', '.midi', '.syx', '.sty', '.set', '.pcg', '.kst', '.pad', '.prs', '.all', '.bkp', '.pkg'];
 const arrangerExtensions = new Set(['.sty', '.set', '.pcg', '.kst', '.pad', '.prs', '.all', '.bkp', '.pkg']);
 
+function detectKorgPadFolderPresence(input) {
+  const values = [];
+
+  function collect(value) {
+    if (!value) return;
+
+    if (typeof value === 'string') {
+      values.push(value);
+      return;
+    }
+
+    if (Array.isArray(value)) {
+      for (const item of value) collect(item);
+      return;
+    }
+
+    if (typeof value === 'object') {
+      for (const key of ['path', 'name', 'filename', 'originalname', 'relativePath']) {
+        if (value[key]) values.push(String(value[key]));
+      }
+
+      for (const key of Object.keys(value)) {
+        if (key.toLowerCase().includes('pad')) values.push(key);
+      }
+    }
+  }
+
+  collect(input);
+
+  return values
+    .map((value) => String(value).replace(/\\/g, '/').toUpperCase())
+    .some((value) =>
+      value === 'PAD' ||
+      value.endsWith('/PAD') ||
+      value.includes('/PAD/') ||
+      value.includes('.PAD') ||
+      value.endsWith('/PAD/')
+    );
+}
+
 export async function analyzePath(targetPath, options = {}) {
   const stat = await fs.stat(targetPath);
   const rootDir = options.rootDir || path.dirname(targetPath);
@@ -86,13 +126,28 @@ async function analyzeFile(filePath, rootDir, options = {}) {
 }
 
 function baseResult(filePath, rootDir, data) {
-  return {
+  const analysis = {
     id: path.relative(rootDir, filePath).replaceAll(path.sep, '/'),
     name: path.basename(filePath),
     path: path.relative(process.cwd(), filePath).replaceAll(path.sep, '/'),
     analyzedAt: new Date().toISOString(),
     ...data
   };
+
+  analysis.korg = analysis.korg || {};
+  analysis.korg.pad = analysis.korg.pad || {};
+  analysis.korg.pad.folderPresent = detectKorgPadFolderPresence([
+    analysis,
+    analysis.children,
+    analysis.files,
+    analysis.entries,
+    analysis.paths,
+    analysis.archiveEntries,
+    analysis.detectedFiles,
+    analysis.metadata
+  ]);
+
+  return analysis;
 }
 
 async function walk(dir) {

@@ -5,15 +5,29 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import Database from 'better-sqlite3';
+import jwt from 'jsonwebtoken';
+import bcrypt from 'bcryptjs';
+import dotenv from 'dotenv';
 import { analyzePath, supportedExtensions } from './services/analyzer.js';
 import { ensureDir, listLibraryItems, removeLibraryItem, safeName } from './services/library.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const rootDir = path.resolve(__dirname, '..', '..');
+dotenv.config({ path: path.join(rootDir, 'backend', '.env') });
+
 const samplesDir = path.join(rootDir, 'samples');
 const docsDir = path.join(rootDir, 'docs');
 const uploadsDir = path.join(samplesDir, 'uploads');
 const db = new Database(path.join(rootDir, 'backend', 'uaos.db'));
+const jwtSecret = process.env.JWT_SECRET || 'uaos_secret_key';
+
+db.prepare(`
+  CREATE TABLE IF NOT EXISTS users (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    email TEXT UNIQUE NOT NULL,
+    password TEXT NOT NULL
+  )
+`).run();
 
 db.prepare(`
   CREATE TABLE IF NOT EXISTS library_uploads (
@@ -56,7 +70,43 @@ app.get('/api/status', (_req, res) => {
 });
 
 app.get('/api/health', (_req, res) => {
-  res.json({ ok: true, service: 'UAOS Backend' });
+  res.json({ ok: true, service: 'UAOS Runtime Backend' });
+});
+
+app.post('/api/auth/register', async (req, res) => {
+  try {
+    const email = String(req.body?.email || '').trim().toLowerCase();
+    const password = String(req.body?.password || '');
+    if (!email || !password) return res.status(400).json({ error: 'Email and password are required.' });
+    if (password.length < 8) return res.status(400).json({ error: 'Password must be at least 8 characters.' });
+
+    const hash = await bcrypt.hash(password, 10);
+    const result = db.prepare('INSERT INTO users (email, password) VALUES (?, ?)').run(email, hash);
+    res.status(201).json({ ok: true, id: result.lastInsertRowid, email });
+  } catch (error) {
+    if (error.code === 'SQLITE_CONSTRAINT_UNIQUE') {
+      res.status(409).json({ error: 'Email is already registered.' });
+      return;
+    }
+    res.status(500).json({ error: 'Registration failed.', detail: error.message });
+  }
+});
+
+app.post('/api/auth/login', async (req, res) => {
+  try {
+    const email = String(req.body?.email || '').trim().toLowerCase();
+    const password = String(req.body?.password || '');
+    const user = db.prepare('SELECT * FROM users WHERE email = ?').get(email);
+    if (!user) return res.status(401).json({ error: 'Invalid credentials.' });
+
+    const valid = await bcrypt.compare(password, user.password);
+    if (!valid) return res.status(401).json({ error: 'Invalid credentials.' });
+
+    const token = jwt.sign({ id: user.id, email: user.email }, jwtSecret, { expiresIn: '7d' });
+    res.json({ token });
+  } catch (error) {
+    res.status(500).json({ error: 'Login failed.', detail: error.message });
+  }
 });
 
 app.post('/api/upload', upload.fields([{ name: 'file', maxCount: 1 }, { name: 'files', maxCount: 100 }]), async (req, res) => {
@@ -143,7 +193,7 @@ app.delete('/api/library/:id', async (req, res) => {
   }
 });
 
-const port = Number(process.env.PORT || 4000);
+const port = Number(process.env.PORT || 3001);
 app.listen(port, () => {
   console.log(`Keyboard Manager backend listening on http://localhost:${port}`);
 });
