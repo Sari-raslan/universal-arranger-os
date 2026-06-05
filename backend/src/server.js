@@ -8,6 +8,7 @@ import Database from 'better-sqlite3';
 import jwt from 'jsonwebtoken';
 import bcrypt from 'bcryptjs';
 import dotenv from 'dotenv';
+import musicTasteRoutes from './music-taste/routes.js';
 import { analyzePath, supportedExtensions } from './services/analyzer.js';
 import { ensureDir, listLibraryItems, removeLibraryItem, safeName } from './services/library.js';
 
@@ -59,6 +60,7 @@ const upload = multer({
 const app = express();
 app.use(cors());
 app.use(express.json({ limit: '2mb' }));
+app.use('/api/music-taste', musicTasteRoutes);
 
 app.get('/api/status', (_req, res) => {
   res.json({

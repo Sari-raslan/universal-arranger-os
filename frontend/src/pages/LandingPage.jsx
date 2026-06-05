@@ -1,6 +1,7 @@
 import React from 'react';
 import LaunchHero from '../components/LaunchHero.jsx';
 import MusicTasteOnboarding from '../components/MusicTasteOnboarding.jsx';
+import MusicTasteUploadPanel from '../components/MusicTasteUploadPanel.jsx';
 
 export default function LandingPage() {
   return (
@@ -27,6 +28,7 @@ export default function LandingPage() {
       </section>
 
       <MusicTasteOnboarding />
+      <MusicTasteUploadPanel />
 
       <section className="contentBand">
         <h2>Platform Status</h2>
