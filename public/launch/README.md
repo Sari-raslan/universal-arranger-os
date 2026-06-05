@@ -1,19 +1,19 @@
 # UAOS Official Launch Links
 
 Website:
-https://frontend-aeplatform-apps-projects.vercel.app
+https://uaos-universal-arranger-os-737954605821.europe-west3.run.app
 
 Pricing:
-https://frontend-aeplatform-apps-projects.vercel.app/pricing
+https://uaos-universal-arranger-os-737954605821.europe-west3.run.app/pricing
 
 Downloads:
-https://frontend-aeplatform-apps-projects.vercel.app/downloads
+https://uaos-universal-arranger-os-737954605821.europe-west3.run.app/downloads
 
 AI Features:
-https://frontend-aeplatform-apps-projects.vercel.app/features
+https://uaos-universal-arranger-os-737954605821.europe-west3.run.app/features
 
 Demo:
-https://frontend-aeplatform-apps-projects.vercel.app/demo
+https://uaos-universal-arranger-os-737954605821.europe-west3.run.app/demo
 
 GitHub:
 https://github.com/Sari-raslan/universal-arranger-os
@@ -22,10 +22,13 @@ Releases:
 https://github.com/Sari-raslan/universal-arranger-os/releases
 
 Payment:
-PASTE_REAL_PAYPAL_LINK_HERE
+https://www.paypal.com/ncp/payment/4PHMPZL66YEG8
 
-Demo Video:
-PASTE_REAL_VIDEO_LINK_HERE
+Explainer Video:
+https://uaos-animated-explainer-logo-737954605821.europe-west3.run.app
+
+Logo Showcase:
+https://universal-arranger-os-logo-showcase-737954605821.europe-west3.run.app
 
 Planned domain:
 uaos.app

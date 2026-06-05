@@ -1,6 +1,6 @@
 import React from 'react';
 
-const PAYPAL_LINK = 'PASTE_REAL_PAYPAL_LINK_HERE';
+const PAYPAL_LINK = 'https://www.paypal.com/ncp/payment/4PHMPZL66YEG8';
 
 export default function PricingPage() {
   return (
