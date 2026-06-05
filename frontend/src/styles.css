@@ -15,7 +15,8 @@ body {
 
 button,
 input,
-select {
+select,
+textarea {
   font: inherit;
 }
 
@@ -585,13 +586,15 @@ pre {
 
 .contentBand,
 .tastePanel,
-.tasteUploadPanel {
+.tasteUploadPanel,
+.arrangerPanel {
   padding: 26px 0;
   border-top: 1px solid #ddd5c7;
 }
 
 .tastePanel,
-.tasteUploadPanel {
+.tasteUploadPanel,
+.arrangerPanel {
   display: grid;
   grid-template-columns: minmax(220px, 0.75fr) minmax(0, 1fr);
   gap: 22px;
@@ -604,7 +607,8 @@ pre {
 }
 
 .tasteForm input,
-.tasteForm select {
+.tasteForm select,
+.tasteForm textarea {
   width: 100%;
   min-height: 42px;
   border: 1px solid #cfd8c8;
@@ -612,6 +616,10 @@ pre {
   background: #ffffff;
   color: #172019;
   padding: 8px 10px;
+}
+
+.tasteForm textarea {
+  resize: vertical;
 }
 
 .tasteForm button {
@@ -670,7 +678,8 @@ pre {
 
   .launchHero,
   .tastePanel,
-  .tasteUploadPanel {
+  .tasteUploadPanel,
+  .arrangerPanel {
     grid-template-columns: 1fr;
   }
 
