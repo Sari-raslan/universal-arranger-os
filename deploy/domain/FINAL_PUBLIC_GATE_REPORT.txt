@@ -1,0 +1,47 @@
+UAOS FINAL PUBLIC LAUNCH CHECKLIST
+
+Website:
+https://frontend-aeplatform-apps-projects.vercel.app
+
+Domain:
+aeplatform.app
+
+PayPal:
+
+
+Demo Video:
+
+
+STATUS:
+Website public: True
+PayPal link present: False
+Demo video present: False
+
+MANUAL STEPS STILL REQUIRED IF FAILING:
+
+1) Vercel Deployment Protection
+Vercel Dashboard -> Project frontend -> Settings -> Deployment Protection
+Disable:
+- Vercel Authentication
+- Password Protection
+- Trusted IPs
+
+2) DNS
+At domain provider:
+
+A:
+@ -> 76.76.21.21
+
+CNAME:
+www -> cname.vercel-dns.com
+
+3) Vercel Domains
+Project frontend -> Settings -> Domains
+Add:
+aeplatform.app
+www.aeplatform.app
+
+4) Test
+Invoke-WebRequest https://frontend-aeplatform-apps-projects.vercel.app -UseBasicParsing
+nslookup aeplatform.app
+Invoke-WebRequest https://aeplatform.app -UseBasicParsing
