@@ -1,7 +1,7 @@
 # UAOS Official Links
 
 Website:
-https://github.com/Sari-raslan/universal-arranger-os
+https://frontend-aeplatform-apps-projects.vercel.app
 
 GitHub:
 https://github.com/Sari-raslan/universal-arranger-os
@@ -16,4 +16,4 @@ Video:
 PASTE_REAL_VIDEO_LINK_HERE
 
 API:
-https://github.com/Sari-raslan/universal-arranger-os/api
+https://frontend-aeplatform-apps-projects.vercel.app/api
