@@ -4,6 +4,7 @@ import DemoPage from './pages/DemoPage.jsx';
 import DownloadsPage from './pages/DownloadsPage.jsx';
 import FeaturesPage from './pages/FeaturesPage.jsx';
 import LandingPage from './pages/LandingPage.jsx';
+import MediaPage from './pages/MediaPage.jsx';
 import PricingPage from './pages/PricingPage.jsx';
 
 export default function App() {
@@ -13,6 +14,7 @@ export default function App() {
   if (path === '/downloads') return <DownloadsPage />;
   if (path === '/demo') return <DemoPage />;
   if (path === '/features') return <FeaturesPage />;
+  if (path === '/media') return <MediaPage />;
   if (path === '/app') return <KeyboardManagerApp />;
 
   return <LandingPage />;
