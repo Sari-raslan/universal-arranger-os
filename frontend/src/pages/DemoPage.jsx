@@ -1,6 +1,6 @@
 import React from 'react';
 
-const DEMO_VIDEO = 'PASTE_REAL_VIDEO_LINK_HERE';
+const DEMO_VIDEO = 'https://uaos-animated-explainer-logo-737954605821.europe-west3.run.app';
 
 export default function DemoPage() {
   return (
