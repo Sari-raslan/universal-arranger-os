@@ -1,31 +1,26 @@
 {
-  "name": "uaos-mobile",
+  "name": "universal-arranger-os",
   "version": "1.0.0",
-  "private": true,
-  "type": "module",
-  "scripts": {
-    "start": "npm --prefix backend start",
-    "smoke": "node backend/src/scripts/smoke.js",
-    "smoke:sar": "node backend/src/scripts/smoke-sar-set.js",
-    "desktop": "electron desktop/main.cjs",
-    "desktop:start": "electron electron/main.cjs",
-    "frontend:build": "cd frontend && npm run build",
-    "desktop:build": "npm --prefix frontend run build && electron-builder",
-    "release:win": "npm --prefix frontend run build && electron-builder --win nsis portable",
-    "build": "npm --prefix frontend run build",
-    "test": "node tests/regression.test.js"
-  },
   "main": "electron/main.cjs",
-  "dependencies": {
-    "@capacitor/android": "^6.2.1",
-    "@capacitor/cli": "^6.2.1",
-    "@capacitor/core": "^6.2.1",
-    "@capacitor/ios": "^6.0.0"
+  "description": "Universal Arranger OS desktop workstation",
+  "author": "Sarey Raslan",
+  "scripts": {
+    "dev": "concurrently \"cd backend && node src/server.js\" \"cd frontend && npm run dev\"",
+    "frontend:install": "cd frontend && npm install",
+    "frontend:build": "cd frontend && npm run build",
+    "desktop:start": "electron electron/main.cjs",
+    "desktop:build": "npm run frontend:build && electron-builder",
+    "release:win": "npm run frontend:build && electron-builder --win nsis portable",
+    "release:portable": "npm run frontend:build && electron-builder --win portable",
+    "release:nsis": "npm run frontend:build && electron-builder --win nsis",
+    "prod:start": "powershell -ExecutionPolicy Bypass -File scripts/production/start-production.ps1",
+    "prod:stop": "powershell -ExecutionPolicy Bypass -File scripts/production/stop-production.ps1",
+    "prod:health": "powershell -ExecutionPolicy Bypass -File scripts/production/health-production.ps1"
   },
   "devDependencies": {
+    "concurrently": "^9.0.0",
     "electron": "^30.0.0",
-    "electron-builder": "^24.0.0",
-    "playwright": "^1.60.0"
+    "electron-builder": "^24.0.0"
   },
   "build": {
     "appId": "com.universalarranger.os",
@@ -36,7 +31,14 @@
     "files": [
       "electron/**/*",
       "frontend/dist/**/*",
+      "backend/**/*",
       "package.json"
+    ],
+    "extraResources": [
+      {
+        "from": "backend",
+        "to": "backend"
+      }
     ],
     "win": {
       "target": [
