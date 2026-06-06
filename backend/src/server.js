@@ -16,6 +16,7 @@ import assistantRoutes from './keyboard-assistant/routes.js';
 import integrationsRoutes from './integrations/routes.js';
 import releaseRoutes from './release/routes.js';
 import musicTasteRoutes from './music-taste/routes.js';
+import omrRoutes from './omr/routes.js';
 import { analyzePath, supportedExtensions } from './services/analyzer.js';
 import { ensureDir, listLibraryItems, removeLibraryItem, safeName } from './services/library.js';
 
@@ -75,6 +76,7 @@ app.use('/api/assistant', assistantRoutes);
 app.use('/api/integrations', integrationsRoutes);
 app.use('/api/release', releaseRoutes);
 app.use('/api/music-taste', musicTasteRoutes);
+app.use('/api/omr', omrRoutes);
 
 app.get('/api/status', (_req, res) => {
   res.json({

@@ -587,7 +587,8 @@ pre {
 .contentBand,
 .tastePanel,
 .tasteUploadPanel,
-.arrangerPanel {
+.arrangerPanel,
+.uaosProductBand {
   padding: 26px 0;
   border-top: 1px solid #ddd5c7;
 }
@@ -652,6 +653,117 @@ pre {
   margin: 0;
 }
 
+.uaosProductBand {
+  display: grid;
+  gap: 18px;
+}
+
+.uaosProductBand h2 {
+  font-size: 1.45rem;
+  margin-bottom: 6px;
+}
+
+.uaosHeroActions {
+  grid-template-columns: minmax(0, 0.72fr) minmax(320px, 1fr);
+  align-items: start;
+}
+
+.uaosHeroActions .uaosActions {
+  grid-column: 1 / -1;
+}
+
+.uaosVideoFrame {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #111912;
+  border: 1px solid #d8d0c2;
+}
+
+.uaosVideoFrame iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.uaosActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.uaosWorkflow {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 10px;
+}
+
+.uaosStep {
+  min-height: 168px;
+  display: grid;
+  align-content: start;
+  gap: 8px;
+  padding: 14px;
+  border: 1px solid #ddd5c7;
+  border-radius: 8px;
+  background: #fffdf7;
+}
+
+.uaosStep strong {
+  width: 34px;
+  height: 34px;
+  display: inline-grid;
+  place-items: center;
+  border-radius: 8px;
+  background: #1f5e3a;
+  color: #ffffff;
+}
+
+.uaosStep h3 {
+  font-size: 1rem;
+}
+
+.uaosStep p {
+  margin-bottom: 0;
+  color: #4f5b4b;
+}
+
+.sheetMusicFixPanel {
+  grid-template-columns: minmax(220px, 0.75fr) minmax(0, 1fr);
+  align-items: start;
+}
+
+.sheetUploadControl {
+  min-height: 112px;
+  display: grid;
+  place-items: center;
+  gap: 8px;
+  border: 1px dashed #8a957f;
+  border-radius: 8px;
+  padding: 18px;
+  background: #f8faf4;
+  color: #172019;
+  cursor: pointer;
+}
+
+.sheetUploadControl span {
+  font-weight: 700;
+}
+
+.sheetUploadControl input {
+  width: 100%;
+}
+
+.sheetStatus,
+.uaosOutput {
+  grid-column: 2;
+}
+
+.uaosOutput {
+  margin: 0;
+}
+
 @media (max-width: 980px) {
   .dashboard,
   .workspace {
@@ -679,7 +791,9 @@ pre {
   .launchHero,
   .tastePanel,
   .tasteUploadPanel,
-  .arrangerPanel {
+  .arrangerPanel,
+  .uaosHeroActions,
+  .sheetMusicFixPanel {
     grid-template-columns: 1fr;
   }
 
@@ -689,7 +803,9 @@ pre {
   }
 
   .saveStatus,
-  .tasteResult {
+  .tasteResult,
+  .sheetStatus,
+  .uaosOutput {
     grid-column: auto;
   }
 

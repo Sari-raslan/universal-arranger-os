@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { uploadSheetMusic } from '../services/sheetMusicApi.js';
 
 export default function ProfessionalOmrPanel() {
   const [result, setResult] = useState(null);
@@ -14,23 +15,7 @@ export default function ProfessionalOmrPanel() {
     setResult(null);
 
     try {
-      const form = new FormData();
-      form.append('sheet', file);
-
-      const response = await fetch(
-        'http://localhost:3002/api/omr/upload-sheet',
-        {
-          method: 'POST',
-          body: form
-        }
-      );
-
-      const data = await response.json();
-
-      if (!response.ok || !data.ok) {
-        throw new Error(data.error || 'OMR failed');
-      }
-
+      const data = await uploadSheetMusic(file);
       setResult(data);
     } catch (err) {
       setError(err.message);
@@ -61,14 +46,15 @@ export default function ProfessionalOmrPanel() {
       {result && (
         <div>
           <h3>OMR Result</h3>
-          <p>MIDI: {result.midiPath}</p>
-          <p>MusicXML: {result.musicXmlPath}</p>
-          <p>Systems: {result.staffSegmentation.systems.length}</p>
-          <p>Symbols: {result.symbols.length}</p>
-          <p>Notes: {result.rhythm.notes.length}</p>
+          <p>{result.message}</p>
+          {result.midiPath && <p>MIDI: {result.midiPath}</p>}
+          {result.musicXmlPath && <p>MusicXML: {result.musicXmlPath}</p>}
+          {result.staffSegmentation?.systems && <p>Systems: {result.staffSegmentation.systems.length}</p>}
+          {result.symbols && <p>Symbols: {result.symbols.length}</p>}
+          {result.rhythm?.notes && <p>Notes: {result.rhythm.notes.length}</p>}
 
           <pre style={{ whiteSpace: 'pre-wrap', maxHeight: 300, overflow: 'auto' }}>
-            {JSON.stringify(result.quality, null, 2)}
+            {JSON.stringify(result.quality || result.analysis, null, 2)}
           </pre>
         </div>
       )}

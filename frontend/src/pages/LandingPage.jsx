@@ -4,6 +4,9 @@ import MusicTasteOnboarding from '../components/MusicTasteOnboarding.jsx';
 import MusicTasteUploadPanel from '../components/MusicTasteUploadPanel.jsx';
 import PersonalizedArrangerPanel from '../components/PersonalizedArrangerPanel.jsx';
 import UaosAiPlatformPanel from '../components/UaosAiPlatformPanel.jsx';
+import UaosHeroActions from '../components/UaosHeroActions.jsx';
+import UaosWorkflowPanel from '../components/UaosWorkflowPanel.jsx';
+import SheetMusicFixPanel from '../components/SheetMusicFixPanel.jsx';
 
 export default function LandingPage() {
   return (
@@ -29,6 +32,9 @@ export default function LandingPage() {
         </ul>
       </section>
 
+      <UaosHeroActions />
+      <UaosWorkflowPanel />
+      <SheetMusicFixPanel />
       <MusicTasteOnboarding />
       <MusicTasteUploadPanel />
       <PersonalizedArrangerPanel />

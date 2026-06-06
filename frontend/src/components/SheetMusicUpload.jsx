@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
-import axios from 'axios';
-
-const OMR_API = import.meta.env.VITE_OMR_API_URL || 'http://localhost:3002';
+import { uploadSheetMusic } from '../services/sheetMusicApi.js';
 
 export default function SheetMusicUpload() {
   const [result, setResult] = useState(null);
@@ -12,18 +10,15 @@ export default function SheetMusicUpload() {
     const file = event.target.files?.[0];
     if (!file) return;
 
-    const formData = new FormData();
-    formData.append('sheet', file);
-
     setBusy(true);
     setError('');
 
     try {
-      const response = await axios.post(`${OMR_API}/api/omr/upload-sheet`, formData);
-      setResult(response.data);
+      const data = await uploadSheetMusic(file);
+      setResult(data);
     } catch (err) {
       setResult(null);
-      setError(err.response?.data?.error || err.message || 'Sheet upload failed.');
+      setError(err.message || 'Sheet upload failed.');
     } finally {
       setBusy(false);
     }
@@ -44,13 +39,13 @@ export default function SheetMusicUpload() {
 
       {result && (
         <div>
-          <h3>Detected Notes</h3>
+          <h3>Sheet Analysis</h3>
 
           <pre>{JSON.stringify(result.analysis, null, 2)}</pre>
 
-          <h3>MIDI Generated</h3>
+          <h3>OMR Status</h3>
 
-          <div>{result.midi}</div>
+          <div>{result.message}</div>
         </div>
       )}
     </div>
