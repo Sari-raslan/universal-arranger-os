@@ -1,4 +1,5 @@
-﻿import { securityHeaders } from './security/headers.js';
+﻿import express from 'express';
+import { securityHeaders } from './security/headers.js';
 import productionRoutes from './production/routes.js';
 import cors from 'cors';
 import multer from 'multer';
@@ -227,4 +228,5 @@ const port = Number(process.env.PORT || 3001);
 app.listen(port, () => {
   console.log(`Keyboard Manager backend listening on http://localhost:${port}`);
 });
+
 
