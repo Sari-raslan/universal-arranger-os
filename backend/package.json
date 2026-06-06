@@ -4,6 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "dev": "node src/server.js",
     "start": "node src/server.js",
     "analyze:sar": "node src/scripts/analyze-sar-set.js"
   },
