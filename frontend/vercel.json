@@ -1,10 +1,11 @@
-{
+﻿{
   "rewrites": [
+    { "source": "/app", "destination": "/" },
     { "source": "/pricing", "destination": "/" },
     { "source": "/downloads", "destination": "/" },
     { "source": "/features", "destination": "/" },
-    { "source": "/media", "destination": "/" },
     { "source": "/demo", "destination": "/" },
-    { "source": "/app", "destination": "/" }
+    { "source": "/media", "destination": "/" },
+    { "source": "/(.*)", "destination": "/" }
   ]
 }
