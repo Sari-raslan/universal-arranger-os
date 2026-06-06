@@ -3,6 +3,7 @@ import LaunchHero from '../components/LaunchHero.jsx';
 import MusicTasteOnboarding from '../components/MusicTasteOnboarding.jsx';
 import MusicTasteUploadPanel from '../components/MusicTasteUploadPanel.jsx';
 import PersonalizedArrangerPanel from '../components/PersonalizedArrangerPanel.jsx';
+import UaosAiPlatformPanel from '../components/UaosAiPlatformPanel.jsx';
 
 export default function LandingPage() {
   return (
@@ -31,6 +32,7 @@ export default function LandingPage() {
       <MusicTasteOnboarding />
       <MusicTasteUploadPanel />
       <PersonalizedArrangerPanel />
+      <UaosAiPlatformPanel />
 
       <section className="contentBand">
         <h2>Platform Status</h2>

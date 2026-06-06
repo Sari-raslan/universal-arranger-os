@@ -9,6 +9,12 @@ import jwt from 'jsonwebtoken';
 import bcrypt from 'bcryptjs';
 import dotenv from 'dotenv';
 import arrangerRoutes from './arranger/routes.js';
+import midiEngineRoutes from './midi-engine/routes.js';
+import cloudSyncRoutes from './cloud-sync/routes.js';
+import marketplaceRoutes from './marketplace/routes.js';
+import assistantRoutes from './keyboard-assistant/routes.js';
+import integrationsRoutes from './integrations/routes.js';
+import releaseRoutes from './release/routes.js';
 import musicTasteRoutes from './music-taste/routes.js';
 import { analyzePath, supportedExtensions } from './services/analyzer.js';
 import { ensureDir, listLibraryItems, removeLibraryItem, safeName } from './services/library.js';
@@ -62,6 +68,12 @@ const app = express();
 app.use(cors());
 app.use(express.json({ limit: '2mb' }));
 app.use('/api/arranger', arrangerRoutes);
+app.use('/api/midi-engine', midiEngineRoutes);
+app.use('/api/cloud-sync', cloudSyncRoutes);
+app.use('/api/marketplace', marketplaceRoutes);
+app.use('/api/assistant', assistantRoutes);
+app.use('/api/integrations', integrationsRoutes);
+app.use('/api/release', releaseRoutes);
 app.use('/api/music-taste', musicTasteRoutes);
 
 app.get('/api/status', (_req, res) => {
