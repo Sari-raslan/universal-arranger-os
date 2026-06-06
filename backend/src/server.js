@@ -1,4 +1,6 @@
 import express from 'express';
+import { securityHeaders } from './security/headers.js';
+import productionRoutes from './production/routes.js';
 import cors from 'cors';
 import multer from 'multer';
 import fs from 'node:fs/promises';
@@ -68,7 +70,9 @@ const upload = multer({
 
 const app = express();
 app.use(cors());
+app.use(securityHeaders);
 app.use(express.json({ limit: '2mb' }));
+app.use('/api/production', productionRoutes);
 app.use('/api/arranger', arrangerRoutes);
 app.use('/api/midi-engine', midiEngineRoutes);
 app.use('/api/cloud-sync', cloudSyncRoutes);
@@ -217,3 +221,4 @@ const port = Number(process.env.PORT || 3001);
 app.listen(port, () => {
   console.log(`Keyboard Manager backend listening on http://localhost:${port}`);
 });
+

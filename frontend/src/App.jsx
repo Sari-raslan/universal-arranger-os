@@ -1,3 +1,4 @@
+import StatusPage from './pages/StatusPage.jsx';
 import React from 'react';
 import KeyboardManagerApp from './KeyboardManagerApp.jsx';
 import DemoPage from './pages/DemoPage.jsx';
@@ -11,6 +12,7 @@ export default function App() {
   const path = window.location.pathname;
 
   if (path === '/pricing') return <PricingPage />;
+  if (path === '/status') return <StatusPage />;
   if (path === '/downloads') return <DownloadsPage />;
   if (path === '/demo') return <DemoPage />;
   if (path === '/features') return <FeaturesPage />;
@@ -19,3 +21,4 @@ export default function App() {
 
   return <LandingPage />;
 }
+
