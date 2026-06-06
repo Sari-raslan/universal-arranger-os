@@ -7,6 +7,7 @@ import FeaturesPage from './pages/FeaturesPage.jsx';
 import LandingPage from './pages/LandingPage.jsx';
 import MediaPage from './pages/MediaPage.jsx';
 import PricingPage from './pages/PricingPage.jsx';
+import UaosWorkspacePage from './pages/UaosWorkspacePage.jsx';
 import PublicRuntimeStatus from './components/PublicRuntimeStatus.jsx';
 
 function withRuntimeStatus(page) {
@@ -27,7 +28,8 @@ export default function App() {
   if (path === '/demo') return withRuntimeStatus(<DemoPage />);
   if (path === '/features') return withRuntimeStatus(<FeaturesPage />);
   if (path === '/media') return withRuntimeStatus(<MediaPage />);
-  if (path === '/app') return withRuntimeStatus(<KeyboardManagerApp />);
+  if (path === '/app') return withRuntimeStatus(<UaosWorkspacePage />);
+  if (path === '/keyboard') return withRuntimeStatus(<KeyboardManagerApp />);
 
   return withRuntimeStatus(<LandingPage />);
 }
