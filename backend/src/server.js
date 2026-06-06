@@ -17,6 +17,7 @@ import integrationsRoutes from './integrations/routes.js';
 import releaseRoutes from './release/routes.js';
 import musicTasteRoutes from './music-taste/routes.js';
 import omrRoutes from './omr/routes.js';
+import assistantMemoryRoutes from './assistant-memory/routes.js';
 import { analyzePath, supportedExtensions } from './services/analyzer.js';
 import { ensureDir, listLibraryItems, removeLibraryItem, safeName } from './services/library.js';
 
@@ -77,6 +78,7 @@ app.use('/api/integrations', integrationsRoutes);
 app.use('/api/release', releaseRoutes);
 app.use('/api/music-taste', musicTasteRoutes);
 app.use('/api/omr', omrRoutes);
+app.use('/api/uaos-assistant', assistantMemoryRoutes);
 
 app.get('/api/status', (_req, res) => {
   res.json({

@@ -7,6 +7,7 @@ import UaosAiPlatformPanel from '../components/UaosAiPlatformPanel.jsx';
 import UaosHeroActions from '../components/UaosHeroActions.jsx';
 import UaosWorkflowPanel from '../components/UaosWorkflowPanel.jsx';
 import SheetMusicFixPanel from '../components/SheetMusicFixPanel.jsx';
+import UaosLiveAssistant from '../components/UaosLiveAssistant.jsx';
 
 export default function LandingPage() {
   return (
@@ -35,6 +36,7 @@ export default function LandingPage() {
       <UaosHeroActions />
       <UaosWorkflowPanel />
       <SheetMusicFixPanel />
+      <UaosLiveAssistant />
       <MusicTasteOnboarding />
       <MusicTasteUploadPanel />
       <PersonalizedArrangerPanel />
