@@ -1,4 +1,6 @@
-import express from 'express';
+﻿import express from 'express'
+import path from 'path'
+import { fileURLToPath } from 'url';
 import { securityHeaders } from './security/headers.js';
 import productionRoutes from './production/routes.js';
 import cors from 'cors';
@@ -222,3 +224,14 @@ app.listen(port, () => {
   console.log(`Keyboard Manager backend listening on http://localhost:${port}`);
 });
 
+
+
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
+const frontendDist = path.resolve(__dirname, '../../frontend/dist')
+
+app.use(express.static(frontendDist))
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(frontendDist, 'index.html'))
+})
