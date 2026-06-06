@@ -1,4 +1,4 @@
-# UAOS Official Launch Links
+﻿# UAOS Official Launch Links
 
 Website:
 https://uaos-universal-arranger-os-737954605821.europe-west3.run.app
@@ -32,3 +32,4 @@ https://universal-arranger-os-logo-showcase-737954605821.europe-west3.run.app
 
 Planned domain:
 uaos.app
+
