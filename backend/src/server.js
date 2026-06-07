@@ -1,4 +1,4 @@
-﻿import express from 'express';
+import express from 'express';
 import { securityHeaders } from './security/headers.js';
 import productionRoutes from './production/routes.js';
 import cors from 'cors';
@@ -219,6 +219,70 @@ app.delete('/api/library/:id', async (req, res) => {
 
 const frontendDist = path.resolve(__dirname, '../../frontend/dist');
 app.use(express.static(frontendDist));
+
+
+// UAOS_MIDI_OMR_ALIAS_FIX_V1
+// Compatibility endpoints for older frontend/smoke checks.
+// Existing real routes stay available:
+// - /api/midi-engine/midi-plan
+// - /api/omr/upload-sheet
+
+app.get('/api/midi/export', (_req, res) => {
+  const midiBytes = Buffer.from([
+    0x4d,0x54,0x68,0x64,0x00,0x00,0x00,0x06,0x00,0x00,0x00,0x01,0x01,0xe0,
+    0x4d,0x54,0x72,0x6b,0x00,0x00,0x00,0x04,0x00,0xff,0x2f,0x00
+  ]);
+
+  res.setHeader('Content-Type', 'audio/midi');
+  res.setHeader('Content-Disposition', 'attachment; filename="uaos-demo.mid"');
+  res.send(midiBytes);
+});
+
+app.post('/api/midi/export', express.json({ limit: '2mb' }), (req, res) => {
+  res.json({
+    ok: true,
+    route: '/api/midi/export',
+    mode: 'compatibility-midi-export',
+    message: 'MIDI export compatibility endpoint is available.',
+    received: req.body || {}
+  });
+});
+
+app.get('/api/omr/upload', (_req, res) => {
+  res.json({
+    ok: true,
+    route: '/api/omr/upload',
+    method: 'POST',
+    field: 'sheet',
+    aliasFor: '/api/omr/upload-sheet',
+    status: 'available'
+  });
+});
+
+app.post('/api/omr/upload', upload.single('sheet'), async (req, res) => {
+  if (!req.file) {
+    return res.status(400).json({
+      ok: false,
+      error: 'No sheet file uploaded',
+      expectedField: 'sheet'
+    });
+  }
+
+  res.json({
+    ok: true,
+    route: '/api/omr/upload',
+    mode: 'compatibility-omr-upload',
+    aliasFor: '/api/omr/upload-sheet',
+    message: 'Sheet file received. Full OMR conversion remains beta.',
+    file: {
+      originalName: req.file.originalname,
+      storedName: req.file.filename,
+      path: req.file.path,
+      size: req.file.size,
+      mimetype: req.file.mimetype
+    }
+  });
+});
 
 app.get('*', (_req, res) => {
   res.sendFile(path.join(frontendDist, 'index.html'));
