@@ -1,9 +1,13 @@
-﻿{
-  "redirects": [
-    {
-      "source": "/github",
-      "destination": "https://AE Platform.github.io/universal-arranger-os/"
-    }
+{
+  "rewrites": [
+    { "source": "/", "destination": "/index.html" },
+    { "source": "/app", "destination": "/index.html" },
+    { "source": "/media", "destination": "/index.html" },
+    { "source": "/features", "destination": "/index.html" },
+    { "source": "/pricing", "destination": "/index.html" },
+    { "source": "/paypal", "destination": "/index.html" },
+    { "source": "/downloads", "destination": "/index.html" },
+    { "source": "/demo", "destination": "/index.html" },
+    { "source": "/(.*)", "destination": "/index.html" }
   ]
 }
-

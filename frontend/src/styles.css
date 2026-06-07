@@ -903,3 +903,56 @@ pre {
     grid-template-columns: 1fr;
   }
 }
+
+/* UAOS_ANDROID_BRAIN_PHASE2_UI */
+.uaos-loading-screen {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  background: radial-gradient(circle at top, #101735, #050712 60%, #02030a);
+  color: white;
+  font-family: Arial, sans-serif;
+}
+.uaos-loader {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  border: 5px solid rgba(255,255,255,.18);
+  border-top-color: #8b5cf6;
+  animation: uaos-spin 1s linear infinite;
+  margin: 0 auto 18px;
+}
+@keyframes uaos-spin { to { transform: rotate(360deg); } }
+.uaos-fade-in { animation: uaos-fade-in .45s ease both; }
+@keyframes uaos-fade-in {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.uaos-brain-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px 18px;
+  background: rgba(5,7,18,.86);
+  border-bottom: 1px solid rgba(255,255,255,.1);
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  backdrop-filter: blur(14px);
+}
+.uaos-brain-topbar a,
+.uaos-brain-topbar button {
+  color: white;
+  text-decoration: none;
+  border: 0;
+  border-radius: 10px;
+  padding: 9px 12px;
+  background: rgba(255,255,255,.08);
+  cursor: pointer;
+}
+.uaos-brain-topbar a:hover,
+.uaos-brain-topbar button:hover {
+  background: rgba(139,92,246,.35);
+}

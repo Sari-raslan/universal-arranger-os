@@ -34,3 +34,11 @@ export default function App() {
   return withRuntimeStatus(<LandingPage />);
 }
 
+
+
+// UAOS_ANDROID_BRAIN_PHASE2_NOTE
+// Safe Phase 2 applied:
+// - index.html metadata/loading fallback
+// - CSS loading/animation/topbar helpers
+// - frontend/src/storage.js cache helper
+// Next safe step: wire uaosCacheSet/uaosCacheGet into real app state after reviewing current App structure.
