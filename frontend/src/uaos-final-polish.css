@@ -1,0 +1,127 @@
+:root {
+  --uaos-bg: #050712;
+  --uaos-panel: rgba(255,255,255,.075);
+  --uaos-border: rgba(255,255,255,.14);
+  --uaos-blue: #00aaff;
+  --uaos-purple: #8b5cf6;
+  --uaos-pink: #ff35d4;
+  --uaos-text: #f5f7ff;
+  --uaos-muted: #b9c2df;
+}
+
+body {
+  background:
+    radial-gradient(circle at top left, rgba(0,170,255,.23), transparent 34%),
+    radial-gradient(circle at top right, rgba(255,53,212,.20), transparent 32%),
+    linear-gradient(180deg,#060817,#02030a 72%) !important;
+  color: var(--uaos-text) !important;
+}
+
+a {
+  color: #7bdcff;
+}
+
+.uaos-page,
+.uaos-workspace,
+.uaos-shell,
+main {
+  animation: uaosFadeIn .45s ease both;
+}
+
+@keyframes uaosFadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.uaos-card,
+.card,
+.panel,
+section {
+  border-radius: 24px;
+}
+
+.uaos-glass,
+.uaos-card,
+.card {
+  background: linear-gradient(160deg, rgba(255,255,255,.10), rgba(255,255,255,.035));
+  border: 1px solid var(--uaos-border);
+  box-shadow: 0 24px 80px rgba(0,0,0,.38);
+  backdrop-filter: blur(18px);
+}
+
+.uaos-launch-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0,1fr));
+  gap: 18px;
+  margin-top: 24px;
+}
+
+.uaos-launch-card {
+  padding: 24px;
+  border-radius: 24px;
+  background: linear-gradient(160deg, rgba(0,170,255,.13), rgba(255,53,212,.10));
+  border: 1px solid rgba(255,255,255,.15);
+  box-shadow: 0 20px 60px rgba(0,0,0,.35);
+}
+
+.uaos-launch-card h3 {
+  margin: 0 0 10px;
+  font-size: 24px;
+}
+
+.uaos-launch-card p {
+  color: var(--uaos-muted);
+  line-height: 1.65;
+}
+
+.uaos-button-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.uaos-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 12px 18px;
+  border-radius: 14px;
+  color: white !important;
+  text-decoration: none;
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--uaos-blue), var(--uaos-pink));
+  box-shadow: 0 18px 38px rgba(80,90,255,.25);
+}
+
+.uaos-button.secondary {
+  background: rgba(255,255,255,.08);
+  border: 1px solid rgba(255,255,255,.14);
+  box-shadow: none;
+}
+
+.uaos-hero-title {
+  font-size: clamp(42px, 7vw, 88px);
+  line-height: .95;
+  margin: 0 0 16px;
+  background: linear-gradient(90deg, var(--uaos-blue), var(--uaos-purple), var(--uaos-pink));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.uaos-final-links {
+  margin-top: 24px;
+  padding: 22px;
+  border-radius: 22px;
+  border: 1px solid rgba(255,255,255,.14);
+  background: rgba(0,0,0,.24);
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 900px) {
+  .uaos-launch-grid {
+    grid-template-columns: 1fr;
+  }
+}

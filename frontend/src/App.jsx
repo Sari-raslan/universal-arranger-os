@@ -1,3 +1,4 @@
+import "./uaos-force-visual-final.css";
 import StatusPage from './pages/StatusPage.jsx';
 import React from 'react';
 import KeyboardManagerApp from './KeyboardManagerApp.jsx';

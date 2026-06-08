@@ -1,8 +1,14 @@
 export const UAOS_LINKS = {
-  website: 'https://uaos-universal-arranger-os-737954605821.europe-west3.run.app',
-  pricing: 'https://uaos-universal-arranger-os-737954605821.europe-west3.run.app/pricing',
-  explainer: 'https://uaos-animated-explainer-logo-737954605821.europe-west3.run.app',
-  logoShowcase: 'https://universal-arranger-os-logo-showcase-737954605821.europe-west3.run.app',
-  starterPayPal: 'https://www.paypal.com/ncp/payment/4PHMPZL66YEG8',
-  proPayPal: 'https://www.paypal.com/ncp/payment/2W2D2VXEDNTBU'
+  website: "https://uaos-public-live.vercel.app",
+  github: "https://github.com/Sari-raslan/universal-arranger-os",
+  release: "https://github.com/Sari-raslan/universal-arranger-os/releases/tag/v0.1.0-debug",
+  androidApk: "https://github.com/Sari-raslan/universal-arranger-os/releases/download/v0.1.0-debug/UAOS-debug.apk",
+  paypal: "https://www.paypal.com/ncp/payment/2W2D2VXEDNTBU",
+  youtube: "https://youtube.com/@uaos",
+  instagram: "https://instagram.com/uaos.app",
+  tiktok: "https://tiktok.com/@uaos.app",
+  x: "https://x.com/uaos_app",
+  facebook: "https://facebook.com/UAOS"
 };
+
+export default UAOS_LINKS;

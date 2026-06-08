@@ -1,0 +1,114 @@
+.uaos-media-page {
+  min-height: 100vh;
+  padding: 64px 24px;
+  color: white;
+  background:
+    radial-gradient(circle at 10% 0%, rgba(0, 170, 255, .25), transparent 35%),
+    radial-gradient(circle at 88% 8%, rgba(255, 53, 212, .22), transparent 34%),
+    linear-gradient(180deg, #050712, #02030a 74%);
+}
+
+.uaos-media-hero {
+  max-width: 1180px;
+  margin: 0 auto 34px;
+  padding: 40px;
+  border-radius: 32px;
+  border: 1px solid rgba(255,255,255,.14);
+  background: linear-gradient(160deg, rgba(255,255,255,.10), rgba(255,255,255,.035));
+  box-shadow: 0 30px 90px rgba(0,0,0,.42);
+  backdrop-filter: blur(18px);
+}
+
+.uaos-kicker {
+  color: #ff35d4;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  font-weight: 900;
+}
+
+.uaos-media-hero h1 {
+  margin: 0;
+  font-size: clamp(42px, 7vw, 92px);
+  line-height: .95;
+  background: linear-gradient(90deg, #00aaff, #8b5cf6, #ff35d4);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.uaos-media-hero p {
+  max-width: 840px;
+  color: #cfd6f0;
+  font-size: 20px;
+  line-height: 1.75;
+}
+
+.uaos-media-grid {
+  max-width: 1180px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.uaos-video-card {
+  border-radius: 26px;
+  overflow: hidden;
+  background: rgba(255,255,255,.075);
+  border: 1px solid rgba(255,255,255,.14);
+  box-shadow: 0 22px 70px rgba(0,0,0,.35);
+}
+
+.uaos-video-card video,
+.uaos-video-placeholder {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  display: block;
+  background: #050712;
+}
+
+.uaos-video-placeholder {
+  display: grid;
+  place-items: center;
+  padding: 22px;
+  color: #b9c2df;
+  text-align: center;
+}
+
+.uaos-video-card div {
+  padding: 18px;
+}
+
+.uaos-video-card h3 {
+  margin: 0 0 8px;
+}
+
+.uaos-video-card p {
+  margin: 0;
+  color: #b9c2df;
+  overflow-wrap: anywhere;
+}
+
+.uaos-media-info {
+  max-width: 1180px;
+  margin: 24px auto 0;
+  padding: 28px;
+  border-radius: 26px;
+  border: 1px solid rgba(255,255,255,.14);
+  background: rgba(0,0,0,.26);
+}
+
+.uaos-media-info p {
+  color: #cfd6f0;
+  line-height: 1.8;
+}
+
+@media (max-width: 960px) {
+  .uaos-media-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .uaos-media-hero {
+    padding: 28px;
+  }
+}
