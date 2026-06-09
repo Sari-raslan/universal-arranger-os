@@ -1,254 +1,44 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>UAOS | Universal Arranger OS</title>
-<meta name="description" content="Universal Arranger OS by AE Platform turns voice, humming, and melodies into MIDI, chords, arrangements, and DAW-ready workflows.">
-<meta name="keywords" content="UAOS, Universal Arranger OS, AE Platform, Music AI, MIDI, Voice to MIDI, AI Arrangement, Music Production">
-<meta name="author" content="AE Platform">
-<meta property="og:title" content="Universal Arranger OS | Turn Your Voice Into Music">
-<meta property="og:description" content="AI-powered music creation platform for musicians, producers, singers, and creators.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://sari-raslan.github.io/universal-arranger-os/">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="theme-color" content="#7b4cff">
-<style>
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-html[dir="rtl"] body{text-align:right}
-body{margin:0;font-family:Segoe UI,Tahoma,Arial,sans-serif;background:#050616;color:white}
-nav{position:sticky;top:0;z-index:10;display:flex;justify-content:space-between;align-items:center;padding:18px 7%;background:#060719e6;backdrop-filter:blur(14px);border-bottom:1px solid #ffffff12}
-.logo{display:flex;align-items:center;gap:14px}.logo-mark{width:58px;height:58px;border-radius:18px;background:linear-gradient(135deg,#00d4ff,#7b4cff,#ff3bd4);display:grid;place-items:center;font-size:34px;box-shadow:0 0 25px #7b4cff}.logo b{font-size:26px}.logo span{display:block;color:#c6ccff;font-size:14px}
-.nav-actions a,.nav-actions button{margin:4px;padding:9px 12px;border-radius:10px;border:1px solid #ffffff33;background:#11162d;color:white;font-weight:800;text-decoration:none;cursor:pointer}
-.hero{display:grid;grid-template-columns:1.05fr .95fr;gap:44px;min-height:88vh;padding:90px 7%;align-items:center;background:radial-gradient(circle at 80% 10%,#7b2cff66,transparent 30%),radial-gradient(circle at 15% 20%,#009dff55,transparent 30%),#050616}
-.badge{display:inline-block;padding:10px 18px;border:1px solid #8b8cff;border-radius:999px;background:#121631aa}
-h1{font-size:70px;line-height:1.04;margin:22px 0}.grad{background:linear-gradient(90deg,#31a8ff,#ff55df);-webkit-background-clip:text;color:transparent}
-p{font-size:20px;line-height:1.7;color:#d5daf0}.btn{display:inline-block;padding:16px 26px;border-radius:15px;margin:10px 10px 10px 0;text-decoration:none;font-weight:900}.primary{background:linear-gradient(90deg,#2f82ff,#d94cff);color:white}.secondary{border:1px solid #ffffff55;color:white;background:#11162d}
-.visual{background:#10152bcc;border:1px solid #ffffff22;border-radius:30px;padding:28px}.live{display:inline-block;color:#34ff91;font-weight:900;margin-bottom:12px}.screen{background:#070a15;border-radius:18px;padding:18px;border:1px solid #ffffff18}.row{display:grid;grid-template-columns:90px 1fr 1fr 1fr;gap:8px;margin:12px 0}.clip{height:30px;border-radius:7px;background:linear-gradient(90deg,#6a47ff,#c24cff)}.blue{background:linear-gradient(90deg,#2f7cff,#3fdcff)}.gold{background:linear-gradient(90deg,#ffb72f,#ffdf70)}.piano{height:100px;margin-top:20px;border-radius:18px;background:repeating-linear-gradient(90deg,#fff 0 40px,#111 40px 53px,#fff 53px 82px)}
-.section{padding:70px 7%;text-align:center}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:30px}.card{background:#10152bcc;border:1px solid #ffffff18;border-radius:24px;padding:28px}.price{font-size:46px;font-weight:900}.popular{outline:2px solid #a455ff;box-shadow:0 0 40px #a455ff55}
-.demo-box{max-width:820px;margin:30px auto;background:#10152bcc;border:1px solid #ffffff22;border-radius:24px;padding:28px;text-align:left}html[dir="rtl"] .demo-box{text-align:right}
-input{width:100%;padding:16px;border-radius:12px;border:1px solid #ffffff30;background:#070a15;color:white;margin:10px 0}.result{padding:18px;border-radius:14px;background:#070a15;color:#34ff91;margin-top:14px;display:none}
-footer{padding:36px 7%;border-top:1px solid #ffffff12;color:#aab0cc}
-@media(max-width:900px){.hero,.grid{grid-template-columns:1fr}h1{font-size:42px}nav{flex-direction:column;gap:12px}}
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#080a0e" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/app-icon.svg" />
+    <title>UAOS — Universal Arranger OS</title>
+  <style id="UAOS_FORCE_INDEX_STYLE_V1">
+html,body{background:#020713!important;color:#fff!important}
 </style>
+<style id="UAOS_FORCE_VISUAL_INLINE_V2">
+html,body,#root{min-height:100%!important}
+body{background:radial-gradient(circle at 12% 0%,rgba(0,200,255,.38),transparent 34%),linear-gradient(180deg,#071d38,#020713 62%,#00030a)!important;color:#fff!important}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;background:linear-gradient(to right,rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(to bottom,rgba(255,255,255,.04) 1px,transparent 1px);background-size:34px 34px}
+</style>
+<script id="UAOS_FORCE_VISUAL_SCRIPT_V2">
+window.__UAOS_FORCE_VISUAL_FINAL_V2__=true;
+document.addEventListener("DOMContentLoaded",function(){
+  if(!document.querySelector(".uaos-force-banner")){
+    var b=document.createElement("div");
+    b.className="uaos-force-banner";
+    b.textContent="UAOS أ¢â‚¬آ¢ NEON BLUE / WHITE DESIGN ACTIVE";
+    b.style.cssText="position:sticky;top:0;z-index:999999;width:100%;padding:13px 18px;text-align:center;color:#00101d;font-weight:950;letter-spacing:.1em;text-transform:uppercase;background:linear-gradient(90deg,#fff,#9af1ff,#00c8ff);box-shadow:0 0 40px rgba(0,200,255,.65)";
+    document.body.prepend(b);
+  }
+});
+</script>
+<style id="UAOS_BLACK_NEON_MUSIC_INLINE_V1">
+html,body,#root{min-height:100%!important}
+body{background:radial-gradient(circle at 12% 0%,rgba(0,200,255,.24),transparent 32%),linear-gradient(180deg,#020814,#00040b 58%,#000)!important;color:#fff!important}
+</style>
+<script id="UAOS_BLACK_NEON_MUSIC_SCRIPT_V1">
+window.__UAOS_BLACK_NEON_MUSIC_V1__=true;
+</script>
+<style id="UAOS_LANGLEY_XENON_INLINE_V1">body{background:#030308!important;color:#fff!important}</style><script>window.__UAOS_LANGLEY_XENON_DARK_V1__=true;</script>
+  <script type="module" crossorigin src="/assets/index-CyWjU4Pj.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-DmlBB6yD.css">
 </head>
-<body>
-
-
-<nav>
-<div class="logo"><div class="logo-mark"></div><div><b>UAOS</b><span>Universal Arranger OS</span></div></div>
-<div class="nav-actions">
-<a href="#demo">Live Demo</a><a href="#features">Features</a><a href="#pricing">Pricing</a>
-<button onclick="setLang('en')">EN</button><button onclick="setLang('ar')">عربي</button><button onclick="setLang('de')">DE</button>
-</div>
-</nav>
-
-<section class="hero">
-<div>
-<div class="badge" id="badge">Official Launch  Early Access Open</div>
-<h1 id="heroTitle">Turn your voice <span class="grad">into music.</span></h1>
-<p id="heroText">UAOS helps musicians and producers turn melodies into MIDI, chords, arrangements, and DAW-ready workflows.</p>
-<a class="btn primary" href="#demo" id="demoBtn">Try Live Demo</a>
-<a class="btn secondary" href="#pricing" id="plansBtn">View Plans</a>
-</div>
-
-<div class="visual">
-<span class="live"> LIVE MUSIC ENGINE PREVIEW</span>
-<div class="screen">
-<div class="row"><b>Voice</b><div class="clip blue"></div><div class="clip blue"></div><div class="clip blue"></div></div>
-<div class="row"><b>Melody</b><div class="clip"></div><div class="clip"></div><div class="clip"></div></div>
-<div class="row"><b>Chords</b><div class="clip blue"></div><div class="clip blue"></div><div class="clip blue"></div></div>
-<div class="row"><b>Drums</b><div class="clip gold"></div><div class="clip gold"></div><div class="clip gold"></div></div>
-</div>
-<div class="piano"></div>
-</div>
-</section>
-
-<section class="section" id="demo">
-<h2 id="demoTitle">Try the Demo</h2>
-<p id="demoText">Upload a short audio idea. This MVP simulates the UAOS analysis flow.</p>
-<div class="demo-box">
-<label id="uploadLabel">Upload audio file</label>
-<input type="file" accept="audio/*" id="audio">
-<a class="btn primary" href="javascript:void(0)" onclick="runDemo()" id="analyzeBtn">Analyze Audio</a>
-<div class="result" id="result">Detected: A minor  120 BPM  Chords: Am - F - C - G  MIDI preview ready.</div>
-</div>
-</section>
-
-<section class="section" id="features">
-<h2 id="featuresTitle">Everything You Need to Create</h2>
-<div class="grid">
-<div class="card"><h3 id="f1">Voice to MIDI</h3><p id="f1p">Convert singing or humming into MIDI melodies.</p></div>
-<div class="card"><h3 id="f2">Chord Generator</h3><p id="f2p">Generate chord progressions that fit your melody.</p></div>
-<div class="card"><h3 id="f3">AI Arrangement</h3><p id="f3p">Build arrangements with bass, drums, and harmony.</p></div>
-</div>
-</section>
-
-<section class="section" id="pricing">
-<h2 id="pricingTitle">Choose Your Plan</h2>
-<div class="grid">
-<div class="card"><h3 id="freeTitle">Free Trial</h3><div class="price">0</div><p id="freeDesc">Try the live demo and preview the workflow.</p><a class="btn secondary" href="#demo" id="freeBtn">Try Free</a></div>
-<div class="card popular"><h3>Creator Premium</h3><div class="price">19.99</div><p id="creatorDesc">For musicians and creators starting with UAOS.</p><a class="btn primary" href="https://www.paypal.com/ncp/payment/ZB63CA66C98AN" target="_blank">Get Creator</a></div>
-<div class="card"><h3>Pro Premium</h3><div class="price">49.99</div><p id="proDesc">For producers, studios, and commercial workflows.</p><a class="btn primary" href="https://www.paypal.com/ncp/payment/4PHMPZL66YEG8" target="_blank">Get Pro</a></div>
-</div>
-</section>
-
-<section class="section" id="videos">
-<h2>Launch Videos</h2>
-<p>Use these videos for TikTok, YouTube Shorts, Instagram Reels, and X.</p>
-<div class="grid">
-<div class="card"><h3>Arabic Demo</h3><p>uaos_ar_demo_voice_to_music.mp4</p><a class="btn primary" href="ai-videos/output_v2/uaos_ar_demo_voice_to_music.mp4">Open Video</a></div>
-<div class="card"><h3>English Demo</h3><p>uaos_en_demo.mp4</p><a class="btn primary" href="ai-videos/output_v2/uaos_en_demo.mp4">Open Video</a></div>
-<div class="card"><h3>German Demo</h3><p>uaos_de_demo.mp4</p><a class="btn primary" href="ai-videos/output_v2/uaos_de_demo.mp4">Open Video</a></div>
-</div>
-</section>
-<section class="section" id="social">
-<h2>Publish UAOS Now</h2>
-<p>Open each platform, upload the launch video, and paste the launch message.</p>
-
-<div class="grid">
-<div class="card">
-<h3>TikTok</h3>
-<p>Upload the Arabic or English demo video.</p>
-<a class="btn primary" href="https://www.tiktok.com/upload" target="_blank">Open TikTok Upload</a>
-</div>
-
-<div class="card">
-<h3>YouTube Shorts</h3>
-<p>Upload vertical demo video as Shorts.</p>
-<a class="btn primary" href="https://studio.youtube.com" target="_blank">Open YouTube Studio</a>
-</div>
-
-<div class="card">
-<h3>X / Twitter</h3>
-<p>Post launch announcement with website and PayPal links.</p>
-<a class="btn primary" href="https://x.com/compose/post" target="_blank">Open X Post</a>
-</div>
-</div>
-</section>
-<section class="section" id="roadmap">
-<h2>UAOS Roadmap</h2>
-<p>Public MVP is live. These are the next production milestones.</p>
-
-<div class="grid">
-<div class="card">
-<h3>Phase 1  MVP</h3>
-<p>Landing page, demo flow, pricing, PayPal, videos, multilingual launch.</p>
-</div>
-
-<div class="card">
-<h3>Phase 2  Real Product</h3>
-<p>User accounts, file uploads, real voice-to-MIDI processing, project dashboard.</p>
-</div>
-
-<div class="card">
-<h3>Phase 3  Pro Tools</h3>
-<p>Advanced AI arranger, DAW exports, commercial workflows, mobile app packaging.</p>
-</div>
-</div>
-</section>
-
-<section class="section" id="trust">
-<h2>Built for Music Creators</h2>
-<p>UAOS is designed for singers, producers, beatmakers, studios, and creators who want to capture ideas fast.</p>
-<div class="grid">
-<div class="card"><h3>Fast Idea Capture</h3><p>Do not lose melodies. Capture and convert them.</p></div>
-<div class="card"><h3>Producer Workflow</h3><p>Move from voice idea to arrangement structure.</p></div>
-<div class="card"><h3>Early Access</h3><p>Join now and help shape the product roadmap.</p></div>
-</div>
-</section>
-<section class="section" id="feedback">
-<h2>Join Early Access Feedback</h2>
-<p>Leave your email and what you want UAOS to build next.</p>
-
-<div class="demo-box">
-<label>Email</label>
-<input id="email" type="email" placeholder="you@example.com">
-
-<label>What do you want UAOS to do?</label>
-<input id="idea" type="text" placeholder="Voice to MIDI, chords, full arrangement...">
-
-<a class="btn primary" href="javascript:void(0)" onclick="saveFeedback()">Send Feedback</a>
-
-<div class="result" id="feedbackResult">
-Saved locally. You can also email: admin@aeplatform.app
-</div>
-</div>
-</section>
-
-<script>
-function saveFeedback(){
-  const email = document.getElementById("email").value;
-  const idea = document.getElementById("idea").value;
-  localStorage.setItem("uaos_feedback", JSON.stringify({
-    email,
-    idea,
-    date:new Date().toISOString()
-  }));
-  document.getElementById("feedbackResult").style.display="block";
-}
-</script>
-<section class="section" id="faq">
-<h2>FAQ</h2>
-
-<div class="grid">
-<div class="card">
-<h3>Is UAOS live?</h3>
-<p>Yes. The public MVP landing page and early access are live.</p>
-</div>
-
-<div class="card">
-<h3>What does Free include?</h3>
-<p>Free users can try the demo flow and preview the product idea.</p>
-</div>
-
-<div class="card">
-<h3>What does Premium include?</h3>
-<p>Premium users support early development and get priority access to updates and future features.</p>
-</div>
-
-<div class="card">
-<h3>Does it export real MIDI now?</h3>
-<p>The current public version is an MVP demo. Real cloud voice-to-MIDI processing is on the roadmap.</p>
-</div>
-
-<div class="card">
-<h3>Who is it for?</h3>
-<p>Musicians, singers, producers, beatmakers, studios, and creators.</p>
-</div>
-
-<div class="card">
-<h3>How do I contact support?</h3>
-<p>Email: admin@aeplatform.app</p>
-</div>
-</div>
-</section>
-
-<section class="section" id="support">
-<h2>Support</h2>
-<p>Questions, feedback, partnerships, or early access support:</p>
-<a class="btn primary" href="mailto:admin@aeplatform.app">Contact AE Platform</a>
-</section>
-<footer>UAOS by AE Platform  admin@aeplatform.app</footer>
-
-<script>
-function runDemo(){document.getElementById('result').style.display='block'}
-const L={
-en:{dir:"ltr",badge:"Official Launch  Early Access Open",heroTitle:'Turn your voice <span class="grad">into music.</span>',heroText:"UAOS helps musicians and producers turn melodies into MIDI, chords, arrangements, and DAW-ready workflows.",demoBtn:"Try Live Demo",plansBtn:"View Plans",demoTitle:"Try the Demo",demoText:"Upload a short audio idea. This MVP simulates the UAOS analysis flow.",uploadLabel:"Upload audio file",analyzeBtn:"Analyze Audio",featuresTitle:"Everything You Need to Create",pricingTitle:"Choose Your Plan",freeTitle:"Free Trial",freeDesc:"Try the live demo and preview the workflow.",freeBtn:"Try Free",creatorDesc:"For musicians and creators starting with UAOS.",proDesc:"For producers, studios, and commercial workflows."},
-ar:{dir:"rtl",badge:"الإطلاق الرسمي  الوصول المبكر متاح الآن",heroTitle:'حول صوتك <span class="grad">إلى موسيقى.</span>',heroText:"يساعد UAOS الموسيقيين والمنتجين على تحويل الألحان إلى MIDI وأكوردات وتوزيع موسيقي ومسار عمل جاهز للإنتاج.",demoBtn:"جرب الديمو المباشر",plansBtn:"عرض الخطط",demoTitle:"جرب الديمو",demoText:"ارفع فكرة صوتية قصيرة. هذا النموذج يحاكي طريقة تحليل UAOS.",uploadLabel:"ارفع ملف صوت",analyzeBtn:"تحليل الصوت",featuresTitle:"كل ما تحتاجه لصناعة الموسيقى",pricingTitle:"اختر خطتك",freeTitle:"تجربة مجانية",freeDesc:"جرب الديمو المباشر وشاهد سير العمل.",freeBtn:"جرب مجانا",creatorDesc:"للموسيقيين وصناع المحتوى في البداية.",proDesc:"للمنتجين والاستوديوهات والاستخدام التجاري."},
-de:{dir:"ltr",badge:"Offizieller Launch  Early Access offen",heroTitle:'Verwandle deine Stimme <span class="grad">in Musik.</span>',heroText:"UAOS hilft Musikern und Produzenten, Melodien in MIDI, Akkorde und DAW-Workflows zu verwandeln.",demoBtn:"Live Demo testen",plansBtn:"Pläne ansehen",demoTitle:"Demo testen",demoText:"Lade eine kurze Audioidee hoch. Dieses MVP simuliert den UAOS-Analysefluss.",uploadLabel:"Audiodatei hochladen",analyzeBtn:"Audio analysieren",featuresTitle:"Alles, was du zum Erstellen brauchst",pricingTitle:"Wähle deinen Plan",freeTitle:"Kostenlos testen",freeDesc:"Teste die Live-Demo und den Workflow.",freeBtn:"Kostenlos testen",creatorDesc:"Für Musiker und Creator zum Start.",proDesc:"Für Produzenten, Studios und kommerzielle Workflows."}
-};
-function setLang(lang){const x=L[lang];document.documentElement.dir=x.dir;document.documentElement.lang=lang;for(const k in x){if(k==='dir')continue;const el=document.getElementById(k);if(el)el.innerHTML=x[k]}localStorage.setItem('uaos_lang',lang)}
-setLang(localStorage.getItem('uaos_lang')||'en')
-</script>
-</body>
+  <body>
+    <div id="root"><div class="uaos-loading-screen"><div class="uaos-loader"></div><p>Loading UAOS...</p></div></div>
+  </body>
 </html>
-
-
-
-
-
-
-
-
