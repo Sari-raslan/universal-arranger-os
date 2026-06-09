@@ -1,0 +1,74 @@
+﻿:root{
+  background:#05070d;
+  color:#fff;
+  font-family:Inter,Arial,sans-serif;
+}
+*{box-sizing:border-box}
+body{margin:0;background:radial-gradient(circle at top,#111733,#05070d 55%,#02030a);min-height:100vh}
+.uaos{min-height:100vh;color:white}
+.topbar{
+  display:flex;align-items:center;justify-content:space-between;gap:18px;
+  padding:18px 28px;border-bottom:1px solid rgba(255,255,255,.08);
+  background:rgba(3,5,13,.8);backdrop-filter:blur(16px);position:sticky;top:0;z-index:5
+}
+.brand{display:flex;gap:12px;align-items:center;color:white;text-decoration:none}
+.brandMark{
+  width:44px;height:44px;border-radius:14px;display:grid;place-items:center;
+  background:linear-gradient(135deg,#0099ff,#d735ff);font-size:26px;box-shadow:0 0 28px rgba(151,54,255,.5)
+}
+.brand strong{display:block;font-size:20px;letter-spacing:.12em}
+.brand small{display:block;color:#b9c0d4;font-size:11px;text-transform:uppercase}
+nav{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+nav a{color:#dce5ff;text-decoration:none;padding:9px 12px;border-radius:10px}
+nav a:hover{background:rgba(255,255,255,.09)}
+select{
+  background:#111831;color:white;border:1px solid rgba(255,255,255,.18);
+  padding:10px 12px;border-radius:12px
+}
+.hero{
+  max-width:1180px;margin:0 auto;padding:70px 28px 40px;
+  display:grid;grid-template-columns:1.1fr .9fr;gap:36px;align-items:center
+}
+.kicker{color:#ff45df;text-transform:uppercase;letter-spacing:.22em;font-size:13px}
+h1{font-size:clamp(42px,7vw,86px);line-height:.95;margin:12px 0;background:linear-gradient(90deg,#00aaff,#a442ff,#ff35d4);-webkit-background-clip:text;color:transparent}
+h2{font-size:clamp(24px,3vw,38px);margin:0 0 18px}
+p{color:#d3d9ee;font-size:18px;line-height:1.75}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  padding:14px 20px;border-radius:14px;text-decoration:none;color:white;
+  background:linear-gradient(135deg,#008cff,#c829ff);font-weight:800;
+  box-shadow:0 12px 32px rgba(0,140,255,.24)
+}
+.btn.secondary{background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.14);box-shadow:none}
+.logoCard{
+  min-height:420px;border-radius:28px;border:1px solid rgba(255,255,255,.11);
+  background:radial-gradient(circle at 50% 25%,rgba(193,55,255,.25),transparent 32%),#03040a;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  box-shadow:0 30px 90px rgba(0,0,0,.45)
+}
+.musicIcon{font-size:130px;line-height:1;background:linear-gradient(180deg,#ff53f2,#00a6ff);-webkit-background-clip:text;color:transparent}
+.logoName{font-size:78px;font-weight:900;letter-spacing:.12em;background:linear-gradient(90deg,#009dff,#d735ff);-webkit-background-clip:text;color:transparent}
+.logoSub{text-transform:uppercase;letter-spacing:.28em;color:#f2f5ff}
+.panel{
+  max-width:1050px;margin:20px auto 60px;padding:34px 28px;border-radius:26px;
+  background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1)
+}
+.panel h2{margin-top:0}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:22px}
+.grid article{
+  padding:20px;border-radius:18px;background:rgba(0,0,0,.25);
+  border:1px solid rgba(255,255,255,.08);color:#f4f7ff;font-size:17px
+}
+.paymentBox{margin-top:22px}
+.warning{color:#ffd27b;background:rgba(255,190,65,.1);border:1px solid rgba(255,190,65,.25);padding:16px;border-radius:14px}
+footer{text-align:center;padding:26px;color:#9ca7c7}
+[dir="rtl"] .topbar,[dir="rtl"] .actions{direction:rtl}
+@media(max-width:860px){
+  .topbar{align-items:flex-start;flex-direction:column}
+  .hero{grid-template-columns:1fr;padding-top:42px}
+  .logoCard{min-height:320px}
+  .musicIcon{font-size:92px}
+  .logoName{font-size:54px}
+  .grid{grid-template-columns:1fr}
+}
