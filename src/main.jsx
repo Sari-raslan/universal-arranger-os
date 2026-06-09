@@ -1,17 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { createRoot } from "react-dom/client";
 import { apiHealth, sendState, detectChord, playStyle, stopStyle, recStart, recStop, WS_BASE } from "./api.js";
+import { scanWebMidi, playTestNote } from "./midi-web.js";
+import { saveProject, loadProject } from "./project-store.js";
+import { generateStyle } from "./ai-style.js";
 import "./style.css";
 
 const sections = ["Intro","Main A","Main B","Main C","Fill","Break","Ending"];
-const devices = ["KORG PA3X","KORG PA5X","Yamaha Genos","Roland BK9","Ketron SD9","Generic MIDI"];
-const noteSets = {
-  "Cm":[60,63,67],
-  "C":[60,64,67],
-  "G":[67,71,74],
-  "Ab":[68,72,75],
-  "Bb":[70,74,77]
-};
+const noteSets = { Cm:[60,63,67], C:[60,64,67], G:[67,71,74], Ab:[68,72,75], Bb:[70,74,77] };
 
 function App(){
   const [section,setSection] = useState("Intro");
@@ -19,11 +15,23 @@ function App(){
   const [chord,setChord] = useState("Cm");
   const [api,setApi] = useState({offline:true});
   const [ws,setWs] = useState("offline");
+  const [midi,setMidi] = useState({inputs:[],outputs:[]});
+  const [style,setStyle] = useState(generateStyle());
   const [log,setLog] = useState([]);
 
-  function addLog(x){ setLog(l => [JSON.stringify(x), ...l].slice(0,8)); }
+  const snapshot = { section, tempo, chord, style };
+
+  function addLog(x){ setLog(l => [typeof x === "string" ? x : JSON.stringify(x), ...l].slice(0,10)); }
 
   useEffect(()=>{
+    const saved = loadProject();
+    if(saved){
+      setSection(saved.section || "Intro");
+      setTempo(saved.tempo || 120);
+      setChord(saved.chord || "Cm");
+      if(saved.style) setStyle(saved.style);
+    }
+
     apiHealth().then(r => { setApi(r); addLog(r); });
 
     try {
@@ -35,27 +43,25 @@ function App(){
         try {
           const msg = JSON.parse(e.data);
           if (msg.state) {
-            setSection(msg.state.section || "Intro");
-            setTempo(msg.state.tempo || 120);
-            setChord(msg.state.chord || "Cm");
+            setSection(msg.state.section || section);
+            setTempo(msg.state.tempo || tempo);
+            setChord(msg.state.chord || chord);
           }
         } catch {}
       };
       return () => socket.close();
-    } catch {
-      setWs("offline");
-    }
+    } catch { setWs("offline"); }
   },[]);
 
   async function changeSection(s){ setSection(s); addLog(await sendState({ section:s })); }
-  async function changeTempo(v){ setTempo(v); addLog(await sendState({ tempo:Number(v) })); }
+  async function changeTempo(v){ setTempo(Number(v)); addLog(await sendState({ tempo:Number(v) })); }
   async function testChord(name){ const r = await detectChord(noteSets[name]); setChord(r.chord); addLog(r); }
 
   return (
     <main className="uaos">
       <header>
         <h1>UAOS Universal Arranger OS</h1>
-        <p>Live Arranger • MIDI Core • Realtime Backend • AI HyperStation</p>
+        <p>Studio • Live Arranger • Web MIDI • AI Style Engine</p>
         <div className="status">
           <b className={api.ok ? "ok" : "warn"}>{api.ok ? "Backend Ready" : "Frontend Live / Backend Offline"}</b>
           <b className={ws === "connected" ? "ok" : "warn"}>WebSocket: {ws}</b>
@@ -83,15 +89,31 @@ function App(){
 
         <div className="card">
           <h2>Style Player</h2>
-          <button onClick={async()=>addLog(await playStyle("Oriental Pop"))}>Play Style</button>
+          <button onClick={async()=>addLog(await playStyle(style.name))}>Play Style</button>
           <button onClick={async()=>addLog(await stopStyle())}>Stop</button>
           <button onClick={async()=>addLog(await recStart())}>Rec</button>
           <button onClick={async()=>addLog(await recStop())}>Stop Rec</button>
         </div>
 
         <div className="card">
-          <h2>MIDI Devices</h2>
-          {devices.map(d => <div className="device" key={d}>{d}</div>)}
+          <h2>Web MIDI</h2>
+          <button onClick={async()=>{const r=await scanWebMidi(); setMidi(r); addLog(r);}}>Scan MIDI</button>
+          <button onClick={async()=>addLog(await playTestNote(60))}>Play C</button>
+          <p>Inputs: {(midi.inputs || []).join(", ") || "none"}</p>
+          <p>Outputs: {(midi.outputs || []).join(", ") || "none"}</p>
+        </div>
+
+        <div className="card">
+          <h2>AI Style Generator</h2>
+          <button onClick={()=>{const s=generateStyle("Oriental Pop Pro"); setStyle(s); addLog(s);}}>Generate Style</button>
+          <p><b>{style.name}</b></p>
+          <pre>{JSON.stringify(style.sections, null, 2)}</pre>
+        </div>
+
+        <div className="card">
+          <h2>Project</h2>
+          <button onClick={()=>addLog(saveProject(snapshot))}>Save Project</button>
+          <button onClick={()=>{const p=loadProject(); addLog(p || "No saved project");}}>Load Info</button>
         </div>
 
         <div className="card wide">
