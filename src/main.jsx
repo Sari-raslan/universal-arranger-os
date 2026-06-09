@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { createRoot } from "react-dom/client";
-import { apiHealth, sendState, detectChord, playStyle, stopStyle, recStart, recStop, WS_BASE } from "./api.js";
+import {
+  apiHealth, sendState, detectChord, playStyle, stopStyle, recStart, recStop,
+  WS_BASE, getSequencer, seqToggle, getMixer, mixerSet, getDevices, exportProject
+} from "./api.js";
 import { scanWebMidi, playTestNote } from "./midi-web.js";
 import { saveProject, loadProject } from "./project-store.js";
 import { generateStyle } from "./ai-style.js";
@@ -17,51 +20,46 @@ function App(){
   const [ws,setWs] = useState("offline");
   const [midi,setMidi] = useState({inputs:[],outputs:[]});
   const [style,setStyle] = useState(generateStyle());
+  const [seq,setSeq] = useState({steps:[],position:0});
+  const [mixer,setMixer] = useState({tracks:[]});
+  const [devices,setDevices] = useState({});
   const [log,setLog] = useState([]);
 
-  const snapshot = { section, tempo, chord, style };
+  const snapshot = { section, tempo, chord, style, seq, mixer };
 
   function addLog(x){ setLog(l => [typeof x === "string" ? x : JSON.stringify(x), ...l].slice(0,10)); }
+  async function refresh(){ setApi(await apiHealth()); setSeq(await getSequencer()); setMixer(await getMixer()); setDevices(await getDevices()); }
 
   useEffect(()=>{
     const saved = loadProject();
-    if(saved){
-      setSection(saved.section || "Intro");
-      setTempo(saved.tempo || 120);
-      setChord(saved.chord || "Cm");
-      if(saved.style) setStyle(saved.style);
-    }
+    if(saved){ setSection(saved.section || "Intro"); setTempo(saved.tempo || 120); setChord(saved.chord || "Cm"); if(saved.style) setStyle(saved.style); }
 
-    apiHealth().then(r => { setApi(r); addLog(r); });
+    refresh();
 
     try {
       const socket = new WebSocket(WS_BASE);
       socket.onopen = () => setWs("connected");
       socket.onclose = () => setWs("offline");
       socket.onerror = () => setWs("error");
-      socket.onmessage = e => {
-        try {
-          const msg = JSON.parse(e.data);
-          if (msg.state) {
-            setSection(msg.state.section || section);
-            setTempo(msg.state.tempo || tempo);
-            setChord(msg.state.chord || chord);
-          }
-        } catch {}
-      };
+      socket.onmessage = e => { try { const msg = JSON.parse(e.data); if (msg.state) { setSection(msg.state.section || section); setTempo(msg.state.tempo || tempo); setChord(msg.state.chord || chord); } } catch {} };
       return () => socket.close();
     } catch { setWs("offline"); }
+
+    const timer = setInterval(refresh, 1500);
+    return () => clearInterval(timer);
   },[]);
 
   async function changeSection(s){ setSection(s); addLog(await sendState({ section:s })); }
   async function changeTempo(v){ setTempo(Number(v)); addLog(await sendState({ tempo:Number(v) })); }
   async function testChord(name){ const r = await detectChord(noteSets[name]); setChord(r.chord); addLog(r); }
+  async function toggle(track, step){ addLog(await seqToggle(track, step)); setSeq(await getSequencer()); }
+  async function volume(name, value){ addLog(await mixerSet(name, { volume:Number(value) })); setMixer(await getMixer()); }
 
   return (
     <main className="uaos">
       <header>
         <h1>UAOS Universal Arranger OS</h1>
-        <p>Studio • Live Arranger • Web MIDI • AI Style Engine</p>
+        <p>Studio • Live Arranger • Sequencer • Mixer • Web MIDI • AI Style Engine</p>
         <div className="status">
           <b className={api.ok ? "ok" : "warn"}>{api.ok ? "Backend Ready" : "Frontend Live / Backend Offline"}</b>
           <b className={ws === "connected" ? "ok" : "warn"}>WebSocket: {ws}</b>
@@ -95,6 +93,28 @@ function App(){
           <button onClick={async()=>addLog(await recStop())}>Stop Rec</button>
         </div>
 
+        <div className="card wide">
+          <h2>Step Sequencer</h2>
+          <p>Position: <b>{seq.position || 0}</b></p>
+          {["kick","snare","hat"].map(track => (
+            <div className="seqrow" key={track}>
+              <b>{track}</b>
+              {(seq.steps || []).map(s => <button className={s[track] ? "on" : ""} onClick={()=>toggle(track,s.step)} key={track+s.step}>{s.step}</button>)}
+            </div>
+          ))}
+        </div>
+
+        <div className="card wide">
+          <h2>Mixer</h2>
+          {(mixer.tracks || []).map(t => (
+            <div className="mix" key={t.name}>
+              <b>{t.name}</b>
+              <input type="range" min="0" max="100" value={t.volume} onChange={e=>volume(t.name,e.target.value)} />
+              <span>{t.volume}</span>
+            </div>
+          ))}
+        </div>
+
         <div className="card">
           <h2>Web MIDI</h2>
           <button onClick={async()=>{const r=await scanWebMidi(); setMidi(r); addLog(r);}}>Scan MIDI</button>
@@ -104,16 +124,20 @@ function App(){
         </div>
 
         <div className="card">
+          <h2>Device Profiles</h2>
+          <pre>{JSON.stringify(devices.profiles || {}, null, 2)}</pre>
+        </div>
+
+        <div className="card">
           <h2>AI Style Generator</h2>
           <button onClick={()=>{const s=generateStyle("Oriental Pop Pro"); setStyle(s); addLog(s);}}>Generate Style</button>
           <p><b>{style.name}</b></p>
-          <pre>{JSON.stringify(style.sections, null, 2)}</pre>
         </div>
 
         <div className="card">
           <h2>Project</h2>
-          <button onClick={()=>addLog(saveProject(snapshot))}>Save Project</button>
-          <button onClick={()=>{const p=loadProject(); addLog(p || "No saved project");}}>Load Info</button>
+          <button onClick={()=>addLog(saveProject(snapshot))}>Save Local</button>
+          <button onClick={async()=>addLog(await exportProject())}>Export Backend</button>
         </div>
 
         <div className="card wide">
