@@ -10,6 +10,9 @@ import { Sequencer } from "./src/sequencer.js";
 import { Mixer } from "./src/mixer.js";
 import { MidiClock } from "./src/midi-clock.js";
 import { SongArranger } from "./src/song-arranger.js";
+import { MidiMap } from "./src/midi-map.js";
+import { getPresets, getPreset } from "./src/preset-bank.js";
+import { diagnostics } from "./src/diagnostics.js";
 import { listProfiles, getProfile } from "./src/device-profiles.js";
 
 const app = express();
@@ -24,6 +27,7 @@ const sequencer = new Sequencer();
 const mixer = new Mixer();
 const clock = new MidiClock();
 const song = new SongArranger();
+const midiMap = new MidiMap();
 
 const state = {
   ok:true, section:"Intro", tempo:120, chord:"Cm", style:"Oriental Pop",
@@ -34,38 +38,29 @@ app.get("/", (req,res)=>res.json({ ok:true, service:"UAOS Backend" }));
 app.get("/health", (req,res)=>res.json({
   ok:true, state, player:player.status(), recorder:recorder.status(),
   sequencer:sequencer.status(), mixer:mixer.status(), clock:clock.status(),
-  song:song.status(), time:new Date().toISOString()
+  song:song.status(), midiMap:midiMap.status(), time:new Date().toISOString()
 }));
 
+app.get("/diagnostics", (req,res)=>res.json(diagnostics({state,player,recorder,sequencer,mixer,clock,song,midiMap})));
 app.get("/events", (req,res)=>res.json({ ok:true, events:bus.list() }));
 app.get("/devices", (req,res)=>res.json({ ok:true, profiles:listProfiles() }));
 app.get("/device/:name", (req,res)=>res.json({ ok:true, profile:getProfile(req.params.name) }));
+app.get("/presets", (req,res)=>res.json({ ok:true, presets:getPresets() }));
+app.post("/preset/apply", (req,res)=>{
+  const p = getPreset(req.body.id);
+  state.style = p.name; state.tempo = p.tempo; state.chord = p.defaultChord;
+  bus.push("preset", p);
+  res.json({ ok:true, preset:p, state });
+});
+
+app.get("/midi-map", (req,res)=>res.json(midiMap.status()));
+app.post("/midi-map", (req,res)=>res.json(midiMap.set(req.body.key, req.body.cc)));
 
 app.post("/state", (req,res)=>{ Object.assign(state, req.body || {}); bus.push("state", req.body || {}); res.json({ ok:true, state }); });
+app.post("/chord", (req,res)=>{ const result = chords.detect(req.body.notes || []); state.chord = result.chord; bus.push("chord", result); recorder.add({ type:"chord", result }); res.json(result); });
 
-app.post("/chord", (req,res)=>{
-  const result = chords.detect(req.body.notes || []);
-  state.chord = result.chord;
-  bus.push("chord", result);
-  recorder.add({ type:"chord", result });
-  res.json(result);
-});
-
-app.post("/style/play", (req,res)=>{
-  const result = player.play(req.body.style || state.style);
-  sequencer.start();
-  clock.start(state.tempo);
-  bus.push("style-play", result);
-  res.json(result);
-});
-
-app.post("/style/stop", (req,res)=>{
-  const result = player.stop();
-  sequencer.stop();
-  clock.stop();
-  bus.push("style-stop", result);
-  res.json(result);
-});
+app.post("/style/play", (req,res)=>{ const result = player.play(req.body.style || state.style); sequencer.start(); clock.start(state.tempo); bus.push("style-play", result); res.json(result); });
+app.post("/style/stop", (req,res)=>{ const result = player.stop(); sequencer.stop(); clock.stop(); bus.push("style-stop", result); res.json(result); });
 
 app.post("/rec/start", (req,res)=>res.json(recorder.start()));
 app.post("/rec/stop", (req,res)=>res.json(recorder.stop()));
@@ -83,20 +78,12 @@ app.post("/song/generate", (req,res)=>res.json(song.generate(req.body.style || s
 
 app.get("/export", (req,res)=>res.json({
   ok:true,
-  project:{ state, mixer:mixer.status(), sequencer:sequencer.status(), recorder:recorder.status(), clock:clock.status(), song:song.status() }
+  project:{ state, mixer:mixer.status(), sequencer:sequencer.status(), recorder:recorder.status(), clock:clock.status(), song:song.status(), midiMap:midiMap.status() }
 }));
 
-app.post("/import", (req,res)=>{
-  const project = req.body.project || {};
-  if(project.state) Object.assign(state, project.state);
-  bus.push("import", project);
-  res.json({ ok:true, state });
-});
+app.post("/import", (req,res)=>{ const project = req.body.project || {}; if(project.state) Object.assign(state, project.state); bus.push("import", project); res.json({ ok:true, state }); });
 
-const server = app.listen(process.env.PORT || 8080, () => {
-  console.log("UAOS backend running on http://localhost:" + (process.env.PORT || 8080));
-});
-
+const server = app.listen(process.env.PORT || 8080, () => console.log("UAOS backend running on http://localhost:" + (process.env.PORT || 8080)));
 const wss = new WebSocketServer({ server });
 attachRealtime(wss, state);
 
