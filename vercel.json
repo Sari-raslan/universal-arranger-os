@@ -3,10 +3,8 @@
   "experimentalServices": {
     "frontend": {
       "type": "web",
-      "buildCommand": "npm run build"
+      "buildCommand": "npm run build",
+      "routePrefix": "/"
     }
-  },
-  "rewrites": [
-    { "source": "/(.*)", "destination": "/" }
-  ]
+  }
 }
