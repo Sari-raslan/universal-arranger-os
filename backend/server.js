@@ -1,30 +1,73 @@
 import express from "express";
 import cors from "cors";
 import { WebSocketServer } from "ws";
-import { ArrangerEngine } from "./src/arranger-engine.js";
+import { attachRealtime } from "./src/realtime.js";
 import { ChordEngine } from "./src/chord-engine.js";
-import { MidiRouter } from "./src/midi-router.js";
+import { StylePlayer } from "./src/style-player.js";
+import { LoopRecorder } from "./src/loop-recorder.js";
+import { EventBus } from "./src/event-bus.js";
 
 const app = express();
 app.use(cors());
 app.use(express.json());
 
-const arranger = new ArrangerEngine();
 const chords = new ChordEngine();
-const midi = new MidiRouter();
+const player = new StylePlayer();
+const recorder = new LoopRecorder();
+const bus = new EventBus();
+
+const state = {
+  ok: true,
+  section: "Intro",
+  tempo: 120,
+  chord: "Cm",
+  style: "Oriental Pop",
+  devices: ["Generic MIDI", "UAOS Virtual MIDI"],
+  phase: "2/3"
+};
 
 app.get("/", (req,res)=>res.json({ ok:true, service:"UAOS Backend" }));
-app.get("/health", (req,res)=>res.json({ ok:true, phase:"2/3", time:new Date().toISOString() }));
-app.get("/devices", (req,res)=>res.json(midi.scan()));
-app.post("/arranger/section", (req,res)=>res.json(arranger.setSection(req.body.section)));
-app.post("/chord", (req,res)=>res.json(chords.detect(req.body.notes || [])));
+app.get("/health", (req,res)=>res.json({ ok:true, state, player:player.status(), recorder:recorder.status(), time:new Date().toISOString() }));
+app.get("/events", (req,res)=>res.json({ ok:true, events:bus.list() }));
+app.get("/devices", (req,res)=>res.json({ ok:true, devices:state.devices }));
 
-const server = app.listen(process.env.PORT || 8080, ()=> {
-  console.log("UAOS backend running");
+app.post("/state", (req,res)=>{
+  Object.assign(state, req.body || {});
+  bus.push("state", req.body || {});
+  res.json({ ok:true, state });
+});
+
+app.post("/chord", (req,res)=>{
+  const result = chords.detect(req.body.notes || []);
+  state.chord = result.chord;
+  bus.push("chord", result);
+  recorder.add({ type:"chord", result });
+  res.json(result);
+});
+
+app.post("/style/play", (req,res)=>{
+  const result = player.play(req.body.style || state.style);
+  bus.push("style-play", result);
+  res.json(result);
+});
+
+app.post("/style/stop", (req,res)=>{
+  const result = player.stop();
+  bus.push("style-stop", result);
+  res.json(result);
+});
+
+app.post("/rec/start", (req,res)=>res.json(recorder.start()));
+app.post("/rec/stop", (req,res)=>res.json(recorder.stop()));
+
+const server = app.listen(process.env.PORT || 8080, () => {
+  console.log("UAOS backend running on http://localhost:" + (process.env.PORT || 8080));
 });
 
 const wss = new WebSocketServer({ server });
-wss.on("connection", ws => {
-  ws.send(JSON.stringify({ ok:true, type:"uaos-connected" }));
-  ws.on("message", msg => ws.send(JSON.stringify({ ok:true, echo:String(msg) })));
-});
+attachRealtime(wss, state);
+
+setInterval(()=> {
+  const s = player.tick();
+  if(s.playing) bus.push("tick", s);
+}, 1000);
