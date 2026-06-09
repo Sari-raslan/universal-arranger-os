@@ -1,0 +1,27 @@
+﻿export class TimingEngine {
+  constructor(bpm = 120) {
+    this.bpm = bpm;
+    this.ppq = 24;
+    this.tick = 0;
+  }
+
+  setTempo(bpm) {
+    this.bpm = bpm;
+  }
+
+  getMsPerTick() {
+    return 60000 / this.bpm / this.ppq;
+  }
+
+  nextTick() {
+    this.tick += 1;
+    return {
+      tick: this.tick,
+      msPerTick: this.getMsPerTick()
+    };
+  }
+
+  reset() {
+    this.tick = 0;
+  }
+}
