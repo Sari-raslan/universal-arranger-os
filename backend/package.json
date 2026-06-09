@@ -1,30 +1,14 @@
 {
-  "name": "keyboard-manager-backend",
-  "version": "0.1.0",
-  "private": true,
+  "name": "uaos-backend",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "dev": "node src/server.js",
-    "start": "node src/server.js",
-    "analyze:sar": "node src/scripts/analyze-sar-set.js"
+    "start": "node server.js",
+    "dev": "node server.js"
   },
   "dependencies": {
-    "bcryptjs": "^3.0.3",
-    "better-sqlite3": "^12.10.0",
-    "cors": "^2.8.6",
-    "dotenv": "^17.4.2",
-    "express": "^4.22.2",
-    "fast-xml-parser": "^5.8.0",
-    "jsonwebtoken": "^9.0.3",
-    "midi-writer-js": "^3.2.1",
-    "multer": "^2.0.0",
-    "music-metadata": "^11.12.3",
-    "node-fetch": "^3.3.2",
-    "pdf-poppler": "^0.2.3",
-    "sharp": "^0.34.5",
-    "sqlite3": "^6.0.1",
-    "tesseract.js": "^7.0.0",
-    "uuid": "^14.0.0",
-    "ws": "^8.21.0"
+    "cors": "latest",
+    "express": "latest",
+    "ws": "latest"
   }
 }
