@@ -127,7 +127,11 @@ function Update-State {
 
         $State = Get-Content $GLOBAL_STATE -Raw | ConvertFrom-Json
 
-        $State.$Key = $Value
+        if ($State.PSObject.Properties.Name -contains $Key) {
+            $State.$Key = $Value
+        } else {
+            $State | Add-Member -NotePropertyName $Key -NotePropertyValue $Value
+        }
         $State.updated_at = (Get-Date).ToString("o")
 
         $State |
@@ -316,4 +320,5 @@ Write-Host ""
 
 Write-Host "Next Recommended Issue:" -ForegroundColor Yellow
 Write-Host "SAR-105 Resume / Recovery Engine" -ForegroundColor Yellow
+
 
