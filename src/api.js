@@ -20,6 +20,7 @@ export const apiHealth = () => get("/health");
 export const getDevices = () => get("/devices");
 export const getSequencer = () => get("/sequencer");
 export const getMixer = () => get("/mixer");
+export const getSong = () => get("/song");
 export const exportProject = () => get("/export");
 
 export const sendState = update => post("/state", update);
@@ -30,3 +31,5 @@ export const recStart = () => post("/rec/start", {});
 export const recStop = () => post("/rec/stop", {});
 export const seqToggle = (track, step) => post("/sequencer/toggle", { track, step });
 export const mixerSet = (name, patch) => post("/mixer", { name, patch });
+export const generateSong = style => post("/song/generate", { style });
+export const importProject = project => post("/import", { project });

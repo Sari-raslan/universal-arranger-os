@@ -2,11 +2,13 @@ import React, { useEffect, useState } from "react";
 import { createRoot } from "react-dom/client";
 import {
   apiHealth, sendState, detectChord, playStyle, stopStyle, recStart, recStop,
-  WS_BASE, getSequencer, seqToggle, getMixer, mixerSet, getDevices, exportProject
+  WS_BASE, getSequencer, seqToggle, getMixer, mixerSet, getDevices,
+  exportProject, getSong, generateSong, importProject
 } from "./api.js";
 import { scanWebMidi, playTestNote } from "./midi-web.js";
 import { saveProject, loadProject } from "./project-store.js";
 import { generateStyle } from "./ai-style.js";
+import { downloadJson, readJsonFile } from "./file-tools.js";
 import "./style.css";
 
 const sections = ["Intro","Main A","Main B","Main C","Fill","Break","Ending"];
@@ -23,12 +25,20 @@ function App(){
   const [seq,setSeq] = useState({steps:[],position:0});
   const [mixer,setMixer] = useState({tracks:[]});
   const [devices,setDevices] = useState({});
+  const [song,setSong] = useState({song:[]});
   const [log,setLog] = useState([]);
 
-  const snapshot = { section, tempo, chord, style, seq, mixer };
+  const snapshot = { section, tempo, chord, style, seq, mixer, song };
 
   function addLog(x){ setLog(l => [typeof x === "string" ? x : JSON.stringify(x), ...l].slice(0,10)); }
-  async function refresh(){ setApi(await apiHealth()); setSeq(await getSequencer()); setMixer(await getMixer()); setDevices(await getDevices()); }
+
+  async function refresh(){
+    setApi(await apiHealth());
+    setSeq(await getSequencer());
+    setMixer(await getMixer());
+    setDevices(await getDevices());
+    setSong(await getSong());
+  }
 
   useEffect(()=>{
     const saved = loadProject();
@@ -41,7 +51,16 @@ function App(){
       socket.onopen = () => setWs("connected");
       socket.onclose = () => setWs("offline");
       socket.onerror = () => setWs("error");
-      socket.onmessage = e => { try { const msg = JSON.parse(e.data); if (msg.state) { setSection(msg.state.section || section); setTempo(msg.state.tempo || tempo); setChord(msg.state.chord || chord); } } catch {} };
+      socket.onmessage = e => {
+        try {
+          const msg = JSON.parse(e.data);
+          if (msg.state) {
+            setSection(msg.state.section || section);
+            setTempo(msg.state.tempo || tempo);
+            setChord(msg.state.chord || chord);
+          }
+        } catch {}
+      };
       return () => socket.close();
     } catch { setWs("offline"); }
 
@@ -54,15 +73,18 @@ function App(){
   async function testChord(name){ const r = await detectChord(noteSets[name]); setChord(r.chord); addLog(r); }
   async function toggle(track, step){ addLog(await seqToggle(track, step)); setSeq(await getSequencer()); }
   async function volume(name, value){ addLog(await mixerSet(name, { volume:Number(value) })); setMixer(await getMixer()); }
+  async function exportNow(){ const p = await exportProject(); downloadJson("uaos-project.json", p); addLog("Exported uaos-project.json"); }
+  async function importNow(file){ const data = await readJsonFile(file); addLog(await importProject(data.project || data)); refresh(); }
 
   return (
     <main className="uaos">
       <header>
         <h1>UAOS Universal Arranger OS</h1>
-        <p>Studio • Live Arranger • Sequencer • Mixer • Web MIDI • AI Style Engine</p>
+        <p>Studio • Live Arranger • Sequencer • Mixer • MIDI Clock • Song Builder • Web MIDI</p>
         <div className="status">
           <b className={api.ok ? "ok" : "warn"}>{api.ok ? "Backend Ready" : "Frontend Live / Backend Offline"}</b>
           <b className={ws === "connected" ? "ok" : "warn"}>WebSocket: {ws}</b>
+          <b>Clock: {api.clock?.running ? "running" : "stopped"} / {api.clock?.pulses || 0}</b>
         </div>
       </header>
 
@@ -91,6 +113,12 @@ function App(){
           <button onClick={async()=>addLog(await stopStyle())}>Stop</button>
           <button onClick={async()=>addLog(await recStart())}>Rec</button>
           <button onClick={async()=>addLog(await recStop())}>Stop Rec</button>
+        </div>
+
+        <div className="card wide">
+          <h2>Song Builder</h2>
+          <button onClick={async()=>{const s=await generateSong(style.name); setSong(s); addLog(s);}}>Generate Song</button>
+          <div className="songline">{(song.song || []).map((x,i)=><span key={i}>{x.section} • {x.bars} bars • {x.chord}</span>)}</div>
         </div>
 
         <div className="card wide">
@@ -137,7 +165,8 @@ function App(){
         <div className="card">
           <h2>Project</h2>
           <button onClick={()=>addLog(saveProject(snapshot))}>Save Local</button>
-          <button onClick={async()=>addLog(await exportProject())}>Export Backend</button>
+          <button onClick={exportNow}>Download Export</button>
+          <input type="file" accept=".json" onChange={e=>e.target.files?.[0] && importNow(e.target.files[0])} />
         </div>
 
         <div className="card wide">
