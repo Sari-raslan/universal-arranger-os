@@ -1,4 +1,11 @@
-﻿export function exportMidiDraft(project){
+﻿$Root = "$HOME\Desktop\UAOS_ALL_AGENTS_FINAL_RUN\universal-arranger-os"
+cd $Root
+
+Write-Host "UAOS REAL ENGINE CONTINUE..." -ForegroundColor Cyan
+
+# 1. Fix backend exports
+@'
+export function exportMidiDraft(project){
   const song = project?.song?.song || [];
   let time = 0;
   const events = [];
