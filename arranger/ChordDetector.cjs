@@ -1,0 +1,59 @@
+﻿class ChordDetector {
+  constructor(){
+    this.activeNotes = [];
+  }
+
+  noteOn(note){
+    if(!this.activeNotes.includes(note)){
+      this.activeNotes.push(note);
+    }
+    return this.detect();
+  }
+
+  noteOff(note){
+    this.activeNotes = this.activeNotes.filter(n => n !== note);
+    return this.detect();
+  }
+
+  normalize(notes){
+    return notes
+      .map(n => n % 12)
+      .sort((a,b)=>a-b);
+  }
+
+  detect(){
+    const notes = this.normalize(this.activeNotes);
+
+    const patterns = {
+      major:[0,4,7],
+      minor:[0,3,7],
+      diminished:[0,3,6],
+      augmented:[0,4,8]
+    };
+
+    const names = ["C","C#","D","D#","E","F","F#","G","G#","A","A#","B"];
+
+    for(let root=0; root<12; root++){
+      for(const [type,shape] of Object.entries(patterns)){
+        const expected = shape.map(n => (n + root) % 12).sort((a,b)=>a-b);
+
+        if(JSON.stringify(expected) === JSON.stringify(notes)){
+          return {
+            detected:true,
+            root:names[root],
+            type,
+            chord:`${names[root]} ${type}`,
+            notes:this.activeNotes
+          };
+        }
+      }
+    }
+
+    return {
+      detected:false,
+      notes:this.activeNotes
+    };
+  }
+}
+
+module.exports = { ChordDetector };
