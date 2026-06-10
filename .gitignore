@@ -1,3 +1,18 @@
 node_modules/
 .vercel
 .env*
+
+# UAOS local runtime
+backend/*.db
+backend/*.json
+
+# frontend build
+frontend/dist
+frontend/logs
+
+# release exports
+release
+
+# uploaded samples
+samples/uploads
+
