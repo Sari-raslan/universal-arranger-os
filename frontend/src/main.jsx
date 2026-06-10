@@ -1,1 +1,10 @@
-import React,{useEffect,useState}from"react";import{createRoot}from"react-dom/client";import"./style.css";function App(){const[status,setStatus]=useState(null);useEffect(()=>{fetch("http://localhost:8090/api/status").then(r=>r.json()).then(setStatus).catch(()=>setStatus({ok:true,note:"Production UI ready. Local backend optional."}))},[]);return <main className="app"><section className="panel"><h1>UAOS HyperStation</h1><h2>Core Runtime Alpha</h2><p>Universal Arranger OS: MIDI, Arranger, Sampler, Hardware and AI execution platform.</p><div className="cards"><div>V1 Stable Ops</div><div>MIDI Runtime</div><div>Arranger Engine</div><div>Sampler Core</div><div>Hardware Layer</div><div>AI Music Systems</div></div><pre>{JSON.stringify(status,null,2)}</pre></section></main>}createRoot(document.getElementById("root")).render(<App/>);
+﻿import React from "react";
+import { createRoot } from "react-dom/client";
+import App from "./App.jsx";
+import "./style.css";
+
+createRoot(document.getElementById("root")).render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
