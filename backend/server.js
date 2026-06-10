@@ -8,7 +8,7 @@ const { StylePlayer } = require("../arranger/StylePlayer.cjs");
 const { SamplerEngine } = require("../sampler/SamplerEngine.cjs");
 const { HardwareLayer } = require("../hardware/HardwareLayer.cjs");
 const { AiMusicLayer } = require("../ai/AiMusicLayer.cjs");
-const { MixerEngine } = require("../mixer/MixerEngine.cjs");const { ProjectStore } = require("../project/ProjectStore.cjs");const { RuntimeDiagnostics } = require("../diagnostics/RuntimeDiagnostics.cjs");
+const { MixerEngine } = require("../mixer/MixerEngine.cjs");const { ProjectStore } = require("../project/ProjectStore.cjs");const { RuntimeDiagnostics } = require("../diagnostics/RuntimeDiagnostics.cjs");const { ReleaseGate } = require("../release/ReleaseGate.cjs");
 
 const app=express();
 const PORT=process.env.PORT||8090;
@@ -22,7 +22,7 @@ const stylePlayer=new StylePlayer();
 const sampler=new SamplerEngine();
 const hardware=new HardwareLayer();
 const ai=new AiMusicLayer();
-const mixer=new MixerEngine();const projectStore=new ProjectStore(process.cwd());const diagnostics=new RuntimeDiagnostics({midi,chordDetector,stylePlayer,sampler,hardware,ai,mixer});
+const mixer=new MixerEngine();const projectStore=new ProjectStore(process.cwd());const diagnostics=new RuntimeDiagnostics({midi,chordDetector,stylePlayer,sampler,hardware,ai,mixer});const releaseGate=new ReleaseGate(diagnostics);
 
 midi.start();
 
@@ -51,6 +51,7 @@ app.post("/runtime/mixer/fx/:channelId/:effect",(req,res)=>res.json(mixer.addEff
 
 app.get("/runtime/projects",(req,res)=>res.json(projectStore.list()));app.post("/runtime/projects/save/:name",(req,res)=>res.json(projectStore.save(req.params.name,{runtime:"Core Runtime Alpha",savedVia:"api"})));app.get("/runtime/projects/load/:name",(req,res)=>res.json(projectStore.load(req.params.name)));
 app.get("/runtime/diagnostics",(req,res)=>res.json(diagnostics.run()));
+app.get("/runtime/release-gate",(req,res)=>res.json(releaseGate.validate()));
 app.get("/api/status",(req,res)=>res.json({ok:true,runtime:"Core Runtime Alpha"}));
 
 app.listen(PORT,()=>console.log("UAOS Runtime Backend => [http://localhost:"+PORT](http://localhost:%22+PORT)));
