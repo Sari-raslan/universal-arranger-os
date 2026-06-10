@@ -1,4 +1,4 @@
-
+﻿
 const express=require("express");
 const cors=require("cors");
 const http=require("http");
@@ -245,4 +245,4 @@ releaseReady:true
 });
 });
 
-server.listen(PORT,()=>console.log("UAOS Realtime Runtime Backend => [http://localhost:"+PORT](http://localhost:%22+PORT)));
+server.listen(PORT,()=>console.log("UAOS Realtime Runtime Backend => http://localhost:"+PORT));
