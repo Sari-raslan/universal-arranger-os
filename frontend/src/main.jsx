@@ -1,34 +1,31 @@
-import React, {useEffect, useState} from "react";
+﻿import React, {useEffect, useState} from "react";
 import {createRoot} from "react-dom/client";
 import "./style.css";
 
 function App(){
   const [status,setStatus]=useState(null);
-
   useEffect(()=>{
     fetch("http://localhost:8090/api/status")
       .then(r=>r.json())
       .then(setStatus)
-      .catch(()=>setStatus({ok:false,error:"Backend not connected"}));
+      .catch(()=>setStatus({ok:false, note:"Local backend not connected in production preview"}));
   },[]);
 
-  return (
-    <main className="app">
-      <section className="hero">
-        <h1>UAOS V1</h1>
-        <p>Universal Arranger OS — Launch Build</p>
-        <div className="grid">
-          <div>Arranger Sections</div>
-          <div>MIDI Engine</div>
-          <div>Media Pages</div>
-          <div>Agent Monitor</div>
-          <div>Style Converter</div>
-          <div>DAW / Library Roadmap</div>
-        </div>
-        <pre>{JSON.stringify(status,null,2)}</pre>
-      </section>
-    </main>
-  );
+  return <main className="app">
+    <section className="panel">
+      <h1>UAOS HyperStation</h1>
+      <h2>Core Runtime Alpha</h2>
+      <p>Universal Arranger OS: MIDI, Arranger, Sampler, Hardware and AI execution platform.</p>
+      <div className="cards">
+        <div>V1 Stable Ops</div>
+        <div>MIDI Runtime</div>
+        <div>Arranger Engine</div>
+        <div>Sampler Core</div>
+        <div>Hardware Layer</div>
+        <div>AI Music Systems</div>
+      </div>
+      <pre>{JSON.stringify(status,null,2)}</pre>
+    </section>
+  </main>
 }
-
 createRoot(document.getElementById("root")).render(<App />);
