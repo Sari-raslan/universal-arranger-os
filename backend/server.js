@@ -173,6 +173,41 @@ function projectSnapshot(){
 app.get("/export/midi", (req,res)=>res.json(exportMidiDraft(projectSnapshot())));
 app.get("/export/style/:target", (req,res)=>res.json(exportStyleDraft(projectSnapshot(), req.params.target)));
 
+
+app.get("/ai/analyze", (req,res)=>res.json({
+  ok:true,
+  engine:"UAOS AI Mock",
+  style:state.style,
+  tempo:state.tempo,
+  chord:state.chord,
+  sections:["Intro","Main A","Main B","Fill","Ending"],
+  suggestions:["Generate arranger variation","Improve bass movement","Prepare MIDI export"]
+}));
+
+app.get("/audio/status", (req,res)=>res.json({
+  ok:true,
+  engine:"UAOS Audio Mock",
+  running:false,
+  sampleRate:48000
+}));
+
+app.get("/audio/render", (req,res)=>res.json({
+  ok:true,
+  type:"audio-render-draft",
+  warning:"Mock render. Native renderer comes later.",
+  project:projectSnapshot()
+}));
+
+app.get("/phase3/report", (req,res)=>res.json({
+  ok:true,
+  phase:"3 foundation",
+  ai:"mock ready",
+  audio:"mock ready",
+  bridge:"localhost:8090",
+  exports:["midi","korg","yamaha","roland","ketron"],
+  generatedAt:new Date().toISOString()
+}));
+
 const server = app.listen(process.env.PORT || 8080, () => {
   console.log("UAOS backend running on http://localhost:" + (process.env.PORT || 8080));
 });
