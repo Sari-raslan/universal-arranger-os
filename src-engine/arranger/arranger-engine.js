@@ -1,0 +1,1 @@
+﻿export class ArrangerEngine{constructor(){this.section="Stop";this.sections=["Intro","Main A","Main B","Main C","Main D","Fill","Break","Ending"]}trigger(section){this.section=section;return {ok:true,section,state:"accepted",time:Date.now()}}}
