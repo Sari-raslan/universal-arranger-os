@@ -188,3 +188,23 @@ li { margin: 10px 0; color: #bfdbfe; }
   font-size: 13px;
   color: #dcfce7;
 }
+
+.backend {
+  max-width: 420px;
+  margin: 10px 0 22px;
+  padding: 12px 14px;
+  border-radius: 14px;
+  font-weight: 700;
+}
+
+.backend.online {
+  border: 1px solid #22c55e;
+  background: rgba(22,163,74,.16);
+  color: #bbf7d0;
+}
+
+.backend.offline {
+  border: 1px solid #ef4444;
+  background: rgba(239,68,68,.13);
+  color: #fecaca;
+}
