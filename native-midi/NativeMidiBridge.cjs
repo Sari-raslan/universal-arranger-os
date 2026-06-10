@@ -1,25 +1,20 @@
 
-class NativeMidiBridge {
+class NativeMidiBridge{
 constructor(){
-this.enabled = false;
-this.devices = [];
-this.events = [];
+this.enabled=false;
+this.devices=[];
+this.events=[];
 }
 
 enable(){
-this.enabled = true;
-return this.status();
-}
-
-disable(){
-this.enabled = false;
+this.enabled=true;
 return this.status();
 }
 
 scan(){
-this.devices = [
-{ id:"virtual_in_1", name:"UAOS Virtual MIDI In", type:"input" },
-{ id:"virtual_out_1", name:"UAOS Virtual MIDI Out", type:"output" }
+this.devices=[
+{id:"virtual_in",name:"UAOS MIDI IN",type:"input"},
+{id:"virtual_out",name:"UAOS MIDI OUT",type:"output"}
 ];
 
 ```
@@ -28,19 +23,17 @@ return this.status();
 
 }
 
-send(note=60, velocity=100, channel=1){
-const event = {
-type:"native-midi-send",
+send(note=60){
+const e={
+type:"native-midi",
 note:Number(note),
-velocity:Number(velocity),
-channel:Number(channel),
 time:Date.now()
 };
 
 ```
-this.events.push(event);
+this.events.push(e);
 
-return event;
+return e;
 ```
 
 }
@@ -48,10 +41,9 @@ return event;
 status(){
 return {
 ok:true,
-module:"native-midi",
 enabled:this.enabled,
 devices:this.devices,
-recentEvents:this.events.slice(-20)
+events:this.events.slice(-20)
 };
 }
 }

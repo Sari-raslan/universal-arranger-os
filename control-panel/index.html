@@ -1,0 +1,36 @@
+
+
+<!doctype html>
+
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>UAOS Control Panel</title>
+<style>
+body{background:#07111f;color:white;font-family:Arial;padding:24px}
+button{padding:12px;margin:6px;border-radius:10px;border:0}
+pre{background:#020617;padding:16px;border-radius:12px}
+</style>
+</head>
+<body>
+
+<h1>UAOS Control Panel</h1>
+
+<button onclick="api(`/health`)">Health</button> <button onclick="api(`/runtime`)">Runtime</button> <button onclick="api(`/runtime/midi/noteon/60`,`POST`)">C</button> <button onclick="api(`/runtime/midi/noteon/64`,`POST`)">E</button> <button onclick="api(`/runtime/midi/noteon/67`,`POST`)">G</button> <button onclick="api(`/runtime/chord`)">Chord</button> <button onclick="api(`/runtime/style/load/OrientalPop`,`POST`)">Load Style</button> <button onclick="api(`/runtime/style/start`,`POST`)">Start Style</button> <button onclick="api(`/runtime/native-midi/scan`,`POST`)">Scan MIDI</button> <button onclick="api(`/runtime/release-gate`)">Release Gate</button>
+
+<pre id="out">READY</pre>
+
+<script>
+async function api(path,method="GET"){
+try{
+const r=await fetch("http://localhost:8090"+path,{method});
+const j=await r.json();
+document.getElementById("out").textContent=JSON.stringify(j,null,2);
+}catch(e){
+document.getElementById("out").textContent=e.message;
+}
+}
+</script>
+
+</body>
+</html>
