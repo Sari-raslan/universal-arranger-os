@@ -1,15 +1,14 @@
-{
+﻿{
   "name": "uaos-backend",
   "version": "1.0.0",
-  "type": "module",
+  "type": "commonjs",
+  "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "dev": "node server.js"
+    "health": "node health-check.js"
   },
   "dependencies": {
-    "cors": "latest",
-    "easymidi": "^3.2.0",
-    "express": "latest",
-    "ws": "latest"
+    "cors": "^2.8.5",
+    "express": "^4.19.2"
   }
 }

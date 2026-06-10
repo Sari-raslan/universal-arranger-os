@@ -1,18 +1,14 @@
-{
-  "name": "uaos-platform",
+﻿{
+  "name": "universal-arranger-os",
   "version": "1.0.0",
   "private": true,
-  "type": "module",
   "scripts": {
-    "dev": "vite --host 0.0.0.0",
-    "build": "vite build",
-    "preview": "vite preview --host 0.0.0.0"
-  },
-  "dependencies": {
-    "@vitejs/plugin-react": "latest",
-    "easymidi": "^3.2.0",
-    "react": "latest",
-    "react-dom": "latest",
-    "vite": "latest"
+    "setup": "npm install --prefix backend && npm install --prefix frontend",
+    "dev": "node backend/server.js",
+    "backend": "node backend/server.js",
+    "frontend": "npm run dev --prefix frontend",
+    "build": "npm run build --prefix frontend",
+    "health": "node backend/health-check.js",
+    "v1": "npm run setup && npm run build && npm run health"
   }
 }
