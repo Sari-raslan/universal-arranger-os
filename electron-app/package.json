@@ -4,9 +4,27 @@
   "version":"0.1.0",
   "main":"main.js",
   "scripts":{
-    "start":"electron ."
+    "start":"electron .",
+    "pack":"electron-builder --win portable"
   },
   "dependencies":{
     "electron":"latest"
+  },
+  "devDependencies":{
+    "electron-builder":"latest"
+  },
+  "build":{
+    "appId":"com.uaos.hyperstation",
+    "productName":"UAOS HyperStation",
+    "directories":{
+      "output":"dist"
+    },
+    "files":[
+      "main.js",
+      "../control-panel/**/*"
+    ],
+    "win":{
+      "target":"portable"
+    }
   }
 }
