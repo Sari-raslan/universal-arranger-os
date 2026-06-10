@@ -1,0 +1,63 @@
+﻿class MidiRuntime {
+  constructor(){
+    this.inputs = [];
+    this.outputs = [];
+    this.routes = [];
+    this.events = [];
+    this.started = false;
+  }
+
+  start(){
+    this.started = true;
+    return this.status();
+  }
+
+  stop(){
+    this.started = false;
+    return this.status();
+  }
+
+  addInput(name){
+    const input = { id: "in_" + Date.now(), name, active: true };
+    this.inputs.push(input);
+    return input;
+  }
+
+  addOutput(name){
+    const output = { id: "out_" + Date.now(), name, active: true };
+    this.outputs.push(output);
+    return output;
+  }
+
+  route(inputId, outputId, channel = "all"){
+    const route = { id: "route_" + Date.now(), inputId, outputId, channel, active: true };
+    this.routes.push(route);
+    return route;
+  }
+
+  noteOn(note = 60, velocity = 100, channel = 1){
+    const event = { type:"noteOn", note, velocity, channel, time:Date.now() };
+    this.events.push(event);
+    return event;
+  }
+
+  noteOff(note = 60, channel = 1){
+    const event = { type:"noteOff", note, channel, time:Date.now() };
+    this.events.push(event);
+    return event;
+  }
+
+  status(){
+    return {
+      ok:true,
+      module:"midi",
+      started:this.started,
+      inputs:this.inputs,
+      outputs:this.outputs,
+      routes:this.routes,
+      recentEvents:this.events.slice(-20)
+    };
+  }
+}
+
+module.exports = { MidiRuntime };
