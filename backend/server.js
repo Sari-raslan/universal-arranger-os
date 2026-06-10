@@ -28,4 +28,5 @@ app.post("/runtime/realtime/broadcast/:event",(req,res)=>{
   });
 });
 
+app.get("/runtime/registration",(req,res)=>res.json(registrations.list()));app.post("/runtime/registration/save/:slot",(req,res)=>res.json(registrations.save(req.params.slot,{runtime:"snapshot",time:Date.now()})));app.get("/runtime/registration/load/:slot",(req,res)=>res.json(registrations.load(req.params.slot)));app.delete("/runtime/registration/:slot",(req,res)=>res.json(registrations.clear(req.params.slot)));
 app.get("/api/status",(req,res)=>res.json({ok:true,runtime:{core:runtime.core,midi:runtime.midi.status(),chord:chordDetector.detect(),arranger:runtime.arranger,sampler:runtime.sampler,hardware:runtime.hardware,ai:runtime.ai}}));server.listen(PORT,()=>console.log("UAOS Runtime Backend => http://localhost:"+PORT));
