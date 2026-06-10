@@ -1,51 +1,24 @@
-﻿
-# UAOS FINAL LAUNCH PLAN
+﻿# UAOS FINAL LAUNCH PLAN
 
-## STEP 1 - CODE READY
+STEP 1 - CODE READY
+- App UI
+- Paid landing page
+- Build checks
+- GitHub push
+- Vercel config
+- Domain DNS notes
+- Payment placeholders
 
-* App UI
-* Paid landing page
-* Build checks
-* GitHub push
-* Vercel config
-* Domain DNS notes
-* Payment placeholders
+STEP 2 - USER SUBSCRIPTIONS
+- Stripe or LemonSqueezy
+- Railway or Render backend
+- Vercel Pro optional
+- Cloudflare DNS optional
 
-## STEP 2 - USER SUBSCRIPTIONS
+STEP 3 - FINAL EXECUTION
+- Add checkout links
+- Connect uaos.app
+- Deploy production
+- Connect api.uaos.app
+- Publish Founder offer
 
-Required:
-
-1. Vercel Pro or wait 24h
-2. Stripe or LemonSqueezy
-3. Railway or Render backend
-4. Cloudflare DNS optional
-5. Discord community optional
-
-## STEP 3 - FINAL EXECUTION
-
-1. Add checkout links
-2. Connect uaos.app to Vercel
-3. Deploy production
-4. Connect api.uaos.app to backend
-5. Publish Founder offer
-   "@ -Encoding UTF8
-
-Set-Content "docs\UAOS_DNS_SETUP.md" @"
-
-# DNS for uaos.app
-
-For Vercel frontend:
-
-A record:
-Name: @
-Value: 76.76.21.21
-
-CNAME:
-Name: www
-Value: cname.vercel-dns.com
-
-Recommended subdomains:
-app.uaos.app = program UI
-founder.uaos.app = paid landing page
-api.uaos.app = backend
-docs.uaos.app = documentation
