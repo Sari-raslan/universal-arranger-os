@@ -1,158 +1,110 @@
 ﻿import { useState } from "react";
 import "./style.css";
 
-const panels = {
-  v1: {
-    title: "V1 Stable Ops",
-    status: "Ready",
-    text: "Production UI, build system, local verification and release kit are ready."
-  },
-  midi: {
-    title: "MIDI Runtime",
-    status: "Local",
-    text: "MIDI routing foundation is prepared. Hardware input can be connected in the next stage."
-  },
-  arranger: {
-    title: "Arranger Engine",
-    status: "Alpha",
-    text: "Live sections, intro, variations, fills, breaks and endings are mapped for UAOS runtime."
-  },
-  sampler: {
-    title: "Sampler Core",
-    status: "Legal Host",
-    text: "UAOS stores local paths and metadata only. It does not redistribute protected samples."
-  },
-  hardware: {
-    title: "Hardware Layer",
-    status: "Planned",
-    text: "Future profiles: KORG PA3X/PA5X, Yamaha Genos, Roland BK9 and Ketron SD9."
-  },
-  ai: {
-    title: "AI Music Systems",
-    status: "V3 Ready",
-    text: "Song analyzer, style suggester, arrangement brain and Oriental engine foundations are ready."
-  }
-};
-
-const maqams = [
-  { name: "Rast", root: "C", cents: "0 200 350 500 700 900 1050 1200" },
-  { name: "Bayati", root: "D", cents: "0 150 300 500 700 800 1000 1200" },
-  { name: "Hijaz", root: "D", cents: "0 100 400 500 700 800 1100 1200" },
-  { name: "Nahawand", root: "C", cents: "0 200 300 500 700 800 1100 1200" }
-];
-
-const instruments = [
-  "Oud",
-  "Kanun",
-  "Persian Ney",
-  "Turkish Ney",
-  "Oriental Violins",
-  "Kemence"
+const tests = [
+  "Frontend Loaded",
+  "Runtime Start/Stop",
+  "Tempo Control",
+  "Arranger Sections",
+  "Maqam Selector",
+  "Sampler Browser",
+  "Offline Mode",
+  "Legal Local Host"
 ];
 
 export default function App() {
-  const [active, setActive] = useState("v1");
   const [running, setRunning] = useState(false);
-  const [section, setSection] = useState("Variation 1");
   const [tempo, setTempo] = useState(120);
-  const [maqam, setMaqam] = useState(maqams[0]);
+  const [section, setSection] = useState("Variation 1");
+  const [maqam, setMaqam] = useState("Rast");
+  const [results, setResults] = useState({});
 
-  const panel = panels[active];
+  function mark(name, value) {
+    setResults({ ...results, [name]: value });
+  }
+
+  const passCount = Object.values(results).filter(Boolean).length;
 
   return (
     <main className="app">
       <section className="hero">
-        <div className="badge">Offline Verified • V1/V2/V3 Local Runtime</div>
+        <div className="badge">UAOS Offline Verification Console</div>
 
         <h1>UAOS HyperStation</h1>
-        <h2>Core Runtime Alpha</h2>
+        <h2>Local Verified Runtime</h2>
 
         <p className="lead">
-          Universal Arranger OS: MIDI, Arranger, Sampler, Hardware and AI execution platform.
+          Test V1/V2/V3 locally before public deployment.
         </p>
-
-        <div className="grid">
-          <button onClick={() => setActive("v1")}>V1 Stable Ops</button>
-          <button onClick={() => setActive("midi")}>MIDI Runtime</button>
-          <button onClick={() => setActive("arranger")}>Arranger Engine</button>
-          <button onClick={() => setActive("sampler")}>Sampler Core</button>
-          <button onClick={() => setActive("hardware")}>Hardware Layer</button>
-          <button onClick={() => setActive("ai")}>AI Music Systems</button>
-        </div>
-
-        <div className="panel">
-          <div>
-            <span className="label">Active Module</span>
-            <h3>{panel.title}</h3>
-          </div>
-          <span className="status">{panel.status}</span>
-          <p>{panel.text}</p>
-        </div>
 
         <div className="runtime">
           <div className="runtimeHead">
-            <h3>Runtime Monitor</h3>
+            <h3>Runtime Control</h3>
             <button className={running ? "danger" : "ok"} onClick={() => setRunning(!running)}>
               {running ? "Stop" : "Start"}
             </button>
           </div>
 
           <div className="meters">
-            <div><b>Engine</b><span>{running ? "Running" : "Standby"}</span></div>
+            <div><b>Status</b><span>{running ? "Running" : "Standby"}</span></div>
             <div><b>Tempo</b><span>{tempo} BPM</span></div>
             <div><b>Section</b><span>{section}</span></div>
-            <div><b>Mode</b><span>Offline</span></div>
+            <div><b>Maqam</b><span>{maqam}</span></div>
           </div>
 
-          <input
-            type="range"
-            min="60"
-            max="180"
-            value={tempo}
-            onChange={(e) => setTempo(e.target.value)}
-          />
+          <input type="range" min="60" max="180" value={tempo} onChange={e => setTempo(e.target.value)} />
 
           <div className="sections">
             {["Intro", "Variation 1", "Variation 2", "Fill", "Break", "Ending"].map(x => (
-              <button key={x} onClick={() => setSection(x)} className={section === x ? "selected" : ""}>
-                {x}
-              </button>
+              <button className={section === x ? "selected" : ""} onClick={() => setSection(x)} key={x}>{x}</button>
+            ))}
+          </div>
+
+          <div className="sections">
+            {["Rast", "Bayati", "Hijaz", "Nahawand"].map(x => (
+              <button className={maqam === x ? "selected" : ""} onClick={() => setMaqam(x)} key={x}>{x}</button>
             ))}
           </div>
         </div>
 
         <div className="split">
           <div className="card">
-            <h3>Oriental / Maqam Engine</h3>
-            <div className="maqamList">
-              {maqams.map(m => (
-                <button key={m.name} onClick={() => setMaqam(m)} className={maqam.name === m.name ? "selected" : ""}>
-                  {m.name}
-                </button>
-              ))}
-            </div>
-            <pre>{JSON.stringify(maqam, null, 2)}</pre>
+            <h3>Manual Verification</h3>
+            <p className="small">Mark each feature after testing it.</p>
+
+            {tests.map(t => (
+              <div className="testRow" key={t}>
+                <span>{t}</span>
+                <button onClick={() => mark(t, true)} className={results[t] ? "ok" : ""}>PASS</button>
+                <button onClick={() => mark(t, false)} className={results[t] === false ? "danger" : ""}>FAIL</button>
+              </div>
+            ))}
           </div>
 
           <div className="card">
-            <h3>Local Sampler Browser</h3>
-            <p className="small">Local metadata only. No sample redistribution.</p>
+            <h3>Sampler / Oriental Engine</h3>
             <ul>
-              {instruments.map(i => <li key={i}>{i}</li>)}
+              <li>Oud</li>
+              <li>Kanun</li>
+              <li>Persian Ney</li>
+              <li>Turkish Ney</li>
+              <li>Oriental Violins</li>
+              <li>Kemence</li>
             </ul>
           </div>
         </div>
 
         <pre className="json">
 {JSON.stringify({
-  ok: true,
-  localVerified: true,
-  module: panel.title,
+  localVerified: passCount === tests.length,
+  passCount,
+  total: tests.length,
   running,
-  section,
   tempo,
-  maqam: maqam.name,
-  note: "Production UI ready. Local backend optional."
+  section,
+  maqam,
+  deployReady: passCount === tests.length,
+  note: "Deploy only after all tests are PASS."
 }, null, 2)}
         </pre>
       </section>
