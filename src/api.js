@@ -1,40 +1,36 @@
-export const API_BASE = import.meta.env.VITE_UAOS_API || "http://localhost:8080";
+﻿export const API_BASE = import.meta.env.VITE_UAOS_API || "http://localhost:8080";
 export const WS_BASE = import.meta.env.VITE_UAOS_WS || "ws://localhost:8080";
+export const BRIDGE_BASE = import.meta.env.VITE_UAOS_BRIDGE || "http://localhost:8090";
 
-async function get(path) {
-  try { const r = await fetch(`${API_BASE}${path}`); return await r.json(); }
-  catch { return { ok: false, offline: true }; }
+async function getUrl(url){
+  try { const r = await fetch(url); return await r.json(); }
+  catch { return { ok:false, offline:true }; }
 }
 
-async function post(path, body = {}) {
+async function postUrl(url, body={}){
   try {
-    const r = await fetch(`${API_BASE}${path}`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(body)
+    const r = await fetch(url, {
+      method:"POST",
+      headers:{ "Content-Type":"application/json" },
+      body:JSON.stringify(body)
     });
     return await r.json();
-  } catch {
-    return { ok: false, offline: true };
-  }
+  } catch { return { ok:false, offline:true }; }
 }
+
+async function get(path){ return getUrl(`${API_BASE}${path}`); }
+async function post(path, body={}){ return postUrl(`${API_BASE}${path}`, body); }
 
 export const apiHealth = () => get("/health");
 export const diagnostics = () => get("/diagnostics");
-export const getStatus = () => get("/status");
-export const getReport = () => get("/report");
 export const getDevices = () => get("/devices");
 export const getSequencer = () => get("/sequencer");
 export const getMixer = () => get("/mixer");
 export const getSong = () => get("/song");
-export const getPresets = () => get("/presets");
-export const getTemplates = () => get("/templates");
-export const getMidiMap = () => get("/midi-map");
 export const exportProject = () => get("/export");
+export const exportMidi = () => get("/export/midi");
+export const exportStyle = target => get(`/export/style/${target}`);
 
-export const applyPreset = id => post("/preset/apply", { id });
-export const applyTemplate = id => post("/template/apply", { id });
-export const setMidiMap = (key, cc) => post("/midi-map", { key, cc });
 export const sendState = update => post("/state", update);
 export const detectChord = notes => post("/chord", { notes });
 export const playStyle = style => post("/style/play", { style });
@@ -44,4 +40,9 @@ export const recStop = () => post("/rec/stop", {});
 export const seqToggle = (track, step) => post("/sequencer/toggle", { track, step });
 export const mixerSet = (name, patch) => post("/mixer", { name, patch });
 export const generateSong = style => post("/song/generate", { style });
-export const importProject = project => post("/import", { project });
+
+export const bridgeHealth = () => getUrl(`${BRIDGE_BASE}/health`);
+export const bridgeScan = () => getUrl(`${BRIDGE_BASE}/scan`);
+export const bridgeSendNote = (note=60, velocity=100, channel=1) =>
+  postUrl(`${BRIDGE_BASE}/send`, { type:"note", note, velocity, channel });
+export const bridgePanic = () => postUrl(`${BRIDGE_BASE}/panic`, {});
