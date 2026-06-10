@@ -1,1 +1,215 @@
-body{margin:0;font-family:Arial,sans-serif;background:#050816;color:white}.app{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:32px}.panel{max-width:980px;width:100%;background:#111827;border:1px solid #334155;border-radius:28px;padding:34px}h1{font-size:54px;margin:0}h2{color:#93c5fd;margin-top:8px}p{font-size:19px;color:#d1d5db}.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin:26px 0}.cards div{background:#1f2937;border:1px solid #475569;border-radius:16px;padding:18px}pre{background:#020617;border-radius:14px;padding:18px;overflow:auto}
+﻿:root {
+  font-family: Inter, system-ui, Arial, sans-serif;
+  color: #f8fafc;
+  background: #020617;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(circle at top left, rgba(59,130,246,.22), transparent 35%),
+    radial-gradient(circle at bottom right, rgba(14,165,233,.14), transparent 30%),
+    #020617;
+}
+
+button {
+  cursor: pointer;
+}
+
+.app {
+  min-height: 100vh;
+  padding: 48px 32px;
+}
+
+.hero {
+  max-width: 1180px;
+  margin: auto;
+  padding: 36px;
+  border: 1px solid #334155;
+  border-radius: 28px;
+  background: rgba(15,23,42,.9);
+  box-shadow: 0 30px 90px rgba(0,0,0,.35);
+}
+
+.badge {
+  display: inline-block;
+  padding: 8px 14px;
+  border: 1px solid #2563eb;
+  border-radius: 999px;
+  color: #93c5fd;
+  background: rgba(37,99,235,.12);
+  margin-bottom: 18px;
+}
+
+h1 {
+  font-size: clamp(42px, 7vw, 78px);
+  margin: 0;
+  letter-spacing: -0.06em;
+}
+
+h2 {
+  margin: 8px 0 18px;
+  color: #60a5fa;
+}
+
+.lead {
+  font-size: 20px;
+  line-height: 1.6;
+  color: #dbeafe;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 12px;
+  margin: 28px 0;
+}
+
+.grid button,
+.sections button,
+.maqamList button {
+  border: 1px solid #475569;
+  background: #1e293b;
+  color: white;
+  padding: 16px 18px;
+  border-radius: 14px;
+  font-size: 16px;
+}
+
+.grid button:hover,
+.sections button:hover,
+.maqamList button:hover,
+.selected {
+  border-color: #60a5fa !important;
+  background: #1d4ed8 !important;
+}
+
+.panel,
+.runtime,
+.card,
+.json {
+  border-radius: 18px;
+  background: #020617;
+  border: 1px solid #1e293b;
+  padding: 22px;
+  margin-top: 20px;
+}
+
+.panel {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 12px;
+}
+
+.panel p {
+  grid-column: 1 / -1;
+  color: #cbd5e1;
+}
+
+.label,
+.small {
+  color: #94a3b8;
+  font-size: 14px;
+}
+
+.status {
+  color: #22c55e;
+  font-weight: 700;
+}
+
+.runtimeHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ok {
+  background: #16a34a;
+  color: white;
+  border: 0;
+  padding: 12px 22px;
+  border-radius: 12px;
+}
+
+.danger {
+  background: #dc2626;
+  color: white;
+  border: 0;
+  padding: 12px 22px;
+  border-radius: 12px;
+}
+
+.meters {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 12px;
+  margin: 16px 0;
+}
+
+.meters div {
+  background: #111827;
+  border: 1px solid #1f2937;
+  padding: 16px;
+  border-radius: 14px;
+}
+
+.meters span {
+  display: block;
+  color: #93c5fd;
+  margin-top: 8px;
+}
+
+input[type="range"] {
+  width: 100%;
+  margin: 10px 0 18px;
+}
+
+.sections,
+.maqamList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.split {
+  display: grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap: 20px;
+}
+
+pre {
+  overflow: auto;
+  white-space: pre-wrap;
+}
+
+.json {
+  color: #d1fae5;
+}
+
+ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+li {
+  margin: 10px 0;
+  color: #bfdbfe;
+}
+
+@media (max-width: 800px) {
+  .app {
+    padding: 18px;
+  }
+
+  .hero {
+    padding: 22px;
+  }
+
+  .split {
+    grid-template-columns: 1fr;
+  }
+}
