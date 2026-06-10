@@ -11,4 +11,5 @@ app.post("/runtime/orchestrator/noteoff/:note",(req,res)=>{
   res.json(orchestrator.noteOff(Number(req.params.note)));
 });
 
+app.get("/runtime/timing",(req,res)=>res.json(timing.status()));app.post("/runtime/timing/start",(req,res)=>res.json(timing.start()));app.post("/runtime/timing/stop",(req,res)=>res.json(timing.stop()));app.post("/runtime/timing/bpm/:bpm",(req,res)=>res.json(timing.setBpm(req.params.bpm)));app.post("/runtime/timing/tick/:ticks",(req,res)=>res.json(timing.advance(req.params.ticks)));
 app.get("/api/status",(req,res)=>res.json({ok:true,runtime:{core:runtime.core,midi:runtime.midi.status(),chord:chordDetector.detect(),arranger:runtime.arranger,sampler:runtime.sampler,hardware:runtime.hardware,ai:runtime.ai}}));app.listen(PORT,()=>console.log("UAOS Runtime Backend => http://localhost:"+PORT));
