@@ -1,0 +1,12 @@
+﻿[2026-06-10 09:43:14] PHASE 4 SAFE START
+[2026-06-10 09:43:14] 1. Ensure backend Phase4 endpoints
+[2026-06-10 09:43:14] 2. Restart services
+[2026-06-10 09:43:27] 3. Build frontend
+[2026-06-10 09:43:28] 4. Check Phase4 endpoints
+[2026-06-10 09:43:28] http://localhost:8080/phase4/report => 200
+[2026-06-10 09:43:28] http://localhost:8080/phase4/audio/plan => 200
+[2026-06-10 09:43:28] http://localhost:8080/phase4/midi/hardware => 200
+[2026-06-10 09:43:28] http://localhost:8080/phase4/export/binary/korg => 200
+[2026-06-10 09:43:28] http://localhost:8080/phase4/export/binary/yamaha => 200
+[2026-06-10 09:43:28] http://localhost:8090/health => 200
+[2026-06-10 09:43:28] 5. Git sync

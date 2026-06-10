@@ -1,4 +1,8 @@
 import express from "express";
+import { realAiArrange } from "./src/real-ai.js";
+import { audioRenderPlan } from "./src/real-audio.js";
+import { midiHardwarePlan } from "./src/real-midi.js";
+import { binaryExportPlan } from "./src/binary-export.js";
 import cors from "cors";
 import { WebSocketServer } from "ws";
 import { attachRealtime } from "./src/realtime.js";
@@ -205,6 +209,21 @@ app.get("/phase3/report", (req,res)=>res.json({
   audio:"mock ready",
   bridge:"localhost:8090",
   exports:["midi","korg","yamaha","roland","ketron"],
+  generatedAt:new Date().toISOString()
+}));
+
+
+app.post("/phase4/ai/arrange", async (req,res)=>res.json(await realAiArrange(req.body || state)));
+app.get("/phase4/audio/plan", (req,res)=>res.json(audioRenderPlan(projectSnapshot())));
+app.get("/phase4/midi/hardware", (req,res)=>res.json(midiHardwarePlan()));
+app.get("/phase4/export/binary/:target", (req,res)=>res.json(binaryExportPlan(req.params.target, projectSnapshot())));
+app.get("/phase4/report", (req,res)=>res.json({
+  ok:true,
+  phase:"4 real integration foundation",
+  ai:process.env.OPENAI_API_KEY ? "real API configured" : "fallback until OPENAI_API_KEY is set",
+  audio:"native audio plan ready",
+  midi:"hardware bridge plan ready",
+  binaryExport:"writer foundation ready",
   generatedAt:new Date().toISOString()
 }));
 
