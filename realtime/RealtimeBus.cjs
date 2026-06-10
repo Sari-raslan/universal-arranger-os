@@ -1,13 +1,14 @@
 
-const WebSocket = require("ws");
+const WebSocket = require("../backend/node_modules/ws");
 
 class RealtimeBus {
 constructor(server){
-this.clients = [];
-this.events = [];
-this.wss = new WebSocket.Server({ server });
+this.clients=[];
+this.events=[];
 
 ```
+this.wss=new WebSocket.Server({server});
+
 this.wss.on("connection",(ws)=>{
   this.clients.push(ws);
 
@@ -17,16 +18,16 @@ this.wss.on("connection",(ws)=>{
     time:Date.now()
   }));
 
-  ws.on("message",(message)=>{
+  ws.on("message",(msg)=>{
     this.events.push({
       type:"client-message",
-      message:String(message),
+      message:String(msg),
       time:Date.now()
     });
   });
 
   ws.on("close",()=>{
-    this.clients = this.clients.filter(c => c !== ws);
+    this.clients=this.clients.filter(c=>c!==ws);
   });
 });
 ```
@@ -34,22 +35,16 @@ this.wss.on("connection",(ws)=>{
 }
 
 broadcast(type,data={}){
-const payload = {
-type,
-data,
-time:Date.now()
-};
+const payload={type,data,time:Date.now()};
 
 ```
-const text = JSON.stringify(payload);
-
-this.events.push(payload);
-
-for(const client of this.clients){
+for(const c of this.clients){
   try{
-    client.send(text);
+    c.send(JSON.stringify(payload));
   }catch{}
 }
+
+this.events.push(payload);
 
 return payload;
 ```
@@ -59,7 +54,6 @@ return payload;
 status(){
 return {
 ok:true,
-module:"realtime",
 clients:this.clients.length,
 recentEvents:this.events.slice(-20)
 };
