@@ -71,7 +71,7 @@ export default function App() {
   return (
     <main className="app">
       <section className="hero">
-        <div className="badge">UAOS Offline Verification Console • BUILD 5174</div>
+        <div className="badge">UAOS Offline Verification Console • BUILD 5174</div><Diagnostics />
 
         <h1>UAOS HyperStation</h1>
         <h2>{deployReady ? "Release Ready Locally" : "Local Test Required"}</h2>
@@ -150,4 +150,5 @@ export default function App() {
     </main>
   );
 }
+
 
