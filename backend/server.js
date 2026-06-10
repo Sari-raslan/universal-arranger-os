@@ -1,4 +1,4 @@
-
+﻿
 const express=require("express");
 const cors=require("cors");
 
@@ -68,4 +68,5 @@ app.post("/runtime/mixer/channel/:type/:name",(req,res)=>{const x={id:"ch_"+Date
 app.get("/runtime/diagnostics",(req,res)=>res.json({ok:true,checks:{midi:true,chord:true,style:true,sampler:true,hardware:true,ai:true,mixer:true}}));
 app.get("/runtime/release-gate",(req,res)=>res.json({ok:true,target:"UAOS Core Runtime Alpha",releaseReady:true}));
 
-app.listen(PORT,()=>console.log("UAOS Runtime Backend => [http://localhost:"+PORT](http://localhost:%22+PORT)));
+app.listen(PORT,()=>console.log("UAOS Runtime Backend => http://localhost:"+PORT));
+
