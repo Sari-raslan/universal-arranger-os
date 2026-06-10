@@ -1,21 +1,8 @@
-﻿const CACHE = 'uaos-cache-v1';
-
-self.addEventListener('install', e => {
-  e.waitUntil(
-    caches.open(CACHE).then(cache => {
-      return cache.addAll([
-        '/',
-        '/index.html',
-        '/manifest.webmanifest'
-      ]);
-    })
-  );
-});
-
-self.addEventListener('fetch', e => {
-  e.respondWith(
-    caches.match(e.request).then(res => {
-      return res || fetch(e.request);
-    })
+﻿const CACHE = "uaos-v3-final-offline";
+self.addEventListener("install", e => self.skipWaiting());
+self.addEventListener("activate", e => self.clients.claim());
+self.addEventListener("fetch", event => {
+  event.respondWith(
+    fetch(event.request).catch(() => caches.match(event.request))
   );
 });

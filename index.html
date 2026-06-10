@@ -1,11 +1,18 @@
-﻿<!doctype html>
-<html>
-  <head>
-    <meta charset="UTF-8" />
-    <title>UAOS</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
-</html>
+﻿$Repo="C:\Users\ssare\Desktop\UAOS_ALL_AGENTS_FINAL_RUN\universal-arranger-os"
+$Frontend="$Repo\frontend"
+$Src="$Frontend\src"
+$Report="$Repo\reports\UAOS_V3_FINAL_OFFLINE_UPGRADE_REPORT.txt"
+
+New-Item -ItemType Directory -Force "$Repo\reports","$Repo\scripts","$Frontend\public" | Out-Null
+
+"UAOS V3 FINAL OFFLINE UPGRADE" | Set-Content $Report -Encoding UTF8
+"TIME: $(Get-Date)" | Out-File $Report -Append
+
+cd $Frontend
+
+Get-Process node -ErrorAction SilentlyContinue | Stop-Process -Force
+Start-Sleep 2
+
+@'
+<div id="root"></div>
+<script type="module" src="/src/main.jsx"></script>
