@@ -16,6 +16,8 @@ import { diagnostics } from "./src/diagnostics.js";
 import { listProfiles, getProfile } from "./src/device-profiles.js";
 import { listTemplates, getTemplate } from "./src/project-templates.js";
 import { createSessionReport } from "./src/session-report.js";
+import { exportMidiDraft } from "./src/midi-exporter.js";
+import { exportStyleDraft } from "./src/style-exporter.js";
 
 const app = express();
 app.use(cors());
@@ -154,6 +156,22 @@ app.post("/import", (req, res) => {
   bus.push("import", project);
   res.json({ ok: true, state });
 });
+
+
+function projectSnapshot(){
+  return {
+    state,
+    mixer:mixer.status(),
+    sequencer:sequencer.status(),
+    recorder:recorder.status(),
+    clock:clock.status(),
+    song:song.status(),
+    midiMap:midiMap.status()
+  };
+}
+
+app.get("/export/midi", (req,res)=>res.json(exportMidiDraft(projectSnapshot())));
+app.get("/export/style/:target", (req,res)=>res.json(exportStyleDraft(projectSnapshot(), req.params.target)));
 
 const server = app.listen(process.env.PORT || 8080, () => {
   console.log("UAOS backend running on http://localhost:" + (process.env.PORT || 8080));
