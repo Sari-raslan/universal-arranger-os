@@ -6,55 +6,78 @@ const PORT=process.env.PORT||8090;
 app.use(cors());
 app.use(express.json({limit:"20mb"}));
 
-const state={
-app:"UAOS HyperStation",
-phase:"V1 stable foundation / V2 engine build",
-modules:{
-frontend:"ready",
-backend:"ready",
-midi:"foundation",
-chordEngine:"foundation",
-arranger:"foundation",
-sampler:"foundation",
-hardware:"foundation",
-dawExport:"planned",
-voiceToMidi:"planned",
-agents:"planned"
-},
-arrangerSections:["Intro 1","Intro 2","Main A","Main B","Main C","Main D","Fill A","Fill B","Break","Ending 1","Ending 2"],
-tasks:[
-"Build real USB MIDI bridge",
-"Detect chords from MIDI notes",
-"Create arranger state machine",
-"Add Cubase MIDI export",
-"Add sampler articulation engine",
-"Add voice-to-MIDI worker",
-"Add Linear/Codex/GitHub agent monitor"
-]
+function detectChord(notes=[]){
+  const names=["C","C#","D","D#","E","F","F#","G","G#","A","A#","B"];
+  const pcs=[...new Set(notes.map(n=>Number(n)%12))].sort((a,b)=>a-b);
+  for(const r of pcs){
+    const x=pcs.map(n=>(n-r+12)%12);
+    if(x.includes(0)&&x.includes(4)&&x.includes(7))return names[r]+" Major";
+    if(x.includes(0)&&x.includes(3)&&x.includes(7))return names[r]+" Minor";
+    if(x.includes(0)&&x.includes(3)&&x.includes(6))return names[r]+" Dim";
+    if(x.includes(0)&&x.includes(5)&&x.includes(7))return names[r]+" Sus4";
+  }
+  return "Unknown";
+}
+
+const runtime={
+  app:"UAOS HyperStation",
+  phase:"Linear Agent Commander Runtime",
+  modules:{
+    frontend:"clean-live",
+    backend:"connected",
+    midi:"api-ready",
+    chordEngine:"api-ready",
+    arranger:"api-ready",
+    sampler:"foundation",
+    agents:"linear-commander"
+  },
+  midiDevices:[],
+  arranger:{
+    current:"Stop",
+    sections:["Intro","Main A","Main B","Main C","Main D","Fill","Break","Ending"]
+  },
+  sampler:{
+    status:"foundation",
+    articulations:["normal","legato","staccato","slide"],
+    rule:"original or licensed samples only"
+  },
+  agents:{
+    leader:"Linear",
+    helpers:["Codex","VS Code","GitHub","Vercel"],
+    mode:"task-to-code"
+  }
 };
 
-function detectChord(notes){
-if(!Array.isArray(notes)||notes.length===0)return "No chord";
-const pcs=[...new Set(notes.map(n=>Number(n)%12))].sort((a,b)=>a-b);
-const names=["C","C#","D","D#","E","F","F#","G","G#","A","A#","B"];
-for(const root of pcs){
-const rel=pcs.map(x=>(x-root+12)%12);
-if(rel.includes(0)&&rel.includes(4)&&rel.includes(7))return names[root]+" Major";
-if(rel.includes(0)&&rel.includes(3)&&rel.includes(7))return names[root]+" Minor";
-if(rel.includes(0)&&rel.includes(3)&&rel.includes(6))return names[root]+" Dim";
-if(rel.includes(0)&&rel.includes(4)&&rel.includes(8))return names[root]+" Aug";
-if(rel.includes(0)&&rel.includes(5)&&rel.includes(7))return names[root]+" Sus4";
-}
-return "Unknown chord";
-}
+app.get("/",(_,res)=>res.json({ok:true,runtime}));
+app.get("/health",(_,res)=>res.json({ok:true,time:new Date().toISOString()}));
+app.get("/api/status",(_,res)=>res.json({ok:true,state:runtime}));
 
-app.get("/",(*,res)=>res.json({ok:true,...state}));
-app.get("/health",(*,res)=>res.json({ok:true,time:new Date().toISOString()}));
-app.get("/api/status",(*,res)=>res.json({ok:true,state}));
-app.get("/api/midi/devices",(*,res)=>res.json({ok:true,note:"Real MIDI needs native/WebMIDI bridge",devices:[]}));
-app.post("/api/chord/read",(req,res)=>res.json({ok:true,notes:req.body.notes||[],chord:detectChord(req.body.notes||[])}));
-app.post("/api/arranger/event",(req,res)=>res.json({ok:true,event:req.body,state:"accepted",sections:state.arrangerSections}));
-app.get("/api/sampler/status",(*,res)=>res.json({ok:true,engine:"foundation",rule:"Use original or licensed samples only"}));
-app.get("/api/agents/status",(*,res)=>res.json({ok:true,leader:"Linear",helpers:["GitHub","Codex","VS Code","Vercel"],mode:"planned"}));
+app.get("/api/midi/devices",(_,res)=>{
+  res.json({ok:true,devices:runtime.midiDevices,note:"Native USB/WebMIDI bridge next"});
+});
 
-app.listen(PORT,()=>console.log("UAOS backend running on [http://localhost:"+PORT](http://localhost:%22+PORT)));
+app.post("/api/midi/mock-device",(req,res)=>{
+  const device=req.body||{};
+  runtime.midiDevices.push({
+    id:device.id||("dev-"+Date.now()),
+    name:device.name||"Mock MIDI Keyboard",
+    type:device.type||"input"
+  });
+  res.json({ok:true,devices:runtime.midiDevices});
+});
+
+app.post("/api/chord/read",(req,res)=>{
+  const notes=req.body.notes||[];
+  res.json({ok:true,notes,chord:detectChord(notes)});
+});
+
+app.post("/api/arranger/event",(req,res)=>{
+  const section=req.body.section||"Stop";
+  runtime.arranger.current=section;
+  res.json({ok:true,arranger:runtime.arranger,event:req.body});
+});
+
+app.get("/api/sampler/status",(_,res)=>res.json({ok:true,sampler:runtime.sampler}));
+app.get("/api/agents/status",(_,res)=>res.json({ok:true,agents:runtime.agents}));
+
+app.listen(PORT,()=>console.log("UAOS backend running on http://localhost:"+PORT));
