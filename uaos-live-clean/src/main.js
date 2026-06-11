@@ -9,21 +9,20 @@ async function req(p,b){
 function log(m){logs.innerHTML=`<div>${new Date().toLocaleTimeString()} ${m}</div>`+logs.innerHTML}
 function hz(n){return 440*Math.pow(2,(n-69)/12)}
 function body(){
- const preset=presets.find(p=>p.name===presetSel.value);
- return preset?{...preset,name:projectName.value||preset.name,preset:preset.name}:{name:projectName.value||"UAOS V9 Song",tempo:Number(tempo.value),maqam:maqam.value,progression:progression.value.split(/\s+/).filter(Boolean),structure:structure.value.split(",").map(x=>x.trim()).filter(Boolean)};
+ const p=presets.find(x=>x.name===presetSel.value);
+ return p?{...p,name:projectName.value||p.name,preset:p.name}:{name:projectName.value||"UAOS V10 Song",tempo:Number(tempo.value),maqam:maqam.value,progression:progression.value.split(/\s+/),structure:structure.value.split(",").map(x=>x.trim())};
 }
 async function load(){
  status.textContent=JSON.stringify(await req("/api/status"),null,2);
- payments.textContent=JSON.stringify(await req("/api/payments"),null,2);
  checklist.textContent=JSON.stringify(await req("/api/launch/checklist"),null,2);
  report.textContent=JSON.stringify(await req("/api/release/report"),null,2);
  policy.textContent=JSON.stringify(await req("/api/legal/sample-policy"),null,2);
  domain.textContent=JSON.stringify(await req("/api/domain/status"),null,2);
- routes.textContent=JSON.stringify(await req("/api/test/routes"),null,2);
- projects.textContent=JSON.stringify(await req("/api/project/list"),null,2);
+ routes.textContent=JSON.stringify(await req("/api/qa/routes"),null,2);
+ commands.textContent=JSON.stringify(await req("/api/packaging/commands"),null,2);
  presets=await req("/api/presets");
  presetSel.innerHTML='<option value="">Custom</option>'+presets.map(p=>`<option>${p.name}</option>`).join("");
- log("V9 loaded");
+ log("V10 loaded");
 }
 async function generate(){
  song=await req("/api/song/generate",body());
@@ -44,28 +43,21 @@ function play(){
    o.start();o.stop(ctx.currentTime+Math.max(.05,(n.duration||120)/1000));
   },n.time*(60000/song.tempo)/480);
  }
- log("Playback started");
 }
 async function exportMidi(){
  const r=await fetch(API+"/api/song/export-midi",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(body())});
  const blob=await r.blob();const u=URL.createObjectURL(blob);const a=document.createElement("a");
- a.href=u;a.download="uaos-v9-song.mid";a.click();log("MIDI exported");
+ a.href=u;a.download="uaos-v10-song.mid";a.click();
 }
-async function save(){
- if(!song)await generate();
- await req("/api/project/save",{name:projectName.value||song.name,song});
- projects.textContent=JSON.stringify(await req("/api/project/list"),null,2);
- log("Project saved");
-}
-function exportJson(){
- if(!song)return;
- const blob=new Blob([JSON.stringify(song,null,2)],{type:"application/json"});
- const u=URL.createObjectURL(blob);const a=document.createElement("a");a.href=u;a.download="uaos-v9-project.json";a.click();
+async function downloadReport(){
+ const r=await req("/api/release/report");
+ const blob=new Blob([JSON.stringify(r,null,2)],{type:"application/json"});
+ const u=URL.createObjectURL(blob);const a=document.createElement("a");
+ a.href=u;a.download="uaos-v10-release-report.json";a.click();
 }
 function applyPreset(){
  const p=presets.find(x=>x.name===presetSel.value);if(!p)return;
  tempo.value=p.tempo;maqam.value=p.maqam;progression.value=p.progression.join(" ");structure.value=p.structure.join(",");
- log("Preset applied");
 }
-window.generate=generate;window.play=play;window.exportMidi=exportMidi;window.save=save;window.exportJson=exportJson;window.applyPreset=applyPreset;
+window.generate=generate;window.play=play;window.exportMidi=exportMidi;window.downloadReport=downloadReport;window.applyPreset=applyPreset;
 load();

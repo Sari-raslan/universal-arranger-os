@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8"/>
-<title>UAOS HyperStation V9</title>
+<title>UAOS HyperStation V10</title>
 <style>
 body{margin:0;background:#05050d;color:#fff;font-family:Segoe UI,Arial;padding:26px}
 .hero,.card{background:#121225;border:1px solid #38386c;border-radius:20px;padding:20px;margin:12px 0}
@@ -15,32 +15,35 @@ pre,textarea{background:#05050e;white-space:pre-wrap;max-height:390px;overflow:a
 </head>
 <body>
 <div class="hero">
-<h1>UAOS HyperStation V9</h1>
-<p>Product Hardening ? Legal Sample Policy ? Domain Status ? Health Matrix ? Launch Report</p>
-<span class="badge">V9</span><span class="badge">Production Prep</span><span class="badge">AEPlatform</span>
+<h1>UAOS HyperStation V10</h1>
+<p>QA Control Center ? Release Gate ? Packaging Commands ? Downloadable Report</p>
+<span class="badge">V10</span><span class="badge">QA</span><span class="badge">Packaging</span>
 </div>
 
 <div class="grid">
 <div class="card">
 <h2>Song Builder</h2>
-<input id="projectName" value="UAOS V9 Demo"/>
+<input id="projectName" value="UAOS V10 QA Demo"/>
 <select id="presetSel" onchange="applyPreset()"></select>
 <input id="tempo" type="range" min="60" max="160" value="96"/>
 <select id="maqam"><option>Nahawand</option><option>Bayati</option><option>Hijaz</option><option>Rast</option><option>Saba</option><option>Kurd</option><option>Ajam</option></select>
 <input id="progression" value="Cm F G7 Cm"/>
-<textarea id="structure" rows="4">Intro,Main A,Main A,Fill,Main B,Break,Main A,Ending</textarea>
-<button onclick="generate()">Generate</button><button onclick="play()">Play</button><button onclick="exportMidi()">Export MIDI</button><button onclick="save()">Save</button><button onclick="exportJson()">Export JSON</button>
+<textarea id="structure" rows="4">Intro,Main A,Fill,Main B,Ending</textarea>
+<button onclick="generate()">Generate</button>
+<button onclick="play()">Play</button>
+<button onclick="exportMidi()">Export MIDI</button>
+<button onclick="downloadReport()">Download Release Report</button>
 </div>
-<div class="card"><h2>Launch Report</h2><pre id="report"></pre></div>
-<div class="card"><h2>Legal Sample Policy</h2><pre id="policy"></pre></div>
-<div class="card"><h2>Domain Status</h2><pre id="domain"></pre></div>
-<div class="card"><h2>Health Routes</h2><pre id="routes"></pre></div>
+
+<div class="card"><h2>Release Gate</h2><pre id="report"></pre></div>
+<div class="card"><h2>Packaging Commands</h2><pre id="commands"></pre></div>
+<div class="card"><h2>Route QA</h2><pre id="routes"></pre></div>
 <div class="card"><h2>Checklist</h2><pre id="checklist"></pre></div>
-<div class="card"><h2>Payments</h2><pre id="payments"></pre></div>
+<div class="card"><h2>Domain</h2><pre id="domain"></pre></div>
+<div class="card"><h2>Sample Policy</h2><pre id="policy"></pre></div>
 <div class="card"><h2>MIDI Monitor</h2><pre id="monitor"></pre></div>
 <div class="card"><h2>Song JSON</h2><pre id="out"></pre></div>
 <div class="card"><h2>Status</h2><pre id="status"></pre></div>
-<div class="card"><h2>Projects</h2><pre id="projects"></pre></div>
 <div class="card"><h2>Log</h2><div id="logs"></div></div>
 </div>
 <script type="module" src="/src/main.js"></script>
