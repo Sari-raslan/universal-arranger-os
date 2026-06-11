@@ -2,50 +2,18 @@
 <html>
 <head>
 <meta charset="UTF-8"/>
-<title>UAOS HyperStation V10</title>
+<title>UAOS HyperStation</title>
 <style>
-body{margin:0;background:#05050d;color:#fff;font-family:Segoe UI,Arial;padding:26px}
-.hero,.card{background:#121225;border:1px solid #38386c;border-radius:20px;padding:20px;margin:12px 0}
-h1{font-size:44px;margin:0}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:14px}
-select,input,textarea,button{width:100%;box-sizing:border-box;padding:11px;margin:7px 0;border-radius:12px;border:1px solid #444;background:#09091a;color:white}
-button{background:#5a48ff;font-weight:700;cursor:pointer}
-pre,textarea{background:#05050e;white-space:pre-wrap;max-height:390px;overflow:auto}
-.badge{display:inline-block;background:#242452;padding:8px 12px;border-radius:999px;margin:4px}
+body{margin:0;background:#05050d;color:#fff;font-family:Segoe UI,Arial;padding:28px}
+.hero,.card{background:#121225;border:1px solid #38386c;border-radius:20px;padding:22px;margin:12px 0}
+h1{font-size:42px;margin:0}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:14px}
+button{width:100%;padding:14px;margin:8px 0;border-radius:12px;border:0;background:#5a48ff;color:white;font-weight:700;cursor:pointer}
+pre{background:#05050e;padding:14px;border-radius:12px;white-space:pre-wrap}
 </style>
-  <script type="module" crossorigin src="/assets/index-DaVCbBdp.js"></script>
+  <script type="module" crossorigin src="/assets/index-T0e2YFEK.js"></script>
 </head>
 <body>
-<div class="hero">
-<h1>UAOS HyperStation V10</h1>
-<p>QA Control Center ? Release Gate ? Packaging Commands ? Downloadable Report</p>
-<span class="badge">V10</span><span class="badge">QA</span><span class="badge">Packaging</span>
-</div>
-
-<div class="grid">
-<div class="card">
-<h2>Song Builder</h2>
-<input id="projectName" value="UAOS V10 QA Demo"/>
-<select id="presetSel" onchange="applyPreset()"></select>
-<input id="tempo" type="range" min="60" max="160" value="96"/>
-<select id="maqam"><option>Nahawand</option><option>Bayati</option><option>Hijaz</option><option>Rast</option><option>Saba</option><option>Kurd</option><option>Ajam</option></select>
-<input id="progression" value="Cm F G7 Cm"/>
-<textarea id="structure" rows="4">Intro,Main A,Fill,Main B,Ending</textarea>
-<button onclick="generate()">Generate</button>
-<button onclick="play()">Play</button>
-<button onclick="exportMidi()">Export MIDI</button>
-<button onclick="downloadReport()">Download Release Report</button>
-</div>
-
-<div class="card"><h2>Release Gate</h2><pre id="report"></pre></div>
-<div class="card"><h2>Packaging Commands</h2><pre id="commands"></pre></div>
-<div class="card"><h2>Route QA</h2><pre id="routes"></pre></div>
-<div class="card"><h2>Checklist</h2><pre id="checklist"></pre></div>
-<div class="card"><h2>Domain</h2><pre id="domain"></pre></div>
-<div class="card"><h2>Sample Policy</h2><pre id="policy"></pre></div>
-<div class="card"><h2>MIDI Monitor</h2><pre id="monitor"></pre></div>
-<div class="card"><h2>Song JSON</h2><pre id="out"></pre></div>
-<div class="card"><h2>Status</h2><pre id="status"></pre></div>
-<div class="card"><h2>Log</h2><div id="logs"></div></div>
-</div>
+<div id="app"></div>
 </body>
 </html>
