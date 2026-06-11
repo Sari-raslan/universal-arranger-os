@@ -1,1 +1,19 @@
-{"name":"uaos-mobile","version":"11.0.0","private":true,"scripts":{"init":"echo Capacitor init prepared","android":"echo Android APK prep prepared","sync":"echo Capacitor sync prepared"}}
+{
+  "name": "uaos-mobile",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "init": "npx cap init \"UAOS HyperStation\" app.aeplatform.uaos --web-dir ../uaos-live-clean/dist",
+    "add-android": "npx cap add android",
+    "add-ios": "npx cap add ios",
+    "sync": "npx cap sync",
+    "android": "npx cap open android",
+    "ios": "npx cap open ios"
+  },
+  "dependencies": {
+    "@capacitor/android": "latest",
+    "@capacitor/ios": "latest",
+    "@capacitor/cli": "latest",
+    "@capacitor/core": "latest"
+  }
+}

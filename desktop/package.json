@@ -1,1 +1,19 @@
-{"name":"uaos-desktop","version":"11.0.0","private":true,"scripts":{"pack":"echo Electron package prepared. Next install electron and electron-builder."}}
+{
+  "name": "uaos-desktop",
+  "version": "1.0.0",
+  "main": "main.js",
+  "private": true,
+  "scripts": {
+    "start": "electron .",
+    "pack": "electron-builder --win portable"
+  },
+  "devDependencies": {
+    "electron": "latest",
+    "electron-builder": "latest"
+  },
+  "build": {
+    "appId": "app.aeplatform.uaos",
+    "productName": "UAOS HyperStation",
+    "files": ["main.js"]
+  }
+}

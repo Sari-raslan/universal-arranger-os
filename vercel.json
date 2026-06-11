@@ -5,6 +5,9 @@
   "outputDirectory": "uaos-live-clean/dist",
   "installCommand": "npm run setup",
   "rewrites": [
+    { "source": "/api/status", "destination": "/api/status.js" },
+    { "source": "/api/release-report", "destination": "/api/release-report.js" },
+    { "source": "/api/presets", "destination": "/api/presets.js" },
     { "source": "/(.*)", "destination": "/" }
   ]
 }
