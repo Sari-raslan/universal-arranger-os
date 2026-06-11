@@ -155,3 +155,4 @@ export default function App() {
 
   return <><Nav page={page} setPage={setPage} />{screen}<footer>UAOS Public V1.2</footer></>;
 }
+
