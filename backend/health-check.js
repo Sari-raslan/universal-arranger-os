@@ -1,1 +1,8 @@
-﻿const http=require("http");const urls=["http://localhost:8090/health","http://localhost:8090/api/status","http://localhost:8090/api/sounds","http://localhost:8090/api/sounds/gulf","http://localhost:8090/api/maqam"];function c(u){return new Promise(r=>{http.get(u,x=>r(u+" => "+x.statusCode)).on("error",e=>r(u+" => FAIL "+e.message));});}(async()=>{for(const u of urls)console.log(await c(u));})();
+﻿const http = require("http");
+http.get("http://127.0.0.1:5199/health",res=>{
+  console.log("BACKEND HEALTH",res.statusCode);
+  process.exit(res.statusCode===200?0:1);
+}).on("error",err=>{
+  console.error("BACKEND HEALTH FAIL",err.message);
+  process.exit(1);
+});
