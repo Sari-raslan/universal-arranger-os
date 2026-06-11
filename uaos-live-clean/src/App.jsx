@@ -86,16 +86,36 @@ function Pro() {
 
 function Midi() {
   const [status, setStatus] = useState("Not scanned");
+  const [inputs, setInputs] = useState([]);
+  const [outputs, setOutputs] = useState([]);
+
   async function scan() {
-    if (!navigator.requestMIDIAccess) return setStatus("WebMIDI not available. Use Chrome or Electron.");
+    if (window.uaosMidi) {
+      const test = await window.uaosMidi.test();
+      const ins = await window.uaosMidi.listInputs();
+      const outs = await window.uaosMidi.listOutputs();
+      setStatus(test.message || "Electron MIDI bridge ready");
+      setInputs(ins.inputs || []);
+      setOutputs(outs.outputs || []);
+      return;
+    }
+
+    if (!navigator.requestMIDIAccess) {
+      setStatus("WebMIDI not available. Use Chrome or UAOS Desktop.");
+      return;
+    }
+
     try {
-      await navigator.requestMIDIAccess();
-      setStatus("MIDI scan complete");
+      const access = await navigator.requestMIDIAccess();
+      setInputs([...access.inputs.values()].map((x) => x.name));
+      setOutputs([...access.outputs.values()].map((x) => x.name));
+      setStatus("WebMIDI scan complete");
     } catch {
       setStatus("MIDI permission failed");
     }
   }
-  return <main className="page"><section className="panel"><h1>Real WebMIDI Scan</h1><button onClick={scan}>Scan MIDI</button><div className="fakeBox">{status}</div></section></main>;
+
+  return <main className="page"><section className="panel"><h1>MIDI Diagnostics</h1><button onClick={scan}>Scan MIDI</button><div className="fakeBox">{status}</div><div className="cards"><article className="card"><h2>Inputs</h2>{inputs.length ? inputs.map((x)=><p key={x}>{x}</p>) : <p>No inputs found</p>}</article><article className="card"><h2>Outputs</h2>{outputs.length ? outputs.map((x)=><p key={x}>{x}</p>) : <p>No outputs found</p>}</article></div></section></main>;
 }
 
 function Sounds() {
