@@ -1,0 +1,14 @@
+﻿V3 CODE DONE:
+- WebMIDI browser connection
+- Real .mid file export from notes
+- Payment link placeholders
+- Domain docs
+- Backend payment/status APIs
+- Production backend ready for Railway/Render
+
+MANUAL REQUIRED:
+- Add real Stripe/LemonSqueezy links
+- Add uaos.app DNS
+- Deploy after Vercel limit resets or upgrade
+- Deploy backend to Railway/Render
+
