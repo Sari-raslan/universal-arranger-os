@@ -1,0 +1,12 @@
+﻿{
+  "engine":"UAOS Articulation Engine",
+  "version":"0.1.0",
+  "rules":[
+    {"name":"legato","trigger":"overlap-notes","effect":"smooth transition"},
+    {"name":"slide","trigger":"velocity>105","effect":"pitch slide"},
+    {"name":"ornament","trigger":"short grace note","effect":"arabic ornament"},
+    {"name":"tremolo","trigger":"keyswitch C0","effect":"repeated articulation"},
+    {"name":"fall","trigger":"keyswitch D0","effect":"downward fall"},
+    {"name":"scoop","trigger":"keyswitch E0","effect":"upward scoop"}
+  ]
+}

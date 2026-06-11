@@ -1,0 +1,17 @@
+﻿{
+  "library":"UAOS Gulf Pro",
+  "version":"0.1.0",
+  "focus":["khaliji","saudi","kuwaiti","iraqi-gulf","emirati","bahraini"],
+  "instruments":[
+    {"id":"gulf-strings","name":"Gulf Strings","articulations":["legato","glide","tremolo","scoop","ornament"],"velocityLayers":7},
+    {"id":"mirwas-kit","name":"Mirwas Kit","family":"percussion","hits":["dum","tak","slap","roll","rim"],"roundRobin":6},
+    {"id":"tabl-khaliji","name":"Khaliji Tabl","family":"percussion","hits":["dum","tak","open","mute","roll"],"roundRobin":6},
+    {"id":"gulf-claps","name":"Gulf Claps","family":"percussion","hits":["single","group","wide","tight"],"roundRobin":8}
+  ],
+  "grooves":[
+    {"id":"khaliji-1","name":"Khaliji 1","meter":"4/4","feel":"swing","bpm":[80,120]},
+    {"id":"khaliji-2","name":"Khaliji 2","meter":"4/4","feel":"heavy","bpm":[70,110]},
+    {"id":"saudi-samri","name":"Saudi Samri","meter":"6/8","feel":"traditional","bpm":[70,105]},
+    {"id":"iraqi-gulf","name":"Iraqi Gulf","meter":"4/4","feel":"driving","bpm":[90,130]}
+  ]
+}
