@@ -1,6 +1,6 @@
 ﻿# UAOS FINAL LAUNCH PLAN
 
-STEP 1 - CODE READY
+## STEP 1 - CODE READY
 - App UI
 - Paid landing page
 - Build checks
@@ -9,16 +9,17 @@ STEP 1 - CODE READY
 - Domain DNS notes
 - Payment placeholders
 
-STEP 2 - USER SUBSCRIPTIONS
+## STEP 2 - USER SUBSCRIPTIONS
+Required:
+- Vercel Pro or wait 24h
 - Stripe or LemonSqueezy
 - Railway or Render backend
-- Vercel Pro optional
 - Cloudflare DNS optional
+- Discord community optional
 
-STEP 3 - FINAL EXECUTION
+## STEP 3 - FINAL EXECUTION
 - Add checkout links
-- Connect uaos.app
+- Connect uaos.app to Vercel
 - Deploy production
-- Connect api.uaos.app
+- Connect api.uaos.app to backend
 - Publish Founder offer
-
