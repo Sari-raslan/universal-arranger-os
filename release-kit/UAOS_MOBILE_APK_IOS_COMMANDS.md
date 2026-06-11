@@ -1,0 +1,34 @@
+﻿# UAOS Mobile Final Commands
+
+## Android APK on Windows
+cd "C:\Users\ssare\Desktop\UAOS_ALL_AGENTS_FINAL_RUN\universal-arranger-os\mobile"
+npm install
+npm run build-web
+npm run add-android
+npm run sync
+cd android
+.\gradlew.bat assembleDebug
+
+APK path:
+C:\Users\ssare\Desktop\UAOS_ALL_AGENTS_FINAL_RUN\universal-arranger-os\mobile\android\app\build\outputs\apk\debug\app-debug.apk
+
+## Open Android Studio
+cd "C:\Users\ssare\Desktop\UAOS_ALL_AGENTS_FINAL_RUN\universal-arranger-os\mobile"
+npm run android
+
+## iPhone / iOS
+iOS requires macOS + Xcode + Apple Developer account.
+
+On Mac:
+cd mobile
+npm install
+npm run build-web
+npm run add-ios
+npm run sync
+npm run ios
+
+Then in Xcode:
+- Select Team
+- Set Bundle ID: app.aeplatform.uaos
+- Build to iPhone
+- Archive for App Store/TestFlight

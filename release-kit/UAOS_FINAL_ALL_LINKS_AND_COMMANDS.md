@@ -1,0 +1,37 @@
+﻿# UAOS FINAL LINKS
+
+Public Web:
+https://universal-arranger-os.vercel.app
+
+Public API:
+https://universal-arranger-os.vercel.app/api/status
+https://universal-arranger-os.vercel.app/api/presets
+https://universal-arranger-os.vercel.app/api/release-report
+
+Local:
+http://127.0.0.1:5180
+http://127.0.0.1:5199/health
+
+LAN:
+http://192.168.56.1:5180
+http://192.168.56.1:5199/health
+
+Desktop:
+cd desktop
+npm install
+npm run start
+
+Android:
+cd mobile
+npm install
+npm run init
+npm run add-android
+npm run sync
+npm run android
+
+iPhone:
+Requires macOS + Xcode:
+cd mobile
+npm run add-ios
+npm run sync
+npm run ios

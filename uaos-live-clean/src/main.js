@@ -80,7 +80,12 @@ function hz(note) {
 
 async function initAudio() {
   audioCtx = audioCtx || new (window.AudioContext || window.webkitAudioContext)();
-  if (audioCtx.state === "suspended") await audioCtx.resume();
+  if (audioCtx.state === "suspended") {
+    await Promise.race([
+      audioCtx.resume().catch(() => null),
+      new Promise((resolve) => setTimeout(resolve, 250))
+    ]);
+  }
 
   if (!masterGain) {
     masterGain = audioCtx.createGain();
@@ -279,6 +284,7 @@ async function generate() {
 }
 
 async function play() {
+  await initAudio();
   if (!current) await generate();
   await playPattern(current);
 }
