@@ -1,52 +1,26 @@
 ﻿import React, { useMemo, useState } from "react";
 import "./style.css";
 
-const products = [
-  {
-    id: "sing",
-    name: "UAOS Sing",
-    subtitle: "For singers",
-    headline: "غنّي فقط… وUAOS يحوّل صوتك إلى أغنية كاملة.",
-    bullets: ["Voice upload", "Style selection", "Magic arrangement", "MP3/WAV export"],
-    price: "9–15 € / month"
-  },
-  {
-    id: "studio",
-    name: "UAOS Studio",
-    subtitle: "For creators",
-    headline: "استوديو سهل لصنّاع المحتوى والموسيقيين الجدد.",
-    bullets: ["Tracks", "Chords", "Mixer", "MIDI/WAV export"],
-    price: "19–29 € / month"
-  },
-  {
-    id: "pro",
-    name: "UAOS Pro Arranger",
-    subtitle: "For professionals",
-    headline: "أداة ذكية للعازفين وأصحاب الأورجات.",
-    bullets: ["MIDI/USB", "KORG/Yamaha/Roland/Ketron", "Style tools", "Set manager"],
-    price: "49–99 € / month"
-  }
+const plans = [
+  { id: "sing", name: "UAOS Sing", price: "9-15 EUR", text: "Voice to full music for singers." },
+  { id: "studio", name: "UAOS Studio", price: "19-29 EUR", text: "Easy music studio for creators." },
+  { id: "pro", name: "UAOS Pro Arranger", price: "49-99 EUR", text: "Professional arranger tools for keyboards." }
 ];
 
-function Nav({ page, setPage }) {
-  const items = [
-    ["home", "Home"],
-    ["sing", "Sing"],
-    ["studio", "Studio"],
-    ["pro", "Pro Arranger"],
-    ["midi", "MIDI"],
-    ["pricing", "Pricing"],
-    ["demo", "Demo"],
-    ["downloads", "Downloads"]
-  ];
+function route(page, setPage) {
+  window.location.hash = "#/" + page;
+  setPage(page);
+}
 
+function Nav({ page, setPage }) {
+  const items = ["home", "sing", "studio", "pro", "midi", "sounds", "sampler", "promo", "pricing", "downloads"];
   return (
     <nav className="nav">
-      <div className="brand">UAOS</div>
+      <b className="brand">UAOS</b>
       <div className="navItems">
-        {items.map(([id, label]) => (
-          <button key={id} onClick={() => setPage(id)} className={page === id ? "active" : ""}>
-            {label}
+        {items.map((x) => (
+          <button key={x} className={page === x ? "active" : ""} onClick={() => route(x, setPage)}>
+            {x}
           </button>
         ))}
       </div>
@@ -58,26 +32,21 @@ function Home({ setPage }) {
   return (
     <main className="page">
       <section className="hero">
-        <p className="eyebrow">Universal Arranger OS</p>
+        <p className="eyebrow">PUBLIC V1.2</p>
         <h1>Sing. Create. Arrange.</h1>
-        <p className="lead">
-          UAOS منصة موسيقية بثلاث واجهات: للمغني، لصانع المحتوى، وللمحترف الذي يعمل مع الأورجات.
-        </p>
+        <p className="lead">UAOS is a multi-product music platform: Singer, Creator Studio, Pro Arranger, Sound Library, and Sampler foundation.</p>
         <div className="heroActions">
-          <button onClick={() => setPage("sing")}>ابدأ كمغني</button>
-          <button onClick={() => setPage("studio")} className="secondary">افتح Studio</button>
-          <button onClick={() => setPage("pro")} className="secondary">Pro Arranger</button>
+          <button onClick={() => route("sing", setPage)}>Start Sing</button>
+          <button className="secondary" onClick={() => route("studio", setPage)}>Open Studio</button>
+          <button className="secondary" onClick={() => route("pro", setPage)}>Pro Arranger</button>
         </div>
       </section>
-
       <section className="cards">
-        {products.map((p) => (
+        {plans.map((p) => (
           <article className="card" key={p.id}>
-            <p className="tag">{p.subtitle}</p>
             <h2>{p.name}</h2>
-            <p>{p.headline}</p>
-            <ul>{p.bullets.map((b) => <li key={b}>{b}</li>)}</ul>
-            <button onClick={() => setPage(p.id)}>Open {p.name}</button>
+            <p>{p.text}</p>
+            <b>{p.price}</b>
           </article>
         ))}
       </section>
@@ -86,175 +55,83 @@ function Home({ setPage }) {
 }
 
 function Sing() {
+  const [name, setName] = useState(localStorage.getItem("uaos_project_name") || "My UAOS Song");
+  const [voice, setVoice] = useState("No file selected");
+  function save() {
+    localStorage.setItem("uaos_project_name", name);
+    alert("Saved locally");
+  }
   return (
     <main className="page">
       <section className="panel">
         <p className="eyebrow">UAOS Sing</p>
-        <h1>للمغني العادي</h1>
-        <p className="lead">ارفع صوتك، اختر ستايل، وخلي UAOS يعمل Demo موسيقي جاهز.</p>
-        <div className="workflow">
-          <div>1. Upload Voice</div>
-          <div>2. Choose Style</div>
-          <div>3. Generate Arrangement</div>
-          <div>4. Export MP3/WAV</div>
-        </div>
-        <div className="fakeBox">
-          <strong>V1 Demo Placeholder</strong>
-          <p>هنا لاحقاً نضيف رفع الصوت وتحليل الطبقة والكوردات والتوزيع الذكي.</p>
-        </div>
+        <h1>Voice to Music</h1>
+        <input value={name} onChange={(e) => setName(e.target.value)} />
+        <input type="file" accept="audio/*" onChange={(e) => setVoice(e.target.files?.[0]?.name || "No file selected")} />
+        <div className="fakeBox"><b>Voice:</b> {voice}</div>
+        <div className="workflow"><div>Upload</div><div>Style</div><div>Generate</div><div>Export</div></div>
+        <button onClick={save}>Save Local Project</button>
       </section>
     </main>
   );
 }
 
 function Studio() {
-  const tracks = ["Drums", "Bass", "Chords", "Piano", "Strings", "Lead", "Vocal Guide", "FX"];
-  return (
-    <main className="page">
-      <section className="panel">
-        <p className="eyebrow">UAOS Studio</p>
-        <h1>لصانع المحتوى ونصف الموسيقي</h1>
-        <p className="lead">واجهة سهلة فيها Tracks وMixer وChord Assistant بدون تعقيد DAW كامل.</p>
-        <div className="studioGrid">
-          {tracks.map((t) => (
-            <div className="track" key={t}>
-              <span>{t}</span>
-              <button>Mute</button>
-              <button>Solo</button>
-            </div>
-          ))}
-        </div>
-      </section>
-    </main>
-  );
+  return <main className="page"><section className="panel"><h1>Creator Studio</h1><div className="studioGrid">{["Drums","Bass","Chords","Piano","Strings","Lead","Vocal","FX"].map((t)=><div className="track" key={t}><span>{t}</span><button>Mute</button><button>Solo</button></div>)}</div></section></main>;
 }
 
 function Pro() {
-  const devices = ["KORG PA3X / PA5X", "Yamaha Genos", "Roland BK Series", "Ketron SD Series"];
-  return (
-    <main className="page">
-      <section className="panel">
-        <p className="eyebrow">UAOS Pro Arranger</p>
-        <h1>للمحترف وأصحاب الأورجات</h1>
-        <p className="lead">تحويل Styles، إدارة Sets، SongBook، Sound Mapper، وربط Sampler UAOS.</p>
-        <div className="cards">
-          {devices.map((d) => (
-            <article className="card small" key={d}>
-              <h2>{d}</h2>
-              <p>Device profile placeholder</p>
-              <button>Open Profile</button>
-            </article>
-          ))}
-        </div>
-      </section>
-    </main>
-  );
+  return <main className="page"><section className="panel"><h1>Keyboard Tools</h1><div className="cards">{["KORG","Yamaha","Roland","Ketron"].map((d)=><article className="card" key={d}><h2>{d}</h2><p>Style, Set, MIDI, SongBook profile.</p></article>)}</div></section></main>;
 }
 
 function Midi() {
-  const ports = ["Input: UAOS Virtual MIDI", "Input: Keyboard USB", "Output: UAOS Sampler", "Output: External Arranger"];
-  return (
-    <main className="page">
-      <section className="panel">
-        <p className="eyebrow">MIDI Diagnostics</p>
-        <h1>فحص MIDI / USB</h1>
-        <p className="lead">هذه صفحة الفحص الأولى. في V1 نعرض الجاهزية، وفي V2 نربط WebMIDI/Electron MIDI فعلياً.</p>
-        <div className="studioGrid">
-          {ports.map((p) => (
-            <div className="track" key={p}>
-              <span>{p}</span>
-              <button>Scan</button>
-              <button>Test</button>
-            </div>
-          ))}
-        </div>
-        <div className="fakeBox">
-          <strong>Status:</strong>
-          <p>Ready for MIDI engine integration. Next: Electron MIDI bridge + WebMIDI browser check.</p>
-        </div>
-      </section>
-    </main>
-  );
+  const [status, setStatus] = useState("Not scanned");
+  async function scan() {
+    if (!navigator.requestMIDIAccess) return setStatus("WebMIDI not available. Use Chrome or Electron.");
+    try {
+      await navigator.requestMIDIAccess();
+      setStatus("MIDI scan complete");
+    } catch {
+      setStatus("MIDI permission failed");
+    }
+  }
+  return <main className="page"><section className="panel"><h1>Real WebMIDI Scan</h1><button onClick={scan}>Scan MIDI</button><div className="fakeBox">{status}</div></section></main>;
+}
+
+function Sounds() {
+  return <main className="page"><section className="panel"><h1>Sounds & Libraries</h1><div className="cards">{["Oriental","Gulf","Turkish","Western","Violin","Oud"].map((x)=><article className="card" key={x}><h2>{x}</h2><p>Library placeholder with articulations and human feel plan.</p></article>)}</div></section></main>;
+}
+
+function Sampler() {
+  return <main className="page"><section className="panel"><h1>Sampler Foundation</h1><div className="workflow"><div>Samples</div><div>Velocity</div><div>Round Robin</div><div>Articulations</div></div></section></main>;
+}
+
+function Promo() {
+  return <main className="page"><section className="panel"><h1>Marketing Message</h1><div className="fakeBox">Sing. Create. Arrange. UAOS turns your voice and ideas into complete arrangements.</div></section></main>;
 }
 
 function Pricing() {
-  return (
-    <main className="page">
-      <section className="panel">
-        <p className="eyebrow">Pricing</p>
-        <h1>خطط متعددة لكل فئة</h1>
-        <div className="cards">
-          {products.map((p) => (
-            <article className="card" key={p.id}>
-              <h2>{p.name}</h2>
-              <p>{p.price}</p>
-              <ul>{p.bullets.map((b) => <li key={b}>{b}</li>)}</ul>
-            </article>
-          ))}
-        </div>
-      </section>
-    </main>
-  );
-}
-
-function Demo() {
-  return (
-    <main className="page">
-      <section className="panel">
-        <p className="eyebrow">Demo</p>
-        <h1>UAOS V1 Demo</h1>
-        <p className="lead">صفحة الديمو العامة للإطلاق الأول.</p>
-        <div className="fakeBox">
-          <p>Demo video / audio preview / generated song examples will be placed here.</p>
-        </div>
-      </section>
-    </main>
-  );
+  return <main className="page"><section className="panel"><h1>Pricing</h1><div className="cards">{plans.map((p)=><article className="card" key={p.id}><h2>{p.name}</h2><p>{p.price}</p></article>)}</div></section></main>;
 }
 
 function Downloads() {
-  return (
-    <main className="page">
-      <section className="panel">
-        <p className="eyebrow">Downloads</p>
-        <h1>تحميل UAOS</h1>
-        <p className="lead">روابط Windows / Android / iOS / Web ستضاف هنا بعد تثبيت النشر.</p>
-        <div className="workflow">
-          <div>Windows Desktop</div>
-          <div>Android APK</div>
-          <div>iOS TestFlight</div>
-          <div>Web App</div>
-        </div>
-      </section>
-    </main>
-  );
+  return <main className="page"><section className="panel"><h1>Downloads</h1><p className="lead">Web is live. Desktop and APK come after V1 web stabilization.</p></section></main>;
 }
 
 export default function App() {
-  const routeFromHash = () => window.location.hash.replace("#/", "") || "home";
-  const [page, setPageState] = useState(routeFromHash());
-
-  const setPage = (next) => {
-    window.location.hash = `/${next}`;
-    setPageState(next);
-  };
-
+  const [page, setPage] = useState(window.location.hash.replace("#/", "") || "home");
   const screen = useMemo(() => {
     if (page === "sing") return <Sing />;
     if (page === "studio") return <Studio />;
     if (page === "pro") return <Pro />;
     if (page === "midi") return <Midi />;
+    if (page === "sounds") return <Sounds />;
+    if (page === "sampler") return <Sampler />;
+    if (page === "promo") return <Promo />;
     if (page === "pricing") return <Pricing />;
-    if (page === "demo") return <Demo />;
     if (page === "downloads") return <Downloads />;
     return <Home setPage={setPage} />;
   }, [page]);
 
-  return (
-    <>
-      <Nav page={page} setPage={setPage} />
-      {screen}
-      <footer>UAOS V1 Platform Preview — Sing / Studio / Pro Arranger / MIDI</footer>
-    </>
-  );
+  return <><Nav page={page} setPage={setPage} />{screen}<footer>UAOS Public V1.2</footer></>;
 }
