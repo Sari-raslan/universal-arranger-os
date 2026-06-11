@@ -1,7 +1,9 @@
 {
   "version": 2,
+  "framework": null,
   "buildCommand": "npm run build --prefix uaos-live-clean",
   "outputDirectory": "uaos-live-clean/dist",
+  "installCommand": "npm run setup",
   "rewrites": [
     { "source": "/(.*)", "destination": "/" }
   ]
