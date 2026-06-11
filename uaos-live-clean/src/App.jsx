@@ -53,8 +53,11 @@ export default function App(){
 
   return <main className="app">
     <section className="hero">
-      <h1>UAOS HyperStation V5</h1>
-      <p>Real Audio Foundation + MIDI Export + Style Arranger Engine</p>
+      <div className="hero-copy">
+        <span className="kicker">Universal Arranger OS</span>
+        <h1>UAOS HyperStation</h1>
+        <p>Real audio, MIDI export, and style arranging in one synced workstation.</p>
+      </div>
       <div className="badges">
         <span>{status?.ok ? "Backend PASS" : "Backend..."}</span>
         <span>Sampler {samples.length} WAV</span>
