@@ -34,6 +34,7 @@ function Nav({ page, setPage }) {
     ["sing", "Sing"],
     ["studio", "Studio"],
     ["pro", "Pro Arranger"],
+    ["midi", "MIDI"],
     ["pricing", "Pricing"],
     ["demo", "Demo"],
     ["downloads", "Downloads"]
@@ -91,14 +92,12 @@ function Sing() {
         <p className="eyebrow">UAOS Sing</p>
         <h1>للمغني العادي</h1>
         <p className="lead">ارفع صوتك، اختر ستايل، وخلي UAOS يعمل Demo موسيقي جاهز.</p>
-
         <div className="workflow">
           <div>1. Upload Voice</div>
           <div>2. Choose Style</div>
           <div>3. Generate Arrangement</div>
           <div>4. Export MP3/WAV</div>
         </div>
-
         <div className="fakeBox">
           <strong>V1 Demo Placeholder</strong>
           <p>هنا لاحقاً نضيف رفع الصوت وتحليل الطبقة والكوردات والتوزيع الذكي.</p>
@@ -116,7 +115,6 @@ function Studio() {
         <p className="eyebrow">UAOS Studio</p>
         <h1>لصانع المحتوى ونصف الموسيقي</h1>
         <p className="lead">واجهة سهلة فيها Tracks وMixer وChord Assistant بدون تعقيد DAW كامل.</p>
-
         <div className="studioGrid">
           {tracks.map((t) => (
             <div className="track" key={t}>
@@ -132,27 +130,47 @@ function Studio() {
 }
 
 function Pro() {
-  const devices = ["KORG", "Yamaha", "Roland", "Ketron"];
+  const devices = ["KORG PA3X / PA5X", "Yamaha Genos", "Roland BK Series", "Ketron SD Series"];
   return (
     <main className="page">
       <section className="panel">
         <p className="eyebrow">UAOS Pro Arranger</p>
         <h1>للمحترف وأصحاب الأورجات</h1>
-        <p className="lead">MIDI diagnostics، تحويل Styles، إدارة Sets، وProfiles للأجهزة.</p>
-
+        <p className="lead">تحويل Styles، إدارة Sets، SongBook، Sound Mapper، وربط Sampler UAOS.</p>
         <div className="cards">
           {devices.map((d) => (
             <article className="card small" key={d}>
               <h2>{d}</h2>
               <p>Device profile placeholder</p>
-              <button>Scan MIDI</button>
+              <button>Open Profile</button>
             </article>
           ))}
         </div>
+      </section>
+    </main>
+  );
+}
 
+function Midi() {
+  const ports = ["Input: UAOS Virtual MIDI", "Input: Keyboard USB", "Output: UAOS Sampler", "Output: External Arranger"];
+  return (
+    <main className="page">
+      <section className="panel">
+        <p className="eyebrow">MIDI Diagnostics</p>
+        <h1>فحص MIDI / USB</h1>
+        <p className="lead">هذه صفحة الفحص الأولى. في V1 نعرض الجاهزية، وفي V2 نربط WebMIDI/Electron MIDI فعلياً.</p>
+        <div className="studioGrid">
+          {ports.map((p) => (
+            <div className="track" key={p}>
+              <span>{p}</span>
+              <button>Scan</button>
+              <button>Test</button>
+            </div>
+          ))}
+        </div>
         <div className="fakeBox">
-          <strong>Pro Tools</strong>
-          <p>Style Converter / Set Manager / SongBook / Sound Mapper / Sampler Integration</p>
+          <strong>Status:</strong>
+          <p>Ready for MIDI engine integration. Next: Electron MIDI bridge + WebMIDI browser check.</p>
         </div>
       </section>
     </main>
@@ -185,7 +203,7 @@ function Demo() {
       <section className="panel">
         <p className="eyebrow">Demo</p>
         <h1>UAOS V1 Demo</h1>
-        <p className="lead">هذه صفحة الديمو العامة للإطلاق الأول.</p>
+        <p className="lead">صفحة الديمو العامة للإطلاق الأول.</p>
         <div className="fakeBox">
           <p>Demo video / audio preview / generated song examples will be placed here.</p>
         </div>
@@ -225,6 +243,7 @@ export default function App() {
     if (page === "sing") return <Sing />;
     if (page === "studio") return <Studio />;
     if (page === "pro") return <Pro />;
+    if (page === "midi") return <Midi />;
     if (page === "pricing") return <Pricing />;
     if (page === "demo") return <Demo />;
     if (page === "downloads") return <Downloads />;
@@ -235,7 +254,7 @@ export default function App() {
     <>
       <Nav page={page} setPage={setPage} />
       {screen}
-      <footer>UAOS V1 Platform Preview — Sing / Studio / Pro Arranger</footer>
+      <footer>UAOS V1 Platform Preview — Sing / Studio / Pro Arranger / MIDI</footer>
     </>
   );
 }
