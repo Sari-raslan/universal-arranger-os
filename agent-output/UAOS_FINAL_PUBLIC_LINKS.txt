@@ -1,0 +1,21 @@
+﻿UAOS FINAL PUBLIC LINKS
+
+Current Alias:
+https://keyboard-manager-clean-liard.vercel.app
+
+Production Deployment:
+https://keyboard-manager-clean-3ezkj43ic-sari-raslans-projects.vercel.app
+
+Next Domain:
+https://uaos.app
+https://www.uaos.app
+
+DNS REQUIRED:
+A      @      76.76.21.21
+CNAME  www    cname.vercel-dns.com
+
+After DNS:
+vercel domains add uaos.app
+vercel domains add www.uaos.app
+vercel alias https://keyboard-manager-clean-3ezkj43ic-sari-raslans-projects.vercel.app uaos.app
+vercel alias https://keyboard-manager-clean-3ezkj43ic-sari-raslans-projects.vercel.app www.uaos.app
