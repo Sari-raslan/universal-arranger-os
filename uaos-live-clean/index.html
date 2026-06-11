@@ -1,56 +1,48 @@
-﻿<!doctype html>
+<!doctype html>
 <html>
 <head>
 <meta charset="UTF-8"/>
-<title>UAOS HyperStation V5</title>
+<title>UAOS HyperStation V9</title>
 <style>
-body{margin:0;background:#080814;color:white;font-family:Segoe UI,Arial;padding:28px}
-.hero,.card{background:#121228;border:1px solid #303060;border-radius:20px;padding:22px;margin:14px 0}
-h1{font-size:42px;margin:0}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}
-select,input,button{width:100%;padding:12px;margin:8px 0;border-radius:12px;border:1px solid #444;background:#09091a;color:white}
-button{background:#5a48ff;font-weight:bold;cursor:pointer}
-pre{background:#050510;padding:14px;border-radius:12px;white-space:pre-wrap;max-height:380px;overflow:auto}
+body{margin:0;background:#05050d;color:#fff;font-family:Segoe UI,Arial;padding:26px}
+.hero,.card{background:#121225;border:1px solid #38386c;border-radius:20px;padding:20px;margin:12px 0}
+h1{font-size:44px;margin:0}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:14px}
+select,input,textarea,button{width:100%;box-sizing:border-box;padding:11px;margin:7px 0;border-radius:12px;border:1px solid #444;background:#09091a;color:white}
+button{background:#5a48ff;font-weight:700;cursor:pointer}
+pre,textarea{background:#05050e;white-space:pre-wrap;max-height:390px;overflow:auto}
+.badge{display:inline-block;background:#242452;padding:8px 12px;border-radius:999px;margin:4px}
 </style>
 </head>
 <body>
 <div class="hero">
-<h1>UAOS HyperStation V5</h1>
-<p>Real Audio Foundation • MIDI Export • Style Arranger • Oriental/Gulf Engine</p>
+<h1>UAOS HyperStation V9</h1>
+<p>Product Hardening ? Legal Sample Policy ? Domain Status ? Health Matrix ? Launch Report</p>
+<span class="badge">V9</span><span class="badge">Production Prep</span><span class="badge">AEPlatform</span>
 </div>
 
 <div class="grid">
 <div class="card">
-<h2>Arranger</h2>
-<label>Section</label>
-<select id="section"><option>Intro</option><option selected>Main A</option><option>Main B</option><option>Main C</option><option>Main D</option><option>Fill</option><option>Break</option><option>Ending</option></select>
-<label>Chord</label>
-<select id="chord"><option>Cm</option><option>Dm</option><option>G7</option><option>F</option><option>Bb</option><option>Am</option></select>
-<label>Maqam</label>
-<select id="maqam"><option>Nahawand</option><option>Bayati</option><option>Hijaz</option><option>Rast</option><option>Saba</option><option>Kurd</option></select>
-<label>Tempo</label>
+<h2>Song Builder</h2>
+<input id="projectName" value="UAOS V9 Demo"/>
+<select id="presetSel" onchange="applyPreset()"></select>
 <input id="tempo" type="range" min="60" max="160" value="96"/>
-<button onclick="gen()">Generate Pattern</button>
-<button onclick="play()">Play Audio</button>
-<button onclick="mid()">Export MIDI</button>
+<select id="maqam"><option>Nahawand</option><option>Bayati</option><option>Hijaz</option><option>Rast</option><option>Saba</option><option>Kurd</option><option>Ajam</option></select>
+<input id="progression" value="Cm F G7 Cm"/>
+<textarea id="structure" rows="4">Intro,Main A,Main A,Fill,Main B,Break,Main A,Ending</textarea>
+<button onclick="generate()">Generate</button><button onclick="play()">Play</button><button onclick="exportMidi()">Export MIDI</button><button onclick="save()">Save</button><button onclick="exportJson()">Export JSON</button>
 </div>
-
-<div class="card">
-<h2>Status</h2>
-<pre id="status"></pre>
+<div class="card"><h2>Launch Report</h2><pre id="report"></pre></div>
+<div class="card"><h2>Legal Sample Policy</h2><pre id="policy"></pre></div>
+<div class="card"><h2>Domain Status</h2><pre id="domain"></pre></div>
+<div class="card"><h2>Health Routes</h2><pre id="routes"></pre></div>
+<div class="card"><h2>Checklist</h2><pre id="checklist"></pre></div>
+<div class="card"><h2>Payments</h2><pre id="payments"></pre></div>
+<div class="card"><h2>MIDI Monitor</h2><pre id="monitor"></pre></div>
+<div class="card"><h2>Song JSON</h2><pre id="out"></pre></div>
+<div class="card"><h2>Status</h2><pre id="status"></pre></div>
+<div class="card"><h2>Projects</h2><pre id="projects"></pre></div>
+<div class="card"><h2>Log</h2><div id="logs"></div></div>
 </div>
-
-<div class="card">
-<h2>Libraries</h2>
-<pre id="sounds"></pre>
-</div>
-
-<div class="card">
-<h2>Pattern JSON</h2>
-<pre id="out"></pre>
-</div>
-</div>
-
 <script type="module" src="/src/main.js"></script>
 </body>
 </html>

@@ -1,39 +1,71 @@
-﻿const API="http://127.0.0.1:5199";
-async function j(p,b){
+const API="http://127.0.0.1:5199";
+let song=null,presets=[];
+
+async function req(p,b){
  const r=await fetch(API+p,{method:b?"POST":"GET",headers:{"Content-Type":"application/json"},body:b?JSON.stringify(b):undefined});
  if(!r.ok)throw new Error(await r.text());
  return r.json();
 }
-function playSynth(notes,tempo){
+function log(m){logs.innerHTML=`<div>${new Date().toLocaleTimeString()} ${m}</div>`+logs.innerHTML}
+function hz(n){return 440*Math.pow(2,(n-69)/12)}
+function body(){
+ const preset=presets.find(p=>p.name===presetSel.value);
+ return preset?{...preset,name:projectName.value||preset.name,preset:preset.name}:{name:projectName.value||"UAOS V9 Song",tempo:Number(tempo.value),maqam:maqam.value,progression:progression.value.split(/\s+/).filter(Boolean),structure:structure.value.split(",").map(x=>x.trim()).filter(Boolean)};
+}
+async function load(){
+ status.textContent=JSON.stringify(await req("/api/status"),null,2);
+ payments.textContent=JSON.stringify(await req("/api/payments"),null,2);
+ checklist.textContent=JSON.stringify(await req("/api/launch/checklist"),null,2);
+ report.textContent=JSON.stringify(await req("/api/release/report"),null,2);
+ policy.textContent=JSON.stringify(await req("/api/legal/sample-policy"),null,2);
+ domain.textContent=JSON.stringify(await req("/api/domain/status"),null,2);
+ routes.textContent=JSON.stringify(await req("/api/test/routes"),null,2);
+ projects.textContent=JSON.stringify(await req("/api/project/list"),null,2);
+ presets=await req("/api/presets");
+ presetSel.innerHTML='<option value="">Custom</option>'+presets.map(p=>`<option>${p.name}</option>`).join("");
+ log("V9 loaded");
+}
+async function generate(){
+ song=await req("/api/song/generate",body());
+ out.textContent=JSON.stringify(song,null,2);
+ monitor.textContent=song.notes.map(n=>`${n.time} ${n.section} ${n.chord} CH${n.channel} NOTE${n.note} ${n.role}`).join("\n");
+ log("Song generated");
+}
+function play(){
+ if(!song){generate().then(play);return}
  const ctx=new AudioContext();
- for(const n of notes){
+ for(const n of song.notes){
   setTimeout(()=>{
    const o=ctx.createOscillator(),g=ctx.createGain();
-   o.frequency.value=440*Math.pow(2,(n.note-69)/12);
-   g.gain.value=(n.velocity||80)/900;
+   o.type=n.channel===9?"square":n.role==="bass"?"triangle":"sine";
+   o.frequency.value=n.channel===9?(n.note===36?70:130):hz(n.note);
+   g.gain.value=(n.velocity||90)/(n.channel===9?900:1100);
    o.connect(g).connect(ctx.destination);
-   o.start(); o.stop(ctx.currentTime+(n.duration||200)/1000);
-  },n.time*(60000/tempo)/480);
+   o.start();o.stop(ctx.currentTime+Math.max(.05,(n.duration||120)/1000));
+  },n.time*(60000/song.tempo)/480);
  }
+ log("Playback started");
 }
-async function exportMidi(body){
- const r=await fetch(API+"/api/patterns/export",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(body)});
- const blob=await r.blob(); const u=URL.createObjectURL(blob);
- const a=document.createElement("a"); a.href=u; a.download="uaos-pattern.mid"; a.click();
+async function exportMidi(){
+ const r=await fetch(API+"/api/song/export-midi",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(body())});
+ const blob=await r.blob();const u=URL.createObjectURL(blob);const a=document.createElement("a");
+ a.href=u;a.download="uaos-v9-song.mid";a.click();log("MIDI exported");
 }
-let current=null;
-async function init(){
- const st=await j("/api/status");
- const sounds=await j("/api/sounds");
- document.querySelector("#status").textContent=JSON.stringify(st,null,2);
- document.querySelector("#sounds").textContent=JSON.stringify(sounds,null,2);
+async function save(){
+ if(!song)await generate();
+ await req("/api/project/save",{name:projectName.value||song.name,song});
+ projects.textContent=JSON.stringify(await req("/api/project/list"),null,2);
+ log("Project saved");
 }
-async function gen(){
- const body={section:section.value,chord:chord.value,maqam:maqam.value,tempo:Number(tempo.value)};
- current=await j("/api/patterns/generate",body);
- out.textContent=JSON.stringify(current,null,2);
+function exportJson(){
+ if(!song)return;
+ const blob=new Blob([JSON.stringify(song,null,2)],{type:"application/json"});
+ const u=URL.createObjectURL(blob);const a=document.createElement("a");a.href=u;a.download="uaos-v9-project.json";a.click();
 }
-window.gen=gen;
-window.play=async()=>{if(!current)await gen();playSynth(current.notes,current.tempo)}
-window.mid=async()=>{if(!current)await gen();exportMidi(current)}
-init();
+function applyPreset(){
+ const p=presets.find(x=>x.name===presetSel.value);if(!p)return;
+ tempo.value=p.tempo;maqam.value=p.maqam;progression.value=p.progression.join(" ");structure.value=p.structure.join(",");
+ log("Preset applied");
+}
+window.generate=generate;window.play=play;window.exportMidi=exportMidi;window.save=save;window.exportJson=exportJson;window.applyPreset=applyPreset;
+load();
