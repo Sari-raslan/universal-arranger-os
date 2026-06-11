@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8"/>
-<title>UAOS HyperStation V10</title>
+<title>UAOS HyperStation V11 Final Local</title>
 <style>
 body{margin:0;background:#05050d;color:#fff;font-family:Segoe UI,Arial;padding:26px}
 .hero,.card{background:#121225;border:1px solid #38386c;border-radius:20px;padding:20px;margin:12px 0}
@@ -15,35 +15,35 @@ pre,textarea{background:#05050e;white-space:pre-wrap;max-height:390px;overflow:a
 </head>
 <body>
 <div class="hero">
-<h1>UAOS HyperStation V10</h1>
-<p>QA Control Center ? Release Gate ? Packaging Commands ? Downloadable Report</p>
-<span class="badge">V10</span><span class="badge">QA</span><span class="badge">Packaging</span>
+<h1>UAOS HyperStation V11</h1>
+<p>Final Local Foundation ? Arranger ? MIDI Export ? Sampler Map ? WAV Import ? QA ? Release Kit</p>
+<span class="badge">V11</span><span class="badge">Master Launcher</span><span class="badge">AEPlatform</span>
 </div>
-
 <div class="grid">
 <div class="card">
 <h2>Song Builder</h2>
-<input id="projectName" value="UAOS V10 QA Demo"/>
+<input id="projectName" value="UAOS V11 Final Demo"/>
 <select id="presetSel" onchange="applyPreset()"></select>
 <input id="tempo" type="range" min="60" max="160" value="96"/>
 <select id="maqam"><option>Nahawand</option><option>Bayati</option><option>Hijaz</option><option>Rast</option><option>Saba</option><option>Kurd</option><option>Ajam</option></select>
 <input id="progression" value="Cm F G7 Cm"/>
-<textarea id="structure" rows="4">Intro,Main A,Fill,Main B,Ending</textarea>
+<textarea id="structure" rows="4">Intro,Main A,Main A,Fill,Main B,Break,Main A,Ending</textarea>
 <button onclick="generate()">Generate</button>
 <button onclick="play()">Play</button>
 <button onclick="exportMidi()">Export MIDI</button>
-<button onclick="downloadReport()">Download Release Report</button>
+<button onclick="saveProject()">Save Project</button>
+<button onclick="downloadReport()">Download Report</button>
 </div>
-
-<div class="card"><h2>Release Gate</h2><pre id="report"></pre></div>
-<div class="card"><h2>Packaging Commands</h2><pre id="commands"></pre></div>
-<div class="card"><h2>Route QA</h2><pre id="routes"></pre></div>
+<div class="card"><h2>Sampler Map</h2><textarea id="map" rows="14"></textarea><button onclick="saveMap()">Save Map</button><input id="wav" type="file" accept=".wav"/><button onclick="importWav()">Import WAV</button></div>
+<div class="card"><h2>Release Report</h2><pre id="report"></pre></div>
 <div class="card"><h2>Checklist</h2><pre id="checklist"></pre></div>
 <div class="card"><h2>Domain</h2><pre id="domain"></pre></div>
 <div class="card"><h2>Sample Policy</h2><pre id="policy"></pre></div>
+<div class="card"><h2>Routes</h2><pre id="routes"></pre></div>
 <div class="card"><h2>MIDI Monitor</h2><pre id="monitor"></pre></div>
 <div class="card"><h2>Song JSON</h2><pre id="out"></pre></div>
 <div class="card"><h2>Status</h2><pre id="status"></pre></div>
+<div class="card"><h2>Projects</h2><pre id="projects"></pre></div>
 <div class="card"><h2>Log</h2><div id="logs"></div></div>
 </div>
 <script type="module" src="/src/main.js"></script>
