@@ -1,0 +1,19 @@
+﻿{
+  "name":"uaos-mobile",
+  "version":"1.0.0",
+  "type":"module",
+  "scripts":{
+    "init":"capacitor init UAOS app.aeplatform.uaos --web-dir ../uaos-live-clean/dist",
+    "android":"capacitor add android",
+    "ios":"capacitor add ios",
+    "sync":"capacitor sync",
+    "open-android":"capacitor open android",
+    "open-ios":"capacitor open ios"
+  },
+  "dependencies":{
+    "@capacitor/core":"latest",
+    "@capacitor/cli":"latest",
+    "@capacitor/android":"latest",
+    "@capacitor/ios":"latest"
+  }
+}
