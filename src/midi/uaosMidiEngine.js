@@ -1,4 +1,4 @@
-﻿import { KEYBOARD_PROFILES } from "../profiles/keyboardProfiles.js";
+﻿import { loadKeyboardProfiles, saveKeyboardProfiles } from "../profiles/keyboardProfiles.js";
 
 export class UAOSMidiEngine {
   constructor(bus, timeline){
@@ -8,21 +8,35 @@ export class UAOSMidiEngine {
     this.outputs = [];
     this.selectedOutputId = "";
     this.profileKey = "GENERAL_MIDI";
+    this.profiles = loadKeyboardProfiles();
     this.recordedNotes = [];
   }
 
   profile(){
-    return KEYBOARD_PROFILES[this.profileKey] || KEYBOARD_PROFILES.GENERAL_MIDI;
+    return this.profiles[this.profileKey] || this.profiles.GENERAL_MIDI;
+  }
+
+  getProfiles(){
+    return this.profiles;
+  }
+
+  updateCurrentProfile(patch){
+    this.profiles[this.profileKey] = {
+      ...this.profile(),
+      ...patch
+    };
+    saveKeyboardProfiles(this.profiles);
+
+    const ev = this.bus.emit("midi.profile.updated", {
+      key: this.profileKey,
+      profile: this.profile()
+    });
+    this.timeline.add(ev);
   }
 
   setProfile(key){
     this.profileKey = key;
-
-    const ev = this.bus.emit("midi.profile", {
-      key,
-      profile: this.profile()
-    });
-
+    const ev = this.bus.emit("midi.profile", { key, profile: this.profile() });
     this.timeline.add(ev);
   }
 
@@ -34,7 +48,6 @@ export class UAOSMidiEngine {
     }
 
     this.access = await navigator.requestMIDIAccess({ sysex:false });
-
     const inputs = [...this.access.inputs.values()];
     this.outputs = [...this.access.outputs.values()];
 
@@ -42,7 +55,6 @@ export class UAOSMidiEngine {
       inputs: inputs.map(i => ({ id: i.id, name: i.name })),
       outputs: this.outputs.map(o => ({ id: o.id, name: o.name }))
     });
-
     this.timeline.add(scan);
 
     inputs.forEach(input => {
@@ -55,26 +67,11 @@ export class UAOSMidiEngine {
         if(command === 144 && velocity > 0) type = "midi.noteon";
         if(command === 128 || (command === 144 && velocity === 0)) type = "midi.noteoff";
 
-        const payload = {
-          device: input.name,
-          status,
-          command,
-          channel,
-          note,
-          velocity
-        };
+        const payload = { device: input.name, status, command, channel, note, velocity };
 
         if(type === "midi.noteon"){
-          this.recordedNotes.push({
-            note,
-            velocity,
-            channel,
-            time: performance.now()
-          });
-
-          if(this.recordedNotes.length > 256){
-            this.recordedNotes = this.recordedNotes.slice(-256);
-          }
+          this.recordedNotes.push({ note, velocity, channel, time: performance.now() });
+          if(this.recordedNotes.length > 512) this.recordedNotes = this.recordedNotes.slice(-512);
         }
 
         const ev = this.bus.emit(type, payload);
@@ -107,32 +104,15 @@ export class UAOSMidiEngine {
     const finalNote = Math.max(0, Math.min(127, note + (profile.transpose || 0)));
 
     output.send([0x90 + ch, finalNote, velocity]);
-
-    setTimeout(()=>{
-      output.send([0x80 + ch, finalNote, 0]);
-    }, duration);
+    setTimeout(()=>output.send([0x80 + ch, finalNote, 0]), duration);
 
     return true;
   }
 
-  transportStart(){
-    return this.sendRaw(this.profile().controls.start);
-  }
+  transportStart(){ return this.sendRaw(this.profile().controls.start); }
+  transportStop(){ return this.sendRaw(this.profile().controls.stop); }
+  sendSection(section){ return this.sendRaw(this.profile().sections[section]); }
 
-  transportStop(){
-    return this.sendRaw(this.profile().controls.stop);
-  }
-
-  sendSection(section){
-    const bytes = this.profile().sections[section];
-    return this.sendRaw(bytes);
-  }
-
-  getRecordedNotes(){
-    return this.recordedNotes;
-  }
-
-  clearRecordedNotes(){
-    this.recordedNotes = [];
-  }
+  getRecordedNotes(){ return this.recordedNotes; }
+  clearRecordedNotes(){ this.recordedNotes = []; }
 }

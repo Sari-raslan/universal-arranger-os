@@ -16,21 +16,14 @@ export class UAOSAudioIntelligence {
 
   async start(){
     const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
-
     this.ctx = new AudioContext();
     const src = this.ctx.createMediaStreamSource(stream);
-
     this.analyser = this.ctx.createAnalyser();
     this.analyser.fftSize = 4096;
-
     src.connect(this.analyser);
-
     this.running = true;
 
-    const ev = this.bus.emit("audio.started", {
-      sampleRate: this.ctx.sampleRate
-    });
-
+    const ev = this.bus.emit("audio.started", { sampleRate: this.ctx.sampleRate });
     this.timeline.add(ev);
     this.loop();
   }
@@ -51,11 +44,7 @@ export class UAOSAudioIntelligence {
     const note = freqToNote(pitchHz);
 
     if(note && level > 18){
-      this.noteWindow.push({
-        midi: note.midi,
-        ts: Date.now()
-      });
-
+      this.noteWindow.push({ midi: note.midi, ts: Date.now() });
       this.noteWindow = this.noteWindow.filter(n => Date.now() - n.ts < 2200);
     }
 
@@ -68,14 +57,12 @@ export class UAOSAudioIntelligence {
       if(this.lastBeat > 0){
         const diff = now - this.lastBeat;
         const instantBpm = Math.round(60000 / diff);
-
         if(instantBpm >= 60 && instantBpm <= 200){
           this.beats.push(instantBpm);
           if(this.beats.length > 8) this.beats.shift();
           bpm = Math.round(this.beats.reduce((a,b)=>a+b,0) / this.beats.length);
         }
       }
-
       this.lastBeat = now;
     }
 
@@ -86,17 +73,13 @@ export class UAOSAudioIntelligence {
         velocity: Math.max(30, Math.min(120, level)),
         pitchHz: note.freq
       });
-
       this.timeline.add(voiceEv);
       this.lastVoiceMidi = note.midi;
       this.voiceGate = true;
     }
 
     if(level < 10 && this.voiceGate){
-      const offEv = this.bus.emit("voice.midi.off", {
-        midi: this.lastVoiceMidi
-      });
-
+      const offEv = this.bus.emit("voice.midi.off", { midi: this.lastVoiceMidi });
       this.timeline.add(offEv);
       this.voiceGate = false;
       this.lastVoiceMidi = null;

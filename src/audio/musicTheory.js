@@ -6,9 +6,7 @@ export function midiToName(midi){
 
 export function freqToNote(freq){
   if(!freq || freq < 40 || freq > 2000) return null;
-
   const midi = Math.round(69 + 12 * Math.log2(freq / 440));
-
   return {
     midi,
     name: NOTE_NAMES[((midi % 12) + 12) % 12],
@@ -22,9 +20,7 @@ export function autoCorrelate(buffer, sampleRate){
   let size = buffer.length;
   let rms = 0;
 
-  for(let i=0;i<size;i++){
-    rms += buffer[i] * buffer[i];
-  }
+  for(let i=0;i<size;i++) rms += buffer[i] * buffer[i];
 
   rms = Math.sqrt(rms / size);
   if(rms < 0.012) return null;
@@ -37,13 +33,10 @@ export function autoCorrelate(buffer, sampleRate){
 
   for(let offset = minOffset; offset < maxOffset; offset++){
     let correlation = 0;
-
     for(let i=0;i<size-offset;i++){
       correlation += Math.abs(buffer[i] - buffer[i+offset]);
     }
-
     correlation = 1 - correlation / (size - offset);
-
     if(correlation > bestCorrelation){
       bestCorrelation = correlation;
       bestOffset = offset;
