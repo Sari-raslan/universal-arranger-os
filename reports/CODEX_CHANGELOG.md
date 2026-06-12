@@ -21,3 +21,6 @@
 - Integrated a Professional Arranger panel into the Pro route.
 - Verified V1 gates still pass with V2 tests: `npm run check`, `npm run build`, and `npm run desktop:smoke`.
 - Added V2 pattern playback events, V2 architecture docs, pattern/device formats, desktop runbook, manual hardware tests, and V2 final report.
+- Created stacked V3 branch `codex/uaos-v3-ai-labs`.
+- Added experimental AI analysis, voice-to-MIDI, planner, rule-based generator, rhythm, evaluation, services, policy docs, V3 docs, and AI Labs route.
+- Verified V1 and V2 gates still pass with V3 tests: `npm run check` and `npm run build`.
