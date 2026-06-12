@@ -16,7 +16,7 @@ export async function json(path, body=null){
 }
 
 export async function exportMidi(pattern){
-  const res = await api("/api/patterns/export",{method:"POST",body:JSON.stringify(pattern)});
+  const res = await api("/api/midi-export",{method:"POST",body:JSON.stringify(pattern)});
   const blob = await res.blob();
   const url = URL.createObjectURL(blob);
   const a = document.createElement("a");
