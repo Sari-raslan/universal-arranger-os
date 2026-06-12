@@ -1,163 +1,112 @@
-﻿import AudioEngineV17 from './AudioEngineV17.jsx';
-import AudioEngine from './AudioEngine.jsx';
-import React, { useMemo, useState } from "react";
-import "./style.css";
+﻿import React,{useEffect,useMemo,useState} from "react";
+import { uaosBus } from "./core/uaosBus.js";
+import { uaosTimeline } from "./core/uaosTimeline.js";
+import { UAOSAudioEngine } from "./engines/uaosAudioEngine.js";
+import { UAOSMidiEngine } from "./engines/uaosMidiEngine.js";
+import { UAOSArranger, SECTIONS } from "./engines/uaosArranger.js";
+import { downloadText, makeMidi, downloadMidi } from "./core/exporters.js";
 
-const plans = [
-  { id: "sing", name: "UAOS Sing", price: "9-15 EUR", text: "Voice to full music for singers." },
-  { id: "studio", name: "UAOS Studio", price: "19-29 EUR", text: "Easy music studio for creators." },
-  { id: "pro", name: "UAOS Pro Arranger", price: "49-99 EUR", text: "Professional arranger tools for keyboards." }
-];
+const CHORDS=["C","Dm","Em","F","G","Am","A","E","D","C7","G7","Am7"];
 
-function route(page, setPage) {
-  window.location.hash = "#/" + page;
-  setPage(page);
-}
+export default function App(){
+  const midi=useMemo(()=>new UAOSMidiEngine(uaosBus,uaosTimeline),[]);
+  const audio=useMemo(()=>new UAOSAudioEngine(uaosBus,uaosTimeline),[]);
+  const arranger=useMemo(()=>new UAOSArranger(uaosBus,uaosTimeline,midi),[midi]);
 
-function Nav({ page, setPage }) {
-  const items = ["home", "sing", "studio", "pro", "midi", "sounds", "sampler", "promo", "pricing", "downloads"];
-  return (
-    <nav className="nav">
-      <b className="brand">UAOS</b>
-      <div className="navItems">
-        {items.map((x) => (
-          <button key={x} className={page === x ? "active" : ""} onClick={() => route(x, setPage)}>
-            {x}
-          </button>
-        ))}
+  const [status,setStatus]=useState("READY");
+  const [audioState,setAudioState]=useState({});
+  const [midiInfo,setMidiInfo]=useState({inputs:[],outputs:[]});
+  const [events,setEvents]=useState([]);
+  const [state,setState]=useState(arranger.state());
+  const [live,setLive]=useState(false);
+
+  useEffect(()=>{
+    uaosBus.on("*",()=>{
+      setEvents([...uaosTimeline.load()].slice(-80).reverse());
+      setState(arranger.state());
+    });
+    uaosBus.on("audio.intelligence",ev=>{
+      setAudioState(ev.payload);
+      if(ev.payload.bpm) arranger.setBpm(ev.payload.bpm);
+      if(ev.payload.chord) arranger.setChord(ev.payload.chord.chord);
+    });
+    uaosBus.on("midi.scan",ev=>setMidiInfo(ev.payload));
+  },[arranger]);
+
+  async function startAudio(){
+    try{setStatus("AUDIO STARTING");await audio.start();setStatus("AUDIO RUNNING");}
+    catch(e){setStatus("AUDIO ERROR: "+e.message);}
+  }
+
+  async function startMidi(){
+    try{setStatus("MIDI STARTING");await midi.start();setStatus("MIDI READY");}
+    catch(e){setStatus("MIDI ERROR: "+e.message);}
+  }
+
+  function controls(){
+    return <>
+      <button onClick={startAudio}>Start Audio</button>
+      <button onClick={startMidi} style={{marginLeft:8}}>Start MIDI</button>
+      <button onClick={()=>arranger.start()} style={{marginLeft:8}}>Start Arranger</button>
+      <button onClick={()=>arranger.stop()} style={{marginLeft:8}}>Stop Arranger</button>
+      <button onClick={()=>midi.panic()} style={{marginLeft:8,background:"#7f1d1d",color:"white"}}>Panic</button>
+      <button onClick={()=>setLive(!live)} style={{marginLeft:8}}>Live Mode</button>
+    </>;
+  }
+
+  if(live){
+    return <div style={{minHeight:"100vh",background:"#020617",color:"white",fontFamily:"Arial",padding:24}}>
+      <h1>UAOS LIVE STAGE</h1>
+      <h2>{state.section} | {state.chord} | BPM {state.bpm}</h2>
+      {controls()}
+      <h2>Sections</h2>
+      <div style={{display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:12}}>
+        {SECTIONS.map(s=><button key={s} onClick={()=>arranger.setSection(s)} style={{fontSize:28,padding:28}}>{s}</button>)}
       </div>
-    </nav>
-  );
-}
-
-function Home({ setPage }) {
-  return (
-    <main className="page">
-      <section className="hero">
-        <p className="eyebrow">PUBLIC V1.2</p>
-        <h1>Sing. Create. Arrange.</h1>
-        <p className="lead">UAOS is a multi-product music platform: Singer, Creator Studio, Pro Arranger, Sound Library, and Sampler foundation.</p>
-        <div className="heroActions">
-          <button onClick={() => route("sing", setPage)}>Start Sing</button>
-          <button className="secondary" onClick={() => route("studio", setPage)}>Open Studio</button>
-          <button className="secondary" onClick={() => route("pro", setPage)}>Pro Arranger</button>
-        </div>
-      </section>
-      <section className="cards">
-        {plans.map((p) => (
-          <article className="card" key={p.id}>
-            <h2>{p.name}</h2>
-            <p>{p.text}</p>
-            <b>{p.price}</b>
-          </article>
-        ))}
-      </section>
-    </main>
-  );
-}
-
-function Sing() {
-  const [name, setName] = useState(localStorage.getItem("uaos_project_name") || "My UAOS Song");
-  const [voice, setVoice] = useState("No file selected");
-  function save() {
-    localStorage.setItem("uaos_project_name", name);
-    alert("Saved locally");
-  }
-  return (
-    <main className="page">
-      <section className="panel">
-        <p className="eyebrow">UAOS Sing</p>
-        <h1>Voice to Music</h1>
-        <input value={name} onChange={(e) => setName(e.target.value)} />
-        <input type="file" accept="audio/*" onChange={(e) => setVoice(e.target.files?.[0]?.name || "No file selected")} />
-        <div className="fakeBox"><b>Voice:</b> {voice}</div>
-        <div className="workflow"><div>Upload</div><div>Style</div><div>Generate</div><div>Export</div></div>
-        <button onClick={save}>Save Local Project</button>
-      </section>
-    </main>
-  );
-}
-
-function Studio() {
-  return <main className="page"><section className="panel"><h1>Creator Studio</h1> <AudioEngineV17 /> <AudioEngine /><div className="studioGrid">{["Drums","Bass","Chords","Piano","Strings","Lead","Vocal","FX"].map((t)=><div className="track" key={t}><span>{t}</span><button>Mute</button><button>Solo</button></div>)}</div></section></main>;
-}
-
-function Pro() {
-  return <main className="page"><section className="panel"><h1>Keyboard Tools</h1><div className="cards">{["KORG","Yamaha","Roland","Ketron"].map((d)=><article className="card" key={d}><h2>{d}</h2><p>Style, Set, MIDI, SongBook profile.</p></article>)}</div></section></main>;
-}
-
-function Midi() {
-  const [status, setStatus] = useState("Not scanned");
-  const [inputs, setInputs] = useState([]);
-  const [outputs, setOutputs] = useState([]);
-
-  async function scan() {
-    if (window.uaosMidi) {
-      const test = await window.uaosMidi.test();
-      const ins = await window.uaosMidi.listInputs();
-      const outs = await window.uaosMidi.listOutputs();
-      setStatus(test.message || "Electron MIDI bridge ready");
-      setInputs(ins.inputs || []);
-      setOutputs(outs.outputs || []);
-      return;
-    }
-
-    if (!navigator.requestMIDIAccess) {
-      setStatus("WebMIDI not available. Use Chrome or UAOS Desktop.");
-      return;
-    }
-
-    try {
-      const access = await navigator.requestMIDIAccess();
-      setInputs([...access.inputs.values()].map((x) => x.name));
-      setOutputs([...access.outputs.values()].map((x) => x.name));
-      setStatus("WebMIDI scan complete");
-    } catch {
-      setStatus("MIDI permission failed");
-    }
+      <h2>Chord Pads</h2>
+      <div style={{display:"grid",gridTemplateColumns:"repeat(4,1fr)",gap:12}}>
+        {CHORDS.map(c=><button key={c} onClick={()=>arranger.setChord(c)} style={{fontSize:34,padding:34}}>{c}</button>)}
+      </div>
+    </div>;
   }
 
-  return <main className="page"><section className="panel"><h1>MIDI Diagnostics</h1><button onClick={scan}>Scan MIDI</button><div className="fakeBox">{status}</div><div className="cards"><article className="card"><h2>Inputs</h2>{inputs.length ? inputs.map((x)=><p key={x}>{x}</p>) : <p>No inputs found</p>}</article><article className="card"><h2>Outputs</h2>{outputs.length ? outputs.map((x)=><p key={x}>{x}</p>) : <p>No outputs found</p>}</article></div></section></main>;
+  return <div style={{minHeight:"100vh",background:"#070b14",color:"white",fontFamily:"Arial",padding:24}}>
+    <h1>UAOS Final Foundation Workstation</h1>
+    <p>Audio intelligence, MIDI, arranger, live stage, scenes, pattern memory, exports, and safe deploy pipeline.</p>
+    <h3>Status: {status}</h3>
+
+    {controls()}
+
+    <div style={{marginTop:12}}>
+      <button onClick={()=>arranger.learnPattern()}>Learn Pattern</button>
+      <button onClick={()=>arranger.saveScene()} style={{marginLeft:8}}>Save Scene</button>
+      <button onClick={()=>uaosTimeline.clear()} style={{marginLeft:8}}>Clear Timeline</button>
+      <button onClick={()=>downloadText("uaos-style.json",arranger.exportStyle())} style={{marginLeft:8}}>Export Style</button>
+      <button onClick={()=>downloadText("uaos-timeline.json",uaosTimeline.exportJson())} style={{marginLeft:8}}>Export Timeline</button>
+      <button onClick={()=>downloadMidi("uaos-export.mid",makeMidi(uaosTimeline.load(),state.bpm))} style={{marginLeft:8}}>Export MIDI</button>
+    </div>
+
+    <h2>Audio Intelligence</h2>
+    <p>Level: {audioState.level||0} | Pitch: {audioState.pitchHz||"-"} | Note: {audioState.note?.label||"-"} | Chord: {audioState.chord?.chord||"-"} | BPM: {audioState.bpm||state.bpm}</p>
+    <progress value={audioState.level||0} max="255" style={{width:"100%"}} />
+
+    <h2>MIDI</h2>
+    <select onChange={e=>midi.setOutput(e.target.value)}>
+      <option value="">Auto Output</option>
+      {midiInfo.outputs.map(o=><option key={o.id} value={o.id}>{o.name}</option>)}
+    </select>
+    <pre style={{background:"#111827",padding:12,borderRadius:8}}>{JSON.stringify(midiInfo,null,2)}</pre>
+
+    <h2>Arranger</h2>
+    <p>Section: {state.section} | Chord: {state.chord} | BPM: {state.bpm} | Pattern: {state.patternKey} | Running: {String(state.running)}</p>
+
+    <div>{SECTIONS.map(s=><button key={s} onClick={()=>arranger.setSection(s)} style={{margin:4}}>{s}</button>)}</div>
+    <div>{CHORDS.map(c=><button key={c} onClick={()=>arranger.setChord(c)} style={{margin:4}}>{c}</button>)}</div>
+
+    <h2>Scenes</h2>
+    <div>{state.scenes.map(s=><button key={s.id} onClick={()=>arranger.recallScene(s.id)} style={{margin:4}}>{s.section} {s.chord} {s.bpm}</button>)}</div>
+
+    <h2>Timeline</h2>
+    <ul>{events.map(e=><li key={e.id}><b>{e.type}</b> â€” {JSON.stringify(e.payload)}</li>)}</ul>
+  </div>;
 }
-
-function Sounds() {
-  return <main className="page"><section className="panel"><h1>Sounds & Libraries</h1><div className="cards">{["Oriental","Gulf","Turkish","Western","Violin","Oud"].map((x)=><article className="card" key={x}><h2>{x}</h2><p>Library placeholder with articulations and human feel plan.</p></article>)}</div></section></main>;
-}
-
-function Sampler() {
-  return <main className="page"><section className="panel"><h1>Sampler Foundation</h1><div className="workflow"><div>Samples</div><div>Velocity</div><div>Round Robin</div><div>Articulations</div></div></section></main>;
-}
-
-function Promo() {
-  return <main className="page"><section className="panel"><h1>Marketing Message</h1><div className="fakeBox">Sing. Create. Arrange. UAOS turns your voice and ideas into complete arrangements.</div></section></main>;
-}
-
-function Pricing() {
-  return <main className="page"><section className="panel"><h1>Pricing</h1><div className="cards">{plans.map((p)=><article className="card" key={p.id}><h2>{p.name}</h2><p>{p.price}</p></article>)}</div></section></main>;
-}
-
-function Downloads() {
-  return <main className="page"><section className="panel"><h1>Downloads</h1><p className="lead">Web is live. Desktop and APK come after V1 web stabilization.</p></section></main>;
-}
-
-export default function App() {
-  const [page, setPage] = useState(window.location.hash.replace("#/", "") || "home");
-  const screen = useMemo(() => {
-    if (page === "sing") return <Sing />;
-    if (page === "studio") return <Studio />;
-    if (page === "pro") return <Pro />;
-    if (page === "midi") return <Midi />;
-    if (page === "sounds") return <Sounds />;
-    if (page === "sampler") return <Sampler />;
-    if (page === "promo") return <Promo />;
-    if (page === "pricing") return <Pricing />;
-    if (page === "downloads") return <Downloads />;
-    return <Home setPage={setPage} />;
-  }, [page]);
-
-  return <><Nav page={page} setPage={setPage} />{screen}<footer>UAOS Public V1.2</footer></>;
-}
-
-
-
-
