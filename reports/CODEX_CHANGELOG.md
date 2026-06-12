@@ -10,3 +10,6 @@
 - Recorded that root `npm test` and `npm run check` are missing at baseline.
 - Started V1 and added the runtime core, audio/MIDI/timeline/session/arranger modules, and real feature panels in the active React app.
 - Verified `npm run build` after the V1 runtime core and UI panels.
+- Hardened backend and Electron V1 behavior, added static check, desktop smoke, and V1 tests.
+- Expanded `npm test` to include both baseline tests and V1 tests.
+- Verified `npm run check`, `npm run build`, and `npm run desktop:smoke`.
