@@ -10,6 +10,7 @@ import { SessionsPanel } from "./components/SessionsPanel.jsx";
 import { StatusBadge } from "./components/StatusBadge.jsx";
 import { TimelinePanel } from "./components/TimelinePanel.jsx";
 import { ProfessionalArrangerPanel } from "./components/ProfessionalArrangerPanel.jsx";
+import { AILabsPanel } from "./components/AILabsPanel.jsx";
 import { EVENT_TYPES } from "./core/eventTypes.js";
 import { eventBus } from "./core/eventBus.js";
 import { autosaveSession, createDefaultSession, loadSession } from "./session/sessionStore.js";
@@ -20,7 +21,7 @@ const plans = [
   { id: "pro", name: "UAOS Pro Arranger", price: "49-99 EUR", text: "Live arranger controls and MIDI performance foundation.", status: "experimental" }
 ];
 
-const routeItems = ["home", "sing", "studio", "pro", "midi", "sounds", "sampler", "promo", "pricing", "downloads", "audio", "timeline", "arranger", "live", "sessions", "diagnostics"];
+const routeItems = ["home", "sing", "studio", "pro", "midi", "sounds", "sampler", "promo", "pricing", "downloads", "audio", "timeline", "arranger", "live", "sessions", "diagnostics", "ai"];
 
 function route(page, setPage) {
   window.location.hash = "#/" + page;
@@ -213,6 +214,7 @@ function AppShell() {
     if (page === "live") return <main className="page"><section className="panel"><ArrangerPanel session={session} onSessionChange={setSession} live /><MidiMonitor compact /></section></main>;
     if (page === "sessions") return <main className="page"><section className="panel"><SessionsPanel session={session} onSessionChange={setSession} /></section></main>;
     if (page === "diagnostics") return <main className="page"><section className="panel"><DiagnosticsPanel /></section></main>;
+    if (page === "ai") return <main className="page"><section className="panel"><AILabsPanel /></section></main>;
     return <Home setPage={setPage} />;
   }, [page, session]);
 
