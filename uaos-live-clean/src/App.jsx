@@ -9,6 +9,7 @@ import { RuntimeStatus } from "./components/RuntimeStatus.jsx";
 import { SessionsPanel } from "./components/SessionsPanel.jsx";
 import { StatusBadge } from "./components/StatusBadge.jsx";
 import { TimelinePanel } from "./components/TimelinePanel.jsx";
+import { ProfessionalArrangerPanel } from "./components/ProfessionalArrangerPanel.jsx";
 import { EVENT_TYPES } from "./core/eventTypes.js";
 import { eventBus } from "./core/eventBus.js";
 import { autosaveSession, createDefaultSession, loadSession } from "./session/sessionStore.js";
@@ -105,6 +106,7 @@ function Pro({ session, setSession }) {
         <h1>Keyboard Tools</h1>
         <p className="lead">Draft profiles and mapping templates are shown as templates only. Proprietary style-file parsing is not claimed in V1.</p>
         <ArrangerPanel session={session} onSessionChange={setSession} />
+        <ProfessionalArrangerPanel />
         <div className="cards">
           {["KORG Draft Profile", "Yamaha Draft Profile", "Roland Mapping Template", "Ketron Mapping Template"].map((name) => (
             <article className="card" key={name}>
