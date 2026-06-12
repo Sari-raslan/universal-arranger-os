@@ -6,10 +6,6 @@ import { UAOSAudioIntelligence } from "./audio/uaosAudioIntelligence.js";
 import { UAOSMidiEngine } from "./midi/uaosMidiEngine.js";
 import { UAOSArrangerEngine, UAOS_SECTIONS } from "./arranger/uaosArrangerEngine.js";
 import { exportMidiDraft } from "./style/midiExportDraft.js";
-import { UAOSSetlist } from "./live/uaosSetlist.js";
-import { UAOSSplitZones } from "./midi/uaosSplitZones.js";
-import { UAOSPanic } from "./midi/uaosPanic.js";
-import { UAOSArrangerLanes } from "./arranger/uaosArrangerLanes.js";
 import { UAOSCrashSafeAutosave } from "./safety/uaosCrashSafeAutosave.js";
 import { UAOSLatencyMonitor } from "./live/uaosLatencyMonitor.js";
 import { LIVE_CHORD_PADS, LIVE_QUICK_SECTIONS } from "./live/livePads.js";
@@ -39,10 +35,6 @@ export default function App(){
   const wavRecorder = useMemo(()=>new UAOSWavRecorder(uaosBus, uaosTimeline), []);
   const performanceMode = useMemo(()=>new UAOSPerformanceMode(uaosBus, uaosTimeline, arranger, midi, audio), [arranger, midi, audio]);
   const songArrangement = useMemo(()=>new UAOSSongArrangement(uaosBus, uaosTimeline, arranger), [arranger]);
-  const setlist = useMemo(()=>new UAOSSetlist(uaosBus, uaosTimeline, arranger), [arranger]);
-  const splitZones = useMemo(()=>new UAOSSplitZones(uaosBus, uaosTimeline), []);
-  const panic = useMemo(()=>new UAOSPanic(uaosBus, uaosTimeline, midi), [midi]);
-  const lanes = useMemo(()=>new UAOSArrangerLanes(uaosBus, uaosTimeline, midi), [midi]);
 
   const [status,setStatus] = useState("READY");
   const [audioState,setAudioState] = useState({level:0, peak:0, pitchHz:null, note:null, chord:null, bpm:null});
@@ -128,7 +120,7 @@ export default function App(){
   if(liveMode){
     return (
       <div style={{minHeight:"100vh",background:"#020617",color:"white",fontFamily:"Arial",padding:24}}>
-        <h1>UAOS V1.17 Live Setlist + Lanes</h1>
+        <h1>UAOS V1.16 LIVE STAGE MODE</h1>
         <h2>{arrangerState.section} | {arrangerState.chord} | BPM {arrangerState.bpm}</h2>
         <p>Latency: {latency.average} ms average</p>
 
@@ -172,8 +164,8 @@ export default function App(){
 
   return (
     <div style={{minHeight:"100vh",background:"#070b14",color:"white",fontFamily:"Arial",padding:24}}>
-      <h1>UAOS V1.17 Live Setlist + Lanes</h1>
-      <p>Live setlist launcher, keyboard split zones, MIDI channel lanes, drum/bass/pad arranger lanes, emergency panic, and stage performance control.</p>
+      <h1>UAOS V1.16 Live Stage Mode</h1>
+      <p>Standalone live mode, full-screen stage UI, chord pads, transport bar, latency monitor, autosave, performance tools, and arranger control.</p>
 
       <h3>Status: {status}</h3>
 
@@ -198,9 +190,6 @@ export default function App(){
       <span style={{marginLeft:16}}>Latency Avg: {latency.average} ms</span>
 
       <button onClick={startAudio}>Start Audio / Chord / Voice</button>
-      <button onClick={()=>panic.allNotesOff()} style={{marginLeft:8,background:"#7f1d1d",color:"white"}}>
-        Emergency Panic
-      </button>
       <button onClick={()=>performanceMode.start()} style={{marginLeft:8}}>Start Performance Mode</button>
       <button onClick={()=>performanceMode.stop()} style={{marginLeft:8}}>Stop Performance Mode</button>
       <button onClick={()=>wavRecorder.start()} style={{marginLeft:8}}>Record Audio</button>
@@ -340,60 +329,6 @@ export default function App(){
       <h3>Section Memory</h3>
       <pre style={{background:"#111827",padding:12,borderRadius:8}}>{JSON.stringify(arrangerState.sectionMemory,null,2)}</pre>
 
-      <h2>Live Setlist</h2>
-      <button onClick={()=>setlist.addSong()}>Add Song</button>
-      <button onClick={()=>setlist.previous()} style={{marginLeft:8}}>Previous Song</button>
-      <button onClick={()=>setlist.next()} style={{marginLeft:8}}>Next Song</button>
-      <button onClick={()=>downloadText("uaos-v117-setlist.json", setlist.exportSetlist())} style={{marginLeft:8}}>Export Setlist</button>
-
-      <div style={{marginTop:12}}>
-        {setlist.songs.map((s,i)=>(
-          <div key={s.id} style={{background:"#111827",padding:10,marginBottom:8,borderRadius:8}}>
-            <button onClick={()=>setlist.launch(i)}>Launch</button>
-            <input style={{marginLeft:8}} value={s.title} onChange={e=>setlist.updateSong(i,{title:e.target.value})} />
-            <input style={{marginLeft:8,width:70}} type="number" value={s.bpm} onChange={e=>setlist.updateSong(i,{bpm:Number(e.target.value)||100})} />
-            <select style={{marginLeft:8}} value={s.chord} onChange={e=>setlist.updateSong(i,{chord:e.target.value})}>
-              {chords.map(c=><option key={c} value={c}>{c}</option>)}
-            </select>
-            <select style={{marginLeft:8}} value={s.section} onChange={e=>setlist.updateSong(i,{section:e.target.value})}>
-              {UAOS_SECTIONS.map(x=><option key={x} value={x}>{x}</option>)}
-            </select>
-            <button style={{marginLeft:8}} onClick={()=>setlist.removeSong(i)}>Remove</button>
-          </div>
-        ))}
-      </div>
-
-      <h2>Keyboard Split Zones</h2>
-      <button onClick={()=>splitZones.addZone()}>Add Zone</button>
-      <button onClick={()=>downloadText("uaos-v117-split-zones.json", splitZones.exportZones())} style={{marginLeft:8}}>Export Zones</button>
-      <div style={{marginTop:12}}>
-        {splitZones.zones.map((z,i)=>(
-          <div key={z.id} style={{background:"#111827",padding:10,marginBottom:8,borderRadius:8}}>
-            <input value={z.name} onChange={e=>splitZones.updateZone(i,{name:e.target.value})} />
-            <input style={{marginLeft:8,width:60}} type="number" value={z.min} onChange={e=>splitZones.updateZone(i,{min:Number(e.target.value)||0})} />
-            <input style={{marginLeft:8,width:60}} type="number" value={z.max} onChange={e=>splitZones.updateZone(i,{max:Number(e.target.value)||127})} />
-            <input style={{marginLeft:8,width:60}} type="number" value={z.channel} onChange={e=>splitZones.updateZone(i,{channel:Number(e.target.value)||1})} />
-            <input style={{marginLeft:8,width:60}} type="number" value={z.transpose} onChange={e=>splitZones.updateZone(i,{transpose:Number(e.target.value)||0})} />
-            <button style={{marginLeft:8}} onClick={()=>splitZones.removeZone(i)}>Remove</button>
-          </div>
-        ))}
-      </div>
-
-      <h2>Arranger Lanes</h2>
-      <button onClick={()=>lanes.triggerAll()}>Trigger Drum/Bass/Pad</button>
-      {Object.entries(lanes.lanes).map(([name,lane])=>(
-        <div key={name} style={{background:"#111827",padding:10,marginTop:8,borderRadius:8}}>
-          <b>{name}</b>
-          <label style={{marginLeft:8}}>
-            Enabled
-            <input type="checkbox" checked={lane.enabled} onChange={e=>lanes.updateLane(name,{enabled:e.target.checked})} />
-          </label>
-          <input style={{marginLeft:8,width:60}} type="number" value={lane.channel} onChange={e=>lanes.updateLane(name,{channel:Number(e.target.value)||1})} />
-          <input style={{marginLeft:8,width:60}} type="number" value={lane.note} onChange={e=>lanes.updateLane(name,{note:Number(e.target.value)||60})} />
-          <input style={{marginLeft:8,width:60}} type="number" value={lane.velocity} onChange={e=>lanes.updateLane(name,{velocity:Number(e.target.value)||90})} />
-        </div>
-      ))}
-
       <h2>Song Arrangement</h2>
       <button onClick={()=>{songArrangement.addSection();setStatus("SONG SECTION ADDED")}}>
         Add Song Section
@@ -426,7 +361,6 @@ export default function App(){
     </div>
   );
 }
-
 
 
 
