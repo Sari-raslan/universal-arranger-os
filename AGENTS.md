@@ -123,3 +123,12 @@ docs\sar-set-analysis.json
 docs\sar-set-notes.md
 
 Keep improving until the local MVP runs.
+## Codex Autonomous Roadmap Rules
+
+- Current roadmap: UAOS V1 Production Foundation, V2 Professional Arranger, V3 AI Arranger Labs.
+- Use stacked branches and never merge to `master` automatically.
+- Never deploy, run Vercel commands, run `UAOS_SAFE_TURBO.ps1`, force-push, or modify production aliases.
+- Before resuming, read `reports/CODEX_MASTER_STATE.json`, inspect git status, and continue from `nextTask`.
+- Update `reports/CODEX_MASTER_STATE.json`, `reports/CODEX_BLOCKERS.md`, and `reports/CODEX_CHANGELOG.md` after each completed task group.
+- Keep PowerShell as orchestration only; application source belongs in JS, JSX, CSS, JSON, tests, and docs.
+- Preserve current public routes and label incomplete features honestly.

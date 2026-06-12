@@ -1,0 +1,15 @@
+{
+  "appId": "tech.uaos.xenon.pro",
+  "appName": "UAOS Xenon Studio",
+  "webDir": "dist",
+  "bundledWebRuntime": false,
+  "server": {
+    "allowNavigation": [
+      "universal-arranger-os.vercel.app"
+    ],
+    "cleartext": true
+  },
+  "android": {
+    "hardwareAccelerated": true
+  }
+}
