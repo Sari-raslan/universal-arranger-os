@@ -1,4 +1,6 @@
-﻿import React, { useMemo, useState } from "react";
+﻿import AudioEngineV17 from './AudioEngineV17.jsx';
+import AudioEngine from './AudioEngine.jsx';
+import React, { useMemo, useState } from "react";
 import "./style.css";
 
 const plans = [
@@ -77,7 +79,7 @@ function Sing() {
 }
 
 function Studio() {
-  return <main className="page"><section className="panel"><h1>Creator Studio</h1><div className="studioGrid">{["Drums","Bass","Chords","Piano","Strings","Lead","Vocal","FX"].map((t)=><div className="track" key={t}><span>{t}</span><button>Mute</button><button>Solo</button></div>)}</div></section></main>;
+  return <main className="page"><section className="panel"><h1>Creator Studio</h1> <AudioEngineV17 /> <AudioEngine /><div className="studioGrid">{["Drums","Bass","Chords","Piano","Strings","Lead","Vocal","FX"].map((t)=><div className="track" key={t}><span>{t}</span><button>Mute</button><button>Solo</button></div>)}</div></section></main>;
 }
 
 function Pro() {
@@ -155,4 +157,7 @@ export default function App() {
 
   return <><Nav page={page} setPage={setPage} />{screen}<footer>UAOS Public V1.2</footer></>;
 }
+
+
+
 

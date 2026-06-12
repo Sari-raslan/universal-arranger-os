@@ -1,45 +1,1 @@
-﻿# UAOS FINAL LIVE LINKS
-
-Public Web:
-https://universal-arranger-os.vercel.app
-
-Production Deployment:
-https://universal-arranger-40tk1xvxq-sari-raslans-projects.vercel.app
-
-Public API:
-https://universal-arranger-os.vercel.app/api/status
-https://universal-arranger-os.vercel.app/api/release-report
-https://universal-arranger-os.vercel.app/api/presets
-
-Local Frontend:
-http://127.0.0.1:5180
-
-Local Backend:
-http://127.0.0.1:5199
-
-LAN IP:
-http://192.168.56.1:5180
-http://192.168.56.1:5199
-
-Desktop:
-cd desktop
-npm install
-npm run start
-npm run pack
-
-Android:
-cd mobile
-npm install
-npm run init
-npm run add-android
-npm run sync
-npm run android
-
-iPhone/iOS:
-Needs macOS + Xcode:
-cd mobile
-npm install
-npm run init
-npm run add-ios
-npm run sync
-npm run ios
+﻿# UAOS FINAL LIVE LINKSPublic Web:https://universal-arranger-os.vercel.appProduction Deployment:https://universal-arranger-40tk1xvxq-sari-raslans-projects.vercel.appPublic API:https://universal-arranger-os.vercel.app/api/statushttps://universal-arranger-os.vercel.app/api/release-reporthttps://universal-arranger-os.vercel.app/api/presetsLocal Frontend:http://127.0.0.1:5180Local Backend:http://127.0.0.1:5199LAN IP:http://192.168.56.1:5180http://192.168.56.1:5199Desktop:cd desktopnpm installnpm run startnpm run packAndroid:cd mobilenpm installnpm run initnpm run add-androidnpm run syncnpm run androidiPhone/iOS:Needs macOS + Xcode:cd mobilenpm installnpm run initnpm run add-iosnpm run syncnpm run ios

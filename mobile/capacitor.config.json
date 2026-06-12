@@ -5,5 +5,12 @@
   "server": {
     "url": "https://universal-arranger-os.vercel.app",
     "cleartext": true
+  },
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 1200,
+      "backgroundColor": "#05050d",
+      "showSpinner": false
+    }
   }
 }

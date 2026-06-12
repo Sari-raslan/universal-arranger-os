@@ -1,9 +1,1 @@
-﻿UAOS PAID LAUNCH CHECKLIST
-
-1. Add checkout links.
-2. Run the paid launcher.
-3. Publish TikTok/Reels/Shorts.
-4. Founder Lifetime price: 239 EUR first 100 users.
-
-PRO: https://YOUR-CHECKOUT-LINK-PRO
-FOUNDER: https://YOUR-CHECKOUT-LINK-FOUNDER
+﻿UAOS PAID LAUNCH CHECKLIST1. Add checkout links.2. Run the paid launcher.3. Publish TikTok/Reels/Shorts.4. Founder Lifetime price: 239 EUR first 100 users.PRO: https://YOUR-CHECKOUT-LINK-PROFOUNDER: https://YOUR-CHECKOUT-LINK-FOUNDER

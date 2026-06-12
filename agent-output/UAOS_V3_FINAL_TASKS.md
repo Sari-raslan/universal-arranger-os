@@ -1,16 +1,1 @@
-﻿UAOS V3 FINAL TASKS
-
-DONE BY THIS SCRIPT:
-- Project save/export structure
-- MIDI export UI prepared
-- Cubase export plan prepared
-- Payment env example
-- Build verification
-- Git commit/push
-
-NEXT MANUAL:
-1. Add real Stripe/LemonSqueezy checkout links.
-2. Connect uaos.app DNS.
-3. Deploy backend to Railway/Render.
-4. Deploy frontend when Vercel limit resets.
-
+﻿UAOS V3 FINAL TASKSDONE BY THIS SCRIPT:* Project save/export structure* MIDI export UI prepared* Cubase export plan prepared* Payment env example* Build verification* Git commit/pushNEXT MANUAL:1. Add real Stripe/LemonSqueezy checkout links.2. Connect uaos.app DNS.3. Deploy backend to Railway/Render.4. Deploy frontend when Vercel limit resets.

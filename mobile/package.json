@@ -8,12 +8,17 @@
     "add-ios": "npx cap add ios",
     "sync": "npx cap sync",
     "android": "npx cap open android",
-    "ios": "npx cap open ios"
+    "ios": "npx cap open ios",
+    "build-web": "cd .. && npm run build --prefix uaos-live-clean",
+    "apk-debug": "cd android && gradlew assembleDebug",
+    "apk-release": "cd android && gradlew assembleRelease"
   },
   "dependencies": {
     "@capacitor/android": "latest",
     "@capacitor/ios": "latest",
     "@capacitor/cli": "latest",
-    "@capacitor/core": "latest"
+    "@capacitor/core": "latest",
+    "@capacitor/splash-screen": "latest",
+    "@capacitor/status-bar": "latest"
   }
 }

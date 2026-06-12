@@ -1,0 +1,20 @@
+{
+	"appId": "app.aeplatform.uaos",
+	"appName": "UAOS HyperStation",
+	"webDir": "../uaos-live-clean/dist",
+	"server": {
+		"url": "https://universal-arranger-os.vercel.app",
+		"cleartext": true
+	},
+	"plugins": {
+		"SplashScreen": {
+			"launchShowDuration": 1200,
+			"backgroundColor": "#05050d",
+			"showSpinner": false
+		}
+	},
+	"packageClassList": [
+		"SplashScreenPlugin",
+		"StatusBarPlugin"
+	]
+}
