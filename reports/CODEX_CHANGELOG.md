@@ -24,3 +24,4 @@
 - Created stacked V3 branch `codex/uaos-v3-ai-labs`.
 - Added experimental AI analysis, voice-to-MIDI, planner, rule-based generator, rhythm, evaluation, services, policy docs, V3 docs, and AI Labs route.
 - Verified V1 and V2 gates still pass with V3 tests: `npm run check` and `npm run build`.
+- Added master completion report, complete architecture, release sequence, and remaining hardware/research test documentation.
