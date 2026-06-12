@@ -4,13 +4,37 @@ const express = require("express");
 
 const app = express();
 const port = Number(process.env.PORT || 5199);
+const version = "1.0.0";
 const dataDir = path.join(__dirname, "data");
 const uploadsDir = path.join(__dirname, "uploads");
+const allowedOrigins = new Set([
+  "http://127.0.0.1:5173",
+  "http://localhost:5173",
+  "http://127.0.0.1:5180",
+  "http://localhost:5180"
+]);
 
 fs.mkdirSync(dataDir, { recursive: true });
 fs.mkdirSync(uploadsDir, { recursive: true });
 
-app.use(express.json({ limit: "300mb" }));
+app.use((req, res, next) => {
+  const origin = req.headers.origin;
+  if (origin && allowedOrigins.has(origin)) {
+    res.setHeader("Access-Control-Allow-Origin", origin);
+    res.setHeader("Vary", "Origin");
+  }
+  res.setHeader("Access-Control-Allow-Methods", "GET,POST,OPTIONS");
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+  if (req.method === "OPTIONS") return res.sendStatus(204);
+  return next();
+});
+
+app.use((req, _res, next) => {
+  console.log(`${new Date().toISOString()} ${req.method} ${req.path}`);
+  next();
+});
+
+app.use(express.json({ limit: "25mb" }));
 app.use("/samples", express.static(uploadsDir));
 
 const sampleMapFile = path.join(dataDir, "sample-map.json");
@@ -28,17 +52,13 @@ function writeJson(file, value) {
   fs.writeFileSync(file, JSON.stringify(value, null, 2), "utf8");
 }
 
-if (!fs.existsSync(sampleMapFile)) {
-  writeJson(sampleMapFile, []);
-}
-if (!fs.existsSync(projectsFile)) {
-  writeJson(projectsFile, []);
-}
+if (!fs.existsSync(sampleMapFile)) writeJson(sampleMapFile, []);
+if (!fs.existsSync(projectsFile)) writeJson(projectsFile, []);
 
 const presets = [
-  { name: "Khaliji Pop 96", tempo: 96, maqam: "Nahawand", section: "Main A", chord: "Cm" },
-  { name: "Oriental Ballad 76", tempo: 76, maqam: "Bayati", section: "Main B", chord: "Dm" },
-  { name: "Hijaz Dance 112", tempo: 112, maqam: "Hijaz", section: "Fill", chord: "G7" }
+  { name: "Khaliji Pop 96", tempo: 96, maqam: "Nahawand", section: "VAR_A", chord: "Cm" },
+  { name: "Oriental Ballad 76", tempo: 76, maqam: "Bayati", section: "VAR_B", chord: "Dm" },
+  { name: "Hijaz Dance 112", tempo: 112, maqam: "Hijaz", section: "FILL_1", chord: "G7" }
 ];
 
 const chords = {
@@ -51,26 +71,24 @@ const chords = {
   Am: [69, 72, 76]
 };
 
-function makeSong(body = {}) {
-  const tempo = Number(body.tempo || 96);
-  const chord = body.chord || "Cm";
-  const maqam = body.maqam || "Nahawand";
-  const structure = Array.isArray(body.structure) && body.structure.length
-    ? body.structure
-    : [body.section || "Main A"];
-  const base = chords[chord] || chords.Cm;
+function makePattern(body = {}) {
+  const tempo = Math.max(30, Math.min(260, Number(body.tempo || 96)));
+  const chord = chords[body.chord] ? body.chord : "Cm";
+  const maqam = String(body.maqam || "Nahawand");
+  const structure = Array.isArray(body.structure) && body.structure.length ? body.structure : [body.section || "VAR_A"];
+  const base = chords[chord];
   const notes = [];
   let position = 0;
 
   for (const section of structure) {
     for (let step = 0; step < 4; step += 1) {
-      notes.push({ time: position + step * 480, duration: 360, note: base[step % base.length], velocity: 105 - (step % 3) * 7, channel: 0, role: "melody", section });
+      notes.push({ time: position + step * 480, duration: 360, note: base[step % base.length], velocity: 96 - (step % 3) * 6, channel: 0, role: "melody", section });
       notes.push({ time: position + step * 480 + 240, duration: 150, note: base[0] - 12, velocity: 75, channel: 1, role: "bass", section });
-      notes.push({ time: position + step * 480, duration: 90, note: step % 2 ? 42 : 36, velocity: step % 2 ? 80 : 122, channel: 9, role: "drum", section });
+      notes.push({ time: position + step * 480, duration: 90, note: step % 2 ? 42 : 36, velocity: step % 2 ? 80 : 112, channel: 9, role: "drum", section });
     }
-    if (section === "Fill") {
+    if (section === "FILL_1" || section === "FILL_2") {
       [38, 40, 43, 45].forEach((note, index) => {
-        notes.push({ time: position + 1440 + index * 90, duration: 70, note, velocity: 124, channel: 9, role: "fill", section });
+        notes.push({ time: position + 1440 + index * 90, duration: 70, note, velocity: 112, channel: 9, role: "fill", section });
       });
     }
     position += 1920;
@@ -78,13 +96,14 @@ function makeSong(body = {}) {
 
   return {
     ok: true,
+    generator: "deterministic-v1-pattern",
     name: `UAOS ${structure[0]} ${chord} ${maqam}`,
     tempo,
     section: structure[0],
     chord,
     maqam,
     structure,
-    timeline: body.timeline || [],
+    timeline: Array.isArray(body.timeline) ? body.timeline : [],
     ppq: 480,
     notes
   };
@@ -136,14 +155,21 @@ function toMidi(pattern) {
   return Buffer.concat([header, track, body]);
 }
 
-app.get("/health", (_req, res) => res.json({ ok: true, service: "UAOS release backend", time: new Date().toISOString() }));
-app.get("/api/status", (_req, res) => res.json({ ok: true, product: "UAOS HyperStation", version: "V11", features: ["sampler", "webmidi", "timeline", "midi-export"] }));
+app.get("/health", (_req, res) => res.json({ ok: true, service: "uaos-v1-backend", mode: process.env.NODE_ENV || "development", time: new Date().toISOString() }));
+app.get("/api/version", (_req, res) => res.json({ ok: true, version, api: "uaos-v1" }));
+app.get("/api/status", (_req, res) => res.json({
+  ok: true,
+  product: "UAOS V1",
+  version,
+  mode: process.env.NODE_ENV || "development",
+  features: { sampler: "planned", webmidi: "browser", timeline: "available", midiExport: "available", ai: "not included" }
+}));
 app.get("/api/presets", (_req, res) => res.json(presets));
-app.post("/api/song-generate", (req, res) => res.json(makeSong(req.body || {})));
+app.post("/api/pattern-generate", (req, res) => res.json(makePattern(req.body || {})));
 app.post("/api/midi-export", (req, res) => {
-  const file = toMidi(makeSong(req.body || {}));
+  const file = toMidi(makePattern(req.body || {}));
   res.setHeader("Content-Type", "audio/midi");
-  res.setHeader("Content-Disposition", "attachment; filename=uaos-style.mid");
+  res.setHeader("Content-Disposition", "attachment; filename=uaos-pattern.mid");
   res.send(file);
 });
 app.get("/api/sampler/map", (_req, res) => res.json(readJson(sampleMapFile, [])));
@@ -166,6 +192,19 @@ app.post("/api/project/save", (req, res) => {
 });
 app.get("/api/project/list", (_req, res) => res.json(readJson(projectsFile, [])));
 
-app.listen(port, () => {
-  console.log(`UAOS release backend listening on http://127.0.0.1:${port}`);
+app.use((req, res) => {
+  res.status(404).json({ ok: false, error: `Unknown endpoint: ${req.method} ${req.path}` });
 });
+
+app.use((err, _req, res, _next) => {
+  console.error(err);
+  res.status(500).json({ ok: false, error: "Internal server error" });
+});
+
+if (require.main === module) {
+  app.listen(port, () => {
+    console.log(`UAOS V1 backend listening on http://127.0.0.1:${port}`);
+  });
+}
+
+module.exports = { app, makePattern, toMidi };
