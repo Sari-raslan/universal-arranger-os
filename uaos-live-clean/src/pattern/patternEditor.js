@@ -52,3 +52,13 @@ export function createPatternEditor(pattern = createPattern()) {
   };
 }
 
+export function patternToPlaybackEvents(pattern) {
+  const validation = validatePattern(pattern);
+  if (!validation.ok) throw new Error(validation.error);
+  return pattern.notes
+    .flatMap((note) => [
+      { tick: note.tick, type: "noteon", lane: note.lane, note: note.note, velocity: note.velocity || 100 },
+      { tick: note.tick + note.duration, type: "noteoff", lane: note.lane, note: note.note, velocity: 0 }
+    ])
+    .sort((a, b) => a.tick - b.tick || (a.type === "noteoff" ? -1 : 1));
+}

@@ -20,3 +20,4 @@
 - Added V2 timing, nine-lane arranger, pattern editor, chord recognition, song/setlist, device profile, mixer, and desktop project store modules.
 - Integrated a Professional Arranger panel into the Pro route.
 - Verified V1 gates still pass with V2 tests: `npm run check`, `npm run build`, and `npm run desktop:smoke`.
+- Added V2 pattern playback events, V2 architecture docs, pattern/device formats, desktop runbook, manual hardware tests, and V2 final report.

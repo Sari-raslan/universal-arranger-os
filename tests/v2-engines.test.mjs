@@ -2,7 +2,7 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import { applySwing, deterministicHumanize, positionFromTick, quantizeTick, reduceClock, scheduleWindow } from "../uaos-live-clean/src/timing/proClock.js";
 import { activeLanes, createProArrangerState, reduceProArranger, V2_LANES } from "../uaos-live-clean/src/arranger/proArranger.js";
-import { createPattern, createPatternEditor, validatePattern } from "../uaos-live-clean/src/pattern/patternEditor.js";
+import { createPattern, createPatternEditor, patternToPlaybackEvents, validatePattern } from "../uaos-live-clean/src/pattern/patternEditor.js";
 import { recognizeChord } from "../uaos-live-clean/src/chords/chordRecognition.js";
 import { addSongSection, addSongToSetlist, createSetlist, createSong, nextSong, previousSong, validateSongProject } from "../uaos-live-clean/src/song/songSetlist.js";
 import { DEVICE_PROFILES, exportProfile, importProfile } from "../uaos-live-clean/src/devices/deviceProfiles.js";
@@ -41,6 +41,7 @@ test("pattern editor supports create modify save reopen undo redo", () => {
   const exported = editor.exportJson();
   const reopened = createPatternEditor().importJson(exported);
   assert.equal(validatePattern(reopened).ok, true);
+  assert.deepEqual(patternToPlaybackEvents(reopened).map((event) => event.type), ["noteon", "noteoff"]);
 });
 
 test("chord recognition covers common qualities", () => {
