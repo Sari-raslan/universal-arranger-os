@@ -6,9 +6,6 @@ import { UAOSAudioIntelligence } from "./audio/uaosAudioIntelligence.js";
 import { UAOSMidiEngine } from "./midi/uaosMidiEngine.js";
 import { UAOSArrangerEngine, UAOS_SECTIONS } from "./arranger/uaosArrangerEngine.js";
 import { exportMidiDraft } from "./style/midiExportDraft.js";
-import { UAOSCrashSafeAutosave } from "./safety/uaosCrashSafeAutosave.js";
-import { UAOSLatencyMonitor } from "./live/uaosLatencyMonitor.js";
-import { LIVE_CHORD_PADS, LIVE_QUICK_SECTIONS } from "./live/livePads.js";
 import { UAOSWavRecorder } from "./audio/uaosWavRecorder.js";
 import { UAOSPerformanceMode } from "./performance/uaosPerformanceMode.js";
 import { UAOSSongArrangement } from "./song/uaosSongArrangement.js";
@@ -44,10 +41,6 @@ export default function App(){
   const [arrangerState,setArrangerState] = useState(arranger.state());
   const [recording,setRecording] = useState(true);
   const [profileEditor,setProfileEditor] = useState({channel:1, transpose:0});
-  const [liveMode,setLiveMode] = useState(false);
-  const [latency,setLatency] = useState({latency:0,average:0});
-  const autosave = useMemo(()=>new UAOSCrashSafeAutosave(uaosBus, uaosTimeline, arranger), [arranger]);
-  const latencyMonitor = useMemo(()=>new UAOSLatencyMonitor(uaosBus, uaosTimeline), []);
 
   useEffect(()=>{
     uaosBus.on("*", () => {
@@ -63,9 +56,6 @@ export default function App(){
 
     uaosBus.on("voice.midi.draft", ev => setVoiceMidi(ev.payload));
     uaosBus.on("midi.scan", ev => setMidiInfo(ev.payload));
-    uaosBus.on("latency.monitor", ev => setLatency(ev.payload));
-      autosave.start();
-    latencyMonitor.start();
   },[arranger]);
 
   async function startAudio(){
@@ -117,77 +107,12 @@ export default function App(){
     setStatus("KEYBOARD PROFILE UPDATED");
   }
 
-  if(liveMode){
-    return (
-      <div style={{minHeight:"100vh",background:"#020617",color:"white",fontFamily:"Arial",padding:24}}>
-        <h1>UAOS V1.16 LIVE STAGE MODE</h1>
-        <h2>{arrangerState.section} | {arrangerState.chord} | BPM {arrangerState.bpm}</h2>
-        <p>Latency: {latency.average} ms average</p>
-
-        <button onClick={()=>setLiveMode(false)}>Exit Live Mode</button>
-        <button onClick={()=>arranger.start()} style={{marginLeft:8}}>Start</button>
-        <button onClick={()=>arranger.stop()} style={{marginLeft:8}}>Stop</button>
-        <button onClick={()=>performanceMode.start()} style={{marginLeft:8}}>Performance Start</button>
-        <button onClick={()=>performanceMode.stop()} style={{marginLeft:8}}>Performance Stop</button>
-
-        <h2>Sections</h2>
-        <div style={{display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:12}}>
-          {LIVE_QUICK_SECTIONS.map(s=>(
-            <button key={s} onClick={()=>arranger.setSection(s)} style={{fontSize:28,padding:28}}>
-              {s}
-            </button>
-          ))}
-        </div>
-
-        <h2>Chord Pads</h2>
-        <div style={{display:"grid",gridTemplateColumns:"repeat(4,1fr)",gap:12}}>
-          {LIVE_CHORD_PADS.map(c=>(
-            <button key={c} onClick={()=>arranger.setChord(c)} style={{fontSize:34,padding:34}}>
-              {c}
-            </button>
-          ))}
-        </div>
-
-        <h2>Live Monitor</h2>
-        <pre style={{background:"#111827",padding:12,borderRadius:8}}>
-          {JSON.stringify({
-            status,
-            audio:audioState,
-            voiceMidi,
-            arranger:arrangerState,
-            latency
-          },null,2)}
-        </pre>
-      </div>
-    );
-  }
-
   return (
     <div style={{minHeight:"100vh",background:"#070b14",color:"white",fontFamily:"Arial",padding:24}}>
-      <h1>UAOS V1.16 Live Stage Mode</h1>
-      <p>Standalone live mode, full-screen stage UI, chord pads, transport bar, latency monitor, autosave, performance tools, and arranger control.</p>
+      <h1>UAOS V1.15 Performance + Audio Export</h1>
+      <p>Performance mode, audio recording export, pattern editor, song arrangement sections, MIDI/project export, and realtime arranger tools.</p>
 
       <h3>Status: {status}</h3>
-
-      <button onClick={()=>setLiveMode(true)} style={{fontSize:18,padding:12}}>
-        Enter Live Stage Mode
-      </button>
-      <button onClick={()=>document.documentElement.requestFullscreen?.()} style={{marginLeft:8}}>
-        Full Screen
-      </button>
-      <button onClick={()=>{
-        const snap=autosave.restore();
-        setStatus(snap ? "AUTOSAVE FOUND: "+snap.savedAt : "NO AUTOSAVE FOUND");
-      }} style={{marginLeft:8}}>
-        Check Autosave
-      </button>
-
-      <h3>Transport Bar</h3>
-      <button onClick={()=>arranger.start()}>â–¶ Start</button>
-      <button onClick={()=>arranger.stop()} style={{marginLeft:8}}>â–  Stop</button>
-      <button onClick={()=>player.play()} style={{marginLeft:8}}>â–¶ Timeline</button>
-      <button onClick={()=>player.stop()} style={{marginLeft:8}}>â–  Timeline</button>
-      <span style={{marginLeft:16}}>Latency Avg: {latency.average} ms</span>
 
       <button onClick={startAudio}>Start Audio / Chord / Voice</button>
       <button onClick={()=>performanceMode.start()} style={{marginLeft:8}}>Start Performance Mode</button>
@@ -361,6 +286,5 @@ export default function App(){
     </div>
   );
 }
-
 
 
