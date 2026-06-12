@@ -6,8 +6,6 @@ import { UAOSAudioIntelligence } from "./audio/uaosAudioIntelligence.js";
 import { UAOSMidiEngine } from "./midi/uaosMidiEngine.js";
 import { UAOSArrangerEngine, UAOS_SECTIONS } from "./arranger/uaosArrangerEngine.js";
 import { exportMidiDraft } from "./style/midiExportDraft.js";
-import { makeMidiFile, downloadBytes } from "./midi/midiFileExport.js";
-import { makeProjectSnapshot, loadProjectSnapshot } from "./project/uaosProject.js";
 
 const chords = ["C","Dm","Em","F","G","Am","A","E","D","C7","G7","Am7"];
 
@@ -103,8 +101,8 @@ export default function App(){
 
   return (
     <div style={{minHeight:"100vh",background:"#070b14",color:"white",fontFamily:"Arial",padding:24}}>
-      <h1>UAOS V1.14 Real MIDI + Project Export</h1>
-      <p>Real MIDI file export, project save/load, timeline player, style import/export, audio intelligence, and keyboard profile editor.</p>
+      <h1>UAOS V1.13 Full Music Workstation</h1>
+      <p>Audio + chord + voice MIDI + timeline player + style import/export + MIDI draft export + keyboard profile editor.</p>
 
       <h3>Status: {status}</h3>
 
@@ -122,27 +120,8 @@ export default function App(){
         <button onClick={()=>arranger.memorizeSection()} style={{marginLeft:8}}>Save Section Memory</button>
         <button onClick={()=>downloadText("uaos-v113-timeline.json", uaosTimeline.exportJson())} style={{marginLeft:8}}>Export Timeline</button>
         <button onClick={()=>downloadText("uaos-v113-style.json", arranger.exportStyle())} style={{marginLeft:8}}>Export Style</button>
-        <button onClick={()=>downloadText("uaos-v114-midi-draft.json", exportMidiDraft(uaosTimeline.load()))} style={{marginLeft:8}}>Export MIDI Draft</button>
-        <button onClick={()=>downloadBytes("uaos-v114-export.mid", makeMidiFile(uaosTimeline.load(), arrangerState.bpm))} style={{marginLeft:8}}>Export Real MIDI</button>
-        <button onClick={()=>downloadText("uaos-v114-project.uaos.json", makeProjectSnapshot({timeline:uaosTimeline.load(), arrangerState, midiProfiles:midi.getProfiles()}))} style={{marginLeft:8}}>Save Project</button>
+        <button onClick={()=>downloadText("uaos-v113-midi-draft.json", exportMidiDraft(uaosTimeline.load()))} style={{marginLeft:8}}>Export MIDI Draft</button>
       </div>
-
-      <h2>Load UAOS Project</h2>
-      <input type="file" accept="application/json" onChange={e=>{
-        const file=e.target.files?.[0];
-        if(!file)return;
-        const r=new FileReader();
-        r.onload=()=>{
-          try{
-            const p=loadProjectSnapshot(String(r.result));
-            localStorage.setItem("uaos.v113.timeline", JSON.stringify(p.timeline || []));
-            setStatus("PROJECT LOADED â€” refresh page to restore full timeline");
-          }catch(err){
-            setStatus("PROJECT LOAD FAILED: " + err.message);
-          }
-        };
-        r.readAsText(file);
-      }} />
 
       <h2>Import UAOS Style JSON</h2>
       <input type="file" accept="application/json" onChange={e=>importStyleFile(e.target.files?.[0])} />
@@ -214,4 +193,3 @@ export default function App(){
     </div>
   );
 }
-
