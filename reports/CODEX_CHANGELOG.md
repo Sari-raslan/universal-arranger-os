@@ -16,3 +16,7 @@
 - Added V1 final report, manual test plan, and event bus / route smoke tests.
 - Restored the `promo` route after route smoke test caught the regression.
 - Passed V1 quality gate: `npm run check`, `npm test`, `npm run build`, `npm run desktop:smoke`, and `scripts/UAOS_V1_VALIDATE_NO_DEPLOY.ps1 -SkipInstall`.
+- Created stacked V2 branch `codex/uaos-v2-pro-arranger`.
+- Added V2 timing, nine-lane arranger, pattern editor, chord recognition, song/setlist, device profile, mixer, and desktop project store modules.
+- Integrated a Professional Arranger panel into the Pro route.
+- Verified V1 gates still pass with V2 tests: `npm run check`, `npm run build`, and `npm run desktop:smoke`.
