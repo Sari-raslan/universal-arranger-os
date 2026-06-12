@@ -1,15 +1,8 @@
 ﻿$Root="$HOME\Desktop\UAOS_ALL_AGENTS_FINAL_RUN\universal-arranger-os"
 $App="$Root\uaos-live-clean"
-$Log="$Root\reports\UAOS_V17_AUDIO_REAL_FIX.txt"
-
-function L($m){
-  Write-Host $m -ForegroundColor Cyan
-  $m | Out-File $Log -Append -Encoding utf8
-}
-
 Set-Location $App
 
-L "Writing real AudioEngine.jsx..."
+Write-Host "[AUDIO REAL] writing AudioEngine.jsx" -ForegroundColor Cyan
 
 @'
 import React, { useRef, useState } from "react";
@@ -30,37 +23,37 @@ export default function AudioEngine(){
   const chunksRef=useRef([]);
 
   function freqToNote(freq){
-    if(!freq || freq < 40) return "--";
+    if(!freq || freq<40) return "--";
     const midi=Math.round(69+12*Math.log2(freq/440));
     const names=["C","C#","D","D#","E","F","F#","G","G#","A","A#","B"];
-    return names[((midi%12)+12)%12] + (Math.floor(midi/12)-1) + " / MIDI " + midi;
+    return names[((midi%12)+12)%12]+(Math.floor(midi/12)-1)+" / MIDI "+midi;
   }
 
-  function detectPitch(buf,sampleRate){
-    let size=buf.length;
+  function detectPitch(data,sampleRate){
     let rms=0;
-    for(let i=0;i<size;i++) rms+=buf[i]*buf[i];
-    rms=Math.sqrt(rms/size);
-    if(rms < 0.01) return -1;
+    for(let i=0;i<data.length;i++) rms+=data[i]*data[i];
+    rms=Math.sqrt(rms/data.length);
+    if(rms<0.01) return -1;
 
     let bestOffset=-1;
-    let bestCorrelation=0;
+    let bestCorr=0;
 
     for(let offset=40; offset<1000; offset++){
-      let correlation=0;
-      for(let i=0;i<size-offset;i++){
-        correlation += Math.abs(buf[i]-buf[i+offset]);
+      let corr=0;
+      for(let i=0;i<data.length-offset;i++){
+        corr += Math.abs(data[i]-data[i+offset]);
       }
-      correlation = 1 - correlation/(size-offset);
-      if(correlation > bestCorrelation){
-        bestCorrelation=correlation;
+      corr = 1 - corr/(data.length-offset);
+      if(corr>bestCorr){
+        bestCorr=corr;
         bestOffset=offset;
       }
     }
 
-    if(bestCorrelation > 0.9 && bestOffset > 0){
-      return sampleRate / bestOffset;
+    if(bestCorr>0.9 && bestOffset>0){
+      return sampleRate/bestOffset;
     }
+
     return -1;
   }
 
@@ -108,7 +101,6 @@ export default function AudioEngine(){
     if(rafRef.current) cancelAnimationFrame(rafRef.current);
     if(streamRef.current) streamRef.current.getTracks().forEach(t=>t.stop());
     if(ctxRef.current) ctxRef.current.close();
-
     setRunning(false);
     setLevel(0);
   }
@@ -141,32 +133,20 @@ export default function AudioEngine(){
   }
 
   return (
-    <div style={{padding:24,border:"1px solid #333",borderRadius:16,marginTop:20}}>
+    <section style={{padding:20,border:"1px solid #333",borderRadius:14,marginTop:20}}>
       <h2>UAOS Audio Engine V1.7 Real</h2>
+      {!running ? <button onClick={start}>Start Microphone</button> : <button onClick={stop}>Stop Microphone</button>}
 
-      {!running
-        ? <button onClick={start}>Start Microphone</button>
-        : <button onClick={stop}>Stop Microphone</button>
-      }
-
-      <div style={{height:24,background:"#222",borderRadius:12,overflow:"hidden",marginTop:20}}>
+      <div style={{height:22,background:"#222",borderRadius:12,overflow:"hidden",marginTop:16}}>
         <div style={{height:"100%",width:level+"%",background:"lime"}} />
       </div>
 
-      <p>Input Level: {level}%</p>
+      <p>Level: {level}%</p>
       <p>Pitch: {pitch}</p>
       <p>Note: {note}</p>
 
-      {!recording
-        ? <button onClick={startRecording}>Record</button>
-        : <button onClick={stopRecording}>Stop Recording</button>
-      }
-
-      {audioUrl && <audio controls src={audioUrl} style={{width:"100%",marginTop:15}} />}
-
-      <p style={{marginTop:20}}>
-        Next: detected pitch will become MIDI notes for UAOS Voice-to-MIDI.
-      </p>
-    </div>
+      {!recording ? <button onClick={startRecording}>Record</button> : <button onClick={stopRecording}>Stop Recording</button>}
+      {audioUrl && <audio controls src={audioUrl} style={{width:"100%",marginTop:12}} />}
+    </section>
   );
 }
