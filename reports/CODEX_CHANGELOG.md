@@ -13,3 +13,6 @@
 - Hardened backend and Electron V1 behavior, added static check, desktop smoke, and V1 tests.
 - Expanded `npm test` to include both baseline tests and V1 tests.
 - Verified `npm run check`, `npm run build`, and `npm run desktop:smoke`.
+- Added V1 final report, manual test plan, and event bus / route smoke tests.
+- Restored the `promo` route after route smoke test caught the regression.
+- Passed V1 quality gate: `npm run check`, `npm test`, `npm run build`, `npm run desktop:smoke`, and `scripts/UAOS_V1_VALIDATE_NO_DEPLOY.ps1 -SkipInstall`.

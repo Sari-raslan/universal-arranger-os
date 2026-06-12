@@ -2,8 +2,12 @@
 
 Current phase: AUDIT
 
-## Baseline Blockers
+## Resolved Baseline Blockers
 
-- Root `npm test` is missing. V1 must add it before the V1 quality gate can pass.
-- Root `npm run check` is missing. V1 must add it before the V1 quality gate can pass.
-- Real microphone and MIDI hardware behavior cannot be fully validated without browser permissions and physical devices; V1 should provide code, simulated tests, and manual test steps.
+- Root `npm test` was added and passes.
+- Root `npm run check` was added and passes.
+
+## Manual Validation Blockers
+
+- Real microphone permission and stream cleanup should be validated in target browsers.
+- Real MIDI thru, mapping, and All Notes Off behavior should be validated with physical MIDI hardware.

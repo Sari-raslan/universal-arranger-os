@@ -19,7 +19,7 @@ const plans = [
   { id: "pro", name: "UAOS Pro Arranger", price: "49-99 EUR", text: "Live arranger controls and MIDI performance foundation.", status: "experimental" }
 ];
 
-const routeItems = ["home", "sing", "studio", "pro", "midi", "sounds", "sampler", "pricing", "downloads", "audio", "timeline", "arranger", "live", "sessions", "diagnostics"];
+const routeItems = ["home", "sing", "studio", "pro", "midi", "sounds", "sampler", "promo", "pricing", "downloads", "audio", "timeline", "arranger", "live", "sessions", "diagnostics"];
 
 function route(page, setPage) {
   window.location.hash = "#/" + page;
@@ -155,6 +155,18 @@ function Sampler() {
   );
 }
 
+function Promo() {
+  return (
+    <main className="page">
+      <section className="panel">
+        <p className="eyebrow">Promo <StatusBadge status="available" /></p>
+        <h1>Marketing Message</h1>
+        <p className="lead">Sing. Create. Arrange. UAOS presents a local V1 foundation for audio analysis, MIDI monitoring, arranging, and sessions.</p>
+      </section>
+    </main>
+  );
+}
+
 function Pricing() {
   return <main className="page"><section className="panel"><h1>Pricing</h1><div className="cards">{plans.map((plan) => <article className="card" key={plan.id}><StatusBadge status={plan.status} /><h2>{plan.name}</h2><p>{plan.price}</p></article>)}</div></section></main>;
 }
@@ -190,6 +202,7 @@ function AppShell() {
     if (page === "midi") return <Midi />;
     if (page === "sounds") return <Sounds />;
     if (page === "sampler") return <Sampler />;
+    if (page === "promo") return <Promo />;
     if (page === "pricing") return <Pricing />;
     if (page === "downloads") return <Downloads />;
     if (page === "audio") return <main className="page"><section className="panel"><AudioLab /></section></main>;
