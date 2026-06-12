@@ -1,4 +1,12 @@
-﻿import React, { useEffect, useState } from "react";
+```powershell
+$Root="$HOME\Desktop\UAOS_ALL_AGENTS_FINAL_RUN\universal-arranger-os"
+
+Set-Location $Root
+
+$App="src\App.jsx"
+
+@'
+import React, { useEffect, useState } from "react";
 
 export default function App(){
 
@@ -68,7 +76,7 @@ export default function App(){
       <ul>
         {events.map(e=>(
           <li key={e.id}>
-            {e.type} â€” {e.value}
+            {e.type} — {e.value}
           </li>
         ))}
       </ul>
@@ -76,3 +84,23 @@ export default function App(){
     </div>
   )
 }
+'@ | Set-Content $App -Encoding UTF8
+
+npm run build
+
+if($LASTEXITCODE -eq 0){
+
+  Write-Host "UAOS V1.8 CORE UI BUILD PASS" -ForegroundColor Green
+
+  if(Test-Path ".\UAOS_SAFE_TURBO.ps1"){
+
+    powershell -ExecutionPolicy Bypass -File ".\UAOS_SAFE_TURBO.ps1"
+
+  }
+
+}else{
+
+  Write-Host "BUILD FAIL" -ForegroundColor Red
+
+}
+```
