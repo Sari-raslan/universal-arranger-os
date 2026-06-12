@@ -1,10 +1,26 @@
-﻿export class UAOSMidiEngine {
+﻿import { KEYBOARD_PROFILES } from "../profiles/keyboardProfiles.js";
+
+export class UAOSMidiEngine {
   constructor(bus, timeline){
     this.bus = bus;
     this.timeline = timeline;
     this.access = null;
     this.outputs = [];
     this.selectedOutputId = "";
+    this.profileKey = "GENERAL_MIDI";
+  }
+
+  profile(){
+    return KEYBOARD_PROFILES[this.profileKey] || KEYBOARD_PROFILES.GENERAL_MIDI;
+  }
+
+  setProfile(key){
+    this.profileKey = key;
+    const ev = this.bus.emit("midi.profile", {
+      key,
+      profile: this.profile()
+    });
+    this.timeline.add(ev);
   }
 
   async start(){
@@ -14,7 +30,7 @@
       return;
     }
 
-    this.access = await navigator.requestMIDIAccess();
+    this.access = await navigator.requestMIDIAccess({ sysex:false });
 
     const inputs = [...this.access.inputs.values()];
     this.outputs = [...this.access.outputs.values()];
@@ -33,7 +49,6 @@
         const channel = (status & 0x0f) + 1;
 
         let type = "midi.raw";
-
         if(command === 144 && velocity > 0) type = "midi.noteon";
         if(command === 128 || (command === 144 && velocity === 0)) type = "midi.noteoff";
 
@@ -55,17 +70,43 @@
     this.selectedOutputId = id;
   }
 
-  sendNote(note = 60, velocity = 100, duration = 250, channel = 1){
-    const output = this.outputs.find(o => o.id === this.selectedOutputId) || this.outputs[0];
+  output(){
+    return this.outputs.find(o => o.id === this.selectedOutputId) || this.outputs[0];
+  }
+
+  sendRaw(bytes){
+    const output = this.output();
+    if(!output) return false;
+    output.send(bytes);
+    return true;
+  }
+
+  sendNote(note = 60, velocity = 100, duration = 250, channel = null){
+    const output = this.output();
     if(!output) return false;
 
-    const ch = Math.max(0, Math.min(15, channel - 1));
-    output.send([0x90 + ch, note, velocity]);
+    const profile = this.profile();
+    const ch = Math.max(0, Math.min(15, (channel || profile.channel) - 1));
+    const finalNote = Math.max(0, Math.min(127, note + (profile.transpose || 0)));
+
+    output.send([0x90 + ch, finalNote, velocity]);
 
     setTimeout(()=>{
-      output.send([0x80 + ch, note, 0]);
+      output.send([0x80 + ch, finalNote, 0]);
     }, duration);
 
     return true;
+  }
+
+  styleStart(){
+    const p = this.profile();
+    if(p.styleStart) return this.sendRaw(p.styleStart);
+    return false;
+  }
+
+  styleStop(){
+    const p = this.profile();
+    if(p.styleStop) return this.sendRaw(p.styleStop);
+    return false;
   }
 }

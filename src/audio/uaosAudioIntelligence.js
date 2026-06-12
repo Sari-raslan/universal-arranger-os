@@ -1,54 +1,4 @@
-﻿const NOTE_NAMES = ["C","C#","D","D#","E","F","F#","G","G#","A","A#","B"];
-
-function freqToNote(freq){
-  if(!freq || freq < 40 || freq > 2000) return null;
-  const midi = Math.round(69 + 12 * Math.log2(freq / 440));
-  return {
-    midi,
-    name: NOTE_NAMES[((midi % 12) + 12) % 12],
-    octave: Math.floor(midi / 12) - 1,
-    freq: Math.round(freq * 10) / 10
-  };
-}
-
-function autoCorrelate(buffer, sampleRate){
-  let size = buffer.length;
-  let rms = 0;
-
-  for(let i=0;i<size;i++){
-    rms += buffer[i] * buffer[i];
-  }
-
-  rms = Math.sqrt(rms / size);
-  if(rms < 0.01) return null;
-
-  let bestOffset = -1;
-  let bestCorrelation = 0;
-
-  const minOffset = Math.floor(sampleRate / 1000);
-  const maxOffset = Math.floor(sampleRate / 50);
-
-  for(let offset = minOffset; offset < maxOffset; offset++){
-    let correlation = 0;
-
-    for(let i=0;i<size-offset;i++){
-      correlation += Math.abs(buffer[i] - buffer[i+offset]);
-    }
-
-    correlation = 1 - correlation / (size - offset);
-
-    if(correlation > bestCorrelation){
-      bestCorrelation = correlation;
-      bestOffset = offset;
-    }
-  }
-
-  if(bestCorrelation > 0.88 && bestOffset > 0){
-    return sampleRate / bestOffset;
-  }
-
-  return null;
-}
+﻿import { autoCorrelate, freqToNote, guessChordFromNotes } from "./musicTheory.js";
 
 export class UAOSAudioIntelligence {
   constructor(bus, timeline){
@@ -59,6 +9,9 @@ export class UAOSAudioIntelligence {
     this.running = false;
     this.lastBeat = 0;
     this.beats = [];
+    this.noteWindow = [];
+    this.lastVoiceMidi = null;
+    this.voiceGate = false;
   }
 
   async start(){
@@ -79,7 +32,6 @@ export class UAOSAudioIntelligence {
     });
 
     this.timeline.add(ev);
-
     this.loop();
   }
 
@@ -98,6 +50,17 @@ export class UAOSAudioIntelligence {
     const pitchHz = autoCorrelate(timeData, this.ctx.sampleRate);
     const note = freqToNote(pitchHz);
 
+    if(note && level > 18){
+      this.noteWindow.push({
+        midi: note.midi,
+        ts: Date.now()
+      });
+
+      this.noteWindow = this.noteWindow.filter(n => Date.now() - n.ts < 2200);
+    }
+
+    const chord = guessChordFromNotes(this.noteWindow.map(n => n.midi));
+
     let bpm = null;
     const now = performance.now();
 
@@ -112,7 +75,31 @@ export class UAOSAudioIntelligence {
           bpm = Math.round(this.beats.reduce((a,b)=>a+b,0) / this.beats.length);
         }
       }
+
       this.lastBeat = now;
+    }
+
+    if(note && level > 22 && this.lastVoiceMidi !== note.midi){
+      const voiceEv = this.bus.emit("voice.midi.draft", {
+        note: note.label,
+        midi: note.midi,
+        velocity: Math.max(30, Math.min(120, level)),
+        pitchHz: note.freq
+      });
+
+      this.timeline.add(voiceEv);
+      this.lastVoiceMidi = note.midi;
+      this.voiceGate = true;
+    }
+
+    if(level < 10 && this.voiceGate){
+      const offEv = this.bus.emit("voice.midi.off", {
+        midi: this.lastVoiceMidi
+      });
+
+      this.timeline.add(offEv);
+      this.voiceGate = false;
+      this.lastVoiceMidi = null;
     }
 
     const ev = this.bus.emit("audio.intelligence", {
@@ -120,6 +107,7 @@ export class UAOSAudioIntelligence {
       peak,
       pitchHz: pitchHz ? Math.round(pitchHz * 10) / 10 : null,
       note,
+      chord,
       bpm
     });
 
