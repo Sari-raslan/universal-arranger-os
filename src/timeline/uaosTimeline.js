@@ -1,12 +1,14 @@
 ﻿export class UAOSTimeline {
   constructor(){
-    this.key = "uaos.v111.timeline";
+    this.key = "uaos.v112.timeline";
     this.items = JSON.parse(localStorage.getItem(this.key) || "[]");
+    this.recording = true;
   }
 
   add(ev){
+    if(!this.recording) return;
     this.items.push(ev);
-    if(this.items.length > 5000) this.items = this.items.slice(-5000);
+    if(this.items.length > 8000) this.items = this.items.slice(-8000);
     this.save();
   }
 
@@ -23,10 +25,14 @@
     this.save();
   }
 
+  setRecording(v){
+    this.recording = !!v;
+  }
+
   exportJson(){
     return JSON.stringify({
       product: "UAOS",
-      version: "1.11-chord-voice-style",
+      version: "1.12-timeline-style-export",
       exportedAt: new Date().toISOString(),
       events: this.items
     }, null, 2);

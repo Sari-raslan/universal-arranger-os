@@ -39,28 +39,75 @@ export class UAOSArrangerEngine {
     this.timer = null;
     this.bpm = 100;
     this.patternKey = "POP_8BEAT";
-    this.patterns = JSON.parse(localStorage.getItem("uaos.v111.patterns") || "null") || DEFAULT_PATTERNS;
+    this.patterns = JSON.parse(localStorage.getItem("uaos.v112.patterns") || "null") || DEFAULT_PATTERNS;
+    this.sectionMemory = JSON.parse(localStorage.getItem("uaos.v112.sectionMemory") || "null") || {};
   }
 
-  savePatterns(){
-    localStorage.setItem("uaos.v111.patterns", JSON.stringify(this.patterns));
+  save(){
+    localStorage.setItem("uaos.v112.patterns", JSON.stringify(this.patterns));
+    localStorage.setItem("uaos.v112.sectionMemory", JSON.stringify(this.sectionMemory));
   }
 
-  learnCurrentPattern(){
-    const key = "USER_PATTERN_" + Date.now();
+  learnFromMidi(notes){
+    if(!notes || !notes.length) return false;
+
+    const base = notes.slice(-16);
+    const mapped = base.map(n => Math.abs(n.note % 3));
+
+    const key = "MIDI_PATTERN_" + Date.now();
+
     this.patterns[key] = {
-      name: "User Pattern " + new Date().toLocaleTimeString(),
-      steps: [0,1,2,1,0,2,1,2]
+      name: "Recorded MIDI Pattern " + new Date().toLocaleTimeString(),
+      steps: mapped.length ? mapped : [0,1,2,1]
     };
-    this.patternKey = key;
-    this.savePatterns();
 
-    const ev = this.bus.emit("pattern.learned", {
+    this.patternKey = key;
+    this.save();
+
+    const ev = this.bus.emit("pattern.learned.from-midi", {
       key,
       pattern: this.patterns[key]
     });
 
     this.timeline.add(ev);
+
+    return true;
+  }
+
+  memorizeSection(){
+    this.sectionMemory[this.section] = {
+      chord: this.chord,
+      patternKey: this.patternKey,
+      bpm: this.bpm
+    };
+
+    this.save();
+
+    const ev = this.bus.emit("section.memory.saved", {
+      section: this.section,
+      memory: this.sectionMemory[this.section]
+    });
+
+    this.timeline.add(ev);
+  }
+
+  recallSection(section){
+    const mem = this.sectionMemory[section];
+    if(!mem) return false;
+
+    this.section = section;
+    this.chord = mem.chord || this.chord;
+    this.patternKey = mem.patternKey || this.patternKey;
+    this.bpm = mem.bpm || this.bpm;
+
+    const ev = this.bus.emit("section.memory.recalled", {
+      section,
+      memory: mem
+    });
+
+    this.timeline.add(ev);
+
+    return true;
   }
 
   setPattern(key){
@@ -74,12 +121,13 @@ export class UAOSArrangerEngine {
 
   setSection(section){
     this.section = section;
+    this.midi?.sendSection(section);
+
     const ev = this.bus.emit("arranger.section", { section });
     this.timeline.add(ev);
   }
 
   setChord(chord){
-    if(chord && chord.chord) chord = chord.chord;
     this.chord = CHORDS[chord] ? chord : "C";
     const ev = this.bus.emit("arranger.chord", { chord: this.chord });
     this.timeline.add(ev);
@@ -95,14 +143,15 @@ export class UAOSArrangerEngine {
 
   start(){
     this.running = true;
-    this.midi?.styleStart();
+    this.midi?.transportStart();
     this.tick();
   }
 
   stop(){
     this.running = false;
     if(this.timer) clearTimeout(this.timer);
-    this.midi?.styleStop();
+    this.midi?.transportStop();
+
     const ev = this.bus.emit("arranger.stopped", {});
     this.timeline.add(ev);
   }
@@ -134,6 +183,20 @@ export class UAOSArrangerEngine {
     this.timer = setTimeout(()=>this.tick(), interval);
   }
 
+  exportStyle(){
+    return JSON.stringify({
+      product: "UAOS",
+      version: "1.12-style-json",
+      exportedAt: new Date().toISOString(),
+      bpm: this.bpm,
+      activeSection: this.section,
+      activeChord: this.chord,
+      activePattern: this.patternKey,
+      patterns: this.patterns,
+      sectionMemory: this.sectionMemory
+    }, null, 2);
+  }
+
   state(){
     return {
       section: this.section,
@@ -141,7 +204,8 @@ export class UAOSArrangerEngine {
       bpm: this.bpm,
       running: this.running,
       patternKey: this.patternKey,
-      patterns: this.patterns
+      patterns: this.patterns,
+      sectionMemory: this.sectionMemory
     };
   }
 }

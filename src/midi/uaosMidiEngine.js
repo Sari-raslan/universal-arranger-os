@@ -8,6 +8,7 @@ export class UAOSMidiEngine {
     this.outputs = [];
     this.selectedOutputId = "";
     this.profileKey = "GENERAL_MIDI";
+    this.recordedNotes = [];
   }
 
   profile(){
@@ -16,10 +17,12 @@ export class UAOSMidiEngine {
 
   setProfile(key){
     this.profileKey = key;
+
     const ev = this.bus.emit("midi.profile", {
       key,
       profile: this.profile()
     });
+
     this.timeline.add(ev);
   }
 
@@ -52,15 +55,29 @@ export class UAOSMidiEngine {
         if(command === 144 && velocity > 0) type = "midi.noteon";
         if(command === 128 || (command === 144 && velocity === 0)) type = "midi.noteoff";
 
-        const ev = this.bus.emit(type, {
+        const payload = {
           device: input.name,
           status,
           command,
           channel,
           note,
           velocity
-        });
+        };
 
+        if(type === "midi.noteon"){
+          this.recordedNotes.push({
+            note,
+            velocity,
+            channel,
+            time: performance.now()
+          });
+
+          if(this.recordedNotes.length > 256){
+            this.recordedNotes = this.recordedNotes.slice(-256);
+          }
+        }
+
+        const ev = this.bus.emit(type, payload);
         this.timeline.add(ev);
       };
     });
@@ -76,7 +93,7 @@ export class UAOSMidiEngine {
 
   sendRaw(bytes){
     const output = this.output();
-    if(!output) return false;
+    if(!output || !bytes) return false;
     output.send(bytes);
     return true;
   }
@@ -98,15 +115,24 @@ export class UAOSMidiEngine {
     return true;
   }
 
-  styleStart(){
-    const p = this.profile();
-    if(p.styleStart) return this.sendRaw(p.styleStart);
-    return false;
+  transportStart(){
+    return this.sendRaw(this.profile().controls.start);
   }
 
-  styleStop(){
-    const p = this.profile();
-    if(p.styleStop) return this.sendRaw(p.styleStop);
-    return false;
+  transportStop(){
+    return this.sendRaw(this.profile().controls.stop);
+  }
+
+  sendSection(section){
+    const bytes = this.profile().sections[section];
+    return this.sendRaw(bytes);
+  }
+
+  getRecordedNotes(){
+    return this.recordedNotes;
+  }
+
+  clearRecordedNotes(){
+    this.recordedNotes = [];
   }
 }
