@@ -10,50 +10,7 @@
 
 body {
   margin: 0;
-  color: #f7f7fb;
-  background: #080d18;
-}
-
-html,
-body,
-#root {
-  min-height: 100%;
-}
-
-body,
-#root {
-  min-height: 100vh;
-}
-
-#root:empty::before {
-  content: "UAOS is loading";
-  position: fixed;
-  inset: 0;
-  display: grid;
-  place-items: center;
-  color: #f7f7fb;
-  background: #080d18;
-  font: 700 18px/1.4 Inter, Arial, sans-serif;
-}
-
-.runtimeError {
-  min-height: 100vh;
-  display: grid;
-  align-content: center;
-  gap: 14px;
-  width: min(760px, calc(100% - 32px));
-  margin: 0 auto;
-  color: #f7f7fb;
-}
-
-.runtimeError pre {
-  white-space: pre-wrap;
-  overflow-wrap: anywhere;
-  border: 1px solid rgba(255, 118, 118, 0.45);
-  border-radius: 8px;
-  padding: 14px;
-  background: rgba(255, 118, 118, 0.1);
-  color: #ffd1c8;
+  background: linear-gradient(135deg, #0a0d12 0%, #151922 48%, #101817 100%);
 }
 
 button,
