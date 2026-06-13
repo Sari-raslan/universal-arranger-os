@@ -1,31 +1,21 @@
 # UAOS V3 Final Report
 
-Date: 2026-06-12
-Branch: `codex/uaos-v3-ai-labs`
-Base branch: `codex/uaos-v2-pro-arranger`
-
 ## Completed
-
-- Versioned analysis pipeline with confidence-bearing outputs.
-- Synthetic voice-to-MIDI segmentation and quantization tests.
-- Deterministic arrangement planner with schema validation.
-- Local rule-based generator with range validation and lane regeneration.
-- Original rhythm framework for common meters and oriental-cycle metadata.
-- Evaluation system for timing, range, stuck notes, density, determinism, and human rating fields.
-- AI service architecture with model registry, job queue, cancellation, and user-data deletion.
-- Dataset, model, and copyright safety policies.
-- Experimental UI route `#/ai`.
+- Audio analysis pipeline with confidence and version metadata.
+- Voice-to-MIDI segmentation and quantization for synthetic contours.
+- Arrangement planner with schema validation.
+- Local deterministic rule-based generator with lane and region regeneration support.
+- Rhythm framework with original maqam and Middle Eastern rhythm metadata, without copying commercial styles.
+- Evaluation checks for ranges, timing, stuck notes, density, and determinism.
+- Job queue with cancellation and privacy deletion.
+- Model registry labels cloud models as not configured.
+- AI Labs panel is linked into the product shell under `#/ai` and marked experimental.
 
 ## Validation
+- `tests/v3-ai.test.mjs`
+- Full suite via `npm test`
+- Production web build via `npm run build`
 
-- PASS: V1 and V2 gates still pass.
-- PASS: `npm run check` with 44 tests.
-- PASS: `npm run build`.
-- PASS: `npm run desktop:smoke`.
-
-## Limitations
-
-- No trained model or licensed training dataset is included.
-- Cloud processing remains optional and unconfigured.
-- Musical quality requires human evaluation.
-- Hardware and microphone tests remain manual.
+## Limits
+- No trained commercial AI model is claimed.
+- Real microphone capture quality and MIDI hardware behavior require manual testing with the target devices.

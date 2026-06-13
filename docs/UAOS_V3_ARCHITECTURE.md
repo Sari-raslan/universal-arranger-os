@@ -1,14 +1,16 @@
 # UAOS V3 Architecture
 
-V3 adds experimental AI Arranger Labs on top of V2:
+V3 AI Labs is local, deterministic, and labelled experimental.
 
-- `ai/analysisPipeline.js`: signal analysis with versioned confidence outputs.
-- `ai/voiceToMidi.js`: pitch contour segmentation and editable MIDI-note estimates.
-- `ai/arrangementPlanner.js`: deterministic schema-validated arrangement plans.
-- `ai/generators.js`: local rule-based generator, test-only mock adapter, capability metadata, lane/region regeneration, and range validation.
-- `ai/rhythmFramework.js`: extensible original rhythm metadata for common meters and oriental cycles.
-- `ai/evaluation.js`: timing, range, stuck-note, density, determinism, and human rating fields.
-- `ai/aiServices.js`: job queue, cancellation, model registry, privacy deletion.
+## Modules
+- `ai/analysisPipeline.js`: audio analysis metadata and confidence.
+- `ai/voiceToMidi.js`: voice segmentation and quantization.
+- `ai/arrangementPlanner.js`: arrangement plans and schema validation.
+- `ai/generators.js`: deterministic local rule-based MIDI generation.
+- `ai/rhythmFramework.js`: original maqam and rhythm metadata.
+- `ai/evaluation.js`: range, timing, stuck-note, density, and determinism checks.
+- `ai/aiServices.js`: local job queue, cancellation, privacy deletion, and model registry.
+- `components/AILabsPanel.jsx`: product UI integration.
 
-The active UI exposes `#/ai` and labels the feature experimental.
-
+## AI Notes
+Cloud adapters are not configured. No trained commercial AI model is included or claimed.

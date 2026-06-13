@@ -1,19 +1,16 @@
 # UAOS V2 Architecture
 
-V2 extends the V1 runtime with professional arranger workstation modules while preserving all V1 routes and checks.
+V2 is a deterministic professional arranger layer inside `uaos-live-clean/src`.
 
 ## Modules
+- `timing/proClock.js`: PPQ timing, quantization, swing, humanization, schedule windows, and tempo state.
+- `arranger/proArranger.js`: nine-lane arranger state, sections, boundary commits, and lane patches.
+- `pattern/patternEditor.js`: editable pattern storage, undo/redo, validation, and playback event conversion.
+- `chords/chordRecognition.js`: chord recognition foundation.
+- `song/songSetlist.js`: Song Book and Setlist data model.
+- `mixer/mixerStore.js`: mixer lane state, scenes, recall, and panic messages.
+- `devices/deviceProfiles.js`: honest MIDI mapping templates for target hardware.
+- `components/ProfessionalArrangerPanel.jsx`: product UI integration.
 
-- `src/timing/proClock.js`: PPQ clock helpers, bar/beat/tick positions, tempo changes, quantization, swing, deterministic humanization, and look-ahead scheduling windows.
-- `src/arranger/proArranger.js`: V2 section list, nine-lane arranger state, lane configuration, boundary-based section transitions, scene snapshots, split/chord-mode state, and active lane resolution.
-- `src/pattern/patternEditor.js`: UAOS-native pattern format, validation, create/edit/delete/duplicate, loop metadata, import/export, undo/redo, and playback event generation.
-- `src/chords/chordRecognition.js`: deterministic chord recognition for common triads, sevenths, suspended, diminished, augmented, sixth chords, slash bass labels, and recognition zones.
-- `src/song/songSetlist.js`: song structure and setlist save/navigation foundations.
-- `src/devices/deviceProfiles.js`: verified generic profile and unverified mapping templates for KORG/Yamaha/Roland/Ketron/foot controllers.
-- `src/mixer/mixerStore.js`: per-lane volume, pan, mute, solo, scene save/recall, reset, and panic integration.
-- `src/desktop/desktopProjectStore.js`: adapter-based offline project save/load foundation for Electron IPC or test adapters.
-
-## UI
-
-`ProfessionalArrangerPanel` is integrated into the existing `pro` route and labelled experimental. It does not claim proprietary hardware style conversion.
-
+## Hardware Notes
+MIDI device mapping and reconnect behavior require manual tests with physical hardware. The current release does not parse proprietary commercial style files.

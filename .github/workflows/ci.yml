@@ -1,16 +1,51 @@
-﻿name: UAOS Media Ops CI
+name: UAOS CI
 
 on:
   push:
+    branches:
+      - master
+      - "codex/**"
   pull_request:
+    branches:
+      - master
+
+concurrency:
+  group: uaos-ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   validate:
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v4
 
-      - name: Validate repository
-        run: echo "UAOS Media Ops CI Running"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
 
+      - name: Install root
+        run: npm ci
+
+      - name: Install backend
+        run: npm ci
+        working-directory: backend
+
+      - name: Install web app
+        run: npm ci
+        working-directory: uaos-live-clean
+
+      - name: Install desktop
+        run: npm ci
+        working-directory: desktop
+
+      - name: Check
+        run: npm run check
+
+      - name: Test
+        run: npm test
+
+      - name: Build
+        run: npm run build
+
+      - name: Desktop smoke
+        run: npm run desktop:smoke

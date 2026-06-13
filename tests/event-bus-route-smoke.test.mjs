@@ -24,7 +24,7 @@ test("event bus supports on off once and wildcard cleanup", () => {
 
 test("active app preserves required public routes", () => {
   const app = fs.readFileSync("uaos-live-clean/src/App.jsx", "utf8");
-  for (const route of ["home", "sing", "studio", "pro", "midi", "sounds", "sampler", "promo", "pricing", "downloads"]) {
+  for (const route of ["home", "sing", "studio", "pro", "midi", "audio", "timeline", "sessions", "live", "sounds", "sampler", "ai", "diagnostics", "pricing", "downloads", "status"]) {
     assert.match(app, new RegExp(`["']${route}["']`), `missing route ${route}`);
   }
 });

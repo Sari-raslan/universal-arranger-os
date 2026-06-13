@@ -84,6 +84,13 @@ audio {
   padding-left: 0;
 }
 
+.navControls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
 .navItems {
   display: flex;
   gap: 8px;
@@ -372,6 +379,10 @@ footer {
   .nav {
     align-items: flex-start;
     flex-direction: column;
+  }
+
+  .navControls {
+    width: 100%;
   }
 
   .navItems {
