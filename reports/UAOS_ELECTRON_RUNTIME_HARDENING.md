@@ -46,8 +46,8 @@ The desktop runtime did not have a hardened in-project Electron entrypoint and t
 ## GitHub
 
 - Branch: `codex/uaos-electron-runtime-hardening`
-- Commit SHA: `PENDING`
-- Pull Request: `PENDING`
+- Commit SHA: `e59b752`
+- Pull Request: `https://github.com/Sari-raslan/universal-arranger-os/pull/19`
 
 ## Status
 
