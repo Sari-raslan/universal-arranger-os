@@ -6,27 +6,38 @@ import { fileURLToPath } from "node:url";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const repoRoot = path.resolve(__dirname, "..");
-const reportDir = path.join(repoRoot, "reports", "electron-hotfix");
-const logFile = path.join(reportDir, "electron-runtime.log");
+function getRuntimeLogFile() {
+  const reportDir = path.join(
+    app.getPath("userData"),
+    "reports",
+    "electron-runtime"
+  );
+
+  fs.mkdirSync(reportDir, { recursive: true });
+  return path.join(reportDir, "electron-runtime.log");
+}
 const fallbackDevUrl = "http://127.0.0.1:5173";
 
 let mainWindow;
 let showedFailurePage = false;
 
-function ensureReportDir() {
-  fs.mkdirSync(reportDir, { recursive: true });
-}
-
 function logRuntime(event, details = {}) {
-  ensureReportDir();
   const entry = {
     time: new Date().toISOString(),
     event,
     ...details,
   };
-  fs.appendFileSync(logFile, `${JSON.stringify(entry)}\n`, "utf8");
-}
 
+  try {
+    fs.appendFileSync(
+      getRuntimeLogFile(),
+      `${JSON.stringify(entry)}\n`,
+      "utf8"
+    );
+  } catch (error) {
+    console.error("UAOS runtime log failed:", error);
+  }
+}
 function escapeHtml(value) {
   return String(value)
     .replaceAll("&", "&amp;")
