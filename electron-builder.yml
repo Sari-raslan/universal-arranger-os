@@ -1,4 +1,4 @@
-electronDist: node_modules/electron/dist
+﻿electronDist: node_modules/electron/dist
 appId: com.uaos.universalarranger
 productName: UAOS Universal Arranger
 copyright: Copyright © 2026 UAOS
@@ -14,6 +14,7 @@ files:
 asar: true
 
 win:
+  icon: build-assets/uaos.ico
   executableName: UAOS
   target:
     - target: nsis
@@ -35,4 +36,10 @@ nsis:
 portable:
   artifactName: UAOS-V1-Portable-${version}-${arch}.${ext}
 
-publish: null
+publish:
+  provider: github
+  owner: Sari-raslan
+  repo: universal-arranger-os
+  releaseType: prerelease
+
+generateUpdatesFilesForAllChannels: true
