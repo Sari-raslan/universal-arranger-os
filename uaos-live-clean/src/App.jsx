@@ -112,7 +112,7 @@ function Home({ setPage }) {
   <div className="uaosHeroBrand" aria-hidden="true">
     <img onError={(event) => { event.currentTarget.style.display = "none"; }} src="/brand/uaos-lockup-transparent.png" alt="" />
   </div>
-        <p className="eyebrow">UAOS V1 • WINDOWS EARLY ACCESS</p>
+        <p className="eyebrow">UAOS V1 â€¢ WINDOWS EARLY ACCESS</p>
         <h1>
   <span className="heroBrand">Universal Arranger</span>
   <span className="heroAccent">Operating System</span>
