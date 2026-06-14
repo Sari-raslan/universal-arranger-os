@@ -1,7 +1,7 @@
-electronDist: node_modules/electron/dist
+﻿electronDist: node_modules/electron/dist
 appId: com.uaos.universalarranger
 productName: UAOS Universal Arranger
-copyright: Copyright آ© 2026 UAOS
+copyright: Copyright © 2026 UAOS
 
 directories:
   output: release-windows
@@ -15,8 +15,7 @@ asar: true
 
 win:
   icon: build-assets/uaos.ico
-  executableName: UAOS
-  publisherName: UAOS
+  executableName: UAOS
   target:
     - target: nsis
       arch:
