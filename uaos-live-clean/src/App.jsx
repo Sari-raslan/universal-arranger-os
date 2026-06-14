@@ -9,6 +9,7 @@ import { RuntimeStatus } from "./components/RuntimeStatus.jsx";
 import { SessionsPanel } from "./components/SessionsPanel.jsx";
 import { StatusBadge } from "./components/StatusBadge.jsx";
 import { TimelinePanel } from "./components/TimelinePanel.jsx";
+import { DownloadsUpdatePanel } from "./components/DownloadsUpdatePanel.jsx";
 import { ProfessionalArrangerPanel } from "./components/ProfessionalArrangerPanel.jsx";
 import { AILabsPanel } from "./components/AILabsPanel.jsx";
 import { LaunchBanner, ImpressumPage, PrivacyPage, TermsPage, SupportPage, ContactPage } from "./components/LaunchPages.jsx";
@@ -54,6 +55,7 @@ const routeItems = [
   { id: "timeline", label: "Timeline" },
   { id: "sessions", label: "Sessions" },
   { id: "diagnostics", label: "Diagnostics" },
+  { id: "downloads", label: "Downloads" },
   { id: "support", label: "Support" },
   { id: "privacy", label: "Privacy" },
   { id: "terms", label: "Terms" },
@@ -112,7 +114,7 @@ function Home({ setPage }) {
   <div className="uaosHeroBrand" aria-hidden="true">
     <img onError={(event) => { event.currentTarget.style.display = "none"; }} src="/brand/uaos-lockup-transparent.png" alt="" />
   </div>
-        <p className="eyebrow">UAOS V1 â€¢ WINDOWS EARLY ACCESS</p>
+        <p className="eyebrow">UAOS V1 أ¢â‚¬آ¢ WINDOWS EARLY ACCESS</p>
         <h1>
   <span className="heroBrand">Universal Arranger</span>
   <span className="heroAccent">Operating System</span>
@@ -215,23 +217,8 @@ function Pricing() {
   return <><main className="page"><TutorialHelpButton topic="Pricing" setPage={(page) => route(page, () => {})} /></main><PricingPage /></>;
 }
 
-function Downloads({ setPage }) {
-  const downloads = createDownloadCenter();
-  return (
-    <main className="page">
-      <section className="panel">
-        <p className="eyebrow">Downloads <StatusBadge status="planned" /></p>
-        <h1>Download Center</h1>
-        <p className="lead">The web app is available locally. Desktop packaging is code-ready but unsigned; no fake signed installer links are shown.</p>
-        <TutorialHelpButton topic="Downloads" setPage={setPage} />
-        <div className="cards three">
-          <article className="card"><h2>Windows</h2><p>{downloads.windowsInstaller.status}</p><p>Signed: {String(downloads.windowsInstaller.signed)}</p></article>
-          <article className="card"><h2>Portable</h2><p>{downloads.portableBuild.status}</p><p>Checksum: pending</p></article>
-          <article className="card"><h2>Mobile</h2><p>Android: {downloads.android.status}</p><p>iOS: {downloads.ios.status}</p></article>
-        </div>
-      </section>
-    </main>
-  );
+function Downloads() {
+  return <DownloadsUpdatePanel />;
 }
 
 function Demo({ session, setSession }) {
@@ -436,7 +423,7 @@ function AppShell() {
     if (page === "sounds") return <Sounds />;
     if (page === "sampler") return <Sampler setPage={setPage} />;
     if (page === "pricing") return <Pricing />;
-    if (page === "downloads") return <Downloads setPage={setPage} />;
+    if (page === "downloads") return <Downloads />;
     if (page === "support") return <Support setPage={setPage} />;
     if (page === "academy") return <AcademyManager />;
     if (page === "demo") return <Demo session={session} setSession={setSession} />;
