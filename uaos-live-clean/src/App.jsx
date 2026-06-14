@@ -84,18 +84,26 @@ function route(page, setPage) {
 }
 
 function Nav({ page, setPage }) {
+  const uniqueRouteItems = routeItems.filter(
+    (item, index, items) =>
+      items.findIndex(
+        (candidate) =>
+          candidate.id === item.id ||
+          candidate.label.toLowerCase() === item.label.toLowerCase()
+      ) === index
+  );
   return (
     <nav className="nav">
       <div className="navControls">
         <button className="brandButton" onClick={() => route("home", setPage)}>
-  <img src="/brand/uaos-icon-192.png" alt="" aria-hidden="true" />
+  <img onError={(event) => { event.currentTarget.style.display = "none"; }} src="/brand/uaos-icon-192.png" alt="" aria-hidden="true" />
   <span>UAOS</span>
 </button>
         <button className="secondary" onClick={() => window.history.back()}>Back</button>
         <button className="secondary" onClick={() => route("home", setPage)}>Home</button>
       </div>
       <div className="navItems">
-        {routeItems.map((item) => (
+        {Array.from(new Map(routeItems.map((item) => [item.id, item])).values()).map((item) => (
           <button key={item.id} className={page === item.id ? "active" : ""} onClick={() => route(item.id, setPage)}>
             {item.label}
           </button>
@@ -119,15 +127,18 @@ function Home({ setPage }) {
     <main className="page">
       <section className="hero uaosHero">
   <div className="uaosHeroBrand" aria-hidden="true">
-    <img src="/brand/uaos-lockup-transparent.png" alt="" />
+    <img onError={(event) => { event.currentTarget.style.display = "none"; }} src="/brand/uaos-lockup-transparent.png" alt="" />
   </div>
-        <p className="eyebrow">Arabic / English / Deutsch workspace</p>
-        <h1>Universal Arranger OS</h1>
-        <p className="lead">A browser-first music workstation for microphone analysis, MIDI monitoring, professional arranger experiments, timeline capture, sessions, and local AI arrangement labs.</p>
+        <p className="eyebrow">PUBLIC PREVIEW • ARABIC / ENGLISH / DEUTSCH</p>
+        <h1>
+  <span className="heroBrand">Universal Arranger</span>
+  <span className="heroAccent">Operating System</span>
+</h1>
+        <p className="lead">Create, arrange, record and control music from one browser-first workstation — voice, MIDI, arranger, sampler, studio and local AI tools.</p>
         <div className="heroActions">
-          <button onClick={() => route("audio", setPage)}>Open Audio Lab</button>
-          <button className="secondary" onClick={() => route("pro", setPage)}>Pro Arranger</button>
-          <button className="secondary" onClick={() => route("ai", setPage)}>AI Labs</button>
+          <button className="primaryLaunch" onClick={() => route("studio", setPage)}>Open UAOS Studio</button>
+          <button className="secondaryLaunch" onClick={() => route("pro", setPage)}>Pre-Arranger</button>
+          <button className="secondaryLaunch" onClick={() => route("sing", setPage)}>AI Labs</button>
         </div>
         <TutorialHelpButton topic="Home" setPage={setPage} />
       </section>
@@ -463,8 +474,24 @@ function AppShell() {
   return (
     <>
       <Nav page={page} setPage={setPage} />
+      <section className="uaosReleaseStrip">
+        <div>
+          <strong>UAOS Hybrid Studio Preview</strong>
+          <span>Oceanic × Forest concept applied</span>
+        </div>
+
+        <div className="uaosReleaseStripStatus">
+          <span>Web: Live</span>
+          <span>Payments: Disabled</span>
+          <span>Build: Unsigned Preview</span>
+        </div>
+      </section>
       {screen}
-      <footer>UAOS Public Preview — RELEASE_CANDIDATE_READY_UNSIGNED — Payments and signed installers are not enabled.</footer>
+      <footer className="uaosFinalFooter">
+  <strong>UAOS Public Preview</strong>
+  <span>RELEASE_CANDIDATE_READY_UNSIGNED</span>
+  <span>Payments and signed downloads are not enabled yet.</span>
+</footer>
     </>
   );
 }
@@ -476,4 +503,8 @@ export default function App() {
     </ErrorBoundary>
   );
 }
+
+
+
+
 
