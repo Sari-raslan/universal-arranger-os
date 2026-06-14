@@ -1,0 +1,410 @@
+:root {
+  color: #f7f7fb;
+  background: #0a0d12;
+  font-family: Inter, Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: linear-gradient(135deg, #0a0d12 0%, #151922 48%, #101817 100%);
+}
+
+button,
+.buttonLike,
+.buttonLink {
+  border: 0;
+  border-radius: 8px;
+  padding: 11px 14px;
+  font-weight: 800;
+  cursor: pointer;
+  background: #f8f8f4;
+  color: #11151c;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+}
+
+button.secondary {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+button.active {
+  background: #9fe7c8;
+  color: #06120d;
+}
+
+button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+input,
+select {
+  width: 100%;
+  min-height: 42px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(0, 0, 0, 0.24);
+  color: #fff;
+  padding: 10px 12px;
+}
+
+audio {
+  width: 100%;
+  margin-top: 12px;
+}
+
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  backdrop-filter: blur(16px);
+  background: rgba(10, 13, 18, 0.82);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 24px;
+}
+
+.brandButton {
+  font-size: 24px;
+  letter-spacing: 0;
+  background: transparent;
+  color: #fff;
+  padding-left: 0;
+}
+
+.navControls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.navItems {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.navItems button {
+  background: transparent;
+  color: #d7dcee;
+  border: 1px solid transparent;
+  min-height: 36px;
+  padding: 8px 10px;
+}
+
+.navItems button.active {
+  color: #07100d;
+  background: #9fe7c8;
+}
+
+.page {
+  width: min(1180px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 38px 0;
+}
+
+.hero,
+.panel {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.075);
+  border-radius: 8px;
+  padding: 34px;
+  box-shadow: 0 28px 80px rgba(0, 0, 0, 0.28);
+}
+
+.panelSection {
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  margin-top: 26px;
+  padding-top: 24px;
+}
+
+.panelSection.compact {
+  margin-top: 16px;
+}
+
+.panelSection.live {
+  background: rgba(159, 231, 200, 0.06);
+  border: 1px solid rgba(159, 231, 200, 0.22);
+  border-radius: 8px;
+  padding: 18px;
+}
+
+.danger {
+  border-color: rgba(255, 118, 118, 0.5);
+}
+
+.eyebrow,
+.tag {
+  color: #9fe7c8;
+  text-transform: uppercase;
+  letter-spacing: 0;
+  font-size: 13px;
+  font-weight: 900;
+}
+
+h1 {
+  font-size: clamp(38px, 6vw, 72px);
+  margin: 10px 0;
+  line-height: 1;
+  letter-spacing: 0;
+}
+
+h2,
+h3 {
+  margin: 0 0 12px;
+  letter-spacing: 0;
+}
+
+.lead {
+  font-size: 20px;
+  color: #d9deea;
+  max-width: 840px;
+  line-height: 1.55;
+}
+
+.heroActions,
+.controlRow {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 18px 0;
+}
+
+.controlRow > select,
+.controlRow > input {
+  width: auto;
+  min-width: 150px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.cards.two {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.card {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.07);
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.card p,
+li {
+  color: #d0d6e4;
+  line-height: 1.55;
+}
+
+.statusBadge {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  color: #fff;
+  padding: 4px 9px;
+  font-size: 12px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.statusBadge.available {
+  background: rgba(159, 231, 200, 0.14);
+  color: #b9ffdf;
+}
+
+.statusBadge.experimental {
+  background: rgba(249, 211, 122, 0.13);
+  color: #ffe49d;
+}
+
+.statusBadge.planned,
+.statusBadge.desktop-only {
+  color: #c6cfdd;
+}
+
+.runtime {
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  margin-top: 22px;
+  padding: 18px 0;
+}
+
+.runtimeGrid {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+
+.runtimeGrid span {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+  padding: 6px 10px;
+}
+
+.runtimeGrid .ok {
+  color: #b9ffdf;
+}
+
+.runtimeGrid .warn,
+.errorText {
+  color: #ffb7a8;
+}
+
+.sectionHeader {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.meters {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin: 18px 0;
+}
+
+.meter {
+  height: 18px;
+  background: rgba(0, 0, 0, 0.35);
+  border-radius: 999px;
+  overflow: hidden;
+  margin: 8px 0;
+}
+
+.meter i {
+  display: block;
+  height: 100%;
+  background: #9fe7c8;
+}
+
+.clip {
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 999px;
+  padding: 7px 10px;
+}
+
+.clip.on {
+  color: #ffb7a8;
+  border-color: rgba(255, 118, 118, 0.5);
+}
+
+.workflow {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+  margin: 24px 0;
+}
+
+.workflow div,
+.track {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.track {
+  display: grid;
+  grid-template-columns: minmax(140px, 1fr) minmax(130px, 180px) auto auto;
+  gap: 10px;
+  align-items: center;
+}
+
+.laneGrid,
+.sectionGrid {
+  display: grid;
+  gap: 10px;
+  margin: 18px 0;
+}
+
+.sectionGrid {
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+}
+
+.eventList {
+  max-height: 240px;
+  overflow: auto;
+  background: rgba(0, 0, 0, 0.18);
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.eventList.tall {
+  max-height: 360px;
+}
+
+.eventList p {
+  margin: 4px 0;
+  color: #d8deeb;
+}
+
+footer {
+  text-align: center;
+  padding: 28px;
+  color: #a9b1c3;
+}
+
+@media (max-width: 900px) {
+  .cards,
+  .cards.two,
+  .workflow,
+  .meters {
+    grid-template-columns: 1fr;
+  }
+
+  .nav {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .navControls {
+    width: 100%;
+  }
+
+  .navItems {
+    justify-content: flex-start;
+  }
+
+  .hero,
+  .panel {
+    padding: 24px;
+  }
+
+  .sectionHeader,
+  .track {
+    grid-template-columns: 1fr;
+    flex-direction: column;
+  }
+
+  .controlRow > select,
+  .controlRow > input,
+  .controlRow > button,
+  .buttonLike,
+  .buttonLink {
+    width: 100%;
+  }
+}
