@@ -1,0 +1,284 @@
+.uaos-account-launcher {
+  position: fixed;
+  z-index: 1200;
+  top: 16px;
+  right: 18px;
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  max-width: min(320px, calc(100vw - 36px));
+  border: 1px solid rgba(107, 222, 255, 0.36);
+  border-radius: 14px;
+  padding: 10px 14px;
+  background: rgba(8, 16, 27, 0.9);
+  color: #eefaff;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.28);
+  backdrop-filter: blur(18px);
+  cursor: pointer;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.uaos-account-launcher:hover {
+  border-color: rgba(107, 222, 255, 0.78);
+  transform: translateY(-1px);
+}
+
+.uaos-account-launcher-dot {
+  width: 9px;
+  height: 9px;
+  flex: 0 0 auto;
+  border-radius: 999px;
+  background: #6bdeff;
+  box-shadow: 0 0 16px rgba(107, 222, 255, 0.9);
+}
+
+.uaos-account-overlay {
+  position: fixed;
+  z-index: 2000;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  background: rgba(2, 6, 12, 0.78);
+  backdrop-filter: blur(12px);
+}
+
+.uaos-account-panel {
+  width: min(560px, 100%);
+  max-height: min(820px, calc(100vh - 40px));
+  overflow: auto;
+  border: 1px solid rgba(107, 222, 255, 0.25);
+  border-radius: 24px;
+  padding: 24px;
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(64, 172, 255, 0.16),
+      transparent 38%
+    ),
+    linear-gradient(160deg, #101a28, #070d16 72%);
+  color: #f3fbff;
+  box-shadow: 0 34px 110px rgba(0, 0, 0, 0.58);
+}
+
+.uaos-account-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 20px;
+}
+
+.uaos-account-header h2 {
+  margin: 4px 0 6px;
+  font-size: clamp(1.35rem, 4vw, 2rem);
+}
+
+.uaos-account-kicker {
+  margin: 0;
+  color: #6bdeff;
+  font-size: 0.77rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+}
+
+.uaos-account-health {
+  margin: 0;
+  color: #91a7bb;
+  font-size: 0.86rem;
+}
+
+.uaos-account-health .is-online {
+  color: #65e3a1;
+}
+
+.uaos-account-health .is-offline {
+  color: #ff8c8c;
+}
+
+.uaos-account-health .is-checking {
+  color: #ffd977;
+}
+
+.uaos-account-close {
+  width: 42px;
+  height: 42px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 13px;
+  background: rgba(255, 255, 255, 0.06);
+  color: #fff;
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+
+.uaos-account-form {
+  display: grid;
+  gap: 15px;
+}
+
+.uaos-account-field {
+  display: grid;
+  gap: 7px;
+}
+
+.uaos-account-field span {
+  color: #bcd0df;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.uaos-account-field input {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid rgba(151, 191, 221, 0.24);
+  border-radius: 13px;
+  padding: 13px 14px;
+  background: rgba(2, 8, 15, 0.72);
+  color: #fff;
+  outline: none;
+}
+
+.uaos-account-field input:focus {
+  border-color: #6bdeff;
+  box-shadow: 0 0 0 3px rgba(107, 222, 255, 0.12);
+}
+
+.uaos-account-primary,
+.uaos-account-secondary,
+.uaos-account-danger {
+  border-radius: 13px;
+  padding: 12px 16px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.uaos-account-primary {
+  border: 0;
+  background: linear-gradient(135deg, #5cd7ff, #7b8cff);
+  color: #06111c;
+}
+
+.uaos-account-secondary {
+  border: 1px solid rgba(154, 193, 220, 0.26);
+  background: rgba(255, 255, 255, 0.05);
+  color: #e6f7ff;
+}
+
+.uaos-account-danger {
+  border: 1px solid rgba(255, 111, 111, 0.35);
+  background: rgba(255, 77, 77, 0.08);
+  color: #ffb1b1;
+}
+
+.uaos-account-primary:disabled,
+.uaos-account-secondary:disabled,
+.uaos-account-danger:disabled {
+  cursor: wait;
+  opacity: 0.58;
+}
+
+.uaos-account-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 14px;
+  justify-content: center;
+}
+
+.uaos-account-links button {
+  border: 0;
+  padding: 2px;
+  background: transparent;
+  color: #7bddff;
+  cursor: pointer;
+}
+
+.uaos-account-feedback,
+.uaos-account-dev-token {
+  margin-bottom: 16px;
+  border-radius: 13px;
+  padding: 12px 14px;
+}
+
+.uaos-account-feedback.is-success {
+  border: 1px solid rgba(77, 222, 150, 0.3);
+  background: rgba(45, 176, 114, 0.11);
+  color: #a9ffd2;
+}
+
+.uaos-account-feedback.is-error {
+  border: 1px solid rgba(255, 102, 102, 0.34);
+  background: rgba(205, 55, 55, 0.11);
+  color: #ffc0c0;
+}
+
+.uaos-account-dev-token {
+  display: grid;
+  gap: 7px;
+  border: 1px solid rgba(255, 214, 99, 0.3);
+  background: rgba(255, 193, 69, 0.08);
+  color: #ffe5a3;
+}
+
+.uaos-account-dev-token code {
+  overflow-wrap: anywhere;
+  color: #fff5d7;
+}
+
+.uaos-account-dev-token span {
+  color: #cdbf99;
+  font-size: 0.8rem;
+}
+
+.uaos-account-dashboard {
+  display: grid;
+  gap: 12px;
+}
+
+.uaos-account-user-card {
+  display: grid;
+  gap: 5px;
+  border: 1px solid rgba(151, 191, 221, 0.16);
+  border-radius: 14px;
+  padding: 14px;
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.uaos-account-user-card span {
+  color: #8ca8bd;
+  font-size: 0.8rem;
+}
+
+.uaos-account-user-card strong {
+  overflow-wrap: anywhere;
+}
+
+.uaos-account-footer {
+  margin-top: 20px;
+  color: #7890a4;
+  font-size: 0.76rem;
+  line-height: 1.5;
+  text-align: center;
+}
+
+@media (max-width: 640px) {
+  .uaos-account-launcher {
+    top: 10px;
+    right: 10px;
+    padding: 9px 11px;
+    font-size: 0.82rem;
+  }
+
+  .uaos-account-overlay {
+    align-items: end;
+    padding: 0;
+  }
+
+  .uaos-account-panel {
+    width: 100%;
+    max-height: 92vh;
+    border-radius: 22px 22px 0 0;
+    padding: 20px;
+  }
+}
