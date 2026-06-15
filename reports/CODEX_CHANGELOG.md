@@ -25,3 +25,12 @@
 - Added experimental AI analysis, voice-to-MIDI, planner, rule-based generator, rhythm, evaluation, services, policy docs, V3 docs, and AI Labs route.
 - Verified V1 and V2 gates still pass with V3 tests: `npm run check` and `npm run build`.
 - Added master completion report, complete architecture, release sequence, and remaining hardware/research test documentation.
+
+## 2026-06-15
+
+- Repaired PR #29 CI validation failures locally.
+- Replaced remaining `Math.random` ID fallbacks with standards-based UUID generation and deterministic monotonic fallback IDs.
+- Added root `nodemailer` dependency and lock metadata for production SMTP imports.
+- Restored V7 session migration state across sampler, library, recording, AI, hardware, DAW, cloud, and beta modules.
+- Restored AccountShell mounting, AI Studio UI contract labels, and Electron preload MIDI bridge handlers.
+- Verified `node scripts/uaos-static-check.mjs`, `node --test tests/production-integrations.test.mjs`, `npm run check`, `npm test`, `npm run build`, `npm run runtime:check`, `npm run desktop:smoke`, `node --check backend/server.js`, dist existence, secret diff scan, and `git diff --check`.

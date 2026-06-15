@@ -1,6 +1,7 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
 import App from "./App.jsx";
+import { AccountShell } from "./components/AccountShell.jsx";
 import "./style.css";
 
 class RuntimeErrorBoundary extends React.Component {
@@ -51,6 +52,8 @@ if (!rootElement) {
 
 createRoot(rootElement).render(
   <RuntimeErrorBoundary>
-    <App />
+    <AccountShell>
+      <App />
+    </AccountShell>
   </RuntimeErrorBoundary>
 );

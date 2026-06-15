@@ -1,9 +1,12 @@
+let fallbackIdCounter = 0;
+
 function createId(prefix) {
   if (globalThis.crypto?.randomUUID) {
     return prefix + "-" + globalThis.crypto.randomUUID();
   }
 
-  return prefix + "-" + Date.now() + "-" + Math.random().toString(16).slice(2);
+  fallbackIdCounter += 1;
+  return prefix + "-" + Date.now().toString(36) + "-" + fallbackIdCounter.toString(36);
 }
 
 export function createTrack(options = {}) {
