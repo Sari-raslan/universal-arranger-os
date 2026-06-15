@@ -1,4 +1,4 @@
-﻿@echo off
+@echo off
 title UAOS ALL IN ONE MASTER LAUNCHER
 cd /d "%~dp0.."
 echo Running UAOS Master Remaining Verification Script...
