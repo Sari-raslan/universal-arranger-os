@@ -1,0 +1,88 @@
+{
+  "project": "UAOS",
+  "phase": 5,
+  "name": "AI Music Engine + Audio Analysis + Voice to MIDI + Song to Arrangement",
+  "generatedAt": "2026-06-13",
+  "status": "CODE_READY_EXTERNAL_APPROVALS_REQUIRED",
+  "codeReady": true,
+  "productionActivationReady": false,
+  "featuresCompleted": [
+    "Audio analysis core",
+    "Voice-to-melody engine",
+    "Standard MIDI file export foundation",
+    "Music theory core",
+    "Oriental music theory metadata foundation",
+    "Song structure analyzer",
+    "Song-to-arrangement planner",
+    "Arrangement generation rules",
+    "AI provider abstraction",
+    "Analysis job system",
+    "Session schema v3 integration",
+    "UAOS AI Music Studio UI"
+  ],
+  "remoteProvider": {
+    "status": "disabled-by-default",
+    "secretsEmbedded": false,
+    "automaticNetworkRequests": false,
+    "explicitConsentRequired": true
+  },
+  "privacy": {
+    "audioUpload": false,
+    "rawAudioStoredInLocalStorage": false,
+    "metadataOnlyPersistence": true,
+    "commercialAudioCopied": false
+  },
+  "checks": [
+    { "command": "node --test tests/phase5-ai-music-engine.test.mjs tests/v3-ai.test.mjs tests/session-timeline-arranger.test.mjs", "status": "PASS", "tests": 17 },
+    { "command": "npm test", "status": "PASS", "tests": 144 },
+    { "command": "npm run check", "status": "PASS", "tests": 144 },
+    { "command": "npm run build", "status": "PASS" },
+    { "command": "npm run runtime:check", "status": "PASS" },
+    { "command": "npm run desktop:smoke", "status": "PASS" },
+    { "command": "npm run hardware:readiness", "status": "PASS", "note": "Physical validation remains." },
+    { "command": "npm run windows:readiness", "status": "PASS", "signedCommercialInstallerReady": false },
+    { "command": "npm run launch:gate", "status": "PASS", "launchStatus": "CODE_READY_EXTERNAL_APPROVALS_REQUIRED" }
+  ],
+  "runtimeStatus": {
+    "frontend": {
+      "url": "http://127.0.0.1:5173/#/ai",
+      "httpStatus": 200,
+      "browserVerified": true,
+      "signals": ["UAOS AI MUSIC STUDIO", "Analyze", "Export MIDI", "No upload", "Voice-to-MIDI", "Arrangement Plan"]
+    },
+    "accountsApi": {
+      "url": "http://127.0.0.1:3041/health",
+      "httpStatus": 200,
+      "payload": {
+        "ok": true,
+        "service": "uaos-accounts",
+        "storage": "local-json-development",
+        "emailProviderConfigured": false
+      }
+    }
+  },
+  "manualValidationRemaining": [
+    "Real microphone and decoded audio analysis",
+    "Real vocal pitch contour validation",
+    "MIDI export import into DAWs/keyboards",
+    "Phase 4 sampler preview with real samples",
+    "Oriental pitch bend/MPE/tuning validation"
+  ],
+  "externalReleaseBlockers": [
+    "Windows signing certificate",
+    "Production Stripe/PostgreSQL/SMTP approvals",
+    "Commercial approval",
+    "Audio/MIDI/Oriental hardware validation"
+  ],
+  "safety": {
+    "destructiveGitCommandsUsed": false,
+    "commitPushMergeTagReleaseDeploy": false,
+    "realPaymentsOrSubscriptions": false,
+    "databaseMigrationRun": false,
+    "realEmailSent": false,
+    "userAudioUploaded": false,
+    "apiSecretsEmbedded": false,
+    "commercialAudioCopied": false,
+    "proprietaryFormatSupportClaimed": false
+  }
+}

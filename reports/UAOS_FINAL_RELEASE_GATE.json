@@ -1,0 +1,143 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-06-14T00:58:27.667Z",
+  "status": "RELEASE_CANDIDATE_READY_UNSIGNED",
+  "codeReady": true,
+  "productionActivationReady": false,
+  "checks": {
+    "automatedTests": true,
+    "staticChecks": true,
+    "builds": true,
+    "routeSmoke": true,
+    "e2e": true,
+    "accessibilityBaseline": true,
+    "performanceBudget": true,
+    "securityBaseline": true,
+    "pricingConsistency": true,
+    "installerReadiness": true,
+    "mobileReadiness": true,
+    "updaterDisabled": true,
+    "signingCertificate": false,
+    "legalApproval": false,
+    "privacyApproval": false,
+    "productionPostgres": false,
+    "productionStripe": false,
+    "productionSmtp": false,
+    "domainTls": false,
+    "physicalHardwareValidation": false,
+    "manualAudioValidation": false,
+    "manualMidiValidation": false,
+    "manualRecordingValidation": false,
+    "releaseAuthorization": false
+  },
+  "matrix": [
+    {
+      "area": "Web",
+      "status": "PASS_AUTOMATED"
+    },
+    {
+      "area": "Electron development",
+      "status": "PASS_AUTOMATED"
+    },
+    {
+      "area": "Electron packaged",
+      "status": "CODE_READY_MANUAL_CHECK_REQUIRED"
+    },
+    {
+      "area": "Windows unpacked",
+      "status": "CODE_READY_MANUAL_CHECK_REQUIRED"
+    },
+    {
+      "area": "Windows installer metadata",
+      "status": "PASS_CODE_UNSIGNED"
+    },
+    {
+      "area": "Android debug readiness",
+      "status": "CODE_ONLY_NOT_BUILT"
+    },
+    {
+      "area": "iOS readiness",
+      "status": "METADATA_ONLY_UNSUPPORTED_ON_WINDOWS"
+    },
+    {
+      "area": "Offline mode",
+      "status": "PASS_AUTOMATED"
+    },
+    {
+      "area": "Accounts online",
+      "status": "PASS_MOCK"
+    },
+    {
+      "area": "Accounts offline",
+      "status": "PASS_FALLBACK"
+    },
+    {
+      "area": "Stripe disabled",
+      "status": "PASS_AUTOMATED"
+    },
+    {
+      "area": "SMTP disabled",
+      "status": "PASS_AUTOMATED"
+    },
+    {
+      "area": "PostgreSQL disabled",
+      "status": "PASS_AUTOMATED"
+    },
+    {
+      "area": "Cloud sync disabled",
+      "status": "PASS_AUTOMATED"
+    },
+    {
+      "area": "Audio unavailable",
+      "status": "PASS_FALLBACK"
+    },
+    {
+      "area": "Microphone denied",
+      "status": "MANUAL_REQUIRED"
+    },
+    {
+      "area": "MIDI unavailable",
+      "status": "PASS_FALLBACK"
+    },
+    {
+      "area": "Mock MIDI",
+      "status": "PASS_AUTOMATED"
+    },
+    {
+      "area": "Mock hardware",
+      "status": "PASS_AUTOMATED"
+    },
+    {
+      "area": "Arabic",
+      "status": "FOUNDATION"
+    },
+    {
+      "area": "English",
+      "status": "FOUNDATION"
+    },
+    {
+      "area": "German",
+      "status": "FOUNDATION"
+    },
+    {
+      "area": "Reduced motion",
+      "status": "PASS_AUTOMATED"
+    },
+    {
+      "area": "Corrupted session",
+      "status": "PASS_AUTOMATED"
+    },
+    {
+      "area": "Missing assets",
+      "status": "PASS_WARNING"
+    },
+    {
+      "area": "Old session migration",
+      "status": "PASS_AUTOMATED"
+    },
+    {
+      "area": "Uninstall metadata",
+      "status": "FOUNDATION"
+    }
+  ]
+}

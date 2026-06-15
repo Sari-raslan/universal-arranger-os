@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-06-13T23:32:47.423Z",
+  "passed": true,
+  "android": {
+    "schemaVersion": 1,
+    "packageId": "app.uaos.mobile",
+    "applicationName": "UAOS",
+    "icons": "metadata-required",
+    "splash": "metadata-required",
+    "sdkValidation": "not-run-on-this-host",
+    "javaCompatibility": "requires-local-android-toolchain",
+    "gradleCompatibility": "requires-local-android-toolchain",
+    "permissions": [
+      "RECORD_AUDIO optional"
+    ],
+    "midiCapability": "metadata-only",
+    "fileAccessPolicy": "scoped-storage-required",
+    "networkSecurity": "no-cleartext-production",
+    "offlineFunctionality": true,
+    "debugApkReady": false,
+    "releaseSigningMissing": true,
+    "embeddedSecrets": false,
+    "playStoreReady": false
+  },
+  "ios": {
+    "schemaVersion": 1,
+    "bundleId": "app.uaos.mobile",
+    "capabilities": [
+      "audio",
+      "files",
+      "midi-metadata"
+    ],
+    "microphonePermissionText": "UAOS can analyze local audio when you choose to record.",
+    "fileAccessPolicy": "user-selected-files",
+    "offlineMode": true,
+    "privacyManifest": "foundation-required",
+    "signingRequired": true,
+    "provisioningRequired": true,
+    "appStoreRequirements": "not-complete",
+    "buildStatusOnWindows": "unsupported",
+    "fakeSuccessfulBuild": false
+  },
+  "playStorePublished": false,
+  "appStorePublished": false
+}

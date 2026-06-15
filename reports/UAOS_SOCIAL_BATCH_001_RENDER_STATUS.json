@@ -1,0 +1,92 @@
+[
+  {
+    "lessonId": "lesson-001",
+    "status": "FFMPEG_REQUIRED",
+    "commands": {
+      "landscape": "ffmpeg -y -f lavfi -i color=c=0x07111f:s=1920x1080:d=1:r=30 -an \"social-output/batch-001/lesson-001-what-is-uaos/video/long-16x9.mp4\"",
+      "vertical": "ffmpeg -y -f lavfi -i color=c=0x07111f:s=1080x1920:d=1:r=30 -an \"social-output/batch-001/lesson-001-what-is-uaos/shorts/short-9x16.mp4\""
+    },
+    "checksum": "h456210f1"
+  },
+  {
+    "lessonId": "lesson-002",
+    "status": "FFMPEG_REQUIRED",
+    "commands": {
+      "landscape": "ffmpeg -y -f lavfi -i color=c=0x07111f:s=1920x1080:d=1:r=30 -an \"social-output/batch-001/lesson-002-windows-installation/video/long-16x9.mp4\"",
+      "vertical": "ffmpeg -y -f lavfi -i color=c=0x07111f:s=1080x1920:d=1:r=30 -an \"social-output/batch-001/lesson-002-windows-installation/shorts/short-9x16.mp4\""
+    },
+    "checksum": "h32dd03e5"
+  },
+  {
+    "lessonId": "lesson-003",
+    "status": "FFMPEG_REQUIRED",
+    "commands": {
+      "landscape": "ffmpeg -y -f lavfi -i color=c=0x07111f:s=1920x1080:d=1:r=30 -an \"social-output/batch-001/lesson-003-first-run/video/long-16x9.mp4\"",
+      "vertical": "ffmpeg -y -f lavfi -i color=c=0x07111f:s=1080x1920:d=1:r=30 -an \"social-output/batch-001/lesson-003-first-run/shorts/short-9x16.mp4\""
+    },
+    "checksum": "h483d6783"
+  },
+  {
+    "lessonId": "lesson-004",
+    "status": "FFMPEG_REQUIRED",
+    "commands": {
+      "landscape": "ffmpeg -y -f lavfi -i color=c=0x07111f:s=1920x1080:d=1:r=30 -an \"social-output/batch-001/lesson-004-choose-language/video/long-16x9.mp4\"",
+      "vertical": "ffmpeg -y -f lavfi -i color=c=0x07111f:s=1080x1920:d=1:r=30 -an \"social-output/batch-001/lesson-004-choose-language/shorts/short-9x16.mp4\""
+    },
+    "checksum": "hac67cdab"
+  },
+  {
+    "lessonId": "lesson-005",
+    "status": "FFMPEG_REQUIRED",
+    "commands": {
+      "landscape": "ffmpeg -y -f lavfi -i color=c=0x07111f:s=1920x1080:d=1:r=30 -an \"social-output/batch-001/lesson-005-offline-mode/video/long-16x9.mp4\"",
+      "vertical": "ffmpeg -y -f lavfi -i color=c=0x07111f:s=1080x1920:d=1:r=30 -an \"social-output/batch-001/lesson-005-offline-mode/shorts/short-9x16.mp4\""
+    },
+    "checksum": "ha3ed461a"
+  },
+  {
+    "lessonId": "lesson-006",
+    "status": "FFMPEG_REQUIRED",
+    "commands": {
+      "landscape": "ffmpeg -y -f lavfi -i color=c=0x07111f:s=1920x1080:d=1:r=30 -an \"social-output/batch-001/lesson-006-first-project/video/long-16x9.mp4\"",
+      "vertical": "ffmpeg -y -f lavfi -i color=c=0x07111f:s=1080x1920:d=1:r=30 -an \"social-output/batch-001/lesson-006-first-project/shorts/short-9x16.mp4\""
+    },
+    "checksum": "h8c3471bf"
+  },
+  {
+    "lessonId": "lesson-007",
+    "status": "FFMPEG_REQUIRED",
+    "commands": {
+      "landscape": "ffmpeg -y -f lavfi -i color=c=0x07111f:s=1920x1080:d=1:r=30 -an \"social-output/batch-001/lesson-007-save-and-restore/video/long-16x9.mp4\"",
+      "vertical": "ffmpeg -y -f lavfi -i color=c=0x07111f:s=1080x1920:d=1:r=30 -an \"social-output/batch-001/lesson-007-save-and-restore/shorts/short-9x16.mp4\""
+    },
+    "checksum": "hb32472e3"
+  },
+  {
+    "lessonId": "lesson-008",
+    "status": "FFMPEG_REQUIRED",
+    "commands": {
+      "landscape": "ffmpeg -y -f lavfi -i color=c=0x07111f:s=1920x1080:d=1:r=30 -an \"social-output/batch-001/lesson-008-main-interface-tour/video/long-16x9.mp4\"",
+      "vertical": "ffmpeg -y -f lavfi -i color=c=0x07111f:s=1080x1920:d=1:r=30 -an \"social-output/batch-001/lesson-008-main-interface-tour/shorts/short-9x16.mp4\""
+    },
+    "checksum": "h87bf1819"
+  },
+  {
+    "lessonId": "lesson-009",
+    "status": "FFMPEG_REQUIRED",
+    "commands": {
+      "landscape": "ffmpeg -y -f lavfi -i color=c=0x07111f:s=1920x1080:d=1:r=30 -an \"social-output/batch-001/lesson-009-first-sampler-track/video/long-16x9.mp4\"",
+      "vertical": "ffmpeg -y -f lavfi -i color=c=0x07111f:s=1080x1920:d=1:r=30 -an \"social-output/batch-001/lesson-009-first-sampler-track/shorts/short-9x16.mp4\""
+    },
+    "checksum": "ha66b8306"
+  },
+  {
+    "lessonId": "lesson-010",
+    "status": "FFMPEG_REQUIRED",
+    "commands": {
+      "landscape": "ffmpeg -y -f lavfi -i color=c=0x07111f:s=1920x1080:d=1:r=30 -an \"social-output/batch-001/lesson-010-black-screen-local-services/video/long-16x9.mp4\"",
+      "vertical": "ffmpeg -y -f lavfi -i color=c=0x07111f:s=1080x1920:d=1:r=30 -an \"social-output/batch-001/lesson-010-black-screen-local-services/shorts/short-9x16.mp4\""
+    },
+    "checksum": "h20fd8e9c"
+  }
+]

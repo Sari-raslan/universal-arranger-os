@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "status": "BLOCKED_MANUAL_HANDOFF",
+  "generatedAt": "2026-06-14T02:27:29.014Z",
+  "totals": {
+    "tutorials": 140,
+    "batches": 30,
+    "renderManifests": 560,
+    "publicationQueueItems": 700,
+    "draftQueueItems": 700,
+    "oauthPlatforms": 23,
+    "oauthConfigured": 0
+  },
+  "localArtifacts": {
+    "outputRoot": "social-output",
+    "tutorials": "social-output/tutorials",
+    "renders": "social-output/renders",
+    "queue": "social-output/queue/publication-queue.json",
+    "reports": "reports/UAOS_SOCIAL_*",
+    "renderHandoff": "reports/UAOS_SOCIAL_RENDER_HANDOFF.json"
+  },
+  "commands": {
+    "verifyStatus": "npm run academy:status",
+    "validateAll": "npm run academy:validate:all",
+    "checkOAuth": "npm run academy:oauth:status",
+    "renderSample": "npm run academy:render:sample",
+    "renderStatus": "npm run academy:render:status",
+    "queueDryRun": "npm run academy:queue:dry-run"
+  },
+  "requiredExternalActions": [
+    "Install FFmpeg or render manually from the generated render manifests.",
+    "Record or approve Arabic narration for every tutorial before final render approval.",
+    "Configure official platform OAuth/API credentials and approved app scopes.",
+    "Complete manual review and owner approval before any private upload, scheduling, or publication."
+  ],
+  "publicationAllowed": false,
+  "realNetworkActionsPerformed": false,
+  "approvalPhraseRequired": "OWNER_APPROVES_SOCIAL_PUBLICATION"
+}

@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "product": "UAOS",
+  "release": "1.0.0",
+  "publicBetaRoutes": [
+    "home",
+    "sing",
+    "studio",
+    "pro",
+    "midi",
+    "sounds",
+    "sampler",
+    "pricing",
+    "downloads"
+  ],
+  "commercialRequirements": [
+    "production-base-url",
+    "payment-provider",
+    "server-side-payment-secret",
+    "license-signing-secret",
+    "support-email",
+    "approved-legal-documents",
+    "approved-hardware-validation",
+    "signed-windows-installer"
+  ],
+  "deferredToV2": [
+    "proprietary-style-import",
+    "automatic-sysex-control",
+    "cloud-sample-upload",
+    "ios-release",
+    "full-daw-replacement"
+  ]
+}

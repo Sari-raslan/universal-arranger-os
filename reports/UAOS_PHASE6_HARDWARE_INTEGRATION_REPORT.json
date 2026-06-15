@@ -1,0 +1,82 @@
+{
+  "schemaVersion": 1,
+  "status": "CODE_READY_EXTERNAL_APPROVALS_REQUIRED",
+  "codeReady": true,
+  "productionActivationReady": false,
+  "implementedModules": [
+    "hardware device discovery",
+    "device profile schema",
+    "MIDI Learn",
+    "hardware command router",
+    "MIDI output engine",
+    "SysEx safety layer",
+    "Electron MIDI bridge contract",
+    "hardware diagnostics",
+    "setup wizard",
+    "session migration"
+  ],
+  "profilesAdded": [
+    "KORG PA3X Oriental",
+    "KORG PA5X",
+    "Yamaha Genos",
+    "Roland BK-9",
+    "Ketron SD9"
+  ],
+  "verifiedMappings": [],
+  "experimentalMappings": [
+    "KORG PA3X Oriental foundation CC examples"
+  ],
+  "testsRun": [
+    "node --test tests/phase6-hardware-integration.test.mjs",
+    "npm test",
+    "npm run check",
+    "npm run build",
+    "npm run runtime:check",
+    "npm run desktop:smoke",
+    "npm run hardware:readiness",
+    "npm run windows:readiness",
+    "npm run launch:gate"
+  ],
+  "buildResults": {
+    "phase6FocusedTests": "passed",
+    "npmTest": "passed 155/155",
+    "npmRunCheck": "passed",
+    "npmRunBuild": "passed",
+    "runtimeCheck": "passed",
+    "desktopSmoke": "passed",
+    "hardwareReadiness": "passed code readiness; physical validation remains",
+    "windowsReadiness": "code packaging ready; signed commercial installer false",
+    "launchGate": "CODE_READY_EXTERNAL_APPROVALS_REQUIRED; production activation false"
+  },
+  "localVerification": [
+    "http://127.0.0.1:5173/#/midi",
+    "http://127.0.0.1:5173/#/hardware",
+    "http://127.0.0.1:3041/health"
+  ],
+  "browserLimitations": [
+    "Web MIDI depends on browser support and user permission.",
+    "No physical device absence is treated as a code failure."
+  ],
+  "electronLimitations": [
+    "Native MIDI driver installation is not performed.",
+    "Electron bridge exposes capability/error contracts and browser fallback."
+  ],
+  "manualHardwareValidationRemaining": true,
+  "sysexSafetyStatus": "disabled-by-default dry-run-only-in-tests",
+  "remainingCodeBlockers": [],
+  "externalBlockers": [
+    "physical hardware validation",
+    "Windows signing",
+    "Stripe/PostgreSQL/SMTP production configuration",
+    "commercial/legal approvals",
+    "explicit deployment decision"
+  ],
+  "safetyConfirmation": {
+    "realSysexSent": false,
+    "firmwareUpdated": false,
+    "factoryResetIssued": false,
+    "driverInstalled": false,
+    "commitPushDeploy": false,
+    "productionActivationReady": false
+  }
+}

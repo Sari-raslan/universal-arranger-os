@@ -1,0 +1,33 @@
+# UAOS Release Checklist
+
+- Frontend: PASS_CODE
+- Accounts: PASS_CODE
+- Offline mode: PASS_CODE
+- Sampler: PASS_CODE
+- Arranger: PASS_CODE
+- AI: PASS_CODE
+- Hardware: PASS_CODE
+- DAW: PASS_CODE
+- Recording: PASS_CODE
+- MIDI: PASS_CODE
+- Installer: PASS_CODE_UNSIGNED
+- Update disabled: PASS_CODE
+- Privacy summary: PASS_CODE_DRAFT
+- Terms: DRAFT_REQUIRED
+- Accessibility: BASELINE_ONLY
+- Performance: PASS_CODE
+- Recovery: PASS_CODE
+- Diagnostics: PASS_CODE
+- Feedback: PASS_CODE_LOCAL_ONLY
+- Pricing: PASS_CODE
+- Billing disabled: PASS_CODE
+- Cloud disabled: PASS_CODE
+- Arabic: FOUNDATION_ONLY
+- English: FOUNDATION_ONLY
+- German: FOUNDATION_ONLY
+- Windows signing: REQUIRED_EXTERNAL
+- Manual hardware: REQUIRED_MANUAL
+- Manual audio: REQUIRED_MANUAL
+- Manual MIDI: REQUIRED_MANUAL
+- External services: REQUIRED_EXTERNAL
+- Deployment authorization: REQUIRED_EXTERNAL

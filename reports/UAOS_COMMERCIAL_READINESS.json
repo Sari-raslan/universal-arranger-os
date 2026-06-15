@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-06-13T12:10:18.869Z",
+  "codeReady": true,
+  "productionConfigured": false,
+  "fileChecks": [
+    {
+      "name": "server/commercial/plans.mjs",
+      "passed": true
+    },
+    {
+      "name": "server/commercial/config.mjs",
+      "passed": true
+    },
+    {
+      "name": "server/commercial/crypto.mjs",
+      "passed": true
+    },
+    {
+      "name": "server/commercial/licenseService.mjs",
+      "passed": true
+    },
+    {
+      "name": "server/commercial/paymentWebhook.mjs",
+      "passed": true
+    },
+    {
+      "name": "server/commercial/server.mjs",
+      "passed": true
+    },
+    {
+      "name": "tests/commercial-backend.test.mjs",
+      "passed": true
+    },
+    {
+      "name": ".env.commercial.example",
+      "passed": true
+    }
+  ],
+  "environmentChecks": [
+    {
+      "name": "public-base-url",
+      "passed": false
+    },
+    {
+      "name": "payment-provider",
+      "passed": false
+    },
+    {
+      "name": "payment-secret",
+      "passed": false
+    },
+    {
+      "name": "license-signing-secret",
+      "passed": false
+    },
+    {
+      "name": "admin-secret",
+      "passed": false
+    },
+    {
+      "name": "support-email",
+      "passed": false
+    },
+    {
+      "name": "database-storage",
+      "passed": false
+    }
+  ],
+  "prices": {
+    "creatorMonthlyEur": 19.99,
+    "professionalMonthlyEur": 49.99
+  },
+  "safety": {
+    "secretsInFrontend": false,
+    "webhookSignatureRequired": true,
+    "licenseSignatureRequired": true,
+    "productionDatabaseRequired": true,
+    "providerIntegrationEnabled": false
+  }
+}

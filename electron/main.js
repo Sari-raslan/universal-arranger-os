@@ -1,4 +1,4 @@
-import { app, BrowserWindow, shell } from "electron";
+import { app, BrowserWindow, ipcMain, shell } from "electron";
 import fs from "node:fs";
 import path from "node:path";
 import { createRequire } from "node:module";
@@ -138,6 +138,7 @@ function createWindow() {
       contextIsolation: true,
       nodeIntegration: false,
       webSecurity: true,
+      preload: path.join(__dirname, "preload.cjs"),
     },
   });
 
@@ -183,6 +184,28 @@ function createWindow() {
     showFailurePage("UAOS failed to start", error.message);
   });
 }
+
+ipcMain.handle("uaos:midi:list-devices", () => ({
+  supported: false,
+  bridgeState: "available",
+  permissionState: "unsupported",
+  inputs: [],
+  outputs: [],
+  events: [
+    {
+      type: "electron-midi-foundation",
+      message: "Electron MIDI bridge is present; native MIDI enumeration is not implemented in this build.",
+    },
+  ],
+}));
+
+ipcMain.handle("uaos:midi:reconnect", () => ({ ok: false, reason: "native-midi-not-implemented" }));
+ipcMain.handle("uaos:midi:send", () => ({ ok: false, reason: "native-midi-not-implemented" }));
+ipcMain.handle("uaos:midi:capabilities", () => ({
+  webMidi: false,
+  nativeMidi: false,
+  sysex: false,
+}));
 
 async function resolveAutoUpdater() {
   const updaterModule = require("electron-updater");

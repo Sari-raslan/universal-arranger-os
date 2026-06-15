@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "activationMode": "external-credentials-required",
+  "stripe": {
+    "testModeRequiredBeforeProduction": true,
+    "foundersSchedule": {
+      "enabledByDefault": false,
+      "introMonths": 3,
+      "studio": {
+        "introEur": 7.99,
+        "regularEur": 12.99
+      },
+      "professional": {
+        "introEur": 19.99,
+        "regularEur": 29.99
+      }
+    }
+  },
+  "database": {
+    "engine": "postgresql",
+    "migrationsRequired": [
+      1,
+      2,
+      3
+    ],
+    "executeAutomatically": false
+  },
+  "smtp": {
+    "realDeliveryTestRequired": true,
+    "executeAutomatically": false
+  },
+  "windowsSigning": {
+    "requiredForCommercialInstaller": true,
+    "executeAutomatically": false
+  },
+  "deployment": {
+    "requiresExplicitApproval": true,
+    "executeAutomatically": false
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "phase": "PHASE_9_PUBLIC_BETA",
+  "status": "RELEASE_CANDIDATE_READY_UNSIGNED",
+  "codeReady": true,
+  "productionActivationReady": false,
+  "signedInstallerReady": false,
+  "features": {
+    "releaseModel": true,
+    "versioning": true,
+    "featureFlags": true,
+    "onboarding": true,
+    "demoProject": true,
+    "e2eFoundation": true,
+    "routeSmoke": true,
+    "errorRecovery": true,
+    "crashRecovery": true,
+    "diagnostics": true,
+    "feedback": true,
+    "installerHardening": true,
+    "updateFoundation": true,
+    "performanceBudget": true,
+    "accessibilityBaseline": true,
+    "localizationFoundation": true,
+    "privacyLegalFoundation": true,
+    "supportCenter": true,
+    "keyboardShortcuts": true,
+    "releaseGateV2": true,
+    "knownIssues": true
+  },
+  "safety": {
+    "productionDeployment": false,
+    "realPayment": false,
+    "realEmail": false,
+    "realUpload": false,
+    "realUpdate": false,
+    "commitOrPush": false,
+    "fakeSigning": false
+  }
+}

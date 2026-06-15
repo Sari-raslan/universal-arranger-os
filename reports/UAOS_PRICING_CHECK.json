@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-06-14T00:58:20.056Z",
+  "passed": true,
+  "pricing": [
+    {
+      "productId": "sing",
+      "planId": "free",
+      "name": "UAOS Free / Sing",
+      "currency": "EUR",
+      "introAmount": 0,
+      "regularAmount": 0,
+      "introPaidMonths": 0,
+      "checkoutEnabled": false,
+      "notForSale": false,
+      "status": "available",
+      "taxMode": "tax-not-configured",
+      "noHiddenCharge": true
+    },
+    {
+      "productId": "studio",
+      "planId": "creator",
+      "name": "UAOS Studio",
+      "currency": "EUR",
+      "introAmount": 7.99,
+      "regularAmount": 12.99,
+      "introPaidMonths": 3,
+      "checkoutEnabled": false,
+      "notForSale": false,
+      "status": "experimental",
+      "taxMode": "tax-not-configured",
+      "noHiddenCharge": true
+    },
+    {
+      "productId": "pro",
+      "planId": "professional",
+      "name": "UAOS Pro Arranger",
+      "currency": "EUR",
+      "introAmount": 19.99,
+      "regularAmount": 29.99,
+      "introPaidMonths": 3,
+      "checkoutEnabled": false,
+      "notForSale": false,
+      "status": "experimental",
+      "taxMode": "tax-not-configured",
+      "noHiddenCharge": true
+    },
+    {
+      "productId": "ultimate",
+      "planId": "ultimate",
+      "name": "UAOS Ultimate / Performer",
+      "currency": "EUR",
+      "introAmount": null,
+      "regularAmount": 49.99,
+      "introPaidMonths": 0,
+      "checkoutEnabled": false,
+      "notForSale": true,
+      "status": "planned-not-for-sale",
+      "taxMode": "tax-not-configured",
+      "noHiddenCharge": true
+    }
+  ],
+  "checkoutEnabled": false,
+  "realPayment": false
+}

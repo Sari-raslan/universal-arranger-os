@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-06-13T15:48:03.937Z",
+  "offer": {
+    "durationMonths": 3,
+    "cancellation": "Cancel any time"
+  },
+  "plans": [
+    {
+      "id": "sing",
+      "name": "UAOS Free / Sing",
+      "launchPriceEur": 0,
+      "regularPriceEur": 0,
+      "status": "available"
+    },
+    {
+      "id": "studio",
+      "backendPlanId": "creator",
+      "name": "UAOS Studio",
+      "launchPriceEur": 7.99,
+      "regularPriceEur": 12.99,
+      "status": "experimental"
+    },
+    {
+      "id": "pro",
+      "backendPlanId": "professional",
+      "name": "UAOS Pro Arranger",
+      "launchPriceEur": 19.99,
+      "regularPriceEur": 29.99,
+      "status": "experimental"
+    },
+    {
+      "id": "ultimate",
+      "name": "UAOS Ultimate / Performer",
+      "launchPriceEur": null,
+      "regularPriceEur": 49.99,
+      "status": "planned"
+    }
+  ],
+  "checkoutEnabled": false,
+  "paymentIdentifiersChanged": false,
+  "secretsChanged": false
+}

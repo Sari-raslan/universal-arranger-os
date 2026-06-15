@@ -1,0 +1,34 @@
+[
+  {
+    "id": "UAOS-KI-001",
+    "title": "Windows installer is unsigned",
+    "area": "installer",
+    "severity": "high",
+    "status": "open",
+    "affectedVersion": "1.0.0-beta.9",
+    "workaround": "Use local development build until signing certificate is available.",
+    "manualVerification": true,
+    "externalBlocker": true,
+    "codeBlocker": false,
+    "owner": "release",
+    "sourceReport": "UAOS_WINDOWS_PACKAGE_READINESS",
+    "resolvedVersion": null,
+    "visibility": "public"
+  },
+  {
+    "id": "UAOS-KI-002",
+    "title": "Physical hardware validation is not complete",
+    "area": "hardware",
+    "severity": "medium",
+    "status": "open",
+    "affectedVersion": "1.0.0-beta.9",
+    "workaround": "Use mock profiles and validate manually before performance use.",
+    "manualVerification": true,
+    "externalBlocker": true,
+    "codeBlocker": false,
+    "owner": "qa",
+    "sourceReport": "UAOS_HARDWARE_READINESS",
+    "resolvedVersion": null,
+    "visibility": "public"
+  }
+]

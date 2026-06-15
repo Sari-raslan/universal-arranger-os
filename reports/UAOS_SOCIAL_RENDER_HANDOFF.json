@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "status": "BLOCKED_FFMPEG_OR_MANUAL_RENDER_REQUIRED",
+  "generatedAt": "2026-06-14T02:27:29.014Z",
+  "publicationAllowed": false,
+  "realNetworkActionsPerformed": false,
+  "totals": {
+    "tutorials": 140,
+    "renderManifests": 560,
+    "blockedManifests": 560,
+    "renderedFiles": 0,
+    "expectedFormatsPerTutorial": 4
+  },
+  "paths": {
+    "outputRoot": "social-output",
+    "tutorialRoot": "social-output/tutorials",
+    "globalRenderRoot": "social-output/renders",
+    "sampleManifest": "social-output/tutorials/tutorial-001-start-here-what-is-uaos/renders/manifest.json",
+    "sampleOutput": "social-output/tutorials/tutorial-001-start-here-what-is-uaos/renders/landscape.mp4",
+    "renderReadinessReport": "reports/UAOS_SOCIAL_RENDER_READINESS.json",
+    "renderHandoffReport": "reports/UAOS_SOCIAL_RENDER_HANDOFF.json"
+  },
+  "prerequisites": [
+    "Install FFmpeg locally or use a trusted manual video editor.",
+    "Use only generated UAOS synthetic scripts, captions, thumbnails and manifests.",
+    "Do not include user projects, private paths, account pages, tokens, commercial samples or copyrighted songs.",
+    "Run validation before and after any manual render pass."
+  ],
+  "localValidationCommands": {
+    "validateAll": "npm run academy:validate:all",
+    "handoffReadiness": "npm run academy:handoff:readiness",
+    "renderStatus": "npm run academy:render:status",
+    "queueDryRun": "npm run academy:queue:dry-run"
+  },
+  "sampleFfmpegCommand": "ffmpeg -y -f lavfi -i color=c=0x07111f:s=1920x1080:d=1:r=30 -an \"social-output/tutorials/tutorial-001-start-here-what-is-uaos/renders/landscape.mp4\"",
+  "manualSteps": [
+    "Open the tutorial render manifest.",
+    "Render one sample landscape output first.",
+    "Review narration, captions, safe margins, contrast and motion.",
+    "Repeat for vertical, square and portrait formats after approval.",
+    "Keep publication queue items in DRAFT until OAuth, legal review and owner approval are complete."
+  ],
+  "approvalRequiredBeforeUpload": true,
+  "approvalPhraseRequired": "OWNER_APPROVES_SOCIAL_PUBLICATION"
+}

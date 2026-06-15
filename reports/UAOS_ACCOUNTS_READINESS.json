@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-06-13T19:14:33.560Z",
+  "codeReady": true,
+  "productionConfigured": false,
+  "fileChecks": [
+    {
+      "name": "server/accounts/passwords.mjs",
+      "passed": true
+    },
+    {
+      "name": "server/accounts/tokens.mjs",
+      "passed": true
+    },
+    {
+      "name": "server/accounts/stores.mjs",
+      "passed": true
+    },
+    {
+      "name": "server/accounts/accountService.mjs",
+      "passed": true
+    },
+    {
+      "name": "server/accounts/server.mjs",
+      "passed": true
+    },
+    {
+      "name": "tests/accounts-auth.test.mjs",
+      "passed": true
+    },
+    {
+      "name": ".env.accounts.example",
+      "passed": true
+    }
+  ],
+  "environmentChecks": [
+    {
+      "name": "production-database-adapter",
+      "passed": false
+    },
+    {
+      "name": "production-email-provider",
+      "passed": false
+    },
+    {
+      "name": "email-from-address",
+      "passed": false
+    },
+    {
+      "name": "public-base-url",
+      "passed": false
+    }
+  ],
+  "capabilities": {
+    "passwordHashing": "scrypt",
+    "opaqueSessions": true,
+    "storedSessionTokens": false,
+    "emailVerification": true,
+    "passwordReset": true,
+    "subscriptionLinking": true,
+    "localDevelopmentStore": true,
+    "productionDatabaseAdapter": false,
+    "productionEmailDelivery": false
+  }
+}

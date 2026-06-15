@@ -1,0 +1,42 @@
+{
+  "phase": "PHASE_10_COMMERCIAL_RELEASE_FOUNDATION",
+  "status": "RELEASE_CANDIDATE_READY_UNSIGNED",
+  "codeReady": true,
+  "productionActivationReady": false,
+  "signedInstallerReady": false,
+  "features": {
+    "productEditions": true,
+    "canonicalPricing": true,
+    "licensingFoundation": true,
+    "activationFoundation": true,
+    "founderSchedule": true,
+    "commercialWebsite": true,
+    "demoMedia": true,
+    "downloadCenter": true,
+    "windowsDistribution": true,
+    "androidReadiness": true,
+    "iosReadiness": true,
+    "updateSystem": true,
+    "telemetryPrivacy": true,
+    "crashReporting": true,
+    "supportCenter": true,
+    "legalFoundation": true,
+    "securityBaseline": true,
+    "performanceBaseline": true,
+    "accessibilityBaseline": true,
+    "localizationFoundation": true,
+    "backupRestore": true,
+    "releaseNotes": true,
+    "finalGate": true
+  },
+  "safety": {
+    "paymentExecuted": false,
+    "smtpDeliveryExecuted": false,
+    "productionDatabaseWrite": false,
+    "cloudUpload": false,
+    "autoUpdateExecuted": false,
+    "signingExecuted": false,
+    "deploymentExecuted": false,
+    "commitOrPush": false
+  }
+}

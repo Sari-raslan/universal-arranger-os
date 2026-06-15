@@ -1,0 +1,94 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-06-13T23:32:37.283Z",
+  "codeReady": true,
+  "manualHardwareValidationRequired": true,
+  "sysexEnabled": false,
+  "midiOutputEnabled": true,
+  "requiredFoundations": [
+    {
+      "name": "uaos-live-clean/src/hooks/useWebMidiInput.js",
+      "passed": true
+    },
+    {
+      "name": "uaos-live-clean/src/midi/midiMessageParser.js",
+      "passed": true
+    },
+    {
+      "name": "uaos-live-clean/src/midi/deviceProfiles.js",
+      "passed": true
+    },
+    {
+      "name": "uaos-live-clean/src/hardware/hardwarePhase6.js",
+      "passed": true
+    },
+    {
+      "name": "uaos-live-clean/src/components/HardwareIntegrationPanel.jsx",
+      "passed": true
+    },
+    {
+      "name": "electron/preload.cjs",
+      "passed": true
+    },
+    {
+      "name": "uaos-live-clean/src/components/SamplerWorkbench.jsx",
+      "passed": true
+    },
+    {
+      "name": "uaos-live-clean/src/components/ArrangerEnginePanel.jsx",
+      "passed": true
+    }
+  ],
+  "targetProfiles": [
+    {
+      "name": "KORG PA3X",
+      "noteOnOff": "manual-test-required",
+      "velocity": "manual-test-required",
+      "sustain": "manual-test-required",
+      "pitchBend": "manual-test-required",
+      "channelFilter": "manual-test-required",
+      "panic": "manual-test-required",
+      "latency": "manual-test-required"
+    },
+    {
+      "name": "KORG PA5X",
+      "noteOnOff": "manual-test-required",
+      "velocity": "manual-test-required",
+      "sustain": "manual-test-required",
+      "pitchBend": "manual-test-required",
+      "channelFilter": "manual-test-required",
+      "panic": "manual-test-required",
+      "latency": "manual-test-required"
+    },
+    {
+      "name": "Yamaha Genos",
+      "noteOnOff": "manual-test-required",
+      "velocity": "manual-test-required",
+      "sustain": "manual-test-required",
+      "pitchBend": "manual-test-required",
+      "channelFilter": "manual-test-required",
+      "panic": "manual-test-required",
+      "latency": "manual-test-required"
+    },
+    {
+      "name": "Roland BK-9",
+      "noteOnOff": "manual-test-required",
+      "velocity": "manual-test-required",
+      "sustain": "manual-test-required",
+      "pitchBend": "manual-test-required",
+      "channelFilter": "manual-test-required",
+      "panic": "manual-test-required",
+      "latency": "manual-test-required"
+    },
+    {
+      "name": "Ketron SD9",
+      "noteOnOff": "manual-test-required",
+      "velocity": "manual-test-required",
+      "sustain": "manual-test-required",
+      "pitchBend": "manual-test-required",
+      "channelFilter": "manual-test-required",
+      "panic": "manual-test-required",
+      "latency": "manual-test-required"
+    }
+  ]
+}

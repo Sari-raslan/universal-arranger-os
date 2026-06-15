@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "status": "BLOCKED_PUBLICATION_APPROVAL",
+  "generatedAt": "2026-06-14T02:27:29.014Z",
+  "publicationAllowed": false,
+  "privateUploadAllowed": false,
+  "unlistedUploadAllowed": false,
+  "realNetworkActionsPerformed": false,
+  "totals": {
+    "tutorials": 140,
+    "queueItems": 700,
+    "draftItems": 700,
+    "reviewedItems": 0,
+    "ownerApprovedItems": 0,
+    "privateReadyItems": 0,
+    "publicReadyItems": 0,
+    "platformsPerTutorial": 5
+  },
+  "requiredEvidence": [
+    "technicalReview",
+    "educationalReview",
+    "legalBrandReview",
+    "privacyReview",
+    "copyrightReview",
+    "renderedMediaApproved",
+    "narrationApproved",
+    "ownerApproval",
+    "approvalPhrase"
+  ],
+  "sampleQueueItem": {
+    "contentId": "tutorial-001-start-here-what-is-uaos-youtube",
+    "tutorialId": "tutorial-001-start-here-what-is-uaos",
+    "platform": "youtube",
+    "status": "DRAFT",
+    "approvalState": "not-reviewed",
+    "requiredBeforePrivateUpload": [
+      "rendered-media-approved",
+      "narration-approved",
+      "privacy-review",
+      "copyright-review",
+      "technical-review",
+      "educational-review",
+      "owner-approval"
+    ],
+    "requiredBeforePublicPublication": [
+      "platform-oauth-configured",
+      "account-verified",
+      "legal-brand-review",
+      "explicit-publication-mode",
+      "OWNER_APPROVES_SOCIAL_PUBLICATION"
+    ]
+  },
+  "paths": {
+    "queue": "social-output/queue/publication-queue.json",
+    "approvalReport": "reports/UAOS_SOCIAL_PUBLICATION_APPROVAL_HANDOFF.json",
+    "approvalNotes": "reports/UAOS_SOCIAL_PUBLICATION_APPROVAL_HANDOFF.md",
+    "publicationQueueReport": "reports/UAOS_SOCIAL_PUBLICATION_QUEUE.json"
+  },
+  "safeLocalCommands": {
+    "approvalStatus": "npm run academy:approval:status",
+    "queueDryRun": "npm run academy:queue:dry-run",
+    "handoffReadiness": "npm run academy:handoff:readiness",
+    "validateAll": "npm run academy:validate:all"
+  },
+  "blockers": [
+    "Approve rendered media for every platform item after FFmpeg/manual render output exists.",
+    "Approve narration audio for every tutorial and language before any upload.",
+    "Complete technical, educational, privacy, copyright and legal/brand review.",
+    "Configure official platform OAuth/API credentials and verify platform accounts.",
+    "Record owner approval with the exact phrase OWNER_APPROVES_SOCIAL_PUBLICATION before private, unlisted, scheduled or public posting."
+  ],
+  "approvalPhraseRequired": "OWNER_APPROVES_SOCIAL_PUBLICATION"
+}

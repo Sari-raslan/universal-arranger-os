@@ -1,0 +1,44 @@
+{
+  "ffmpegAvailable": false,
+  "status": "FFMPEG_REQUIRED",
+  "sampleRenderOnly": true,
+  "fullBatchRenderAutomatic": false,
+  "manifests": 560,
+  "blockedManifests": 560,
+  "renderedFiles": 0,
+  "expectedFormats": [
+    "landscape",
+    "vertical",
+    "square",
+    "portrait"
+  ],
+  "manifestLocations": [
+    "social-output/tutorials/tutorial-001-start-here-what-is-uaos/renders/manifest.json",
+    "social-output/tutorials/tutorial-002-start-here-windows-installation/renders/manifest.json",
+    "social-output/tutorials/tutorial-003-start-here-web-app/renders/manifest.json",
+    "social-output/tutorials/tutorial-004-start-here-first-run/renders/manifest.json",
+    "social-output/tutorials/tutorial-005-start-here-choose-language/renders/manifest.json"
+  ],
+  "sampleTutorialId": "tutorial-001-start-here-what-is-uaos",
+  "sampleManifestPath": "social-output/tutorials/tutorial-001-start-here-what-is-uaos/renders/manifest.json",
+  "sampleOutputPath": "social-output/tutorials/tutorial-001-start-here-what-is-uaos/renders/landscape.mp4",
+  "screenshots": "svg-placeholder-ready",
+  "overlays": "ready",
+  "captions": "ready",
+  "thumbnails": "ready",
+  "exactCommands": true,
+  "concurrencyLimit": 1,
+  "resumeSupport": true,
+  "diskSpaceChecks": true,
+  "cleanup": true,
+  "failedJobRetry": true,
+  "safeCommands": {
+    "validateAll": "npm run academy:validate:all",
+    "inspectStatus": "npm run academy:status",
+    "renderSample": "npm run academy:render:sample",
+    "renderBatchManifestOnly": "npm run academy:render:batch"
+  },
+  "blockedReason": "FFmpeg is not available in this environment or was not detected on PATH.",
+  "manualRenderAllowed": true,
+  "automaticUploadAfterRender": false
+}

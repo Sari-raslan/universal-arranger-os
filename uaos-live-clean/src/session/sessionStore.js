@@ -1,6 +1,72 @@
-export const PROJECT_VERSION = 1;
+import { createDisabledRemoteProvider } from "../ai/aiProvider.js";
+import { migratePhase9State } from "../beta/phase9Beta.js";
+import { migrateCloudState } from "../cloud/cloudPhase8.js";
+import { migrateDawProject } from "../daw/dawPhase7.js";
+import { migrateHardwareSession } from "../hardware/hardwarePhase6.js";
+import { createLibraryCatalog } from "../library/libraryCatalog.js";
+import { migrateSamplerPreset } from "../sampler/samplerEngine.js";
+
+export const PROJECT_VERSION = 7;
 export const SESSION_KEY = "uaos_v1_session";
 const AUTOSAVE_KEY = "uaos_v1_autosave";
+
+function createAudioState(overrides = {}) {
+  return {
+    schemaVersion: 1,
+    masterGain: 0.9,
+    muted: false,
+    solo: [],
+    channels: ["master", "sampler", "arranger", "recording"],
+    ...overrides,
+  };
+}
+
+function createRecordingSessionState(overrides = {}) {
+  return {
+    schemaVersion: 1,
+    clips: [],
+    selectedMicrophoneId: null,
+    permissionState: "unknown",
+    rawAudioInLocalStorage: false,
+    ...overrides,
+    clips: Array.isArray(overrides.clips) ? overrides.clips : [],
+    rawAudioInLocalStorage: false,
+  };
+}
+
+function createSamplerState(overrides = {}) {
+  const presets = Array.isArray(overrides.presets)
+    ? overrides.presets.map((preset) => {
+        try {
+          return migrateSamplerPreset(preset);
+        } catch {
+          return null;
+        }
+      }).filter(Boolean)
+    : [];
+
+  return {
+    schemaVersion: 2,
+    selectedPresetId: overrides.selectedPresetId || presets[0]?.id || null,
+    presets,
+    missingAssets: Array.isArray(overrides.missingAssets) ? overrides.missingAssets : [],
+  };
+}
+
+function createAiMusicState(overrides = {}) {
+  return {
+    schemaVersion: 1,
+    provider: {
+      ...createDisabledRemoteProvider(),
+      ...(overrides.provider || {}),
+      remoteEnabled: false,
+      status: "disabled",
+    },
+    analyses: Array.isArray(overrides.analyses) ? overrides.analyses : [],
+    jobs: Array.isArray(overrides.jobs) ? overrides.jobs : [],
+    remoteUploadsEnabled: false,
+  };
+}
 
 export function createDefaultSession() {
   return {
@@ -11,6 +77,15 @@ export function createDefaultSession() {
     timeline: [],
     arranger: null,
     midiMappings: {},
+    audio: createAudioState(),
+    sampler: createSamplerState(),
+    library: createLibraryCatalog([]),
+    recording: createRecordingSessionState(),
+    aiMusic: createAiMusicState(),
+    hardware: migrateHardwareSession(),
+    dawProject: migrateDawProject(),
+    cloud: migrateCloudState(),
+    beta: migratePhase9State(),
     updatedAt: new Date().toISOString()
   };
 }
@@ -26,8 +101,18 @@ export function validateSession(value) {
 
 export function migrateSession(value) {
   const base = createDefaultSession();
-  const next = { ...base, ...value, version: PROJECT_VERSION };
+  const source = value && typeof value === "object" ? value : {};
+  const next = { ...base, ...source, version: PROJECT_VERSION };
   next.bpm = Math.max(30, Math.min(260, Number(next.bpm || base.bpm)));
+  next.audio = createAudioState(source.audio);
+  next.sampler = createSamplerState(source.sampler);
+  next.library = source.library?.schemaVersion ? source.library : createLibraryCatalog(source.library?.items || []);
+  next.recording = createRecordingSessionState(source.recording);
+  next.aiMusic = createAiMusicState(source.aiMusic);
+  next.hardware = migrateHardwareSession(source.hardware);
+  next.dawProject = migrateDawProject(source.dawProject);
+  next.cloud = migrateCloudState(source.cloud);
+  next.beta = migratePhase9State(source.beta);
   next.updatedAt = new Date().toISOString();
   return next;
 }

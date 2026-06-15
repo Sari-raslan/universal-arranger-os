@@ -1,0 +1,151 @@
+{
+  "schemaVersion": 1,
+  "batchId": "BATCH-001",
+  "passed": true,
+  "validation": {
+    "valid": true,
+    "errors": []
+  },
+  "counts": {
+    "lessons": 10,
+    "readyForReview": 10,
+    "blockedByRenderer": 10,
+    "blockedByOAuth": 10,
+    "platformPackages": 100
+  },
+  "statuses": {
+    "scripts": "SCRIPT_READY",
+    "storyboards": "SCRIPT_READY",
+    "capture": "CAPTURE_READY",
+    "render": "FFMPEG_REQUIRED",
+    "captions": "CAPTIONS_READY",
+    "thumbnails": "THUMBNAILS_READY",
+    "platformPackages": "DRY_RUN_READY",
+    "publication": "BLOCKED_OAUTH"
+  },
+  "routeChecks": [
+    {
+      "lessonId": "lesson-001",
+      "route": "#/",
+      "routeWorks": true,
+      "evidence": [
+        "Universal Arranger OS",
+        "Open Audio Lab",
+        "Pro Arranger",
+        "AI Labs"
+      ]
+    },
+    {
+      "lessonId": "lesson-002",
+      "route": "#/downloads",
+      "routeWorks": true,
+      "evidence": [
+        "Download Center",
+        "Windows",
+        "Signed: false",
+        "unsigned"
+      ]
+    },
+    {
+      "lessonId": "lesson-003",
+      "route": "#/demo",
+      "routeWorks": true,
+      "evidence": [
+        "Public Beta",
+        "demo",
+        "recovery",
+        "diagnostics"
+      ]
+    },
+    {
+      "lessonId": "lesson-004",
+      "route": "#/",
+      "routeWorks": true,
+      "evidence": [
+        "Arabic / English / Deutsch workspace"
+      ]
+    },
+    {
+      "lessonId": "lesson-005",
+      "route": "#/account",
+      "routeWorks": true,
+      "evidence": [
+        "offline",
+        "provider",
+        "disabled",
+        "local"
+      ]
+    },
+    {
+      "lessonId": "lesson-006",
+      "route": "#/studio",
+      "routeWorks": true,
+      "evidence": [
+        "UAOS DAW Studio",
+        "Audio Track",
+        "MIDI Track",
+        "Sampler Track",
+        "Autosave"
+      ]
+    },
+    {
+      "lessonId": "lesson-007",
+      "route": "#/sessions",
+      "routeWorks": true,
+      "evidence": [
+        "Sessions",
+        "autosave",
+        "recovery"
+      ]
+    },
+    {
+      "lessonId": "lesson-008",
+      "route": "#/",
+      "routeWorks": true,
+      "evidence": [
+        "Home",
+        "UAOS Sing",
+        "UAOS Studio",
+        "Sampler",
+        "Support",
+        "Diagnostics"
+      ]
+    },
+    {
+      "lessonId": "lesson-009",
+      "route": "#/sampler",
+      "routeWorks": true,
+      "evidence": [
+        "Sampler",
+        "WAV",
+        "Root note",
+        "Key zones",
+        "MIDI"
+      ]
+    },
+    {
+      "lessonId": "lesson-010",
+      "route": "#/diagnostics",
+      "routeWorks": true,
+      "evidence": [
+        "Diagnostics",
+        "Runtime",
+        "Local services",
+        "Support"
+      ]
+    }
+  ],
+  "outputRoot": "social-output/batch-001",
+  "safety": {
+    "publicPublishingEnabled": false,
+    "privateUploadEnabled": false,
+    "unlistedUploadEnabled": false,
+    "networkCallsAllowed": false,
+    "realAccountsAllowed": false,
+    "oauthAllowed": false,
+    "personalDataAllowed": false,
+    "commercialFilesAllowed": false,
+    "copyrightedSongsAllowed": false
+  },
+  "ffmpegStatus": "FFMPEG_REQUIRED"
+}

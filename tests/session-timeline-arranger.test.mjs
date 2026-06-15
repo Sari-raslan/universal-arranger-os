@@ -10,7 +10,7 @@ test("session validation and migration", () => {
   assert.equal(validateSession(session).ok, true);
   assert.equal(importSession(exportSession(session)).name, "Gig");
   assert.equal(validateSession({ bpm: 2 }).ok, false);
-  assert.equal(createDefaultSession().version, 1);
+  assert.equal(createDefaultSession().version, 7);
 });
 
 test("timeline capture throttles audio and avoids playback re-record", () => {

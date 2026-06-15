@@ -1,0 +1,110 @@
+{
+  "schemaVersion": 1,
+  "status": "TEMPLATE_ONLY_NO_APPROVALS_IMPORTED",
+  "generatedAt": "2026-06-14T02:27:29.014Z",
+  "publicationAllowed": false,
+  "privateUploadAllowed": false,
+  "unlistedUploadAllowed": false,
+  "realNetworkActionsPerformed": false,
+  "instructions": [
+    "Copy this template before editing; keep the generated file as the baseline.",
+    "Use only local rendered media, local narration audio and written human review records.",
+    "Do not paste OAuth secrets, refresh tokens, cookies, private URLs or personal data into this manifest.",
+    "Set approval fields only after the matching local artifact has been manually reviewed.",
+    "Keep publication queue entries in DRAFT until a separate owner approval and platform OAuth review are complete."
+  ],
+  "expectedTotals": {
+    "tutorials": 140,
+    "queueItems": 700,
+    "renderManifests": 560,
+    "narrationAssets": 420,
+    "oauthPlatforms": 23
+  },
+  "requiredEvidenceTypes": [
+    "rendered-media-approved",
+    "narration-approved",
+    "technical-review",
+    "educational-review",
+    "privacy-review",
+    "copyright-review",
+    "legal-brand-review",
+    "owner-approval"
+  ],
+  "requiredApprovalPhrase": "OWNER_APPROVES_SOCIAL_PUBLICATION",
+  "evidenceFileConventions": {
+    "renderedMedia": "social-output/renders/<tutorial-id>/<format>.mp4",
+    "narrationAudio": "social-output/narration/<tutorial-id>/<language>.wav",
+    "reviewerNotes": "social-output/reviews/<tutorial-id>/<review-type>.md",
+    "ownerApproval": "social-output/reviews/owner-approval.json",
+    "oauthStatus": "reports/UAOS_SOCIAL_OAUTH_STATUS.json"
+  },
+  "sampleTutorialEvidence": {
+    "tutorialId": "tutorial-001-start-here-what-is-uaos",
+    "contentHash": "ha3a120ba",
+    "renderedMediaApproved": false,
+    "narrationApproved": {
+      "ar": false,
+      "en": false,
+      "de-foundation": false
+    },
+    "technicalReview": false,
+    "educationalReview": false,
+    "privacyReview": false,
+    "copyrightReview": false,
+    "legalBrandReview": false,
+    "renderedMediaPaths": [],
+    "narrationAudioPaths": {
+      "ar": null,
+      "en": null,
+      "de-foundation": null
+    },
+    "reviewerNotePaths": [],
+    "reviewerNotes": [],
+    "reviewedAt": null,
+    "reviewerName": null,
+    "evidenceSource": "local-manual-review"
+  },
+  "sampleQueueEvidence": {
+    "contentId": "tutorial-001-start-here-what-is-uaos-youtube",
+    "tutorialId": "tutorial-001-start-here-what-is-uaos",
+    "platform": "youtube",
+    "contentHash": "ha3a120ba",
+    "ownerApproval": false,
+    "approvalPhrase": null,
+    "privateUploadAllowed": false,
+    "unlistedUploadAllowed": false,
+    "publicPublicationAllowed": false,
+    "reviewedAt": null,
+    "reviewerName": null,
+    "evidenceSource": "local-owner-approval"
+  },
+  "sampleOAuthEvidence": {
+    "platformId": "youtube",
+    "configured": false,
+    "appReviewApproved": false,
+    "accountVerified": false,
+    "scopesApproved": false,
+    "tokenStorageVerified": false,
+    "reviewerNote": null,
+    "reviewedAt": null,
+    "reviewerName": null,
+    "evidenceSource": "local-oauth-checklist"
+  },
+  "validationRules": [
+    "All queue items must keep privateUploadAllowed, unlistedUploadAllowed and publicPublicationAllowed false in local review mode.",
+    "Owner approval is invalid unless approvalPhrase exactly equals OWNER_APPROVES_SOCIAL_PUBLICATION.",
+    "Approved tutorial and queue rows must include the current generated contentHash so stale evidence cannot unlock readiness.",
+    "Approved evidence rows must include reviewedAt, reviewerName and evidenceSource provenance from the current review cycle.",
+    "Rendered media, narration audio and reviewer note references must be local relative paths under social-output/.",
+    "OAuth status may record platform IDs and non-secret review metadata only; secrets must never be stored in reports.",
+    "This template does not upload, schedule, publish, authenticate, record audio or render media."
+  ],
+  "safeLocalCommands": {
+    "createTemplate": "npm run academy:evidence:template",
+    "createWorkingFile": "npm run academy:evidence:working",
+    "auditWorkingFile": "npm run academy:evidence:audit",
+    "reviewEvidence": "npm run academy:review:evidence",
+    "approvalStatus": "npm run academy:approval:status",
+    "oauthStatus": "npm run academy:oauth:status"
+  }
+}

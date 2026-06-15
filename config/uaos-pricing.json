@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 2,
+  "currency": "EUR",
+  "offer": {
+    "name": "Founders launch offer",
+    "introductoryPaidMonths": 3,
+    "cancellation": "Cancel any time",
+    "checkoutEnabled": false
+  },
+  "plans": [
+    {
+      "id": "sing",
+      "backendPlanId": "free",
+      "name": "UAOS Free / Sing",
+      "launchAmountMinor": 0,
+      "regularAmountMinor": 0,
+      "launchMonths": 0,
+      "status": "available"
+    },
+    {
+      "id": "studio",
+      "backendPlanId": "creator",
+      "name": "UAOS Studio",
+      "launchAmountMinor": 799,
+      "regularAmountMinor": 1299,
+      "launchMonths": 3,
+      "status": "experimental"
+    },
+    {
+      "id": "pro",
+      "backendPlanId": "professional",
+      "name": "UAOS Pro Arranger",
+      "launchAmountMinor": 1999,
+      "regularAmountMinor": 2999,
+      "launchMonths": 3,
+      "status": "experimental"
+    },
+    {
+      "id": "ultimate",
+      "backendPlanId": "ultimate",
+      "name": "UAOS Ultimate / Performer",
+      "launchAmountMinor": null,
+      "regularAmountMinor": 4999,
+      "launchMonths": 0,
+      "status": "planned"
+    }
+  ]
+}

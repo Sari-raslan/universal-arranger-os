@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "status": "BLOCKED_REVIEW_EVIDENCE",
+  "generatedAt": "2026-06-14T02:27:29.014Z",
+  "publicationAllowed": false,
+  "privateUploadAllowed": false,
+  "unlistedUploadAllowed": false,
+  "realNetworkActionsPerformed": false,
+  "totals": {
+    "tutorials": 140,
+    "renderManifests": 560,
+    "renderedFiles": 0,
+    "expectedNarrationAssets": 420,
+    "approvedNarrationAssets": 0,
+    "queueItems": 700,
+    "draftQueueItems": 700,
+    "oauthConfigured": 0,
+    "oauthPlatforms": 23,
+    "approvedPhrases": 0
+  },
+  "evidenceCounts": {
+    "technicalReview": 0,
+    "educationalReview": 0,
+    "legalBrandReview": 0,
+    "privacyReview": 0,
+    "copyrightReview": 0,
+    "renderedMediaApproved": 0,
+    "narrationApproved": 0,
+    "ownerApproval": 0
+  },
+  "requiredEvidence": [
+    "rendered-media-approved",
+    "narration-approved",
+    "technical-review",
+    "educational-review",
+    "privacy-review",
+    "copyright-review",
+    "legal-brand-review",
+    "owner-approval",
+    "OWNER_APPROVES_SOCIAL_PUBLICATION"
+  ],
+  "blockers": [
+    "Rendered media outputs are not approved for every required format.",
+    "Narration audio is not approved for every tutorial language.",
+    "Queue review evidence is incomplete.",
+    "Platform OAuth/API configuration is incomplete.",
+    "Publication queue remains in DRAFT."
+  ],
+  "safeLocalCommands": {
+    "evidenceTemplate": "npm run academy:evidence:template",
+    "evidenceAudit": "npm run academy:evidence:audit",
+    "reviewEvidence": "npm run academy:review:evidence",
+    "renderStatus": "npm run academy:render:status",
+    "narrationStatus": "npm run academy:narration:status",
+    "approvalStatus": "npm run academy:approval:status",
+    "oauthStatus": "npm run academy:oauth:status"
+  },
+  "localArtifacts": {
+    "queue": "social-output/queue/publication-queue.json",
+    "renderHandoff": "reports/UAOS_SOCIAL_RENDER_HANDOFF.json",
+    "narrationHandoff": "reports/UAOS_SOCIAL_NARRATION_HANDOFF.json",
+    "approvalHandoff": "reports/UAOS_SOCIAL_PUBLICATION_APPROVAL_HANDOFF.json",
+    "evidenceImportTemplate": "reports/UAOS_SOCIAL_REVIEW_EVIDENCE_IMPORT_TEMPLATE.json",
+    "reviewerWorkingEvidence": "social-output/reviews/reviewer-evidence-working.json",
+    "reviewEvidenceGate": "reports/UAOS_SOCIAL_REVIEW_EVIDENCE_GATE.json"
+  },
+  "approvalPhraseRequired": "OWNER_APPROVES_SOCIAL_PUBLICATION"
+}
