@@ -1,32 +1,47 @@
 import { app, BrowserWindow, ipcMain, shell } from "electron";
 import fs from "node:fs";
 import path from "node:path";
+import { createRequire } from "node:module";
 import { fileURLToPath } from "node:url";
+import { initializeAutoUpdateEngine } from "./updateEngine.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const repoRoot = path.resolve(__dirname, "..");
-const reportDir = path.join(repoRoot, "reports", "electron-hotfix");
-const logFile = path.join(reportDir, "electron-runtime.log");
+const require = createRequire(import.meta.url);
+function getRuntimeLogFile() {
+  const reportDir = path.join(
+    app.getPath("userData"),
+    "reports",
+    "electron-runtime"
+  );
+
+  fs.mkdirSync(reportDir, { recursive: true });
+  return path.join(reportDir, "electron-runtime.log");
+}
 const fallbackDevUrl = "http://127.0.0.1:5173";
 
 let mainWindow;
 let showedFailurePage = false;
-
-function ensureReportDir() {
-  fs.mkdirSync(reportDir, { recursive: true });
-}
+let updateEngine;
 
 function logRuntime(event, details = {}) {
-  ensureReportDir();
   const entry = {
     time: new Date().toISOString(),
     event,
     ...details,
   };
-  fs.appendFileSync(logFile, `${JSON.stringify(entry)}\n`, "utf8");
-}
 
+  try {
+    fs.appendFileSync(
+      getRuntimeLogFile(),
+      `${JSON.stringify(entry)}\n`,
+      "utf8"
+    );
+  } catch (error) {
+    console.error("UAOS runtime log failed:", error);
+  }
+}
 function escapeHtml(value) {
   return String(value)
     .replaceAll("&", "&amp;")
@@ -192,9 +207,23 @@ ipcMain.handle("uaos:midi:capabilities", () => ({
   sysex: false,
 }));
 
+async function resolveAutoUpdater() {
+  const updaterModule = require("electron-updater");
+  return updaterModule.autoUpdater;
+}
+
 app.whenReady().then(() => {
   logRuntime("app-ready", { version: app.getVersion(), packaged: app.isPackaged });
   createWindow();
+  initializeAutoUpdateEngine({
+    app,
+    resolveAutoUpdater,
+    logger: logRuntime,
+  }).then((engine) => {
+    updateEngine = engine;
+  }).catch((error) => {
+    logRuntime("updater:init-failed", { message: error.message, stack: error.stack });
+  });
 
   app.on("activate", () => {
     if (BrowserWindow.getAllWindows().length === 0) {
@@ -205,6 +234,7 @@ app.whenReady().then(() => {
 
 app.on("window-all-closed", () => {
   if (process.platform !== "darwin") {
+    updateEngine?.stop();
     app.quit();
   }
 });

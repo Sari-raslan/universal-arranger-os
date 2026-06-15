@@ -1,17 +1,19 @@
-
-  {"project": "UAOS",
+{
+  "project": "UAOS",
   "roadmapVersion": "V1-V2-V3",
-  "currentPhase": "COMPLETE",
+  "currentPhase": "HARDENING",
   "phaseStatus": "COMPLETE",
-  "lastCompletedTask": "PR_29_PHASE8_EXPRESS_DEPENDENCY_FIX",
+  "lastCompletedTask": "MERGE_MASTER_INTO_UAOS_RUNTIME_HARDENING_CONFLICT_RESOLUTION",
   "nextTask": "GITHUB_ACTIONS_RECHECK_AFTER_PUSH",
-  "lastSuccessfulCommand": "git diff --check",
+  "lastSuccessfulCommand": "npm ci --prefix backend",
   "lastSuccessfulCommit": "b3e71ff",
-  "buildStatus": "PASS",
-  "testStatus": "PASS",
+  "buildStatus": "BLOCKED",
+  "testStatus": "BLOCKED",
   "blockers": [
     "Manual microphone permission cleanup validation requires a real browser permission flow.",
-    "Manual MIDI thru and panic validation requires real MIDI hardware."
+    "Manual MIDI thru and panic validation requires real MIDI hardware.",
+    "Automatic updater network checks require a packaged signed build with the intended update provider configured.",
+    "Post-merge validation is blocked at npm ci --prefix uaos-live-clean because Windows refuses to unlink uaos-live-clean/node_modules/@rolldown/.binding-win32-x64-msvc-XggE4oWY/rolldown-binding.win32-x64-msvc.node."
   ],
-  "updatedAt": "2026-06-15T18:49:01.9365695+02:00"
+  "updatedAt": "2026-06-15T19:10:30.000+02:00"
 }

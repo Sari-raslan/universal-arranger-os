@@ -1,4 +1,4 @@
-﻿import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import "./style.css";
 import { ArrangerPanel } from "./components/ArrangerPanel.jsx";
 import { AudioLab } from "./components/AudioLab.jsx";
@@ -9,6 +9,7 @@ import { RuntimeStatus } from "./components/RuntimeStatus.jsx";
 import { SessionsPanel } from "./components/SessionsPanel.jsx";
 import { StatusBadge } from "./components/StatusBadge.jsx";
 import { TimelinePanel } from "./components/TimelinePanel.jsx";
+import { DownloadsUpdatePanel } from "./components/DownloadsUpdatePanel.jsx";
 import { ProfessionalArrangerPanel } from "./components/ProfessionalArrangerPanel.jsx";
 import { AILabsPanel } from "./components/AILabsPanel.jsx";
 import { LaunchBanner, ImpressumPage, PrivacyPage, TermsPage, SupportPage, ContactPage } from "./components/LaunchPages.jsx";
@@ -48,34 +49,18 @@ const plans = canonicalPricing().map((plan) => ({
 
 const routeItems = [
   { id: "home", label: "Home" },
-  { id: "sing", label: "UAOS Sing" },
-  { id: "studio", label: "UAOS Studio" },
-  { id: "account", label: "Account" },
-  { id: "pro", label: "Pro Arranger" },
-  { id: "midi", label: "MIDI" },
-  { id: "hardware", label: "Hardware" },
   { id: "audio", label: "Audio Lab" },
+  { id: "midi", label: "MIDI" },
+  { id: "arranger", label: "Arranger" },
   { id: "timeline", label: "Timeline" },
   { id: "sessions", label: "Sessions" },
-  { id: "live", label: "Live Mode" },
-  { id: "sounds", label: "Sounds" },
-  { id: "sampler", label: "Sampler" },
-  { id: "ai", label: "AI Labs" },
   { id: "diagnostics", label: "Diagnostics" },
-  { id: "pricing", label: "Pricing" },
   { id: "downloads", label: "Downloads" },
   { id: "support", label: "Support" },
-  { id: "academy", label: "Academy" },
-  { id: "demo", label: "Demo" },
   { id: "privacy", label: "Privacy" },
   { id: "terms", label: "Terms" },
   { id: "contact", label: "Contact" },
-  { id: "status", label: "Release Status" },
-  { id: "support", label: "Support" },
-  { id: "contact", label: "Contact" },
-  { id: "privacy", label: "Privacy" },
-  { id: "terms", label: "Terms" },
-  { id: "impressum", label: "Impressum" }
+  { id: "status", label: "Release Status" }
 ];
 
 function route(page, setPage) {
@@ -129,17 +114,17 @@ function Home({ setPage }) {
   <div className="uaosHeroBrand" aria-hidden="true">
     <img onError={(event) => { event.currentTarget.style.display = "none"; }} src="/brand/uaos-lockup-transparent.png" alt="" />
   </div>
-        <p className="eyebrow">PUBLIC PREVIEW • ARABIC / ENGLISH / DEUTSCH</p>
+        <p className="eyebrow">UAOS V1 أ¢â‚¬آ¢ WINDOWS EARLY ACCESS</p>
         <h1>
   <span className="heroBrand">Universal Arranger</span>
   <span className="heroAccent">Operating System</span>
 </h1>
-        <p className="lead">Create, arrange, record and control music from one browser-first workstation — voice, MIDI, arranger, sampler, studio and local AI tools.</p>
+        <p className="lead">Record audio, monitor MIDI, arrange ideas, manage sessions and work offline from one Windows music workstation.</p>
         <div className="heroActions">
-          <button className="primaryLaunch" onClick={() => route("studio", setPage)}>Open UAOS Studio</button>
-          <button className="secondaryLaunch" onClick={() => route("pro", setPage)}>Pre-Arranger</button>
-          <button className="secondaryLaunch" onClick={() => route("sing", setPage)}>AI Labs</button>
-        </div>
+  <button className="primaryLaunch" onClick={() => route("audio", setPage)}>Open Audio Lab</button>
+  <button className="secondaryLaunch" onClick={() => route("midi", setPage)}>Open MIDI</button>
+  <button className="secondaryLaunch" onClick={() => route("arranger", setPage)}>Open Arranger</button>
+</div>
         <TutorialHelpButton topic="Home" setPage={setPage} />
       </section>
       <RuntimeStatus />
@@ -232,23 +217,8 @@ function Pricing() {
   return <><main className="page"><TutorialHelpButton topic="Pricing" setPage={(page) => route(page, () => {})} /></main><PricingPage /></>;
 }
 
-function Downloads({ setPage }) {
-  const downloads = createDownloadCenter();
-  return (
-    <main className="page">
-      <section className="panel">
-        <p className="eyebrow">Downloads <StatusBadge status="planned" /></p>
-        <h1>Download Center</h1>
-        <p className="lead">The web app is available locally. Desktop packaging is code-ready but unsigned; no fake signed installer links are shown.</p>
-        <TutorialHelpButton topic="Downloads" setPage={setPage} />
-        <div className="cards three">
-          <article className="card"><h2>Windows</h2><p>{downloads.windowsInstaller.status}</p><p>Signed: {String(downloads.windowsInstaller.signed)}</p></article>
-          <article className="card"><h2>Portable</h2><p>{downloads.portableBuild.status}</p><p>Checksum: pending</p></article>
-          <article className="card"><h2>Mobile</h2><p>Android: {downloads.android.status}</p><p>iOS: {downloads.ios.status}</p></article>
-        </div>
-      </section>
-    </main>
-  );
+function Downloads() {
+  return <DownloadsUpdatePanel />;
 }
 
 function Demo({ session, setSession }) {
@@ -453,7 +423,7 @@ function AppShell() {
     if (page === "sounds") return <Sounds />;
     if (page === "sampler") return <Sampler setPage={setPage} />;
     if (page === "pricing") return <Pricing />;
-    if (page === "downloads") return <Downloads setPage={setPage} />;
+    if (page === "downloads") return <Downloads />;
     if (page === "support") return <Support setPage={setPage} />;
     if (page === "academy") return <AcademyManager />;
     if (page === "demo") return <Demo session={session} setSession={setSession} />;
@@ -476,21 +446,21 @@ function AppShell() {
       <Nav page={page} setPage={setPage} />
       <section className="uaosReleaseStrip">
         <div>
-          <strong>UAOS Hybrid Studio Preview</strong>
-          <span>Oceanic × Forest concept applied</span>
+          <strong>UAOS Windows Early Access V1</strong>
+          <span>Local audio, MIDI, arranger and session tools</span>
         </div>
 
         <div className="uaosReleaseStripStatus">
           <span>Web: Live</span>
-          <span>Payments: Disabled</span>
-          <span>Build: Unsigned Preview</span>
+          <span>Sales: Pending final checkout setup</span>
+          <span>Build: Windows Early Access</span>
         </div>
       </section>
       {screen}
       <footer className="uaosFinalFooter">
-  <strong>UAOS Public Preview</strong>
-  <span>RELEASE_CANDIDATE_READY_UNSIGNED</span>
-  <span>Payments and signed downloads are not enabled yet.</span>
+  <strong>UAOS Windows Early Access V1</strong>
+  <span>V1_SCOPE_FROZEN_FOR_FINAL_QA</span>
+  <span>Final checkout, installer delivery and legal review are the remaining launch gates.</span>
 </footer>
     </>
   );

@@ -1,5 +1,12 @@
 # CODEX Changelog
 
+## 2026-06-14
+
+- Hardened the root Electron automatic update engine with `electron-updater`, optional updater loading, packaged-only activation, manual download/install defaults, rate-limited checks, and runtime logging.
+- Pinned Windows package/dist scripts to `--publish never` to avoid accidental release publishing from local build commands.
+- Added updater policy and no-publish regression tests.
+- Verified `node --test tests/electron-update-engine.test.mjs`, `npm run check`, and `npm run desktop:smoke`.
+
 ## 2026-06-12
 
 - Initialized autonomous V1-V2-V3 roadmap state files.
