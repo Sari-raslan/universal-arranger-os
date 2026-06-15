@@ -20,7 +20,8 @@
                     "pack:win":  "npm run build \u0026\u0026 electron-builder --win --dir --publish never",
                     "dist:win:setup":  "npm run build \u0026\u0026 electron-builder --win nsis --publish never",
                     "dist:win:portable":  "npm run build \u0026\u0026 electron-builder --win portable --publish never",
-                    "doctor:v113":  "node scripts/uaos-v113-doctor.mjs"
+                    "doctor:v113":  "node scripts/uaos-v113-doctor.mjs",
+                    "test:v113":  "node --test tests/v113-core.test.mjs"
                 },
     "type":  "module",
     "devDependencies":  {
