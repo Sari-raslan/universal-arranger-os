@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 
-const CURRENT_VERSION = "11.1.0";
+const CURRENT_VERSION = "11.2.0";
 const REPOSITORY = "Sari-raslan/universal-arranger-os";
 const RELEASES_API =
   `https://api.github.com/repos/${REPOSITORY}/releases?per_page=10`;
