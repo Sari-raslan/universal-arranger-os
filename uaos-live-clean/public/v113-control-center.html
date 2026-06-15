@@ -1,0 +1,339 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>UAOS 11.3 Control Center</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+      background: #020617;
+      color: #e2e8f0;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at 20% 0%, rgba(34,211,238,.12), transparent 35%),
+        radial-gradient(circle at 85% 15%, rgba(168,85,247,.13), transparent 32%),
+        #020617;
+    }
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      display: flex;
+      gap: 14px;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 24px;
+      background: rgba(2,6,23,.84);
+      border-bottom: 1px solid rgba(148,163,184,.18);
+      backdrop-filter: blur(16px);
+    }
+    header h1 { margin: 0; font-size: 20px; }
+    header a { color: #67e8f9; text-decoration: none; }
+    main {
+      width: min(1180px, calc(100% - 28px));
+      margin: 24px auto 60px;
+      display: grid;
+      gap: 18px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 18px;
+    }
+    .card {
+      border: 1px solid rgba(148,163,184,.18);
+      border-radius: 18px;
+      background: rgba(15,23,42,.78);
+      padding: 18px;
+      box-shadow: 0 18px 60px rgba(0,0,0,.22);
+    }
+    .card h2 { margin-top: 0; font-size: 17px; }
+    label { display: grid; gap: 7px; margin: 12px 0; color: #cbd5e1; }
+    select, button, input {
+      border: 1px solid rgba(148,163,184,.28);
+      border-radius: 12px;
+      padding: 11px 12px;
+      background: #07101f;
+      color: #e2e8f0;
+    }
+    button {
+      cursor: pointer;
+      font-weight: 750;
+      background: linear-gradient(135deg, rgba(8,145,178,.9), rgba(126,34,206,.9));
+    }
+    button.secondary { background: #0f172a; }
+    pre {
+      min-height: 120px;
+      white-space: pre-wrap;
+      overflow-wrap: anywhere;
+      padding: 14px;
+      border-radius: 14px;
+      background: #01040c;
+      border: 1px solid rgba(148,163,184,.14);
+      color: #a5f3fc;
+    }
+    .status {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border-radius: 999px;
+      padding: 7px 10px;
+      background: rgba(15,118,110,.2);
+      color: #99f6e4;
+    }
+    .meter {
+      height: 14px;
+      overflow: hidden;
+      border-radius: 999px;
+      background: #020617;
+      border: 1px solid rgba(148,163,184,.16);
+    }
+    .meter > div {
+      height: 100%;
+      width: 0%;
+      transition: width .08s linear;
+      background: linear-gradient(90deg, #22d3ee, #a855f7, #fb7185);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div>
+      <h1>UAOS 11.3 Control Center</h1>
+      <div class="status" id="global-status">Development diagnostics ready</div>
+    </div>
+    <a href="/">Back to UAOS</a>
+  </header>
+
+  <main>
+    <div class="grid">
+      <section class="card">
+        <h2>Release Channel</h2>
+        <label>
+          Channel
+          <select id="channel">
+            <option value="stable">Stable</option>
+            <option value="beta">Beta</option>
+            <option value="nightly">Nightly</option>
+          </select>
+        </label>
+        <button id="save-channel">Save channel</button>
+        <pre id="channel-output"></pre>
+      </section>
+
+      <section class="card">
+        <h2>Hardware Profile</h2>
+        <label>
+          Arranger
+          <select id="hardware">
+            <option value="korg-pa3x">KORG PA3X</option>
+            <option value="korg-pa5x">KORG PA5X</option>
+            <option value="yamaha-genos">Yamaha Genos</option>
+            <option value="roland-bk9">Roland BK-9</option>
+            <option value="ketron-sd9">Ketron SD9</option>
+          </select>
+        </label>
+        <button id="save-hardware">Activate profile</button>
+        <pre id="hardware-output"></pre>
+      </section>
+
+      <section class="card">
+        <h2>MIDI Diagnostics</h2>
+        <button id="scan-midi">Scan MIDI devices</button>
+        <pre id="midi-output"></pre>
+      </section>
+
+      <section class="card">
+        <h2>Audio Diagnostics</h2>
+        <div class="meter"><div id="audio-meter"></div></div>
+        <p id="audio-label">Microphone idle</p>
+        <button id="start-audio">Start microphone test</button>
+        <button id="stop-audio" class="secondary">Stop</button>
+        <pre id="audio-output"></pre>
+      </section>
+
+      <section class="card">
+        <h2>Crash Log Sanitizer</h2>
+        <label>
+          Test payload
+          <input id="secret-input" value="Bearer demo-secret-token" />
+        </label>
+        <button id="sanitize">Sanitize test record</button>
+        <pre id="crash-output"></pre>
+      </section>
+
+      <section class="card">
+        <h2>Safety Gate</h2>
+        <button id="run-gate">Run local readiness gate</button>
+        <pre id="gate-output"></pre>
+      </section>
+    </div>
+  </main>
+
+  <script>
+    const profiles = {
+      "korg-pa3x": { vendor: "KORG", model: "PA3X", family: "arranger" },
+      "korg-pa5x": { vendor: "KORG", model: "PA5X", family: "arranger" },
+      "yamaha-genos": { vendor: "Yamaha", model: "Genos", family: "arranger" },
+      "roland-bk9": { vendor: "Roland", model: "BK-9", family: "arranger" },
+      "ketron-sd9": { vendor: "Ketron", model: "SD9", family: "arranger" }
+    };
+
+    const channel = document.querySelector("#channel");
+    const hardware = document.querySelector("#hardware");
+    const channelOutput = document.querySelector("#channel-output");
+    const hardwareOutput = document.querySelector("#hardware-output");
+    const midiOutput = document.querySelector("#midi-output");
+    const audioOutput = document.querySelector("#audio-output");
+    const audioMeter = document.querySelector("#audio-meter");
+    const audioLabel = document.querySelector("#audio-label");
+    const crashOutput = document.querySelector("#crash-output");
+    const gateOutput = document.querySelector("#gate-output");
+
+    channel.value = localStorage.getItem("uaos.releaseChannel") || "stable";
+    hardware.value = localStorage.getItem("uaos.hardwareProfile") || "korg-pa5x";
+
+    function showChannel() {
+      channelOutput.textContent = JSON.stringify({
+        channel: channel.value,
+        automaticUpdates: channel.value !== "nightly",
+        prereleaseAllowed: channel.value !== "stable"
+      }, null, 2);
+    }
+
+    function showHardware() {
+      hardwareOutput.textContent = JSON.stringify({
+        id: hardware.value,
+        ...profiles[hardware.value],
+        active: true
+      }, null, 2);
+    }
+
+    document.querySelector("#save-channel").addEventListener("click", () => {
+      localStorage.setItem("uaos.releaseChannel", channel.value);
+      showChannel();
+    });
+
+    document.querySelector("#save-hardware").addEventListener("click", () => {
+      localStorage.setItem("uaos.hardwareProfile", hardware.value);
+      showHardware();
+    });
+
+    document.querySelector("#scan-midi").addEventListener("click", async () => {
+      if (!navigator.requestMIDIAccess) {
+        midiOutput.textContent = "Web MIDI is unavailable in this browser.";
+        return;
+      }
+
+      try {
+        const access = await navigator.requestMIDIAccess({ sysex: false });
+        const inputs = [...access.inputs.values()].map((port) => ({
+          id: port.id,
+          name: port.name,
+          manufacturer: port.manufacturer,
+          state: port.state
+        }));
+        const outputs = [...access.outputs.values()].map((port) => ({
+          id: port.id,
+          name: port.name,
+          manufacturer: port.manufacturer,
+          state: port.state
+        }));
+        midiOutput.textContent = JSON.stringify({ inputs, outputs }, null, 2);
+      } catch (error) {
+        midiOutput.textContent = String(error.message || error);
+      }
+    });
+
+    let audioContext;
+    let audioStream;
+    let animationFrame;
+
+    document.querySelector("#start-audio").addEventListener("click", async () => {
+      try {
+        audioStream = await navigator.mediaDevices.getUserMedia({ audio: true });
+        audioContext = new AudioContext();
+        const source = audioContext.createMediaStreamSource(audioStream);
+        const analyser = audioContext.createAnalyser();
+        analyser.fftSize = 1024;
+        source.connect(analyser);
+
+        const data = new Float32Array(analyser.fftSize);
+
+        const tick = () => {
+          analyser.getFloatTimeDomainData(data);
+          let sum = 0;
+          let peak = 0;
+
+          for (const value of data) {
+            sum += value * value;
+            peak = Math.max(peak, Math.abs(value));
+          }
+
+          const rms = Math.sqrt(sum / data.length);
+          audioMeter.style.width = `${Math.min(100, rms * 500)}%`;
+          audioLabel.textContent = `RMS ${rms.toFixed(5)} آ· Peak ${peak.toFixed(5)}`;
+          audioOutput.textContent = JSON.stringify({
+            sampleCount: data.length,
+            rms,
+            peak,
+            silent: rms <= 0.0005,
+            clipped: peak >= 0.999
+          }, null, 2);
+
+          animationFrame = requestAnimationFrame(tick);
+        };
+
+        tick();
+      } catch (error) {
+        audioOutput.textContent = String(error.message || error);
+      }
+    });
+
+    document.querySelector("#stop-audio").addEventListener("click", () => {
+      if (animationFrame) cancelAnimationFrame(animationFrame);
+      if (audioStream) audioStream.getTracks().forEach((track) => track.stop());
+      if (audioContext) audioContext.close();
+      audioMeter.style.width = "0%";
+      audioLabel.textContent = "Microphone stopped";
+    });
+
+    document.querySelector("#sanitize").addEventListener("click", () => {
+      const raw = document.querySelector("#secret-input").value;
+      const sanitized = raw
+        .replace(/Bearer\s+[A-Za-z0-9._-]+/gi, "Bearer [redacted]")
+        .replace(/[A-Za-z]:\\Users\\[^\\\s]+/gi, "[user-home]");
+
+      crashOutput.textContent = JSON.stringify({
+        timestamp: new Date().toISOString(),
+        input: sanitized,
+        token: "[redacted]",
+        password: "[redacted]"
+      }, null, 2);
+    });
+
+    document.querySelector("#run-gate").addEventListener("click", () => {
+      const result = {
+        releaseChannel: Boolean(channel.value),
+        hardwareProfile: Boolean(profiles[hardware.value]),
+        secureContext: window.isSecureContext,
+        mediaDevices: Boolean(navigator.mediaDevices),
+        webMidi: Boolean(navigator.requestMIDIAccess),
+        localStorage: true,
+        ready: Boolean(channel.value && profiles[hardware.value])
+      };
+
+      gateOutput.textContent = JSON.stringify(result, null, 2);
+    });
+
+    showChannel();
+    showHardware();
+  </script>
+</body>
+</html>
