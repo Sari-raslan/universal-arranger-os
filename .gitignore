@@ -40,3 +40,23 @@ reports/phase14-inventory/
 frontend/reports/
 release/builder-debug.yml
 release/win-unpacked/
+
+# Local secrets and environment overrides
+.env.uaos.production.local
+.env.local
+.env.*.local
+
+# Aider local state
+.aider.chat.history.md
+.aider.tags.cache.v4/
+
+# UAOS local caches
+.uaos-cache/
+
+# Generated agent reports and resume runs
+agent-output/phase3-resume-*/
+agents/reports/UAOS_AGENT_COMMANDER_*.txt
+
+# Runtime-generated state
+reports/runtime-monitor.log
+uaos-live-clean/src/midi-status.json
