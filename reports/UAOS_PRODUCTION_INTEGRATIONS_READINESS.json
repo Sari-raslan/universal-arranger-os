@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-06-13T19:14:35.420Z",
+  "codeReady": true,
+  "productionConfigured": false,
+  "fileChecks": [
+    {
+      "name": "server/production/config.mjs",
+      "passed": true
+    },
+    {
+      "name": "server/production/postgresAccountRepository.mjs",
+      "passed": true
+    },
+    {
+      "name": "server/production/postgresAccountService.mjs",
+      "passed": true
+    },
+    {
+      "name": "server/production/smtpEmailService.mjs",
+      "passed": true
+    },
+    {
+      "name": "server/production/accountsServer.mjs",
+      "passed": true
+    },
+    {
+      "name": "migrations/001_accounts.sql",
+      "passed": true
+    },
+    {
+      "name": "scripts/uaos-db-migrate.mjs",
+      "passed": true
+    },
+    {
+      "name": "tests/production-integrations.test.mjs",
+      "passed": true
+    },
+    {
+      "name": ".env.production.integrations.example",
+      "passed": true
+    }
+  ],
+  "environmentChecks": [
+    {
+      "name": "public-base-url",
+      "passed": false
+    },
+    {
+      "name": "database-url",
+      "passed": false
+    },
+    {
+      "name": "smtp-host",
+      "passed": false
+    },
+    {
+      "name": "smtp-user",
+      "passed": false
+    },
+    {
+      "name": "smtp-password",
+      "passed": false
+    },
+    {
+      "name": "email-from",
+      "passed": false
+    },
+    {
+      "name": "support-email",
+      "passed": false
+    }
+  ],
+  "databaseMigrationExecuted": false,
+  "smtpConnectionVerified": false,
+  "notes": [
+    "The default readiness command does not connect to PostgreSQL.",
+    "The default readiness command does not send email.",
+    "Run strict readiness only with private production environment variables."
+  ]
+}

@@ -1,0 +1,335 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-06-13T23:32:37.825Z",
+  "codePackagingReady": true,
+  "signedCommercialInstallerReady": false,
+  "electronInstalled": true,
+  "builderInstalled": true,
+  "entryReady": true,
+  "frontendBuildReady": true,
+  "packages": [
+    {
+      "file": "backend/package.json",
+      "directory": "C:\\Users\\ssare\\Desktop\\UAOS_ALL_AGENTS_FINAL_RUN\\universal-arranger-os\\backend",
+      "main": null,
+      "mainExists": false,
+      "electron": null,
+      "electronBuilder": null,
+      "scripts": {
+        "start": "node server.js"
+      },
+      "build": null
+    },
+    {
+      "file": "clean-web/package.json",
+      "directory": "C:\\Users\\ssare\\Desktop\\UAOS_ALL_AGENTS_FINAL_RUN\\universal-arranger-os\\clean-web",
+      "main": null,
+      "mainExists": false,
+      "electron": null,
+      "electronBuilder": null,
+      "scripts": {
+        "build": "vite build",
+        "dev": "vite --host 0.0.0.0 --port 5173"
+      },
+      "build": null
+    },
+    {
+      "file": "desktop/package.json",
+      "directory": "C:\\Users\\ssare\\Desktop\\UAOS_ALL_AGENTS_FINAL_RUN\\universal-arranger-os\\desktop",
+      "main": "main.cjs",
+      "mainExists": true,
+      "electron": "latest",
+      "electronBuilder": "latest",
+      "scripts": {
+        "pack": "electron-builder --dir",
+        "dist": "electron-builder",
+        "start": "electron ."
+      },
+      "build": null
+    },
+    {
+      "file": "electron-app/package.json",
+      "directory": "C:\\Users\\ssare\\Desktop\\UAOS_ALL_AGENTS_FINAL_RUN\\universal-arranger-os\\electron-app",
+      "main": "main.js",
+      "mainExists": true,
+      "electron": "latest",
+      "electronBuilder": "latest",
+      "scripts": {
+        "start": "electron .",
+        "pack": "electron-builder --win portable"
+      },
+      "build": {
+        "appId": "com.uaos.hyperstation",
+        "productName": "UAOS HyperStation",
+        "directories": {
+          "output": "dist"
+        },
+        "files": [
+          "main.js",
+          "../control-panel/**/*"
+        ],
+        "win": {
+          "target": "portable"
+        }
+      }
+    },
+    {
+      "file": "frontend/package.json",
+      "directory": "C:\\Users\\ssare\\Desktop\\UAOS_ALL_AGENTS_FINAL_RUN\\universal-arranger-os\\frontend",
+      "main": null,
+      "mainExists": false,
+      "electron": null,
+      "electronBuilder": null,
+      "scripts": {
+        "dev": "vite --host 0.0.0.0 --port 5173",
+        "build": "vite build",
+        "preview": "vite preview --host 0.0.0.0 --port 4173"
+      },
+      "build": null
+    },
+    {
+      "file": "landing-sales/package.json",
+      "directory": "C:\\Users\\ssare\\Desktop\\UAOS_ALL_AGENTS_FINAL_RUN\\universal-arranger-os\\landing-sales",
+      "main": null,
+      "mainExists": false,
+      "electron": null,
+      "electronBuilder": null,
+      "scripts": {
+        "dev": "vite --host 0.0.0.0 --port 5200",
+        "build": "vite build"
+      },
+      "build": null
+    },
+    {
+      "file": "mobile/package.json",
+      "directory": "C:\\Users\\ssare\\Desktop\\UAOS_ALL_AGENTS_FINAL_RUN\\universal-arranger-os\\mobile",
+      "main": null,
+      "mainExists": false,
+      "electron": null,
+      "electronBuilder": null,
+      "scripts": {
+        "init": "npx cap init \"UAOS HyperStation\" app.aeplatform.uaos --web-dir ../uaos-live-clean/dist",
+        "add-android": "npx cap add android",
+        "add-ios": "npx cap add ios",
+        "sync": "npx cap sync",
+        "android": "npx cap open android",
+        "ios": "npx cap open ios",
+        "build-web": "cd .. && npm run build --prefix uaos-live-clean",
+        "apk-debug": "cd android && gradlew assembleDebug",
+        "apk-release": "cd android && gradlew assembleRelease"
+      },
+      "build": null
+    },
+    {
+      "file": "package.json",
+      "directory": "C:\\Users\\ssare\\Desktop\\UAOS_ALL_AGENTS_FINAL_RUN\\universal-arranger-os",
+      "main": "electron/main.js",
+      "mainExists": true,
+      "electron": "^42.4.0",
+      "electronBuilder": "latest",
+      "scripts": {
+        "test": "node scripts/uaos-test-runner.mjs",
+        "setup": "npm install --prefix backend && npm install --prefix uaos-live-clean",
+        "build": "npm run build --prefix uaos-live-clean",
+        "dev": "node backend/server.js",
+        "front": "npm run preview --prefix uaos-live-clean",
+        "check": "node scripts/uaos-static-check.mjs && npm test",
+        "desktop": "npm start --prefix desktop",
+        "desktop:smoke": "node scripts/uaos-desktop-smoke.mjs",
+        "master": "powershell -ExecutionPolicy Bypass -File scripts/UAOS_MASTER_REMAINING_ALL_IN_ONE.ps1",
+        "electron:dev": "set UAOS_DEV_URL=http://127.0.0.1:5173&& electron .",
+        "electron:start": "electron .",
+        "runtime:check": "node scripts/uaos-runtime-check.mjs",
+        "runtime:start": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/UAOS_RUNTIME_START.ps1",
+        "library:scan": "node scripts/uaos-library-scan.mjs",
+        "hardware:scan": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/UAOS_HARDWARE_SCAN.ps1",
+        "internal:validate": "npm test && npm run check && npm run build && npm run runtime:check && npm run desktop:smoke",
+        "hardware:readiness": "node scripts/uaos-hardware-readiness.mjs",
+        "release:gate": "node scripts/uaos-v1-release-gate.mjs",
+        "release:gate:commercial": "node scripts/uaos-v1-release-gate.mjs --strict-commercial",
+        "windows:readiness": "node scripts/uaos-windows-package-readiness.mjs",
+        "windows:readiness:signed": "node scripts/uaos-windows-package-readiness.mjs --strict-signed",
+        "release:prepare": "npm run hardware:readiness && npm run release:gate && npm run windows:readiness",
+        "desktop:start": "electron .",
+        "desktop:pack": "npm run build && electron-builder --dir",
+        "desktop:dist": "npm run build && electron-builder --win",
+        "commercial:server": "node server/commercial/server.mjs",
+        "commercial:test": "node --test tests/commercial-backend.test.mjs",
+        "commercial:readiness": "node scripts/uaos-commercial-readiness.mjs",
+        "commercial:readiness:strict": "node scripts/uaos-commercial-readiness.mjs --strict-production",
+        "accounts:server": "node server/accounts/server.mjs",
+        "accounts:test": "node --test tests/accounts-auth.test.mjs",
+        "accounts:readiness": "node scripts/uaos-accounts-readiness.mjs",
+        "accounts:readiness:strict": "node scripts/uaos-accounts-readiness.mjs --strict-production",
+        "production:integrations:test": "node --test tests/production-integrations.test.mjs",
+        "production:integrations:readiness": "node scripts/uaos-production-integrations-readiness.mjs",
+        "production:integrations:readiness:strict": "node scripts/uaos-production-integrations-readiness.mjs --strict-production",
+        "db:migrate": "node scripts/uaos-db-migrate.mjs",
+        "accounts:production": "node server/production/accountsServer.mjs",
+        "stripe:test": "node --test tests/stripe-billing-cookie.test.mjs tests/stripe-founders-schedule.test.mjs",
+        "stripe:readiness": "node scripts/uaos-stripe-readiness.mjs",
+        "stripe:readiness:strict": "node scripts/uaos-stripe-readiness.mjs --strict",
+        "commerce:production": "node server/production/commerceServer.mjs",
+        "stripe:sdk:install": "npm install stripe --save --no-audit --no-fund",
+        "launch:gate": "node scripts/uaos-final-launch-gate.mjs",
+        "production:doctor": "node scripts/uaos-production-doctor.mjs",
+        "production:doctor:strict": "node scripts/uaos-production-doctor.mjs --strict",
+        "routes:smoke": "node scripts/uaos-route-smoke.mjs",
+        "e2e:beta": "node scripts/uaos-beta-e2e.mjs",
+        "accessibility:check": "node scripts/uaos-accessibility-check.mjs",
+        "performance:check": "node scripts/uaos-performance-check.mjs",
+        "security:check": "node scripts/uaos-security-check.mjs",
+        "pricing:check": "node scripts/uaos-pricing-check.mjs",
+        "installer:check": "node scripts/uaos-installer-check.mjs",
+        "mobile:readiness": "node scripts/uaos-mobile-readiness.mjs",
+        "rc:gate": "node scripts/uaos-rc-gate.mjs",
+        "final:gate": "node scripts/uaos-final-release-gate.mjs"
+      },
+      "build": {
+        "appId": "com.uaos.desktop",
+        "productName": "UAOS Desktop",
+        "asar": true,
+        "directories": {
+          "output": "release"
+        },
+        "files": [
+          "electron/**/*",
+          "uaos-live-clean/dist/**/*",
+          "package.json"
+        ],
+        "win": {
+          "target": [
+            {
+              "target": "nsis",
+              "arch": [
+                "x64"
+              ]
+            }
+          ]
+        },
+        "nsis": {
+          "oneClick": false,
+          "allowToChangeInstallationDirectory": true,
+          "createDesktopShortcut": true,
+          "createStartMenuShortcut": true
+        }
+      }
+    },
+    {
+      "file": "reports/electron-hotfix/backups/package.json",
+      "directory": "C:\\Users\\ssare\\Desktop\\UAOS_ALL_AGENTS_FINAL_RUN\\universal-arranger-os\\reports\\electron-hotfix\\backups",
+      "main": null,
+      "mainExists": false,
+      "electron": null,
+      "electronBuilder": null,
+      "scripts": {
+        "setup": "npm install --prefix backend && npm install --prefix uaos-live-clean",
+        "build": "npm run build --prefix uaos-live-clean",
+        "dev": "node backend/server.js",
+        "front": "npm run preview --prefix uaos-live-clean",
+        "test": "node --test tests/*.test.mjs tests/*.test.js tests/*.test.cjs",
+        "check": "node scripts/uaos-static-check.mjs && npm test",
+        "desktop": "npm start --prefix desktop",
+        "desktop:smoke": "node scripts/uaos-desktop-smoke.mjs",
+        "master": "powershell -ExecutionPolicy Bypass -File scripts/UAOS_MASTER_REMAINING_ALL_IN_ONE.ps1"
+      },
+      "build": null
+    },
+    {
+      "file": "uaos-live-clean/package.json",
+      "directory": "C:\\Users\\ssare\\Desktop\\UAOS_ALL_AGENTS_FINAL_RUN\\universal-arranger-os\\uaos-live-clean",
+      "main": null,
+      "mainExists": false,
+      "electron": null,
+      "electronBuilder": null,
+      "scripts": {
+        "build": "vite build",
+        "preview": "vite preview --host 127.0.0.1 --port 5180",
+        "dev": "vite --host 127.0.0.1 --port 5173"
+      },
+      "build": null
+    },
+    {
+      "file": "v2-runtime/package.json",
+      "directory": "C:\\Users\\ssare\\Desktop\\UAOS_ALL_AGENTS_FINAL_RUN\\universal-arranger-os\\v2-runtime",
+      "main": null,
+      "mainExists": false,
+      "electron": null,
+      "electronBuilder": null,
+      "scripts": {
+        "start": "node index.js",
+        "check": "node index.js"
+      },
+      "build": null
+    },
+    {
+      "file": "v3-future/library-scanner/package.json",
+      "directory": "C:\\Users\\ssare\\Desktop\\UAOS_ALL_AGENTS_FINAL_RUN\\universal-arranger-os\\v3-future\\library-scanner",
+      "main": null,
+      "mainExists": false,
+      "electron": null,
+      "electronBuilder": null,
+      "scripts": {
+        "scan": "node scan-oriental-libraries.js"
+      },
+      "build": null
+    },
+    {
+      "file": "v3-future/oriental-engine/package.json",
+      "directory": "C:\\Users\\ssare\\Desktop\\UAOS_ALL_AGENTS_FINAL_RUN\\universal-arranger-os\\v3-future\\oriental-engine",
+      "main": null,
+      "mainExists": false,
+      "electron": null,
+      "electronBuilder": null,
+      "scripts": {
+        "start": "node index.js",
+        "legal": "node legal-host.js"
+      },
+      "build": null
+    },
+    {
+      "file": "v3-future/package.json",
+      "directory": "C:\\Users\\ssare\\Desktop\\UAOS_ALL_AGENTS_FINAL_RUN\\universal-arranger-os\\v3-future",
+      "main": null,
+      "mainExists": false,
+      "electron": null,
+      "electronBuilder": null,
+      "scripts": {
+        "start": "node index.js",
+        "check": "node index.js",
+        "test": "node tests/v3-smoke-test.js"
+      },
+      "build": null
+    }
+  ],
+  "mainEntries": [
+    {
+      "package": "desktop/package.json",
+      "main": "main.cjs"
+    },
+    {
+      "package": "electron-app/package.json",
+      "main": "main.js"
+    },
+    {
+      "package": "package.json",
+      "main": "electron/main.js"
+    }
+  ],
+  "discoveredElectronEntries": [
+    "desktop/main.cjs",
+    "desktop/main.js",
+    "desktop/src/main.js",
+    "electron/main.cjs",
+    "electron/main.js",
+    "electron-app/main.js",
+    "scripts/uaos-runtime-check.mjs",
+    "scripts/uaos-windows-package-readiness.mjs",
+    "uaos-live-clean/electron/main.js"
+  ],
+  "iconCandidates": [],
+  "unpackedCandidates": [
+    "release/win-unpacked"
+  ],
+  "signingFlag": false
+}

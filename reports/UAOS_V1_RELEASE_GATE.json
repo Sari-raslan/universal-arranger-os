@@ -1,0 +1,95 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-06-13T12:06:43.701Z",
+  "publicBetaCodeReady": true,
+  "legalDraftsPresent": true,
+  "commercialReady": false,
+  "codeChecks": [
+    {
+      "name": "uaos-live-clean/src/App.jsx",
+      "passed": true
+    },
+    {
+      "name": "uaos-live-clean/src/components/LibraryBrowser.jsx",
+      "passed": true
+    },
+    {
+      "name": "uaos-live-clean/src/components/SamplerWorkbench.jsx",
+      "passed": true
+    },
+    {
+      "name": "uaos-live-clean/src/components/ArrangerEnginePanel.jsx",
+      "passed": true
+    },
+    {
+      "name": "uaos-live-clean/src/midi/midiMessageParser.js",
+      "passed": true
+    },
+    {
+      "name": "uaos-live-clean/src/arranger/chordRecognizer.js",
+      "passed": true
+    },
+    {
+      "name": "uaos-live-clean/src/arranger/openStyleEngine.js",
+      "passed": true
+    }
+  ],
+  "legalDraftChecks": [
+    {
+      "name": "docs/legal/IMPRESSUM_DRAFT.md",
+      "passed": true
+    },
+    {
+      "name": "docs/legal/PRIVACY_DRAFT.md",
+      "passed": true
+    },
+    {
+      "name": "docs/legal/TERMS_DRAFT.md",
+      "passed": true
+    },
+    {
+      "name": "docs/legal/CANCELLATION_DRAFT.md",
+      "passed": true
+    }
+  ],
+  "commercialChecks": [
+    {
+      "name": "UAOS_PUBLIC_BASE_URL",
+      "passed": false
+    },
+    {
+      "name": "UAOS_PAYMENT_PROVIDER",
+      "passed": false
+    },
+    {
+      "name": "UAOS_PAYMENT_SECRET",
+      "passed": false
+    },
+    {
+      "name": "UAOS_LICENSE_SIGNING_SECRET",
+      "passed": false
+    },
+    {
+      "name": "UAOS_SUPPORT_EMAIL",
+      "passed": false
+    },
+    {
+      "name": "UAOS_OFFICIAL_LEGAL_APPROVAL=true",
+      "passed": false
+    },
+    {
+      "name": "UAOS_HARDWARE_VALIDATION_APPROVED=true",
+      "passed": false
+    },
+    {
+      "name": "UAOS_WINDOWS_SIGNING_READY=true",
+      "passed": false
+    }
+  ],
+  "notes": [
+    "Draft legal documents are not official approval.",
+    "Payment secrets must remain server-side.",
+    "Hardware approval must follow physical device tests.",
+    "Commercial release must use a signed Windows installer."
+  ]
+}

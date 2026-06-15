@@ -1,0 +1,127 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-06-13T23:32:54.996Z",
+  "status": "RELEASE_CANDIDATE_READY_UNSIGNED",
+  "codeReady": true,
+  "checks": {
+    "tests": true,
+    "staticCheck": true,
+    "build": true,
+    "runtimeCheck": true,
+    "desktopSmoke": true,
+    "routeSmoke": true,
+    "e2eWorkflows": true,
+    "accessibilityBaseline": true,
+    "performanceBudget": true,
+    "arabicEncoding": true,
+    "branding": true,
+    "pricing": true,
+    "accountOfflineFallback": true,
+    "stripeDisabled": true,
+    "cloudDisabled": true,
+    "updaterDisabled": true,
+    "installerPackageReadiness": true,
+    "signedInstaller": false,
+    "legalApproval": false,
+    "physicalHardwareValidation": false,
+    "manualAudioValidation": false,
+    "manualMidiValidation": false,
+    "productionServices": false,
+    "externalApprovals": false
+  },
+  "release": {
+    "schemaVersion": 1,
+    "releaseId": "uaos-rc-20260613",
+    "version": "1.0.0-beta.9",
+    "frontendVersion": "11.0.0",
+    "backendVersion": "phase8-cloud-foundation",
+    "apiVersion": "v1-beta",
+    "installerVersion": "1.0.0-beta.9",
+    "buildNumber": "local-phase9",
+    "channel": "release-candidate",
+    "stable": false,
+    "commitSha": null,
+    "buildTimestamp": "2026-06-13T23:32:54.993Z",
+    "schemaVersions": {
+      "session": 7,
+      "phase9": 1,
+      "cloud": 1,
+      "daw": 1,
+      "hardware": 1
+    },
+    "supportedPlatforms": [
+      "web",
+      "windows-desktop-code-ready"
+    ],
+    "minimumWindowsVersion": "Windows 10 19045",
+    "architecture": [
+      "x64"
+    ],
+    "packagedFiles": [
+      "electron",
+      "uaos-live-clean/dist",
+      "package.json"
+    ],
+    "checksums": [],
+    "signingStatus": "unsigned",
+    "testStatus": "passed-local-code-gates",
+    "manualValidationStatus": "required",
+    "externalApprovalStatus": "required",
+    "knownIssues": [],
+    "blockers": [
+      "Windows signing certificate missing",
+      "Manual audio, MIDI and hardware validation required",
+      "External legal, privacy, Stripe, SMTP and database approvals required"
+    ],
+    "releaseNotes": [
+      "Public beta foundation for local testing",
+      "No production services activated",
+      "Cloud sync, billing, updater and uploads disabled by default"
+    ],
+    "rolloutState": "disabled-local-only",
+    "activationEnabled": false
+  },
+  "releaseValid": true,
+  "knownIssues": [
+    {
+      "id": "UAOS-KI-001",
+      "title": "Windows installer is unsigned",
+      "area": "installer",
+      "severity": "high",
+      "status": "open",
+      "affectedVersion": "1.0.0-beta.9",
+      "workaround": "Use local development build until signing certificate is available.",
+      "manualVerification": true,
+      "externalBlocker": true,
+      "codeBlocker": false,
+      "owner": "release",
+      "sourceReport": "UAOS_WINDOWS_PACKAGE_READINESS",
+      "resolvedVersion": null,
+      "visibility": "public"
+    },
+    {
+      "id": "UAOS-KI-002",
+      "title": "Physical hardware validation is not complete",
+      "area": "hardware",
+      "severity": "medium",
+      "status": "open",
+      "affectedVersion": "1.0.0-beta.9",
+      "workaround": "Use mock profiles and validate manually before performance use.",
+      "manualVerification": true,
+      "externalBlocker": true,
+      "codeBlocker": false,
+      "owner": "qa",
+      "sourceReport": "UAOS_HARDWARE_READINESS",
+      "resolvedVersion": null,
+      "visibility": "public"
+    }
+  ],
+  "safety": {
+    "productionReadyClaimed": false,
+    "signedClaimedWithoutCertificate": false,
+    "paymentsExecuted": false,
+    "uploadsExecuted": false,
+    "updatesDownloaded": false,
+    "deploymentExecuted": false
+  }
+}

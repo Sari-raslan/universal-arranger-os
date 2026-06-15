@@ -1,0 +1,46 @@
+{
+  "providers": [
+    "disabled",
+    "text-only",
+    "windows-system-tts",
+    "imported-narration",
+    "user-recorded-narration",
+    "mock-provider",
+    "remote-provider-disabled"
+  ],
+  "voiceDiscovery": "metadata-only",
+  "languageMatching": true,
+  "arabicVoiceMatching": "MANUAL_ARABIC_NARRATION_REQUIRED",
+  "englishVoiceMatching": "WINDOWS_TTS_WHEN_AVAILABLE",
+  "germanVoiceMatching": "FOUNDATION",
+  "speakingRate": "0.95",
+  "pauses": true,
+  "pronunciationDictionary": {
+    "UAOS": "you-ay-oh-ess",
+    "MIDI": "mid-ee",
+    "SysEx": "system exclusive"
+  },
+  "outputWavMetadata": "metadata-only",
+  "durationCheck": "pending-real-audio",
+  "clippingCheck": "pending-real-audio",
+  "silenceCheck": "pending-real-audio",
+  "manualArabicNarrationRequired": 140,
+  "requiredLanguages": [
+    "ar",
+    "en",
+    "de-foundation"
+  ],
+  "scriptCounts": {
+    "ar": 140,
+    "en": 140,
+    "de": 140
+  },
+  "expectedAudioAssets": 420,
+  "recordedAudioAssets": 0,
+  "importedAudioAssets": 0,
+  "approvedAudioAssets": 0,
+  "automaticVoiceCloning": false,
+  "cloudTtsEnabled": false,
+  "realMicrophoneCapturePerformed": false,
+  "status": "BLOCKED_MANUAL_NARRATION"
+}

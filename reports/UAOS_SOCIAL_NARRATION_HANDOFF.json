@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "status": "BLOCKED_MANUAL_NARRATION",
+  "generatedAt": "2026-06-14T02:27:29.014Z",
+  "publicationAllowed": false,
+  "realNetworkActionsPerformed": false,
+  "realMicrophoneCapturePerformed": false,
+  "cloudTtsEnabled": false,
+  "automaticVoiceCloning": false,
+  "totals": {
+    "tutorials": 140,
+    "languages": 3,
+    "expectedAudioAssets": 420,
+    "recordedAudioAssets": 0,
+    "importedAudioAssets": 0,
+    "approvedAudioAssets": 0,
+    "pendingApprovalAssets": 420
+  },
+  "paths": {
+    "outputRoot": "social-output",
+    "tutorialRoot": "social-output/tutorials",
+    "sampleScript": "social-output/tutorials/tutorial-001-start-here-what-is-uaos/scripts/script-ar.json",
+    "sampleNarrationDirectory": "social-output/tutorials/tutorial-001-start-here-what-is-uaos/narration",
+    "narrationReadinessReport": "reports/UAOS_SOCIAL_NARRATION_READINESS.json",
+    "narrationHandoffReport": "reports/UAOS_SOCIAL_NARRATION_HANDOFF.json"
+  },
+  "perLanguage": [
+    {
+      "language": "ar",
+      "scriptsReady": 140,
+      "recordedAudioAssets": 0,
+      "approvedAudioAssets": 0,
+      "status": "MANUAL_RECORDING_REQUIRED"
+    },
+    {
+      "language": "en",
+      "scriptsReady": 140,
+      "recordedAudioAssets": 0,
+      "approvedAudioAssets": 0,
+      "status": "REVIEW_OR_IMPORT_REQUIRED"
+    },
+    {
+      "language": "de-foundation",
+      "scriptsReady": 140,
+      "recordedAudioAssets": 0,
+      "approvedAudioAssets": 0,
+      "status": "REVIEW_OR_IMPORT_REQUIRED"
+    }
+  ],
+  "requiredChecks": [
+    "Record or import approved narration audio for each tutorial and language.",
+    "Verify consent for every human voice before use.",
+    "Check duration against captions and storyboard timings.",
+    "Check clipping, silence, pronunciation and pacing.",
+    "Keep cloud TTS and voice cloning disabled unless explicitly approved later."
+  ],
+  "safeLocalCommands": {
+    "narrationStatus": "npm run academy:narration:status",
+    "validateAll": "npm run academy:validate:all",
+    "renderStatus": "npm run academy:render:status",
+    "handoffReadiness": "npm run academy:handoff:readiness"
+  },
+  "blockers": [
+    "Arabic narration requires manual recording or explicit approval.",
+    "English and German foundation narration require review, import or approved local TTS.",
+    "Real audio quality checks require browser/audio or DAW validation."
+  ],
+  "approvalRequiredBeforeRender": true,
+  "approvalPhraseRequired": "OWNER_APPROVES_NARRATION_FOR_RENDER"
+}

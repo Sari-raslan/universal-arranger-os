@@ -1,0 +1,722 @@
+{
+  "schemaVersion": 1,
+  "codeName": "UAOSSocialMediaEducationAgent",
+  "marketingName": "UAOS Academy & Social Hub",
+  "mode": "dry-run",
+  "publicPublishingEnabled": false,
+  "platformAdapters": 23,
+  "adaptersIndependent": true,
+  "featureCount": 23,
+  "curriculumSections": 11,
+  "mandatoryTutorialCount": 140,
+  "supportedLanguages": [
+    "ar",
+    "en",
+    "de"
+  ],
+  "contentTypes": [
+    "youtube-tutorial",
+    "facebook-long-video",
+    "course-lesson",
+    "webinar-foundation",
+    "product-walkthrough",
+    "hardware-setup-lesson",
+    "troubleshooting-lesson",
+    "short-tip-15s",
+    "short-tip-30s",
+    "short-tutorial-60s",
+    "short-walkthrough-90s",
+    "instagram-post",
+    "facebook-post",
+    "x-post",
+    "linkedin-post",
+    "threads-post",
+    "pinterest-pin",
+    "whatsapp-poster",
+    "telegram-post",
+    "discord-announcement",
+    "website-news-post",
+    "carousel",
+    "story",
+    "tutorial-summary",
+    "faq",
+    "blog-post",
+    "email-newsletter-foundation"
+  ],
+  "sampleContentCount": 23,
+  "validation": true,
+  "capturePlan": {
+    "schemaVersion": 1,
+    "tutorialId": "tutorial-uaos-home-what-is-uaos-ar",
+    "engines": [
+      "playwright-foundation",
+      "electron-capture-foundation"
+    ],
+    "route": "#/",
+    "deterministicDemoState": true,
+    "dataSources": [
+      "mock-account",
+      "mock-midi",
+      "mock-hardware",
+      "synthetic-audio"
+    ],
+    "realUserDataAllowed": false,
+    "overlays": [
+      "cursor-indicator",
+      "click-indicator",
+      "key-indicator",
+      "highlight",
+      "zoom"
+    ],
+    "waits": "stable-wait",
+    "outputs": [
+      "screenshots",
+      "video",
+      "failure-capture",
+      "console-errors"
+    ],
+    "retry": {
+      "enabled": true,
+      "maxAttempts": 2
+    },
+    "cancel": true
+  },
+  "renderPlan": {
+    "schemaVersion": 1,
+    "tutorialId": "tutorial-uaos-home-what-is-uaos-ar",
+    "renderer": "ffmpeg-only",
+    "dimensions": {
+      "landscape": {
+        "width": 1920,
+        "height": 1080,
+        "aspectRatio": "16:9",
+        "platforms": [
+          "youtube",
+          "facebook-pages",
+          "linkedin"
+        ]
+      },
+      "vertical": {
+        "width": 1080,
+        "height": 1920,
+        "aspectRatio": "9:16",
+        "platforms": [
+          "tiktok",
+          "instagram-reels",
+          "youtube-shorts",
+          "stories",
+          "whatsapp-status"
+        ]
+      },
+      "square": {
+        "width": 1080,
+        "height": 1080,
+        "aspectRatio": "1:1",
+        "platforms": [
+          "posts",
+          "covers",
+          "carousels"
+        ]
+      },
+      "portraitFeed": {
+        "width": 1080,
+        "height": 1350,
+        "aspectRatio": "4:5",
+        "platforms": [
+          "instagram-feed"
+        ]
+      }
+    },
+    "brand": [
+      "official-logo",
+      "OLED black",
+      "electric blue",
+      "cyan",
+      "violet",
+      "Blue LED"
+    ],
+    "overlays": [
+      "title-cards",
+      "captions",
+      "chapters",
+      "intro",
+      "outro"
+    ],
+    "audio": {
+      "normalizationMetadata": true,
+      "clippingCheck": true
+    },
+    "temporaryFiles": {
+      "cleanup": true
+    },
+    "renderManifest": true,
+    "checksum": "h165c1a29"
+  },
+  "schedulePreview": [
+    {
+      "contentId": "social-uaos-home-youtube-youtube-tutorial-ar",
+      "platform": "youtube",
+      "scheduledTime": "2026-06-14T09:00:00.000Z",
+      "timezone": "Europe/Berlin",
+      "publicationStatus": "scheduled-draft",
+      "approvalStatus": "not-approved",
+      "dryRun": true
+    },
+    {
+      "contentId": "social-uaos-home-youtube-shorts-short-tutorial-60s-ar",
+      "platform": "youtube-shorts",
+      "scheduledTime": "2026-06-14T15:00:00.000Z",
+      "timezone": "Europe/Berlin",
+      "publicationStatus": "scheduled-draft",
+      "approvalStatus": "not-approved",
+      "dryRun": true
+    },
+    {
+      "contentId": "social-uaos-home-tiktok-short-tutorial-60s-ar",
+      "platform": "tiktok",
+      "scheduledTime": "2026-06-14T21:00:00.000Z",
+      "timezone": "Europe/Berlin",
+      "publicationStatus": "scheduled-draft",
+      "approvalStatus": "not-approved",
+      "dryRun": true
+    },
+    {
+      "contentId": "social-uaos-home-instagram-reels-short-tutorial-60s-ar",
+      "platform": "instagram-reels",
+      "scheduledTime": "2026-06-15T03:00:00.000Z",
+      "timezone": "Europe/Berlin",
+      "publicationStatus": "scheduled-draft",
+      "approvalStatus": "not-approved",
+      "dryRun": true
+    },
+    {
+      "contentId": "social-uaos-home-facebook-reels-short-tutorial-60s-ar",
+      "platform": "facebook-reels",
+      "scheduledTime": "2026-06-15T09:00:00.000Z",
+      "timezone": "Europe/Berlin",
+      "publicationStatus": "scheduled-draft",
+      "approvalStatus": "not-approved",
+      "dryRun": true
+    }
+  ],
+  "adapterStatuses": [
+    {
+      "id": "youtube",
+      "mode": "dry-run",
+      "networkRequestSent": false
+    },
+    {
+      "id": "youtube-shorts",
+      "mode": "dry-run",
+      "networkRequestSent": false
+    },
+    {
+      "id": "tiktok",
+      "mode": "dry-run",
+      "networkRequestSent": false
+    },
+    {
+      "id": "instagram-reels",
+      "mode": "dry-run",
+      "networkRequestSent": false
+    },
+    {
+      "id": "facebook-reels",
+      "mode": "dry-run",
+      "networkRequestSent": false
+    },
+    {
+      "id": "snapchat-spotlight",
+      "mode": "dry-run",
+      "networkRequestSent": false
+    },
+    {
+      "id": "instagram-feed",
+      "mode": "dry-run",
+      "networkRequestSent": false
+    },
+    {
+      "id": "facebook-pages",
+      "mode": "dry-run",
+      "networkRequestSent": false
+    },
+    {
+      "id": "x-twitter",
+      "mode": "dry-run",
+      "networkRequestSent": false
+    },
+    {
+      "id": "linkedin",
+      "mode": "dry-run",
+      "networkRequestSent": false
+    },
+    {
+      "id": "threads",
+      "mode": "dry-run",
+      "networkRequestSent": false
+    },
+    {
+      "id": "pinterest",
+      "mode": "dry-run",
+      "networkRequestSent": false
+    },
+    {
+      "id": "whatsapp-channel",
+      "mode": "dry-run",
+      "networkRequestSent": false
+    },
+    {
+      "id": "whatsapp-status",
+      "mode": "dry-run",
+      "networkRequestSent": false
+    },
+    {
+      "id": "telegram-channel",
+      "mode": "dry-run",
+      "networkRequestSent": false
+    },
+    {
+      "id": "telegram-group",
+      "mode": "dry-run",
+      "networkRequestSent": false
+    },
+    {
+      "id": "discord-announcement",
+      "mode": "dry-run",
+      "networkRequestSent": false
+    },
+    {
+      "id": "reddit-post",
+      "mode": "dry-run",
+      "networkRequestSent": false
+    },
+    {
+      "id": "generic-social",
+      "mode": "dry-run",
+      "networkRequestSent": false
+    },
+    {
+      "id": "webhook",
+      "mode": "dry-run",
+      "networkRequestSent": false
+    },
+    {
+      "id": "rss-feed",
+      "mode": "dry-run",
+      "networkRequestSent": false
+    },
+    {
+      "id": "blog-cms",
+      "mode": "dry-run",
+      "networkRequestSent": false
+    },
+    {
+      "id": "website-news",
+      "mode": "dry-run",
+      "networkRequestSent": false
+    }
+  ],
+  "blockers": [
+    "OAuth/API credentials missing",
+    "Explicit approval missing",
+    "Manual review required before public posting"
+  ],
+  "generatedAt": "2026-06-13T23:52:47.213Z",
+  "passed": true,
+  "campaign": {
+    "campaignId": "uaos-academy-ar",
+    "tutorialCount": 140,
+    "contentCount": 3220,
+    "scheduleCount": 3220,
+    "publicPublishingEnabled": false
+  },
+  "sample": {
+    "tutorial": {
+      "schemaVersion": 1,
+      "tutorialId": "tutorial-uaos-home-what-is-uaos-ar",
+      "featureId": "uaos-home",
+      "topic": "What is UAOS",
+      "language": "ar",
+      "locale": "ar-SA",
+      "order": 1,
+      "title": "What is UAOS - UAOS overview and product entry",
+      "objective": "Teach What is UAOS in UAOS overview and product entry with honest release-candidate limits.",
+      "prerequisites": [
+        "Local UAOS app"
+      ],
+      "difficulty": "beginner",
+      "audience": "all",
+      "route": "#/",
+      "supportLink": "#/support",
+      "nextLesson": null,
+      "outputsRequired": [
+        "long-video",
+        "short-video",
+        "static-post",
+        "carousel",
+        "story",
+        "faq",
+        "support-center-link"
+      ],
+      "status": "draft"
+    },
+    "content": {
+      "schemaVersion": 1,
+      "contentId": "social-uaos-home-youtube-youtube-tutorial-ar",
+      "featureId": "uaos-home",
+      "campaignId": "uaos-academy-foundation",
+      "tutorialId": "tutorial-uaos-home-what-is-uaos-ar",
+      "platform": "youtube",
+      "contentType": "youtube-tutorial",
+      "format": "long-video",
+      "aspectRatio": "16:9",
+      "language": "ar",
+      "locale": "ar-SA",
+      "title": "What is UAOS on YouTube",
+      "hook": "What is UAOS: the safe way inside UAOS.",
+      "body": "Welcome to UAOS Academy. Today we cover What is UAOS.\nObjective: Teach What is UAOS in UAOS overview and product entry with honest release-candidate limits.\nSteps: Open #/. > Locate the What is UAOS control or panel. > Use mock/demo data when possible. > Check the status badge before assuming production behavior. > Confirm the expected result and save locally.\nWarning: Do not use private user projects in captures.\nTry it locally, keep projects backed up, and continue with the next UAOS Academy lesson.",
+      "callToAction": "Open UAOS locally and follow the matching lesson in the support center.",
+      "description": "What is UAOS is ready for education content as a beginner UAOS lesson.",
+      "hashtags": [
+        "#UAOS",
+        "#MusicProduction",
+        "#ArrangerKeyboard"
+      ],
+      "keywords": [
+        "UAOS",
+        "music workstation",
+        "arranger"
+      ],
+      "chapters": [
+        {
+          "time": "0:00",
+          "title": "Open #/."
+        },
+        {
+          "time": "2:00",
+          "title": "Locate the What is UAOS control or panel."
+        },
+        {
+          "time": "4:00",
+          "title": "Use mock/demo data when possible."
+        },
+        {
+          "time": "6:00",
+          "title": "Check the status badge before assuming production behavior."
+        },
+        {
+          "time": "8:00",
+          "title": "Confirm the expected result and save locally."
+        }
+      ],
+      "captions": [],
+      "thumbnail": null,
+      "cover": null,
+      "mediaAssets": [],
+      "sourceVersion": "1.0.0-beta.10",
+      "targetProduct": "UAOS",
+      "targetPlan": "free",
+      "audience": "all",
+      "difficulty": "beginner",
+      "publicationStatus": "draft",
+      "approvalStatus": "not-approved",
+      "privacyStatus": "private-draft",
+      "platformPostId": null,
+      "platformUrl": null,
+      "scheduledTime": null,
+      "timezone": "UTC",
+      "duplicateStatus": "unique",
+      "error": null,
+      "retry": {
+        "count": 0,
+        "nextAttempt": null
+      },
+      "dryRun": true,
+      "contentHash": "he3fb1b1e"
+    },
+    "shortForm15": {
+      "schemaVersion": 1,
+      "tutorialId": "tutorial-uaos-home-what-is-uaos-ar",
+      "durationSeconds": 15,
+      "layout": "9:16",
+      "safeTextZones": [
+        "top-15",
+        "center-70",
+        "bottom-15"
+      ],
+      "hookDeadlineSeconds": 2,
+      "captions": "large",
+      "edits": [
+        "fast-cuts",
+        "cursor-zoom",
+        "success-result",
+        "loop-friendly-ending"
+      ],
+      "misleadingBeforeAfter": false,
+      "callToAction": "Open UAOS locally and try this workflow."
+    },
+    "shortForm30": {
+      "schemaVersion": 1,
+      "tutorialId": "tutorial-uaos-home-what-is-uaos-ar",
+      "durationSeconds": 30,
+      "layout": "9:16",
+      "safeTextZones": [
+        "top-15",
+        "center-70",
+        "bottom-15"
+      ],
+      "hookDeadlineSeconds": 2,
+      "captions": "large",
+      "edits": [
+        "fast-cuts",
+        "cursor-zoom",
+        "success-result",
+        "loop-friendly-ending"
+      ],
+      "misleadingBeforeAfter": false,
+      "callToAction": "Open UAOS locally and try this workflow."
+    },
+    "shortForm60": {
+      "schemaVersion": 1,
+      "tutorialId": "tutorial-uaos-home-what-is-uaos-ar",
+      "durationSeconds": 60,
+      "layout": "9:16",
+      "safeTextZones": [
+        "top-15",
+        "center-70",
+        "bottom-15"
+      ],
+      "hookDeadlineSeconds": 2,
+      "captions": "large",
+      "edits": [
+        "fast-cuts",
+        "cursor-zoom",
+        "success-result",
+        "loop-friendly-ending"
+      ],
+      "misleadingBeforeAfter": false,
+      "callToAction": "Open UAOS locally and try this workflow."
+    },
+    "shortForm90": {
+      "schemaVersion": 1,
+      "tutorialId": "tutorial-uaos-home-what-is-uaos-ar",
+      "durationSeconds": 90,
+      "layout": "9:16",
+      "safeTextZones": [
+        "top-15",
+        "center-70",
+        "bottom-15"
+      ],
+      "hookDeadlineSeconds": 2,
+      "captions": "large",
+      "edits": [
+        "fast-cuts",
+        "cursor-zoom",
+        "success-result",
+        "loop-friendly-ending"
+      ],
+      "misleadingBeforeAfter": false,
+      "callToAction": "Open UAOS locally and try this workflow."
+    },
+    "carousel": {
+      "schemaVersion": 1,
+      "tutorialId": "tutorial-uaos-home-what-is-uaos-ar",
+      "platform": "instagram-feed",
+      "format": "carousel",
+      "aspectRatio": "4:5",
+      "safeMargins": "96px",
+      "slides": [
+        {
+          "number": 1,
+          "type": "cover",
+          "title": "What is UAOS",
+          "altText": "Cover slide for What is UAOS"
+        },
+        {
+          "number": 2,
+          "type": "problem",
+          "title": "Before you start",
+          "altText": "Problem statement and prerequisites"
+        },
+        {
+          "number": 3,
+          "type": "steps",
+          "title": "Open the right UAOS route",
+          "altText": "Step showing local route"
+        },
+        {
+          "number": 4,
+          "type": "warnings",
+          "title": "Check status labels",
+          "altText": "Warning slide about release status"
+        },
+        {
+          "number": 5,
+          "type": "success",
+          "title": "Save locally",
+          "altText": "Success confirmation slide"
+        },
+        {
+          "number": 6,
+          "type": "cta",
+          "title": "Continue in Support",
+          "altText": "Call to action slide"
+        }
+      ],
+      "language": "ar"
+    },
+    "story": {
+      "schemaVersion": 1,
+      "tutorialId": "tutorial-uaos-home-what-is-uaos-ar",
+      "platform": "instagram-reels",
+      "aspectRatio": "9:16",
+      "cards": [
+        "vertical-tutorial-card",
+        "new-video-announcement",
+        "feature-launch",
+        "tip-of-the-day",
+        "troubleshooting"
+      ],
+      "pollFoundation": {
+        "enabled": true,
+        "realPublish": false,
+        "requiresApiSupport": true
+      },
+      "questionBoxFoundation": {
+        "enabled": true,
+        "realPublish": false,
+        "requiresApiSupport": true
+      },
+      "publicPollPublished": false
+    },
+    "capture": {
+      "schemaVersion": 1,
+      "tutorialId": "tutorial-uaos-home-what-is-uaos-ar",
+      "engines": [
+        "playwright-foundation",
+        "electron-capture-foundation"
+      ],
+      "route": "#/",
+      "deterministicDemoState": true,
+      "dataSources": [
+        "mock-account",
+        "mock-midi",
+        "mock-hardware",
+        "synthetic-audio"
+      ],
+      "realUserDataAllowed": false,
+      "overlays": [
+        "cursor-indicator",
+        "click-indicator",
+        "key-indicator",
+        "highlight",
+        "zoom"
+      ],
+      "waits": "stable-wait",
+      "outputs": [
+        "screenshots",
+        "video",
+        "failure-capture",
+        "console-errors"
+      ],
+      "retry": {
+        "enabled": true,
+        "maxAttempts": 2
+      },
+      "cancel": true
+    },
+    "render": {
+      "schemaVersion": 1,
+      "tutorialId": "tutorial-uaos-home-what-is-uaos-ar",
+      "renderer": "ffmpeg-only",
+      "dimensions": {
+        "landscape": {
+          "width": 1920,
+          "height": 1080,
+          "aspectRatio": "16:9",
+          "platforms": [
+            "youtube",
+            "facebook-pages",
+            "linkedin"
+          ]
+        },
+        "vertical": {
+          "width": 1080,
+          "height": 1920,
+          "aspectRatio": "9:16",
+          "platforms": [
+            "tiktok",
+            "instagram-reels",
+            "youtube-shorts",
+            "stories",
+            "whatsapp-status"
+          ]
+        },
+        "square": {
+          "width": 1080,
+          "height": 1080,
+          "aspectRatio": "1:1",
+          "platforms": [
+            "posts",
+            "covers",
+            "carousels"
+          ]
+        },
+        "portraitFeed": {
+          "width": 1080,
+          "height": 1350,
+          "aspectRatio": "4:5",
+          "platforms": [
+            "instagram-feed"
+          ]
+        }
+      },
+      "brand": [
+        "official-logo",
+        "OLED black",
+        "electric blue",
+        "cyan",
+        "violet",
+        "Blue LED"
+      ],
+      "overlays": [
+        "title-cards",
+        "captions",
+        "chapters",
+        "intro",
+        "outro"
+      ],
+      "audio": {
+        "normalizationMetadata": true,
+        "clippingCheck": true
+      },
+      "temporaryFiles": {
+        "cleanup": true
+      },
+      "renderManifest": true,
+      "checksum": "h165c1a29"
+    },
+    "publishPreview": {
+      "platform": "youtube",
+      "attempted": true,
+      "published": false,
+      "dryRun": true,
+      "reason": "dry-run-or-missing-oauth-api-or-approval",
+      "requiresOAuth": true,
+      "requiresApi": true,
+      "explicitApprovalRequired": true,
+      "networkRequestSent": false,
+      "contentId": "social-uaos-home-youtube-youtube-tutorial-ar"
+    }
+  },
+  "validationErrors": [],
+  "safety": {
+    "defaultMode": "dry-run",
+    "publicPostingPerformed": false,
+    "oauthOrApiRequiredForLivePublish": true,
+    "explicitApprovalRequiredForLivePublish": true,
+    "networkRequestSent": false,
+    "realUserDataAllowedInCapture": false,
+    "renderer": "ffmpeg-only"
+  }
+}

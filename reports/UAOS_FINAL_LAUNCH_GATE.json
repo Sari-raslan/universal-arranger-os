@@ -1,0 +1,127 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-06-14T00:58:27.679Z",
+  "status": "CODE_READY_EXTERNAL_APPROVALS_REQUIRED",
+  "codeReady": true,
+  "stripeSdkInstalled": true,
+  "externalApprovalsComplete": false,
+  "productionActivationReady": false,
+  "codeChecks": [
+    {
+      "name": "accounts-backend",
+      "passed": true
+    },
+    {
+      "name": "accounts-frontend",
+      "passed": true
+    },
+    {
+      "name": "postgres-adapter",
+      "passed": true
+    },
+    {
+      "name": "smtp-adapter",
+      "passed": true
+    },
+    {
+      "name": "stripe-billing-code",
+      "passed": true
+    },
+    {
+      "name": "accounts-migration",
+      "passed": true
+    },
+    {
+      "name": "billing-migration",
+      "passed": true
+    },
+    {
+      "name": "founders-pricing-test",
+      "passed": true
+    },
+    {
+      "name": "impressum-draft",
+      "passed": true
+    },
+    {
+      "name": "privacy-draft",
+      "passed": true
+    },
+    {
+      "name": "terms-draft",
+      "passed": true
+    },
+    {
+      "name": "cancellation-draft",
+      "passed": true
+    },
+    {
+      "name": "cookie-draft",
+      "passed": true
+    }
+  ],
+  "reportChecks": [
+    {
+      "name": "founders-pricing-report",
+      "passed": true
+    },
+    {
+      "name": "windows-code-package",
+      "passed": true
+    },
+    {
+      "name": "stripe-code",
+      "passed": true
+    },
+    {
+      "name": "accounts-code",
+      "passed": true
+    },
+    {
+      "name": "production-integration-code",
+      "passed": true
+    }
+  ],
+  "externalChecks": [
+    {
+      "name": "legalApproval",
+      "passed": false
+    },
+    {
+      "name": "privacyApproval",
+      "passed": false
+    },
+    {
+      "name": "paymentTestModeApproval",
+      "passed": false
+    },
+    {
+      "name": "productionDatabaseApproval",
+      "passed": false
+    },
+    {
+      "name": "smtpDeliveryApproval",
+      "passed": false
+    },
+    {
+      "name": "physicalHardwareApproval",
+      "passed": false
+    },
+    {
+      "name": "windowsSigningApproval",
+      "passed": false
+    },
+    {
+      "name": "publicDeploymentApproval",
+      "passed": false
+    }
+  ],
+  "safety": {
+    "paymentExecuted": false,
+    "migrationExecuted": false,
+    "commitExecuted": false,
+    "pushExecuted": false,
+    "mergeExecuted": false,
+    "deploymentExecuted": false
+  }
+}

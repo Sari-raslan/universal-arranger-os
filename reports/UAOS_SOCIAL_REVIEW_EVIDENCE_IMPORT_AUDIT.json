@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "status": "IMPORTED_EVIDENCE_BLOCKED",
+  "generatedAt": "2026-06-14T02:27:29.014Z",
+  "publicationAllowed": false,
+  "privateUploadAllowed": false,
+  "unlistedUploadAllowed": false,
+  "realNetworkActionsPerformed": false,
+  "expectedTotals": {
+    "tutorials": 140,
+    "queueItems": 700,
+    "renderManifests": 560,
+    "narrationAssets": 420,
+    "oauthPlatforms": 23
+  },
+  "importedRows": {
+    "tutorialEvidence": 0,
+    "queueEvidence": 0,
+    "oauthEvidence": 0
+  },
+  "importedApprovalCounts": {
+    "renderedMediaApproved": 0,
+    "narrationApproved": 0,
+    "technicalReview": 0,
+    "educationalReview": 0,
+    "privacyReview": 0,
+    "copyrightReview": 0,
+    "legalBrandReview": 0,
+    "ownerApproval": 0,
+    "approvedPhrases": 0
+  },
+  "oauthEvidenceCounts": {
+    "configured": 0,
+    "appReviewApproved": 0,
+    "accountVerified": 0,
+    "scopesApproved": 0,
+    "tokenStorageVerified": 0
+  },
+  "invalidOwnerApprovals": 0,
+  "evidenceShapeIssues": {
+    "tutorialEvidence": [],
+    "queueEvidence": [],
+    "oauthEvidence": []
+  },
+  "evidenceArtifactIssues": {
+    "tutorialEvidence": []
+  },
+  "evidenceArtifactFileIssues": {
+    "missingFiles": [],
+    "invalidExtensions": []
+  },
+  "evidenceFreshnessIssues": {
+    "tutorialEvidence": [],
+    "queueEvidence": []
+  },
+  "evidenceProvenanceIssues": {
+    "tutorialEvidence": [],
+    "queueEvidence": [],
+    "oauthEvidence": []
+  },
+  "evidenceConsistencyIssues": {
+    "queueEvidence": []
+  },
+  "unsafeUnlocks": [],
+  "unsafeSecretLikeKeys": [],
+  "invalidEvidenceReferences": {
+    "tutorialIds": [],
+    "contentIds": [],
+    "platformIds": []
+  },
+  "duplicateEvidenceReferences": {
+    "tutorialIds": [],
+    "contentIds": [],
+    "platformIds": []
+  },
+  "blockers": [
+    "No tutorial evidence rows were imported from the reviewer working file.",
+    "No queue evidence rows were imported from the reviewer working file.",
+    "No OAuth evidence rows were imported from the reviewer working file.",
+    "Rendered media evidence is incomplete.",
+    "Narration evidence is incomplete.",
+    "Owner approval evidence is incomplete.",
+    "Required owner approval phrases are incomplete.",
+    "OAuth evidence is incomplete for one or more platforms."
+  ],
+  "approvalPhraseRequired": "OWNER_APPROVES_SOCIAL_PUBLICATION",
+  "sourceStatus": "WORKING_FILE_PENDING_HUMAN_REVIEW",
+  "sourceWorkingFilePath": "social-output/reviews/reviewer-evidence-working.json",
+  "queueImportMode": "DRAFT_ONLY_NO_UPLOAD"
+}
