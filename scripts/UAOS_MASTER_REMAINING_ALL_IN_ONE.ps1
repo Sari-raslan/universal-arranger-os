@@ -54,21 +54,21 @@ foreach ($chk in $StructureChecks) {
     $fullPath = Join-Path $AppRoot $chk.Path
     if (Test-Path $fullPath) {
         Log "[OK] Found structure item: $($chk.Path)"
-        Log-Report "- [x] Found: \`$($chk.Path)\`"
+        Log-Report "- [x] Found: \'$($chk.Path)\'"
     } else {
         if ($chk.Req) {
             Log "[FAIL] Missing required structure item: $($chk.Path)" "ERROR"
-            Log-Report "- [ ] **MISSING**: \`$($chk.Path)\` (Required)"
+            Log-Report "- [ ] **MISSING**: \'$($chk.Path)\' (Required)"
         } else {
             Log "[WARN] Missing optional structure item: $($chk.Path)" "WARN"
-            Log-Report "- [ ] *MISSING*: \`$($chk.Path)\` (Optional)"
+            Log-Report "- [ ] *MISSING*: \'$($chk.Path)\' (Optional)"
         }
     }
 }
 
 # [2] التحقق من الأدوات المساعدة للنظام
 Log "Verifying toolchains..."
-Log-Report "`n## 2. System Toolchain Check"
+Log-Report "'n## 2. System Toolchain Check"
 $Tools = @("node", "npm", "git")
 foreach ($t in $Tools) {
     if (Get-Command $t -ErrorAction SilentlyContinue) {
@@ -86,13 +86,13 @@ foreach ($t in $Tools) {
 
 # [3] عرض حالة الـ Git الحالية دون تعديل
 Log "Capturing Git Status..."
-Log-Report "`n## 3. Git Status Capture"
+Log-Report "'n## 3. Git Status Capture"
 $gitStatus = git status -sb 2>&1 | Out-String
-Log-Report "\`\`\`text`n$gitStatus\`\`\`"
+Log-Report "\'\'\'text'n$gitStatus\'\'\'"
 
 # [4] التنظيف الآمن للملفات المؤقتة والكاش
 Log "Performing safe cache and log cleaning..."
-Log-Report "`n## 4. Safe Cleaning Actions"
+Log-Report "'n## 4. Safe Cleaning Actions"
 $CleanPaths = @(
     ".npm-cache",
     "uaos-live-clean/dist",
@@ -105,7 +105,7 @@ foreach ($cp in $CleanPaths) {
     if (Test-Path $target) {
         Remove-Item -Path $target -Recurse -Force -ErrorAction SilentlyContinue
         Log "Cleaned: $cp"
-        Log-Report "- Cleaned: \`$cp\`"
+        Log-Report "- Cleaned: \'$cp\'"
     }
 }
 
@@ -122,11 +122,11 @@ Get-ChildItem -Path $AppRoot -Filter *.bak -Recurse -ErrorAction SilentlyContinu
 }
 Log "Cleaned $tmpCount temporary files (.tmp)"
 Log "Cleaned $bakCount backup files (.bak)"
-Log-Report "- Cleaned $tmpCount \`*.tmp\` files recursively."
-Log-Report "- Cleaned $bakCount \`*.bak\` files recursively."
+Log-Report "- Cleaned $tmpCount \'*.tmp\' files recursively."
+Log-Report "- Cleaned $bakCount \'*.bak\' files recursively."
 
 # [5] تثبيت الاعتماديات (Dependencies) بشكل آمن ومنظم
-Log-Report "`n## 5. Dependency Installations"
+Log-Report "'n## 5. Dependency Installations"
 function Install-Deps($dir, $name) {
     if (Test-Path $dir) {
         Push-Location $dir
@@ -159,7 +159,7 @@ Install-Deps (Join-Path $AppRoot "backend") "Backend Module"
 Install-Deps (Join-Path $AppRoot "uaos-live-clean") "UAOS Live Clean Module"
 
 # [6] تشغيل اختبار الفحص الثابت (Linting / Formatting Checks)
-Log-Report "`n## 6. Static Analysis Checks"
+Log-Report "'n## 6. Static Analysis Checks"
 Log "Running 'npm run check'..."
 Push-Location $AppRoot
 $checkResult = npm run check 2>&1 | Out-String
@@ -167,11 +167,11 @@ $checkExit = $LASTEXITCODE
 Pop-Location
 
 Log "Check Exit Code: $checkExit"
-Log-Report "Exit Code: \`$checkExit\`"
-Log-Report "\`\`\`text`n$checkResult\`\`\`"
+Log-Report "Exit Code: \'$checkExit\'"
+Log-Report "\'\'\'text'n$checkResult\'\'\'"
 
 # [7] بناء المشروع (Production Build)
-Log-Report "`n## 7. Build Orchestration"
+Log-Report "'n## 7. Build Orchestration"
 Log "Running 'npm run build'..."
 Push-Location $AppRoot
 $buildResult = npm run build 2>&1 | Out-String
@@ -179,32 +179,32 @@ $buildExit = $LASTEXITCODE
 Pop-Location
 
 Log "Build Exit Code: $buildExit"
-Log-Report "Exit Code: \`$buildExit\`"
-Log-Report "\`\`\`text`n$buildResult\`\`\`"
+Log-Report "Exit Code: \'$buildExit\'"
+Log-Report "\'\'\'text'n$buildResult\'\'\'"
 
 # [8] التحقق من ناتج البناء (Build Outputs Verification)
-Log-Report "`n## 8. Build Deliverable Validation"
+Log-Report "'n## 8. Build Deliverable Validation"
 $liveHtml = Join-Path $AppRoot "uaos-live-clean/dist/index.html"
 if (Test-Path $liveHtml) {
     Log "[OK] Found generated artifact: uaos-live-clean/dist/index.html"
-    Log-Report "- [x] **Validated**: \`uaos-live-clean/dist/index.html\` exists and is compiled."
+    Log-Report "- [x] **Validated**: \'uaos-live-clean/dist/index.html\' exists and is compiled."
 } else {
     Log "[FAIL] Build artifact missing: uaos-live-clean/dist/index.html" "ERROR"
-    Log-Report "- [ ] **FAILED**: \`uaos-live-clean/dist/index.html\` was NOT generated."
+    Log-Report "- [ ] **FAILED**: \'uaos-live-clean/dist/index.html\' was NOT generated."
 }
 
 # [9] تشغيل اختبارات الدخان (Smoke & Runtime Checks) بشكل اختياري وآمن
-Log-Report "`n## 9. Smoke & Runtime Verification"
+Log-Report "'n## 9. Smoke & Runtime Verification"
 
 Log "Running optional desktop smoke test..."
 Push-Location $AppRoot
 try {
     $smoke = npm run desktop:smoke 2>&1 | Out-String
     Log "[OK] Smoke check executed (Optional)"
-    Log-Report "### Desktop Smoke Check (Optional)`n\`\`\`text`n$smoke\`\`\`"
+    Log-Report "### Desktop Smoke Check (Optional)'n\'\'\'text'n$smoke\'\'\'"
 } catch {
     Log "[WARN] Desktop smoke script not found or failed." "WARN"
-    Log-Report "### Desktop Smoke Check`n*Optional script omitted or failed to execute.*"
+    Log-Report "### Desktop Smoke Check'n*Optional script omitted or failed to execute.*"
 }
 Pop-Location
 
@@ -213,15 +213,15 @@ Push-Location $AppRoot
 try {
     $runtime = npm run runtime:check 2>&1 | Out-String
     Log "[OK] Runtime check executed (Optional)"
-    Log-Report "### Runtime Check (Optional)`n\`\`\`text`n$runtime\`\`\`"
+    Log-Report "### Runtime Check (Optional)'n\'\'\'text'n$runtime\'\'\'"
 } catch {
     Log "[WARN] Runtime check script not found or failed." "WARN"
-    Log-Report "### Runtime Check`n*Optional script omitted or failed to execute.*"
+    Log-Report "### Runtime Check'n*Optional script omitted or failed to execute.*"
 }
 Pop-Location
 
 # [10] فحص ملفات .env.example للتأكد من خلوها من الأسرار الحقيقية
-Log-Report "`n## 10. Secrets & Environment Audit"
+Log-Report "'n## 10. Secrets & Environment Audit"
 Log "Scanning environment example configurations..."
 $envExamples = Get-ChildItem -Path $AppRoot -Recurse -Filter .env.example -ErrorAction SilentlyContinue |
     Where-Object { $_.FullName -notmatch "node_modules" }
@@ -231,16 +231,16 @@ foreach ($envf in $envExamples) {
     # التحقق من أنماط مفاتيح Stripe live الحقيقية أو كلمات مرور واضحة
     if ($content -match "sk_live_" -or $content -match "pk_live_" -or $content -match "secret_key=(?!your_|[a-zA-Z0-9_\-]*dummy)[a-zA-Z0-9_]{16,}") {
         Log "[WARN] Sensitive production key format pattern found in $($envf.FullName)" "WARN"
-        Log-Report "- [ ] *WARNING*: Potential active key pattern found in \`$($envf.FullName)\`"
+        Log-Report "- [ ] *WARNING*: Potential active key pattern found in \'$($envf.FullName)\'"
     } else {
         Log "[OK] Configuration template is clean and safe: $($envf.FullName)"
-        Log-Report "- [x] Safe configuration template: \`$($envf.FullName)\`"
+        Log-Report "- [x] Safe configuration template: \'$($envf.FullName)\'"
     }
 }
 
 # الملخص النهائي
 Log "UAOS Master remaining check finished."
-Log-Report "`n## 11. Run Summary"
+Log-Report "'n## 11. Run Summary"
 if ($buildExit -eq 0 -and (Test-Path $liveHtml)) {
     Log-Report "### **STATUS: PASS** 🚀"
 } else {
