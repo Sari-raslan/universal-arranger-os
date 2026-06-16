@@ -1,4 +1,4 @@
-﻿import { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import "./style.css";
 import { ModernHome } from "./ModernHome.jsx";
 import { ArrangerPanel } from "./components/ArrangerPanel.jsx";
@@ -35,7 +35,8 @@ import { EVENT_TYPES } from "./core/eventTypes.js";
 import { eventBus } from "./core/eventBus.js";
 import { detectRuntimeFeatures } from "./core/diagnostics.js";
 import { autosaveSession, createDefaultSession, loadSession } from "./session/sessionStore.js";
-
+
+import { SmartSequencerPage } from "./components/SmartSequencerPage.jsx";
 const HOME_PAGE = "home";
 const LAST_ROUTE_KEY = "uaos.lastRoute";
 
@@ -745,7 +746,7 @@ function AppShell() {
   );
 }
 
-export default function App() {
+function UaosOriginalApp() {
   return (
     <ErrorBoundary
       onError={(error) => eventBus.emit(EVENT_TYPES.RUNTIME_ERROR, { message: error.message })}
@@ -755,4 +756,33 @@ export default function App() {
   );
 }
 
+function getUaosRequestedPage() {
+  if (typeof window === "undefined") return "";
 
+  const hash = window.location.hash
+    .replace(/^#\/?/, "")
+    .split(/[?&]/)[0]
+    .trim()
+    .toLowerCase();
+
+  const pathname = window.location.pathname
+    .replace(/^\/+|\/+$/g, "")
+    .trim()
+    .toLowerCase();
+
+  return hash || pathname;
+}
+
+export default function App() {
+  const requestedPage = getUaosRequestedPage();
+
+  if (
+    requestedPage === "smart-sequencer" ||
+    requestedPage === "sequencer" ||
+    requestedPage === "song-to-arrangement"
+  ) {
+    return <SmartSequencerPage />;
+  }
+
+  return <UaosOriginalApp />;
+}

@@ -1,6 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 const express = require("express");
+const { createUmsRouter } = require("./umsRoutes.cjs");
 
 const app = express();
 const port = Number(process.env.PORT || 5199);
@@ -121,6 +122,8 @@ let serviceCache = new Map();
 fs.mkdirSync(dataDir, { recursive: true });
 fs.mkdirSync(uploadsDir, { recursive: true });
 fs.mkdirSync(samplesDir, { recursive: true });
+app.use("/api/ums", createUmsRouter(express, { dataDir }));
+
 
 app.use((req, res, next) => {
   const origin = req.headers.origin;
@@ -1398,7 +1401,7 @@ app.use((err, _req, res, _next) => {
 });
 
 if (require.main === module) {
-  app.listen(port, () => {
+app.listen(port, () => {
     console.log(`UAOS local backend listening on http://127.0.0.1:${port}`);
   });
 }

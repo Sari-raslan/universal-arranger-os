@@ -1,0 +1,81 @@
+{
+  "schema": "uaos.device-profiles",
+  "schemaVersion": "0.1.0",
+  "profiles": [
+    {
+      "id": "korg-pa3x-oriental",
+      "manufacturer": "KORG",
+      "model": "Pa3X Oriental",
+      "support": "planned",
+      "formats": [
+        "MID",
+        "SET"
+      ],
+      "verified": false
+    },
+    {
+      "id": "korg-pa5x",
+      "manufacturer": "KORG",
+      "model": "Pa5X",
+      "support": "experimental",
+      "formats": [
+        "MID"
+      ],
+      "verified": false
+    },
+    {
+      "id": "yamaha-genos",
+      "manufacturer": "Yamaha",
+      "model": "Genos",
+      "support": "planned",
+      "formats": [
+        "MID",
+        "STY"
+      ],
+      "verified": false
+    },
+    {
+      "id": "yamaha-genos2",
+      "manufacturer": "Yamaha",
+      "model": "Genos2",
+      "support": "planned",
+      "formats": [
+        "MID",
+        "STY"
+      ],
+      "verified": false
+    },
+    {
+      "id": "yamaha-psr-sx",
+      "manufacturer": "Yamaha",
+      "model": "PSR-SX",
+      "support": "planned",
+      "formats": [
+        "MID",
+        "STY"
+      ],
+      "verified": false
+    },
+    {
+      "id": "roland-bk9",
+      "manufacturer": "Roland",
+      "model": "BK-9",
+      "support": "planned",
+      "formats": [
+        "MID"
+      ],
+      "verified": false
+    },
+    {
+      "id": "ketron-sd9",
+      "manufacturer": "Ketron",
+      "model": "SD9",
+      "support": "planned",
+      "formats": [
+        "MID"
+      ],
+      "verified": false
+    }
+  ],
+  "verificationRule": "A profile may be marked verified only after physical-device or trusted fixture validation."
+}
