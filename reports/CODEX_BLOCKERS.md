@@ -6,6 +6,13 @@ Current phase: HARDENING
 
 - Root `npm test` was added and passes.
 - Root `npm run check` was added and passes.
+- V1 UI architecture rebuild is complete and passes local build/test validation.
+- Canonical home routing is now on `ModernHome.jsx` and passes final local validation.
+- Backend runtime integration now has a canonical local API client, live health reporting, and service map documentation.
+- The backend `src` tree now declares ESM semantics explicitly, removing the Node typeless-package warning during test runs.
+- The local runtime host at `http://127.0.0.1:5199/` now returns HTTP 200 and serves the UI fallback shell when the built frontend is present.
+- Backend project persistence now sanitizes IDs, names, descriptions, timelines, sessions, and metadata before save/update/duplicate flows.
+- MIDI monitor and Web MIDI hook now degrade safely when `navigator`, WebMIDI, or localStorage are unavailable.
 
 ## Manual Validation Blockers
 

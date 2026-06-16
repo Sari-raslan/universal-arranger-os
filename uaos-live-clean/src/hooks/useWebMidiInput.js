@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { detectMidiDeviceProfile } from "../midi/deviceProfiles.js";
 import { parseMidiMessage } from "../midi/midiMessageParser.js";
+import { getMidiNavigator, isWebMidiAvailable } from "./midiEnvironment.js";
 
 function listInputs(access) {
   return Array.from(access?.inputs?.values?.() || []).map((input) => ({
@@ -17,11 +18,7 @@ export function useWebMidiInput({ onMidiEvent }) {
   const inputRef = useRef(null);
   const callbackRef = useRef(onMidiEvent);
 
-  const [support, setSupport] = useState(
-    typeof navigator !== "undefined" && "requestMIDIAccess" in navigator
-      ? "available"
-      : "unavailable",
-  );
+  const [support, setSupport] = useState(isWebMidiAvailable() ? "available" : "unavailable");
   const [connection, setConnection] = useState("disconnected");
   const [error, setError] = useState("");
   const [inputs, setInputs] = useState([]);
@@ -101,7 +98,8 @@ export function useWebMidiInput({ onMidiEvent }) {
   }, [attachInput, detachInput, selectedInputId]);
 
   const connect = useCallback(async () => {
-    if (!("requestMIDIAccess" in navigator)) {
+    const midiNavigator = getMidiNavigator();
+    if (!midiNavigator) {
       setSupport("unavailable");
       setError("Web MIDI is not available in this browser or runtime.");
       return false;
@@ -109,7 +107,7 @@ export function useWebMidiInput({ onMidiEvent }) {
 
     try {
       setConnection("requesting-permission");
-      const access = await navigator.requestMIDIAccess({ sysex: false });
+      const access = await midiNavigator.requestMIDIAccess({ sysex: false });
       accessRef.current = access;
       setSupport("available");
 

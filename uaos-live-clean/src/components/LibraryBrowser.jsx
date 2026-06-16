@@ -52,7 +52,10 @@ function reportEntriesToCatalog(report) {
       name: entry.relativePath?.split("/").pop() || `Asset ${index + 1}`,
       vendor: "User library",
       licenseStatus: "license-review-required",
-      sourceType: entry.extension === ".mid" || entry.extension === ".midi" ? "midi" : "sample",
+      sourceType:
+        entry.extension === ".mid" || entry.extension === ".midi"
+          ? "midi"
+          : "sample",
       instrumentFamily: "unclassified",
       articulation: "unknown",
       keyRange: { low: 0, high: 127 },
@@ -184,7 +187,7 @@ export function LibraryBrowser() {
             onChange={importScanReport}
           />
         </label>
-        <button className="secondary" onClick={exportCatalog}>
+        <button className="secondary" type="button" onClick={exportCatalog}>
           Export catalog
         </button>
       </div>
@@ -206,11 +209,11 @@ export function LibraryBrowser() {
             <article className="card libraryCard" key={item.libraryId}>
               <StatusBadge status={errors.length ? "planned" : "available"} />
               <h2>{item.name}</h2>
-              <p>{item.vendor} آ· {item.instrumentFamily} آ· {item.articulation}</p>
+              <p>{item.vendor} | {item.instrumentFamily} | {item.articulation}</p>
               <dl className="libraryDetails">
                 <div><dt>License</dt><dd>{item.licenseStatus}</dd></div>
-                <div><dt>Key range</dt><dd>{item.keyRange.low}â€“{item.keyRange.high}</dd></div>
-                <div><dt>Velocity</dt><dd>{item.velocityRange.low}â€“{item.velocityRange.high}</dd></div>
+                <div><dt>Key range</dt><dd>{item.keyRange.low}-{item.keyRange.high}</dd></div>
+                <div><dt>Velocity</dt><dd>{item.velocityRange.low}-{item.velocityRange.high}</dd></div>
                 <div><dt>Status</dt><dd>{item.status}</dd></div>
               </dl>
               <div className="tagRow">

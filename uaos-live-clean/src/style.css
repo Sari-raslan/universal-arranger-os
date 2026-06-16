@@ -2379,3 +2379,587 @@ footer,
   }
 }
 /* UAOS_FINAL_HERO_COMPLETE_END */
+
+/* UAOS SIMPLE HOME FINAL */
+
+.uaosSimpleTopbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  min-height: 64px;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 16px;
+  padding: 10px 18px;
+  background: #0b111b;
+  border-bottom: 1px solid #263244;
+}
+
+.uaosSimpleBrand,
+.uaosSimpleBack,
+.uaosSimpleHomeButton {
+  min-height: 42px;
+  padding: 0 18px;
+  border: 1px solid #334155;
+  border-radius: 10px;
+  background: #172033;
+  color: #f8fafc;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.uaosSimpleCurrentPage {
+  text-align: center;
+  color: #e2e8f0;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.uaosSimpleTopActions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.uaosSimpleHome {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 30px 24px 60px;
+}
+
+.uaosSimpleWelcome {
+  padding: 30px;
+  margin-bottom: 24px;
+  border: 1px solid #263244;
+  border-radius: 18px;
+  background: #0f1725;
+}
+
+.uaosSimpleEyebrow {
+  margin: 0 0 8px;
+  color: #5eead4;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+}
+
+.uaosSimpleWelcome h1 {
+  margin: 0 0 10px;
+  color: #f8fafc;
+  font-size: clamp(34px, 5vw, 58px);
+  line-height: 1.05;
+}
+
+.uaosSimpleWelcome > p:last-child {
+  margin: 0;
+  color: #aab7ca;
+  font-size: 17px;
+}
+
+.uaosSimpleGroups {
+  display: grid;
+  gap: 22px;
+}
+
+.uaosSimpleGroup {
+  padding: 22px;
+  border: 1px solid #263244;
+  border-radius: 16px;
+  background: #0d1522;
+}
+
+.uaosSimpleGroup header {
+  margin-bottom: 16px;
+}
+
+.uaosSimpleGroup h2 {
+  margin: 0 0 5px;
+  color: #f8fafc;
+  font-size: 23px;
+}
+
+.uaosSimpleGroup header p {
+  margin: 0;
+  color: #94a3b8;
+}
+
+.uaosSimpleGrid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(210px, 1fr)
+  );
+  gap: 12px;
+}
+
+.uaosSimpleFeature {
+  min-height: 112px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 8px;
+  padding: 18px;
+  border: 1px solid #334155;
+  border-radius: 14px;
+  background: #151f2f;
+  color: #f8fafc;
+  cursor: pointer;
+  text-align: left;
+}
+
+.uaosSimpleFeature:hover,
+.uaosSimpleFeature:focus-visible {
+  border-color: #5eead4;
+  background: #19283a;
+  outline: none;
+}
+
+.uaosSimpleFeature strong {
+  font-size: 20px;
+}
+
+.uaosSimpleFeature span {
+  color: #aab7ca;
+  line-height: 1.45;
+}
+
+.uaosSimpleMore {
+  margin-top: 22px;
+  padding: 18px;
+  border: 1px solid #263244;
+  border-radius: 16px;
+  background: #0d1522;
+}
+
+.uaosSimpleMoreToggle {
+  width: 100%;
+  min-height: 48px;
+  border: 1px solid #334155;
+  border-radius: 10px;
+  background: #172033;
+  color: #f8fafc;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.uaosSimpleMoreGrid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(150px, 1fr)
+  );
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.uaosSimpleMoreButton {
+  min-height: 44px;
+  border: 1px solid #334155;
+  border-radius: 9px;
+  background: #101827;
+  color: #dbe5f3;
+  cursor: pointer;
+}
+
+.uaosReleaseStrip,
+.uaosFinalFooter {
+  display: none !important;
+}
+
+@media (max-width: 760px) {
+  .uaosSimpleTopbar {
+    grid-template-columns: 1fr auto;
+  }
+
+  .uaosSimpleCurrentPage {
+    display: none;
+  }
+
+  .uaosSimpleHome {
+    padding: 18px 12px 40px;
+  }
+
+  .uaosSimpleGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* UAOS_SIMPLE_DESKTOP_ARCHITECTURE_START */
+:root {
+  color: #eef4ff;
+  background:
+    radial-gradient(circle at top, rgba(57, 138, 255, 0.18), transparent 35%),
+    radial-gradient(circle at bottom right, rgba(38, 194, 152, 0.12), transparent 28%),
+    #070b12;
+  font-family: "Segoe UI", "Noto Sans Arabic", Arial, sans-serif;
+}
+
+body {
+  background:
+    radial-gradient(circle at top, rgba(57, 138, 255, 0.18), transparent 35%),
+    radial-gradient(circle at bottom right, rgba(38, 194, 152, 0.12), transparent 28%),
+    #070b12;
+  color: #eef4ff;
+}
+
+.uaosAppShell {
+  min-height: 100vh;
+  background:
+    linear-gradient(180deg, rgba(8, 12, 18, 0.94), rgba(8, 12, 18, 0.86)),
+    radial-gradient(circle at top left, rgba(57, 138, 255, 0.12), transparent 30%);
+}
+
+.uaosTopBar {
+  position: sticky;
+  top: 0;
+  z-index: 80;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 18px;
+  border-bottom: 1px solid rgba(141, 170, 214, 0.16);
+  background: rgba(7, 11, 18, 0.88);
+  backdrop-filter: blur(18px);
+}
+
+.uaosBrand,
+.uaosTopActions button,
+.uaosContinueButton,
+.uaosCardButton,
+.uaosHomeCard {
+  border: 1px solid rgba(141, 170, 214, 0.18);
+  border-radius: 14px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02));
+  color: #f6fbff;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.uaosBrand {
+  min-height: 46px;
+  min-width: 96px;
+  padding: 0 18px;
+  font-size: 16px;
+  letter-spacing: 0.08em;
+}
+
+.uaosTopActions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.uaosTopActions button {
+  min-height: 42px;
+  padding: 0 16px;
+  font-weight: 800;
+}
+
+.uaosTopActions button.active {
+  border-color: rgba(110, 231, 183, 0.42);
+  background: linear-gradient(90deg, rgba(18, 96, 80, 0.94), rgba(40, 152, 110, 0.82));
+}
+
+.uaosPage {
+  width: min(1320px, calc(100% - 28px));
+  margin: 0 auto;
+  padding: 26px 0 46px;
+}
+
+.uaosSurface {
+  border: 1px solid rgba(141, 170, 214, 0.14);
+  border-radius: 28px;
+  padding: clamp(24px, 4vw, 40px);
+  background:
+    linear-gradient(180deg, rgba(12, 18, 28, 0.96), rgba(8, 14, 22, 0.92));
+  box-shadow: 0 28px 82px rgba(0, 0, 0, 0.34);
+}
+
+.uaosHomeSurface {
+  min-height: calc(100vh - 130px);
+  display: grid;
+  align-content: start;
+  gap: 18px;
+}
+
+.uaosEyebrow {
+  margin: 0;
+  color: #6be6c1;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.uaosSurface h1 {
+  margin: 0;
+  font-size: clamp(34px, 5vw, 62px);
+  line-height: 0.98;
+}
+
+.uaosLead {
+  max-width: 860px;
+  margin: 0;
+  color: #bfd0e6;
+  font-size: clamp(1rem, 1.6vw, 1.15rem);
+  line-height: 1.7;
+}
+
+.uaosHomeActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 6px;
+}
+
+.uaosContinueButton {
+  min-height: 48px;
+  padding: 0 18px;
+  min-width: 190px;
+  font-weight: 900;
+}
+
+.uaosContinueButton:disabled {
+  opacity: 0.45;
+}
+
+.uaosCardGrid {
+  display: grid;
+  gap: 16px;
+  margin-top: 8px;
+}
+
+.uaosCardGrid.columns-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.uaosCardGrid.columns-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.uaosCardButton,
+.uaosHomeCard,
+.uaosInfoCard {
+  min-height: 136px;
+  padding: 18px 18px 16px;
+  text-align: left;
+}
+
+.uaosHomeCard {
+  display: grid;
+  align-content: start;
+  gap: 10px;
+  min-height: 178px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.uaosCardButton {
+  display: grid;
+  align-content: start;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.uaosCardButton strong,
+.uaosHomeCard strong,
+.uaosInfoCard strong {
+  font-size: 22px;
+}
+
+.uaosCardButton span,
+.uaosHomeCard span,
+.uaosInfoCard span {
+  color: #b7c6da;
+  line-height: 1.5;
+}
+
+.uaosCardButton small {
+  color: #79e7c2;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.uaosField {
+  display: grid;
+  gap: 8px;
+  margin: 10px 0 18px;
+}
+
+.uaosField span {
+  color: #b7c6da;
+  font-size: 13px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.uaosField input,
+.uaosSurface input {
+  min-height: 46px;
+  border-radius: 14px;
+  border: 1px solid rgba(141, 170, 214, 0.18);
+  background: rgba(4, 8, 14, 0.65);
+  color: #f6fbff;
+}
+
+.uaosGridTable {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.uaosMiniCard {
+  display: grid;
+  gap: 6px;
+  padding: 14px;
+  border: 1px solid rgba(141, 170, 214, 0.14);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.uaosMiniCard strong {
+  font-size: 15px;
+}
+
+.uaosInfoCard {
+  display: grid;
+  gap: 8px;
+  border: 1px solid rgba(141, 170, 214, 0.14);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.uaosInfoCard span {
+  color: #9fb2ca;
+}
+
+.uaosSurface .cards,
+.uaosSurface .panelSection {
+  margin-top: 18px;
+}
+
+.uaosSurface .launchBanner {
+  margin-top: 18px;
+}
+
+.uaosSurface .runtime {
+  margin-top: 12px;
+}
+
+.uaosSurface .cards,
+.uaosSurface .uaosCardGrid,
+.uaosSurface .uaosGridTable {
+  animation: uaosFadeIn 220ms ease-out;
+}
+
+@keyframes uaosFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 900px) {
+  .uaosTopBar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .uaosTopActions {
+    justify-content: space-between;
+  }
+
+  .uaosCardGrid.columns-2,
+  .uaosCardGrid.columns-3 {
+    grid-template-columns: 1fr;
+  }
+
+  .uaosHomeSurface {
+    min-height: auto;
+  }
+}
+
+@media (max-width: 700px) {
+  .uaosPage {
+    width: min(100% - 16px, 1320px);
+  }
+
+  .uaosTopActions button,
+  .uaosContinueButton,
+  .uaosCardButton,
+  .uaosHomeCard {
+    width: 100%;
+  }
+}
+
+html,
+body,
+#root {
+  overflow-x: hidden;
+}
+
+.uaosAppShell {
+  overflow-x: clip;
+}
+
+.uaosPage,
+.uaosSurface,
+.uaosAppShell {
+  min-width: 0;
+}
+
+.uaosBrand,
+.uaosTopActions button,
+.uaosContinueButton,
+.uaosCardButton,
+.uaosHomeCard,
+.buttonLike,
+.buttonLink {
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    border-color 180ms ease,
+    background-color 180ms ease;
+}
+
+.uaosBrand:focus-visible,
+.uaosTopActions button:focus-visible,
+.uaosContinueButton:focus-visible,
+.uaosCardButton:focus-visible,
+.uaosHomeCard:focus-visible,
+.buttonLike:focus-visible,
+.buttonLink:focus-visible {
+  outline: 2px solid #6be6c1;
+  outline-offset: 3px;
+}
+
+.uaosBrand:active,
+.uaosTopActions button:active,
+.uaosContinueButton:active,
+.uaosCardButton:active,
+.uaosHomeCard:active,
+.buttonLike:active,
+.buttonLink:active {
+  transform: translateY(1px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .uaosAppShell *,
+  .uaosAppShell *::before,
+  .uaosAppShell *::after {
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 1ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+/* UAOS_SIMPLE_DESKTOP_ARCHITECTURE_END */

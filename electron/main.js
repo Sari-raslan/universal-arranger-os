@@ -1,5 +1,6 @@
-import { app, BrowserWindow, ipcMain, shell } from "electron";
+import { app, BrowserWindow, ipcMain, session, shell } from "electron";
 import fs from "node:fs";
+import http from "node:http";
 import path from "node:path";
 import { createRequire } from "node:module";
 import { fileURLToPath } from "node:url";
@@ -21,9 +22,21 @@ function getRuntimeLogFile() {
 }
 const fallbackDevUrl = "http://127.0.0.1:5173";
 
+app.commandLine.appendSwitch(
+  "enable-experimental-web-platform-features",
+);
+
+app.commandLine.appendSwitch(
+  "enable-features",
+  "WebMidi",
+);
+
+
 let mainWindow;
 let showedFailurePage = false;
 let updateEngine;
+let staticServer;
+let staticServerUrl;
 
 function logRuntime(event, details = {}) {
   const entry = {
@@ -100,13 +113,133 @@ async function showFailurePage(title, reason) {
   mainWindow.show();
 }
 
+function contentTypeFor(filePath) {
+  const extension = path.extname(filePath).toLowerCase();
+
+  return {
+    ".html": "text/html; charset=utf-8",
+    ".js": "text/javascript; charset=utf-8",
+    ".mjs": "text/javascript; charset=utf-8",
+    ".css": "text/css; charset=utf-8",
+    ".json": "application/json; charset=utf-8",
+    ".svg": "image/svg+xml",
+    ".png": "image/png",
+    ".jpg": "image/jpeg",
+    ".jpeg": "image/jpeg",
+    ".webp": "image/webp",
+    ".ico": "image/x-icon",
+    ".woff": "font/woff",
+    ".woff2": "font/woff2",
+    ".mp3": "audio/mpeg",
+    ".wav": "audio/wav",
+    ".ogg": "audio/ogg",
+  }[extension] || "application/octet-stream";
+}
+
+async function startLocalFrontendServer() {
+  if (staticServerUrl) {
+    return staticServerUrl;
+  }
+
+  const builtIndex = findBuiltIndex();
+
+  if (!builtIndex) {
+    throw new Error("UAOS frontend build was not found.");
+  }
+
+  const frontendRoot = path.dirname(builtIndex);
+  const resolvedRoot = path.resolve(frontendRoot);
+
+  staticServer = http.createServer((request, response) => {
+    try {
+      const requestUrl = new URL(
+        request.url || "/",
+        "http://127.0.0.1",
+      );
+
+      let pathname = decodeURIComponent(requestUrl.pathname);
+
+      if (pathname === "/") {
+        pathname = "/index.html";
+      }
+
+      const relativePath = pathname.replace(/^\/+/, "");
+      let targetPath = path.resolve(frontendRoot, relativePath);
+
+      if (!targetPath.startsWith(resolvedRoot)) {
+        response.writeHead(403);
+        response.end("Forbidden");
+        return;
+      }
+
+      if (
+        !fs.existsSync(targetPath) ||
+        fs.statSync(targetPath).isDirectory()
+      ) {
+        targetPath = builtIndex;
+      }
+
+      response.writeHead(200, {
+        "Content-Type": contentTypeFor(targetPath),
+        "Cache-Control": "no-store",
+        "Permissions-Policy": "microphone=(self), midi=(self)",
+      });
+
+      response.end(fs.readFileSync(targetPath));
+    } catch (error) {
+      logRuntime("local-server-request-failed", {
+        message: error.message,
+      });
+
+      response.writeHead(500, {
+        "Content-Type": "text/plain; charset=utf-8",
+      });
+
+      response.end("UAOS local server error");
+    }
+  });
+
+  await new Promise((resolve, reject) => {
+    staticServer.once("error", reject);
+    staticServer.listen(0, "127.0.0.1", resolve);
+  });
+
+  const address = staticServer.address();
+
+  staticServerUrl =
+    `http://127.0.0.1:${address.port}`;
+
+  logRuntime("local-server-ready", {
+    url: staticServerUrl,
+    frontendRoot,
+  });
+
+  return staticServerUrl;
+}
+
+function stopLocalFrontendServer() {
+  try {
+    staticServer?.close();
+  } catch {
+    // Ignore shutdown errors.
+  }
+
+  staticServer = null;
+  staticServerUrl = null;
+}
 async function loadFrontend() {
   const builtIndex = findBuiltIndex();
   const devUrl = process.env.UAOS_DEV_URL || fallbackDevUrl;
 
   if (app.isPackaged && builtIndex) {
-    logRuntime("load-file", { file: builtIndex });
-    await mainWindow.loadFile(builtIndex);
+    const localUrl = await startLocalFrontendServer();
+
+    logRuntime("load-local-server", {
+      url: localUrl,
+      file: builtIndex,
+    });
+
+    await mainWindow.loadURL(localUrl);
     return;
   }
 
@@ -125,6 +258,26 @@ async function loadFrontend() {
   await showFailurePage("UAOS build was not found", "No dist/index.html was found in the known project frontend paths.");
 }
 
+function configureHardwarePermissions() {
+  const allowedPermissions = new Set([
+    "media",
+    "midi",
+    "midiSysex",
+  ]);
+
+  const currentSession = session.defaultSession;
+
+  currentSession.setPermissionCheckHandler(
+    (_webContents, permission) =>
+      allowedPermissions.has(permission),
+  );
+
+  currentSession.setPermissionRequestHandler(
+    (_webContents, permission, callback) => {
+      callback(allowedPermissions.has(permission));
+    },
+  );
+}
 function createWindow() {
   mainWindow = new BrowserWindow({
     width: 1440,
@@ -214,6 +367,7 @@ async function resolveAutoUpdater() {
 
 app.whenReady().then(() => {
   logRuntime("app-ready", { version: app.getVersion(), packaged: app.isPackaged });
+  configureHardwarePermissions();
   createWindow();
   initializeAutoUpdateEngine({
     app,

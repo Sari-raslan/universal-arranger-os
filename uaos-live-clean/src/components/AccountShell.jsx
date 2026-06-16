@@ -4,7 +4,6 @@ import {
   useState,
 } from "react";
 import { useAccountSession } from "../hooks/useAccountSession.js";
-import { openBillingPortal, startCheckout } from "../api/billingClient.js";
 import "./account-shell.css";
 
 const views = Object.freeze({
@@ -80,8 +79,6 @@ export function AccountShell({ children }) {
   const [verificationToken, setVerificationToken] = useState("");
   const [resetToken, setResetToken] = useState("");
   const [developmentToken, setDevelopmentToken] = useState("");
-  const [billingBusy, setBillingBusy] = useState(false);
-  const [billingError, setBillingError] = useState("");
 
   useEffect(() => {
     if (account.signedIn) {
@@ -102,12 +99,12 @@ export function AccountShell({ children }) {
 
   const title = useMemo(() => {
     const titles = {
-      [views.login]: "Sign in / طھط³ط¬ظٹظ„ ط§ظ„ط¯ط®ظˆظ„",
-      [views.register]: "Create account / ط¥ظ†ط´ط§ط، ط­ط³ط§ط¨",
-      [views.verify]: "Verify email / طھظپط¹ظٹظ„ ط§ظ„ط¨ط±ظٹط¯",
-      [views.resetRequest]: "Reset password / ط·ظ„ط¨ ط§ط³طھط¹ط§ط¯ط©",
-      [views.resetConfirm]: "Set new password / ظƒظ„ظ…ط© ظ…ط±ظˆط± ط¬ط¯ظٹط¯ط©",
-      [views.account]: "My UAOS account / ط­ط³ط§ط¨ظٹ",
+      [views.login]: "Sign in / تسجيل الدخول",
+      [views.register]: "Create Account / إنشاء الحساب",
+      [views.verify]: "Verify email / تأكيد البريد",
+      [views.resetRequest]: "Reset Password / استعادة كلمة المرور",
+      [views.resetConfirm]: "Set new password / تعيين كلمة مرور جديدة",
+      [views.account]: "My UAOS Account / الحساب",
     };
 
     return titles[view];
@@ -165,16 +162,10 @@ export function AccountShell({ children }) {
     setView(views.login);
   }
 
-  async function goPortal() {
-    setBillingBusy(true);
-    setBillingError("");
-    try {
-      const response = await openBillingPortal();
-      if (response.url) window.location.assign(response.url);
-    } catch (error) {
-      setBillingError(error.message);
-      setBillingBusy(false);
-    }
+  function openPanel() {
+    account.actions.clearFeedback();
+    setView(account.signedIn ? views.account : views.login);
+    setOpen(true);
   }
 
   return (
@@ -184,17 +175,11 @@ export function AccountShell({ children }) {
       <button
         className="uaos-account-launcher"
         type="button"
-        onClick={() => {
-          account.actions.clearFeedback();
-          setView(account.signedIn ? views.account : views.login);
-          setOpen(true);
-        }}
+        onClick={openPanel}
         aria-label="Open UAOS account"
       >
         <span className="uaos-account-launcher-dot" />
-        {account.signedIn
-          ? account.user.email
-          : "Account / ط§ظ„ط­ط³ط§ط¨"}
+        {account.signedIn ? account.user.email : "Account / الحساب"}
       </button>
 
       {open && (
@@ -231,7 +216,7 @@ export function AccountShell({ children }) {
                 onClick={() => setOpen(false)}
                 aria-label="Close account panel"
               >
-                أ—
+                Close
               </button>
             </header>
 
@@ -245,8 +230,7 @@ export function AccountShell({ children }) {
                 <strong>Local development token</strong>
                 <code>{developmentToken}</code>
                 <span>
-                  This appears only because the local email provider is
-                  not configured.
+                  This appears only because the local email provider is not configured.
                 </span>
               </div>
             )}
@@ -257,7 +241,7 @@ export function AccountShell({ children }) {
                 onSubmit={submitLogin}
               >
                 <TextField
-                  label="Email / ط§ظ„ط¨ط±ظٹط¯"
+                  label="Email / البريد الإلكتروني"
                   type="email"
                   value={email}
                   onChange={setEmail}
@@ -265,7 +249,7 @@ export function AccountShell({ children }) {
                   placeholder="name@example.com"
                 />
                 <TextField
-                  label="Password / ظƒظ„ظ…ط© ط§ظ„ظ…ط±ظˆط±"
+                  label="Password / كلمة المرور"
                   type="password"
                   value={password}
                   onChange={setPassword}
@@ -310,7 +294,7 @@ export function AccountShell({ children }) {
                 onSubmit={submitRegister}
               >
                 <TextField
-                  label="Email / ط§ظ„ط¨ط±ظٹط¯"
+                  label="Email / البريد الإلكتروني"
                   type="email"
                   value={email}
                   onChange={setEmail}
@@ -318,7 +302,7 @@ export function AccountShell({ children }) {
                   placeholder="name@example.com"
                 />
                 <TextField
-                  label="Password / ظƒظ„ظ…ط© ط§ظ„ظ…ط±ظˆط±"
+                  label="Password / كلمة المرور"
                   type="password"
                   value={password}
                   onChange={setPassword}
@@ -350,7 +334,7 @@ export function AccountShell({ children }) {
                 onSubmit={submitVerify}
               >
                 <TextField
-                  label="Verification token / ط±ظ…ط² ط§ظ„طھظپط¹ظٹظ„"
+                  label="Verification token / رمز التحقق"
                   value={verificationToken}
                   onChange={setVerificationToken}
                   autoComplete="one-time-code"
@@ -381,7 +365,7 @@ export function AccountShell({ children }) {
                 onSubmit={submitResetRequest}
               >
                 <TextField
-                  label="Account email / ط¨ط±ظٹط¯ ط§ظ„ط­ط³ط§ط¨"
+                  label="Account Email / البريد الإلكتروني للحساب"
                   type="email"
                   value={email}
                   onChange={setEmail}
@@ -413,14 +397,14 @@ export function AccountShell({ children }) {
                 onSubmit={submitResetConfirm}
               >
                 <TextField
-                  label="Reset token / ط±ظ…ط² ط§ظ„ط§ط³طھط¹ط§ط¯ط©"
+                  label="Reset token / رمز الاستعادة"
                   value={resetToken}
                   onChange={setResetToken}
                   autoComplete="one-time-code"
                   placeholder="Paste reset token"
                 />
                 <TextField
-                  label="New password / ظƒظ„ظ…ط© ط§ظ„ظ…ط±ظˆط± ط§ظ„ط¬ط¯ظٹط¯ط©"
+                  label="New password / كلمة مرور جديدة"
                   type="password"
                   value={password}
                   onChange={setPassword}
@@ -447,23 +431,17 @@ export function AccountShell({ children }) {
 
                 <div className="uaos-account-user-card">
                   <span>Email verified</span>
-                  <strong>
-                    {account.user.emailVerified ? "Yes" : "No"}
-                  </strong>
+                  <strong>{account.user.emailVerified ? "Yes" : "No"}</strong>
                 </div>
 
                 <div className="uaos-account-user-card">
                   <span>Current plan</span>
-                  <strong>
-                    {planLabel(account.user.subscription)}
-                  </strong>
+                  <strong>{planLabel(account.user.subscription)}</strong>
                 </div>
 
                 <div className="uaos-account-user-card">
                   <span>Licenses</span>
-                  <strong>
-                    {account.user.licenseIds?.length || 0}
-                  </strong>
+                  <strong>{account.user.licenseIds?.length || 0}</strong>
                 </div>
 
                 <button
@@ -475,23 +453,27 @@ export function AccountShell({ children }) {
                   Refresh account
                 </button>
 
-                {billingError && <div className="uaos-account-feedback is-error">{billingError}</div>}
-                                <button
+                <div className="uaos-account-dev-token">
+                  <strong>Payments disabled</strong>
+                  <span>
+                    Checkout and billing portal actions remain unavailable in this local-first preview.
+                  </span>
+                </div>
+
+                <button
                   className="uaos-account-primary"
                   type="button"
                   disabled
                 >
                   Studio founders price - checkout under review
                 </button>
-                                <button
+
+                <button
                   className="uaos-account-primary"
                   type="button"
                   disabled
                 >
                   Pro founders price - checkout under review
-                </button>
-                <button className="uaos-account-secondary" type="button" disabled={billingBusy} onClick={goPortal}>
-                  Manage billing
                 </button>
 
                 <button
@@ -506,8 +488,7 @@ export function AccountShell({ children }) {
             )}
 
             <footer className="uaos-account-footer">
-              Local account foundation. Production still requires secure
-              cookies, real email delivery, and a managed database.
+              Local account foundation. Production still requires secure cookies, real email delivery, and a managed database.
             </footer>
           </section>
         </div>
