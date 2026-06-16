@@ -188,6 +188,63 @@ function safeName(name) {
     .trim() || "file";
 }
 
+function normalizeProjectId(value) {
+  const id = typeof value === "string" || typeof value === "number"
+    ? String(value).trim()
+    : "";
+  if (!id) return "";
+  if (/[\0\r\n\\/]/.test(id)) return "";
+  return id.slice(0, 96);
+}
+
+function sanitizeProjectName(value, fallback = "Untitled Project") {
+  const name = ((typeof value === "string" || typeof value === "number")
+    ? String(value)
+    : "")
+    .replace(/[\0\r\n\t]+/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+  return name.slice(0, 120) || fallback;
+}
+
+function sanitizeProjectDescription(value) {
+  return (typeof value === "string" || typeof value === "number" ? String(value) : "")
+    .replace(/[\0\r\n\t]+/g, " ")
+    .replace(/\s+/g, " ")
+    .trim()
+    .slice(0, 500);
+}
+
+function sanitizeProjectTimeline(value) {
+  return Array.isArray(value) ? value.map((item) => ({ ...item })) : [];
+}
+
+function sanitizeProjectSession(value) {
+  if (!value || typeof value !== "object" || Array.isArray(value)) return null;
+  return { ...value };
+}
+
+function sanitizeProjectMetadata(value) {
+  if (!value || typeof value !== "object" || Array.isArray(value)) return {};
+  return { ...value };
+}
+
+function sanitizeProjectRecord(body = {}, overrides = {}) {
+  const nextId = normalizeProjectId(overrides.id ?? body.id) || `${Date.now()}`;
+  const createdAt = String(overrides.createdAt ?? body.createdAt ?? new Date().toISOString());
+
+  return {
+    id: nextId,
+    name: sanitizeProjectName(overrides.name ?? body.name ?? body.title),
+    description: sanitizeProjectDescription(overrides.description ?? body.description),
+    createdAt,
+    updatedAt: new Date().toISOString(),
+    timeline: sanitizeProjectTimeline(overrides.timeline ?? body.timeline),
+    session: sanitizeProjectSession(overrides.session ?? body.session),
+    metadata: sanitizeProjectMetadata(overrides.metadata ?? body.metadata)
+  };
+}
+
 function unique(values) {
   return [...new Set(values)];
 }
@@ -647,16 +704,7 @@ function writeProjects(projects) {
 }
 
 function createProjectRecord(body) {
-  return {
-    id: String(body?.id || Date.now()),
-    name: String(body?.name || body?.title || "Untitled Project"),
-    description: String(body?.description || ""),
-    createdAt: String(body?.createdAt || new Date().toISOString()),
-    updatedAt: new Date().toISOString(),
-    timeline: Array.isArray(body?.timeline) ? body.timeline : [],
-    session: body?.session || null,
-    metadata: body?.metadata || {}
-  };
+  return sanitizeProjectRecord(body);
 }
 
 function upsertProject(projects, project) {
@@ -960,7 +1008,9 @@ async function storeUpload(body) {
 }
 
 function readProjectById(id) {
-  return readProjects().find((project) => project.id === String(id)) || null;
+  const projectId = normalizeProjectId(id);
+  if (!projectId) return null;
+  return readProjects().find((project) => project.id === projectId) || null;
 }
 
 function writeProjectList(nextProjects) {
@@ -968,8 +1018,10 @@ function writeProjectList(nextProjects) {
 }
 
 function removeProjectById(id) {
+  const projectId = normalizeProjectId(id);
+  if (!projectId) return null;
   const projects = readProjects();
-  const index = projects.findIndex((project) => project.id === String(id));
+  const index = projects.findIndex((project) => project.id === projectId);
   if (index < 0) return null;
   const [removed] = projects.splice(index, 1);
   writeProjectList(projects);
@@ -977,13 +1029,16 @@ function removeProjectById(id) {
 }
 
 function duplicateProjectById(id) {
+  const projectId = normalizeProjectId(id);
+  if (!projectId) return null;
   const projects = readProjects();
-  const source = projects.find((project) => project.id === String(id));
+  const source = projects.find((project) => project.id === projectId);
   if (!source) return null;
+  const duplicateId = normalizeProjectId(`${source.id}-copy-${Date.now()}`) || `copy-${Date.now()}`;
   const copy = {
     ...source,
-    id: `${source.id}-copy-${Date.now()}`,
-    name: `${source.name} Copy`,
+    id: duplicateId,
+    name: sanitizeProjectName(`${source.name} Copy`, "Project Copy"),
     createdAt: new Date().toISOString(),
     updatedAt: new Date().toISOString()
   };
@@ -993,10 +1048,12 @@ function duplicateProjectById(id) {
 }
 
 function renameProjectById(id, name) {
+  const projectId = normalizeProjectId(id);
+  if (!projectId) return null;
   const projects = readProjects();
-  const project = projects.find((item) => item.id === String(id));
+  const project = projects.find((item) => item.id === projectId);
   if (!project) return null;
-  project.name = String(name || project.name).trim() || project.name;
+  project.name = sanitizeProjectName(name, project.name);
   project.updatedAt = new Date().toISOString();
   writeProjectList(projects);
   return project;
@@ -1266,21 +1323,30 @@ app.get("/api/project/:id", (req, res) => {
 
 app.put("/api/project/:id", (req, res) => {
   const projects = readProjects();
-  const project = projects.find((item) => item.id === String(req.params.id));
+  const projectId = normalizeProjectId(req.params.id);
+  const project = projectId ? projects.find((item) => item.id === projectId) : null;
   if (!project) {
     return res.status(404).json({ ok: false, error: "Project not found." });
   }
 
   if (typeof req.body?.name === "string") {
-    project.name = req.body.name.trim() || project.name;
+    project.name = sanitizeProjectName(req.body.name, project.name);
   }
 
   if (Array.isArray(req.body?.timeline)) {
-    project.timeline = req.body.timeline;
+    project.timeline = sanitizeProjectTimeline(req.body.timeline);
   }
 
   if (req.body?.session !== undefined) {
-    project.session = req.body.session;
+    project.session = sanitizeProjectSession(req.body.session);
+  }
+
+  if (req.body?.description !== undefined) {
+    project.description = sanitizeProjectDescription(req.body.description);
+  }
+
+  if (req.body?.metadata !== undefined) {
+    project.metadata = sanitizeProjectMetadata(req.body.metadata);
   }
 
   project.updatedAt = new Date().toISOString();
@@ -1341,7 +1407,14 @@ module.exports = {
   app,
   analyzePath,
   buildServiceReport: getServiceReport,
+  createProjectRecord,
+  duplicateProjectById,
   makePattern,
+  normalizeProjectId,
+  renameProjectById,
+  removeProjectById,
+  sanitizeProjectName,
+  sanitizeProjectRecord,
   toMidi,
   refreshServiceCache
 };

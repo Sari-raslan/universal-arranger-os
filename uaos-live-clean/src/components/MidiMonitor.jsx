@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { eventBus } from "../core/eventBus.js";
 import { EVENT_TYPES } from "../core/eventTypes.js";
 import { createAllNotesOffMessages, formatMidiEvent, parseMidiMessage, transformMidiEvent } from "../midi/midiEngine.js";
+import { getMidiNavigator, readMidiMappings, writeMidiMappings } from "../hooks/midiEnvironment.js";
 
 const MAP_KEY = "uaos_v1_midi_mappings";
 
@@ -14,13 +15,13 @@ export function MidiMonitor({ compact = false }) {
   const [events, setEvents] = useState([]);
   const [thru, setThru] = useState(false);
   const [learn, setLearn] = useState("");
-  const [mappings, setMappings] = useState(() => JSON.parse(localStorage.getItem(MAP_KEY) || "{}"));
+  const [mappings, setMappings] = useState(() => readMidiMappings(undefined, MAP_KEY));
   const [transpose, setTranspose] = useState(0);
   const [outputChannel, setOutputChannel] = useState("");
   const accessRef = useRef(null);
 
   async function scan() {
-    if (window.uaosMidi) {
+    if (typeof window !== "undefined" && window.uaosMidi) {
       const test = await window.uaosMidi.test();
       const ins = await window.uaosMidi.listInputs();
       const outs = await window.uaosMidi.listOutputs();
@@ -29,12 +30,13 @@ export function MidiMonitor({ compact = false }) {
       setStatus(test.message || "Desktop MIDI bridge ready");
       return;
     }
-    if (!navigator.requestMIDIAccess) {
+    const midiNavigator = getMidiNavigator();
+    if (!midiNavigator) {
       setStatus("Browser unsupported: WebMIDI is unavailable.");
       return;
     }
     try {
-      const access = await navigator.requestMIDIAccess({ sysex: false });
+      const access = await midiNavigator.requestMIDIAccess({ sysex: false });
       accessRef.current = access;
       access.onstatechange = () => summarize(access);
       summarize(access);
@@ -60,7 +62,7 @@ export function MidiMonitor({ compact = false }) {
       if (learn) {
         const next = { ...mappings, [learn]: { type: event.type, channel: event.channel, data1: event.data1 } };
         setMappings(next);
-        localStorage.setItem(MAP_KEY, JSON.stringify(next));
+        writeMidiMappings(undefined, MAP_KEY, next);
         setLearn("");
       }
       setEvents((current) => [{ ...event, label: formatMidiEvent(event) }, ...current].slice(0, 40));

@@ -1,5 +1,12 @@
 # CODEX Changelog
 
+## 2026-06-16 (backend/runtime hardening)
+
+- Hardened backend project persistence with ID, name, description, session, timeline, and metadata sanitization before save/update/duplicate flows.
+- Added safe Web MIDI and local storage guards so the MIDI monitor and hook degrade to a clear unavailable state when browser APIs are missing.
+- Added deterministic tests for backend project sanitization and MIDI environment fallbacks.
+- Revalidated the edited code with `node --test tests/backend-export.test.mjs tests/backend-project-safety.test.mjs tests/midi-environment.test.mjs tests/web-midi.test.js tests/status-api.test.mjs` and `cmd /c npm run build --prefix uaos-live-clean`.
+
 ## 2026-06-16
 
 - Added a canonical local backend client in `uaos-live-clean/src/lib/uaosApiClient.js` and routed the runtime diagnostics panels through it.

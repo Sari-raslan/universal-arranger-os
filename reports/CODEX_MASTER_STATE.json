@@ -3,9 +3,9 @@
   "roadmapVersion": "V1-V2-V3",
   "currentPhase": "HARDENING",
   "phaseStatus": "COMPLETE",
-  "lastCompletedTask": "FINAL_ACCEPTANCE_REVIEW",
+  "lastCompletedTask": "BACKEND_RUNTIME_SAFETY_HARDENING",
   "nextTask": "COMPLETE",
-  "lastSuccessfulCommand": "cmd /c npm run build",
+  "lastSuccessfulCommand": "cmd /c npm run build --prefix uaos-live-clean",
   "lastSuccessfulCommit": "b3e71ff",
   "buildStatus": "PASS",
   "testStatus": "PASS",
@@ -15,5 +15,5 @@
     "Automatic updater network checks require a packaged signed build with the intended update provider configured.",
     "Post-merge validation is blocked at npm ci --prefix uaos-live-clean because Windows refuses to unlink uaos-live-clean/node_modules/@rolldown/.binding-win32-x64-msvc-XggE4oWY/rolldown-binding.win32-x64-msvc.node."
   ],
-  "updatedAt": "2026-06-16T07:53:00.0000000+02:00"
+  "updatedAt": "2026-06-16T11:00:00.0000000+02:00"
 }
