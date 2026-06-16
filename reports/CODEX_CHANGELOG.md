@@ -1,5 +1,16 @@
 # CODEX Changelog
 
+## 2026-06-16
+
+- Added a canonical local backend client in `uaos-live-clean/src/lib/uaosApiClient.js` and routed the runtime diagnostics panels through it.
+- Rebuilt `backend/server.js` into the live local API for health, service discovery, uploads, library analysis, exports, sampler maps, and safe project CRUD.
+- Added a deterministic backend contract test covering health, status, library inspection, MIDI upload, and project lifecycle flow.
+- Added a backend-hosted UI fallback on `http://127.0.0.1:5199/` and a regression test for the root 200 response.
+- Declared `backend/src` as ESM to remove the Node module-type warning during backend test runs.
+- Wrote the backend architecture service map at `agent-work/backend-integration-20260616-072409/reports/BACKEND_ARCHITECTURE.md`.
+- Generated the `sar.SET` analysis artifacts in `docs/sar-set-analysis.json` and `docs/sar-set-notes.md`.
+- Verified `cmd /c npm run build`, `cmd /c npm test`, `cmd /c npm run check`, and direct HTTP 200 probes against `http://127.0.0.1:5199/`, `http://127.0.0.1:5199/health`, and `http://127.0.0.1:5199/api/status`.
+
 ## 2026-06-14
 
 - Hardened the root Electron automatic update engine with `electron-updater`, optional updater loading, packaged-only activation, manual download/install defaults, rate-limited checks, and runtime logging.
@@ -41,3 +52,12 @@
 - Restored V7 session migration state across sampler, library, recording, AI, hardware, DAW, cloud, and beta modules.
 - Restored AccountShell mounting, AI Studio UI contract labels, and Electron preload MIDI bridge handlers.
 - Verified `node scripts/uaos-static-check.mjs`, `node --test tests/production-integrations.test.mjs`, `npm run check`, `npm test`, `npm run build`, `npm run runtime:check`, `npm run desktop:smoke`, `node --check backend/server.js`, dist existence, secret diff scan, and `git diff --check`.
+
+## 2026-06-16 (frontend rebuild)
+
+- Rebuilt the V1 desktop shell around a four-card home architecture with dedicated Create, Perform, Library, Projects, and Settings pages.
+- Preserved the existing feature routes and panels for Sing, Studio, Audio, Sampler, MIDI, Hardware, Arranger, Pro Arranger, Sound Library, Sessions, Timeline, Diagnostics, Pricing, Downloads, Support, Privacy, Terms, Contact, Academy, and Release Status.
+- Added hash-routing continue/back behavior for browser and Electron usage, while keeping the app local-first and without enabling payments.
+- Cleaned visible UTF-8 mojibake in shared UI surfaces and revalidated the frontend with `cmd /c npm run build --prefix uaos-live-clean` and `cmd /c npm run check`.
+- Promoted `ModernHome.jsx` to the canonical `#/home` surface, removed dead duplicate home/probe files, tightened Home/Back fallback behavior, and enforced shared focus/overflow/reduced-motion rules.
+- Verified the final frontend state with `cmd /c npm run check` and `cmd /c npm run build`.

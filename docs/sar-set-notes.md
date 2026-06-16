@@ -1,27 +1,42 @@
-# sar.SET Safe Analysis Notes
+# sar.SET Notes
 
-Analyzed path: samples/Korg/sar.SET
-Kind: directory
-Possible brand: Korg
-Total files: 147
-Total size: 259606448 bytes
-Deep parser needed: true
+Source analyzed:
 
-This is a safe metadata inspection of a user-provided directory-style arranger set. Proprietary Korg subformats are not decoded; the app records extension counts, limited strings, hex previews, and child summaries only.
+- `samples/Korg/sar.SET`
 
-Extension counts:
-- .gbl: 1
-- .kmp: 1
-- .mxp: 1
-- .pcg: 5
-- .pcm: 99
-- .prf: 16
-- .sbd: 7
-- .sbl: 1
-- .sty: 15
-- .voc: 1
+What it appears to be:
 
-Next parser work:
-- Keep proprietary files in safe-inspection mode unless public documentation is available.
-- Add per-folder summaries for STYLE, SOUND, PCM, PERFORM, SONGBOOK, GLOBAL and MULTISMP.
-- Preserve no-crash behavior for unknown binary files and empty folders.
+- A Korg arranger set directory.
+- The sample tree is proprietary, so the reader should stay in safe-inspection mode unless a dedicated format parser is added later.
+
+Observed structure:
+
+- `147` files total.
+- Approximate payload size: `259,606,448` bytes.
+- Detected brand: `Korg`.
+- Deep parser needed: `yes`.
+
+Extension mix:
+
+- `.PCM`: `99`
+- `.PRF`: `16`
+- `.STY`: `15`
+- `.SBD`: `7`
+- `.PCG`: `5`
+- `.MXP`, `.GBL`, `.VOC`, `.KMP`, `.SBL`: `1` each
+
+Top-level areas inside the set:
+
+- `GLOBAL`
+- `MULTISMP`
+- `PCM`
+- `PERFORM`
+- `SONGBOOK`
+- `SOUND`
+- `STYLE`
+
+Notes:
+
+- The set is a directory-based arranger package, not a single flat binary.
+- Safe inspection should keep extracting names, strings, headers, and binary metadata without assuming the proprietary layout.
+- The backend now treats this kind of content as a protected sample library item. Delete operations hide uploaded items only and do not remove user sample content.

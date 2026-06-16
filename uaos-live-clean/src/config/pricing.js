@@ -65,7 +65,7 @@ export const pricingPlans = Object.freeze([
     launchPriceEur: null,
     regularPriceEur: 49.99,
     launchMonths: 0,
-    price: "49.99 EUR/month â€” planned",
+    price: "49.99 EUR/month - planned",
     billingLabel: "Future professional tier",
     requiresPayment: true,
     checkoutEnabled: false,
