@@ -1,4 +1,4 @@
-import { app, BrowserWindow, ipcMain, shell } from "electron";
+import { app, BrowserWindow, ipcMain, session, shell } from "electron";
 import fs from "node:fs";
 import path from "node:path";
 import { createRequire } from "node:module";
@@ -24,6 +24,248 @@ const fallbackDevUrl = "http://127.0.0.1:5173";
 let mainWindow;
 let showedFailurePage = false;
 let updateEngine;
+
+const activeMidiInputs = new Map();
+
+let easymidi = null;
+try {
+  easymidi = require("easymidi");
+} catch (error) {
+  console.error("UAOS easymidi unavailable:", error.message);
+}
+
+function listNativeMidiInputs() {
+  if (!easymidi) {
+    return {
+      ok: false,
+      error: "easymidi is unavailable.",
+      inputs: [],
+    };
+  }
+
+  return {
+    ok: true,
+    inputs: easymidi.getInputs().map((name, index) => ({
+      id: name,
+      name,
+      state: "connected",
+      index,
+    })),
+  };
+}
+
+function listNativeMidiOutputs() {
+  if (!easymidi) {
+    return {
+      ok: false,
+      error: "easymidi is unavailable.",
+      outputs: [],
+    };
+  }
+
+  return {
+    ok: true,
+    outputs: easymidi.getOutputs().map((name, index) => ({
+      id: name,
+      name,
+      state: "connected",
+      index,
+    })),
+  };
+}
+
+function toRawMidi(type, message = {}) {
+  const channel = Math.max(
+    0,
+    Math.min(15, Number(message.channel || 0)),
+  );
+
+  if (type === "noteon") {
+    return [
+      0x90 | channel,
+      Number(message.note || 0),
+      Number(message.velocity || 0),
+    ];
+  }
+
+  if (type === "noteoff") {
+    return [
+      0x80 | channel,
+      Number(message.note || 0),
+      Number(message.velocity || 0),
+    ];
+  }
+
+  if (type === "cc") {
+    return [
+      0xb0 | channel,
+      Number(message.controller || 0),
+      Number(message.value || 0),
+    ];
+  }
+
+  if (type === "program") {
+    return [
+      0xc0 | channel,
+      Number(message.number || 0),
+    ];
+  }
+
+  if (type === "pitch") {
+    const value = Math.max(
+      0,
+      Math.min(
+        16383,
+        Number(message.value || 0) + 8192,
+      ),
+    );
+
+    return [
+      0xe0 | channel,
+      value & 0x7f,
+      (value >> 7) & 0x7f,
+    ];
+  }
+
+  if (type === "poly aftertouch") {
+    return [
+      0xa0 | channel,
+      Number(message.note || 0),
+      Number(message.pressure || 0),
+    ];
+  }
+
+  if (type === "channel aftertouch") {
+    return [
+      0xd0 | channel,
+      Number(message.pressure || 0),
+    ];
+  }
+
+  return null;
+}
+
+function stopNativeMidiInput(senderId) {
+  const active = activeMidiInputs.get(senderId);
+
+  if (!active) {
+    return {
+      ok: true,
+      stopped: false,
+    };
+  }
+
+  try {
+    active.input.close();
+  } catch {
+    // Ignore shutdown close errors.
+  }
+
+  activeMidiInputs.delete(senderId);
+
+  return {
+    ok: true,
+    stopped: true,
+  };
+}
+
+function startNativeMidiInput(sender, inputName) {
+  if (!easymidi) {
+    return {
+      ok: false,
+      error: "easymidi is unavailable.",
+    };
+  }
+
+  if (
+    !inputName ||
+    !easymidi.getInputs().includes(inputName)
+  ) {
+    return {
+      ok: false,
+      error: "Selected MIDI input is unavailable.",
+    };
+  }
+
+  stopNativeMidiInput(sender.id);
+
+  try {
+    const input = new easymidi.Input(inputName);
+
+    const eventTypes = [
+      "noteon",
+      "noteoff",
+      "cc",
+      "program",
+      "pitch",
+      "poly aftertouch",
+      "channel aftertouch",
+    ];
+
+    for (const type of eventTypes) {
+      input.on(type, (message) => {
+        const raw = toRawMidi(type, message);
+
+        if (!raw || sender.isDestroyed()) {
+          return;
+        }
+
+        sender.send("uaos-midi-message", {
+          inputId: inputName,
+          raw,
+          receivedAt: Date.now(),
+        });
+      });
+    }
+
+    activeMidiInputs.set(sender.id, {
+      input,
+      inputName,
+    });
+
+    logRuntime("midi-input-started", {
+      inputName,
+    });
+
+    return {
+      ok: true,
+      inputId: inputName,
+    };
+  } catch (error) {
+    logRuntime("midi-input-failed", {
+      inputName,
+      message: error.message,
+    });
+
+    return {
+      ok: false,
+      error:
+        error.message ||
+        "Could not open MIDI input.",
+    };
+  }
+}
+
+function configureHardwarePermissions() {
+  const allowedPermissions = new Set([
+    "media",
+    "midi",
+    "midiSysex",
+  ]);
+
+  const currentSession = session.defaultSession;
+
+  currentSession.setPermissionCheckHandler(
+    (_webContents, permission) =>
+      allowedPermissions.has(permission),
+  );
+
+  currentSession.setPermissionRequestHandler(
+    (_webContents, permission, callback) => {
+      callback(allowedPermissions.has(permission));
+    },
+  );
+}
 
 function logRuntime(event, details = {}) {
   const entry = {
@@ -185,27 +427,84 @@ function createWindow() {
   });
 }
 
-ipcMain.handle("uaos:midi:list-devices", () => ({
-  supported: false,
-  bridgeState: "available",
-  permissionState: "unsupported",
-  inputs: [],
-  outputs: [],
-  events: [
-    {
-      type: "electron-midi-foundation",
-      message: "Electron MIDI bridge is present; native MIDI enumeration is not implemented in this build.",
-    },
-  ],
+ipcMain.handle("uaos-midi-test", () => ({
+  ok: true,
+  easymidi: Boolean(easymidi),
+  message: easymidi
+    ? "UAOS native MIDI bridge ready"
+    : "UAOS MIDI bridge loaded; easymidi unavailable",
 }));
 
-ipcMain.handle("uaos:midi:reconnect", () => ({ ok: false, reason: "native-midi-not-implemented" }));
-ipcMain.handle("uaos:midi:send", () => ({ ok: false, reason: "native-midi-not-implemented" }));
-ipcMain.handle("uaos:midi:capabilities", () => ({
-  webMidi: false,
-  nativeMidi: false,
-  sysex: false,
-}));
+ipcMain.handle(
+  "uaos-midi-list-inputs",
+  () => listNativeMidiInputs(),
+);
+
+ipcMain.handle(
+  "uaos-midi-list-outputs",
+  () => listNativeMidiOutputs(),
+);
+
+ipcMain.handle(
+  "uaos-midi-start-input",
+  (event, inputName) =>
+    startNativeMidiInput(
+      event.sender,
+      inputName,
+    ),
+);
+
+ipcMain.handle(
+  "uaos-midi-stop-input",
+  (event) =>
+    stopNativeMidiInput(event.sender.id),
+);
+
+ipcMain.handle(
+  "uaos:midi:list-devices",
+  () => {
+    const inputs = listNativeMidiInputs();
+    const outputs = listNativeMidiOutputs();
+
+    return {
+      supported: Boolean(easymidi),
+      bridgeState: easymidi
+        ? "ready"
+        : "module-unavailable",
+      permissionState: "allowed",
+      inputs: inputs.inputs || [],
+      outputs: outputs.outputs || [],
+      events: [],
+    };
+  },
+);
+
+ipcMain.handle(
+  "uaos:midi:reconnect",
+  () => ({
+    ok: Boolean(easymidi),
+    reason: easymidi
+      ? null
+      : "easymidi-unavailable",
+  }),
+);
+
+ipcMain.handle(
+  "uaos:midi:send",
+  () => ({
+    ok: false,
+    reason: "native-output-send-not-enabled",
+  }),
+);
+
+ipcMain.handle(
+  "uaos:midi:capabilities",
+  () => ({
+    webMidi: true,
+    nativeMidi: Boolean(easymidi),
+    sysex: false,
+  }),
+);
 
 async function resolveAutoUpdater() {
   const updaterModule = require("electron-updater");
@@ -213,7 +512,11 @@ async function resolveAutoUpdater() {
 }
 
 app.whenReady().then(() => {
-  logRuntime("app-ready", { version: app.getVersion(), packaged: app.isPackaged });
+  logRuntime("app-ready", {
+    version: app.getVersion(),
+    packaged: app.isPackaged,
+  });
+  configureHardwarePermissions();
   createWindow();
   initializeAutoUpdateEngine({
     app,
@@ -233,6 +536,10 @@ app.whenReady().then(() => {
 });
 
 app.on("window-all-closed", () => {
+  for (const senderId of activeMidiInputs.keys()) {
+    stopNativeMidiInput(senderId);
+  }
+
   if (process.platform !== "darwin") {
     updateEngine?.stop();
     app.quit();
