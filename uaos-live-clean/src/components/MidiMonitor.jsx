@@ -1,4 +1,4 @@
-﻿import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { eventBus } from "../core/eventBus.js";
 import { EVENT_TYPES } from "../core/eventTypes.js";
 import {
@@ -31,8 +31,8 @@ export function MidiMonitor({ compact = false }) {
   const [outputChannel, setOutputChannel] = useState("");
   const accessRef = useRef(null);
 
-  function processMessage(raw, timestamp = performance.now()) {
-    const event = parseMidiMessage(raw, timestamp);
+  function processMessage(data, timestamp = performance.now()) {
+    const event = parseMidiMessage(data, timestamp);
 
     if (learn) {
       const next = {
@@ -57,178 +57,67 @@ export function MidiMonitor({ compact = false }) {
       ...current
     ].slice(0, 40));
 
-    eventBus.emit(
-      EVENT_TYPES.MIDI_EVENT,
-      event
-    );
+    eventBus.emit(EVENT_TYPES.MIDI_EVENT, event);
 
     if (thru) {
       sendEvent(event);
     }
   }
 
-  async function scan() {
-    setStatus("Scanning MIDI...");
+  function summarize(access) {
+    const nextInputs = [...access.inputs.values()].map((input) => ({
+      id: input.id,
+      name: input.name || "MIDI Input",
+      state: input.state
+    }));
 
-    if (
-      typeof window !== "undefined" &&
-      window.uaosMidi
-    ) {
-      try {
-        const test = await window.uaosMidi.test();
-        const ins = await window.uaosMidi.listInputs();
-        const outs = await window.uaosMidi.listOutputs();
+    const nextOutputs = [...access.outputs.values()].map((output) => ({
+      id: output.id,
+      name: output.name || "MIDI Output",
+      state: output.state
+    }));
 
-        const nextInputs = ins.inputs || [];
-        const nextOutputs = outs.outputs || [];
+    setInputs(nextInputs);
+    setOutputs(nextOutputs);
 
-        setInputs(nextInputs);
-        setOutputs(nextOutputs);
-
-        if (!inputId && nextInputs.length) {
-          setInputId(nextInputs[0].id);
-        }
-
-        if (!outputId && nextOutputs.length) {
-          setOutputId(nextOutputs[0].id);
-        }
-
-        setStatus(
-          nextInputs.length
-            ? `${test.message || "Desktop MIDI ready"} — ${nextInputs.length} input(s)`
-            : ins.error || "No desktop MIDI inputs detected"
-        );
-
-        return;
-      } catch (error) {
-        setStatus(
-          `Desktop MIDI scan failed: ${error.message}`
-        );
-        return;
-      }
+    if (!inputId && nextInputs.length) {
+      setInputId(nextInputs[0].id);
     }
+
+    if (!outputId && nextOutputs.length) {
+      setOutputId(nextOutputs[0].id);
+    }
+  }
+
+  async function scan() {
+    setStatus("Requesting MIDI permission...");
 
     const midiNavigator = getMidiNavigator();
 
-    if (!midiNavigator) {
-      setStatus(
-        "Browser unsupported: WebMIDI is unavailable."
-      );
+    if (!midiNavigator?.requestMIDIAccess) {
+      setStatus("WebMIDI is unavailable in this runtime.");
       return;
     }
 
     try {
-      const access =
-        await midiNavigator.requestMIDIAccess({
-          sysex: false
-        });
+      const access = await midiNavigator.requestMIDIAccess({
+        sysex: false
+      });
 
       accessRef.current = access;
       access.onstatechange = () => summarize(access);
 
       summarize(access);
 
-      const firstInput =
-        [...access.inputs.values()][0];
-
-      if (!inputId && firstInput) {
-        setInputId(firstInput.id);
-      }
-
       setStatus(
-        `WebMIDI permission granted — ${access.inputs.size} input(s)`
+        access.inputs.size
+          ? `Listening — ${access.inputs.size} MIDI input(s) detected`
+          : "MIDI permission granted, but no inputs were detected"
       );
     } catch (error) {
-      setStatus(
-        `MIDI permission failed: ${error.message}`
-      );
+      setStatus(`MIDI permission failed: ${error.message}`);
     }
   }
-
-  function summarize(access) {
-    setInputs(
-      [...access.inputs.values()].map((input) => ({
-        id: input.id,
-        name: input.name || "MIDI Input",
-        state: input.state
-      }))
-    );
-
-    setOutputs(
-      [...access.outputs.values()].map((output) => ({
-        id: output.id,
-        name: output.name || "MIDI Output",
-        state: output.state
-      }))
-    );
-  }
-
-  useEffect(() => {
-    if (
-      typeof window === "undefined" ||
-      !window.uaosMidi ||
-      !inputId
-    ) {
-      return undefined;
-    }
-
-    let disposed = false;
-    let unsubscribe = () => {};
-
-    window.uaosMidi
-      .startInput(inputId)
-      .then((result) => {
-        if (disposed) {
-          return;
-        }
-
-        if (!result?.ok) {
-          setStatus(
-            result?.error || "Could not open MIDI input"
-          );
-          return;
-        }
-
-        setStatus(
-          `Listening to ${inputId}`
-        );
-      })
-      .catch((error) => {
-        if (!disposed) {
-          setStatus(
-            `MIDI input failed: ${error.message}`
-          );
-        }
-      });
-
-    unsubscribe = window.uaosMidi.onMessage(
-      (payload) => {
-        if (
-          payload?.inputId === inputId &&
-          Array.isArray(payload.raw)
-        ) {
-          processMessage(
-            payload.raw,
-            payload.receivedAt || performance.now()
-          );
-        }
-      }
-    );
-
-    return () => {
-      disposed = true;
-      unsubscribe?.();
-      window.uaosMidi.stopInput().catch(() => {});
-    };
-  }, [
-    inputId,
-    thru,
-    outputId,
-    transpose,
-    outputChannel,
-    learn,
-    mappings
-  ]);
 
   useEffect(() => {
     const access = accessRef.current;
@@ -244,6 +133,7 @@ export function MidiMonitor({ compact = false }) {
     const selected = access.inputs.get(inputId);
 
     if (!selected) {
+      setStatus("Selected MIDI input is unavailable.");
       return undefined;
     }
 
@@ -253,6 +143,8 @@ export function MidiMonitor({ compact = false }) {
         message.timeStamp
       );
     };
+
+    setStatus(`Listening to ${selected.name || "MIDI input"}`);
 
     return () => {
       selected.onmidimessage = null;
@@ -271,15 +163,12 @@ export function MidiMonitor({ compact = false }) {
     const access = accessRef.current;
     const output = access?.outputs.get(outputId);
 
-    const transformed = transformMidiEvent(
-      event,
-      {
-        transpose: Number(transpose),
-        outputChannel: outputChannel
-          ? Number(outputChannel)
-          : null
-      }
-    );
+    const transformed = transformMidiEvent(event, {
+      transpose: Number(transpose),
+      outputChannel: outputChannel
+        ? Number(outputChannel)
+        : null
+    });
 
     if (output && transformed?.raw) {
       output.send(transformed.raw);
@@ -287,34 +176,26 @@ export function MidiMonitor({ compact = false }) {
   }
 
   function panic() {
-    const output =
-      accessRef.current?.outputs.get(outputId);
+    const output = accessRef.current?.outputs.get(outputId);
 
-    createAllNotesOffMessages().forEach(
-      (message) => output?.send(message)
+    createAllNotesOffMessages().forEach((message) =>
+      output?.send(message)
     );
 
-    eventBus.emit(
-      EVENT_TYPES.ARRANGER_PANIC,
-      { source: "midi-monitor" }
-    );
+    eventBus.emit(EVENT_TYPES.ARRANGER_PANIC, {
+      source: "midi-monitor"
+    });
   }
 
   return (
-    <section className={
-      compact
-        ? "panelSection compact"
-        : "panelSection"
-    }>
+    <section className={compact ? "panelSection compact" : "panelSection"}>
       <div className="sectionHeader">
         <div>
           <p className="eyebrow">MIDI Monitor</p>
           <h2>Inputs, events, thru, and learn</h2>
         </div>
 
-        <button onClick={scan}>
-          Scan MIDI
-        </button>
+        <button onClick={scan}>Scan MIDI</button>
       </div>
 
       <p>{status}</p>
@@ -322,9 +203,7 @@ export function MidiMonitor({ compact = false }) {
       <div className="controlRow">
         <select
           value={inputId}
-          onChange={(event) =>
-            setInputId(event.target.value)
-          }
+          onChange={(event) => setInputId(event.target.value)}
         >
           <option value="">Input</option>
 
@@ -340,9 +219,7 @@ export function MidiMonitor({ compact = false }) {
 
         <select
           value={outputId}
-          onChange={(event) =>
-            setOutputId(event.target.value)
-          }
+          onChange={(event) => setOutputId(event.target.value)}
         >
           <option value="">Output</option>
 
@@ -360,9 +237,7 @@ export function MidiMonitor({ compact = false }) {
           <input
             type="checkbox"
             checked={thru}
-            onChange={(event) =>
-              setThru(event.target.checked)
-            }
+            onChange={(event) => setThru(event.target.checked)}
           />
           MIDI thru
         </label>
@@ -372,36 +247,27 @@ export function MidiMonitor({ compact = false }) {
           value={transpose}
           min="-24"
           max="24"
-          onChange={(event) =>
-            setTranspose(event.target.value)
-          }
+          onChange={(event) => setTranspose(event.target.value)}
           aria-label="Transpose"
         />
 
         <select
           value={outputChannel}
-          onChange={(event) =>
-            setOutputChannel(event.target.value)
-          }
+          onChange={(event) => setOutputChannel(event.target.value)}
         >
           <option value="">Source channel</option>
 
-          {Array.from(
-            { length: 16 },
-            (_, index) => (
-              <option
-                key={index + 1}
-                value={index + 1}
-              >
-                Out CH {index + 1}
-              </option>
-            )
-          )}
+          {Array.from({ length: 16 }, (_, index) => (
+            <option
+              key={index + 1}
+              value={index + 1}
+            >
+              Out CH {index + 1}
+            </option>
+          ))}
         </select>
 
-        <button onClick={panic}>
-          Panic
-        </button>
+        <button onClick={panic}>Panic</button>
       </div>
 
       <div className="controlRow">
@@ -438,13 +304,11 @@ export function MidiMonitor({ compact = false }) {
           <h3>Mappings</h3>
 
           {Object.entries(mappings).length
-            ? Object.entries(mappings).map(
-                ([key, value]) => (
-                  <p key={key}>
-                    {key}: {value.type} CH{value.channel} {value.data1}
-                  </p>
-                )
-              )
+            ? Object.entries(mappings).map(([key, value]) => (
+                <p key={key}>
+                  {key}: {value.type} CH{value.channel} {value.data1}
+                </p>
+              ))
             : <p>No mappings learned yet.</p>}
         </article>
       </div>
