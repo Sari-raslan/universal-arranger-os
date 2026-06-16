@@ -1,0 +1,62 @@
+﻿diff --git a/backend/data/projects.json b/backend/data/projects.json
+index fe51488..0637a08 100644
+--- a/backend/data/projects.json
++++ b/backend/data/projects.json
+@@ -1 +1 @@
+-[]
++[]
+\ No newline at end of file
+diff --git a/uaos-live-clean/src/App.jsx b/uaos-live-clean/src/App.jsx
+index f94b966..7110794 100644
+--- a/uaos-live-clean/src/App.jsx
++++ b/uaos-live-clean/src/App.jsx
+@@ -36,7 +36,9 @@ import { eventBus } from "./core/eventBus.js";
+ import { detectRuntimeFeatures } from "./core/diagnostics.js";
+ import { autosaveSession, createDefaultSession, loadSession } from "./session/sessionStore.js";
+ 
+
+-import { SmartSequencerPage } from "./components/SmartSequencerPage.jsx";
++import { SmartSequencerPage } from "./components/SmartSequencerPage.jsx";
++import { MusicEncyclopediaPage } from "./components/MusicEncyclopediaPage.jsx";
++import { UaosWorkspaceNav } from "./components/UaosWorkspaceNav.jsx";
+ const HOME_PAGE = "home";
+ const LAST_ROUTE_KEY = "uaos.lastRoute";
+ 
+@@ -776,13 +778,35 @@ function getUaosRequestedPage() {
+ export default function App() {
+   const requestedPage = getUaosRequestedPage();
+ 
++  if (
++    requestedPage === "music-encyclopedia" ||
++    requestedPage === "encyclopedia"
++  ) {
++    return (
++      <>
++        <UaosWorkspaceNav />
++        <MusicEncyclopediaPage />
++      </>
++    );
++  }
++
+   if (
+     requestedPage === "smart-sequencer" ||
+     requestedPage === "sequencer" ||
+     requestedPage === "song-to-arrangement"
+   ) {
+-    return <SmartSequencerPage />;
++    return (
++      <>
++        <UaosWorkspaceNav />
++        <SmartSequencerPage />
++      </>
++    );
+   }
+ 
+-  return <UaosOriginalApp />;
++  return (
++    <>
++      <UaosWorkspaceNav />
++      <UaosOriginalApp />
++    </>
++  );
+ }

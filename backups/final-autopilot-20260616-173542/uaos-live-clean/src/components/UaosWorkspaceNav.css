@@ -1,0 +1,41 @@
+.uaos-workspace-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding: 10px 14px;
+  overflow-x: auto;
+  backdrop-filter: blur(16px);
+  background: rgba(10, 14, 24, 0.92);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.uaos-workspace-links {
+  display: flex;
+  gap: 8px;
+  min-width: max-content;
+}
+
+.uaos-workspace-nav a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 38px;
+  padding: 7px 12px;
+  border-radius: 10px;
+  color: inherit;
+  text-decoration: none;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.uaos-workspace-nav a:hover,
+.uaos-workspace-nav a.active {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.uaos-back-button {
+  flex: 0 0 auto;
+  font-weight: 700;
+}

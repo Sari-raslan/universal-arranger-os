@@ -37,8 +37,6 @@ import { detectRuntimeFeatures } from "./core/diagnostics.js";
 import { autosaveSession, createDefaultSession, loadSession } from "./session/sessionStore.js";
 
 import { SmartSequencerPage } from "./components/SmartSequencerPage.jsx";
-import { MusicEncyclopediaPage } from "./components/MusicEncyclopediaPage.jsx";
-import { UaosWorkspaceNav } from "./components/UaosWorkspaceNav.jsx";
 const HOME_PAGE = "home";
 const LAST_ROUTE_KEY = "uaos.lastRoute";
 
@@ -779,34 +777,12 @@ export default function App() {
   const requestedPage = getUaosRequestedPage();
 
   if (
-    requestedPage === "music-encyclopedia" ||
-    requestedPage === "encyclopedia"
-  ) {
-    return (
-      <>
-        <UaosWorkspaceNav />
-        <MusicEncyclopediaPage />
-      </>
-    );
-  }
-
-  if (
     requestedPage === "smart-sequencer" ||
     requestedPage === "sequencer" ||
     requestedPage === "song-to-arrangement"
   ) {
-    return (
-      <>
-        <UaosWorkspaceNav />
-        <SmartSequencerPage />
-      </>
-    );
+    return <SmartSequencerPage />;
   }
 
-  return (
-    <>
-      <UaosWorkspaceNav />
-      <UaosOriginalApp />
-    </>
-  );
+  return <UaosOriginalApp />;
 }

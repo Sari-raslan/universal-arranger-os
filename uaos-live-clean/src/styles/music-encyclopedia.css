@@ -1,0 +1,115 @@
+.music-encyclopedia-page {
+  display: grid;
+  gap: 18px;
+}
+
+.encyclopedia-hero,
+.encyclopedia-card-heading,
+.encyclopedia-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.encyclopedia-hero h1,
+.encyclopedia-card h2 {
+  margin: 0;
+}
+
+.encyclopedia-home {
+  padding: 10px 16px;
+  border-radius: 12px;
+  text-decoration: none;
+  border: 1px solid currentColor;
+}
+
+.encyclopedia-truth {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 20px;
+}
+
+.encyclopedia-controls label {
+  display: grid;
+  gap: 7px;
+  flex: 1;
+}
+
+.encyclopedia-controls input,
+.encyclopedia-controls select {
+  min-height: 42px;
+}
+
+.encyclopedia-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 14px;
+}
+
+.encyclopedia-card {
+  display: grid;
+  gap: 14px;
+}
+
+.encyclopedia-card dl {
+  display: grid;
+  gap: 9px;
+  margin: 0;
+}
+
+.encyclopedia-card dl div {
+  padding: 10px;
+  border-radius: 10px;
+  background: rgba(127, 127, 127, 0.09);
+}
+
+.encyclopedia-card dt {
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+.encyclopedia-card dd {
+  margin: 4px 0 0;
+}
+
+.encyclopedia-status {
+  padding: 7px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.status-approved {
+  background: rgba(34, 197, 94, 0.18);
+}
+
+.status-draft {
+  background: rgba(245, 158, 11, 0.18);
+}
+
+.status-private {
+  background: rgba(59, 130, 246, 0.18);
+}
+
+.encyclopedia-gate-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 10px;
+}
+
+.encyclopedia-gate-grid div {
+  display: grid;
+  gap: 5px;
+  padding: 12px;
+  border-radius: 12px;
+  background: rgba(127, 127, 127, 0.09);
+}
+
+@media (max-width: 680px) {
+  .encyclopedia-hero,
+  .encyclopedia-controls {
+    align-items: stretch;
+    flex-direction: column;
+  }
+}
