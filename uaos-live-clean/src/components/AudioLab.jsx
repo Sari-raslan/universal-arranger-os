@@ -1,4 +1,4 @@
-﻿import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   analyzeAudioFrame,
   chooseRecordingMimeType,
@@ -33,6 +33,7 @@ export function AudioLab({ compact = false }) {
   const rafRef = useRef(0);
   const recorderRef = useRef(null);
   const chunksRef = useRef([]);
+  const recordedUrlRef = useRef("");
 
   async function scanDevices() {
     if (!navigator.mediaDevices?.enumerateDevices) {
@@ -239,6 +240,11 @@ export function AudioLab({ compact = false }) {
   }
 
   function startRecording() {
+    if (typeof MediaRecorder === "undefined") {
+      setError("MediaRecorder is unavailable in this runtime.");
+      return;
+    }
+
     if (!streamRef.current) {
       setError(
         "Start microphone before recording."
@@ -277,8 +283,15 @@ export function AudioLab({ compact = false }) {
           { type }
         );
 
+      if (recordedUrlRef.current) {
+        URL.revokeObjectURL(recordedUrlRef.current);
+      }
+
+      const url = URL.createObjectURL(blob);
+      recordedUrlRef.current = url;
+
       setRecorded({
-        url: URL.createObjectURL(blob),
+        url,
         type,
         extension:
           extensionForMimeType(type)
@@ -296,8 +309,32 @@ export function AudioLab({ compact = false }) {
   }
 
   useEffect(() => {
+    const mediaDevices = navigator.mediaDevices;
+
+    const handleDeviceChange = () => {
+      scanDevices().catch(() => {});
+    };
+
     scanDevices().catch(() => {});
-    return stop;
+
+    mediaDevices?.addEventListener?.(
+      "devicechange",
+      handleDeviceChange
+    );
+
+    return () => {
+      mediaDevices?.removeEventListener?.(
+        "devicechange",
+        handleDeviceChange
+      );
+
+      if (recordedUrlRef.current) {
+        URL.revokeObjectURL(recordedUrlRef.current);
+        recordedUrlRef.current = "";
+      }
+
+      stop();
+    };
   }, []);
 
   const level = Math.min(

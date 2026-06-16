@@ -29,6 +29,7 @@ export function MidiMonitor({ compact = false }) {
   );
   const [transpose, setTranspose] = useState(0);
   const [outputChannel, setOutputChannel] = useState("");
+  const [lastActivity, setLastActivity] = useState("");
   const accessRef = useRef(null);
 
   function processMessage(data, timestamp = performance.now()) {
@@ -49,10 +50,16 @@ export function MidiMonitor({ compact = false }) {
       setLearn("");
     }
 
+    const label = formatMidiEvent(event);
+
+    setLastActivity(
+      `${label} at ${new Date().toLocaleTimeString()}`
+    );
+
     setEvents((current) => [
       {
         ...event,
-        label: formatMidiEvent(event)
+        label
       },
       ...current
     ].slice(0, 40));
@@ -105,7 +112,20 @@ export function MidiMonitor({ compact = false }) {
       });
 
       accessRef.current = access;
-      access.onstatechange = () => summarize(access);
+
+      access.onstatechange = (event) => {
+        summarize(access);
+
+        const port = event?.port;
+
+        if (port) {
+          setStatus(
+            `${port.name || "MIDI device"}: ${
+              port.state || "state changed"
+            }`
+          );
+        }
+      };
 
       summarize(access);
 
@@ -178,14 +198,56 @@ export function MidiMonitor({ compact = false }) {
   function panic() {
     const output = accessRef.current?.outputs.get(outputId);
 
-    createAllNotesOffMessages().forEach((message) =>
-      output?.send(message)
-    );
+    if (!output) {
+      setStatus(
+        "Panic requested, but no MIDI output is selected."
+      );
+    } else {
+      createAllNotesOffMessages().forEach((message) =>
+        output.send(message)
+      );
+
+      setStatus(
+        `All Notes Off sent to ${
+          output.name || "MIDI output"
+        }`
+      );
+    }
 
     eventBus.emit(EVENT_TYPES.ARRANGER_PANIC, {
       source: "midi-monitor"
     });
   }
+
+  function clearEvents() {
+    setEvents([]);
+    setLastActivity("");
+  }
+
+  function clearMappings() {
+    setMappings({});
+    writeMidiMappings(undefined, MAP_KEY, {});
+    setLearn("");
+    setStatus("MIDI mappings cleared.");
+  }
+
+  useEffect(() => {
+    return () => {
+      const access = accessRef.current;
+
+      if (!access) {
+        return;
+      }
+
+      access.onstatechange = null;
+
+      for (const input of access.inputs.values()) {
+        input.onmidimessage = null;
+      }
+
+      accessRef.current = null;
+    };
+  }, []);
 
   return (
     <section className={compact ? "panelSection compact" : "panelSection"}>
@@ -267,8 +329,40 @@ export function MidiMonitor({ compact = false }) {
           ))}
         </select>
 
-        <button onClick={panic}>Panic</button>
+        <button
+          onClick={panic}
+          disabled={!outputId}
+          title={
+            outputId
+              ? "Send All Notes Off"
+              : "Select a MIDI output first"
+          }
+        >
+          Panic
+        </button>
+
+        <button
+          className="secondary"
+          onClick={clearEvents}
+          disabled={!events.length}
+        >
+          Clear Events
+        </button>
+
+        <button
+          className="secondary"
+          onClick={clearMappings}
+          disabled={!Object.keys(mappings).length}
+        >
+          Clear Mappings
+        </button>
       </div>
+
+      {lastActivity && (
+        <p role="status">
+          Last event: {lastActivity}
+        </p>
+      )}
 
       <div className="controlRow">
         {[
