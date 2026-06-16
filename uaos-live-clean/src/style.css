@@ -62,6 +62,10 @@ audio {
   margin-top: 12px;
 }
 
+.hiddenFile {
+  display: none;
+}
+
 .nav {
   position: sticky;
   top: 0;
@@ -355,6 +359,72 @@ li {
   color: #d8deeb;
 }
 
+.songDemo {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.075);
+  border-radius: 8px;
+  padding: 34px;
+  box-shadow: 0 28px 80px rgba(0, 0, 0, 0.28);
+}
+
+.uploadStrip,
+.exportGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  margin: 18px 0;
+}
+
+.uploadStrip span {
+  color: #d8deeb;
+}
+
+.songSummary {
+  margin-top: 22px;
+}
+
+.timelineRows,
+.noteRows {
+  display: grid;
+  gap: 8px;
+}
+
+.timelineRow {
+  display: grid;
+  grid-template-columns: minmax(150px, 1.3fr) minmax(110px, 0.8fr) minmax(92px, 0.55fr) minmax(92px, 0.55fr) 54px;
+  gap: 8px;
+  align-items: center;
+}
+
+.timelineRow span {
+  color: #b9ffdf;
+  font-weight: 800;
+  text-align: right;
+}
+
+.trackEditor {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.trackCard {
+  min-width: 0;
+}
+
+.noteRow {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(64px, 1fr));
+  gap: 6px;
+}
+
+.noteRow input,
+.timelineRow input,
+.timelineRow select {
+  min-width: 0;
+}
+
 footer {
   text-align: center;
   padding: 28px;
@@ -393,7 +463,23 @@ footer {
   .controlRow > input,
   .controlRow > button,
   .buttonLike,
-  .buttonLink {
+  .buttonLink,
+  .uploadStrip button,
+  .exportGrid a {
     width: 100%;
+  }
+
+  .songDemo {
+    padding: 24px;
+  }
+
+  .timelineRow,
+  .trackEditor,
+  .noteRow {
+    grid-template-columns: 1fr;
+  }
+
+  .timelineRow span {
+    text-align: left;
   }
 }

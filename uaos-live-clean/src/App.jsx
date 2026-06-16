@@ -11,6 +11,7 @@ import { StatusBadge } from "./components/StatusBadge.jsx";
 import { TimelinePanel } from "./components/TimelinePanel.jsx";
 import { ProfessionalArrangerPanel } from "./components/ProfessionalArrangerPanel.jsx";
 import { AILabsPanel } from "./components/AILabsPanel.jsx";
+import { SongDemoPanel } from "./components/SongDemoPanel.jsx";
 import { EVENT_TYPES } from "./core/eventTypes.js";
 import { eventBus } from "./core/eventBus.js";
 import { autosaveSession, createDefaultSession, loadSession } from "./session/sessionStore.js";
@@ -21,7 +22,7 @@ const plans = [
   { id: "pro", name: "UAOS Pro Arranger", price: "49-99 EUR", text: "Live arranger controls and MIDI performance foundation.", status: "experimental" }
 ];
 
-const routeItems = ["home", "sing", "studio", "pro", "midi", "sounds", "sampler", "promo", "pricing", "downloads", "audio", "timeline", "arranger", "live", "sessions", "diagnostics", "ai"];
+const routeItems = ["home", "song", "sing", "studio", "pro", "midi", "sounds", "sampler", "promo", "pricing", "downloads", "audio", "timeline", "arranger", "live", "sessions", "diagnostics", "ai"];
 
 function route(page, setPage) {
   window.location.hash = "#/" + page;
@@ -49,11 +50,11 @@ function Home({ setPage }) {
       <section className="hero">
         <p className="eyebrow">UAOS V1</p>
         <h1>Universal Arranger OS</h1>
-        <p className="lead">A browser-first arranger workspace for microphone analysis, MIDI monitoring, timeline capture, session export, and live performance experiments.</p>
+        <p className="lead">A browser-first arranger workspace for song upload, local audio analysis, UMS project creation, multi-track MIDI export, and live performance experiments.</p>
         <div className="heroActions">
-          <button onClick={() => route("audio", setPage)}>Open Audio Lab</button>
+          <button onClick={() => route("song", setPage)}>Open Song Demo</button>
+          <button className="secondary" onClick={() => route("audio", setPage)}>Audio Lab</button>
           <button className="secondary" onClick={() => route("midi", setPage)}>Scan MIDI</button>
-          <button className="secondary" onClick={() => route("live", setPage)}>Live Mode</button>
         </div>
       </section>
       <RuntimeStatus />
@@ -200,6 +201,7 @@ function AppShell() {
 
   const screen = useMemo(() => {
     if (page === "sing") return <Sing session={session} setSession={setSession} />;
+    if (page === "song") return <main className="page"><SongDemoPanel /></main>;
     if (page === "studio") return <Studio session={session} setSession={setSession} />;
     if (page === "pro") return <Pro session={session} setSession={setSession} />;
     if (page === "midi") return <Midi />;
