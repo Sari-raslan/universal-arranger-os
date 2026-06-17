@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+﻿import { useEffect, useState } from "react";
 import "./style.css";
 import { ModernHome } from "./ModernHome.jsx";
 import { ArrangerPanel } from "./components/ArrangerPanel.jsx";
@@ -37,6 +37,7 @@ import { detectRuntimeFeatures } from "./core/diagnostics.js";
 import { autosaveSession, createDefaultSession, loadSession } from "./session/sessionStore.js";
 
 import { SmartSequencerPage } from "./components/SmartSequencerPage.jsx";
+import { SetHardwareSequencerPanel } from "./components/SetHardwareSequencerPanel.jsx";
 const HOME_PAGE = "home";
 const LAST_ROUTE_KEY = "uaos.lastRoute";
 
@@ -408,6 +409,7 @@ function ProArrangerPage({ session, setSession }) {
       <ArrangerPanel session={session} onSessionChange={setSession} />
       <ProfessionalArrangerPanel />
       <ArrangerEnginePanel />
+      <SetHardwareSequencerPanel />
     </Surface>
   );
 }
@@ -786,3 +788,4 @@ export default function App() {
 
   return <UaosOriginalApp />;
 }
+
