@@ -18,6 +18,10 @@ import {
   startMidiLearn,
   validateSysexMessage,
 } from "../hardware/hardwarePhase6.js";
+import {
+  runExternalClockTransport,
+  stopExternalClockTransport,
+} from "../hardware/safeMidiTransport.js";
 
 function statusText(value) {
   return String(value || "unknown").replaceAll("-", " ");
@@ -31,6 +35,10 @@ export function HardwareIntegrationPanel({ session, onSessionChange }) {
   const [importText, setImportText] = useState("");
   const [lastReport, setLastReport] = useState(null);
   const [sendState, setSendState] = useState("idle");
+  const [clockBpm, setClockBpm] = useState(100);
+  const [clockBars, setClockBars] = useState(1);
+  const [clockState, setClockState] = useState("idle");
+  const clockAbortRef = useRef(null);
   const midiAccessRef = useRef(null);
   const selectedProfile = DEVICE_PROFILES.find((profile) => profile.id === hardware.selectedProfileId) || DEVICE_PROFILES[0];
   const manualChecklist = createManualValidationChecklist(selectedProfile);
@@ -176,6 +184,86 @@ export function HardwareIntegrationPanel({ session, onSessionChange }) {
       setSendState(`Panic failed: ${error.message}`);
     }
   }
+  async function runClockTransport() {
+    if (hardware.capabilities.mockMode) {
+      setClockState("Demo mode does not send physical clock.");
+      return;
+    }
+
+    const output = midiAccessRef.current?.outputs?.get(hardware.selectedOutputId);
+    if (!output) {
+      setClockState("Select a physical MIDI output first.");
+      return;
+    }
+
+    const confirmed = window.confirm(
+      `Send safe external clock to ${output.name || "selected output"} at ${clockBpm} BPM for ${clockBars} bar(s)? ` +
+      "Set PA3X Clock Source to USB/External. No notes, Program Change, SysEx, or Bulk data will be sent."
+    );
+
+    if (!confirmed) {
+      setClockState("Clock test cancelled.");
+      return;
+    }
+
+    clockAbortRef.current?.abort();
+    const controller = new AbortController();
+    clockAbortRef.current = controller;
+    setClockState("Running external clock...");
+
+    try {
+      const result = await runExternalClockTransport(output, {
+        bpm: clockBpm,
+        bars: clockBars,
+        signal: controller.signal,
+        onProgress(event) {
+          if (event.type === "clock") {
+            setClockState(`Clock ${event.index}/${event.total}`);
+          }
+        },
+      });
+
+      setClockState(
+        `Completed ${result.plan.bars} bar(s) at ${result.plan.bpm} BPM and stopped safely.`
+      );
+      commitHardware({
+        ...hardware,
+        connectionState: "clock-test-complete",
+        diagnostic: recordDiagnosticEvent(hardware.diagnostic, {
+          type: "clock-send",
+          message: `External clock ${result.plan.bpm} BPM, ${result.plan.pulseCount} pulses, safe stop`,
+        }),
+      });
+    } catch (error) {
+      const cancelled = error?.name === "AbortError";
+      setClockState(cancelled ? "Clock stopped safely." : `Clock test failed: ${error.message}`);
+      commitHardware({
+        ...hardware,
+        diagnostic: recordDiagnosticEvent(hardware.diagnostic, {
+          type: cancelled ? "clock-cancel" : "clock-error",
+          message: cancelled ? "External clock cancelled with STOP and panic" : error.message,
+        }),
+      });
+    } finally {
+      stopExternalClockTransport(output);
+      if (clockAbortRef.current === controller) clockAbortRef.current = null;
+    }
+  }
+
+  function cancelClockTransport() {
+    clockAbortRef.current?.abort();
+    const output = midiAccessRef.current?.outputs?.get(hardware.selectedOutputId);
+    stopExternalClockTransport(output);
+    setClockState("Clock stopped and panic sent.");
+  }
+
+  useEffect(() => {
+    return () => {
+      clockAbortRef.current?.abort();
+      const output = midiAccessRef.current?.outputs?.get(hardware.selectedOutputId);
+      stopExternalClockTransport(output);
+    };
+  }, [hardware.selectedOutputId]);
 
   useEffect(() => {
     return () => {
@@ -327,6 +415,50 @@ export function HardwareIntegrationPanel({ session, onSessionChange }) {
               </button>
             ))}
           </div>
+          <hr />
+          <h3>Safe External Clock</h3>
+          <p>
+            Validated with KORG PA3X over USB. Sends STOP, START, 24 PPQN clock,
+            STOP, then panic. No notes, Program Change, SysEx, or Bulk data.
+          </p>
+          <div className="miniGrid">
+            <label>
+              BPM
+              <input
+                type="number"
+                min="40"
+                max="240"
+                value={clockBpm}
+                onChange={(event) => setClockBpm(Number(event.target.value))}
+              />
+            </label>
+            <label>
+              Bars
+              <input
+                type="number"
+                min="1"
+                max="8"
+                value={clockBars}
+                onChange={(event) => setClockBars(Number(event.target.value))}
+              />
+            </label>
+          </div>
+          <div className="controlRow">
+            <button
+              type="button"
+              onClick={runClockTransport}
+              disabled={
+                clockState.startsWith("Running") ||
+                (!hardware.capabilities.mockMode && !hardware.selectedOutputId)
+              }
+            >
+              Run Clock
+            </button>
+            <button type="button" className="dangerButton" onClick={cancelClockTransport}>
+              Stop + Panic
+            </button>
+          </div>
+          <p role="status">{clockState}</p>
         </article>
 
         <article className="card">
