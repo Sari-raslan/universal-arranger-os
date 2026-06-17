@@ -22,6 +22,7 @@ import {
   runExternalClockTransport,
   stopExternalClockTransport,
 } from "../hardware/safeMidiTransport.js";
+import { subscribeArrangementPlanForHardware } from "../hardware/audioArrangementHardwareBridge.js";
 
 function statusText(value) {
   return String(value || "unknown").replaceAll("-", " ");
@@ -257,6 +258,16 @@ export function HardwareIntegrationPanel({ session, onSessionChange }) {
     setClockState("Clock stopped and panic sent.");
   }
 
+  useEffect(() => {
+    return subscribeArrangementPlanForHardware(({ transport }) => {
+      setClockBpm(transport.bpm);
+      setClockBars(Math.min(8, Math.max(1, transport.bars)));
+      setClockState(
+        `Arrangement loaded: ${transport.title}, ${transport.bpm} BPM, ${transport.bars} bars. ` +
+        "Review the bar limit and confirm before sending clock."
+      );
+    });
+  }, []);
   useEffect(() => {
     return () => {
       clockAbortRef.current?.abort();

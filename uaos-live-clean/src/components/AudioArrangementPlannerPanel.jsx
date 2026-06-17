@@ -1,4 +1,5 @@
 import { useMemo, useState } from "react";
+import { publishArrangementPlanToHardware } from "../hardware/audioArrangementHardwareBridge.js";
 
 const starterSections = [
 {
@@ -87,6 +88,7 @@ try {
   }
 
   setResult(payload.data);
+    publishArrangementPlanToHardware(payload.data);
 } catch (err) {
   setError(
     err instanceof Error
@@ -183,7 +185,18 @@ return ( <section className="uaosPanel"> <h2>Audio-to-Arrangement Planner</h2>
   ) : null}
 
   {result ? (
-    <pre>{JSON.stringify(result, null, 2)}</pre>
+    <>
+      <div className="controlRow">
+        <button
+          type="button"
+          className="secondary"
+          onClick={() => publishArrangementPlanToHardware(result)}
+        >
+          Send BPM and Bars to Hardware
+        </button>
+      </div>
+      <pre>{JSON.stringify(result, null, 2)}</pre>
+    </>
   ) : null}
 </section>
 ```
