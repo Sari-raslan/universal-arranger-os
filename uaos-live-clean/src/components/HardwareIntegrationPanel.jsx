@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import {
   DEVICE_PROFILES,
   HARDWARE_CONFIG_STORAGE_KEY,
@@ -30,6 +30,8 @@ export function HardwareIntegrationPanel({ session, onSessionChange }) {
   const [selectedCommand, setSelectedCommand] = useState("transport.start");
   const [importText, setImportText] = useState("");
   const [lastReport, setLastReport] = useState(null);
+  const [sendState, setSendState] = useState("idle");
+  const midiAccessRef = useRef(null);
   const selectedProfile = DEVICE_PROFILES.find((profile) => profile.id === hardware.selectedProfileId) || DEVICE_PROFILES[0];
   const manualChecklist = createManualValidationChecklist(selectedProfile);
 
@@ -39,6 +41,19 @@ export function HardwareIntegrationPanel({ session, onSessionChange }) {
   }
 
   async function scan(mock = false) {
+    let access = null;
+
+    if (!mock && navigator.requestMIDIAccess) {
+      try {
+        access = await navigator.requestMIDIAccess({ sysex: false });
+        midiAccessRef.current = access;
+      } catch {
+        midiAccessRef.current = null;
+      }
+    } else if (mock) {
+      midiAccessRef.current = null;
+    }
+
     const result = await discoverMidiDevices({ window, navigator, mock });
     commitHardware({
       ...hardware,
@@ -83,6 +98,97 @@ export function HardwareIntegrationPanel({ session, onSessionChange }) {
       commitHardware({ ...hardware, diagnostic: recordDiagnosticEvent(hardware.diagnostic, { type: "invalid", message: error.message }) });
     }
   }
+
+  function sendToSelectedOutput(bytes, label = "MIDI message") {
+    if (hardware.capabilities.mockMode) {
+      simulateMessage(bytes);
+      setSendState(`Demo routed: ${label}`);
+      return;
+    }
+
+    const output = midiAccessRef.current?.outputs?.get(hardware.selectedOutputId);
+
+    if (!output) {
+      setSendState("No physical MIDI output is selected or available.");
+      commitHardware({
+        ...hardware,
+        diagnostic: recordDiagnosticEvent(hardware.diagnostic, {
+          type: "send-blocked",
+          message: `${label}: no physical MIDI output`
+        })
+      });
+      return;
+    }
+
+    try {
+      output.send(bytes);
+      setSendState(`Sent to ${output.name || "MIDI output"}: ${label}`);
+      commitHardware({
+        ...hardware,
+        connectionState: "message-sent",
+        diagnostic: recordDiagnosticEvent(hardware.diagnostic, {
+          type: "midi-send",
+          message: `${label} -> ${output.name || hardware.selectedOutputId}`,
+          bytes: [...bytes]
+        })
+      });
+    } catch (error) {
+      setSendState(`MIDI send failed: ${error.message}`);
+      commitHardware({
+        ...hardware,
+        diagnostic: recordDiagnosticEvent(hardware.diagnostic, {
+          type: "send-error",
+          message: error.message
+        })
+      });
+    }
+  }
+
+  function sendPanic() {
+    if (hardware.capabilities.mockMode) {
+      simulateMessage([0xb0, 123, 0]);
+      setSendState("Demo panic routed.");
+      return;
+    }
+
+    const output = midiAccessRef.current?.outputs?.get(hardware.selectedOutputId);
+
+    if (!output) {
+      setSendState("Panic blocked: select a physical MIDI output first.");
+      return;
+    }
+
+    try {
+      for (let channel = 0; channel < 16; channel += 1) {
+        output.send([0xb0 | channel, 123, 0]);
+        output.send([0xb0 | channel, 120, 0]);
+        output.send([0xb0 | channel, 121, 0]);
+      }
+      setSendState(`Panic sent to ${output.name || "MIDI output"}`);
+      commitHardware({
+        ...hardware,
+        diagnostic: recordDiagnosticEvent(hardware.diagnostic, {
+          type: "panic-send",
+          message: "All Sound Off, Reset Controllers, and All Notes Off sent on 16 channels"
+        })
+      });
+    } catch (error) {
+      setSendState(`Panic failed: ${error.message}`);
+    }
+  }
+
+  useEffect(() => {
+    return () => {
+      const access = midiAccessRef.current;
+      if (access) {
+        access.onstatechange = null;
+        for (const input of access.inputs.values()) {
+          input.onmidimessage = null;
+        }
+      }
+      midiAccessRef.current = null;
+    };
+  }, []);
 
   function learnFrom(bytes) {
     const nextLearn = learn || startMidiLearn(selectedCommand, { profileId: hardware.selectedProfileId, startedAt: 1, channelFilter: "all" });
@@ -142,7 +248,14 @@ export function HardwareIntegrationPanel({ session, onSessionChange }) {
           <h1>Device Control Workstation</h1>
           <p className="lead">Web MIDI, Electron bridge status, MIDI Learn, routing, diagnostics, and setup checks. Demo mode uses deterministic mock devices and does not claim a physical connection.</p>
         </div>
-        <button className="dangerButton" onClick={() => simulateMessage([0xb0, 123, 0])}>Panic</button>
+        <button
+          className="dangerButton"
+          onClick={sendPanic}
+          disabled={!hardware.capabilities.mockMode && !hardware.selectedOutputId}
+          title={hardware.capabilities.mockMode ? "Run deterministic demo panic" : "Send physical MIDI panic to selected output"}
+        >
+          Panic
+        </button>
       </div>
 
       <div className="hardwareLedStrip" aria-label="MIDI activity LEDs">
@@ -176,6 +289,7 @@ export function HardwareIntegrationPanel({ session, onSessionChange }) {
             </select>
           </label>
           <button className="secondary" onClick={() => scan(hardware.capabilities.mockMode)}>Reconnect</button>
+          {sendState !== "idle" ? <p role="status">{sendState}</p> : null}
         </article>
 
         <article className="card">
@@ -202,7 +316,16 @@ export function HardwareIntegrationPanel({ session, onSessionChange }) {
               ["Fill 1", [0xb0, 82, 127]],
               ["Sustain", [0xb0, 64, 127]],
               ["Program", [0xc0, 10]],
-            ].map(([label, bytes]) => <button key={label} className="secondary" onClick={() => simulateMessage(bytes)}>{label}</button>)}
+            ].map(([label, bytes]) => (
+              <button
+                key={label}
+                className="secondary"
+                onClick={() => sendToSelectedOutput(bytes, label)}
+                disabled={!hardware.capabilities.mockMode && !hardware.selectedOutputId}
+              >
+                {label}
+              </button>
+            ))}
           </div>
         </article>
 
