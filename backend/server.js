@@ -3,6 +3,7 @@ const path = require("path");
 const express = require("express");
 const { createUmsRouter } = require("./umsRoutes.cjs");
 const { createSetHardwareApiRouter } = require("./routes/setHardwareApi");
+const { createAudioArrangementApiRouter } = require("./routes/audioArrangementApi");
 
 const app = express();
 const port = Number(process.env.PORT || 5199);
