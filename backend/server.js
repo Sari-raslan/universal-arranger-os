@@ -1,8 +1,9 @@
-﻿const fs = require("fs");
+const fs = require("fs");
 const path = require("path");
 const express = require("express");
 const { createUmsRouter } = require("./umsRoutes.cjs");
 const { createSetHardwareApiRouter } = require("./routes/setHardwareApi");
+const { createAudioArrangementApiRouter } = require("./routes/audioArrangementApi");
 
 const app = express();
 const port = Number(process.env.PORT || 5199);
@@ -131,6 +132,7 @@ app.use("/api", createSetHardwareApiRouter(express, {
     path.join(repoRoot, "samples")
   ].filter(Boolean)
 }));
+app.use("/api", createAudioArrangementApiRouter(express));
 
 
 app.use((req, res, next) => {
@@ -1429,4 +1431,3 @@ module.exports = {
   toMidi,
   refreshServiceCache
 };
-
