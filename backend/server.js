@@ -1,4 +1,4 @@
-﻿const fs = require("fs");
+const fs = require("fs");
 const path = require("path");
 const express = require("express");
 const { createUmsRouter } = require("./umsRoutes.cjs");
@@ -131,6 +131,7 @@ app.use("/api", createSetHardwareApiRouter(express, {
     path.join(repoRoot, "samples")
   ].filter(Boolean)
 }));
+app.use("/api", createAudioArrangementApiRouter(express));
 
 
 app.use((req, res, next) => {
@@ -1429,4 +1430,3 @@ module.exports = {
   toMidi,
   refreshServiceCache
 };
-
