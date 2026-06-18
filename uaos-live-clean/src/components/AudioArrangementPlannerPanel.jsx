@@ -46,6 +46,59 @@ const value = Number(bpm);
 return value >= 20 && value <= 300;
 }, [bpm]);
 
+async function downloadMidiDraft() {
+  setError("");
+
+  try {
+    const sections = JSON.parse(sectionsJson);
+    const response = await fetch(
+      "/api/audio-arrangement/midi-draft",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          title,
+          bpm: Number(bpm),
+          key: keyName,
+          scale,
+          sections
+        })
+      }
+    );
+
+    if (!response.ok) {
+      const payload = await response.json().catch(() => null);
+      throw new Error(
+        payload?.error?.message ||
+          "Unable to create MIDI draft"
+      );
+    }
+
+    const blob = await response.blob();
+    const disposition =
+      response.headers.get("Content-Disposition") || "";
+    const match = disposition.match(/filename="([^"]+)"/);
+    const filename =
+      match?.[1] || "uaos-arrangement-draft.mid";
+
+    const url = URL.createObjectURL(blob);
+    const anchor = document.createElement("a");
+    anchor.href = url;
+    anchor.download = filename;
+    document.body.appendChild(anchor);
+    anchor.click();
+    anchor.remove();
+    URL.revokeObjectURL(url);
+  } catch (err) {
+    setError(
+      err instanceof Error
+        ? err.message
+        : "Unable to create MIDI draft"
+    );
+  }
+}
 async function createPlan() {
 setError("");
 setResult(null);
@@ -178,6 +231,15 @@ return ( <section className="uaosPanel"> <h2>Audio-to-Arrangement Planner</h2>
     onClick={createPlan}
   >
     Create Neutral Arrangement Plan
+  </button>
+
+  <button
+    type="button"
+    className="secondary"
+    disabled={!canSubmit}
+    onClick={downloadMidiDraft}
+  >
+    Download Neutral MIDI Draft
   </button>
 
   {error ? (
