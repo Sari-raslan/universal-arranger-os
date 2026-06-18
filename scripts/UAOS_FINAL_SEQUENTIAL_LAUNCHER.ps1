@@ -1,83 +1,108 @@
-﻿cd C:\Users\ssare\keyboard-manager-clean
+#requires -Version 5.1
+[CmdletBinding()]
+param(
+    [string]$RepoPath = "C:\UAOSN20260617-000536\wt",
+    [switch]$SkipRuntime,
+    [switch]$SkipPackaging
+)
 
-$LiveUrl = "https://keyboard-manager-clean-liard.vercel.app"
-$Report = "reports\UAOS_FINAL_SEQUENTIAL_LAUNCH_REPORT.md"
+Set-StrictMode -Version Latest
+$ErrorActionPreference = "Stop"
+$ProgressPreference = "SilentlyContinue"
 
-Write-Host "UAOS FINAL SEQUENTIAL LAUNCH START" -ForegroundColor Cyan
-
-# 1. Stop old agents
-$PidFile = "C:\Users\ssare\Documents\UAOS_BACKUPS\UAOS_OVERNIGHT_AGENT.pid"
-if (Test-Path $PidFile) {
-  Stop-Process -Id (Get-Content $PidFile) -Force -ErrorAction SilentlyContinue
+function Step([string]$Message) {
+    Write-Host "`n==================================================" -ForegroundColor DarkCyan
+    Write-Host "==> $Message" -ForegroundColor Cyan
+    Write-Host "==================================================" -ForegroundColor DarkCyan
 }
 
-# 2. Restore tracked files only
-git restore .
-git pull
-
-# 3. Create folders
-mkdir runtime\src,chord-engine\src,midi-router\src,timing-engine\src -Force
-mkdir sampler-engine\src,libraries\oriental-expansion-vol-1,keyboard-runtime\adapters,packs\demo-oriental-runtime-pack.uaos-pack -Force
-mkdir reports -Force
-
-# 4. Runtime
-Set-Content runtime\src\UaosRuntime.js 'export class UaosRuntime{constructor(){this.state={playing:false,section:"variation1",tempo:120,chord:null}}setTempo(bpm){this.state.tempo=bpm;return this.state}setChord(chord){this.state.chord=chord;return this.state}triggerSection(section){this.state.section=section;return this.state}start(){this.state.playing=true;return this.state}stop(){this.state.playing=false;return this.state}}' -Encoding utf8
-
-# 5. Chord Engine
-Set-Content chord-engine\src\detectChord.js 'export function detectChord(notes=[]){const u=[...new Set(notes.map(Number))].sort((a,b)=>a-b);if(u.length<3)return{type:"unknown",notes:u};const r=u[0];const i=u.map(n=>(n-r+12)%12);if(i.includes(4)&&i.includes(7)&&i.includes(10))return{root:r,type:"dominant7",symbol:`${r}:7`,notes:u};if(i.includes(4)&&i.includes(7))return{root:r,type:"major",symbol:`${r}:maj`,notes:u};if(i.includes(3)&&i.includes(7))return{root:r,type:"minor",symbol:`${r}:min`,notes:u};if(i.includes(5)&&i.includes(7))return{root:r,type:"sus4",symbol:`${r}:sus4`,notes:u};return{root:r,type:"custom",notes:u}}' -Encoding utf8
-
-# 6. MIDI Router
-Set-Content midi-router\src\MidiRouter.js 'export class MidiRouter{constructor(){this.outputs=[]}addOutput(o){this.outputs.push(o)}send(m){for(const o of this.outputs){if(o&&typeof o.send==="function")o.send(m)}}noteOn(n,v=100,c=0){this.send([0x90+c,n,v])}noteOff(n,c=0){this.send([0x80+c,n,0])}controlChange(cc,v,c=0){this.send([0xB0+c,cc,v])}programChange(p,c=0){this.send([0xC0+c,p])}}' -Encoding utf8
-
-# 7. Timing Engine
-Set-Content timing-engine\src\TimingEngine.js 'export class TimingEngine{constructor(bpm=120){this.bpm=bpm;this.ppq=24;this.tick=0}setTempo(bpm){this.bpm=bpm}getMsPerTick(){return 60000/this.bpm/this.ppq}nextTick(){this.tick+=1;return{tick:this.tick,msPerTick:this.getMsPerTick()}}reset(){this.tick=0}}' -Encoding utf8
-
-# 8. Sampler + Keyboard Runtime
-Set-Content sampler-engine\src\feelSampler.js 'export function selectSample({samples,note}){return samples.find(s=>s.note===note)||null}' -Encoding utf8
-Set-Content libraries\oriental-expansion-vol-1\manifest.json '{ "name":"oriental-expansion-vol-1", "version":"0.1.0", "license":"original-or-licensed-only" }' -Encoding utf8
-Set-Content packs\demo-oriental-runtime-pack.uaos-pack\manifest.json '{ "packId":"demo-oriental-runtime-pack", "format":".uaos-pack", "targetKeyboards":["korg-pa","yamaha-genos","roland-bk","ketron"] }' -Encoding utf8
-Set-Content keyboard-runtime\adapters\korgPaAdapter.js 'export function createKorgPaCommand(section){return{section,type:"placeholder"}}' -Encoding utf8
-
-# 9. Frontend index
-Set-Content frontend\src\uaosCore.js 'export { UaosRuntime } from "../../runtime/src/UaosRuntime.js"; export { detectChord } from "../../chord-engine/src/detectChord.js"; export { MidiRouter } from "../../midi-router/src/MidiRouter.js"; export { TimingEngine } from "../../timing-engine/src/TimingEngine.js";' -Encoding utf8
-
-# 10. Report
-@"
-# UAOS Final Sequential Launch Report
-
-Done:
-- Runtime Engine
-- Chord Engine
-- MIDI Router
-- Timing Engine
-- Feel Sampler scaffold
-- Oriental Expansion manifest
-- .uaos-pack format
-- Keyboard Runtime adapter
-- Frontend integration file
-- Build + Git + Vercel publish attempted
-
-Live:
-$LiveUrl
-"@ | Out-File $Report -Encoding utf8
-
-# 11. Build
-npm run build --prefix frontend
-if ($LASTEXITCODE -ne 0) {
-  Write-Host "BUILD FAILED. STOPPING." -ForegroundColor Red
-  exit 1
+function Run([string]$Label, [scriptblock]$Command) {
+    Step $Label
+    & $Command
+    if ($LASTEXITCODE -ne 0) {
+        throw "$Label failed with exit code $LASTEXITCODE"
+    }
 }
 
-# 12. Commit and push
-git add runtime chord-engine midi-router timing-engine sampler-engine libraries keyboard-runtime packs frontend\src\uaosCore.js $Report
-git commit -m "Run final sequential UAOS launcher" 2>$null
-git push
+function Invoke-UaosScript(
+    [string]$Name,
+    [string]$RelativePath,
+    [string[]]$Arguments
+) {
+    $path = Join-Path $script:RepoPath $RelativePath
 
-# 13. Publish from dist
-cd frontend
-npm run build
-cd dist
-vercel deploy --prod --yes --archive=tgz
+    if (-not (Test-Path -LiteralPath $path)) {
+        Write-Host "SKIP: $Name â€” missing $RelativePath" -ForegroundColor Yellow
+        return
+    }
 
-Start-Process $LiveUrl
-Write-Host "UAOS FINAL SEQUENTIAL LAUNCH DONE" -ForegroundColor Green
+    Run $Name {
+        powershell.exe `
+            -NoProfile `
+            -ExecutionPolicy Bypass `
+            -File $path `
+            @Arguments
+    }
+}
+
+if (-not (Test-Path -LiteralPath $RepoPath)) {
+    throw "Repository not found: $RepoPath"
+}
+
+$script:RepoPath = (Resolve-Path -LiteralPath $RepoPath).Path
+Set-Location -LiteralPath $script:RepoPath
+
+if (Test-Path -LiteralPath "backend/data/projects.json") {
+    git restore --source=HEAD --worktree -- "backend/data/projects.json" 2>$null
+}
+
+Invoke-UaosScript `
+    -Name "Master sequential autopilot" `
+    -RelativePath "scripts\UAOS_MASTER_SEQUENTIAL_AUTOPILOT.ps1" `
+    -Arguments @("-RepoPath", $script:RepoPath)
+
+if (-not $SkipRuntime) {
+    Invoke-UaosScript `
+        -Name "Runtime route smoke" `
+        -RelativePath "scripts\UAOS_RUNTIME_ROUTE_SMOKE.ps1" `
+        -Arguments @("-RepoPath", $script:RepoPath)
+}
+
+Invoke-UaosScript `
+    -Name "Unified release gate" `
+    -RelativePath "scripts\UAOS_RELEASE_GATE.ps1" `
+    -Arguments @("-RepoPath", $script:RepoPath)
+
+if (-not $SkipPackaging) {
+    Invoke-UaosScript `
+        -Name "Release candidate packaging" `
+        -RelativePath "scripts\UAOS_BUILD_RELEASE_CANDIDATE.ps1" `
+        -Arguments @("-RepoPath", $script:RepoPath, "-Channel", "rc")
+}
+
+Run "Final tests" { npm test }
+Run "Final checks" { npm run check }
+Run "Final production build" { npm run build }
+
+$reportDir = Join-Path $script:RepoPath "reports\final-sequential-launcher"
+[System.IO.Directory]::CreateDirectory($reportDir) | Out-Null
+$stamp = Get-Date -Format "yyyyMMdd-HHmmss"
+$report = Join-Path $reportDir "FINAL_STATUS_$stamp.txt"
+
+@(
+    "UAOS FINAL SEQUENTIAL LAUNCHER",
+    "Generated: $(Get-Date -Format o)",
+    "Branch: $((git branch --show-current).Trim())",
+    "Commit: $((git rev-parse --short HEAD).Trim())",
+    "Node: $(node --version)",
+    "npm: $(npm --version)",
+    "Status: PASS"
+) | Set-Content -LiteralPath $report -Encoding UTF8
+
+if (Test-Path -LiteralPath "backend/data/projects.json") {
+    git restore --source=HEAD --worktree -- "backend/data/projects.json" 2>$null
+}
+
+Write-Host "`nUAOS FINAL SEQUENTIAL LAUNCHER PASS" -ForegroundColor Green
+Write-Host "Report: $report"
+git status -sb
