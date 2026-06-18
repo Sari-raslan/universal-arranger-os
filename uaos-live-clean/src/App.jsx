@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { lazy, useEffect, useState } from "react";
 import "./style.css";
 import { ModernHome } from "./ModernHome.jsx";
 import { ArrangerPanel } from "./components/ArrangerPanel.jsx";
@@ -11,22 +11,19 @@ import { SessionsPanel } from "./components/SessionsPanel.jsx";
 import { StatusBadge } from "./components/StatusBadge.jsx";
 import { TimelinePanel } from "./components/TimelinePanel.jsx";
 import { DownloadsUpdatePanel } from "./components/DownloadsUpdatePanel.jsx";
-import { ProfessionalArrangerPanel } from "./components/ProfessionalArrangerPanel.jsx";
-import { AILabsPanel } from "./components/AILabsPanel.jsx";
+
 import {
   ContactPage,
   PrivacyPage,
   SupportPage,
   TermsPage
 } from "./components/LaunchPages.jsx";
-import { HardwareIntegrationPanel } from "./components/HardwareIntegrationPanel.jsx";
-import { DAWStudioPanel } from "./components/DAWStudioPanel.jsx";
-import { CloudPlatformPanel } from "./components/CloudPlatformPanel.jsx";
-import { PublicBetaPanel } from "./components/PublicBetaPanel.jsx";
+
+
+
 import { PricingPage } from "./components/PricingPage.jsx";
-import { LibraryBrowser } from "./components/LibraryBrowser.jsx";
-import { SamplerWorkbench } from "./components/SamplerWorkbench.jsx";
-import { ArrangerEnginePanel } from "./components/ArrangerEnginePanel.jsx";
+
+
 import { LaunchBanner } from "./components/LaunchPages.jsx";
 import { canonicalPricing } from "./commercial/phase10Commercial.js";
 import { createAcademyManagerSummary } from "./social/academyBatch001.js";
@@ -37,8 +34,20 @@ import { detectRuntimeFeatures } from "./core/diagnostics.js";
 import { autosaveSession, createDefaultSession, loadSession } from "./session/sessionStore.js";
 
 
-import { SmartSequencerPage } from "./components/SmartSequencerPage.jsx";
-import { SetHardwareSequencerPanel } from "./components/SetHardwareSequencerPanel.jsx";
+
+
+const DAWStudioPanel = lazy(() => import("./components/DAWStudioPanel.jsx").then((module) => ({ default: module.DAWStudioPanel })));
+const SamplerWorkbench = lazy(() => import("./components/SamplerWorkbench.jsx").then((module) => ({ default: module.SamplerWorkbench })));
+const AILabsPanel = lazy(() => import("./components/AILabsPanel.jsx").then((module) => ({ default: module.AILabsPanel })));
+const ProfessionalArrangerPanel = lazy(() => import("./components/ProfessionalArrangerPanel.jsx").then((module) => ({ default: module.ProfessionalArrangerPanel })));
+const HardwareIntegrationPanel = lazy(() => import("./components/HardwareIntegrationPanel.jsx").then((module) => ({ default: module.HardwareIntegrationPanel })));
+const CloudPlatformPanel = lazy(() => import("./components/CloudPlatformPanel.jsx").then((module) => ({ default: module.CloudPlatformPanel })));
+const PublicBetaPanel = lazy(() => import("./components/PublicBetaPanel.jsx").then((module) => ({ default: module.PublicBetaPanel })));
+const LibraryBrowser = lazy(() => import("./components/LibraryBrowser.jsx").then((module) => ({ default: module.LibraryBrowser })));
+const ArrangerEnginePanel = lazy(() => import("./components/ArrangerEnginePanel.jsx").then((module) => ({ default: module.ArrangerEnginePanel })));
+const SmartSequencerPage = lazy(() => import("./components/SmartSequencerPage.jsx").then((module) => ({ default: module.SmartSequencerPage })));
+const SetHardwareSequencerPanel = lazy(() => import("./components/SetHardwareSequencerPanel.jsx").then((module) => ({ default: module.SetHardwareSequencerPanel })));
+
 const HOME_PAGE = "home";
 const LAST_ROUTE_KEY = "uaos.lastRoute";
 
