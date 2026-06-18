@@ -1,6 +1,7 @@
 import { useMemo, useState } from "react";
 import { publishArrangementPlanToHardware } from "../hardware/audioArrangementHardwareBridge.js";
 
+import { NeutralMidiPreview } from "./NeutralMidiPreview.jsx";
 const starterSections = [
 {
 type: "intro",
@@ -241,6 +242,13 @@ return ( <section className="uaosPanel"> <h2>Audio-to-Arrangement Planner</h2>
   >
     Download Neutral MIDI Draft
   </button>
+
+  <NeutralMidiPreview
+    bpm={bpm}
+    keyName={keyName}
+    scale={scale}
+    sectionsJson={sectionsJson}
+  />
 
   {error ? (
     <p role="alert">{error}</p>
