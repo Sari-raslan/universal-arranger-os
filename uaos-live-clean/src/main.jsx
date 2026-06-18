@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 import { createRoot } from "react-dom/client";
 import App from "./App.jsx";
 import { AccountShell } from "./components/AccountShell.jsx";
@@ -53,7 +53,17 @@ if (!rootElement) {
 createRoot(rootElement).render(
   <RuntimeErrorBoundary>
     <AccountShell>
-      <App />
+      <Suspense
+        fallback={
+          <main className="uaosPage">
+            <section className="uaosSurface">
+              <p>Loading UAOS module...</p>
+            </section>
+          </main>
+        }
+      >
+        <App />
+      </Suspense>
     </AccountShell>
   </RuntimeErrorBoundary>
 );

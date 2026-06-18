@@ -89,7 +89,10 @@ test("Pro page integrates the open arranger panel", () => {
   );
 
   assert.equal(
-    source.includes('import { ArrangerEnginePanel }'),
+    (
+      source.includes('import { ArrangerEnginePanel }') ||
+      source.includes('const ArrangerEnginePanel = lazy')
+    ),
     true,
   );
   assert.equal(
