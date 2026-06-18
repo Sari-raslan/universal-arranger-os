@@ -4,7 +4,7 @@ const express = require("express");
 const { createUmsRouter } = require("./umsRoutes.cjs");
 const { createSetHardwareApiRouter } = require("./routes/setHardwareApi");
 const { createAudioArrangementApiRouter } = require("./routes/audioArrangementApi");
-
+const { createAudioArrangementMidiApiRouter } = require("./routes/audioArrangementMidiApi");
 const app = express();
 const port = Number(process.env.PORT || 5199);
 const version = "11.2.0-local";
@@ -133,8 +133,7 @@ app.use("/api", createSetHardwareApiRouter(express, {
   ].filter(Boolean)
 }));
 app.use("/api", createAudioArrangementApiRouter(express));
-
-
+app.use("/api", createAudioArrangementMidiApiRouter(express));
 app.use((req, res, next) => {
   const origin = req.headers.origin;
   if (origin && allowedOrigins.has(origin)) {
