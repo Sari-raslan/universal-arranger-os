@@ -24,19 +24,9 @@ function midiToFrequency(note) {
 
 function getChordIntervals(scale) {
   const normalized = String(scale || "minor").toLowerCase();
-
-  if (normalized === "major" || normalized === "rast") {
-    return [0, 4, 7];
-  }
-
-  if (normalized === "hijaz") {
-    return [0, 1, 7];
-  }
-
-  if (normalized === "bayati") {
-    return [0, 2, 7];
-  }
-
+  if (normalized === "major" || normalized === "rast") return [0, 4, 7];
+  if (normalized === "hijaz") return [0, 1, 7];
+  if (normalized === "bayati") return [0, 2, 7];
   return [0, 3, 7];
 }
 
@@ -120,10 +110,8 @@ export function createNeutralArrangementPreview({
     0
   );
 
-  const durationSeconds = endBar * secondsPerBar;
-
   return {
-    durationSeconds,
+    durationSeconds: endBar * secondsPerBar,
     stop() {
       oscillators.forEach((oscillator) => {
         try {
