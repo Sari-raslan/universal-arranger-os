@@ -1,41 +1,196 @@
-﻿$Repo="C:\Users\ssare\Desktop\UAOS_ALL_AGENTS_FINAL_RUN\universal-arranger-os"
-$Report="$Repo\reports\UAOS_RELEASE_GATE_REPORT.txt"
+#requires -Version 5.1
+[CmdletBinding()]
+param(
+    [string]$RepoPath = "C:\UAOSN20260617-000536\wt",
+    [switch]$SkipRuntimeSmoke
+)
 
-New-Item -ItemType Directory -Force "$Repo\reports" | Out-Null
+Set-StrictMode -Version Latest
+$ErrorActionPreference = "Stop"
 
-"UAOS RELEASE GATE" | Set-Content $Report -Encoding UTF8
-"TIME: $(Get-Date)" | Out-File $Report -Append
+function Step([string]$Message) {
+    Write-Host "`n==================================================" -ForegroundColor DarkCyan
+    Write-Host "==> $Message" -ForegroundColor Cyan
+    Write-Host "==================================================" -ForegroundColor DarkCyan
+}
 
-cd $Repo
+function Run([string]$Label, [scriptblock]$Command) {
+    Step $Label
+    & $Command
+    if ($LASTEXITCODE -ne 0) {
+        throw "$Label failed with exit code $LASTEXITCODE"
+    }
+}
 
-$ok=$true
+function Write-Utf8NoBom([string]$Path, [string]$Content) {
+    $fullPath = [System.IO.Path]::GetFullPath($Path)
+    $directory = [System.IO.Path]::GetDirectoryName($fullPath)
+    if ($directory) {
+        [System.IO.Directory]::CreateDirectory($directory) | Out-Null
+    }
 
-"CHECK: BUILD" | Out-File $Report -Append
-npm run build 2>&1 | Tee-Object -FilePath $Report -Append
-if($LASTEXITCODE -ne 0){ $ok=$false }
+    $utf8 = New-Object System.Text.UTF8Encoding($false)
+    [System.IO.File]::WriteAllText(
+        $fullPath,
+        ($Content -replace "`r`n", "`n"),
+        $utf8
+    )
+}
 
-try {
-  $f=Invoke-WebRequest "http://127.0.0.1:5180" -UseBasicParsing -TimeoutSec 10
-  "FRONTEND PREVIEW: PASS $($f.StatusCode)" | Out-File $Report -Append
-} catch {
-  "FRONTEND PREVIEW: FAIL $($_.Exception.Message)" | Out-File $Report -Append
-  $ok=$false
+if (-not (Test-Path -LiteralPath $RepoPath)) {
+    throw "Repository not found: $RepoPath"
+}
+
+$RepoPath = (Resolve-Path -LiteralPath $RepoPath).Path
+Set-Location -LiteralPath $RepoPath
+
+$stamp = Get-Date -Format "yyyyMMdd-HHmmss"
+$reportDir = Join-Path $RepoPath "reports\release-gate"
+[System.IO.Directory]::CreateDirectory($reportDir) | Out-Null
+$reportPath = Join-Path $reportDir "UAOS_RELEASE_GATE_$stamp.txt"
+
+$results = New-Object System.Collections.Generic.List[object]
+
+function Record(
+    [string]$Name,
+    [bool]$Passed,
+    [string]$Details
+) {
+    $results.Add([pscustomobject]@{
+        Name = $Name
+        Passed = $Passed
+        Details = $Details
+    })
 }
 
 try {
-  $b=Invoke-WebRequest "http://localhost:8090/health" -UseBasicParsing -TimeoutSec 10
-  "BACKEND HEALTH: PASS $($b.StatusCode)" | Out-File $Report -Append
+    Step "Git state"
+    $branch = (git branch --show-current).Trim()
+    $head = (git rev-parse --short HEAD).Trim()
+    $status = @(git status --porcelain)
+
+    if (Test-Path -LiteralPath "backend/data/projects.json") {
+        git restore --source=HEAD --worktree -- "backend/data/projects.json" 2>$null
+        $status = @(git status --porcelain)
+    }
+
+    $allowedSelfTestChanges = @(
+        "scripts/UAOS_RELEASE_GATE.ps1",
+        "tests/release-gate-script.test.mjs"
+    )
+
+    $nonReportChanges = @($status | Where-Object {
+        $entry = $_
+        $path = if ($entry.Length -ge 4) {
+            $entry.Substring(3).Trim()
+        } else {
+            $entry.Trim()
+        }
+
+        $path -notin $allowedSelfTestChanges -and
+        $path -notlike "reports/*" -and
+        $path -notlike "release-kit/e2e/*"
+    })
+
+    if ($nonReportChanges.Count -gt 0) {
+        Record "Git clean" $false ($nonReportChanges -join "; ")
+        throw "Working tree contains non-report changes."
+    }
+
+    Record "Git clean" $true "Branch=$branch; HEAD=$head"
+
+    Run "Unit and integration tests" { npm test }
+    Record "npm test" $true "PASS"
+
+    Run "Static checks" { npm run check }
+    Record "npm run check" $true "PASS"
+
+    Run "Production build" { npm run build }
+    Record "npm run build" $true "PASS"
+
+    $dist = Join-Path $RepoPath "uaos-live-clean\dist"
+    if (-not (Test-Path -LiteralPath $dist)) {
+        Record "Frontend dist" $false "Missing $dist"
+        throw "Frontend dist directory is missing."
+    }
+
+    $assets = @(Get-ChildItem -LiteralPath $dist -Recurse -File)
+    $totalBytes = ($assets | Measure-Object -Property Length -Sum).Sum
+    $largest = $assets | Sort-Object Length -Descending | Select-Object -First 1
+
+    Record "Frontend dist" $true (
+        "Files={0}; TotalBytes={1}; Largest={2}:{3}" -f
+        $assets.Count,
+        $totalBytes,
+        $largest.Name,
+        $largest.Length
+    )
+
+    if (-not $SkipRuntimeSmoke) {
+        $runtimeScript = Join-Path $RepoPath "scripts\UAOS_RUNTIME_ROUTE_SMOKE.ps1"
+
+        if (-not (Test-Path -LiteralPath $runtimeScript)) {
+            Record "Runtime route smoke" $false "Script missing"
+            throw "Runtime smoke script is missing."
+        }
+
+        Run "Runtime route smoke" {
+            powershell.exe `
+                -NoProfile `
+                -ExecutionPolicy Bypass `
+                -File $runtimeScript `
+                -RepoPath $RepoPath
+        }
+
+        Record "Runtime route smoke" $true "PASS"
+    } else {
+        Record "Runtime route smoke" $true "SKIPPED BY REQUEST"
+    }
+
+    $manifest = [ordered]@{
+        generatedAt = (Get-Date).ToString("o")
+        branch = $branch
+        commit = $head
+        node = (node --version)
+        npm = (npm --version)
+        distFileCount = $assets.Count
+        distTotalBytes = $totalBytes
+        largestAsset = if ($largest) {
+            [ordered]@{
+                name = $largest.Name
+                bytes = $largest.Length
+            }
+        } else {
+            $null
+        }
+        runtimeSmokeSkipped = [bool]$SkipRuntimeSmoke
+        status = "PASS"
+    }
+
+    $manifestPath = Join-Path $reportDir "UAOS_RELEASE_MANIFEST_$stamp.json"
+    Write-Utf8NoBom $manifestPath ($manifest | ConvertTo-Json -Depth 5)
+
+    Record "Release manifest" $true $manifestPath
 } catch {
-  "BACKEND HEALTH: FAIL $($_.Exception.Message)" | Out-File $Report -Append
-  $ok=$false
+    Record "Release gate" $false $_.Exception.Message
+    throw
+} finally {
+    $summary = @()
+    $summary += "UAOS RELEASE GATE"
+    $summary += "Generated: $(Get-Date -Format o)"
+    $summary += ""
+
+    foreach ($result in $results) {
+        $state = if ($result.Passed) { "PASS" } else { "FAIL" }
+        $summary += ("{0}: {1} - {2}" -f $state, $result.Name, $result.Details)
+    }
+
+    Write-Utf8NoBom $reportPath ($summary -join "`n")
+    Write-Host "`nReport: $reportPath"
+
+    if (Test-Path -LiteralPath "backend/data/projects.json") {
+        git restore --source=HEAD --worktree -- "backend/data/projects.json" 2>$null
+    }
 }
 
-if($ok){
-  "RELEASE GATE: PASS" | Out-File $Report -Append
-  Write-Host "RELEASE GATE PASS ✅" -ForegroundColor Green
-}else{
-  "RELEASE GATE: FAIL" | Out-File $Report -Append
-  Write-Host "RELEASE GATE FAIL ❌" -ForegroundColor Red
-}
-
-notepad $Report
+Write-Host "`nUAOS RELEASE GATE PASS" -ForegroundColor Green
