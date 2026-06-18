@@ -124,6 +124,7 @@ let serviceCache = new Map();
 fs.mkdirSync(dataDir, { recursive: true });
 fs.mkdirSync(uploadsDir, { recursive: true });
 fs.mkdirSync(samplesDir, { recursive: true });
+app.use(express.json({ limit: "25mb" }));
 app.use("/api/ums", createUmsRouter(express, { dataDir }));
 app.use("/api", createSetHardwareApiRouter(express, {
   allowedRoots: [
