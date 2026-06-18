@@ -19,7 +19,8 @@ export function NeutralMidiPreview({
   }
 
   function startPreview() {
-    stopPreview();
+    previewRef.current?.stop();
+    previewRef.current = null;
     setMessage("");
 
     try {

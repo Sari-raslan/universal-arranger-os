@@ -14,7 +14,7 @@ test("preview engine uses Web Audio only", () => {
   assert.doesNotMatch(source, /SysEx/i);
 });
 
-test("planner includes neutral preview controls", () => {
+test("planner includes preview controls", () => {
   const planner = fs.readFileSync(
     "uaos-live-clean/src/components/AudioArrangementPlannerPanel.jsx",
     "utf8"
