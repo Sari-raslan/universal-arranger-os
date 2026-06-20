@@ -1,1 +1,7 @@
-﻿export function createKorgPaCommand(section){return{section,type:"placeholder"}}
+﻿export function createKorgPaCommand(section) {
+  return {
+    target: "korg-pa",
+    type: "section-trigger-placeholder",
+    section
+  };
+}
