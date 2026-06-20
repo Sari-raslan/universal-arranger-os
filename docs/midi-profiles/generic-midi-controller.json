@@ -1,0 +1,69 @@
+
+  {"id": "generic-midi-controller",
+  "name": "Generic MIDI Controller",
+  "manufacturer": "Universal",
+  "protocol": "MIDI 1.0",
+  "match": {
+    "nameIncludes": []
+  },
+  "channels": {
+    "default": 1
+  },
+  "mappings": {
+    "notes": {
+      "36": "pad_1",
+      "37": "pad_2",
+      "38": "pad_3",
+      "39": "pad_4",
+      "40": "pad_5",
+      "41": "pad_6",
+      "42": "pad_7",
+      "43": "pad_8",
+      "44": "pad_9",
+      "45": "pad_10",
+      "46": "pad_11",
+      "47": "pad_12",
+      "48": "pad_13",
+      "49": "pad_14",
+      "50": "pad_15",
+      "51": "pad_16"
+    },
+    "cc": {
+      "1": "modulation",
+      "7": "master_volume",
+      "10": "pan",
+      "11": "expression",
+      "21": "macro_1",
+      "22": "macro_2",
+      "23": "macro_3",
+      "24": "macro_4",
+      "25": "macro_5",
+      "26": "macro_6",
+      "27": "macro_7",
+      "28": "macro_8"
+    },
+    "programChange": {
+      "*": "program_change"
+    },
+    "pitchBend": "pitch_bend",
+    "aftertouch": "aftertouch"
+  },
+  "actions": {
+    "pad_1": "start_style",
+    "pad_2": "stop_style",
+    "pad_3": "fill_1",
+    "pad_4": "fill_2",
+    "pad_5": "break",
+    "pad_6": "intro_1",
+    "pad_7": "ending_1",
+    "pad_8": "variation_1",
+    "macro_1": "tempo",
+    "macro_2": "style_volume",
+    "macro_3": "drums_volume",
+    "macro_4": "bass_volume",
+    "macro_5": "chords_volume",
+    "macro_6": "lead_volume",
+    "macro_7": "reverb",
+    "macro_8": "delay"
+  }
+}

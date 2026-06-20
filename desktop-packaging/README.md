@@ -1,7 +1,1 @@
-﻿# UAOS Desktop Packaging
-
-Next safe tasks:
-- Verify Electron entry
-- Build unsigned local installer only
-- Do not publish installer automatically
-- Do not sign until release identity is ready
+﻿# UAOS Desktop Packaging - unsigned local installer only, no auto publish.

@@ -1,0 +1,77 @@
+
+  {"id": "uaos-mini-controller",
+  "name": "UAOS Mini Controller",
+  "manufacturer": "UAOS",
+  "protocol": "MIDI 1.0",
+  "futureHardware": true,
+  "hardwareClass": "mini",
+  "match": {
+    "nameIncludes": ["UAOS Mini", "UAOS Controller Mini"]
+  },
+  "controls": {
+    "pads": 16,
+    "knobs": 8,
+    "faders": 4,
+    "buttons": 8
+  },
+  "mappings": {
+    "notes": {
+      "36": "pad_1",
+      "37": "pad_2",
+      "38": "pad_3",
+      "39": "pad_4",
+      "40": "pad_5",
+      "41": "pad_6",
+      "42": "pad_7",
+      "43": "pad_8",
+      "44": "pad_9",
+      "45": "pad_10",
+      "46": "pad_11",
+      "47": "pad_12",
+      "48": "pad_13",
+      "49": "pad_14",
+      "50": "pad_15",
+      "51": "pad_16"
+    },
+    "cc": {
+      "21": "knob_1",
+      "22": "knob_2",
+      "23": "knob_3",
+      "24": "knob_4",
+      "25": "knob_5",
+      "26": "knob_6",
+      "27": "knob_7",
+      "28": "knob_8",
+      "41": "fader_1",
+      "42": "fader_2",
+      "43": "fader_3",
+      "44": "fader_4"
+    }
+  },
+  "actions": {
+    "pad_1": "start_style",
+    "pad_2": "stop_style",
+    "pad_3": "fill_1",
+    "pad_4": "fill_2",
+    "pad_5": "break",
+    "pad_6": "intro_1",
+    "pad_7": "ending_1",
+    "pad_8": "variation_1",
+    "pad_9": "variation_2",
+    "pad_10": "variation_3",
+    "pad_11": "variation_4",
+    "pad_12": "sync_start",
+    "knob_1": "tempo",
+    "knob_2": "master_volume",
+    "knob_3": "style_volume",
+    "knob_4": "drums_volume",
+    "knob_5": "bass_volume",
+    "knob_6": "lead_volume",
+    "knob_7": "reverb",
+    "knob_8": "delay",
+    "fader_1": "track_1_volume",
+    "fader_2": "track_2_volume",
+    "fader_3": "track_3_volume",
+    "fader_4": "track_4_volume"
+  }
+}

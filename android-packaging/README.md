@@ -1,8 +1,1 @@
-﻿# UAOS Android Packaging
-
-Next safe tasks:
-- Capacitor shell
-- App icon
-- Privacy policy
-- Signed AAB later
-- No Play Store publish automatically
+﻿# UAOS Android Packaging - Capacitor shell and signed AAB later, no auto publish.

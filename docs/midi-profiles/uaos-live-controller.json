@@ -1,0 +1,26 @@
+
+  {"id": "uaos-live-controller",
+  "name": "UAOS Live Controller",
+  "manufacturer": "UAOS",
+  "protocol": "MIDI 1.0 / Future MIDI 2.0 Ready",
+  "futureHardware": true,
+  "hardwareClass": "live",
+  "match": {
+    "nameIncludes": ["UAOS Live", "UAOS Live Controller"]
+  },
+  "controls": {
+    "pads": 32,
+    "knobs": 8,
+    "faders": 9,
+    "buttons": 24,
+    "display": "OLED optional",
+    "pedals": 2
+  },
+  "actions": {
+    "performanceMode": true,
+    "arrangerMode": true,
+    "styleControl": true,
+    "liveSceneControl": true,
+    "futureFirmwareProfiles": true
+  }
+}
