@@ -1,0 +1,51 @@
+﻿{
+  "format": "UAOS_INSTRUMENT_PRESET",
+  "version": "1.0.0-local-placeholder",
+  "instrumentId": "oud-placeholder",
+  "name": "Oud Placeholder",
+  "family": "strings-oriental",
+  "engine": "uaos-safe-sampler-foundation",
+  "samplePolicy": "metadata-only-no-large-audio",
+  "rootNote": 60,
+  "zones": [
+    {
+      "zoneId": "oud-zone-low",
+      "noteMin": 48,
+      "noteMax": 59,
+      "rootNote": 55,
+      "velocityMin": 1,
+      "velocityMax": 80,
+      "articulation": "sustain",
+      "sampleRef": "placeholder://oud/low/sustain"
+    },
+    {
+      "zoneId": "oud-zone-mid",
+      "noteMin": 60,
+      "noteMax": 72,
+      "rootNote": 60,
+      "velocityMin": 1,
+      "velocityMax": 127,
+      "articulation": "sustain",
+      "sampleRef": "placeholder://oud/mid/sustain"
+    }
+  ],
+  "adsr": {
+    "attack": 0.01,
+    "decay": 0.15,
+    "sustain": 0.75,
+    "release": 0.3
+  },
+  "velocityLayers": [
+    {
+      "id": "soft",
+      "velocityMin": 1,
+      "velocityMax": 64
+    },
+    {
+      "id": "strong",
+      "velocityMin": 65,
+      "velocityMax": 127
+    }
+  ],
+  "articulations": ["sustain", "staccato", "slide"]
+}

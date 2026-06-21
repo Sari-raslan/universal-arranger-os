@@ -1,0 +1,44 @@
+﻿{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "uaos-local-library.schema.json",
+  "title": "UAOS Local Library Index",
+  "type": "object",
+  "required": ["format", "version", "libraries"],
+  "properties": {
+    "format": { "const": "UAOS_LOCAL_LIBRARY_INDEX" },
+    "version": { "type": "string" },
+    "libraries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["libraryId", "name", "status", "instruments"],
+        "properties": {
+          "libraryId": { "type": "string" },
+          "name": { "type": "string" },
+          "status": { "enum": ["placeholder", "indexed", "disabled"] },
+          "description": { "type": "string" },
+          "instruments": {
+            "type": "array",
+            "items": { "$ref": "#/$defs/instrumentRef" }
+          }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "instrumentRef": {
+      "type": "object",
+      "required": ["instrumentId", "name", "family", "presetPath"],
+      "properties": {
+        "instrumentId": { "type": "string" },
+        "name": { "type": "string" },
+        "family": { "type": "string" },
+        "presetPath": { "type": "string" },
+        "tags": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    }
+  }
+}
