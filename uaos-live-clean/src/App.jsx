@@ -169,6 +169,8 @@ export default function App() {
 
 <section className="premiumSection payResumePaymentSection" id="payment"><div className="sectionTitle"><p className="spectrumLabel">Payment readiness</p><h2>UAOS pricing is ready locally. Real payment is locked.</h2></div><div className="payPlans"><article><b>Starter</b><strong>19.99 € / month</strong><p>For singers and creators.</p><a className="mainBtn" href="/universal-arranger-os/checkout/starter.html">Start with Starter</a><button disabled>PayPal Placeholder</button><button disabled>Card Placeholder</button></article><article className="featuredPay"><b>Pro</b><strong>49.99 € / month</strong><p>For serious creators and studios.</p><a className="mainBtn" href="/universal-arranger-os/checkout/pro.html">Choose Pro</a><button disabled>PayPal Placeholder</button><button disabled>Card Placeholder</button></article><article><b>Studio</b><strong>99.99 € / month or Contact</strong><p>For business/studio planning.</p><a className="ghostBtn" href="/universal-arranger-os/checkout/studio.html">Contact for Studio</a><button disabled>Manual Invoice Placeholder</button><button disabled>Payment activation pending approval</button></article></div><p className="paymentLockNote">Payment not active yet. No PayPal live, no card checkout, no subscription activation.</p></section>
 
+<section className="premiumSection pay1214CommercialLinks"><div className="sectionTitle"><p className="spectrumLabel">Commercial checkout</p><h2>Pricing, checkout, invoice, and PayPal readiness are prepared locally.</h2></div><div className="commercialLinkGrid"><a href="/universal-arranger-os/commercial/pricing-comparison.html"><b>Pricing comparison</b><span>Compare Starter, Pro, Studio</span></a><a href="/universal-arranger-os/paypal/sandbox-checkout-preview.html"><b>PayPal Sandbox Preview</b><span>No live payments</span></a><a href="/universal-arranger-os/checkout/manual-invoice.html"><b>Manual Invoice</b><span>Business placeholder</span></a><a href="/universal-arranger-os/legal/payment-terms.html"><b>Payment Terms</b><span>Legal placeholder</span></a></div></section>
+
 <footer className="premiumFooter">
         <b>UAOS</b>
         <span>Universal Arranger OS · Premium local product preview</span>
@@ -176,6 +178,7 @@ export default function App() {
     </main>
   );
 }
+
 
 
 
