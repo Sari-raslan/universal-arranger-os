@@ -1,0 +1,43 @@
+﻿{
+  "format": "UAOS_FINAL_LOCAL_GATE_POLICY",
+  "version": "1.0.0",
+  "status": "local-safe-gate",
+  "requiredPasses": [
+    "build",
+    "localMusicEngineQa",
+    "libraryScannerPlanningQa",
+    "limitedFilenameScannerQa",
+    "libraryIndexMapperQa",
+    "samplerPresetPackBuilderQa",
+    "dawTrackTemplateBuilderQa",
+    "arrangementProjectBuilderQa",
+    "projectWorkspacePackQa",
+    "localPipelineOrchestratorQa"
+  ],
+  "allowedOutputs": [
+    "localHtmlPages",
+    "localJsonReports",
+    "metadataOnlyJson",
+    "browserDownloadedWorkspaceJson"
+  ],
+  "lockedOutputs": [
+    "midiExport",
+    "audioRender",
+    "keyboardFormatExport",
+    "productionParser",
+    "cloudSync",
+    "deployment"
+  ],
+  "hardLocks": {
+    "deploy": false,
+    "appJsTouch": false,
+    "fileContentRead": false,
+    "sampleLoading": false,
+    "audioDecoding": false,
+    "audioRendering": false,
+    "midiExport": false,
+    "keyboardWriter": false,
+    "keyboardOutput": false,
+    "productionParser": false
+  }
+}
