@@ -32,7 +32,7 @@ export default function App() {
           <a href="#workflow">Workflow</a>
           <a href="#pricing">Pricing</a>
           <a href="#downloads">Downloads</a>
-          <a href="#support">Support</a>
+          <a href="#support">Support</a><a href="#legal">Legal</a>
         </div>
       </nav>
 
@@ -178,6 +178,17 @@ export default function App() {
         <p className="lead">A modern, local-first platform for voice ideas, MIDI planning, studio workflow, and professional arranger product direction.</p>
       </section>
 
+            <section className="section legal" id="legal">
+        <p className="pill">FINAL-11 Commercial Pages</p>
+        <h2>Commercial readiness pages</h2>
+        <div className="grid2">
+          <article className="card"><h3>Privacy</h3><p>UAOS is currently a local-first preview. No public account system or payment flow is enabled in this step.</p></article>
+          <article className="card"><h3>Terms</h3><p>This local release candidate is not yet a commercial production release. Public launch requires deploy retry and final verification.</p></article>
+          <article className="card"><h3>Contact</h3><p>Future contact form and support channels can be connected after public deployment and business approval.</p></article>
+          <article className="card"><h3>Beta Access</h3><p>Beta access is planned for singers, creators, studios, and arranger keyboard professionals.</p></article>
+        </div>
+      </section>
+
       <section className="section nextAction">
         <p className="pill">FINAL-07 Next Action</p>
         <h2>Next step after Vercel limit resets</h2>
@@ -195,5 +206,6 @@ export default function App() {
     </main>
   );
 }
+
 
 
