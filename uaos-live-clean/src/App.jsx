@@ -115,6 +115,16 @@ export default function App() {
         </div>
       </section>
 
+            <section className="section trust" id="trust">
+        <p className="pill">FINAL-05 Product Trust</p>
+        <h2>Why UAOS is different</h2>
+        <div className="grid3">
+          <article className="card"><h3>Local-first</h3><p>Work safely on your machine before any public release or cloud workflow.</p></article>
+          <article className="card"><h3>Musician-focused</h3><p>Built around singers, MIDI, song structure, arranger workflows, and creators.</p></article>
+          <article className="card"><h3>Clear safety gates</h3><p>Real writer, parser, fixtures, and keyboard output stay locked until explicitly approved.</p></article>
+        </div>
+      </section>
+
       <section className="section downloads" id="downloads">
         <p className="pill">Downloads</p>
         <h2>Release Candidate downloads are not public yet.</h2>
@@ -128,6 +138,19 @@ export default function App() {
         </div>
       </section>
 
+            <section className="section launchChecklist">
+        <p className="pill">FINAL-06 Launch Checklist</p>
+        <h2>Before public launch retry</h2>
+        <div className="checklist">
+          <span>✓ Main website visible locally</span>
+          <span>✓ Launch status page exists</span>
+          <span>✓ Build passes</span>
+          <span>✓ Git push ready</span>
+          <span>✓ Deploy retry waits for Vercel reset</span>
+          <span>✓ No writer/parser/output unlocked</span>
+        </div>
+      </section>
+
       <section className="section support" id="support">
         <p className="pill">Support</p>
         <h2>Next: polish, screenshots, videos, and public launch retry.</h2>
@@ -138,6 +161,16 @@ export default function App() {
         </div>
       </section>
 
+            <section className="section nextAction">
+        <p className="pill">FINAL-07 Next Action</p>
+        <h2>Next step after Vercel limit resets</h2>
+        <p className="lead">Run the generated retry script only after the Vercel daily deployment limit resets.</p>
+        <div className="ctaRow">
+          <a className="btn hot" href="/universal-arranger-os/launch/status.html">Open Launch Status</a>
+          <a className="btn ghost" href="#home">Back Home</a>
+        </div>
+      </section>
+
       <footer className="footer">
         <b>UAOS</b>
         <span>Visible product completion preview • FINAL-01 • No deploy in this step</span>
@@ -145,3 +178,4 @@ export default function App() {
     </main>
   );
 }
+
