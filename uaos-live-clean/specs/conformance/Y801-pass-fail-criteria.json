@@ -1,0 +1,36 @@
+{
+  "phase": "Y801-Y805",
+  "title": "Pass / Fail Criteria Design",
+  "status": "PASS_CRITERIA_DESIGN_READY",
+  "passCriteria": [
+    "All reports are valid JSON.",
+    "All public review pages exist.",
+    "All safety fields explicitly block writer, output, parser, deploy, fixtures, and App.jsx changes.",
+    "No forbidden keyboard output extensions are created.",
+    "No code path implements writer behavior.",
+    "No fixture path is read/copied/modified.",
+    "Build passes after every group."
+  ],
+  "failCriteria": [
+    "Any writer implementation appears.",
+    "Any real keyboard output file appears.",
+    "Any forbidden extension file appears.",
+    "Any production parser bridge appears.",
+    "Any deploy/public release command appears.",
+    "Any fixture interaction appears.",
+    "Any App.jsx modification appears.",
+    "Any safety field is missing or not blocked."
+  ],
+  "safety": {
+    "writer": "BLOCKED",
+    "realWriter": "BLOCKED",
+    "realKeyboardOutput": "BLOCKED",
+    "productionParser": "BLOCKED",
+    "deployPublicRelease": "BLOCKED",
+    "fixturesReadCopyModify": "BLOCKED",
+    "appJsxModified": false,
+    "designOnly": true,
+    "noOutputQa": true
+  },
+  "generatedAt": "2026-06-21T10:46:58.625Z"
+}

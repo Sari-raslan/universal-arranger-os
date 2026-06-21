@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>UAOS HW/SW Checklist + Failure Modes</title>
+  <style>
+    body{font-family:Arial;background:#0f0f10;color:#eee;padding:28px;line-height:1.55}
+    .card{background:#1b1b1d;border:1px solid #444;border-radius:16px;padding:20px;margin:14px 0}
+    table{width:100%;border-collapse:collapse}td,th{border:1px solid #444;padding:10px;vertical-align:top}
+    .lock{color:#ffcc66}.bad{color:#ff8080}a{color:#9fd0ff}
+  </style>
+</head>
+<body>
+  <div class="card"><h1>UAOS HW/SW Checklist + Failure Modes</h1><p>Design only. No real keyboard output.</p></div>
+  <div class="card"><h2>Hardware / Software Checklist</h2><table><tr><th>ID</th><th>Target</th><th>Validation Needed</th><th>Status</th></tr>
+<tr><td>HW-001</td><td>KORG family</td><td>Future conformance profile only</td><td>BLOCKED_NO_REAL_OUTPUT</td></tr>
+
+<tr><td>HW-002</td><td>Yamaha family</td><td>Future conformance profile only</td><td>BLOCKED_NO_REAL_OUTPUT</td></tr>
+
+<tr><td>HW-003</td><td>Roland family</td><td>Future conformance profile only</td><td>BLOCKED_NO_REAL_OUTPUT</td></tr>
+
+<tr><td>HW-004</td><td>Ketron family</td><td>Future conformance profile only</td><td>BLOCKED_NO_REAL_OUTPUT</td></tr>
+
+<tr><td>SW-001</td><td>Local demo browser</td><td>HTML/report display only</td><td>READY_FOR_REVIEW</td></tr>
+
+<tr><td>SW-002</td><td>Generated reports</td><td>JSON parse + safety fields</td><td>READY_FOR_REVIEW</td></tr>
+
+<tr><td>SW-003</td><td>Build system</td><td>npm run build</td><td>REQUIRED_EACH_GROUP</td></tr></table></div>
+  <div class="card"><h2>Failure Modes</h2><table><tr><th>ID</th><th>Failure</th><th>Severity</th><th>Action</th></tr>
+<tr><td>FM-001</td><td>Writer implementation detected</td><td>CRITICAL</td><td>STOP_IMMEDIATELY</td></tr>
+
+<tr><td>FM-002</td><td>Forbidden keyboard output extension created</td><td>CRITICAL</td><td>STOP_IMMEDIATELY</td></tr>
+
+<tr><td>FM-003</td><td>Fixture read/copy/modify detected</td><td>CRITICAL</td><td>STOP_IMMEDIATELY</td></tr>
+
+<tr><td>FM-004</td><td>Production parser bridge detected</td><td>CRITICAL</td><td>STOP_IMMEDIATELY</td></tr>
+
+<tr><td>FM-005</td><td>Deploy/public release command detected</td><td>CRITICAL</td><td>STOP_IMMEDIATELY</td></tr>
+
+<tr><td>FM-006</td><td>App.jsx modification detected</td><td>CRITICAL</td><td>STOP_IMMEDIATELY</td></tr>
+
+<tr><td>FM-007</td><td>Missing safety field in JSON report</td><td>HIGH</td><td>FAIL_GATE</td></tr>
+
+<tr><td>FM-008</td><td>Missing public HTML review page</td><td>MEDIUM</td><td>FAIL_GATE</td></tr></table></div>
+  <div class="card lock"><p>Writer: BLOCKED | Real output: BLOCKED | Production parser: BLOCKED | Deploy: BLOCKED | Fixtures touch: BLOCKED | App.jsx: NOT MODIFIED</p></div>
+</body>
+</html>

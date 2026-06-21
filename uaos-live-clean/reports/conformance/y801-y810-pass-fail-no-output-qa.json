@@ -1,0 +1,111 @@
+{
+  "passFailCriteria": {
+    "phase": "Y801-Y805",
+    "title": "Pass / Fail Criteria Design",
+    "status": "PASS_CRITERIA_DESIGN_READY",
+    "passCriteria": [
+      "All reports are valid JSON.",
+      "All public review pages exist.",
+      "All safety fields explicitly block writer, output, parser, deploy, fixtures, and App.jsx changes.",
+      "No forbidden keyboard output extensions are created.",
+      "No code path implements writer behavior.",
+      "No fixture path is read/copied/modified.",
+      "Build passes after every group."
+    ],
+    "failCriteria": [
+      "Any writer implementation appears.",
+      "Any real keyboard output file appears.",
+      "Any forbidden extension file appears.",
+      "Any production parser bridge appears.",
+      "Any deploy/public release command appears.",
+      "Any fixture interaction appears.",
+      "Any App.jsx modification appears.",
+      "Any safety field is missing or not blocked."
+    ],
+    "safety": {
+      "writer": "BLOCKED",
+      "realWriter": "BLOCKED",
+      "realKeyboardOutput": "BLOCKED",
+      "productionParser": "BLOCKED",
+      "deployPublicRelease": "BLOCKED",
+      "fixturesReadCopyModify": "BLOCKED",
+      "appJsxModified": false,
+      "designOnly": true,
+      "noOutputQa": true
+    },
+    "generatedAt": "2026-06-21T10:46:58.625Z"
+  },
+  "noOutputQaRules": {
+    "phase": "Y806-Y810",
+    "title": "No-Output QA Rules",
+    "status": "PASS_NO_OUTPUT_QA_RULES_READY",
+    "noOutputRules": [
+      {
+        "id": "NOOUT-001",
+        "rule": "No output files with keyboard extensions may be created."
+      },
+      {
+        "id": "NOOUT-002",
+        "rule": "Reports may describe future output contracts only."
+      },
+      {
+        "id": "NOOUT-003",
+        "rule": "HTML may display forbidden extensions only as blocked formats."
+      },
+      {
+        "id": "NOOUT-004",
+        "rule": "No binary serialization logic may exist."
+      },
+      {
+        "id": "NOOUT-005",
+        "rule": "No writer adapter implementation may exist."
+      },
+      {
+        "id": "NOOUT-006",
+        "rule": "No fixture content may be read to validate output."
+      },
+      {
+        "id": "NOOUT-007",
+        "rule": "No production parser may be called."
+      }
+    ],
+    "allowedArtifacts": [
+      ".json",
+      ".md",
+      ".html",
+      ".txt"
+    ],
+    "forbiddenKeyboardExtensions": [
+      ".STY",
+      ".SET",
+      ".PRS",
+      ".STL",
+      ".PAT",
+      ".MSP",
+      ".KST"
+    ],
+    "safety": {
+      "writer": "BLOCKED",
+      "realWriter": "BLOCKED",
+      "realKeyboardOutput": "BLOCKED",
+      "productionParser": "BLOCKED",
+      "deployPublicRelease": "BLOCKED",
+      "fixturesReadCopyModify": "BLOCKED",
+      "appJsxModified": false,
+      "designOnly": true,
+      "noOutputQa": true
+    },
+    "generatedAt": "2026-06-21T10:46:58.625Z"
+  },
+  "safety": {
+    "writer": "BLOCKED",
+    "realWriter": "BLOCKED",
+    "realKeyboardOutput": "BLOCKED",
+    "productionParser": "BLOCKED",
+    "deployPublicRelease": "BLOCKED",
+    "fixturesReadCopyModify": "BLOCKED",
+    "appJsxModified": false,
+    "designOnly": true,
+    "noOutputQa": true
+  }
+}

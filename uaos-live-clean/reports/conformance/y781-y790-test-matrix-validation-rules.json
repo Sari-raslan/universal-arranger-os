@@ -1,0 +1,149 @@
+{
+  "testMatrix": {
+    "phase": "Y781-Y790",
+    "title": "Conformance Test Matrix Design",
+    "status": "PASS_TEST_MATRIX_DESIGN_READY",
+    "designOnly": true,
+    "matrix": [
+      {
+        "id": "CONF-001",
+        "area": "Input contract",
+        "objective": "Future writer input must match approved contract before any sandbox writer is allowed.",
+        "expectedEvidence": "JSON schema validation report only",
+        "passCondition": "All required fields are present in simulated plan",
+        "outputAllowed": false
+      },
+      {
+        "id": "CONF-002",
+        "area": "Output contract",
+        "objective": "Future output contract must be checked without producing real keyboard files.",
+        "expectedEvidence": "No-output validation report only",
+        "passCondition": "Output plan describes target metadata without creating output",
+        "outputAllowed": false
+      },
+      {
+        "id": "CONF-003",
+        "area": "Forbidden extension policy",
+        "objective": "No generated artifact may use forbidden keyboard extensions.",
+        "expectedEvidence": "File extension scan report",
+        "passCondition": "No .STY/.SET/.PRS/.STL/.PAT/.MSP/.KST files exist in generated package",
+        "outputAllowed": false
+      },
+      {
+        "id": "CONF-004",
+        "area": "Fixture isolation",
+        "objective": "No fixture read/copy/modify is allowed.",
+        "expectedEvidence": "No fixture path interaction report",
+        "passCondition": "No fixture paths referenced or touched",
+        "outputAllowed": false
+      },
+      {
+        "id": "CONF-005",
+        "area": "Production parser isolation",
+        "objective": "No production parser integration is allowed.",
+        "expectedEvidence": "Parser integration blocker report",
+        "passCondition": "Production parser remains blocked",
+        "outputAllowed": false
+      },
+      {
+        "id": "CONF-006",
+        "area": "Deploy isolation",
+        "objective": "No deploy or public release action is allowed.",
+        "expectedEvidence": "Deploy blocker report",
+        "passCondition": "Deploy/public release remains blocked",
+        "outputAllowed": false
+      }
+    ],
+    "safety": {
+      "writer": "BLOCKED",
+      "realWriter": "BLOCKED",
+      "realKeyboardOutput": "BLOCKED",
+      "productionParser": "BLOCKED",
+      "deployPublicRelease": "BLOCKED",
+      "fixturesReadCopyModify": "BLOCKED",
+      "appJsxModified": false,
+      "designOnly": true,
+      "noOutputQa": true
+    },
+    "generatedAt": "2026-06-21T10:46:51.546Z"
+  },
+  "validationRules": {
+    "phase": "Y786-Y790",
+    "title": "Expected Validation Rules Design",
+    "status": "PASS_VALIDATION_RULES_DESIGN_READY",
+    "rules": [
+      {
+        "id": "RULE-001",
+        "name": "Spec only",
+        "expectation": "Only JSON, MD, HTML reports allowed."
+      },
+      {
+        "id": "RULE-002",
+        "name": "No writer implementation",
+        "expectation": "No writer runtime, adapter, binary serializer, or export command."
+      },
+      {
+        "id": "RULE-003",
+        "name": "No real output",
+        "expectation": "No real keyboard file generation."
+      },
+      {
+        "id": "RULE-004",
+        "name": "No forbidden extensions",
+        "expectation": "No files ending with forbidden keyboard extensions."
+      },
+      {
+        "id": "RULE-005",
+        "name": "No fixture touch",
+        "expectation": "No fixture read/copy/modify paths."
+      },
+      {
+        "id": "RULE-006",
+        "name": "No production parser",
+        "expectation": "No parser production path or parser writer bridge."
+      },
+      {
+        "id": "RULE-007",
+        "name": "No deploy",
+        "expectation": "No deploy/public release command."
+      },
+      {
+        "id": "RULE-008",
+        "name": "No App.jsx",
+        "expectation": "No App.jsx modification."
+      }
+    ],
+    "forbiddenExtensions": [
+      ".STY",
+      ".SET",
+      ".PRS",
+      ".STL",
+      ".PAT",
+      ".MSP",
+      ".KST"
+    ],
+    "safety": {
+      "writer": "BLOCKED",
+      "realWriter": "BLOCKED",
+      "realKeyboardOutput": "BLOCKED",
+      "productionParser": "BLOCKED",
+      "deployPublicRelease": "BLOCKED",
+      "fixturesReadCopyModify": "BLOCKED",
+      "appJsxModified": false,
+      "designOnly": true,
+      "noOutputQa": true
+    },
+    "generatedAt": "2026-06-21T10:46:51.547Z"
+  },
+  "safety": {
+    "writer": "BLOCKED",
+    "realWriter": "BLOCKED",
+    "realKeyboardOutput": "BLOCKED",
+    "productionParser": "BLOCKED",
+    "deployPublicRelease": "BLOCKED",
+    "fixturesReadCopyModify": "BLOCKED",
+    "appJsxModified": false,
+    "designOnly": true,
+    "noOutputQa": true
+  }
+}

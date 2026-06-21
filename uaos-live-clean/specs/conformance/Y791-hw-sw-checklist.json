@@ -1,0 +1,62 @@
+{
+  "phase": "Y791-Y796",
+  "title": "Hardware / Software Validation Checklist Design",
+  "status": "PASS_HW_SW_CHECKLIST_DESIGN_READY",
+  "note": "This is a future validation design only. No device files are generated and no hardware output is produced.",
+  "checklist": [
+    {
+      "id": "HW-001",
+      "target": "KORG family",
+      "validationNeeded": "Future conformance profile only",
+      "currentStatus": "BLOCKED_NO_REAL_OUTPUT"
+    },
+    {
+      "id": "HW-002",
+      "target": "Yamaha family",
+      "validationNeeded": "Future conformance profile only",
+      "currentStatus": "BLOCKED_NO_REAL_OUTPUT"
+    },
+    {
+      "id": "HW-003",
+      "target": "Roland family",
+      "validationNeeded": "Future conformance profile only",
+      "currentStatus": "BLOCKED_NO_REAL_OUTPUT"
+    },
+    {
+      "id": "HW-004",
+      "target": "Ketron family",
+      "validationNeeded": "Future conformance profile only",
+      "currentStatus": "BLOCKED_NO_REAL_OUTPUT"
+    },
+    {
+      "id": "SW-001",
+      "target": "Local demo browser",
+      "validationNeeded": "HTML/report display only",
+      "currentStatus": "READY_FOR_REVIEW"
+    },
+    {
+      "id": "SW-002",
+      "target": "Generated reports",
+      "validationNeeded": "JSON parse + safety fields",
+      "currentStatus": "READY_FOR_REVIEW"
+    },
+    {
+      "id": "SW-003",
+      "target": "Build system",
+      "validationNeeded": "npm run build",
+      "currentStatus": "REQUIRED_EACH_GROUP"
+    }
+  ],
+  "safety": {
+    "writer": "BLOCKED",
+    "realWriter": "BLOCKED",
+    "realKeyboardOutput": "BLOCKED",
+    "productionParser": "BLOCKED",
+    "deployPublicRelease": "BLOCKED",
+    "fixturesReadCopyModify": "BLOCKED",
+    "appJsxModified": false,
+    "designOnly": true,
+    "noOutputQa": true
+  },
+  "generatedAt": "2026-06-21T10:46:55.165Z"
+}

@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>UAOS Pass/Fail + No-Output QA</title>
+  <style>
+    body{font-family:Arial;background:#0f0f10;color:#eee;padding:28px;line-height:1.55}
+    .card{background:#1b1b1d;border:1px solid #444;border-radius:16px;padding:20px;margin:14px 0}
+    table{width:100%;border-collapse:collapse}td,th{border:1px solid #444;padding:10px;vertical-align:top}
+    .pass{color:#80ffb0}.bad{color:#ff8080}.lock{color:#ffcc66}a{color:#9fd0ff}
+  </style>
+</head>
+<body>
+  <div class="card"><h1>UAOS Pass/Fail + No-Output QA Rules</h1><p>Design only. No output allowed.</p></div>
+  <div class="card pass"><h2>Pass Criteria</h2><ul><li>All reports are valid JSON.</li>
+<li>All public review pages exist.</li>
+<li>All safety fields explicitly block writer, output, parser, deploy, fixtures, and App.jsx changes.</li>
+<li>No forbidden keyboard output extensions are created.</li>
+<li>No code path implements writer behavior.</li>
+<li>No fixture path is read/copied/modified.</li>
+<li>Build passes after every group.</li></ul></div>
+  <div class="card bad"><h2>Fail Criteria</h2><ul><li>Any writer implementation appears.</li>
+<li>Any real keyboard output file appears.</li>
+<li>Any forbidden extension file appears.</li>
+<li>Any production parser bridge appears.</li>
+<li>Any deploy/public release command appears.</li>
+<li>Any fixture interaction appears.</li>
+<li>Any App.jsx modification appears.</li>
+<li>Any safety field is missing or not blocked.</li></ul></div>
+  <div class="card"><h2>No-Output QA Rules</h2><table><tr><th>ID</th><th>Rule</th></tr><tr><td>NOOUT-001</td><td>No output files with keyboard extensions may be created.</td></tr>
+<tr><td>NOOUT-002</td><td>Reports may describe future output contracts only.</td></tr>
+<tr><td>NOOUT-003</td><td>HTML may display forbidden extensions only as blocked formats.</td></tr>
+<tr><td>NOOUT-004</td><td>No binary serialization logic may exist.</td></tr>
+<tr><td>NOOUT-005</td><td>No writer adapter implementation may exist.</td></tr>
+<tr><td>NOOUT-006</td><td>No fixture content may be read to validate output.</td></tr>
+<tr><td>NOOUT-007</td><td>No production parser may be called.</td></tr></table></div>
+  <div class="card lock"><p>Writer: BLOCKED | Real output: BLOCKED | Production parser: BLOCKED | Deploy: BLOCKED | Fixtures touch: BLOCKED | App.jsx: NOT MODIFIED</p></div>
+</body>
+</html>

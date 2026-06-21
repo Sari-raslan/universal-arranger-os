@@ -1,0 +1,68 @@
+{
+  "phase": "Y781-Y790",
+  "title": "Conformance Test Matrix Design",
+  "status": "PASS_TEST_MATRIX_DESIGN_READY",
+  "designOnly": true,
+  "matrix": [
+    {
+      "id": "CONF-001",
+      "area": "Input contract",
+      "objective": "Future writer input must match approved contract before any sandbox writer is allowed.",
+      "expectedEvidence": "JSON schema validation report only",
+      "passCondition": "All required fields are present in simulated plan",
+      "outputAllowed": false
+    },
+    {
+      "id": "CONF-002",
+      "area": "Output contract",
+      "objective": "Future output contract must be checked without producing real keyboard files.",
+      "expectedEvidence": "No-output validation report only",
+      "passCondition": "Output plan describes target metadata without creating output",
+      "outputAllowed": false
+    },
+    {
+      "id": "CONF-003",
+      "area": "Forbidden extension policy",
+      "objective": "No generated artifact may use forbidden keyboard extensions.",
+      "expectedEvidence": "File extension scan report",
+      "passCondition": "No .STY/.SET/.PRS/.STL/.PAT/.MSP/.KST files exist in generated package",
+      "outputAllowed": false
+    },
+    {
+      "id": "CONF-004",
+      "area": "Fixture isolation",
+      "objective": "No fixture read/copy/modify is allowed.",
+      "expectedEvidence": "No fixture path interaction report",
+      "passCondition": "No fixture paths referenced or touched",
+      "outputAllowed": false
+    },
+    {
+      "id": "CONF-005",
+      "area": "Production parser isolation",
+      "objective": "No production parser integration is allowed.",
+      "expectedEvidence": "Parser integration blocker report",
+      "passCondition": "Production parser remains blocked",
+      "outputAllowed": false
+    },
+    {
+      "id": "CONF-006",
+      "area": "Deploy isolation",
+      "objective": "No deploy or public release action is allowed.",
+      "expectedEvidence": "Deploy blocker report",
+      "passCondition": "Deploy/public release remains blocked",
+      "outputAllowed": false
+    }
+  ],
+  "safety": {
+    "writer": "BLOCKED",
+    "realWriter": "BLOCKED",
+    "realKeyboardOutput": "BLOCKED",
+    "productionParser": "BLOCKED",
+    "deployPublicRelease": "BLOCKED",
+    "fixturesReadCopyModify": "BLOCKED",
+    "appJsxModified": false,
+    "designOnly": true,
+    "noOutputQa": true
+  },
+  "generatedAt": "2026-06-21T10:46:51.546Z"
+}

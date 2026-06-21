@@ -1,0 +1,126 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>UAOS Y781-Y820 Conformance Test Design</title>
+  <style>
+    body{font-family:Arial;background:#0f0f10;color:#eee;padding:28px;line-height:1.55}
+    .card{background:#1b1b1d;border:1px solid #444;border-radius:16px;padding:20px;margin:14px 0}
+    table{width:100%;border-collapse:collapse}td,th{border:1px solid #444;padding:10px;vertical-align:top}
+    .pass{color:#80ffb0}.lock{color:#ffcc66}.bad{color:#ff8080}a{color:#9fd0ff}
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>UAOS Conformance Test Design</h1>
+    <h2>Y781-Y790 Test Matrix + Validation Rules</h2>
+    <p>This is design only. It does not run a writer and does not create output.</p>
+  </div>
+  <div class="card">
+    <h2>Test Matrix</h2>
+    <table><tr><th>ID</th><th>Area</th><th>Objective</th><th>Pass Condition</th><th>Output Allowed</th></tr>
+<tr>
+  <td>CONF-001</td>
+  <td>Input contract</td>
+  <td>Future writer input must match approved contract before any sandbox writer is allowed.</td>
+  <td>All required fields are present in simulated plan</td>
+  <td>NO</td>
+</tr>
+
+<tr>
+  <td>CONF-002</td>
+  <td>Output contract</td>
+  <td>Future output contract must be checked without producing real keyboard files.</td>
+  <td>Output plan describes target metadata without creating output</td>
+  <td>NO</td>
+</tr>
+
+<tr>
+  <td>CONF-003</td>
+  <td>Forbidden extension policy</td>
+  <td>No generated artifact may use forbidden keyboard extensions.</td>
+  <td>No .STY/.SET/.PRS/.STL/.PAT/.MSP/.KST files exist in generated package</td>
+  <td>NO</td>
+</tr>
+
+<tr>
+  <td>CONF-004</td>
+  <td>Fixture isolation</td>
+  <td>No fixture read/copy/modify is allowed.</td>
+  <td>No fixture paths referenced or touched</td>
+  <td>NO</td>
+</tr>
+
+<tr>
+  <td>CONF-005</td>
+  <td>Production parser isolation</td>
+  <td>No production parser integration is allowed.</td>
+  <td>Production parser remains blocked</td>
+  <td>NO</td>
+</tr>
+
+<tr>
+  <td>CONF-006</td>
+  <td>Deploy isolation</td>
+  <td>No deploy or public release action is allowed.</td>
+  <td>Deploy/public release remains blocked</td>
+  <td>NO</td>
+</tr></table>
+  </div>
+  <div class="card">
+    <h2>Validation Rules</h2>
+    <table><tr><th>ID</th><th>Name</th><th>Expectation</th></tr>
+<tr>
+  <td>RULE-001</td>
+  <td>Spec only</td>
+  <td>Only JSON, MD, HTML reports allowed.</td>
+</tr>
+
+<tr>
+  <td>RULE-002</td>
+  <td>No writer implementation</td>
+  <td>No writer runtime, adapter, binary serializer, or export command.</td>
+</tr>
+
+<tr>
+  <td>RULE-003</td>
+  <td>No real output</td>
+  <td>No real keyboard file generation.</td>
+</tr>
+
+<tr>
+  <td>RULE-004</td>
+  <td>No forbidden extensions</td>
+  <td>No files ending with forbidden keyboard extensions.</td>
+</tr>
+
+<tr>
+  <td>RULE-005</td>
+  <td>No fixture touch</td>
+  <td>No fixture read/copy/modify paths.</td>
+</tr>
+
+<tr>
+  <td>RULE-006</td>
+  <td>No production parser</td>
+  <td>No parser production path or parser writer bridge.</td>
+</tr>
+
+<tr>
+  <td>RULE-007</td>
+  <td>No deploy</td>
+  <td>No deploy/public release command.</td>
+</tr>
+
+<tr>
+  <td>RULE-008</td>
+  <td>No App.jsx</td>
+  <td>No App.jsx modification.</td>
+</tr></table>
+  </div>
+  <div class="card lock">
+    <h2>Safety</h2>
+    <p>Writer: BLOCKED | Real output: BLOCKED | Production parser: BLOCKED | Deploy: BLOCKED | Fixtures touch: BLOCKED | App.jsx: NOT MODIFIED</p>
+  </div>
+</body>
+</html>

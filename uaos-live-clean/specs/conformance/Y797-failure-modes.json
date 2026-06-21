@@ -1,0 +1,67 @@
+{
+  "phase": "Y797-Y800",
+  "title": "Failure Modes Design",
+  "status": "PASS_FAILURE_MODES_DESIGN_READY",
+  "modes": [
+    {
+      "id": "FM-001",
+      "failure": "Writer implementation detected",
+      "severity": "CRITICAL",
+      "action": "STOP_IMMEDIATELY"
+    },
+    {
+      "id": "FM-002",
+      "failure": "Forbidden keyboard output extension created",
+      "severity": "CRITICAL",
+      "action": "STOP_IMMEDIATELY"
+    },
+    {
+      "id": "FM-003",
+      "failure": "Fixture read/copy/modify detected",
+      "severity": "CRITICAL",
+      "action": "STOP_IMMEDIATELY"
+    },
+    {
+      "id": "FM-004",
+      "failure": "Production parser bridge detected",
+      "severity": "CRITICAL",
+      "action": "STOP_IMMEDIATELY"
+    },
+    {
+      "id": "FM-005",
+      "failure": "Deploy/public release command detected",
+      "severity": "CRITICAL",
+      "action": "STOP_IMMEDIATELY"
+    },
+    {
+      "id": "FM-006",
+      "failure": "App.jsx modification detected",
+      "severity": "CRITICAL",
+      "action": "STOP_IMMEDIATELY"
+    },
+    {
+      "id": "FM-007",
+      "failure": "Missing safety field in JSON report",
+      "severity": "HIGH",
+      "action": "FAIL_GATE"
+    },
+    {
+      "id": "FM-008",
+      "failure": "Missing public HTML review page",
+      "severity": "MEDIUM",
+      "action": "FAIL_GATE"
+    }
+  ],
+  "safety": {
+    "writer": "BLOCKED",
+    "realWriter": "BLOCKED",
+    "realKeyboardOutput": "BLOCKED",
+    "productionParser": "BLOCKED",
+    "deployPublicRelease": "BLOCKED",
+    "fixturesReadCopyModify": "BLOCKED",
+    "appJsxModified": false,
+    "designOnly": true,
+    "noOutputQa": true
+  },
+  "generatedAt": "2026-06-21T10:46:55.166Z"
+}
