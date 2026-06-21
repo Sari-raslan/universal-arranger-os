@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>UAOS Approval Decision Pages</title>
+<style>
+body{font-family:Arial;background:#0f0f10;color:#eee;padding:28px;line-height:1.55}
+.card{background:#1b1b1d;border:1px solid #444;border-radius:16px;padding:20px;margin:14px 0}
+table{width:100%;border-collapse:collapse}td,th{border:1px solid #444;padding:10px;vertical-align:top}
+.pass{color:#80ffb0}.lock{color:#ffcc66}.bad{color:#ff8080}a{color:#9fd0ff}
+</style>
+</head>
+<body>
+<div class="card"><h1>UAOS Approval Decision Pages</h1><h2 class="lock">No-Further-Code Gate: ACTIVE</h2><p>Current decision: NO_DECISION_SELECTED</p></div>
+<div class="card"><h2>Allowed Decision Types</h2><table><tr><th>ID</th><th>Title</th><th>Level</th><th>Writer?</th><th>Output?</th><th>Description</th></tr>
+<tr>
+<td>DECISION-DOCS-UI</td>
+<td>Continue Docs/UI only</td>
+<td>LOW_RISK</td>
+<td>NO</td>
+<td>NO</td>
+<td>Continue improving documentation and review UI only.</td>
+</tr>
+
+<tr>
+<td>DECISION-NO-OUTPUT-PROTOTYPE</td>
+<td>Approve limited no-output prototype planning</td>
+<td>MEDIUM_RISK</td>
+<td>NO</td>
+<td>NO</td>
+<td>Allow a future planning prototype that still produces no real output.</td>
+</tr>
+
+<tr>
+<td>DECISION-DEFER-WRITER</td>
+<td>Defer writer work</td>
+<td>LOW_RISK</td>
+<td>NO</td>
+<td>NO</td>
+<td>Keep all writer and output work blocked.</td>
+</tr></table></div>
+<div class="card bad"><h2>Not Approved Here</h2><ul><li>writer implementation</li>
+<li>real writer</li>
+<li>real keyboard output</li>
+<li>.STY/.SET/.PRS/.STL/.PAT/.MSP/.KST output</li>
+<li>production parser</li>
+<li>deploy/public release</li>
+<li>fixtures read/copy/modify</li>
+<li>App.jsx modification</li></ul></div>
+</body>
+</html>

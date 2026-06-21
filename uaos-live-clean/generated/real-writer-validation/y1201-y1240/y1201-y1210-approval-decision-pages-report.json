@@ -1,0 +1,87 @@
+{
+  "phase": "Y1201-Y1210",
+  "status": "PASS_APPROVAL_DECISION_PAGES_READY",
+  "decisions": {
+    "phase": "Y1201-Y1210",
+    "title": "Approval Decision Pages",
+    "status": "PASS_APPROVAL_DECISION_PAGES_READY",
+    "currentDecision": "NO_DECISION_SELECTED",
+    "noFurtherCodeGate": "ACTIVE",
+    "allowedDecisionTypes": [
+      {
+        "id": "DECISION-DOCS-UI",
+        "title": "Continue Docs/UI only",
+        "approvalLevel": "LOW_RISK",
+        "writerAllowed": false,
+        "outputAllowed": false,
+        "parserAllowed": false,
+        "deployAllowed": false,
+        "fixturesAllowed": false,
+        "description": "Continue improving documentation and review UI only."
+      },
+      {
+        "id": "DECISION-NO-OUTPUT-PROTOTYPE",
+        "title": "Approve limited no-output prototype planning",
+        "approvalLevel": "MEDIUM_RISK",
+        "writerAllowed": false,
+        "outputAllowed": false,
+        "parserAllowed": false,
+        "deployAllowed": false,
+        "fixturesAllowed": false,
+        "description": "Allow a future planning prototype that still produces no real output."
+      },
+      {
+        "id": "DECISION-DEFER-WRITER",
+        "title": "Defer writer work",
+        "approvalLevel": "LOW_RISK",
+        "writerAllowed": false,
+        "outputAllowed": false,
+        "parserAllowed": false,
+        "deployAllowed": false,
+        "fixturesAllowed": false,
+        "description": "Keep all writer and output work blocked."
+      }
+    ],
+    "notApprovedHere": [
+      "writer implementation",
+      "real writer",
+      "real keyboard output",
+      ".STY/.SET/.PRS/.STL/.PAT/.MSP/.KST output",
+      "production parser",
+      "deploy/public release",
+      "fixtures read/copy/modify",
+      "App.jsx modification"
+    ],
+    "safety": {
+      "writerImplementation": "BLOCKED",
+      "realWriter": "BLOCKED",
+      "realKeyboardOutput": "BLOCKED",
+      "forbiddenKeyboardExtensions": "BLOCKED",
+      "productionParser": "BLOCKED",
+      "deployPublicRelease": "BLOCKED",
+      "fixturesReadCopyModify": "BLOCKED",
+      "appJsxModified": false,
+      "outputAllowed": false,
+      "operationalCode": "NO",
+      "docsOnly": true,
+      "noFurtherCodeGate": "ACTIVE",
+      "commercialProduct": "NO"
+    },
+    "generatedAt": "2026-06-21T11:46:28.737Z"
+  },
+  "safety": {
+    "writerImplementation": "BLOCKED",
+    "realWriter": "BLOCKED",
+    "realKeyboardOutput": "BLOCKED",
+    "forbiddenKeyboardExtensions": "BLOCKED",
+    "productionParser": "BLOCKED",
+    "deployPublicRelease": "BLOCKED",
+    "fixturesReadCopyModify": "BLOCKED",
+    "appJsxModified": false,
+    "outputAllowed": false,
+    "operationalCode": "NO",
+    "docsOnly": true,
+    "noFurtherCodeGate": "ACTIVE",
+    "commercialProduct": "NO"
+  }
+}

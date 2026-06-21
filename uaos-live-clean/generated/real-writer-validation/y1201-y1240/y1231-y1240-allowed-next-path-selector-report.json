@@ -1,0 +1,82 @@
+{
+  "phase": "Y1231-Y1240",
+  "status": "PASS_ALLOWED_NEXT_PATH_SELECTOR_READY",
+  "selector": {
+    "phase": "Y1231-Y1240",
+    "title": "Allowed Next Path Selector",
+    "status": "PASS_ALLOWED_NEXT_PATH_SELECTOR_READY",
+    "selectedPathNow": "NONE",
+    "noFurtherCodeGate": "ACTIVE",
+    "selectablePaths": [
+      {
+        "id": "PATH-DOCS-UI",
+        "name": "Docs/UI only",
+        "allowedWithoutAdditionalTechnicalRisk": true,
+        "writerAllowed": false,
+        "outputAllowed": false,
+        "parserAllowed": false,
+        "deployAllowed": false,
+        "fixturesAllowed": false
+      },
+      {
+        "id": "PATH-NO-OUTPUT-PROTOTYPE-PLANNING",
+        "name": "No-output prototype planning only",
+        "allowedWithoutAdditionalTechnicalRisk": false,
+        "writerAllowed": false,
+        "outputAllowed": false,
+        "parserAllowed": false,
+        "deployAllowed": false,
+        "fixturesAllowed": false
+      },
+      {
+        "id": "PATH-DEFER-WRITER",
+        "name": "Defer writer",
+        "allowedWithoutAdditionalTechnicalRisk": true,
+        "writerAllowed": false,
+        "outputAllowed": false,
+        "parserAllowed": false,
+        "deployAllowed": false,
+        "fixturesAllowed": false
+      }
+    ],
+    "excludedPaths": [
+      "real writer",
+      "real keyboard output",
+      "production parser",
+      "deploy/public release",
+      "fixtures read/copy/modify"
+    ],
+    "nextInstruction": "Choose one path in a separate explicit message. This pack does not select a path.",
+    "safety": {
+      "writerImplementation": "BLOCKED",
+      "realWriter": "BLOCKED",
+      "realKeyboardOutput": "BLOCKED",
+      "forbiddenKeyboardExtensions": "BLOCKED",
+      "productionParser": "BLOCKED",
+      "deployPublicRelease": "BLOCKED",
+      "fixturesReadCopyModify": "BLOCKED",
+      "appJsxModified": false,
+      "outputAllowed": false,
+      "operationalCode": "NO",
+      "docsOnly": true,
+      "noFurtherCodeGate": "ACTIVE",
+      "commercialProduct": "NO"
+    },
+    "generatedAt": "2026-06-21T11:46:39.831Z"
+  },
+  "safety": {
+    "writerImplementation": "BLOCKED",
+    "realWriter": "BLOCKED",
+    "realKeyboardOutput": "BLOCKED",
+    "forbiddenKeyboardExtensions": "BLOCKED",
+    "productionParser": "BLOCKED",
+    "deployPublicRelease": "BLOCKED",
+    "fixturesReadCopyModify": "BLOCKED",
+    "appJsxModified": false,
+    "outputAllowed": false,
+    "operationalCode": "NO",
+    "docsOnly": true,
+    "noFurtherCodeGate": "ACTIVE",
+    "commercialProduct": "NO"
+  }
+}

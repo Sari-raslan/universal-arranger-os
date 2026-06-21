@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>UAOS Approval Text Templates</title>
+<style>
+body{font-family:Arial;background:#0f0f10;color:#eee;padding:28px;line-height:1.55}
+.card{background:#1b1b1d;border:1px solid #444;border-radius:16px;padding:20px;margin:14px 0}
+pre{white-space:pre-wrap;background:#111;padding:14px;border-radius:12px}
+.pass{color:#80ffb0}.lock{color:#ffcc66}.bad{color:#ff8080}
+</style>
+</head>
+<body>
+<div class="card"><h1>UAOS Approval Text Templates</h1><h2 class="lock">No-Further-Code Gate Remains ACTIVE</h2><p>Copy exactly one template only if you want to approve a later separate phase. These templates do not approve writer or output by themselves.</p></div>
+<div class="card"><h2>TPL-DOCS-UI-ONLY</h2><h3>Approve Docs/UI only</h3><pre>I approve the next phase as Docs/UI only. No writer implementation, no real writer, no real keyboard output, no production parser, no deploy, no App.jsx, and no fixtures read/copy/modify.</pre></div>
+<div class="card"><h2>TPL-NO-OUTPUT-PROTOTYPE-ONLY</h2><h3>Approve no-output prototype planning only</h3><pre>I approve a limited no-output prototype planning phase only. It must not implement a real writer, must not create real keyboard output, must not use production parser, must not deploy, must not touch App.jsx, and must not read/copy/modify fixtures.</pre></div>
+<div class="card"><h2>TPL-DEFER-WRITER</h2><h3>Defer writer</h3><pre>I choose to defer writer work. Keep writer implementation, real writer, real keyboard output, production parser, deploy, fixtures, and App.jsx all blocked.</pre></div>
+<div class="card bad"><h2>Templates Not Provided For</h2><ul><li>real writer approval</li>
+<li>real keyboard output approval</li>
+<li>production parser approval</li>
+<li>deploy/public release approval</li>
+<li>fixtures permission</li></ul></div>
+</body>
+</html>
