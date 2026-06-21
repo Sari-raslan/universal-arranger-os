@@ -1,0 +1,77 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>UAOS Library Scanner Approval</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body{font-family:Arial,sans-serif;background:#08101f;color:#f4f7ff;margin:0;padding:24px}
+    .card{background:#131d35;border:1px solid #2c3a66;border-radius:18px;padding:18px;margin:14px 0}
+    .lock{color:#ffd479}
+    .pass{color:#75ffb1}
+    button{padding:10px 14px;border:0;border-radius:10px;cursor:pointer;margin:4px 4px 4px 0}
+    pre{white-space:pre-wrap;background:#050a14;border-radius:12px;padding:14px}
+    a{color:#9bdcff}
+  </style>
+</head>
+<body>
+  <h1>UAOS Library Scanner Approval</h1>
+  <p>This is a planning-only page. It does not scan your computer.</p>
+
+  <div class="card">
+    <h2 class="lock">Locked Until Explicit Approval</h2>
+    <ul>
+      <li>Real disk scan</li>
+      <li>Recursive folder scan</li>
+      <li>Hidden folder scan</li>
+      <li>Archive reading</li>
+      <li>Audio file copy</li>
+      <li>Production parser</li>
+      <li>Keyboard format parser/writer</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2 class="pass">Allowed Now</h2>
+    <ul>
+      <li>Folder selection UI placeholder</li>
+      <li>Mock scanner result</li>
+      <li>Legal safety checklist</li>
+      <li>User approval template</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>Mock Approval Output</h2>
+    <button onclick="makeApproval()">Generate Approval Template</button>
+    <pre id="out">Ready.</pre>
+  </div>
+
+  <p><a href="./index.html">Back</a></p>
+
+  <script>
+    function makeApproval(){
+      const approval = {
+        format: "UAOS_SCANNER_APPROVAL_TEMPLATE",
+        version: "1.0.0-planning-only",
+        userMustApproveBeforeRealScan: true,
+        selectedFolder: "NOT_SELECTED_PLANNING_ONLY",
+        allowedFutureScanTypes: {
+          normalFolders: false,
+          recursiveFolders: false,
+          hiddenFolders: false,
+          compressedArchives: false,
+          audioMetadata: false
+        },
+        safety: {
+          noScanNow: true,
+          noCopyNow: true,
+          noParserNow: true,
+          noKeyboardWriter: true
+        }
+      };
+      document.getElementById("out").textContent = JSON.stringify(approval, null, 2);
+    }
+  </script>
+</body>
+</html>
