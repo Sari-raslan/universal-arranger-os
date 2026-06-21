@@ -1,0 +1,88 @@
+{
+  "format": "UAOS_R53_WRITER_UNLOCK_AUDIT",
+  "version": "R51-R60.0.0",
+  "phase": "R53",
+  "status": "PASS_LOCKED",
+  "target": "yamaha",
+  "futureFormat": ".STY",
+  "requirements": [
+    {
+      "requirement": "approved fixture set with explicit full-parse permission",
+      "complete": false,
+      "blocksWriter": true
+    },
+    {
+      "requirement": "full read-only parser",
+      "complete": false,
+      "blocksWriter": true
+    },
+    {
+      "requirement": "confirmed chunk offsets and lengths",
+      "complete": false,
+      "blocksWriter": true
+    },
+    {
+      "requirement": "confirmed section table",
+      "complete": false,
+      "blocksWriter": true
+    },
+    {
+      "requirement": "confirmed CASM-like rules",
+      "complete": false,
+      "blocksWriter": true
+    },
+    {
+      "requirement": "confirmed OTS metadata rules",
+      "complete": false,
+      "blocksWriter": true
+    },
+    {
+      "requirement": "confirmed checksum/package rules",
+      "complete": false,
+      "blocksWriter": true
+    },
+    {
+      "requirement": "semantic model roundtrip",
+      "complete": false,
+      "blocksWriter": true
+    },
+    {
+      "requirement": "binary candidate sandbox",
+      "complete": false,
+      "blocksWriter": true
+    },
+    {
+      "requirement": "Yamaha editor import pass",
+      "complete": false,
+      "blocksWriter": true
+    },
+    {
+      "requirement": "Yamaha hardware import pass",
+      "complete": false,
+      "blocksWriter": true
+    },
+    {
+      "requirement": "manual explicit writer approval",
+      "complete": false,
+      "blocksWriter": true
+    }
+  ],
+  "completeCount": 0,
+  "blockerCount": 12,
+  "finalDecision": {
+    "writerUnlockReady": false,
+    "continueToWriterImplementation": false,
+    "allowParserImplementation": false,
+    "allowFullBinaryParse": false,
+    "allowWriterImplementation": false,
+    "allowRealKeyboardBinaryOutput": false,
+    "allowRealStyOutput": false,
+    "canExportRealSty": false,
+    "realKeyboardBinaryWriteAllowed": false,
+    "realWriterReady": false
+  },
+  "safety": {
+    "realBinaryBlocked": true,
+    "wroteRealKeyboardBinary": false
+  }
+}
