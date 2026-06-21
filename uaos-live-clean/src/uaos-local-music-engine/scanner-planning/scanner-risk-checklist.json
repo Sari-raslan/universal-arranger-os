@@ -1,0 +1,42 @@
+﻿{
+  "format": "UAOS_SCANNER_RISK_CHECKLIST",
+  "version": "1.0.0-planning-only",
+  "checksBeforeRealScanner": [
+    {
+      "id": "user-approval",
+      "label": "User explicitly approves real scan",
+      "required": true,
+      "status": "not-approved-yet"
+    },
+    {
+      "id": "scope-limit",
+      "label": "Scan scope is limited to selected folders only",
+      "required": true,
+      "status": "not-approved-yet"
+    },
+    {
+      "id": "no-copy",
+      "label": "Scanner does not copy or move files",
+      "required": true,
+      "status": "not-approved-yet"
+    },
+    {
+      "id": "no-archives",
+      "label": "Compressed archives remain locked unless separately approved",
+      "required": true,
+      "status": "not-approved-yet"
+    },
+    {
+      "id": "legal-review",
+      "label": "Commercial asset usage requires license review",
+      "required": true,
+      "status": "not-approved-yet"
+    },
+    {
+      "id": "no-keyboard-parser",
+      "label": "Keyboard format parsing remains locked",
+      "required": true,
+      "status": "locked"
+    }
+  ]
+}
