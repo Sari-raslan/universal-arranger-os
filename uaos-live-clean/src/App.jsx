@@ -30,7 +30,7 @@ export default function App() {
           <a href="#workflow">Workflow</a>
           <a href="#pricing">Pricing</a>
           <a href="#support">Support</a>
-        </nav><div className="languageSwitch"><span>EN</span><b>AR</b></div><a className="account" href="#support">Account</a></header>
+        </nav><div className="languageSwitch"><span>EN</span><b>AR</b></div></header>
 
       <section className="premiumHero" id="home">
         <div className="heroText">
@@ -155,6 +155,8 @@ export default function App() {
 
       <section className="finalCta"><p className="spectrumLabel">Ready to continue</p><h2>Build the product locally today. Retry public deploy after Vercel resets.</h2><div><a className="mainBtn" href="#demo">Open demo</a><a className="ghostBtn" href="/universal-arranger-os/launch/status.html">Launch status</a></div></section>
 
+<section className="finalReadyStrip"><b>UAOS is locally ready.</b><span>Visual product site, pricing preview, launch status, and deploy retry path are prepared.</span><a href="/universal-arranger-os/launch/status.html">Launch status</a></section>
+
 <footer className="premiumFooter">
         <b>UAOS</b>
         <span>Universal Arranger OS · Premium local product preview</span>
@@ -162,6 +164,7 @@ export default function App() {
     </main>
   );
 }
+
 
 
 

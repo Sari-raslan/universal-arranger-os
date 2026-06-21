@@ -395,3 +395,14 @@ a{text-decoration:none;color:inherit}
 .finalCta div{display:flex;gap:14px;flex-wrap:wrap}
 .glassCard,.priceCard,.flowStep,.supportGrid article,.compareGrid article{backdrop-filter:blur(14px)}
 @media(max-width:900px){.proofStrip,.compareGrid{grid-template-columns:1fr}.proofStrip{margin-bottom:0}.finalCta{margin:34px 5vw;padding:30px 24px}}
+
+/* FINAL-24 QA cleanup */
+.finalReadyStrip{max-width:1320px;margin:42px auto;padding:24px 6vw;border-radius:30px;display:flex;align-items:center;justify-content:space-between;gap:18px;background:linear-gradient(135deg,rgba(34,211,238,.13),rgba(168,85,247,.12));border:1px solid rgba(125,211,252,.18);box-shadow:0 24px 90px rgba(0,0,0,.20)}
+.finalReadyStrip b{font-size:22px;background:linear-gradient(135deg,#fff,#7dd3fc,#c084fc);-webkit-background-clip:text;background-clip:text;color:transparent}
+.finalReadyStrip span{color:#b6c5dc;font-weight:800}
+.finalReadyStrip a{height:42px;display:inline-flex;align-items:center;padding:0 16px;border-radius:999px;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.12);font-weight:950}
+.premiumHero{padding-bottom:34px!important}
+#products{margin-top:-44px!important}
+.account{height:42px!important;display:inline-flex!important;align-items:center!important;gap:9px!important;padding:0 16px!important;border-radius:999px!important;background:rgba(15,23,42,.82)!important;border:1px solid rgba(125,211,252,.28)!important;font-weight:950!important;white-space:nowrap!important}
+.account:before{content:'';width:8px;height:8px;border-radius:999px;background:#67e8f9;box-shadow:0 0 16px #67e8f9}
+@media(max-width:900px){.finalReadyStrip{margin:30px 5vw;padding:22px;flex-direction:column;align-items:flex-start}.finalReadyStrip a{width:100%;justify-content:center}#products{margin-top:0!important}}
