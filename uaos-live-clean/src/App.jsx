@@ -30,10 +30,7 @@ export default function App() {
           <a href="#workflow">Workflow</a>
           <a href="#pricing">Pricing</a>
           <a href="#support">Support</a>
-        </nav>
-
-        <a className="account" href="#support">Account</a>
-      </header>
+        </nav><a className="account" href="#support">Account</a></header>
 
       <section className="premiumHero" id="home">
         <div className="heroText">
@@ -157,3 +154,4 @@ export default function App() {
     </main>
   );
 }
+
