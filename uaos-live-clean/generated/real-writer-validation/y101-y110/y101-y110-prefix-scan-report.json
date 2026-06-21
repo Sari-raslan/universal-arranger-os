@@ -1,0 +1,30 @@
+{
+  "program": "UAOS Yamaha Parser Design",
+  "phase": "Y101-Y110",
+  "title": "Bounded Read-Only Prefix Scanner Implementation",
+  "status": "PASS",
+  "approvalRequired": true,
+  "approvalCaptured": true,
+  "approvalText": "I approve implementing bounded read-only prefix scanner for my selected local Yamaha .STY fixtures. No full parse, no writer.",
+  "hardLimits": {
+    "maxReadBytesPerFixture": 32768,
+    "allowedInputs": [
+      "UAOS_YAMAHA_STY_FIXTURE_1",
+      "UAOS_YAMAHA_STY_FIXTURE_2",
+      "UAOS_YAMAHA_STY_FIXTURE_3",
+      "UAOS_YAMAHA_STY_FIXTURE_4",
+      "UAOS_YAMAHA_STY_FIXTURE_5"
+    ],
+    "copyFixtures": false,
+    "modifyFixtures": false,
+    "fullFileRead": false,
+    "fullParse": false,
+    "parserImplementation": false,
+    "writerImplementation": false,
+    "realStyOutput": false,
+    "deploy": false
+  },
+  "fixtureCount": 0,
+  "fixtures": [],
+  "generatedAt": "2026-06-21T08:14:42.544Z"
+}

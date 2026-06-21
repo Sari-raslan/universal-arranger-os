@@ -1,0 +1,39 @@
+﻿<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>UAOS Y101-Y110 Bounded Prefix Scanner</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 24px; background:#111; color:#eee; }
+    .card { border:1px solid #444; border-radius:12px; padding:18px; margin:14px 0; background:#1b1b1b; }
+    code { color:#9fe870; }
+    .locked { color:#ffcc66; }
+    .pass { color:#80ffb0; }
+  </style>
+</head>
+<body>
+  <h1>UAOS Y101-Y110</h1>
+  <h2>Bounded Read-Only Yamaha Prefix Scanner</h2>
+
+  <div class="card pass">
+    Status: implemented as safe local validation tooling only.
+  </div>
+
+  <div class="card">
+    <p>Limits:</p>
+    <ul>
+      <li>Reads first <code>32768 bytes</code> only.</li>
+      <li>Uses only <code>UAOS_YAMAHA_STY_FIXTURE_1..5</code>.</li>
+      <li>No full parse.</li>
+      <li>No writer.</li>
+      <li>No real .STY output.</li>
+      <li>No deploy.</li>
+    </ul>
+  </div>
+
+  <div class="card locked">
+    Real Yamaha .STY parser implementation remains blocked.
+    Real keyboard binary writer remains hard locked.
+  </div>
+</body>
+</html>
