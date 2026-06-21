@@ -1,0 +1,98 @@
+﻿{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "uaos-sampler-preset-pack.schema.json",
+  "title": "UAOS Sampler Preset Pack",
+  "type": "object",
+  "required": ["format", "version", "presets", "previewPlan", "safety"],
+  "properties": {
+    "format": { "const": "UAOS_SAMPLER_PRESET_PACK" },
+    "version": { "type": "string" },
+    "name": { "type": "string" },
+    "presetCount": { "type": "number" },
+    "presets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["format", "instrumentId", "name", "zones", "safety"],
+        "properties": {
+          "format": { "const": "UAOS_INSTRUMENT_PRESET" },
+          "instrumentId": { "type": "string" },
+          "name": { "type": "string" },
+          "family": { "type": "string" },
+          "zones": { "type": "array" },
+          "velocityLayers": { "type": "array" },
+          "articulations": { "type": "array" },
+          "adsr": { "type": "object" },
+          "safety": {
+            "type": "object",
+            "required": [
+              "metadataOnly",
+              "fileContentRead",
+              "sampleLoaded",
+              "audioDecoded",
+              "copied",
+              "moved",
+              "deleted",
+              "parserUsed",
+              "keyboardWriter",
+              "keyboardOutput"
+            ],
+            "properties": {
+              "metadataOnly": { "const": true },
+              "fileContentRead": { "const": false },
+              "sampleLoaded": { "const": false },
+              "audioDecoded": { "const": false },
+              "copied": { "const": false },
+              "moved": { "const": false },
+              "deleted": { "const": false },
+              "parserUsed": { "const": false },
+              "keyboardWriter": { "const": false },
+              "keyboardOutput": { "const": false }
+            }
+          }
+        }
+      }
+    },
+    "previewPlan": {
+      "type": "object",
+      "required": ["format", "realAudioPlayback", "sampleLoading", "items"],
+      "properties": {
+        "format": { "const": "UAOS_SAMPLER_PREVIEW_PLAN" },
+        "realAudioPlayback": { "const": false },
+        "sampleLoading": { "const": false },
+        "items": { "type": "array" }
+      }
+    },
+    "safety": {
+      "type": "object",
+      "required": [
+        "metadataOnly",
+        "filenameOnly",
+        "fileContentRead",
+        "sampleLoaded",
+        "audioDecoded",
+        "copiedFiles",
+        "movedFiles",
+        "deletedFiles",
+        "archiveRead",
+        "productionParser",
+        "keyboardWriter",
+        "keyboardOutput"
+      ],
+      "properties": {
+        "metadataOnly": { "const": true },
+        "filenameOnly": { "const": true },
+        "fileContentRead": { "const": false },
+        "sampleLoaded": { "const": false },
+        "audioDecoded": { "const": false },
+        "copiedFiles": { "const": false },
+        "movedFiles": { "const": false },
+        "deletedFiles": { "const": false },
+        "archiveRead": { "const": false },
+        "productionParser": { "const": false },
+        "keyboardWriter": { "const": false },
+        "keyboardOutput": { "const": false }
+      }
+    }
+  }
+}
