@@ -1,0 +1,52 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>UAOS Mock Library Scan</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body{font-family:Arial,sans-serif;background:#08101f;color:#f4f7ff;margin:0;padding:24px}
+    .card{background:#131d35;border:1px solid #2c3a66;border-radius:18px;padding:18px;margin:14px 0}
+    button{padding:10px 14px;border:0;border-radius:10px;cursor:pointer}
+    pre{white-space:pre-wrap;background:#050a14;border-radius:12px;padding:14px}
+    a{color:#9bdcff}
+  </style>
+</head>
+<body>
+  <h1>UAOS Mock Library Scan</h1>
+  <p>This page creates a mock result only. It does not access your disk.</p>
+  <div class="card">
+    <button onclick="mock()">Generate Mock Result</button>
+    <pre id="out">Ready.</pre>
+  </div>
+  <p><a href="./index.html">Back</a></p>
+
+  <script>
+    function mock(){
+      const result = {
+        format: "UAOS_LIBRARY_SCANNER_RESULT_MOCK",
+        scanWasReal: false,
+        source: "mock-only",
+        folders: [
+          {
+            path: "NOT_SCANNED_PLACEHOLDER",
+            detectedFamilies: ["strings", "percussion", "oriental"],
+            files: [
+              { fileName: "placeholder-oud-sustain.wav", fileWasRead: false, fileWasCopied: false },
+              { fileName: "placeholder-arabic-violin-legato.wav", fileWasRead: false, fileWasCopied: false }
+            ]
+          }
+        ],
+        safety: {
+          realDiskScan: false,
+          recursiveScan: false,
+          archiveRead: false,
+          sampleCopy: false,
+          parser: false
+        }
+      };
+      document.getElementById("out").textContent = JSON.stringify(result, null, 2);
+    }
+  </script>
+</body>
+</html>

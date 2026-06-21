@@ -1,0 +1,37 @@
+﻿{
+  "format": "UAOS_LIBRARY_SCANNER_RESULT_MOCK",
+  "version": "1.0.0-planning-only",
+  "scanWasReal": false,
+  "source": "mock-only",
+  "folders": [
+    {
+      "folderId": "mock-folder-001",
+      "path": "NOT_SCANNED_PLACEHOLDER",
+      "detectedFamilies": ["strings", "percussion", "oriental"],
+      "files": [
+        {
+          "fileName": "placeholder-oud-sustain.wav",
+          "fileWasRead": false,
+          "fileWasCopied": false,
+          "detectedType": "audio-placeholder",
+          "rightsStatus": "unknown"
+        },
+        {
+          "fileName": "placeholder-arabic-violin-legato.wav",
+          "fileWasRead": false,
+          "fileWasCopied": false,
+          "detectedType": "audio-placeholder",
+          "rightsStatus": "unknown"
+        }
+      ]
+    }
+  ],
+  "safety": {
+    "realDiskScan": false,
+    "recursiveScan": false,
+    "hiddenFolderScan": false,
+    "archiveRead": false,
+    "sampleCopy": false,
+    "parser": false
+  }
+}
