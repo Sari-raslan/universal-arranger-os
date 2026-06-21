@@ -1,0 +1,144 @@
+{
+  "format": "UAOS_YAMAHA_STY_TRACK_FINAL_LOCAL_GATE",
+  "version": "64.0.0",
+  "phase": 64,
+  "target": "yamaha",
+  "futureFormat": ".STY",
+  "status": "PASS",
+  "requiredArtifactCount": 10,
+  "passedArtifactCount": 10,
+  "failedArtifactCount": 0,
+  "artifactChecks": [
+    {
+      "file": "generated/real-exporter/yamaha-sty/yamaha-sty-writer-research-plan.json",
+      "exists": true,
+      "ok": true,
+      "type": "json",
+      "format": "UAOS_YAMAHA_STY_WRITER_RESEARCH_PLAN",
+      "version": "56.0.0",
+      "unsafeRealStyClaim": false,
+      "error": null
+    },
+    {
+      "file": "generated/real-exporter/yamaha-sty/yamaha-sty-intermediate-schema.json",
+      "exists": true,
+      "ok": true,
+      "type": "json",
+      "format": "UAOS_YAMAHA_STY_INTERMEDIATE_SCHEMA",
+      "version": "57.0.0",
+      "unsafeRealStyClaim": false,
+      "error": null
+    },
+    {
+      "file": "generated/real-exporter/yamaha-sty/yamaha-sty-phrase-event-schema.json",
+      "exists": true,
+      "ok": true,
+      "type": "json",
+      "format": "UAOS_YAMAHA_STY_PHRASE_EVENT_SCHEMA",
+      "version": "58.0.0",
+      "unsafeRealStyClaim": false,
+      "error": null
+    },
+    {
+      "file": "generated/real-exporter/yamaha-sty/yamaha-sty-safe-container-plan.json",
+      "exists": true,
+      "ok": true,
+      "type": "json",
+      "format": "UAOS_YAMAHA_STY_SAFE_CONTAINER_PLAN",
+      "version": "59.0.0",
+      "unsafeRealStyClaim": false,
+      "error": null
+    },
+    {
+      "file": "generated/real-exporter/yamaha-sty/yamaha-sty-export-readiness-gate.json",
+      "exists": true,
+      "ok": true,
+      "type": "json",
+      "format": "UAOS_YAMAHA_STY_EXPORT_READINESS_GATE",
+      "version": "60.0.0",
+      "unsafeRealStyClaim": false,
+      "error": null
+    },
+    {
+      "file": "generated/real-exporter/yamaha-sty/package/UAOS_YAMAHA_STY_SAFE_EXPORT_PACKAGE.json",
+      "exists": true,
+      "ok": true,
+      "type": "json",
+      "format": "UAOS_YAMAHA_STY_SAFE_EXPORT_PACKAGE",
+      "version": "61.0.0",
+      "unsafeRealStyClaim": false,
+      "error": null
+    },
+    {
+      "file": "generated/real-exporter/yamaha-sty/package/UAOS_YAMAHA_STY_SAFE_PACKAGE.uaosbin",
+      "exists": true,
+      "ok": true,
+      "type": "uaosbin",
+      "magic": "UAOSBIN1",
+      "byteLength": 690570,
+      "error": null
+    },
+    {
+      "file": "generated/real-exporter/yamaha-sty/package/UAOS_YAMAHA_STY_SAFE_UAOSBIN_PACKAGE.json",
+      "exists": true,
+      "ok": true,
+      "type": "json",
+      "format": "UAOS_YAMAHA_STY_SAFE_UAOSBIN_PACKAGE",
+      "version": "62.0.0",
+      "unsafeRealStyClaim": false,
+      "error": null
+    },
+    {
+      "file": "generated/real-exporter/yamaha-sty/package/UAOS_YAMAHA_STY_SAFE_PACKAGE_QA_GATE.json",
+      "exists": true,
+      "ok": true,
+      "type": "json",
+      "format": "UAOS_YAMAHA_STY_SAFE_PACKAGE_QA_GATE",
+      "version": "63.0.0",
+      "unsafeRealStyClaim": false,
+      "error": null
+    },
+    {
+      "file": "generated/real-exporter/yamaha-sty/package/UAOS_YAMAHA_STY_SAFE_PACKAGE_QA_SUMMARY.json",
+      "exists": true,
+      "ok": true,
+      "type": "json",
+      "format": "UAOS_YAMAHA_STY_SAFE_PACKAGE_QA_SUMMARY",
+      "version": "63.0.0",
+      "unsafeRealStyClaim": false,
+      "error": null
+    }
+  ],
+  "completedSafePipeline": [
+    "Phase 56 Yamaha STY writer research track",
+    "Phase 57 Yamaha STY intermediate schema",
+    "Phase 58 Yamaha STY phrase event builder",
+    "Phase 59 Yamaha STY safe container plan",
+    "Phase 60 Yamaha STY export readiness gate",
+    "Phase 61 Yamaha STY safe export package",
+    "Phase 62 Yamaha STY safe UAOSBIN package",
+    "Phase 63 Yamaha STY safe package QA gate"
+  ],
+  "finalDecision": {
+    "localYamahaSafeTrackPass": true,
+    "allowSafeJsonPackage": true,
+    "allowSafeUaosbinPackage": true,
+    "allowRealStyOutput": false,
+    "canExportRealSty": false,
+    "realStyWriterReady": false,
+    "reason": "Yamaha safe export track is complete locally, but real .STY binary output remains blocked until validated format rules, checksum rules, roundtrip import, and hardware/editor tests are complete."
+  },
+  "nextRecommendedWork": [
+    "collect legal-safe Yamaha style documentation",
+    "create roundtrip test harness",
+    "validate phrase chunk rules",
+    "validate CASM-like rules",
+    "validate OTS metadata",
+    "validate checksum/package rules",
+    "test in safe editor/hardware workflow"
+  ],
+  "safety": {
+    "realBinaryBlocked": true,
+    "warning": "Phase 64 closes the safe Yamaha track only. It does not permit or generate real Yamaha .STY binary output."
+  }
+}
