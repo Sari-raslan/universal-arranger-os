@@ -1,0 +1,41 @@
+﻿{
+    "version":  "1.0.0",
+    "noSecrets":  true,
+    "paymentActivation":  "pending approval",
+    "format":  "UAOS_PRICING_CONFIG",
+    "legalNote":  "Requires legal/tax review before real activation.",
+    "plans":  [
+                  {
+                      "features":  [
+                                       "Voice idea workflow",
+                                       "Basic demo preview",
+                                       "Local project preview"
+                                   ],
+                      "name":  "Starter",
+                      "id":  "starter",
+                      "monthly":  19.99
+                  },
+                  {
+                      "features":  [
+                                       "Creator workflow",
+                                       "Studio preview",
+                                       "Arrangement planning"
+                                   ],
+                      "name":  "Pro",
+                      "id":  "pro",
+                      "monthly":  49.99
+                  },
+                  {
+                      "features":  [
+                                       "Studio workflow",
+                                       "Manual invoice placeholder",
+                                       "Contact support"
+                                   ],
+                      "name":  "Studio Business",
+                      "id":  "studio",
+                      "monthly":  99.99
+                  }
+              ],
+    "noRealPayment":  true,
+    "currency":  "EUR"
+}

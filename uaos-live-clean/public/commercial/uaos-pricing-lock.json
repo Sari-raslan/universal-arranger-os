@@ -1,0 +1,32 @@
+﻿{
+    "version":  "1.0.0",
+    "timestamp":  "20260621-183524",
+    "keys":  "none",
+    "format":  "UAOS_PRICING_LOCK",
+    "status":  "LOCAL_PLACEHOLDER_NOT_ACTIVE",
+    "currency":  "EUR",
+    "note":  "Local placeholder prices only. Payment not active.",
+    "plans":  [
+                  {
+                      "label":  "19.99 EUR / month",
+                      "checkout":  "/universal-arranger-os/checkout/starter.html",
+                      "name":  "Starter",
+                      "id":  "starter",
+                      "monthly":  19.99
+                  },
+                  {
+                      "label":  "49.99 EUR / month",
+                      "checkout":  "/universal-arranger-os/checkout/pro.html",
+                      "name":  "Pro",
+                      "id":  "pro",
+                      "monthly":  49.99
+                  },
+                  {
+                      "label":  "99.99 EUR / month or Contact",
+                      "checkout":  "/universal-arranger-os/checkout/studio.html",
+                      "name":  "Studio Business",
+                      "id":  "studio",
+                      "monthly":  99.99
+                  }
+              ]
+}

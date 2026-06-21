@@ -167,6 +167,8 @@ export default function App() {
 
 <section className="ui42DeployBand"><b>Deploy-ready after Vercel reset.</b><span>Local website is prepared. Public deploy remains intentionally locked until the daily limit resets.</span><a href="/universal-arranger-os/launch/status.html">Check launch status</a></section>
 
+<section className="premiumSection payResumePaymentSection" id="payment"><div className="sectionTitle"><p className="spectrumLabel">Payment readiness</p><h2>UAOS pricing is ready locally. Real payment is locked.</h2></div><div className="payPlans"><article><b>Starter</b><strong>19.99 € / month</strong><p>For singers and creators.</p><a className="mainBtn" href="/universal-arranger-os/checkout/starter.html">Start with Starter</a><button disabled>PayPal Placeholder</button><button disabled>Card Placeholder</button></article><article className="featuredPay"><b>Pro</b><strong>49.99 € / month</strong><p>For serious creators and studios.</p><a className="mainBtn" href="/universal-arranger-os/checkout/pro.html">Choose Pro</a><button disabled>PayPal Placeholder</button><button disabled>Card Placeholder</button></article><article><b>Studio</b><strong>99.99 € / month or Contact</strong><p>For business/studio planning.</p><a className="ghostBtn" href="/universal-arranger-os/checkout/studio.html">Contact for Studio</a><button disabled>Manual Invoice Placeholder</button><button disabled>Payment activation pending approval</button></article></div><p className="paymentLockNote">Payment not active yet. No PayPal live, no card checkout, no subscription activation.</p></section>
+
 <footer className="premiumFooter">
         <b>UAOS</b>
         <span>Universal Arranger OS · Premium local product preview</span>
@@ -174,6 +176,7 @@ export default function App() {
     </main>
   );
 }
+
 
 
 

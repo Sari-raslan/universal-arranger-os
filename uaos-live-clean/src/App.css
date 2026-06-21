@@ -476,3 +476,14 @@ a{text-decoration:none;color:inherit}
 .ui42DeployBand span{color:#b6c5dc;font-weight:850}
 .ui42DeployBand a{height:42px;display:inline-flex;align-items:center;padding:0 16px;border-radius:999px;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.12);font-weight:950}
 @media(max-width:900px){.langCards{grid-template-columns:1fr}.ui42DeployBand{margin:30px 5vw;padding:22px;flex-direction:column;align-items:flex-start}.ui42DeployBand a{width:100%;justify-content:center}}
+
+/* PAY RESUME payment UI */
+.payPlans{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.payPlans article{border-radius:32px;padding:28px;background:linear-gradient(180deg,rgba(255,255,255,.085),rgba(255,255,255,.04));border:1px solid rgba(255,255,255,.11);box-shadow:0 30px 100px rgba(0,0,0,.22);display:flex;flex-direction:column;gap:14px}
+.payPlans .featuredPay{background:linear-gradient(180deg,rgba(34,211,238,.14),rgba(168,85,247,.09));border-color:rgba(125,211,252,.24)}
+.payPlans b{font-size:28px;background:linear-gradient(135deg,#fff,#7dd3fc,#c084fc);-webkit-background-clip:text;background-clip:text;color:transparent}
+.payPlans strong{font-size:24px;color:#eef6ff}
+.payPlans p{color:#aebdd3;line-height:1.65;margin:0}
+.payPlans button{min-height:44px;border-radius:999px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.06);color:#9fb0c8;font-weight:900;cursor:not-allowed}
+.paymentLockNote{margin-top:18px;color:#fbbf24;font-weight:900}
+@media(max-width:950px){.payPlans{grid-template-columns:1fr}}
