@@ -1,0 +1,49 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>UAOS Piano Roll Workspace</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body{font-family:Arial,sans-serif;background:#08101f;color:#f4f7ff;margin:0;padding:24px}
+    .card{background:#131d35;border:1px solid #2c3a66;border-radius:18px;padding:18px;margin:14px 0}
+    button{padding:10px 14px;border:0;border-radius:10px;cursor:pointer;margin-right:8px}
+    pre{white-space:pre-wrap;background:#050a14;border-radius:12px;padding:14px}
+    a{color:#9bdcff}
+  </style>
+</head>
+<body>
+  <h1>UAOS Piano Roll Workspace</h1>
+  <p>Local MIDI clip model only. No hardware output. No keyboard file writer.</p>
+
+  <div class="card">
+    <button onclick="makeClip()">Create Piano Roll Mock</button>
+    <pre id="out">Ready.</pre>
+  </div>
+
+  <p><a href="./index.html">Back</a></p>
+
+  <script>
+    function makeClip(){
+      const clip = {
+        format: "UAOS_PIANO_ROLL_CLIP",
+        version: "1.0.0-local-placeholder",
+        clipId: "demo-piano-roll",
+        startBeat: 0,
+        lengthBeats: 4,
+        notes: [
+          { note: 60, startBeat: 0, durationBeats: 1, velocity: 100, channel: 1 },
+          { note: 64, startBeat: 1, durationBeats: 1, velocity: 96, channel: 1 },
+          { note: 67, startBeat: 2, durationBeats: 1, velocity: 104, channel: 1 }
+        ],
+        safety: {
+          localModelOnly: true,
+          noHardwareOutput: true,
+          noKeyboardFileWriter: true
+        }
+      };
+      document.getElementById("out").textContent = JSON.stringify(clip, null, 2);
+    }
+  </script>
+</body>
+</html>
