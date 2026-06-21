@@ -1,0 +1,26 @@
+﻿{
+    "phase":  "Y1281-Y1290",
+    "title":  "Reviewer Quick Start",
+    "officialPath":  "PATH-DOCS-UI",
+    "pathLocked":  true,
+    "noFurtherCodeGate":  "ACTIVE",
+    "outputAllowed":  false,
+    "allowedFileTypes":  [
+                             "HTML",
+                             "JSON",
+                             "MD",
+                             "TXT"
+                         ],
+    "status":  "READY",
+    "blocked":  [
+                    "writer implementation",
+                    "real writer",
+                    "real keyboard output",
+                    ".STY/.SET/.PRS/.STL/.PAT/.MSP/.KST",
+                    "production parser",
+                    "deploy/public release",
+                    "App.jsx",
+                    "fixtures read/copy/modify",
+                    "operational code"
+                ]
+}
