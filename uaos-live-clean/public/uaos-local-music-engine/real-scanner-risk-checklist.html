@@ -1,0 +1,53 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>UAOS Real Scanner Risk Checklist</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body{font-family:Arial,sans-serif;background:#08101f;color:#f4f7ff;margin:0;padding:24px}
+    .card{background:#131d35;border:1px solid #2c3a66;border-radius:18px;padding:18px;margin:14px 0}
+    button{padding:10px 14px;border:0;border-radius:10px;background:#20345f;color:#fff;cursor:pointer}
+    pre{white-space:pre-wrap;background:#050a14;border-radius:12px;padding:14px}
+    a{color:#9bdcff}
+  </style>
+</head>
+<body>
+  <h1>UAOS Real Scanner Risk Checklist</h1>
+  <p>Checklist only. No scanner implementation.</p>
+
+  <div class="card">
+    <label><input type="checkbox" class="c"> Selected folder only</label><br>
+    <label><input type="checkbox" class="c"> Non-recursive by default</label><br>
+    <label><input type="checkbox" class="c"> Filename/extension/size/modified-time only</label><br>
+    <label><input type="checkbox" class="c"> No file content reading</label><br>
+    <label><input type="checkbox" class="c"> No copy/move/delete</label><br>
+    <label><input type="checkbox" class="c"> No archives</label><br>
+    <label><input type="checkbox" class="c"> No parser</label><br>
+    <label><input type="checkbox" class="c"> JSON report only</label><br><br>
+    <button onclick="makeChecklist()">Generate Checklist JSON</button>
+  </div>
+
+  <div class="card">
+    <pre id="out">Ready.</pre>
+  </div>
+
+  <p><a href="./index.html">Back</a></p>
+
+  <script>
+    function makeChecklist(){
+      const checks = Array.from(document.querySelectorAll(".c"));
+      const accepted = checks.every(c => c.checked);
+      const result = {
+        format: "UAOS_REAL_LIMITED_SCANNER_V1_RISK_ACCEPTANCE",
+        version: "1.0.0",
+        accepted,
+        checkedCount: checks.filter(c => c.checked).length,
+        total: checks.length,
+        implementationStatus: "not-implemented-in-this-phase"
+      };
+      document.getElementById("out").textContent = JSON.stringify(result, null, 2);
+    }
+  </script>
+</body>
+</html>

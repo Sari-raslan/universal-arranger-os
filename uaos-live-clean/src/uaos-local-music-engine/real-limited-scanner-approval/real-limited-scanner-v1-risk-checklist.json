@@ -1,0 +1,55 @@
+﻿{
+  "format": "UAOS_REAL_LIMITED_SCANNER_V1_RISK_CHECKLIST",
+  "version": "1.0.0-approval-only",
+  "items": [
+    {
+      "id": "selected-folder-only",
+      "label": "Scanner is limited to one selected folder",
+      "required": true,
+      "accepted": false
+    },
+    {
+      "id": "non-recursive-default",
+      "label": "Recursive scanning is off by default",
+      "required": true,
+      "accepted": false
+    },
+    {
+      "id": "metadata-only",
+      "label": "Scanner records filename, extension, size, and modified time only",
+      "required": true,
+      "accepted": false
+    },
+    {
+      "id": "no-content-read",
+      "label": "Scanner does not read file contents",
+      "required": true,
+      "accepted": false
+    },
+    {
+      "id": "no-copy-move-delete",
+      "label": "Scanner does not copy, move, or delete files",
+      "required": true,
+      "accepted": false
+    },
+    {
+      "id": "no-archives",
+      "label": "Scanner does not open ZIP/RAR/7z archives",
+      "required": true,
+      "accepted": false
+    },
+    {
+      "id": "no-parser",
+      "label": "Scanner does not parse production or keyboard formats",
+      "required": true,
+      "accepted": false
+    },
+    {
+      "id": "json-report-only",
+      "label": "Scanner output is JSON report only",
+      "required": true,
+      "accepted": false
+    }
+  ],
+  "implementationStatus": "not-implemented"
+}
