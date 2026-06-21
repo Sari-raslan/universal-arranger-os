@@ -1,0 +1,77 @@
+﻿{
+    "phaseBundle":  "Y1721-Y1880",
+    "path":  "PATH-NEW-DOCS-PLANNING",
+    "result":  "READY / PASS",
+    "reportsOnly":  [
+                        "JSON",
+                        "MD"
+                    ],
+    "y1721_y1760":  "New Planning Roadmap Outline",
+    "roadmap":  [
+                    "Define future planning topics only",
+                    "Keep implementation locked",
+                    "Prepare human-readable planning sequence",
+                    "No writer/output/parser/deploy scope"
+                ],
+    "y1761_y1800":  "Planning Risk Register",
+    "risks":  [
+                  {
+                      "control":  "Explicit approval required",
+                      "status":  "BLOCKED",
+                      "risk":  "Scope creep into implementation"
+                  },
+                  {
+                      "control":  "No output files",
+                      "status":  "BLOCKED",
+                      "risk":  "Keyboard output assumptions"
+                  },
+                  {
+                      "control":  "No fixtures path access",
+                      "status":  "BLOCKED",
+                      "risk":  "Fixture handling"
+                  },
+                  {
+                      "control":  "No deploy",
+                      "status":  "BLOCKED",
+                      "risk":  "Deployment confusion"
+                  }
+              ],
+    "y1801_y1840":  "Planning Decision Matrix",
+    "decisions":  [
+                      {
+                          "unlock":  "NO",
+                          "option":  "Continue planning docs",
+                          "decision":  "ALLOWED"
+                      },
+                      {
+                          "unlock":  "NO",
+                          "option":  "Open writer",
+                          "decision":  "BLOCKED"
+                      },
+                      {
+                          "unlock":  "NO",
+                          "option":  "Open parser",
+                          "decision":  "BLOCKED"
+                      },
+                      {
+                          "unlock":  "NO",
+                          "option":  "Deploy",
+                          "decision":  "BLOCKED"
+                      }
+                  ],
+    "y1841_y1880":  "Planning Final Summary",
+    "finalSummary":  "Planning path is ready as docs-only. No implementation unlocked.",
+    "stillBlocked":  [
+                         "writer",
+                         "real writer",
+                         "keyboard output",
+                         "production parser",
+                         "deploy",
+                         "App.jsx",
+                         "fixtures",
+                         "operational code"
+                     ],
+    "build":  "PASS",
+    "branch":  "master",
+    "status":  "PLANNING_BUNDLE_READY"
+}
