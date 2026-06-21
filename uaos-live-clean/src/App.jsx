@@ -30,7 +30,7 @@ export default function App() {
           <a href="#workflow">Workflow</a>
           <a href="#pricing">Pricing</a>
           <a href="#support">Support</a>
-        </nav><a className="account" href="#support">Account</a></header>
+        </nav><div className="languageSwitch"><span>EN</span><b>AR</b></div><a className="account" href="#support">Account</a></header>
 
       <section className="premiumHero" id="home">
         <div className="heroText">
@@ -103,7 +103,9 @@ export default function App() {
         </div>
       </section>
 
-      <section className="premiumSection pricing" id="pricing">
+      <section className="premiumSection screenshotWall" id="screens"><div className="sectionTitle"><p className="spectrumLabel">Preview</p><h2>Product screens that explain the vision faster.</h2></div><div className="screenGrid"><article><b>Sing Mode</b><span>Voice idea to arranged direction</span></article><article><b>Studio Mode</b><span>Tracks, chords, MIDI and song flow</span></article><article><b>Pro Arranger</b><span>Professional workflow planning</span></article></div></section>
+
+<section className="premiumSection pricing" id="pricing">
         <div className="sectionTitle">
           <p className="spectrumLabel">Pricing</p>
           <h2>Simple pricing preview.</h2>
@@ -154,4 +156,5 @@ export default function App() {
     </main>
   );
 }
+
 
