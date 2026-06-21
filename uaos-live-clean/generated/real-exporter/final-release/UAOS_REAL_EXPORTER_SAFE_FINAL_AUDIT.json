@@ -1,0 +1,58 @@
+{
+  "format": "UAOS_REAL_EXPORTER_SAFE_FINAL_AUDIT",
+  "version": "74.0.0",
+  "phase": 74,
+  "status": "PASS",
+  "requiredFileCount": 5,
+  "passedFileCount": 5,
+  "failedFileCount": 0,
+  "checks": [
+    {
+      "file": "generated/real-exporter/final-release/UAOS_REAL_EXPORTER_SAFE_RELEASE_MANIFEST.json",
+      "exists": true,
+      "format": "UAOS_REAL_EXPORTER_SAFE_RELEASE_MANIFEST",
+      "unsafeRealBinaryClaim": false,
+      "ok": true
+    },
+    {
+      "file": "generated/real-exporter/final-release/UAOS_REAL_EXPORTER_COMPATIBILITY_MATRIX.json",
+      "exists": true,
+      "format": "UAOS_REAL_EXPORTER_COMPATIBILITY_MATRIX",
+      "unsafeRealBinaryClaim": false,
+      "ok": true
+    },
+    {
+      "file": "generated/real-exporter/final-release/UAOS_REAL_EXPORTER_NEXT_ROADMAP.json",
+      "exists": true,
+      "format": "UAOS_REAL_EXPORTER_NEXT_ROADMAP",
+      "unsafeRealBinaryClaim": false,
+      "ok": true
+    },
+    {
+      "file": "generated/real-exporter/final-safe/UAOS_REAL_EXPORTER_MASTER_SAFE_INDEX.json",
+      "exists": true,
+      "format": "UAOS_REAL_EXPORTER_MASTER_SAFE_INDEX",
+      "unsafeRealBinaryClaim": false,
+      "ok": true
+    },
+    {
+      "file": "generated/real-exporter/final-safe/UAOS_REAL_EXPORTER_FINAL_QA_GATE.json",
+      "exists": true,
+      "format": "UAOS_REAL_EXPORTER_FINAL_QA_GATE",
+      "unsafeRealBinaryClaim": false,
+      "ok": true
+    }
+  ],
+  "finalDecision": {
+    "realExporterSafeFoundationFinal": true,
+    "allowSafeJsonPackage": true,
+    "allowSafeUaosbinPackage": true,
+    "allowRealKeyboardBinaryOutput": false,
+    "realWriterReady": false,
+    "reason": "Final audit passed for safe foundation only. Real keyboard binary output remains blocked."
+  },
+  "safety": {
+    "realBinaryBlocked": true,
+    "warning": "Final audit does not permit real proprietary keyboard binary output."
+  }
+}

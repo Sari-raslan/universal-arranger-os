@@ -1,0 +1,100 @@
+{
+  "format": "UAOS_REAL_EXPORTER_COMPATIBILITY_MATRIX",
+  "version": "72.0.0",
+  "phase": 72,
+  "realKeyboardBinaryWriteAllowed": false,
+  "devices": [
+    {
+      "brand": "Yamaha",
+      "models": [
+        "Genos",
+        "Tyros family research",
+        "PSR-S/SX family research"
+      ],
+      "futureFormats": [
+        ".STY"
+      ],
+      "safeJsonReady": true,
+      "safeUaosbinReady": true,
+      "realBinaryReady": false,
+      "validationRequired": [
+        "STY chunks",
+        "CASM-like rules",
+        "OTS metadata",
+        "checksum",
+        "roundtrip"
+      ]
+    },
+    {
+      "brand": "KORG",
+      "models": [
+        "PA3X Oriental",
+        "PA5X",
+        "PA family research"
+      ],
+      "futureFormats": [
+        ".STY",
+        ".SET"
+      ],
+      "safeJsonReady": true,
+      "safeUaosbinReady": true,
+      "realBinaryReady": false,
+      "validationRequired": [
+        "style container",
+        "SET package",
+        "sections",
+        "metadata",
+        "hardware editor"
+      ]
+    },
+    {
+      "brand": "Roland",
+      "models": [
+        "BK-9",
+        "E-A family research"
+      ],
+      "futureFormats": [
+        ".STL",
+        ".PRS"
+      ],
+      "safeJsonReady": true,
+      "safeUaosbinReady": true,
+      "realBinaryReady": false,
+      "validationRequired": [
+        "style/performance structure",
+        "device family map",
+        "package rules"
+      ]
+    },
+    {
+      "brand": "Ketron",
+      "models": [
+        "SD9",
+        "Audya family research"
+      ],
+      "futureFormats": [
+        ".PAT",
+        ".MSP",
+        ".KST"
+      ],
+      "safeJsonReady": true,
+      "safeUaosbinReady": true,
+      "realBinaryReady": false,
+      "validationRequired": [
+        "PAT/MSP/KST package",
+        "audio drum refs",
+        "phrase metadata",
+        "hardware validation"
+      ]
+    }
+  ],
+  "finalDecision": {
+    "compatibilityMatrixReady": true,
+    "realBinaryOutputAllowed": false,
+    "reason": "Compatibility matrix documents safe readiness only. Real binary validation is still required."
+  },
+  "safety": {
+    "realBinaryBlocked": true,
+    "warning": "Compatibility does not mean real proprietary binary writer readiness."
+  }
+}
