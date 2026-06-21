@@ -1,0 +1,92 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UAOS Phase 41 Binary Exporter Foundation</title>
+  <style>
+    body { margin:0; font-family:Arial, sans-serif; background:#070b14; color:#eef4ff; }
+    main { max-width:1000px; margin:0 auto; padding:32px; }
+    .card { background:#101827; border:1px solid #26354f; border-radius:18px; padding:20px; margin:16px 0; }
+    button, select { font-size:16px; padding:12px; border-radius:12px; margin:4px; }
+    button { background:#1d4ed8; color:white; border:1px solid #3b82f6; }
+    select { background:#162238; color:white; border:1px solid #4b5f82; }
+    pre { background:#030712; padding:18px; border-radius:14px; white-space:pre-wrap; }
+    .pass { color:#7CFC98; font-weight:bold; }
+    .warn { color:#facc15; font-weight:bold; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>UAOS Phase 41 Binary Exporter Foundation</h1>
+    <p class="pass">SAFE BINARY CONTAINER FOUNDATION PASS CANDIDATE</p>
+    <p class="warn">This is NOT proprietary .STY/.SET/.PRS export yet.</p>
+
+    <div class="card">
+      <select id="target">
+        <option value="korg">KORG</option>
+        <option value="yamaha">Yamaha</option>
+        <option value="roland">Roland</option>
+        <option value="ketron">Ketron</option>
+      </select>
+      <button id="make">Generate Safe Binary Container</button>
+      <button id="download">Download .uaosbin</button>
+    </div>
+
+    <div class="card">
+      <pre id="out">Ready</pre>
+    </div>
+  </main>
+
+  <script>
+    let currentBytes = null;
+    let currentTarget = "korg";
+
+    function enc(text) {
+      return Array.from(new TextEncoder().encode(String(text)));
+    }
+
+    function u32be(value) {
+      return [(value>>>24)&255,(value>>>16)&255,(value>>>8)&255,value&255];
+    }
+
+    function make() {
+      currentTarget = document.getElementById("target").value;
+      const payload = JSON.stringify({
+        format:"UAOS_HARDWARE_EXPORT_PACKAGE",
+        target:currentTarget,
+        projectName:"UAOS Phase 41 Browser Binary Foundation",
+        warning:"SAFE UAOS CONTAINER ONLY - NOT PROPRIETARY KEYBOARD BINARY"
+      }, null, 2);
+
+      const bytes = [
+        ...enc("UAOSBIN1"),
+        ...enc(currentTarget.padEnd(16, " ").slice(0, 16)),
+        ...u32be(enc(payload).length),
+        ...enc(payload)
+      ];
+
+      currentBytes = new Uint8Array(bytes);
+      document.getElementById("out").textContent =
+        "PASS\nTarget: " + currentTarget +
+        "\nBytes: " + currentBytes.length +
+        "\nMagic: UAOSBIN1\n\n" + payload;
+    }
+
+    function download() {
+      if (!currentBytes) make();
+      const blob = new Blob([currentBytes], { type:"application/octet-stream" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "uaos-phase41-" + currentTarget + ".uaosbin";
+      a.click();
+      URL.revokeObjectURL(url);
+    }
+
+    document.getElementById("make").addEventListener("click", make);
+    document.getElementById("download").addEventListener("click", download);
+    make();
+  </script>
+</body>
+</html>
