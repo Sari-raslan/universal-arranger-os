@@ -1,0 +1,37 @@
+﻿{
+  "format": "UAOS_REAL_LIMITED_SCANNER_V1_SCOPE_CONTRACT",
+  "version": "1.0.0-approval-only",
+  "scannerName": "UAOS Real Limited Scanner v1",
+  "futureRuntime": {
+    "selectedFolderOnly": true,
+    "recursive": false,
+    "hiddenFolders": false,
+    "archiveRead": false,
+    "contentRead": false,
+    "copyMoveDelete": false
+  },
+  "allowedFields": [
+    "name",
+    "extension",
+    "sizeBytes",
+    "modifiedTime",
+    "kind",
+    "relativePathOptional"
+  ],
+  "forbiddenFields": [
+    "fileContent",
+    "audioWaveform",
+    "audioMetadataDecoded",
+    "sampleData",
+    "embeddedPresetData",
+    "keyboardStyleData",
+    "archiveContent"
+  ],
+  "output": {
+    "format": "UAOS_REAL_LIMITED_SCANNER_V1_REPORT",
+    "jsonOnly": true,
+    "writeToDisk": false,
+    "browserDownloadAllowed": true
+  },
+  "implementationStatus": "not-implemented"
+}
