@@ -1,0 +1,78 @@
+{
+  "phase": "Y551-Y560",
+  "title": "Next Decision Matrix",
+  "status": "PASS_DECISION_MATRIX_READY",
+  "recommendedPath": [
+    "UI_POLISH",
+    "DRYRUN_IMPROVEMENTS"
+  ],
+  "blockedPath": [
+    "REAL_WRITER",
+    "PUBLIC_DEPLOY"
+  ],
+  "options": [
+    {
+      "id": "UI_POLISH",
+      "name": "UI polish / product demo refinement",
+      "safety": "HIGH",
+      "risk": "LOW",
+      "speed": "FAST",
+      "value": "HIGH",
+      "recommendedNow": true,
+      "allowedNow": true,
+      "reason": "Improves product clarity without opening writer or real output."
+    },
+    {
+      "id": "DRYRUN_IMPROVEMENTS",
+      "name": "Dry-run improvements",
+      "safety": "HIGH",
+      "risk": "LOW_MEDIUM",
+      "speed": "MEDIUM",
+      "value": "MEDIUM_HIGH",
+      "recommendedNow": true,
+      "allowedNow": true,
+      "reason": "Improves evidence quality while staying JSON-only."
+    },
+    {
+      "id": "WRITER_SPEC",
+      "name": "Writer specification only",
+      "safety": "MEDIUM_HIGH",
+      "risk": "MEDIUM",
+      "speed": "MEDIUM",
+      "value": "HIGH_LATER",
+      "recommendedNow": false,
+      "allowedNow": true,
+      "reason": "Useful, but should stay specification-only until stronger conformance plan exists."
+    },
+    {
+      "id": "REAL_WRITER",
+      "name": "Real writer implementation",
+      "safety": "LOW",
+      "risk": "HIGH",
+      "speed": "SLOW",
+      "value": "HIGH_LATER",
+      "recommendedNow": false,
+      "allowedNow": false,
+      "reason": "Blocked until separate approval, real spec, conformance tests, and hardware/software validation."
+    },
+    {
+      "id": "PUBLIC_DEPLOY",
+      "name": "Public deploy",
+      "safety": "MEDIUM",
+      "risk": "MEDIUM_HIGH",
+      "speed": "FAST",
+      "value": "HIGH_LATER",
+      "recommendedNow": false,
+      "allowedNow": false,
+      "reason": "Blocked because product must not imply production writer/parser readiness."
+    }
+  ],
+  "hardLimits": {
+    "appJsxModified": false,
+    "writerImplementation": false,
+    "realKeyboardOutput": false,
+    "productionParser": false,
+    "deploy": false
+  },
+  "generatedAt": "2026-06-21T09:24:18.367Z"
+}

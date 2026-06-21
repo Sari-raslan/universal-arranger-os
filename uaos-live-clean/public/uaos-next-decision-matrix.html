@@ -1,0 +1,94 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>UAOS Next Decision Matrix</title>
+  <style>
+    body{font-family:Arial;background:#101010;color:#eee;padding:28px;line-height:1.5}
+    .hero{padding:24px;border-radius:16px;background:#181818;border:1px solid #444;margin-bottom:18px}
+    table{width:100%;border-collapse:collapse;background:#1b1b1b}
+    th,td{border:1px solid #444;padding:10px;text-align:left;vertical-align:top}
+    th{background:#222}
+    .pass{color:#80ffb0}.lock{color:#ffcc66}.bad{color:#ff8080}
+  </style>
+</head>
+<body>
+  <div class="hero">
+    <h1>UAOS Next Decision Matrix</h1>
+    <h2>Y551-Y560</h2>
+    <p>Recommended now: UI polish and dry-run improvements. Blocked now: real writer and public deploy.</p>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Path</th>
+        <th>Safety</th>
+        <th>Risk</th>
+        <th>Value</th>
+        <th>Allowed Now</th>
+        <th>Recommended Now</th>
+        <th>Reason</th>
+      </tr>
+    </thead>
+    <tbody>
+<tr>
+  <td>UI_POLISH</td>
+  <td>UI polish / product demo refinement</td>
+  <td>HIGH</td>
+  <td>LOW</td>
+  <td>HIGH</td>
+  <td>YES</td>
+  <td>YES</td>
+  <td>Improves product clarity without opening writer or real output.</td>
+</tr>
+
+<tr>
+  <td>DRYRUN_IMPROVEMENTS</td>
+  <td>Dry-run improvements</td>
+  <td>HIGH</td>
+  <td>LOW_MEDIUM</td>
+  <td>MEDIUM_HIGH</td>
+  <td>YES</td>
+  <td>YES</td>
+  <td>Improves evidence quality while staying JSON-only.</td>
+</tr>
+
+<tr>
+  <td>WRITER_SPEC</td>
+  <td>Writer specification only</td>
+  <td>MEDIUM_HIGH</td>
+  <td>MEDIUM</td>
+  <td>HIGH_LATER</td>
+  <td>YES</td>
+  <td>NO</td>
+  <td>Useful, but should stay specification-only until stronger conformance plan exists.</td>
+</tr>
+
+<tr>
+  <td>REAL_WRITER</td>
+  <td>Real writer implementation</td>
+  <td>LOW</td>
+  <td>HIGH</td>
+  <td>HIGH_LATER</td>
+  <td>NO</td>
+  <td>NO</td>
+  <td>Blocked until separate approval, real spec, conformance tests, and hardware/software validation.</td>
+</tr>
+
+<tr>
+  <td>PUBLIC_DEPLOY</td>
+  <td>Public deploy</td>
+  <td>MEDIUM</td>
+  <td>MEDIUM_HIGH</td>
+  <td>HIGH_LATER</td>
+  <td>NO</td>
+  <td>NO</td>
+  <td>Blocked because product must not imply production writer/parser readiness.</td>
+</tr></tbody>
+  </table>
+
+  <p class="lock">Real writer: BLOCKED | Real keyboard output: BLOCKED | Production parser: BLOCKED | Deploy: BLOCKED</p>
+</body>
+</html>
