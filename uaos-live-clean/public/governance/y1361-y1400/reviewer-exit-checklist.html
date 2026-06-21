@@ -1,0 +1,94 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>UAOS Reviewer Exit Checklist</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+:root{
+  --bg:#07101f;
+  --panel:#101b31;
+  --panel2:#162541;
+  --text:#f6f8ff;
+  --muted:#b8c4dc;
+  --line:#2d4169;
+  --ok:#74e8b3;
+  --warn:#f7d774;
+  --bad:#ff9f9f;
+  --blue:#9dccff;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:Arial, Helvetica, sans-serif;
+  background:linear-gradient(180deg,#07101f,#101936);
+  color:var(--text);
+  line-height:1.65;
+}
+main{max-width:1180px;margin:0 auto;padding:34px}
+.card{
+  background:rgba(16,27,49,.95);
+  border:1px solid var(--line);
+  border-radius:18px;
+  padding:24px;
+  margin:18px 0;
+  box-shadow:0 18px 38px rgba(0,0,0,.25);
+}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+h1,h2,h3{line-height:1.25;margin-top:0}
+.badge{
+  display:inline-block;
+  padding:7px 12px;
+  border-radius:999px;
+  background:var(--panel2);
+  border:1px solid var(--line);
+  color:var(--ok);
+  font-weight:700;
+  margin:4px 6px 4px 0;
+}
+.ok{color:var(--ok);font-weight:700}
+.warn{color:var(--warn);font-weight:700}
+.lock{color:var(--bad);font-weight:700}
+a{color:var(--blue)}
+table{width:100%;border-collapse:collapse;margin-top:12px}
+td,th{border:1px solid var(--line);padding:10px;text-align:left;vertical-align:top}
+th{background:#172744}
+code{background:#07101f;border:1px solid var(--line);border-radius:6px;padding:2px 6px}
+.footer{color:var(--muted);font-size:13px;margin-top:28px}
+</style>
+</head>
+<body>
+<main>
+<section class="card">
+  <h1>Y1381-Y1390 · Reviewer Exit Checklist</h1>
+  <span class="badge">Exit Checklist</span>
+  <span class="badge">Docs Only</span>
+  <span class="badge">No Scope Unlock</span>
+</section>
+
+<section class="card">
+  <h2>Exit Checks</h2>
+  <table>
+    <tr><th>Check</th><th>Expected</th></tr>
+    <tr><td>Current official path</td><td class="ok">PATH-DOCS-UI</td></tr>
+    <tr><td>Documentation closure complete</td><td class="ok">READY</td></tr>
+    <tr><td>Archive index complete</td><td class="ok">READY</td></tr>
+    <tr><td>CTO sign-off text present</td><td class="ok">READY</td></tr>
+    <tr><td>Output allowed</td><td class="lock">NO</td></tr>
+    <tr><td>Writer allowed</td><td class="lock">NO</td></tr>
+    <tr><td>Production parser allowed</td><td class="lock">NO</td></tr>
+    <tr><td>Deploy allowed</td><td class="lock">NO</td></tr>
+    <tr><td>Operational code allowed</td><td class="lock">NO</td></tr>
+  </table>
+</section>
+
+<section class="card">
+  <h2>Reviewer Exit Statement</h2>
+  <p>Reviewer may close this package only as documentation. No implementation or output path is approved.</p>
+</section>
+<div class="footer">
+UAOS Governance · Y1361-Y1400 · Final Docs Closure and Archive Index · PATH-DOCS-UI · Closure docs only · No writer · No output · No parser · No deploy.
+</div>
+</main>
+</body>
+</html>
