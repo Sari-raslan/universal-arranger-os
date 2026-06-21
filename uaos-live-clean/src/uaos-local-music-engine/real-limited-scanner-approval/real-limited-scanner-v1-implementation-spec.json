@@ -1,0 +1,45 @@
+﻿{
+  "format": "UAOS_REAL_LIMITED_SCANNER_V1_IMPLEMENTATION_SPEC",
+  "version": "1.0.0-approval-only",
+  "status": "ready-for-future-implementation-after-approval",
+  "phaseToImplement": "PHASE-LIB-97",
+  "runtimeRules": {
+    "requiresApprovalDecisionJson": true,
+    "requiresApprovalApprovedTrue": true,
+    "requiresExplicitCliFlag": "--approve-real-limited-scanner-v1",
+    "requiresFolderArgument": "--folder",
+    "nonRecursiveDefault": true,
+    "maxEntriesDefault": 5000
+  },
+  "allowedNodeApisFuture": [
+    "fs.existsSync",
+    "fs.statSync for selected folder and direct children metadata only",
+    "fs.readdirSync for selected folder direct children only",
+    "path.extname",
+    "path.basename",
+    "path.resolve"
+  ],
+  "forbiddenNodeApisFuture": [
+    "fs.readFileSync",
+    "fs.writeFileSync for scanned data files",
+    "fs.copyFileSync",
+    "fs.renameSync",
+    "fs.rmSync",
+    "fs.unlinkSync",
+    "fs.createReadStream",
+    "fs.createWriteStream",
+    "child_process.exec",
+    "child_process.spawn"
+  ],
+  "forbiddenFeatures": [
+    "archiveExtraction",
+    "audioDecoding",
+    "sampleLoading",
+    "productionParser",
+    "keyboardParser",
+    "keyboardWriter",
+    "midiExport",
+    "audioRender",
+    "deployment"
+  ]
+}
