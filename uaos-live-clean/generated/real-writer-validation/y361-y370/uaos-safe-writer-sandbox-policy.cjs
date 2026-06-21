@@ -1,0 +1,67 @@
+﻿const fs = require("fs");
+const path = require("path");
+
+const base = path.join(process.cwd(), "generated", "real-writer-validation");
+const outDir = path.join(base, "y361-y370");
+fs.mkdirSync(outDir, { recursive: true });
+
+const report = {
+  phase: "Y361-Y370",
+  title: "Safe Writer Sandbox Policy Design",
+  status: "PASS_POLICY_ONLY",
+  policyOnly: true,
+  writerImplemented: false,
+  realOutputProduced: false,
+  outputSandboxCreated: false,
+  outputSandboxPolicy: {
+    proposedPath: "generated/output-sandbox/",
+    createNow: false,
+    reason: "This phase designs policy only and must not create real writer outputs or output folders.",
+    futureAllowedContent: [
+      "dry-run JSON manifests only after separate approval",
+      "validation reports",
+      "non-keyboard placeholder metadata"
+    ],
+    forbiddenContent: [
+      ".STY",
+      ".SET",
+      ".PRS",
+      ".STL",
+      ".PAT",
+      ".MSP",
+      ".KST",
+      "any binary keyboard output",
+      "any modified fixture",
+      "any copied fixture"
+    ]
+  },
+  writerSandboxRules: [
+    "Writer cannot overwrite existing files.",
+    "Writer cannot write into fixture directories.",
+    "Writer cannot use original fixture filename as output filename.",
+    "Writer cannot produce real keyboard extensions.",
+    "Writer cannot run without explicit future approval.",
+    "Writer cannot be connected to production parser.",
+    "Writer must remain dry-run until conformance gates pass."
+  ],
+  hardLimits: {
+    appJsxModified: false,
+    writerImplementation: false,
+    realStyOutput: false,
+    realKeyboardOutput: false,
+    productionParser: false,
+    fixtureModification: false,
+    fixtureCopy: false,
+    destructiveWrites: false,
+    deploy: false
+  },
+  generatedAt: new Date().toISOString()
+};
+
+fs.writeFileSync(
+  path.join(outDir, "y361-y370-writer-sandbox-policy-report.json"),
+  JSON.stringify(report, null, 2),
+  "utf8"
+);
+
+console.log("[Y361-Y370 PASS_POLICY_ONLY]");

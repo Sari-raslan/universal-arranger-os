@@ -1,0 +1,88 @@
+{
+  "phase": "Y371-Y380",
+  "title": "Dry-run Manifest Format + Writer Conformance Checklist",
+  "status": "PASS_FORMAT_ONLY",
+  "formatOnly": true,
+  "realManifestWritten": false,
+  "writerImplemented": false,
+  "realOutputProduced": false,
+  "manifestFormat": {
+    "schemaName": "UAOS_DRY_RUN_WRITER_MANIFEST",
+    "version": "1.0.0-policy-only",
+    "createsRealKeyboardOutput": false,
+    "allowedExtension": ".json",
+    "forbiddenExtensions": [
+      ".STY",
+      ".SET",
+      ".PRS",
+      ".STL",
+      ".PAT",
+      ".MSP",
+      ".KST"
+    ],
+    "requiredFields": [
+      "manifestType",
+      "dryRun",
+      "sourceReportIds",
+      "intendedTarget",
+      "plannedSections",
+      "blockedRealOutput",
+      "writerNotImplemented",
+      "generatedAt"
+    ],
+    "sampleShapeOnly": {
+      "manifestType": "UAOS_DRY_RUN_WRITER_MANIFEST",
+      "dryRun": true,
+      "sourceReportIds": [],
+      "intendedTarget": "YAMAHA_STYLE_DRY_RUN_ONLY",
+      "plannedSections": [],
+      "blockedRealOutput": true,
+      "writerNotImplemented": true,
+      "generatedAt": "ISO_DATE"
+    }
+  },
+  "conformanceChecklist": [
+    {
+      "id": "CONF_NO_REAL_EXTENSION",
+      "requirement": "Dry-run manifest must not use real keyboard file extensions.",
+      "requiredStatus": "PASS_BEFORE_ANY_WRITER"
+    },
+    {
+      "id": "CONF_NO_FIXTURE_COPY",
+      "requirement": "No fixture may be copied to output sandbox.",
+      "requiredStatus": "PASS_BEFORE_ANY_WRITER"
+    },
+    {
+      "id": "CONF_NO_FIXTURE_MODIFY",
+      "requirement": "No fixture may be modified.",
+      "requiredStatus": "PASS_BEFORE_ANY_WRITER"
+    },
+    {
+      "id": "CONF_OUTPUT_FOLDER_ISOLATION",
+      "requirement": "Future outputs must be isolated under generated/output-sandbox only.",
+      "requiredStatus": "PASS_BEFORE_ANY_WRITER"
+    },
+    {
+      "id": "CONF_WRITER_APPROVAL_REQUIRED",
+      "requirement": "Writer cannot run without future explicit approval.",
+      "requiredStatus": "PASS_BEFORE_ANY_WRITER"
+    },
+    {
+      "id": "CONF_HARDWARE_ROUNDTRIP_REQUIRED",
+      "requirement": "Real output requires hardware or trusted conformance validation.",
+      "requiredStatus": "PASS_BEFORE_REAL_OUTPUT"
+    }
+  ],
+  "hardLimits": {
+    "appJsxModified": false,
+    "writerImplementation": false,
+    "realStyOutput": false,
+    "realKeyboardOutput": false,
+    "productionParser": false,
+    "fixtureModification": false,
+    "fixtureCopy": false,
+    "destructiveWrites": false,
+    "deploy": false
+  },
+  "generatedAt": "2026-06-21T08:32:59.001Z"
+}

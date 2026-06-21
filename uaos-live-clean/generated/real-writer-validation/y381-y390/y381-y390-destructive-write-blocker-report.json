@@ -1,0 +1,56 @@
+{
+  "phase": "Y381-Y390",
+  "title": "Destructive-write Blocker Gate",
+  "status": "PASS_ALL_DESTRUCTIVE_WRITES_BLOCKED",
+  "destructiveWritesBlocked": true,
+  "destructivePatterns": [
+    "overwrite existing file",
+    "write into fixture directory",
+    "copy fixture",
+    "modify fixture",
+    "delete fixture",
+    "rename fixture",
+    "write .STY",
+    "write .SET",
+    "write .PRS",
+    "write .STL",
+    "write .PAT",
+    "write .MSP",
+    "write .KST",
+    "deploy",
+    "production parser write path"
+  ],
+  "writePolicy": {
+    "allowedNow": [
+      "JSON policy reports under generated/real-writer-validation",
+      "HTML dashboard pages under public",
+      "text reports under reports"
+    ],
+    "blockedNow": [
+      "any keyboard binary output",
+      "any fixture directory write",
+      "any output-sandbox real file",
+      "any production parser output",
+      "any deploy"
+    ]
+  },
+  "futureUnlockRequirements": [
+    "separate explicit approval",
+    "dry-run writer manifest phase",
+    "safe output folder creation phase",
+    "conformance checklist PASS",
+    "manual review"
+  ],
+  "hardLimits": {
+    "appJsxModified": false,
+    "writerImplementation": false,
+    "realStyOutput": false,
+    "realKeyboardOutput": false,
+    "productionParser": false,
+    "fixtureModification": false,
+    "fixtureCopy": false,
+    "destructiveWrites": false,
+    "deploy": false
+  },
+  "generatedAt": "2026-06-21T08:33:01.856Z"
+}
