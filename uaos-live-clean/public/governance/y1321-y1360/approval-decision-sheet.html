@@ -1,0 +1,101 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>UAOS Approval No-Approval Decision Sheet</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+:root{
+  --bg:#070e1d;
+  --panel:#101a31;
+  --panel2:#162341;
+  --text:#f6f8ff;
+  --muted:#b8c3da;
+  --line:#2c3e65;
+  --ok:#74e8b3;
+  --warn:#f6d365;
+  --bad:#ff9f9f;
+  --blue:#9dccff;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:Arial, Helvetica, sans-serif;
+  background:linear-gradient(180deg,#070e1d,#101936);
+  color:var(--text);
+  line-height:1.65;
+}
+main{max-width:1180px;margin:0 auto;padding:34px}
+.card{
+  background:rgba(16,26,49,.94);
+  border:1px solid var(--line);
+  border-radius:18px;
+  padding:24px;
+  margin:18px 0;
+  box-shadow:0 18px 38px rgba(0,0,0,.25);
+}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+h1,h2,h3{line-height:1.25;margin-top:0}
+.badge{
+  display:inline-block;
+  padding:7px 12px;
+  border-radius:999px;
+  background:var(--panel2);
+  border:1px solid var(--line);
+  color:var(--ok);
+  font-weight:700;
+  margin:4px 6px 4px 0;
+}
+.ok{color:var(--ok);font-weight:700}
+.warn{color:var(--warn);font-weight:700}
+.lock{color:var(--bad);font-weight:700}
+a{color:var(--blue)}
+table{width:100%;border-collapse:collapse;margin-top:12px}
+td,th{border:1px solid var(--line);padding:10px;text-align:left;vertical-align:top}
+th{background:#172744}
+code{background:#070e1d;border:1px solid var(--line);border-radius:6px;padding:2px 6px}
+.footer{color:var(--muted);font-size:13px;margin-top:28px}
+.hero{font-size:20px;color:var(--muted)}
+</style>
+</head>
+<body>
+<main>
+<section class="card">
+  <h1>Y1341-Y1350 · Approval / No-Approval Decision Sheet</h1>
+  <span class="badge">Decision Sheet</span>
+  <span class="badge">Docs/UI Only</span>
+  <span class="badge">No Scope Unlock</span>
+</section>
+
+<section class="card">
+  <h2>Decision Options</h2>
+  <table>
+    <tr><th>Option</th><th>Meaning</th><th>Unlocks Implementation?</th></tr>
+    <tr><td class="ok">Approve Docs/UI Presentation Pack</td><td>Accepts the presentation package as documentation.</td><td class="lock">No</td></tr>
+    <tr><td class="warn">Request Docs Revision</td><td>Requests text/link/checklist revision only.</td><td class="lock">No</td></tr>
+    <tr><td class="lock">No Approval</td><td>Does not accept the presentation pack.</td><td class="lock">No</td></tr>
+  </table>
+</section>
+
+<section class="card">
+  <h2>Decision Text Templates</h2>
+  <h3>Approve Docs/UI Presentation Only</h3>
+  <p>I approve Y1321-Y1360 only as a Final Governance Presentation Pack under PATH-DOCS-UI. This approval does not authorize writer implementation, real writer, real keyboard output, production parser, deployment, fixtures processing, App.jsx modification, operational code, or commercial release.</p>
+
+  <h3>Request Docs Revision Only</h3>
+  <p>I request revision of the documentation/presentation wording or links only. No implementation or output scope is authorized.</p>
+
+  <h3>No Approval</h3>
+  <p>I do not approve moving beyond the current documentation presentation state. PATH-DOCS-UI remains locked.</p>
+</section>
+
+<section class="card">
+  <h2>Required Future Rule</h2>
+  <p>Any future non-docs path requires a new explicit approval pack with separate risk acceptance.</p>
+</section>
+<div class="footer">
+UAOS Governance · Y1321-Y1360 · Final Governance Presentation Pack · PATH-DOCS-UI · Presentation docs only · No writer · No output · No parser · No deploy.
+</div>
+</main>
+</body>
+</html>

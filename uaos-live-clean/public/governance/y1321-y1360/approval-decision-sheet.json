@@ -1,0 +1,26 @@
+﻿{
+    "phase":  "Y1341-Y1350",
+    "title":  "Approval / No-Approval Decision Sheet",
+    "decisionOptions":  [
+                            {
+                                "option":  "Approve Docs/UI Presentation Pack",
+                                "unlocksImplementation":  false,
+                                "unlocksOutput":  false,
+                                "unlocksDeploy":  false
+                            },
+                            {
+                                "option":  "Request Docs Revision",
+                                "unlocksImplementation":  false,
+                                "unlocksOutput":  false,
+                                "unlocksDeploy":  false
+                            },
+                            {
+                                "option":  "No Approval",
+                                "unlocksImplementation":  false,
+                                "unlocksOutput":  false,
+                                "unlocksDeploy":  false
+                            }
+                        ],
+    "futureRule":  "Any future non-docs path requires a new explicit approval pack.",
+    "status":  "READY"
+}

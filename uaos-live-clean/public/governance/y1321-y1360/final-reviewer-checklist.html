@@ -1,0 +1,98 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>UAOS Final Reviewer Checklist</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+:root{
+  --bg:#070e1d;
+  --panel:#101a31;
+  --panel2:#162341;
+  --text:#f6f8ff;
+  --muted:#b8c3da;
+  --line:#2c3e65;
+  --ok:#74e8b3;
+  --warn:#f6d365;
+  --bad:#ff9f9f;
+  --blue:#9dccff;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:Arial, Helvetica, sans-serif;
+  background:linear-gradient(180deg,#070e1d,#101936);
+  color:var(--text);
+  line-height:1.65;
+}
+main{max-width:1180px;margin:0 auto;padding:34px}
+.card{
+  background:rgba(16,26,49,.94);
+  border:1px solid var(--line);
+  border-radius:18px;
+  padding:24px;
+  margin:18px 0;
+  box-shadow:0 18px 38px rgba(0,0,0,.25);
+}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+h1,h2,h3{line-height:1.25;margin-top:0}
+.badge{
+  display:inline-block;
+  padding:7px 12px;
+  border-radius:999px;
+  background:var(--panel2);
+  border:1px solid var(--line);
+  color:var(--ok);
+  font-weight:700;
+  margin:4px 6px 4px 0;
+}
+.ok{color:var(--ok);font-weight:700}
+.warn{color:var(--warn);font-weight:700}
+.lock{color:var(--bad);font-weight:700}
+a{color:var(--blue)}
+table{width:100%;border-collapse:collapse;margin-top:12px}
+td,th{border:1px solid var(--line);padding:10px;text-align:left;vertical-align:top}
+th{background:#172744}
+code{background:#070e1d;border:1px solid var(--line);border-radius:6px;padding:2px 6px}
+.footer{color:var(--muted);font-size:13px;margin-top:28px}
+.hero{font-size:20px;color:var(--muted)}
+</style>
+</head>
+<body>
+<main>
+<section class="card">
+  <h1>Y1331-Y1340 · Final Reviewer Checklist</h1>
+  <span class="badge">Checklist</span>
+  <span class="badge">Final Review</span>
+  <span class="badge">Docs/UI Only</span>
+</section>
+
+<section class="card">
+  <h2>Required Checks</h2>
+  <table>
+    <tr><th>Check</th><th>Expected Result</th></tr>
+    <tr><td>Selected Path</td><td class="ok">PATH-DOCS-UI</td></tr>
+    <tr><td>Path Locked</td><td class="ok">true</td></tr>
+    <tr><td>No Further Code Gate</td><td class="warn">ACTIVE</td></tr>
+    <tr><td>Output Allowed</td><td class="lock">NO</td></tr>
+    <tr><td>Writer Implementation</td><td class="lock">BLOCKED</td></tr>
+    <tr><td>Real Writer</td><td class="lock">BLOCKED</td></tr>
+    <tr><td>Real Keyboard Output</td><td class="lock">BLOCKED</td></tr>
+    <tr><td>Production Parser</td><td class="lock">BLOCKED</td></tr>
+    <tr><td>Deploy/Public Release</td><td class="lock">BLOCKED</td></tr>
+    <tr><td>Fixtures Read/Copy/Modify</td><td class="lock">BLOCKED</td></tr>
+    <tr><td>App.jsx Modified</td><td class="ok">false</td></tr>
+    <tr><td>Operational Code</td><td class="lock">NO</td></tr>
+  </table>
+</section>
+
+<section class="card">
+  <h2>Reviewer Decision</h2>
+  <p>Reviewer may approve this package only as governance presentation documentation. Approval does not unlock implementation or output.</p>
+</section>
+<div class="footer">
+UAOS Governance · Y1321-Y1360 · Final Governance Presentation Pack · PATH-DOCS-UI · Presentation docs only · No writer · No output · No parser · No deploy.
+</div>
+</main>
+</body>
+</html>
