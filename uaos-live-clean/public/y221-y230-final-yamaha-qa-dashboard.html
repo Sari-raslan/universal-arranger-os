@@ -1,0 +1,41 @@
+﻿<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>UAOS Y221-Y230 Final Yamaha QA Dashboard</title>
+  <style>
+    body{font-family:Arial;background:#111;color:#eee;padding:24px}
+    .card{background:#1b1b1b;border:1px solid #444;border-radius:12px;padding:18px;margin:14px 0}
+    code{color:#9fe870}
+    .pass{color:#80ffb0}
+    .lock{color:#ffcc66}
+    .bad{color:#ff8080}
+  </style>
+</head>
+<body>
+  <h1>UAOS Y221-Y230</h1>
+  <h2>Final Yamaha Parser QA Dashboard</h2>
+
+  <div class="card pass">
+    Safe read-only analysis chain completed: classification, confidence, structure summary, readiness, writer blockers.
+  </div>
+
+  <div class="card lock">
+    Writer: HARD_LOCKED<br>
+    Real .STY output: HARD_LOCKED<br>
+    Deploy: BLOCKED
+  </div>
+
+  <div class="card">
+    Local reports are under:
+    <br><br>
+    <code>generated/real-writer-validation/y171-y230</code>
+  </div>
+
+  <div class="card">
+    Next approval required:
+    <br><br>
+    <code>I approve read-only Yamaha parser rule design from existing reports only. No writer, no real .STY output.</code>
+  </div>
+</body>
+</html>
