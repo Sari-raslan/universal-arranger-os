@@ -1,0 +1,35 @@
+{
+  "phase": "Y441-Y450",
+  "title": "Dry-run Extension Blocker + Conformance Report",
+  "status": "PASS_ALL_DRYRUN_OUTPUTS_JSON_ONLY",
+  "checkedFolder": "generated/output-sandbox-dryrun",
+  "files": [],
+  "conformance": {
+    "jsonOnly": true,
+    "noRealKeyboardExtensions": true,
+    "noFixtureCopy": true,
+    "noFixtureModify": true,
+    "noProductionParser": true,
+    "noRealWriter": true,
+    "noDeploy": true
+  },
+  "forbiddenExtensions": [
+    ".sty",
+    ".set",
+    ".prs",
+    ".stl",
+    ".pat",
+    ".msp",
+    ".kst"
+  ],
+  "hardLimits": {
+    "appJsxModified": false,
+    "fixtureCopy": false,
+    "fixtureModify": false,
+    "productionParser": false,
+    "realWriterImplementation": false,
+    "realKeyboardOutput": false,
+    "deploy": false
+  },
+  "generatedAt": "2026-06-21T08:43:16.772Z"
+}
