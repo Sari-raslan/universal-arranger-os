@@ -1,0 +1,41 @@
+{
+  "format": "UAOS_R46_ROUNDTRIP_BLOCKER_MATRIX",
+  "version": "R41-R50.0.0",
+  "phase": "R46",
+  "status": "PASS_BLOCKED",
+  "roundtripRequirements": [
+    {
+      "requirement": "parse fixture to semantic model",
+      "ready": false
+    },
+    {
+      "requirement": "semantic model to safe intermediate",
+      "ready": false
+    },
+    {
+      "requirement": "safe intermediate to binary candidate",
+      "ready": false
+    },
+    {
+      "requirement": "binary candidate accepted by editor",
+      "ready": false
+    },
+    {
+      "requirement": "binary candidate accepted by hardware",
+      "ready": false
+    }
+  ],
+  "canRunTrueRoundtrip": false,
+  "finalDecision": {
+    "roundtripReady": false,
+    "parserImplementationAllowed": false,
+    "writerImplementationAllowed": false,
+    "allowRealStyOutput": false,
+    "realKeyboardBinaryWriteAllowed": false
+  },
+  "safety": {
+    "readOnly": true,
+    "wroteRealKeyboardBinary": false,
+    "realBinaryBlocked": true
+  }
+}

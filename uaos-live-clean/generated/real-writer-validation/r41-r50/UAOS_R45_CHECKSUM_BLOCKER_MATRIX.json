@@ -1,0 +1,45 @@
+{
+  "format": "UAOS_R45_CHECKSUM_BLOCKER_MATRIX",
+  "version": "R41-R50.0.0",
+  "phase": "R45",
+  "status": "PASS_BLOCKED",
+  "blockers": [
+    {
+      "area": "file checksum algorithm",
+      "known": false,
+      "blocksWriter": true
+    },
+    {
+      "area": "chunk checksum algorithm",
+      "known": false,
+      "blocksWriter": true
+    },
+    {
+      "area": "footer/package integrity",
+      "known": false,
+      "blocksWriter": true
+    },
+    {
+      "area": "editor acceptance criteria",
+      "known": false,
+      "blocksWriter": true
+    },
+    {
+      "area": "hardware acceptance criteria",
+      "known": false,
+      "blocksWriter": true
+    }
+  ],
+  "finalDecision": {
+    "checksumReady": false,
+    "packageReady": false,
+    "writerImplementationAllowed": false,
+    "allowRealStyOutput": false,
+    "realKeyboardBinaryWriteAllowed": false
+  },
+  "safety": {
+    "readOnly": true,
+    "wroteRealKeyboardBinary": false,
+    "realBinaryBlocked": true
+  }
+}

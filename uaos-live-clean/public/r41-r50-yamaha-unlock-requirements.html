@@ -1,0 +1,45 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UAOS R41-R50 Yamaha Unlock Requirements</title>
+  <style>
+    body { margin:0; font-family:Arial, sans-serif; background:#070b14; color:#eef4ff; }
+    main { max-width:1000px; margin:0 auto; padding:32px; }
+    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:16px; margin-top:24px; }
+    .card { background:#101827; border:1px solid #26354f; border-radius:18px; padding:20px; }
+    .pass { color:#7CFC98; font-weight:bold; }
+    .warn { color:#facc15; font-weight:bold; }
+    code { background:#030712; padding:3px 6px; border-radius:6px; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>UAOS R41–R50 Yamaha Unlock Requirements</h1>
+    <p class="pass">R41–R50 UNLOCK REQUIREMENTS PASS CANDIDATE</p>
+    <p class="warn">Writer unlock is documented but still locked. No .STY output.</p>
+
+    <div class="grid">
+      <div class="card"><h2>R41</h2><p>Fixture approval set.</p></div>
+      <div class="card"><h2>R42</h2><p>Parser test matrix.</p></div>
+      <div class="card"><h2>R43</h2><p>Semantic section map.</p></div>
+      <div class="card"><h2>R44</h2><p>CASM/OTS blockers.</p></div>
+      <div class="card"><h2>R45</h2><p>Checksum blockers.</p></div>
+      <div class="card"><h2>R46</h2><p>Roundtrip blockers.</p></div>
+      <div class="card"><h2>R47</h2><p>Writer unlock requirements locked.</p></div>
+      <div class="card"><h2>R48-R50</h2><p>QA, build, commit, safe push.</p></div>
+    </div>
+
+    <div class="card">
+      <h2>Generated</h2>
+      <p><code>generated/real-writer-validation/r41-r50/</code></p>
+    </div>
+
+    <div class="card">
+      <h2>Blocked</h2>
+      <p><code>.STY</code>, parser implementation, full binary parse, and writer implementation.</p>
+    </div>
+  </main>
+</body>
+</html>

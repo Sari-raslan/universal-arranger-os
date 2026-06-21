@@ -1,0 +1,70 @@
+{
+  "format": "UAOS_R42_PARSER_TEST_MATRIX",
+  "version": "R41-R50.0.0",
+  "phase": "R42",
+  "status": "PASS",
+  "testCount": 8,
+  "tests": [
+    {
+      "name": "fixture path exists",
+      "requiredBeforeParserImplementation": true,
+      "currentStatus": "PLANNED_OR_PARTIAL",
+      "writerUnlockEffect": "does_not_unlock_writer"
+    },
+    {
+      "name": "extension is .sty",
+      "requiredBeforeParserImplementation": true,
+      "currentStatus": "PLANNED_OR_PARTIAL",
+      "writerUnlockEffect": "does_not_unlock_writer"
+    },
+    {
+      "name": "metadata hash stable",
+      "requiredBeforeParserImplementation": true,
+      "currentStatus": "PLANNED_OR_PARTIAL",
+      "writerUnlockEffect": "does_not_unlock_writer"
+    },
+    {
+      "name": "small prefix readable",
+      "requiredBeforeParserImplementation": true,
+      "currentStatus": "PLANNED_OR_PARTIAL",
+      "writerUnlockEffect": "does_not_unlock_writer"
+    },
+    {
+      "name": "marker probe stable",
+      "requiredBeforeParserImplementation": true,
+      "currentStatus": "PLANNED_OR_PARTIAL",
+      "writerUnlockEffect": "does_not_unlock_writer"
+    },
+    {
+      "name": "section marker hypothesis stable",
+      "requiredBeforeParserImplementation": true,
+      "currentStatus": "PLANNED_OR_PARTIAL",
+      "writerUnlockEffect": "does_not_unlock_writer"
+    },
+    {
+      "name": "midi-like header probe stable",
+      "requiredBeforeParserImplementation": true,
+      "currentStatus": "PLANNED_OR_PARTIAL",
+      "writerUnlockEffect": "does_not_unlock_writer"
+    },
+    {
+      "name": "safe structure map generated",
+      "requiredBeforeParserImplementation": true,
+      "currentStatus": "PLANNED_OR_PARTIAL",
+      "writerUnlockEffect": "does_not_unlock_writer"
+    }
+  ],
+  "fixtureApprovalSet": "UAOS_R41_YAMAHA_FIXTURE_APPROVAL_SET",
+  "finalDecision": {
+    "parserTestMatrixReady": true,
+    "parserImplementationAllowed": false,
+    "writerImplementationAllowed": false,
+    "allowRealStyOutput": false,
+    "realKeyboardBinaryWriteAllowed": false
+  },
+  "safety": {
+    "readOnly": true,
+    "wroteRealKeyboardBinary": false,
+    "realBinaryBlocked": true
+  }
+}

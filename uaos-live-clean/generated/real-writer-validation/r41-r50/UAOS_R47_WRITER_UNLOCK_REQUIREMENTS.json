@@ -1,0 +1,76 @@
+{
+  "format": "UAOS_R47_WRITER_UNLOCK_REQUIREMENTS",
+  "version": "R41-R50.0.0",
+  "phase": "R47",
+  "status": "PASS_LOCKED",
+  "target": "yamaha",
+  "futureFormat": ".STY",
+  "unlockRequirements": [
+    {
+      "requirement": "user-owned approved fixtures",
+      "complete": false,
+      "requiredToUnlockWriter": true
+    },
+    {
+      "requirement": "full read-only parser",
+      "complete": false,
+      "requiredToUnlockWriter": true
+    },
+    {
+      "requirement": "confirmed section offsets and lengths",
+      "complete": false,
+      "requiredToUnlockWriter": true
+    },
+    {
+      "requirement": "confirmed CASM-like rules",
+      "complete": false,
+      "requiredToUnlockWriter": true
+    },
+    {
+      "requirement": "confirmed OTS metadata rules",
+      "complete": false,
+      "requiredToUnlockWriter": true
+    },
+    {
+      "requirement": "confirmed checksum/package rules",
+      "complete": false,
+      "requiredToUnlockWriter": true
+    },
+    {
+      "requirement": "semantic roundtrip test pass",
+      "complete": false,
+      "requiredToUnlockWriter": true
+    },
+    {
+      "requirement": "editor import validation pass",
+      "complete": false,
+      "requiredToUnlockWriter": true
+    },
+    {
+      "requirement": "hardware import validation pass",
+      "complete": false,
+      "requiredToUnlockWriter": true
+    },
+    {
+      "requirement": "manual explicit writer approval",
+      "complete": false,
+      "requiredToUnlockWriter": true
+    }
+  ],
+  "finalDecision": {
+    "writerUnlockReady": false,
+    "continueToWriterImplementation": false,
+    "allowParserImplementation": false,
+    "allowFullBinaryParse": false,
+    "allowWriterImplementation": false,
+    "allowRealKeyboardBinaryOutput": false,
+    "allowRealStyOutput": false,
+    "canExportRealSty": false,
+    "realKeyboardBinaryWriteAllowed": false,
+    "realWriterReady": false
+  },
+  "safety": {
+    "realBinaryBlocked": true,
+    "wroteRealKeyboardBinary": false
+  }
+}

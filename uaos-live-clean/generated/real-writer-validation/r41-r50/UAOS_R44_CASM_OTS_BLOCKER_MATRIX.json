@@ -1,0 +1,51 @@
+{
+  "format": "UAOS_R44_CASM_OTS_BLOCKER_MATRIX",
+  "version": "R41-R50.0.0",
+  "phase": "R44",
+  "status": "PASS_BLOCKED",
+  "blockers": [
+    {
+      "area": "CASM chord behavior",
+      "confirmed": false,
+      "blocksWriter": true
+    },
+    {
+      "area": "CASM note transposition",
+      "confirmed": false,
+      "blocksWriter": true
+    },
+    {
+      "area": "CASM channel mapping",
+      "confirmed": false,
+      "blocksWriter": true
+    },
+    {
+      "area": "OTS voice metadata",
+      "confirmed": false,
+      "blocksWriter": true
+    },
+    {
+      "area": "OTS effect references",
+      "confirmed": false,
+      "blocksWriter": true
+    },
+    {
+      "area": "OTS split/layer behavior",
+      "confirmed": false,
+      "blocksWriter": true
+    }
+  ],
+  "finalDecision": {
+    "casmReady": false,
+    "otsReady": false,
+    "parserImplementationAllowed": false,
+    "writerImplementationAllowed": false,
+    "allowRealStyOutput": false,
+    "realKeyboardBinaryWriteAllowed": false
+  },
+  "safety": {
+    "readOnly": true,
+    "wroteRealKeyboardBinary": false,
+    "realBinaryBlocked": true
+  }
+}
