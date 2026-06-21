@@ -1,0 +1,35 @@
+{
+  "format": "UAOS_SAFE_WRITER_GATE",
+  "version": "55.0.0",
+  "target": "roland",
+  "allowedFormatsNow": [
+    ".json",
+    ".uaosbin"
+  ],
+  "blockedFormats": [
+    ".STL",
+    ".PRS"
+  ],
+  "requiredGates": [
+    "format analyzer complete",
+    "section binary mapping complete",
+    "legal-safe fixture validation",
+    "performance metadata rules known",
+    "roundtrip import test",
+    "hardware/editor validation"
+  ],
+  "completedGates": [
+    "format analyzer complete",
+    "section binary mapping complete"
+  ],
+  "missingGates": [
+    "legal-safe fixture validation",
+    "performance metadata rules known",
+    "roundtrip import test",
+    "hardware/editor validation"
+  ],
+  "realKeyboardBinaryWriteAllowed": false,
+  "safeIntermediateWriteAllowed": true,
+  "status": "BLOCKED",
+  "warning": "Phase 55 blocks real keyboard binary output. Only .json and .uaosbin are allowed now."
+}

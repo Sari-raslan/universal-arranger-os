@@ -1,0 +1,149 @@
+{
+  "format": "UAOS_ALL_SAFE_WRITER_GATES",
+  "version": "55.0.0",
+  "realKeyboardBinaryWriteAllowed": false,
+  "safeIntermediateWriteAllowed": true,
+  "count": 4,
+  "gates": [
+    {
+      "format": "UAOS_SAFE_WRITER_GATE",
+      "version": "55.0.0",
+      "target": "korg",
+      "allowedFormatsNow": [
+        ".json",
+        ".uaosbin"
+      ],
+      "blockedFormats": [
+        ".STY",
+        ".SET"
+      ],
+      "requiredGates": [
+        "format analyzer complete",
+        "section binary mapping complete",
+        "legal-safe fixture validation",
+        "checksum rules known",
+        "roundtrip import test",
+        "hardware/editor validation"
+      ],
+      "completedGates": [
+        "format analyzer complete",
+        "section binary mapping complete"
+      ],
+      "missingGates": [
+        "legal-safe fixture validation",
+        "checksum rules known",
+        "roundtrip import test",
+        "hardware/editor validation"
+      ],
+      "realKeyboardBinaryWriteAllowed": false,
+      "safeIntermediateWriteAllowed": true,
+      "status": "BLOCKED",
+      "warning": "Phase 55 blocks real keyboard binary output. Only .json and .uaosbin are allowed now."
+    },
+    {
+      "format": "UAOS_SAFE_WRITER_GATE",
+      "version": "55.0.0",
+      "target": "yamaha",
+      "allowedFormatsNow": [
+        ".json",
+        ".uaosbin"
+      ],
+      "blockedFormats": [
+        ".STY"
+      ],
+      "requiredGates": [
+        "format analyzer complete",
+        "section binary mapping complete",
+        "legal-safe fixture validation",
+        "CASM/OTS rules known",
+        "roundtrip import test",
+        "hardware/editor validation"
+      ],
+      "completedGates": [
+        "format analyzer complete",
+        "section binary mapping complete"
+      ],
+      "missingGates": [
+        "legal-safe fixture validation",
+        "CASM/OTS rules known",
+        "roundtrip import test",
+        "hardware/editor validation"
+      ],
+      "realKeyboardBinaryWriteAllowed": false,
+      "safeIntermediateWriteAllowed": true,
+      "status": "BLOCKED",
+      "warning": "Phase 55 blocks real keyboard binary output. Only .json and .uaosbin are allowed now."
+    },
+    {
+      "format": "UAOS_SAFE_WRITER_GATE",
+      "version": "55.0.0",
+      "target": "roland",
+      "allowedFormatsNow": [
+        ".json",
+        ".uaosbin"
+      ],
+      "blockedFormats": [
+        ".STL",
+        ".PRS"
+      ],
+      "requiredGates": [
+        "format analyzer complete",
+        "section binary mapping complete",
+        "legal-safe fixture validation",
+        "performance metadata rules known",
+        "roundtrip import test",
+        "hardware/editor validation"
+      ],
+      "completedGates": [
+        "format analyzer complete",
+        "section binary mapping complete"
+      ],
+      "missingGates": [
+        "legal-safe fixture validation",
+        "performance metadata rules known",
+        "roundtrip import test",
+        "hardware/editor validation"
+      ],
+      "realKeyboardBinaryWriteAllowed": false,
+      "safeIntermediateWriteAllowed": true,
+      "status": "BLOCKED",
+      "warning": "Phase 55 blocks real keyboard binary output. Only .json and .uaosbin are allowed now."
+    },
+    {
+      "format": "UAOS_SAFE_WRITER_GATE",
+      "version": "55.0.0",
+      "target": "ketron",
+      "allowedFormatsNow": [
+        ".json",
+        ".uaosbin"
+      ],
+      "blockedFormats": [
+        ".PAT",
+        ".MSP",
+        ".KST"
+      ],
+      "requiredGates": [
+        "format analyzer complete",
+        "section binary mapping complete",
+        "legal-safe fixture validation",
+        "audio drum reference rules known",
+        "roundtrip import test",
+        "hardware/editor validation"
+      ],
+      "completedGates": [
+        "format analyzer complete",
+        "section binary mapping complete"
+      ],
+      "missingGates": [
+        "legal-safe fixture validation",
+        "audio drum reference rules known",
+        "roundtrip import test",
+        "hardware/editor validation"
+      ],
+      "realKeyboardBinaryWriteAllowed": false,
+      "safeIntermediateWriteAllowed": true,
+      "status": "BLOCKED",
+      "warning": "Phase 55 blocks real keyboard binary output. Only .json and .uaosbin are allowed now."
+    }
+  ]
+}
