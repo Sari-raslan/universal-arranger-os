@@ -161,6 +161,8 @@ export default function App() {
 
 <section className="finalLaunchLock"><b>UAOS launch package ready.</b><span>Visible site, QA, reports, and retry deploy script are prepared.</span><a href="/universal-arranger-os/launch/status.html">Launch status</a></section>
 
+<section className="premiumSection final31ContentUpgrade" id="faq"><div className="sectionTitle"><p className="spectrumLabel">FAQ</p><h2>Clear answers before public launch.</h2></div><div className="faqGrid"><article><b>Is UAOS public?</b><p>Not yet. The visible website is ready locally and public deploy is waiting for Vercel reset.</p></article><article><b>Does it export real keyboard files?</b><p>No. Real writer and keyboard output remain locked until approved.</p></article><article><b>What is ready?</b><p>Premium website, pricing preview, local QA, launch status, and retry deploy script.</p></article><article><b>What happens next?</b><p>After Vercel reset, run the prepared retry deploy launcher.</p></article></div></section>
+
 <footer className="premiumFooter">
         <b>UAOS</b>
         <span>Universal Arranger OS · Premium local product preview</span>
@@ -168,6 +170,7 @@ export default function App() {
     </main>
   );
 }
+
 
 
 

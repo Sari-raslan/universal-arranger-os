@@ -450,3 +450,10 @@ a{text-decoration:none;color:inherit}
 .finalChecklist div{border-radius:22px;padding:18px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.09);font-weight:900;color:#dbeafe}
 @media(max-width:1100px){.premiumHero{min-height:auto!important;padding-top:42px!important}.premiumPreview{transform:none!important}#products{margin-top:0!important}.finalChecklist{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:700px){.finalLaunchLock{margin:30px 5vw;padding:22px;flex-direction:column;align-items:flex-start}.finalLaunchLock a{width:100%;justify-content:center}.finalChecklist{grid-template-columns:1fr;padding:0 5vw}}
+
+/* FINAL-31 website content upgrade */
+.faqGrid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.faqGrid article{border-radius:28px;padding:26px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.09);box-shadow:0 26px 80px rgba(0,0,0,.18)}
+.faqGrid b{display:block;font-size:22px;margin-bottom:10px;background:linear-gradient(135deg,#fff,#7dd3fc,#c084fc);-webkit-background-clip:text;background-clip:text;color:transparent}
+.faqGrid p{margin:0;color:#aebdd3;line-height:1.7}
+@media(max-width:850px){.faqGrid{grid-template-columns:1fr}}
