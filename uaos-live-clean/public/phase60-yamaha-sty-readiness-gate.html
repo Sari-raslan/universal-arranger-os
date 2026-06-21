@@ -1,0 +1,39 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UAOS Phase 60 Yamaha STY Export Readiness Gate</title>
+  <style>
+    body { margin:0; font-family:Arial, sans-serif; background:#070b14; color:#eef4ff; }
+    main { max-width:1100px; margin:0 auto; padding:32px; }
+    .card { background:#101827; border:1px solid #26354f; border-radius:18px; padding:20px; margin:16px 0; }
+    .pass { color:#7CFC98; font-weight:bold; }
+    .warn { color:#facc15; font-weight:bold; }
+    code { background:#030712; padding:3px 6px; border-radius:6px; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>UAOS Phase 60 Yamaha STY Export Readiness Gate</h1>
+    <p class="pass">YAMAHA STY READINESS GATE PASS CANDIDATE</p>
+    <p class="warn">Final decision: real .STY output remains blocked.</p>
+
+    <div class="card">
+      <h2>Output</h2>
+      <p><code>generated/real-exporter/yamaha-sty/yamaha-sty-export-readiness-gate.json</code></p>
+      <p><code>generated/real-exporter/yamaha-sty/yamaha-sty-export-readiness-summary.json</code></p>
+    </div>
+
+    <div class="card">
+      <h2>Allowed Now</h2>
+      <p><code>.json</code> and <code>.uaosbin</code></p>
+    </div>
+
+    <div class="card">
+      <h2>Blocked</h2>
+      <p><code>.STY</code> until real validation is complete.</p>
+    </div>
+  </main>
+</body>
+</html>

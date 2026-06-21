@@ -1,0 +1,61 @@
+{
+  "format": "UAOS_YAMAHA_STY_EXPORT_READINESS_GATE",
+  "version": "60.0.0",
+  "phase": 60,
+  "target": "yamaha",
+  "futureFormat": ".STY",
+  "safeStagesChecked": 4,
+  "safeStagesCompleted": 4,
+  "fileChecks": [
+    {
+      "file": "generated/real-exporter/yamaha-sty/yamaha-sty-writer-research-plan.json",
+      "exists": true
+    },
+    {
+      "file": "generated/real-exporter/yamaha-sty/yamaha-sty-intermediate-schema.json",
+      "exists": true
+    },
+    {
+      "file": "generated/real-exporter/yamaha-sty/yamaha-sty-phrase-event-schema.json",
+      "exists": true
+    },
+    {
+      "file": "generated/real-exporter/yamaha-sty/yamaha-sty-safe-container-plan.json",
+      "exists": true
+    }
+  ],
+  "realStyWriterReady": false,
+  "realKeyboardBinaryWriteAllowed": false,
+  "safeJsonExportAllowed": true,
+  "safeUaosbinExportAllowed": true,
+  "readiness": {
+    "status": "NOT_READY_FOR_REAL_STY",
+    "canGenerateRealStyNow": false,
+    "canGenerateSafePlanNow": true,
+    "completedSafeStages": [
+      "generated/real-exporter/yamaha-sty/yamaha-sty-writer-research-plan.json",
+      "generated/real-exporter/yamaha-sty/yamaha-sty-intermediate-schema.json",
+      "generated/real-exporter/yamaha-sty/yamaha-sty-phrase-event-schema.json",
+      "generated/real-exporter/yamaha-sty/yamaha-sty-safe-container-plan.json"
+    ],
+    "hardBlockers": [
+      "real Yamaha STY binary container structure not validated",
+      "CASM-like rules not validated",
+      "OTS metadata not validated",
+      "checksum/package rules not validated",
+      "roundtrip import test not completed",
+      "hardware/editor validation not completed",
+      "legal-safe writer rules not approved"
+    ]
+  },
+  "finalDecision": {
+    "allowRealStyOutput": false,
+    "allowJsonOutput": true,
+    "allowUaosbinOutput": true,
+    "reason": "Safe research pipeline exists, but real Yamaha STY binary validation is not complete."
+  },
+  "safety": {
+    "realBinaryBlocked": true,
+    "warning": "Phase 60 is a readiness gate only. It must not generate a Yamaha .STY file."
+  }
+}
