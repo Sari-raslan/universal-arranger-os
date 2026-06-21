@@ -161,7 +161,24 @@ export default function App() {
         </div>
       </section>
 
-            <section className="section nextAction">
+                  <section className="section faq" id="faq">
+        <p className="pill">FINAL-10 FAQ</p>
+        <h2>Common questions</h2>
+        <div className="grid2">
+          <article className="card"><h3>Is UAOS already public?</h3><p>The local website is ready. Public deploy retry waits for Vercel daily limit reset.</p></article>
+          <article className="card"><h3>Can it export keyboard styles today?</h3><p>No. Real keyboard writer and output formats remain locked until separate approval.</p></article>
+          <article className="card"><h3>Who is it for?</h3><p>Singers, creators, studios, and professional arranger keyboard users.</p></article>
+          <article className="card"><h3>What is the next step?</h3><p>Run the generated retry deploy script after Vercel resets, then verify public routes.</p></article>
+        </div>
+      </section>
+
+      <section className="section seoReady">
+        <p className="pill">FINAL-10 Launch Copy</p>
+        <h2>UAOS turns musical ideas into arranger-ready workflows.</h2>
+        <p className="lead">A modern, local-first platform for voice ideas, MIDI planning, studio workflow, and professional arranger product direction.</p>
+      </section>
+
+      <section className="section nextAction">
         <p className="pill">FINAL-07 Next Action</p>
         <h2>Next step after Vercel limit resets</h2>
         <p className="lead">Run the generated retry script only after the Vercel daily deployment limit resets.</p>
@@ -178,4 +195,5 @@ export default function App() {
     </main>
   );
 }
+
 
