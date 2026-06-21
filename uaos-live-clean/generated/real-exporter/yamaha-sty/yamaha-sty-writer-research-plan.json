@@ -1,0 +1,186 @@
+{
+  "format": "UAOS_YAMAHA_STY_WRITER_RESEARCH_PLAN",
+  "version": "56.0.0",
+  "phase": 56,
+  "target": "yamaha",
+  "futureFormat": ".STY",
+  "realStyWriterReady": false,
+  "realKeyboardBinaryWriteAllowed": false,
+  "allowedOutputsNow": [
+    ".json",
+    ".uaosbin"
+  ],
+  "blockedOutputs": [
+    ".STY"
+  ],
+  "sourceSections": [
+    {
+      "id": "intro1",
+      "yamahaSlot": "INTRO_A",
+      "bars": 4,
+      "chord": "Dm"
+    },
+    {
+      "id": "mainA",
+      "yamahaSlot": "MAIN_A",
+      "bars": 8,
+      "chord": "Dm"
+    },
+    {
+      "id": "fillA",
+      "yamahaSlot": "FILL_A",
+      "bars": 1,
+      "chord": "A7"
+    },
+    {
+      "id": "mainB",
+      "yamahaSlot": "MAIN_B",
+      "bars": 8,
+      "chord": "Gm"
+    },
+    {
+      "id": "ending1",
+      "yamahaSlot": "ENDING_A",
+      "bars": 4,
+      "chord": "Dm"
+    }
+  ],
+  "tracks": [
+    {
+      "id": "rhythm1",
+      "role": "drums",
+      "channel": 10
+    },
+    {
+      "id": "rhythm2",
+      "role": "percussion",
+      "channel": 9
+    },
+    {
+      "id": "bass",
+      "role": "bass",
+      "channel": 11
+    },
+    {
+      "id": "chord1",
+      "role": "chords",
+      "channel": 12
+    },
+    {
+      "id": "chord2",
+      "role": "pad",
+      "channel": 13
+    },
+    {
+      "id": "phrase1",
+      "role": "phrase",
+      "channel": 14
+    },
+    {
+      "id": "phrase2",
+      "role": "phrase",
+      "channel": 15
+    }
+  ],
+  "researchModel": {
+    "sections": [
+      {
+        "sourceId": "intro1",
+        "yamahaSlot": "INTRO_A",
+        "bars": 4,
+        "chord": "Dm",
+        "midiPhraseReady": true,
+        "binaryChunkReady": false
+      },
+      {
+        "sourceId": "mainA",
+        "yamahaSlot": "MAIN_A",
+        "bars": 8,
+        "chord": "Dm",
+        "midiPhraseReady": true,
+        "binaryChunkReady": false
+      },
+      {
+        "sourceId": "fillA",
+        "yamahaSlot": "FILL_A",
+        "bars": 1,
+        "chord": "A7",
+        "midiPhraseReady": true,
+        "binaryChunkReady": false
+      },
+      {
+        "sourceId": "mainB",
+        "yamahaSlot": "MAIN_B",
+        "bars": 8,
+        "chord": "Gm",
+        "midiPhraseReady": true,
+        "binaryChunkReady": false
+      },
+      {
+        "sourceId": "ending1",
+        "yamahaSlot": "ENDING_A",
+        "bars": 4,
+        "chord": "Dm",
+        "midiPhraseReady": true,
+        "binaryChunkReady": false
+      }
+    ],
+    "trackPolicy": [
+      {
+        "trackId": "rhythm1",
+        "role": "drums",
+        "midiChannel": 10,
+        "styChannelMappingReady": false
+      },
+      {
+        "trackId": "rhythm2",
+        "role": "percussion",
+        "midiChannel": 9,
+        "styChannelMappingReady": false
+      },
+      {
+        "trackId": "bass",
+        "role": "bass",
+        "midiChannel": 11,
+        "styChannelMappingReady": false
+      },
+      {
+        "trackId": "chord1",
+        "role": "chords",
+        "midiChannel": 12,
+        "styChannelMappingReady": false
+      },
+      {
+        "trackId": "chord2",
+        "role": "pad",
+        "midiChannel": 13,
+        "styChannelMappingReady": false
+      },
+      {
+        "trackId": "phrase1",
+        "role": "phrase",
+        "midiChannel": 14,
+        "styChannelMappingReady": false
+      },
+      {
+        "trackId": "phrase2",
+        "role": "phrase",
+        "midiChannel": 15,
+        "styChannelMappingReady": false
+      }
+    ],
+    "requiredBeforeWriter": [
+      "confirmed Yamaha style chunk/container structure",
+      "confirmed section phrase serialization rules",
+      "confirmed CASM-like rules",
+      "confirmed OTS metadata rules",
+      "checksum/package validation",
+      "roundtrip import in safe editor",
+      "hardware/device validation"
+    ]
+  },
+  "safety": {
+    "status": "RESEARCH_TRACK_READY",
+    "warning": "Phase 56 prepares Yamaha STY writer research only. It does not create a real .STY file."
+  }
+}
