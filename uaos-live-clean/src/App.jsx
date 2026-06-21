@@ -66,7 +66,9 @@ export default function App() {
         </aside>
       </section>
 
-      <section className="premiumSection" id="products">
+      <section className="proofStrip"><span>For singers</span><span>For creators</span><span>For studios</span><span>For arranger professionals</span></section>
+
+<section className="premiumSection" id="products">
         <div className="sectionTitle">
           <p className="spectrumLabel">Products</p>
           <h2>Three clear paths, one music platform.</h2>
@@ -127,7 +129,9 @@ export default function App() {
         </div>
       </section>
 
-      <section className="launchStrip">
+      <section className="premiumSection comparisonSection"><div className="sectionTitle"><p className="spectrumLabel">Why UAOS</p><h2>Less scattered tools. More musical direction.</h2></div><div className="compareGrid"><article><b>Before</b><p>Ideas, voice notes, MIDI, tracks, pricing, and launch tasks are separated.</p></article><article><b>With UAOS</b><p>One focused product direction for demo creation, arrangement planning, and launch readiness.</p></article></div></section>
+
+<section className="launchStrip">
         <div>
           <p className="spectrumLabel">Launch</p>
           <h2>Ready locally. Public deploy retry after Vercel reset.</h2>
@@ -149,12 +153,15 @@ export default function App() {
         </div>
       </section>
 
-      <footer className="premiumFooter">
+      <section className="finalCta"><p className="spectrumLabel">Ready to continue</p><h2>Build the product locally today. Retry public deploy after Vercel resets.</h2><div><a className="mainBtn" href="#demo">Open demo</a><a className="ghostBtn" href="/universal-arranger-os/launch/status.html">Launch status</a></div></section>
+
+<footer className="premiumFooter">
         <b>UAOS</b>
         <span>Universal Arranger OS · Premium local product preview</span>
       </footer>
     </main>
   );
 }
+
 
 
