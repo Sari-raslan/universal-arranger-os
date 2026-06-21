@@ -1,0 +1,38 @@
+{
+  "format": "UAOS_Y43_MARKER_INDEX_PREFLIGHT",
+  "version": "Y41-Y50.0.0",
+  "phase": "Y43",
+  "status": "PASS_PREFLIGHT_ONLY",
+  "markerIndexPlan": {
+    "allowedMarkers": [
+      "MThd",
+      "MTrk",
+      "CASM",
+      "OTS",
+      "MAIN",
+      "INTRO",
+      "ENDING",
+      "FILL",
+      "BREAK"
+    ],
+    "markerIndexImplementationAllowed": false,
+    "outputType": "safe-json-only",
+    "markerOffsetsAllowed": false,
+    "markerPresenceAllowed": true
+  },
+  "finalDecision": {
+    "markerIndexPreflightReady": true,
+    "markerIndexImplementationAllowed": false,
+    "allowFullBinaryParse": false,
+    "allowParserImplementation": false,
+    "allowWriterImplementation": false,
+    "allowRealStyOutput": false,
+    "realKeyboardBinaryWriteAllowed": false
+  },
+  "safety": {
+    "preflightOnly": true,
+    "readOnly": true,
+    "wroteRealKeyboardBinary": false,
+    "realBinaryBlocked": true
+  }
+}

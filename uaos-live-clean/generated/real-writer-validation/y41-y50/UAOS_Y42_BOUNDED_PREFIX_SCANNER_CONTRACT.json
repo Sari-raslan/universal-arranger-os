@@ -1,0 +1,39 @@
+{
+  "format": "UAOS_Y42_BOUNDED_PREFIX_SCANNER_CONTRACT",
+  "version": "Y41-Y50.0.0",
+  "phase": "Y42",
+  "status": "PASS_CONTRACT_ONLY",
+  "scannerContract": {
+    "maxReadBytes": 32768,
+    "allowedOperations": [
+      "open file read-only",
+      "read first bounded bytes only",
+      "calculate prefix hash",
+      "scan safe ASCII marker preview",
+      "emit JSON report"
+    ],
+    "blockedOperations": [
+      "read full file",
+      "modify file",
+      "copy file",
+      "write .STY",
+      "write binary patch",
+      "infer writer readiness"
+    ]
+  },
+  "finalDecision": {
+    "boundedPrefixScannerContractReady": true,
+    "boundedPrefixScannerImplementationAllowed": false,
+    "allowFullBinaryParse": false,
+    "allowParserImplementation": false,
+    "allowWriterImplementation": false,
+    "allowRealStyOutput": false,
+    "realKeyboardBinaryWriteAllowed": false
+  },
+  "safety": {
+    "contractOnly": true,
+    "readOnly": true,
+    "wroteRealKeyboardBinary": false,
+    "realBinaryBlocked": true
+  }
+}

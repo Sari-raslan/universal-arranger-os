@@ -1,0 +1,33 @@
+{
+  "format": "UAOS_Y45_PARSER_UNLOCK_GATE",
+  "version": "Y41-Y50.0.0",
+  "phase": "Y45",
+  "status": "PASS_LOCKED",
+  "blockers": [
+    "bounded prefix scanner is contract-only",
+    "marker index is preflight-only",
+    "full parse permission is not approved",
+    "semantic parser is not implemented",
+    "roundtrip validation is not implemented",
+    "writer remains blocked"
+  ],
+  "finalDecision": {
+    "parserUnlockReady": false,
+    "continueToParserImplementation": false,
+    "allowBoundedPrefixScannerImplementation": false,
+    "allowFullBinaryParse": false,
+    "allowParserImplementation": false,
+    "allowWriterImplementation": false,
+    "allowRealKeyboardBinaryOutput": false,
+    "allowRealStyOutput": false,
+    "canExportRealSty": false,
+    "realKeyboardBinaryWriteAllowed": false,
+    "realWriterReady": false
+  },
+  "safety": {
+    "lockedGate": true,
+    "readOnly": true,
+    "wroteRealKeyboardBinary": false,
+    "realBinaryBlocked": true
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "format": "UAOS_Y44_PREFIX_SCAN_SAFETY_REPORT",
+  "version": "Y41-Y50.0.0",
+  "phase": "Y44",
+  "status": "PASS",
+  "safetyChecks": [
+    {
+      "item": "bounded read limit",
+      "pass": true
+    },
+    {
+      "item": "read-only operation",
+      "pass": true
+    },
+    {
+      "item": "no fixture copy",
+      "pass": true
+    },
+    {
+      "item": "no fixture modification",
+      "pass": true
+    },
+    {
+      "item": "no full parse",
+      "pass": true
+    },
+    {
+      "item": "no writer",
+      "pass": true
+    },
+    {
+      "item": "redacted reporting",
+      "pass": true
+    }
+  ],
+  "finalDecision": {
+    "prefixScanSafetyReady": true,
+    "allowBoundedPrefixScan": true,
+    "allowFullBinaryParse": false,
+    "allowParserImplementation": false,
+    "allowWriterImplementation": false,
+    "allowRealStyOutput": false,
+    "realKeyboardBinaryWriteAllowed": false
+  },
+  "safety": {
+    "readOnly": true,
+    "copiedFiles": false,
+    "modifiedFixtures": false,
+    "wroteRealKeyboardBinary": false,
+    "realBinaryBlocked": true
+  }
+}
