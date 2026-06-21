@@ -495,3 +495,11 @@ a{text-decoration:none;color:inherit}
 .commercialLinkGrid span{color:#aebdd3;margin-top:8px;font-weight:850}
 @media(max-width:1000px){.commercialLinkGrid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:650px){.commercialLinkGrid{grid-template-columns:1fr}}
+
+/* PAY-15-20 upgrade flow links */
+.upgradeLinkGrid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.upgradeLinkGrid a{min-height:150px;border-radius:28px;padding:24px;background:linear-gradient(180deg,rgba(255,255,255,.085),rgba(255,255,255,.04));border:1px solid rgba(255,255,255,.11);box-shadow:0 26px 90px rgba(0,0,0,.20);text-decoration:none;display:flex;flex-direction:column;justify-content:flex-end}
+.upgradeLinkGrid b{font-size:22px;background:linear-gradient(135deg,#fff,#7dd3fc,#c084fc);-webkit-background-clip:text;background-clip:text;color:transparent}
+.upgradeLinkGrid span{color:#aebdd3;margin-top:8px;font-weight:850}
+@media(max-width:1000px){.upgradeLinkGrid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:650px){.upgradeLinkGrid{grid-template-columns:1fr}}

@@ -171,6 +171,8 @@ export default function App() {
 
 <section className="premiumSection pay1214CommercialLinks"><div className="sectionTitle"><p className="spectrumLabel">Commercial checkout</p><h2>Pricing, checkout, invoice, and PayPal readiness are prepared locally.</h2></div><div className="commercialLinkGrid"><a href="/universal-arranger-os/commercial/pricing-comparison.html"><b>Pricing comparison</b><span>Compare Starter, Pro, Studio</span></a><a href="/universal-arranger-os/paypal/sandbox-checkout-preview.html"><b>PayPal Sandbox Preview</b><span>No live payments</span></a><a href="/universal-arranger-os/checkout/manual-invoice.html"><b>Manual Invoice</b><span>Business placeholder</span></a><a href="/universal-arranger-os/legal/payment-terms.html"><b>Payment Terms</b><span>Legal placeholder</span></a></div></section>
 
+<section className="premiumSection pay1520UpgradeLinks"><div className="sectionTitle"><p className="spectrumLabel">Upgrade flow</p><h2>Upgrade, success, cancel, and invoice pages are ready as safe placeholders.</h2></div><div className="upgradeLinkGrid"><a href="/universal-arranger-os/checkout/upgrade.html"><b>Upgrade Center</b><span>Compare and choose a plan</span></a><a href="/universal-arranger-os/checkout/success.html"><b>Success Placeholder</b><span>No real payment</span></a><a href="/universal-arranger-os/checkout/cancel.html"><b>Cancel Placeholder</b><span>Safe checkout cancel route</span></a><a href="/universal-arranger-os/checkout/invoice-request.html"><b>Invoice Request</b><span>Manual business placeholder</span></a></div></section>
+
 <footer className="premiumFooter">
         <b>UAOS</b>
         <span>Universal Arranger OS · Premium local product preview</span>
@@ -178,6 +180,7 @@ export default function App() {
     </main>
   );
 }
+
 
 
 
