@@ -183,6 +183,8 @@ export default function App() {
 
 <section className="pay6166PaymentFreeze"><b>Payment freeze active.</b><span>Public launch is allowed only with inactive checkout placeholders.</span><a href="/universal-arranger-os/qa/payment-freeze-dashboard.html">Freeze dashboard</a></section>
 
+<section className="pay6772PredeployPaymentLock"><b>Predeploy payment lock active.</b><span>Only static inactive payment placeholders are allowed for public launch.</span><a href="/universal-arranger-os/qa/payment-predeploy-lock-dashboard.html">Predeploy lock</a></section>
+
 <footer className="premiumFooter">
         <b>UAOS</b>
         <span>Universal Arranger OS · Premium local product preview</span>
@@ -190,6 +192,7 @@ export default function App() {
     </main>
   );
 }
+
 
 
 
