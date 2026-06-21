@@ -1,1 +1,6 @@
-﻿# UAOS Desktop Packaging - unsigned local installer only, no auto publish.
+﻿# UAOS Desktop Packaging
+
+Safe scope:
+- Verify Electron entry.
+- Build unsigned local installer only.
+- No automatic public release.

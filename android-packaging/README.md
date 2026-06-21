@@ -1,1 +1,8 @@
-﻿# UAOS Android Packaging - Capacitor shell and signed AAB later, no auto publish.
+﻿# UAOS Android Packaging
+
+Safe scope:
+- Capacitor shell.
+- App icon.
+- Privacy policy.
+- Signed AAB later.
+- No automatic Play Store publish.
