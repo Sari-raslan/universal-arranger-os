@@ -1,55 +1,159 @@
 ﻿import "./App.css";
 
+const products = [
+  ["UAOS Sing", "For singers", "Sing an idea and turn it into a clean arranged demo direction."],
+  ["UAOS Studio", "For creators", "Build song structure, MIDI ideas, sections, tracks, and studio planning."],
+  ["UAOS Pro Arranger", "For professionals", "Prepare advanced arranger workflows for future approved hardware paths."]
+];
+
+const workflow = [
+  ["01", "Capture", "Start from voice, melody, chords, or a rough musical idea."],
+  ["02", "Arrange", "Shape sections, tracks, MIDI direction, and production flow."],
+  ["03", "Launch", "Prepare pricing, downloads, support, and public deployment retry."]
+];
+
 export default function App() {
   return (
-    <main className="activeProof">
-      <nav className="proofNav">
-        <div className="proofBrand">
+    <main className="uaosPremium">
+      <header className="premiumNav">
+        <a className="premiumBrand" href="#home">
           <span>UAOS</span>
-          <b>Universal Arranger OS</b>
-        </div>
-        <div className="proofLinks">
-          <a href="#demo">Demo</a>
-          <a href="#pricing">Pricing</a>
-          <a href="#launch">Launch</a>
-        </div>
-      </nav>
+          <div>
+            <b>Universal Arranger OS</b>
+            <small>AI Music Workstation</small>
+          </div>
+        </a>
 
-      <section className="proofHero">
-        <div>
-          <p className="proofBadge">✅ NEW ACTIVE APP CONFIRMED</p>
-          <h1>UAOS visual redesign is now loaded from the active Vite app.</h1>
-          <p>
-            إذا كنت تشوف هذه الصفحة، معناها نحن أخيراً نعدل الملف الصحيح والسيرفر الصحيح.
-            بعدها نكمل التصميم الحقيقي فوق هذا الملف.
+        <nav>
+          <a href="#demo">Demo</a>
+          <a href="#products">Products</a>
+          <a href="#workflow">Workflow</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#support">Support</a>
+        </nav>
+
+        <a className="account" href="#support">Account</a>
+      </header>
+
+      <section className="premiumHero" id="home">
+        <div className="heroText">
+          <p className="spectrumLabel">AI arranger platform · local product preview</p>
+          <h1>
+            Arrange songs from <span>voice</span>, <span>MIDI</span>, and <span>creative ideas</span>.
+          </h1>
+          <p className="heroLead">
+            UAOS is a modern music workstation for singers, creators, studios, and arranger keyboard professionals.
+            Build musical direction, shape arrangements, preview product workflows, and prepare for public launch.
           </p>
-          <div className="proofButtons">
-            <a href="#demo">Start Demo</a>
-            <a href="#pricing">Choose Plan</a>
+
+          <div className="heroButtons">
+            <a className="mainBtn" href="#demo">Start demo</a>
+            <a className="ghostBtn" href="#pricing">Choose plan</a>
+            <a className="ghostBtn" href="/universal-arranger-os/launch/status.html">Launch status</a>
+          </div>
+
+          <div className="statusPills">
+            <span>Local UI ready</span>
+            <span>Build passes</span>
+            <span>Deploy retry pending</span>
           </div>
         </div>
 
-        <aside className="proofPanel" id="demo">
-          <h2>Live Preview</h2>
-          <div className="proofTrack">Voice → MIDI planning</div>
-          <div className="proofTrack">Chords → Arrangement</div>
-          <div className="proofTrack">Studio → Release prep</div>
+        <aside className="premiumPreview" id="demo">
+          <div className="windowDots"><i></i><i></i><i></i><b>Live arrangement preview</b></div>
+          <div className="previewRow active"><strong>Voice idea</strong><span>Melody planning</span></div>
+          <div className="previewRow"><strong>Chord map</strong><span>Verse · Chorus · Bridge</span></div>
+          <div className="previewRow"><strong>Studio tracks</strong><span>Drums · Bass · Keys</span></div>
+          <div className="previewRow locked"><strong>Hardware output</strong><span>Locked until approval</span></div>
+          <div className="keys"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
         </aside>
       </section>
 
-      <section className="proofSection" id="pricing">
-        <h2>Pricing Preview</h2>
-        <div className="proofCards">
-          <article><h3>Starter</h3><strong>€19.99/mo</strong><p>For singers and creators.</p></article>
-          <article><h3>Pro</h3><strong>€49.99/mo</strong><p>For studios and arranger pros.</p></article>
+      <section className="premiumSection" id="products">
+        <div className="sectionTitle">
+          <p className="spectrumLabel">Products</p>
+          <h2>Three clear paths, one music platform.</h2>
+        </div>
+
+        <div className="cards3">
+          {products.map(([title, tag, text]) => (
+            <article className="glassCard" key={title}>
+              <span>{tag}</span>
+              <h3>{title}</h3>
+              <p>{text}</p>
+              <a href="#pricing">Explore →</a>
+            </article>
+          ))}
         </div>
       </section>
 
-      <section className="proofSection" id="launch">
-        <h2>Launch Status</h2>
-        <p>Local UI is active. Public deploy waits for Vercel daily limit reset.</p>
+      <section className="premiumSection" id="workflow">
+        <div className="sectionTitle">
+          <p className="spectrumLabel">Workflow</p>
+          <h2>From raw idea to launch-ready direction.</h2>
+        </div>
+
+        <div className="workflow">
+          {workflow.map(([num, title, text]) => (
+            <article className="flowStep" key={num}>
+              <b>{num}</b>
+              <div>
+                <h3>{title}</h3>
+                <p>{text}</p>
+              </div>
+            </article>
+          ))}
+        </div>
       </section>
+
+      <section className="premiumSection pricing" id="pricing">
+        <div className="sectionTitle">
+          <p className="spectrumLabel">Pricing</p>
+          <h2>Simple pricing preview.</h2>
+        </div>
+
+        <div className="priceGrid">
+          <article className="priceCard">
+            <h3>Starter</h3>
+            <strong>€19.99<small>/mo</small></strong>
+            <p>For singers and creators testing fast demo ideas.</p>
+            <a className="ghostBtn" href="#demo">Start demo</a>
+          </article>
+          <article className="priceCard pro">
+            <h3>Pro</h3>
+            <strong>€49.99<small>/mo</small></strong>
+            <p>For studios and arranger professionals planning advanced workflows.</p>
+            <a className="mainBtn" href="#support">Request access</a>
+          </article>
+        </div>
+      </section>
+
+      <section className="launchStrip">
+        <div>
+          <p className="spectrumLabel">Launch</p>
+          <h2>Ready locally. Public deploy retry after Vercel reset.</h2>
+          <p>No writer, no parser, no keyboard output, no fixtures. Public deployment waits for the Vercel daily limit reset.</p>
+        </div>
+        <a className="mainBtn" href="/universal-arranger-os/launch/status.html">Open status</a>
+      </section>
+
+      <section className="premiumSection" id="support">
+        <div className="sectionTitle">
+          <p className="spectrumLabel">Support</p>
+          <h2>Built for a serious music product launch.</h2>
+        </div>
+
+        <div className="cards3 supportGrid">
+          <article className="glassCard"><h3>Singers</h3><p>Turn rough vocals into arranged demo direction.</p></article>
+          <article className="glassCard"><h3>Studios</h3><p>Plan tracks, song sections, and release-ready workflows.</p></article>
+          <article className="glassCard"><h3>Arranger Pros</h3><p>Advanced exports stay locked until a separate approval path.</p></article>
+        </div>
+      </section>
+
+      <footer className="premiumFooter">
+        <b>UAOS</b>
+        <span>Universal Arranger OS · Premium local product preview</span>
+      </footer>
     </main>
   );
 }
-
