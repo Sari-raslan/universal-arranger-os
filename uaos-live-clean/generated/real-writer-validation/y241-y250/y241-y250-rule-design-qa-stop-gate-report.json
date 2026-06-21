@@ -1,0 +1,32 @@
+{
+  "phase": "Y241-Y250",
+  "title": "Parser Rule Design QA + Stop Gate",
+  "status": "PASS_WITH_STOP_GATE",
+  "qa": {
+    "ruleCount": 5,
+    "promotionBlockerCount": 3,
+    "allRulesDesignOnly": true,
+    "allPromotionBlocked": true,
+    "noWriter": true,
+    "noRealStyOutput": true,
+    "noDeploy": true,
+    "sourceReportsOnly": true
+  },
+  "completed": [
+    "Read-only parser rule design from existing reports",
+    "Rule QA",
+    "Production parser stop gate",
+    "Writer hard lock confirmation",
+    "Real .STY output block confirmation"
+  ],
+  "stopGate": {
+    "productionParser": "BLOCKED",
+    "chunkPayloadExtraction": "BLOCKED",
+    "fixtureRead": "BLOCKED",
+    "writerImplementation": "HARD_LOCKED",
+    "realStyOutput": "HARD_LOCKED",
+    "deploy": "BLOCKED"
+  },
+  "nextApprovalRequiredText": "I approve creating a read-only Yamaha parser rule simulator from existing reports only. No fixture read, no writer, no real .STY output.",
+  "generatedAt": "2026-06-21T08:24:33.189Z"
+}

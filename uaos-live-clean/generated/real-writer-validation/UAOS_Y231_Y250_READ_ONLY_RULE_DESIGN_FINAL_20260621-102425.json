@@ -1,0 +1,19 @@
+﻿{
+    "program":  "UAOS Yamaha Parser Design",
+    "chain":  "Y231-Y250",
+    "status":  "PASS_WITH_STOP_GATE",
+    "completed":  [
+                      "Y231-Y240 read-only Yamaha parser rule design from existing reports",
+                      "Y241-Y250 rule design QA and stop gate"
+                  ],
+    "stillBlocked":  [
+                         "Fixture read",
+                         "Chunk payload extraction",
+                         "Production parser implementation",
+                         "Writer implementation",
+                         "Real .STY output",
+                         "Deploy"
+                     ],
+    "nextApprovalRequiredText":  "I approve creating a read-only Yamaha parser rule simulator from existing reports only. No fixture read, no writer, no real .STY output.",
+    "generatedAt":  "2026-06-21T10:24:35.2386647+02:00"
+}

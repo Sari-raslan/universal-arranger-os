@@ -1,0 +1,206 @@
+{
+  "phase": "Y231-Y240",
+  "title": "Read-Only Yamaha Parser Rule Design From Existing Reports",
+  "status": "PASS",
+  "approvalCaptured": true,
+  "approvalText": "I approve read-only Yamaha parser rule design from existing reports only. No writer, no real .STY output.",
+  "sourceReportsOnly": true,
+  "fixtureRead": false,
+  "parserProductionImplementation": false,
+  "writerImplementation": false,
+  "realStyOutput": false,
+  "deploy": false,
+  "readiness": "NO_FIXTURES",
+  "ruleDesign": {
+    "sectionRules": [
+      {
+        "id": "RULE_SECTION_MAIN",
+        "purpose": "Detect MAIN style sections from approved marker/classification evidence.",
+        "evidenceSources": [
+          "Y171-Y180",
+          "Y181-Y190",
+          "Y191-Y200"
+        ],
+        "inputFields": [
+          "sectionType",
+          "markerCount",
+          "confidenceBand",
+          "detectedSectionTypes"
+        ],
+        "positiveSignals": [
+          "MAIN",
+          "MAIN A",
+          "MAIN B",
+          "MAIN C",
+          "MAIN D"
+        ],
+        "output": "SECTION_CANDIDATE_MAIN",
+        "allowedAction": "DESIGN_ONLY",
+        "forbiddenActions": [
+          "fixtureRead",
+          "chunkExtraction",
+          "payloadExport",
+          "writerImplementation",
+          "realStyOutput"
+        ]
+      },
+      {
+        "id": "RULE_SECTION_INTRO",
+        "purpose": "Detect INTRO style sections from approved marker/classification evidence.",
+        "evidenceSources": [
+          "Y171-Y180",
+          "Y181-Y190"
+        ],
+        "inputFields": [
+          "sectionType",
+          "markerCount",
+          "confidenceBand"
+        ],
+        "positiveSignals": [
+          "INTRO",
+          "INTRO A",
+          "INTRO B",
+          "INTRO C"
+        ],
+        "output": "SECTION_CANDIDATE_INTRO",
+        "allowedAction": "DESIGN_ONLY",
+        "forbiddenActions": [
+          "fixtureRead",
+          "chunkExtraction",
+          "payloadExport",
+          "writerImplementation",
+          "realStyOutput"
+        ]
+      },
+      {
+        "id": "RULE_SECTION_FILL_BREAK",
+        "purpose": "Detect FILL and BREAK transition sections.",
+        "evidenceSources": [
+          "Y171-Y180",
+          "Y181-Y190"
+        ],
+        "inputFields": [
+          "sectionType",
+          "markerCount",
+          "confidenceBand"
+        ],
+        "positiveSignals": [
+          "FILL",
+          "BREAK"
+        ],
+        "output": "SECTION_CANDIDATE_TRANSITION",
+        "allowedAction": "DESIGN_ONLY",
+        "forbiddenActions": [
+          "fixtureRead",
+          "chunkExtraction",
+          "payloadExport",
+          "writerImplementation",
+          "realStyOutput"
+        ]
+      },
+      {
+        "id": "RULE_SECTION_ENDING",
+        "purpose": "Detect ENDING style sections.",
+        "evidenceSources": [
+          "Y171-Y180",
+          "Y181-Y190"
+        ],
+        "inputFields": [
+          "sectionType",
+          "markerCount",
+          "confidenceBand"
+        ],
+        "positiveSignals": [
+          "ENDING",
+          "ENDING A",
+          "ENDING B",
+          "ENDING C"
+        ],
+        "output": "SECTION_CANDIDATE_ENDING",
+        "allowedAction": "DESIGN_ONLY",
+        "forbiddenActions": [
+          "fixtureRead",
+          "chunkExtraction",
+          "payloadExport",
+          "writerImplementation",
+          "realStyOutput"
+        ]
+      },
+      {
+        "id": "RULE_TECHNICAL_CASM_OTS_SFF",
+        "purpose": "Track Yamaha support markers for future read-only parser design.",
+        "evidenceSources": [
+          "Y171-Y180",
+          "Y151-Y160"
+        ],
+        "inputFields": [
+          "markerMap",
+          "sectionCandidateMap"
+        ],
+        "positiveSignals": [
+          "CASM",
+          "OTS",
+          "SFF",
+          "SFF1",
+          "SFF2"
+        ],
+        "output": "TECHNICAL_MARKER_CANDIDATE",
+        "allowedAction": "DESIGN_ONLY",
+        "forbiddenActions": [
+          "fixtureRead",
+          "chunkExtraction",
+          "payloadExport",
+          "writerImplementation",
+          "realStyOutput"
+        ]
+      }
+    ],
+    "productionPromotionRules": [
+      {
+        "id": "PROMOTION_BLOCK_WRITER",
+        "status": "BLOCKED",
+        "reason": "Writer remains hard locked by Y211-Y220.",
+        "unlockRequires": [
+          "Separate explicit writer approval",
+          "Binary output specification",
+          "Conformance tests",
+          "Round-trip hardware validation",
+          "Legal/release approval"
+        ]
+      },
+      {
+        "id": "PROMOTION_BLOCK_REAL_STY_OUTPUT",
+        "status": "BLOCKED",
+        "reason": "Real .STY output is not approved.",
+        "unlockRequires": [
+          "Separate explicit real output approval",
+          "Safe output sandbox",
+          "Non-destructive output directory policy",
+          "Validation fixture strategy"
+        ]
+      },
+      {
+        "id": "PROMOTION_BLOCK_DEPLOY",
+        "status": "BLOCKED",
+        "reason": "No deploy approval in current scope.",
+        "unlockRequires": [
+          "Separate deploy approval"
+        ]
+      }
+    ]
+  },
+  "fixtureEvidenceSummary": [],
+  "hardLimits": {
+    "useExistingReportsOnly": true,
+    "fixtureRead": false,
+    "fixtureCopy": false,
+    "fixtureModify": false,
+    "chunkExtraction": false,
+    "payloadExport": false,
+    "productionParserImplementation": false,
+    "writerImplementation": false,
+    "realStyOutput": false,
+    "deploy": false
+  },
+  "generatedAt": "2026-06-21T08:24:29.811Z"
+}
