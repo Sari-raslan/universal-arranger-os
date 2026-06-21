@@ -1,0 +1,36 @@
+{
+  "format": "UAOS_Y2_APPROVAL_RECORD_TEMPLATE",
+  "version": "Y1-Y10.0.0",
+  "phase": "Y2",
+  "status": "PASS_LOCKED",
+  "template": {
+    "fixturePath": "",
+    "userOwnsOrHasRights": false,
+    "approveMetadataOnly": true,
+    "approveSmallPrefixReadOnly": true,
+    "approveFullReadOnlyParse": false,
+    "approveCopyIntoRepo": false,
+    "approveWriterExperiment": false,
+    "approvePublishing": false,
+    "notes": "Do not enable full parse or writer without explicit separate approval."
+  },
+  "requiredBeforeY3RealParser": [
+    "fixturePath set",
+    "userOwnsOrHasRights true",
+    "approveFullReadOnlyParse true",
+    "manual confirmation report committed"
+  ],
+  "finalDecision": {
+    "approvalRecordReady": true,
+    "fullParseApprovedNow": false,
+    "allowParserImplementation": false,
+    "allowWriterImplementation": false,
+    "allowRealStyOutput": false,
+    "realKeyboardBinaryWriteAllowed": false
+  },
+  "safety": {
+    "readOnly": true,
+    "realBinaryBlocked": true,
+    "wroteRealKeyboardBinary": false
+  }
+}

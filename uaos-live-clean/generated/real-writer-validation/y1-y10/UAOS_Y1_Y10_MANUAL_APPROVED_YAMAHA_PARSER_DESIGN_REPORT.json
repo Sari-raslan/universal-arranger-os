@@ -1,0 +1,396 @@
+{
+  "format": "UAOS_Y1_Y10_MANUAL_APPROVED_YAMAHA_PARSER_DESIGN_REPORT",
+  "version": "Y1-Y10.0.0",
+  "phases": [
+    "Y1",
+    "Y2",
+    "Y3",
+    "Y4",
+    "Y5",
+    "Y6",
+    "Y7",
+    "Y8",
+    "Y9",
+    "Y10"
+  ],
+  "status": "PASS",
+  "reports": {
+    "y1": {
+      "format": "UAOS_Y1_MANUAL_APPROVED_FIXTURE_SET",
+      "version": "Y1-Y10.0.0",
+      "phase": "Y1",
+      "status": "PASS_LOCKED",
+      "sourceBaselineReady": true,
+      "target": "yamaha",
+      "futureFormat": ".STY",
+      "approvedFixtures": [],
+      "requiredUserAction": [
+        "select 3-5 user-owned Yamaha .STY fixture files",
+        "confirm they are owned/licensed for local analysis",
+        "confirm no upload/publishing",
+        "confirm read-only parser design only"
+      ],
+      "currentPermission": {
+        "metadataIndexing": true,
+        "smallPrefixReadOnly": true,
+        "fullReadOnlyParse": false,
+        "copyFixtureIntoRepo": false,
+        "writerTest": false,
+        "publishFixture": false
+      },
+      "finalDecision": {
+        "fixtureSetApprovedForFullParse": false,
+        "allowFullBinaryParse": false,
+        "allowParserImplementation": false,
+        "allowWriterImplementation": false,
+        "allowRealStyOutput": false,
+        "realKeyboardBinaryWriteAllowed": false,
+        "realWriterReady": false
+      },
+      "safety": {
+        "readOnly": true,
+        "copiedFiles": false,
+        "modifiedFixtures": false,
+        "wroteRealKeyboardBinary": false,
+        "realBinaryBlocked": true
+      }
+    },
+    "y2": {
+      "format": "UAOS_Y2_APPROVAL_RECORD_TEMPLATE",
+      "version": "Y1-Y10.0.0",
+      "phase": "Y2",
+      "status": "PASS_LOCKED",
+      "template": {
+        "fixturePath": "",
+        "userOwnsOrHasRights": false,
+        "approveMetadataOnly": true,
+        "approveSmallPrefixReadOnly": true,
+        "approveFullReadOnlyParse": false,
+        "approveCopyIntoRepo": false,
+        "approveWriterExperiment": false,
+        "approvePublishing": false,
+        "notes": "Do not enable full parse or writer without explicit separate approval."
+      },
+      "requiredBeforeY3RealParser": [
+        "fixturePath set",
+        "userOwnsOrHasRights true",
+        "approveFullReadOnlyParse true",
+        "manual confirmation report committed"
+      ],
+      "finalDecision": {
+        "approvalRecordReady": true,
+        "fullParseApprovedNow": false,
+        "allowParserImplementation": false,
+        "allowWriterImplementation": false,
+        "allowRealStyOutput": false,
+        "realKeyboardBinaryWriteAllowed": false
+      },
+      "safety": {
+        "readOnly": true,
+        "realBinaryBlocked": true,
+        "wroteRealKeyboardBinary": false
+      }
+    },
+    "y3": {
+      "format": "UAOS_Y3_READ_ONLY_PARSER_DESIGN_SKELETON",
+      "version": "Y1-Y10.0.0",
+      "phase": "Y3",
+      "status": "PASS_DESIGN_ONLY",
+      "target": "yamaha",
+      "futureFormat": ".STY",
+      "parserSkeleton": {
+        "implementationEnabled": false,
+        "fullBinaryParseEnabled": false,
+        "modules": [
+          {
+            "name": "FileAccessPolicy",
+            "purpose": "read-only approved fixture paths",
+            "enabled": false
+          },
+          {
+            "name": "PrefixScanner",
+            "purpose": "safe bounded prefix scan",
+            "enabled": true
+          },
+          {
+            "name": "MarkerIndex",
+            "purpose": "non-destructive marker index",
+            "enabled": true
+          },
+          {
+            "name": "ChunkBoundaryReader",
+            "purpose": "confirmed boundaries only",
+            "enabled": false
+          },
+          {
+            "name": "SemanticSectionReader",
+            "purpose": "section model extraction",
+            "enabled": false
+          },
+          {
+            "name": "ChecksumReader",
+            "purpose": "read-only checksum identification",
+            "enabled": false
+          }
+        ]
+      },
+      "finalDecision": {
+        "parserDesignReady": true,
+        "parserImplementationEnabled": false,
+        "allowFullBinaryParse": false,
+        "allowParserImplementation": false,
+        "allowWriterImplementation": false,
+        "allowRealStyOutput": false,
+        "realKeyboardBinaryWriteAllowed": false,
+        "realWriterReady": false
+      },
+      "safety": {
+        "designOnly": true,
+        "readOnly": true,
+        "wroteRealKeyboardBinary": false,
+        "realBinaryBlocked": true
+      }
+    },
+    "y4": {
+      "format": "UAOS_Y4_SEMANTIC_PARSER_CONTRACT",
+      "version": "Y1-Y10.0.0",
+      "phase": "Y4",
+      "status": "PASS_CONTRACT_ONLY",
+      "target": "yamaha",
+      "futureFormat": ".STY",
+      "semanticModel": {
+        "styleName": {
+          "required": false,
+          "confirmed": false
+        },
+        "tempo": {
+          "required": false,
+          "confirmed": false
+        },
+        "meter": {
+          "required": false,
+          "confirmed": false
+        },
+        "sections": {
+          "intro": [
+            "A",
+            "B",
+            "C"
+          ],
+          "main": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ],
+          "fill": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ],
+          "ending": [
+            "A",
+            "B",
+            "C"
+          ]
+        },
+        "tracks": [
+          "drums",
+          "bass",
+          "chord",
+          "pad",
+          "phrase1",
+          "phrase2"
+        ],
+        "casmLikeRules": {
+          "required": true,
+          "confirmed": false
+        },
+        "otsMetadata": {
+          "required": false,
+          "confirmed": false
+        }
+      },
+      "finalDecision": {
+        "semanticContractReady": true,
+        "semanticParserImplemented": false,
+        "allowParserImplementation": false,
+        "allowWriterImplementation": false,
+        "allowRealStyOutput": false,
+        "realKeyboardBinaryWriteAllowed": false
+      },
+      "safety": {
+        "contractOnly": true,
+        "readOnly": true,
+        "wroteRealKeyboardBinary": false,
+        "realBinaryBlocked": true
+      }
+    },
+    "y5": {
+      "format": "UAOS_Y5_CHUNK_BOUNDARY_CONTRACT",
+      "version": "Y1-Y10.0.0",
+      "phase": "Y5",
+      "status": "PASS_CONTRACT_ONLY",
+      "target": "yamaha",
+      "futureFormat": ".STY",
+      "chunkBoundaryRules": [
+        {
+          "rule": "never infer writable boundary from unconfirmed marker",
+          "enforced": true
+        },
+        {
+          "rule": "never write chunk unless checksum/package known",
+          "enforced": true
+        },
+        {
+          "rule": "record offset/length only after read-only confirmation",
+          "enforced": true
+        },
+        {
+          "rule": "separate semantic model from binary model",
+          "enforced": true
+        }
+      ],
+      "boundaryModelReady": false,
+      "finalDecision": {
+        "chunkBoundaryContractReady": true,
+        "chunkBoundaryParserReady": false,
+        "allowFullBinaryParse": false,
+        "allowParserImplementation": false,
+        "allowWriterImplementation": false,
+        "allowRealStyOutput": false,
+        "realKeyboardBinaryWriteAllowed": false
+      },
+      "safety": {
+        "contractOnly": true,
+        "readOnly": true,
+        "wroteRealKeyboardBinary": false,
+        "realBinaryBlocked": true
+      }
+    },
+    "y6": {
+      "format": "UAOS_Y6_ROUNDTRIP_VALIDATION_CONTRACT",
+      "version": "Y1-Y10.0.0",
+      "phase": "Y6",
+      "status": "PASS_CONTRACT_ONLY",
+      "target": "yamaha",
+      "futureFormat": ".STY",
+      "roundtripStages": [
+        {
+          "stage": "fixture -> read-only parse model",
+          "ready": false
+        },
+        {
+          "stage": "parse model -> semantic model",
+          "ready": false
+        },
+        {
+          "stage": "semantic model -> safe intermediate",
+          "ready": false
+        },
+        {
+          "stage": "safe intermediate -> binary candidate",
+          "ready": false
+        },
+        {
+          "stage": "binary candidate -> editor import",
+          "ready": false
+        },
+        {
+          "stage": "binary candidate -> hardware import",
+          "ready": false
+        }
+      ],
+      "canRunRoundtripNow": false,
+      "finalDecision": {
+        "roundtripContractReady": true,
+        "roundtripImplementationReady": false,
+        "allowWriterImplementation": false,
+        "allowRealStyOutput": false,
+        "realKeyboardBinaryWriteAllowed": false
+      },
+      "safety": {
+        "contractOnly": true,
+        "readOnly": true,
+        "wroteRealKeyboardBinary": false,
+        "realBinaryBlocked": true
+      }
+    },
+    "y7": {
+      "format": "UAOS_Y7_PARSER_UNLOCK_GATE",
+      "version": "Y1-Y10.0.0",
+      "phase": "Y7",
+      "status": "PASS_LOCKED",
+      "unlockRequirements": [
+        {
+          "item": "manual approved fixture paths",
+          "complete": false
+        },
+        {
+          "item": "explicit full read-only parse approval",
+          "complete": false
+        },
+        {
+          "item": "parser skeleton reviewed",
+          "complete": true
+        },
+        {
+          "item": "semantic contract reviewed",
+          "complete": true
+        },
+        {
+          "item": "chunk boundary contract reviewed",
+          "complete": true
+        },
+        {
+          "item": "roundtrip contract reviewed",
+          "complete": true
+        }
+      ],
+      "finalDecision": {
+        "parserUnlockReady": false,
+        "continueToParserImplementation": false,
+        "continueToWriterImplementation": false,
+        "allowFullBinaryParse": false,
+        "allowParserImplementation": false,
+        "allowWriterImplementation": false,
+        "allowRealKeyboardBinaryOutput": false,
+        "allowRealStyOutput": false,
+        "canExportRealSty": false,
+        "realKeyboardBinaryWriteAllowed": false,
+        "realWriterReady": false
+      },
+      "safety": {
+        "lockedGate": true,
+        "readOnly": true,
+        "wroteRealKeyboardBinary": false,
+        "realBinaryBlocked": true
+      }
+    }
+  },
+  "finalDecision": {
+    "manualApprovedParserDesignReady": true,
+    "parserUnlockReady": false,
+    "allowReadOnlyAnalysis": true,
+    "allowFullBinaryParse": false,
+    "allowParserImplementation": false,
+    "allowWriterImplementation": false,
+    "allowRealKeyboardBinaryOutput": false,
+    "allowRealStyOutput": false,
+    "canExportRealSty": false,
+    "realKeyboardBinaryWriteAllowed": false,
+    "realWriterReady": false,
+    "deployAllowed": false
+  },
+  "safety": {
+    "localOnly": true,
+    "noDeploy": true,
+    "designOnly": true,
+    "readOnly": true,
+    "copiedFiles": false,
+    "modifiedFixtures": false,
+    "wroteRealKeyboardBinary": false,
+    "realBinaryBlocked": true
+  }
+}

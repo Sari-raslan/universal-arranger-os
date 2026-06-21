@@ -1,0 +1,48 @@
+{
+  "format": "UAOS_Y6_ROUNDTRIP_VALIDATION_CONTRACT",
+  "version": "Y1-Y10.0.0",
+  "phase": "Y6",
+  "status": "PASS_CONTRACT_ONLY",
+  "target": "yamaha",
+  "futureFormat": ".STY",
+  "roundtripStages": [
+    {
+      "stage": "fixture -> read-only parse model",
+      "ready": false
+    },
+    {
+      "stage": "parse model -> semantic model",
+      "ready": false
+    },
+    {
+      "stage": "semantic model -> safe intermediate",
+      "ready": false
+    },
+    {
+      "stage": "safe intermediate -> binary candidate",
+      "ready": false
+    },
+    {
+      "stage": "binary candidate -> editor import",
+      "ready": false
+    },
+    {
+      "stage": "binary candidate -> hardware import",
+      "ready": false
+    }
+  ],
+  "canRunRoundtripNow": false,
+  "finalDecision": {
+    "roundtripContractReady": true,
+    "roundtripImplementationReady": false,
+    "allowWriterImplementation": false,
+    "allowRealStyOutput": false,
+    "realKeyboardBinaryWriteAllowed": false
+  },
+  "safety": {
+    "contractOnly": true,
+    "readOnly": true,
+    "wroteRealKeyboardBinary": false,
+    "realBinaryBlocked": true
+  }
+}

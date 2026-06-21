@@ -1,0 +1,42 @@
+{
+  "format": "UAOS_Y5_CHUNK_BOUNDARY_CONTRACT",
+  "version": "Y1-Y10.0.0",
+  "phase": "Y5",
+  "status": "PASS_CONTRACT_ONLY",
+  "target": "yamaha",
+  "futureFormat": ".STY",
+  "chunkBoundaryRules": [
+    {
+      "rule": "never infer writable boundary from unconfirmed marker",
+      "enforced": true
+    },
+    {
+      "rule": "never write chunk unless checksum/package known",
+      "enforced": true
+    },
+    {
+      "rule": "record offset/length only after read-only confirmation",
+      "enforced": true
+    },
+    {
+      "rule": "separate semantic model from binary model",
+      "enforced": true
+    }
+  ],
+  "boundaryModelReady": false,
+  "finalDecision": {
+    "chunkBoundaryContractReady": true,
+    "chunkBoundaryParserReady": false,
+    "allowFullBinaryParse": false,
+    "allowParserImplementation": false,
+    "allowWriterImplementation": false,
+    "allowRealStyOutput": false,
+    "realKeyboardBinaryWriteAllowed": false
+  },
+  "safety": {
+    "contractOnly": true,
+    "readOnly": true,
+    "wroteRealKeyboardBinary": false,
+    "realBinaryBlocked": true
+  }
+}

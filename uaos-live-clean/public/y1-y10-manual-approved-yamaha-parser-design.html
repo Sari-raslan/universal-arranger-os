@@ -1,0 +1,41 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UAOS Y1-Y10 Manual Approved Yamaha Parser Design</title>
+  <style>
+    body { margin:0; font-family:Arial, sans-serif; background:#070b14; color:#eef4ff; }
+    main { max-width:1000px; margin:0 auto; padding:32px; }
+    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:16px; margin-top:24px; }
+    .card { background:#101827; border:1px solid #26354f; border-radius:18px; padding:20px; }
+    .pass { color:#7CFC98; font-weight:bold; }
+    .warn { color:#facc15; font-weight:bold; }
+    code { background:#030712; padding:3px 6px; border-radius:6px; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>UAOS Y1–Y10 Manual Approved Yamaha Parser Design</h1>
+    <p class="pass">DESIGN BASELINE PASS</p>
+    <p class="warn">Parser unlock remains locked. No .STY writer.</p>
+
+    <div class="grid">
+      <div class="card"><h2>Y1</h2><p>Manual fixture approval set.</p></div>
+      <div class="card"><h2>Y2</h2><p>Approval record template.</p></div>
+      <div class="card"><h2>Y3</h2><p>Read-only parser design skeleton.</p></div>
+      <div class="card"><h2>Y4</h2><p>Semantic parser contract.</p></div>
+      <div class="card"><h2>Y5</h2><p>Chunk boundary contract.</p></div>
+      <div class="card"><h2>Y6</h2><p>Roundtrip validation contract.</p></div>
+      <div class="card"><h2>Y7</h2><p>Parser unlock gate locked.</p></div>
+      <div class="card"><h2>Y8-Y10</h2><p>QA, build, commit, safe push.</p></div>
+    </div>
+
+    <div class="card">
+      <h2>Final status</h2>
+      <p><code>DESIGN_ONLY_LOCKED</code></p>
+      <p>No real keyboard binary output.</p>
+    </div>
+  </main>
+</body>
+</html>

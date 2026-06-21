@@ -1,0 +1,51 @@
+{
+  "format": "UAOS_Y7_PARSER_UNLOCK_GATE",
+  "version": "Y1-Y10.0.0",
+  "phase": "Y7",
+  "status": "PASS_LOCKED",
+  "unlockRequirements": [
+    {
+      "item": "manual approved fixture paths",
+      "complete": false
+    },
+    {
+      "item": "explicit full read-only parse approval",
+      "complete": false
+    },
+    {
+      "item": "parser skeleton reviewed",
+      "complete": true
+    },
+    {
+      "item": "semantic contract reviewed",
+      "complete": true
+    },
+    {
+      "item": "chunk boundary contract reviewed",
+      "complete": true
+    },
+    {
+      "item": "roundtrip contract reviewed",
+      "complete": true
+    }
+  ],
+  "finalDecision": {
+    "parserUnlockReady": false,
+    "continueToParserImplementation": false,
+    "continueToWriterImplementation": false,
+    "allowFullBinaryParse": false,
+    "allowParserImplementation": false,
+    "allowWriterImplementation": false,
+    "allowRealKeyboardBinaryOutput": false,
+    "allowRealStyOutput": false,
+    "canExportRealSty": false,
+    "realKeyboardBinaryWriteAllowed": false,
+    "realWriterReady": false
+  },
+  "safety": {
+    "lockedGate": true,
+    "readOnly": true,
+    "wroteRealKeyboardBinary": false,
+    "realBinaryBlocked": true
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "format": "UAOS_Y3_READ_ONLY_PARSER_DESIGN_SKELETON",
+  "version": "Y1-Y10.0.0",
+  "phase": "Y3",
+  "status": "PASS_DESIGN_ONLY",
+  "target": "yamaha",
+  "futureFormat": ".STY",
+  "parserSkeleton": {
+    "implementationEnabled": false,
+    "fullBinaryParseEnabled": false,
+    "modules": [
+      {
+        "name": "FileAccessPolicy",
+        "purpose": "read-only approved fixture paths",
+        "enabled": false
+      },
+      {
+        "name": "PrefixScanner",
+        "purpose": "safe bounded prefix scan",
+        "enabled": true
+      },
+      {
+        "name": "MarkerIndex",
+        "purpose": "non-destructive marker index",
+        "enabled": true
+      },
+      {
+        "name": "ChunkBoundaryReader",
+        "purpose": "confirmed boundaries only",
+        "enabled": false
+      },
+      {
+        "name": "SemanticSectionReader",
+        "purpose": "section model extraction",
+        "enabled": false
+      },
+      {
+        "name": "ChecksumReader",
+        "purpose": "read-only checksum identification",
+        "enabled": false
+      }
+    ]
+  },
+  "finalDecision": {
+    "parserDesignReady": true,
+    "parserImplementationEnabled": false,
+    "allowFullBinaryParse": false,
+    "allowParserImplementation": false,
+    "allowWriterImplementation": false,
+    "allowRealStyOutput": false,
+    "realKeyboardBinaryWriteAllowed": false,
+    "realWriterReady": false
+  },
+  "safety": {
+    "designOnly": true,
+    "readOnly": true,
+    "wroteRealKeyboardBinary": false,
+    "realBinaryBlocked": true
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "format": "UAOS_Y1_MANUAL_APPROVED_FIXTURE_SET",
+  "version": "Y1-Y10.0.0",
+  "phase": "Y1",
+  "status": "PASS_LOCKED",
+  "sourceBaselineReady": true,
+  "target": "yamaha",
+  "futureFormat": ".STY",
+  "approvedFixtures": [],
+  "requiredUserAction": [
+    "select 3-5 user-owned Yamaha .STY fixture files",
+    "confirm they are owned/licensed for local analysis",
+    "confirm no upload/publishing",
+    "confirm read-only parser design only"
+  ],
+  "currentPermission": {
+    "metadataIndexing": true,
+    "smallPrefixReadOnly": true,
+    "fullReadOnlyParse": false,
+    "copyFixtureIntoRepo": false,
+    "writerTest": false,
+    "publishFixture": false
+  },
+  "finalDecision": {
+    "fixtureSetApprovedForFullParse": false,
+    "allowFullBinaryParse": false,
+    "allowParserImplementation": false,
+    "allowWriterImplementation": false,
+    "allowRealStyOutput": false,
+    "realKeyboardBinaryWriteAllowed": false,
+    "realWriterReady": false
+  },
+  "safety": {
+    "readOnly": true,
+    "copiedFiles": false,
+    "modifiedFixtures": false,
+    "wroteRealKeyboardBinary": false,
+    "realBinaryBlocked": true
+  }
+}

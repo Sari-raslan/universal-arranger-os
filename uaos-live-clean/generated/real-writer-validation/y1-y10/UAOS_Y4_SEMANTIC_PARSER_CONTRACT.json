@@ -1,0 +1,76 @@
+{
+  "format": "UAOS_Y4_SEMANTIC_PARSER_CONTRACT",
+  "version": "Y1-Y10.0.0",
+  "phase": "Y4",
+  "status": "PASS_CONTRACT_ONLY",
+  "target": "yamaha",
+  "futureFormat": ".STY",
+  "semanticModel": {
+    "styleName": {
+      "required": false,
+      "confirmed": false
+    },
+    "tempo": {
+      "required": false,
+      "confirmed": false
+    },
+    "meter": {
+      "required": false,
+      "confirmed": false
+    },
+    "sections": {
+      "intro": [
+        "A",
+        "B",
+        "C"
+      ],
+      "main": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "fill": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "ending": [
+        "A",
+        "B",
+        "C"
+      ]
+    },
+    "tracks": [
+      "drums",
+      "bass",
+      "chord",
+      "pad",
+      "phrase1",
+      "phrase2"
+    ],
+    "casmLikeRules": {
+      "required": true,
+      "confirmed": false
+    },
+    "otsMetadata": {
+      "required": false,
+      "confirmed": false
+    }
+  },
+  "finalDecision": {
+    "semanticContractReady": true,
+    "semanticParserImplemented": false,
+    "allowParserImplementation": false,
+    "allowWriterImplementation": false,
+    "allowRealStyOutput": false,
+    "realKeyboardBinaryWriteAllowed": false
+  },
+  "safety": {
+    "contractOnly": true,
+    "readOnly": true,
+    "wroteRealKeyboardBinary": false,
+    "realBinaryBlocked": true
+  }
+}
