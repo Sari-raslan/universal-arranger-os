@@ -1,0 +1,55 @@
+{
+  "format": "UAOS_Y26_NEXT_PARSER_ROADMAP",
+  "version": "Y21-Y30.0.0",
+  "phase": "Y26",
+  "status": "PASS",
+  "nextProgram": "Y31 Manual Fixture Entry + Read-only Parser Preflight",
+  "nextSteps": [
+    {
+      "id": "Y31",
+      "name": "Add real approved fixture manifest entries",
+      "allowed": true,
+      "requiresUserInput": true,
+      "writesBinary": false
+    },
+    {
+      "id": "Y32",
+      "name": "Validate fixture paths exist locally",
+      "allowed": true,
+      "requiresUserInput": true,
+      "writesBinary": false
+    },
+    {
+      "id": "Y33",
+      "name": "Create parser preflight report",
+      "allowed": true,
+      "writesBinary": false
+    },
+    {
+      "id": "Y34",
+      "name": "Unlock read-only full parse only if explicitly approved",
+      "allowed": false,
+      "writesBinary": false
+    },
+    {
+      "id": "Y35",
+      "name": "Real writer remains blocked",
+      "allowed": false,
+      "writesBinary": true
+    }
+  ],
+  "finalDecision": {
+    "roadmapReady": true,
+    "allowFullBinaryParse": false,
+    "allowParserImplementation": false,
+    "allowWriterImplementation": false,
+    "allowRealStyOutput": false,
+    "realKeyboardBinaryWriteAllowed": false
+  },
+  "safety": {
+    "planningOnly": true,
+    "readOnly": true,
+    "realBinaryBlocked": true,
+    "wroteRealKeyboardBinary": false
+  }
+}

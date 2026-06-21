@@ -1,0 +1,32 @@
+{
+  "format": "UAOS_Y24_LOCAL_ONLY_ANALYSIS_POLICY",
+  "version": "Y21-Y30.0.0",
+  "phase": "Y24",
+  "status": "PASS",
+  "policy": {
+    "analysisLocation": "local-machine-only",
+    "networkUploadAllowed": false,
+    "deployAllowed": false,
+    "publishReportsAllowed": true,
+    "publishBinaryContentAllowed": false,
+    "copyFixturesAllowed": false,
+    "modifyFixturesAllowed": false
+  },
+  "finalDecision": {
+    "localOnlyPolicyReady": true,
+    "allowNetworkUploadOfFixtures": false,
+    "deployAllowed": false,
+    "allowFullBinaryParse": false,
+    "allowParserImplementation": false,
+    "allowWriterImplementation": false,
+    "allowRealStyOutput": false,
+    "realKeyboardBinaryWriteAllowed": false
+  },
+  "safety": {
+    "localOnly": true,
+    "noDeploy": true,
+    "readOnly": true,
+    "wroteRealKeyboardBinary": false,
+    "realBinaryBlocked": true
+  }
+}

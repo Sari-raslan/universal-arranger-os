@@ -1,0 +1,47 @@
+{
+  "format": "UAOS_Y21_APPROVED_FIXTURE_MANIFEST",
+  "version": "Y21-Y30.0.0",
+  "phase": "Y21",
+  "status": "PASS_LOCKED",
+  "sourceRegistryReady": true,
+  "target": "yamaha",
+  "futureFormat": ".STY",
+  "approvedFixtureManifest": [],
+  "manifestRules": [
+    "Only user-owned Yamaha .STY local paths may be listed.",
+    "Only path hash and redacted path may be committed.",
+    "No fixture file content is copied into repo.",
+    "No full parse until explicit approval entry is complete.",
+    "No writer test in this phase."
+  ],
+  "exampleManifestEntry": {
+    "fixtureId": "yamaha_fixture_001",
+    "redactedPath": "D:\\...\\example.sty",
+    "pathHash": "24417060cccd26f1286f1f21feb6d106d5565cc6ac63796d39e068493f9d3c88",
+    "extension": ".sty",
+    "approveMetadataOnly": true,
+    "approveSmallPrefixReadOnly": true,
+    "approveFullReadOnlyParse": false,
+    "approveCopyIntoRepo": false,
+    "approveWriterExperiment": false,
+    "approvePublishing": false
+  },
+  "finalDecision": {
+    "manifestReady": true,
+    "hasApprovedFullParseFixtures": false,
+    "allowFullBinaryParse": false,
+    "allowParserImplementation": false,
+    "allowWriterImplementation": false,
+    "allowRealStyOutput": false,
+    "realKeyboardBinaryWriteAllowed": false,
+    "realWriterReady": false
+  },
+  "safety": {
+    "redactedPathsOnly": true,
+    "readOnly": true,
+    "copiedFiles": false,
+    "modifiedFixtures": false,
+    "wroteRealKeyboardBinary": false,
+    "realBinaryBlocked": true
+  }
+}

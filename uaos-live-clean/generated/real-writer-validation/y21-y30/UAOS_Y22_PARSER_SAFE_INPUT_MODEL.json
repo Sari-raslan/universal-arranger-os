@@ -1,0 +1,48 @@
+{
+  "format": "UAOS_Y22_PARSER_SAFE_INPUT_MODEL",
+  "version": "Y21-Y30.0.0",
+  "phase": "Y22",
+  "status": "PASS_LOCKED",
+  "inputModel": {
+    "fixtureId": "",
+    "redactedPath": "",
+    "pathHash": "",
+    "extension": ".sty",
+    "fileSizeBytes": null,
+    "metadataHash": "",
+    "allowedReadBytes": 0,
+    "allowFullReadOnlyParse": false,
+    "allowBinaryWrite": false,
+    "allowOutputSty": false
+  },
+  "allowedFields": [
+    "fixtureId",
+    "redactedPath",
+    "pathHash",
+    "extension",
+    "fileSizeBytes",
+    "metadataHash",
+    "allowedReadBytes"
+  ],
+  "blockedFields": [
+    "rawBinary",
+    "fullFileContent",
+    "privateFullPathForPublicReport",
+    "outputStyBytes",
+    "writerPatchBytes"
+  ],
+  "finalDecision": {
+    "parserSafeInputModelReady": true,
+    "allowFullBinaryParse": false,
+    "allowParserImplementation": false,
+    "allowWriterImplementation": false,
+    "allowRealStyOutput": false,
+    "realKeyboardBinaryWriteAllowed": false
+  },
+  "safety": {
+    "schemaOnly": true,
+    "readOnly": true,
+    "wroteRealKeyboardBinary": false,
+    "realBinaryBlocked": true
+  }
+}

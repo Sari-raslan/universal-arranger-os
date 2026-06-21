@@ -1,0 +1,46 @@
+{
+  "format": "UAOS_Y25_PARSER_UNLOCK_BLOCKER",
+  "version": "Y21-Y30.0.0",
+  "phase": "Y25",
+  "status": "PASS_BLOCKED",
+  "blockers": [
+    {
+      "item": "no approved fixture entries yet",
+      "blocksParser": true
+    },
+    {
+      "item": "full read-only parse not approved",
+      "blocksParser": true
+    },
+    {
+      "item": "parser safe input model is schema-only",
+      "blocksParser": true
+    },
+    {
+      "item": "local-only policy does not unlock full parse",
+      "blocksParser": true
+    },
+    {
+      "item": "no semantic parser implementation approval",
+      "blocksParser": true
+    }
+  ],
+  "finalDecision": {
+    "parserUnlockReady": false,
+    "continueToParserImplementation": false,
+    "allowFullBinaryParse": false,
+    "allowParserImplementation": false,
+    "allowWriterImplementation": false,
+    "allowRealKeyboardBinaryOutput": false,
+    "allowRealStyOutput": false,
+    "canExportRealSty": false,
+    "realKeyboardBinaryWriteAllowed": false,
+    "realWriterReady": false
+  },
+  "safety": {
+    "blocked": true,
+    "readOnly": true,
+    "wroteRealKeyboardBinary": false,
+    "realBinaryBlocked": true
+  }
+}

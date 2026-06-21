@@ -1,0 +1,37 @@
+{
+  "format": "UAOS_Y23_REDACTED_FIXTURE_REPORT",
+  "version": "Y21-Y30.0.0",
+  "phase": "Y23",
+  "status": "PASS",
+  "reportPolicy": {
+    "includeRedactedPath": true,
+    "includePathHash": true,
+    "includeFileName": true,
+    "includeFullPath": false,
+    "includeBinaryContent": false,
+    "includePrivateFixtureContent": false,
+    "includeStyOutput": false
+  },
+  "sampleRedaction": {
+    "originalExample": "D:\\YourPrivateFolder\\Styles\\example.sty",
+    "redacted": "D:\\...\\example.sty",
+    "pathHash": "52b7296f8bcba01eddfdd6acb113a6523a33e57ccad20ddbb405cb1d2a71edd2"
+  },
+  "finalDecision": {
+    "redactedReportReady": true,
+    "allowPrivatePathPublishing": false,
+    "allowBinaryContentPublishing": false,
+    "allowFullBinaryParse": false,
+    "allowWriterImplementation": false,
+    "allowRealStyOutput": false,
+    "realKeyboardBinaryWriteAllowed": false
+  },
+  "safety": {
+    "privacyProtected": true,
+    "readOnly": true,
+    "copiedFiles": false,
+    "modifiedFixtures": false,
+    "wroteRealKeyboardBinary": false,
+    "realBinaryBlocked": true
+  }
+}
