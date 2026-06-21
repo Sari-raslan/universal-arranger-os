@@ -14,6 +14,19 @@ const fixtureEnvNames = [
   "UAOS_YAMAHA_STY_FIXTURE_5"
 ];
 
+function fail(message) {
+  console.error("[Y101-Y110 FAIL]", message);
+  process.exit(1);
+}
+
+function safeStat(filePath) {
+  try {
+    return fs.statSync(filePath);
+  } catch {
+    return null;
+  }
+}
+
 function readPrefixOnly(filePath) {
   const fd = fs.openSync(filePath, "r");
   try {
@@ -43,27 +56,16 @@ function hexPreview(buffer) {
 function markerHits(buffer) {
   const markers = [
     "MThd", "MTrk", "CASM", "OTS", "SFF", "SFF1", "SFF2",
-    "YAMAHA", "YEP", "MAIN", "INTRO", "ENDING", "FILL",
-    "MAIN A", "MAIN B", "MAIN C", "MAIN D",
-    "INTRO A", "INTRO B", "INTRO C",
-    "ENDING A", "ENDING B", "ENDING C",
-    "FILL IN", "BREAK"
+    "YAMAHA", "YEP", "MAIN", "INTRO", "ENDING", "FILL"
   ];
 
   const text = buffer.toString("latin1");
-
   return markers.map(marker => {
-    const offsets = [];
-    let index = text.indexOf(marker);
-    while (index >= 0 && offsets.length < 20) {
-      offsets.push(index);
-      index = text.indexOf(marker, index + 1);
-    }
+    const index = text.indexOf(marker);
     return {
       marker,
-      found: offsets.length > 0,
-      firstOffset: offsets.length ? offsets[0] : null,
-      offsetsWithinPrefixOnly: offsets
+      found: index >= 0,
+      firstOffset: index >= 0 ? index : null
     };
   });
 }
@@ -71,12 +73,13 @@ function markerHits(buffer) {
 const fixtures = [];
 
 for (const envName of fixtureEnvNames) {
-  const raw = process.env[envName];
-  if (!raw || !raw.trim()) continue;
+  const value = process.env[envName];
+  if (!value || !value.trim()) continue;
 
-  const filePath = path.resolve(raw.trim());
+  const filePath = path.resolve(value.trim());
+  const stat = safeStat(filePath);
 
-  if (!fs.existsSync(filePath)) {
+  if (!stat) {
     fixtures.push({
       envName,
       path: filePath,
@@ -85,8 +88,6 @@ for (const envName of fixtureEnvNames) {
     });
     continue;
   }
-
-  const stat = fs.statSync(filePath);
 
   if (!stat.isFile()) {
     fixtures.push({
@@ -98,17 +99,19 @@ for (const envName of fixtureEnvNames) {
     continue;
   }
 
-  if (path.extname(filePath).toLowerCase() !== ".sty") {
+  const ext = path.extname(filePath).toLowerCase();
+  if (ext !== ".sty") {
     fixtures.push({
       envName,
       path: filePath,
       status: "REJECTED_EXTENSION",
-      error: "Only .STY fixtures are allowed"
+      error: "Only .STY fixtures allowed for this gate"
     });
     continue;
   }
 
   const prefix = readPrefixOnly(filePath);
+  const sha256Prefix = crypto.createHash("sha256").update(prefix).digest("hex");
 
   fixtures.push({
     envName,
@@ -121,14 +124,11 @@ for (const envName of fixtureEnvNames) {
     readPolicy: "FIRST_32768_BYTES_ONLY",
     copiedFixture: false,
     modifiedFixture: false,
-    fullFileRead: false,
     fullParse: false,
-    parserImplementation: false,
-    writerImplementation: false,
+    writer: false,
     realStyOutput: false,
-    deploy: false,
-    sha256Prefix: crypto.createHash("sha256").update(prefix).digest("hex"),
-    asciiPreviewFirst256Bytes: asciiPreview(prefix),
+    sha256Prefix,
+    asciiPreview: asciiPreview(prefix),
     hexPreviewFirst256Bytes: hexPreview(prefix),
     markerHits: markerHits(prefix)
   });
@@ -137,8 +137,9 @@ for (const envName of fixtureEnvNames) {
 const report = {
   program: "UAOS Yamaha Parser Design",
   phase: "Y101-Y110",
-  title: "Bounded Read-Only Prefix Scanner",
+  title: "Bounded Read-Only Prefix Scanner Implementation",
   status: "PASS",
+  approvalRequired: true,
   approvalCaptured: true,
   approvalText: "I approve implementing bounded read-only prefix scanner for my selected local Yamaha .STY fixtures. No full parse, no writer.",
   hardLimits: {
@@ -161,4 +162,5 @@ const report = {
 const outPath = path.join(OUT_DIR, "y101-y110-prefix-scan-report.json");
 fs.writeFileSync(outPath, JSON.stringify(report, null, 2), "utf8");
 
-console.log("[Y101-Y110 PASS]", outPath);
+console.log("[Y101-Y110 PASS] Report written:", outPath);
+console.log("[Y101-Y110 PASS] Fixtures scanned:", fixtures.length);

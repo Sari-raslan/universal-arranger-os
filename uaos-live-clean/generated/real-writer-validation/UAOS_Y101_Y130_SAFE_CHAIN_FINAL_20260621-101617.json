@@ -1,0 +1,19 @@
+﻿{
+    "program":  "UAOS Yamaha Parser Design / Real Writer Validation",
+    "chain":  "Y101-Y130",
+    "status":  "PASS_WITH_STOP_GATE",
+    "completed":  [
+                      "Y101-Y110 bounded read-only prefix scanner",
+                      "Y111-Y120 marker index planning from prefix report only",
+                      "Y121-Y130 parser unlock stop gate"
+                  ],
+    "blocked":  [
+                    "Full parse",
+                    "Parser implementation",
+                    "Writer implementation",
+                    "Real .STY output",
+                    "Deploy"
+                ],
+    "nextApprovalRequiredText":  "I approve implementing read-only Yamaha parser sandbox using approved fixtures. No writer, no real .STY output.",
+    "generatedAt":  "2026-06-21T10:16:27.9336401+02:00"
+}

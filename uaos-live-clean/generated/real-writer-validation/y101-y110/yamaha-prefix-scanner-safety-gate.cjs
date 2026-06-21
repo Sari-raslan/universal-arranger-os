@@ -1,68 +1,70 @@
 ﻿const fs = require("fs");
 const path = require("path");
 
-const OUT_DIR = path.join(process.cwd(), "generated", "real-writer-validation", "y101-y110");
-const reportPath = path.join(OUT_DIR, "y101-y110-prefix-scan-report.json");
+const reportPath = path.join(
+  process.cwd(),
+  "generated",
+  "real-writer-validation",
+  "y101-y110",
+  "y101-y110-prefix-scan-report.json"
+);
 
-function fail(message) {
-  console.error("[Y101-Y110 SAFETY GATE FAIL]", message);
+function fail(msg) {
+  console.error("[Y101-Y110 SAFETY FAIL]", msg);
   process.exit(1);
 }
 
-if (!fs.existsSync(reportPath)) {
-  fail("Missing prefix scan report");
-}
+if (!fs.existsSync(reportPath)) fail("Missing prefix scan report");
 
 const report = JSON.parse(fs.readFileSync(reportPath, "utf8"));
-
-if (report.phase !== "Y101-Y110") fail("Wrong phase");
-if (report.status !== "PASS") fail("Report status is not PASS");
-if (!report.approvalCaptured) fail("Approval not captured");
-
 const limits = report.hardLimits || {};
 
+if (report.phase !== "Y101-Y110") fail("Wrong phase");
+if (report.status !== "PASS") fail("Report not PASS");
+if (!report.approvalCaptured) fail("Approval not captured");
+
 if (limits.maxReadBytesPerFixture !== 32768) fail("Max read limit changed");
-if (limits.copyFixtures !== false) fail("Fixture copy is not blocked");
-if (limits.modifyFixtures !== false) fail("Fixture modification is not blocked");
-if (limits.fullFileRead !== false) fail("Full file read is not blocked");
-if (limits.fullParse !== false) fail("Full parse is not blocked");
-if (limits.parserImplementation !== false) fail("Parser implementation is not blocked");
-if (limits.writerImplementation !== false) fail("Writer implementation is not blocked");
-if (limits.realStyOutput !== false) fail("Real .STY output is not blocked");
-if (limits.deploy !== false) fail("Deploy is not blocked");
+if (limits.copyFixtures !== false) fail("Copy fixtures not blocked");
+if (limits.modifyFixtures !== false) fail("Modify fixtures not blocked");
+if (limits.fullFileRead !== false) fail("Full file read not blocked");
+if (limits.fullParse !== false) fail("Full parse not blocked");
+if (limits.parserImplementation !== false) fail("Parser implementation not blocked");
+if (limits.writerImplementation !== false) fail("Writer implementation not blocked");
+if (limits.realStyOutput !== false) fail("Real STY output not blocked");
+if (limits.deploy !== false) fail("Deploy not blocked");
 
 for (const fx of report.fixtures || []) {
-  if (fx.actualReadBytes && fx.actualReadBytes > 32768) {
-    fail(`Fixture exceeded prefix limit: ${fx.path}`);
-  }
-  if (fx.copiedFixture === true) fail(`Fixture copy detected: ${fx.path}`);
-  if (fx.modifiedFixture === true) fail(`Fixture modification detected: ${fx.path}`);
-  if (fx.fullParse === true) fail(`Full parse detected: ${fx.path}`);
-  if (fx.writer === true) fail(`Writer detected: ${fx.path}`);
-  if (fx.realStyOutput === true) fail(`Real .STY output detected: ${fx.path}`);
+  if ((fx.actualReadBytes || 0) > 32768) fail(`Read too much: ${fx.path}`);
+  if (fx.copiedFixture) fail(`Copy detected: ${fx.path}`);
+  if (fx.modifiedFixture) fail(`Modify detected: ${fx.path}`);
+  if (fx.fullFileRead) fail(`Full file read detected: ${fx.path}`);
+  if (fx.fullParse) fail(`Full parse detected: ${fx.path}`);
+  if (fx.parserImplementation) fail(`Parser implementation detected: ${fx.path}`);
+  if (fx.writerImplementation) fail(`Writer implementation detected: ${fx.path}`);
+  if (fx.realStyOutput) fail(`Real STY output detected: ${fx.path}`);
 }
 
-const gateReport = {
+const out = {
   phase: "Y101-Y110",
   title: "Prefix Scanner Safety Gate",
   status: "PASS",
-  checkedReport: reportPath,
-  confirmedBlocks: [
+  confirmed: [
+    "MAX_32768_BYTES",
+    "READ_ONLY",
+    "NO_FULL_FILE_READ",
     "NO_FULL_PARSE",
+    "NO_PARSER_IMPLEMENTATION",
     "NO_WRITER",
     "NO_REAL_STY_OUTPUT",
-    "NO_DEPLOY",
-    "NO_FIXTURE_COPY",
-    "NO_FIXTURE_MODIFY",
-    "MAX_32768_BYTES"
+    "NO_DEPLOY"
   ],
   generatedAt: new Date().toISOString()
 };
 
 fs.writeFileSync(
-  path.join(OUT_DIR, "y101-y110-safety-gate-report.json"),
-  JSON.stringify(gateReport, null, 2),
+  path.join(process.cwd(), "generated", "real-writer-validation", "y101-y110", "y101-y110-safety-gate-report.json"),
+  JSON.stringify(out, null, 2),
   "utf8"
 );
 
-console.log("[Y101-Y110 SAFETY GATE PASS]");
+console.log("[Y101-Y110 SAFETY PASS]");
