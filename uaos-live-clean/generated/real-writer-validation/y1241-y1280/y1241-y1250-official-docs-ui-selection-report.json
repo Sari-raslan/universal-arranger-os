@@ -1,0 +1,65 @@
+{
+  "phase": "Y1241-Y1250",
+  "status": "PASS_OFFICIAL_DOCS_UI_PATH_SELECTED",
+  "selection": {
+    "phase": "Y1241-Y1250",
+    "title": "Official Docs/UI Path Selection Record",
+    "status": "PASS_OFFICIAL_DOCS_UI_PATH_SELECTED",
+    "selectedPath": "PATH-DOCS-UI",
+    "selectedPathTitle": "Docs/UI only",
+    "approvalText": "User approved PATH-DOCS-UI. Docs/UI only. No writer implementation, no real writer, no real keyboard output, no production parser, no deploy, no App.jsx, no fixtures read/copy/modify, no operational code.",
+    "allowedNow": [
+      "documentation pages",
+      "review UI pages",
+      "status reports",
+      "governance summaries",
+      "README/review presentation docs"
+    ],
+    "blockedNow": [
+      "writer implementation",
+      "real writer",
+      "real keyboard output",
+      ".STY/.SET/.PRS/.STL/.PAT/.MSP/.KST output",
+      "production parser",
+      "deploy/public release",
+      "fixtures read/copy/modify",
+      "App.jsx modification",
+      "operational code"
+    ],
+    "safety": {
+      "selectedPath": "PATH-DOCS-UI",
+      "pathLocked": true,
+      "writerImplementation": "BLOCKED",
+      "realWriter": "BLOCKED",
+      "realKeyboardOutput": "BLOCKED",
+      "forbiddenKeyboardExtensions": "BLOCKED",
+      "productionParser": "BLOCKED",
+      "deployPublicRelease": "BLOCKED",
+      "fixturesReadCopyModify": "BLOCKED",
+      "appJsxModified": false,
+      "outputAllowed": false,
+      "operationalCode": "NO",
+      "docsOnly": true,
+      "noFurtherCodeGate": "ACTIVE",
+      "commercialProduct": "NO"
+    },
+    "generatedAt": "2026-06-21T11:52:39.594Z"
+  },
+  "safety": {
+    "selectedPath": "PATH-DOCS-UI",
+    "pathLocked": true,
+    "writerImplementation": "BLOCKED",
+    "realWriter": "BLOCKED",
+    "realKeyboardOutput": "BLOCKED",
+    "forbiddenKeyboardExtensions": "BLOCKED",
+    "productionParser": "BLOCKED",
+    "deployPublicRelease": "BLOCKED",
+    "fixturesReadCopyModify": "BLOCKED",
+    "appJsxModified": false,
+    "outputAllowed": false,
+    "operationalCode": "NO",
+    "docsOnly": true,
+    "noFurtherCodeGate": "ACTIVE",
+    "commercialProduct": "NO"
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "phase": "Y1251-Y1260",
+  "title": "Docs/UI Path Working Rules",
+  "status": "PASS_DOCS_UI_WORKING_RULES_READY",
+  "path": "PATH-DOCS-UI",
+  "allowedFileTypes": [
+    ".html",
+    ".json",
+    ".md",
+    ".txt"
+  ],
+  "allowedWork": [
+    "review page polish",
+    "documentation refinement",
+    "status explanation",
+    "governance index improvement",
+    "handover clarity",
+    "non-operational reports"
+  ],
+  "forbiddenWork": [
+    "runtime features",
+    "writer implementation",
+    "binary exporters",
+    "keyboard output",
+    "production parsers",
+    "deployment scripts",
+    "fixture access",
+    "App.jsx edits"
+  ],
+  "stopConditions": [
+    "Any request to create real output",
+    "Any request to implement writer",
+    "Any request to touch fixtures",
+    "Any request to deploy",
+    "Any request to modify App.jsx",
+    "Any request to introduce operational code"
+  ],
+  "safety": {
+    "selectedPath": "PATH-DOCS-UI",
+    "pathLocked": true,
+    "writerImplementation": "BLOCKED",
+    "realWriter": "BLOCKED",
+    "realKeyboardOutput": "BLOCKED",
+    "forbiddenKeyboardExtensions": "BLOCKED",
+    "productionParser": "BLOCKED",
+    "deployPublicRelease": "BLOCKED",
+    "fixturesReadCopyModify": "BLOCKED",
+    "appJsxModified": false,
+    "outputAllowed": false,
+    "operationalCode": "NO",
+    "docsOnly": true,
+    "noFurtherCodeGate": "ACTIVE",
+    "commercialProduct": "NO"
+  },
+  "generatedAt": "2026-06-21T11:52:43.165Z"
+}
