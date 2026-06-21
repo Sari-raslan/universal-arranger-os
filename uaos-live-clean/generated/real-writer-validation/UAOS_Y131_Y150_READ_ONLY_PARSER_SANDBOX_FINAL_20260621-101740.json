@@ -1,0 +1,17 @@
+﻿{
+    "program":  "UAOS Yamaha Parser Design",
+    "chain":  "Y131-Y150",
+    "status":  "PASS_WITH_WRITER_HARD_LOCKED",
+    "completed":  [
+                      "Y131-Y140 read-only Yamaha parser sandbox",
+                      "Y141-Y150 parser sandbox QA and writer hard-lock gate"
+                  ],
+    "blocked":  [
+                    "Writer implementation",
+                    "Real .STY output",
+                    "Destructive writes",
+                    "Deploy"
+                ],
+    "nextApprovalRequiredText":  "I approve implementing read-only Yamaha chunk map extraction from approved fixtures. No writer, no real .STY output.",
+    "generatedAt":  "2026-06-21T10:17:47.1649359+02:00"
+}

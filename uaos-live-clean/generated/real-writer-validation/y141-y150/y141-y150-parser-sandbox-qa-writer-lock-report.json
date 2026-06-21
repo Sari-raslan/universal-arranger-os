@@ -1,0 +1,17 @@
+{
+  "phase": "Y141-Y150",
+  "title": "Parser Sandbox QA + Writer Hard Lock",
+  "status": "PASS_WITH_WRITER_LOCKED",
+  "qaSummary": {
+    "fixtureCount": 0,
+    "fixtures": []
+  },
+  "hardLocks": {
+    "writerImplementation": "HARD_LOCKED",
+    "realStyOutput": "HARD_LOCKED",
+    "destructiveWrites": "BLOCKED",
+    "deploy": "BLOCKED"
+  },
+  "nextApprovalRequiredText": "I approve implementing read-only Yamaha chunk map extraction from approved fixtures. No writer, no real .STY output.",
+  "generatedAt": "2026-06-21T08:17:45.612Z"
+}
