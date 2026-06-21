@@ -177,6 +177,8 @@ export default function App() {
 
 <section className="premiumSection pay2734FinalCommercialGate"><div className="sectionTitle"><p className="spectrumLabel">Final commercial gate</p><h2>Payment routes are complete locally, but activation remains locked.</h2></div><div className="finalCommercialGrid"><a href="/universal-arranger-os/commercial/payment-sitemap.html"><b>Payment Sitemap</b><span>All local payment routes</span></a><a href="/universal-arranger-os/commercial/pricing-faq.html"><b>Pricing FAQ</b><span>Clear payment answers</span></a><a href="/universal-arranger-os/checkout/payment-waitlist.html"><b>Payment Waitlist</b><span>Safe pre-launch placeholder</span></a><a href="/universal-arranger-os/checkout/contact-sales.html"><b>Contact Sales</b><span>Business placeholder</span></a><a href="/universal-arranger-os/legal/germany-eu-tax-readiness.html"><b>Germany/EU Tax</b><span>Review required before live</span></a></div></section>
 
+<section className="premiumSection pay4752FinalPaymentNav"><div className="sectionTitle"><p className="spectrumLabel">Checkout is locked</p><h2>All buy buttons route to safe placeholder checkout pages.</h2></div><div className="finalPaymentNavGrid"><a href="/universal-arranger-os/commercial/payment-navigation.html"><b>Payment Navigation</b><span>All routes in one place</span></a><a href="/universal-arranger-os/checkout/checkout-status.html"><b>Checkout Status</b><span>Payment not active</span></a><a href="/universal-arranger-os/commercial/public-payment-status.html"><b>Public Payment Status</b><span>Safe for placeholder publishing</span></a><a href="/universal-arranger-os/commercial/payment-sitemap.html"><b>Payment Sitemap</b><span>Commercial route map</span></a></div></section>
+
 <footer className="premiumFooter">
         <b>UAOS</b>
         <span>Universal Arranger OS · Premium local product preview</span>
@@ -184,6 +186,7 @@ export default function App() {
     </main>
   );
 }
+
 
 
 

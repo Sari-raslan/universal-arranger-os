@@ -518,3 +518,13 @@ a{text-decoration:none;color:inherit}
 .finalCommercialGrid span{color:#aebdd3;margin-top:8px;font-weight:850}
 @media(max-width:1150px){.finalCommercialGrid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:650px){.finalCommercialGrid{grid-template-columns:1fr}}
+
+/* PAY-47-52B final payment navigation lock */
+.finalPaymentNavGrid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.finalPaymentNavGrid a{min-height:150px;border-radius:28px;padding:24px;background:linear-gradient(180deg,rgba(255,255,255,.085),rgba(255,255,255,.04));border:1px solid rgba(255,255,255,.11);box-shadow:0 26px 90px rgba(0,0,0,.20);text-decoration:none;display:flex;flex-direction:column;justify-content:flex-end}
+.finalPaymentNavGrid b{font-size:21px;background:linear-gradient(135deg,#fff,#7dd3fc,#c084fc);-webkit-background-clip:text;background-clip:text;color:transparent}
+.finalPaymentNavGrid span{color:#aebdd3;margin-top:8px;font-weight:850}
+.payPlans a.mainBtn,.payPlans a.ghostBtn{justify-content:center;text-align:center}
+.payPlans:before{content:"Payment placeholders only — no real checkout active";grid-column:1/-1;color:#fbbf24;font-weight:950;padding:14px 18px;border-radius:18px;background:rgba(251,191,36,.08);border:1px solid rgba(251,191,36,.18)}
+@media(max-width:1000px){.finalPaymentNavGrid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:650px){.finalPaymentNavGrid{grid-template-columns:1fr}}
