@@ -1,0 +1,39 @@
+{
+  "format": "UAOS_Y75_WRITER_UNLOCK_BLOCKER",
+  "version": "Y71-Y80.0.0",
+  "phase": "Y75",
+  "status": "PASS_BLOCKED",
+  "blockerReason": "Writer cannot unlock before parser, checksum/package rules, editor import, and hardware import validation.",
+  "blockedFormats": [
+    ".STY",
+    ".SET",
+    ".PRS",
+    ".STL",
+    ".PAT",
+    ".MSP",
+    ".KST"
+  ],
+  "hardRequirementsBeforeWriter": [
+    "full read-only parser pass",
+    "semantic roundtrip pass",
+    "checksum/package rules confirmed",
+    "Yamaha editor import pass",
+    "Yamaha hardware import pass",
+    "separate explicit writer approval"
+  ],
+  "finalDecision": {
+    "writerUnlockReady": false,
+    "continueToWriterImplementation": false,
+    "allowWriterImplementation": false,
+    "allowRealKeyboardBinaryOutput": false,
+    "allowRealStyOutput": false,
+    "canExportRealSty": false,
+    "realKeyboardBinaryWriteAllowed": false,
+    "realWriterReady": false
+  },
+  "safety": {
+    "locked": true,
+    "realBinaryBlocked": true,
+    "wroteRealKeyboardBinary": false
+  }
+}

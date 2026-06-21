@@ -1,0 +1,24 @@
+{
+  "format": "UAOS_Y74_FULL_PARSE_UNLOCK_BLOCKER",
+  "version": "Y71-Y80.0.0",
+  "phase": "Y74",
+  "status": "PASS_BLOCKED",
+  "blockerReason": "Full binary parse is not approved and must not be inferred from prefix scan planning.",
+  "canFullParseNow": false,
+  "requiredApprovalText": "I approve full read-only parse for my selected local Yamaha .STY fixtures. No writer.",
+  "finalDecision": {
+    "fullParseUnlockReady": false,
+    "fullParseUnlocked": false,
+    "allowFullBinaryParse": false,
+    "allowParserImplementation": false,
+    "allowWriterImplementation": false,
+    "allowRealStyOutput": false,
+    "realKeyboardBinaryWriteAllowed": false
+  },
+  "safety": {
+    "blocked": true,
+    "readOnly": true,
+    "wroteRealKeyboardBinary": false,
+    "realBinaryBlocked": true
+  }
+}

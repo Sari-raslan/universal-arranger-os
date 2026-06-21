@@ -1,0 +1,53 @@
+{
+  "format": "UAOS_Y71_MANUAL_UNLOCK_DECISION_GATE",
+  "version": "Y71-Y80.0.0",
+  "phase": "Y71",
+  "status": "PASS_LOCKED",
+  "target": "yamaha",
+  "futureFormat": ".STY",
+  "baseline": {
+    "summaryFile": "generated/real-writer-validation/y61-y70/UAOS_Y61_Y70_YAMAHA_PARSER_DESIGN_FINAL_CLOSURE_SUMMARY.json",
+    "handoverFile": "generated/real-writer-validation/y61-y70/UAOS_YAMAHA_PARSER_DESIGN_FINAL_HANDOVER.md",
+    "summaryExists": true,
+    "handoverExists": true,
+    "summaryReady": true,
+    "ok": true
+  },
+  "decisionMode": "MANUAL_ONLY",
+  "defaultDecision": "STOP_LOCKED",
+  "allowedDecisions": [
+    "STOP_LOCKED",
+    "CONTINUE_TO_PREFIX_SCANNER_IMPLEMENTATION_REVIEW_ONLY"
+  ],
+  "forbiddenDecisions": [
+    "UNLOCK_FULL_PARSE",
+    "UNLOCK_PARSER_IMPLEMENTATION",
+    "UNLOCK_WRITER",
+    "EXPORT_REAL_STY",
+    "DEPLOY"
+  ],
+  "finalDecision": {
+    "manualUnlockGateReady": true,
+    "selectedDecision": "STOP_LOCKED",
+    "parserUnlockReady": false,
+    "writerUnlockReady": false,
+    "allowBoundedPrefixScannerImplementation": false,
+    "allowMarkerExtractionImplementation": false,
+    "allowFullBinaryParse": false,
+    "allowParserImplementation": false,
+    "allowWriterImplementation": false,
+    "allowRealKeyboardBinaryOutput": false,
+    "allowRealStyOutput": false,
+    "canExportRealSty": false,
+    "realKeyboardBinaryWriteAllowed": false,
+    "realWriterReady": false,
+    "deployAllowed": false
+  },
+  "safety": {
+    "lockedByDefault": true,
+    "noDeploy": true,
+    "readOnly": true,
+    "wroteRealKeyboardBinary": false,
+    "realBinaryBlocked": true
+  }
+}

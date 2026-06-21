@@ -1,0 +1,23 @@
+{
+  "format": "UAOS_Y71_Y80_MANUAL_UNLOCK_DECISION_GATE_SUMMARY",
+  "version": "Y71-Y80.0.0",
+  "status": "PASS",
+  "manualUnlockDecisionGateReady": true,
+  "selectedDecision": "STOP_LOCKED",
+  "parserUnlockReady": false,
+  "writerUnlockReady": false,
+  "allowReadOnlyAnalysis": true,
+  "allowBoundedPrefixScanPlanning": true,
+  "allowBoundedPrefixScannerImplementation": false,
+  "allowMarkerExtractionImplementation": false,
+  "allowFullBinaryParse": false,
+  "allowParserImplementation": false,
+  "allowWriterImplementation": false,
+  "allowRealKeyboardBinaryOutput": false,
+  "allowRealStyOutput": false,
+  "canExportRealSty": false,
+  "realKeyboardBinaryWriteAllowed": false,
+  "realWriterReady": false,
+  "deployAllowed": false,
+  "nextPhase": "Y81 only if user explicitly approves bounded prefix scanner implementation"
+}
