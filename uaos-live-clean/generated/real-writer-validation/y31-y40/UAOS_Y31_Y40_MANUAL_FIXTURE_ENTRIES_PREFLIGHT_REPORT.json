@@ -1,0 +1,232 @@
+{
+  "format": "UAOS_Y31_Y40_MANUAL_FIXTURE_ENTRIES_PREFLIGHT_REPORT",
+  "version": "Y31-Y40.0.0",
+  "phases": [
+    "Y31",
+    "Y32",
+    "Y33",
+    "Y34",
+    "Y35",
+    "Y36",
+    "Y37",
+    "Y38",
+    "Y39",
+    "Y40"
+  ],
+  "status": "PASS",
+  "reports": {
+    "y31": {
+      "format": "UAOS_Y31_MANUAL_FIXTURE_ENTRIES",
+      "version": "Y31-Y40.0.0",
+      "phase": "Y31",
+      "status": "PASS",
+      "sourceBaselineReady": true,
+      "envFixtureCount": 0,
+      "entryCount": 0,
+      "entries": [],
+      "instructions": [
+        "Optional: set UAOS_YAMAHA_STY_FIXTURE_1..5 to local user-owned .sty paths before running.",
+        "Only redacted paths and hashes are committed.",
+        "Private full paths are not written to generated JSON.",
+        "Full parse remains false.",
+        "Writer experiment remains false."
+      ],
+      "finalDecision": {
+        "manualEntriesReady": true,
+        "hasFullParseApprovedEntries": false,
+        "allowFullBinaryParse": false,
+        "allowParserImplementation": false,
+        "allowWriterImplementation": false,
+        "allowRealStyOutput": false,
+        "realKeyboardBinaryWriteAllowed": false,
+        "realWriterReady": false
+      },
+      "safety": {
+        "privatePathsRedacted": true,
+        "readOnly": true,
+        "copiedFiles": false,
+        "modifiedFixtures": false,
+        "wroteRealKeyboardBinary": false,
+        "realBinaryBlocked": true
+      }
+    },
+    "y32": {
+      "format": "UAOS_Y32_LOCAL_PATH_EXISTENCE_VALIDATOR",
+      "version": "Y31-Y40.0.0",
+      "phase": "Y32",
+      "status": "PASS",
+      "validationCount": 0,
+      "validations": [],
+      "finalDecision": {
+        "localPathValidationReady": true,
+        "allowMetadataOnly": true,
+        "allowSmallPrefixReadOnly": true,
+        "allowFullBinaryParse": false,
+        "allowParserImplementation": false,
+        "allowWriterImplementation": false,
+        "allowRealStyOutput": false,
+        "realKeyboardBinaryWriteAllowed": false
+      },
+      "safety": {
+        "redactedPathsOnly": true,
+        "readOnly": true,
+        "copiedFiles": false,
+        "modifiedFixtures": false,
+        "wroteRealKeyboardBinary": false,
+        "realBinaryBlocked": true
+      }
+    },
+    "y33": {
+      "format": "UAOS_Y33_REDACTED_APPROVED_MANIFEST_BUILDER",
+      "version": "Y31-Y40.0.0",
+      "phase": "Y33",
+      "status": "PASS",
+      "approvedMetadataCount": 0,
+      "approvedMetadata": [],
+      "finalDecision": {
+        "redactedApprovedManifestReady": true,
+        "allowMetadataOnly": true,
+        "allowSmallPrefixReadOnly": true,
+        "allowFullBinaryParse": false,
+        "allowParserImplementation": false,
+        "allowWriterImplementation": false,
+        "allowRealStyOutput": false,
+        "realKeyboardBinaryWriteAllowed": false
+      },
+      "safety": {
+        "redactedPathsOnly": true,
+        "readOnly": true,
+        "copiedFiles": false,
+        "modifiedFixtures": false,
+        "wroteRealKeyboardBinary": false,
+        "realBinaryBlocked": true
+      }
+    },
+    "y34": {
+      "format": "UAOS_Y34_PARSER_PREFLIGHT_REPORT",
+      "version": "Y31-Y40.0.0",
+      "phase": "Y34",
+      "status": "PASS_BLOCKED",
+      "target": "yamaha",
+      "futureFormat": ".STY",
+      "preflight": {
+        "manifestEntries": 0,
+        "existingStyCandidates": 0,
+        "redactedApprovedMetadataEntries": 0,
+        "fullParseApprovedEntries": 0,
+        "parserImplementationAllowed": false,
+        "writerImplementationAllowed": false
+      },
+      "blockers": [
+        "No entry approves full read-only parse.",
+        "No parser implementation approval.",
+        "No full binary parse approval.",
+        "Writer remains explicitly blocked."
+      ],
+      "finalDecision": {
+        "parserPreflightReady": true,
+        "parserUnlockReady": false,
+        "continueToParserImplementation": false,
+        "allowFullBinaryParse": false,
+        "allowParserImplementation": false,
+        "allowWriterImplementation": false,
+        "allowRealStyOutput": false,
+        "realKeyboardBinaryWriteAllowed": false,
+        "realWriterReady": false
+      },
+      "safety": {
+        "blocked": true,
+        "readOnly": true,
+        "wroteRealKeyboardBinary": false,
+        "realBinaryBlocked": true
+      }
+    },
+    "y35": {
+      "format": "UAOS_Y35_FULL_PARSE_GATE",
+      "version": "Y31-Y40.0.0",
+      "phase": "Y35",
+      "status": "PASS_LOCKED",
+      "approvedFullParseEntries": [],
+      "requirementsToUnlock": [
+        "explicit approveFullReadOnlyParse true for selected fixtures",
+        "fixtures must be user-owned/licensed",
+        "private full paths must remain local",
+        "parser must output JSON only",
+        "writer module must not exist in parser phase"
+      ],
+      "finalDecision": {
+        "fullParseGateReady": true,
+        "fullParseUnlocked": false,
+        "allowFullBinaryParse": false,
+        "allowParserImplementation": false,
+        "allowWriterImplementation": false,
+        "allowRealStyOutput": false,
+        "realKeyboardBinaryWriteAllowed": false,
+        "realWriterReady": false
+      },
+      "safety": {
+        "lockedGate": true,
+        "readOnly": true,
+        "wroteRealKeyboardBinary": false,
+        "realBinaryBlocked": true
+      }
+    },
+    "y36": {
+      "format": "UAOS_Y36_WRITER_GATE",
+      "version": "Y31-Y40.0.0",
+      "phase": "Y36",
+      "status": "PASS_LOCKED",
+      "target": "yamaha",
+      "futureFormat": ".STY",
+      "blockedWriterActions": [
+        "write .STY",
+        "write .SET",
+        "write .PRS",
+        "write .STL",
+        "write .PAT/.MSP/.KST",
+        "modify fixtures",
+        "create binary patch",
+        "claim hardware compatibility"
+      ],
+      "finalDecision": {
+        "writerGateReady": true,
+        "continueToWriterImplementation": false,
+        "allowWriterImplementation": false,
+        "allowRealKeyboardBinaryOutput": false,
+        "allowRealStyOutput": false,
+        "canExportRealSty": false,
+        "realKeyboardBinaryWriteAllowed": false,
+        "realWriterReady": false
+      },
+      "safety": {
+        "realBinaryBlocked": true,
+        "wroteRealKeyboardBinary": false
+      }
+    }
+  },
+  "finalDecision": {
+    "manualFixtureEntriesPreflightReady": true,
+    "parserUnlockReady": false,
+    "allowReadOnlyAnalysis": true,
+    "allowSmallPrefixReadOnly": true,
+    "allowFullBinaryParse": false,
+    "allowParserImplementation": false,
+    "allowWriterImplementation": false,
+    "allowRealKeyboardBinaryOutput": false,
+    "allowRealStyOutput": false,
+    "canExportRealSty": false,
+    "realKeyboardBinaryWriteAllowed": false,
+    "realWriterReady": false,
+    "deployAllowed": false
+  },
+  "safety": {
+    "localOnly": true,
+    "noDeploy": true,
+    "readOnly": true,
+    "redactedReportsOnly": true,
+    "copiedFiles": false,
+    "modifiedFixtures": false,
+    "wroteRealKeyboardBinary": false,
+    "realBinaryBlocked": true
+  }
+}

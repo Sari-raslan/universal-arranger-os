@@ -1,0 +1,35 @@
+{
+  "format": "UAOS_Y31_MANUAL_FIXTURE_ENTRIES",
+  "version": "Y31-Y40.0.0",
+  "phase": "Y31",
+  "status": "PASS",
+  "sourceBaselineReady": true,
+  "envFixtureCount": 0,
+  "entryCount": 0,
+  "entries": [],
+  "instructions": [
+    "Optional: set UAOS_YAMAHA_STY_FIXTURE_1..5 to local user-owned .sty paths before running.",
+    "Only redacted paths and hashes are committed.",
+    "Private full paths are not written to generated JSON.",
+    "Full parse remains false.",
+    "Writer experiment remains false."
+  ],
+  "finalDecision": {
+    "manualEntriesReady": true,
+    "hasFullParseApprovedEntries": false,
+    "allowFullBinaryParse": false,
+    "allowParserImplementation": false,
+    "allowWriterImplementation": false,
+    "allowRealStyOutput": false,
+    "realKeyboardBinaryWriteAllowed": false,
+    "realWriterReady": false
+  },
+  "safety": {
+    "privatePathsRedacted": true,
+    "readOnly": true,
+    "copiedFiles": false,
+    "modifiedFixtures": false,
+    "wroteRealKeyboardBinary": false,
+    "realBinaryBlocked": true
+  }
+}

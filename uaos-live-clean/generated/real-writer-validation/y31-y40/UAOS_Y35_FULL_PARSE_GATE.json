@@ -1,0 +1,30 @@
+{
+  "format": "UAOS_Y35_FULL_PARSE_GATE",
+  "version": "Y31-Y40.0.0",
+  "phase": "Y35",
+  "status": "PASS_LOCKED",
+  "approvedFullParseEntries": [],
+  "requirementsToUnlock": [
+    "explicit approveFullReadOnlyParse true for selected fixtures",
+    "fixtures must be user-owned/licensed",
+    "private full paths must remain local",
+    "parser must output JSON only",
+    "writer module must not exist in parser phase"
+  ],
+  "finalDecision": {
+    "fullParseGateReady": true,
+    "fullParseUnlocked": false,
+    "allowFullBinaryParse": false,
+    "allowParserImplementation": false,
+    "allowWriterImplementation": false,
+    "allowRealStyOutput": false,
+    "realKeyboardBinaryWriteAllowed": false,
+    "realWriterReady": false
+  },
+  "safety": {
+    "lockedGate": true,
+    "readOnly": true,
+    "wroteRealKeyboardBinary": false,
+    "realBinaryBlocked": true
+  }
+}

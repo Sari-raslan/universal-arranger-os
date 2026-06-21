@@ -1,0 +1,32 @@
+{
+  "format": "UAOS_Y36_WRITER_GATE",
+  "version": "Y31-Y40.0.0",
+  "phase": "Y36",
+  "status": "PASS_LOCKED",
+  "target": "yamaha",
+  "futureFormat": ".STY",
+  "blockedWriterActions": [
+    "write .STY",
+    "write .SET",
+    "write .PRS",
+    "write .STL",
+    "write .PAT/.MSP/.KST",
+    "modify fixtures",
+    "create binary patch",
+    "claim hardware compatibility"
+  ],
+  "finalDecision": {
+    "writerGateReady": true,
+    "continueToWriterImplementation": false,
+    "allowWriterImplementation": false,
+    "allowRealKeyboardBinaryOutput": false,
+    "allowRealStyOutput": false,
+    "canExportRealSty": false,
+    "realKeyboardBinaryWriteAllowed": false,
+    "realWriterReady": false
+  },
+  "safety": {
+    "realBinaryBlocked": true,
+    "wroteRealKeyboardBinary": false
+  }
+}

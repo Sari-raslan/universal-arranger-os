@@ -1,0 +1,39 @@
+{
+  "format": "UAOS_Y34_PARSER_PREFLIGHT_REPORT",
+  "version": "Y31-Y40.0.0",
+  "phase": "Y34",
+  "status": "PASS_BLOCKED",
+  "target": "yamaha",
+  "futureFormat": ".STY",
+  "preflight": {
+    "manifestEntries": 0,
+    "existingStyCandidates": 0,
+    "redactedApprovedMetadataEntries": 0,
+    "fullParseApprovedEntries": 0,
+    "parserImplementationAllowed": false,
+    "writerImplementationAllowed": false
+  },
+  "blockers": [
+    "No entry approves full read-only parse.",
+    "No parser implementation approval.",
+    "No full binary parse approval.",
+    "Writer remains explicitly blocked."
+  ],
+  "finalDecision": {
+    "parserPreflightReady": true,
+    "parserUnlockReady": false,
+    "continueToParserImplementation": false,
+    "allowFullBinaryParse": false,
+    "allowParserImplementation": false,
+    "allowWriterImplementation": false,
+    "allowRealStyOutput": false,
+    "realKeyboardBinaryWriteAllowed": false,
+    "realWriterReady": false
+  },
+  "safety": {
+    "blocked": true,
+    "readOnly": true,
+    "wroteRealKeyboardBinary": false,
+    "realBinaryBlocked": true
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "format": "UAOS_Y32_LOCAL_PATH_EXISTENCE_VALIDATOR",
+  "version": "Y31-Y40.0.0",
+  "phase": "Y32",
+  "status": "PASS",
+  "validationCount": 0,
+  "validations": [],
+  "finalDecision": {
+    "localPathValidationReady": true,
+    "allowMetadataOnly": true,
+    "allowSmallPrefixReadOnly": true,
+    "allowFullBinaryParse": false,
+    "allowParserImplementation": false,
+    "allowWriterImplementation": false,
+    "allowRealStyOutput": false,
+    "realKeyboardBinaryWriteAllowed": false
+  },
+  "safety": {
+    "redactedPathsOnly": true,
+    "readOnly": true,
+    "copiedFiles": false,
+    "modifiedFixtures": false,
+    "wroteRealKeyboardBinary": false,
+    "realBinaryBlocked": true
+  }
+}

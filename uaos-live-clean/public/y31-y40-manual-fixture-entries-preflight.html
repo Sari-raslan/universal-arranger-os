@@ -1,0 +1,45 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UAOS Y31-Y40 Manual Fixture Entries Preflight</title>
+  <style>
+    body { margin:0; font-family:Arial, sans-serif; background:#070b14; color:#eef4ff; }
+    main { max-width:1000px; margin:0 auto; padding:32px; }
+    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:16px; margin-top:24px; }
+    .card { background:#101827; border:1px solid #26354f; border-radius:18px; padding:20px; }
+    .pass { color:#7CFC98; font-weight:bold; }
+    .warn { color:#facc15; font-weight:bold; }
+    code { background:#030712; padding:3px 6px; border-radius:6px; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>UAOS Y31–Y40 Manual Fixture Entries Preflight</h1>
+    <p class="pass">PREFLIGHT BASELINE PASS</p>
+    <p class="warn">Full parse and writer remain locked.</p>
+
+    <div class="grid">
+      <div class="card"><h2>Y31</h2><p>Manual fixture entries.</p></div>
+      <div class="card"><h2>Y32</h2><p>Local path existence validator.</p></div>
+      <div class="card"><h2>Y33</h2><p>Redacted manifest builder.</p></div>
+      <div class="card"><h2>Y34</h2><p>Parser preflight report.</p></div>
+      <div class="card"><h2>Y35</h2><p>Full-parse gate locked.</p></div>
+      <div class="card"><h2>Y36</h2><p>Writer gate locked.</p></div>
+      <div class="card"><h2>Y37-Y40</h2><p>QA, build, commit, safe push.</p></div>
+    </div>
+
+    <div class="card">
+      <h2>Optional env vars</h2>
+      <p><code>UAOS_YAMAHA_STY_FIXTURE_1</code> to <code>UAOS_YAMAHA_STY_FIXTURE_5</code></p>
+    </div>
+
+    <div class="card">
+      <h2>Final status</h2>
+      <p><code>PREFLIGHT_READY_BUT_LOCKED</code></p>
+      <p>No full parse. No real keyboard binary output.</p>
+    </div>
+  </main>
+</body>
+</html>
