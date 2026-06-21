@@ -179,6 +179,8 @@ export default function App() {
 
 <section className="premiumSection pay4752FinalPaymentNav"><div className="sectionTitle"><p className="spectrumLabel">Checkout is locked</p><h2>All buy buttons route to safe placeholder checkout pages.</h2></div><div className="finalPaymentNavGrid"><a href="/universal-arranger-os/commercial/payment-navigation.html"><b>Payment Navigation</b><span>All routes in one place</span></a><a href="/universal-arranger-os/checkout/checkout-status.html"><b>Checkout Status</b><span>Payment not active</span></a><a href="/universal-arranger-os/commercial/public-payment-status.html"><b>Public Payment Status</b><span>Safe for placeholder publishing</span></a><a href="/universal-arranger-os/commercial/payment-sitemap.html"><b>Payment Sitemap</b><span>Commercial route map</span></a></div></section>
 
+<section className="pay5360CommercialLaunchGuard"><b>Commercial launch guard active.</b><span>Payment pages can be published only as inactive placeholders. Live checkout remains forbidden.</span><a href="/universal-arranger-os/qa/final-payment-launch-guard.html">Final payment QA</a></section>
+
 <footer className="premiumFooter">
         <b>UAOS</b>
         <span>Universal Arranger OS · Premium local product preview</span>
@@ -186,6 +188,7 @@ export default function App() {
     </main>
   );
 }
+
 
 
 

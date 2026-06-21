@@ -528,3 +528,10 @@ a{text-decoration:none;color:inherit}
 .payPlans:before{content:"Payment placeholders only — no real checkout active";grid-column:1/-1;color:#fbbf24;font-weight:950;padding:14px 18px;border-radius:18px;background:rgba(251,191,36,.08);border:1px solid rgba(251,191,36,.18)}
 @media(max-width:1000px){.finalPaymentNavGrid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:650px){.finalPaymentNavGrid{grid-template-columns:1fr}}
+
+/* PAY-53-60B commercial launch guard */
+.pay5360CommercialLaunchGuard{max-width:1320px;margin:48px auto;padding:30px 6vw;border-radius:34px;display:flex;align-items:center;justify-content:space-between;gap:18px;background:linear-gradient(135deg,rgba(251,191,36,.14),rgba(34,211,238,.10),rgba(168,85,247,.10));border:1px solid rgba(251,191,36,.22);box-shadow:0 30px 100px rgba(0,0,0,.22)}
+.pay5360CommercialLaunchGuard b{font-size:25px;background:linear-gradient(135deg,#fff,#fbbf24,#7dd3fc);-webkit-background-clip:text;background-clip:text;color:transparent}
+.pay5360CommercialLaunchGuard span{color:#c8d4e6;font-weight:850}
+.pay5360CommercialLaunchGuard a{height:44px;display:inline-flex;align-items:center;padding:0 18px;border-radius:999px;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.13);font-weight:950;text-decoration:none}
+@media(max-width:850px){.pay5360CommercialLaunchGuard{margin:30px 5vw;padding:22px;flex-direction:column;align-items:flex-start}.pay5360CommercialLaunchGuard a{width:100%;justify-content:center}}
