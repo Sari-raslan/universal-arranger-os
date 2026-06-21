@@ -204,3 +204,134 @@ h1{font-size:clamp(44px,6.5vw,86px);line-height:.93;margin:14px 0 20px}h2{font-s
     padding:0 10px;
   }
 }
+
+/* FINAL-14 HARD NAV RESET - MUST WIN */
+.final14Topbar,
+.topbar.final14Topbar{
+  position:sticky !important;
+  top:0 !important;
+  z-index:9999 !important;
+  width:100% !important;
+  min-height:76px !important;
+  height:auto !important;
+  display:flex !important;
+  flex-direction:row !important;
+  align-items:center !important;
+  justify-content:space-between !important;
+  gap:18px !important;
+  padding:12px 5vw !important;
+  margin:0 !important;
+  background:rgba(3,7,18,.92) !important;
+  border:0 !important;
+  border-bottom:1px solid rgba(255,255,255,.12) !important;
+  border-radius:0 !important;
+  box-shadow:none !important;
+  backdrop-filter:blur(18px) !important;
+}
+
+.final14Topbar .brand{
+  flex:0 0 auto !important;
+  display:flex !important;
+  flex-direction:row !important;
+  align-items:center !important;
+  gap:12px !important;
+  width:auto !important;
+  min-width:220px !important;
+}
+
+.final14Nav,
+.nav.final14Nav{
+  flex:1 1 auto !important;
+  display:flex !important;
+  flex-direction:row !important;
+  align-items:center !important;
+  justify-content:center !important;
+  gap:8px !important;
+  width:auto !important;
+  max-width:none !important;
+  min-height:0 !important;
+  height:auto !important;
+  padding:0 !important;
+  margin:0 !important;
+  background:transparent !important;
+  border:0 !important;
+  border-radius:0 !important;
+  box-shadow:none !important;
+  overflow:visible !important;
+}
+
+.final14Nav a,
+.nav.final14Nav a{
+  display:inline-flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  min-height:38px !important;
+  height:38px !important;
+  padding:0 11px !important;
+  margin:0 !important;
+  border-radius:11px !important;
+  white-space:nowrap !important;
+  font-size:13px !important;
+  font-weight:900 !important;
+  line-height:1 !important;
+  color:#dbeafe !important;
+  background:transparent !important;
+}
+
+.final14Nav a:hover{
+  color:#fff !important;
+  background:rgba(255,255,255,.10) !important;
+}
+
+.final14Account,
+.accountBtn.final14Account{
+  flex:0 0 auto !important;
+  display:inline-flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  height:42px !important;
+  min-height:42px !important;
+  padding:0 14px !important;
+  margin:0 !important;
+  border-radius:14px !important;
+  white-space:nowrap !important;
+  font-size:13px !important;
+  font-weight:950 !important;
+  color:white !important;
+  border:1px solid rgba(103,232,249,.38) !important;
+  background:rgba(15,23,42,.75) !important;
+  box-shadow:0 12px 35px rgba(34,211,238,.14) !important;
+}
+
+.final14Account:before{
+  content:"" !important;
+  width:9px !important;
+  height:9px !important;
+  border-radius:999px !important;
+  background:#67e8f9 !important;
+  margin-right:9px !important;
+  box-shadow:0 0 18px #67e8f9 !important;
+}
+
+@media(max-width:1200px){
+  .final14Topbar{
+    flex-wrap:wrap !important;
+    align-items:center !important;
+  }
+  .final14Nav{
+    order:3 !important;
+    flex:1 0 100% !important;
+    justify-content:flex-start !important;
+    overflow-x:auto !important;
+    padding-bottom:4px !important;
+  }
+  .final14Account{
+    margin-left:auto !important;
+  }
+}
+
+@media(max-width:700px){
+  .final14Topbar .brand span{display:none !important}
+  .final14Topbar .brand{min-width:auto !important}
+  .final14Nav a{font-size:12px !important;padding:0 9px !important}
+}

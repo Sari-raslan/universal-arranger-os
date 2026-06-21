@@ -24,20 +24,24 @@ const locks = [
 export default function App() {
   return (
     <main className="uaos">
-      <nav className="topbar">
+            <nav className="topbar final14Topbar">
         <a className="brand" href="#home"><b>UAOS</b><span>Universal Arranger OS</span></a>
-        <div className="nav">
+        <div className="nav final14Nav">
           <a href="#demo">Demo</a>
           <a href="#products">Products</a>
           <a href="#workflow">Workflow</a>
           <a href="#pricing">Pricing</a>
           <a href="#downloads">Downloads</a>
-          <a href="#support">Support</a><a href="#onboarding">Start</a><a href="#legal">Legal</a>
-        </div><a className="accountBtn" href="#support">Account / الحساب</a></nav>
+          <a href="#support">Support</a>
+          <a href="#onboarding">Start</a>
+          <a href="#legal">Legal</a>
+        </div>
+        <a className="accountBtn final14Account" href="#support">Account / الحساب</a>
+      </nav>
 
       <section className="hero" id="home">
         <div className="heroText">
-          <p className="pill">FINAL-01 • Visible Product Completion UI Pack</p>
+          <p className="pill">FINAL-14 • Header Fixed / Hard Reset</p>
           <h1>AI Arranger Platform for singers, creators, and keyboard professionals.</h1>
           <p className="lead">
             This is the real visible UAOS product front page. It now shows a commercial landing page,
@@ -240,6 +244,7 @@ export default function App() {
     </main>
   );
 }
+
 
 
 
