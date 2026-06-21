@@ -1,0 +1,55 @@
+{
+  "format": "UAOS_R64_NEXT_WORK_ROADMAP",
+  "version": "R61-R70.0.0",
+  "phase": "R64",
+  "status": "PASS",
+  "nextProgram": "Manual Approved Yamaha Parser Design",
+  "nextPhases": [
+    {
+      "id": "Y1",
+      "name": "manual select 3-5 user-owned Yamaha .STY fixtures",
+      "allowed": true,
+      "writesBinary": false
+    },
+    {
+      "id": "Y2",
+      "name": "explicit approval record for full read-only parse",
+      "allowed": true,
+      "writesBinary": false
+    },
+    {
+      "id": "Y3",
+      "name": "read-only parser skeleton",
+      "allowed": false,
+      "reason": "requires Y1/Y2 approval"
+    },
+    {
+      "id": "Y4",
+      "name": "semantic parse report",
+      "allowed": false,
+      "reason": "requires parser skeleton and validation"
+    },
+    {
+      "id": "Y5",
+      "name": "roundtrip semantic validator",
+      "allowed": false,
+      "reason": "requires semantic parse report"
+    },
+    {
+      "id": "Y6",
+      "name": "experimental writer sandbox",
+      "allowed": false,
+      "reason": "requires parser, checksum, editor and hardware validation"
+    }
+  ],
+  "finalDecision": {
+    "roadmapReady": true,
+    "allowRealStyOutput": false,
+    "realKeyboardBinaryWriteAllowed": false,
+    "realWriterReady": false
+  },
+  "safety": {
+    "realBinaryBlocked": true,
+    "wroteRealKeyboardBinary": false
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "format": "UAOS_R63_FINAL_SAFETY_CERTIFICATE",
+  "version": "R61-R70.0.0",
+  "phase": "R63",
+  "status": "PASS",
+  "certificate": {
+    "project": "UAOS Real Writer Validation",
+    "state": "SAFE_BASELINE_ONLY",
+    "writerState": "LOCKED",
+    "parserState": "PLANNING_ONLY",
+    "publicDeployState": "BLOCKED_BY_THIS_PROGRAM"
+  },
+  "certifiedFalseClaims": [
+    "real writer ready",
+    "real .STY export ready",
+    "full binary parser ready",
+    "hardware validated",
+    "editor validated",
+    "production deployed"
+  ],
+  "finalDecision": {
+    "safetyCertificateReady": true,
+    "allowParserImplementation": false,
+    "allowFullBinaryParse": false,
+    "allowWriterImplementation": false,
+    "allowRealKeyboardBinaryOutput": false,
+    "allowRealStyOutput": false,
+    "canExportRealSty": false,
+    "realKeyboardBinaryWriteAllowed": false,
+    "realWriterReady": false,
+    "deployAllowed": false
+  },
+  "safety": {
+    "noDeploy": true,
+    "readOnlyBaseline": true,
+    "realBinaryBlocked": true,
+    "wroteRealKeyboardBinary": false
+  }
+}

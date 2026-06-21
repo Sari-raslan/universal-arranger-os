@@ -1,0 +1,46 @@
+{
+  "format": "UAOS_R65_FINAL_DASHBOARD_DATA",
+  "version": "R61-R70.0.0",
+  "phase": "R65",
+  "status": "PASS",
+  "dashboard": {
+    "title": "UAOS Real Writer Validation Final Dashboard",
+    "finalStatus": "SAFE_BASELINE_CLOSED",
+    "target": "Yamaha .STY first",
+    "cards": [
+      {
+        "title": "Baseline",
+        "value": "Closed",
+        "state": "pass"
+      },
+      {
+        "title": "Parser",
+        "value": "Planning only",
+        "state": "warn"
+      },
+      {
+        "title": "Writer",
+        "value": "Locked",
+        "state": "warn"
+      },
+      {
+        "title": "Deploy",
+        "value": "Not executed",
+        "state": "warn"
+      }
+    ]
+  },
+  "finalDecision": {
+    "dashboardReady": true,
+    "allowRealKeyboardBinaryOutput": false,
+    "allowRealStyOutput": false,
+    "realKeyboardBinaryWriteAllowed": false,
+    "realWriterReady": false,
+    "deployAllowed": false
+  },
+  "safety": {
+    "noDeploy": true,
+    "realBinaryBlocked": true,
+    "wroteRealKeyboardBinary": false
+  }
+}
