@@ -1,0 +1,108 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UAOS Phase 28 Hardware Export</title>
+  <style>
+    body { margin:0; font-family:Arial, sans-serif; background:#070b14; color:#eef4ff; }
+    main { max-width:1100px; margin:0 auto; padding:32px; }
+    h1 { font-size:34px; margin-bottom:8px; }
+    .card { background:#101827; border:1px solid #26354f; border-radius:18px; padding:20px; margin:16px 0; }
+    button, select { font-size:16px; padding:12px 14px; border-radius:12px; border:1px solid #4b5f82; background:#162238; color:#fff; }
+    button { cursor:pointer; background:#1d4ed8; border-color:#3b82f6; }
+    pre { white-space:pre-wrap; word-break:break-word; background:#030712; border-radius:14px; padding:18px; border:1px solid #26354f; }
+    .ok { color:#7CFC98; font-weight:bold; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>UAOS Phase 28 Hardware Export Layer</h1>
+    <p>Safe local prototype for KORG, Yamaha, Roland, and Ketron export manifests.</p>
+
+    <div class="card">
+      <label>Hardware Target</label><br><br>
+      <select id="target">
+        <option value="korg">KORG PA Series</option>
+        <option value="yamaha">Yamaha Genos / SX</option>
+        <option value="roland">Roland BK / E-A</option>
+        <option value="ketron">Ketron SD / Audya</option>
+      </select>
+      <button id="make">Generate Export Package</button>
+      <button id="download">Download JSON</button>
+    </div>
+
+    <div class="card">
+      <div id="status" class="ok">Ready</div>
+      <pre id="out"></pre>
+    </div>
+  </main>
+
+  <script type="module">
+    const targets = {
+      korg: { name:"KORG PA Series", devices:["PA3X Oriental","PA4X","PA5X"], extensions:[".uaos-korg.json"] },
+      yamaha: { name:"Yamaha Arranger", devices:["Genos","Genos2","SX900"], extensions:[".uaos-yamaha.json"] },
+      roland: { name:"Roland / E-A / BK Series", devices:["BK-9","E-A7"], extensions:[".uaos-roland.json"] },
+      ketron: { name:"Ketron Arranger", devices:["SD9","SD90","Audya"], extensions:[".uaos-ketron.json"] }
+    };
+
+    let current = null;
+
+    function makePackage() {
+      const target = document.getElementById("target").value;
+      const preset = targets[target];
+      current = {
+        format: "UAOS_HARDWARE_EXPORT_PACKAGE",
+        version: "28.0.0",
+        createdAt: new Date().toISOString(),
+        target,
+        targetName: preset.name,
+        devices: preset.devices,
+        extensions: preset.extensions,
+        source: {
+          phase: 28,
+          engine: "UAOS Hardware Export Layer",
+          safeLocalPrototype: true,
+          realBinaryExport: false
+        },
+        styleMap: {
+          tempo: 96,
+          meter: "4/4",
+          key: "C minor",
+          sections: [
+            { id:"intro1", type:"intro", bars:4, chord:"Cm" },
+            { id:"mainA", type:"main", bars:8, chord:"Cm" },
+            { id:"fill1", type:"fill", bars:1, chord:"G7" },
+            { id:"mainB", type:"main", bars:8, chord:"Fm" },
+            { id:"ending1", type:"ending", bars:4, chord:"Cm" }
+          ],
+          tracks: [
+            { id:"drums", role:"drums", channel:10, program:"standard-kit" },
+            { id:"bass", role:"bass", channel:2, program:"finger-bass" },
+            { id:"chords", role:"chords", channel:3, program:"warm-keys" },
+            { id:"pad", role:"pad", channel:4, program:"strings-pad" },
+            { id:"lead", role:"lead", channel:5, program:"oriental-violin" }
+          ]
+        }
+      };
+      document.getElementById("status").textContent = "PASS: Package generated for " + preset.name;
+      document.getElementById("out").textContent = JSON.stringify(current, null, 2);
+    }
+
+    function downloadPackage() {
+      if (!current) makePackage();
+      const blob = new Blob([JSON.stringify(current, null, 2)], { type:"application/json" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "uaos-phase28-" + current.target + "-hardware-export.json";
+      a.click();
+      URL.revokeObjectURL(url);
+    }
+
+    document.getElementById("make").addEventListener("click", makePackage);
+    document.getElementById("download").addEventListener("click", downloadPackage);
+    makePackage();
+  </script>
+</body>
+</html>

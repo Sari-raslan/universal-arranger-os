@@ -1,0 +1,132 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UAOS Phase 29 Hardware Integration</title>
+  <style>
+    body { margin:0; font-family:Arial, sans-serif; background:#070b14; color:#eef4ff; }
+    main { max-width:1100px; margin:0 auto; padding:32px; }
+    h1 { font-size:34px; margin-bottom:8px; }
+    .card { background:#101827; border:1px solid #26354f; border-radius:18px; padding:20px; margin:16px 0; }
+    button, select, input { font-size:16px; padding:12px 14px; border-radius:12px; border:1px solid #4b5f82; background:#162238; color:#fff; margin:4px; }
+    button { cursor:pointer; background:#1d4ed8; border-color:#3b82f6; }
+    pre { white-space:pre-wrap; word-break:break-word; background:#030712; border-radius:14px; padding:18px; border:1px solid #26354f; }
+    .ok { color:#7CFC98; font-weight:bold; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>UAOS Phase 29 Hardware Integration</h1>
+    <p>Links Style Engine sections + MIDI timeline reference + Hardware Export package.</p>
+
+    <div class="card">
+      <select id="target">
+        <option value="korg">KORG PA Series</option>
+        <option value="yamaha">Yamaha Genos / SX</option>
+        <option value="roland">Roland BK / E-A</option>
+        <option value="ketron">Ketron SD / Audya</option>
+      </select>
+      <input id="tempo" value="104" />
+      <input id="chords" value="Dm,Bb,Gm,A7" />
+      <button id="make">Generate Integrated Export</button>
+      <button id="download">Download JSON</button>
+    </div>
+
+    <div class="card">
+      <div id="status" class="ok">Ready</div>
+      <pre id="out"></pre>
+    </div>
+  </main>
+
+  <script type="module">
+    let current = null;
+
+    const targetNames = {
+      korg: "KORG PA Series",
+      yamaha: "Yamaha Arranger",
+      roland: "Roland / E-A / BK Series",
+      ketron: "Ketron Arranger"
+    };
+
+    function makePackage() {
+      const target = document.getElementById("target").value;
+      const tempo = Number(document.getElementById("tempo").value || 104);
+      const chordProgression = document.getElementById("chords").value.split(",").map(x => x.trim()).filter(Boolean);
+
+      const sections = [
+        { id:"intro1", type:"intro", bars:4, chord:chordProgression[0] || "Dm" },
+        { id:"mainA", type:"main", bars:8, chord:chordProgression[0] || "Dm" },
+        { id:"fill1", type:"fill", bars:1, chord:chordProgression[3] || "A7" },
+        { id:"mainB", type:"main", bars:8, chord:chordProgression[2] || "Gm" },
+        { id:"ending1", type:"ending", bars:4, chord:chordProgression[0] || "Dm" }
+      ];
+
+      const tracks = [
+        { id:"drums", role:"drums", channel:10, program:"standard-kit" },
+        { id:"bass", role:"bass", channel:2, program:"finger-bass" },
+        { id:"chords", role:"chords", channel:3, program:"warm-keys" },
+        { id:"pad", role:"pad", channel:4, program:"strings-pad" },
+        { id:"lead", role:"lead", channel:5, program:"oriental-violin" }
+      ];
+
+      const midiReference = {
+        format:"UAOS_PHASE29_MIDI_REFERENCE",
+        version:"29.0.0",
+        tempo,
+        meter:"4/4",
+        key:"D minor",
+        timeline: sections.map((s, i) => ({ index:i, sectionId:s.id, type:s.type, bars:s.bars, chord:s.chord })),
+        tracks: tracks.map((t, i) => ({ index:i, trackId:t.id, role:t.role, channel:t.channel, program:t.program }))
+      };
+
+      current = {
+        format:"UAOS_HARDWARE_EXPORT_PACKAGE",
+        version:"28.0.0",
+        createdAt:new Date().toISOString(),
+        target,
+        targetName:targetNames[target],
+        projectName:"UAOS Phase 29 Integrated Style",
+        source:{
+          phase:29,
+          engine:"UAOS Hardware Export Integration",
+          safeLocalPrototype:true,
+          realBinaryExport:false
+        },
+        styleMap:{ tempo, meter:"4/4", key:"D minor", sections, tracks },
+        integration:{
+          phase:29,
+          version:"29.0.0",
+          styleProjectFormat:"UAOS_PHASE29_STYLE_PROJECT",
+          midiReferenceFormat:"UAOS_PHASE29_MIDI_REFERENCE",
+          chordProgression,
+          midiReference
+        },
+        exportNotes:[
+          "Phase 29 integrated package.",
+          "Links style sections, MIDI reference, and hardware target manifest.",
+          "Not real proprietary keyboard binary export yet."
+        ]
+      };
+
+      document.getElementById("status").textContent = "PASS: Integrated export generated for " + targetNames[target];
+      document.getElementById("out").textContent = JSON.stringify(current, null, 2);
+    }
+
+    function downloadPackage() {
+      if (!current) makePackage();
+      const blob = new Blob([JSON.stringify(current, null, 2)], { type:"application/json" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "uaos-phase29-" + current.target + "-integrated-hardware-export.json";
+      a.click();
+      URL.revokeObjectURL(url);
+    }
+
+    document.getElementById("make").addEventListener("click", makePackage);
+    document.getElementById("download").addEventListener("click", downloadPackage);
+    makePackage();
+  </script>
+</body>
+</html>
