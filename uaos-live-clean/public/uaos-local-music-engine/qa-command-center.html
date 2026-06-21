@@ -1,0 +1,36 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>UAOS QA Command Center</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body{font-family:Arial,sans-serif;background:#08101f;color:#f4f7ff;margin:0;padding:24px}
+    .card{background:#131d35;border:1px solid #2c3a66;border-radius:18px;padding:18px;margin:14px 0}
+    code{display:block;background:#050a14;padding:10px;border-radius:10px;margin:8px 0;white-space:pre-wrap}
+    a{color:#9bdcff}
+  </style>
+</head>
+<body>
+  <h1>UAOS QA Command Center</h1>
+
+  <div class="card">
+    <h2>All Local QA</h2>
+    <code>node scripts/qa/verify-local-music-engine-all.mjs</code>
+  </div>
+
+  <div class="card">
+    <h2>Final Local Gate</h2>
+    <code>node scripts/qa/final-local-music-engine-gate.mjs</code>
+  </div>
+
+  <div class="card">
+    <h2>Build</h2>
+    <code>cd uaos-live-clean
+npm run build</code>
+  </div>
+
+  <p><a href="./final-local-gate.html">Final Local Gate</a></p>
+  <p><a href="./index.html">Back</a></p>
+</body>
+</html>
