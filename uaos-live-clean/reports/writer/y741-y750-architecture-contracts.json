@@ -1,0 +1,93 @@
+{
+  "architecture": {
+    "phase": "Y741-Y744",
+    "title": "Writer Architecture Spec",
+    "status": "SPEC_DRAFT_READY",
+    "purpose": "Define the future writer architecture without implementing any writer code.",
+    "allowedScope": [
+      "spec documents",
+      "JSON readiness reports",
+      "public HTML documentation pages"
+    ],
+    "prohibitedScope": [
+      "writer implementation",
+      "binary serialization logic",
+      "real keyboard output generation",
+      "production parser integration",
+      "fixture read/copy/modify",
+      "deploy/public release"
+    ],
+    "proposedLayers": [
+      "Input validation layer",
+      "Dry-run planning layer",
+      "Conformance gate layer",
+      "Sandbox approval layer",
+      "Future writer adapter interface, spec only"
+    ],
+    "safety": {
+      "writerImplementation": "BLOCKED",
+      "realWriter": "BLOCKED",
+      "realKeyboardOutput": "BLOCKED",
+      "productionParser": "BLOCKED",
+      "deployPublicRelease": "BLOCKED",
+      "fixturesReadCopyModify": "BLOCKED",
+      "appJsxModified": false,
+      "specOnly": true
+    },
+    "generatedAt": "2026-06-21T10:42:07.685Z"
+  },
+  "inputContract": {
+    "phase": "Y745-Y748",
+    "title": "Input Contract Spec",
+    "status": "SPEC_DRAFT_READY",
+    "acceptedInputsFutureOnly": [
+      "validated arrangement plan",
+      "dry-run manifest",
+      "approved conformance profile",
+      "approved hardware target profile"
+    ],
+    "requiredFieldsFutureOnly": [
+      "projectId",
+      "targetFamily",
+      "sections",
+      "tracks",
+      "tempo",
+      "timeSignature",
+      "safetyProfile",
+      "approvalState"
+    ],
+    "requiredApprovalState": "APPROVED_IN_FUTURE_ONLY",
+    "nowAllowed": "Documentation only. No input is consumed by any writer.",
+    "safety": {
+      "writerImplementation": "BLOCKED",
+      "realWriter": "BLOCKED",
+      "realKeyboardOutput": "BLOCKED",
+      "productionParser": "BLOCKED",
+      "deployPublicRelease": "BLOCKED",
+      "fixturesReadCopyModify": "BLOCKED",
+      "appJsxModified": false,
+      "specOnly": true
+    },
+    "generatedAt": "2026-06-21T10:42:07.686Z"
+  },
+  "outputContract": {
+    "phase": "Y749-Y752",
+    "title": "Output Contract Spec Without Output Generation",
+    "status": "SPEC_DRAFT_READY_OUTPUT_GENERATION_BLOCKED",
+    "futureOutputConcept": "A future writer may produce keyboard-compatible files only after separate approval.",
+    "outputGenerationNow": "BLOCKED",
+    "realKeyboardOutputNow": "BLOCKED",
+    "forbiddenExtensionsPolicyRef": "Y753-Y756",
+    "safety": {
+      "writerImplementation": "BLOCKED",
+      "realWriter": "BLOCKED",
+      "realKeyboardOutput": "BLOCKED",
+      "productionParser": "BLOCKED",
+      "deployPublicRelease": "BLOCKED",
+      "fixturesReadCopyModify": "BLOCKED",
+      "appJsxModified": false,
+      "specOnly": true
+    },
+    "generatedAt": "2026-06-21T10:42:07.686Z"
+  }
+}

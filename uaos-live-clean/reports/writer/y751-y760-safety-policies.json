@@ -1,0 +1,49 @@
+{
+  "phase": "Y751-Y760",
+  "title": "Forbidden Extension + Sandbox + Fixture Isolation Policies",
+  "status": "PASS_POLICY_SPECS_READY",
+  "forbiddenExtensionPolicy": {
+    "phase": "Y753-Y756",
+    "forbiddenExtensions": [
+      ".STY",
+      ".SET",
+      ".PRS",
+      ".STL",
+      ".PAT",
+      ".MSP",
+      ".KST"
+    ],
+    "rule": "These extensions may be mentioned only as forbidden output formats. No file with these extensions may be created by this package."
+  },
+  "sandboxOnlyRules": {
+    "phase": "Y754",
+    "rule": "Future writer work must run only in an approved sandbox path after separate approval. This package does not create a writer sandbox."
+  },
+  "noOverwritePolicy": {
+    "phase": "Y755",
+    "rule": "Future writer must never overwrite existing assets. Any future output must be new, isolated, and approval-gated."
+  },
+  "noFixtureCopyPolicy": {
+    "phase": "Y757",
+    "rule": "Fixtures must not be read, copied, modified, renamed, moved, or used by this package."
+  },
+  "noFixtureModifyPolicy": {
+    "phase": "Y758",
+    "rule": "Fixtures remain untouched. Any fixture interaction requires a separate read-only approval phase."
+  },
+  "accessIsolation": {
+    "phase": "Y759-Y760",
+    "rule": "Writer specification is separated from parser, deploy, fixture, and production paths."
+  },
+  "safety": {
+    "writerImplementation": "BLOCKED",
+    "realWriter": "BLOCKED",
+    "realKeyboardOutput": "BLOCKED",
+    "productionParser": "BLOCKED",
+    "deployPublicRelease": "BLOCKED",
+    "fixturesReadCopyModify": "BLOCKED",
+    "appJsxModified": false,
+    "specOnly": true
+  },
+  "generatedAt": "2026-06-21T10:42:10.688Z"
+}
