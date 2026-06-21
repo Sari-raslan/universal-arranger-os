@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>UAOS Sandbox Permission + Rollback Freeze</title>
+  <style>
+    body{font-family:Arial;background:#0f0f10;color:#eee;padding:28px;line-height:1.55}
+    .card{background:#1b1b1d;border:1px solid #444;border-radius:16px;padding:20px;margin:14px 0}
+    .pass{color:#80ffb0}.lock{color:#ffcc66}.bad{color:#ff8080}a{color:#9fd0ff}
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>UAOS Sandbox Permission Model + Rollback/Freeze Policy</h1>
+    <h2>Sandbox Status Now: NOT OPENED</h2>
+  </div>
+  <div class="card pass"><h2>Allowed Only If Future Approved</h2><ul><li>Create isolated planning folder only</li>
+<li>Create dry-run JSON only</li>
+<li>Run no-output gates</li>
+<li>Run extension scans</li>
+<li>Generate HTML review reports</li></ul></div>
+  <div class="card bad"><h2>Denied Without Separate Approval</h2><ul><li>writer implementation</li>
+<li>binary serialization</li>
+<li>real keyboard output</li>
+<li>production parser bridge</li>
+<li>fixture read/copy/modify</li>
+<li>deploy/public release</li>
+<li>App.jsx modification</li></ul></div>
+  <div class="card lock"><h2>Freeze Triggers</h2><ul><li>Any writer implementation detected</li>
+<li>Any real output file detected</li>
+<li>Any forbidden extension file detected</li>
+<li>Any production parser bridge detected</li>
+<li>Any fixture read/copy/modify detected</li>
+<li>Any deploy/public release command detected</li>
+<li>Any App.jsx modification detected</li></ul></div>
+  <div class="card"><h2>Rollback Actions</h2><ul><li>Stop immediately</li>
+<li>Preserve logs and reports</li>
+<li>Do not continue to next phase</li>
+<li>Do not commit unsafe files</li>
+<li>Restore from backup if protected files changed</li>
+<li>Return final failure report</li></ul></div>
+</body>
+</html>

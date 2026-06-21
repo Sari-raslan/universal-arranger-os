@@ -1,0 +1,85 @@
+{
+  "permissionModel": {
+    "phase": "Y841-Y845",
+    "title": "Sandbox Permission Model",
+    "status": "PASS_SANDBOX_PERMISSION_MODEL_READY",
+    "sandboxStatusNow": "NOT_OPENED",
+    "allowedIfFutureApproved": [
+      "Create isolated planning folder only",
+      "Create dry-run JSON only",
+      "Run no-output gates",
+      "Run extension scans",
+      "Generate HTML review reports"
+    ],
+    "deniedAlwaysWithoutSeparateApproval": [
+      "writer implementation",
+      "binary serialization",
+      "real keyboard output",
+      "production parser bridge",
+      "fixture read/copy/modify",
+      "deploy/public release",
+      "App.jsx modification"
+    ],
+    "requiredBeforeAnyFutureSandbox": [
+      "manual approval",
+      "risk matrix accepted",
+      "rollback/freeze accepted",
+      "conformance rules accepted",
+      "output remains blocked unless separately approved"
+    ],
+    "safety": {
+      "writerImplementation": "BLOCKED",
+      "realWriter": "BLOCKED",
+      "realKeyboardOutput": "BLOCKED",
+      "productionParser": "BLOCKED",
+      "deployPublicRelease": "BLOCKED",
+      "fixturesReadCopyModify": "BLOCKED",
+      "appJsxModified": false,
+      "approvalOnly": true
+    },
+    "generatedAt": "2026-06-21T10:50:50.856Z"
+  },
+  "rollbackFreeze": {
+    "phase": "Y846-Y850",
+    "title": "Rollback / Freeze Policy",
+    "status": "PASS_ROLLBACK_FREEZE_POLICY_READY",
+    "freezeTriggers": [
+      "Any writer implementation detected",
+      "Any real output file detected",
+      "Any forbidden extension file detected",
+      "Any production parser bridge detected",
+      "Any fixture read/copy/modify detected",
+      "Any deploy/public release command detected",
+      "Any App.jsx modification detected"
+    ],
+    "rollbackActions": [
+      "Stop immediately",
+      "Preserve logs and reports",
+      "Do not continue to next phase",
+      "Do not commit unsafe files",
+      "Restore from backup if protected files changed",
+      "Return final failure report"
+    ],
+    "safety": {
+      "writerImplementation": "BLOCKED",
+      "realWriter": "BLOCKED",
+      "realKeyboardOutput": "BLOCKED",
+      "productionParser": "BLOCKED",
+      "deployPublicRelease": "BLOCKED",
+      "fixturesReadCopyModify": "BLOCKED",
+      "appJsxModified": false,
+      "approvalOnly": true
+    },
+    "generatedAt": "2026-06-21T10:50:50.856Z"
+  },
+  "safety": {
+    "writerImplementation": "BLOCKED",
+    "realWriter": "BLOCKED",
+    "realKeyboardOutput": "BLOCKED",
+    "productionParser": "BLOCKED",
+    "deployPublicRelease": "BLOCKED",
+    "fixturesReadCopyModify": "BLOCKED",
+    "appJsxModified": false,
+    "approvalOnly": true
+  }
+}

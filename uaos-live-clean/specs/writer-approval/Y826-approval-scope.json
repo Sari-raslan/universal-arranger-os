@@ -1,0 +1,35 @@
+{
+  "phase": "Y826-Y830",
+  "title": "Approval Scope Definition",
+  "status": "PASS_APPROVAL_SCOPE_READY",
+  "allowedNow": [
+    "approval text",
+    "risk matrix",
+    "go/no-go gate",
+    "sandbox permission model",
+    "rollback/freeze policy",
+    "manual approval checklist",
+    "public HTML reports",
+    "generated JSON reports"
+  ],
+  "blockedNow": [
+    "writer implementation",
+    "real writer",
+    "real keyboard output",
+    "production parser",
+    "deploy/public release",
+    "fixtures read/copy/modify"
+  ],
+  "futureTransitionCondition": "Separate explicit manual approval after all blocker matrices are green.",
+  "safety": {
+    "writerImplementation": "BLOCKED",
+    "realWriter": "BLOCKED",
+    "realKeyboardOutput": "BLOCKED",
+    "productionParser": "BLOCKED",
+    "deployPublicRelease": "BLOCKED",
+    "fixturesReadCopyModify": "BLOCKED",
+    "appJsxModified": false,
+    "approvalOnly": true
+  },
+  "generatedAt": "2026-06-21T10:50:43.614Z"
+}

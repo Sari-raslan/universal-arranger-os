@@ -1,0 +1,33 @@
+{
+  "phase": "Y821-Y825",
+  "title": "Writer Sandbox Approval Text",
+  "status": "PASS_APPROVAL_TEXT_READY",
+  "approvalStatusNow": "NOT_APPROVED",
+  "textForFutureManualApproval": [
+    "I approve opening a limited writer sandbox planning phase only.",
+    "I do not approve real keyboard output generation.",
+    "I do not approve production parser integration.",
+    "I do not approve deploy or public release.",
+    "I do not approve fixture read/copy/modify.",
+    "I understand any future writer sandbox must remain isolated and rollback-gated."
+  ],
+  "notApprovedNow": [
+    "writer implementation",
+    "real writer",
+    "real keyboard output",
+    "production parser",
+    "deploy/public release",
+    "fixtures read/copy/modify"
+  ],
+  "safety": {
+    "writerImplementation": "BLOCKED",
+    "realWriter": "BLOCKED",
+    "realKeyboardOutput": "BLOCKED",
+    "productionParser": "BLOCKED",
+    "deployPublicRelease": "BLOCKED",
+    "fixturesReadCopyModify": "BLOCKED",
+    "appJsxModified": false,
+    "approvalOnly": true
+  },
+  "generatedAt": "2026-06-21T10:50:43.612Z"
+}
