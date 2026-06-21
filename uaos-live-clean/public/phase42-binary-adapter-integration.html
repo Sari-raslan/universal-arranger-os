@@ -1,0 +1,120 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UAOS Phase 42 Binary Adapter Integration</title>
+  <style>
+    body { margin:0; font-family:Arial, sans-serif; background:#070b14; color:#eef4ff; }
+    main { max-width:1000px; margin:0 auto; padding:32px; }
+    .card { background:#101827; border:1px solid #26354f; border-radius:18px; padding:20px; margin:16px 0; }
+    button, select { font-size:16px; padding:12px; border-radius:12px; margin:4px; }
+    button { background:#1d4ed8; color:white; border:1px solid #3b82f6; cursor:pointer; }
+    select { background:#162238; color:white; border:1px solid #4b5f82; }
+    pre { background:#030712; padding:18px; border-radius:14px; white-space:pre-wrap; word-break:break-word; }
+    .pass { color:#7CFC98; font-weight:bold; }
+    .warn { color:#facc15; font-weight:bold; }
+    a { color:#93c5fd; font-weight:bold; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>UAOS Phase 42 Binary Adapter Integration</h1>
+    <p class="pass">SAFE .uaosbin + Adapter Plan Integration PASS CANDIDATE</p>
+    <p class="warn">This is not real .STY/.SET/.PRS export yet.</p>
+
+    <div class="card">
+      <select id="profile">
+        <option value="korg_pa3x_oriental">KORG PA3X Oriental</option>
+        <option value="korg_pa5x">KORG PA5X</option>
+        <option value="yamaha_genos">Yamaha Genos</option>
+        <option value="roland_bk9">Roland BK-9</option>
+        <option value="ketron_sd9">Ketron SD9</option>
+      </select>
+      <button id="make">Generate Binary Adapter Package</button>
+      <button id="download">Download .uaosbin</button>
+    </div>
+
+    <div class="card">
+      <pre id="out">Ready</pre>
+    </div>
+
+    <p><a href="./phase41-binary-exporter-foundation.html">Back to Phase 41</a></p>
+    <p><a href="./phase40-final-hardware-export-gate.html">Back to Phase 40</a></p>
+  </main>
+
+  <script>
+    let currentBytes = null;
+    let currentProfile = "korg_pa3x_oriental";
+
+    const profiles = {
+      korg_pa3x_oriental: { brand:"KORG", model:"PA3X Oriental", target:"korg" },
+      korg_pa5x: { brand:"KORG", model:"PA5X", target:"korg" },
+      yamaha_genos: { brand:"Yamaha", model:"Genos", target:"yamaha" },
+      roland_bk9: { brand:"Roland", model:"BK-9", target:"roland" },
+      ketron_sd9: { brand:"Ketron", model:"SD9", target:"ketron" }
+    };
+
+    function enc(text) {
+      return Array.from(new TextEncoder().encode(String(text)));
+    }
+
+    function u32be(value) {
+      return [(value>>>24)&255,(value>>>16)&255,(value>>>8)&255,value&255];
+    }
+
+    function make() {
+      currentProfile = document.getElementById("profile").value;
+      const p = profiles[currentProfile];
+
+      const payload = JSON.stringify({
+        format:"UAOS_BINARY_ADAPTER_EXPORT",
+        version:"42.0.0",
+        deviceProfileId:currentProfile,
+        brand:p.brand,
+        model:p.model,
+        adapterPlan:{
+          outputMode:"safe-json-adapter-plan",
+          realBinaryReady:false,
+          warning:"NOT PROPRIETARY KEYBOARD BINARY"
+        },
+        safety:{
+          realBinaryExportReady:false,
+          proprietaryKeyboardBinary:false,
+          warning:"SAFE UAOS BINARY CONTAINER WITH ADAPTER PLAN - NOT .STY/.SET/.PRS"
+        }
+      }, null, 2);
+
+      const bytes = [
+        ...enc("UAOSBIN1"),
+        ...enc(p.target.padEnd(16, " ").slice(0, 16)),
+        ...u32be(enc(payload).length),
+        ...enc(payload)
+      ];
+
+      currentBytes = new Uint8Array(bytes);
+
+      document.getElementById("out").textContent =
+        "PASS\nProfile: " + currentProfile +
+        "\nTarget: " + p.target +
+        "\nBytes: " + currentBytes.length +
+        "\nMagic: UAOSBIN1\n\n" + payload;
+    }
+
+    function download() {
+      if (!currentBytes) make();
+      const blob = new Blob([currentBytes], { type:"application/octet-stream" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "uaos-phase42-" + currentProfile + "-adapter.uaosbin";
+      a.click();
+      URL.revokeObjectURL(url);
+    }
+
+    document.getElementById("make").addEventListener("click", make);
+    document.getElementById("download").addEventListener("click", download);
+    make();
+  </script>
+</body>
+</html>
