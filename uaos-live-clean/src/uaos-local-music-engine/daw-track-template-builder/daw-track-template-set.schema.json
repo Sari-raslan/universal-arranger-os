@@ -1,0 +1,84 @@
+﻿{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "uaos-daw-track-template-set.schema.json",
+  "title": "UAOS DAW Track Template Set",
+  "type": "object",
+  "required": ["format", "version", "tracks", "arrangementReadyLanes", "defaultClips", "safety"],
+  "properties": {
+    "format": { "const": "UAOS_DAW_TRACK_TEMPLATE_SET" },
+    "version": { "type": "string" },
+    "title": { "type": "string" },
+    "tempo": { "type": "number" },
+    "timeSignature": { "type": "string" },
+    "trackCount": { "type": "number" },
+    "tracks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["trackId", "name", "role", "type", "safety"],
+        "properties": {
+          "trackId": { "type": "string" },
+          "name": { "type": "string" },
+          "role": { "enum": ["drums", "bass", "chords", "pads", "melody"] },
+          "type": { "type": "string" },
+          "instrumentId": { "type": ["string", "null"] },
+          "midiChannel": { "type": "number" },
+          "volume": { "type": "number" },
+          "pan": { "type": "number" },
+          "safety": {
+            "type": "object",
+            "required": [
+              "metadataOnly",
+              "sampleLoaded",
+              "audioDecoded",
+              "parserUsed",
+              "keyboardWriter",
+              "keyboardOutput"
+            ],
+            "properties": {
+              "metadataOnly": { "const": true },
+              "sampleLoaded": { "const": false },
+              "audioDecoded": { "const": false },
+              "parserUsed": { "const": false },
+              "keyboardWriter": { "const": false },
+              "keyboardOutput": { "const": false }
+            }
+          }
+        }
+      }
+    },
+    "arrangementReadyLanes": { "type": "object" },
+    "defaultClips": { "type": "array" },
+    "safety": {
+      "type": "object",
+      "required": [
+        "metadataOnly",
+        "fileContentRead",
+        "sampleLoaded",
+        "audioDecoded",
+        "copiedFiles",
+        "movedFiles",
+        "deletedFiles",
+        "archiveRead",
+        "productionParser",
+        "keyboardWriter",
+        "keyboardOutput",
+        "dawAudioRender"
+      ],
+      "properties": {
+        "metadataOnly": { "const": true },
+        "fileContentRead": { "const": false },
+        "sampleLoaded": { "const": false },
+        "audioDecoded": { "const": false },
+        "copiedFiles": { "const": false },
+        "movedFiles": { "const": false },
+        "deletedFiles": { "const": false },
+        "archiveRead": { "const": false },
+        "productionParser": { "const": false },
+        "keyboardWriter": { "const": false },
+        "keyboardOutput": { "const": false },
+        "dawAudioRender": { "const": false }
+      }
+    }
+  }
+}
