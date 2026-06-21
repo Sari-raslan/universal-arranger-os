@@ -66,3 +66,48 @@ h3{font-size:24px;margin:10px 0}
   0%,100%{transform:translateY(0)}
   50%{transform:translateY(-8px)}
 }
+
+.product-roadmap{
+  padding-top:20px;
+}
+.roadmap-grid,.support-box{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+.roadmap-grid div,.support-box div{
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:22px;
+  padding:22px;
+}
+.roadmap-grid strong{
+  display:block;
+  font-size:26px;
+  color:#67e8f9;
+  margin-bottom:10px;
+}
+.roadmap-grid span{
+  color:#cbd5e1;
+  line-height:1.6;
+}
+.support{
+  background:rgba(2,6,23,.4);
+}
+.footer{
+  margin:40px 6vw 0;
+  padding:28px 0 46px;
+  border-top:1px solid rgba(255,255,255,.12);
+  display:flex;
+  justify-content:space-between;
+  gap:18px;
+  color:#cbd5e1;
+}
+.footer strong{
+  color:#fff;
+  font-size:24px;
+}
+@media(max-width:900px){
+  .roadmap-grid,.support-box{grid-template-columns:1fr}
+  .footer{flex-direction:column}
+}

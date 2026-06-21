@@ -27,7 +27,7 @@ export default function App() {
           <a href="#demo">Demo</a>
           <a href="#products">Products</a>
           <a href="#pricing">Pricing</a>
-          <a href="#downloads">Downloads</a>
+          <a href="#downloads">Downloads</a><a href="#support">Support</a>
         </div>
       </nav>
 
@@ -123,7 +123,40 @@ export default function App() {
           <a className="btn secondary" href="/universal-arranger-os/governance/y2041-y2400/final-rc-lock.html">RC Lock</a>
         </div>
       </section>
+          <section className="section product-roadmap">
+        <h2>Product roadmap preview</h2>
+        <div className="roadmap-grid">
+          <div><strong>Now</strong><span>Local UI, MIDI foundations, product preview</span></div>
+          <div><strong>Next</strong><span>Better onboarding, demo flow, screenshots, videos</span></div>
+          <div><strong>Later</strong><span>Real exports only after separate approval</span></div>
+        </div>
+      </section>
+
+      <section className="section support" id="support">
+        <h2>Support & Contact</h2>
+        <p className="lead">Need help, beta access, or a custom arranger workflow? Use this section as the future contact/support area.</p>
+        <div className="support-box">
+          <div>
+            <h3>For singers</h3>
+            <p>Start with the demo and turn ideas into arranged song drafts.</p>
+          </div>
+          <div>
+            <h3>For studios</h3>
+            <p>Use UAOS Studio planning for tracks, MIDI, and local project workflows.</p>
+          </div>
+          <div>
+            <h3>For keyboard pros</h3>
+            <p>Professional arranger workflows remain planning-only until real writer approval.</p>
+          </div>
+        </div>
+      </section>
+
+      <footer className="footer">
+        <strong>UAOS</strong>
+        <span>Local visible website preview. Public deploy waits for Vercel daily limit reset.</span>
+      </footer>
     </main>
   );
 }
+
 
