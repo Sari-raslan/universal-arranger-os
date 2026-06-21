@@ -1,0 +1,41 @@
+{
+  "phase": "Y981-Y990",
+  "title": "Sandbox Audit Runner",
+  "status": "PASS_SANDBOX_AUDIT_CLEAN",
+  "scanRoots": [
+    "C:\\Users\\ssare\\keyboard-manager-clean\\uaos-live-clean\\generated\\real-writer-validation\\writer-sandbox-phase0-no-output",
+    "C:\\Users\\ssare\\keyboard-manager-clean\\uaos-live-clean\\reports\\writer-sandbox-phase0",
+    "C:\\Users\\ssare\\keyboard-manager-clean\\uaos-live-clean\\public\\governance\\y941-y1000"
+  ],
+  "scannedFileCount": 18,
+  "forbiddenExtensions": [
+    ".sty",
+    ".set",
+    ".prs",
+    ".stl",
+    ".pat",
+    ".msp",
+    ".kst"
+  ],
+  "forbiddenFound": [],
+  "clean": true,
+  "sourceReadiness": {
+    "phase0Gate": true,
+    "dryrunContracts": true,
+    "auditContracts": true
+  },
+  "safety": {
+    "writerImplementation": "BLOCKED",
+    "realWriter": "BLOCKED",
+    "realKeyboardOutput": "BLOCKED",
+    "forbiddenKeyboardExtensions": "BLOCKED",
+    "productionParser": "BLOCKED",
+    "deployPublicRelease": "BLOCKED",
+    "fixturesReadCopyModify": "BLOCKED",
+    "appJsxModified": false,
+    "sandboxPhase": "PHASE_0_NO_OUTPUT",
+    "outputAllowed": false,
+    "finalFreeze": true
+  },
+  "generatedAt": "2026-06-21T11:11:29.116Z"
+}

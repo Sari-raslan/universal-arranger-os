@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>UAOS Dry-Run Interface Contracts</title>
+<style>
+body{font-family:Arial;background:#0f0f10;color:#eee;padding:28px;line-height:1.55}
+.card{background:#1b1b1d;border:1px solid #444;border-radius:16px;padding:20px;margin:14px 0}
+.pass{color:#80ffb0}.lock{color:#ffcc66}.bad{color:#ff8080}a{color:#9fd0ff}
+</style>
+</head>
+<body>
+<div class="card"><h1>UAOS Dry-Run Interface Contracts</h1><h2>Y941-Y960</h2><p>Contract only. No writer. No output.</p></div>
+<div class="card pass"><h2>Dry-Run Input Required Fields</h2><ul><li>requestId</li>
+<li>projectId</li>
+<li>targetFamily</li>
+<li>intent</li>
+<li>sections</li>
+<li>tracks</li>
+<li>tempo</li>
+<li>timeSignature</li>
+<li>safetyProfile</li>
+<li>approvalState</li></ul></div>
+<div class="card pass"><h2>Allowed Intent Values</h2><ul><li>VALIDATE_PLAN_ONLY</li>
+<li>DESCRIBE_OUTPUT_PLAN_ONLY</li>
+<li>RUN_NO_OUTPUT_AUDIT_ONLY</li></ul></div>
+<div class="card bad"><h2>Denied Intent Values</h2><ul><li>WRITE_FILE</li>
+<li>EXPORT_KEYBOARD_FILE</li>
+<li>RUN_REAL_WRITER</li>
+<li>RUN_PRODUCTION_PARSER</li>
+<li>DEPLOY</li></ul></div>
+<div class="card lock"><h2>Forbidden Output Extensions</h2><ul><li>.STY</li>
+<li>.SET</li>
+<li>.PRS</li>
+<li>.STL</li>
+<li>.PAT</li>
+<li>.MSP</li>
+<li>.KST</li></ul></div>
+<div class="card lock"><h2>Final Rule</h2><p>Output creation allowed: NO</p></div>
+</body>
+</html>

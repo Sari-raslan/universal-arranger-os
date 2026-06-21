@@ -1,0 +1,41 @@
+{
+  "phase": "Y961-Y970",
+  "title": "Dry-Run Request Schema",
+  "status": "PASS_DRYRUN_REQUEST_SCHEMA_READY",
+  "schemaType": "DESIGN_ONLY",
+  "required": {
+    "requestId": "string",
+    "requestType": "DRYRUN_PLAN_ONLY | DESCRIBE_OUTPUT_PLAN_ONLY | RUN_NO_OUTPUT_AUDIT_ONLY",
+    "sandboxPhase": "PHASE_0_NO_OUTPUT",
+    "approvalState": "NO_OUTPUT_SANDBOX_ONLY",
+    "outputAllowed": false,
+    "writerAllowed": false,
+    "parserAllowed": false,
+    "deployAllowed": false,
+    "fixturesTouchAllowed": false
+  },
+  "deniedRequestTypes": [
+    "WRITE_FILE",
+    "RUN_REAL_WRITER",
+    "EXPORT_KEYBOARD_FILE",
+    "RUN_PRODUCTION_PARSER",
+    "DEPLOY_PUBLIC_RELEASE",
+    "READ_FIXTURES",
+    "COPY_FIXTURES",
+    "MODIFY_FIXTURES"
+  ],
+  "safety": {
+    "writerImplementation": "BLOCKED",
+    "realWriter": "BLOCKED",
+    "realKeyboardOutput": "BLOCKED",
+    "forbiddenKeyboardExtensions": "BLOCKED",
+    "productionParser": "BLOCKED",
+    "deployPublicRelease": "BLOCKED",
+    "fixturesReadCopyModify": "BLOCKED",
+    "appJsxModified": false,
+    "sandboxPhase": "PHASE_0_NO_OUTPUT",
+    "outputAllowed": false,
+    "auditOnly": true
+  },
+  "generatedAt": "2026-06-21T11:11:25.935Z"
+}

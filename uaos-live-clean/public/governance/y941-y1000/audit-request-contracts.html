@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>UAOS Audit + Request Contracts</title>
+<style>
+body{font-family:Arial;background:#0f0f10;color:#eee;padding:28px;line-height:1.55}
+.card{background:#1b1b1d;border:1px solid #444;border-radius:16px;padding:20px;margin:14px 0}
+table{width:100%;border-collapse:collapse}td,th{border:1px solid #444;padding:10px}
+.pass{color:#80ffb0}.lock{color:#ffcc66}.bad{color:#ff8080}a{color:#9fd0ff}
+</style>
+</head>
+<body>
+<div class="card"><h1>UAOS Audit + Request Contracts</h1><h2>Y961-Y980</h2><p>Audit/request schema only. No writer. No output.</p></div>
+<div class="card"><h2>Dry-Run Request Required Fields</h2><table><tr><th>Field</th><th>Expected</th></tr><tr><td>requestId</td><td>string</td></tr>
+<tr><td>requestType</td><td>DRYRUN_PLAN_ONLY | DESCRIBE_OUTPUT_PLAN_ONLY | RUN_NO_OUTPUT_AUDIT_ONLY</td></tr>
+<tr><td>sandboxPhase</td><td>PHASE_0_NO_OUTPUT</td></tr>
+<tr><td>approvalState</td><td>NO_OUTPUT_SANDBOX_ONLY</td></tr>
+<tr><td>outputAllowed</td><td>false</td></tr>
+<tr><td>writerAllowed</td><td>false</td></tr>
+<tr><td>parserAllowed</td><td>false</td></tr>
+<tr><td>deployAllowed</td><td>false</td></tr>
+<tr><td>fixturesTouchAllowed</td><td>false</td></tr></table></div>
+<div class="card bad"><h2>Denied Request Types</h2><ul><li>WRITE_FILE</li>
+<li>RUN_REAL_WRITER</li>
+<li>EXPORT_KEYBOARD_FILE</li>
+<li>RUN_PRODUCTION_PARSER</li>
+<li>DEPLOY_PUBLIC_RELEASE</li>
+<li>READ_FIXTURES</li>
+<li>COPY_FIXTURES</li>
+<li>MODIFY_FIXTURES</li></ul></div>
+<div class="card pass"><h2>Audit Scope</h2><ul><li>scan sandbox generated folder</li>
+<li>scan reports/writer-sandbox-phase0</li>
+<li>scan public/governance/y941-y1000</li>
+<li>verify no forbidden extensions</li>
+<li>verify safety flags remain blocked</li>
+<li>verify outputAllowed is false</li></ul></div>
+<div class="card lock"><h2>Audit Does Not</h2><ul><li>run writer</li>
+<li>generate output</li>
+<li>read fixtures</li>
+<li>run production parser</li>
+<li>deploy</li>
+<li>modify App.jsx</li></ul></div>
+</body>
+</html>

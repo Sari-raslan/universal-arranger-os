@@ -1,0 +1,46 @@
+{
+  "phase": "Y941-Y950",
+  "title": "Dry-Run Input Contract",
+  "status": "PASS_DRYRUN_INPUT_CONTRACT_READY",
+  "purpose": "Define future dry-run request fields only. This does not run a writer.",
+  "allowedRequestType": "DRYRUN_PLAN_ONLY",
+  "requiredFields": [
+    "requestId",
+    "projectId",
+    "targetFamily",
+    "intent",
+    "sections",
+    "tracks",
+    "tempo",
+    "timeSignature",
+    "safetyProfile",
+    "approvalState"
+  ],
+  "allowedIntentValues": [
+    "VALIDATE_PLAN_ONLY",
+    "DESCRIBE_OUTPUT_PLAN_ONLY",
+    "RUN_NO_OUTPUT_AUDIT_ONLY"
+  ],
+  "deniedIntentValues": [
+    "WRITE_FILE",
+    "EXPORT_KEYBOARD_FILE",
+    "RUN_REAL_WRITER",
+    "RUN_PRODUCTION_PARSER",
+    "DEPLOY"
+  ],
+  "approvalStateRequired": "NO_OUTPUT_SANDBOX_ONLY",
+  "safety": {
+    "writerImplementation": "BLOCKED",
+    "realWriter": "BLOCKED",
+    "realKeyboardOutput": "BLOCKED",
+    "forbiddenKeyboardExtensions": "BLOCKED",
+    "productionParser": "BLOCKED",
+    "deployPublicRelease": "BLOCKED",
+    "fixturesReadCopyModify": "BLOCKED",
+    "appJsxModified": false,
+    "sandboxPhase": "PHASE_0_NO_OUTPUT",
+    "outputAllowed": false,
+    "contractOnly": true
+  },
+  "generatedAt": "2026-06-21T11:11:22.882Z"
+}

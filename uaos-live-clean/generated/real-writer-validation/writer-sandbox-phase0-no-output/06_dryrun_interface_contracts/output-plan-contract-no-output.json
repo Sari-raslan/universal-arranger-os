@@ -1,0 +1,41 @@
+{
+  "phase": "Y951-Y960",
+  "title": "No-Output Output-Plan Contract",
+  "status": "PASS_OUTPUT_PLAN_CONTRACT_READY_NO_OUTPUT",
+  "purpose": "Describe a future output plan without creating output.",
+  "outputCreationAllowed": false,
+  "outputPlanAllowedFields": [
+    "planId",
+    "targetFamily",
+    "formatNameTextOnly",
+    "expectedSections",
+    "expectedTracks",
+    "riskLevel",
+    "requiredApprovals",
+    "blockedOutputExtensions"
+  ],
+  "forbiddenOutputExtensions": [
+    ".STY",
+    ".SET",
+    ".PRS",
+    ".STL",
+    ".PAT",
+    ".MSP",
+    ".KST"
+  ],
+  "note": "Forbidden extensions are mentioned only as blocked text values. No file with these extensions may be created.",
+  "safety": {
+    "writerImplementation": "BLOCKED",
+    "realWriter": "BLOCKED",
+    "realKeyboardOutput": "BLOCKED",
+    "forbiddenKeyboardExtensions": "BLOCKED",
+    "productionParser": "BLOCKED",
+    "deployPublicRelease": "BLOCKED",
+    "fixturesReadCopyModify": "BLOCKED",
+    "appJsxModified": false,
+    "sandboxPhase": "PHASE_0_NO_OUTPUT",
+    "outputAllowed": false,
+    "contractOnly": true
+  },
+  "generatedAt": "2026-06-21T11:11:22.883Z"
+}
