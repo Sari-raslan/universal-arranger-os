@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>UAOS Negative Test Proof</title>
+<style>
+body{font-family:Arial;background:#0f0f10;color:#eee;padding:28px;line-height:1.55}
+.card{background:#1b1b1d;border:1px solid #444;border-radius:16px;padding:20px;margin:14px 0}
+table{width:100%;border-collapse:collapse}td,th{border:1px solid #444;padding:10px}
+.pass{color:#80ffb0}.lock{color:#ffcc66}.bad{color:#ff8080}
+</style>
+</head>
+<body>
+<div class="card"><h1>UAOS Negative Test Matrix</h1><h2>PASS_NEGATIVE_TEST_PROOF_READY</h2><p>All forbidden actions must be rejected with no side effects.</p></div>
+<div class="card"><table><tr><th>ID</th><th>Action</th><th>Expected</th><th>Actual</th><th>Side Effect</th></tr><tr><td>NEG-001</td><td>createWriterAdapter</td><td>REJECTED</td><td>REJECTED</td><td>NO</td></tr>
+<tr><td>NEG-002</td><td>serializeKeyboardBinary</td><td>REJECTED</td><td>REJECTED</td><td>NO</td></tr>
+<tr><td>NEG-003</td><td>createForbiddenExtension</td><td>REJECTED</td><td>REJECTED</td><td>NO</td></tr>
+<tr><td>NEG-004</td><td>connectProductionParser</td><td>REJECTED</td><td>REJECTED</td><td>NO</td></tr>
+<tr><td>NEG-005</td><td>deployPublicRelease</td><td>REJECTED</td><td>REJECTED</td><td>NO</td></tr>
+<tr><td>NEG-006</td><td>readFixtures</td><td>REJECTED</td><td>REJECTED</td><td>NO</td></tr>
+<tr><td>NEG-007</td><td>copyFixtures</td><td>REJECTED</td><td>REJECTED</td><td>NO</td></tr>
+<tr><td>NEG-008</td><td>modifyFixtures</td><td>REJECTED</td><td>REJECTED</td><td>NO</td></tr>
+<tr><td>NEG-009</td><td>modifyAppJsx</td><td>REJECTED</td><td>REJECTED</td><td>NO</td></tr>
+<tr><td>NEG-010</td><td>enableOutputAllowed</td><td>REJECTED</td><td>REJECTED</td><td>NO</td></tr></table></div>
+</body>
+</html>

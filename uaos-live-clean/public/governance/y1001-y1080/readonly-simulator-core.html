@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>UAOS Read-Only Sandbox Simulator</title>
+<style>
+body{font-family:Arial;background:#0f0f10;color:#eee;padding:28px;line-height:1.55}
+.card{background:#1b1b1d;border:1px solid #444;border-radius:16px;padding:20px;margin:14px 0}
+table{width:100%;border-collapse:collapse}td,th{border:1px solid #444;padding:10px}
+.pass{color:#80ffb0}.lock{color:#ffcc66}.bad{color:#ff8080}a{color:#9fd0ff}
+</style>
+</head>
+<body>
+<div class="card"><h1>UAOS Read-Only Sandbox Simulator</h1><h2>PASS_READONLY_SIMULATOR_CORE_READY</h2><p>No writer. No output. Simulator only.</p></div>
+<div class="card"><table><tr><th>ID</th><th>Request Type</th><th>Result</th><th>Output Created</th></tr><tr><td>REQ-001</td><td>VALIDATE_PLAN_ONLY</td><td>ALLOW_READONLY</td><td>NO</td></tr>
+<tr><td>REQ-002</td><td>DESCRIBE_OUTPUT_PLAN_ONLY</td><td>ALLOW_READONLY</td><td>NO</td></tr>
+<tr><td>REQ-003</td><td>RUN_NO_OUTPUT_AUDIT_ONLY</td><td>ALLOW_READONLY</td><td>NO</td></tr>
+<tr><td>REQ-004</td><td>WRITE_FILE</td><td>REJECT</td><td>NO</td></tr>
+<tr><td>REQ-005</td><td>EXPORT_KEYBOARD_FILE</td><td>REJECT</td><td>NO</td></tr>
+<tr><td>REQ-006</td><td>RUN_REAL_WRITER</td><td>REJECT</td><td>NO</td></tr>
+<tr><td>REQ-007</td><td>RUN_PRODUCTION_PARSER</td><td>REJECT</td><td>NO</td></tr>
+<tr><td>REQ-008</td><td>DEPLOY_PUBLIC_RELEASE</td><td>REJECT</td><td>NO</td></tr>
+<tr><td>REQ-009</td><td>READ_FIXTURES</td><td>REJECT</td><td>NO</td></tr>
+<tr><td>REQ-010</td><td>COPY_FIXTURES</td><td>REJECT</td><td>NO</td></tr>
+<tr><td>REQ-011</td><td>MODIFY_FIXTURES</td><td>REJECT</td><td>NO</td></tr>
+<tr><td>REQ-012</td><td>MODIFY_APP_JSX</td><td>REJECT</td><td>NO</td></tr></table></div>
+<div class="card lock"><h2>Hard Locks</h2><p>Writer: BLOCKED | Real output: BLOCKED | Production parser: BLOCKED | Deploy: BLOCKED | Fixtures touch: BLOCKED | App.jsx: false</p></div>
+</body>
+</html>

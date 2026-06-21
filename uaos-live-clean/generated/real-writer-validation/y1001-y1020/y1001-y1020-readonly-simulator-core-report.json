@@ -1,0 +1,204 @@
+{
+  "phase": "Y1001-Y1020",
+  "title": "Read-Only Sandbox Simulator Core",
+  "status": "PASS_READONLY_SIMULATOR_CORE_READY",
+  "requests": [
+    {
+      "id": "REQ-001",
+      "type": "VALIDATE_PLAN_ONLY",
+      "expected": "ALLOW_READONLY"
+    },
+    {
+      "id": "REQ-002",
+      "type": "DESCRIBE_OUTPUT_PLAN_ONLY",
+      "expected": "ALLOW_READONLY"
+    },
+    {
+      "id": "REQ-003",
+      "type": "RUN_NO_OUTPUT_AUDIT_ONLY",
+      "expected": "ALLOW_READONLY"
+    },
+    {
+      "id": "REQ-004",
+      "type": "WRITE_FILE",
+      "expected": "REJECT"
+    },
+    {
+      "id": "REQ-005",
+      "type": "EXPORT_KEYBOARD_FILE",
+      "expected": "REJECT"
+    },
+    {
+      "id": "REQ-006",
+      "type": "RUN_REAL_WRITER",
+      "expected": "REJECT"
+    },
+    {
+      "id": "REQ-007",
+      "type": "RUN_PRODUCTION_PARSER",
+      "expected": "REJECT"
+    },
+    {
+      "id": "REQ-008",
+      "type": "DEPLOY_PUBLIC_RELEASE",
+      "expected": "REJECT"
+    },
+    {
+      "id": "REQ-009",
+      "type": "READ_FIXTURES",
+      "expected": "REJECT"
+    },
+    {
+      "id": "REQ-010",
+      "type": "COPY_FIXTURES",
+      "expected": "REJECT"
+    },
+    {
+      "id": "REQ-011",
+      "type": "MODIFY_FIXTURES",
+      "expected": "REJECT"
+    },
+    {
+      "id": "REQ-012",
+      "type": "MODIFY_APP_JSX",
+      "expected": "REJECT"
+    }
+  ],
+  "results": [
+    {
+      "id": "REQ-001",
+      "type": "VALIDATE_PLAN_ONLY",
+      "result": "ALLOW_READONLY",
+      "outputCreated": false,
+      "writerTouched": false,
+      "parserTouched": false,
+      "fixturesTouched": false,
+      "appJsxTouched": false
+    },
+    {
+      "id": "REQ-002",
+      "type": "DESCRIBE_OUTPUT_PLAN_ONLY",
+      "result": "ALLOW_READONLY",
+      "outputCreated": false,
+      "writerTouched": false,
+      "parserTouched": false,
+      "fixturesTouched": false,
+      "appJsxTouched": false
+    },
+    {
+      "id": "REQ-003",
+      "type": "RUN_NO_OUTPUT_AUDIT_ONLY",
+      "result": "ALLOW_READONLY",
+      "outputCreated": false,
+      "writerTouched": false,
+      "parserTouched": false,
+      "fixturesTouched": false,
+      "appJsxTouched": false
+    },
+    {
+      "id": "REQ-004",
+      "type": "WRITE_FILE",
+      "result": "REJECT",
+      "outputCreated": false,
+      "writerTouched": false,
+      "parserTouched": false,
+      "fixturesTouched": false,
+      "appJsxTouched": false
+    },
+    {
+      "id": "REQ-005",
+      "type": "EXPORT_KEYBOARD_FILE",
+      "result": "REJECT",
+      "outputCreated": false,
+      "writerTouched": false,
+      "parserTouched": false,
+      "fixturesTouched": false,
+      "appJsxTouched": false
+    },
+    {
+      "id": "REQ-006",
+      "type": "RUN_REAL_WRITER",
+      "result": "REJECT",
+      "outputCreated": false,
+      "writerTouched": false,
+      "parserTouched": false,
+      "fixturesTouched": false,
+      "appJsxTouched": false
+    },
+    {
+      "id": "REQ-007",
+      "type": "RUN_PRODUCTION_PARSER",
+      "result": "REJECT",
+      "outputCreated": false,
+      "writerTouched": false,
+      "parserTouched": false,
+      "fixturesTouched": false,
+      "appJsxTouched": false
+    },
+    {
+      "id": "REQ-008",
+      "type": "DEPLOY_PUBLIC_RELEASE",
+      "result": "REJECT",
+      "outputCreated": false,
+      "writerTouched": false,
+      "parserTouched": false,
+      "fixturesTouched": false,
+      "appJsxTouched": false
+    },
+    {
+      "id": "REQ-009",
+      "type": "READ_FIXTURES",
+      "result": "REJECT",
+      "outputCreated": false,
+      "writerTouched": false,
+      "parserTouched": false,
+      "fixturesTouched": false,
+      "appJsxTouched": false
+    },
+    {
+      "id": "REQ-010",
+      "type": "COPY_FIXTURES",
+      "result": "REJECT",
+      "outputCreated": false,
+      "writerTouched": false,
+      "parserTouched": false,
+      "fixturesTouched": false,
+      "appJsxTouched": false
+    },
+    {
+      "id": "REQ-011",
+      "type": "MODIFY_FIXTURES",
+      "result": "REJECT",
+      "outputCreated": false,
+      "writerTouched": false,
+      "parserTouched": false,
+      "fixturesTouched": false,
+      "appJsxTouched": false
+    },
+    {
+      "id": "REQ-012",
+      "type": "MODIFY_APP_JSX",
+      "result": "REJECT",
+      "outputCreated": false,
+      "writerTouched": false,
+      "parserTouched": false,
+      "fixturesTouched": false,
+      "appJsxTouched": false
+    }
+  ],
+  "mismatches": [],
+  "allRejectedCorrectly": true,
+  "safety": {
+    "writerImplementation": "BLOCKED",
+    "realWriter": "BLOCKED",
+    "realKeyboardOutput": "BLOCKED",
+    "forbiddenKeyboardExtensions": "BLOCKED",
+    "productionParser": "BLOCKED",
+    "deployPublicRelease": "BLOCKED",
+    "fixturesReadCopyModify": "BLOCKED",
+    "appJsxModified": false,
+    "simulatorMode": "READ_ONLY_NO_OUTPUT",
+    "outputAllowed": false
+  },
+  "generatedAt": "2026-06-21T11:19:37.076Z"
+}

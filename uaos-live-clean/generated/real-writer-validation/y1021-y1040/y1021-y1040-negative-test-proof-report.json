@@ -1,0 +1,154 @@
+{
+  "phase": "Y1021-Y1040",
+  "title": "Negative Test Matrix + Forbidden Action Proof",
+  "status": "PASS_NEGATIVE_TEST_PROOF_READY",
+  "negativeTests": [
+    {
+      "id": "NEG-001",
+      "action": "createWriterAdapter",
+      "expected": "REJECTED"
+    },
+    {
+      "id": "NEG-002",
+      "action": "serializeKeyboardBinary",
+      "expected": "REJECTED"
+    },
+    {
+      "id": "NEG-003",
+      "action": "createForbiddenExtension",
+      "expected": "REJECTED"
+    },
+    {
+      "id": "NEG-004",
+      "action": "connectProductionParser",
+      "expected": "REJECTED"
+    },
+    {
+      "id": "NEG-005",
+      "action": "deployPublicRelease",
+      "expected": "REJECTED"
+    },
+    {
+      "id": "NEG-006",
+      "action": "readFixtures",
+      "expected": "REJECTED"
+    },
+    {
+      "id": "NEG-007",
+      "action": "copyFixtures",
+      "expected": "REJECTED"
+    },
+    {
+      "id": "NEG-008",
+      "action": "modifyFixtures",
+      "expected": "REJECTED"
+    },
+    {
+      "id": "NEG-009",
+      "action": "modifyAppJsx",
+      "expected": "REJECTED"
+    },
+    {
+      "id": "NEG-010",
+      "action": "enableOutputAllowed",
+      "expected": "REJECTED"
+    }
+  ],
+  "results": [
+    {
+      "id": "NEG-001",
+      "action": "createWriterAdapter",
+      "expected": "REJECTED",
+      "actual": "REJECTED",
+      "proof": "Blocked by sandbox phase-0 no-output policy",
+      "sideEffect": false
+    },
+    {
+      "id": "NEG-002",
+      "action": "serializeKeyboardBinary",
+      "expected": "REJECTED",
+      "actual": "REJECTED",
+      "proof": "Blocked by sandbox phase-0 no-output policy",
+      "sideEffect": false
+    },
+    {
+      "id": "NEG-003",
+      "action": "createForbiddenExtension",
+      "expected": "REJECTED",
+      "actual": "REJECTED",
+      "proof": "Blocked by sandbox phase-0 no-output policy",
+      "sideEffect": false
+    },
+    {
+      "id": "NEG-004",
+      "action": "connectProductionParser",
+      "expected": "REJECTED",
+      "actual": "REJECTED",
+      "proof": "Blocked by sandbox phase-0 no-output policy",
+      "sideEffect": false
+    },
+    {
+      "id": "NEG-005",
+      "action": "deployPublicRelease",
+      "expected": "REJECTED",
+      "actual": "REJECTED",
+      "proof": "Blocked by sandbox phase-0 no-output policy",
+      "sideEffect": false
+    },
+    {
+      "id": "NEG-006",
+      "action": "readFixtures",
+      "expected": "REJECTED",
+      "actual": "REJECTED",
+      "proof": "Blocked by sandbox phase-0 no-output policy",
+      "sideEffect": false
+    },
+    {
+      "id": "NEG-007",
+      "action": "copyFixtures",
+      "expected": "REJECTED",
+      "actual": "REJECTED",
+      "proof": "Blocked by sandbox phase-0 no-output policy",
+      "sideEffect": false
+    },
+    {
+      "id": "NEG-008",
+      "action": "modifyFixtures",
+      "expected": "REJECTED",
+      "actual": "REJECTED",
+      "proof": "Blocked by sandbox phase-0 no-output policy",
+      "sideEffect": false
+    },
+    {
+      "id": "NEG-009",
+      "action": "modifyAppJsx",
+      "expected": "REJECTED",
+      "actual": "REJECTED",
+      "proof": "Blocked by sandbox phase-0 no-output policy",
+      "sideEffect": false
+    },
+    {
+      "id": "NEG-010",
+      "action": "enableOutputAllowed",
+      "expected": "REJECTED",
+      "actual": "REJECTED",
+      "proof": "Blocked by sandbox phase-0 no-output policy",
+      "sideEffect": false
+    }
+  ],
+  "failures": [],
+  "allForbiddenActionsRejected": true,
+  "safety": {
+    "writerImplementation": "BLOCKED",
+    "realWriter": "BLOCKED",
+    "realKeyboardOutput": "BLOCKED",
+    "forbiddenKeyboardExtensions": "BLOCKED",
+    "productionParser": "BLOCKED",
+    "deployPublicRelease": "BLOCKED",
+    "fixturesReadCopyModify": "BLOCKED",
+    "appJsxModified": false,
+    "negativeTestOnly": true,
+    "outputAllowed": false
+  },
+  "generatedAt": "2026-06-21T11:19:40.086Z"
+}
