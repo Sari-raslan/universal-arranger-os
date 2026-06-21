@@ -1,0 +1,242 @@
+{
+  "format": "UAOS_SECTION_TO_BINARY_MAPPING_PLAN",
+  "version": "54.0.0",
+  "target": "yamaha",
+  "futureFormats": [
+    ".STY"
+  ],
+  "realBinaryWriterReady": false,
+  "binaryOutputBlocked": true,
+  "source": {
+    "sections": [
+      {
+        "id": "intro1",
+        "type": "intro",
+        "bars": 4,
+        "chord": "Dm"
+      },
+      {
+        "id": "mainA",
+        "type": "main",
+        "bars": 8,
+        "chord": "Dm"
+      },
+      {
+        "id": "fill1",
+        "type": "fill",
+        "bars": 1,
+        "chord": "A7"
+      },
+      {
+        "id": "mainB",
+        "type": "main",
+        "bars": 8,
+        "chord": "Gm"
+      },
+      {
+        "id": "ending1",
+        "type": "ending",
+        "bars": 4,
+        "chord": "Dm"
+      }
+    ],
+    "tracks": [
+      {
+        "id": "drums",
+        "role": "drums",
+        "channel": 10
+      },
+      {
+        "id": "bass",
+        "role": "bass",
+        "channel": 2
+      },
+      {
+        "id": "chords",
+        "role": "chords",
+        "channel": 3
+      },
+      {
+        "id": "pad",
+        "role": "pad",
+        "channel": 4
+      },
+      {
+        "id": "lead",
+        "role": "lead",
+        "channel": 5
+      }
+    ]
+  },
+  "mapping": {
+    "sectionSlots": [
+      {
+        "slot": "INTRO_A",
+        "sourceSection": {
+          "id": "intro1",
+          "type": "intro",
+          "bars": 4,
+          "chord": "Dm"
+        },
+        "safeIntermediateOnly": true
+      },
+      {
+        "slot": "INTRO_B",
+        "sourceSection": {
+          "id": "mainA",
+          "type": "main",
+          "bars": 8,
+          "chord": "Dm"
+        },
+        "safeIntermediateOnly": true
+      },
+      {
+        "slot": "INTRO_C",
+        "sourceSection": {
+          "id": "fill1",
+          "type": "fill",
+          "bars": 1,
+          "chord": "A7"
+        },
+        "safeIntermediateOnly": true
+      },
+      {
+        "slot": "MAIN_A",
+        "sourceSection": {
+          "id": "mainB",
+          "type": "main",
+          "bars": 8,
+          "chord": "Gm"
+        },
+        "safeIntermediateOnly": true
+      },
+      {
+        "slot": "MAIN_B",
+        "sourceSection": {
+          "id": "ending1",
+          "type": "ending",
+          "bars": 4,
+          "chord": "Dm"
+        },
+        "safeIntermediateOnly": true
+      },
+      {
+        "slot": "MAIN_C",
+        "sourceSection": {
+          "id": "intro1",
+          "type": "intro",
+          "bars": 4,
+          "chord": "Dm"
+        },
+        "safeIntermediateOnly": true
+      },
+      {
+        "slot": "MAIN_D",
+        "sourceSection": {
+          "id": "mainA",
+          "type": "main",
+          "bars": 8,
+          "chord": "Dm"
+        },
+        "safeIntermediateOnly": true
+      },
+      {
+        "slot": "FILL_A",
+        "sourceSection": {
+          "id": "fill1",
+          "type": "fill",
+          "bars": 1,
+          "chord": "A7"
+        },
+        "safeIntermediateOnly": true
+      },
+      {
+        "slot": "FILL_B",
+        "sourceSection": {
+          "id": "mainB",
+          "type": "main",
+          "bars": 8,
+          "chord": "Gm"
+        },
+        "safeIntermediateOnly": true
+      },
+      {
+        "slot": "ENDING_A",
+        "sourceSection": {
+          "id": "ending1",
+          "type": "ending",
+          "bars": 4,
+          "chord": "Dm"
+        },
+        "safeIntermediateOnly": true
+      },
+      {
+        "slot": "ENDING_B",
+        "sourceSection": {
+          "id": "intro1",
+          "type": "intro",
+          "bars": 4,
+          "chord": "Dm"
+        },
+        "safeIntermediateOnly": true
+      },
+      {
+        "slot": "ENDING_C",
+        "sourceSection": {
+          "id": "mainA",
+          "type": "main",
+          "bars": 8,
+          "chord": "Dm"
+        },
+        "safeIntermediateOnly": true
+      }
+    ],
+    "trackChannels": [
+      {
+        "trackId": "drums",
+        "role": "drums",
+        "channel": 10,
+        "binaryChannelReady": false,
+        "policy": "style-section-midi-map"
+      },
+      {
+        "trackId": "bass",
+        "role": "bass",
+        "channel": 2,
+        "binaryChannelReady": false,
+        "policy": "style-section-midi-map"
+      },
+      {
+        "trackId": "chords",
+        "role": "chords",
+        "channel": 3,
+        "binaryChannelReady": false,
+        "policy": "style-section-midi-map"
+      },
+      {
+        "trackId": "pad",
+        "role": "pad",
+        "channel": 4,
+        "binaryChannelReady": false,
+        "policy": "style-section-midi-map"
+      },
+      {
+        "trackId": "lead",
+        "role": "lead",
+        "channel": 5,
+        "binaryChannelReady": false,
+        "policy": "style-section-midi-map"
+      }
+    ]
+  },
+  "safety": {
+    "warning": "Phase 54 creates mapping plans only. It does not write proprietary keyboard binary files.",
+    "allowedNow": [
+      ".json",
+      ".uaosbin"
+    ],
+    "blockedUntilValidated": [
+      ".STY"
+    ]
+  }
+}

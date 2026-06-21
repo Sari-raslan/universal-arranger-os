@@ -1,0 +1,206 @@
+{
+  "format": "UAOS_SECTION_TO_BINARY_MAPPING_PLAN",
+  "version": "54.0.0",
+  "target": "ketron",
+  "futureFormats": [
+    ".PAT",
+    ".MSP",
+    ".KST"
+  ],
+  "realBinaryWriterReady": false,
+  "binaryOutputBlocked": true,
+  "source": {
+    "sections": [
+      {
+        "id": "intro1",
+        "type": "intro",
+        "bars": 4,
+        "chord": "Dm"
+      },
+      {
+        "id": "mainA",
+        "type": "main",
+        "bars": 8,
+        "chord": "Dm"
+      },
+      {
+        "id": "fill1",
+        "type": "fill",
+        "bars": 1,
+        "chord": "A7"
+      },
+      {
+        "id": "mainB",
+        "type": "main",
+        "bars": 8,
+        "chord": "Gm"
+      },
+      {
+        "id": "ending1",
+        "type": "ending",
+        "bars": 4,
+        "chord": "Dm"
+      }
+    ],
+    "tracks": [
+      {
+        "id": "drums",
+        "role": "drums",
+        "channel": 10
+      },
+      {
+        "id": "bass",
+        "role": "bass",
+        "channel": 2
+      },
+      {
+        "id": "chords",
+        "role": "chords",
+        "channel": 3
+      },
+      {
+        "id": "pad",
+        "role": "pad",
+        "channel": 4
+      },
+      {
+        "id": "lead",
+        "role": "lead",
+        "channel": 5
+      }
+    ]
+  },
+  "mapping": {
+    "sectionSlots": [
+      {
+        "slot": "INTRO",
+        "sourceSection": {
+          "id": "intro1",
+          "type": "intro",
+          "bars": 4,
+          "chord": "Dm"
+        },
+        "safeIntermediateOnly": true
+      },
+      {
+        "slot": "ARR_A",
+        "sourceSection": {
+          "id": "mainA",
+          "type": "main",
+          "bars": 8,
+          "chord": "Dm"
+        },
+        "safeIntermediateOnly": true
+      },
+      {
+        "slot": "ARR_B",
+        "sourceSection": {
+          "id": "fill1",
+          "type": "fill",
+          "bars": 1,
+          "chord": "A7"
+        },
+        "safeIntermediateOnly": true
+      },
+      {
+        "slot": "ARR_C",
+        "sourceSection": {
+          "id": "mainB",
+          "type": "main",
+          "bars": 8,
+          "chord": "Gm"
+        },
+        "safeIntermediateOnly": true
+      },
+      {
+        "slot": "ARR_D",
+        "sourceSection": {
+          "id": "ending1",
+          "type": "ending",
+          "bars": 4,
+          "chord": "Dm"
+        },
+        "safeIntermediateOnly": true
+      },
+      {
+        "slot": "FILL",
+        "sourceSection": {
+          "id": "intro1",
+          "type": "intro",
+          "bars": 4,
+          "chord": "Dm"
+        },
+        "safeIntermediateOnly": true
+      },
+      {
+        "slot": "BREAK",
+        "sourceSection": {
+          "id": "mainA",
+          "type": "main",
+          "bars": 8,
+          "chord": "Dm"
+        },
+        "safeIntermediateOnly": true
+      },
+      {
+        "slot": "ENDING",
+        "sourceSection": {
+          "id": "fill1",
+          "type": "fill",
+          "bars": 1,
+          "chord": "A7"
+        },
+        "safeIntermediateOnly": true
+      }
+    ],
+    "trackChannels": [
+      {
+        "trackId": "drums",
+        "role": "drums",
+        "channel": 10,
+        "binaryChannelReady": false,
+        "policy": "style-audio-drum-reference-map"
+      },
+      {
+        "trackId": "bass",
+        "role": "bass",
+        "channel": 2,
+        "binaryChannelReady": false,
+        "policy": "style-audio-drum-reference-map"
+      },
+      {
+        "trackId": "chords",
+        "role": "chords",
+        "channel": 3,
+        "binaryChannelReady": false,
+        "policy": "style-audio-drum-reference-map"
+      },
+      {
+        "trackId": "pad",
+        "role": "pad",
+        "channel": 4,
+        "binaryChannelReady": false,
+        "policy": "style-audio-drum-reference-map"
+      },
+      {
+        "trackId": "lead",
+        "role": "lead",
+        "channel": 5,
+        "binaryChannelReady": false,
+        "policy": "style-audio-drum-reference-map"
+      }
+    ]
+  },
+  "safety": {
+    "warning": "Phase 54 creates mapping plans only. It does not write proprietary keyboard binary files.",
+    "allowedNow": [
+      ".json",
+      ".uaosbin"
+    ],
+    "blockedUntilValidated": [
+      ".PAT",
+      ".MSP",
+      ".KST"
+    ]
+  }
+}
