@@ -1,0 +1,39 @@
+﻿<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>UAOS Y491-Y500 Final Dry-run Local Viewer Gate</title>
+  <style>
+    body{font-family:Arial;background:#101010;color:#eee;padding:28px;line-height:1.5}
+    .hero{padding:24px;border-radius:16px;background:#181818;border:1px solid #444;margin-bottom:18px}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+    .card{background:#1b1b1b;border:1px solid #444;border-radius:14px;padding:18px}
+    .pass{color:#80ffb0}.lock{color:#ffcc66}.bad{color:#ff8080}a{color:#9fd0ff}code{color:#9fe870}
+  </style>
+</head>
+<body>
+  <div class="hero">
+    <h1>UAOS Final Dry-run Local Viewer Gate</h1>
+    <h2>Y491-Y500 PASS_LOCAL_VIEWER_READY</h2>
+    <p>Dry-run manifest viewer and local demo UI pages are ready. No writer or real keyboard output is enabled.</p>
+  </div>
+
+  <div class="grid">
+    <div class="card pass"><h3>Manifest Viewer</h3><p>READY</p></div>
+    <div class="card pass"><h3>Local UI Pages</h3><p>READY</p></div>
+    <div class="card pass"><h3>Dry-run QA</h3><p>READY</p></div>
+    <div class="card pass"><h3>JSON Only</h3><p>PASS</p></div>
+    <div class="card lock"><h3>Real Writer</h3><p>BLOCKED</p></div>
+    <div class="card lock"><h3>Real Keyboard Output</h3><p>BLOCKED</p></div>
+    <div class="card lock"><h3>Production Parser</h3><p>BLOCKED</p></div>
+    <div class="card lock"><h3>Deploy</h3><p>BLOCKED</p></div>
+  </div>
+
+  <div class="card" style="margin-top:18px">
+    <h3>Open Pages</h3>
+    <p><a href="./y461-y470-dryrun-manifest-viewer.html">Dry-run Manifest Viewer</a></p>
+    <p><a href="./y471-y480-dryrun-local-ui-pack.html">Dry-run Local UI Pack</a></p>
+    <p><a href="./y481-y490-dryrun-writer-qa-dashboard.html">Dry-run Writer QA Dashboard</a></p>
+  </div>
+</body>
+</html>
