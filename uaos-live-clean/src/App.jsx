@@ -175,6 +175,8 @@ export default function App() {
 
 <section className="premiumSection pay2126SandboxGateLinks"><div className="sectionTitle"><p className="spectrumLabel">Sandbox gate</p><h2>Payment sandbox is prepared but still locked until explicit approval.</h2></div><div className="sandboxGateGrid"><a href="/universal-arranger-os/paypal/sandbox-approval-gate.html"><b>Sandbox Approval Gate</b><span>No client ID stored</span></a><a href="/universal-arranger-os/commercial/payment-activation-checklist.html"><b>Activation Checklist</b><span>Legal/tax/sandbox steps</span></a><a href="/universal-arranger-os/qa/payment-admin-status.html"><b>Payment Admin Status</b><span>Local readiness dashboard</span></a></div></section>
 
+<section className="premiumSection pay2734FinalCommercialGate"><div className="sectionTitle"><p className="spectrumLabel">Final commercial gate</p><h2>Payment routes are complete locally, but activation remains locked.</h2></div><div className="finalCommercialGrid"><a href="/universal-arranger-os/commercial/payment-sitemap.html"><b>Payment Sitemap</b><span>All local payment routes</span></a><a href="/universal-arranger-os/commercial/pricing-faq.html"><b>Pricing FAQ</b><span>Clear payment answers</span></a><a href="/universal-arranger-os/checkout/payment-waitlist.html"><b>Payment Waitlist</b><span>Safe pre-launch placeholder</span></a><a href="/universal-arranger-os/checkout/contact-sales.html"><b>Contact Sales</b><span>Business placeholder</span></a><a href="/universal-arranger-os/legal/germany-eu-tax-readiness.html"><b>Germany/EU Tax</b><span>Review required before live</span></a></div></section>
+
 <footer className="premiumFooter">
         <b>UAOS</b>
         <span>Universal Arranger OS · Premium local product preview</span>
@@ -182,6 +184,7 @@ export default function App() {
     </main>
   );
 }
+
 
 
 
