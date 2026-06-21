@@ -181,6 +181,8 @@ export default function App() {
 
 <section className="pay5360CommercialLaunchGuard"><b>Commercial launch guard active.</b><span>Payment pages can be published only as inactive placeholders. Live checkout remains forbidden.</span><a href="/universal-arranger-os/qa/final-payment-launch-guard.html">Final payment QA</a></section>
 
+<section className="pay6166PaymentFreeze"><b>Payment freeze active.</b><span>Public launch is allowed only with inactive checkout placeholders.</span><a href="/universal-arranger-os/qa/payment-freeze-dashboard.html">Freeze dashboard</a></section>
+
 <footer className="premiumFooter">
         <b>UAOS</b>
         <span>Universal Arranger OS · Premium local product preview</span>
@@ -188,6 +190,7 @@ export default function App() {
     </main>
   );
 }
+
 
 
 
