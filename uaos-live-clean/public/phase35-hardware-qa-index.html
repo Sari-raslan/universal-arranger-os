@@ -1,0 +1,59 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UAOS Phase 35 Hardware Export QA Index</title>
+  <style>
+    body { margin:0; font-family:Arial, sans-serif; background:#070b14; color:#eef4ff; }
+    main { max-width:1100px; margin:0 auto; padding:32px; }
+    h1 { font-size:36px; margin-bottom:8px; }
+    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:16px; margin-top:24px; }
+    .card { background:#101827; border:1px solid #26354f; border-radius:18px; padding:20px; }
+    a { color:#93c5fd; font-weight:bold; text-decoration:none; }
+    .pass { color:#7CFC98; font-weight:bold; }
+    .warn { color:#facc15; font-weight:bold; }
+    code { background:#030712; padding:3px 6px; border-radius:6px; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>UAOS Phase 35 Hardware Export QA Index</h1>
+    <p class="pass">FINAL LOCAL HARDWARE EXPORT QA INDEX PASS CANDIDATE</p>
+    <p>This page collects the verified local hardware export prototype gates.</p>
+
+    <div class="grid">
+      <div class="card">
+        <h2>Phase 28</h2>
+        <p>Hardware Export Layer: KORG / Yamaha / Roland / Ketron JSON manifests.</p>
+        <a href="./phase28-hardware-export.html">Open Phase 28</a>
+      </div>
+
+      <div class="card">
+        <h2>Phase 29</h2>
+        <p>Style sections + MIDI timeline + hardware export integration.</p>
+        <a href="./phase29-hardware-integration.html">Open Phase 29</a>
+      </div>
+
+      <div class="card">
+        <h2>Phase 30</h2>
+        <p>Local product gate dashboard.</p>
+        <a href="./phase30-local-product-gate.html">Open Phase 30</a>
+      </div>
+
+      <div class="card">
+        <h2>Phase 34</h2>
+        <p>Real hardware binary export roadmap gate.</p>
+        <a href="./phase34-real-hardware-roadmap.html">Open Phase 34</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Final QA Status</h2>
+      <p class="pass">Local prototype gates: PASS</p>
+      <p class="warn">Real proprietary binary export remains future work.</p>
+      <p>Run locally with <code>npm run preview</code> or <code>npm run dev</code>.</p>
+    </div>
+  </main>
+</body>
+</html>
