@@ -335,3 +335,31 @@ h1{font-size:clamp(44px,6.5vw,86px);line-height:.93;margin:14px 0 20px}h2{font-s
   .final14Topbar .brand{min-width:auto !important}
   .final14Nav a{font-size:12px !important;padding:0 9px !important}
 }
+
+/* FINAL-15 duplicate cleanup */
+.final15Account{
+  flex:0 0 auto !important;
+  display:inline-flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  height:42px !important;
+  padding:0 16px !important;
+  border-radius:14px !important;
+  border:1px solid rgba(103,232,249,.38) !important;
+  background:rgba(15,23,42,.72) !important;
+  color:#fff !important;
+  font-weight:950 !important;
+  white-space:nowrap !important;
+}
+.final15Account:before{
+  content:"" !important;
+  width:9px !important;
+  height:9px !important;
+  border-radius:999px !important;
+  background:#67e8f9 !important;
+  margin-right:9px !important;
+  box-shadow:0 0 18px #67e8f9 !important;
+}
+.hero{
+  padding-top:64px !important;
+}

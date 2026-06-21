@@ -35,8 +35,7 @@ export default function App() {
           <a href="#support">Support</a>
           <a href="#onboarding">Start</a>
           <a href="#legal">Legal</a>
-        </div>
-        <a className="accountBtn final14Account" href="#support">Account / الحساب</a>
+        </div><a className="accountBtn final15Account" href="#support">Account / الحساب</a>
       </nav>
 
       <section className="hero" id="home">
@@ -54,8 +53,8 @@ export default function App() {
           </div>
           <div className="miniStats">
             <span>Local UI: Updated</span>
-            <span>Build: Required PASS</span>
-            <span>Deploy: waiting Vercel reset</span>
+            <span>Build: PASS locally</span>
+            <span>Deploy: retry after Vercel reset</span>
           </div>
         </div>
 
@@ -244,6 +243,7 @@ export default function App() {
     </main>
   );
 }
+
 
 
 
