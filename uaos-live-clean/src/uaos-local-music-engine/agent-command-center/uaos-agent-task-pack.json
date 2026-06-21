@@ -18,10 +18,8 @@
       "tasks": [
         "Run node scripts/qa/verify-local-music-engine-all.mjs",
         "Run node scripts/qa/final-local-music-engine-gate.mjs",
-        "Report failures only with exact command and last 30 lines"
-      ],
-      "allowed": ["read project files", "run local QA", "write markdown report"],
-      "locked": ["delete", "deploy", "edit App.jsx"]
+        "Report failures only with command and last 30 lines"
+      ]
     },
     {
       "agentId": "scanner-agent",
@@ -30,9 +28,7 @@
         "Use Real Limited Scanner v1 only with approval JSON and explicit flag",
         "Generate metadata-only scanner report",
         "Do not read file contents"
-      ],
-      "allowed": ["selected folder metadata only", "JSON report"],
-      "locked": ["content read", "archives", "copy/move/delete", "parser"]
+      ]
     },
     {
       "agentId": "pipeline-agent",
@@ -41,20 +37,16 @@
         "Import scanner report into pipeline",
         "Generate final workspace JSON",
         "Run import QA"
-      ],
-      "allowed": ["JSON text conversion", "metadata-only workspace"],
-      "locked": ["MIDI export", "audio render", "keyboard output"]
+      ]
     },
     {
       "agentId": "docs-agent",
       "title": "Docs Agent",
       "tasks": [
-        "Update local documentation summaries",
+        "Update local documentation",
         "Keep status honest: safe local prototype only",
-        "List locked commercial/production items"
-      ],
-      "allowed": ["docs", "reports", "local status pages"],
-      "locked": ["marketing claims", "production-ready claims", "deploy"]
+        "List locked production items"
+      ]
     }
   ]
 }

@@ -8,9 +8,7 @@
     body{font-family:Arial,sans-serif;background:#08101f;color:#f4f7ff;margin:0;padding:24px}
     .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
     .card{background:#131d35;border:1px solid #2c3a66;border-radius:18px;padding:18px;margin:14px 0}
-    .pass{color:#75ffb1}
-    .lock{color:#ffd479}
-    a{color:#9bdcff}
+    .pass{color:#75ffb1}.lock{color:#ffd479}a{color:#9bdcff}
     code{background:#050a14;padding:2px 6px;border-radius:7px}
   </style>
 </head>
@@ -35,22 +33,15 @@
     </div>
 
     <div class="card">
-      <h2 class="lock">Not Yet Production</h2>
+      <h2 class="lock">Still Not Production</h2>
       <ul>
-        <li>No real audio engine rendering</li>
-        <li>No real MIDI export in this local gate</li>
+        <li>No real audio rendering</li>
+        <li>No real MIDI export in this gate</li>
         <li>No keyboard .STY/.SET/.PRS writer</li>
         <li>No production parser</li>
         <li>No installer/signing/payment/account</li>
         <li>No deploy from this launcher</li>
       </ul>
-    </div>
-
-    <div class="card">
-      <h2>Commands</h2>
-      <p><code>node scripts/qa/verify-local-music-engine-all.mjs</code></p>
-      <p><code>node scripts/qa/final-local-music-engine-gate.mjs</code></p>
-      <p><code>npm run build</code></p>
     </div>
   </div>
 
