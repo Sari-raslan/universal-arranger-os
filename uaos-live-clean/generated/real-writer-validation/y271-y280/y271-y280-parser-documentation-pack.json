@@ -1,0 +1,41 @@
+{
+  "phase": "Y271-Y280",
+  "title": "Yamaha Parser Documentation Pack",
+  "status": "PASS",
+  "documentOnly": true,
+  "sections": [
+    {
+      "title": "Scope",
+      "body": "Safe read-only Yamaha parser design documentation. No production parser, no writer, no real output."
+    },
+    {
+      "title": "Inputs",
+      "body": "Existing reports under generated/real-writer-validation only."
+    },
+    {
+      "title": "Rule Simulator",
+      "body": "Y251-Y260 produced simulation-only outputs."
+    },
+    {
+      "title": "Rule Validation",
+      "body": "Y261-Y270 summary total=0, good=0, weak=0, none=0."
+    },
+    {
+      "title": "Writer Lock",
+      "body": "Writer remains HARD_LOCKED. Real .STY/.SET/.PRS/.STL/.PAT/.MSP/.KST outputs remain blocked."
+    },
+    {
+      "title": "Next Safe Work",
+      "body": "More documentation, dashboards, and stop gates only unless new explicit approval is provided."
+    }
+  ],
+  "writerUnlock": "BLOCKED",
+  "hardLimits": {
+    "fixtureRead": false,
+    "productionParserImplementation": false,
+    "writerImplementation": false,
+    "realOutput": false,
+    "deploy": false
+  },
+  "generatedAt": "2026-06-21T08:27:30.349Z"
+}

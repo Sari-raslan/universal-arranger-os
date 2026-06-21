@@ -1,0 +1,60 @@
+{
+  "phase": "Y281-Y290",
+  "title": "Parser QA Dashboard",
+  "status": "PASS",
+  "dashboardOnly": true,
+  "cards": [
+    {
+      "label": "Rule Simulator",
+      "phase": "Y251-Y260",
+      "status": "PASS",
+      "safe": true
+    },
+    {
+      "label": "Rule Validation",
+      "phase": "Y261-Y270",
+      "status": "PASS",
+      "safe": true,
+      "summary": {
+        "total": 0,
+        "good": 0,
+        "weak": 0,
+        "none": 0
+      }
+    },
+    {
+      "label": "Documentation",
+      "phase": "Y271-Y280",
+      "status": "PASS",
+      "safe": true
+    },
+    {
+      "label": "Production Parser",
+      "status": "BLOCKED",
+      "safe": true
+    },
+    {
+      "label": "Writer",
+      "status": "HARD_LOCKED",
+      "safe": true
+    },
+    {
+      "label": "Real Keyboard Output",
+      "status": "HARD_LOCKED",
+      "safe": true
+    },
+    {
+      "label": "Deploy",
+      "status": "BLOCKED",
+      "safe": true
+    }
+  ],
+  "hardLimits": {
+    "fixtureRead": false,
+    "productionParserImplementation": false,
+    "writerImplementation": false,
+    "realOutput": false,
+    "deploy": false
+  },
+  "generatedAt": "2026-06-21T08:27:33.197Z"
+}

@@ -1,0 +1,24 @@
+﻿{
+    "program":  "UAOS Yamaha Parser / Real Writer Validation",
+    "chain":  "Y251-Y320",
+    "status":  "SEALED_SAFE_STOP",
+    "completed":  [
+                      "Y251-Y260 read-only parser rule simulator from existing reports",
+                      "Y261-Y270 read-only parser rule validation from existing reports",
+                      "Y271-Y280 parser documentation pack",
+                      "Y281-Y290 parser QA dashboard",
+                      "Y291-Y300 universal output lock stop gate",
+                      "Y301-Y310 executive safe closure pack",
+                      "Y311-Y320 final sealed QA dashboard and hard stop"
+                  ],
+    "hardLocked":  [
+                       "Production parser",
+                       "Writer implementation",
+                       "Real .STY output",
+                       "Real .SET/.PRS/.STL/.PAT/.MSP/.KST output",
+                       "Deploy"
+                   ],
+    "notCommercialProduct":  true,
+    "appJsxModified":  false,
+    "generatedAt":  "2026-06-21T10:27:44.3005686+02:00"
+}
