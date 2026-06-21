@@ -28,3 +28,257 @@ a{text-decoration:none;color:inherit}
  .proofLinks{display:none}
  .proofHero{padding-top:50px}
 }
+
+/* =========================
+   FINAL-18 Spectrum + Motion
+   ========================= */
+
+body{
+  background:
+    radial-gradient(circle at 12% 10%, rgba(56,189,248,.18), transparent 24rem),
+    radial-gradient(circle at 82% 14%, rgba(168,85,247,.18), transparent 24rem),
+    radial-gradient(circle at 50% 80%, rgba(34,197,94,.10), transparent 28rem),
+    linear-gradient(180deg,#040814 0%,#071120 45%,#060b14 100%) !important;
+}
+
+.siteShell{
+  position:relative;
+  isolation:isolate;
+}
+
+.siteShell::before,
+.siteShell::after{
+  content:"";
+  position:fixed;
+  inset:auto;
+  width:32rem;
+  height:32rem;
+  border-radius:999px;
+  filter:blur(80px);
+  opacity:.16;
+  z-index:-1;
+  pointer-events:none;
+}
+
+.siteShell::before{
+  top:4rem;
+  left:-8rem;
+  background:linear-gradient(135deg,#22d3ee,#7c3aed,#60a5fa);
+  animation:floatBlobA 14s ease-in-out infinite;
+}
+
+.siteShell::after{
+  right:-8rem;
+  top:18rem;
+  background:linear-gradient(135deg,#34d399,#22d3ee,#a78bfa);
+  animation:floatBlobB 18s ease-in-out infinite;
+}
+
+@keyframes floatBlobA{
+  0%,100%{transform:translateY(0) translateX(0) scale(1)}
+  50%{transform:translateY(30px) translateX(20px) scale(1.08)}
+}
+@keyframes floatBlobB{
+  0%,100%{transform:translateY(0) translateX(0) scale(1)}
+  50%{transform:translateY(-24px) translateX(-18px) scale(1.06)}
+}
+
+.heroTitle{
+  background:linear-gradient(135deg,#ffffff 0%,#dbeafe 18%,#7dd3fc 42%,#a78bfa 67%,#ffffff 100%);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent !important;
+  text-shadow:0 0 28px rgba(125,211,252,.10);
+}
+
+.heroTitle span{
+  background:linear-gradient(135deg,#22d3ee 0%,#60a5fa 28%,#c084fc 56%,#34d399 100%);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+  filter:drop-shadow(0 10px 22px rgba(96,165,250,.18));
+}
+
+.eyebrow{
+  background:linear-gradient(90deg,#67e8f9,#a78bfa,#34d399);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent !important;
+  font-weight:1000 !important;
+}
+
+.sectionHead h2,
+.supportTitle,
+.launchPanel h2{
+  background:linear-gradient(135deg,#f8fbff 0%,#93c5fd 35%,#c084fc 68%,#f8fbff 100%);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+}
+
+.brandMark strong{
+  background:linear-gradient(135deg,#ffffff,#c4b5fd,#7dd3fc);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+}
+
+.mainNav a{
+  position:relative;
+  overflow:hidden;
+}
+.mainNav a::after{
+  content:"";
+  position:absolute;
+  left:12px;
+  right:12px;
+  bottom:6px;
+  height:2px;
+  border-radius:999px;
+  background:linear-gradient(90deg,#22d3ee,#a78bfa,#34d399);
+  transform:scaleX(0);
+  transform-origin:left;
+  transition:.22s ease;
+}
+.mainNav a:hover::after{
+  transform:scaleX(1);
+}
+
+.btn{
+  position:relative;
+  overflow:hidden;
+  backdrop-filter:blur(10px);
+}
+
+.btn::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(120deg,transparent 0%,rgba(255,255,255,.22) 35%,transparent 70%);
+  transform:translateX(-130%);
+  transition:transform .7s ease;
+}
+.btn:hover::before{
+  transform:translateX(130%);
+}
+
+.primaryBtn{
+  background:linear-gradient(135deg,#67e8f9 0%,#60a5fa 40%,#a78bfa 100%) !important;
+  color:white !important;
+  border:1px solid rgba(255,255,255,.18) !important;
+  box-shadow:0 18px 55px rgba(96,165,250,.22), 0 8px 30px rgba(168,85,247,.14) !important;
+}
+
+.secondaryBtn{
+  background:rgba(255,255,255,.08) !important;
+  border:1px solid rgba(148,163,184,.24) !important;
+  box-shadow:0 14px 38px rgba(15,23,42,.14) !important;
+}
+
+.accountLink{
+  background:linear-gradient(135deg,rgba(15,23,42,.82),rgba(30,41,59,.82)) !important;
+  border:1px solid rgba(103,232,249,.24) !important;
+  box-shadow:0 12px 40px rgba(34,211,238,.10) !important;
+}
+.accountLink:hover{
+  transform:translateY(-1px);
+  box-shadow:0 16px 46px rgba(34,211,238,.14) !important;
+}
+
+.demoCard{
+  background:
+    linear-gradient(180deg,rgba(12,20,38,.92),rgba(7,13,26,.96)),
+    radial-gradient(circle at 80% 20%,rgba(34,211,238,.18),transparent 18rem) !important;
+  border:1px solid rgba(125,211,252,.16) !important;
+  box-shadow:
+    0 32px 90px rgba(2,6,23,.35),
+    inset 0 1px 0 rgba(255,255,255,.04) !important;
+  animation:cardFloat 6s ease-in-out infinite;
+}
+
+@keyframes cardFloat{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-8px)}
+}
+
+.demoCardHeader p{
+  background:linear-gradient(90deg,#7dd3fc,#c4b5fd);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent !important;
+}
+
+.mockRow{
+  transition:transform .18s ease, border-color .18s ease, background .18s ease;
+}
+.mockRow:hover{
+  transform:translateX(4px);
+  border-color:rgba(125,211,252,.24);
+}
+.mockRow.active{
+  background:linear-gradient(135deg,rgba(34,211,238,.22),rgba(96,165,250,.18),rgba(168,85,247,.18)) !important;
+}
+
+.miniKeyboard{
+  background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.04)) !important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.05);
+}
+.miniKeyboard i{
+  background:linear-gradient(180deg,#f8fbff,#b9c7dc) !important;
+  box-shadow:0 6px 14px rgba(15,23,42,.18);
+}
+
+.productCard,
+.priceCard,
+.supportGrid article,
+.workflowStep{
+  transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+.productCard:hover,
+.priceCard:hover,
+.supportGrid article:hover,
+.workflowStep:hover{
+  transform:translateY(-6px);
+  border-color:rgba(125,211,252,.2);
+  box-shadow:0 28px 80px rgba(2,6,23,.24), 0 10px 28px rgba(96,165,250,.08);
+}
+
+.productCard span{
+  background:linear-gradient(90deg,#67e8f9,#a78bfa,#34d399);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent !important;
+}
+
+.priceCard strong{
+  background:linear-gradient(135deg,#ffffff,#7dd3fc,#a78bfa);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+}
+
+.priceCard.highlighted{
+  background:
+    linear-gradient(180deg,rgba(34,211,238,.10),rgba(168,85,247,.08),rgba(255,255,255,.05)) !important;
+  border-color:rgba(125,211,252,.28) !important;
+}
+
+.launchPanel{
+  box-shadow:0 28px 90px rgba(2,6,23,.18);
+}
+
+.siteFooter strong{
+  background:linear-gradient(135deg,#ffffff,#7dd3fc,#c4b5fd);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+}
+
+@media(max-width:760px){
+  .heroTitle{
+    font-size:40px !important;
+  }
+  .btn{
+    width:100%;
+  }
+}
