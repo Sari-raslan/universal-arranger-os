@@ -1,0 +1,75 @@
+﻿{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "uaos-local-music-pipeline-result.schema.json",
+  "title": "UAOS Local Music Pipeline Result",
+  "type": "object",
+  "required": ["format", "version", "stages", "finalWorkspacePack", "qa", "safety"],
+  "properties": {
+    "format": { "const": "UAOS_LOCAL_MUSIC_PIPELINE_RESULT" },
+    "version": { "type": "string" },
+    "stages": {
+      "type": "object",
+      "required": [
+        "filenameReport",
+        "libraryIndex",
+        "samplerPresetPack",
+        "dawTrackTemplateSet",
+        "arrangementProject",
+        "workspacePack"
+      ]
+    },
+    "finalWorkspacePack": {
+      "type": "object",
+      "required": ["format"],
+      "properties": {
+        "format": { "const": "UAOS_PROJECT_WORKSPACE_PACK" }
+      }
+    },
+    "qa": {
+      "type": "object",
+      "required": ["format", "checks", "summary"],
+      "properties": {
+        "format": { "const": "UAOS_LOCAL_PIPELINE_QA" },
+        "checks": { "type": "array" },
+        "summary": { "type": "object" }
+      }
+    },
+    "safety": {
+      "type": "object",
+      "required": [
+        "metadataOnly",
+        "jsonTextOnly",
+        "fileContentRead",
+        "sampleLoaded",
+        "audioDecoded",
+        "audioRendered",
+        "midiExported",
+        "copiedFiles",
+        "movedFiles",
+        "deletedFiles",
+        "archiveRead",
+        "productionParser",
+        "keyboardWriter",
+        "keyboardOutput",
+        "deploy"
+      ],
+      "properties": {
+        "metadataOnly": { "const": true },
+        "jsonTextOnly": { "const": true },
+        "fileContentRead": { "const": false },
+        "sampleLoaded": { "const": false },
+        "audioDecoded": { "const": false },
+        "audioRendered": { "const": false },
+        "midiExported": { "const": false },
+        "copiedFiles": { "const": false },
+        "movedFiles": { "const": false },
+        "deletedFiles": { "const": false },
+        "archiveRead": { "const": false },
+        "productionParser": { "const": false },
+        "keyboardWriter": { "const": false },
+        "keyboardOutput": { "const": false },
+        "deploy": { "const": false }
+      }
+    }
+  }
+}
