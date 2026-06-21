@@ -1,0 +1,73 @@
+{
+  "phase": "Y641-Y650",
+  "title": "Demo Checklist + Review Notes Page",
+  "status": "PASS_DEMO_CHECKLIST_READY",
+  "checklist": [
+    {
+      "id": "DEMO_001",
+      "text": "Open the polished navigation hub.",
+      "required": true
+    },
+    {
+      "id": "DEMO_002",
+      "text": "Show executive presentation.",
+      "required": true
+    },
+    {
+      "id": "DEMO_003",
+      "text": "Show founder demo script.",
+      "required": true
+    },
+    {
+      "id": "DEMO_004",
+      "text": "Show investor/partner summary.",
+      "required": true
+    },
+    {
+      "id": "DEMO_005",
+      "text": "Show evidence index.",
+      "required": true
+    },
+    {
+      "id": "DEMO_006",
+      "text": "Show final safe decision gate.",
+      "required": true
+    },
+    {
+      "id": "SAFETY_001",
+      "text": "State that real writer is blocked.",
+      "required": true
+    },
+    {
+      "id": "SAFETY_002",
+      "text": "State that real keyboard output is blocked.",
+      "required": true
+    },
+    {
+      "id": "SAFETY_003",
+      "text": "State that production parser is blocked.",
+      "required": true
+    },
+    {
+      "id": "SAFETY_004",
+      "text": "State that deploy is blocked.",
+      "required": true
+    }
+  ],
+  "reviewNotesTemplate": [
+    "Reviewer name:",
+    "Review date:",
+    "Strongest proof page:",
+    "Weakest proof page:",
+    "Questions:",
+    "Next recommended step:"
+  ],
+  "hardLimits": {
+    "appJsxModified": false,
+    "writerImplementation": false,
+    "realKeyboardOutput": false,
+    "productionParser": false,
+    "deploy": false
+  },
+  "generatedAt": "2026-06-21T09:59:55.408Z"
+}
