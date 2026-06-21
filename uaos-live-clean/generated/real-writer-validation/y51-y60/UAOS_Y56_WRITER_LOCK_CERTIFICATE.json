@@ -1,0 +1,35 @@
+{
+  "format": "UAOS_Y56_WRITER_LOCK_CERTIFICATE",
+  "version": "Y51-Y60.0.0",
+  "phase": "Y56",
+  "status": "PASS_LOCKED",
+  "certificate": {
+    "writerState": "LOCKED",
+    "target": "yamaha",
+    "futureFormat": ".STY",
+    "reason": "No parser unlock, no full parse, no checksum validation, no editor/hardware validation."
+  },
+  "blockedFormats": [
+    ".STY",
+    ".SET",
+    ".PRS",
+    ".STL",
+    ".PAT",
+    ".MSP",
+    ".KST"
+  ],
+  "finalDecision": {
+    "writerLockCertified": true,
+    "continueToWriterImplementation": false,
+    "allowWriterImplementation": false,
+    "allowRealKeyboardBinaryOutput": false,
+    "allowRealStyOutput": false,
+    "canExportRealSty": false,
+    "realKeyboardBinaryWriteAllowed": false,
+    "realWriterReady": false
+  },
+  "safety": {
+    "realBinaryBlocked": true,
+    "wroteRealKeyboardBinary": false
+  }
+}

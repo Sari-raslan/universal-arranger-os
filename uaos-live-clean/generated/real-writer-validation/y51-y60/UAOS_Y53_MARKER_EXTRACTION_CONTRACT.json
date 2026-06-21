@@ -1,0 +1,45 @@
+{
+  "format": "UAOS_Y53_MARKER_EXTRACTION_CONTRACT",
+  "version": "Y51-Y60.0.0",
+  "phase": "Y53",
+  "status": "PASS_CONTRACT_ONLY",
+  "markerContract": {
+    "allowedMarkers": [
+      "MThd",
+      "MTrk",
+      "CASM",
+      "OTS",
+      "MAIN",
+      "INTRO",
+      "ENDING",
+      "FILL",
+      "BREAK"
+    ],
+    "allowedOutput": [
+      "present",
+      "count",
+      "prefix-relative-offset-if-approved-later"
+    ],
+    "currentAllowedOutput": [
+      "present",
+      "count"
+    ],
+    "offsetOutputAllowedNow": false,
+    "rawBytesOutputAllowed": false
+  },
+  "finalDecision": {
+    "markerExtractionContractReady": true,
+    "markerExtractionImplementationAllowed": false,
+    "allowFullBinaryParse": false,
+    "allowParserImplementation": false,
+    "allowWriterImplementation": false,
+    "allowRealStyOutput": false,
+    "realKeyboardBinaryWriteAllowed": false
+  },
+  "safety": {
+    "contractOnly": true,
+    "readOnly": true,
+    "wroteRealKeyboardBinary": false,
+    "realBinaryBlocked": true
+  }
+}

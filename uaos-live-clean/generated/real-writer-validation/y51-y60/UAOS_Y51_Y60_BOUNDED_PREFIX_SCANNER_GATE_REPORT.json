@@ -1,0 +1,291 @@
+{
+  "format": "UAOS_Y51_Y60_BOUNDED_PREFIX_SCANNER_GATE_REPORT",
+  "version": "Y51-Y60.0.0",
+  "phases": [
+    "Y51",
+    "Y52",
+    "Y53",
+    "Y54",
+    "Y55",
+    "Y56",
+    "Y57",
+    "Y58",
+    "Y59",
+    "Y60"
+  ],
+  "status": "PASS",
+  "reports": {
+    "y51": {
+      "format": "UAOS_Y51_BOUNDED_PREFIX_SCANNER_IMPLEMENTATION_GATE",
+      "version": "Y51-Y60.0.0",
+      "phase": "Y51",
+      "status": "PASS_LOCKED",
+      "sourceManifestReady": true,
+      "target": "yamaha",
+      "futureFormat": ".STY",
+      "scannerGate": {
+        "implementationRequested": false,
+        "implementationAllowed": false,
+        "maxReadBytes": 32768,
+        "inputSource": "approved redacted manifest entries only",
+        "outputType": "safe-json-report-only"
+      },
+      "allowedFutureImplementationRules": [
+        "open only approved local paths",
+        "read at most SAFE_PREFIX_LIMIT_BYTES",
+        "emit hash and marker presence only",
+        "never copy fixture content",
+        "never output binary payload"
+      ],
+      "finalDecision": {
+        "boundedPrefixScannerGateReady": true,
+        "allowBoundedPrefixScannerImplementation": false,
+        "allowFullBinaryParse": false,
+        "allowParserImplementation": false,
+        "allowWriterImplementation": false,
+        "allowRealStyOutput": false,
+        "realKeyboardBinaryWriteAllowed": false,
+        "realWriterReady": false
+      },
+      "safety": {
+        "gateOnly": true,
+        "readOnly": true,
+        "copiedFiles": false,
+        "modifiedFixtures": false,
+        "wroteRealKeyboardBinary": false,
+        "realBinaryBlocked": true
+      }
+    },
+    "y52": {
+      "format": "UAOS_Y52_PREFIX_SCAN_EXECUTION_PLAN",
+      "version": "Y51-Y60.0.0",
+      "phase": "Y52",
+      "status": "PASS_PLAN_ONLY",
+      "executionPlan": {
+        "enabledNow": false,
+        "maxReadBytes": 32768,
+        "steps": [
+          "load approved redacted manifest",
+          "resolve private path only at runtime from user environment",
+          "verify extension .sty",
+          "read bounded prefix only",
+          "calculate prefix hash",
+          "detect allowed marker presence",
+          "write safe JSON report"
+        ]
+      },
+      "blockedSteps": [
+        "full file read",
+        "binary parse",
+        "chunk reconstruction",
+        "checksum writing",
+        "real .STY output"
+      ],
+      "finalDecision": {
+        "prefixScanExecutionPlanReady": true,
+        "prefixScanExecutionEnabledNow": false,
+        "allowFullBinaryParse": false,
+        "allowParserImplementation": false,
+        "allowWriterImplementation": false,
+        "allowRealStyOutput": false,
+        "realKeyboardBinaryWriteAllowed": false
+      },
+      "safety": {
+        "planOnly": true,
+        "readOnly": true,
+        "wroteRealKeyboardBinary": false,
+        "realBinaryBlocked": true
+      }
+    },
+    "y53": {
+      "format": "UAOS_Y53_MARKER_EXTRACTION_CONTRACT",
+      "version": "Y51-Y60.0.0",
+      "phase": "Y53",
+      "status": "PASS_CONTRACT_ONLY",
+      "markerContract": {
+        "allowedMarkers": [
+          "MThd",
+          "MTrk",
+          "CASM",
+          "OTS",
+          "MAIN",
+          "INTRO",
+          "ENDING",
+          "FILL",
+          "BREAK"
+        ],
+        "allowedOutput": [
+          "present",
+          "count",
+          "prefix-relative-offset-if-approved-later"
+        ],
+        "currentAllowedOutput": [
+          "present",
+          "count"
+        ],
+        "offsetOutputAllowedNow": false,
+        "rawBytesOutputAllowed": false
+      },
+      "finalDecision": {
+        "markerExtractionContractReady": true,
+        "markerExtractionImplementationAllowed": false,
+        "allowFullBinaryParse": false,
+        "allowParserImplementation": false,
+        "allowWriterImplementation": false,
+        "allowRealStyOutput": false,
+        "realKeyboardBinaryWriteAllowed": false
+      },
+      "safety": {
+        "contractOnly": true,
+        "readOnly": true,
+        "wroteRealKeyboardBinary": false,
+        "realBinaryBlocked": true
+      }
+    },
+    "y54": {
+      "format": "UAOS_Y54_SAFE_PREFIX_SCAN_RESULT_SCHEMA",
+      "version": "Y51-Y60.0.0",
+      "phase": "Y54",
+      "status": "PASS_SCHEMA_ONLY",
+      "resultSchema": {
+        "fixtureId": "string",
+        "redactedPath": "string",
+        "pathHash": "string",
+        "extension": ".sty",
+        "prefixReadBytes": "number",
+        "prefixHash": "sha256",
+        "markers": {
+          "MThd": "boolean",
+          "MTrk": "boolean",
+          "CASM": "boolean",
+          "OTS": "boolean",
+          "MAIN": "boolean",
+          "INTRO": "boolean",
+          "ENDING": "boolean",
+          "FILL": "boolean",
+          "BREAK": "boolean"
+        },
+        "rawBinaryIncluded": false,
+        "fullParseIncluded": false,
+        "writerOutputIncluded": false
+      },
+      "blockedSchemaFields": [
+        "rawBinary",
+        "fullFileBytes",
+        "outputStyBytes",
+        "patchBytes",
+        "privateFullPathInPublicReport"
+      ],
+      "finalDecision": {
+        "safePrefixScanResultSchemaReady": true,
+        "allowFullBinaryParse": false,
+        "allowParserImplementation": false,
+        "allowWriterImplementation": false,
+        "allowRealStyOutput": false,
+        "realKeyboardBinaryWriteAllowed": false
+      },
+      "safety": {
+        "schemaOnly": true,
+        "readOnly": true,
+        "wroteRealKeyboardBinary": false,
+        "realBinaryBlocked": true
+      }
+    },
+    "y55": {
+      "format": "UAOS_Y55_PARSER_UNLOCK_BLOCKER",
+      "version": "Y51-Y60.0.0",
+      "phase": "Y55",
+      "status": "PASS_BLOCKED",
+      "blockers": [
+        "bounded prefix scanner implementation not enabled",
+        "marker extraction implementation not enabled",
+        "full parse permission not approved",
+        "semantic parser not implemented",
+        "roundtrip validator not implemented",
+        "writer remains blocked"
+      ],
+      "finalDecision": {
+        "parserUnlockReady": false,
+        "continueToParserImplementation": false,
+        "allowBoundedPrefixScannerImplementation": false,
+        "allowMarkerExtractionImplementation": false,
+        "allowFullBinaryParse": false,
+        "allowParserImplementation": false,
+        "allowWriterImplementation": false,
+        "allowRealKeyboardBinaryOutput": false,
+        "allowRealStyOutput": false,
+        "canExportRealSty": false,
+        "realKeyboardBinaryWriteAllowed": false,
+        "realWriterReady": false
+      },
+      "safety": {
+        "blocked": true,
+        "readOnly": true,
+        "wroteRealKeyboardBinary": false,
+        "realBinaryBlocked": true
+      }
+    },
+    "y56": {
+      "format": "UAOS_Y56_WRITER_LOCK_CERTIFICATE",
+      "version": "Y51-Y60.0.0",
+      "phase": "Y56",
+      "status": "PASS_LOCKED",
+      "certificate": {
+        "writerState": "LOCKED",
+        "target": "yamaha",
+        "futureFormat": ".STY",
+        "reason": "No parser unlock, no full parse, no checksum validation, no editor/hardware validation."
+      },
+      "blockedFormats": [
+        ".STY",
+        ".SET",
+        ".PRS",
+        ".STL",
+        ".PAT",
+        ".MSP",
+        ".KST"
+      ],
+      "finalDecision": {
+        "writerLockCertified": true,
+        "continueToWriterImplementation": false,
+        "allowWriterImplementation": false,
+        "allowRealKeyboardBinaryOutput": false,
+        "allowRealStyOutput": false,
+        "canExportRealSty": false,
+        "realKeyboardBinaryWriteAllowed": false,
+        "realWriterReady": false
+      },
+      "safety": {
+        "realBinaryBlocked": true,
+        "wroteRealKeyboardBinary": false
+      }
+    }
+  },
+  "finalDecision": {
+    "boundedPrefixScannerGateReady": true,
+    "parserUnlockReady": false,
+    "allowReadOnlyAnalysis": true,
+    "allowBoundedPrefixScanPlanning": true,
+    "allowBoundedPrefixScannerImplementation": false,
+    "allowMarkerExtractionImplementation": false,
+    "allowFullBinaryParse": false,
+    "allowParserImplementation": false,
+    "allowWriterImplementation": false,
+    "allowRealKeyboardBinaryOutput": false,
+    "allowRealStyOutput": false,
+    "canExportRealSty": false,
+    "realKeyboardBinaryWriteAllowed": false,
+    "realWriterReady": false,
+    "deployAllowed": false
+  },
+  "safety": {
+    "localOnly": true,
+    "noDeploy": true,
+    "readOnly": true,
+    "planningOnly": true,
+    "copiedFiles": false,
+    "modifiedFixtures": false,
+    "wroteRealKeyboardBinary": false,
+    "realBinaryBlocked": true
+  }
+}

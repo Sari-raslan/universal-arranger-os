@@ -1,0 +1,49 @@
+{
+  "format": "UAOS_Y54_SAFE_PREFIX_SCAN_RESULT_SCHEMA",
+  "version": "Y51-Y60.0.0",
+  "phase": "Y54",
+  "status": "PASS_SCHEMA_ONLY",
+  "resultSchema": {
+    "fixtureId": "string",
+    "redactedPath": "string",
+    "pathHash": "string",
+    "extension": ".sty",
+    "prefixReadBytes": "number",
+    "prefixHash": "sha256",
+    "markers": {
+      "MThd": "boolean",
+      "MTrk": "boolean",
+      "CASM": "boolean",
+      "OTS": "boolean",
+      "MAIN": "boolean",
+      "INTRO": "boolean",
+      "ENDING": "boolean",
+      "FILL": "boolean",
+      "BREAK": "boolean"
+    },
+    "rawBinaryIncluded": false,
+    "fullParseIncluded": false,
+    "writerOutputIncluded": false
+  },
+  "blockedSchemaFields": [
+    "rawBinary",
+    "fullFileBytes",
+    "outputStyBytes",
+    "patchBytes",
+    "privateFullPathInPublicReport"
+  ],
+  "finalDecision": {
+    "safePrefixScanResultSchemaReady": true,
+    "allowFullBinaryParse": false,
+    "allowParserImplementation": false,
+    "allowWriterImplementation": false,
+    "allowRealStyOutput": false,
+    "realKeyboardBinaryWriteAllowed": false
+  },
+  "safety": {
+    "schemaOnly": true,
+    "readOnly": true,
+    "wroteRealKeyboardBinary": false,
+    "realBinaryBlocked": true
+  }
+}
