@@ -58,3 +58,17 @@ PHASE-LIB-11 START
 BUILD PASS after PHASE-LIB-11
 
 ### Commit + Safe Push after PHASE-LIB-11
+COMMIT + SAFE PUSH PASS after PHASE-LIB-11 on branch master
+PHASE-LIB-11 PASS
+
+============================================================
+PHASE-LIB-12 START
+============================================================
+- Wrote: uaos-live-clean\src\uaos-local-music-engine\bridges\arrangementToDawBridge.js
+- Wrote: uaos-live-clean\public\uaos-local-music-engine\arrangement-to-daw-demo.html
+- Wrote: docs\uaos-local-music-engine\PHASE-LIB-12-ARRANGEMENT-DAW-BRIDGE.md
+
+### BUILD after PHASE-LIB-12
+BUILD PASS after PHASE-LIB-12
+
+### Commit + Safe Push after PHASE-LIB-12
