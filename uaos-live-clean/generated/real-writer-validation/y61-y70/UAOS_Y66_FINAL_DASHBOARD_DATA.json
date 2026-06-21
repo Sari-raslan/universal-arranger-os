@@ -1,0 +1,53 @@
+{
+  "format": "UAOS_Y66_FINAL_DASHBOARD_DATA",
+  "version": "Y61-Y70.0.0",
+  "phase": "Y66",
+  "status": "PASS",
+  "dashboard": {
+    "title": "UAOS Yamaha Parser Design Final Dashboard",
+    "finalStatus": "YAMAHA_PARSER_DESIGN_BASELINE_CLOSED",
+    "target": "Yamaha .STY",
+    "cards": [
+      {
+        "title": "Design",
+        "value": "Closed",
+        "state": "pass"
+      },
+      {
+        "title": "Prefix scanner",
+        "value": "Planned only",
+        "state": "warn"
+      },
+      {
+        "title": "Parser",
+        "value": "Locked",
+        "state": "warn"
+      },
+      {
+        "title": "Writer",
+        "value": "Locked",
+        "state": "warn"
+      },
+      {
+        "title": "Deploy",
+        "value": "Not executed",
+        "state": "warn"
+      }
+    ]
+  },
+  "finalDecision": {
+    "dashboardReady": true,
+    "allowFullBinaryParse": false,
+    "allowParserImplementation": false,
+    "allowWriterImplementation": false,
+    "allowRealStyOutput": false,
+    "realKeyboardBinaryWriteAllowed": false,
+    "deployAllowed": false
+  },
+  "safety": {
+    "noDeploy": true,
+    "readOnly": true,
+    "realBinaryBlocked": true,
+    "wroteRealKeyboardBinary": false
+  }
+}

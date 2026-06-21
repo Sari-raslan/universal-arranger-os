@@ -1,0 +1,47 @@
+{
+  "format": "UAOS_Y65_FINAL_PARSER_DESIGN_HANDOVER",
+  "version": "Y61-Y70.0.0",
+  "phase": "Y65",
+  "status": "PASS",
+  "handover": {
+    "currentStatus": "YAMAHA_PARSER_DESIGN_BASELINE_CLOSED",
+    "targetPriority": "Yamaha .STY",
+    "ready": [
+      "manual approval structure",
+      "fixture manifest schema",
+      "redacted reporting",
+      "bounded prefix scan plan",
+      "marker extraction contract",
+      "safe prefix result schema",
+      "locked parser and writer gates"
+    ],
+    "stillBlocked": [
+      "full binary parse",
+      "parser implementation",
+      "writer implementation",
+      "real .STY output",
+      "deploy"
+    ],
+    "nextProgram": "Y71 Manual Unlock Decision Gate or stop"
+  },
+  "finalDecision": {
+    "handoverReady": true,
+    "parserDesignBaselineClosed": true,
+    "allowBoundedPrefixScannerImplementation": false,
+    "allowMarkerExtractionImplementation": false,
+    "allowFullBinaryParse": false,
+    "allowParserImplementation": false,
+    "allowWriterImplementation": false,
+    "allowRealStyOutput": false,
+    "realKeyboardBinaryWriteAllowed": false,
+    "realWriterReady": false,
+    "deployAllowed": false
+  },
+  "safety": {
+    "noDeploy": true,
+    "readOnly": true,
+    "planningOnly": true,
+    "realBinaryBlocked": true,
+    "wroteRealKeyboardBinary": false
+  }
+}

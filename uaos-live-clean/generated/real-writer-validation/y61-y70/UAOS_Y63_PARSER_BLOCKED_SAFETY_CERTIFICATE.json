@@ -1,0 +1,37 @@
+{
+  "format": "UAOS_Y63_PARSER_BLOCKED_SAFETY_CERTIFICATE",
+  "version": "Y61-Y70.0.0",
+  "phase": "Y63",
+  "status": "PASS_LOCKED",
+  "certificate": {
+    "parserState": "LOCKED",
+    "implementationState": "NOT_ENABLED",
+    "fullParseState": "BLOCKED",
+    "reason": "Design contracts exist, but no explicit full parse approval and no implementation unlock."
+  },
+  "falseClaimsBlocked": [
+    "parser implemented",
+    "full binary parser ready",
+    "semantic parser ready",
+    "roundtrip validator ready",
+    "Yamaha .STY parser complete"
+  ],
+  "finalDecision": {
+    "parserBlockedCertificateReady": true,
+    "parserUnlockReady": false,
+    "continueToParserImplementation": false,
+    "allowBoundedPrefixScannerImplementation": false,
+    "allowMarkerExtractionImplementation": false,
+    "allowFullBinaryParse": false,
+    "allowParserImplementation": false,
+    "allowWriterImplementation": false,
+    "allowRealStyOutput": false,
+    "realKeyboardBinaryWriteAllowed": false
+  },
+  "safety": {
+    "locked": true,
+    "readOnly": true,
+    "wroteRealKeyboardBinary": false,
+    "realBinaryBlocked": true
+  }
+}

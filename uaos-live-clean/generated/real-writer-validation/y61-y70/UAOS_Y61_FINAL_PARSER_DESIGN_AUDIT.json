@@ -1,0 +1,89 @@
+{
+  "format": "UAOS_Y61_FINAL_PARSER_DESIGN_AUDIT",
+  "version": "Y61-Y70.0.0",
+  "phase": "Y61",
+  "status": "PASS",
+  "requiredCount": 6,
+  "passedCount": 6,
+  "failedCount": 0,
+  "checks": [
+    {
+      "file": "generated/real-writer-validation/y1-y10/UAOS_Y1_Y10_MANUAL_APPROVED_YAMAHA_PARSER_DESIGN_SUMMARY.json",
+      "exists": true,
+      "ok": true,
+      "format": "UAOS_Y1_Y10_MANUAL_APPROVED_YAMAHA_PARSER_DESIGN_SUMMARY",
+      "status": "PASS",
+      "unsafeClaim": false,
+      "error": null
+    },
+    {
+      "file": "generated/real-writer-validation/y11-y20/UAOS_Y11_Y20_MANUAL_FIXTURE_APPROVAL_REGISTRY_SUMMARY.json",
+      "exists": true,
+      "ok": true,
+      "format": "UAOS_Y11_Y20_MANUAL_FIXTURE_APPROVAL_REGISTRY_SUMMARY",
+      "status": "PASS",
+      "unsafeClaim": false,
+      "error": null
+    },
+    {
+      "file": "generated/real-writer-validation/y21-y30/UAOS_Y21_Y30_APPROVED_FIXTURE_MANIFEST_SUMMARY.json",
+      "exists": true,
+      "ok": true,
+      "format": "UAOS_Y21_Y30_APPROVED_FIXTURE_MANIFEST_SUMMARY",
+      "status": "PASS",
+      "unsafeClaim": false,
+      "error": null
+    },
+    {
+      "file": "generated/real-writer-validation/y31-y40/UAOS_Y31_Y40_MANUAL_FIXTURE_ENTRIES_PREFLIGHT_SUMMARY.json",
+      "exists": true,
+      "ok": true,
+      "format": "UAOS_Y31_Y40_MANUAL_FIXTURE_ENTRIES_PREFLIGHT_SUMMARY",
+      "status": "PASS",
+      "unsafeClaim": false,
+      "error": null
+    },
+    {
+      "file": "generated/real-writer-validation/y41-y50/UAOS_Y41_Y50_APPROVED_PREFIX_SCAN_MANIFEST_SUMMARY.json",
+      "exists": true,
+      "ok": true,
+      "format": "UAOS_Y41_Y50_APPROVED_PREFIX_SCAN_MANIFEST_SUMMARY",
+      "status": "PASS",
+      "unsafeClaim": false,
+      "error": null
+    },
+    {
+      "file": "generated/real-writer-validation/y51-y60/UAOS_Y51_Y60_BOUNDED_PREFIX_SCANNER_GATE_SUMMARY.json",
+      "exists": true,
+      "ok": true,
+      "format": "UAOS_Y51_Y60_BOUNDED_PREFIX_SCANNER_GATE_SUMMARY",
+      "status": "PASS",
+      "unsafeClaim": false,
+      "error": null
+    }
+  ],
+  "finalDecision": {
+    "finalParserDesignAuditPass": true,
+    "parserDesignBaselineReady": true,
+    "allowReadOnlyAnalysis": true,
+    "allowBoundedPrefixScanPlanning": true,
+    "allowBoundedPrefixScannerImplementation": false,
+    "allowMarkerExtractionImplementation": false,
+    "allowFullBinaryParse": false,
+    "allowParserImplementation": false,
+    "allowWriterImplementation": false,
+    "allowRealKeyboardBinaryOutput": false,
+    "allowRealStyOutput": false,
+    "canExportRealSty": false,
+    "realKeyboardBinaryWriteAllowed": false,
+    "realWriterReady": false,
+    "deployAllowed": false
+  },
+  "safety": {
+    "noDeploy": true,
+    "readOnly": true,
+    "planningOnly": true,
+    "wroteRealKeyboardBinary": false,
+    "realBinaryBlocked": true
+  }
+}
