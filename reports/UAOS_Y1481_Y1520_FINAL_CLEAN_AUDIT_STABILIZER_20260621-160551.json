@@ -1,0 +1,36 @@
+﻿{
+    "phase":  "Y1481-Y1520",
+    "title":  "Final Clean Audit Stabilizer",
+    "officialPath":  "PATH-DOCS-UI",
+    "result":  "READY / PASS",
+    "pathLocked":  true,
+    "noFurtherCodeGate":  "ACTIVE",
+    "outputAllowed":  false,
+    "writerImplementation":  "BLOCKED",
+    "realWriter":  "BLOCKED",
+    "realKeyboardOutput":  "BLOCKED",
+    "productionParser":  "BLOCKED",
+    "deployPublicRelease":  "BLOCKED",
+    "fixturesReadCopyModify":  "BLOCKED",
+    "appJsxModified":  false,
+    "operationalCode":  false,
+    "commercialProduct":  false,
+    "newHtmlPagesCreated":  false,
+    "oldPagesModified":  false,
+    "audit":  {
+                  "gitBranch":  "master",
+                  "gitStatusSafe":  true,
+                  "y1441ReportsFound":  6,
+                  "reportsWithFixturesWord":  1,
+                  "realFixturesPathFindings":  0,
+                  "forbiddenFindings":  0,
+                  "finalBuild":  "PASS",
+                  "reportTypes":  [
+                                      "TXT",
+                                      "JSON",
+                                      "MD"
+                                  ]
+              },
+    "note":  "The word FIXTURES inside reports file names is allowed as historical report evidence. It is not a real fixtures folder path.",
+    "status":  "READY"
+}
