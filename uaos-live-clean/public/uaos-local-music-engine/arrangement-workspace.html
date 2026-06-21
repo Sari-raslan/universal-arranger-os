@@ -1,0 +1,69 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>UAOS Arrangement Workspace</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body{font-family:Arial,sans-serif;background:#0b1020;color:#f4f7ff;margin:0;padding:24px}
+    .card{background:#151d36;border:1px solid #2a355d;border-radius:16px;padding:18px;margin:14px 0}
+    button{padding:10px 14px;border-radius:10px;border:0;cursor:pointer;margin-right:8px}
+    pre{white-space:pre-wrap;background:#070b16;padding:14px;border-radius:12px}
+    a{color:#8fd3ff}
+  </style>
+</head>
+<body>
+  <h1>UAOS Arrangement Workspace</h1>
+  <p>Exports UAOS project JSON only. No real keyboard writer/output.</p>
+  <div class="card">
+    <button onclick="generateArrangement()">Generate Placeholder Arrangement</button>
+    <pre id="out">Ready.</pre>
+  </div>
+  <p><a href="./library-dashboard.html">Back to Library Dashboard</a></p>
+  <script>
+    function generateArrangement(){
+      const project = {
+        format: "UAOS_PROJECT_JSON",
+        version: "1.0.0-local-arrangement-export",
+        title: "Placeholder Arrangement",
+        tempo: 96,
+        timeSignature: "4/4",
+        key: "D minor",
+        sections: [
+          {
+            name: "Intro",
+            bars: 4,
+            chords: ["Dm","Bb","C","Dm"],
+            lanes: {
+              drums: "placeholder",
+              bass: "placeholder",
+              chords: "placeholder",
+              pads: "placeholder",
+              melody: "placeholder"
+            }
+          },
+          {
+            name: "Verse",
+            bars: 8,
+            chords: ["Dm","Gm","A","Dm"],
+            lanes: {
+              drums: "placeholder",
+              bass: "placeholder",
+              chords: "placeholder",
+              pads: "placeholder",
+              melody: "placeholder"
+            }
+          }
+        ],
+        exportSafety: {
+          jsonOnly: true,
+          noRealKeyboardWriter: true,
+          noRealKeyboardOutput: true,
+          noProductionParser: true
+        }
+      };
+      document.getElementById("out").textContent = JSON.stringify(project, null, 2);
+    }
+  </script>
+</body>
+</html>

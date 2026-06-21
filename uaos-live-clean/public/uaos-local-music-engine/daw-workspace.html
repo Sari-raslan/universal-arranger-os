@@ -1,0 +1,72 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>UAOS DAW Workspace</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body{font-family:Arial,sans-serif;background:#0b1020;color:#f4f7ff;margin:0;padding:24px}
+    .card{background:#151d36;border:1px solid #2a355d;border-radius:16px;padding:18px;margin:14px 0}
+    button{padding:10px 14px;border-radius:10px;border:0;cursor:pointer;margin-right:8px}
+    pre{white-space:pre-wrap;background:#070b16;padding:14px;border-radius:12px}
+    a{color:#8fd3ff}
+  </style>
+</head>
+<body>
+  <h1>UAOS DAW Workspace</h1>
+  <p>Local project JSON only. MIDI clips and audio placeholder clips only.</p>
+  <div class="card">
+    <button onclick="createProject()">Create Demo Project JSON</button>
+    <button onclick="downloadJson()">Download JSON</button>
+    <pre id="out">Ready.</pre>
+  </div>
+  <p><a href="./library-dashboard.html">Back to Library Dashboard</a></p>
+  <script>
+    let current = null;
+    function createProject(){
+      current = {
+        format: "UAOS_DAW_PROJECT",
+        version: "1.0.0-local-foundation",
+        title: "Local DAW Placeholder Project",
+        tempo: 120,
+        timeSignature: "4/4",
+        tracks: [
+          {
+            trackId: "track-drums",
+            name: "Drums Placeholder",
+            type: "instrument",
+            clips: [
+              { clipId: "clip-1", type: "midi", startBeat: 0, lengthBeats: 16, notes: [] }
+            ]
+          },
+          {
+            trackId: "track-audio-placeholder",
+            name: "Audio Placeholder",
+            type: "audio-placeholder",
+            clips: [
+              { clipId: "clip-2", type: "audio-placeholder", startBeat: 0, lengthBeats: 16, audioFile: null }
+            ]
+          }
+        ],
+        safety: {
+          localJsonOnly: true,
+          realKeyboardOutput: false,
+          realKeyboardWriter: false,
+          productionParser: false
+        }
+      };
+      document.getElementById("out").textContent = JSON.stringify(current, null, 2);
+    }
+    function downloadJson(){
+      if(!current) createProject();
+      const blob = new Blob([JSON.stringify(current,null,2)], {type:"application/json"});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "uaos-local-daw-project.placeholder.json";
+      a.click();
+      URL.revokeObjectURL(url);
+    }
+  </script>
+</body>
+</html>

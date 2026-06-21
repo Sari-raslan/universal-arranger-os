@@ -1,0 +1,39 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>UAOS Sampler Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body{font-family:Arial,sans-serif;background:#0b1020;color:#f4f7ff;margin:0;padding:24px}
+    .card{background:#151d36;border:1px solid #2a355d;border-radius:16px;padding:18px;margin:14px 0}
+    button{padding:10px 14px;border-radius:10px;border:0;cursor:pointer}
+    pre{white-space:pre-wrap;background:#070b16;padding:14px;border-radius:12px}
+    a{color:#8fd3ff}
+  </style>
+</head>
+<body>
+  <h1>UAOS Sampler Dashboard</h1>
+  <p>Browser preview mock only. No real sample loading and no keyboard output.</p>
+  <div class="card">
+    <button onclick="previewMock()">Run Safe Preview Mock</button>
+    <pre id="out">Ready.</pre>
+  </div>
+  <p><a href="./library-dashboard.html">Back to Library Dashboard</a></p>
+  <script>
+    function previewMock(){
+      const result = {
+        format: "UAOS_BROWSER_PREVIEW_MOCK",
+        realAudioPlayback: false,
+        note: 60,
+        velocity: 100,
+        articulation: "sustain",
+        zone: "placeholder://oud/mid/sustain",
+        adsr: { attack: 0.01, decay: 0.15, sustain: 0.75, release: 0.3 },
+        message: "Safe mock only. No real sample files loaded."
+      };
+      document.getElementById("out").textContent = JSON.stringify(result, null, 2);
+    }
+  </script>
+</body>
+</html>

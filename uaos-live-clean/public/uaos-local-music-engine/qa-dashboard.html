@@ -1,0 +1,36 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>UAOS Local Music Engine QA Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body{font-family:Arial,sans-serif;background:#0b1020;color:#f4f7ff;margin:0;padding:24px}
+    .card{background:#151d36;border:1px solid #2a355d;border-radius:16px;padding:18px;margin:14px 0}
+    .pass{color:#75ffb1}
+    code{background:#0a0f1f;padding:2px 6px;border-radius:6px}
+    a{color:#8fd3ff}
+  </style>
+</head>
+<body>
+  <h1>UAOS Local Music Engine QA Dashboard</h1>
+  <div class="card">
+    <h2 class="pass">QA Scope</h2>
+    <ul>
+      <li>JSON schema exists</li>
+      <li>Library pages exist</li>
+      <li>Sampler foundation exists</li>
+      <li>DAW foundation exists</li>
+      <li>Arrangement foundation exists</li>
+      <li>No forbidden keyboard format files in new layer</li>
+      <li>No writer/output/parser implementation in new layer</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h2>CLI QA</h2>
+    <p>Run from root:</p>
+    <code>node scripts/qa/verify-local-music-engine.mjs</code>
+  </div>
+  <p><a href="./library-dashboard.html">Back to Library Dashboard</a></p>
+</body>
+</html>
