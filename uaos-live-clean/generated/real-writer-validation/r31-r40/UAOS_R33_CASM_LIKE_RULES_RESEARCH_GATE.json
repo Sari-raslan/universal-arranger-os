@@ -1,0 +1,48 @@
+{
+  "format": "UAOS_R33_CASM_LIKE_RULES_RESEARCH_GATE",
+  "version": "R31-R40.0.0",
+  "phase": "R33",
+  "status": "PASS_LOCKED",
+  "target": "yamaha",
+  "futureFormat": ".STY",
+  "casmLikeRules": {
+    "researched": false,
+    "confirmed": false,
+    "writable": false,
+    "ruleGroups": [
+      {
+        "name": "chord recognition",
+        "confirmed": false
+      },
+      {
+        "name": "note transposition",
+        "confirmed": false
+      },
+      {
+        "name": "channel behavior",
+        "confirmed": false
+      },
+      {
+        "name": "section behavior",
+        "confirmed": false
+      }
+    ]
+  },
+  "blockers": [
+    "CASM-like behavior not validated",
+    "no semantic parser",
+    "no roundtrip import",
+    "no editor/hardware validation"
+  ],
+  "finalDecision": {
+    "casmRulesReady": false,
+    "allowParserImplementation": false,
+    "allowWriterImplementation": false,
+    "allowRealStyOutput": false,
+    "realKeyboardBinaryWriteAllowed": false
+  },
+  "safety": {
+    "realBinaryBlocked": true,
+    "wroteRealKeyboardBinary": false
+  }
+}

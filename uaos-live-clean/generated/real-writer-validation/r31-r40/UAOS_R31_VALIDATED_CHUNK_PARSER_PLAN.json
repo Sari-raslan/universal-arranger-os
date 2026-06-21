@@ -1,0 +1,53 @@
+{
+  "format": "UAOS_R31_VALIDATED_CHUNK_PARSER_PLAN",
+  "version": "R31-R40.0.0",
+  "phase": "R31",
+  "status": "PASS",
+  "target": "yamaha",
+  "futureFormat": ".STY",
+  "sourceSandboxReady": true,
+  "parserPlan": {
+    "parserType": "READ_ONLY_VALIDATED_CHUNK_PARSER_PLAN",
+    "implementationAllowedNow": false,
+    "fullBinaryParseAllowedNow": false,
+    "plannedStages": [
+      {
+        "id": "P1",
+        "name": "prefix scanner",
+        "allowed": true,
+        "writeOperation": false
+      },
+      {
+        "id": "P2",
+        "name": "marker index",
+        "allowed": true,
+        "writeOperation": false
+      },
+      {
+        "id": "P3",
+        "name": "confirmed chunk boundary reader",
+        "allowed": false,
+        "reason": "requires validated chunk boundaries"
+      },
+      {
+        "id": "P4",
+        "name": "semantic section parser",
+        "allowed": false,
+        "reason": "requires roundtrip validation"
+      }
+    ]
+  },
+  "finalDecision": {
+    "allowParserImplementation": false,
+    "allowFullBinaryParse": false,
+    "allowRealStyOutput": false,
+    "realKeyboardBinaryWriteAllowed": false,
+    "realWriterReady": false
+  },
+  "safety": {
+    "readOnly": true,
+    "wroteRealKeyboardBinary": false,
+    "realBinaryBlocked": true,
+    "warning": "R31 plans parser stages only. It does not implement full binary parsing or writing."
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "format": "UAOS_R32_YAMAHA_SECTION_TABLE_MODEL",
+  "version": "R31-R40.0.0",
+  "phase": "R32",
+  "status": "PASS",
+  "target": "yamaha",
+  "futureFormat": ".STY",
+  "modelType": "SAFE_SECTION_TABLE_HYPOTHESIS",
+  "sections": [
+    {
+      "slot": "INTRO_A",
+      "confirmed": false,
+      "writable": false
+    },
+    {
+      "slot": "INTRO_B",
+      "confirmed": false,
+      "writable": false
+    },
+    {
+      "slot": "INTRO_C",
+      "confirmed": false,
+      "writable": false
+    },
+    {
+      "slot": "MAIN_A",
+      "confirmed": false,
+      "writable": false
+    },
+    {
+      "slot": "MAIN_B",
+      "confirmed": false,
+      "writable": false
+    },
+    {
+      "slot": "MAIN_C",
+      "confirmed": false,
+      "writable": false
+    },
+    {
+      "slot": "MAIN_D",
+      "confirmed": false,
+      "writable": false
+    },
+    {
+      "slot": "FILL_A",
+      "confirmed": false,
+      "writable": false
+    },
+    {
+      "slot": "FILL_B",
+      "confirmed": false,
+      "writable": false
+    },
+    {
+      "slot": "FILL_C",
+      "confirmed": false,
+      "writable": false
+    },
+    {
+      "slot": "FILL_D",
+      "confirmed": false,
+      "writable": false
+    },
+    {
+      "slot": "ENDING_A",
+      "confirmed": false,
+      "writable": false
+    },
+    {
+      "slot": "ENDING_B",
+      "confirmed": false,
+      "writable": false
+    },
+    {
+      "slot": "ENDING_C",
+      "confirmed": false,
+      "writable": false
+    }
+  ],
+  "dependencies": {
+    "parserPlan": "UAOS_R31_VALIDATED_CHUNK_PARSER_PLAN",
+    "parserImplementationAllowed": false
+  },
+  "finalDecision": {
+    "sectionTableConfirmed": false,
+    "sectionWriterReady": false,
+    "allowRealStyOutput": false,
+    "realKeyboardBinaryWriteAllowed": false
+  },
+  "safety": {
+    "hypothesisOnly": true,
+    "readOnly": true,
+    "wroteRealKeyboardBinary": false,
+    "realBinaryBlocked": true
+  }
+}

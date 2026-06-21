@@ -1,0 +1,33 @@
+{
+  "format": "UAOS_R34_OTS_METADATA_RESEARCH_GATE",
+  "version": "R31-R40.0.0",
+  "phase": "R34",
+  "status": "PASS_LOCKED",
+  "target": "yamaha",
+  "futureFormat": ".STY",
+  "otsMetadata": {
+    "researched": false,
+    "confirmed": false,
+    "writable": false,
+    "placeholders": [
+      "voice/preset",
+      "mix levels",
+      "effects references",
+      "keyboard split/layer behavior"
+    ]
+  },
+  "dependencies": {
+    "casmGate": "UAOS_R33_CASM_LIKE_RULES_RESEARCH_GATE",
+    "casmReady": false
+  },
+  "finalDecision": {
+    "otsMetadataReady": false,
+    "allowWriterImplementation": false,
+    "allowRealStyOutput": false,
+    "realKeyboardBinaryWriteAllowed": false
+  },
+  "safety": {
+    "realBinaryBlocked": true,
+    "wroteRealKeyboardBinary": false
+  }
+}

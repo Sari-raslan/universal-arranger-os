@@ -1,0 +1,45 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UAOS R31-R40 Yamaha Parser Planning</title>
+  <style>
+    body { margin:0; font-family:Arial, sans-serif; background:#070b14; color:#eef4ff; }
+    main { max-width:1000px; margin:0 auto; padding:32px; }
+    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:16px; margin-top:24px; }
+    .card { background:#101827; border:1px solid #26354f; border-radius:18px; padding:20px; }
+    .pass { color:#7CFC98; font-weight:bold; }
+    .warn { color:#facc15; font-weight:bold; }
+    code { background:#030712; padding:3px 6px; border-radius:6px; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>UAOS R31–R40 Yamaha Parser Planning</h1>
+    <p class="pass">R31–R40 PARSER PLANNING PASS CANDIDATE</p>
+    <p class="warn">Parser implementation, full binary parse, and .STY writer remain blocked.</p>
+
+    <div class="grid">
+      <div class="card"><h2>R31</h2><p>Validated chunk parser plan.</p></div>
+      <div class="card"><h2>R32</h2><p>Section table model.</p></div>
+      <div class="card"><h2>R33</h2><p>CASM-like rules gate.</p></div>
+      <div class="card"><h2>R34</h2><p>OTS metadata gate.</p></div>
+      <div class="card"><h2>R35</h2><p>Checksum/package plan.</p></div>
+      <div class="card"><h2>R36</h2><p>Parser readiness gate locked.</p></div>
+      <div class="card"><h2>R37</h2><p>Writer risk blocker.</p></div>
+      <div class="card"><h2>R38-R40</h2><p>QA, build, commit, safe push.</p></div>
+    </div>
+
+    <div class="card">
+      <h2>Generated</h2>
+      <p><code>generated/real-writer-validation/r31-r40/</code></p>
+    </div>
+
+    <div class="card">
+      <h2>Blocked</h2>
+      <p><code>.STY</code>, parser implementation, full binary parse, and writer implementation.</p>
+    </div>
+  </main>
+</body>
+</html>

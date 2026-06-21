@@ -1,0 +1,31 @@
+{
+  "format": "UAOS_R35_CHECKSUM_PACKAGE_RULE_PLAN",
+  "version": "R31-R40.0.0",
+  "phase": "R35",
+  "status": "PASS_LOCKED",
+  "target": "yamaha",
+  "futureFormat": ".STY",
+  "checksumPlan": {
+    "checksumKnown": false,
+    "packageFooterKnown": false,
+    "validationHashOnly": true,
+    "writeChecksumAllowed": false,
+    "plannedValidation": [
+      "compare user-owned fixture prefix hashes",
+      "detect stable markers",
+      "later compare full file hashes only after approval",
+      "never infer checksum writer without validation"
+    ]
+  },
+  "finalDecision": {
+    "checksumWriterReady": false,
+    "packageWriterReady": false,
+    "allowRealStyOutput": false,
+    "realKeyboardBinaryWriteAllowed": false
+  },
+  "safety": {
+    "readOnly": true,
+    "realBinaryBlocked": true,
+    "wroteRealKeyboardBinary": false
+  }
+}

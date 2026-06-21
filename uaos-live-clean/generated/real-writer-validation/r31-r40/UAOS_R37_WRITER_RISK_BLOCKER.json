@@ -1,0 +1,36 @@
+{
+  "format": "UAOS_R37_WRITER_RISK_BLOCKER",
+  "version": "R31-R40.0.0",
+  "phase": "R37",
+  "status": "PASS_BLOCKED",
+  "target": "yamaha",
+  "futureFormat": ".STY",
+  "riskLevel": "VERY_HIGH_FOR_WRITER_UNTIL_VALIDATED",
+  "blockedActions": [
+    "write Yamaha .STY",
+    "rewrite user fixture",
+    "copy fixture into repo",
+    "publish fixture data",
+    "claim parser ready",
+    "claim writer ready"
+  ],
+  "allowedActions": [
+    "local read-only marker analysis",
+    "safe JSON reports",
+    "manual review",
+    "fixture path selection with user approval"
+  ],
+  "finalDecision": {
+    "continueToWriterImplementation": false,
+    "allowWriterImplementation": false,
+    "allowParserImplementation": false,
+    "allowFullBinaryParse": false,
+    "allowRealStyOutput": false,
+    "realKeyboardBinaryWriteAllowed": false,
+    "realWriterReady": false
+  },
+  "safety": {
+    "realBinaryBlocked": true,
+    "wroteRealKeyboardBinary": false
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "format": "UAOS_R36_PARSER_IMPLEMENTATION_READINESS_GATE",
+  "version": "R31-R40.0.0",
+  "phase": "R36",
+  "status": "PASS_LOCKED",
+  "target": "yamaha",
+  "futureFormat": ".STY",
+  "readiness": {
+    "parserPlanReady": true,
+    "sectionModelReady": true,
+    "casmRulesReady": false,
+    "otsMetadataReady": false,
+    "checksumRulesReady": false,
+    "parserImplementationAllowed": false,
+    "fullBinaryParseAllowed": false
+  },
+  "blockers": [
+    "CASM-like rules locked",
+    "OTS metadata locked",
+    "checksum/package rules locked",
+    "section table unconfirmed",
+    "roundtrip harness not semantic",
+    "hardware/editor validation missing"
+  ],
+  "finalDecision": {
+    "allowParserImplementation": false,
+    "allowFullBinaryParse": false,
+    "allowRealStyOutput": false,
+    "canExportRealSty": false,
+    "realKeyboardBinaryWriteAllowed": false,
+    "realWriterReady": false
+  },
+  "safety": {
+    "realBinaryBlocked": true,
+    "wroteRealKeyboardBinary": false
+  }
+}

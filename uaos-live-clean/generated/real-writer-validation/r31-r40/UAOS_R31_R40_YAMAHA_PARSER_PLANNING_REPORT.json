@@ -1,0 +1,373 @@
+{
+  "format": "UAOS_R31_R40_YAMAHA_PARSER_PLANNING_REPORT",
+  "version": "R31-R40.0.0",
+  "phases": [
+    "R31",
+    "R32",
+    "R33",
+    "R34",
+    "R35",
+    "R36",
+    "R37",
+    "R38",
+    "R39",
+    "R40"
+  ],
+  "status": "PASS",
+  "reports": {
+    "r31": {
+      "format": "UAOS_R31_VALIDATED_CHUNK_PARSER_PLAN",
+      "version": "R31-R40.0.0",
+      "phase": "R31",
+      "status": "PASS",
+      "target": "yamaha",
+      "futureFormat": ".STY",
+      "sourceSandboxReady": true,
+      "parserPlan": {
+        "parserType": "READ_ONLY_VALIDATED_CHUNK_PARSER_PLAN",
+        "implementationAllowedNow": false,
+        "fullBinaryParseAllowedNow": false,
+        "plannedStages": [
+          {
+            "id": "P1",
+            "name": "prefix scanner",
+            "allowed": true,
+            "writeOperation": false
+          },
+          {
+            "id": "P2",
+            "name": "marker index",
+            "allowed": true,
+            "writeOperation": false
+          },
+          {
+            "id": "P3",
+            "name": "confirmed chunk boundary reader",
+            "allowed": false,
+            "reason": "requires validated chunk boundaries"
+          },
+          {
+            "id": "P4",
+            "name": "semantic section parser",
+            "allowed": false,
+            "reason": "requires roundtrip validation"
+          }
+        ]
+      },
+      "finalDecision": {
+        "allowParserImplementation": false,
+        "allowFullBinaryParse": false,
+        "allowRealStyOutput": false,
+        "realKeyboardBinaryWriteAllowed": false,
+        "realWriterReady": false
+      },
+      "safety": {
+        "readOnly": true,
+        "wroteRealKeyboardBinary": false,
+        "realBinaryBlocked": true,
+        "warning": "R31 plans parser stages only. It does not implement full binary parsing or writing."
+      }
+    },
+    "r32": {
+      "format": "UAOS_R32_YAMAHA_SECTION_TABLE_MODEL",
+      "version": "R31-R40.0.0",
+      "phase": "R32",
+      "status": "PASS",
+      "target": "yamaha",
+      "futureFormat": ".STY",
+      "modelType": "SAFE_SECTION_TABLE_HYPOTHESIS",
+      "sections": [
+        {
+          "slot": "INTRO_A",
+          "confirmed": false,
+          "writable": false
+        },
+        {
+          "slot": "INTRO_B",
+          "confirmed": false,
+          "writable": false
+        },
+        {
+          "slot": "INTRO_C",
+          "confirmed": false,
+          "writable": false
+        },
+        {
+          "slot": "MAIN_A",
+          "confirmed": false,
+          "writable": false
+        },
+        {
+          "slot": "MAIN_B",
+          "confirmed": false,
+          "writable": false
+        },
+        {
+          "slot": "MAIN_C",
+          "confirmed": false,
+          "writable": false
+        },
+        {
+          "slot": "MAIN_D",
+          "confirmed": false,
+          "writable": false
+        },
+        {
+          "slot": "FILL_A",
+          "confirmed": false,
+          "writable": false
+        },
+        {
+          "slot": "FILL_B",
+          "confirmed": false,
+          "writable": false
+        },
+        {
+          "slot": "FILL_C",
+          "confirmed": false,
+          "writable": false
+        },
+        {
+          "slot": "FILL_D",
+          "confirmed": false,
+          "writable": false
+        },
+        {
+          "slot": "ENDING_A",
+          "confirmed": false,
+          "writable": false
+        },
+        {
+          "slot": "ENDING_B",
+          "confirmed": false,
+          "writable": false
+        },
+        {
+          "slot": "ENDING_C",
+          "confirmed": false,
+          "writable": false
+        }
+      ],
+      "dependencies": {
+        "parserPlan": "UAOS_R31_VALIDATED_CHUNK_PARSER_PLAN",
+        "parserImplementationAllowed": false
+      },
+      "finalDecision": {
+        "sectionTableConfirmed": false,
+        "sectionWriterReady": false,
+        "allowRealStyOutput": false,
+        "realKeyboardBinaryWriteAllowed": false
+      },
+      "safety": {
+        "hypothesisOnly": true,
+        "readOnly": true,
+        "wroteRealKeyboardBinary": false,
+        "realBinaryBlocked": true
+      }
+    },
+    "r33": {
+      "format": "UAOS_R33_CASM_LIKE_RULES_RESEARCH_GATE",
+      "version": "R31-R40.0.0",
+      "phase": "R33",
+      "status": "PASS_LOCKED",
+      "target": "yamaha",
+      "futureFormat": ".STY",
+      "casmLikeRules": {
+        "researched": false,
+        "confirmed": false,
+        "writable": false,
+        "ruleGroups": [
+          {
+            "name": "chord recognition",
+            "confirmed": false
+          },
+          {
+            "name": "note transposition",
+            "confirmed": false
+          },
+          {
+            "name": "channel behavior",
+            "confirmed": false
+          },
+          {
+            "name": "section behavior",
+            "confirmed": false
+          }
+        ]
+      },
+      "blockers": [
+        "CASM-like behavior not validated",
+        "no semantic parser",
+        "no roundtrip import",
+        "no editor/hardware validation"
+      ],
+      "finalDecision": {
+        "casmRulesReady": false,
+        "allowParserImplementation": false,
+        "allowWriterImplementation": false,
+        "allowRealStyOutput": false,
+        "realKeyboardBinaryWriteAllowed": false
+      },
+      "safety": {
+        "realBinaryBlocked": true,
+        "wroteRealKeyboardBinary": false
+      }
+    },
+    "r34": {
+      "format": "UAOS_R34_OTS_METADATA_RESEARCH_GATE",
+      "version": "R31-R40.0.0",
+      "phase": "R34",
+      "status": "PASS_LOCKED",
+      "target": "yamaha",
+      "futureFormat": ".STY",
+      "otsMetadata": {
+        "researched": false,
+        "confirmed": false,
+        "writable": false,
+        "placeholders": [
+          "voice/preset",
+          "mix levels",
+          "effects references",
+          "keyboard split/layer behavior"
+        ]
+      },
+      "dependencies": {
+        "casmGate": "UAOS_R33_CASM_LIKE_RULES_RESEARCH_GATE",
+        "casmReady": false
+      },
+      "finalDecision": {
+        "otsMetadataReady": false,
+        "allowWriterImplementation": false,
+        "allowRealStyOutput": false,
+        "realKeyboardBinaryWriteAllowed": false
+      },
+      "safety": {
+        "realBinaryBlocked": true,
+        "wroteRealKeyboardBinary": false
+      }
+    },
+    "r35": {
+      "format": "UAOS_R35_CHECKSUM_PACKAGE_RULE_PLAN",
+      "version": "R31-R40.0.0",
+      "phase": "R35",
+      "status": "PASS_LOCKED",
+      "target": "yamaha",
+      "futureFormat": ".STY",
+      "checksumPlan": {
+        "checksumKnown": false,
+        "packageFooterKnown": false,
+        "validationHashOnly": true,
+        "writeChecksumAllowed": false,
+        "plannedValidation": [
+          "compare user-owned fixture prefix hashes",
+          "detect stable markers",
+          "later compare full file hashes only after approval",
+          "never infer checksum writer without validation"
+        ]
+      },
+      "finalDecision": {
+        "checksumWriterReady": false,
+        "packageWriterReady": false,
+        "allowRealStyOutput": false,
+        "realKeyboardBinaryWriteAllowed": false
+      },
+      "safety": {
+        "readOnly": true,
+        "realBinaryBlocked": true,
+        "wroteRealKeyboardBinary": false
+      }
+    },
+    "r36": {
+      "format": "UAOS_R36_PARSER_IMPLEMENTATION_READINESS_GATE",
+      "version": "R31-R40.0.0",
+      "phase": "R36",
+      "status": "PASS_LOCKED",
+      "target": "yamaha",
+      "futureFormat": ".STY",
+      "readiness": {
+        "parserPlanReady": true,
+        "sectionModelReady": true,
+        "casmRulesReady": false,
+        "otsMetadataReady": false,
+        "checksumRulesReady": false,
+        "parserImplementationAllowed": false,
+        "fullBinaryParseAllowed": false
+      },
+      "blockers": [
+        "CASM-like rules locked",
+        "OTS metadata locked",
+        "checksum/package rules locked",
+        "section table unconfirmed",
+        "roundtrip harness not semantic",
+        "hardware/editor validation missing"
+      ],
+      "finalDecision": {
+        "allowParserImplementation": false,
+        "allowFullBinaryParse": false,
+        "allowRealStyOutput": false,
+        "canExportRealSty": false,
+        "realKeyboardBinaryWriteAllowed": false,
+        "realWriterReady": false
+      },
+      "safety": {
+        "realBinaryBlocked": true,
+        "wroteRealKeyboardBinary": false
+      }
+    },
+    "r37": {
+      "format": "UAOS_R37_WRITER_RISK_BLOCKER",
+      "version": "R31-R40.0.0",
+      "phase": "R37",
+      "status": "PASS_BLOCKED",
+      "target": "yamaha",
+      "futureFormat": ".STY",
+      "riskLevel": "VERY_HIGH_FOR_WRITER_UNTIL_VALIDATED",
+      "blockedActions": [
+        "write Yamaha .STY",
+        "rewrite user fixture",
+        "copy fixture into repo",
+        "publish fixture data",
+        "claim parser ready",
+        "claim writer ready"
+      ],
+      "allowedActions": [
+        "local read-only marker analysis",
+        "safe JSON reports",
+        "manual review",
+        "fixture path selection with user approval"
+      ],
+      "finalDecision": {
+        "continueToWriterImplementation": false,
+        "allowWriterImplementation": false,
+        "allowParserImplementation": false,
+        "allowFullBinaryParse": false,
+        "allowRealStyOutput": false,
+        "realKeyboardBinaryWriteAllowed": false,
+        "realWriterReady": false
+      },
+      "safety": {
+        "realBinaryBlocked": true,
+        "wroteRealKeyboardBinary": false
+      }
+    }
+  },
+  "finalDecision": {
+    "parserPlanningReady": true,
+    "allowReadOnlyAnalysis": true,
+    "allowParserImplementation": false,
+    "allowFullBinaryParse": false,
+    "allowWriterImplementation": false,
+    "allowRealKeyboardBinaryOutput": false,
+    "allowRealStyOutput": false,
+    "canExportRealSty": false,
+    "realKeyboardBinaryWriteAllowed": false,
+    "realWriterReady": false
+  },
+  "safety": {
+    "readOnly": true,
+    "copiedFiles": false,
+    "modifiedFixtures": false,
+    "wroteRealKeyboardBinary": false,
+    "realBinaryBlocked": true
+  }
+}
