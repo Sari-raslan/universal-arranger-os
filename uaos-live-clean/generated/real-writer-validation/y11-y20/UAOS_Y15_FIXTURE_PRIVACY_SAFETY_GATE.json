@@ -1,0 +1,33 @@
+{
+  "format": "UAOS_Y15_FIXTURE_PRIVACY_SAFETY_GATE",
+  "version": "Y11-Y20.0.0",
+  "phase": "Y15",
+  "status": "PASS",
+  "privacyRules": [
+    "Do not publish fixture file contents.",
+    "Do not copy private fixture files into repo.",
+    "Generated reports should avoid full private path exposure in public pages.",
+    "Keep analysis local.",
+    "Only use user-owned or licensed fixtures."
+  ],
+  "localOnlyRecommended": true,
+  "publicReportAllowed": true,
+  "publicReportMustExcludeBinaryContent": true,
+  "finalDecision": {
+    "privacyGateReady": true,
+    "allowPublishingFixtureContent": false,
+    "allowCopyIntoRepo": false,
+    "allowFullBinaryParse": false,
+    "allowWriterImplementation": false,
+    "allowRealStyOutput": false,
+    "realKeyboardBinaryWriteAllowed": false
+  },
+  "safety": {
+    "privacyProtected": true,
+    "readOnly": true,
+    "copiedFiles": false,
+    "modifiedFixtures": false,
+    "wroteRealKeyboardBinary": false,
+    "realBinaryBlocked": true
+  }
+}

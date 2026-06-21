@@ -1,0 +1,32 @@
+{
+  "format": "UAOS_Y13_FULL_PARSE_PERMISSION_GATE",
+  "version": "Y11-Y20.0.0",
+  "phase": "Y13",
+  "status": "PASS_LOCKED",
+  "approvedFullParseCount": 0,
+  "approvedFullParse": [],
+  "gateRules": [
+    "Full read-only parse requires user-owned rights.",
+    "Full read-only parse requires explicit approval.",
+    "Writer experiment must remain false.",
+    "Any approved fixture must remain outside repo unless synthetic.",
+    "Parser may not write output binary."
+  ],
+  "finalDecision": {
+    "fullParsePermissionReady": false,
+    "allowFullBinaryParse": false,
+    "allowParserImplementation": false,
+    "allowWriterImplementation": false,
+    "allowRealKeyboardBinaryOutput": false,
+    "allowRealStyOutput": false,
+    "canExportRealSty": false,
+    "realKeyboardBinaryWriteAllowed": false,
+    "realWriterReady": false
+  },
+  "safety": {
+    "lockedGate": true,
+    "readOnly": true,
+    "wroteRealKeyboardBinary": false,
+    "realBinaryBlocked": true
+  }
+}

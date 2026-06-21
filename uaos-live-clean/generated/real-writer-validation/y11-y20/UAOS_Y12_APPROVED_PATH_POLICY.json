@@ -1,0 +1,45 @@
+{
+  "format": "UAOS_Y12_APPROVED_PATH_POLICY",
+  "version": "Y11-Y20.0.0",
+  "phase": "Y12",
+  "status": "PASS_LOCKED",
+  "pathPolicy": {
+    "allowedRoots": [],
+    "deniedRoots": [
+      "repo source tree unless fixture is synthetic",
+      "public folder",
+      "dist folder",
+      "generated folder for real fixtures"
+    ],
+    "allowedOperations": [
+      "exists check",
+      "metadata stat",
+      "bounded read-only prefix scan after approval"
+    ],
+    "blockedOperations": [
+      "copy fixture into repo",
+      "modify fixture",
+      "rename fixture",
+      "delete fixture",
+      "publish fixture",
+      "write binary beside fixture"
+    ]
+  },
+  "finalDecision": {
+    "pathPolicyReady": true,
+    "allowFixtureCopy": false,
+    "allowFixtureModification": false,
+    "allowFullBinaryParse": false,
+    "allowParserImplementation": false,
+    "allowWriterImplementation": false,
+    "allowRealStyOutput": false,
+    "realKeyboardBinaryWriteAllowed": false
+  },
+  "safety": {
+    "readOnly": true,
+    "copiedFiles": false,
+    "modifiedFixtures": false,
+    "wroteRealKeyboardBinary": false,
+    "realBinaryBlocked": true
+  }
+}

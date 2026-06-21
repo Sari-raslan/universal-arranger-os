@@ -1,0 +1,40 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UAOS Y11-Y20 Manual Fixture Approval Registry</title>
+  <style>
+    body { margin:0; font-family:Arial, sans-serif; background:#070b14; color:#eef4ff; }
+    main { max-width:1000px; margin:0 auto; padding:32px; }
+    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:16px; margin-top:24px; }
+    .card { background:#101827; border:1px solid #26354f; border-radius:18px; padding:20px; }
+    .pass { color:#7CFC98; font-weight:bold; }
+    .warn { color:#facc15; font-weight:bold; }
+    code { background:#030712; padding:3px 6px; border-radius:6px; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>UAOS Y11–Y20 Manual Fixture Approval Registry</h1>
+    <p class="pass">APPROVAL REGISTRY BASELINE PASS</p>
+    <p class="warn">Full parse and writer remain locked.</p>
+
+    <div class="grid">
+      <div class="card"><h2>Y11</h2><p>Manual fixture approval registry.</p></div>
+      <div class="card"><h2>Y12</h2><p>Approved path policy.</p></div>
+      <div class="card"><h2>Y13</h2><p>Full parse permission gate locked.</p></div>
+      <div class="card"><h2>Y14</h2><p>Parser implementation preflight blocked.</p></div>
+      <div class="card"><h2>Y15</h2><p>Fixture privacy/safety gate.</p></div>
+      <div class="card"><h2>Y16</h2><p>Local approval handover.</p></div>
+      <div class="card"><h2>Y17-Y20</h2><p>QA, build, commit, safe push.</p></div>
+    </div>
+
+    <div class="card">
+      <h2>Final status</h2>
+      <p><code>APPROVAL_REGISTRY_READY_BUT_LOCKED</code></p>
+      <p>No full parse. No real keyboard binary output.</p>
+    </div>
+  </main>
+</body>
+</html>

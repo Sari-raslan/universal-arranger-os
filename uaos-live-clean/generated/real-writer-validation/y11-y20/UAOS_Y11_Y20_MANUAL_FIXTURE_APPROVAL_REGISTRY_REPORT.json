@@ -1,0 +1,270 @@
+{
+  "format": "UAOS_Y11_Y20_MANUAL_FIXTURE_APPROVAL_REGISTRY_REPORT",
+  "version": "Y11-Y20.0.0",
+  "phases": [
+    "Y11",
+    "Y12",
+    "Y13",
+    "Y14",
+    "Y15",
+    "Y16",
+    "Y17",
+    "Y18",
+    "Y19",
+    "Y20"
+  ],
+  "status": "PASS",
+  "reports": {
+    "y11": {
+      "format": "UAOS_Y11_MANUAL_FIXTURE_APPROVAL_REGISTRY",
+      "version": "Y11-Y20.0.0",
+      "phase": "Y11",
+      "status": "PASS_LOCKED",
+      "sourceDesignReady": true,
+      "target": "yamaha",
+      "futureFormat": ".STY",
+      "registry": [],
+      "registryInstructions": [
+        "Add only local user-owned Yamaha .STY file paths.",
+        "Do not copy fixture files into repo.",
+        "Do not publish fixture names if private.",
+        "Do not enable full parse without explicit approval.",
+        "Do not enable writer experiments."
+      ],
+      "exampleEntry": {
+        "fixtureId": "yamaha_fixture_001",
+        "localPath": "D:\\YourFolder\\example.sty",
+        "userOwnsOrHasRights": false,
+        "approveMetadataOnly": true,
+        "approveSmallPrefixReadOnly": true,
+        "approveFullReadOnlyParse": false,
+        "approveCopyIntoRepo": false,
+        "approveWriterExperiment": false,
+        "approvePublishing": false
+      },
+      "finalDecision": {
+        "registryReady": true,
+        "hasApprovedFullParseFixtures": false,
+        "allowFullBinaryParse": false,
+        "allowParserImplementation": false,
+        "allowWriterImplementation": false,
+        "allowRealStyOutput": false,
+        "realKeyboardBinaryWriteAllowed": false,
+        "realWriterReady": false
+      },
+      "safety": {
+        "localPathsOnly": true,
+        "readOnly": true,
+        "copiedFiles": false,
+        "modifiedFixtures": false,
+        "wroteRealKeyboardBinary": false,
+        "realBinaryBlocked": true
+      }
+    },
+    "y12": {
+      "format": "UAOS_Y12_APPROVED_PATH_POLICY",
+      "version": "Y11-Y20.0.0",
+      "phase": "Y12",
+      "status": "PASS_LOCKED",
+      "pathPolicy": {
+        "allowedRoots": [],
+        "deniedRoots": [
+          "repo source tree unless fixture is synthetic",
+          "public folder",
+          "dist folder",
+          "generated folder for real fixtures"
+        ],
+        "allowedOperations": [
+          "exists check",
+          "metadata stat",
+          "bounded read-only prefix scan after approval"
+        ],
+        "blockedOperations": [
+          "copy fixture into repo",
+          "modify fixture",
+          "rename fixture",
+          "delete fixture",
+          "publish fixture",
+          "write binary beside fixture"
+        ]
+      },
+      "finalDecision": {
+        "pathPolicyReady": true,
+        "allowFixtureCopy": false,
+        "allowFixtureModification": false,
+        "allowFullBinaryParse": false,
+        "allowParserImplementation": false,
+        "allowWriterImplementation": false,
+        "allowRealStyOutput": false,
+        "realKeyboardBinaryWriteAllowed": false
+      },
+      "safety": {
+        "readOnly": true,
+        "copiedFiles": false,
+        "modifiedFixtures": false,
+        "wroteRealKeyboardBinary": false,
+        "realBinaryBlocked": true
+      }
+    },
+    "y13": {
+      "format": "UAOS_Y13_FULL_PARSE_PERMISSION_GATE",
+      "version": "Y11-Y20.0.0",
+      "phase": "Y13",
+      "status": "PASS_LOCKED",
+      "approvedFullParseCount": 0,
+      "approvedFullParse": [],
+      "gateRules": [
+        "Full read-only parse requires user-owned rights.",
+        "Full read-only parse requires explicit approval.",
+        "Writer experiment must remain false.",
+        "Any approved fixture must remain outside repo unless synthetic.",
+        "Parser may not write output binary."
+      ],
+      "finalDecision": {
+        "fullParsePermissionReady": false,
+        "allowFullBinaryParse": false,
+        "allowParserImplementation": false,
+        "allowWriterImplementation": false,
+        "allowRealKeyboardBinaryOutput": false,
+        "allowRealStyOutput": false,
+        "canExportRealSty": false,
+        "realKeyboardBinaryWriteAllowed": false,
+        "realWriterReady": false
+      },
+      "safety": {
+        "lockedGate": true,
+        "readOnly": true,
+        "wroteRealKeyboardBinary": false,
+        "realBinaryBlocked": true
+      }
+    },
+    "y14": {
+      "format": "UAOS_Y14_PARSER_IMPLEMENTATION_PREFLIGHT",
+      "version": "Y11-Y20.0.0",
+      "phase": "Y14",
+      "status": "PASS_BLOCKED",
+      "preflight": {
+        "fullParsePermissionReady": false,
+        "approvedFixtureCount": 0,
+        "parserImplementationAllowed": false,
+        "reason": "No full parse fixtures approved yet."
+      },
+      "requiredBeforeParserCode": [
+        "Y11 registry has approved local fixture paths",
+        "Y13 full parse permission ready",
+        "Y12 path policy accepted",
+        "separate parser must be read-only and output JSON only",
+        "no writer module in parser phase"
+      ],
+      "finalDecision": {
+        "parserPreflightReady": false,
+        "continueToParserImplementation": false,
+        "allowFullBinaryParse": false,
+        "allowParserImplementation": false,
+        "allowWriterImplementation": false,
+        "allowRealStyOutput": false,
+        "realKeyboardBinaryWriteAllowed": false,
+        "realWriterReady": false
+      },
+      "safety": {
+        "blocked": true,
+        "readOnly": true,
+        "wroteRealKeyboardBinary": false,
+        "realBinaryBlocked": true
+      }
+    },
+    "y15": {
+      "format": "UAOS_Y15_FIXTURE_PRIVACY_SAFETY_GATE",
+      "version": "Y11-Y20.0.0",
+      "phase": "Y15",
+      "status": "PASS",
+      "privacyRules": [
+        "Do not publish fixture file contents.",
+        "Do not copy private fixture files into repo.",
+        "Generated reports should avoid full private path exposure in public pages.",
+        "Keep analysis local.",
+        "Only use user-owned or licensed fixtures."
+      ],
+      "localOnlyRecommended": true,
+      "publicReportAllowed": true,
+      "publicReportMustExcludeBinaryContent": true,
+      "finalDecision": {
+        "privacyGateReady": true,
+        "allowPublishingFixtureContent": false,
+        "allowCopyIntoRepo": false,
+        "allowFullBinaryParse": false,
+        "allowWriterImplementation": false,
+        "allowRealStyOutput": false,
+        "realKeyboardBinaryWriteAllowed": false
+      },
+      "safety": {
+        "privacyProtected": true,
+        "readOnly": true,
+        "copiedFiles": false,
+        "modifiedFixtures": false,
+        "wroteRealKeyboardBinary": false,
+        "realBinaryBlocked": true
+      }
+    },
+    "y16": {
+      "format": "UAOS_Y16_LOCAL_APPROVAL_HANDOVER",
+      "version": "Y11-Y20.0.0",
+      "phase": "Y16",
+      "status": "PASS_LOCKED",
+      "handover": {
+        "currentStatus": "APPROVAL_REGISTRY_READY_BUT_LOCKED",
+        "nextHumanAction": "Add 3-5 user-owned Yamaha .STY local paths and explicitly approve full read-only parsing.",
+        "stillBlocked": [
+          "full binary parse",
+          "parser implementation",
+          "writer implementation",
+          "real .STY output",
+          "deploy"
+        ],
+        "safeNow": [
+          "approval registry template",
+          "path policy",
+          "privacy rules",
+          "local handover"
+        ]
+      },
+      "finalDecision": {
+        "handoverReady": true,
+        "parserUnlockReady": false,
+        "allowFullBinaryParse": false,
+        "allowParserImplementation": false,
+        "allowWriterImplementation": false,
+        "allowRealStyOutput": false,
+        "realKeyboardBinaryWriteAllowed": false
+      },
+      "safety": {
+        "readOnly": true,
+        "realBinaryBlocked": true,
+        "wroteRealKeyboardBinary": false
+      }
+    }
+  },
+  "finalDecision": {
+    "approvalRegistryReady": true,
+    "parserUnlockReady": false,
+    "allowReadOnlyAnalysis": true,
+    "allowFullBinaryParse": false,
+    "allowParserImplementation": false,
+    "allowWriterImplementation": false,
+    "allowRealKeyboardBinaryOutput": false,
+    "allowRealStyOutput": false,
+    "canExportRealSty": false,
+    "realKeyboardBinaryWriteAllowed": false,
+    "realWriterReady": false,
+    "deployAllowed": false
+  },
+  "safety": {
+    "localOnly": true,
+    "noDeploy": true,
+    "readOnly": true,
+    "copiedFiles": false,
+    "modifiedFixtures": false,
+    "wroteRealKeyboardBinary": false,
+    "realBinaryBlocked": true
+  }
+}
