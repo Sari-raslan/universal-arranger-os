@@ -1,0 +1,22 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>UAOS Master Commands</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body{font-family:Arial,sans-serif;background:#08101f;color:#f4f7ff;margin:0;padding:24px}
+    .card{background:#131d35;border:1px solid #2c3a66;border-radius:18px;padding:18px;margin:14px 0}
+    code{display:block;background:#050a14;padding:10px;border-radius:10px;white-space:pre-wrap}
+    a{color:#9bdcff}
+  </style>
+</head>
+<body>
+  <h1>UAOS Master Commands</h1>
+  <div class="card"><h2>Start</h2><code>powershell -ExecutionPolicy Bypass -File .\launchers\UAOS_START_LOCAL_MUSIC_ENGINE.ps1</code></div>
+  <div class="card"><h2>Open</h2><code>powershell -ExecutionPolicy Bypass -File .\launchers\UAOS_OPEN_LOCAL_ENGINE.ps1</code></div>
+  <div class="card"><h2>QA</h2><code>powershell -ExecutionPolicy Bypass -File .\launchers\UAOS_RUN_FINAL_QA.ps1</code></div>
+  <div class="card"><h2>Health</h2><code>node scripts/qa/uaos-local-health-check.mjs</code></div>
+  <p><a href="./index.html">Back</a></p>
+</body>
+</html>
