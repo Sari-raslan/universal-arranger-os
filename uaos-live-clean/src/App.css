@@ -74,3 +74,42 @@ h1{font-size:clamp(44px,6.5vw,86px);line-height:.93;margin:14px 0 20px}h2{font-s
 .legal .card{
   min-height:190px;
 }
+
+.onboarding{
+  background:radial-gradient(circle at right,rgba(139,92,246,.16),rgba(2,6,23,.24));
+}
+.actionCard{
+  position:relative;
+  overflow:hidden;
+}
+.actionCard:after{
+  content:"";
+  position:absolute;
+  inset:auto -30px -40px auto;
+  width:120px;
+  height:120px;
+  border-radius:999px;
+  background:rgba(34,211,238,.12);
+}
+.conversionStrip{
+  margin:34px 6vw;
+  padding:34px;
+  border-radius:32px;
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:24px;
+  align-items:center;
+  background:linear-gradient(135deg,rgba(34,211,238,.20),rgba(139,92,246,.20));
+  border:1px solid rgba(255,255,255,.16);
+  box-shadow:0 24px 80px rgba(34,211,238,.12);
+}
+@media(max-width:920px){
+  .conversionStrip{
+    grid-template-columns:1fr;
+    margin:26px 4vw;
+    padding:24px;
+  }
+  .ctaRow .btn{
+    width:100%;
+  }
+}

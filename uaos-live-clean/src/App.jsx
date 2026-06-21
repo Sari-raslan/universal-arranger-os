@@ -32,7 +32,7 @@ export default function App() {
           <a href="#workflow">Workflow</a>
           <a href="#pricing">Pricing</a>
           <a href="#downloads">Downloads</a>
-          <a href="#support">Support</a><a href="#legal">Legal</a>
+          <a href="#support">Support</a><a href="#legal">Legal</a><a href="#onboarding">Start</a>
         </div>
       </nav>
 
@@ -178,7 +178,42 @@ export default function App() {
         <p className="lead">A modern, local-first platform for voice ideas, MIDI planning, studio workflow, and professional arranger product direction.</p>
       </section>
 
-            <section className="section legal" id="legal">
+                  <section className="section onboarding" id="onboarding">
+        <p className="pill">FINAL-12 Onboarding</p>
+        <h2>Start in three simple ways</h2>
+        <div className="grid3">
+          <article className="card actionCard">
+            <h3>1. Singer mode</h3>
+            <p>Use UAOS Sing to turn vocal ideas into arranged demo direction.</p>
+            <a className="smallBtn" href="#demo">Start Singer Demo</a>
+          </article>
+          <article className="card actionCard">
+            <h3>2. Studio mode</h3>
+            <p>Use UAOS Studio to plan tracks, MIDI ideas, and song structure.</p>
+            <a className="smallBtn" href="#products">Open Studio Preview</a>
+          </article>
+          <article className="card actionCard">
+            <h3>3. Pro Arranger mode</h3>
+            <p>Use Pro Arranger planning for future professional keyboard workflows.</p>
+            <a className="smallBtn" href="#pricing">View Pro Plan</a>
+          </article>
+        </div>
+      </section>
+
+      <section className="section conversionStrip">
+        <div>
+          <p className="pill">Ready locally</p>
+          <h2>See the product now. Deploy retry comes after Vercel resets.</h2>
+          <p className="lead">The main website is visible locally with product, pricing, downloads, support, legal, FAQ, launch status, and onboarding sections.</p>
+        </div>
+        <div className="ctaRow">
+          <a className="btn hot" href="#demo">▶ Try Demo</a>
+          <a className="btn" href="#pricing">💎 Choose Plan</a>
+          <a className="btn ghost" href="/universal-arranger-os/launch/status.html">Launch Status</a>
+        </div>
+      </section>
+
+      <section className="section legal" id="legal">
         <p className="pill">FINAL-11 Commercial Pages</p>
         <h2>Commercial readiness pages</h2>
         <div className="grid2">
@@ -206,6 +241,7 @@ export default function App() {
     </main>
   );
 }
+
 
 
 
