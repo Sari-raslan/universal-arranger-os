@@ -157,6 +157,8 @@ export default function App() {
 
 <section className="finalReadyStrip"><b>UAOS is locally ready.</b><span>Visual product site, pricing preview, launch status, and deploy retry path are prepared.</span><a href="/universal-arranger-os/launch/status.html">Launch status</a></section>
 
+<section className="finalChecklist"><div>Build PASS</div><div>Local site ready</div><div>GitHub pushed</div><div>Deploy retry prepared</div></section>
+
 <section className="finalLaunchLock"><b>UAOS launch package ready.</b><span>Visible site, QA, reports, and retry deploy script are prepared.</span><a href="/universal-arranger-os/launch/status.html">Launch status</a></section>
 
 <footer className="premiumFooter">
@@ -166,6 +168,8 @@ export default function App() {
     </main>
   );
 }
+
+
 
 
 
