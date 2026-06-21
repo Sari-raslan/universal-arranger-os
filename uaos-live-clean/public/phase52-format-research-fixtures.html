@@ -1,0 +1,36 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UAOS Phase 52 Format Research Fixtures</title>
+  <style>
+    body { margin:0; font-family:Arial, sans-serif; background:#070b14; color:#eef4ff; }
+    main { max-width:1100px; margin:0 auto; padding:32px; }
+    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:16px; margin-top:24px; }
+    .card { background:#101827; border:1px solid #26354f; border-radius:18px; padding:20px; }
+    .pass { color:#7CFC98; font-weight:bold; }
+    .warn { color:#facc15; font-weight:bold; }
+    code { background:#030712; padding:3px 6px; border-radius:6px; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>UAOS Phase 52 Format Research Fixtures</h1>
+    <p class="pass">FORMAT RESEARCH FIXTURES PASS CANDIDATE</p>
+    <p class="warn">No proprietary binary samples included.</p>
+
+    <div class="grid">
+      <div class="card"><h2>KORG</h2><p><code>korg-format-fixture.json</code></p></div>
+      <div class="card"><h2>Yamaha</h2><p><code>yamaha-format-fixture.json</code></p></div>
+      <div class="card"><h2>Roland</h2><p><code>roland-format-fixture.json</code></p></div>
+      <div class="card"><h2>Ketron</h2><p><code>ketron-format-fixture.json</code></p></div>
+    </div>
+
+    <div class="card">
+      <h2>Purpose</h2>
+      <p>These fixtures prepare analyzer/writer research safely before real binary writing.</p>
+    </div>
+  </main>
+</body>
+</html>
