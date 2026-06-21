@@ -1,0 +1,49 @@
+﻿{
+  "format": "UAOS_FULL_LOCAL_MUSIC_ENGINE_PRODUCT_GATE_POLICY",
+  "version": "1.0.0",
+  "status": "local-product-gate-only",
+  "productState": "safe-local-metadata-prototype",
+  "readyLocalModules": [
+    "filenameOnlyScanner",
+    "realLimitedScannerV1",
+    "realScannerPipelineImport",
+    "libraryIndexMapper",
+    "samplerPresetPackBuilder",
+    "dawTrackTemplateBuilder",
+    "arrangementProjectBuilder",
+    "projectWorkspacePackBuilder",
+    "localPipelineOrchestrator",
+    "finalLocalGate"
+  ],
+  "allowed": [
+    "localHtml",
+    "localJson",
+    "browserDownloadJson",
+    "metadataOnlyReports",
+    "localQa",
+    "localBuild"
+  ],
+  "locked": [
+    "deploy",
+    "productionParser",
+    "keyboardParser",
+    "keyboardWriter",
+    "keyboardOutput",
+    "midiExport",
+    "audioRender",
+    "sampleLoading",
+    "archiveRead",
+    "copyMoveDelete"
+  ],
+  "safety": {
+    "noDeploy": true,
+    "noDelete": true,
+    "noAppJsTouch": true,
+    "noProductionParser": true,
+    "noKeyboardWriter": true,
+    "noKeyboardOutput": true,
+    "noMidiExport": true,
+    "noAudioRender": true,
+    "metadataOnly": true
+  }
+}
