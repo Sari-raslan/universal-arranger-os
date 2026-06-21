@@ -1,0 +1,53 @@
+{
+  "generatedBy": "KetronAgent",
+  "phase": 47,
+  "file": "ketron-package.plan.json",
+  "status": "prepared",
+  "realBinaryReady": false,
+  "sourceOutput": {
+    "agent": "KetronAgent",
+    "version": "46.0.0",
+    "target": "ketron",
+    "devices": [
+      "SD9",
+      "SD90",
+      "Audya"
+    ],
+    "preparedFiles": [
+      "ketron-style-map.plan.json",
+      "ketron-audio-drum-reference.plan.json",
+      "ketron-package.plan.json"
+    ],
+    "plan": {
+      "futureFormats": [
+        ".PAT",
+        ".MSP",
+        ".KST"
+      ],
+      "sectionMap": {
+        "intro": [
+          "intro"
+        ],
+        "arranger": [
+          "arrA",
+          "arrB",
+          "arrC",
+          "arrD"
+        ],
+        "fill": [
+          "fill"
+        ],
+        "break": [
+          "break"
+        ],
+        "ending": [
+          "ending"
+        ]
+      },
+      "audioDrumReference": true,
+      "sourceProject": "UAOS Phase 47 Generated Agent Files"
+    },
+    "realBinaryReady": false,
+    "status": "prepared"
+  }
+}
