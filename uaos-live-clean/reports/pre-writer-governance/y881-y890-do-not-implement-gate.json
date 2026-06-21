@@ -1,0 +1,39 @@
+{
+  "phase": "Y881-Y890",
+  "title": "Do-Not-Implement Until Approved Gate",
+  "status": "PASS_DO_NOT_IMPLEMENT_GATE_READY",
+  "gateState": "ACTIVE",
+  "implementationAllowed": "NO",
+  "requiredInstruction": "DO NOT IMPLEMENT UNTIL APPROVED",
+  "blockedActions": [
+    "Do not implement writer.",
+    "Do not implement real writer.",
+    "Do not create real keyboard output.",
+    "Do not create .STY/.SET/.PRS/.STL/.PAT/.MSP/.KST files.",
+    "Do not connect production parser.",
+    "Do not deploy.",
+    "Do not touch App.jsx.",
+    "Do not read/copy/modify fixtures."
+  ],
+  "futureApprovalMustInclude": [
+    "Exact phase scope",
+    "Allowed file paths",
+    "Forbidden file extensions",
+    "Rollback plan",
+    "No-output status or explicitly approved output status",
+    "Human approval text",
+    "Stop-at-first-failure rule"
+  ],
+  "safety": {
+    "writerImplementation": "BLOCKED",
+    "realWriter": "BLOCKED",
+    "realKeyboardOutput": "BLOCKED",
+    "productionParser": "BLOCKED",
+    "deployPublicRelease": "BLOCKED",
+    "fixturesReadCopyModify": "BLOCKED",
+    "appJsxModified": false,
+    "governanceOnly": true,
+    "approvalRequired": true
+  },
+  "generatedAt": "2026-06-21T10:55:41.102Z"
+}
