@@ -1,0 +1,154 @@
+{
+  "format": "UAOS_YAMAHA_STY_SAFE_PACKAGE_QA_GATE",
+  "version": "63.0.0",
+  "phase": 63,
+  "target": "yamaha",
+  "futureFormat": ".STY",
+  "requiredFileCount": 11,
+  "passedFileCount": 11,
+  "failedFileCount": 0,
+  "checks": [
+    {
+      "file": "generated/real-exporter/yamaha-sty/yamaha-sty-writer-research-plan.json",
+      "exists": true,
+      "type": "json",
+      "ok": true,
+      "error": null,
+      "format": "UAOS_YAMAHA_STY_WRITER_RESEARCH_PLAN",
+      "magic": null,
+      "byteLength": null,
+      "unsafeRealStyClaim": false
+    },
+    {
+      "file": "generated/real-exporter/yamaha-sty/yamaha-sty-intermediate-schema.json",
+      "exists": true,
+      "type": "json",
+      "ok": true,
+      "error": null,
+      "format": "UAOS_YAMAHA_STY_INTERMEDIATE_SCHEMA",
+      "magic": null,
+      "byteLength": null,
+      "unsafeRealStyClaim": false
+    },
+    {
+      "file": "generated/real-exporter/yamaha-sty/yamaha-sty-phrase-event-schema.json",
+      "exists": true,
+      "type": "json",
+      "ok": true,
+      "error": null,
+      "format": "UAOS_YAMAHA_STY_PHRASE_EVENT_SCHEMA",
+      "magic": null,
+      "byteLength": null,
+      "unsafeRealStyClaim": false
+    },
+    {
+      "file": "generated/real-exporter/yamaha-sty/yamaha-sty-safe-container-plan.json",
+      "exists": true,
+      "type": "json",
+      "ok": true,
+      "error": null,
+      "format": "UAOS_YAMAHA_STY_SAFE_CONTAINER_PLAN",
+      "magic": null,
+      "byteLength": null,
+      "unsafeRealStyClaim": false
+    },
+    {
+      "file": "generated/real-exporter/yamaha-sty/yamaha-sty-export-readiness-gate.json",
+      "exists": true,
+      "type": "json",
+      "ok": true,
+      "error": null,
+      "format": "UAOS_YAMAHA_STY_EXPORT_READINESS_GATE",
+      "magic": null,
+      "byteLength": null,
+      "unsafeRealStyClaim": false
+    },
+    {
+      "file": "generated/real-exporter/yamaha-sty/yamaha-sty-export-readiness-summary.json",
+      "exists": true,
+      "type": "json",
+      "ok": true,
+      "error": null,
+      "format": "UAOS_YAMAHA_STY_EXPORT_READINESS_SUMMARY",
+      "magic": null,
+      "byteLength": null,
+      "unsafeRealStyClaim": false
+    },
+    {
+      "file": "generated/real-exporter/yamaha-sty/package/UAOS_YAMAHA_STY_SAFE_EXPORT_PACKAGE.json",
+      "exists": true,
+      "type": "json",
+      "ok": true,
+      "error": null,
+      "format": "UAOS_YAMAHA_STY_SAFE_EXPORT_PACKAGE",
+      "magic": null,
+      "byteLength": null,
+      "unsafeRealStyClaim": false
+    },
+    {
+      "file": "generated/real-exporter/yamaha-sty/package/UAOS_YAMAHA_STY_SAFE_EXPORT_PACKAGE_SUMMARY.json",
+      "exists": true,
+      "type": "json",
+      "ok": true,
+      "error": null,
+      "format": "UAOS_YAMAHA_STY_SAFE_EXPORT_PACKAGE_SUMMARY",
+      "magic": null,
+      "byteLength": null,
+      "unsafeRealStyClaim": false
+    },
+    {
+      "file": "generated/real-exporter/yamaha-sty/package/UAOS_YAMAHA_STY_SAFE_PACKAGE.uaosbin",
+      "exists": true,
+      "type": "uaosbin",
+      "ok": true,
+      "error": null,
+      "format": null,
+      "magic": "UAOSBIN1",
+      "byteLength": 690570,
+      "unsafeRealStyClaim": false
+    },
+    {
+      "file": "generated/real-exporter/yamaha-sty/package/UAOS_YAMAHA_STY_SAFE_UAOSBIN_PACKAGE.json",
+      "exists": true,
+      "type": "json",
+      "ok": true,
+      "error": null,
+      "format": "UAOS_YAMAHA_STY_SAFE_UAOSBIN_PACKAGE",
+      "magic": "UAOSBIN1",
+      "byteLength": 690570,
+      "unsafeRealStyClaim": false
+    },
+    {
+      "file": "generated/real-exporter/yamaha-sty/package/UAOS_YAMAHA_STY_SAFE_UAOSBIN_SUMMARY.json",
+      "exists": true,
+      "type": "json",
+      "ok": true,
+      "error": null,
+      "format": "UAOS_YAMAHA_STY_SAFE_UAOSBIN_SUMMARY",
+      "magic": null,
+      "byteLength": 690570,
+      "unsafeRealStyClaim": false
+    }
+  ],
+  "qa": {
+    "status": "PASS",
+    "missing": [],
+    "unsafe": [],
+    "badUaosbin": [],
+    "failed": []
+  },
+  "finalDecision": {
+    "safePackageQaPass": true,
+    "allowSafeJsonPackage": true,
+    "allowSafeUaosbinPackage": true,
+    "allowRealStyOutput": false,
+    "canExportRealSty": false,
+    "reason": "Phase 63 validates the safe package only. Real .STY output remains blocked."
+  },
+  "realStyWriterReady": false,
+  "realKeyboardBinaryWriteAllowed": false,
+  "safety": {
+    "realBinaryBlocked": true,
+    "warning": "QA gate validates safe JSON/UAOSBIN artifacts only. It does not permit Yamaha .STY output."
+  }
+}
