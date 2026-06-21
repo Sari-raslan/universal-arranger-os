@@ -1,0 +1,36 @@
+{
+  "phase": "Y351-Y360",
+  "title": "Final Local Demo Gate",
+  "status": "PASS_LOCAL_DEMO_READY",
+  "finalConclusion": "UAOS Yamaha parser validation is ready as a local proof-of-technology demo and CTO evidence pack.",
+  "localPages": [
+    "y321-y330-local-product-demo-dashboard.html",
+    "y331-y340-cto-evidence-report.html",
+    "y341-y350-writer-roadmap-product-readiness.html",
+    "y351-y360-final-local-demo-gate.html"
+  ],
+  "finalState": {
+    "localDemo": "READY",
+    "ctoEvidencePack": "READY",
+    "writerRoadmap": "READY_WITHOUT_IMPLEMENTATION",
+    "productionParser": "BLOCKED",
+    "writer": "HARD_LOCKED",
+    "realStyOutput": "HARD_LOCKED",
+    "deploy": "BLOCKED",
+    "commercialProduct": "NO"
+  },
+  "sourceStatuses": {
+    "demo": "PASS",
+    "cto": "PASS",
+    "readiness": "PASS"
+  },
+  "nextBestDecision": "Review local demo. Then choose either UI/product refinement or a separately approved writer sandbox specification phase.",
+  "hardLimits": {
+    "appJsxModified": false,
+    "writerImplementation": false,
+    "realStyOutput": false,
+    "productionParser": false,
+    "deploy": false
+  },
+  "generatedAt": "2026-06-21T08:30:30.936Z"
+}

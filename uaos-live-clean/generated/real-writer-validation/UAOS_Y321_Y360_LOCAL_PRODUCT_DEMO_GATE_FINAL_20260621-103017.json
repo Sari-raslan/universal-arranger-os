@@ -1,0 +1,24 @@
+﻿{
+    "program":  "UAOS Yamaha Parser Validation",
+    "chain":  "Y321-Y360",
+    "status":  "PASS_LOCAL_DEMO_READY",
+    "completed":  [
+                      "Y321-Y330 main local product demo dashboard",
+                      "Y331-Y340 CTO evidence report",
+                      "Y341-Y350 writer roadmap without implementation and product readiness",
+                      "Y351-Y360 final local demo gate"
+                  ],
+    "finalState":  {
+                       "localDemo":  "READY",
+                       "ctoEvidencePack":  "READY",
+                       "writerRoadmap":  "READY_WITHOUT_IMPLEMENTATION",
+                       "productionParser":  "BLOCKED",
+                       "writer":  "HARD_LOCKED",
+                       "realStyOutput":  "HARD_LOCKED",
+                       "deploy":  "BLOCKED",
+                       "commercialProduct":  "NO"
+                   },
+    "appJsxModified":  false,
+    "noDeploy":  true,
+    "generatedAt":  "2026-06-21T10:30:33.0553303+02:00"
+}
