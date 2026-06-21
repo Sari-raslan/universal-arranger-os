@@ -18,82 +18,27 @@
 </head>
 <body>
   <h1>UAOS Local Music Engine</h1>
-  <p>Library + DAW + Sampler + Arrangement + Workspace + Pipeline + Final Local Gate.</p>
-  <p><code>No deploy · No writer · No keyboard output · No production parser · No large audio files · No MIDI export</code></p>
+  <p>Safe local pipeline with scanner approval pack.</p>
+  <p><code>No deploy · No writer · No keyboard output · No production parser · No MIDI export · No real scanner yet</code></p>
 
   <div class="grid">
-    <div class="card"><h2><a href="./library-dashboard.html">Library Dashboard</a></h2><small>Metadata, instruments, presets, zones.</small></div>
-    <div class="card"><h2><a href="./sampler-dashboard.html">Sampler Dashboard</a></h2><small>Safe preview mock and preset mapping.</small></div>
-    <div class="card"><h2><a href="./daw-workspace.html">DAW Workspace</a></h2><small>Tracks, clips, tempo, local JSON.</small></div>
-    <div class="card"><h2><a href="./arrangement-workspace.html">Arrangement Workspace</a></h2><small>Sections, chords, style lanes.</small></div>
-    <div class="card"><h2><a href="./project-studio.html">Project Studio</a></h2><small>Combined demo workspace.</small></div>
-    <div class="card"><h2><a href="./local-music-engine-status.html">Status</a></h2><small>Completion status and locks.</small></div>
-    <div class="card"><h2><a href="./qa-dashboard.html">QA Dashboard</a></h2><small>Local verification status.</small></div>
+    <div class="card"><h2><a href="./local-pipeline-orchestrator.html">End-to-End Pipeline</a></h2><small>Safe JSON-only pipeline to workspace.</small></div>
+    <div class="card"><h2><a href="./final-local-gate.html">Final Local Gate</a></h2><small>Final local readiness gate.</small></div>
+    <div class="card"><h2><a href="./qa-command-center.html">QA Command Center</a></h2><small>All local QA commands.</small></div>
 
     <div class="card">
-      <h2 class="locked">Scanner Planning</h2>
-      <p><a href="./library-scanner-approval.html">Scanner Approval</a></p>
-      <p><a href="./legal-asset-policy.html">Legal Asset Policy</a></p>
-      <p><a href="./mock-library-scan.html">Mock Library Scan</a></p>
-      <p><a href="./scanner-risk-checklist.html">Scanner Risk Checklist</a></p>
-      <small>Planning only.</small>
+      <h2 class="locked">Real Limited Scanner v1 Approval</h2>
+      <p><a href="./real-limited-scanner-approval.html">Approval Decision</a></p>
+      <p><a href="./real-scanner-risk-checklist.html">Risk Checklist</a></p>
+      <small>Approval only. No real scanner implementation yet.</small>
     </div>
 
-    <div class="card">
-      <h2 class="new">Limited Scanner</h2>
-      <p><a href="./limited-folder-picker.html">Browser Folder Picker</a></p>
-      <p><a href="./scanner-report-dashboard.html">Scanner Report Dashboard</a></p>
-      <small>Filename-only. No content read.</small>
-    </div>
-
-    <div class="card">
-      <h2 class="new">Library Index Mapper</h2>
-      <p><a href="./library-index-mapper.html">Library Index Mapper</a></p>
-      <p><a href="./preset-placeholder-preview.html">Preset Placeholder Preview</a></p>
-      <small>Maps filename-only JSON to metadata-only library index.</small>
-    </div>
-
-    <div class="card">
-      <h2 class="new">Sampler Preset Pack</h2>
-      <p><a href="./sampler-preset-pack-builder.html">Preset Pack Builder</a></p>
-      <p><a href="./sampler-preview-plan.html">Preview Plan</a></p>
-      <small>Metadata-only sampler preset pack and mock preview plan.</small>
-    </div>
-
-    <div class="card">
-      <h2 class="new">DAW Track Templates</h2>
-      <p><a href="./daw-track-template-builder.html">Track Template Builder</a></p>
-      <p><a href="./arrangement-lane-preview.html">Arrangement Lane Preview</a></p>
-      <small>Build DAW track templates and arrangement-ready lanes.</small>
-    </div>
-
-    <div class="card">
-      <h2 class="new">Arrangement Project</h2>
-      <p><a href="./arrangement-project-builder.html">Arrangement Project Builder</a></p>
-      <p><a href="./arrangement-timeline-preview.html">Timeline Preview</a></p>
-      <small>Build arrangement project JSON with sections and empty MIDI regions.</small>
-    </div>
-
-    <div class="card">
-      <h2 class="new">Project Workspace Pack</h2>
-      <p><a href="./project-workspace-pack-builder.html">Workspace Pack Builder</a></p>
-      <p><a href="./workspace-qa-dashboard.html">Workspace QA Dashboard</a></p>
-      <small>Build full local UAOS workspace pack JSON.</small>
-    </div>
-
-    <div class="card">
-      <h2 class="new">End-to-End Pipeline</h2>
-      <p><a href="./local-pipeline-orchestrator.html">Pipeline Orchestrator</a></p>
-      <p><a href="./pipeline-status.html">Pipeline Status</a></p>
-      <small>One-click safe JSON-only pipeline to final workspace pack.</small>
-    </div>
-
-    <div class="card">
-      <h2 class="new">Final Local Gate</h2>
-      <p><a href="./final-local-gate.html">Final Gate</a></p>
-      <p><a href="./qa-command-center.html">QA Command Center</a></p>
-      <small>Final local-only QA and readiness gate.</small>
-    </div>
+    <div class="card"><h2><a href="./limited-folder-picker.html">Browser Folder Picker</a></h2><small>Browser metadata/name report.</small></div>
+    <div class="card"><h2><a href="./library-index-mapper.html">Library Index Mapper</a></h2><small>Filename report to library index.</small></div>
+    <div class="card"><h2><a href="./sampler-preset-pack-builder.html">Sampler Preset Pack</a></h2><small>Metadata-only preset pack.</small></div>
+    <div class="card"><h2><a href="./daw-track-template-builder.html">DAW Track Templates</a></h2><small>Metadata-only DAW templates.</small></div>
+    <div class="card"><h2><a href="./arrangement-project-builder.html">Arrangement Project</a></h2><small>Sections and empty MIDI regions.</small></div>
+    <div class="card"><h2><a href="./project-workspace-pack-builder.html">Workspace Pack</a></h2><small>Full local workspace JSON.</small></div>
   </div>
 </body>
 </html>
