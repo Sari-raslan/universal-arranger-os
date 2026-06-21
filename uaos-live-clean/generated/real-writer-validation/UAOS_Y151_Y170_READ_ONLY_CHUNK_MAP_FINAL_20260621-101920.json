@@ -1,0 +1,18 @@
+﻿{
+    "program":  "UAOS Yamaha Parser Design",
+    "chain":  "Y151-Y170",
+    "status":  "PASS_WITH_WRITER_HARD_LOCKED",
+    "completed":  [
+                      "Y151-Y160 read-only Yamaha chunk map extraction",
+                      "Y161-Y170 chunk map QA and writer hard-lock gate"
+                  ],
+    "blocked":  [
+                    "Payload export",
+                    "Chunk payload writing",
+                    "Writer implementation",
+                    "Real .STY output",
+                    "Deploy"
+                ],
+    "nextApprovalRequiredText":  "I approve implementing read-only Yamaha section classification from approved chunk maps. No writer, no real .STY output.",
+    "generatedAt":  "2026-06-21T10:19:27.9099540+02:00"
+}
