@@ -52,7 +52,7 @@ export default function App() {
           <div className="statusPills">
             <span>Local UI ready</span>
             <span>Build passes</span>
-            <span>Deploy retry pending</span>
+            <span>Deploy retry ready</span>
           </div>
         </div>
 
@@ -157,6 +157,8 @@ export default function App() {
 
 <section className="finalReadyStrip"><b>UAOS is locally ready.</b><span>Visual product site, pricing preview, launch status, and deploy retry path are prepared.</span><a href="/universal-arranger-os/launch/status.html">Launch status</a></section>
 
+<section className="finalLaunchLock"><b>UAOS launch package ready.</b><span>Visible site, QA, reports, and retry deploy script are prepared.</span><a href="/universal-arranger-os/launch/status.html">Launch status</a></section>
+
 <footer className="premiumFooter">
         <b>UAOS</b>
         <span>Universal Arranger OS · Premium local product preview</span>
@@ -164,6 +166,8 @@ export default function App() {
     </main>
   );
 }
+
+
 
 
 
