@@ -12,22 +12,20 @@ function fail(message) {
 
 function mustExist(relativePath) {
   const full = path.join(app, relativePath);
-  if (!fs.existsSync(full)) {
-    fail("Missing: " + relativePath);
-  }
+  if (!fs.existsSync(full)) fail("Missing: " + relativePath);
   return full;
 }
 
 const policyPath = mustExist("src/uaos-local-music-engine/final-product-gate-v1/full-local-product-gate-policy.json");
 const registryPath = mustExist("src/uaos-local-music-engine/agent-command-center/desktop-agent-registry.metadata-only.json");
 const taskPackPath = mustExist("src/uaos-local-music-engine/agent-command-center/uaos-agent-task-pack.json");
+
 mustExist("public/uaos-local-music-engine/full-local-product-gate-v1.html");
 mustExist("public/uaos-local-music-engine/agent-command-center.html");
+mustExist("public/uaos-local-music-engine/index.html");
 
 const policy = JSON.parse(fs.readFileSync(policyPath, "utf8"));
-if (policy.format !== "UAOS_FULL_LOCAL_MUSIC_ENGINE_PRODUCT_GATE_POLICY") {
-  fail("Policy format mismatch.");
-}
+if (policy.format !== "UAOS_FULL_LOCAL_MUSIC_ENGINE_PRODUCT_GATE_POLICY") fail("Policy format mismatch.");
 if (policy.safety.noDeploy !== true) fail("Policy noDeploy must be true.");
 if (policy.safety.noDelete !== true) fail("Policy noDelete must be true.");
 if (policy.safety.noAppJsTouch !== true) fail("Policy noAppJsTouch must be true.");
@@ -49,7 +47,7 @@ const appJsStatus = spawnSync("git", ["status", "--porcelain", "--", "uaos-live-
 });
 
 if ((appJsStatus.stdout || "").trim() !== "") {
-  fail("App.jsx has local changes. Stop and inspect: git status --porcelain -- uaos-live-clean/src/App.jsx");
+  fail("App.jsx has local changes.");
 }
 
 console.log("UAOS FULL LOCAL PRODUCT GATE V1 QA PASS");
