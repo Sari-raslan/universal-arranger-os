@@ -1,0 +1,42 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UAOS R2-R6 Binary Validation Program</title>
+  <style>
+    body { margin:0; font-family:Arial, sans-serif; background:#070b14; color:#eef4ff; }
+    main { max-width:1000px; margin:0 auto; padding:32px; }
+    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:16px; margin-top:24px; }
+    .card { background:#101827; border:1px solid #26354f; border-radius:18px; padding:20px; }
+    .pass { color:#7CFC98; font-weight:bold; }
+    .warn { color:#facc15; font-weight:bold; }
+    code { background:#030712; padding:3px 6px; border-radius:6px; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>UAOS R2–R6 Binary Validation Program</h1>
+    <p class="pass">R2–R6 VALIDATION PASS CANDIDATE</p>
+    <p class="warn">Read-only validation. No real .STY output. Writer gate remains locked.</p>
+
+    <div class="grid">
+      <div class="card"><h2>R2</h2><p>Read-only binary header analyzer.</p></div>
+      <div class="card"><h2>R3</h2><p>Yamaha .STY candidate analyzer.</p></div>
+      <div class="card"><h2>R4</h2><p>Roundtrip harness placeholder.</p></div>
+      <div class="card"><h2>R5</h2><p>Checksum/chunk validator blockers.</p></div>
+      <div class="card"><h2>R6</h2><p>Experimental writer gate locked.</p></div>
+    </div>
+
+    <div class="card">
+      <h2>Generated</h2>
+      <p><code>generated/real-writer-validation/r2-r6/</code></p>
+    </div>
+
+    <div class="card">
+      <h2>Blocked</h2>
+      <p><code>.STY</code>, <code>.SET</code>, <code>.PRS</code>, <code>.STL</code>, <code>.PAT</code>, <code>.MSP</code>, <code>.KST</code></p>
+    </div>
+  </main>
+</body>
+</html>
