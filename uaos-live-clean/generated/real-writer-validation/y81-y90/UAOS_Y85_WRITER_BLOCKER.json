@@ -1,0 +1,35 @@
+{
+  "format": "UAOS_Y85_WRITER_BLOCKER",
+  "version": "Y81-Y90.0.0",
+  "phase": "Y85",
+  "status": "PASS_BLOCKED",
+  "blockedFormats": [
+    ".STY",
+    ".SET",
+    ".PRS",
+    ".STL",
+    ".PAT",
+    ".MSP",
+    ".KST"
+  ],
+  "blocker": {
+    "writerBlocked": true,
+    "reason": "Writer cannot unlock from prefix scan approval. Requires parser, checksum, editor import, hardware import, and separate writer approval."
+  },
+  "finalDecision": {
+    "writerBlocked": true,
+    "writerUnlockReady": false,
+    "continueToWriterImplementation": false,
+    "allowWriterImplementation": false,
+    "allowRealKeyboardBinaryOutput": false,
+    "allowRealStyOutput": false,
+    "canExportRealSty": false,
+    "realKeyboardBinaryWriteAllowed": false,
+    "realWriterReady": false
+  },
+  "safety": {
+    "locked": true,
+    "realBinaryBlocked": true,
+    "wroteRealKeyboardBinary": false
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "format": "UAOS_Y81_APPROVAL_REQUIRED_GATE",
+  "version": "Y81-Y90.0.0",
+  "phase": "Y81",
+  "status": "PASS_LOCKED",
+  "target": "yamaha",
+  "futureFormat": ".STY",
+  "previousReady": true,
+  "requiredApprovalPhrase": "I approve implementing bounded read-only prefix scanner for my selected local Yamaha .STY fixtures. No full parse, no writer.",
+  "approvalProvidedInThisLauncher": false,
+  "decision": "STOP_LOCKED",
+  "reason": "Exact approval phrase was not provided as a launcher variable or separate explicit instruction.",
+  "finalDecision": {
+    "approvalRequiredGateReady": true,
+    "selectedDecision": "STOP_LOCKED",
+    "prefixScannerImplementationUnlocked": false,
+    "parserUnlockReady": false,
+    "writerUnlockReady": false,
+    "allowBoundedPrefixScannerImplementation": false,
+    "allowMarkerExtractionImplementation": false,
+    "allowFullBinaryParse": false,
+    "allowParserImplementation": false,
+    "allowWriterImplementation": false,
+    "allowRealKeyboardBinaryOutput": false,
+    "allowRealStyOutput": false,
+    "canExportRealSty": false,
+    "realKeyboardBinaryWriteAllowed": false,
+    "realWriterReady": false,
+    "deployAllowed": false
+  },
+  "safety": {
+    "lockedByDefault": true,
+    "noDeploy": true,
+    "readOnly": true,
+    "wroteRealKeyboardBinary": false,
+    "realBinaryBlocked": true
+  }
+}

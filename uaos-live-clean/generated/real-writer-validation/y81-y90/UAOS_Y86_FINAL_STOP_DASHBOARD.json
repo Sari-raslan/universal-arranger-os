@@ -1,0 +1,64 @@
+{
+  "format": "UAOS_Y86_FINAL_STOP_DASHBOARD",
+  "version": "Y81-Y90.0.0",
+  "phase": "Y86",
+  "status": "PASS_LOCKED",
+  "dashboard": {
+    "title": "UAOS Yamaha Parser Approval Required Stop Gate",
+    "finalStatus": "STOP_LOCKED",
+    "cards": [
+      {
+        "title": "Approval gate",
+        "value": "Ready",
+        "state": "pass"
+      },
+      {
+        "title": "Exact approval",
+        "value": "Missing",
+        "state": "warn"
+      },
+      {
+        "title": "Prefix scanner",
+        "value": "Blocked",
+        "state": "warn"
+      },
+      {
+        "title": "Full parse",
+        "value": "Blocked",
+        "state": "warn"
+      },
+      {
+        "title": "Writer",
+        "value": "Blocked",
+        "state": "warn"
+      },
+      {
+        "title": "Deploy",
+        "value": "Not executed",
+        "state": "warn"
+      }
+    ],
+    "requiredApprovalPhrase": "I approve implementing bounded read-only prefix scanner for my selected local Yamaha .STY fixtures. No full parse, no writer."
+  },
+  "finalDecision": {
+    "finalStopDashboardReady": true,
+    "selectedDecision": "STOP_LOCKED",
+    "prefixScannerImplementationUnlocked": false,
+    "parserUnlockReady": false,
+    "writerUnlockReady": false,
+    "allowBoundedPrefixScannerImplementation": false,
+    "allowMarkerExtractionImplementation": false,
+    "allowFullBinaryParse": false,
+    "allowParserImplementation": false,
+    "allowWriterImplementation": false,
+    "allowRealStyOutput": false,
+    "realKeyboardBinaryWriteAllowed": false,
+    "deployAllowed": false
+  },
+  "safety": {
+    "noDeploy": true,
+    "readOnly": true,
+    "realBinaryBlocked": true,
+    "wroteRealKeyboardBinary": false
+  }
+}

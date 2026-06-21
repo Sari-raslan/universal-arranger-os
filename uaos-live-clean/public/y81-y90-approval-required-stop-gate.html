@@ -1,0 +1,39 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UAOS Y81-Y90 Approval Required Stop Gate</title>
+  <style>
+    body { margin:0; font-family:Arial, sans-serif; background:#070b14; color:#eef4ff; }
+    main { max-width:1000px; margin:0 auto; padding:32px; }
+    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:16px; margin-top:24px; }
+    .card { background:#101827; border:1px solid #26354f; border-radius:18px; padding:20px; }
+    .pass { color:#7CFC98; font-weight:bold; }
+    .warn { color:#facc15; font-weight:bold; }
+    code { background:#030712; padding:3px 6px; border-radius:6px; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>UAOS Y81–Y90 Approval Required Stop Gate</h1>
+    <p class="pass">STOP GATE READY</p>
+    <p class="warn">Default decision: STOP_LOCKED. No scanner implementation, no parser, no writer.</p>
+
+    <div class="grid">
+      <div class="card"><h2>Y81</h2><p>Approval-required gate.</p></div>
+      <div class="card"><h2>Y82</h2><p>Exact approval validator.</p></div>
+      <div class="card"><h2>Y83</h2><p>Prefix scanner blocker.</p></div>
+      <div class="card"><h2>Y84</h2><p>Full parse blocker.</p></div>
+      <div class="card"><h2>Y85</h2><p>Writer blocker.</p></div>
+      <div class="card"><h2>Y86</h2><p>Final stop dashboard.</p></div>
+      <div class="card"><h2>Y87-Y90</h2><p>QA, build, commit, safe push.</p></div>
+    </div>
+
+    <div class="card">
+      <h2>Required approval for future scanner launcher</h2>
+      <p><code>I approve implementing bounded read-only prefix scanner for my selected local Yamaha .STY fixtures. No full parse, no writer.</code></p>
+    </div>
+  </main>
+</body>
+</html>

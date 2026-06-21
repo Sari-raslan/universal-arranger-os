@@ -1,0 +1,26 @@
+{
+  "format": "UAOS_Y84_FULL_PARSE_BLOCKER",
+  "version": "Y81-Y90.0.0",
+  "phase": "Y84",
+  "status": "PASS_BLOCKED",
+  "blocker": {
+    "fullParseBlocked": true,
+    "reason": "Prefix scanning, even if later approved, must not unlock full binary parse.",
+    "requiredFutureApproval": "Separate explicit full read-only parse approval."
+  },
+  "finalDecision": {
+    "fullParseBlocked": true,
+    "fullParseUnlocked": false,
+    "allowFullBinaryParse": false,
+    "allowParserImplementation": false,
+    "allowWriterImplementation": false,
+    "allowRealStyOutput": false,
+    "realKeyboardBinaryWriteAllowed": false
+  },
+  "safety": {
+    "blocked": true,
+    "readOnly": true,
+    "wroteRealKeyboardBinary": false,
+    "realBinaryBlocked": true
+  }
+}
