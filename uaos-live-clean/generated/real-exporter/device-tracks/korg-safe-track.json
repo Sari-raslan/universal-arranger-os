@@ -1,0 +1,263 @@
+{
+  "format": "UAOS_MULTI_DEVICE_SAFE_TRACK",
+  "version": "65-66.0.0",
+  "target": "korg",
+  "futureFormats": [
+    ".STY",
+    ".SET"
+  ],
+  "realKeyboardBinaryWriteAllowed": false,
+  "realWriterReady": false,
+  "allowSafeJsonPackage": true,
+  "allowSafeUaosbinPackage": true,
+  "allowRealBinaryOutput": false,
+  "sections": [
+    {
+      "slot": "INTRO_1",
+      "sourceSectionId": "section_1",
+      "bars": 4,
+      "safeJsonReady": true,
+      "safeUaosbinReady": true,
+      "realBinaryChunkReady": false
+    },
+    {
+      "slot": "INTRO_2",
+      "sourceSectionId": "section_2",
+      "bars": 4,
+      "safeJsonReady": true,
+      "safeUaosbinReady": true,
+      "realBinaryChunkReady": false
+    },
+    {
+      "slot": "VAR_1",
+      "sourceSectionId": "section_3",
+      "bars": 4,
+      "safeJsonReady": true,
+      "safeUaosbinReady": true,
+      "realBinaryChunkReady": false
+    },
+    {
+      "slot": "VAR_2",
+      "sourceSectionId": "section_4",
+      "bars": 4,
+      "safeJsonReady": true,
+      "safeUaosbinReady": true,
+      "realBinaryChunkReady": false
+    },
+    {
+      "slot": "VAR_3",
+      "sourceSectionId": "section_5",
+      "bars": 4,
+      "safeJsonReady": true,
+      "safeUaosbinReady": true,
+      "realBinaryChunkReady": false
+    },
+    {
+      "slot": "VAR_4",
+      "sourceSectionId": "section_6",
+      "bars": 4,
+      "safeJsonReady": true,
+      "safeUaosbinReady": true,
+      "realBinaryChunkReady": false
+    },
+    {
+      "slot": "FILL_1",
+      "sourceSectionId": "section_7",
+      "bars": 1,
+      "safeJsonReady": true,
+      "safeUaosbinReady": true,
+      "realBinaryChunkReady": false
+    },
+    {
+      "slot": "FILL_2",
+      "sourceSectionId": "section_8",
+      "bars": 1,
+      "safeJsonReady": true,
+      "safeUaosbinReady": true,
+      "realBinaryChunkReady": false
+    },
+    {
+      "slot": "ENDING_1",
+      "sourceSectionId": "section_9",
+      "bars": 4,
+      "safeJsonReady": true,
+      "safeUaosbinReady": true,
+      "realBinaryChunkReady": false
+    }
+  ],
+  "tracks": [
+    {
+      "id": "drums",
+      "channel": 10,
+      "role": "drums",
+      "safePhraseEventsReady": true,
+      "realBinarySerializationReady": false
+    },
+    {
+      "id": "bass",
+      "channel": 2,
+      "role": "bass",
+      "safePhraseEventsReady": true,
+      "realBinarySerializationReady": false
+    },
+    {
+      "id": "chords",
+      "channel": 3,
+      "role": "chords",
+      "safePhraseEventsReady": true,
+      "realBinarySerializationReady": false
+    },
+    {
+      "id": "pad",
+      "channel": 4,
+      "role": "pad",
+      "safePhraseEventsReady": true,
+      "realBinarySerializationReady": false
+    },
+    {
+      "id": "phrase",
+      "channel": 5,
+      "role": "phrase",
+      "safePhraseEventsReady": true,
+      "realBinarySerializationReady": false
+    }
+  ],
+  "safePackage": {
+    "format": "UAOS_DEVICE_SAFE_PACKAGE",
+    "target": "korg",
+    "sections": [
+      {
+        "slot": "INTRO_1",
+        "sourceSectionId": "section_1",
+        "bars": 4,
+        "safeJsonReady": true,
+        "safeUaosbinReady": true,
+        "realBinaryChunkReady": false
+      },
+      {
+        "slot": "INTRO_2",
+        "sourceSectionId": "section_2",
+        "bars": 4,
+        "safeJsonReady": true,
+        "safeUaosbinReady": true,
+        "realBinaryChunkReady": false
+      },
+      {
+        "slot": "VAR_1",
+        "sourceSectionId": "section_3",
+        "bars": 4,
+        "safeJsonReady": true,
+        "safeUaosbinReady": true,
+        "realBinaryChunkReady": false
+      },
+      {
+        "slot": "VAR_2",
+        "sourceSectionId": "section_4",
+        "bars": 4,
+        "safeJsonReady": true,
+        "safeUaosbinReady": true,
+        "realBinaryChunkReady": false
+      },
+      {
+        "slot": "VAR_3",
+        "sourceSectionId": "section_5",
+        "bars": 4,
+        "safeJsonReady": true,
+        "safeUaosbinReady": true,
+        "realBinaryChunkReady": false
+      },
+      {
+        "slot": "VAR_4",
+        "sourceSectionId": "section_6",
+        "bars": 4,
+        "safeJsonReady": true,
+        "safeUaosbinReady": true,
+        "realBinaryChunkReady": false
+      },
+      {
+        "slot": "FILL_1",
+        "sourceSectionId": "section_7",
+        "bars": 1,
+        "safeJsonReady": true,
+        "safeUaosbinReady": true,
+        "realBinaryChunkReady": false
+      },
+      {
+        "slot": "FILL_2",
+        "sourceSectionId": "section_8",
+        "bars": 1,
+        "safeJsonReady": true,
+        "safeUaosbinReady": true,
+        "realBinaryChunkReady": false
+      },
+      {
+        "slot": "ENDING_1",
+        "sourceSectionId": "section_9",
+        "bars": 4,
+        "safeJsonReady": true,
+        "safeUaosbinReady": true,
+        "realBinaryChunkReady": false
+      }
+    ],
+    "tracks": [
+      {
+        "id": "drums",
+        "channel": 10,
+        "role": "drums",
+        "safePhraseEventsReady": true,
+        "realBinarySerializationReady": false
+      },
+      {
+        "id": "bass",
+        "channel": 2,
+        "role": "bass",
+        "safePhraseEventsReady": true,
+        "realBinarySerializationReady": false
+      },
+      {
+        "id": "chords",
+        "channel": 3,
+        "role": "chords",
+        "safePhraseEventsReady": true,
+        "realBinarySerializationReady": false
+      },
+      {
+        "id": "pad",
+        "channel": 4,
+        "role": "pad",
+        "safePhraseEventsReady": true,
+        "realBinarySerializationReady": false
+      },
+      {
+        "id": "phrase",
+        "channel": 5,
+        "role": "phrase",
+        "safePhraseEventsReady": true,
+        "realBinarySerializationReady": false
+      }
+    ],
+    "realBinaryBlocked": true
+  },
+  "qa": {
+    "status": "PASS",
+    "safeJsonReady": true,
+    "safeUaosbinReady": true,
+    "realBinaryReady": false,
+    "blockers": [
+      "KORG container structure not validated",
+      "KORG style section binary rules not validated",
+      "KORG checksum/package rules not validated",
+      "KORG PA3X/PA5X editor or hardware validation missing"
+    ]
+  },
+  "finalDecision": {
+    "canExportSafeJsonPackage": true,
+    "canExportSafeUaosbinPackage": true,
+    "canExportRealKeyboardBinary": false,
+    "reason": "Safe track prepared. Real keyboard binary output remains blocked until format validation, roundtrip import, checksum/package rules, and hardware/editor validation are complete."
+  },
+  "safety": {
+    "realBinaryBlocked": true,
+    "warning": "Safe track only. No real proprietary keyboard binary is generated."
+  }
+}

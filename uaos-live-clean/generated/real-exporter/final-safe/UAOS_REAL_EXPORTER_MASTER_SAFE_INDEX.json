@@ -1,0 +1,72 @@
+{
+  "format": "UAOS_REAL_EXPORTER_MASTER_SAFE_INDEX",
+  "version": "67.0.0",
+  "phase": 67,
+  "inputCount": 4,
+  "entries": [
+    {
+      "file": "generated/real-exporter/yamaha-sty/package/UAOS_YAMAHA_STY_TRACK_FINAL_LOCAL_GATE_SUMMARY.json",
+      "exists": true,
+      "format": "UAOS_YAMAHA_STY_TRACK_FINAL_LOCAL_GATE_SUMMARY",
+      "target": "yamaha",
+      "futureFormat": ".STY",
+      "futureFormats": null,
+      "unsafeRealBinaryClaim": false
+    },
+    {
+      "file": "generated/real-exporter/device-tracks/korg-safe-track.json",
+      "exists": true,
+      "format": "UAOS_MULTI_DEVICE_SAFE_TRACK",
+      "target": "korg",
+      "futureFormat": null,
+      "futureFormats": [
+        ".STY",
+        ".SET"
+      ],
+      "unsafeRealBinaryClaim": false
+    },
+    {
+      "file": "generated/real-exporter/device-tracks/roland-safe-track.json",
+      "exists": true,
+      "format": "UAOS_MULTI_DEVICE_SAFE_TRACK",
+      "target": "roland",
+      "futureFormat": null,
+      "futureFormats": [
+        ".STL",
+        ".PRS"
+      ],
+      "unsafeRealBinaryClaim": false
+    },
+    {
+      "file": "generated/real-exporter/device-tracks/ketron-safe-track.json",
+      "exists": true,
+      "format": "UAOS_MULTI_DEVICE_SAFE_TRACK",
+      "target": "ketron",
+      "futureFormat": null,
+      "futureFormats": [
+        ".PAT",
+        ".MSP",
+        ".KST"
+      ],
+      "unsafeRealBinaryClaim": false
+    }
+  ],
+  "qa": {
+    "status": "PASS",
+    "missing": [],
+    "unsafe": []
+  },
+  "finalDecision": {
+    "safeFoundationReady": true,
+    "allowSafeJsonPackage": true,
+    "allowSafeUaosbinPackage": true,
+    "allowRealKeyboardBinaryOutput": false,
+    "reason": "Master index closes the safe foundation only. Real keyboard binary writers remain blocked."
+  },
+  "realKeyboardBinaryWriteAllowed": false,
+  "realWriterReady": false,
+  "safety": {
+    "realBinaryBlocked": true,
+    "warning": "This master index does not permit .STY/.SET/.PRS/.STL/.PAT/.MSP/.KST output."
+  }
+}
