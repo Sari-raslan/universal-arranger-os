@@ -173,6 +173,8 @@ export default function App() {
 
 <section className="premiumSection pay1520UpgradeLinks"><div className="sectionTitle"><p className="spectrumLabel">Upgrade flow</p><h2>Upgrade, success, cancel, and invoice pages are ready as safe placeholders.</h2></div><div className="upgradeLinkGrid"><a href="/universal-arranger-os/checkout/upgrade.html"><b>Upgrade Center</b><span>Compare and choose a plan</span></a><a href="/universal-arranger-os/checkout/success.html"><b>Success Placeholder</b><span>No real payment</span></a><a href="/universal-arranger-os/checkout/cancel.html"><b>Cancel Placeholder</b><span>Safe checkout cancel route</span></a><a href="/universal-arranger-os/checkout/invoice-request.html"><b>Invoice Request</b><span>Manual business placeholder</span></a></div></section>
 
+<section className="premiumSection pay2126SandboxGateLinks"><div className="sectionTitle"><p className="spectrumLabel">Sandbox gate</p><h2>Payment sandbox is prepared but still locked until explicit approval.</h2></div><div className="sandboxGateGrid"><a href="/universal-arranger-os/paypal/sandbox-approval-gate.html"><b>Sandbox Approval Gate</b><span>No client ID stored</span></a><a href="/universal-arranger-os/commercial/payment-activation-checklist.html"><b>Activation Checklist</b><span>Legal/tax/sandbox steps</span></a><a href="/universal-arranger-os/qa/payment-admin-status.html"><b>Payment Admin Status</b><span>Local readiness dashboard</span></a></div></section>
+
 <footer className="premiumFooter">
         <b>UAOS</b>
         <span>Universal Arranger OS · Premium local product preview</span>
@@ -180,6 +182,7 @@ export default function App() {
     </main>
   );
 }
+
 
 
 
