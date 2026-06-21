@@ -1,0 +1,31 @@
+{
+  "format": "UAOS_FORMAT_ANALYSIS_REPORT",
+  "version": "53.0.0",
+  "target": "yamaha",
+  "futureFormats": [
+    ".STY"
+  ],
+  "fixtureFile": "yamaha-format-fixture.json",
+  "safeOnly": true,
+  "realBinarySampleIncluded": false,
+  "analyzerStatus": "FOUNDATION_ANALYSIS_READY",
+  "requiredResearchCount": 5,
+  "knownSafeAssumptionCount": 3,
+  "analysis": {
+    "canBuildIntermediateSchema": true,
+    "canBuildSectionMapper": true,
+    "canBuildSafeWriterPlan": true,
+    "canEmitRealKeyboardBinaryNow": false,
+    "blockersBeforeRealBinary": [
+      "style container/chunk structure",
+      "MAIN/INTRO/FILL/ENDING mapping",
+      "OTS metadata mapping",
+      "CASM-like behavior compatibility",
+      "checksum and device compatibility rules"
+    ]
+  },
+  "safety": {
+    "realBinaryWriterReady": false,
+    "warning": "Analyzer foundation only. No proprietary keyboard binary output."
+  }
+}

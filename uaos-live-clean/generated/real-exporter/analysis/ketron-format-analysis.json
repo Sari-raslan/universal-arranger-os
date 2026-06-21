@@ -1,0 +1,33 @@
+{
+  "format": "UAOS_FORMAT_ANALYSIS_REPORT",
+  "version": "53.0.0",
+  "target": "ketron",
+  "futureFormats": [
+    ".PAT",
+    ".MSP",
+    ".KST"
+  ],
+  "fixtureFile": "ketron-format-fixture.json",
+  "safeOnly": true,
+  "realBinarySampleIncluded": false,
+  "analyzerStatus": "FOUNDATION_ANALYSIS_READY",
+  "requiredResearchCount": 5,
+  "knownSafeAssumptionCount": 3,
+  "analysis": {
+    "canBuildIntermediateSchema": true,
+    "canBuildSectionMapper": true,
+    "canBuildSafeWriterPlan": true,
+    "canEmitRealKeyboardBinaryNow": false,
+    "blockersBeforeRealBinary": [
+      "style package structure",
+      "audio drum reference rules",
+      "arranger section mapping",
+      "phrase/channel metadata",
+      "validation workflow for SD/Audya families"
+    ]
+  },
+  "safety": {
+    "realBinaryWriterReady": false,
+    "warning": "Analyzer foundation only. No proprietary keyboard binary output."
+  }
+}

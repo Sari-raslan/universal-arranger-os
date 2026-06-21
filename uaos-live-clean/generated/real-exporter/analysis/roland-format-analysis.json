@@ -1,0 +1,32 @@
+{
+  "format": "UAOS_FORMAT_ANALYSIS_REPORT",
+  "version": "53.0.0",
+  "target": "roland",
+  "futureFormats": [
+    ".STL",
+    ".PRS"
+  ],
+  "fixtureFile": "roland-format-fixture.json",
+  "safeOnly": true,
+  "realBinarySampleIncluded": false,
+  "analyzerStatus": "FOUNDATION_ANALYSIS_READY",
+  "requiredResearchCount": 5,
+  "knownSafeAssumptionCount": 3,
+  "analysis": {
+    "canBuildIntermediateSchema": true,
+    "canBuildSectionMapper": true,
+    "canBuildSafeWriterPlan": true,
+    "canEmitRealKeyboardBinaryNow": false,
+    "blockersBeforeRealBinary": [
+      "performance structure mapping",
+      "variation/fill/intro/ending model",
+      "device family differences BK/E-A",
+      "style package metadata",
+      "validation workflow"
+    ]
+  },
+  "safety": {
+    "realBinaryWriterReady": false,
+    "warning": "Analyzer foundation only. No proprietary keyboard binary output."
+  }
+}
