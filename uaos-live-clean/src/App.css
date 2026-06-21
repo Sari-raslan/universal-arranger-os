@@ -457,3 +457,22 @@ a{text-decoration:none;color:inherit}
 .faqGrid b{display:block;font-size:22px;margin-bottom:10px;background:linear-gradient(135deg,#fff,#7dd3fc,#c084fc);-webkit-background-clip:text;background-clip:text;color:transparent}
 .faqGrid p{margin:0;color:#aebdd3;line-height:1.7}
 @media(max-width:850px){.faqGrid{grid-template-columns:1fr}}
+
+/* UI-41 to UI-46 premium buttons language deploy polish */
+.heroButtons{gap:16px!important;align-items:center!important}
+.mainBtn,.ghostBtn{min-height:50px!important;border-radius:999px!important;font-weight:1000!important;letter-spacing:-.02em!important;transition:transform .18s ease,box-shadow .18s ease,background .18s ease!important}
+.mainBtn:hover,.ghostBtn:hover{transform:translateY(-2px)!important}
+.mainBtn{background:linear-gradient(135deg,#67e8f9,#8b5cf6,#f472b6)!important;color:#031020!important;box-shadow:0 24px 80px rgba(34,211,238,.24)!important}
+.ghostBtn{background:rgba(255,255,255,.075)!important;border:1px solid rgba(255,255,255,.16)!important;color:#eaf4ff!important}
+.premiumNav a:not(.account){position:relative}
+.premiumNav a:not(.account):after{content:'';position:absolute;left:0;right:0;bottom:-7px;height:2px;border-radius:99px;background:linear-gradient(90deg,#67e8f9,#a78bfa);transform:scaleX(0);transform-origin:left;transition:transform .18s ease}
+.premiumNav a:not(.account):hover:after{transform:scaleX(1)}
+.langCards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.langCards a{min-height:150px;border-radius:30px;padding:26px;background:linear-gradient(180deg,rgba(255,255,255,.09),rgba(255,255,255,.045));border:1px solid rgba(255,255,255,.11);box-shadow:0 28px 90px rgba(0,0,0,.20);text-decoration:none;display:flex;flex-direction:column;justify-content:flex-end}
+.langCards b{font-size:30px;background:linear-gradient(135deg,#fff,#7dd3fc,#c084fc);-webkit-background-clip:text;background-clip:text;color:transparent}
+.langCards span{color:#aebdd3;margin-top:8px;font-weight:800}
+.ui42DeployBand{max-width:1320px;margin:42px auto;padding:28px 6vw;border-radius:34px;display:flex;align-items:center;justify-content:space-between;gap:18px;background:linear-gradient(135deg,rgba(34,211,238,.14),rgba(168,85,247,.12),rgba(245,158,11,.09));border:1px solid rgba(125,211,252,.18);box-shadow:0 30px 100px rgba(0,0,0,.22)}
+.ui42DeployBand b{font-size:24px;background:linear-gradient(135deg,#fff,#7dd3fc,#c084fc);-webkit-background-clip:text;background-clip:text;color:transparent}
+.ui42DeployBand span{color:#b6c5dc;font-weight:850}
+.ui42DeployBand a{height:42px;display:inline-flex;align-items:center;padding:0 16px;border-radius:999px;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.12);font-weight:950}
+@media(max-width:900px){.langCards{grid-template-columns:1fr}.ui42DeployBand{margin:30px 5vw;padding:22px;flex-direction:column;align-items:flex-start}.ui42DeployBand a{width:100%;justify-content:center}}

@@ -163,6 +163,10 @@ export default function App() {
 
 <section className="premiumSection final31ContentUpgrade" id="faq"><div className="sectionTitle"><p className="spectrumLabel">FAQ</p><h2>Clear answers before public launch.</h2></div><div className="faqGrid"><article><b>Is UAOS public?</b><p>Not yet. The visible website is ready locally and public deploy is waiting for Vercel reset.</p></article><article><b>Does it export real keyboard files?</b><p>No. Real writer and keyboard output remain locked until approved.</p></article><article><b>What is ready?</b><p>Premium website, pricing preview, local QA, launch status, and retry deploy script.</p></article><article><b>What happens next?</b><p>After Vercel reset, run the prepared retry deploy launcher.</p></article></div></section>
 
+<section className="premiumSection ui41LangHub" id="languages"><div className="sectionTitle"><p className="spectrumLabel">Languages</p><h2>UAOS speaks to creators in English, Arabic, and German.</h2></div><div className="langCards"><a href="/universal-arranger-os/pages/marketing-en.html"><b>English</b><span>Global launch copy</span></a><a href="/universal-arranger-os/pages/marketing-ar.html"><b>العربية</b><span>صفحة تسويقية عربية</span></a><a href="/universal-arranger-os/pages/marketing-de.html"><b>Deutsch</b><span>Deutsche Produktseite</span></a></div></section>
+
+<section className="ui42DeployBand"><b>Deploy-ready after Vercel reset.</b><span>Local website is prepared. Public deploy remains intentionally locked until the daily limit resets.</span><a href="/universal-arranger-os/launch/status.html">Check launch status</a></section>
+
 <footer className="premiumFooter">
         <b>UAOS</b>
         <span>Universal Arranger OS · Premium local product preview</span>
@@ -170,6 +174,7 @@ export default function App() {
     </main>
   );
 }
+
 
 
 
