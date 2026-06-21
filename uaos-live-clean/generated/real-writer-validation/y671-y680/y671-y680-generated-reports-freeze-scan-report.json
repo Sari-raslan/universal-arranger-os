@@ -1,0 +1,110 @@
+{
+  "phase": "Y671-Y680",
+  "title": "Generated Reports QA Freeze Scan",
+  "status": "PASS_GENERATED_REPORTS_PRESENT",
+  "requiredReportCount": 8,
+  "missingCount": 0,
+  "parseErrorCount": 0,
+  "weakLocksCount": 0,
+  "checks": [
+    {
+      "rel": "y351-y360/y351-y360-final-local-demo-gate-report.json",
+      "exists": true,
+      "parseOk": true,
+      "status": "PASS_LOCAL_DEMO_READY",
+      "hasWriterBlockedText": true,
+      "hasRealOutputBlockedText": false,
+      "hasParserBlockedText": true,
+      "hasDeployBlockedText": true,
+      "parseError": null
+    },
+    {
+      "rel": "y391-y400/y391-y400-final-writer-readiness-dashboard-report.json",
+      "exists": true,
+      "parseOk": true,
+      "status": "PASS_WRITER_NOT_READY_BUT_POLICY_READY",
+      "hasWriterBlockedText": true,
+      "hasRealOutputBlockedText": true,
+      "hasParserBlockedText": true,
+      "hasDeployBlockedText": true,
+      "parseError": null
+    },
+    {
+      "rel": "y451-y460/y451-y460-final-dryrun-writer-readiness-report.json",
+      "exists": true,
+      "parseOk": true,
+      "status": "PASS_DRYRUN_WRITER_READY_JSON_ONLY",
+      "hasWriterBlockedText": true,
+      "hasRealOutputBlockedText": true,
+      "hasParserBlockedText": true,
+      "hasDeployBlockedText": true,
+      "parseError": null
+    },
+    {
+      "rel": "y491-y500/y491-y500-final-dryrun-local-viewer-gate-report.json",
+      "exists": true,
+      "parseOk": true,
+      "status": "PASS_LOCAL_VIEWER_READY",
+      "hasWriterBlockedText": true,
+      "hasRealOutputBlockedText": true,
+      "hasParserBlockedText": true,
+      "hasDeployBlockedText": true,
+      "parseError": null
+    },
+    {
+      "rel": "y531-y540/y531-y540-final-local-proof-package-report.json",
+      "exists": true,
+      "parseOk": true,
+      "status": "PASS_LOCAL_PROOF_PACKAGE_READY",
+      "hasWriterBlockedText": true,
+      "hasRealOutputBlockedText": true,
+      "hasParserBlockedText": true,
+      "hasDeployBlockedText": true,
+      "parseError": null
+    },
+    {
+      "rel": "y571-y580/y571-y580-final-safe-decision-gate-report.json",
+      "exists": true,
+      "parseOk": true,
+      "status": "PASS_SAFE_NEXT_DECISION_READY",
+      "hasWriterBlockedText": true,
+      "hasRealOutputBlockedText": true,
+      "hasParserBlockedText": true,
+      "hasDeployBlockedText": true,
+      "parseError": null
+    },
+    {
+      "rel": "y611-y620/y611-y620-final-polished-local-demo-gate-report.json",
+      "exists": true,
+      "parseOk": true,
+      "status": "PASS_POLISHED_LOCAL_DEMO_READY",
+      "hasWriterBlockedText": true,
+      "hasRealOutputBlockedText": true,
+      "hasParserBlockedText": true,
+      "hasDeployBlockedText": true,
+      "parseError": null
+    },
+    {
+      "rel": "y651-y660/y651-y660-final-ui-navigation-polish-gate-report.json",
+      "exists": true,
+      "parseOk": true,
+      "status": "PASS_LOCAL_UI_NAVIGATION_POLISHED",
+      "hasWriterBlockedText": true,
+      "hasRealOutputBlockedText": true,
+      "hasParserBlockedText": true,
+      "hasDeployBlockedText": true,
+      "parseError": null
+    }
+  ],
+  "missing": [],
+  "parseErrors": [],
+  "weakLocks": [],
+  "hardLimits": {
+    "appJsxModified": false,
+    "writerImplementation": false,
+    "realKeyboardOutput": false,
+    "productionParser": false,
+    "deploy": false
+  },
+  "generatedAt": "2026-06-21T10:25:13.840Z"
+}

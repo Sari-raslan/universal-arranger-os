@@ -1,0 +1,25 @@
+﻿{
+    "program":  "UAOS Local QA Freeze + Handover Summary",
+    "chain":  "Y661-Y700",
+    "status":  "PASS_FROZEN_LOCAL_PROOF_READY",
+    "completed":  [
+                      "Y661-Y670 public pages QA freeze scan",
+                      "Y671-Y680 generated reports QA freeze scan",
+                      "Y681-Y690 QA freeze dashboard and handover summary",
+                      "Y691-Y700 final frozen local proof gate"
+                  ],
+    "finalState":  {
+                       "frozenLocalProof":  "READY",
+                       "qaFreezeDashboard":  "READY",
+                       "handoverSummary":  "READY",
+                       "publicPagesScanned":  "DONE",
+                       "generatedReportsScanned":  "DONE",
+                       "writer":  "BLOCKED",
+                       "realKeyboardOutput":  "BLOCKED",
+                       "productionParser":  "BLOCKED",
+                       "deploy":  "BLOCKED",
+                       "appJsxModified":  false,
+                       "commercialProduct":  "NO"
+                   },
+    "generatedAt":  "2026-06-21T12:25:23.3047373+02:00"
+}
