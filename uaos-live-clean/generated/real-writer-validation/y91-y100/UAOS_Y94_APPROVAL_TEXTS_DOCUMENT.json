@@ -1,0 +1,41 @@
+{
+  "format": "UAOS_Y94_APPROVAL_TEXTS_DOCUMENT",
+  "version": "Y91-Y100.0.0",
+  "phase": "Y94",
+  "status": "PASS",
+  "texts": [
+    {
+      "id": "prefixScanner",
+      "text": "I approve implementing bounded read-only prefix scanner for my selected local Yamaha .STY fixtures. No full parse, no writer.",
+      "effect": "Allows a future dedicated bounded prefix scanner implementation launcher only. No full parse, no writer."
+    },
+    {
+      "id": "fullReadOnlyParse",
+      "text": "I approve full read-only parse for my selected local Yamaha .STY fixtures. No writer.",
+      "effect": "Allows future full read-only parse launcher only. No writer."
+    },
+    {
+      "id": "writerExperiment",
+      "text": "I approve an experimental Yamaha .STY writer sandbox only after parser, checksum, editor import, and hardware validation pass.",
+      "effect": "Only after parser/checksum/editor/hardware validation. Not valid now."
+    }
+  ],
+  "finalDecision": {
+    "approvalTextsDocumentReady": true,
+    "implementationUnlockedNow": false,
+    "prefixScannerImplementationUnlocked": false,
+    "fullParseUnlocked": false,
+    "writerUnlockReady": false,
+    "allowBoundedPrefixScannerImplementation": false,
+    "allowFullBinaryParse": false,
+    "allowWriterImplementation": false,
+    "realKeyboardBinaryWriteAllowed": false,
+    "deployAllowed": false
+  },
+  "safety": {
+    "documentOnly": true,
+    "noDeploy": true,
+    "realBinaryBlocked": true,
+    "wroteRealKeyboardBinary": false
+  }
+}

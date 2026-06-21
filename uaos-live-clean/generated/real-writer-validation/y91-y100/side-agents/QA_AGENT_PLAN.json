@@ -1,0 +1,47 @@
+{
+  "format": "UAOS_Y92_QAAGENT_PREWRITE_PLAN",
+  "version": "Y91-Y100.0.0",
+  "phase": "Y92",
+  "agent": {
+    "id": "qaAgent",
+    "title": "Safety QA Agent",
+    "outputFile": "generated/real-writer-validation/y91-y100/side-agents/QA_AGENT_PLAN.json",
+    "status": "READY",
+    "plannedFiles": [
+      "scripts/UAOS_REAL_WRITER_SAFETY_QA.mjs"
+    ],
+    "allowedNow": true,
+    "reason": "QA-only planning is safe."
+  },
+  "approvalState": {
+    "prefixScannerApprovalCaptured": false,
+    "fullReadOnlyParseApprovalCaptured": false,
+    "writerExperimentApprovalCaptured": false
+  },
+  "finalDecision": {
+    "prewritePlanReady": true,
+    "implementationAllowedNow": true,
+    "prefixScannerImplementationUnlocked": false,
+    "fullParseUnlocked": false,
+    "parserUnlockReady": false,
+    "writerUnlockReady": false,
+    "allowBoundedPrefixScannerImplementation": false,
+    "allowMarkerExtractionImplementation": false,
+    "allowFullBinaryParse": false,
+    "allowParserImplementation": false,
+    "allowWriterImplementation": false,
+    "allowRealKeyboardBinaryOutput": false,
+    "allowRealStyOutput": false,
+    "canExportRealSty": false,
+    "realKeyboardBinaryWriteAllowed": false,
+    "realWriterReady": false,
+    "deployAllowed": false
+  },
+  "safety": {
+    "planningOnly": true,
+    "noDeploy": true,
+    "readOnly": true,
+    "wroteRealKeyboardBinary": false,
+    "realBinaryBlocked": true
+  }
+}

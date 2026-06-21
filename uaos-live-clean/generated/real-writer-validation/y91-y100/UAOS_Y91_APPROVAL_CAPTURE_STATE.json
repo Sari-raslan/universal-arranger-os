@@ -1,0 +1,53 @@
+{
+  "format": "UAOS_Y91_APPROVAL_CAPTURE_STATE",
+  "version": "Y91-Y100.0.0",
+  "phase": "Y91",
+  "status": "PASS_CAPTURED",
+  "approvalTexts": {
+    "prefixScanner": "I approve implementing bounded read-only prefix scanner for my selected local Yamaha .STY fixtures. No full parse, no writer.",
+    "fullReadOnlyParse": "I approve full read-only parse for my selected local Yamaha .STY fixtures. No writer.",
+    "writerExperiment": "I approve an experimental Yamaha .STY writer sandbox only after parser, checksum, editor import, and hardware validation pass."
+  },
+  "captured": {
+    "prefixScannerExactMatch": false,
+    "fullReadOnlyParseExactMatch": false,
+    "writerExperimentExactMatch": false
+  },
+  "effectiveDecision": {
+    "prefixScannerCanBePrepared": true,
+    "prefixScannerCanBeImplementedNow": false,
+    "fullParseCanBePrepared": true,
+    "fullParseCanBeImplementedNow": false,
+    "writerCanBePrepared": true,
+    "writerCanBeImplementedNow": false
+  },
+  "finalDecision": {
+    "approvalTextsReady": true,
+    "approvalCaptureReady": true,
+    "prefixScannerApprovalCaptured": false,
+    "fullReadOnlyParseApprovalCaptured": false,
+    "writerExperimentApprovalCaptured": false,
+    "prefixScannerImplementationUnlocked": false,
+    "fullParseUnlocked": false,
+    "parserUnlockReady": false,
+    "writerUnlockReady": false,
+    "allowBoundedPrefixScannerImplementation": false,
+    "allowMarkerExtractionImplementation": false,
+    "allowFullBinaryParse": false,
+    "allowParserImplementation": false,
+    "allowWriterImplementation": false,
+    "allowRealKeyboardBinaryOutput": false,
+    "allowRealStyOutput": false,
+    "canExportRealSty": false,
+    "realKeyboardBinaryWriteAllowed": false,
+    "realWriterReady": false,
+    "deployAllowed": false
+  },
+  "safety": {
+    "captureOnly": true,
+    "noDeploy": true,
+    "readOnly": true,
+    "wroteRealKeyboardBinary": false,
+    "realBinaryBlocked": true
+  }
+}

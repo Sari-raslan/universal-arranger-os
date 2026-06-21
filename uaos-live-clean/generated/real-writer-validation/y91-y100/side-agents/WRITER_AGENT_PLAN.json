@@ -1,0 +1,47 @@
+{
+  "format": "UAOS_Y92_WRITERAGENT_PREWRITE_PLAN",
+  "version": "Y91-Y100.0.0",
+  "phase": "Y92",
+  "agent": {
+    "id": "writerAgent",
+    "title": "Real Writer Agent",
+    "outputFile": "generated/real-writer-validation/y91-y100/side-agents/WRITER_AGENT_PLAN.json",
+    "status": "HARD_LOCKED",
+    "plannedFiles": [
+      "src/real-writer-validation/writer/yamahaStyWriterSandbox.js"
+    ],
+    "allowedNow": false,
+    "reason": "Writer requires parser, checksum, editor, hardware validation, and separate approval."
+  },
+  "approvalState": {
+    "prefixScannerApprovalCaptured": false,
+    "fullReadOnlyParseApprovalCaptured": false,
+    "writerExperimentApprovalCaptured": false
+  },
+  "finalDecision": {
+    "prewritePlanReady": true,
+    "implementationAllowedNow": false,
+    "prefixScannerImplementationUnlocked": false,
+    "fullParseUnlocked": false,
+    "parserUnlockReady": false,
+    "writerUnlockReady": false,
+    "allowBoundedPrefixScannerImplementation": false,
+    "allowMarkerExtractionImplementation": false,
+    "allowFullBinaryParse": false,
+    "allowParserImplementation": false,
+    "allowWriterImplementation": false,
+    "allowRealKeyboardBinaryOutput": false,
+    "allowRealStyOutput": false,
+    "canExportRealSty": false,
+    "realKeyboardBinaryWriteAllowed": false,
+    "realWriterReady": false,
+    "deployAllowed": false
+  },
+  "safety": {
+    "planningOnly": true,
+    "noDeploy": true,
+    "readOnly": true,
+    "wroteRealKeyboardBinary": false,
+    "realBinaryBlocked": true
+  }
+}

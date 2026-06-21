@@ -1,0 +1,72 @@
+{
+  "format": "UAOS_Y93_PREPARED_FILE_REGISTRY",
+  "version": "Y91-Y100.0.0",
+  "phase": "Y93",
+  "status": "PASS_PENDING_APPROVAL",
+  "preparedFiles": [
+    {
+      "agentId": "prefixScannerAgent",
+      "file": "src/real-writer-validation/prefix-scanner/boundedPrefixScanner.js",
+      "status": "PENDING_APPROVAL",
+      "createNow": false
+    },
+    {
+      "agentId": "prefixScannerAgent",
+      "file": "scripts/UAOS_RUN_BOUNDED_PREFIX_SCAN.mjs",
+      "status": "PENDING_APPROVAL",
+      "createNow": false
+    },
+    {
+      "agentId": "markerIndexAgent",
+      "file": "src/real-writer-validation/marker-index/yamahaMarkerIndex.js",
+      "status": "PENDING_APPROVAL",
+      "createNow": false
+    },
+    {
+      "agentId": "markerIndexAgent",
+      "file": "scripts/UAOS_RUN_MARKER_INDEX.mjs",
+      "status": "PENDING_APPROVAL",
+      "createNow": false
+    },
+    {
+      "agentId": "fullParseAgent",
+      "file": "src/real-writer-validation/full-parser/yamahaReadOnlyParser.js",
+      "status": "PENDING_APPROVAL",
+      "createNow": false
+    },
+    {
+      "agentId": "writerAgent",
+      "file": "src/real-writer-validation/writer/yamahaStyWriterSandbox.js",
+      "status": "PENDING_APPROVAL",
+      "createNow": false
+    },
+    {
+      "agentId": "qaAgent",
+      "file": "scripts/UAOS_REAL_WRITER_SAFETY_QA.mjs",
+      "status": "QA_PLAN_READY",
+      "createNow": false
+    }
+  ],
+  "finalDecision": {
+    "preparedFileRegistryReady": true,
+    "writePreparedImplementationFilesNow": false,
+    "prefixScannerImplementationUnlocked": false,
+    "fullParseUnlocked": false,
+    "parserUnlockReady": false,
+    "writerUnlockReady": false,
+    "allowBoundedPrefixScannerImplementation": false,
+    "allowMarkerExtractionImplementation": false,
+    "allowFullBinaryParse": false,
+    "allowParserImplementation": false,
+    "allowWriterImplementation": false,
+    "allowRealStyOutput": false,
+    "realKeyboardBinaryWriteAllowed": false,
+    "deployAllowed": false
+  },
+  "safety": {
+    "registryOnly": true,
+    "noDeploy": true,
+    "wroteRealKeyboardBinary": false,
+    "realBinaryBlocked": true
+  }
+}

@@ -1,0 +1,355 @@
+{
+  "format": "UAOS_Y91_Y100_APPROVAL_TEXTS_AND_SIDE_AGENTS_REPORT",
+  "version": "Y91-Y100.0.0",
+  "phases": [
+    "Y91",
+    "Y92",
+    "Y93",
+    "Y94",
+    "Y95",
+    "Y96",
+    "Y97",
+    "Y98",
+    "Y99",
+    "Y100"
+  ],
+  "status": "PASS",
+  "previousReady": true,
+  "reports": {
+    "y91": {
+      "format": "UAOS_Y91_APPROVAL_CAPTURE_STATE",
+      "version": "Y91-Y100.0.0",
+      "phase": "Y91",
+      "status": "PASS_CAPTURED",
+      "approvalTexts": {
+        "prefixScanner": "I approve implementing bounded read-only prefix scanner for my selected local Yamaha .STY fixtures. No full parse, no writer.",
+        "fullReadOnlyParse": "I approve full read-only parse for my selected local Yamaha .STY fixtures. No writer.",
+        "writerExperiment": "I approve an experimental Yamaha .STY writer sandbox only after parser, checksum, editor import, and hardware validation pass."
+      },
+      "captured": {
+        "prefixScannerExactMatch": false,
+        "fullReadOnlyParseExactMatch": false,
+        "writerExperimentExactMatch": false
+      },
+      "effectiveDecision": {
+        "prefixScannerCanBePrepared": true,
+        "prefixScannerCanBeImplementedNow": false,
+        "fullParseCanBePrepared": true,
+        "fullParseCanBeImplementedNow": false,
+        "writerCanBePrepared": true,
+        "writerCanBeImplementedNow": false
+      },
+      "finalDecision": {
+        "approvalTextsReady": true,
+        "approvalCaptureReady": true,
+        "prefixScannerApprovalCaptured": false,
+        "fullReadOnlyParseApprovalCaptured": false,
+        "writerExperimentApprovalCaptured": false,
+        "prefixScannerImplementationUnlocked": false,
+        "fullParseUnlocked": false,
+        "parserUnlockReady": false,
+        "writerUnlockReady": false,
+        "allowBoundedPrefixScannerImplementation": false,
+        "allowMarkerExtractionImplementation": false,
+        "allowFullBinaryParse": false,
+        "allowParserImplementation": false,
+        "allowWriterImplementation": false,
+        "allowRealKeyboardBinaryOutput": false,
+        "allowRealStyOutput": false,
+        "canExportRealSty": false,
+        "realKeyboardBinaryWriteAllowed": false,
+        "realWriterReady": false,
+        "deployAllowed": false
+      },
+      "safety": {
+        "captureOnly": true,
+        "noDeploy": true,
+        "readOnly": true,
+        "wroteRealKeyboardBinary": false,
+        "realBinaryBlocked": true
+      }
+    },
+    "y92": {
+      "format": "UAOS_Y92_SIDE_AGENT_PREWRITE_PLANS",
+      "version": "Y91-Y100.0.0",
+      "phase": "Y92",
+      "status": "PASS",
+      "agentCount": 5,
+      "agents": [
+        {
+          "id": "prefixScannerAgent",
+          "title": "Bounded Prefix Scanner Agent",
+          "outputFile": "generated/real-writer-validation/y91-y100/side-agents/PREFIX_SCANNER_AGENT_PLAN.json",
+          "status": "PENDING_APPROVAL",
+          "plannedFiles": [
+            "src/real-writer-validation/prefix-scanner/boundedPrefixScanner.js",
+            "scripts/UAOS_RUN_BOUNDED_PREFIX_SCAN.mjs"
+          ],
+          "allowedNow": false,
+          "reason": "Needs separate implementation launcher after explicit approval."
+        },
+        {
+          "id": "markerIndexAgent",
+          "title": "Marker Index Agent",
+          "outputFile": "generated/real-writer-validation/y91-y100/side-agents/MARKER_INDEX_AGENT_PLAN.json",
+          "status": "PENDING_APPROVAL",
+          "plannedFiles": [
+            "src/real-writer-validation/marker-index/yamahaMarkerIndex.js",
+            "scripts/UAOS_RUN_MARKER_INDEX.mjs"
+          ],
+          "allowedNow": false,
+          "reason": "Marker extraction implementation remains blocked."
+        },
+        {
+          "id": "fullParseAgent",
+          "title": "Full Read-only Parser Agent",
+          "outputFile": "generated/real-writer-validation/y91-y100/side-agents/FULL_PARSE_AGENT_PLAN.json",
+          "status": "LOCKED",
+          "plannedFiles": [
+            "src/real-writer-validation/full-parser/yamahaReadOnlyParser.js"
+          ],
+          "allowedNow": false,
+          "reason": "Full binary parse approval is separate and not unlocked."
+        },
+        {
+          "id": "writerAgent",
+          "title": "Real Writer Agent",
+          "outputFile": "generated/real-writer-validation/y91-y100/side-agents/WRITER_AGENT_PLAN.json",
+          "status": "HARD_LOCKED",
+          "plannedFiles": [
+            "src/real-writer-validation/writer/yamahaStyWriterSandbox.js"
+          ],
+          "allowedNow": false,
+          "reason": "Writer requires parser, checksum, editor, hardware validation, and separate approval."
+        },
+        {
+          "id": "qaAgent",
+          "title": "Safety QA Agent",
+          "outputFile": "generated/real-writer-validation/y91-y100/side-agents/QA_AGENT_PLAN.json",
+          "status": "READY",
+          "plannedFiles": [
+            "scripts/UAOS_REAL_WRITER_SAFETY_QA.mjs"
+          ],
+          "allowedNow": true,
+          "reason": "QA-only planning is safe."
+        }
+      ],
+      "finalDecision": {
+        "sideAgentPlansReady": true,
+        "sideAgentImplementationAllowedNow": false,
+        "prefixScannerImplementationUnlocked": false,
+        "fullParseUnlocked": false,
+        "parserUnlockReady": false,
+        "writerUnlockReady": false,
+        "allowBoundedPrefixScannerImplementation": false,
+        "allowMarkerExtractionImplementation": false,
+        "allowFullBinaryParse": false,
+        "allowParserImplementation": false,
+        "allowWriterImplementation": false,
+        "allowRealKeyboardBinaryOutput": false,
+        "allowRealStyOutput": false,
+        "canExportRealSty": false,
+        "realKeyboardBinaryWriteAllowed": false,
+        "realWriterReady": false,
+        "deployAllowed": false
+      },
+      "safety": {
+        "planningOnly": true,
+        "noDeploy": true,
+        "readOnly": true,
+        "wroteRealKeyboardBinary": false,
+        "realBinaryBlocked": true
+      }
+    },
+    "y93": {
+      "format": "UAOS_Y93_PREPARED_FILE_REGISTRY",
+      "version": "Y91-Y100.0.0",
+      "phase": "Y93",
+      "status": "PASS_PENDING_APPROVAL",
+      "preparedFiles": [
+        {
+          "agentId": "prefixScannerAgent",
+          "file": "src/real-writer-validation/prefix-scanner/boundedPrefixScanner.js",
+          "status": "PENDING_APPROVAL",
+          "createNow": false
+        },
+        {
+          "agentId": "prefixScannerAgent",
+          "file": "scripts/UAOS_RUN_BOUNDED_PREFIX_SCAN.mjs",
+          "status": "PENDING_APPROVAL",
+          "createNow": false
+        },
+        {
+          "agentId": "markerIndexAgent",
+          "file": "src/real-writer-validation/marker-index/yamahaMarkerIndex.js",
+          "status": "PENDING_APPROVAL",
+          "createNow": false
+        },
+        {
+          "agentId": "markerIndexAgent",
+          "file": "scripts/UAOS_RUN_MARKER_INDEX.mjs",
+          "status": "PENDING_APPROVAL",
+          "createNow": false
+        },
+        {
+          "agentId": "fullParseAgent",
+          "file": "src/real-writer-validation/full-parser/yamahaReadOnlyParser.js",
+          "status": "PENDING_APPROVAL",
+          "createNow": false
+        },
+        {
+          "agentId": "writerAgent",
+          "file": "src/real-writer-validation/writer/yamahaStyWriterSandbox.js",
+          "status": "PENDING_APPROVAL",
+          "createNow": false
+        },
+        {
+          "agentId": "qaAgent",
+          "file": "scripts/UAOS_REAL_WRITER_SAFETY_QA.mjs",
+          "status": "QA_PLAN_READY",
+          "createNow": false
+        }
+      ],
+      "finalDecision": {
+        "preparedFileRegistryReady": true,
+        "writePreparedImplementationFilesNow": false,
+        "prefixScannerImplementationUnlocked": false,
+        "fullParseUnlocked": false,
+        "parserUnlockReady": false,
+        "writerUnlockReady": false,
+        "allowBoundedPrefixScannerImplementation": false,
+        "allowMarkerExtractionImplementation": false,
+        "allowFullBinaryParse": false,
+        "allowParserImplementation": false,
+        "allowWriterImplementation": false,
+        "allowRealStyOutput": false,
+        "realKeyboardBinaryWriteAllowed": false,
+        "deployAllowed": false
+      },
+      "safety": {
+        "registryOnly": true,
+        "noDeploy": true,
+        "wroteRealKeyboardBinary": false,
+        "realBinaryBlocked": true
+      }
+    },
+    "y94": {
+      "format": "UAOS_Y94_APPROVAL_TEXTS_DOCUMENT",
+      "version": "Y91-Y100.0.0",
+      "phase": "Y94",
+      "status": "PASS",
+      "texts": [
+        {
+          "id": "prefixScanner",
+          "text": "I approve implementing bounded read-only prefix scanner for my selected local Yamaha .STY fixtures. No full parse, no writer.",
+          "effect": "Allows a future dedicated bounded prefix scanner implementation launcher only. No full parse, no writer."
+        },
+        {
+          "id": "fullReadOnlyParse",
+          "text": "I approve full read-only parse for my selected local Yamaha .STY fixtures. No writer.",
+          "effect": "Allows future full read-only parse launcher only. No writer."
+        },
+        {
+          "id": "writerExperiment",
+          "text": "I approve an experimental Yamaha .STY writer sandbox only after parser, checksum, editor import, and hardware validation pass.",
+          "effect": "Only after parser/checksum/editor/hardware validation. Not valid now."
+        }
+      ],
+      "finalDecision": {
+        "approvalTextsDocumentReady": true,
+        "implementationUnlockedNow": false,
+        "prefixScannerImplementationUnlocked": false,
+        "fullParseUnlocked": false,
+        "writerUnlockReady": false,
+        "allowBoundedPrefixScannerImplementation": false,
+        "allowFullBinaryParse": false,
+        "allowWriterImplementation": false,
+        "realKeyboardBinaryWriteAllowed": false,
+        "deployAllowed": false
+      },
+      "safety": {
+        "documentOnly": true,
+        "noDeploy": true,
+        "realBinaryBlocked": true,
+        "wroteRealKeyboardBinary": false
+      }
+    },
+    "y95": {
+      "format": "UAOS_Y95_FINAL_SIDE_AGENT_GATE",
+      "version": "Y91-Y100.0.0",
+      "phase": "Y95",
+      "status": "PASS_LOCKED",
+      "gate": {
+        "approvalCaptured": {
+          "prefixScannerExactMatch": false,
+          "fullReadOnlyParseExactMatch": false,
+          "writerExperimentExactMatch": false
+        },
+        "agentPlansReady": true,
+        "implementationFilesWritten": false,
+        "reason": "This launcher prepares approval texts and agent plans only."
+      },
+      "finalDecision": {
+        "finalSideAgentGateReady": true,
+        "sideAgentsPrewritten": true,
+        "sideAgentsImplemented": false,
+        "prefixScannerImplementationUnlocked": false,
+        "fullParseUnlocked": false,
+        "parserUnlockReady": false,
+        "writerUnlockReady": false,
+        "allowBoundedPrefixScannerImplementation": false,
+        "allowMarkerExtractionImplementation": false,
+        "allowFullBinaryParse": false,
+        "allowParserImplementation": false,
+        "allowWriterImplementation": false,
+        "allowRealKeyboardBinaryOutput": false,
+        "allowRealStyOutput": false,
+        "canExportRealSty": false,
+        "realKeyboardBinaryWriteAllowed": false,
+        "realWriterReady": false,
+        "deployAllowed": false
+      },
+      "safety": {
+        "locked": true,
+        "noDeploy": true,
+        "readOnly": true,
+        "wroteRealKeyboardBinary": false,
+        "realBinaryBlocked": true
+      }
+    }
+  },
+  "finalDecision": {
+    "approvalTextsReady": true,
+    "approvalCaptureReady": true,
+    "sideAgentPlansReady": true,
+    "preparedFileRegistryReady": true,
+    "implementationFilesWritten": false,
+    "prefixScannerImplementationUnlocked": false,
+    "fullParseUnlocked": false,
+    "parserUnlockReady": false,
+    "writerUnlockReady": false,
+    "allowReadOnlyAnalysis": true,
+    "allowBoundedPrefixScanPlanning": true,
+    "allowBoundedPrefixScannerImplementation": false,
+    "allowMarkerExtractionImplementation": false,
+    "allowFullBinaryParse": false,
+    "allowParserImplementation": false,
+    "allowWriterImplementation": false,
+    "allowRealKeyboardBinaryOutput": false,
+    "allowRealStyOutput": false,
+    "canExportRealSty": false,
+    "realKeyboardBinaryWriteAllowed": false,
+    "realWriterReady": false,
+    "deployAllowed": false
+  },
+  "safety": {
+    "planningOnly": true,
+    "localOnly": true,
+    "noDeploy": true,
+    "readOnly": true,
+    "copiedFiles": false,
+    "modifiedFixtures": false,
+    "wroteRealKeyboardBinary": false,
+    "realBinaryBlocked": true
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "format": "UAOS_Y95_FINAL_SIDE_AGENT_GATE",
+  "version": "Y91-Y100.0.0",
+  "phase": "Y95",
+  "status": "PASS_LOCKED",
+  "gate": {
+    "approvalCaptured": {
+      "prefixScannerExactMatch": false,
+      "fullReadOnlyParseExactMatch": false,
+      "writerExperimentExactMatch": false
+    },
+    "agentPlansReady": true,
+    "implementationFilesWritten": false,
+    "reason": "This launcher prepares approval texts and agent plans only."
+  },
+  "finalDecision": {
+    "finalSideAgentGateReady": true,
+    "sideAgentsPrewritten": true,
+    "sideAgentsImplemented": false,
+    "prefixScannerImplementationUnlocked": false,
+    "fullParseUnlocked": false,
+    "parserUnlockReady": false,
+    "writerUnlockReady": false,
+    "allowBoundedPrefixScannerImplementation": false,
+    "allowMarkerExtractionImplementation": false,
+    "allowFullBinaryParse": false,
+    "allowParserImplementation": false,
+    "allowWriterImplementation": false,
+    "allowRealKeyboardBinaryOutput": false,
+    "allowRealStyOutput": false,
+    "canExportRealSty": false,
+    "realKeyboardBinaryWriteAllowed": false,
+    "realWriterReady": false,
+    "deployAllowed": false
+  },
+  "safety": {
+    "locked": true,
+    "noDeploy": true,
+    "readOnly": true,
+    "wroteRealKeyboardBinary": false,
+    "realBinaryBlocked": true
+  }
+}

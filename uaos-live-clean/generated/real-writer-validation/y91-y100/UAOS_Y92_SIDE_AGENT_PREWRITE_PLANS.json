@@ -1,0 +1,92 @@
+{
+  "format": "UAOS_Y92_SIDE_AGENT_PREWRITE_PLANS",
+  "version": "Y91-Y100.0.0",
+  "phase": "Y92",
+  "status": "PASS",
+  "agentCount": 5,
+  "agents": [
+    {
+      "id": "prefixScannerAgent",
+      "title": "Bounded Prefix Scanner Agent",
+      "outputFile": "generated/real-writer-validation/y91-y100/side-agents/PREFIX_SCANNER_AGENT_PLAN.json",
+      "status": "PENDING_APPROVAL",
+      "plannedFiles": [
+        "src/real-writer-validation/prefix-scanner/boundedPrefixScanner.js",
+        "scripts/UAOS_RUN_BOUNDED_PREFIX_SCAN.mjs"
+      ],
+      "allowedNow": false,
+      "reason": "Needs separate implementation launcher after explicit approval."
+    },
+    {
+      "id": "markerIndexAgent",
+      "title": "Marker Index Agent",
+      "outputFile": "generated/real-writer-validation/y91-y100/side-agents/MARKER_INDEX_AGENT_PLAN.json",
+      "status": "PENDING_APPROVAL",
+      "plannedFiles": [
+        "src/real-writer-validation/marker-index/yamahaMarkerIndex.js",
+        "scripts/UAOS_RUN_MARKER_INDEX.mjs"
+      ],
+      "allowedNow": false,
+      "reason": "Marker extraction implementation remains blocked."
+    },
+    {
+      "id": "fullParseAgent",
+      "title": "Full Read-only Parser Agent",
+      "outputFile": "generated/real-writer-validation/y91-y100/side-agents/FULL_PARSE_AGENT_PLAN.json",
+      "status": "LOCKED",
+      "plannedFiles": [
+        "src/real-writer-validation/full-parser/yamahaReadOnlyParser.js"
+      ],
+      "allowedNow": false,
+      "reason": "Full binary parse approval is separate and not unlocked."
+    },
+    {
+      "id": "writerAgent",
+      "title": "Real Writer Agent",
+      "outputFile": "generated/real-writer-validation/y91-y100/side-agents/WRITER_AGENT_PLAN.json",
+      "status": "HARD_LOCKED",
+      "plannedFiles": [
+        "src/real-writer-validation/writer/yamahaStyWriterSandbox.js"
+      ],
+      "allowedNow": false,
+      "reason": "Writer requires parser, checksum, editor, hardware validation, and separate approval."
+    },
+    {
+      "id": "qaAgent",
+      "title": "Safety QA Agent",
+      "outputFile": "generated/real-writer-validation/y91-y100/side-agents/QA_AGENT_PLAN.json",
+      "status": "READY",
+      "plannedFiles": [
+        "scripts/UAOS_REAL_WRITER_SAFETY_QA.mjs"
+      ],
+      "allowedNow": true,
+      "reason": "QA-only planning is safe."
+    }
+  ],
+  "finalDecision": {
+    "sideAgentPlansReady": true,
+    "sideAgentImplementationAllowedNow": false,
+    "prefixScannerImplementationUnlocked": false,
+    "fullParseUnlocked": false,
+    "parserUnlockReady": false,
+    "writerUnlockReady": false,
+    "allowBoundedPrefixScannerImplementation": false,
+    "allowMarkerExtractionImplementation": false,
+    "allowFullBinaryParse": false,
+    "allowParserImplementation": false,
+    "allowWriterImplementation": false,
+    "allowRealKeyboardBinaryOutput": false,
+    "allowRealStyOutput": false,
+    "canExportRealSty": false,
+    "realKeyboardBinaryWriteAllowed": false,
+    "realWriterReady": false,
+    "deployAllowed": false
+  },
+  "safety": {
+    "planningOnly": true,
+    "noDeploy": true,
+    "readOnly": true,
+    "wroteRealKeyboardBinary": false,
+    "realBinaryBlocked": true
+  }
+}
