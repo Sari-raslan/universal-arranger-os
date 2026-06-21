@@ -1,0 +1,33 @@
+{
+  "format": "UAOS_R26_PARSER_RISK_GATE",
+  "version": "R21-R30.0.0",
+  "phase": "R26",
+  "status": "PASS_LOCKED",
+  "riskLevel": "HIGH_UNTIL_VALIDATED",
+  "acceptedSafeActions": [
+    "read-only prefix analysis",
+    "hashing",
+    "marker probe",
+    "hypothesis map",
+    "local-only report"
+  ],
+  "blockedActions": [
+    "writing .STY",
+    "rewriting fixture",
+    "copying fixture without approval",
+    "publishing fixture",
+    "claiming Yamaha writer ready"
+  ],
+  "dependsOn": "UAOS_R25_PARSER_READINESS_GATE",
+  "finalDecision": {
+    "continueToWriterImplementation": false,
+    "allowRealKeyboardBinaryOutput": false,
+    "allowRealStyOutput": false,
+    "realKeyboardBinaryWriteAllowed": false,
+    "realWriterReady": false
+  },
+  "safety": {
+    "realBinaryBlocked": true,
+    "wroteRealKeyboardBinary": false
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "format": "UAOS_R25_PARSER_READINESS_GATE",
+  "version": "R21-R30.0.0",
+  "phase": "R25",
+  "status": "PASS_LOCKED",
+  "target": "yamaha",
+  "futureFormat": ".STY",
+  "readiness": {
+    "sandboxItems": 10,
+    "sectionMarkerProbeReady": true,
+    "midiHeaderProbeReady": true,
+    "safeStructureMapReady": true,
+    "fullParserReady": false,
+    "binaryWriterReady": false
+  },
+  "blockers": [
+    "Full parser not implemented",
+    "Chunk boundaries not confirmed",
+    "Checksum rules not known",
+    "CASM/OTS rules not confirmed",
+    "Roundtrip import not validated",
+    "Hardware/editor validation missing"
+  ],
+  "finalDecision": {
+    "allowFullBinaryParse": false,
+    "allowRealStyOutput": false,
+    "canExportRealSty": false,
+    "realKeyboardBinaryWriteAllowed": false,
+    "realWriterReady": false
+  },
+  "safety": {
+    "realBinaryBlocked": true,
+    "wroteRealKeyboardBinary": false
+  }
+}
