@@ -185,6 +185,8 @@ export default function App() {
 
 <section className="pay6772PredeployPaymentLock"><b>Predeploy payment lock active.</b><span>Only static inactive payment placeholders are allowed for public launch.</span><a href="/universal-arranger-os/qa/payment-predeploy-lock-dashboard.html">Predeploy lock</a></section>
 
+<section className="pay7380PaymentMasterIndex"><b>Payment master index ready.</b><span>All payment placeholder routes are grouped and locked for public-safe display.</span><a href="/universal-arranger-os/commercial/payment-master-index.html">Master index</a></section>
+
 <footer className="premiumFooter">
         <b>UAOS</b>
         <span>Universal Arranger OS · Premium local product preview</span>
@@ -192,6 +194,7 @@ export default function App() {
     </main>
   );
 }
+
 
 
 
