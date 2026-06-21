@@ -1,0 +1,37 @@
+{
+  "format": "UAOS_R17_MANUAL_APPROVAL_GATE",
+  "version": "R11-R20.0.0",
+  "phase": "R17",
+  "status": "PASS_LOCKED",
+  "selectedCount": 20,
+  "riskCount": 20,
+  "manualApprovalRequired": true,
+  "approvedForWrite": false,
+  "approvedForDeepFullBinaryParse": false,
+  "approvedForPublishing": false,
+  "approvedForCopyingFixtures": false,
+  "allowedNow": [
+    "metadata report",
+    "read-only small-prefix analysis",
+    "local-only QA"
+  ],
+  "blockedNow": [
+    "real .STY writer",
+    "real .SET writer",
+    "real .PRS writer",
+    "real .STL writer",
+    "real .PAT/.MSP/.KST writer"
+  ],
+  "finalDecision": {
+    "continueToWriterImplementation": false,
+    "allowRealStyOutput": false,
+    "canExportRealSty": false,
+    "realKeyboardBinaryWriteAllowed": false,
+    "realWriterReady": false,
+    "reason": "Manual approval gate remains locked."
+  },
+  "safety": {
+    "realBinaryBlocked": true,
+    "wroteRealKeyboardBinary": false
+  }
+}

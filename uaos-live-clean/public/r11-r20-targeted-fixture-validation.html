@@ -1,0 +1,45 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UAOS R11-R20 Targeted Fixture Validation</title>
+  <style>
+    body { margin:0; font-family:Arial, sans-serif; background:#070b14; color:#eef4ff; }
+    main { max-width:1000px; margin:0 auto; padding:32px; }
+    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:16px; margin-top:24px; }
+    .card { background:#101827; border:1px solid #26354f; border-radius:18px; padding:20px; }
+    .pass { color:#7CFC98; font-weight:bold; }
+    .warn { color:#facc15; font-weight:bold; }
+    code { background:#030712; padding:3px 6px; border-radius:6px; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>UAOS R11–R20 Targeted Fixture Validation</h1>
+    <p class="pass">R11–R20 TARGETED VALIDATION PASS CANDIDATE</p>
+    <p class="warn">Read-only. Manual writer gate locked. No .STY output.</p>
+
+    <div class="grid">
+      <div class="card"><h2>R11</h2><p>Target fixture selection.</p></div>
+      <div class="card"><h2>R12</h2><p>Deep read-only profile.</p></div>
+      <div class="card"><h2>R13</h2><p>Yamaha STY classifier.</p></div>
+      <div class="card"><h2>R14</h2><p>Chunk map hypothesis.</p></div>
+      <div class="card"><h2>R15</h2><p>Roundtrip readiness.</p></div>
+      <div class="card"><h2>R16</h2><p>Fixture risk report.</p></div>
+      <div class="card"><h2>R17</h2><p>Manual approval gate locked.</p></div>
+      <div class="card"><h2>R18-R20</h2><p>QA, build, commit, safe push.</p></div>
+    </div>
+
+    <div class="card">
+      <h2>Generated</h2>
+      <p><code>generated/real-writer-validation/r11-r20/</code></p>
+    </div>
+
+    <div class="card">
+      <h2>Blocked</h2>
+      <p><code>.STY</code>, <code>.SET</code>, <code>.PRS</code>, <code>.STL</code>, <code>.PAT</code>, <code>.MSP</code>, <code>.KST</code></p>
+    </div>
+  </main>
+</body>
+</html>

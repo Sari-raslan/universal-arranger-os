@@ -1,0 +1,27 @@
+{
+  "format": "UAOS_R15_ROUNDTRIP_READINESS_REPORT",
+  "version": "R11-R20.0.0",
+  "phase": "R15",
+  "status": "PASS",
+  "readiness": {
+    "hasReadOnlyProfiles": true,
+    "hasChunkHypotheses": true,
+    "semanticParserReady": false,
+    "binaryRoundtripReady": false,
+    "checksumRoundtripReady": false,
+    "hardwareValidationReady": false
+  },
+  "canRunTrueRoundtripNow": false,
+  "realKeyboardBinaryWriteAllowed": false,
+  "blockers": [
+    "Parser not validated",
+    "Chunk map not confirmed",
+    "Checksum not confirmed",
+    "Hardware/editor validation missing"
+  ],
+  "safety": {
+    "readOnly": true,
+    "wroteRealKeyboardBinary": false,
+    "realBinaryBlocked": true
+  }
+}
