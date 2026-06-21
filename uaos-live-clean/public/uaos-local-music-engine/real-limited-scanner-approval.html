@@ -1,0 +1,105 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>UAOS Real Limited Scanner v1 Approval</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body{font-family:Arial,sans-serif;background:#08101f;color:#f4f7ff;margin:0;padding:24px}
+    .card{background:#131d35;border:1px solid #2c3a66;border-radius:18px;padding:18px;margin:14px 0}
+    .lock{color:#ffd479}
+    .pass{color:#75ffb1}
+    textarea{width:100%;min-height:110px;background:#050a14;color:#f4f7ff;border:1px solid #2c3a66;border-radius:12px;padding:12px}
+    button{padding:10px 14px;border:0;border-radius:10px;background:#20345f;color:#fff;cursor:pointer}
+    pre{white-space:pre-wrap;background:#050a14;border-radius:12px;padding:14px}
+    a{color:#9bdcff}
+  </style>
+</head>
+<body>
+  <h1>UAOS Real Limited Scanner v1 Approval</h1>
+  <p>This page prepares the approval decision. It does not scan your computer.</p>
+
+  <div class="card">
+    <h2 class="pass">Future allowed after approval</h2>
+    <ul>
+      <li>Selected folder only</li>
+      <li>Filename</li>
+      <li>Extension</li>
+      <li>Size bytes</li>
+      <li>Modified time</li>
+      <li>JSON report only</li>
+      <li>Non-recursive by default</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2 class="lock">Locked</h2>
+    <ul>
+      <li>No content reading</li>
+      <li>No audio decoding</li>
+      <li>No sample loading</li>
+      <li>No copy/move/delete</li>
+      <li>No ZIP/RAR/7z</li>
+      <li>No production parser</li>
+      <li>No keyboard parser/writer/output</li>
+      <li>No MIDI/audio export</li>
+      <li>No deployment</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>Approval Phrase</h2>
+    <textarea id="approval">I approve UAOS Real Limited Scanner v1: selected folder only, filename/extension/size/modified-time only, no content read, no copy/move/delete, no archives, JSON report only.</textarea>
+    <br><br>
+    <button onclick="makeDecision()">Generate Approval Decision JSON</button>
+  </div>
+
+  <div class="card">
+    <h2>Decision JSON</h2>
+    <pre id="out">Ready.</pre>
+  </div>
+
+  <p><a href="./index.html">Back</a></p>
+
+  <script>
+    function makeDecision(){
+      const phrase = document.getElementById("approval").value.trim();
+      const required = "I approve UAOS Real Limited Scanner v1: selected folder only, filename/extension/size/modified-time only, no content read, no copy/move/delete, no archives, JSON report only.";
+
+      const decision = {
+        format: "UAOS_REAL_LIMITED_SCANNER_V1_APPROVAL_DECISION",
+        version: "1.0.0",
+        createdAt: new Date().toISOString(),
+        approved: phrase === required,
+        approvalPhrase: phrase,
+        requiredPhrase: required,
+        allowedFutureImplementation: {
+          selectedFolderOnly: true,
+          filename: true,
+          extension: true,
+          sizeBytes: true,
+          modifiedTime: true,
+          jsonReportOnly: true,
+          nonRecursiveDefault: true
+        },
+        locked: {
+          fileContentRead: true,
+          audioDecode: true,
+          sampleLoad: true,
+          copyMoveDelete: true,
+          archiveRead: true,
+          productionParser: true,
+          keyboardWriter: true,
+          keyboardOutput: true,
+          midiExport: true,
+          audioRender: true,
+          deploy: true
+        },
+        implementationStatus: "not-implemented-in-this-phase"
+      };
+
+      document.getElementById("out").textContent = JSON.stringify(decision, null, 2);
+    }
+  </script>
+</body>
+</html>
