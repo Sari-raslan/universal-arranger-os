@@ -40,17 +40,17 @@ export default function App() {
             and professional keyboard players. This visible UI is now the real main website preview.
           </p>
           <div className="actions">
-            <a className="btn primary" href="#demo">Start Free Demo</a>
-            <a className="btn secondary" href="#pricing">Choose Plan</a>
+            <a className="btn primary" href="#demo">▶ Start Free Demo</a>
+            <a className="btn secondary" href="#pricing">💎 Choose Plan</a>
           </div>
           <div className="status-row">
             <span>Build: PASS</span>
-            <span>Deploy: waiting for Vercel limit</span>
+            <span>Local Preview: Ready</span>
             <span>Mode: local preview</span>
           </div>
         </div>
         <div className="hero-panel" id="demo">
-          <h2>UAOS Live Preview</h2>
+          <h2>UAOS Interactive Preview</h2>
           <div className="screen">
             <div className="meter"><span style={{width:"88%"}} /></div>
             <div className="tracks">
@@ -60,7 +60,7 @@ export default function App() {
               <div>DAW Export</div>
             </div>
           </div>
-          <p>No real keyboard writer, parser, or deploy is enabled in this UI fix.</p>
+          <p>Safe local preview only. Public deploy will continue after the Vercel daily limit resets.</p>
         </div>
       </section>
 
@@ -112,7 +112,7 @@ export default function App() {
         </div>
       </section>
 
-      <section className="section" id="downloads">
+      <section className="section banner"><h2>Ready for musicians, singers, and arrangers</h2><p className="lead">This is now the visible commercial front page. Next work can polish real product pages, screenshots, videos, and onboarding.</p><div className="actions"><a className="btn primary" href="#demo">Try the Demo</a><a className="btn secondary" href="#pricing">See Pricing</a></div></section><section className="section" id="downloads">
         <h2>Downloads</h2>
         <p className="lead">
           Desktop and mobile packages are not publicly released in this step.
@@ -126,3 +126,4 @@ export default function App() {
     </main>
   );
 }
+
