@@ -40,7 +40,7 @@ export default function App() {
 
       <section className="hero" id="home">
         <div className="heroText">
-          <p className="pill">FINAL-14 • Header Fixed / Hard Reset</p>
+          <p className="pill">FINAL-16 • LIVE WEBSITE READY</p>
           <h1>AI Arranger Platform for singers, creators, and keyboard professionals.</h1>
           <p className="lead">
             This is the real visible UAOS product front page. It now shows a commercial landing page,
@@ -238,11 +238,12 @@ export default function App() {
 
       <footer className="footer">
         <b>UAOS</b>
-        <span>Visible product completion preview • FINAL-01 • No deploy in this step</span>
+        <span>Visible product completion preview • FINAL-16 • LIVE WEBSITE READY</span>
       </footer>
     </main>
   );
 }
+
 
 
 
