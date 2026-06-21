@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>UAOS Permission Checker + Rollback Monitor</title>
+<style>
+body{font-family:Arial;background:#0f0f10;color:#eee;padding:28px;line-height:1.55}
+.card{background:#1b1b1d;border:1px solid #444;border-radius:16px;padding:20px;margin:14px 0}
+.pass{color:#80ffb0}.lock{color:#ffcc66}.bad{color:#ff8080}a{color:#9fd0ff}
+</style>
+</head>
+<body>
+<div class="card"><h1>Permission Checker + Rollback/Freeze Monitor</h1><h2>ALLOW PHASE 0 ONLY</h2></div>
+<div class="card pass"><h2>Allowed Now</h2><ul><li>create isolated generated sandbox folder</li>
+<li>write JSON reports</li>
+<li>write HTML review pages</li>
+<li>scan forbidden extensions</li>
+<li>verify no-output state</li></ul></div>
+<div class="card bad"><h2>Denied Now</h2><ul><li>writer implementation</li>
+<li>real writer</li>
+<li>real keyboard output</li>
+<li>.STY/.SET/.PRS/.STL/.PAT/.MSP/.KST output</li>
+<li>production parser</li>
+<li>deploy/public release</li>
+<li>fixtures read/copy/modify</li>
+<li>App.jsx modification</li></ul></div>
+<div class="card lock"><h2>Freeze Triggers</h2><ul><li>writer implementation detected</li>
+<li>real writer detected</li>
+<li>real keyboard output detected</li>
+<li>forbidden extension file detected</li>
+<li>production parser detected</li>
+<li>deploy command detected</li>
+<li>fixture read/copy/modify detected</li>
+<li>App.jsx modification detected</li></ul></div>
+<div class="card"><h2>Freeze Action</h2><p>STOP_AT_FIRST_FAILURE</p></div>
+</body>
+</html>

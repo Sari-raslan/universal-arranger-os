@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>UAOS No-Output Harness + Scanner</title>
+<style>
+body{font-family:Arial;background:#0f0f10;color:#eee;padding:28px;line-height:1.55}
+.card{background:#1b1b1d;border:1px solid #444;border-radius:16px;padding:20px;margin:14px 0}
+.pass{color:#80ffb0}.lock{color:#ffcc66}.bad{color:#ff8080}a{color:#9fd0ff}
+</style>
+</head>
+<body>
+<div class="card"><h1>No-Output Harness + Forbidden Extension Scanner</h1><h2>PASS_FORBIDDEN_EXTENSION_SCAN_CLEAN</h2></div>
+<div class="card pass"><h2>Harness Rules</h2><ul><li>No writer commands.</li>
+<li>No binary serialization.</li>
+<li>No output generation.</li>
+<li>No real keyboard file creation.</li>
+<li>No production parser.</li>
+<li>No fixtures touch.</li>
+<li>No deploy.</li></ul></div>
+<div class="card lock"><h2>Forbidden Extensions</h2><ul><li>.sty</li>
+<li>.set</li>
+<li>.prs</li>
+<li>.stl</li>
+<li>.pat</li>
+<li>.msp</li>
+<li>.kst</li></ul></div>
+<div class="card"><h2>Scan Result</h2><p>Scanned files: 1<br>Forbidden found: 0</p></div>
+</body>
+</html>

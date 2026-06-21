@@ -1,0 +1,88 @@
+{
+  "phase": "Y901-Y910",
+  "status": "PASS_SANDBOX_FOLDER_MANIFEST_READY",
+  "manifest": {
+    "phase": "Y901-Y910",
+    "title": "Isolated No-Output Sandbox Folder Manifest",
+    "status": "PASS_SANDBOX_FOLDER_MANIFEST_READY",
+    "sandboxRoot": "C:\\Users\\ssare\\keyboard-manager-clean\\uaos-live-clean\\generated\\real-writer-validation\\writer-sandbox-phase0-no-output",
+    "purpose": "Create an isolated folder for future sandbox governance only. No writer, no output, no parser, no fixtures.",
+    "allowedArtifacts": [
+      ".json",
+      ".html",
+      ".txt",
+      ".md"
+    ],
+    "forbiddenExtensions": [
+      ".STY",
+      ".SET",
+      ".PRS",
+      ".STL",
+      ".PAT",
+      ".MSP",
+      ".KST"
+    ],
+    "directories": [
+      {
+        "name": "00_manifest",
+        "path": "C:\\Users\\ssare\\keyboard-manager-clean\\uaos-live-clean\\generated\\real-writer-validation\\writer-sandbox-phase0-no-output\\00_manifest",
+        "purpose": "Reports/governance only"
+      },
+      {
+        "name": "01_no_output_harness",
+        "path": "C:\\Users\\ssare\\keyboard-manager-clean\\uaos-live-clean\\generated\\real-writer-validation\\writer-sandbox-phase0-no-output\\01_no_output_harness",
+        "purpose": "Reports/governance only"
+      },
+      {
+        "name": "02_scanners",
+        "path": "C:\\Users\\ssare\\keyboard-manager-clean\\uaos-live-clean\\generated\\real-writer-validation\\writer-sandbox-phase0-no-output\\02_scanners",
+        "purpose": "Reports/governance only"
+      },
+      {
+        "name": "03_permission_checker",
+        "path": "C:\\Users\\ssare\\keyboard-manager-clean\\uaos-live-clean\\generated\\real-writer-validation\\writer-sandbox-phase0-no-output\\03_permission_checker",
+        "purpose": "Reports/governance only"
+      },
+      {
+        "name": "04_rollback_freeze_monitor",
+        "path": "C:\\Users\\ssare\\keyboard-manager-clean\\uaos-live-clean\\generated\\real-writer-validation\\writer-sandbox-phase0-no-output\\04_rollback_freeze_monitor",
+        "purpose": "Reports/governance only"
+      },
+      {
+        "name": "05_reports_only",
+        "path": "C:\\Users\\ssare\\keyboard-manager-clean\\uaos-live-clean\\generated\\real-writer-validation\\writer-sandbox-phase0-no-output\\05_reports_only",
+        "purpose": "Reports/governance only"
+      },
+      {
+        "name": "99_quarantine_empty",
+        "path": "C:\\Users\\ssare\\keyboard-manager-clean\\uaos-live-clean\\generated\\real-writer-validation\\writer-sandbox-phase0-no-output\\99_quarantine_empty",
+        "purpose": "Must remain empty unless future failure evidence is copied manually after approval."
+      }
+    ],
+    "safety": {
+      "writerImplementation": "BLOCKED",
+      "realWriter": "BLOCKED",
+      "realKeyboardOutput": "BLOCKED",
+      "forbiddenKeyboardExtensions": "BLOCKED",
+      "productionParser": "BLOCKED",
+      "deployPublicRelease": "BLOCKED",
+      "fixturesReadCopyModify": "BLOCKED",
+      "appJsxModified": false,
+      "sandboxPhase": "PHASE_0_NO_OUTPUT",
+      "sandboxIsolated": true
+    },
+    "generatedAt": "2026-06-21T11:04:02.495Z"
+  },
+  "safety": {
+    "writerImplementation": "BLOCKED",
+    "realWriter": "BLOCKED",
+    "realKeyboardOutput": "BLOCKED",
+    "forbiddenKeyboardExtensions": "BLOCKED",
+    "productionParser": "BLOCKED",
+    "deployPublicRelease": "BLOCKED",
+    "fixturesReadCopyModify": "BLOCKED",
+    "appJsxModified": false,
+    "sandboxPhase": "PHASE_0_NO_OUTPUT",
+    "sandboxIsolated": true
+  }
+}
