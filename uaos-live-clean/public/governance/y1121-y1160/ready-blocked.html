@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>UAOS Ready / Blocked</title>
+<style>
+body{font-family:Arial;background:#0f0f10;color:#eee;padding:28px;line-height:1.55}
+.card{background:#1b1b1d;border:1px solid #444;border-radius:16px;padding:20px;margin:14px 0}
+table{width:100%;border-collapse:collapse}td,th{border:1px solid #444;padding:10px}
+.pass{color:#80ffb0}.lock{color:#ffcc66}.bad{color:#ff8080}
+</style>
+</head>
+<body>
+<div class="card"><h1>UAOS What Is Ready / What Is Blocked</h1></div>
+<div class="card pass"><h2>Ready</h2><table><tr><th>Item</th><th>Status</th><th>Note</th></tr><tr><td>Local proof</td><td>READY</td><td>Safe local review evidence exists.</td></tr>
+<tr><td>Commercial readiness planning</td><td>READY</td><td>Planning only, not launch.</td></tr>
+<tr><td>Writer specification</td><td>READY</td><td>Spec only, no implementation.</td></tr>
+<tr><td>Conformance design</td><td>READY</td><td>Design only.</td></tr>
+<tr><td>Approval governance</td><td>READY</td><td>NO-GO unless separately approved.</td></tr>
+<tr><td>No-output sandbox</td><td>READY</td><td>Isolated generated sandbox only.</td></tr>
+<tr><td>Dry-run contracts</td><td>READY</td><td>Contracts only, no output.</td></tr>
+<tr><td>Read-only simulator</td><td>READY</td><td>Rejects forbidden actions.</td></tr>
+<tr><td>Final handover freeze</td><td>READY</td><td>Safe closure pages ready.</td></tr></table></div>
+<div class="card bad"><h2>Blocked</h2><table><tr><th>Item</th><th>Status</th><th>Reason</th></tr><tr><td>Writer implementation</td><td>BLOCKED</td><td>Requires separate explicit approval.</td></tr>
+<tr><td>Real writer</td><td>BLOCKED</td><td>Not implemented.</td></tr>
+<tr><td>Real keyboard output</td><td>BLOCKED</td><td>No .STY/.SET/.PRS/.STL/.PAT/.MSP/.KST.</td></tr>
+<tr><td>Production parser</td><td>BLOCKED</td><td>Not approved.</td></tr>
+<tr><td>Deploy/public release</td><td>BLOCKED</td><td>No release authorization.</td></tr>
+<tr><td>Fixtures read/copy/modify</td><td>BLOCKED</td><td>No fixture permission.</td></tr>
+<tr><td>App.jsx modification</td><td>BLOCKED</td><td>Protected by constraint.</td></tr>
+<tr><td>Commercial product claim</td><td>NO</td><td>Only safe local proof and planning are ready.</td></tr></table></div>
+</body>
+</html>
