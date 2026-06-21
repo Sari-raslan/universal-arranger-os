@@ -1,0 +1,38 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UAOS Phase 48 Agent File Aggregator</title>
+  <style>
+    body { margin:0; font-family:Arial, sans-serif; background:#070b14; color:#eef4ff; }
+    main { max-width:1100px; margin:0 auto; padding:32px; }
+    .card { background:#101827; border:1px solid #26354f; border-radius:18px; padding:20px; margin:16px 0; }
+    .pass { color:#7CFC98; font-weight:bold; }
+    .warn { color:#facc15; font-weight:bold; }
+    code { background:#030712; padding:3px 6px; border-radius:6px; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>UAOS Phase 48 Agent File Aggregator</h1>
+    <p class="pass">MASTER AGENT EXPORT PLAN PASS CANDIDATE</p>
+    <p class="warn">This aggregates generated agent plans. It is not real .STY/.SET/.PRS binary export.</p>
+
+    <div class="card">
+      <h2>Master Output</h2>
+      <p><code>uaos-live-clean/generated/master/UAOS_AGENT_MASTER_EXPORT_PLAN.json</code></p>
+    </div>
+
+    <div class="card">
+      <h2>Included Source Folder</h2>
+      <p><code>uaos-live-clean/generated/agents/</code></p>
+    </div>
+
+    <div class="card">
+      <h2>Purpose</h2>
+      <p>Collects KORG, Yamaha, Roland, Ketron, MIDI, Style, Binary, QA, and Orchestrator generated plans into one master export plan.</p>
+    </div>
+  </main>
+</body>
+</html>

@@ -1,0 +1,2325 @@
+{
+  "format": "UAOS_AGENT_MASTER_EXPORT_PLAN",
+  "version": "48.0.0",
+  "createdAt": "2026-06-21T05:07:41.012Z",
+  "sourceFolder": "generated/agents",
+  "fileCount": 29,
+  "entries": [
+    {
+      "relativePath": "binary/binary-agent-output.json",
+      "generatedBy": "BinaryAgent",
+      "realBinaryReady": false,
+      "data": {
+        "agent": "BinaryAgent",
+        "version": "46.0.0",
+        "preparedFiles": [
+          "safe-uaosbin.plan.json",
+          "binary-header.plan.json",
+          "payload-schema.plan.json"
+        ],
+        "binaryPlan": {
+          "format": "UAOS_AGENT_BINARY_PLAN",
+          "containerMagic": "UAOSBIN1",
+          "safeExtension": ".uaosbin",
+          "requestedTarget": "all",
+          "realBinaryReady": false,
+          "warning": "Safe UAOS binary container only. Not proprietary keyboard binary."
+        },
+        "status": "prepared"
+      }
+    },
+    {
+      "relativePath": "binary/binary-header.plan.json",
+      "generatedBy": "BinaryAgent",
+      "realBinaryReady": false,
+      "data": {
+        "generatedBy": "BinaryAgent",
+        "phase": 47,
+        "file": "binary-header.plan.json",
+        "status": "prepared",
+        "realBinaryReady": false,
+        "sourceOutput": {
+          "agent": "BinaryAgent",
+          "version": "46.0.0",
+          "preparedFiles": [
+            "safe-uaosbin.plan.json",
+            "binary-header.plan.json",
+            "payload-schema.plan.json"
+          ],
+          "binaryPlan": {
+            "format": "UAOS_AGENT_BINARY_PLAN",
+            "containerMagic": "UAOSBIN1",
+            "safeExtension": ".uaosbin",
+            "requestedTarget": "all",
+            "realBinaryReady": false,
+            "warning": "Safe UAOS binary container only. Not proprietary keyboard binary."
+          },
+          "status": "prepared"
+        }
+      }
+    },
+    {
+      "relativePath": "binary/payload-schema.plan.json",
+      "generatedBy": "BinaryAgent",
+      "realBinaryReady": false,
+      "data": {
+        "generatedBy": "BinaryAgent",
+        "phase": 47,
+        "file": "payload-schema.plan.json",
+        "status": "prepared",
+        "realBinaryReady": false,
+        "sourceOutput": {
+          "agent": "BinaryAgent",
+          "version": "46.0.0",
+          "preparedFiles": [
+            "safe-uaosbin.plan.json",
+            "binary-header.plan.json",
+            "payload-schema.plan.json"
+          ],
+          "binaryPlan": {
+            "format": "UAOS_AGENT_BINARY_PLAN",
+            "containerMagic": "UAOSBIN1",
+            "safeExtension": ".uaosbin",
+            "requestedTarget": "all",
+            "realBinaryReady": false,
+            "warning": "Safe UAOS binary container only. Not proprietary keyboard binary."
+          },
+          "status": "prepared"
+        }
+      }
+    },
+    {
+      "relativePath": "binary/safe-uaosbin.plan.json",
+      "generatedBy": "BinaryAgent",
+      "realBinaryReady": false,
+      "data": {
+        "generatedBy": "BinaryAgent",
+        "phase": 47,
+        "file": "safe-uaosbin.plan.json",
+        "status": "prepared",
+        "realBinaryReady": false,
+        "sourceOutput": {
+          "agent": "BinaryAgent",
+          "version": "46.0.0",
+          "preparedFiles": [
+            "safe-uaosbin.plan.json",
+            "binary-header.plan.json",
+            "payload-schema.plan.json"
+          ],
+          "binaryPlan": {
+            "format": "UAOS_AGENT_BINARY_PLAN",
+            "containerMagic": "UAOSBIN1",
+            "safeExtension": ".uaosbin",
+            "requestedTarget": "all",
+            "realBinaryReady": false,
+            "warning": "Safe UAOS binary container only. Not proprietary keyboard binary."
+          },
+          "status": "prepared"
+        }
+      }
+    },
+    {
+      "relativePath": "ketron/ketron-agent-output.json",
+      "generatedBy": "KetronAgent",
+      "realBinaryReady": false,
+      "data": {
+        "agent": "KetronAgent",
+        "version": "46.0.0",
+        "target": "ketron",
+        "devices": [
+          "SD9",
+          "SD90",
+          "Audya"
+        ],
+        "preparedFiles": [
+          "ketron-style-map.plan.json",
+          "ketron-audio-drum-reference.plan.json",
+          "ketron-package.plan.json"
+        ],
+        "plan": {
+          "futureFormats": [
+            ".PAT",
+            ".MSP",
+            ".KST"
+          ],
+          "sectionMap": {
+            "intro": [
+              "intro"
+            ],
+            "arranger": [
+              "arrA",
+              "arrB",
+              "arrC",
+              "arrD"
+            ],
+            "fill": [
+              "fill"
+            ],
+            "break": [
+              "break"
+            ],
+            "ending": [
+              "ending"
+            ]
+          },
+          "audioDrumReference": true,
+          "sourceProject": "UAOS Phase 47 Generated Agent Files"
+        },
+        "realBinaryReady": false,
+        "status": "prepared"
+      }
+    },
+    {
+      "relativePath": "ketron/ketron-audio-drum-reference.plan.json",
+      "generatedBy": "KetronAgent",
+      "realBinaryReady": false,
+      "data": {
+        "generatedBy": "KetronAgent",
+        "phase": 47,
+        "file": "ketron-audio-drum-reference.plan.json",
+        "status": "prepared",
+        "realBinaryReady": false,
+        "sourceOutput": {
+          "agent": "KetronAgent",
+          "version": "46.0.0",
+          "target": "ketron",
+          "devices": [
+            "SD9",
+            "SD90",
+            "Audya"
+          ],
+          "preparedFiles": [
+            "ketron-style-map.plan.json",
+            "ketron-audio-drum-reference.plan.json",
+            "ketron-package.plan.json"
+          ],
+          "plan": {
+            "futureFormats": [
+              ".PAT",
+              ".MSP",
+              ".KST"
+            ],
+            "sectionMap": {
+              "intro": [
+                "intro"
+              ],
+              "arranger": [
+                "arrA",
+                "arrB",
+                "arrC",
+                "arrD"
+              ],
+              "fill": [
+                "fill"
+              ],
+              "break": [
+                "break"
+              ],
+              "ending": [
+                "ending"
+              ]
+            },
+            "audioDrumReference": true,
+            "sourceProject": "UAOS Phase 47 Generated Agent Files"
+          },
+          "realBinaryReady": false,
+          "status": "prepared"
+        }
+      }
+    },
+    {
+      "relativePath": "ketron/ketron-package.plan.json",
+      "generatedBy": "KetronAgent",
+      "realBinaryReady": false,
+      "data": {
+        "generatedBy": "KetronAgent",
+        "phase": 47,
+        "file": "ketron-package.plan.json",
+        "status": "prepared",
+        "realBinaryReady": false,
+        "sourceOutput": {
+          "agent": "KetronAgent",
+          "version": "46.0.0",
+          "target": "ketron",
+          "devices": [
+            "SD9",
+            "SD90",
+            "Audya"
+          ],
+          "preparedFiles": [
+            "ketron-style-map.plan.json",
+            "ketron-audio-drum-reference.plan.json",
+            "ketron-package.plan.json"
+          ],
+          "plan": {
+            "futureFormats": [
+              ".PAT",
+              ".MSP",
+              ".KST"
+            ],
+            "sectionMap": {
+              "intro": [
+                "intro"
+              ],
+              "arranger": [
+                "arrA",
+                "arrB",
+                "arrC",
+                "arrD"
+              ],
+              "fill": [
+                "fill"
+              ],
+              "break": [
+                "break"
+              ],
+              "ending": [
+                "ending"
+              ]
+            },
+            "audioDrumReference": true,
+            "sourceProject": "UAOS Phase 47 Generated Agent Files"
+          },
+          "realBinaryReady": false,
+          "status": "prepared"
+        }
+      }
+    },
+    {
+      "relativePath": "ketron/ketron-style-map.plan.json",
+      "generatedBy": "KetronAgent",
+      "realBinaryReady": false,
+      "data": {
+        "generatedBy": "KetronAgent",
+        "phase": 47,
+        "file": "ketron-style-map.plan.json",
+        "status": "prepared",
+        "realBinaryReady": false,
+        "sourceOutput": {
+          "agent": "KetronAgent",
+          "version": "46.0.0",
+          "target": "ketron",
+          "devices": [
+            "SD9",
+            "SD90",
+            "Audya"
+          ],
+          "preparedFiles": [
+            "ketron-style-map.plan.json",
+            "ketron-audio-drum-reference.plan.json",
+            "ketron-package.plan.json"
+          ],
+          "plan": {
+            "futureFormats": [
+              ".PAT",
+              ".MSP",
+              ".KST"
+            ],
+            "sectionMap": {
+              "intro": [
+                "intro"
+              ],
+              "arranger": [
+                "arrA",
+                "arrB",
+                "arrC",
+                "arrD"
+              ],
+              "fill": [
+                "fill"
+              ],
+              "break": [
+                "break"
+              ],
+              "ending": [
+                "ending"
+              ]
+            },
+            "audioDrumReference": true,
+            "sourceProject": "UAOS Phase 47 Generated Agent Files"
+          },
+          "realBinaryReady": false,
+          "status": "prepared"
+        }
+      }
+    },
+    {
+      "relativePath": "korg/korg-agent-output.json",
+      "generatedBy": "KorgAgent",
+      "realBinaryReady": false,
+      "data": {
+        "agent": "KorgAgent",
+        "version": "46.0.0",
+        "target": "korg",
+        "devices": [
+          "PA3X Oriental",
+          "PA5X"
+        ],
+        "preparedFiles": [
+          "korg-section-map.plan.json",
+          "korg-style-container.plan.json",
+          "korg-compatibility.plan.json"
+        ],
+        "plan": {
+          "futureFormats": [
+            ".STY",
+            ".SET"
+          ],
+          "sectionMap": {
+            "intro": [
+              "intro1",
+              "intro2"
+            ],
+            "main": [
+              "mainA",
+              "mainB",
+              "mainC",
+              "mainD"
+            ],
+            "fill": [
+              "fill1",
+              "fill2"
+            ],
+            "ending": [
+              "ending1",
+              "ending2"
+            ]
+          },
+          "channels": {
+            "drums": 10,
+            "bass": 2,
+            "chords": 3,
+            "pad": 4,
+            "lead": 5
+          },
+          "sourceProject": "UAOS Phase 47 Generated Agent Files"
+        },
+        "realBinaryReady": false,
+        "status": "prepared"
+      }
+    },
+    {
+      "relativePath": "korg/korg-compatibility.plan.json",
+      "generatedBy": "KorgAgent",
+      "realBinaryReady": false,
+      "data": {
+        "generatedBy": "KorgAgent",
+        "phase": 47,
+        "file": "korg-compatibility.plan.json",
+        "status": "prepared",
+        "realBinaryReady": false,
+        "sourceOutput": {
+          "agent": "KorgAgent",
+          "version": "46.0.0",
+          "target": "korg",
+          "devices": [
+            "PA3X Oriental",
+            "PA5X"
+          ],
+          "preparedFiles": [
+            "korg-section-map.plan.json",
+            "korg-style-container.plan.json",
+            "korg-compatibility.plan.json"
+          ],
+          "plan": {
+            "futureFormats": [
+              ".STY",
+              ".SET"
+            ],
+            "sectionMap": {
+              "intro": [
+                "intro1",
+                "intro2"
+              ],
+              "main": [
+                "mainA",
+                "mainB",
+                "mainC",
+                "mainD"
+              ],
+              "fill": [
+                "fill1",
+                "fill2"
+              ],
+              "ending": [
+                "ending1",
+                "ending2"
+              ]
+            },
+            "channels": {
+              "drums": 10,
+              "bass": 2,
+              "chords": 3,
+              "pad": 4,
+              "lead": 5
+            },
+            "sourceProject": "UAOS Phase 47 Generated Agent Files"
+          },
+          "realBinaryReady": false,
+          "status": "prepared"
+        }
+      }
+    },
+    {
+      "relativePath": "korg/korg-section-map.plan.json",
+      "generatedBy": "KorgAgent",
+      "realBinaryReady": false,
+      "data": {
+        "generatedBy": "KorgAgent",
+        "phase": 47,
+        "file": "korg-section-map.plan.json",
+        "status": "prepared",
+        "realBinaryReady": false,
+        "sourceOutput": {
+          "agent": "KorgAgent",
+          "version": "46.0.0",
+          "target": "korg",
+          "devices": [
+            "PA3X Oriental",
+            "PA5X"
+          ],
+          "preparedFiles": [
+            "korg-section-map.plan.json",
+            "korg-style-container.plan.json",
+            "korg-compatibility.plan.json"
+          ],
+          "plan": {
+            "futureFormats": [
+              ".STY",
+              ".SET"
+            ],
+            "sectionMap": {
+              "intro": [
+                "intro1",
+                "intro2"
+              ],
+              "main": [
+                "mainA",
+                "mainB",
+                "mainC",
+                "mainD"
+              ],
+              "fill": [
+                "fill1",
+                "fill2"
+              ],
+              "ending": [
+                "ending1",
+                "ending2"
+              ]
+            },
+            "channels": {
+              "drums": 10,
+              "bass": 2,
+              "chords": 3,
+              "pad": 4,
+              "lead": 5
+            },
+            "sourceProject": "UAOS Phase 47 Generated Agent Files"
+          },
+          "realBinaryReady": false,
+          "status": "prepared"
+        }
+      }
+    },
+    {
+      "relativePath": "korg/korg-style-container.plan.json",
+      "generatedBy": "KorgAgent",
+      "realBinaryReady": false,
+      "data": {
+        "generatedBy": "KorgAgent",
+        "phase": 47,
+        "file": "korg-style-container.plan.json",
+        "status": "prepared",
+        "realBinaryReady": false,
+        "sourceOutput": {
+          "agent": "KorgAgent",
+          "version": "46.0.0",
+          "target": "korg",
+          "devices": [
+            "PA3X Oriental",
+            "PA5X"
+          ],
+          "preparedFiles": [
+            "korg-section-map.plan.json",
+            "korg-style-container.plan.json",
+            "korg-compatibility.plan.json"
+          ],
+          "plan": {
+            "futureFormats": [
+              ".STY",
+              ".SET"
+            ],
+            "sectionMap": {
+              "intro": [
+                "intro1",
+                "intro2"
+              ],
+              "main": [
+                "mainA",
+                "mainB",
+                "mainC",
+                "mainD"
+              ],
+              "fill": [
+                "fill1",
+                "fill2"
+              ],
+              "ending": [
+                "ending1",
+                "ending2"
+              ]
+            },
+            "channels": {
+              "drums": 10,
+              "bass": 2,
+              "chords": 3,
+              "pad": 4,
+              "lead": 5
+            },
+            "sourceProject": "UAOS Phase 47 Generated Agent Files"
+          },
+          "realBinaryReady": false,
+          "status": "prepared"
+        }
+      }
+    },
+    {
+      "relativePath": "midi/midi-agent-output.json",
+      "generatedBy": "MidiAgent",
+      "realBinaryReady": false,
+      "data": {
+        "agent": "MidiAgent",
+        "version": "46.0.0",
+        "preparedFiles": [
+          "midi-timeline.plan.json",
+          "midi-channel-map.plan.json"
+        ],
+        "midiReference": {
+          "format": "UAOS_AGENT_MIDI_REFERENCE",
+          "tempo": 104,
+          "meter": "4/4",
+          "sections": [
+            {
+              "id": "intro1",
+              "type": "intro",
+              "bars": 4,
+              "chord": "Cm"
+            },
+            {
+              "id": "mainA",
+              "type": "main",
+              "bars": 8,
+              "chord": "Cm"
+            },
+            {
+              "id": "fill1",
+              "type": "fill",
+              "bars": 1,
+              "chord": "G7"
+            },
+            {
+              "id": "mainB",
+              "type": "main",
+              "bars": 8,
+              "chord": "Fm"
+            },
+            {
+              "id": "ending1",
+              "type": "ending",
+              "bars": 4,
+              "chord": "Cm"
+            }
+          ],
+          "timeline": [
+            {
+              "index": 0,
+              "id": "intro1",
+              "bars": 4,
+              "chord": "Cm"
+            },
+            {
+              "index": 1,
+              "id": "mainA",
+              "bars": 8,
+              "chord": "Cm"
+            },
+            {
+              "index": 2,
+              "id": "fill1",
+              "bars": 1,
+              "chord": "G7"
+            },
+            {
+              "index": 3,
+              "id": "mainB",
+              "bars": 8,
+              "chord": "Fm"
+            },
+            {
+              "index": 4,
+              "id": "ending1",
+              "bars": 4,
+              "chord": "Cm"
+            }
+          ]
+        },
+        "status": "prepared"
+      }
+    },
+    {
+      "relativePath": "midi/midi-channel-map.plan.json",
+      "generatedBy": "MidiAgent",
+      "realBinaryReady": false,
+      "data": {
+        "generatedBy": "MidiAgent",
+        "phase": 47,
+        "file": "midi-channel-map.plan.json",
+        "status": "prepared",
+        "realBinaryReady": false,
+        "sourceOutput": {
+          "agent": "MidiAgent",
+          "version": "46.0.0",
+          "preparedFiles": [
+            "midi-timeline.plan.json",
+            "midi-channel-map.plan.json"
+          ],
+          "midiReference": {
+            "format": "UAOS_AGENT_MIDI_REFERENCE",
+            "tempo": 104,
+            "meter": "4/4",
+            "sections": [
+              {
+                "id": "intro1",
+                "type": "intro",
+                "bars": 4,
+                "chord": "Cm"
+              },
+              {
+                "id": "mainA",
+                "type": "main",
+                "bars": 8,
+                "chord": "Cm"
+              },
+              {
+                "id": "fill1",
+                "type": "fill",
+                "bars": 1,
+                "chord": "G7"
+              },
+              {
+                "id": "mainB",
+                "type": "main",
+                "bars": 8,
+                "chord": "Fm"
+              },
+              {
+                "id": "ending1",
+                "type": "ending",
+                "bars": 4,
+                "chord": "Cm"
+              }
+            ],
+            "timeline": [
+              {
+                "index": 0,
+                "id": "intro1",
+                "bars": 4,
+                "chord": "Cm"
+              },
+              {
+                "index": 1,
+                "id": "mainA",
+                "bars": 8,
+                "chord": "Cm"
+              },
+              {
+                "index": 2,
+                "id": "fill1",
+                "bars": 1,
+                "chord": "G7"
+              },
+              {
+                "index": 3,
+                "id": "mainB",
+                "bars": 8,
+                "chord": "Fm"
+              },
+              {
+                "index": 4,
+                "id": "ending1",
+                "bars": 4,
+                "chord": "Cm"
+              }
+            ]
+          },
+          "status": "prepared"
+        }
+      }
+    },
+    {
+      "relativePath": "midi/midi-timeline.plan.json",
+      "generatedBy": "MidiAgent",
+      "realBinaryReady": false,
+      "data": {
+        "generatedBy": "MidiAgent",
+        "phase": 47,
+        "file": "midi-timeline.plan.json",
+        "status": "prepared",
+        "realBinaryReady": false,
+        "sourceOutput": {
+          "agent": "MidiAgent",
+          "version": "46.0.0",
+          "preparedFiles": [
+            "midi-timeline.plan.json",
+            "midi-channel-map.plan.json"
+          ],
+          "midiReference": {
+            "format": "UAOS_AGENT_MIDI_REFERENCE",
+            "tempo": 104,
+            "meter": "4/4",
+            "sections": [
+              {
+                "id": "intro1",
+                "type": "intro",
+                "bars": 4,
+                "chord": "Cm"
+              },
+              {
+                "id": "mainA",
+                "type": "main",
+                "bars": 8,
+                "chord": "Cm"
+              },
+              {
+                "id": "fill1",
+                "type": "fill",
+                "bars": 1,
+                "chord": "G7"
+              },
+              {
+                "id": "mainB",
+                "type": "main",
+                "bars": 8,
+                "chord": "Fm"
+              },
+              {
+                "id": "ending1",
+                "type": "ending",
+                "bars": 4,
+                "chord": "Cm"
+              }
+            ],
+            "timeline": [
+              {
+                "index": 0,
+                "id": "intro1",
+                "bars": 4,
+                "chord": "Cm"
+              },
+              {
+                "index": 1,
+                "id": "mainA",
+                "bars": 8,
+                "chord": "Cm"
+              },
+              {
+                "index": 2,
+                "id": "fill1",
+                "bars": 1,
+                "chord": "G7"
+              },
+              {
+                "index": 3,
+                "id": "mainB",
+                "bars": 8,
+                "chord": "Fm"
+              },
+              {
+                "index": 4,
+                "id": "ending1",
+                "bars": 4,
+                "chord": "Cm"
+              }
+            ]
+          },
+          "status": "prepared"
+        }
+      }
+    },
+    {
+      "relativePath": "orchestrator/final-prepared-plan.json",
+      "generatedBy": "unknown",
+      "realBinaryReady": false,
+      "data": {
+        "devices": [
+          {
+            "agent": "KorgAgent",
+            "target": "korg",
+            "devices": [
+              "PA3X Oriental",
+              "PA5X"
+            ],
+            "futureFormats": [
+              ".STY",
+              ".SET"
+            ],
+            "preparedFiles": [
+              "korg-section-map.plan.json",
+              "korg-style-container.plan.json",
+              "korg-compatibility.plan.json"
+            ]
+          },
+          {
+            "agent": "YamahaAgent",
+            "target": "yamaha",
+            "devices": [
+              "Genos",
+              "Genos2",
+              "SX900"
+            ],
+            "futureFormats": [
+              ".STY"
+            ],
+            "preparedFiles": [
+              "yamaha-style-section.plan.json",
+              "yamaha-ots-map.plan.json",
+              "yamaha-style-container.plan.json"
+            ]
+          },
+          {
+            "agent": "RolandAgent",
+            "target": "roland",
+            "devices": [
+              "BK-9",
+              "E-A7"
+            ],
+            "futureFormats": [
+              ".STL",
+              ".PRS"
+            ],
+            "preparedFiles": [
+              "roland-performance-map.plan.json",
+              "roland-style-section.plan.json",
+              "roland-compatibility.plan.json"
+            ]
+          },
+          {
+            "agent": "KetronAgent",
+            "target": "ketron",
+            "devices": [
+              "SD9",
+              "SD90",
+              "Audya"
+            ],
+            "futureFormats": [
+              ".PAT",
+              ".MSP",
+              ".KST"
+            ],
+            "preparedFiles": [
+              "ketron-style-map.plan.json",
+              "ketron-audio-drum-reference.plan.json",
+              "ketron-package.plan.json"
+            ]
+          }
+        ],
+        "stylePlan": {
+          "format": "UAOS_AGENT_STYLE_PLAN",
+          "projectName": "UAOS Phase 47 Generated Agent Files",
+          "key": "D minor",
+          "chordProgression": [
+            "Dm",
+            "Bb",
+            "Gm",
+            "A7"
+          ],
+          "sections": [
+            {
+              "id": "intro1",
+              "type": "intro",
+              "bars": 4,
+              "chord": "Cm"
+            },
+            {
+              "id": "mainA",
+              "type": "main",
+              "bars": 8,
+              "chord": "Cm"
+            },
+            {
+              "id": "fill1",
+              "type": "fill",
+              "bars": 1,
+              "chord": "G7"
+            },
+            {
+              "id": "mainB",
+              "type": "main",
+              "bars": 8,
+              "chord": "Fm"
+            },
+            {
+              "id": "ending1",
+              "type": "ending",
+              "bars": 4,
+              "chord": "Cm"
+            }
+          ]
+        },
+        "midiReference": {
+          "format": "UAOS_AGENT_MIDI_REFERENCE",
+          "tempo": 104,
+          "meter": "4/4",
+          "sections": [
+            {
+              "id": "intro1",
+              "type": "intro",
+              "bars": 4,
+              "chord": "Cm"
+            },
+            {
+              "id": "mainA",
+              "type": "main",
+              "bars": 8,
+              "chord": "Cm"
+            },
+            {
+              "id": "fill1",
+              "type": "fill",
+              "bars": 1,
+              "chord": "G7"
+            },
+            {
+              "id": "mainB",
+              "type": "main",
+              "bars": 8,
+              "chord": "Fm"
+            },
+            {
+              "id": "ending1",
+              "type": "ending",
+              "bars": 4,
+              "chord": "Cm"
+            }
+          ],
+          "timeline": [
+            {
+              "index": 0,
+              "id": "intro1",
+              "bars": 4,
+              "chord": "Cm"
+            },
+            {
+              "index": 1,
+              "id": "mainA",
+              "bars": 8,
+              "chord": "Cm"
+            },
+            {
+              "index": 2,
+              "id": "fill1",
+              "bars": 1,
+              "chord": "G7"
+            },
+            {
+              "index": 3,
+              "id": "mainB",
+              "bars": 8,
+              "chord": "Fm"
+            },
+            {
+              "index": 4,
+              "id": "ending1",
+              "bars": 4,
+              "chord": "Cm"
+            }
+          ]
+        },
+        "binaryPlan": {
+          "format": "UAOS_AGENT_BINARY_PLAN",
+          "containerMagic": "UAOSBIN1",
+          "safeExtension": ".uaosbin",
+          "requestedTarget": "all",
+          "realBinaryReady": false,
+          "warning": "Safe UAOS binary container only. Not proprietary keyboard binary."
+        }
+      }
+    },
+    {
+      "relativePath": "orchestrator/full-orchestration.json",
+      "generatedBy": "UAOS_AGENT_WORKSPACE_ORCHESTRATION",
+      "realBinaryReady": false,
+      "data": {
+        "format": "UAOS_AGENT_WORKSPACE_ORCHESTRATION",
+        "version": "46.0.0",
+        "ok": true,
+        "projectName": "UAOS Phase 47 Generated Agent Files",
+        "outputs": [
+          {
+            "agent": "StyleAgent",
+            "version": "46.0.0",
+            "preparedFiles": [
+              "style-sections.plan.json",
+              "arrangement-map.plan.json"
+            ],
+            "stylePlan": {
+              "format": "UAOS_AGENT_STYLE_PLAN",
+              "projectName": "UAOS Phase 47 Generated Agent Files",
+              "key": "D minor",
+              "chordProgression": [
+                "Dm",
+                "Bb",
+                "Gm",
+                "A7"
+              ],
+              "sections": [
+                {
+                  "id": "intro1",
+                  "type": "intro",
+                  "bars": 4,
+                  "chord": "Cm"
+                },
+                {
+                  "id": "mainA",
+                  "type": "main",
+                  "bars": 8,
+                  "chord": "Cm"
+                },
+                {
+                  "id": "fill1",
+                  "type": "fill",
+                  "bars": 1,
+                  "chord": "G7"
+                },
+                {
+                  "id": "mainB",
+                  "type": "main",
+                  "bars": 8,
+                  "chord": "Fm"
+                },
+                {
+                  "id": "ending1",
+                  "type": "ending",
+                  "bars": 4,
+                  "chord": "Cm"
+                }
+              ]
+            },
+            "status": "prepared"
+          },
+          {
+            "agent": "MidiAgent",
+            "version": "46.0.0",
+            "preparedFiles": [
+              "midi-timeline.plan.json",
+              "midi-channel-map.plan.json"
+            ],
+            "midiReference": {
+              "format": "UAOS_AGENT_MIDI_REFERENCE",
+              "tempo": 104,
+              "meter": "4/4",
+              "sections": [
+                {
+                  "id": "intro1",
+                  "type": "intro",
+                  "bars": 4,
+                  "chord": "Cm"
+                },
+                {
+                  "id": "mainA",
+                  "type": "main",
+                  "bars": 8,
+                  "chord": "Cm"
+                },
+                {
+                  "id": "fill1",
+                  "type": "fill",
+                  "bars": 1,
+                  "chord": "G7"
+                },
+                {
+                  "id": "mainB",
+                  "type": "main",
+                  "bars": 8,
+                  "chord": "Fm"
+                },
+                {
+                  "id": "ending1",
+                  "type": "ending",
+                  "bars": 4,
+                  "chord": "Cm"
+                }
+              ],
+              "timeline": [
+                {
+                  "index": 0,
+                  "id": "intro1",
+                  "bars": 4,
+                  "chord": "Cm"
+                },
+                {
+                  "index": 1,
+                  "id": "mainA",
+                  "bars": 8,
+                  "chord": "Cm"
+                },
+                {
+                  "index": 2,
+                  "id": "fill1",
+                  "bars": 1,
+                  "chord": "G7"
+                },
+                {
+                  "index": 3,
+                  "id": "mainB",
+                  "bars": 8,
+                  "chord": "Fm"
+                },
+                {
+                  "index": 4,
+                  "id": "ending1",
+                  "bars": 4,
+                  "chord": "Cm"
+                }
+              ]
+            },
+            "status": "prepared"
+          },
+          {
+            "agent": "KorgAgent",
+            "version": "46.0.0",
+            "target": "korg",
+            "devices": [
+              "PA3X Oriental",
+              "PA5X"
+            ],
+            "preparedFiles": [
+              "korg-section-map.plan.json",
+              "korg-style-container.plan.json",
+              "korg-compatibility.plan.json"
+            ],
+            "plan": {
+              "futureFormats": [
+                ".STY",
+                ".SET"
+              ],
+              "sectionMap": {
+                "intro": [
+                  "intro1",
+                  "intro2"
+                ],
+                "main": [
+                  "mainA",
+                  "mainB",
+                  "mainC",
+                  "mainD"
+                ],
+                "fill": [
+                  "fill1",
+                  "fill2"
+                ],
+                "ending": [
+                  "ending1",
+                  "ending2"
+                ]
+              },
+              "channels": {
+                "drums": 10,
+                "bass": 2,
+                "chords": 3,
+                "pad": 4,
+                "lead": 5
+              },
+              "sourceProject": "UAOS Phase 47 Generated Agent Files"
+            },
+            "realBinaryReady": false,
+            "status": "prepared"
+          },
+          {
+            "agent": "YamahaAgent",
+            "version": "46.0.0",
+            "target": "yamaha",
+            "devices": [
+              "Genos",
+              "Genos2",
+              "SX900"
+            ],
+            "preparedFiles": [
+              "yamaha-style-section.plan.json",
+              "yamaha-ots-map.plan.json",
+              "yamaha-style-container.plan.json"
+            ],
+            "plan": {
+              "futureFormats": [
+                ".STY"
+              ],
+              "sectionMap": {
+                "intro": [
+                  "intro1",
+                  "intro2",
+                  "intro3"
+                ],
+                "main": [
+                  "mainA",
+                  "mainB",
+                  "mainC",
+                  "mainD"
+                ],
+                "fill": [
+                  "fillA",
+                  "fillB",
+                  "fillC",
+                  "fillD"
+                ],
+                "ending": [
+                  "ending1",
+                  "ending2",
+                  "ending3"
+                ]
+              },
+              "otsMap": [
+                "OTS1",
+                "OTS2",
+                "OTS3",
+                "OTS4"
+              ],
+              "sourceProject": "UAOS Phase 47 Generated Agent Files"
+            },
+            "realBinaryReady": false,
+            "status": "prepared"
+          },
+          {
+            "agent": "RolandAgent",
+            "version": "46.0.0",
+            "target": "roland",
+            "devices": [
+              "BK-9",
+              "E-A7"
+            ],
+            "preparedFiles": [
+              "roland-performance-map.plan.json",
+              "roland-style-section.plan.json",
+              "roland-compatibility.plan.json"
+            ],
+            "plan": {
+              "futureFormats": [
+                ".STL",
+                ".PRS"
+              ],
+              "sectionMap": {
+                "intro": [
+                  "intro"
+                ],
+                "variation": [
+                  "variation1",
+                  "variation2",
+                  "variation3",
+                  "variation4"
+                ],
+                "fill": [
+                  "fill"
+                ],
+                "ending": [
+                  "ending"
+                ]
+              },
+              "performanceMap": [
+                "UPPER1",
+                "UPPER2",
+                "LOWER",
+                "MBS"
+              ],
+              "sourceProject": "UAOS Phase 47 Generated Agent Files"
+            },
+            "realBinaryReady": false,
+            "status": "prepared"
+          },
+          {
+            "agent": "KetronAgent",
+            "version": "46.0.0",
+            "target": "ketron",
+            "devices": [
+              "SD9",
+              "SD90",
+              "Audya"
+            ],
+            "preparedFiles": [
+              "ketron-style-map.plan.json",
+              "ketron-audio-drum-reference.plan.json",
+              "ketron-package.plan.json"
+            ],
+            "plan": {
+              "futureFormats": [
+                ".PAT",
+                ".MSP",
+                ".KST"
+              ],
+              "sectionMap": {
+                "intro": [
+                  "intro"
+                ],
+                "arranger": [
+                  "arrA",
+                  "arrB",
+                  "arrC",
+                  "arrD"
+                ],
+                "fill": [
+                  "fill"
+                ],
+                "break": [
+                  "break"
+                ],
+                "ending": [
+                  "ending"
+                ]
+              },
+              "audioDrumReference": true,
+              "sourceProject": "UAOS Phase 47 Generated Agent Files"
+            },
+            "realBinaryReady": false,
+            "status": "prepared"
+          },
+          {
+            "agent": "BinaryAgent",
+            "version": "46.0.0",
+            "preparedFiles": [
+              "safe-uaosbin.plan.json",
+              "binary-header.plan.json",
+              "payload-schema.plan.json"
+            ],
+            "binaryPlan": {
+              "format": "UAOS_AGENT_BINARY_PLAN",
+              "containerMagic": "UAOSBIN1",
+              "safeExtension": ".uaosbin",
+              "requestedTarget": "all",
+              "realBinaryReady": false,
+              "warning": "Safe UAOS binary container only. Not proprietary keyboard binary."
+            },
+            "status": "prepared"
+          }
+        ],
+        "qa": {
+          "agent": "QaAgent",
+          "version": "46.0.0",
+          "status": "prepared",
+          "ok": true,
+          "errors": [],
+          "checkedAgents": [
+            "StyleAgent",
+            "MidiAgent",
+            "KorgAgent",
+            "YamahaAgent",
+            "RolandAgent",
+            "KetronAgent",
+            "BinaryAgent"
+          ]
+        },
+        "finalPreparedPlan": {
+          "devices": [
+            {
+              "agent": "KorgAgent",
+              "target": "korg",
+              "devices": [
+                "PA3X Oriental",
+                "PA5X"
+              ],
+              "futureFormats": [
+                ".STY",
+                ".SET"
+              ],
+              "preparedFiles": [
+                "korg-section-map.plan.json",
+                "korg-style-container.plan.json",
+                "korg-compatibility.plan.json"
+              ]
+            },
+            {
+              "agent": "YamahaAgent",
+              "target": "yamaha",
+              "devices": [
+                "Genos",
+                "Genos2",
+                "SX900"
+              ],
+              "futureFormats": [
+                ".STY"
+              ],
+              "preparedFiles": [
+                "yamaha-style-section.plan.json",
+                "yamaha-ots-map.plan.json",
+                "yamaha-style-container.plan.json"
+              ]
+            },
+            {
+              "agent": "RolandAgent",
+              "target": "roland",
+              "devices": [
+                "BK-9",
+                "E-A7"
+              ],
+              "futureFormats": [
+                ".STL",
+                ".PRS"
+              ],
+              "preparedFiles": [
+                "roland-performance-map.plan.json",
+                "roland-style-section.plan.json",
+                "roland-compatibility.plan.json"
+              ]
+            },
+            {
+              "agent": "KetronAgent",
+              "target": "ketron",
+              "devices": [
+                "SD9",
+                "SD90",
+                "Audya"
+              ],
+              "futureFormats": [
+                ".PAT",
+                ".MSP",
+                ".KST"
+              ],
+              "preparedFiles": [
+                "ketron-style-map.plan.json",
+                "ketron-audio-drum-reference.plan.json",
+                "ketron-package.plan.json"
+              ]
+            }
+          ],
+          "stylePlan": {
+            "format": "UAOS_AGENT_STYLE_PLAN",
+            "projectName": "UAOS Phase 47 Generated Agent Files",
+            "key": "D minor",
+            "chordProgression": [
+              "Dm",
+              "Bb",
+              "Gm",
+              "A7"
+            ],
+            "sections": [
+              {
+                "id": "intro1",
+                "type": "intro",
+                "bars": 4,
+                "chord": "Cm"
+              },
+              {
+                "id": "mainA",
+                "type": "main",
+                "bars": 8,
+                "chord": "Cm"
+              },
+              {
+                "id": "fill1",
+                "type": "fill",
+                "bars": 1,
+                "chord": "G7"
+              },
+              {
+                "id": "mainB",
+                "type": "main",
+                "bars": 8,
+                "chord": "Fm"
+              },
+              {
+                "id": "ending1",
+                "type": "ending",
+                "bars": 4,
+                "chord": "Cm"
+              }
+            ]
+          },
+          "midiReference": {
+            "format": "UAOS_AGENT_MIDI_REFERENCE",
+            "tempo": 104,
+            "meter": "4/4",
+            "sections": [
+              {
+                "id": "intro1",
+                "type": "intro",
+                "bars": 4,
+                "chord": "Cm"
+              },
+              {
+                "id": "mainA",
+                "type": "main",
+                "bars": 8,
+                "chord": "Cm"
+              },
+              {
+                "id": "fill1",
+                "type": "fill",
+                "bars": 1,
+                "chord": "G7"
+              },
+              {
+                "id": "mainB",
+                "type": "main",
+                "bars": 8,
+                "chord": "Fm"
+              },
+              {
+                "id": "ending1",
+                "type": "ending",
+                "bars": 4,
+                "chord": "Cm"
+              }
+            ],
+            "timeline": [
+              {
+                "index": 0,
+                "id": "intro1",
+                "bars": 4,
+                "chord": "Cm"
+              },
+              {
+                "index": 1,
+                "id": "mainA",
+                "bars": 8,
+                "chord": "Cm"
+              },
+              {
+                "index": 2,
+                "id": "fill1",
+                "bars": 1,
+                "chord": "G7"
+              },
+              {
+                "index": 3,
+                "id": "mainB",
+                "bars": 8,
+                "chord": "Fm"
+              },
+              {
+                "index": 4,
+                "id": "ending1",
+                "bars": 4,
+                "chord": "Cm"
+              }
+            ]
+          },
+          "binaryPlan": {
+            "format": "UAOS_AGENT_BINARY_PLAN",
+            "containerMagic": "UAOSBIN1",
+            "safeExtension": ".uaosbin",
+            "requestedTarget": "all",
+            "realBinaryReady": false,
+            "warning": "Safe UAOS binary container only. Not proprietary keyboard binary."
+          }
+        },
+        "realBinaryReady": false
+      }
+    },
+    {
+      "relativePath": "qa/qa-result.json",
+      "generatedBy": "QaAgent",
+      "realBinaryReady": false,
+      "data": {
+        "agent": "QaAgent",
+        "version": "46.0.0",
+        "status": "prepared",
+        "ok": true,
+        "errors": [],
+        "checkedAgents": [
+          "StyleAgent",
+          "MidiAgent",
+          "KorgAgent",
+          "YamahaAgent",
+          "RolandAgent",
+          "KetronAgent",
+          "BinaryAgent"
+        ]
+      }
+    },
+    {
+      "relativePath": "roland/roland-agent-output.json",
+      "generatedBy": "RolandAgent",
+      "realBinaryReady": false,
+      "data": {
+        "agent": "RolandAgent",
+        "version": "46.0.0",
+        "target": "roland",
+        "devices": [
+          "BK-9",
+          "E-A7"
+        ],
+        "preparedFiles": [
+          "roland-performance-map.plan.json",
+          "roland-style-section.plan.json",
+          "roland-compatibility.plan.json"
+        ],
+        "plan": {
+          "futureFormats": [
+            ".STL",
+            ".PRS"
+          ],
+          "sectionMap": {
+            "intro": [
+              "intro"
+            ],
+            "variation": [
+              "variation1",
+              "variation2",
+              "variation3",
+              "variation4"
+            ],
+            "fill": [
+              "fill"
+            ],
+            "ending": [
+              "ending"
+            ]
+          },
+          "performanceMap": [
+            "UPPER1",
+            "UPPER2",
+            "LOWER",
+            "MBS"
+          ],
+          "sourceProject": "UAOS Phase 47 Generated Agent Files"
+        },
+        "realBinaryReady": false,
+        "status": "prepared"
+      }
+    },
+    {
+      "relativePath": "roland/roland-compatibility.plan.json",
+      "generatedBy": "RolandAgent",
+      "realBinaryReady": false,
+      "data": {
+        "generatedBy": "RolandAgent",
+        "phase": 47,
+        "file": "roland-compatibility.plan.json",
+        "status": "prepared",
+        "realBinaryReady": false,
+        "sourceOutput": {
+          "agent": "RolandAgent",
+          "version": "46.0.0",
+          "target": "roland",
+          "devices": [
+            "BK-9",
+            "E-A7"
+          ],
+          "preparedFiles": [
+            "roland-performance-map.plan.json",
+            "roland-style-section.plan.json",
+            "roland-compatibility.plan.json"
+          ],
+          "plan": {
+            "futureFormats": [
+              ".STL",
+              ".PRS"
+            ],
+            "sectionMap": {
+              "intro": [
+                "intro"
+              ],
+              "variation": [
+                "variation1",
+                "variation2",
+                "variation3",
+                "variation4"
+              ],
+              "fill": [
+                "fill"
+              ],
+              "ending": [
+                "ending"
+              ]
+            },
+            "performanceMap": [
+              "UPPER1",
+              "UPPER2",
+              "LOWER",
+              "MBS"
+            ],
+            "sourceProject": "UAOS Phase 47 Generated Agent Files"
+          },
+          "realBinaryReady": false,
+          "status": "prepared"
+        }
+      }
+    },
+    {
+      "relativePath": "roland/roland-performance-map.plan.json",
+      "generatedBy": "RolandAgent",
+      "realBinaryReady": false,
+      "data": {
+        "generatedBy": "RolandAgent",
+        "phase": 47,
+        "file": "roland-performance-map.plan.json",
+        "status": "prepared",
+        "realBinaryReady": false,
+        "sourceOutput": {
+          "agent": "RolandAgent",
+          "version": "46.0.0",
+          "target": "roland",
+          "devices": [
+            "BK-9",
+            "E-A7"
+          ],
+          "preparedFiles": [
+            "roland-performance-map.plan.json",
+            "roland-style-section.plan.json",
+            "roland-compatibility.plan.json"
+          ],
+          "plan": {
+            "futureFormats": [
+              ".STL",
+              ".PRS"
+            ],
+            "sectionMap": {
+              "intro": [
+                "intro"
+              ],
+              "variation": [
+                "variation1",
+                "variation2",
+                "variation3",
+                "variation4"
+              ],
+              "fill": [
+                "fill"
+              ],
+              "ending": [
+                "ending"
+              ]
+            },
+            "performanceMap": [
+              "UPPER1",
+              "UPPER2",
+              "LOWER",
+              "MBS"
+            ],
+            "sourceProject": "UAOS Phase 47 Generated Agent Files"
+          },
+          "realBinaryReady": false,
+          "status": "prepared"
+        }
+      }
+    },
+    {
+      "relativePath": "roland/roland-style-section.plan.json",
+      "generatedBy": "RolandAgent",
+      "realBinaryReady": false,
+      "data": {
+        "generatedBy": "RolandAgent",
+        "phase": 47,
+        "file": "roland-style-section.plan.json",
+        "status": "prepared",
+        "realBinaryReady": false,
+        "sourceOutput": {
+          "agent": "RolandAgent",
+          "version": "46.0.0",
+          "target": "roland",
+          "devices": [
+            "BK-9",
+            "E-A7"
+          ],
+          "preparedFiles": [
+            "roland-performance-map.plan.json",
+            "roland-style-section.plan.json",
+            "roland-compatibility.plan.json"
+          ],
+          "plan": {
+            "futureFormats": [
+              ".STL",
+              ".PRS"
+            ],
+            "sectionMap": {
+              "intro": [
+                "intro"
+              ],
+              "variation": [
+                "variation1",
+                "variation2",
+                "variation3",
+                "variation4"
+              ],
+              "fill": [
+                "fill"
+              ],
+              "ending": [
+                "ending"
+              ]
+            },
+            "performanceMap": [
+              "UPPER1",
+              "UPPER2",
+              "LOWER",
+              "MBS"
+            ],
+            "sourceProject": "UAOS Phase 47 Generated Agent Files"
+          },
+          "realBinaryReady": false,
+          "status": "prepared"
+        }
+      }
+    },
+    {
+      "relativePath": "style/arrangement-map.plan.json",
+      "generatedBy": "StyleAgent",
+      "realBinaryReady": false,
+      "data": {
+        "generatedBy": "StyleAgent",
+        "phase": 47,
+        "file": "arrangement-map.plan.json",
+        "status": "prepared",
+        "realBinaryReady": false,
+        "sourceOutput": {
+          "agent": "StyleAgent",
+          "version": "46.0.0",
+          "preparedFiles": [
+            "style-sections.plan.json",
+            "arrangement-map.plan.json"
+          ],
+          "stylePlan": {
+            "format": "UAOS_AGENT_STYLE_PLAN",
+            "projectName": "UAOS Phase 47 Generated Agent Files",
+            "key": "D minor",
+            "chordProgression": [
+              "Dm",
+              "Bb",
+              "Gm",
+              "A7"
+            ],
+            "sections": [
+              {
+                "id": "intro1",
+                "type": "intro",
+                "bars": 4,
+                "chord": "Cm"
+              },
+              {
+                "id": "mainA",
+                "type": "main",
+                "bars": 8,
+                "chord": "Cm"
+              },
+              {
+                "id": "fill1",
+                "type": "fill",
+                "bars": 1,
+                "chord": "G7"
+              },
+              {
+                "id": "mainB",
+                "type": "main",
+                "bars": 8,
+                "chord": "Fm"
+              },
+              {
+                "id": "ending1",
+                "type": "ending",
+                "bars": 4,
+                "chord": "Cm"
+              }
+            ]
+          },
+          "status": "prepared"
+        }
+      }
+    },
+    {
+      "relativePath": "style/style-agent-output.json",
+      "generatedBy": "StyleAgent",
+      "realBinaryReady": false,
+      "data": {
+        "agent": "StyleAgent",
+        "version": "46.0.0",
+        "preparedFiles": [
+          "style-sections.plan.json",
+          "arrangement-map.plan.json"
+        ],
+        "stylePlan": {
+          "format": "UAOS_AGENT_STYLE_PLAN",
+          "projectName": "UAOS Phase 47 Generated Agent Files",
+          "key": "D minor",
+          "chordProgression": [
+            "Dm",
+            "Bb",
+            "Gm",
+            "A7"
+          ],
+          "sections": [
+            {
+              "id": "intro1",
+              "type": "intro",
+              "bars": 4,
+              "chord": "Cm"
+            },
+            {
+              "id": "mainA",
+              "type": "main",
+              "bars": 8,
+              "chord": "Cm"
+            },
+            {
+              "id": "fill1",
+              "type": "fill",
+              "bars": 1,
+              "chord": "G7"
+            },
+            {
+              "id": "mainB",
+              "type": "main",
+              "bars": 8,
+              "chord": "Fm"
+            },
+            {
+              "id": "ending1",
+              "type": "ending",
+              "bars": 4,
+              "chord": "Cm"
+            }
+          ]
+        },
+        "status": "prepared"
+      }
+    },
+    {
+      "relativePath": "style/style-sections.plan.json",
+      "generatedBy": "StyleAgent",
+      "realBinaryReady": false,
+      "data": {
+        "generatedBy": "StyleAgent",
+        "phase": 47,
+        "file": "style-sections.plan.json",
+        "status": "prepared",
+        "realBinaryReady": false,
+        "sourceOutput": {
+          "agent": "StyleAgent",
+          "version": "46.0.0",
+          "preparedFiles": [
+            "style-sections.plan.json",
+            "arrangement-map.plan.json"
+          ],
+          "stylePlan": {
+            "format": "UAOS_AGENT_STYLE_PLAN",
+            "projectName": "UAOS Phase 47 Generated Agent Files",
+            "key": "D minor",
+            "chordProgression": [
+              "Dm",
+              "Bb",
+              "Gm",
+              "A7"
+            ],
+            "sections": [
+              {
+                "id": "intro1",
+                "type": "intro",
+                "bars": 4,
+                "chord": "Cm"
+              },
+              {
+                "id": "mainA",
+                "type": "main",
+                "bars": 8,
+                "chord": "Cm"
+              },
+              {
+                "id": "fill1",
+                "type": "fill",
+                "bars": 1,
+                "chord": "G7"
+              },
+              {
+                "id": "mainB",
+                "type": "main",
+                "bars": 8,
+                "chord": "Fm"
+              },
+              {
+                "id": "ending1",
+                "type": "ending",
+                "bars": 4,
+                "chord": "Cm"
+              }
+            ]
+          },
+          "status": "prepared"
+        }
+      }
+    },
+    {
+      "relativePath": "yamaha/yamaha-agent-output.json",
+      "generatedBy": "YamahaAgent",
+      "realBinaryReady": false,
+      "data": {
+        "agent": "YamahaAgent",
+        "version": "46.0.0",
+        "target": "yamaha",
+        "devices": [
+          "Genos",
+          "Genos2",
+          "SX900"
+        ],
+        "preparedFiles": [
+          "yamaha-style-section.plan.json",
+          "yamaha-ots-map.plan.json",
+          "yamaha-style-container.plan.json"
+        ],
+        "plan": {
+          "futureFormats": [
+            ".STY"
+          ],
+          "sectionMap": {
+            "intro": [
+              "intro1",
+              "intro2",
+              "intro3"
+            ],
+            "main": [
+              "mainA",
+              "mainB",
+              "mainC",
+              "mainD"
+            ],
+            "fill": [
+              "fillA",
+              "fillB",
+              "fillC",
+              "fillD"
+            ],
+            "ending": [
+              "ending1",
+              "ending2",
+              "ending3"
+            ]
+          },
+          "otsMap": [
+            "OTS1",
+            "OTS2",
+            "OTS3",
+            "OTS4"
+          ],
+          "sourceProject": "UAOS Phase 47 Generated Agent Files"
+        },
+        "realBinaryReady": false,
+        "status": "prepared"
+      }
+    },
+    {
+      "relativePath": "yamaha/yamaha-ots-map.plan.json",
+      "generatedBy": "YamahaAgent",
+      "realBinaryReady": false,
+      "data": {
+        "generatedBy": "YamahaAgent",
+        "phase": 47,
+        "file": "yamaha-ots-map.plan.json",
+        "status": "prepared",
+        "realBinaryReady": false,
+        "sourceOutput": {
+          "agent": "YamahaAgent",
+          "version": "46.0.0",
+          "target": "yamaha",
+          "devices": [
+            "Genos",
+            "Genos2",
+            "SX900"
+          ],
+          "preparedFiles": [
+            "yamaha-style-section.plan.json",
+            "yamaha-ots-map.plan.json",
+            "yamaha-style-container.plan.json"
+          ],
+          "plan": {
+            "futureFormats": [
+              ".STY"
+            ],
+            "sectionMap": {
+              "intro": [
+                "intro1",
+                "intro2",
+                "intro3"
+              ],
+              "main": [
+                "mainA",
+                "mainB",
+                "mainC",
+                "mainD"
+              ],
+              "fill": [
+                "fillA",
+                "fillB",
+                "fillC",
+                "fillD"
+              ],
+              "ending": [
+                "ending1",
+                "ending2",
+                "ending3"
+              ]
+            },
+            "otsMap": [
+              "OTS1",
+              "OTS2",
+              "OTS3",
+              "OTS4"
+            ],
+            "sourceProject": "UAOS Phase 47 Generated Agent Files"
+          },
+          "realBinaryReady": false,
+          "status": "prepared"
+        }
+      }
+    },
+    {
+      "relativePath": "yamaha/yamaha-style-container.plan.json",
+      "generatedBy": "YamahaAgent",
+      "realBinaryReady": false,
+      "data": {
+        "generatedBy": "YamahaAgent",
+        "phase": 47,
+        "file": "yamaha-style-container.plan.json",
+        "status": "prepared",
+        "realBinaryReady": false,
+        "sourceOutput": {
+          "agent": "YamahaAgent",
+          "version": "46.0.0",
+          "target": "yamaha",
+          "devices": [
+            "Genos",
+            "Genos2",
+            "SX900"
+          ],
+          "preparedFiles": [
+            "yamaha-style-section.plan.json",
+            "yamaha-ots-map.plan.json",
+            "yamaha-style-container.plan.json"
+          ],
+          "plan": {
+            "futureFormats": [
+              ".STY"
+            ],
+            "sectionMap": {
+              "intro": [
+                "intro1",
+                "intro2",
+                "intro3"
+              ],
+              "main": [
+                "mainA",
+                "mainB",
+                "mainC",
+                "mainD"
+              ],
+              "fill": [
+                "fillA",
+                "fillB",
+                "fillC",
+                "fillD"
+              ],
+              "ending": [
+                "ending1",
+                "ending2",
+                "ending3"
+              ]
+            },
+            "otsMap": [
+              "OTS1",
+              "OTS2",
+              "OTS3",
+              "OTS4"
+            ],
+            "sourceProject": "UAOS Phase 47 Generated Agent Files"
+          },
+          "realBinaryReady": false,
+          "status": "prepared"
+        }
+      }
+    },
+    {
+      "relativePath": "yamaha/yamaha-style-section.plan.json",
+      "generatedBy": "YamahaAgent",
+      "realBinaryReady": false,
+      "data": {
+        "generatedBy": "YamahaAgent",
+        "phase": 47,
+        "file": "yamaha-style-section.plan.json",
+        "status": "prepared",
+        "realBinaryReady": false,
+        "sourceOutput": {
+          "agent": "YamahaAgent",
+          "version": "46.0.0",
+          "target": "yamaha",
+          "devices": [
+            "Genos",
+            "Genos2",
+            "SX900"
+          ],
+          "preparedFiles": [
+            "yamaha-style-section.plan.json",
+            "yamaha-ots-map.plan.json",
+            "yamaha-style-container.plan.json"
+          ],
+          "plan": {
+            "futureFormats": [
+              ".STY"
+            ],
+            "sectionMap": {
+              "intro": [
+                "intro1",
+                "intro2",
+                "intro3"
+              ],
+              "main": [
+                "mainA",
+                "mainB",
+                "mainC",
+                "mainD"
+              ],
+              "fill": [
+                "fillA",
+                "fillB",
+                "fillC",
+                "fillD"
+              ],
+              "ending": [
+                "ending1",
+                "ending2",
+                "ending3"
+              ]
+            },
+            "otsMap": [
+              "OTS1",
+              "OTS2",
+              "OTS3",
+              "OTS4"
+            ],
+            "sourceProject": "UAOS Phase 47 Generated Agent Files"
+          },
+          "realBinaryReady": false,
+          "status": "prepared"
+        }
+      }
+    }
+  ],
+  "summary": {
+    "agents": [
+      "BinaryAgent",
+      "KetronAgent",
+      "KorgAgent",
+      "MidiAgent",
+      "QaAgent",
+      "RolandAgent",
+      "StyleAgent",
+      "UAOS_AGENT_WORKSPACE_ORCHESTRATION",
+      "YamahaAgent",
+      "unknown"
+    ],
+    "hasOrchestratorPlan": true,
+    "hasFullOrchestration": true,
+    "hasQaResult": true,
+    "realBinaryExportReady": false,
+    "currentLevel": "safe agent plans + JSON manifests + .uaosbin planning foundation"
+  },
+  "warnings": [
+    "This master plan aggregates prepared agent files only.",
+    "It does not claim real proprietary keyboard binary export.",
+    "Real .STY/.SET/.PRS export remains a separate engineering phase."
+  ]
+}
