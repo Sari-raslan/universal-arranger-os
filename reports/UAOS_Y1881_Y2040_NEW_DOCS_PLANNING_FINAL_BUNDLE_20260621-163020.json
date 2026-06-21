@@ -1,0 +1,65 @@
+﻿{
+    "phaseBundle":  "Y1881-Y2040",
+    "path":  "PATH-NEW-DOCS-PLANNING",
+    "result":  "READY / PASS",
+    "reportsOnly":  [
+                        "JSON",
+                        "MD"
+                    ],
+    "stages":  {
+                   "Y1881-Y1920":  "Planning Evidence Index",
+                   "Y1921-Y1960":  "Future Approval Gates Plan",
+                   "Y1961-Y2000":  "Non-Operational Architecture Notes",
+                   "Y2001-Y2040":  "Planning Completion Summary"
+               },
+    "allowed":  [
+                    "JSON reports",
+                    "MD reports",
+                    "planning notes",
+                    "roadmap outline",
+                    "approval gate text",
+                    "human review notes"
+                ],
+    "blocked":  [
+                    "writer",
+                    "real writer",
+                    "keyboard output",
+                    "production parser",
+                    "deploy",
+                    "App.jsx",
+                    "fixtures",
+                    "operational code",
+                    ".STY/.SET/.PRS/.STL/.PAT/.MSP/.KST"
+                ],
+    "evidenceReports":  [
+                            {
+                                "Name":  "UAOS_Y1721_Y1880_NEW_DOCS_PLANNING_BUNDLE_20260621-162917.md",
+                                "Length":  1102,
+                                "LastWriteTime":  "\/Date(1782052158977)\/"
+                            },
+                            {
+                                "Name":  "UAOS_Y1721_Y1880_NEW_DOCS_PLANNING_BUNDLE_20260621-162917.json",
+                                "Length":  2939,
+                                "LastWriteTime":  "\/Date(1782052158975)\/"
+                            },
+                            {
+                                "Name":  "UAOS_Y1681_Y1720_NEW_DOCS_PLANNING_PATH_CHARTER_20260621-162534.md",
+                                "Length":  586,
+                                "LastWriteTime":  "\/Date(1782051936413)\/"
+                            },
+                            {
+                                "Name":  "UAOS_Y1681_Y1720_NEW_DOCS_PLANNING_PATH_CHARTER_20260621-162534.txt",
+                                "Length":  656,
+                                "LastWriteTime":  "\/Date(1782051936412)\/"
+                            },
+                            {
+                                "Name":  "UAOS_Y1681_Y1720_NEW_DOCS_PLANNING_PATH_CHARTER_20260621-162534.json",
+                                "Length":  771,
+                                "LastWriteTime":  "\/Date(1782051936410)\/"
+                            }
+                        ],
+    "planningCompletion":  "READY",
+    "build":  "PASS",
+    "branch":  "master",
+    "status":  "NEW_DOCS_PLANNING_FINAL_READY"
+}
