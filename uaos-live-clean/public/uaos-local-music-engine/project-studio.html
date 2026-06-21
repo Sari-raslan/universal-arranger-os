@@ -1,0 +1,108 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>UAOS Local Project Studio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body{font-family:Arial,sans-serif;background:#08101f;color:#f4f7ff;margin:0;padding:24px}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+    .card{background:#131d35;border:1px solid #2c3a66;border-radius:18px;padding:18px}
+    button{padding:10px 14px;border:0;border-radius:10px;cursor:pointer;margin:4px 4px 4px 0}
+    textarea{width:100%;min-height:320px;background:#050a14;color:#f4f7ff;border:1px solid #2c3a66;border-radius:12px;padding:12px}
+    input{padding:10px;border-radius:10px;border:1px solid #2c3a66;background:#050a14;color:#f4f7ff}
+    a{color:#9bdcff}
+  </style>
+</head>
+<body>
+  <h1>UAOS Local Project Studio</h1>
+  <p>Combined local workspace: library preset + sampler mock + DAW JSON + arrangement JSON.</p>
+
+  <div class="grid">
+    <div class="card">
+      <h2>Create</h2>
+      <button onclick="createFullProject()">Create Full Placeholder Project</button>
+      <button onclick="downloadProject()">Download JSON</button>
+    </div>
+
+    <div class="card">
+      <h2>Open Local JSON</h2>
+      <input type="file" accept="application/json" onchange="openProject(event)" />
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Project JSON</h2>
+    <textarea id="json">Ready.</textarea>
+  </div>
+
+  <p><a href="./index.html">Back</a></p>
+
+  <script>
+    function createFullProject(){
+      const project = {
+        format: "UAOS_LOCAL_MUSIC_ENGINE_PROJECT",
+        version: "1.0.0-local-placeholder",
+        title: "UAOS Full Local Placeholder Project",
+        library: {
+          selectedPreset: "arabic-violin-placeholder",
+          samplePolicy: "metadata-only-no-large-audio"
+        },
+        sampler: {
+          previewMode: "mock-only",
+          selectedArticulation: "legato",
+          adsr: { attack: 0.03, decay: 0.2, sustain: 0.82, release: 0.45 }
+        },
+        daw: {
+          tempo: 96,
+          timeSignature: "4/4",
+          tracks: [
+            { trackId: "track-drums", name: "Drums", type: "placeholder", clips: [] },
+            { trackId: "track-bass", name: "Bass", type: "placeholder", clips: [] },
+            { trackId: "track-chords", name: "Chords", type: "placeholder", clips: [] },
+            { trackId: "track-melody", name: "Melody", type: "placeholder", clips: [] }
+          ]
+        },
+        arrangement: {
+          key: "D minor",
+          sections: [
+            { name: "Intro", bars: 4, chords: ["Dm","Bb","C","Dm"] },
+            { name: "Verse", bars: 8, chords: ["Dm","Gm","A","Dm"] },
+            { name: "Chorus", bars: 8, chords: ["Bb","C","Dm","A"] }
+          ]
+        },
+        safety: {
+          localJsonOnly: true,
+          noLargeAudioFiles: true,
+          noFixtureAccess: true,
+          noKeyboardFileWriter: true,
+          noHardwareOutput: true,
+          noProductionParser: true,
+          noDeploy: true
+        }
+      };
+
+      document.getElementById("json").value = JSON.stringify(project, null, 2);
+    }
+
+    function downloadProject(){
+      const text = document.getElementById("json").value;
+      const blob = new Blob([text], { type: "application/json" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "uaos-local-music-engine-project.placeholder.json";
+      a.click();
+      URL.revokeObjectURL(url);
+    }
+
+    async function openProject(event){
+      const file = event.target.files[0];
+      if(!file) return;
+      const text = await file.text();
+      JSON.parse(text);
+      document.getElementById("json").value = text;
+    }
+  </script>
+</body>
+</html>

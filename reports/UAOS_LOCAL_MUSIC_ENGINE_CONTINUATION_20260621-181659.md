@@ -72,3 +72,16 @@ PHASE-LIB-12 START
 BUILD PASS after PHASE-LIB-12
 
 ### Commit + Safe Push after PHASE-LIB-12
+COMMIT + SAFE PUSH PASS after PHASE-LIB-12 on branch master
+PHASE-LIB-12 PASS
+
+============================================================
+PHASE-LIB-13 START
+============================================================
+- Wrote: uaos-live-clean\public\uaos-local-music-engine\project-studio.html
+- Wrote: docs\uaos-local-music-engine\PHASE-LIB-13-PROJECT-STUDIO.md
+
+### BUILD after PHASE-LIB-13
+BUILD PASS after PHASE-LIB-13
+
+### Commit + Safe Push after PHASE-LIB-13
