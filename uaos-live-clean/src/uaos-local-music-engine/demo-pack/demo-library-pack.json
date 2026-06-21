@@ -1,0 +1,47 @@
+﻿{
+  "format": "UAOS_DEMO_LIBRARY_PACK",
+  "version": "1.0.0-local-placeholder",
+  "policy": {
+    "largeAudioFiles": false,
+    "realSamples": false,
+    "fixtureAccess": false,
+    "commercialAssetClaim": false
+  },
+  "families": [
+    {
+      "familyId": "oriental-strings-placeholder",
+      "name": "Oriental Strings Placeholder",
+      "instruments": [
+        {
+          "instrumentId": "arabic-violin-placeholder",
+          "name": "Arabic Violin Placeholder",
+          "role": "melody",
+          "recommendedArticulations": ["legato", "slide", "tremolo"]
+        },
+        {
+          "instrumentId": "oud-placeholder",
+          "name": "Oud Placeholder",
+          "role": "chords-and-melody",
+          "recommendedArticulations": ["sustain", "staccato", "slide"]
+        }
+      ]
+    },
+    {
+      "familyId": "rhythm-placeholder",
+      "name": "Rhythm Placeholder",
+      "instruments": [
+        {
+          "instrumentId": "arabic-drums-placeholder",
+          "name": "Arabic Drums Placeholder",
+          "role": "drums",
+          "recommendedArticulations": ["dum", "tak", "roll"]
+        }
+      ]
+    }
+  ],
+  "notes": [
+    "This is a metadata-only demo pack.",
+    "No audio samples are copied.",
+    "No keyboard file output is generated."
+  ]
+}

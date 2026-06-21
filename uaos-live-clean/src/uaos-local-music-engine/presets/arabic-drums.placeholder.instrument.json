@@ -1,0 +1,51 @@
+﻿{
+  "format": "UAOS_INSTRUMENT_PRESET",
+  "version": "1.0.0-local-placeholder",
+  "instrumentId": "arabic-drums-placeholder",
+  "name": "Arabic Drums Placeholder",
+  "family": "percussion-oriental",
+  "engine": "uaos-safe-sampler-foundation",
+  "samplePolicy": "metadata-only-no-large-audio",
+  "rootNote": 36,
+  "zones": [
+    {
+      "zoneId": "dum-placeholder",
+      "noteMin": 36,
+      "noteMax": 36,
+      "rootNote": 36,
+      "velocityMin": 1,
+      "velocityMax": 127,
+      "articulation": "dum",
+      "sampleRef": "placeholder://arabic-drums/dum"
+    },
+    {
+      "zoneId": "tak-placeholder",
+      "noteMin": 38,
+      "noteMax": 38,
+      "rootNote": 38,
+      "velocityMin": 1,
+      "velocityMax": 127,
+      "articulation": "tak",
+      "sampleRef": "placeholder://arabic-drums/tak"
+    }
+  ],
+  "adsr": {
+    "attack": 0.001,
+    "decay": 0.08,
+    "sustain": 0.2,
+    "release": 0.12
+  },
+  "velocityLayers": [
+    {
+      "id": "soft",
+      "velocityMin": 1,
+      "velocityMax": 70
+    },
+    {
+      "id": "hard",
+      "velocityMin": 71,
+      "velocityMax": 127
+    }
+  ],
+  "articulations": ["dum", "tak", "roll"]
+}
