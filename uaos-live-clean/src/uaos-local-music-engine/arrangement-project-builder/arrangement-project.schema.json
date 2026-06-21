@@ -1,0 +1,73 @@
+﻿{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "uaos-arrangement-project.schema.json",
+  "title": "UAOS Arrangement Project",
+  "type": "object",
+  "required": ["format", "version", "sections", "timeline", "safety"],
+  "properties": {
+    "format": { "const": "UAOS_ARRANGEMENT_PROJECT" },
+    "version": { "type": "string" },
+    "title": { "type": "string" },
+    "tempo": { "type": "number" },
+    "timeSignature": { "type": "string" },
+    "key": { "type": "string" },
+    "sections": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["sectionId", "name", "startBar", "bars", "chords", "styleLanes", "regions"],
+        "properties": {
+          "sectionId": { "type": "string" },
+          "name": { "type": "string" },
+          "startBar": { "type": "number" },
+          "bars": { "type": "number" },
+          "chords": { "type": "array" },
+          "styleLanes": { "type": "object" },
+          "regions": { "type": "array" }
+        }
+      }
+    },
+    "timeline": { "type": "array" },
+    "exportTargets": {
+      "type": "object",
+      "required": ["uaosProjectJson", "midi", "audio", "keyboardFormats"],
+      "properties": {
+        "uaosProjectJson": { "const": true },
+        "midi": { "const": false },
+        "audio": { "const": false },
+        "keyboardFormats": { "const": false }
+      }
+    },
+    "safety": {
+      "type": "object",
+      "required": [
+        "metadataOnly",
+        "fileContentRead",
+        "sampleLoaded",
+        "audioDecoded",
+        "audioRendered",
+        "copiedFiles",
+        "movedFiles",
+        "deletedFiles",
+        "archiveRead",
+        "productionParser",
+        "keyboardWriter",
+        "keyboardOutput"
+      ],
+      "properties": {
+        "metadataOnly": { "const": true },
+        "fileContentRead": { "const": false },
+        "sampleLoaded": { "const": false },
+        "audioDecoded": { "const": false },
+        "audioRendered": { "const": false },
+        "copiedFiles": { "const": false },
+        "movedFiles": { "const": false },
+        "deletedFiles": { "const": false },
+        "archiveRead": { "const": false },
+        "productionParser": { "const": false },
+        "keyboardWriter": { "const": false },
+        "keyboardOutput": { "const": false }
+      }
+    }
+  }
+}
