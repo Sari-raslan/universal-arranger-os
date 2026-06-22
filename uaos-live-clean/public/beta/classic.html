@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>UAOS Classic Beta</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate, max-age=0">
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#070d19;color:#eef6ff;font-family:Inter,Arial,Tahoma,sans-serif}
+a{text-decoration:none;color:inherit}
+.page{min-height:100vh;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:56px 56px}
+.nav{height:86px;display:flex;align-items:center;justify-content:space-between;padding:0 7vw;border-bottom:1px solid rgba(255,255,255,.08);background:rgba(7,13,25,.84);backdrop-filter:blur(16px)}
+.brand{display:flex;align-items:center;gap:14px}.logo{width:48px;height:48px;border-radius:16px;background:linear-gradient(135deg,#56e7e1,#8d5cff)}
+.brand b{display:block;font-size:18px}.brand span{color:#aebdd3;font-size:13px}
+.navlinks{display:flex;gap:28px;align-items:center;color:#cfe0ff;font-weight:800;font-size:14px}
+.lang button{background:#111c30;border:1px solid #2d4b78;color:#fff;border-radius:14px;padding:10px 14px;font-weight:900;margin-left:6px;cursor:pointer}
+.lang button.active{background:#245f9d}
+.hero{display:grid;grid-template-columns:1.05fr .95fr;gap:58px;align-items:center;padding:82px 7vw 40px}
+.kicker{color:#65f2ef;letter-spacing:5px;font-weight:900;font-size:13px;text-transform:uppercase}
+h1{font-size:72px;line-height:.98;margin:20px 0;background:linear-gradient(90deg,#fff,#4fc7ff,#b96dff);-webkit-background-clip:text;color:transparent;letter-spacing:-4px}
+.lead{font-size:20px;line-height:1.75;color:#c9d8f3;max-width:720px}
+.actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:28px}.btn{border:1px solid rgba(255,255,255,.14);background:#1c2433;padding:16px 24px;border-radius:999px;font-weight:900}
+.btn.primary{background:#79e6df;color:#06101f;border:0}
+.chips{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}.chip{background:#111c30;border:1px solid rgba(255,255,255,.1);border-radius:999px;padding:9px 14px;color:#c9d8f3;font-size:13px;font-weight:800}
+.preview{background:linear-gradient(145deg,#111a2c,#0a1221);border:1px solid #273d63;border-radius:34px;padding:28px;box-shadow:0 30px 80px rgba(0,0,0,.35)}
+.dots{display:flex;gap:10px;margin-bottom:24px}.dot{width:12px;height:12px;border-radius:50%;background:#7198ff}.dot:nth-child(2){background:#9c72ff}.dot:nth-child(3){background:#56e7a8}
+.row{display:flex;justify-content:space-between;gap:20px;background:#1b2638;border:1px solid rgba(255,255,255,.08);border-radius:18px;padding:22px;margin:12px 0;font-weight:900}.row.active{background:linear-gradient(90deg,#1b4964,#3c326e)}.row.locked{border-color:#704044;color:#ffb8b8}
+.keys{display:grid;grid-template-columns:repeat(8,1fr);gap:8px;margin-top:22px}.key{height:60px;border-radius:12px;background:linear-gradient(#f8fbff,#b9c7d8)}
+.section{padding:50px 7vw}.section h2{font-size:34px;margin:0 0 22px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{background:#101827;border:1px solid rgba(255,255,255,.1);border-radius:26px;padding:26px;min-height:180px}.card p{color:#aebdd3;line-height:1.7}.go{color:#79e6df;font-weight:900}
+.safe{margin-top:26px;background:#111c30;border:1px solid #2d4b78;border-radius:24px;padding:22px;color:#cfe0ff}
+.rtl{direction:rtl;font-family:Tahoma,Arial,sans-serif}.rtl h1{letter-spacing:-2px}
+@media(max-width:980px){.hero{grid-template-columns:1fr;padding-top:42px}h1{font-size:50px}.cards{grid-template-columns:1fr}.nav{height:auto;padding:18px;display:block}.navlinks{margin-top:14px;flex-wrap:wrap}.preview{margin-top:12px}}
+</style>
+</head>
+<body>
+<div class="page">
+<nav class="nav">
+ <div class="brand"><div class="logo"></div><div><b>Universal Arranger OS</b><span id="sub">AI Music Workstation</span></div></div>
+ <div class="navlinks">
+  <a href="/universal-arranger-os/singer/singer-local-learning-ui.html" id="navSinger">Singer</a>
+  <a href="/universal-arranger-os/qa/remaining-safe-gates-dashboard.html" id="navKorg">KORG</a>
+  <a href="/universal-arranger-os/qa/final-evidence-pack-dashboard.html" id="navEvidence">Evidence</a>
+  <a href="/universal-arranger-os/qa/product-truth-lock-dashboard.html" id="navStatus">Status</a>
+  <span class="lang"><button onclick="setLang('en')">EN</button><button onclick="setLang('de')">DE</button><button onclick="setLang('ar')">AR</button></span>
+ </div>
+</nav>
+
+<section class="hero">
+ <div>
+  <div class="kicker" id="kicker">AI ARRANGER PLATFORM · LOCAL BETA</div>
+  <h1 id="title">Arrange songs from voice, MIDI, and creative ideas.</h1>
+  <p class="lead" id="lead">UAOS is a modern local music workstation for singers, creators, studios, and arranger keyboard professionals. Build musical direction, shape arrangements, and test product workflows safely.</p>
+  <div class="actions">
+   <a class="btn primary" href="/universal-arranger-os/singer/singer-local-learning-ui.html" id="cta1">Start Singer</a>
+   <a class="btn" href="/universal-arranger-os/qa/remaining-safe-gates-dashboard.html" id="cta2">Open KORG</a>
+   <a class="btn" href="/universal-arranger-os/qa/final-evidence-pack-dashboard.html" id="cta3">Launch status</a>
+  </div>
+  <div class="chips"><span class="chip">Local beta ready</span><span class="chip">Build passes</span><span class="chip">No payment active</span><span class="chip">KORG writer locked</span></div>
+ </div>
+
+ <div class="preview">
+  <div class="dots"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+  <div class="row active"><span id="p1">Voice idea</span><span id="p1b">Melody planning</span></div>
+  <div class="row"><span id="p2">Chord map</span><span>Verse · Chorus · Bridge</span></div>
+  <div class="row"><span id="p3">Studio tracks</span><span>Drums · Bass · Keys</span></div>
+  <div class="row locked"><span id="p4">Hardware output</span><span id="p4b">Locked until approval</span></div>
+  <div class="keys"><div class="key"></div><div class="key"></div><div class="key"></div><div class="key"></div><div class="key"></div><div class="key"></div><div class="key"></div><div class="key"></div></div>
+ </div>
+</section>
+
+<section class="section">
+ <h2 id="products">Products</h2>
+ <div class="cards">
+  <a class="card" href="/universal-arranger-os/singer/singer-local-learning-ui.html"><h3>UAOS Singer</h3><p id="singerText">Learn notes, choose instruments, and prepare voice-to-MIDI ideas locally.</p><span class="go" id="open1">Open →</span></a>
+  <a class="card" href="/universal-arranger-os/qa/remaining-safe-gates-dashboard.html"><h3>KORG Manager/Core</h3><p id="korgText">Read-only validation, compatibility gates, and safe writer lock.</p><span class="go" id="open2">Open →</span></a>
+  <a class="card" href="/universal-arranger-os/qa/final-evidence-pack-dashboard.html"><h3 id="evidenceTitle">Evidence Pack</h3><p id="evidenceText">CTO evidence, beta status, reports, and local QA proof.</p><span class="go" id="open3">Open →</span></a>
+ </div>
+ <div class="safe" id="safe">Commercial launch is locked. Payment is inactive. Deployment was not run. Real KORG writer stays blocked until explicit approval.</div>
+</section>
+</div>
+
+<script>
+const T={
+en:{dir:"ltr",sub:"AI Music Workstation",navSinger:"Singer",navKorg:"KORG",navEvidence:"Evidence",navStatus:"Status",kicker:"AI ARRANGER PLATFORM · LOCAL BETA",title:"Arrange songs from voice, MIDI, and creative ideas.",lead:"UAOS is a modern local music workstation for singers, creators, studios, and arranger keyboard professionals. Build musical direction, shape arrangements, and test product workflows safely.",cta1:"Start Singer",cta2:"Open KORG",cta3:"Launch status",p1:"Voice idea",p1b:"Melody planning",p2:"Chord map",p3:"Studio tracks",p4:"Hardware output",p4b:"Locked until approval",products:"Products",singerText:"Learn notes, choose instruments, and prepare voice-to-MIDI ideas locally.",korgText:"Read-only validation, compatibility gates, and safe writer lock.",evidenceTitle:"Evidence Pack",evidenceText:"CTO evidence, beta status, reports, and local QA proof.",open:"Open →",safe:"Commercial launch is locked. Payment is inactive. Deployment was not run. Real KORG writer stays blocked until explicit approval."},
+de:{dir:"ltr",sub:"AI Musik Workstation",navSinger:"Singer",navKorg:"KORG",navEvidence:"Evidenz",navStatus:"Status",kicker:"AI ARRANGER PLATTFORM · LOKALE BETA",title:"Songs aus Stimme, MIDI und Ideen arrangieren.",lead:"UAOS ist eine moderne lokale Musik-Workstation für Sänger, Creator, Studios und Arranger-Keyboard-Profis. Erstelle musikalische Richtung, teste Workflows und bleibe sicher lokal.",cta1:"Singer starten",cta2:"KORG öffnen",cta3:"Status öffnen",p1:"Stimmidee",p1b:"Melodieplanung",p2:"Akkordkarte",p3:"Studio-Spuren",p4:"Hardware-Ausgabe",p4b:"Gesperrt bis Freigabe",products:"Produkte",singerText:"Noten lernen, Instrumente wählen und Voice-to-MIDI Ideen lokal vorbereiten.",korgText:"Read-only Validierung, Kompatibilitäts-Gates und Writer-Sperre.",evidenceTitle:"Evidenzpaket",evidenceText:"CTO-Evidenz, Beta-Status, Berichte und lokaler QA-Nachweis.",open:"Öffnen →",safe:"Kommerzieller Start ist gesperrt. Zahlung ist inaktiv. Deployment wurde nicht ausgeführt. Echter KORG Writer bleibt bis zur Freigabe blockiert."},
+ar:{dir:"rtl",sub:"محطة موسيقية بالذكاء الاصطناعي",navSinger:"Singer",navKorg:"KORG",navEvidence:"الأدلة",navStatus:"الحالة",kicker:"منصة أرينجر ذكية · بيتا محلية",title:"رتّب الأغاني من الصوت والـ MIDI والأفكار.",lead:"UAOS محطة موسيقية محلية للمغنين والموزعين والاستديوهات ومحترفي الأورغات. ابنِ الاتجاه الموسيقي، جرّب التوزيع، واختبر المنتج بأمان.",cta1:"ابدأ Singer",cta2:"افتح KORG",cta3:"حالة التشغيل",p1:"فكرة صوتية",p1b:"تخطيط اللحن",p2:"خريطة الكورد",p3:"تراكات الاستديو",p4:"خروج الهاردوير",p4b:"مقفول حتى الموافقة",products:"المنتجات",singerText:"تعلم النغمات، اختر الآلة، وجهّز أفكار الغناء إلى MIDI محلياً.",korgText:"تحقق read-only، توافق، وبوابة قفل للـ writer.",evidenceTitle:"حزمة الأدلة",evidenceText:"أدلة CTO، حالة البيتا، التقارير، وإثباتات QA المحلية.",open:"فتح ←",safe:"الإطلاق التجاري مقفول. الدفع غير مفعل. لم يتم النشر. KORG writer الحقيقي يبقى مقفولاً حتى موافقة صريحة."}
+};
+function setLang(l){localStorage.uaosClassicLang=l;render()}
+function render(){const l=localStorage.uaosClassicLang||"en";const t=T[l];document.body.className=t.dir==="rtl"?"rtl":"";document.documentElement.lang=l;for(const k in t){const e=document.getElementById(k);if(e)e.textContent=t[k]}["open1","open2","open3"].forEach(id=>document.getElementById(id).textContent=t.open)}
+render();
+</script>
+</body>
+</html>
