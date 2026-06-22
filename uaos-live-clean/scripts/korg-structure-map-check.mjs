@@ -1,0 +1,13 @@
+﻿import { inferKorgStyleStructure, summarizeKorgStructureMaps } from "../src/korg/korgReadOnlyStructureMap.js";
+const scan = { extension: ".sty", prefixLength: 128, asciiPreview: "KORG intro variation fill ending", hexPreview: "4b 4f 52 47", risks: ["PREFIX_ONLY_NOT_FULL_FILE"] };
+const map = inferKorgStyleStructure(scan);
+const summary = summarizeKorgStructureMaps([scan]);
+const failures = [];
+if (map.sale !== "LOCKED") failures.push("sale not locked");
+if (map.writer !== "FORBIDDEN") failures.push("writer not forbidden");
+if (map.productionParser !== "FORBIDDEN") failures.push("parser not forbidden");
+if (map.realKeyboardOutput !== "FORBIDDEN") failures.push("output not forbidden");
+if (map.sections.length < 3) failures.push("sections not inferred");
+if (summary.commercialReady !== false) failures.push("commercial ready must be false");
+console.log(JSON.stringify({ result: failures.length ? "FAIL" : "PASS", map, summary, failures }, null, 2));
+if (failures.length) process.exit(1);

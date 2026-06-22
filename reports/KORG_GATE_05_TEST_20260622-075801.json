@@ -1,0 +1,88 @@
+﻿{
+  "result": "PASS",
+  "map": {
+    "gate": "KORG-REAL-PRODUCT-GATE-05-READ-ONLY-STYLE-STRUCTURE-MAP",
+    "mode": "READ_ONLY_STRUCTURE_MAP",
+    "sale": "LOCKED",
+    "writer": "FORBIDDEN",
+    "productionParser": "FORBIDDEN",
+    "realKeyboardOutput": "FORBIDDEN",
+    "extension": ".sty",
+    "prefixLength": 128,
+    "sections": [
+      {
+        "section": "intro",
+        "confidence": 0.7,
+        "source": "ascii-preview"
+      },
+      {
+        "section": "variation",
+        "confidence": 0.7,
+        "source": "ascii-preview"
+      },
+      {
+        "section": "fill",
+        "confidence": 0.7,
+        "source": "ascii-preview"
+      },
+      {
+        "section": "ending",
+        "confidence": 0.7,
+        "source": "ascii-preview"
+      }
+    ],
+    "warnings": [
+      "PREFIX_ONLY_NOT_FULL_FILE"
+    ],
+    "commercialReady": false,
+    "decision": "READ_ONLY_STRUCTURE_MAP_ONLY_NOT_COMMERCIAL_READY",
+    "nextGate": "KORG-REAL-PRODUCT-GATE-06-READ-ONLY-COMPATIBILITY-MATRIX"
+  },
+  "summary": {
+    "gate": "KORG-REAL-PRODUCT-GATE-05-READ-ONLY-STYLE-STRUCTURE-MAP",
+    "sale": "LOCKED",
+    "commercialReady": false,
+    "total": 1,
+    "maps": [
+      {
+        "gate": "KORG-REAL-PRODUCT-GATE-05-READ-ONLY-STYLE-STRUCTURE-MAP",
+        "mode": "READ_ONLY_STRUCTURE_MAP",
+        "sale": "LOCKED",
+        "writer": "FORBIDDEN",
+        "productionParser": "FORBIDDEN",
+        "realKeyboardOutput": "FORBIDDEN",
+        "extension": ".sty",
+        "prefixLength": 128,
+        "sections": [
+          {
+            "section": "intro",
+            "confidence": 0.7,
+            "source": "ascii-preview"
+          },
+          {
+            "section": "variation",
+            "confidence": 0.7,
+            "source": "ascii-preview"
+          },
+          {
+            "section": "fill",
+            "confidence": 0.7,
+            "source": "ascii-preview"
+          },
+          {
+            "section": "ending",
+            "confidence": 0.7,
+            "source": "ascii-preview"
+          }
+        ],
+        "warnings": [
+          "PREFIX_ONLY_NOT_FULL_FILE"
+        ],
+        "commercialReady": false,
+        "decision": "READ_ONLY_STRUCTURE_MAP_ONLY_NOT_COMMERCIAL_READY",
+        "nextGate": "KORG-REAL-PRODUCT-GATE-06-READ-ONLY-COMPATIBILITY-MATRIX"
+      }
+    ]
+  },
+  "failures": []
+}

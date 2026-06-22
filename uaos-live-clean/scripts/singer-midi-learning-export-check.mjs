@@ -1,0 +1,11 @@
+﻿import { createSingerMidiLearningExport } from "../src/singer/singerLearningMidiExport.js";
+const out = createSingerMidiLearningExport([{midi:60,start:0,duration:.5},{midi:64,start:.5,duration:.5},{midi:67,start:1,duration:1}], { tempo: 120 });
+const failures = [];
+if (out.sale !== "LOCKED") failures.push("sale not locked");
+if (out.payment !== "NOT_ACTIVE") failures.push("payment active");
+if (!out.hasMidiHeader) failures.push("missing MThd");
+if (!out.hasTrackHeader) failures.push("missing MTrk");
+if (out.byteLength < 30) failures.push("midi too small");
+if (out.commercialReady !== false) failures.push("commercial ready must be false");
+console.log(JSON.stringify({ result: failures.length ? "FAIL" : "PASS", byteLength: out.byteLength, hasMidiHeader: out.hasMidiHeader, hasTrackHeader: out.hasTrackHeader, failures }, null, 2));
+if (failures.length) process.exit(1);
