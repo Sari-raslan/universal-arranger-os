@@ -1,0 +1,51 @@
+﻿{
+    "appJsChanged":  "NOT_TOUCHED_BY_THIS_GATE",
+    "payment":  "NOT_ACTIVE",
+    "result":  "PASS",
+    "counts":  {
+                   "commercialFiles":  0,
+                   "korgGateFiles":  7,
+                   "singerGateFiles":  6,
+                   "combinedEvidenceFiles":  5,
+                   "reportFiles":  0,
+                   "unsafeFindings":  0
+               },
+    "timestamp":  "20260622-085533",
+    "korgGates":  [
+                      "korg-real-product-gate-01.json",
+                      "korg-real-product-gate-03.json",
+                      "korg-real-product-gate-04.json",
+                      "korg-real-product-gate-05.json",
+                      "korg-real-product-gate-06.json",
+                      "korg-real-product-gate-07.json",
+                      "korg-real-product-gate-08.json"
+                  ],
+    "realKeyboardOutput":  "BLOCKED",
+    "korgWriter":  "BLOCKED_UNTIL_EXPLICIT_APPROVAL",
+    "singerGates":  [
+                        "singer-real-product-gate-01.json",
+                        "singer-real-product-gate-02.json",
+                        "singer-real-product-gate-03.json",
+                        "singer-real-product-gate-04.json",
+                        "singer-real-product-gate-05.json",
+                        "singer-real-product-gate-06.json"
+                    ],
+    "combinedEvidence":  [
+                             "combined-real-product-gate-status.json",
+                             "korg04-singer02-combined-status.json",
+                             "korg05-singer03-combined-status.json",
+                             "parallel-agent-build-gate.json",
+                             "remaining-safe-gates-complete.json"
+                         ],
+    "commercialLaunch":  "LOCKED",
+    "version":  "1.0.1",
+    "deploy":  "NOT_RUN",
+    "decision":  "SAFE_LOCAL_PRODUCT_EVIDENCE_PACK_READY_NOT_COMMERCIAL_LAUNCH",
+    "nextFastest":  [
+                        "Final local beta candidate gate",
+                        "Singer UI integration if not already completed",
+                        "Approved real fixture selection only after user provides safe files"
+                    ],
+    "productionParser":  "BLOCKED",
+    "format":  "UAOS_FINAL_EVIDENCE_INDEX"
+}
