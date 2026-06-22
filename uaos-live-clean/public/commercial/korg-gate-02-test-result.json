@@ -1,0 +1,144 @@
+﻿{
+    "version":  "1.0.0",
+    "timestamp":  "20260622-074734",
+    "next":  "KORG-REAL-PRODUCT-GATE-03-READ-ONLY-PREFIX-SCANNER",
+    "result":  "PASS",
+    "sale":  "LOCKED",
+    "nodeCheck":  {
+                      "result":  "PASS",
+                      "report":  {
+                                     "gate":  "KORG-REAL-PRODUCT-GATE-02-READ-ONLY-READER-SCOPE",
+                                     "mode":  "READ_ONLY_SCOPE_ONLY",
+                                     "commercialSale":  "LOCKED",
+                                     "writer":  "FORBIDDEN",
+                                     "productionParser":  "FORBIDDEN",
+                                     "realKeyboardOutput":  "FORBIDDEN",
+                                     "allowedExtensions":  [
+                                                               ".sty",
+                                                               ".set",
+                                                               ".pcg",
+                                                               ".ksc",
+                                                               ".mid"
+                                                           ],
+                                     "blockedOutputExtensions":  [
+                                                                     ".sty",
+                                                                     ".set",
+                                                                     ".prs",
+                                                                     ".stl",
+                                                                     ".pat",
+                                                                     ".msp",
+                                                                     ".kst"
+                                                                 ],
+                                     "maxScanBytes":  262144,
+                                     "allowedOperations":  [
+                                                               "file_name_inspection",
+                                                               "extension_check",
+                                                               "size_check",
+                                                               "safe_prefix_read_design",
+                                                               "header_hex_preview_design",
+                                                               "risk_classification_design",
+                                                               "report_generation"
+                                                           ],
+                                     "forbiddenOperations":  [
+                                                                 "write_keyboard_file",
+                                                                 "modify_fixture",
+                                                                 "modify_user_style",
+                                                                 "production_parse",
+                                                                 "export_real_korg_package",
+                                                                 "claim_device_compatibility"
+                                                             ],
+                                     "result":  "SCOPE_DEFINED_NOT_PRODUCT_READY",
+                                     "nextGate":  "KORG-REAL-PRODUCT-GATE-03-READ-ONLY-PREFIX-SCANNER"
+                                 },
+                      "classifications":  [
+                                              {
+                                                  "gate":  "KORG-REAL-PRODUCT-GATE-02-READ-ONLY-READER-SCOPE",
+                                                  "mode":  "READ_ONLY_SCOPE_ONLY",
+                                                  "name":  "demo.STY",
+                                                  "size":  1024,
+                                                  "extension":  ".sty",
+                                                  "isAllowedExtension":  true,
+                                                  "withinScanLimit":  true,
+                                                  "status":  "READ_ONLY_CANDIDATE",
+                                                  "saleStatus":  "LOCKED",
+                                                  "writer":  "FORBIDDEN",
+                                                  "productionParser":  "FORBIDDEN",
+                                                  "risks":  [
+                                                                "OUTPUT_EXTENSION_IS_BLOCKED_FOR_WRITING",
+                                                                "STYLE_FILE_REQUIRES_DEDICATED_PARSER_GATE"
+                                                            ]
+                                              },
+                                              {
+                                                  "gate":  "KORG-REAL-PRODUCT-GATE-02-READ-ONLY-READER-SCOPE",
+                                                  "mode":  "READ_ONLY_SCOPE_ONLY",
+                                                  "name":  "backup.SET",
+                                                  "size":  65536,
+                                                  "extension":  ".set",
+                                                  "isAllowedExtension":  true,
+                                                  "withinScanLimit":  true,
+                                                  "status":  "READ_ONLY_CANDIDATE",
+                                                  "saleStatus":  "LOCKED",
+                                                  "writer":  "FORBIDDEN",
+                                                  "productionParser":  "FORBIDDEN",
+                                                  "risks":  [
+                                                                "OUTPUT_EXTENSION_IS_BLOCKED_FOR_WRITING",
+                                                                "SET_PACKAGE_REQUIRES_SPECIAL_READ_ONLY_BOUNDARY"
+                                                            ]
+                                              },
+                                              {
+                                                  "gate":  "KORG-REAL-PRODUCT-GATE-02-READ-ONLY-READER-SCOPE",
+                                                  "mode":  "READ_ONLY_SCOPE_ONLY",
+                                                  "name":  "song.mid",
+                                                  "size":  4096,
+                                                  "extension":  ".mid",
+                                                  "isAllowedExtension":  true,
+                                                  "withinScanLimit":  true,
+                                                  "status":  "READ_ONLY_CANDIDATE",
+                                                  "saleStatus":  "LOCKED",
+                                                  "writer":  "FORBIDDEN",
+                                                  "productionParser":  "FORBIDDEN",
+                                                  "risks":  [
+
+                                                            ]
+                                              },
+                                              {
+                                                  "gate":  "KORG-REAL-PRODUCT-GATE-02-READ-ONLY-READER-SCOPE",
+                                                  "mode":  "READ_ONLY_SCOPE_ONLY",
+                                                  "name":  "large.STY",
+                                                  "size":  999999,
+                                                  "extension":  ".sty",
+                                                  "isAllowedExtension":  true,
+                                                  "withinScanLimit":  false,
+                                                  "status":  "READ_ONLY_CANDIDATE",
+                                                  "saleStatus":  "LOCKED",
+                                                  "writer":  "FORBIDDEN",
+                                                  "productionParser":  "FORBIDDEN",
+                                                  "risks":  [
+                                                                "FILE_EXCEEDS_SAFE_PREFIX_SCAN_LIMIT",
+                                                                "OUTPUT_EXTENSION_IS_BLOCKED_FOR_WRITING",
+                                                                "STYLE_FILE_REQUIRES_DEDICATED_PARSER_GATE"
+                                                            ]
+                                              },
+                                              {
+                                                  "gate":  "KORG-REAL-PRODUCT-GATE-02-READ-ONLY-READER-SCOPE",
+                                                  "mode":  "READ_ONLY_SCOPE_ONLY",
+                                                  "name":  "image.png",
+                                                  "size":  1000,
+                                                  "extension":  ".png",
+                                                  "isAllowedExtension":  false,
+                                                  "withinScanLimit":  true,
+                                                  "status":  "NOT_KORG_CANDIDATE",
+                                                  "saleStatus":  "LOCKED",
+                                                  "writer":  "FORBIDDEN",
+                                                  "productionParser":  "FORBIDDEN",
+                                                  "risks":  [
+
+                                                            ]
+                                              }
+                                          ],
+                      "failures":  [
+
+                                   ]
+                  },
+    "format":  "UAOS_KORG_GATE_02_TEST_RESULT"
+}
