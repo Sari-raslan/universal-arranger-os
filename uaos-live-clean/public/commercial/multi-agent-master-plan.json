@@ -1,0 +1,26 @@
+﻿{
+    "deploy":  "NOT_RUN",
+    "requiredBeforeSale":  [
+                               "KORG REAL PRODUCT GATE pass",
+                               "SINGER REAL PRODUCT GATE pass",
+                               "Build pass",
+                               "No unsupported final claims",
+                               "No checkout before verified product"
+                           ],
+    "version":  "1.0.0",
+    "next":  "KORG-REAL-PRODUCT-GATE-01",
+    "format":  "UAOS_MULTI_AGENT_MASTER_PLAN",
+    "commercialLaunch":  "LOCKED",
+    "internalPayment":  "NOT_ACTIVE",
+    "timestamp":  "20260622-065503",
+    "status":  "ORCHESTRATION_RESUMED",
+    "agents":  [
+                   "korg-readiness-agent",
+                   "singer-readiness-agent",
+                   "qa-agent",
+                   "ui-ux-agent",
+                   "product-truth-agent",
+                   "build-test-agent",
+                   "roadmap-agent"
+               ]
+}
