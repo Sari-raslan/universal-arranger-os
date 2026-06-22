@@ -2,125 +2,93 @@
 <html lang="ar">
 <head>
 <meta charset="utf-8">
-<title>UAOS New UI V6</title>
+<title>UAOS New UI V7</title>
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate, max-age=0">
 <style>
-:root{--bg:#050914;--panel:#0f1a2d;--panel2:#0a1424;--line:#2f527f;--text:#f5f8ff;--muted:#aebdd3;--ok:#79e6b2;--warn:#ffd166;--bad:#ffaaa5;--blue:#8fc7ff;--cyan:#58e4df;--violet:#8d5cff}
 *{box-sizing:border-box}
-body{margin:0;background:radial-gradient(circle at 74% 0%,#12365d 0,#050914 44%,#02050b 100%);color:var(--text);font-family:Tahoma,Arial,sans-serif}
+body{margin:0;background:#050914;color:#f5f8ff;font-family:Tahoma,Arial,sans-serif}
 body.rtl{direction:rtl}
 a{text-decoration:none;color:inherit}
-.shell{max-width:1220px;margin:auto;padding:18px}
-.top{display:flex;justify-content:space-between;align-items:center;gap:14px;background:rgba(15,26,45,.92);border:1px solid var(--line);border-radius:24px;padding:14px 18px;margin-bottom:14px;position:sticky;top:8px;z-index:10;backdrop-filter:blur(14px)}
-.brand{display:flex;align-items:center;gap:12px}.logo{width:46px;height:46px;border-radius:16px;background:linear-gradient(135deg,var(--cyan),var(--violet))}
-h1,h2,h3{margin:0}.brand h1{font-size:22px}.brand p{margin:4px 0 0;color:var(--muted);font-size:13px}
-.lang{display:flex;gap:8px;flex-wrap:wrap}.lang button,.btn{border:1px solid #456b9d;background:#102849;color:#fff;border-radius:14px;padding:10px 14px;font-weight:900;cursor:pointer}
+.page{min-height:100vh;background:radial-gradient(circle at 75% 0,#12365d 0,#050914 45%,#02050b 100%)}
+.wrap{max-width:1180px;margin:auto;padding:18px}
+.nav{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:18px}
+.brand{display:flex;align-items:center;gap:12px}
+.logo{width:44px;height:44px;border-radius:15px;background:linear-gradient(135deg,#79e6b2,#59d6ff,#8d5cff)}
+h1,h2,h3,p{margin-top:0}.brand h1{font-size:22px;margin-bottom:3px}.muted{color:#aebdd3;line-height:1.65}
+.lang{display:flex;gap:8px}.lang button,.btn{border:1px solid #456b9d;background:#102849;color:#fff;border-radius:14px;padding:10px 14px;font-weight:900;cursor:pointer}
 .lang button.active,.btn.primary{background:linear-gradient(135deg,#1b8ca0,#2366b4);border-color:#69a9ff}
-.hero{display:grid;grid-template-columns:1.15fr .85fr;gap:14px;align-items:stretch}
-.panel{background:rgba(15,26,45,.96);border:1px solid var(--line);border-radius:26px;padding:22px}
-.heroMain{min-height:310px;display:flex;flex-direction:column;justify-content:center}
-.badge{display:inline-block;width:max-content;background:#0c2f38;color:var(--ok);border:1px solid #2a7177;border-radius:999px;padding:7px 12px;font-weight:900;margin-bottom:12px}
-.heroTitle{font-size:46px;line-height:1.1;margin-bottom:12px}
-.text{color:var(--muted);line-height:1.7}
-.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}.btn.big{font-size:17px;padding:14px 20px}
-.productFocus{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:18px}
-.focus{background:#071426;border:1px solid var(--line);border-radius:20px;padding:16px}.focus h3{font-size:19px;margin-bottom:8px}.focus p{color:var(--muted);line-height:1.55;font-size:14px}
-.status{display:grid;gap:10px}.stat{display:flex;justify-content:space-between;align-items:center;background:#071426;border:1px solid var(--line);border-radius:16px;padding:13px}.ok{color:var(--ok)}.warn{color:var(--warn)}.bad{color:var(--bad)}
-.sectionTitle{display:flex;justify-content:space-between;align-items:center;margin:18px 0 10px}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-.tile{background:rgba(10,20,36,.98);border:1px solid var(--line);border-radius:22px;padding:18px;min-height:142px;display:flex;flex-direction:column;justify-content:space-between;transition:.15s}
-.tile:hover{transform:translateY(-2px);border-color:#82baff;background:#10233d}.tile h3{font-size:20px;margin-bottom:8px}.tile p{font-size:14px;color:var(--muted);line-height:1.55}.go{color:var(--blue);font-weight:900}
-.reports{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.report{background:#071426;border:1px solid #263f63;border-radius:18px;padding:14px;color:#d8e7ff;font-weight:800}
-.notice{background:#16160d;border-color:#675d28;margin-top:14px}.footer{text-align:center;color:var(--muted);padding:18px;font-size:13px}
-@media(max-width:920px){.hero,.grid{grid-template-columns:1fr}.reports,.productFocus{grid-template-columns:1fr 1fr}.heroTitle{font-size:34px}.top{display:block}.lang{margin-top:12px}}
-@media(max-width:620px){.reports,.productFocus{grid-template-columns:1fr}.shell{padding:12px}}
+.hero{background:rgba(15,26,45,.96);border:1px solid #31527f;border-radius:28px;padding:34px;display:grid;grid-template-columns:1.15fr .85fr;gap:24px;align-items:center}
+.badge{display:inline-block;background:#0c2f38;color:#79e6b2;border:1px solid #2a7177;border-radius:999px;padding:7px 12px;font-weight:900;margin-bottom:14px}
+.title{font-size:52px;line-height:1.08;margin-bottom:14px}
+.lead{font-size:18px;color:#cbd9f4;line-height:1.75}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px}.btn.big{font-size:17px;padding:15px 22px}
+.flow{display:grid;gap:10px}.flowRow{display:flex;justify-content:space-between;align-items:center;background:#071426;border:1px solid #31527f;border-radius:18px;padding:15px}.flowRow.active{background:linear-gradient(90deg,#16415f,#382b69)}
+.statusBar{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:14px 0}.stat{background:#071426;border:1px solid #31527f;border-radius:16px;padding:12px;text-align:center}.ok{color:#79e6b2}.warn{color:#ffd166}.bad{color:#ffaaa5}
+.sectionHead{display:flex;justify-content:space-between;align-items:center;margin:22px 0 12px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.tile{background:rgba(10,20,36,.98);border:1px solid #31527f;border-radius:22px;padding:20px;min-height:145px;display:flex;flex-direction:column;justify-content:space-between;transition:.15s}
+.tile:hover{transform:translateY(-2px);border-color:#82baff;background:#10233d}.tile p{color:#aebdd3;line-height:1.55;font-size:14px}.go{color:#8fc7ff;font-weight:900}
+.notice{background:#17160d;border:1px solid #675d28;border-radius:22px;padding:18px;margin-top:14px}.footer{text-align:center;color:#aebdd3;padding:18px;font-size:13px}
+@media(max-width:900px){.hero,.grid,.statusBar{grid-template-columns:1fr}.title{font-size:36px}.nav{display:block}.lang{margin-top:12px;flex-wrap:wrap}.wrap{padding:12px}}
 </style>
 </head>
 <body class="rtl">
-<div class="shell">
-<header class="top">
- <div class="brand">
-  <div class="logo"></div>
-  <div>
-   <h1 data-t="brand">UAOS Beta</h1>
-   <p data-t="brandSub">واجهة جديدة مركزة على الاستخدام</p>
-  </div>
- </div>
- <div class="lang">
-  <button id="ar" onclick="setLang('ar')">عربي</button>
-  <button id="de" onclick="setLang('de')">Deutsch</button>
-  <button id="en" onclick="setLang('en')">English</button>
- </div>
-</header>
+<div class="page"><div class="wrap">
+<nav class="nav">
+ <div class="brand"><div class="logo"></div><div><h1>UAOS Beta</h1><p class="muted" data-t="brandSub">واجهة نظيفة وسريعة للاختبار</p></div></div>
+ <div class="lang"><button id="ar" onclick="setLang('ar')">عربي</button><button id="de" onclick="setLang('de')">Deutsch</button><button id="en" onclick="setLang('en')">English</button></div>
+</nav>
 
 <section class="hero">
- <div class="panel heroMain">
-  <span class="badge" data-t="badge">New UI V6 · بيتا محلية آمنة</span>
-  <h2 class="heroTitle" data-t="title">ماذا تريد أن تفعل الآن؟</h2>
-  <p class="text" data-t="intro">اختر مسار واضح: جرّب Singer، راجع KORG، أو افتح الأدلة. التقارير موجودة بالأسفل وليست هي الواجهة الأساسية.</p>
+ <div>
+  <span class="badge" data-t="badge">New UI V7 · بيتا محلية</span>
+  <h2 class="title" data-t="title">ابدأ من هنا</h2>
+  <p class="lead" data-t="lead">واجهة واحدة واضحة: جرّب Singer، افتح KORG، أو راجع الأدلة. التقارير التقنية أصبحت في الأسفل فقط.</p>
   <div class="actions">
-   <a class="btn primary big" href="/universal-arranger-os/singer/singer-local-learning-ui.html" data-t="startSinger">ابدأ تجربة Singer</a>
-   <a class="btn big" href="/universal-arranger-os/qa/remaining-safe-gates-dashboard.html" data-t="openKorg">افتح KORG Manager</a>
-   <a class="btn big" href="/universal-arranger-os/qa/final-evidence-pack-dashboard.html" data-t="openEvidence">راجع الأدلة</a>
-  </div>
-  <div class="productFocus">
-   <div class="focus"><h3 data-t="singer">UAOS Singer</h3><p data-t="singerBenefit">للمغني: أدخل فكرة لحنية، اختر آلة، وجهّز نغمات MIDI تعليمية محلياً.</p></div>
-   <div class="focus"><h3 data-t="korg">KORG Manager/Core</h3><p data-t="korgBenefit">للموزع: فحص آمن read-only، توافق، وإثباتات بدون كتابة ملفات حقيقية.</p></div>
+   <a class="btn primary big" href="/universal-arranger-os/singer/singer-local-learning-ui.html" data-t="btnSinger">ابدأ Singer</a>
+   <a class="btn big" href="/universal-arranger-os/qa/remaining-safe-gates-dashboard.html" data-t="btnKorg">افتح KORG</a>
+   <a class="btn big" href="/universal-arranger-os/qa/final-evidence-pack-dashboard.html" data-t="btnEvidence">الأدلة</a>
   </div>
  </div>
-
- <div class="panel">
-  <h2 data-t="safety">حالة الأمان</h2>
-  <p class="text" data-t="safetySub">المنتج في Beta محلية. لا بيع ولا دفع ولا نشر.</p>
-  <div class="status">
-   <div class="stat"><b>Local Beta</b><span class="ok">PASS</span></div>
-   <div class="stat"><b>Payment</b><span class="warn">NOT_ACTIVE</span></div>
-   <div class="stat"><b>Deploy</b><span class="warn">NOT_RUN</span></div>
-   <div class="stat"><b>KORG Writer</b><span class="bad">BLOCKED</span></div>
-   <div class="stat"><b>App.jsx</b><span class="ok">NO CHANGE</span></div>
-  </div>
+ <div class="flow">
+  <div class="flowRow active"><b data-t="flow1">فكرة صوتية</b><span data-t="flow1b">لحن</span></div>
+  <div class="flowRow"><b>Singer</b><span>Voice → MIDI</span></div>
+  <div class="flowRow"><b>KORG</b><span>Read-only</span></div>
+  <div class="flowRow"><b>Hardware</b><span class="bad">Locked</span></div>
  </div>
 </section>
 
-<div class="sectionTitle">
- <h2 data-t="mainActions">الاختصارات المهمة</h2>
- <span class="text">V6 — 20260622-112617</span>
-</div>
+<section class="statusBar">
+ <div class="stat"><b>Beta</b><br><span class="ok">PASS</span></div>
+ <div class="stat"><b>Payment</b><br><span class="warn">NOT_ACTIVE</span></div>
+ <div class="stat"><b>Deploy</b><br><span class="warn">NOT_RUN</span></div>
+ <div class="stat"><b>KORG Writer</b><br><span class="bad">BLOCKED</span></div>
+</section>
+
+<div class="sectionHead"><h2 data-t="actions">ماذا تريد أن تفتح؟</h2><span class="muted">V7 — 20260622-113704</span></div>
 
 <section class="grid">
- <a class="tile" href="/universal-arranger-os/singer/singer-local-learning-ui.html"><div><h3 data-t="cardSingerTitle">ابدأ Singer</h3><p data-t="cardSingerText">واجهة تجربة الغناء، اختيار الآلة، ونغمات التعلم.</p></div><span class="go" data-t="open">فتح ←</span></a>
- <a class="tile" href="/universal-arranger-os/qa/remaining-safe-gates-dashboard.html"><div><h3 data-t="cardKorgTitle">افتح KORG</h3><p data-t="cardKorgText">بوابات KORG الآمنة والتحقق والتوافق.</p></div><span class="go" data-t="open">فتح ←</span></a>
- <a class="tile" href="/universal-arranger-os/qa/final-evidence-pack-dashboard.html"><div><h3 data-t="cardEvidenceTitle">الأدلة</h3><p data-t="cardEvidenceText">حالة CTO، إثباتات المنتج، وتقارير التحقق.</p></div><span class="go" data-t="open">فتح ←</span></a>
- <a class="tile" href="/universal-arranger-os/qa/manual-browser-smoke-test-dashboard.html"><div><h3 data-t="cardSmokeTitle">اختبار التنقل</h3><p data-t="cardSmokeText">تأكد أن الروابط والصفحات تعمل محلياً.</p></div><span class="go" data-t="open">فتح ←</span></a>
- <a class="tile" href="/universal-arranger-os/qa/product-truth-lock-dashboard.html"><div><h3 data-t="cardTruthTitle">قفل الحقيقة</h3><p data-t="cardTruthText">منع البيع والدفع والادعاءات غير المثبتة.</p></div><span class="go" data-t="open">فتح ←</span></a>
- <a class="tile" href="/universal-arranger-os/commercial/final-local-beta-complete-status.json"><div><h3 data-t="cardJsonTitle">الحالة النهائية</h3><p data-t="cardJsonText">ملف JSON مختصر لحالة المشروع.</p></div><span class="go" data-t="open">فتح ←</span></a>
+ <a class="tile" href="/universal-arranger-os/singer/singer-local-learning-ui.html"><div><h3 data-t="singer">UAOS Singer</h3><p data-t="singerText">تجربة الغناء، اختيار الآلة، وتجهيز نغمات تعليمية.</p></div><span class="go" data-t="open">فتح ←</span></a>
+ <a class="tile" href="/universal-arranger-os/qa/remaining-safe-gates-dashboard.html"><div><h3 data-t="korg">KORG Manager/Core</h3><p data-t="korgText">فحص آمن، توافق، تحقق، بدون writer.</p></div><span class="go" data-t="open">فتح ←</span></a>
+ <a class="tile" href="/universal-arranger-os/qa/final-evidence-pack-dashboard.html"><div><h3 data-t="evidence">الأدلة</h3><p data-t="evidenceText">تقارير CTO وحالة البوابات.</p></div><span class="go" data-t="open">فتح ←</span></a>
+ <a class="tile" href="/universal-arranger-os/qa/manual-browser-smoke-test-dashboard.html"><div><h3 data-t="smoke">اختبار التنقل</h3><p data-t="smokeText">تأكد من الروابط والصفحات.</p></div><span class="go" data-t="open">فتح ←</span></a>
+ <a class="tile" href="/universal-arranger-os/qa/product-truth-lock-dashboard.html"><div><h3 data-t="truth">قفل الحقيقة</h3><p data-t="truthText">لا بيع ولا دفع ولا ادعاءات.</p></div><span class="go" data-t="open">فتح ←</span></a>
+ <a class="tile" href="/universal-arranger-os/commercial/final-local-beta-complete-status.json"><div><h3 data-t="json">الحالة النهائية</h3><p data-t="jsonText">ملف JSON مختصر للمراجعة.</p></div><span class="go" data-t="open">فتح ←</span></a>
 </section>
 
-<section class="panel notice">
- <h2 data-t="note">مهم</h2>
- <p data-t="noteText">هذه ليست صفحة بيع. هذه واجهة Beta محلية للاختبار والتطوير. KORG writer الحقيقي والدفع والنشر كلها مقفولة حتى موافقة صريحة.</p>
-</section>
+<section class="notice"><b data-t="note">تنبيه:</b> <span data-t="noteText">هذه Beta محلية فقط. لا بيع، لا دفع، لا نشر، ولا KORG writer.</span></section>
 
-<div class="sectionTitle"><h2 data-t="reportsTitle">التقارير التقنية</h2><span class="text" data-t="reportsSub">للمراجعة فقط</span></div>
-<section class="reports">
- <a class="report" href="/universal-arranger-os/evidence/final-evidence-index.json" data-t="r1">Evidence Index</a>
- <a class="report" href="/universal-arranger-os/evidence/cto-final-status.json" data-t="r2">CTO Status</a>
- <a class="report" href="/universal-arranger-os/commercial/final-local-beta-complete-status.json" data-t="r3">Beta Status</a>
- <a class="report" href="/universal-arranger-os/commercial/new-ui-v6-ux-polish.json" data-t="r4">UI V6 Report</a>
-</section>
-
-<div class="footer">UAOS New UI V6 — product-first beta interface</div>
-</div>
+<div class="footer">UAOS New UI V7</div>
+</div></div>
 
 <script>
 const D={
-ar:{dir:"rtl",brand:"UAOS Beta",brandSub:"واجهة جديدة مركزة على الاستخدام",badge:"New UI V6 · بيتا محلية آمنة",title:"ماذا تريد أن تفعل الآن؟",intro:"اختر مسار واضح: جرّب Singer، راجع KORG، أو افتح الأدلة. التقارير موجودة بالأسفل وليست هي الواجهة الأساسية.",startSinger:"ابدأ تجربة Singer",openKorg:"افتح KORG Manager",openEvidence:"راجع الأدلة",singer:"UAOS Singer",singerBenefit:"للمغني: أدخل فكرة لحنية، اختر آلة، وجهّز نغمات MIDI تعليمية محلياً.",korg:"KORG Manager/Core",korgBenefit:"للموزع: فحص آمن read-only، توافق، وإثباتات بدون كتابة ملفات حقيقية.",safety:"حالة الأمان",safetySub:"المنتج في Beta محلية. لا بيع ولا دفع ولا نشر.",mainActions:"الاختصارات المهمة",cardSingerTitle:"ابدأ Singer",cardSingerText:"واجهة تجربة الغناء، اختيار الآلة، ونغمات التعلم.",cardKorgTitle:"افتح KORG",cardKorgText:"بوابات KORG الآمنة والتحقق والتوافق.",cardEvidenceTitle:"الأدلة",cardEvidenceText:"حالة CTO، إثباتات المنتج، وتقارير التحقق.",cardSmokeTitle:"اختبار التنقل",cardSmokeText:"تأكد أن الروابط والصفحات تعمل محلياً.",cardTruthTitle:"قفل الحقيقة",cardTruthText:"منع البيع والدفع والادعاءات غير المثبتة.",cardJsonTitle:"الحالة النهائية",cardJsonText:"ملف JSON مختصر لحالة المشروع.",open:"فتح ←",note:"مهم",noteText:"هذه ليست صفحة بيع. هذه واجهة Beta محلية للاختبار والتطوير. KORG writer الحقيقي والدفع والنشر كلها مقفولة حتى موافقة صريحة.",reportsTitle:"التقارير التقنية",reportsSub:"للمراجعة فقط",r1:"فهرس الأدلة",r2:"حالة CTO",r3:"حالة Beta",r4:"تقرير الواجهة"},
-de:{dir:"ltr",brand:"UAOS Beta",brandSub:"Neue nutzungsorientierte Oberfläche",badge:"New UI V6 · lokale Beta",title:"Was möchtest du jetzt tun?",intro:"Wähle einen klaren Weg: Singer testen, KORG prüfen oder Evidenz öffnen. Technische Berichte sind unten, nicht im Vordergrund.",startSinger:"Singer testen",openKorg:"KORG Manager öffnen",openEvidence:"Evidenz prüfen",singer:"UAOS Singer",singerBenefit:"Für Sänger: Melodieidee eingeben, Instrument wählen und Lern-MIDI lokal vorbereiten.",korg:"KORG Manager/Core",korgBenefit:"Für Arranger: sichere Read-only Prüfung, Kompatibilität und Nachweise ohne echte Dateien zu schreiben.",safety:"Sicherheitsstatus",safetySub:"Produkt ist lokale Beta. Kein Verkauf, keine Zahlung, kein Deployment.",mainActions:"Wichtige Aktionen",cardSingerTitle:"Singer starten",cardSingerText:"Gesangs-Test, Instrumentauswahl und Lernnoten.",cardKorgTitle:"KORG öffnen",cardKorgText:"Sichere KORG Gates, Validierung und Kompatibilität.",cardEvidenceTitle:"Evidenz",cardEvidenceText:"CTO Status, Produktnachweise und Prüfberichte.",cardSmokeTitle:"Navigationstest",cardSmokeText:"Prüfe lokale Links und Seiten.",cardTruthTitle:"Product Truth Lock",cardTruthText:"Blockiert Verkauf, Zahlung und unbelegte Claims.",cardJsonTitle:"Finaler Status",cardJsonText:"Kurze JSON-Datei zum Projektstatus.",open:"Öffnen →",note:"Wichtig",noteText:"Dies ist keine Verkaufsseite. Es ist eine lokale Beta für Tests und Entwicklung. KORG Writer, Zahlung und Deployment bleiben gesperrt.",reportsTitle:"Technische Berichte",reportsSub:"Nur zur Prüfung",r1:"Evidenzindex",r2:"CTO Status",r3:"Beta Status",r4:"UI V6 Bericht"},
-en:{dir:"ltr",brand:"UAOS Beta",brandSub:"New use-focused interface",badge:"New UI V6 · local beta",title:"What do you want to do now?",intro:"Choose a clear path: test Singer, review KORG, or open evidence. Technical reports are below, not the main interface.",startSinger:"Start Singer",openKorg:"Open KORG Manager",openEvidence:"Review Evidence",singer:"UAOS Singer",singerBenefit:"For singers: enter a melody idea, choose an instrument, and prepare learning MIDI locally.",korg:"KORG Manager/Core",korgBenefit:"For arrangers: safe read-only checks, compatibility and proof without writing real files.",safety:"Safety status",safetySub:"Product is local beta. No sale, no payment, no deployment.",mainActions:"Important actions",cardSingerTitle:"Start Singer",cardSingerText:"Singing test, instrument choice and learning notes.",cardKorgTitle:"Open KORG",cardKorgText:"Safe KORG gates, validation and compatibility.",cardEvidenceTitle:"Evidence",cardEvidenceText:"CTO status, product proof and verification reports.",cardSmokeTitle:"Navigation test",cardSmokeText:"Check local links and pages.",cardTruthTitle:"Product Truth Lock",cardTruthText:"Blocks sale, payment and unsupported claims.",cardJsonTitle:"Final status",cardJsonText:"Short JSON project status file.",open:"Open →",note:"Important",noteText:"This is not a sales page. It is a local beta for testing and development. KORG writer, payment and deployment stay locked.",reportsTitle:"Technical reports",reportsSub:"For review only",r1:"Evidence Index",r2:"CTO Status",r3:"Beta Status",r4:"UI V6 Report"}
+ar:{dir:"rtl",brandSub:"واجهة نظيفة وسريعة للاختبار",badge:"New UI V7 · بيتا محلية",title:"ابدأ من هنا",lead:"واجهة واحدة واضحة: جرّب Singer، افتح KORG، أو راجع الأدلة. التقارير التقنية أصبحت في الأسفل فقط.",btnSinger:"ابدأ Singer",btnKorg:"افتح KORG",btnEvidence:"الأدلة",flow1:"فكرة صوتية",flow1b:"لحن",actions:"ماذا تريد أن تفتح؟",singer:"UAOS Singer",singerText:"تجربة الغناء، اختيار الآلة، وتجهيز نغمات تعليمية.",korg:"KORG Manager/Core",korgText:"فحص آمن، توافق، تحقق، بدون writer.",evidence:"الأدلة",evidenceText:"تقارير CTO وحالة البوابات.",smoke:"اختبار التنقل",smokeText:"تأكد من الروابط والصفحات.",truth:"قفل الحقيقة",truthText:"لا بيع ولا دفع ولا ادعاءات.",json:"الحالة النهائية",jsonText:"ملف JSON مختصر للمراجعة.",open:"فتح ←",note:"تنبيه:",noteText:"هذه Beta محلية فقط. لا بيع، لا دفع، لا نشر، ولا KORG writer."},
+de:{dir:"ltr",brandSub:"Saubere schnelle Testoberfläche",badge:"New UI V7 · lokale Beta",title:"Hier starten",lead:"Eine klare Oberfläche: Singer testen, KORG öffnen oder Evidenz prüfen. Technische Berichte sind unten.",btnSinger:"Singer starten",btnKorg:"KORG öffnen",btnEvidence:"Evidenz",flow1:"Stimmidee",flow1b:"Melodie",actions:"Was möchtest du öffnen?",singer:"UAOS Singer",singerText:"Gesang testen, Instrument wählen und Lernnoten vorbereiten.",korg:"KORG Manager/Core",korgText:"Sichere Prüfung, Kompatibilität, Validierung, kein Writer.",evidence:"Evidenz",evidenceText:"CTO-Berichte und Gate-Status.",smoke:"Navigationstest",smokeText:"Links und Seiten prüfen.",truth:"Product Truth Lock",truthText:"Kein Verkauf, keine Zahlung, keine Claims.",json:"Finaler Status",jsonText:"Kurze JSON-Datei zur Prüfung.",open:"Öffnen →",note:"Hinweis:",noteText:"Dies ist nur eine lokale Beta. Kein Verkauf, keine Zahlung, kein Deployment und kein KORG Writer."},
+en:{dir:"ltr",brandSub:"Clean fast testing interface",badge:"New UI V7 · local beta",title:"Start here",lead:"One clear interface: test Singer, open KORG, or review evidence. Technical reports are below.",btnSinger:"Start Singer",btnKorg:"Open KORG",btnEvidence:"Evidence",flow1:"Voice idea",flow1b:"Melody",actions:"What do you want to open?",singer:"UAOS Singer",singerText:"Test singing, choose instrument and prepare learning notes.",korg:"KORG Manager/Core",korgText:"Safe check, compatibility, validation, no writer.",evidence:"Evidence",evidenceText:"CTO reports and gate status.",smoke:"Navigation test",smokeText:"Check links and pages.",truth:"Product Truth Lock",truthText:"No sale, no payment, no claims.",json:"Final status",jsonText:"Short JSON file for review.",open:"Open →",note:"Notice:",noteText:"This is local beta only. No sale, no payment, no deployment, no KORG writer."}
 };
-function setLang(l){localStorage.uaosV6Lang=l;render()}
-function render(){const l=localStorage.uaosV6Lang||"ar";const t=D[l];document.body.className=t.dir==="rtl"?"rtl":"";document.documentElement.lang=l;document.querySelectorAll("[data-t]").forEach(e=>{const k=e.getAttribute("data-t");if(t[k])e.textContent=t[k]});["ar","de","en"].forEach(x=>document.getElementById(x).classList.remove("active"));document.getElementById(l).classList.add("active")}
+function setLang(l){localStorage.uaosV7Lang=l;render()}
+function render(){const l=localStorage.uaosV7Lang||"ar";const t=D[l];document.body.className=t.dir==="rtl"?"rtl":"";document.documentElement.lang=l;document.querySelectorAll("[data-t]").forEach(e=>{const k=e.getAttribute("data-t");if(t[k])e.textContent=t[k]});["ar","de","en"].forEach(x=>document.getElementById(x).classList.remove("active"));document.getElementById(l).classList.add("active")}
 render();
 </script>
 </body>
