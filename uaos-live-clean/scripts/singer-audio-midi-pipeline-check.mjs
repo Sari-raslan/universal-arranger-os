@@ -1,0 +1,11 @@
+﻿import { frequencyToMidi, midiToName, createSingerAudioMidiReport } from "../src/singer/singerAudioMidiPipeline.js";
+const events = [{time:0,freq:440},{time:.1,freq:441},{time:.2,freq:0},{time:.3,freq:523.25},{time:.5,freq:523.25}];
+const report = createSingerAudioMidiReport(events);
+const failures = [];
+if (frequencyToMidi(440) !== 69) failures.push("A4 frequency failed");
+if (midiToName(60) !== "C4") failures.push("C4 mapping failed");
+if (report.sale !== "LOCKED") failures.push("sale not locked");
+if (report.payment !== "NOT_ACTIVE") failures.push("payment active");
+if (report.noteCount < 2) failures.push("note extraction too weak");
+console.log(JSON.stringify({ result: failures.length ? "FAIL" : "PASS", report, failures }, null, 2));
+if (failures.length) process.exit(1);

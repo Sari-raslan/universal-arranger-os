@@ -1,0 +1,33 @@
+﻿{
+  "result": "PASS",
+  "report": {
+    "gate": "SINGER-REAL-PRODUCT-GATE-02-AUDIO-TO-MIDI-PIPELINE",
+    "mode": "SAFE_AUDIO_TO_MIDI_FOUNDATION",
+    "sale": "LOCKED",
+    "payment": "NOT_ACTIVE",
+    "eventCount": 5,
+    "noteCount": 2,
+    "notes": [
+      {
+        "midi": 69,
+        "noteName": "A4",
+        "start": 0,
+        "duration": 0.2
+      },
+      {
+        "midi": 72,
+        "noteName": "C5",
+        "start": 0.3,
+        "duration": 0.2
+      }
+    ],
+    "exports": {
+      "midi": "NEXT_GATE",
+      "pdf": "LOCKED",
+      "video": "LOCKED",
+      "mobile": "LOCKED"
+    },
+    "commercialReady": false
+  },
+  "failures": []
+}

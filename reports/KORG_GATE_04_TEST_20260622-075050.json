@@ -1,0 +1,100 @@
+﻿{
+  "result": "PASS",
+  "validation": {
+    "gate": "KORG-REAL-PRODUCT-GATE-04-SMART-VALIDATION-DASHBOARD",
+    "mode": "READ_ONLY_SMART_VALIDATION",
+    "sale": "LOCKED",
+    "writer": "FORBIDDEN",
+    "productionParser": "FORBIDDEN",
+    "realKeyboardOutput": "FORBIDDEN",
+    "score": 90,
+    "decision": "READ_ONLY_VALIDATION_OK",
+    "checks": [
+      {
+        "id": "read_only_mode",
+        "pass": true
+      },
+      {
+        "id": "writer_forbidden",
+        "pass": true
+      },
+      {
+        "id": "parser_forbidden",
+        "pass": true
+      },
+      {
+        "id": "output_forbidden",
+        "pass": true
+      },
+      {
+        "id": "has_extension",
+        "pass": true
+      },
+      {
+        "id": "has_prefix_preview",
+        "pass": true
+      }
+    ],
+    "failedChecks": [],
+    "risks": [],
+    "warnings": [
+      "PREFIX_ONLY_NOT_FULL_FILE",
+      "STYLE_REQUIRES_DEDICATED_READ_ONLY_PARSE_GATE"
+    ],
+    "nextGate": "KORG-REAL-PRODUCT-GATE-05-READ-ONLY-STYLE-STRUCTURE-MAP"
+  },
+  "summary": {
+    "gate": "KORG-REAL-PRODUCT-GATE-04-SMART-VALIDATION-DASHBOARD",
+    "sale": "LOCKED",
+    "total": 1,
+    "ready": 1,
+    "blocked": 0,
+    "commercialReady": false,
+    "validations": [
+      {
+        "gate": "KORG-REAL-PRODUCT-GATE-04-SMART-VALIDATION-DASHBOARD",
+        "mode": "READ_ONLY_SMART_VALIDATION",
+        "sale": "LOCKED",
+        "writer": "FORBIDDEN",
+        "productionParser": "FORBIDDEN",
+        "realKeyboardOutput": "FORBIDDEN",
+        "score": 90,
+        "decision": "READ_ONLY_VALIDATION_OK",
+        "checks": [
+          {
+            "id": "read_only_mode",
+            "pass": true
+          },
+          {
+            "id": "writer_forbidden",
+            "pass": true
+          },
+          {
+            "id": "parser_forbidden",
+            "pass": true
+          },
+          {
+            "id": "output_forbidden",
+            "pass": true
+          },
+          {
+            "id": "has_extension",
+            "pass": true
+          },
+          {
+            "id": "has_prefix_preview",
+            "pass": true
+          }
+        ],
+        "failedChecks": [],
+        "risks": [],
+        "warnings": [
+          "PREFIX_ONLY_NOT_FULL_FILE",
+          "STYLE_REQUIRES_DEDICATED_READ_ONLY_PARSE_GATE"
+        ],
+        "nextGate": "KORG-REAL-PRODUCT-GATE-05-READ-ONLY-STYLE-STRUCTURE-MAP"
+      }
+    ]
+  },
+  "failures": []
+}

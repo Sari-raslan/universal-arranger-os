@@ -1,0 +1,11 @@
+﻿import { validateKorgScan, summarizeKorgValidation } from "../src/korg/korgSmartValidation.js";
+const scan = { mode:"READ_ONLY_PREFIX_SCAN", writer:"FORBIDDEN", productionParser:"FORBIDDEN", realKeyboardOutput:"FORBIDDEN", extension:".sty", allowed:true, hexPreview:"4b 4f 52 47", risks:["PREFIX_ONLY_NOT_FULL_FILE"] };
+const result = validateKorgScan(scan);
+const summary = summarizeKorgValidation([scan]);
+const failures = [];
+if (result.sale !== "LOCKED") failures.push("sale not locked");
+if (result.writer !== "FORBIDDEN") failures.push("writer not forbidden");
+if (!result.warnings.includes("STYLE_REQUIRES_DEDICATED_READ_ONLY_PARSE_GATE")) failures.push("style warning missing");
+if (summary.commercialReady !== false) failures.push("commercialReady must be false");
+console.log(JSON.stringify({ result: failures.length ? "FAIL" : "PASS", validation: result, summary, failures }, null, 2));
+if (failures.length) process.exit(1);
