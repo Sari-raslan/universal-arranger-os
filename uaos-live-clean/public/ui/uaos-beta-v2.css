@@ -1,0 +1,17 @@
+body{margin:0;background:#050b16;color:#f3f8ff;font-family:Arial,Tahoma,sans-serif}
+body.rtl{direction:rtl;font-family:Tahoma,Arial,sans-serif}
+.wrap{max-width:1180px;margin:auto;padding:28px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:16px;background:#0e1b31;border:1px solid #2e466d;border-radius:26px;padding:22px;margin-bottom:18px}
+.logo{width:54px;height:54px;border-radius:18px;background:linear-gradient(135deg,#79e6b2,#9dccff)}
+.brand{display:flex;gap:14px;align-items:center}
+h1,h2,h3{margin-top:0}.muted,p{color:#b8c6dd;line-height:1.7}
+button,.btn{background:#102849;color:#fff;border:1px solid #456b9d;border-radius:14px;padding:11px 15px;font-weight:800;cursor:pointer;text-decoration:none;display:inline-block;margin:4px}
+button.active{background:#24598f}
+.hero{display:grid;grid-template-columns:1.2fr .8fr;gap:18px}
+.card{background:#101b31;border:1px solid #2e466d;border-radius:28px;padding:26px;margin:16px 0}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.tile{background:#0b1628;border:1px solid #2e466d;border-radius:22px;padding:22px;min-height:155px;display:flex;flex-direction:column;justify-content:space-between;text-decoration:none;color:#fff}
+.tile:hover{border-color:#82aee8;transform:translateY(-2px)}
+.ok{color:#79e6b2}.warn{color:#ffd166}.bad{color:#ffaaa5}.go{color:#9dccff;font-weight:900}
+.status{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.pill{background:#071225;border:1px solid #2e466d;border-radius:16px;padding:14px}
+@media(max-width:850px){.top,.hero{grid-template-columns:1fr;display:block}.grid,.status{grid-template-columns:1fr}.wrap{padding:16px}}

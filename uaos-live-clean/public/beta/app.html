@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>UAOS Beta V2</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate, max-age=0">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<link rel="stylesheet" href="/universal-arranger-os/ui/uaos-beta-v2.css?v=20260622-093711">
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <div class="brand">
+      <div class="logo"></div>
+      <div>
+        <h1 data-t="title">UAOS Beta V2</h1>
+        <p data-t="sub">New frontend loaded: Arabic / German / English</p>
+      </div>
+    </div>
+    <div>
+      <button onclick="setLang('ar')">عربي</button>
+      <button onclick="setLang('de')">Deutsch</button>
+      <button onclick="setLang('en')">English</button>
+    </div>
+  </div>
+
+  <section class="hero">
+    <div class="card">
+      <p class="ok">NEW UI VERSION: 20260622-093711</p>
+      <h2 data-t="hero">واجهة جديدة واضحة</h2>
+      <p data-t="heroText">هذه ليست الخريطة القديمة. هذه واجهة Beta جديدة بكروت واضحة وتنقل مباشر.</p>
+      <a class="btn" href="/universal-arranger-os/singer/singer-local-learning-ui.html" data-t="singerBtn">فتح Singer</a>
+      <a class="btn" href="/universal-arranger-os/qa/final-evidence-pack-dashboard.html" data-t="evidenceBtn">فتح الأدلة</a>
+    </div>
+
+    <div class="card">
+      <h2 data-t="status">الحالة</h2>
+      <div class="status">
+        <div class="pill"><b>Beta</b><br><span class="ok">PASS</span></div>
+        <div class="pill"><b>Payment</b><br><span class="warn">NOT_ACTIVE</span></div>
+        <div class="pill"><b>Deploy</b><br><span class="warn">NOT_RUN</span></div>
+        <div class="pill"><b>KORG Writer</b><br><span class="bad">BLOCKED</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2 data-t="cards">الأقسام الرئيسية</h2>
+    <div class="grid">
+      <a class="tile" href="/universal-arranger-os/qa/remaining-safe-gates-dashboard.html"><div><h3>KORG Manager/Core</h3><p data-t="korgText">بوابات KORG والتحقق والتوافق.</p></div><span class="go">Open →</span></a>
+      <a class="tile" href="/universal-arranger-os/singer/singer-local-learning-ui.html"><div><h3>UAOS Singer</h3><p data-t="singerText">واجهة تعلم النغمات واختيار الآلة.</p></div><span class="go">Open →</span></a>
+      <a class="tile" href="/universal-arranger-os/qa/final-evidence-pack-dashboard.html"><div><h3>Evidence</h3><p data-t="evidenceText">حزمة الأدلة وتقارير CTO.</p></div><span class="go">Open →</span></a>
+      <a class="tile" href="/universal-arranger-os/qa/manual-browser-smoke-test-dashboard.html"><div><h3>QA Smoke</h3><p data-t="qaText">اختبار الروابط والتنقل.</p></div><span class="go">Open →</span></a>
+      <a class="tile" href="/universal-arranger-os/qa/product-truth-lock-dashboard.html"><div><h3>Product Truth</h3><p data-t="truthText">قفل البيع والدفع والنشر.</p></div><span class="go">Open →</span></a>
+      <a class="tile" href="/universal-arranger-os/commercial/final-local-beta-complete-status.json"><div><h3>Status JSON</h3><p data-t="jsonText">الحالة النهائية بصيغة JSON.</p></div><span class="go">Open →</span></a>
+    </div>
+  </section>
+</div>
+
+<script>
+const D={
+ ar:{dir:"rtl",title:"UAOS مركز Beta الجديد",sub:"واجهة جديدة: عربي / ألماني / إنجليزي",hero:"واجهة جديدة واضحة",heroText:"هذه ليست الخريطة القديمة. هذه واجهة Beta جديدة بكروت واضحة وتنقل مباشر.",singerBtn:"فتح Singer",evidenceBtn:"فتح الأدلة",status:"الحالة",cards:"الأقسام الرئيسية",korgText:"بوابات KORG والتحقق والتوافق.",singerText:"واجهة تعلم النغمات واختيار الآلة.",evidenceText:"حزمة الأدلة وتقارير CTO.",qaText:"اختبار الروابط والتنقل.",truthText:"قفل البيع والدفع والنشر.",jsonText:"الحالة النهائية بصيغة JSON."},
+ de:{dir:"ltr",title:"UAOS Neues Beta Zentrum",sub:"Neue Oberfläche: Arabisch / Deutsch / Englisch",hero:"Neue klare Oberfläche",heroText:"Das ist nicht die alte Karte. Das ist eine neue Beta-Oberfläche mit klaren Karten und Navigation.",singerBtn:"Singer öffnen",evidenceBtn:"Evidenz öffnen",status:"Status",cards:"Hauptbereiche",korgText:"KORG Gates, Validierung und Kompatibilität.",singerText:"Notenlernen und Instrumentenauswahl.",evidenceText:"Evidenzpaket und CTO-Berichte.",qaText:"Link- und Navigationstest.",truthText:"Verkauf, Zahlung und Deployment gesperrt.",jsonText:"Finaler Status als JSON."},
+ en:{dir:"ltr",title:"UAOS New Beta Center",sub:"New UI: Arabic / German / English",hero:"New clear interface",heroText:"This is not the old map. This is a new beta UI with clear cards and direct navigation.",singerBtn:"Open Singer",evidenceBtn:"Open Evidence",status:"Status",cards:"Main areas",korgText:"KORG gates, validation and compatibility.",singerText:"Learning notes and instrument selection.",evidenceText:"Evidence pack and CTO reports.",qaText:"Route and navigation tests.",truthText:"Sale, payment and deployment locked.",jsonText:"Final status as JSON."}
+};
+function setLang(l){localStorage.uaosV2Lang=l;render()}
+function render(){const l=localStorage.uaosV2Lang||"ar";const t=D[l];document.body.className=t.dir==="rtl"?"rtl":"";document.documentElement.lang=l;document.querySelectorAll("[data-t]").forEach(e=>{const k=e.getAttribute("data-t");if(t[k])e.textContent=t[k]})}
+render();
+</script>
+</body>
+</html>
