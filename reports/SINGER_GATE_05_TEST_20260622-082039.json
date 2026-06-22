@@ -1,0 +1,37 @@
+﻿{
+  "result": "PASS",
+  "out": {
+    "gate": "SINGER-REAL-PRODUCT-GATE-05-PITCH-DETECTION-PROOF",
+    "mode": "PITCH_DETECTION_PROOF_FROM_EVENTS",
+    "sale": "LOCKED",
+    "payment": "NOT_ACTIVE",
+    "inputCount": 3,
+    "voicedCount": 3,
+    "notes": [
+      {
+        "index": 0,
+        "freq": 440,
+        "midi": 69,
+        "noteName": "A4",
+        "voiced": true
+      },
+      {
+        "index": 1,
+        "freq": 493.88,
+        "midi": 71,
+        "noteName": "B4",
+        "voiced": true
+      },
+      {
+        "index": 2,
+        "freq": 523.25,
+        "midi": 72,
+        "noteName": "C5",
+        "voiced": true
+      }
+    ],
+    "commercialReady": false,
+    "nextGate": "SINGER-REAL-PRODUCT-GATE-06-LEARNING-EXPORT-PACKAGE"
+  },
+  "failures": []
+}

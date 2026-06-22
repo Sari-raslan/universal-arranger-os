@@ -1,0 +1,14 @@
+﻿export function createUaosRealProductProof() {
+  return {
+    gate: "UAOS-FINAL-INTEGRATED-PRODUCT-PROOF-GATE",
+    result: "SAFE_LOCAL_PRODUCT_CORES_PROGRESSING",
+    commercialLaunch: "LOCKED",
+    payment: "NOT_ACTIVE",
+    deploy: "NOT_RUN",
+    korg: { gates: ["01","02","03","04","05","06","07","08"], sale: "LOCKED", writer: "BLOCKED" },
+    singer: { gates: ["01","02","03","04","05","06"], sale: "LOCKED", payment: "NOT_ACTIVE" },
+    appJsChanged: false,
+    productReadyForSale: false,
+    nextFastest: ["KORG real approved fixture tests", "Singer UI integration without payment", "QA evidence pack"]
+  };
+}

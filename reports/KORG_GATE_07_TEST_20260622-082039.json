@@ -1,0 +1,34 @@
+﻿{
+  "result": "PASS",
+  "out": {
+    "gate": "KORG-REAL-PRODUCT-GATE-07-DEVICE-DIAGNOSTIC-PROOF",
+    "mode": "READ_ONLY_DEVICE_DIAGNOSTIC_PROOF",
+    "sale": "LOCKED",
+    "payment": "NOT_ACTIVE",
+    "writer": "FORBIDDEN",
+    "realKeyboardOutput": "FORBIDDEN",
+    "checks": [
+      {
+        "id": "sale_locked",
+        "pass": true
+      },
+      {
+        "id": "writer_forbidden",
+        "pass": true
+      },
+      {
+        "id": "output_forbidden",
+        "pass": true
+      },
+      {
+        "id": "not_commercial_ready",
+        "pass": true
+      }
+    ],
+    "failures": [],
+    "pass": true,
+    "commercialReady": false,
+    "nextGate": "KORG-REAL-PRODUCT-GATE-08-SAFE-WRITER-APPROVAL-LOCK"
+  },
+  "failures": []
+}

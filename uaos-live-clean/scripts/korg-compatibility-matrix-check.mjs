@@ -1,0 +1,11 @@
+﻿import { evaluateKorgCompatibility } from "../src/korg/korgCompatibilityMatrix.js";
+const map = { sections: [{section:"intro"},{section:"variation"}], warnings:["PREFIX_ONLY_NOT_FULL_FILE"] };
+const out = evaluateKorgCompatibility(map, "PA3X");
+const failures = [];
+if (out.sale !== "LOCKED") failures.push("sale not locked");
+if (out.writer !== "FORBIDDEN") failures.push("writer not forbidden");
+if (out.realKeyboardOutput !== "FORBIDDEN") failures.push("real output not forbidden");
+if (out.commercialReady !== false) failures.push("commercial ready must be false");
+if (!out.warnings.includes("REAL_EXPORT_BLOCKED_UNTIL_WRITER_GATE")) failures.push("writer gate warning missing");
+console.log(JSON.stringify({ result: failures.length ? "FAIL" : "PASS", out, failures }, null, 2));
+if (failures.length) process.exit(1);

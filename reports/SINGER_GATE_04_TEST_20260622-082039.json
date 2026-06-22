@@ -1,0 +1,32 @@
+﻿{
+  "result": "PASS",
+  "out": {
+    "gate": "SINGER-REAL-PRODUCT-GATE-04-AUDIO-RECORD-UPLOAD-UI-MODEL",
+    "mode": "SAFE_AUDIO_RECORD_UPLOAD_MODEL",
+    "sale": "LOCKED",
+    "payment": "NOT_ACTIVE",
+    "name": "test.wav",
+    "type": "audio/wav",
+    "size": 1024,
+    "valid": true,
+    "errors": [],
+    "warnings": [],
+    "nextGate": "SINGER-REAL-PRODUCT-GATE-05-PITCH-DETECTION-PROOF"
+  },
+  "bad": {
+    "gate": "SINGER-REAL-PRODUCT-GATE-04-AUDIO-RECORD-UPLOAD-UI-MODEL",
+    "mode": "SAFE_AUDIO_RECORD_UPLOAD_MODEL",
+    "sale": "LOCKED",
+    "payment": "NOT_ACTIVE",
+    "name": "x.txt",
+    "type": "text/plain",
+    "size": 10,
+    "valid": false,
+    "errors": [
+      "UNSUPPORTED_AUDIO_TYPE"
+    ],
+    "warnings": [],
+    "nextGate": "SINGER-REAL-PRODUCT-GATE-05-PITCH-DETECTION-PROOF"
+  },
+  "failures": []
+}

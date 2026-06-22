@@ -1,0 +1,28 @@
+﻿{
+  "result": "PASS",
+  "out": {
+    "gate": "KORG-REAL-PRODUCT-GATE-06-READ-ONLY-COMPATIBILITY-MATRIX",
+    "mode": "READ_ONLY_COMPATIBILITY_MATRIX",
+    "target": "PA3X",
+    "profile": {
+      "family": "PA",
+      "generation": "legacy",
+      "styleSupport": "requires-real-validation",
+      "exportAllowed": false
+    },
+    "sale": "LOCKED",
+    "writer": "FORBIDDEN",
+    "productionParser": "FORBIDDEN",
+    "realKeyboardOutput": "FORBIDDEN",
+    "sectionCount": 2,
+    "confidence": "READ_ONLY_LOW_TO_MEDIUM",
+    "commercialReady": false,
+    "decision": "NOT_COMMERCIAL_READY_COMPATIBILITY_NEEDS_REAL_DEVICE_OR_APPROVED_FIXTURE",
+    "warnings": [
+      "PREFIX_ONLY_NOT_FULL_FILE",
+      "REAL_EXPORT_BLOCKED_UNTIL_WRITER_GATE"
+    ],
+    "nextGate": "KORG-REAL-PRODUCT-GATE-07-DEVICE-DIAGNOSTIC-PROOF"
+  },
+  "failures": []
+}

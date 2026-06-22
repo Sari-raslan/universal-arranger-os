@@ -1,0 +1,10 @@
+﻿import { validateSingerAudioInput } from "../src/singer/singerAudioRecordUploadModel.js";
+const out = validateSingerAudioInput({ name:"test.wav", type:"audio/wav", size:1024 });
+const bad = validateSingerAudioInput({ name:"x.txt", type:"text/plain", size:10 });
+const failures = [];
+if (out.sale !== "LOCKED") failures.push("sale not locked");
+if (out.payment !== "NOT_ACTIVE") failures.push("payment active");
+if (!out.valid) failures.push("valid wav rejected");
+if (bad.valid) failures.push("bad file accepted");
+console.log(JSON.stringify({ result: failures.length ? "FAIL" : "PASS", out, bad, failures }, null, 2));
+if (failures.length) process.exit(1);
