@@ -1,0 +1,44 @@
+﻿{
+    "korgWriter":  "BLOCKED_UNTIL_EXPLICIT_APPROVAL",
+    "version":  "1.0.0",
+    "realKeyboardOutput":  "BLOCKED",
+    "productionParser":  "BLOCKED",
+    "timestamp":  "20260622-085812",
+    "result":  "PASS",
+    "verified":  [
+                     "KORG gates 01-08 exist",
+                     "Singer gates 01-06 exist",
+                     "Final evidence pack exists",
+                     "Safety scan clean",
+                     "Build will be checked",
+                     "No deploy",
+                     "No payment",
+                     "No App.jsx"
+                 ],
+    "format":  "UAOS_FINAL_LOCAL_BETA_CANDIDATE",
+    "appJsChanged":  false,
+    "status":  "SAFE_LOCAL_BETA_CANDIDATE",
+    "nextFastest":  [
+                        "Local beta run page",
+                        "Manual browser smoke test",
+                        "Real approved fixture selection only if user provides safe files",
+                        "Singer UI polish without payment"
+                    ],
+    "payment":  "NOT_ACTIVE",
+    "commercialLaunch":  "LOCKED",
+    "deploy":  "NOT_RUN",
+    "counts":  {
+                   "unsafeFindings":  0,
+                   "qaPages":  24,
+                   "korgGates":  8,
+                   "evidenceFiles":  3,
+                   "singerGates":  7
+               },
+    "notCommercialYet":  [
+                             "No real KORG writer approved",
+                             "No real keyboard output approved",
+                             "No production parser approved",
+                             "No live checkout",
+                             "No public release"
+                         ]
+}
