@@ -1,0 +1,86 @@
+﻿{
+    "korgWriter":  "BLOCKED",
+    "version":  "1.0.0",
+    "nextFastest":  [
+                        "Open beta run center locally",
+                        "Manual visual review",
+                        "Real approved fixture only if user provides safe files",
+                        "Singer UI polish without payment"
+                    ],
+    "decision":  "SAFE_LOCAL_BETA_READY_FOR_MANUAL_VISUAL_REVIEW",
+    "timestamp":  "20260622-090818",
+    "result":  "PASS",
+    "format":  "UAOS_MANUAL_BROWSER_SMOKE_TEST_AND_UI_POLISH",
+    "build":  "PASS",
+    "appJsChanged":  false,
+    "testedRoutes":  [
+                         {
+                             "ok":  true,
+                             "url":  "http://127.0.0.1:5173/universal-arranger-os/beta/",
+                             "statusCode":  200,
+                             "bytes":  1006,
+                             "route":  "/universal-arranger-os/beta/"
+                         },
+                         {
+                             "ok":  true,
+                             "url":  "http://127.0.0.1:5173/universal-arranger-os/beta/run-center.html",
+                             "statusCode":  200,
+                             "bytes":  2226,
+                             "route":  "/universal-arranger-os/beta/run-center.html"
+                         },
+                         {
+                             "ok":  true,
+                             "url":  "http://127.0.0.1:5173/universal-arranger-os/beta/final-local-beta-candidate.json",
+                             "statusCode":  200,
+                             "bytes":  1714,
+                             "route":  "/universal-arranger-os/beta/final-local-beta-candidate.json"
+                         },
+                         {
+                             "ok":  true,
+                             "url":  "http://127.0.0.1:5173/universal-arranger-os/evidence/final-evidence-index.json",
+                             "statusCode":  200,
+                             "bytes":  2321,
+                             "route":  "/universal-arranger-os/evidence/final-evidence-index.json"
+                         },
+                         {
+                             "ok":  true,
+                             "url":  "http://127.0.0.1:5173/universal-arranger-os/evidence/cto-final-status.json",
+                             "statusCode":  200,
+                             "bytes":  934,
+                             "route":  "/universal-arranger-os/evidence/cto-final-status.json"
+                         },
+                         {
+                             "ok":  true,
+                             "url":  "http://127.0.0.1:5173/universal-arranger-os/qa/final-evidence-pack-dashboard.html",
+                             "statusCode":  200,
+                             "bytes":  1789,
+                             "route":  "/universal-arranger-os/qa/final-evidence-pack-dashboard.html"
+                         },
+                         {
+                             "ok":  true,
+                             "url":  "http://127.0.0.1:5173/universal-arranger-os/qa/final-local-beta-candidate-dashboard.html",
+                             "statusCode":  200,
+                             "bytes":  1192,
+                             "route":  "/universal-arranger-os/qa/final-local-beta-candidate-dashboard.html"
+                         },
+                         {
+                             "ok":  true,
+                             "url":  "http://127.0.0.1:5173/universal-arranger-os/qa/remaining-safe-gates-dashboard.html",
+                             "statusCode":  200,
+                             "bytes":  2167,
+                             "route":  "/universal-arranger-os/qa/remaining-safe-gates-dashboard.html"
+                         },
+                         {
+                             "ok":  true,
+                             "url":  "http://127.0.0.1:5173/universal-arranger-os/singer/singer-local-learning-ui.html",
+                             "statusCode":  200,
+                             "bytes":  2961,
+                             "route":  "/universal-arranger-os/singer/singer-local-learning-ui.html"
+                         }
+                     ],
+    "payment":  "NOT_ACTIVE",
+    "commercialLaunch":  "LOCKED",
+    "localDevRouteTest":  "PASS",
+    "deploy":  "NOT_RUN",
+    "betaRunCenter":  "public/beta/run-center.html"
+}
