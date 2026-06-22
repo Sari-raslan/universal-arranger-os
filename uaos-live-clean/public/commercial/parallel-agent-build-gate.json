@@ -1,0 +1,28 @@
+﻿{
+    "deploy":  "NOT_RUN",
+    "mergedSafeFiles":  [
+                            "src/korg/korgSafePrefixScanner.js",
+                            "src/singer/singerMelodyLearningCore.js",
+                            "scripts/korg-safe-prefix-scanner-check.mjs",
+                            "scripts/singer-learning-core-check.mjs"
+                        ],
+    "version":  "1.0.0",
+    "next":  [
+                 "KORG-REAL-PRODUCT-GATE-03-READ-ONLY-PREFIX-SCANNER",
+                 "SINGER-REAL-PRODUCT-GATE-01-MELODY-LEARNING-CORE"
+             ],
+    "format":  "UAOS_PARALLEL_AGENT_BUILD_GATE",
+    "commercialLaunch":  "LOCKED",
+    "timestamp":  "20260622-074800",
+    "appJsChanged":  false,
+    "payment":  "NOT_ACTIVE",
+    "result":  "PASS",
+    "agents":  [
+                   "korg-agent",
+                   "singer-agent",
+                   "qa-agent",
+                   "product-truth-agent",
+                   "roadmap-agent",
+                   "build-test-agent"
+               ]
+}

@@ -1,0 +1,10 @@
+﻿import { createSingerLearningReport, midiNoteName } from "../src/singer/singerMelodyLearningCore.js";
+const report = createSingerLearningReport([{midi:60,start:0,duration:.5},{midi:64,start:.5,duration:.5},{midi:67,start:1,duration:1}], "oud");
+const failures = [];
+if (midiNoteName(60) !== "C4") failures.push("C4 mapping failed");
+if (report.commercialSale !== "LOCKED") failures.push("sale must stay locked");
+if (report.payment !== "NOT_ACTIVE") failures.push("payment must stay inactive");
+if (report.noteCount !== 3) failures.push("note count failed");
+if (report.learningNotes[0].instrument !== "oud") failures.push("instrument selection failed");
+console.log(JSON.stringify({ result: failures.length ? "FAIL" : "PASS", report, failures }, null, 2));
+if (failures.length) process.exit(1);

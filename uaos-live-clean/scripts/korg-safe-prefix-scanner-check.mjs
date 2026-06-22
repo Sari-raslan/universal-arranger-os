@@ -1,0 +1,11 @@
+﻿import { scanKorgPrefix } from "../src/korg/korgSafePrefixScanner.js";
+const fakeSty = new Uint8Array([0x4b,0x4f,0x52,0x47,0x00,0x01,0x02,0x03]);
+const out = scanKorgPrefix({ name: "demo.STY", size: 8192, bytes: fakeSty });
+const failures = [];
+if (out.writer !== "FORBIDDEN") failures.push("writer not forbidden");
+if (out.productionParser !== "FORBIDDEN") failures.push("production parser not forbidden");
+if (out.realKeyboardOutput !== "FORBIDDEN") failures.push("real output not forbidden");
+if (!out.risks.includes("PREFIX_ONLY_NOT_FULL_FILE")) failures.push("prefix-only risk missing");
+if (!out.risks.includes("STYLE_FILE_REQUIRES_DEDICATED_READ_ONLY_PARSE_GATE")) failures.push("sty parse gate risk missing");
+console.log(JSON.stringify({ result: failures.length ? "FAIL" : "PASS", out, failures }, null, 2));
+if (failures.length) process.exit(1);
