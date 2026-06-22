@@ -1,0 +1,37 @@
+﻿{
+    "version":  "1.0.0",
+    "saleStatus":  "LOCKED",
+    "commercialReadiness":  "NOT_READY_FOR_PAID_SALE",
+    "timestamp":  "20260622-074245",
+    "result":  "AUDIT_PASS_PRODUCT_NOT_READY_FOR_SALE",
+    "format":  "UAOS_KORG_REAL_PRODUCT_GATE_01",
+    "implementedInThisGate":  [
+                                  "Audit reports",
+                                  "Capability inventory",
+                                  "Gap matrix",
+                                  "CEO QA dashboard"
+                              ],
+    "riskCount":  0,
+    "gapCount":  0,
+    "notImplementedInThisGate":  [
+                                     "No real writer",
+                                     "No production parser",
+                                     "No real keyboard output",
+                                     "No fixture modification",
+                                     "No checkout",
+                                     "No deploy"
+                                 ],
+    "payment":  "NOT_ACTIVE",
+    "product":  "UAOS KORG Manager/Core",
+    "evidence":  {
+                     "midiFiles":  740,
+                     "parserFiles":  1764,
+                     "hardwareFiles":  946,
+                     "korgFiles":  1971,
+                     "readerFiles":  1937,
+                     "validatorFiles":  879,
+                     "writerFiles":  2156
+                 },
+    "deploy":  "NOT_RUN",
+    "next":  "KORG-REAL-PRODUCT-GATE-02-READ-ONLY-READER-SCOPE"
+}
