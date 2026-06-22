@@ -1,0 +1,23 @@
+﻿{
+  "result": "PASS",
+  "out": {
+    "gate": "KORG-REAL-PRODUCT-GATE-03-READ-ONLY-PREFIX-SCANNER",
+    "mode": "READ_ONLY_PREFIX_SCAN",
+    "name": "demo.STY",
+    "size": 8192,
+    "extension": ".sty",
+    "allowed": true,
+    "prefixLength": 8,
+    "hexPreview": "4b 4f 52 47 00 01 02 03",
+    "asciiPreview": "KORG....",
+    "writer": "FORBIDDEN",
+    "productionParser": "FORBIDDEN",
+    "realKeyboardOutput": "FORBIDDEN",
+    "risks": [
+      "PREFIX_ONLY_NOT_FULL_FILE",
+      "STYLE_FILE_REQUIRES_DEDICATED_READ_ONLY_PARSE_GATE"
+    ],
+    "saleStatus": "LOCKED"
+  },
+  "failures": []
+}
