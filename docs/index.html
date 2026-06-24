@@ -4,102 +4,189 @@
 <meta charset="utf-8">
 <title>UAOS - Universal Arranger OS</title>
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="UAOS - Universal Arranger OS. AI-assisted arranger workstation concept for performers, producers, and keyboard users.">
 <style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
 html,body{
-  margin:0!important;
-  min-height:100%!important;
-  background:#020617!important;
-  color:#ffffff!important;
-  font-family:Arial,Helvetica,sans-serif!important;
+  margin:0;
+  min-height:100%;
+  background:#020617;
+  color:white;
+  font-family:Arial,Helvetica,sans-serif;
 }
 body:before{
   content:"";
   position:fixed;
   inset:0;
+  z-index:-2;
   background:
-    radial-gradient(circle at top left,rgba(34,211,238,.28),transparent 34%),
-    radial-gradient(circle at bottom right,rgba(37,99,235,.25),transparent 38%),
-    linear-gradient(135deg,#020617,#07111f,#0f172a);
-  z-index:-1;
+    radial-gradient(circle at 15% 8%,rgba(34,211,238,.32),transparent 30%),
+    radial-gradient(circle at 85% 20%,rgba(99,102,241,.26),transparent 32%),
+    radial-gradient(circle at 50% 95%,rgba(16,185,129,.15),transparent 35%),
+    linear-gradient(135deg,#020617,#07111f 52%,#0f172a);
 }
-main{
-  max-width:1120px;
-  margin:0 auto;
-  padding:44px 22px;
+body:after{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:-1;
+  background-image:
+    linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);
+  background-size:42px 42px;
+  mask-image:linear-gradient(to bottom,rgba(0,0,0,.65),transparent 75%);
+}
+a{color:inherit}
+.wrap{max-width:1180px;margin:0 auto;padding:28px 22px 46px}
+.nav{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:18px;
+  padding:14px 0 26px;
+}
+.logo{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-weight:900;
+  letter-spacing:.08em;
+}
+.logo-mark{
+  width:38px;height:38px;border-radius:12px;
+  background:linear-gradient(135deg,#22d3ee,#2563eb);
+  display:grid;place-items:center;
+  box-shadow:0 0 28px rgba(34,211,238,.35);
+}
+.navlinks{display:flex;gap:10px;flex-wrap:wrap}
+.navlinks a{
+  text-decoration:none;
+  color:#cbd5e1;
+  padding:9px 12px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.09);
+  background:rgba(15,23,42,.62);
+  font-size:14px;
 }
 .hero{
-  border:1px solid rgba(34,211,238,.35);
-  border-radius:28px;
-  padding:34px;
-  background:rgba(15,23,42,.86);
-  box-shadow:0 24px 70px rgba(0,0,0,.45);
+  display:grid;
+  grid-template-columns:1.15fr .85fr;
+  gap:22px;
+  align-items:stretch;
 }
+.panel{
+  border:1px solid rgba(34,211,238,.28);
+  border-radius:30px;
+  background:linear-gradient(180deg,rgba(15,23,42,.91),rgba(15,23,42,.72));
+  box-shadow:0 26px 80px rgba(0,0,0,.46);
+}
+.hero-main{padding:36px}
 .pill{
-  display:inline-block;
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
   padding:9px 13px;
   border-radius:999px;
-  background:#064e3b;
+  background:rgba(6,78,59,.88);
   color:#86efac;
   font-size:12px;
-  font-weight:700;
-  margin-bottom:18px;
+  font-weight:800;
+  border:1px solid rgba(134,239,172,.25);
 }
+.dot{width:8px;height:8px;border-radius:50%;background:#22c55e;box-shadow:0 0 16px #22c55e}
 h1{
-  font-size:76px;
-  line-height:.95;
-  margin:0;
+  font-size:clamp(58px,9vw,112px);
+  line-height:.88;
+  margin:24px 0 10px;
   color:#22d3ee;
+  letter-spacing:-.06em;
 }
 h2{
-  font-size:34px;
-  margin:12px 0;
+  font-size:clamp(28px,4vw,46px);
+  margin:0 0 18px;
   color:#e0f2fe;
+  letter-spacing:-.035em;
 }
-p{
+.lead{
   font-size:20px;
-  line-height:1.6;
+  line-height:1.65;
   color:#cbd5e1;
-  max-width:920px;
+  max-width:860px;
 }
 .actions{
   display:flex;
   gap:12px;
   flex-wrap:wrap;
-  margin-top:24px;
+  margin-top:26px;
 }
-.actions a{
+.btn{
   padding:14px 20px;
-  border-radius:14px;
+  border-radius:15px;
+  text-decoration:none;
+  font-weight:900;
   background:linear-gradient(90deg,#2563eb,#06b6d4);
   color:white;
-  text-decoration:none;
-  font-weight:700;
+  box-shadow:0 12px 28px rgba(37,99,235,.22);
+}
+.btn.secondary{
+  background:rgba(15,23,42,.9);
+  border:1px solid rgba(34,211,238,.28);
+  box-shadow:none;
+}
+.hero-side{padding:26px;display:flex;flex-direction:column;gap:14px}
+.stat{
+  padding:18px;
+  border-radius:20px;
+  background:rgba(2,6,23,.55);
+  border:1px solid rgba(255,255,255,.08);
+}
+.stat b{display:block;color:#67e8f9;font-size:22px;margin-bottom:4px}
+.stat span{color:#cbd5e1;font-size:14px}
+.section-title{
+  margin:38px 0 16px;
+  display:flex;
+  justify-content:space-between;
+  align-items:end;
+  gap:14px;
+}
+.section-title h3{
+  margin:0;
+  font-size:28px;
+  color:#e0f2fe;
+}
+.section-title p{
+  margin:0;
+  color:#94a3b8;
 }
 .grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
   gap:16px;
-  margin-top:26px;
 }
 .card{
-  border:1px solid rgba(34,211,238,.32);
-  border-radius:20px;
+  border:1px solid rgba(34,211,238,.25);
+  border-radius:22px;
   padding:22px;
-  background:rgba(15,23,42,.86);
+  background:rgba(15,23,42,.76);
+  transition:transform .18s ease,border-color .18s ease;
 }
-.card h3{
+.card:hover{transform:translateY(-3px);border-color:rgba(34,211,238,.55)}
+.card h4{
   margin:0 0 10px;
   color:#67e8f9;
+  font-size:18px;
 }
 .card p{
   font-size:15px;
-  margin:0 0 12px;
+  line-height:1.55;
+  margin:0 0 14px;
   color:#cbd5e1;
 }
 code{
   display:block;
-  padding:8px;
-  border-radius:8px;
+  padding:9px;
+  border-radius:10px;
   background:#020617;
   color:#93c5fd;
   font-size:12px;
@@ -108,52 +195,117 @@ code{
 .badge{
   display:inline-block;
   margin-top:14px;
-  padding:6px 9px;
+  padding:7px 10px;
   border-radius:999px;
   background:#064e3b;
   color:#86efac;
   font-size:12px;
-  font-weight:700;
+  font-weight:800;
 }
-.big-warning{
-  margin-top:18px;
-  padding:14px;
-  border-radius:14px;
-  background:#451a03;
-  color:#fed7aa;
+.timeline{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:16px;
+}
+.step{
+  padding:22px;
+  border-radius:22px;
+  background:rgba(2,6,23,.52);
+  border:1px solid rgba(255,255,255,.09);
+}
+.step strong{color:#67e8f9}
+.footer{
+  margin-top:42px;
+  padding:22px;
+  border-radius:22px;
+  background:rgba(15,23,42,.65);
+  color:#94a3b8;
+  display:flex;
+  justify-content:space-between;
+  gap:12px;
+  flex-wrap:wrap;
+}
+@media(max-width:850px){
+  .hero{grid-template-columns:1fr}
+  .nav{align-items:flex-start;flex-direction:column}
+  .hero-main{padding:26px}
 }
 </style>
 </head>
 <body>
-<main>
-  <section class="hero">
-    <span class="pill">UAOS PUBLIC PAGE RESTORED</span>
-    <h1>UAOS</h1>
-    <h2>Universal Arranger OS — Module UI</h2>
-    <p>
-      Public static homepage is visible. This page is deployed without React dependency to fix the black-screen issue.
-    </p>
-    <div class="actions">
-      <a href="./launch/payment.html">Premium</a>
-      <a href="./status-ar.html">Arabic Status</a>
+<div class="wrap">
+  <nav class="nav">
+    <div class="logo"><div class="logo-mark">U</div><span>UAOS</span></div>
+    <div class="navlinks">
       <a href="#modules">Modules</a>
+      <a href="#roadmap">Roadmap</a>
+      <a href="./launch/payment.html">Premium</a>
+      <a href="./status-ar.html">Arabic</a>
     </div>
-    <div class="big-warning">
-      If you can read this text, the black page is fixed.
+  </nav>
+
+  <section class="hero">
+    <div class="panel hero-main">
+      <span class="pill"><span class="dot"></span> PUBLIC HOMEPAGE POLISH V1</span>
+      <h1>UAOS</h1>
+      <h2>Universal Arranger OS</h2>
+      <p class="lead">
+        A next-generation arranger workstation concept for singers, producers, and keyboard players.
+        UAOS connects runtime modules, MIDI routing, sampler logic, keyboard profiles, pack validation,
+        library management, AI planning, and QA into one safe product direction.
+      </p>
+      <div class="actions">
+        <a class="btn" href="#modules">Explore Modules</a>
+        <a class="btn secondary" href="./launch/payment.html">Premium Preview</a>
+        <a class="btn secondary" href="./status-ar.html">Arabic Status</a>
+      </div>
     </div>
+
+    <aside class="panel hero-side">
+      <div class="stat"><b>Live</b><span>GitHub Pages public preview is visible.</span></div>
+      <div class="stat"><b>Safe</b><span>No Vercel, no startup scripts, no force push, no release publishing.</span></div>
+      <div class="stat"><b>Modular</b><span>Runtime, MIDI, Sampler, Keyboard, Pack, Library, AI and QA agents.</span></div>
+      <div class="stat"><b>Next</b><span>Gradual safe wiring of real runtime panels after UI polish.</span></div>
+    </aside>
   </section>
 
-  <section id="modules" class="grid">
-    <article class="card"><h3>Runtime Agent</h3><p>Playing, tempo, chord and section state.</p><code>runtime/src/UaosRuntime.js</code><span class="badge">SAFE SCAFFOLD</span></article>
-    <article class="card"><h3>MIDI Agent</h3><p>MIDI notes, CC and program-change router.</p><code>midi-router/src/MidiRouter.js</code><span class="badge">SAFE SCAFFOLD</span></article>
-    <article class="card"><h3>Sampler Agent</h3><p>Feel sampler selection by note, velocity and articulation.</p><code>sampler-engine/src/feelSampler.js</code><span class="badge">SAFE SCAFFOLD</span></article>
-    <article class="card"><h3>Keyboard Runtime Agent</h3><p>Keyboard profiles and pack loading foundation.</p><code>keyboard-runtime/src/KeyboardRuntime.js</code><span class="badge">SAFE SCAFFOLD</span></article>
-    <article class="card"><h3>Pack System Agent</h3><p>.uaos-pack validation and manifest direction.</p><code>pack-system/src/UaosPack.js</code><span class="badge">SAFE SCAFFOLD</span></article>
-    <article class="card"><h3>Library Manager Agent</h3><p>Oriental expansion and future library catalog.</p><code>library-manager/src/LibraryManager.js</code><span class="badge">SAFE SCAFFOLD</span></article>
-    <article class="card"><h3>AI/Ollama Planner Agent</h3><p>Safe local planning scaffold with manual review.</p><code>ai-features/src/AiMission.js</code><span class="badge">SAFE SCAFFOLD</span></article>
-    <article class="card"><h3>Desktop/Android Agent</h3><p>Packaging notes for desktop and Android.</p><code>desktop-packaging / android-packaging</code><span class="badge">SAFE SCAFFOLD</span></article>
-    <article class="card"><h3>QA Agent</h3><p>Build, Pages, payment, mobile and runtime checklist.</p><code>qa/src/qaChecklist.js</code><span class="badge">SAFE SCAFFOLD</span></article>
+  <div class="section-title" id="modules">
+    <div>
+      <h3>Safe Agent Modules</h3>
+      <p>Visible product modules prepared for future integration.</p>
+    </div>
+  </div>
+
+  <section class="grid">
+    <article class="card"><h4>Runtime Agent</h4><p>Playing, tempo, chord and section state.</p><code>runtime/src/UaosRuntime.js</code><span class="badge">SAFE SCAFFOLD</span></article>
+    <article class="card"><h4>MIDI Agent</h4><p>MIDI notes, CC and program-change router.</p><code>midi-router/src/MidiRouter.js</code><span class="badge">SAFE SCAFFOLD</span></article>
+    <article class="card"><h4>Sampler Agent</h4><p>Feel sampler selection by note, velocity and articulation.</p><code>sampler-engine/src/feelSampler.js</code><span class="badge">SAFE SCAFFOLD</span></article>
+    <article class="card"><h4>Keyboard Runtime Agent</h4><p>Keyboard profiles and pack loading foundation.</p><code>keyboard-runtime/src/KeyboardRuntime.js</code><span class="badge">SAFE SCAFFOLD</span></article>
+    <article class="card"><h4>Pack System Agent</h4><p>.uaos-pack validation and manifest direction.</p><code>pack-system/src/UaosPack.js</code><span class="badge">SAFE SCAFFOLD</span></article>
+    <article class="card"><h4>Library Manager Agent</h4><p>Oriental expansion and future library catalog.</p><code>library-manager/src/LibraryManager.js</code><span class="badge">SAFE SCAFFOLD</span></article>
+    <article class="card"><h4>AI/Ollama Planner Agent</h4><p>Safe local planning scaffold with manual review.</p><code>ai-features/src/AiMission.js</code><span class="badge">SAFE SCAFFOLD</span></article>
+    <article class="card"><h4>Desktop/Android Agent</h4><p>Packaging notes for desktop and Android.</p><code>desktop-packaging / android-packaging</code><span class="badge">SAFE SCAFFOLD</span></article>
+    <article class="card"><h4>QA Agent</h4><p>Build, Pages, payment, mobile and runtime checklist.</p><code>qa/src/qaChecklist.js</code><span class="badge">SAFE SCAFFOLD</span></article>
   </section>
-</main>
+
+  <div class="section-title" id="roadmap">
+    <div>
+      <h3>Next Safe Roadmap</h3>
+      <p>UI first, then careful runtime wiring.</p>
+    </div>
+  </div>
+
+  <section class="timeline">
+    <div class="step"><strong>1. Public Polish</strong><br>Make the homepage clear, attractive, and stable.</div>
+    <div class="step"><strong>2. Static Product Pages</strong><br>Add demo, modules, premium, and Arabic pages safely.</div>
+    <div class="step"><strong>3. Runtime Panels</strong><br>Wire read-only UI panels to scaffolded modules.</div>
+    <div class="step"><strong>4. QA Gate</strong><br>Keep build, Pages, links, and safety checks green.</div>
+  </section>
+
+  <footer class="footer">
+    <span>UAOS — Universal Arranger OS</span>
+    <span>Public preview · Safe module UI · No release publishing</span>
+  </footer>
+</div>
 </body>
 </html>
