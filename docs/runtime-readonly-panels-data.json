@@ -1,0 +1,122 @@
+﻿[
+    {
+        "name":  "Runtime Agent",
+        "path":  "runtime/src/UaosRuntime.js",
+        "role":  "Playing, tempo, chord and section state",
+        "type":  "runtime",
+        "exists":  true,
+        "sizeBytes":  438,
+        "mode":  "READ_ONLY_PANEL_NO_EXECUTION",
+        "preview":  "export class UaosRuntime{constructor(){this.state={playing:false,section:\"variation1\",tempo:120,chord:null}}start(){this.state.playing=true;return{...this.state}}stop(){this.state.playing=false;return{...this.state}}setTempo(bpm){this.state.tempo=Number(bpm)||120;return{...this.state}}setChord(chord){this.state.chord=chord;return{...this.state}}triggerSection(section){this.state.section=section||\"variation1\";return{...this.state}}}"
+    },
+    {
+        "name":  "MIDI Router",
+        "path":  "midi-router/src/MidiRouter.js",
+        "role":  "MIDI notes, CC, program-change routing",
+        "type":  "midi",
+        "exists":  true,
+        "sizeBytes":  418,
+        "mode":  "READ_ONLY_PANEL_NO_EXECUTION",
+        "preview":  "export class MidiRouter{constructor(){this.outputs=[];this.events=[]}addOutput(o){if(o\u0026\u0026typeof o.send===\"function\")this.outputs.push(o);return this.outputs.length}send(m){this.events.push({time:Date.now(),message:m});this.outputs.forEach(o=\u003eo.send(m));return m}noteOn(n,v=100,c=0){return this.send([0x90+c,n,v])}noteOff(n,c=0){return this.send([0x80+c,n,0])}controlChange(cc,v,c=0){return this.send([0xB0+c,cc,v])}}"
+    },
+    {
+        "name":  "Sampler Engine",
+        "path":  "sampler-engine/src/feelSampler.js",
+        "role":  "Feel sampler by note, velocity, articulation",
+        "type":  "sampler",
+        "exists":  true,
+        "sizeBytes":  331,
+        "mode":  "READ_ONLY_PANEL_NO_EXECUTION",
+        "preview":  "export function selectSample({samples=[],note,velocity=100,articulation=\"sustain\",maqam=null}){return samples.find(s=\u003es.note===note\u0026\u0026velocity\u003e=(s.velocityMin??0)\u0026\u0026velocity\u003c=(s.velocityMax??127)\u0026\u0026(!s.articulation||s.articulation===articulation)\u0026\u0026(!s.maqamHint||!maqam||s.maqamHint===maqam))||samples.find(s=\u003es.note===note)||null}"
+    },
+    {
+        "name":  "Keyboard Runtime",
+        "path":  "keyboard-runtime/src/KeyboardRuntime.js",
+        "role":  "Keyboard profile and pack loading foundation",
+        "type":  "keyboard",
+        "exists":  true,
+        "sizeBytes":  266,
+        "mode":  "READ_ONLY_PANEL_NO_EXECUTION",
+        "preview":  "export class KeyboardRuntime{constructor(){this.profile=null;this.pack=null}loadProfile(p){this.profile=p;return this.status()}loadPack(p){this.pack=p;return this.status()}status(){return{ready:!!this.profile,profile:this.profile,packId:this.pack?.packId||null}}}"
+    },
+    {
+        "name":  "KORG PA Adapter",
+        "path":  "keyboard-runtime/adapters/korgPaAdapter.js",
+        "role":  "Safe adapter direction, no device write",
+        "type":  "adapter",
+        "exists":  true,
+        "sizeBytes":  116,
+        "mode":  "READ_ONLY_PANEL_NO_EXECUTION",
+        "preview":  "export function createKorgPaCommand(section){return{target:\"korg-pa\",type:\"section-trigger-placeholder\",section}}"
+    },
+    {
+        "name":  "KORG PA Profile",
+        "path":  "keyboard-runtime/profiles/korg-pa-generic.json",
+        "role":  "Generic profile data",
+        "type":  "profile",
+        "exists":  true,
+        "sizeBytes":  92,
+        "mode":  "READ_ONLY_PANEL_NO_EXECUTION",
+        "preview":  "{ \"id\":\"korg-pa-generic\", \"name\":\"KORG PA Generic\", \"status\":\"placeholder-safe-profile\" }"
+    },
+    {
+        "name":  "Pack System",
+        "path":  "pack-system/src/UaosPack.js",
+        "role":  ".uaos-pack manifest and validation direction",
+        "type":  "pack",
+        "exists":  true,
+        "sizeBytes":  178,
+        "mode":  "READ_ONLY_PANEL_NO_EXECUTION",
+        "preview":  "export function validateUaosPack(pack){const required=[\"packId\",\"format\",\"targetKeyboards\"];const missing=required.filter(k=\u003e!pack?.[k]);return{ok:missing.length===0,missing}}"
+    },
+    {
+        "name":  "Demo Pack Manifest",
+        "path":  "packs/demo-oriental-runtime-pack.uaos-pack/manifest.json",
+        "role":  "Demo oriental runtime pack manifest",
+        "type":  "manifest",
+        "exists":  true,
+        "sizeBytes":  177,
+        "mode":  "READ_ONLY_PANEL_NO_EXECUTION",
+        "preview":  "{ \"packId\":\"demo-oriental-runtime-pack\", \"format\":\".uaos-pack\", \"targetKeyboards\":[\"korg-pa\",\"yamaha-genos\",\"roland-bk\",\"ketron\"], \"licenseType\":\"original-or-licensed-only\" }"
+    },
+    {
+        "name":  "Library Manager",
+        "path":  "library-manager/src/LibraryManager.js",
+        "role":  "Library catalog foundation",
+        "type":  "library",
+        "exists":  true,
+        "sizeBytes":  218,
+        "mode":  "READ_ONLY_PANEL_NO_EXECUTION",
+        "preview":  "export class LibraryManager{constructor(){this.libraries=[]}add(lib){this.libraries.push(lib);return this.list()}list(){return[...this.libraries]}findByName(name){return this.libraries.find(l=\u003el.name===name)||null}}"
+    },
+    {
+        "name":  "Oriental Library Manifest",
+        "path":  "libraries/oriental-expansion-vol-1/manifest.json",
+        "role":  "Oriental expansion catalog",
+        "type":  "manifest",
+        "exists":  true,
+        "sizeBytes":  159,
+        "mode":  "READ_ONLY_PANEL_NO_EXECUTION",
+        "preview":  "{ \"name\":\"oriental-expansion-vol-1\", \"version\":\"0.1.0\", \"license\":\"original-or-licensed-only\", \"instruments\":[\"oriental-violin\",\"ney\",\"arabic-percussion\"] }"
+    },
+    {
+        "name":  "AI/Ollama Planner",
+        "path":  "ai-features/src/AiMission.js",
+        "role":  "Safe local planning scaffold",
+        "type":  "ai",
+        "exists":  true,
+        "sizeBytes":  149,
+        "mode":  "READ_ONLY_PANEL_NO_EXECUTION",
+        "preview":  "export function createAiMission({title,priority=\"high\",area=\"uaos\"}){return{title,priority,area,status:\"planned\",safety:\"manual-review-required\"}}"
+    },
+    {
+        "name":  "QA Checklist",
+        "path":  "qa/src/qaChecklist.js",
+        "role":  "Build, pages, safety checklist",
+        "type":  "qa",
+        "exists":  true,
+        "sizeBytes":  194,
+        "mode":  "READ_ONLY_PANEL_NO_EXECUTION",
+        "preview":  "export function runQaChecklist(){return[{id:\"build\",status:\"pass\"},{id:\"github-pages\",status:\"manual-check\"},{id:\"payments\",status:\"manual-check\"},{id:\"runtime-modules\",status:\"scaffolded\"}]}"
+    }
+]

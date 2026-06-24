@@ -1,0 +1,150 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>UAOS Runtime Read-Only Panels</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#020617;color:white;font-family:Arial,Helvetica,sans-serif}
+body:before{content:"";position:fixed;inset:0;z-index:-1;background:radial-gradient(circle at 15% 10%,rgba(34,211,238,.28),transparent 30%),radial-gradient(circle at 85% 20%,rgba(99,102,241,.22),transparent 34%),linear-gradient(135deg,#020617,#07111f,#0f172a)}
+main{max-width:1180px;margin:0 auto;padding:26px 18px 44px}
+.nav{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px}
+.nav a{color:#dbeafe;text-decoration:none;padding:10px 12px;border-radius:999px;border:1px solid rgba(255,255,255,.1);background:rgba(15,23,42,.72)}
+.hero{border:1px solid rgba(34,211,238,.28);border-radius:28px;background:rgba(15,23,42,.84);padding:28px;margin-bottom:18px}
+.pill{display:inline-block;padding:8px 11px;border-radius:999px;background:#064e3b;color:#86efac;font-size:12px;font-weight:bold}
+h1{font-size:56px;margin:18px 0 8px;color:#22d3ee}
+h2{color:#e0f2fe;margin:0 0 10px}
+p{color:#cbd5e1;line-height:1.6}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
+.card{border:1px solid rgba(34,211,238,.25);border-radius:20px;background:rgba(15,23,42,.78);padding:18px}
+.card h3{color:#67e8f9;margin:12px 0 8px}
+code{display:block;background:#020617;color:#93c5fd;padding:8px;border-radius:9px;font-size:12px;overflow:auto}
+small{display:block;margin-top:10px;color:#94a3b8}
+.topline{display:flex;justify-content:space-between;gap:8px}
+.type,.state{padding:6px 8px;border-radius:999px;font-size:11px;font-weight:bold}
+.type{background:#172554;color:#bfdbfe}
+.state{color:white}
+.footer{margin-top:22px;border-radius:18px;background:rgba(15,23,42,.7);padding:16px;color:#94a3b8}
+@media(max-width:720px){
+  main{padding:14px}
+  h1{font-size:42px}
+  .hero{padding:20px;border-radius:22px}
+  .grid{grid-template-columns:1fr}
+  .nav{display:grid;grid-template-columns:1fr 1fr}
+  .nav a{text-align:center}
+}
+</style>
+</head>
+<body>
+<main>
+  <nav class="nav">
+    <a href="./index.html">Home</a>
+    <a href="./demo.html">Demo</a>
+    <a href="./modules.html">Modules</a>
+    <a href="./premium.html">Premium</a>
+    <a href="./arabic.html">Arabic</a>
+    <a href="./status.html">Status</a>
+  </nav>
+
+  <section class="hero">
+    <span class="pill">UAOS RUNTIME READ-ONLY PANELS V1</span>
+    <h1>Runtime Panels</h1>
+    <h2>Safe module visibility without executing agents</h2>
+    <p>This page reads file existence and module metadata only. It does not run unknown desktop agents, does not write keyboard files, does not activate payment, and does not publish a release.</p>
+  </section>
+
+  <section class="grid">
+    <article class="card">
+  <div class="topline"><span class="type">runtime</span><span class="state" style="background:#064e3b">READY</span></div>
+  <h3>Runtime Agent</h3>
+  <p>Playing, tempo, chord and section state</p>
+  <code>runtime/src/UaosRuntime.js</code>
+  <small>438 bytes · READ ONLY · NO EXECUTION</small>
+</article>
+<article class="card">
+  <div class="topline"><span class="type">midi</span><span class="state" style="background:#064e3b">READY</span></div>
+  <h3>MIDI Router</h3>
+  <p>MIDI notes, CC, program-change routing</p>
+  <code>midi-router/src/MidiRouter.js</code>
+  <small>418 bytes · READ ONLY · NO EXECUTION</small>
+</article>
+<article class="card">
+  <div class="topline"><span class="type">sampler</span><span class="state" style="background:#064e3b">READY</span></div>
+  <h3>Sampler Engine</h3>
+  <p>Feel sampler by note, velocity, articulation</p>
+  <code>sampler-engine/src/feelSampler.js</code>
+  <small>331 bytes · READ ONLY · NO EXECUTION</small>
+</article>
+<article class="card">
+  <div class="topline"><span class="type">keyboard</span><span class="state" style="background:#064e3b">READY</span></div>
+  <h3>Keyboard Runtime</h3>
+  <p>Keyboard profile and pack loading foundation</p>
+  <code>keyboard-runtime/src/KeyboardRuntime.js</code>
+  <small>266 bytes · READ ONLY · NO EXECUTION</small>
+</article>
+<article class="card">
+  <div class="topline"><span class="type">adapter</span><span class="state" style="background:#064e3b">READY</span></div>
+  <h3>KORG PA Adapter</h3>
+  <p>Safe adapter direction, no device write</p>
+  <code>keyboard-runtime/adapters/korgPaAdapter.js</code>
+  <small>116 bytes · READ ONLY · NO EXECUTION</small>
+</article>
+<article class="card">
+  <div class="topline"><span class="type">profile</span><span class="state" style="background:#064e3b">READY</span></div>
+  <h3>KORG PA Profile</h3>
+  <p>Generic profile data</p>
+  <code>keyboard-runtime/profiles/korg-pa-generic.json</code>
+  <small>92 bytes · READ ONLY · NO EXECUTION</small>
+</article>
+<article class="card">
+  <div class="topline"><span class="type">pack</span><span class="state" style="background:#064e3b">READY</span></div>
+  <h3>Pack System</h3>
+  <p>.uaos-pack manifest and validation direction</p>
+  <code>pack-system/src/UaosPack.js</code>
+  <small>178 bytes · READ ONLY · NO EXECUTION</small>
+</article>
+<article class="card">
+  <div class="topline"><span class="type">manifest</span><span class="state" style="background:#064e3b">READY</span></div>
+  <h3>Demo Pack Manifest</h3>
+  <p>Demo oriental runtime pack manifest</p>
+  <code>packs/demo-oriental-runtime-pack.uaos-pack/manifest.json</code>
+  <small>177 bytes · READ ONLY · NO EXECUTION</small>
+</article>
+<article class="card">
+  <div class="topline"><span class="type">library</span><span class="state" style="background:#064e3b">READY</span></div>
+  <h3>Library Manager</h3>
+  <p>Library catalog foundation</p>
+  <code>library-manager/src/LibraryManager.js</code>
+  <small>218 bytes · READ ONLY · NO EXECUTION</small>
+</article>
+<article class="card">
+  <div class="topline"><span class="type">manifest</span><span class="state" style="background:#064e3b">READY</span></div>
+  <h3>Oriental Library Manifest</h3>
+  <p>Oriental expansion catalog</p>
+  <code>libraries/oriental-expansion-vol-1/manifest.json</code>
+  <small>159 bytes · READ ONLY · NO EXECUTION</small>
+</article>
+<article class="card">
+  <div class="topline"><span class="type">ai</span><span class="state" style="background:#064e3b">READY</span></div>
+  <h3>AI/Ollama Planner</h3>
+  <p>Safe local planning scaffold</p>
+  <code>ai-features/src/AiMission.js</code>
+  <small>149 bytes · READ ONLY · NO EXECUTION</small>
+</article>
+<article class="card">
+  <div class="topline"><span class="type">qa</span><span class="state" style="background:#064e3b">READY</span></div>
+  <h3>QA Checklist</h3>
+  <p>Build, pages, safety checklist</p>
+  <code>qa/src/qaChecklist.js</code>
+  <small>194 bytes · READ ONLY · NO EXECUTION</small>
+</article>
+
+  </section>
+
+  <section class="footer">
+    No Vercel · No startup scripts · No infinite loops · No force push · No release publishing · No writer · No real keyboard output.
+  </section>
+</main>
+</body>
+</html>
