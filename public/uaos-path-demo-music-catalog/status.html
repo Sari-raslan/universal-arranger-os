@@ -24,5 +24,22 @@ a.main{background:#2563eb}
 </nav>
 <h1>UAOS Status</h1>
 <div class="card"><p class="ok">Build safe. Public demo. Payment disabled. Writer disabled.</p><a class="btn main" href="./index.html">Home</a></div>
+<style>
+*{pointer-events:auto!important}
+button,a{pointer-events:auto!important;cursor:pointer!important;position:relative!important;z-index:999999!important}
+</style>
+<script>
+document.addEventListener("click",function(e){
+ const t=(e.target.innerText||e.target.textContent||"").trim().toLowerCase();
+ const m={
+  "home":"./index.html","demo":"./demo.html","modules":"./modules.html",
+  "premium":"./premium.html","arabic":"./arabic.html","status":"./status.html",
+  "open demo":"./demo.html","view modules":"./modules.html","premium preview":"./premium.html"
+ };
+ if(m[t]){ window.location.href=m[t]; }
+},true);
+</script>
+<!-- UAOS_FORCE_CLICK_FIX -->
 </body>
 </html>
+
