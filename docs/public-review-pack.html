@@ -18,38 +18,49 @@ p,li{color:#cbd5e1;line-height:1.65}
 .tile{display:block;text-decoration:none;border:1px solid rgba(34,211,238,.24);border-radius:18px;background:rgba(2,6,23,.55);padding:16px;color:white}
 .tile b{display:block;color:#67e8f9;margin-bottom:6px}
 .tile span{color:#cbd5e1;font-size:14px}
-.muted{opacity:.62}
 .steps{counter-reset:s;display:grid;gap:10px}
 .step{border:1px solid rgba(255,255,255,.1);border-radius:16px;background:rgba(2,6,23,.5);padding:16px}
 .step:before{counter-increment:s;content:counter(s);display:inline-grid;place-items:center;width:28px;height:28px;border-radius:50%;background:#2563eb;margin-right:8px;font-weight:bold}
 .warn{border-color:rgba(251,191,36,.35);background:rgba(69,26,3,.35)}
-.footer{color:#94a3b8}
+.nav{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px}
+.nav a{color:#dbeafe;text-decoration:none;padding:10px 12px;border-radius:999px;border:1px solid rgba(255,255,255,.1);background:rgba(15,23,42,.72)}
 @media(max-width:720px){
   main{padding:14px}
   h1{font-size:42px}
   .hero,.box{padding:18px;border-radius:20px}
   .grid{grid-template-columns:1fr}
+  .nav{display:grid;grid-template-columns:1fr 1fr}
+  .nav a{text-align:center}
 }
 </style>
 </head>
 <body>
 <main>
+<nav class="nav">
+  <a href="./index.html">Home</a>
+  <a href="./demo.html">Demo</a>
+  <a href="./modules.html">Modules</a>
+  <a href="./premium.html">Premium</a>
+  <a href="./arabic.html">Arabic</a>
+  <a href="./status.html">Status</a>
+</nav>
+
 <section class="hero">
-  <span class="pill">UAOS PUBLIC REVIEW PACK V1</span>
+  <span class="pill">UAOS PUBLIC REVIEW PACK V1 REPAIR</span>
   <h1>UAOS Review Pack</h1>
-  <h2>One-page review entry for public preview, demo, modules, status, and safety locks.</h2>
+  <h2>One-page review entry for the public preview.</h2>
   <p>This page is for quick external review. It does not activate payment, does not publish a release, does not run agents, and does not claim final keyboard writer readiness.</p>
 </section>
 
 <section class="box">
   <h2>Recommended 5-Minute Review Order</h2>
   <div class="steps">
-    <div class="step">Open the homepage and confirm the product direction is clear.</div>
-    <div class="step">Open Demo and review the singer / producer / keyboard workflow story.</div>
-    <div class="step">Open Modules and review the safe agent architecture.</div>
-    <div class="step">Open Runtime Panels and verify read-only module visibility only.</div>
-    <div class="step">Open Premium and confirm checkout/payment is preview-only.</div>
-    <div class="step">Open Status and confirm no release publishing / no force push / no Vercel locks.</div>
+    <div class="step">Open Homepage and confirm product direction.</div>
+    <div class="step">Open Demo and review singer / producer / keyboard workflow.</div>
+    <div class="step">Open Modules and review safe agent architecture.</div>
+    <div class="step">Open Runtime Panels and verify read-only visibility.</div>
+    <div class="step">Open Premium and confirm preview-only checkout.</div>
+    <div class="step">Open Status and confirm safety locks.</div>
   </div>
 </section>
 
@@ -68,11 +79,10 @@ p,li{color:#cbd5e1;line-height:1.65}
 <section class="box">
   <h2>Technical / QA Pages</h2>
   <div class="grid">
-    <a class='tile' href='./runtime-panels.html'><b>runtime-panels.html</b><span>READY</span></a>
-<a class='tile' href='./mobile-visual-qa.html'><b>mobile-visual-qa.html</b><span>READY</span></a>
-<a class='tile' href='./agent-command-center.html'><b>agent-command-center.html</b><span>READY</span></a>
-<a class='tile' href='./final-preparation-dashboard.html'><b>final-preparation-dashboard.html</b><span>READY</span></a>
-
+    <a class="tile" href="./runtime-panels.html"><b>Runtime Panels</b><span>Read-only module visibility</span></a>
+    <a class="tile" href="./mobile-visual-qa.html"><b>Mobile Visual QA</b><span>Mobile and visual checklist</span></a>
+    <a class="tile" href="./agent-command-center.html"><b>Agent Command Center</b><span>Desktop agent inventory, not executed</span></a>
+    <a class="tile" href="./final-preparation-dashboard.html"><b>Final Preparation Dashboard</b><span>Safe work overview</span></a>
   </div>
 </section>
 
@@ -90,8 +100,8 @@ p,li{color:#cbd5e1;line-height:1.65}
   </ul>
 </section>
 
-<section class="box footer">
-  UAOS — Universal Arranger OS · Public Review Pack V1 · Safe public preview.
+<section class="box">
+  UAOS — Universal Arranger OS · Public Review Pack V1 Repair · Safe public preview.
 </section>
 </main>
 </body>
