@@ -8,30 +8,36 @@
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{margin:0;background:#020617;color:#fff;font-family:Arial,Helvetica,sans-serif}
-body:before{content:"";position:fixed;inset:0;z-index:-2;background:radial-gradient(circle at 15% 8%,rgba(34,211,238,.3),transparent 30%),radial-gradient(circle at 85% 20%,rgba(99,102,241,.25),transparent 32%),linear-gradient(135deg,#020617,#07111f 52%,#0f172a)}
-body:after{content:"";position:fixed;inset:0;z-index:-1;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:42px 42px;mask-image:linear-gradient(to bottom,rgba(0,0,0,.65),transparent 75%)}
-.wrap{max-width:1160px;margin:0 auto;padding:28px 22px 46px}
-.nav{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:14px 0 26px}
+body:before{content:"";position:fixed;inset:0;z-index:-2;background:radial-gradient(circle at 12% 8%,rgba(34,211,238,.34),transparent 30%),radial-gradient(circle at 88% 18%,rgba(99,102,241,.28),transparent 35%),radial-gradient(circle at 50% 98%,rgba(16,185,129,.16),transparent 35%),linear-gradient(135deg,#020617,#07111f 48%,#111827)}
+body:after{content:"";position:fixed;inset:0;z-index:-1;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:42px 42px;mask-image:linear-gradient(to bottom,rgba(0,0,0,.65),transparent 78%)}
+.wrap{max-width:1180px;margin:0 auto;padding:28px 22px 50px}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:14px 0 28px}
 .logo{display:flex;align-items:center;gap:10px;font-weight:900;letter-spacing:.08em}
 .logo-mark{width:38px;height:38px;border-radius:12px;background:linear-gradient(135deg,#22d3ee,#2563eb);display:grid;place-items:center;box-shadow:0 0 28px rgba(34,211,238,.35)}
 .navlinks{display:flex;gap:10px;flex-wrap:wrap}
-.navlinks a{text-decoration:none;color:#cbd5e1;padding:9px 12px;border-radius:999px;border:1px solid rgba(255,255,255,.09);background:rgba(15,23,42,.62);font-size:14px}
-.panel{border:1px solid rgba(34,211,238,.28);border-radius:30px;background:linear-gradient(180deg,rgba(15,23,42,.91),rgba(15,23,42,.72));box-shadow:0 26px 80px rgba(0,0,0,.46);padding:34px}
+.navlinks a{text-decoration:none;color:#dbeafe;padding:9px 12px;border-radius:999px;border:1px solid rgba(255,255,255,.1);background:rgba(15,23,42,.64);font-size:14px}
+.hero{display:grid;grid-template-columns:1.05fr .95fr;gap:18px;align-items:stretch}
+.panel{border:1px solid rgba(34,211,238,.28);border-radius:30px;background:linear-gradient(180deg,rgba(15,23,42,.93),rgba(15,23,42,.74));box-shadow:0 26px 80px rgba(0,0,0,.46);padding:34px}
 .pill{display:inline-flex;padding:9px 13px;border-radius:999px;background:rgba(6,78,59,.88);color:#86efac;font-size:12px;font-weight:800;border:1px solid rgba(134,239,172,.25)}
-h1{font-size:clamp(48px,8vw,92px);line-height:.9;margin:22px 0 12px;color:#22d3ee;letter-spacing:-.055em}
+h1{font-size:clamp(50px,8vw,92px);line-height:.9;margin:22px 0 12px;color:#22d3ee;letter-spacing:-.055em}
 h2{font-size:clamp(26px,4vw,42px);margin:0 0 18px;color:#e0f2fe;letter-spacing:-.035em}
 p{font-size:18px;line-height:1.65;color:#cbd5e1}
 .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
 .btn{padding:14px 20px;border-radius:15px;text-decoration:none;font-weight:900;background:linear-gradient(90deg,#2563eb,#06b6d4);color:white;box-shadow:0 12px 28px rgba(37,99,235,.22)}
-.btn.secondary{background:rgba(15,23,42,.9);border:1px solid rgba(34,211,238,.28);box-shadow:none}
+.btn.secondary{background:rgba(15,23,42,.92);border:1px solid rgba(34,211,238,.28);box-shadow:none}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin-top:22px}
-.card{border:1px solid rgba(34,211,238,.25);border-radius:22px;padding:22px;background:rgba(15,23,42,.76)}
+.card{border:1px solid rgba(34,211,238,.25);border-radius:22px;padding:22px;background:rgba(15,23,42,.78)}
 .card h3{margin:0 0 10px;color:#67e8f9;font-size:19px}
 .card p{font-size:15px;margin:0 0 12px}
 .badge{display:inline-block;margin-top:12px;padding:7px 10px;border-radius:999px;background:#064e3b;color:#86efac;font-size:12px;font-weight:800}
+.section{margin-top:28px}
+.section h2{font-size:30px;margin-bottom:10px}
+.list{display:grid;gap:10px;margin-top:16px}
+.item{padding:16px;border-radius:18px;background:rgba(2,6,23,.55);border:1px solid rgba(255,255,255,.08);color:#cbd5e1}
+.item b{color:#67e8f9}
 .footer{margin-top:34px;padding:22px;border-radius:22px;background:rgba(15,23,42,.65);color:#94a3b8;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 .rtl{direction:rtl;text-align:right}
-@media(max-width:850px){.nav{align-items:flex-start;flex-direction:column}.panel{padding:26px}}
+@media(max-width:900px){.hero{grid-template-columns:1fr}.nav{align-items:flex-start;flex-direction:column}.panel{padding:26px}}
 </style>
 </head>
 <body>
@@ -47,23 +53,37 @@ p{font-size:18px;line-height:1.65;color:#cbd5e1}
     <a href="./status.html">Status</a>
   </div>
 </nav>
-<section class="panel">
-  <span class="pill">MODULES PAGE</span>
-  <h1>Modules</h1>
-  <h2>Safe agent architecture</h2>
-  <p>Each module is visible as a product direction before deeper runtime wiring. This keeps the public layer clear while development stays safe.</p>
-  <div class="actions">
-    <a class="btn" href="./demo.html">Open Demo</a>
-    <a class="btn secondary" href="./modules.html">View Modules</a>
-    <a class="btn secondary" href="./premium.html">Premium Preview</a>
+
+<section class="hero">
+  <div class="panel">
+    <span class="pill">DETAIL MODULES PAGE</span>
+    <h1>Modules</h1>
+    <h2>Safe agent architecture</h2>
+    <p>UAOS is organized as a modular system: runtime, MIDI, sampler, keyboard runtime, packs, libraries, AI planning, desktop/mobile, and QA.</p>
+    <div class="actions">
+      <a class="btn" href="./demo.html">See Demo Flow</a><a class="btn secondary" href="./status.html">QA Status</a><a class="btn secondary" href="./arabic.html">Arabic Page</a>
+    </div>
   </div>
+  <aside class="panel">
+    <h2>Why this matters</h2>
+    <div class="list">
+      <div class="item"><b>Architecture:</b> each agent has a visible product role.</div><div class="item"><b>Safe next:</b> wire read-only panels before real write features.</div><div class="item"><b>QA-first:</b> every module remains behind build and safety gates.</div>
+    </div>
+  </aside>
 </section>
+
 <section class="grid">
-<article class="card"><h3>Runtime Agent</h3><p>Playing, tempo, chord and section state.</p><span class="badge">READY</span></article><article class="card"><h3>MIDI Agent</h3><p>Notes, CC and program-change routing foundation.</p><span class="badge">READY</span></article><article class="card"><h3>Sampler Agent</h3><p>Feel sampler selection by note, velocity and articulation.</p><span class="badge">READY</span></article><article class="card"><h3>Pack System</h3><p>.uaos-pack manifest and validation direction.</p><span class="badge">READY</span></article><article class="card"><h3>Library Manager</h3><p>Oriental expansion and future catalog foundation.</p><span class="badge">READY</span></article><article class="card"><h3>QA Agent</h3><p>Build, Pages, mobile and safety checks.</p><span class="badge">READY</span></article>
+<article class="card"><h3>Runtime</h3><p>Playing state, tempo, section, chord and arrangement foundation.</p><span class="badge">READY</span></article>
+<article class="card"><h3>MIDI Router</h3><p>Notes, CC, channels, program changes and routing concept.</p><span class="badge">READY</span></article>
+<article class="card"><h3>Sampler</h3><p>Feel-based sample selection for future expressive playback.</p><span class="badge">READY</span></article>
+<article class="card"><h3>Pack System</h3><p>Manifest structure, validation, future pack marketplace direction.</p><span class="badge">READY</span></article>
+<article class="card"><h3>Library Manager</h3><p>Oriental expansion catalog and future browsing workflow.</p><span class="badge">READY</span></article>
+<article class="card"><h3>QA</h3><p>Build, public pages, mobile view, safety checks and gates.</p><span class="badge">READY</span></article>
 </section>
+
 <footer class="footer">
   <span>UAOS — Universal Arranger OS</span>
-  <span>Static Product Pages V1 Repair V2 · Safe public preview</span>
+  <span>Product Pages Detail Polish V2 · Safe public preview</span>
 </footer>
 </div>
 </body>
