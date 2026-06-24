@@ -1,45 +1,21 @@
 ﻿<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<title>UAOS Status</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<html><head><meta charset="utf-8"><title>UAOS Status</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <style>
-body{font-family:Arial;background:#07101f;color:#eef;margin:0;padding:28px}
+body{font-family:Arial;background:#07101f;color:#eef;padding:28px}
 nav{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:24px}
-a.btn{display:inline-block;background:#12315f;color:white!important;padding:14px 20px;border-radius:12px;text-decoration:none;font-weight:800;border:1px solid #38bdf8}
-a.main{background:#2563eb}
+a{display:inline-block;background:#12315f;color:white!important;padding:14px 20px;border-radius:12px;text-decoration:none;font-weight:800;border:1px solid #38bdf8;margin:6px}
+.main{background:#2563eb}
 .card{background:#101a33;border:1px solid #2b4a7c;border-radius:18px;padding:22px;margin:16px 0}
-.ok{color:#86efac}
-</style>
-</head>
-<body>
+</style></head><body>
+<!-- UAOS_ALL_PUBLISH_PATHS_FIX_20260624_114429 -->
 <nav>
-<a class="btn main" href="./index.html">Home</a>
-<a class="btn" href="./demo.html">Demo</a>
-<a class="btn" href="./modules.html">Modules</a>
-<a class="btn" href="./premium.html">Premium</a>
-<a class="btn" href="./arabic.html">Arabic</a>
-<a class="btn" href="./status.html">Status</a>
+<a class="main" href="./index.html">Home</a>
+<a href="./demo.html">Demo</a>
+<a href="./modules.html">Modules</a>
+<a href="./premium.html">Premium</a>
+<a href="./arabic.html">Arabic</a>
+<a href="./status.html">Status</a>
 </nav>
-<h1>UAOS Status</h1>
-<div class="card"><p class="ok">Build safe. Public demo. Payment disabled. Writer disabled.</p><a class="btn main" href="./index.html">Home</a></div>
-<style>
-*{pointer-events:auto!important}
-button,a{pointer-events:auto!important;cursor:pointer!important;position:relative!important;z-index:999999!important}
-</style>
-<script>
-document.addEventListener("click",function(e){
- const t=(e.target.innerText||e.target.textContent||"").trim().toLowerCase();
- const m={
-  "home":"./index.html","demo":"./demo.html","modules":"./modules.html",
-  "premium":"./premium.html","arabic":"./arabic.html","status":"./status.html",
-  "open demo":"./demo.html","view modules":"./modules.html","premium preview":"./premium.html"
- };
- if(m[t]){ window.location.href=m[t]; }
-},true);
-</script>
-<!-- UAOS_FORCE_CLICK_FIX -->
-</body>
-</html>
-
+<h1>UAOS Status</h1><div class="card">Public demo working. Payment disabled. Writer disabled.</div>
+</body></html>
