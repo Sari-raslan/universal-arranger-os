@@ -1,3 +1,113 @@
-﻿<!doctype html><html><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>UAOS HyperStation</title>  <script type="module" crossorigin src="/assets/index-WwM7uoYH.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/index-CbV2igBy.css">
-</head><body><div id="root"></div></body></html>
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>UAOS - Universal Arranger OS</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      min-height:100vh;
+      font-family:Arial,sans-serif;
+      color:white;
+      background:
+        radial-gradient(circle at top left,rgba(34,211,238,.25),transparent 32%),
+        radial-gradient(circle at bottom right,rgba(37,99,235,.22),transparent 35%),
+        linear-gradient(135deg,#020617,#07111f,#0f172a);
+    }
+    main{max-width:1120px;margin:0 auto;padding:44px 22px}
+    .hero{
+      border:1px solid rgba(34,211,238,.28);
+      border-radius:28px;
+      padding:34px;
+      background:rgba(15,23,42,.78);
+      box-shadow:0 24px 70px rgba(0,0,0,.38);
+    }
+    .pill{
+      display:inline-block;
+      padding:8px 12px;
+      border-radius:999px;
+      background:#064e3b;
+      color:#86efac;
+      font-size:12px;
+      font-weight:bold;
+      margin-bottom:18px;
+    }
+    h1{font-size:74px;line-height:.95;margin:0;color:#22d3ee}
+    h2{font-size:34px;margin:12px 0;color:#e0f2fe}
+    p{font-size:20px;line-height:1.6;color:#cbd5e1;max-width:920px}
+    .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+    .actions a{
+      padding:14px 20px;
+      border-radius:14px;
+      background:linear-gradient(90deg,#2563eb,#06b6d4);
+      color:white;
+      text-decoration:none;
+      font-weight:bold;
+    }
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:16px;
+      margin-top:26px;
+    }
+    .card{
+      border:1px solid rgba(34,211,238,.32);
+      border-radius:20px;
+      padding:22px;
+      background:rgba(15,23,42,.82);
+    }
+    .card h3{margin:0 0 10px;color:#67e8f9}
+    .card p{font-size:15px;margin:0 0 12px;color:#cbd5e1}
+    code{
+      display:block;
+      padding:8px;
+      border-radius:8px;
+      background:#020617;
+      color:#93c5fd;
+      font-size:12px;
+      overflow:auto;
+    }
+    .badge{
+      display:inline-block;
+      margin-top:14px;
+      padding:6px 9px;
+      border-radius:999px;
+      background:#064e3b;
+      color:#86efac;
+      font-size:12px;
+      font-weight:bold;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="hero">
+      <span class="pill">UAOS MODULE UI INTEGRATION - LIVE RESCUE PAGE</span>
+      <h1>UAOS</h1>
+      <h2>Universal Arranger OS — Module UI</h2>
+      <p>
+        Agents are scaffolded and visible as product modules. This static rescue page prevents the black-screen issue and keeps the public site visible while the React runtime layer is repaired safely.
+      </p>
+      <div class="actions">
+        <a href="./launch/payment.html">Premium</a>
+        <a href="./status-ar.html">Arabic Status</a>
+        <a href="#modules">Modules</a>
+      </div>
+    </section>
+
+    <section id="modules" class="grid">
+      <article class="card"><h3>Runtime Agent</h3><p>Playing, tempo, chord and section state.</p><code>runtime/src/UaosRuntime.js</code><span class="badge">SAFE SCAFFOLD</span></article>
+      <article class="card"><h3>MIDI Agent</h3><p>MIDI notes, CC, program change router.</p><code>midi-router/src/MidiRouter.js</code><span class="badge">SAFE SCAFFOLD</span></article>
+      <article class="card"><h3>Sampler Agent</h3><p>Feel sampler selection by note, velocity, articulation and maqam.</p><code>sampler-engine/src/feelSampler.js</code><span class="badge">SAFE SCAFFOLD</span></article>
+      <article class="card"><h3>Keyboard Runtime Agent</h3><p>Keyboard profiles and pack loading foundation.</p><code>keyboard-runtime/src/KeyboardRuntime.js</code><span class="badge">SAFE SCAFFOLD</span></article>
+      <article class="card"><h3>Pack System Agent</h3><p>.uaos-pack validation and manifest direction.</p><code>pack-system/src/UaosPack.js</code><span class="badge">SAFE SCAFFOLD</span></article>
+      <article class="card"><h3>Library Manager Agent</h3><p>Oriental expansion and future library catalog.</p><code>library-manager/src/LibraryManager.js</code><span class="badge">SAFE SCAFFOLD</span></article>
+      <article class="card"><h3>AI/Ollama Planner Agent</h3><p>Safe local planning scaffold with manual review.</p><code>ai-features/src/AiMission.js</code><span class="badge">SAFE SCAFFOLD</span></article>
+      <article class="card"><h3>Desktop/Android Agent</h3><p>Packaging notes for desktop and Android.</p><code>desktop-packaging / android-packaging</code><span class="badge">SAFE SCAFFOLD</span></article>
+      <article class="card"><h3>QA Agent</h3><p>Build, Pages, payments, mobile and runtime checklist.</p><code>qa/src/qaChecklist.js</code><span class="badge">SAFE SCAFFOLD</span></article>
+    </section>
+  </main>
+</body>
+</html>
