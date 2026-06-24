@@ -16,45 +16,24 @@ p,li{color:#cbd5e1;line-height:1.6}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
 .card{border:1px solid rgba(255,255,255,.1);border-radius:18px;padding:16px;background:rgba(2,6,23,.55)}
 a{color:#67e8f9}
-@media(max-width:720px){
-  main{padding:14px}
-  h1{font-size:34px}
-  .panel{padding:18px;border-radius:20px}
-  .grid{grid-template-columns:1fr}
-}
+@media(max-width:720px){main{padding:14px}h1{font-size:34px}.panel{padding:18px;border-radius:20px}.grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
 <main>
-  <section class="panel">
-    <span class="badge">UAOS MOBILE VISUAL QA V1</span>
-    <h1>Mobile Visual QA</h1>
-    <p>This checklist confirms the public static pages have mobile spacing, readable text, visible CTA buttons, RTL Arabic support, and safe release wording.</p>
-  </section>
-
-  <section class="panel">
-    <h2>Checklist</h2>
-    <div class="grid">
-      <div class="card"><b>Mobile spacing</b><p>Panels, cards and navigation fit small screens.</p></div>
-      <div class="card"><b>CTA visibility</b><p>Buttons become full-width on mobile.</p></div>
-      <div class="card"><b>RTL Arabic</b><p>Arabic page remains right-to-left and readable.</p></div>
-      <div class="card"><b>No checkout</b><p>Premium stays preview-only.</p></div>
-      <div class="card"><b>No release</b><p>Status keeps safety locks.</p></div>
-      <div class="card"><b>No React dependency</b><p>Static pages stay visible.</p></div>
-    </div>
-  </section>
-
-  <section class="panel">
-    <h2>Pages</h2>
-    <ul>
-      <li><a href="./index.html">Home</a></li>
-      <li><a href="./demo.html">Demo</a></li>
-      <li><a href="./modules.html">Modules</a></li>
-      <li><a href="./premium.html">Premium</a></li>
-      <li><a href="./arabic.html">Arabic</a></li>
-      <li><a href="./status.html">Status</a></li>
-    </ul>
-  </section>
+<section class="panel">
+<span class="badge">UAOS MOBILE VISUAL QA V1</span>
+<h1>Mobile Visual QA</h1>
+<p>Checklist confirms mobile spacing, readable text, visible CTA buttons, RTL Arabic support, and safe release wording.</p>
+</section>
+<section class="grid">
+<div class="card"><b>Mobile spacing</b><p>Panels, cards and navigation fit small screens.</p></div>
+<div class="card"><b>CTA visibility</b><p>Buttons become full-width on mobile.</p></div>
+<div class="card"><b>RTL Arabic</b><p>Arabic page remains right-to-left and readable.</p></div>
+<div class="card"><b>No checkout</b><p>Premium stays preview-only.</p></div>
+<div class="card"><b>No release</b><p>Status keeps safety locks.</p></div>
+<div class="card"><b>No React dependency</b><p>Static pages stay visible.</p></div>
+</section>
 </main>
 </body>
 </html>
