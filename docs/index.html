@@ -2,125 +2,149 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>UAOS - Universal Arranger OS</title>
+<title>UAOS - Universal Arranger OS Public Preview</title>
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate, max-age=0">
 <style>
+:root{color-scheme:dark}
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:#020617;color:#fff;font-family:Arial,Helvetica,sans-serif}
-body:before{content:"";position:fixed;inset:0;z-index:-2;background:radial-gradient(circle at 12% 8%,rgba(34,211,238,.34),transparent 30%),radial-gradient(circle at 88% 18%,rgba(99,102,241,.28),transparent 35%),radial-gradient(circle at 50% 98%,rgba(16,185,129,.16),transparent 35%),linear-gradient(135deg,#020617,#07111f 48%,#111827)}
-body:after{content:"";position:fixed;inset:0;z-index:-1;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:42px 42px;mask-image:linear-gradient(to bottom,rgba(0,0,0,.65),transparent 78%)}
-.wrap{max-width:1180px;margin:0 auto;padding:28px 22px 50px}
-.nav{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:14px 0 28px}
-.logo{display:flex;align-items:center;gap:10px;font-weight:900;letter-spacing:.08em}
-.logo-mark{width:38px;height:38px;border-radius:12px;background:linear-gradient(135deg,#22d3ee,#2563eb);display:grid;place-items:center;box-shadow:0 0 28px rgba(34,211,238,.35)}
-.navlinks{display:flex;gap:10px;flex-wrap:wrap}
-.navlinks a{text-decoration:none;color:#dbeafe;padding:9px 12px;border-radius:999px;border:1px solid rgba(255,255,255,.1);background:rgba(15,23,42,.64);font-size:14px}
-.hero{display:grid;grid-template-columns:1.05fr .95fr;gap:18px;align-items:stretch}
-.panel{border:1px solid rgba(34,211,238,.28);border-radius:30px;background:linear-gradient(180deg,rgba(15,23,42,.93),rgba(15,23,42,.74));box-shadow:0 26px 80px rgba(0,0,0,.46);padding:34px}
-.pill{display:inline-flex;padding:9px 13px;border-radius:999px;background:rgba(6,78,59,.88);color:#86efac;font-size:12px;font-weight:800;border:1px solid rgba(134,239,172,.25)}
-h1{font-size:clamp(50px,8vw,92px);line-height:.9;margin:22px 0 12px;color:#22d3ee;letter-spacing:-.055em}
-h2{font-size:clamp(26px,4vw,42px);margin:0 0 18px;color:#e0f2fe;letter-spacing:-.035em}
-p{font-size:18px;line-height:1.65;color:#cbd5e1}
-.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
-.btn{padding:14px 20px;border-radius:15px;text-decoration:none;font-weight:900;background:linear-gradient(90deg,#2563eb,#06b6d4);color:white;box-shadow:0 12px 28px rgba(37,99,235,.22)}
-.btn.secondary{background:rgba(15,23,42,.92);border:1px solid rgba(34,211,238,.28);box-shadow:none}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin-top:22px}
-.card{border:1px solid rgba(34,211,238,.25);border-radius:22px;padding:22px;background:rgba(15,23,42,.78)}
-.card h3{margin:0 0 10px;color:#67e8f9;font-size:19px}
-.card p{font-size:15px;margin:0 0 12px}
-.badge{display:inline-block;margin-top:12px;padding:7px 10px;border-radius:999px;background:#064e3b;color:#86efac;font-size:12px;font-weight:800}
-.section{margin-top:28px}
-.section h2{font-size:30px;margin-bottom:10px}
-.list{display:grid;gap:10px;margin-top:16px}
-.item{padding:16px;border-radius:18px;background:rgba(2,6,23,.55);border:1px solid rgba(255,255,255,.08);color:#cbd5e1}
-.item b{color:#67e8f9}
-.footer{margin-top:34px;padding:22px;border-radius:22px;background:rgba(15,23,42,.65);color:#94a3b8;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
-.rtl{direction:rtl;text-align:right}
-@media(max-width:900px){.hero{grid-template-columns:1fr}.nav{align-items:flex-start;flex-direction:column}.panel{padding:26px}}
-</style>
-<style id="uaos-mobile-visual-polish-v1">
-@media(max-width:720px){
-  html,body{overflow-x:hidden!important}
-  .wrap{width:100%!important;max-width:100%!important;padding:16px 14px 34px!important}
-  .nav{gap:12px!important;padding:10px 0 18px!important}
-  .logo{width:100%!important;justify-content:space-between!important}
-  .logo-mark{width:34px!important;height:34px!important;border-radius:11px!important}
-  .navlinks{width:100%!important;display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:8px!important}
-  .navlinks a{text-align:center!important;padding:11px 10px!important;font-size:13px!important;border-radius:13px!important}
-  .hero{grid-template-columns:1fr!important;gap:14px!important}
-  .panel{padding:20px!important;border-radius:22px!important}
-  .pill{font-size:11px!important;padding:8px 10px!important;max-width:100%!important;overflow-wrap:anywhere!important}
-  h1{font-size:52px!important;line-height:.92!important;margin:18px 0 10px!important;letter-spacing:-.05em!important}
-  h2{font-size:26px!important;line-height:1.08!important;margin:0 0 14px!important}
-  p{font-size:16px!important;line-height:1.6!important}
-  .actions{display:grid!important;grid-template-columns:1fr!important;gap:10px!important;margin-top:20px!important}
-  .btn{width:100%!important;text-align:center!important;padding:14px 16px!important;border-radius:14px!important}
-  .grid{grid-template-columns:1fr!important;gap:12px!important;margin-top:16px!important}
-  .card{padding:18px!important;border-radius:18px!important}
-  .card h3{font-size:18px!important}
-  .card p{font-size:15px!important}
-  .list{gap:8px!important}
-  .item{padding:14px!important;border-radius:15px!important}
-  .footer{margin-top:24px!important;padding:18px!important;border-radius:18px!important;font-size:13px!important}
-  code{white-space:pre-wrap!important;overflow-wrap:anywhere!important}
-}
-@media(max-width:420px){
-  .wrap{padding:12px 10px 28px!important}
-  .navlinks{grid-template-columns:1fr!important}
-  h1{font-size:44px!important}
-  h2{font-size:23px!important}
-  .panel{padding:18px!important}
-}
-.rtl .navlinks a,.rtl .btn{text-align:center!important}
-@media(max-width:720px){
-  .rtl{direction:rtl!important;text-align:right!important}
-  .rtl .actions{direction:rtl!important}
-}
+body{margin:0;background:#050814;color:#eaf2ff;font-family:Segoe UI,Arial,sans-serif}
+header{padding:44px 22px;background:radial-gradient(circle at 20% 10%,rgba(57,255,182,.22),transparent 32%),linear-gradient(135deg,#132a58,#071024);border-bottom:1px solid #24375f}
+.wrap{max-width:1120px;margin:auto}
+h1{margin:0;font-size:42px;letter-spacing:-.04em}
+.sub{margin-top:12px;color:#b8c7e6;font-size:18px;line-height:1.55}
+.badges{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.badge{border:1px solid #2a3d66;background:#0b1428;border-radius:999px;padding:9px 12px;color:#dbe8ff;font-weight:700}
+main{max-width:1120px;margin:0 auto;padding:22px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+.card{background:#0b1428;border:1px solid #24375f;border-radius:18px;padding:20px;margin:14px 0;box-shadow:0 20px 60px rgba(0,0,0,.25)}
+h2{margin:0 0 10px;color:#39ffb6}
+p,li{line-height:1.6;color:#cbd8f2}
+button{display:inline-block;background:#39ffb6;color:#06111f;text-decoration:none;border:0;border-radius:14px;padding:12px 16px;font-weight:900;margin:6px 6px 0 0;cursor:pointer}
+.secondary{background:#1f3158!important;color:#eaf2ff!important;border:1px solid #3a5288!important}
+.warn{color:#ffd166;font-weight:800}
+.ok{color:#39ffb6;font-weight:800}
+.small{font-size:13px;color:#9fb0cc}
+table{width:100%;border-collapse:collapse;margin-top:12px}
+th,td{border:1px solid #24375f;padding:10px;text-align:left;vertical-align:top}
+th{background:#101d3a}
+.modalBackdrop{position:fixed;inset:0;background:rgba(0,0,0,.75);display:none;align-items:center;justify-content:center;z-index:999999}
+.modal{max-width:560px;margin:20px;background:#071024;color:#eaf2ff;border:1px solid #2a3d66;border-radius:18px;padding:22px;box-shadow:0 20px 80px rgba(0,0,0,.45)}
+.modal h3{margin-top:0;color:#39ffb6}
 </style>
 </head>
 <body>
-<div class="wrap">
-<nav class="nav">
-  <div class="logo"><div class="logo-mark">U</div><span>UAOS</span></div>
-  <div class="navlinks">
-    <a href="./index.html">Home</a>
-    <a href="./demo.html">Demo</a>
-    <a href="./modules.html">Modules</a>
-    <a href="./premium.html">Premium</a>
-    <a href="./arabic.html">Arabic</a>
-    <a href="./status.html">Status</a><a href="./public-review-pack.html">Review Pack</a><a href="./runtime-panels.html">Runtime Panels</a>
-  </div>
-</nav>
-
-<section class="hero">
-  <div class="panel">
-    <span class="pill">PRODUCT PAGES DETAIL POLISH V2</span>
-    <h1>UAOS</h1>
-    <h2>Universal Arranger OS</h2>
-    <p>A polished public preview for the next-generation arranger workstation concept. UAOS explains the product direction clearly through separated pages, safe modules, honest status, and Arabic positioning.</p>
-    <div class="actions">
-      <a class="btn" href="./demo.html">Open Demo</a><a class="btn secondary" href="./modules.html">View Modules</a><a class="btn secondary" href="./premium.html">Premium Preview</a>
+<header>
+  <div class="wrap">
+    <h1>UAOS - Universal Arranger OS</h1>
+    <div class="sub">Public preview for Jobcenter review, private funding conversations, and early project evaluation. This is a preview only, not a public commercial release.</div>
+    <div class="badges">
+      <span class="badge">Internal Launch: PASS</span>
+      <span class="badge">Public Preview Only</span>
+      <span class="badge">Payment disabled</span>
+      <span class="badge">Checkout disabled</span>
+      <span class="badge">Public download disabled</span>
+      <span class="badge">No Real Writer Claim</span>
+      <span class="badge">No Sale-Ready Claim</span>
     </div>
   </div>
-  <aside class="panel">
-    <h2>Why this matters</h2>
-    <div class="list">
-      <div class="item"><b>Stable:</b> static public pages avoid React path problems.</div><div class="item"><b>Clear:</b> visitors can understand UAOS in seconds.</div><div class="item"><b>Expandable:</b> future runtime panels can be added safely.</div>
+</header>
+
+<main>
+  <div class="card">
+    <h2>What UAOS is</h2>
+    <p>UAOS is a digital music and arranger workflow system for singers, keyboard players, producers, and arranger users. It organizes demo audio, MIDI material, preview packs, sampler concepts, and future arranger frameworks in one structured workflow.</p>
+    <p class="warn">Safety: Payment disabled. Checkout disabled. Public download disabled. No sale-ready claim. No real KORG/Yamaha/Roland/Ketron writer claim.</p>
+    <button onclick="locked()">Request Access / Funding Info</button>
+    <button class="secondary" onclick="demoTone()">Try Audio Demo Tone</button>
+  </div>
+
+  <div class="grid">
+    <div class="card">
+      <h2>Current proof</h2>
+      <p><span class="ok">Confirmed internally:</span> Owner App, Control Room, Showroom, Preview Player, language UI, WAV/MIDI previews, ZIP packs, tester package, feedback tracker, owner self-test sweep, and online root preview.</p>
     </div>
-  </aside>
-</section>
+    <div class="card">
+      <h2>For Jobcenter</h2>
+      <p>The project is presented as a realistic self-employment preparation case. The current need is practical: stable computer, backup, legal content resources, testing, and business preparation.</p>
+    </div>
+    <div class="card">
+      <h2>For private support</h2>
+      <p>Small support levels are realistic: equipment and beta preparation first. No unrealistic revenue claims, no public sale promise, and no unclear technical claims.</p>
+    </div>
+  </div>
 
-<section class="grid">
-<article class="card"><h3>Public Product Layer</h3><p>Clear landing, demo, modules, premium, Arabic, and status pages.</p><span class="badge">VISIBLE</span></article>
-<article class="card"><h3>Safe Static Mode</h3><p>No React dependency for public pages, avoiding black-screen risk.</p><span class="badge">SAFE</span></article>
-<article class="card"><h3>Runtime Ready Path</h3><p>Prepared for future read-only runtime dashboards.</p><span class="badge">NEXT</span></article>
-</section>
+  <div class="card">
+    <h2>What works internally</h2>
+    <ul>
+      <li>Owner App and internal Control Room exist locally.</li>
+      <li>Showroom and preview player exist locally.</li>
+      <li>9 language areas are prepared: English, Arabic, German, Turkish, French, Spanish, Italian, Kurdish, Persian.</li>
+      <li>72 WAV previews and 72 MIDI files exist internally.</li>
+      <li>6 ZIP preview packs exist internally.</li>
+      <li>Tester ZIP and feedback tracker are ready.</li>
+      <li>Organ writer frameworks exist only as safe architecture plans, schemas, manifests, and dry-run outputs.</li>
+    </ul>
+  </div>
 
-<footer class="footer">
-  <span>UAOS — Universal Arranger OS</span>
-  <span>Product Pages Detail Polish V2 · Safe public preview</span>
-</footer>
+  <div class="card">
+    <h2>Funding need - realistic</h2>
+    <table>
+      <tr><th>Scenario</th><th>Amount</th><th>Purpose</th></tr>
+      <tr><td>Minimum support</td><td>EUR 1,500 - 2,500</td><td>Stable laptop/computer, backup, first legal resources.</td></tr>
+      <tr><td>Practical support</td><td>EUR 3,000 - 5,000</td><td>Better development setup, demo material, private beta preparation.</td></tr>
+      <tr><td>6-month push</td><td>EUR 6,000 - 10,000</td><td>Focused development, beta structure, legal/licensing preparation, stronger demos.</td></tr>
+    </table>
+    <p class="small">The main immediate need is a reliable development computer because the current machine is weak and slows down builds, audio/MIDI handling, documentation, and testing.</p>
+  </div>
+
+  <div class="card">
+    <h2>Revenue expectation - conservative</h2>
+    <ul>
+      <li>Months 0-3: product stabilization and testing, little or no revenue.</li>
+      <li>Months 4-6: possible small revenue from test services or first digital packs, approx. EUR 100-500/month if demand exists.</li>
+      <li>Months 7-12: possible EUR 300-1,500/month if private beta, feedback, and legal content preparation work.</li>
+    </ul>
+    <p>No million-euro claims. This is a cautious early-stage plan.</p>
+  </div>
+
+  <div class="card">
+    <h2>Safety locks</h2>
+    <p>Payment disabled. Checkout disabled. Public download disabled. Real KORG/Yamaha/Roland/Ketron writer claim locked until real implementation, device testing, legal review, and proof.</p>
+    <p class="small">Generated: 20260625_114409</p>
+  </div>
+</main>
+
+<div class="modalBackdrop" id="m">
+  <div class="modal">
+    <h3>Preview only</h3>
+    <p>This page is for evaluation. Payment, checkout, public download, and commercial release are disabled. Funding/support discussions are separate and must be handled manually.</p>
+    <button onclick="closeModal()">OK</button>
+  </div>
 </div>
+
+<script>
+function locked(){document.getElementById('m').style.display='flex';return false;}
+function closeModal(){document.getElementById('m').style.display='none';}
+async function demoTone(){
+  try{
+    var C=window.AudioContext||window.webkitAudioContext;
+    if(!C){return locked();}
+    var c=new C(); await c.resume();
+    var o=c.createOscillator(); var g=c.createGain();
+    o.frequency.value=440; g.gain.value=.14; o.connect(g); g.connect(c.destination);
+    o.start(); setTimeout(function(){try{o.stop();}catch(e){}},500);
+    locked();
+  }catch(e){locked();}
+}
+document.addEventListener('click',function(e){
+  var t=e.target;
+  if(!t)return;
+  var txt=((t.textContent||'')+' '+(t.getAttribute&&t.getAttribute('href')||'')).toLowerCase();
+  if(txt.includes('buy')||txt.includes('checkout')||txt.includes('payment')||txt.includes('download')){
+    e.preventDefault(); locked();
+  }
+});
+</script>
 </body>
 </html>
