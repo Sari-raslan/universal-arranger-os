@@ -1,0 +1,67 @@
+﻿<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>UAOS Public Showroom</title>
+<link rel="stylesheet" href="assets/uaos-showroom.css">
+</head>
+<body>
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="logo">UAOS</div>
+    <div class="links">
+      <a href="index.html" data-i18n="global">Global Showroom</a>
+      <a href="product.html" data-i18n="product">Product</a>
+      <a href="features.html" data-i18n="features">Features</a>
+      <a href="libraries.html" data-i18n="libraries">Libraries</a>
+      <a href="demos.html" data-i18n="demos">Demos</a>
+      <a href="pricing-preview.html" data-i18n="pricing">Pricing</a>
+      <a href="faq.html" data-i18n="faq">FAQ</a>
+      <a href="contact.html" data-i18n="contact">Request Access</a>
+    </div>
+    <div class="lang">
+      <button data-lang="en">EN</button>
+      <button data-lang="ar">AR</button>
+      <button data-lang="de">DE</button>
+      <button data-lang="tr">TR</button>
+      <button data-lang="fr">FR</button>
+      <button data-lang="es">ES</button>
+      <button data-lang="it">IT</button>
+      <button data-lang="ku">KU</button>
+      <button data-lang="fa">FA</button>
+    </div>
+  </div>
+</nav>
+
+<main class="wrap">
+<section class="hero"><div><h1><span class="glow" data-i18n="libraryTitle">Synthetic Demo Library Catalog</span></h1><p data-i18n="disabled">Private beta only. Downloads and payments are disabled.</p></div></section>
+<section class="grid">
+  <div class="card"><h2>Oriental Strings Synthetic Demo</h2><p>Nahawand / Rast, cinematic strings preview.</p><a class="btn beta" href="contact.html" data-i18n="contact">Request Access</a></div>
+  <div class="card"><h2>Arabic Violin Phrases Synthetic Demo</h2><p>Hijaz / Bayati phrase concepts, synthetic only.</p><a class="btn beta" href="contact.html" data-i18n="contact">Request Access</a></div>
+  <div class="card"><h2>Khaleeji Groove Synthetic Demo</h2><p>Preview-only groove concepts for product demonstration.</p><a class="btn beta" href="contact.html" data-i18n="contact">Request Access</a></div>
+  <div class="card"><h2>Iraqi Rhythm Synthetic Demo</h2><p>Preview-only rhythmic ideas for private beta.</p><a class="btn beta" href="contact.html" data-i18n="contact">Request Access</a></div>
+  <div class="card"><h2>Singer Style Starter Synthetic Demo</h2><p>Starter workflow preview for singer-to-style concept.</p><a class="btn beta" href="contact.html" data-i18n="contact">Request Access</a></div>
+  <div class="card"><h2>Wedding Intro Synthetic Demo</h2><p>Intro pack concept. No real commercial content.</p><a class="btn beta" href="contact.html" data-i18n="contact">Request Access</a></div>
+</section>
+</main>
+
+<div class="modal" id="uaosModal" onclick="closeLocked()">
+  <div class="modal-box" onclick="event.stopPropagation()">
+    <h2 data-i18n="previewOnly">Preview only</h2>
+    <p data-i18n="disabled">Private beta only. Downloads and payments are disabled.</p>
+    <button class="btn primary" onclick="closeLocked()">OK</button>
+  </div>
+</div>
+
+<footer class="wrap footer">
+  <p data-i18n="footer">UAOS Public Showroom - Private beta preview only.</p>
+  <span class="badge" data-i18n="paymentDisabled">Payments disabled</span>
+  <span class="badge" data-i18n="downloadDisabled">Downloads disabled</span>
+  <span class="badge" data-i18n="notForSale">Not for sale</span>
+</footer>
+
+<script src="assets/uaos-showroom.js"></script>
+</body>
+</html>
+

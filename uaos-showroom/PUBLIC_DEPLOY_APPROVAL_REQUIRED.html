@@ -1,0 +1,43 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>UAOS Public Deploy Approval Required</title>
+<link rel="stylesheet" href="assets/uaos-showroom.css">
+</head>
+<body>
+<main class="wrap">
+<section class="hero">
+  <div>
+    <h1><span class="glow">READY FOR PUBLIC SHOWROOM DEPLOY AFTER OWNER APPROVAL</span></h1>
+    <p>UAOS public showroom is technically prepared for GitHub Pages preview deployment.</p>
+    <div class="btns">
+      <a class="btn primary" href="index.html">Open Showroom</a>
+      <a class="btn" href="preview-player.html">Open Preview Player</a>
+      <a class="btn" href="uaos-public-showroom-master-index.html">Open Master Index</a>
+    </div>
+  </div>
+</section>
+
+<section class="grid">
+  <div class="card"><h2>Payment</h2><p>DISABLED</p></div>
+  <div class="card"><h2>Download</h2><p>DISABLED</p></div>
+  <div class="card"><h2>Release</h2><p>PRIVATE BETA ONLY</p></div>
+</section>
+
+<section class="card">
+  <h2>Expected Public URL After Approval</h2>
+  <p>https://sari-raslan.github.io/universal-arranger-os/uaos-showroom/</p>
+</section>
+</main>
+<div class="modal" id="uaosModal" onclick="closeLocked()">
+  <div class="modal-box" onclick="event.stopPropagation()">
+    <h2>Private Beta Only</h2>
+    <p>هذا الزر مقفول عمداً حالياً. التحميل والدفع والوصول الكامل سيتم تفعيلهم بعد الموافقة النهائية.</p>
+    <button class="btn primary" onclick="closeLocked()">OK</button>
+  </div>
+</div>
+<script src="assets/uaos-showroom.js"></script></body>
+</html>
+
