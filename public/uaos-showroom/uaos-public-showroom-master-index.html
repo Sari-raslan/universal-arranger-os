@@ -1,0 +1,35 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>UAOS Public Showroom Master Index</title>
+<link rel="stylesheet" href="assets/uaos-showroom.css">
+</head>
+<body>
+<main class="wrap">
+<section class="hero">
+  <div>
+    <h1><span class="glow">UAOS Public Showroom Master Index</span></h1>
+    <p>PUBLIC SHOWROOM READY. Payment disabled. Downloads disabled. Private beta only.</p>
+  </div>
+</section>
+<section class="grid">
+  <div class="card"><h2>Main</h2><a class="btn primary" href="index.html">Open Showroom</a></div>
+  <div class="card"><h2>Preview Player</h2><a class="btn primary" href="preview-player.html">Open Player</a></div>
+  <div class="card"><h2>Libraries</h2><a class="btn primary" href="libraries.html">Open Libraries</a></div>
+  <div class="card"><h2>Pricing</h2><a class="btn" href="pricing-preview.html">Pricing Preview</a></div>
+  <div class="card"><h2>Safety Lock</h2><p>payment_enabled=false<br>downloads_enabled=false<br>owner_files_exposed=false</p></div>
+  <div class="card"><h2>Languages</h2><p>EN AR DE TR FR ES IT KU FA</p></div>
+</section>
+</main>
+<div class="modal" id="uaosModal" onclick="closeLocked()">
+  <div class="modal-box" onclick="event.stopPropagation()">
+    <h2>Private Beta Only</h2>
+    <p>هذا الزر مقفول عمداً حالياً. التحميل والدفع والوصول الكامل سيتم تفعيلهم بعد الموافقة النهائية.</p>
+    <button class="btn primary" onclick="closeLocked()">OK</button>
+  </div>
+</div>
+<script src="assets/uaos-showroom.js"></script></body>
+</html>
+

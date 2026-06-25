@@ -1,0 +1,101 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>UAOS Public Preview</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate, max-age=0">
+<style>
+:root{color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:#050814;color:#eaf2ff;font-family:Segoe UI,Arial,sans-serif}
+header{padding:42px 22px;background:radial-gradient(circle at 20% 10%,rgba(57,255,182,.22),transparent 32%),linear-gradient(135deg,#132a58,#071024);border-bottom:1px solid #24375f}
+.wrap{max-width:1100px;margin:auto}
+h1{margin:0;font-size:42px;letter-spacing:-.04em}
+.sub{margin-top:12px;color:#b8c7e6;font-size:18px;line-height:1.55}
+.badges{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.badge{border:1px solid #2a3d66;background:#0b1428;border-radius:999px;padding:9px 12px;color:#dbe8ff;font-weight:700}
+main{max-width:1100px;margin:0 auto;padding:22px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+.card{background:#0b1428;border:1px solid #24375f;border-radius:18px;padding:20px;margin:14px 0;box-shadow:0 20px 60px rgba(0,0,0,.25)}
+h2{margin:0 0 10px;color:#39ffb6}
+p{line-height:1.6;color:#cbd8f2}
+a.btn,button{display:inline-block;background:#39ffb6;color:#06111f;text-decoration:none;border:0;border-radius:14px;padding:12px 16px;font-weight:900;margin:6px 6px 0 0;cursor:pointer}
+.secondary{background:#1f3158!important;color:#eaf2ff!important;border:1px solid #3a5288!important}
+.warn{color:#ffd166;font-weight:800}
+.ok{color:#39ffb6;font-weight:800}
+.small{font-size:13px;color:#9fb0cc}
+.modalBackdrop{position:fixed;inset:0;background:rgba(0,0,0,.75);display:none;align-items:center;justify-content:center;z-index:999999}
+.modal{max-width:560px;margin:20px;background:#071024;color:#eaf2ff;border:1px solid #2a3d66;border-radius:18px;padding:22px;box-shadow:0 20px 80px rgba(0,0,0,.45)}
+.modal h3{margin-top:0;color:#39ffb6}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <h1>UAOS - Universal Arranger OS</h1>
+    <div class="sub">Public preview for project review, Jobcenter discussion, and private funding conversations. This is a preview, not a public commercial release.</div>
+    <div class="badges">
+      <span class="badge">Internal Launch: PASS</span>
+      <span class="badge">Preview Only</span>
+      <span class="badge">Payment Disabled</span>
+      <span class="badge">No Checkout</span>
+      <span class="badge">No Real Writer Claim</span>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="card">
+    <h2>What UAOS is</h2>
+    <p>UAOS is a digital music and arranger workflow system for singers, keyboard players, producers, and arranger users. It organizes demo audio, MIDI material, preview packs, sampler concepts, and future arranger frameworks in one structured workflow.</p>
+    <p class="warn">Important: this preview is not a sale page. Payment, checkout, public download, and public release are disabled.</p>
+    <a class="btn" href="../uaos-showroom/index.html">Open Showroom</a>
+    <a class="btn secondary" href="../uaos-showroom/preview-player.html">Open Preview Player</a>
+    <button onclick="locked()">Funding / Access Info</button>
+  </div>
+
+  <div class="grid">
+    <div class="card">
+      <h2>Current proof</h2>
+      <p><span class="ok">Confirmed internally:</span> Owner App, Control Room, Showroom, Preview Player, language UI, WAV/MIDI previews, ZIP packs, tester package, feedback tracker, and owner self-test sweep.</p>
+    </div>
+    <div class="card">
+      <h2>For Jobcenter</h2>
+      <p>The project is presented as a realistic self-employment preparation case. The current need is practical: stable computer, backup, legal content resources, testing, and business preparation.</p>
+    </div>
+    <div class="card">
+      <h2>For private support</h2>
+      <p>Small support levels are realistic: equipment and beta preparation first. No unrealistic revenue claims, no public sale promise, and no unclear technical claims.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Safety locks</h2>
+    <p>Payment: disabled. Checkout: disabled. Public download/store: disabled. Real KORG/Yamaha/Roland/Ketron writer claim: locked until real device testing and proof.</p>
+    <p class="small">Generated: 20260625_085131</p>
+  </div>
+</main>
+
+<div class="modalBackdrop" id="m">
+  <div class="modal">
+    <h3>Private preview only</h3>
+    <p>This preview is for evaluation. Payment, checkout, public download, and public release are disabled. Funding/support discussions are separate and must be handled manually.</p>
+    <button onclick="closeModal()">OK</button>
+  </div>
+</div>
+
+<script>
+function locked(){document.getElementById('m').style.display='flex';return false;}
+function closeModal(){document.getElementById('m').style.display='none';}
+document.addEventListener('click',function(e){
+  var t=e.target;
+  if(!t)return;
+  var txt=((t.textContent||'')+' '+(t.getAttribute&&t.getAttribute('href')||'')).toLowerCase();
+  if(txt.includes('buy')||txt.includes('checkout')||txt.includes('payment')||txt.includes('download')){
+    e.preventDefault(); locked();
+  }
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>UAOS UX Navigation Hub</title>
+<link rel="stylesheet" href="assets/uaos-showroom.css">
+</head>
+<body>
+<main class="wrap">
+<section class="hero">
+  <div>
+    <h1><span class="glow">UAOS UX Navigation Hub</span></h1>
+    <p>All public showroom actions are connected here. Locked actions open a clear Private Beta modal.</p>
+    <div class="btns">
+      <a class="btn primary" href="index.html">Main Showroom</a>
+      <a class="btn primary" href="preview-player.html">Preview Player</a>
+      <a class="btn" href="libraries.html">Libraries</a>
+      <a class="btn" href="product.html">Product</a>
+      <a class="btn" href="features.html">Features</a>
+      <a class="btn" href="pricing-preview.html">Pricing Preview</a>
+      <a class="btn" href="contact.html">Request Access</a>
+      <button class="btn primary" data-tone>Play Demo Tone</button>
+      <a class="btn locked" href="#" data-locked>Download Disabled</a>
+      <a class="btn locked" href="#" data-locked>Payment Disabled</a>
+    </div>
+  </div>
+</section>
+
+<section class="grid">
+  <div class="card"><h2>Real Links</h2><p>Main pages, preview player, libraries, pricing and contact are connected.</p></div>
+  <div class="card"><h2>Real Audio</h2><p>Play Demo Tone works through WebAudio. Preview Player contains public synthetic WAV assets.</p></div>
+  <div class="card"><h2>Locked Actions</h2><p>Payment and download buttons are intentionally locked and show a clear modal.</p></div>
+</section>
+</main>
+
+<div class="modal" id="uaosModal" onclick="closeLocked()">
+  <div class="modal-box" onclick="event.stopPropagation()">
+    <h2>Private Beta Only</h2>
+    <p>Downloads and payments are disabled until owner approval.</p>
+    <button class="btn primary" onclick="closeLocked()">OK</button>
+  </div>
+</div>
+
+<script src="assets/uaos-showroom.js"></script>
+</body>
+</html>
