@@ -21,6 +21,11 @@ button {
   border: 0;
 }
 
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.48;
+}
+
 .workstationShell {
   min-height: 100vh;
   display: grid;
@@ -110,7 +115,8 @@ button {
 .deskHeader span,
 .statusBar span,
 .safeNote,
-.helpPanel li {
+.helpPanel li,
+.emptyState span {
   color: #aeb9c7;
 }
 
@@ -136,7 +142,8 @@ button {
 .transport button,
 .exportGrid button,
 .sectionBlock,
-.instrumentCard {
+.instrumentCard,
+.templateCard {
   border-radius: 8px;
   cursor: pointer;
 }
@@ -237,6 +244,55 @@ button {
   padding: 9px 10px;
 }
 
+.createButton {
+  align-self: end;
+}
+
+.templateGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.templateCard {
+  min-height: 122px;
+  display: grid;
+  align-content: start;
+  gap: 8px;
+  padding: 13px;
+  color: #eef4f8;
+  text-align: left;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(226, 232, 240, 0.1);
+}
+
+.templateCard.selected,
+.templateCard:hover {
+  border-color: rgba(216, 255, 119, 0.55);
+}
+
+.templateCard span,
+.templateCard small {
+  color: #aeb9c7;
+  line-height: 1.35;
+}
+
+.generatorSummary {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 12px;
+  padding: 12px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.055);
+}
+
+.generatorSummary span {
+  color: #aeb9c7;
+}
+
 .timeline,
 .instrumentGrid,
 .trackList,
@@ -268,20 +324,34 @@ button {
 }
 
 .sectionBlock i,
-.trackRow i {
+.trackRow i,
+.playMeter {
   height: 8px;
   overflow: hidden;
   border-radius: 99px;
   background: rgba(255, 255, 255, 0.11);
 }
 
-.sectionBlock i {
+.sectionBlock i b,
+.trackRow i b,
+.playMeter i {
   display: block;
+  height: 100%;
+  border-radius: 99px;
+  background: linear-gradient(90deg, #d8ff77, #72d6c9);
 }
 
-.sectionBlock i,
-.sectionBlock i[style] {
-  background: linear-gradient(90deg, #d8ff77, #72d6c9);
+.playMeter {
+  flex: 1 1 180px;
+}
+
+.playMeter i {
+  width: 26%;
+  transition: width 180ms ease;
+}
+
+.playMeter i.on {
+  width: 88%;
 }
 
 .sectionBlock small,
@@ -323,11 +393,15 @@ button {
   min-height: 42px;
 }
 
-.trackRow i b {
-  display: block;
-  height: 100%;
-  border-radius: 99px;
-  background: #72d6c9;
+.emptyState {
+  display: grid;
+  gap: 6px;
+  min-height: 76px;
+  align-content: center;
+  padding: 14px;
+  border: 1px solid rgba(226, 232, 240, 0.11);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.05);
 }
 
 .exportPanel,
@@ -381,6 +455,10 @@ button {
     grid-template-columns: 1fr;
     grid-column: auto;
   }
+
+  .generatorSummary {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 760px) {
@@ -399,13 +477,15 @@ button {
   .instrumentGrid,
   .formGrid,
   .exportGrid,
-  .trackRow {
+  .trackRow,
+  .templateGrid {
     grid-template-columns: 1fr;
   }
 
   .sideRail button:not(.brandMark),
   .sessionActions button,
-  .transport button {
+  .transport button,
+  .createButton {
     width: 100%;
   }
 }

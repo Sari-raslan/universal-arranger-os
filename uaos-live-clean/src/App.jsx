@@ -1,101 +1,192 @@
 import { useMemo, useState } from "react";
 import "./App.css";
 
-const sectionTemplates = [
-  { name: "Intro", bars: 4, energy: 32 },
-  { name: "Verse", bars: 16, energy: 52 },
-  { name: "Chorus", bars: 16, energy: 82 },
-  { name: "Bridge", bars: 8, energy: 64 },
-  { name: "Final", bars: 8, energy: 88 },
+const templates = [
+  {
+    id: "oriental-pop",
+    name: "Modern Oriental Pop",
+    tempo: 96,
+    key: "D minor",
+    mood: "Warm vocal song with live arranger energy",
+    sections: ["Intro", "Verse", "Chorus", "Bridge", "Final"],
+  },
+  {
+    id: "live-dabke",
+    name: "Live Dabke",
+    tempo: 112,
+    key: "G minor",
+    mood: "Fast stage rhythm for keyboard performance",
+    sections: ["Intro", "Main", "Break", "Solo", "Main", "Ending"],
+  },
+  {
+    id: "studio-ballad",
+    name: "Studio Ballad",
+    tempo: 78,
+    key: "C minor",
+    mood: "Slow emotional arrangement for singer demos",
+    sections: ["Intro", "Verse", "Pre Chorus", "Chorus", "Final"],
+  },
 ];
 
-const instruments = [
-  { name: "Studio Grand", family: "Keys", role: "Main harmony", color: "#f8fafc" },
-  { name: "Warm Oud", family: "Strings", role: "Lead phrase", color: "#f7c873" },
-  { name: "Arabic Violin", family: "Strings", role: "Counter melody", color: "#f4907a" },
-  { name: "Deep Bass", family: "Bass", role: "Low groove", color: "#8bd3dd" },
-  { name: "Live Drums", family: "Percussion", role: "Rhythm engine", color: "#9fe870" },
-  { name: "Pad Air", family: "Synth", role: "Atmosphere", color: "#b6a7ff" },
+const library = [
+  { id: "live-drums", name: "Live Drums", family: "Percussion", role: "Rhythm engine", color: "#9fe870", ready: true },
+  { id: "deep-bass", name: "Deep Bass", family: "Bass", role: "Low groove", color: "#8bd3dd", ready: true },
+  { id: "studio-grand", name: "Studio Grand", family: "Keys", role: "Chord support", color: "#f8fafc", ready: true },
+  { id: "warm-oud", name: "Warm Oud", family: "Strings", role: "Lead phrase", color: "#f7c873", ready: true },
+  { id: "arabic-violin", name: "Arabic Violin", family: "Strings", role: "Counter melody", color: "#f4907a", ready: true },
+  { id: "pad-air", name: "Pad Air", family: "Synth", role: "Atmosphere", color: "#b6a7ff", ready: true },
 ];
 
-const exportOptions = [
-  ["MIDI", "Arrangement notes and track map"],
-  ["Style", "Keyboard-style package preview"],
-  ["Project", "Complete UAOS workspace"],
-  ["All", "Everything in one safe bundle"],
-];
+const starterInstrumentIds = ["live-drums", "deep-bass", "studio-grand", "warm-oud", "pad-air"];
 
-const defaultProject = {
-  title: "New Song Idea",
-  artist: "Local session",
-  style: "Modern Oriental Pop",
-  key: "D minor",
-  tempo: 96,
-};
+function makeProject(template, title) {
+  return {
+    title: title.trim() || "New UAOS Song",
+    artist: "Local session",
+    templateId: template.id,
+    style: template.name,
+    key: template.key,
+    tempo: template.tempo,
+    mood: template.mood,
+    instruments: starterInstrumentIds,
+    generated: false,
+    sections: template.sections.map((name, index) => ({
+      id: `${template.id}-${name}-${index}`,
+      name,
+      bars: name === "Intro" || name === "Ending" || name === "Final" ? 4 : 8,
+      chord: ["Dm", "Bb", "C", "A7", "Gm", "F"][index] || template.key,
+      energy: index === 0 ? 34 : index === template.sections.length - 1 ? 88 : 58 + index * 7,
+    })),
+    tracks: [],
+  };
+}
 
-function buildArrangement(project, intensity) {
-  return sectionTemplates.map((section, index) => ({
-    ...section,
-    energy: Math.min(100, section.energy + intensity + index * 2),
-    chord: ["Dm", "Bb", "C", "A7", "Dm"][index],
-  }));
+function buildTracks(project) {
+  return library
+    .filter((instrument) => project.instruments.includes(instrument.id))
+    .map((instrument, index) => ({
+      id: `${instrument.id}-${index}`,
+      name: instrument.name,
+      family: instrument.family,
+      role: instrument.role,
+      pattern:
+        instrument.family === "Percussion"
+          ? "Live groove"
+          : instrument.family === "Bass"
+            ? "Root movement"
+            : instrument.family === "Synth"
+              ? "Wide pad layer"
+              : "Chord phrase",
+      level: Math.min(92, 68 + index * 5),
+    }));
+}
+
+function downloadTextFile(filename, text) {
+  const blob = new Blob([text], { type: "application/json;charset=utf-8" });
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement("a");
+  link.href = url;
+  link.download = filename;
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+  URL.revokeObjectURL(url);
+}
+
+function cleanFileName(value) {
+  return value.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "") || "uaos-project";
 }
 
 function App() {
   const [activeView, setActiveView] = useState("dashboard");
-  const [project, setProject] = useState(defaultProject);
-  const [intensity, setIntensity] = useState(12);
-  const [selectedInstrument, setSelectedInstrument] = useState(instruments[1].name);
+  const [selectedTemplateId, setSelectedTemplateId] = useState(templates[0].id);
+  const [projectTitle, setProjectTitle] = useState("My UAOS Song");
+  const [project, setProject] = useState(() => makeProject(templates[0], "My UAOS Song"));
+  const [selectedSectionId, setSelectedSectionId] = useState(project.sections[0]?.id || "");
   const [playing, setPlaying] = useState(false);
-  const [message, setMessage] = useState("Project ready.");
+  const [message, setMessage] = useState("Ready for Real Workflow V2.");
 
-  const arrangement = useMemo(
-    () => buildArrangement(project, intensity),
-    [project, intensity],
+  const currentTemplate = useMemo(
+    () => templates.find((template) => template.id === selectedTemplateId) || templates[0],
+    [selectedTemplateId],
   );
 
-  const tracks = useMemo(
-    () => [
-      { name: "Drums", instrument: "Live Drums", level: 86 },
-      { name: "Bass", instrument: "Deep Bass", level: 70 },
-      { name: "Chords", instrument: "Studio Grand", level: 76 },
-      { name: "Lead", instrument: selectedInstrument, level: 82 },
-      { name: "Pad", instrument: "Pad Air", level: 58 },
-    ],
-    [selectedInstrument],
+  const selectedInstruments = useMemo(
+    () => library.filter((instrument) => project.instruments.includes(instrument.id)),
+    [project.instruments],
   );
+
+  const totalBars = useMemo(
+    () => project.sections.reduce((sum, section) => sum + section.bars, 0),
+    [project.sections],
+  );
+
+  function createProject() {
+    const nextProject = makeProject(currentTemplate, projectTitle);
+    setProject(nextProject);
+    setSelectedSectionId(nextProject.sections[0]?.id || "");
+    setPlaying(false);
+    setMessage("New project created.");
+    setActiveView("project");
+  }
 
   function updateProject(field, value) {
-    setProject((current) => ({ ...current, [field]: value }));
+    setProject((current) => ({ ...current, [field]: value, generated: false, tracks: [] }));
+    setMessage("Project settings changed.");
+  }
+
+  function toggleInstrument(id) {
+    setProject((current) => {
+      const exists = current.instruments.includes(id);
+      const instruments = exists
+        ? current.instruments.filter((instrumentId) => instrumentId !== id)
+        : [...current.instruments, id];
+
+      return { ...current, instruments, generated: false, tracks: [] };
+    });
+    setMessage("Instrument selection changed.");
+    setActiveView("library");
   }
 
   function generateArrangement() {
-    setMessage(`${project.title} arranged as ${project.style}.`);
+    const tracks = buildTracks(project);
+    setProject((current) => ({
+      ...current,
+      generated: true,
+      tracks,
+      sections: current.sections.map((section, index) => ({
+        ...section,
+        energy: Math.min(96, section.energy + 8 + index * 2),
+      })),
+    }));
+    setMessage("Arrangement generated.");
     setActiveView("generator");
   }
 
-  function exportProject(type) {
-    const payload = {
-      type,
+  function exportManifest() {
+    const manifest = {
+      product: "UAOS Universal Arranger OS",
+      mode: "Real Workflow V2",
+      safety: {
+        localOnly: true,
+        publicPublish: false,
+        keyboardOutput: "locked",
+      },
       project,
-      leadInstrument: selectedInstrument,
-      sections: arrangement,
-      tracks,
-      createdBy: "UAOS Real App UI V1",
-      hardwareWriter: "disabled",
+      selectedInstruments,
+      summary: {
+        sections: project.sections.length,
+        tracks: project.tracks.length,
+        bars: totalBars,
+        generated: project.generated,
+      },
     };
-    const blob = new Blob([JSON.stringify(payload, null, 2)], {
-      type: "application/json",
-    });
-    const url = URL.createObjectURL(blob);
-    const link = document.createElement("a");
-    link.href = url;
-    link.download = `uaos-${type.toLowerCase()}-${project.title
-      .toLowerCase()
-      .replace(/[^a-z0-9]+/g, "-")}.json`;
-    link.click();
-    URL.revokeObjectURL(url);
-    setMessage(`${type} export prepared locally.`);
+
+    downloadTextFile(
+      `${cleanFileName(project.title)}-uaos-manifest.json`,
+      JSON.stringify(manifest, null, 2),
+    );
+    setMessage("Local manifest exported.");
   }
 
   return (
@@ -128,7 +219,7 @@ function App() {
       <section className="mainDesk">
         <header className="deskHeader">
           <div>
-            <p className="kicker">Universal Arranger OS</p>
+            <p className="kicker">Real Workflow V2</p>
             <h1>{project.title}</h1>
             <span>{project.style} | {project.key} | {project.tempo} BPM</span>
           </div>
@@ -144,22 +235,23 @@ function App() {
 
         <section className="statusBar" role="status">
           <span>{message}</span>
-          <strong>Local workspace</strong>
-          <strong>Writer off</strong>
+          <strong>{project.generated ? "Generated" : "Draft"}</strong>
+          <strong>{project.generated ? "Export ready" : "Needs generate"}</strong>
+          <strong>Keyboard output locked</strong>
         </section>
 
         <section className="contentGrid">
           <article className="projectPanel">
             <div className="panelTitle">
-              <p className="kicker">Project</p>
-              <h2>Session setup</h2>
+              <p className="kicker">Step 1</p>
+              <h2>New Project</h2>
             </div>
             <div className="formGrid">
               <label>
-                Song title
+                Project name
                 <input
-                  value={project.title}
-                  onChange={(event) => updateProject("title", event.target.value)}
+                  value={projectTitle}
+                  onChange={(event) => setProjectTitle(event.target.value)}
                 />
               </label>
               <label>
@@ -170,15 +262,16 @@ function App() {
                 />
               </label>
               <label>
-                Style
+                Template
                 <select
-                  value={project.style}
-                  onChange={(event) => updateProject("style", event.target.value)}
+                  value={selectedTemplateId}
+                  onChange={(event) => setSelectedTemplateId(event.target.value)}
                 >
-                  <option>Modern Oriental Pop</option>
-                  <option>Dance Arranger</option>
-                  <option>Ballad Studio</option>
-                  <option>Live Dabke</option>
+                  {templates.map((template) => (
+                    <option key={template.id} value={template.id}>
+                      {template.name}
+                    </option>
+                  ))}
                 </select>
               </label>
               <label>
@@ -203,38 +296,54 @@ function App() {
                   onChange={(event) => updateProject("tempo", Number(event.target.value))}
                 />
               </label>
-              <label>
-                Arrangement power
-                <input
-                  max="28"
-                  min="0"
-                  type="range"
-                  value={intensity}
-                  onChange={(event) => setIntensity(Number(event.target.value))}
-                />
-              </label>
+              <button className="primaryButton createButton" onClick={createProject} type="button">
+                Create project
+              </button>
+            </div>
+
+            <div className="templateGrid">
+              {templates.map((template) => (
+                <button
+                  className={template.id === selectedTemplateId ? "templateCard selected" : "templateCard"}
+                  key={template.id}
+                  onClick={() => setSelectedTemplateId(template.id)}
+                  type="button"
+                >
+                  <strong>{template.name}</strong>
+                  <span>{template.mood}</span>
+                  <small>{template.tempo} BPM | {template.key}</small>
+                </button>
+              ))}
             </div>
           </article>
 
           <article className="arrangementPanel">
             <div className="panelTitle">
-              <p className="kicker">Generator</p>
-              <h2>Song sections</h2>
+              <p className="kicker">Step 2</p>
+              <h2>Generator</h2>
+            </div>
+            <div className="generatorSummary">
+              <strong>{project.style}</strong>
+              <span>{selectedInstruments.length} instruments | {totalBars} bars</span>
+              <button className="primaryButton" onClick={generateArrangement} type="button">
+                Generate Arrangement
+              </button>
             </div>
             <div className="timeline">
-              {arrangement.map((section) => (
+              {project.sections.map((section) => (
                 <button
-                  className={activeView === "generator" ? "sectionBlock focus" : "sectionBlock"}
-                  key={section.name}
+                  className={selectedSectionId === section.id ? "sectionBlock focus" : "sectionBlock"}
+                  key={section.id}
                   onClick={() => {
-                    setActiveView("generator");
+                    setSelectedSectionId(section.id);
                     setMessage(`${section.name} selected.`);
+                    setActiveView("generator");
                   }}
                   type="button"
                 >
                   <strong>{section.name}</strong>
                   <span>{section.bars} bars</span>
-                  <i style={{ width: `${section.energy}%` }} />
+                  <i><b style={{ width: `${section.energy}%` }} /></i>
                   <small>{section.chord}</small>
                 </button>
               ))}
@@ -243,83 +352,107 @@ function App() {
 
           <article className="libraryPanel">
             <div className="panelTitle">
-              <p className="kicker">Library</p>
-              <h2>Instruments</h2>
+              <p className="kicker">Step 3</p>
+              <h2>Instrument Library</h2>
             </div>
             <div className="instrumentGrid">
-              {instruments.map((instrument) => (
-                <button
-                  className={selectedInstrument === instrument.name ? "instrumentCard selected" : "instrumentCard"}
-                  key={instrument.name}
-                  onClick={() => {
-                    setSelectedInstrument(instrument.name);
-                    setActiveView("library");
-                    setMessage(`${instrument.name} loaded.`);
-                  }}
-                  type="button"
-                >
-                  <i style={{ background: instrument.color }} />
-                  <strong>{instrument.name}</strong>
-                  <span>{instrument.family}</span>
-                  <small>{instrument.role}</small>
-                </button>
-              ))}
+              {library.map((instrument) => {
+                const selected = project.instruments.includes(instrument.id);
+                return (
+                  <button
+                    className={selected ? "instrumentCard selected" : "instrumentCard"}
+                    key={instrument.id}
+                    onClick={() => toggleInstrument(instrument.id)}
+                    type="button"
+                  >
+                    <i style={{ background: instrument.color }} />
+                    <strong>{instrument.name}</strong>
+                    <span>{instrument.family}</span>
+                    <small>{instrument.ready ? instrument.role : "Preview"}</small>
+                  </button>
+                );
+              })}
             </div>
           </article>
 
           <article className="mixerPanel">
             <div className="panelTitle">
-              <p className="kicker">Player</p>
-              <h2>Transport and mix</h2>
+              <p className="kicker">Step 4</p>
+              <h2>Player / Transport</h2>
             </div>
             <div className="transport">
               <button onClick={() => setPlaying((value) => !value)} type="button">
                 {playing ? "Pause" : "Play"}
               </button>
-              <button onClick={() => setMessage("Returned to start.")} type="button">
+              <button
+                onClick={() => {
+                  setPlaying(false);
+                  setMessage("Preview stopped.");
+                }}
+                type="button"
+              >
                 Stop
               </button>
-              <strong>{playing ? "Playing preview" : "Ready"}</strong>
+              <strong>{playing ? "Preview running" : "Preview stopped"}</strong>
+              <div className="playMeter"><i className={playing ? "on" : ""} /></div>
             </div>
             <div className="trackList">
-              {tracks.map((track) => (
-                <div className="trackRow" key={track.name}>
-                  <span>{track.name}</span>
-                  <strong>{track.instrument}</strong>
-                  <i><b style={{ width: `${track.level}%` }} /></i>
+              {project.tracks.length ? (
+                project.tracks.map((track) => (
+                  <div className="trackRow" key={track.id}>
+                    <span>{track.name}</span>
+                    <strong>{track.pattern}</strong>
+                    <i><b style={{ width: `${track.level}%` }} /></i>
+                  </div>
+                ))
+              ) : (
+                <div className="emptyState">
+                  <strong>No generated tracks yet.</strong>
+                  <span>Use Generate Arrangement to create the session tracks.</span>
                 </div>
-              ))}
+              )}
             </div>
           </article>
 
           <article className="exportPanel">
             <div className="panelTitle">
-              <p className="kicker">Export</p>
-              <h2>Local output center</h2>
+              <p className="kicker">Step 5</p>
+              <h2>Export Center</h2>
             </div>
             <div className="exportGrid">
-              {exportOptions.map(([type, detail]) => (
-                <button key={type} onClick={() => exportProject(type)} type="button">
-                  <strong>{type}</strong>
-                  <span>{detail}</span>
-                </button>
-              ))}
+              <button disabled={!project.generated} onClick={exportManifest} type="button">
+                <strong>Manifest</strong>
+                <span>Download a local project summary</span>
+              </button>
+              <button disabled type="button">
+                <strong>MIDI Draft</strong>
+                <span>Planned DAW handoff</span>
+              </button>
+              <button disabled type="button">
+                <strong>Style Draft</strong>
+                <span>Review-only package concept</span>
+              </button>
+              <button disabled={!project.generated} onClick={exportManifest} type="button">
+                <strong>All</strong>
+                <span>Safe local bundle manifest</span>
+              </button>
             </div>
             <p className="safeNote">
-              Hardware writing stays disabled in this version. Exports are local files only.
+              Exports are local review files. Keyboard output remains locked.
             </p>
           </article>
 
           <article className="helpPanel">
             <div className="panelTitle">
               <p className="kicker">Help</p>
-              <h2>Daily workflow</h2>
+              <h2>How UAOS works now</h2>
             </div>
             <ol>
-              <li>Create or rename a project.</li>
-              <li>Choose a style, tempo, key, and lead sound.</li>
-              <li>Generate the arrangement and preview the player.</li>
-              <li>Export a local package when the idea is ready.</li>
+              <li>Create a project from a musical template.</li>
+              <li>Choose the key, tempo, artist, and instrument library.</li>
+              <li>Generate the arrangement to create sections and tracks.</li>
+              <li>Preview the session with the player transport.</li>
+              <li>Export a local manifest when the idea is ready.</li>
             </ol>
           </article>
         </section>
