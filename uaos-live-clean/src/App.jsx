@@ -1,11 +1,14 @@
 import { useMemo, useState } from "react";
 import "./App.css";
 
+const STORAGE_KEY = "uaos_real_workflow_v4_project";
+
 const styleTemplates = [
   {
     id: "arabic-pop-ballad",
     name: "Arabic Pop Ballad",
     description: "Warm singer arrangement with emotional strings and a clear chorus lift.",
+    market: "Singer demo, Arabic pop, emotional performance",
     tempo: 86,
     key: "D minor",
     groove: "Soft 4/4",
@@ -22,6 +25,7 @@ const styleTemplates = [
     id: "modern-dabke-live",
     name: "Modern Dabke Live",
     description: "Live keyboard energy with strong rhythm sections and a solo break.",
+    market: "Live keyboard, party, dance, fast stage performance",
     tempo: 112,
     key: "G minor",
     groove: "Dabke 4/4",
@@ -38,6 +42,7 @@ const styleTemplates = [
     id: "cinematic-strings",
     name: "Cinematic Strings",
     description: "Slow emotional arrangement for demos, film cues, and dramatic song ideas.",
+    market: "Film, dramatic demo, orchestral song sketch",
     tempo: 76,
     key: "C minor",
     groove: "Slow cinematic",
@@ -117,13 +122,18 @@ function createProject(template, title) {
     templateId: template.id,
     templateName: template.name,
     description: template.description,
+    market: template.market,
     tempo: template.tempo,
     key: template.key,
     groove: template.groove,
     sections: template.sections,
     enabledTracks: defaultTracks,
     arrangement: [],
+    notes: "Write your song idea here.",
+    createdAt: new Date().toISOString(),
+    updatedAt: new Date().toISOString(),
     generatedAt: null,
+    savedAt: null,
   };
 }
 
@@ -136,7 +146,7 @@ function buildArrangement(project) {
         name: track.name,
         family: track.family,
         purpose: track.purpose,
-        pattern: track.patternByStyle[project.templateId],
+        pattern: track.patternByStyle[project.templateId] || "Musical pattern",
         intensity: Math.min(100, Math.max(10, section.energy + trackIndex * 2 - sectionIndex)),
       }));
 
@@ -178,7 +188,8 @@ function App() {
   const [project, setProject] = useState(() => createProject(styleTemplates[0], "My UAOS Arrangement"));
   const [selectedSectionName, setSelectedSectionName] = useState("Intro");
   const [playing, setPlaying] = useState(false);
-  const [message, setMessage] = useState("Ready for Real Workflow V3.");
+  const [message, setMessage] = useState("Ready for Real Workflow V4.");
+  const [lastExportName, setLastExportName] = useState("");
 
   const selectedTemplate = useMemo(
     () => styleTemplates.find((template) => template.id === templateId) || styleTemplates[0],
@@ -201,12 +212,28 @@ function App() {
   );
 
   const generated = Boolean(project.generatedAt);
+  const completionScore = Math.round(
+    (project.title ? 20 : 0)
+      + (project.sections.length ? 20 : 0)
+      + (project.enabledTracks.length ? 20 : 0)
+      + (generated ? 25 : 0)
+      + (project.savedAt ? 15 : 0),
+  );
+
+  function updateProject(patch) {
+    setProject((current) => ({
+      ...current,
+      ...patch,
+      updatedAt: new Date().toISOString(),
+    }));
+  }
 
   function startProject() {
     const nextProject = createProject(selectedTemplate, projectTitle);
     setProject(nextProject);
     setSelectedSectionName(nextProject.sections[0]?.name || "Intro");
     setPlaying(false);
+    setLastExportName("");
     setMessage("New musical project created.");
     setActiveView("project");
   }
@@ -223,6 +250,7 @@ function App() {
         enabledTracks,
         arrangement: [],
         generatedAt: null,
+        updatedAt: new Date().toISOString(),
       };
     });
     setMessage("Track selection updated.");
@@ -235,17 +263,56 @@ function App() {
       ...current,
       arrangement: nextArrangement,
       generatedAt: new Date().toISOString(),
+      updatedAt: new Date().toISOString(),
     }));
     setSelectedSectionName(nextArrangement[0]?.name || "Intro");
     setMessage("Arrangement generated with sections and tracks.");
     setActiveView("arranger");
   }
 
-  function exportManifest() {
-    const manifest = {
+  function saveProject() {
+    const savedProject = {
+      ...project,
+      arrangement,
+      savedAt: new Date().toISOString(),
+      updatedAt: new Date().toISOString(),
+    };
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(savedProject));
+    setProject(savedProject);
+    setMessage("Project saved in this browser.");
+  }
+
+  function loadProject() {
+    const rawProject = localStorage.getItem(STORAGE_KEY);
+    if (!rawProject) {
+      setMessage("No saved project found.");
+      return;
+    }
+
+    try {
+      const loadedProject = JSON.parse(rawProject);
+      setProject(loadedProject);
+      setProjectTitle(loadedProject.title || "My UAOS Arrangement");
+      setTemplateId(loadedProject.templateId || styleTemplates[0].id);
+      setSelectedSectionName(loadedProject.sections?.[0]?.name || "Intro");
+      setPlaying(false);
+      setMessage("Saved project loaded.");
+      setActiveView("save");
+    } catch {
+      setMessage("Saved project could not be loaded.");
+    }
+  }
+
+  function clearSavedProject() {
+    localStorage.removeItem(STORAGE_KEY);
+    setMessage("Saved browser project cleared.");
+  }
+
+  function createManifest() {
+    return {
       product: "UAOS - Universal Arranger OS",
-      version: "Real Workflow V3",
-      purpose: "Safe local project manifest for review, demo, and development handoff",
+      version: "Real Workflow V4",
+      purpose: "Safe local project manifest for review, demo, development handoff, and funding presentation",
       safety: {
         publicPublish: false,
         realKeyboardOutput: false,
@@ -258,6 +325,7 @@ function App() {
       summary: {
         title: project.title,
         style: project.templateName,
+        market: project.market,
         tempo: project.tempo,
         key: project.key,
         groove: project.groove,
@@ -265,11 +333,40 @@ function App() {
         tracks: project.enabledTracks.length,
         totalBars,
         generated,
+        saved: Boolean(project.savedAt),
+        completionScore,
       },
+      nextSafeSteps: [
+        "Add MIDI draft export only after local QA approval",
+        "Keep keyboard output blocked",
+        "Use manifest for review, support, or developer handoff",
+      ],
     };
+  }
 
-    downloadJson(`${cleanFilename(project.title)}_uaos_v3_manifest.json`, manifest);
+  function exportManifest() {
+    const filename = `${cleanFilename(project.title)}_uaos_v4_manifest.json`;
+    downloadJson(filename, createManifest());
+    setLastExportName(filename);
     setMessage("Safe local manifest downloaded.");
+  }
+
+  function exportProjectPackage() {
+    const filename = `${cleanFilename(project.title)}_uaos_safe_package.json`;
+    downloadJson(filename, {
+      type: "UAOS_SAFE_LOCAL_PROJECT_PACKAGE",
+      exportedAt: new Date().toISOString(),
+      manifest: createManifest(),
+      readableSummary: {
+        title: project.title,
+        oneLine: `${project.templateName} | ${project.tempo} BPM | ${project.key}`,
+        description: project.description,
+        projectUse: project.market,
+        status: generated ? "Generated arrangement ready for review" : "Draft project not generated yet",
+      },
+    });
+    setLastExportName(filename);
+    setMessage("Safe project package downloaded.");
   }
 
   return (
@@ -280,7 +377,8 @@ function App() {
         </button>
         {[
           ["dashboard", "Dashboard"],
-          ["project", "New Project"],
+          ["project", "Project"],
+          ["save", "Save / Load"],
           ["arranger", "Arranger"],
           ["tracks", "Tracks"],
           ["player", "Player"],
@@ -302,12 +400,12 @@ function App() {
       <section className="mainDesk">
         <header className="deskHeader heroHeader">
           <div>
-            <p className="kicker">Real Workflow V3</p>
+            <p className="kicker">Real Workflow V4</p>
             <h1>{project.title}</h1>
             <span>{project.templateName} | {project.key} | {project.tempo} BPM | {project.groove}</span>
             <p className="heroCopy">
-              UAOS now works more like a real arranger workstation: musical sections,
-              named tracks, chord plans, energy levels, preview state, and safe local export.
+              UAOS now behaves more like a real local workstation: create, generate,
+              save, load, inspect, and export a clear safe project package.
             </p>
           </div>
           <div className="currentCard">
@@ -318,12 +416,12 @@ function App() {
               <b>{project.tempo} BPM</b>
               <b>{project.key}</b>
               <b>{project.groove}</b>
-              <b>{generated ? "Generated" : "Draft"}</b>
+              <b>{completionScore}% Ready</b>
             </div>
           </div>
           <div className="sessionActions">
-            <button className="softButton" onClick={() => setActiveView("project")} type="button">
-              New
+            <button className="softButton" onClick={() => setActiveView("save")} type="button">
+              Save
             </button>
             <button className="primaryButton" onClick={generateArrangement} type="button">
               Generate
@@ -336,6 +434,7 @@ function App() {
           <strong>{project.sections.length} sections</strong>
           <strong>{project.enabledTracks.length} tracks</strong>
           <strong>{totalBars} bars</strong>
+          <strong>{completionScore}% ready</strong>
           <strong>Output locked</strong>
         </section>
 
@@ -343,7 +442,7 @@ function App() {
           <article className="projectPanel">
             <div className="panelTitle">
               <p className="kicker">Step 1</p>
-              <h2>New Project</h2>
+              <h2>Project Setup</h2>
             </div>
             <div className="formGrid">
               <label>
@@ -370,7 +469,13 @@ function App() {
                 Create project
               </button>
             </div>
-
+            <label className="notesField">
+              Project notes
+              <textarea
+                value={project.notes}
+                onChange={(event) => updateProject({ notes: event.target.value })}
+              />
+            </label>
             <div className="templateGrid">
               {styleTemplates.map((template) => (
                 <button
@@ -387,9 +492,33 @@ function App() {
             </div>
           </article>
 
-          <article className="arrangementPanel">
+          <article className="savePanel" id="save">
             <div className="panelTitle">
               <p className="kicker">Step 2</p>
+              <h2>Save / Load Project</h2>
+            </div>
+            <div className="saveGrid">
+              <article>
+                <strong>Save current project</strong>
+                <p>Stores this UAOS project locally in this browser.</p>
+                <button className="primaryButton" onClick={saveProject} type="button">Save Project</button>
+              </article>
+              <article>
+                <strong>Load last project</strong>
+                <p>Restores the last project saved in this browser.</p>
+                <button className="softButton" onClick={loadProject} type="button">Load Last Project</button>
+              </article>
+              <article>
+                <strong>Clear saved project</strong>
+                <p>Removes only the browser-saved UAOS project.</p>
+                <button className="softButton" onClick={clearSavedProject} type="button">Clear Saved</button>
+              </article>
+            </div>
+          </article>
+
+          <article className="arrangementPanel">
+            <div className="panelTitle">
+              <p className="kicker">Step 3</p>
               <h2>Arranger Timeline</h2>
             </div>
             <div className="generatorSummary">
@@ -422,7 +551,7 @@ function App() {
 
           <article className="libraryPanel">
             <div className="panelTitle">
-              <p className="kicker">Step 3</p>
+              <p className="kicker">Step 4</p>
               <h2>Tracks and Instruments</h2>
             </div>
             <div className="trackRoleGrid">
@@ -447,7 +576,7 @@ function App() {
 
           <article className="mixerPanel">
             <div className="panelTitle">
-              <p className="kicker">Step 4</p>
+              <p className="kicker">Step 5</p>
               <h2>Player and Section Detail</h2>
             </div>
             <div className="transport">
@@ -488,26 +617,29 @@ function App() {
 
           <article className="exportPanel">
             <div className="panelTitle">
-              <p className="kicker">Step 5</p>
+              <p className="kicker">Step 6</p>
               <h2>Export Center</h2>
             </div>
             <div className="exportGrid three">
               <button onClick={exportManifest} type="button">
-                <strong>V3 Manifest</strong>
-                <span>Sections, chords, track roles, energy, and safety gates</span>
+                <strong>V4 Manifest</strong>
+                <span>Project, sections, tracks, notes, summary, and safety gates</span>
+              </button>
+              <button onClick={exportProjectPackage} type="button">
+                <strong>Safe Project Package</strong>
+                <span>Richer local package for review and handoff</span>
               </button>
               <button disabled type="button">
-                <strong>MIDI Handoff</strong>
-                <span>Future safe DAW review</span>
-              </button>
-              <button disabled type="button">
-                <strong>Style Output</strong>
-                <span>Blocked until real device tests and approval</span>
+                <strong>Keyboard Output</strong>
+                <span>Blocked until real tests and approval</span>
               </button>
             </div>
-            <p className="safeNote">
-              Export is a local review manifest. Keyboard output remains blocked.
-            </p>
+            <div className="projectSummary">
+              <strong>Project Summary</strong>
+              <p>{project.templateName} | {project.tempo} BPM | {project.key} | {project.groove}</p>
+              <p>{project.market}</p>
+              <p>Completion: {completionScore}% | Last export: {lastExportName || "None yet"}</p>
+            </div>
           </article>
 
           <article className="helpPanel">
@@ -517,10 +649,10 @@ function App() {
             </div>
             <ol>
               <li>Create a project from a musical style.</li>
-              <li>Generate sections with chords and energy.</li>
-              <li>Choose drums, bass, chords, pad, and melody guide.</li>
+              <li>Add project notes and save it in this browser.</li>
+              <li>Generate sections with chords and tracks.</li>
               <li>Preview the selected section and its track patterns.</li>
-              <li>Download a safe local manifest.</li>
+              <li>Download safe local files.</li>
             </ol>
           </article>
         </section>

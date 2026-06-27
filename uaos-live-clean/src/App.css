@@ -13,7 +13,8 @@ body {
 
 button,
 input,
-select {
+select,
+textarea {
   font: inherit;
 }
 
@@ -257,7 +258,8 @@ button:disabled {
 .libraryPanel,
 .mixerPanel,
 .exportPanel,
-.helpPanel {
+.helpPanel,
+.savePanel {
   min-width: 0;
   border: 1px solid rgba(226, 232, 240, 0.12);
   border-radius: 8px;
@@ -293,7 +295,8 @@ button:disabled {
 }
 
 .formGrid input,
-.formGrid select {
+.formGrid select,
+.notesField textarea {
   min-height: 42px;
   width: 100%;
   border: 1px solid rgba(226, 232, 240, 0.13);
@@ -301,6 +304,20 @@ button:disabled {
   background: #0f1419;
   color: #eef4f8;
   padding: 9px 10px;
+}
+
+.notesField {
+  display: grid;
+  gap: 8px;
+  margin-top: 14px;
+  color: #d7dee7;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.notesField textarea {
+  min-height: 96px;
+  resize: vertical;
 }
 
 .createButton {
@@ -429,6 +446,35 @@ button:disabled {
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 10px;
+}
+
+.saveGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.saveGrid article {
+  display: grid;
+  align-content: start;
+  gap: 10px;
+  min-height: 172px;
+  padding: 14px;
+  border: 1px solid rgba(226, 232, 240, 0.11);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.055);
+}
+
+.saveGrid article p,
+.projectSummary p {
+  margin: 0;
+  color: #aeb9c7;
+  line-height: 1.45;
+}
+
+.saveGrid article button {
+  align-self: end;
+  width: fit-content;
 }
 
 .trackRoleCard {
@@ -582,6 +628,16 @@ button:disabled {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
+.projectSummary {
+  display: grid;
+  gap: 8px;
+  margin-top: 12px;
+  padding: 14px;
+  border: 1px solid rgba(226, 232, 240, 0.11);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.055);
+}
+
 .exportGrid button {
   min-height: 108px;
   display: grid;
@@ -629,7 +685,8 @@ button:disabled {
 
   .generatorSummary,
   .trackRoleGrid,
-  .generatedTracks {
+  .generatedTracks,
+  .saveGrid {
     grid-template-columns: 1fr;
   }
 }
@@ -654,6 +711,7 @@ button:disabled {
   .templateGrid,
   .trackRoleGrid,
   .generatedTracks,
+  .saveGrid,
   .exportGrid.three,
   .miniGrid {
     grid-template-columns: 1fr;
