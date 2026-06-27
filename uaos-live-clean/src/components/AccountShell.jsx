@@ -1,8 +1,4 @@
-import {
-  useEffect,
-  useMemo,
-  useState,
-} from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useAccountSession } from "../hooks/useAccountSession.js";
 import "./account-shell.css";
 
@@ -59,12 +55,12 @@ function Feedback({ message, error }) {
 
 function planLabel(subscription) {
   if (!subscription) {
-    return "Free / No active subscription";
+    return "Free workspace";
   }
 
   const names = {
-    creator: "Studio - 7.99 EUR/month for 3 months, then 12.99 EUR/month",
-    professional: "Pro Arranger - 19.99 EUR/month for 3 months, then 29.99 EUR/month",
+    creator: "Studio",
+    professional: "Pro Arranger",
   };
 
   return `${names[subscription.planId] || subscription.planId} (${subscription.status})`;
@@ -99,12 +95,12 @@ export function AccountShell({ children }) {
 
   const title = useMemo(() => {
     const titles = {
-      [views.login]: "Sign in / تسجيل الدخول",
-      [views.register]: "Create Account / إنشاء الحساب",
-      [views.verify]: "Verify email / تأكيد البريد",
-      [views.resetRequest]: "Reset Password / استعادة كلمة المرور",
-      [views.resetConfirm]: "Set new password / تعيين كلمة مرور جديدة",
-      [views.account]: "My UAOS Account / الحساب",
+      [views.login]: "Sign in",
+      [views.register]: "Create account",
+      [views.verify]: "Verify email",
+      [views.resetRequest]: "Reset password",
+      [views.resetConfirm]: "Set new password",
+      [views.account]: "My UAOS account",
     };
 
     return titles[view];
@@ -179,7 +175,7 @@ export function AccountShell({ children }) {
         aria-label="Open UAOS account"
       >
         <span className="uaos-account-launcher-dot" />
-        {account.signedIn ? account.user.email : "Account / الحساب"}
+        {account.signedIn ? account.user.email : "Account"}
       </button>
 
       {open && (
@@ -202,12 +198,6 @@ export function AccountShell({ children }) {
               <div>
                 <p className="uaos-account-kicker">UAOS ID</p>
                 <h2>{title}</h2>
-                <p className="uaos-account-health">
-                  Accounts API:{" "}
-                  <strong className={`is-${account.health}`}>
-                    {account.health}
-                  </strong>
-                </p>
               </div>
 
               <button
@@ -220,28 +210,20 @@ export function AccountShell({ children }) {
               </button>
             </header>
 
-            <Feedback
-              message={account.message}
-              error={account.error}
-            />
+            <Feedback message={account.message} error={account.error} />
 
             {developmentToken && (
               <div className="uaos-account-dev-token">
-                <strong>Local development token</strong>
+                <strong>Verification code</strong>
                 <code>{developmentToken}</code>
-                <span>
-                  This appears only because the local email provider is not configured.
-                </span>
+                <span>Use this code to complete the local account step.</span>
               </div>
             )}
 
             {view === views.login && (
-              <form
-                className="uaos-account-form"
-                onSubmit={submitLogin}
-              >
+              <form className="uaos-account-form" onSubmit={submitLogin}>
                 <TextField
-                  label="Email / البريد الإلكتروني"
+                  label="Email"
                   type="email"
                   value={email}
                   onChange={setEmail}
@@ -249,7 +231,7 @@ export function AccountShell({ children }) {
                   placeholder="name@example.com"
                 />
                 <TextField
-                  label="Password / كلمة المرور"
+                  label="Password"
                   type="password"
                   value={password}
                   onChange={setPassword}
@@ -266,22 +248,13 @@ export function AccountShell({ children }) {
                 </button>
 
                 <div className="uaos-account-links">
-                  <button
-                    type="button"
-                    onClick={() => setView(views.register)}
-                  >
+                  <button type="button" onClick={() => setView(views.register)}>
                     Create account
                   </button>
-                  <button
-                    type="button"
-                    onClick={() => setView(views.verify)}
-                  >
+                  <button type="button" onClick={() => setView(views.verify)}>
                     Verify email
                   </button>
-                  <button
-                    type="button"
-                    onClick={() => setView(views.resetRequest)}
-                  >
+                  <button type="button" onClick={() => setView(views.resetRequest)}>
                     Forgot password
                   </button>
                 </div>
@@ -289,12 +262,9 @@ export function AccountShell({ children }) {
             )}
 
             {view === views.register && (
-              <form
-                className="uaos-account-form"
-                onSubmit={submitRegister}
-              >
+              <form className="uaos-account-form" onSubmit={submitRegister}>
                 <TextField
-                  label="Email / البريد الإلكتروني"
+                  label="Email"
                   type="email"
                   value={email}
                   onChange={setEmail}
@@ -302,7 +272,7 @@ export function AccountShell({ children }) {
                   placeholder="name@example.com"
                 />
                 <TextField
-                  label="Password / كلمة المرور"
+                  label="Password"
                   type="password"
                   value={password}
                   onChange={setPassword}
@@ -329,16 +299,13 @@ export function AccountShell({ children }) {
             )}
 
             {view === views.verify && (
-              <form
-                className="uaos-account-form"
-                onSubmit={submitVerify}
-              >
+              <form className="uaos-account-form" onSubmit={submitVerify}>
                 <TextField
-                  label="Verification token / رمز التحقق"
+                  label="Verification code"
                   value={verificationToken}
                   onChange={setVerificationToken}
                   autoComplete="one-time-code"
-                  placeholder="Paste verification token"
+                  placeholder="Paste verification code"
                 />
 
                 <button
@@ -360,12 +327,9 @@ export function AccountShell({ children }) {
             )}
 
             {view === views.resetRequest && (
-              <form
-                className="uaos-account-form"
-                onSubmit={submitResetRequest}
-              >
+              <form className="uaos-account-form" onSubmit={submitResetRequest}>
                 <TextField
-                  label="Account Email / البريد الإلكتروني للحساب"
+                  label="Account email"
                   type="email"
                   value={email}
                   onChange={setEmail}
@@ -392,19 +356,16 @@ export function AccountShell({ children }) {
             )}
 
             {view === views.resetConfirm && (
-              <form
-                className="uaos-account-form"
-                onSubmit={submitResetConfirm}
-              >
+              <form className="uaos-account-form" onSubmit={submitResetConfirm}>
                 <TextField
-                  label="Reset token / رمز الاستعادة"
+                  label="Reset code"
                   value={resetToken}
                   onChange={setResetToken}
                   autoComplete="one-time-code"
-                  placeholder="Paste reset token"
+                  placeholder="Paste reset code"
                 />
                 <TextField
-                  label="New password / كلمة مرور جديدة"
+                  label="New password"
                   type="password"
                   value={password}
                   onChange={setPassword}
@@ -439,11 +400,6 @@ export function AccountShell({ children }) {
                   <strong>{planLabel(account.user.subscription)}</strong>
                 </div>
 
-                <div className="uaos-account-user-card">
-                  <span>Licenses</span>
-                  <strong>{account.user.licenseIds?.length || 0}</strong>
-                </div>
-
                 <button
                   className="uaos-account-secondary"
                   type="button"
@@ -451,29 +407,6 @@ export function AccountShell({ children }) {
                   onClick={() => account.actions.refresh()}
                 >
                   Refresh account
-                </button>
-
-                <div className="uaos-account-dev-token">
-                  <strong>Payments disabled</strong>
-                  <span>
-                    Checkout and billing portal actions remain unavailable in this local-first preview.
-                  </span>
-                </div>
-
-                <button
-                  className="uaos-account-primary"
-                  type="button"
-                  disabled
-                >
-                  Studio founders price - checkout under review
-                </button>
-
-                <button
-                  className="uaos-account-primary"
-                  type="button"
-                  disabled
-                >
-                  Pro founders price - checkout under review
                 </button>
 
                 <button
@@ -488,7 +421,7 @@ export function AccountShell({ children }) {
             )}
 
             <footer className="uaos-account-footer">
-              Local account foundation. Production still requires secure cookies, real email delivery, and a managed database.
+              Account access is available for this local workspace.
             </footer>
           </section>
         </div>
