@@ -105,6 +105,12 @@ button:disabled {
   background: rgba(17, 24, 32, 0.78);
 }
 
+.heroHeader {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(260px, 360px) auto;
+  align-items: stretch;
+}
+
 .deskHeader h1 {
   margin: 4px 0;
   font-size: clamp(30px, 4vw, 52px);
@@ -116,8 +122,60 @@ button:disabled {
 .statusBar span,
 .safeNote,
 .helpPanel li,
-.emptyState span {
+.emptyState span,
+.heroCopy,
+.currentCard p,
+.templateCard p,
+.trackRoleCard p,
+.sectionSummary p,
+.generatedTracks p {
   color: #aeb9c7;
+}
+
+.heroCopy {
+  max-width: 780px;
+  margin: 14px 0 0;
+  line-height: 1.6;
+}
+
+.currentCard {
+  display: grid;
+  align-content: start;
+  gap: 10px;
+  padding: 16px;
+  border: 1px solid rgba(226, 232, 240, 0.12);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.055);
+}
+
+.currentCard span,
+.sectionSummary span {
+  color: #d8ff77;
+  font-size: 12px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.currentCard strong {
+  font-size: 24px;
+}
+
+.currentCard p {
+  margin: 0;
+  line-height: 1.45;
+}
+
+.miniGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.miniGrid b {
+  padding: 9px;
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.22);
+  font-size: 13px;
 }
 
 .kicker {
@@ -143,7 +201,8 @@ button:disabled {
 .exportGrid button,
 .sectionBlock,
 .instrumentCard,
-.templateCard {
+.templateCard,
+.trackRoleCard {
   border-radius: 8px;
   cursor: pointer;
 }
@@ -268,7 +327,9 @@ button:disabled {
 }
 
 .templateCard.selected,
-.templateCard:hover {
+.templateCard:hover,
+.trackRoleCard.selected,
+.trackRoleCard:hover {
   border-color: rgba(216, 255, 119, 0.55);
 }
 
@@ -278,9 +339,14 @@ button:disabled {
   line-height: 1.35;
 }
 
+.templateCard small {
+  color: #d8ff77;
+  font-weight: 800;
+}
+
 .generatorSummary {
   display: grid;
-  grid-template-columns: 1fr auto auto;
+  grid-template-columns: minmax(0, 1fr) minmax(220px, 0.8fr) auto;
   gap: 10px;
   align-items: center;
   margin-bottom: 12px;
@@ -359,6 +425,39 @@ button:disabled {
   color: #aeb9c7;
 }
 
+.trackRoleGrid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.trackRoleCard {
+  min-height: 156px;
+  display: grid;
+  align-content: start;
+  gap: 8px;
+  padding: 14px;
+  background: rgba(255, 255, 255, 0.07);
+  color: #eef4f8;
+  text-align: left;
+  border: 1px solid rgba(226, 232, 240, 0.11);
+}
+
+.trackRoleCard span {
+  color: #d8ff77;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.trackRoleCard p {
+  margin: 0;
+  line-height: 1.45;
+}
+
+.trackRoleCard small {
+  color: #aeb9c7;
+}
+
 .instrumentGrid {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
@@ -404,6 +503,72 @@ button:disabled {
   background: rgba(255, 255, 255, 0.05);
 }
 
+.sectionDetail {
+  display: grid;
+  grid-template-columns: minmax(240px, 0.55fr) minmax(0, 1.45fr);
+  gap: 14px;
+}
+
+.sectionSummary,
+.generatedTracks article {
+  padding: 16px;
+  border: 1px solid rgba(226, 232, 240, 0.11);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.sectionSummary {
+  display: grid;
+  align-content: start;
+  gap: 8px;
+}
+
+.sectionSummary strong {
+  font-size: 30px;
+}
+
+.sectionSummary p {
+  margin: 0;
+  line-height: 1.5;
+}
+
+.sectionSummary small {
+  color: #aeb9c7;
+}
+
+.generatedTracks {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.generatedTracks article {
+  display: grid;
+  gap: 7px;
+}
+
+.generatedTracks article span {
+  color: #d8ff77;
+  line-height: 1.35;
+}
+
+.generatedTracks article p {
+  margin: 0;
+}
+
+.level {
+  height: 8px;
+  padding: 2px;
+  border-radius: 99px;
+  background: rgba(255, 255, 255, 0.11);
+}
+
+.level div {
+  height: 100%;
+  border-radius: 99px;
+  background: linear-gradient(90deg, #d8ff77, #72d6c9);
+}
+
 .exportPanel,
 .helpPanel {
   min-height: 220px;
@@ -411,6 +576,10 @@ button:disabled {
 
 .exportGrid {
   grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.exportGrid.three {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 .exportGrid button {
@@ -451,12 +620,16 @@ button:disabled {
   }
 
   .contentGrid,
-  .mixerPanel {
+  .mixerPanel,
+  .heroHeader,
+  .sectionDetail {
     grid-template-columns: 1fr;
     grid-column: auto;
   }
 
-  .generatorSummary {
+  .generatorSummary,
+  .trackRoleGrid,
+  .generatedTracks {
     grid-template-columns: 1fr;
   }
 }
@@ -478,7 +651,11 @@ button:disabled {
   .formGrid,
   .exportGrid,
   .trackRow,
-  .templateGrid {
+  .templateGrid,
+  .trackRoleGrid,
+  .generatedTracks,
+  .exportGrid.three,
+  .miniGrid {
     grid-template-columns: 1fr;
   }
 
