@@ -1,17 +1,18 @@
-import { useMemo, useState } from "react";
-import "./App.css";
+﻿import React, { useMemo, useState } from "react";
+import "./style.css";
 
-const STORAGE_KEY = "uaos_real_workflow_v4_project";
+const STORAGE_KEY = "uaos_real_workflow_v5_projects";
+const ACTIVE_KEY = "uaos_real_workflow_v5_active_project_id";
 
 const styleTemplates = [
   {
     id: "arabic-pop-ballad",
     name: "Arabic Pop Ballad",
-    description: "Warm singer arrangement with emotional strings and a clear chorus lift.",
-    market: "Singer demo, Arabic pop, emotional performance",
-    tempo: 86,
+    description: "Warm singer arrangement with emotional strings and clear chorus lift.",
+    bpm: 86,
     key: "D minor",
     groove: "Soft 4/4",
+    market: "Singer demo, Arabic pop, emotional performance",
     sections: [
       { name: "Intro", bars: 4, energy: 35, chord: "Dm - Bb - C - Dm" },
       { name: "Verse", bars: 8, energy: 48, chord: "Dm - C - Bb - A" },
@@ -24,11 +25,11 @@ const styleTemplates = [
   {
     id: "modern-dabke-live",
     name: "Modern Dabke Live",
-    description: "Live keyboard energy with strong rhythm sections and a solo break.",
-    market: "Live keyboard, party, dance, fast stage performance",
-    tempo: 112,
+    description: "Live keyboard energy with strong rhythm sections and solo break.",
+    bpm: 112,
     key: "G minor",
     groove: "Dabke 4/4",
+    market: "Live keyboard, party, dance, fast stage performance",
     sections: [
       { name: "Intro", bars: 4, energy: 70, chord: "Gm - F - Eb - D" },
       { name: "Main A", bars: 8, energy: 86, chord: "Gm - Gm - F - Gm" },
@@ -41,11 +42,11 @@ const styleTemplates = [
   {
     id: "cinematic-strings",
     name: "Cinematic Strings",
-    description: "Slow emotional arrangement for demos, film cues, and dramatic song ideas.",
-    market: "Film, dramatic demo, orchestral song sketch",
-    tempo: 76,
+    description: "Slow emotional arrangement for demo, film, and dramatic song ideas.",
+    bpm: 76,
     key: "C minor",
     groove: "Slow cinematic",
+    market: "Film, dramatic demo, orchestral song sketch",
     sections: [
       { name: "Intro", bars: 4, energy: 25, chord: "Cm - Ab - Eb - Bb" },
       { name: "Theme", bars: 8, energy: 52, chord: "Cm - Ab - Fm - G" },
@@ -62,7 +63,7 @@ const trackRoles = [
     family: "Rhythm",
     purpose: "Main beat and fills",
     patternByStyle: {
-      "arabic-pop-ballad": "Soft kick, rim, and light oriental percussion",
+      "arabic-pop-ballad": "Soft kick, rim, light oriental percussion",
       "modern-dabke-live": "Fast dabke groove with hand percussion",
       "cinematic-strings": "Low cinematic pulse and soft hits",
     },
@@ -95,7 +96,7 @@ const trackRoles = [
     family: "Atmosphere",
     purpose: "Background emotion and width",
     patternByStyle: {
-      "arabic-pop-ballad": "Warm string pad",
+      "arabic-pop-ballad": "Warm strings pad",
       "modern-dabke-live": "Bright synth support",
       "cinematic-strings": "Layered string pad",
     },
@@ -113,25 +114,28 @@ const trackRoles = [
   },
 ];
 
-const defaultTracks = ["drums", "bass", "chords", "pad", "melody"];
+function uid() {
+  return "uaos-" + Date.now() + "-" + Math.random().toString(16).slice(2);
+}
 
 function createProject(template, title) {
+  const now = new Date().toISOString();
   return {
-    id: `uaos-${Date.now()}`,
+    id: uid(),
     title: title.trim() || template.name,
     templateId: template.id,
     templateName: template.name,
     description: template.description,
     market: template.market,
-    tempo: template.tempo,
+    bpm: template.bpm,
     key: template.key,
     groove: template.groove,
     sections: template.sections,
-    enabledTracks: defaultTracks,
+    enabledTracks: ["drums", "bass", "chords", "pad", "melody"],
     arrangement: [],
     notes: "Write your song idea here.",
-    createdAt: new Date().toISOString(),
-    updatedAt: new Date().toISOString(),
+    createdAt: now,
+    updatedAt: now,
     generatedAt: null,
     savedAt: null,
   };
@@ -153,14 +157,23 @@ function buildArrangement(project) {
     return {
       ...section,
       tracks,
-      cue:
-        section.energy > 85
-          ? "Big live moment"
-          : section.energy > 65
-            ? "Full arrangement"
-            : "Controlled intro or verse feel",
+      cue: section.energy > 85 ? "Big live moment" : section.energy > 65 ? "Full arrangement" : "Controlled intro/verse feel",
     };
   });
+}
+
+function readProjects() {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    const list = raw ? JSON.parse(raw) : [];
+    return Array.isArray(list) ? list : [];
+  } catch {
+    return [];
+  }
+}
+
+function writeProjects(projects) {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(projects));
 }
 
 function downloadJson(filename, data) {
@@ -168,12 +181,12 @@ function downloadJson(filename, data) {
     type: "application/json;charset=utf-8",
   });
   const url = URL.createObjectURL(blob);
-  const link = document.createElement("a");
-  link.href = url;
-  link.download = filename;
-  document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = filename;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
   URL.revokeObjectURL(url);
 }
 
@@ -181,484 +194,559 @@ function cleanFilename(value) {
   return value.replace(/[^a-z0-9]+/gi, "_").replace(/^_+|_+$/g, "").toLowerCase() || "uaos_project";
 }
 
-function App() {
-  const [activeView, setActiveView] = useState("dashboard");
-  const [templateId, setTemplateId] = useState(styleTemplates[0].id);
-  const [projectTitle, setProjectTitle] = useState("My UAOS Arrangement");
-  const [project, setProject] = useState(() => createProject(styleTemplates[0], "My UAOS Arrangement"));
-  const [selectedSectionName, setSelectedSectionName] = useState("Intro");
+function SectionHeader({ label, title, text }) {
+  return (
+    <div className="section-header">
+      <p>{label}</p>
+      <h2>{title}</h2>
+      <span>{text}</span>
+    </div>
+  );
+}
+
+export default function App() {
+  const initialTemplate = styleTemplates[0];
+  const initialProject = createProject(initialTemplate, "My UAOS Arrangement");
+
+  const [projects, setProjects] = useState(() => {
+    const existing = readProjects();
+    if (existing.length) return existing;
+    return [initialProject];
+  });
+
+  const [activeProjectId, setActiveProjectId] = useState(() => {
+    return localStorage.getItem(ACTIVE_KEY) || readProjects()[0]?.id || initialProject.id;
+  });
+
+  const activeProject = useMemo(() => {
+    return projects.find((item) => item.id === activeProjectId) || projects[0] || initialProject;
+  }, [projects, activeProjectId]);
+
+  const [templateId, setTemplateId] = useState(activeProject.templateId || styleTemplates[0].id);
+  const [projectTitle, setProjectTitle] = useState(activeProject.title || "My UAOS Arrangement");
+  const [selectedSectionName, setSelectedSectionName] = useState(activeProject.sections?.[0]?.name || "Intro");
   const [playing, setPlaying] = useState(false);
-  const [message, setMessage] = useState("Ready for Real Workflow V4.");
+  const [message, setMessage] = useState("Ready");
   const [lastExportName, setLastExportName] = useState("");
 
   const selectedTemplate = useMemo(
     () => styleTemplates.find((template) => template.id === templateId) || styleTemplates[0],
-    [templateId],
+    [templateId]
   );
 
-  const arrangement = useMemo(
-    () => (project.arrangement.length ? project.arrangement : buildArrangement(project)),
-    [project],
-  );
+  const arrangement = activeProject.arrangement?.length ? activeProject.arrangement : buildArrangement(activeProject);
 
   const selectedSection = useMemo(
     () => arrangement.find((section) => section.name === selectedSectionName) || arrangement[0],
-    [arrangement, selectedSectionName],
+    [arrangement, selectedSectionName]
   );
 
   const totalBars = useMemo(
-    () => project.sections.reduce((sum, section) => sum + section.bars, 0),
-    [project.sections],
+    () => activeProject.sections.reduce((sum, section) => sum + section.bars, 0),
+    [activeProject.sections]
   );
 
-  const generated = Boolean(project.generatedAt);
+  const activeTrackCount = activeProject.enabledTracks.length;
+  const generated = Boolean(activeProject.generatedAt);
+  const saved = Boolean(activeProject.savedAt);
+
   const completionScore = Math.round(
-    (project.title ? 20 : 0)
-      + (project.sections.length ? 20 : 0)
-      + (project.enabledTracks.length ? 20 : 0)
-      + (generated ? 25 : 0)
-      + (project.savedAt ? 15 : 0),
+    (activeProject.title ? 20 : 0) +
+    (activeProject.sections.length ? 20 : 0) +
+    (activeTrackCount ? 20 : 0) +
+    (generated ? 25 : 0) +
+    (saved ? 15 : 0)
   );
 
-  function updateProject(patch) {
-    setProject((current) => ({
-      ...current,
-      ...patch,
-      updatedAt: new Date().toISOString(),
-    }));
+  function persist(nextProjects, nextActiveId = activeProjectId) {
+    setProjects(nextProjects);
+    writeProjects(nextProjects);
+    localStorage.setItem(ACTIVE_KEY, nextActiveId);
+    setActiveProjectId(nextActiveId);
+  }
+
+  function updateActiveProject(patch) {
+    const now = new Date().toISOString();
+    const nextProjects = projects.map((project) =>
+      project.id === activeProject.id
+        ? { ...project, ...patch, updatedAt: now }
+        : project
+    );
+    persist(nextProjects, activeProject.id);
   }
 
   function startProject() {
     const nextProject = createProject(selectedTemplate, projectTitle);
-    setProject(nextProject);
+    const nextProjects = [nextProject, ...projects];
+    persist(nextProjects, nextProject.id);
     setSelectedSectionName(nextProject.sections[0]?.name || "Intro");
     setPlaying(false);
     setLastExportName("");
-    setMessage("New musical project created.");
-    setActiveView("project");
+    setMessage("New project added to browser");
+  }
+
+  function openProject(projectId) {
+    const found = projects.find((project) => project.id === projectId);
+    if (!found) return;
+    localStorage.setItem(ACTIVE_KEY, projectId);
+    setActiveProjectId(projectId);
+    setProjectTitle(found.title);
+    setTemplateId(found.templateId);
+    setSelectedSectionName(found.sections?.[0]?.name || "Intro");
+    setPlaying(false);
+    setMessage("Project opened");
+  }
+
+  function saveCurrentProject() {
+    const savedProject = {
+      ...activeProject,
+      savedAt: new Date().toISOString(),
+      updatedAt: new Date().toISOString(),
+      arrangement,
+    };
+    const nextProjects = projects.map((project) =>
+      project.id === activeProject.id ? savedProject : project
+    );
+    persist(nextProjects, activeProject.id);
+    setMessage("Project saved in browser library");
+  }
+
+  function renameCurrentProject() {
+    const name = projectTitle.trim();
+    if (!name) {
+      setMessage("Project name is empty");
+      return;
+    }
+    updateActiveProject({ title: name });
+    setMessage("Project renamed");
+  }
+
+  function duplicateCurrentProject() {
+    const now = new Date().toISOString();
+    const copy = {
+      ...activeProject,
+      id: uid(),
+      title: `${activeProject.title} Copy`,
+      createdAt: now,
+      updatedAt: now,
+      savedAt: now,
+    };
+    const nextProjects = [copy, ...projects];
+    persist(nextProjects, copy.id);
+    setProjectTitle(copy.title);
+    setSelectedSectionName(copy.sections?.[0]?.name || "Intro");
+    setMessage("Project duplicated");
+  }
+
+  function deleteCurrentProject() {
+    if (projects.length <= 1) {
+      setMessage("Keep at least one project");
+      return;
+    }
+    const nextProjects = projects.filter((project) => project.id !== activeProject.id);
+    const nextActive = nextProjects[0].id;
+    persist(nextProjects, nextActive);
+    setProjectTitle(nextProjects[0].title);
+    setTemplateId(nextProjects[0].templateId);
+    setSelectedSectionName(nextProjects[0].sections?.[0]?.name || "Intro");
+    setPlaying(false);
+    setMessage("Project deleted locally");
   }
 
   function toggleTrack(trackId) {
-    setProject((current) => {
-      const exists = current.enabledTracks.includes(trackId);
-      const enabledTracks = exists
-        ? current.enabledTracks.filter((id) => id !== trackId)
-        : [...current.enabledTracks, trackId];
+    const exists = activeProject.enabledTracks.includes(trackId);
+    const enabledTracks = exists
+      ? activeProject.enabledTracks.filter((id) => id !== trackId)
+      : [...activeProject.enabledTracks, trackId];
 
-      return {
-        ...current,
-        enabledTracks,
-        arrangement: [],
-        generatedAt: null,
-        updatedAt: new Date().toISOString(),
-      };
+    updateActiveProject({
+      enabledTracks,
+      arrangement: [],
+      generatedAt: null,
+      savedAt: null,
     });
-    setMessage("Track selection updated.");
-    setActiveView("tracks");
+    setMessage("Track selection updated");
   }
 
   function generateArrangement() {
-    const nextArrangement = buildArrangement(project);
-    setProject((current) => ({
-      ...current,
+    const nextArrangement = buildArrangement(activeProject);
+    updateActiveProject({
       arrangement: nextArrangement,
       generatedAt: new Date().toISOString(),
-      updatedAt: new Date().toISOString(),
-    }));
+      savedAt: null,
+    });
     setSelectedSectionName(nextArrangement[0]?.name || "Intro");
-    setMessage("Arrangement generated with sections and tracks.");
-    setActiveView("arranger");
-  }
-
-  function saveProject() {
-    const savedProject = {
-      ...project,
-      arrangement,
-      savedAt: new Date().toISOString(),
-      updatedAt: new Date().toISOString(),
-    };
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(savedProject));
-    setProject(savedProject);
-    setMessage("Project saved in this browser.");
-  }
-
-  function loadProject() {
-    const rawProject = localStorage.getItem(STORAGE_KEY);
-    if (!rawProject) {
-      setMessage("No saved project found.");
-      return;
-    }
-
-    try {
-      const loadedProject = JSON.parse(rawProject);
-      setProject(loadedProject);
-      setProjectTitle(loadedProject.title || "My UAOS Arrangement");
-      setTemplateId(loadedProject.templateId || styleTemplates[0].id);
-      setSelectedSectionName(loadedProject.sections?.[0]?.name || "Intro");
-      setPlaying(false);
-      setMessage("Saved project loaded.");
-      setActiveView("save");
-    } catch {
-      setMessage("Saved project could not be loaded.");
-    }
-  }
-
-  function clearSavedProject() {
-    localStorage.removeItem(STORAGE_KEY);
-    setMessage("Saved browser project cleared.");
+    setMessage("Arrangement generated");
   }
 
   function createManifest() {
     return {
       product: "UAOS - Universal Arranger OS",
-      version: "Real Workflow V4",
-      purpose: "Safe local project manifest for review, demo, development handoff, and funding presentation",
+      version: "Real Workflow V5",
+      purpose: "Safe local multi-project workflow for review, demo, development handoff, and funding presentation",
       safety: {
         publicPublish: false,
-        realKeyboardOutput: false,
+        vercel: false,
+        realDeviceWriter: false,
+        keyboardOutput: false,
         localOnly: true,
       },
       project: {
-        ...project,
+        ...activeProject,
         arrangement,
       },
+      browserLibrary: {
+        projectCount: projects.length,
+        activeProjectId: activeProject.id,
+      },
       summary: {
-        title: project.title,
-        style: project.templateName,
-        market: project.market,
-        tempo: project.tempo,
-        key: project.key,
-        groove: project.groove,
-        sections: project.sections.length,
-        tracks: project.enabledTracks.length,
+        title: activeProject.title,
+        style: activeProject.templateName,
+        market: activeProject.market,
+        bpm: activeProject.bpm,
+        key: activeProject.key,
+        groove: activeProject.groove,
+        sections: activeProject.sections.length,
+        tracks: activeTrackCount,
         totalBars,
         generated,
-        saved: Boolean(project.savedAt),
+        saved,
         completionScore,
       },
-      nextSafeSteps: [
-        "Add MIDI draft export only after local QA approval",
-        "Keep keyboard output blocked",
-        "Use manifest for review, support, or developer handoff",
+      handoffUse: [
+        "Jobcenter funding presentation",
+        "Friend or private reviewer demo",
+        "Developer handoff without exposing device writer",
       ],
     };
   }
 
   function exportManifest() {
-    const filename = `${cleanFilename(project.title)}_uaos_v4_manifest.json`;
+    const filename = `${cleanFilename(activeProject.title)}_uaos_v5_manifest.json`;
     downloadJson(filename, createManifest());
     setLastExportName(filename);
-    setMessage("Safe local manifest downloaded.");
+    setMessage("V5 manifest downloaded");
   }
 
-  function exportProjectPackage() {
-    const filename = `${cleanFilename(project.title)}_uaos_safe_package.json`;
-    downloadJson(filename, {
-      type: "UAOS_SAFE_LOCAL_PROJECT_PACKAGE",
+  function exportLibraryPackage() {
+    const packageData = {
+      type: "UAOS_SAFE_LOCAL_MULTI_PROJECT_LIBRARY",
       exportedAt: new Date().toISOString(),
-      manifest: createManifest(),
-      readableSummary: {
-        title: project.title,
-        oneLine: `${project.templateName} | ${project.tempo} BPM | ${project.key}`,
-        description: project.description,
-        projectUse: project.market,
-        status: generated ? "Generated arrangement ready for review" : "Draft project not generated yet",
+      safety: {
+        publicPublish: false,
+        realDeviceWriter: false,
+        localOnly: true,
       },
-    });
+      activeProjectId: activeProject.id,
+      projects,
+    };
+
+    const filename = `uaos_v5_project_library_${new Date().toISOString().slice(0, 10)}.json`;
+    downloadJson(filename, packageData);
     setLastExportName(filename);
-    setMessage("Safe project package downloaded.");
+    setMessage("Project library package downloaded");
   }
 
   return (
-    <main className="workstationShell">
-      <aside className="sideRail" aria-label="UAOS sections">
-        <button className="brandMark" onClick={() => setActiveView("dashboard")} type="button">
-          UAOS
-        </button>
-        {[
-          ["dashboard", "Dashboard"],
-          ["project", "Project"],
-          ["save", "Save / Load"],
-          ["arranger", "Arranger"],
-          ["tracks", "Tracks"],
-          ["player", "Player"],
-          ["export", "Export"],
-          ["help", "Help"],
-        ].map(([id, label]) => (
-          <button
-            className={activeView === id ? "active" : ""}
-            key={id}
-            onClick={() => setActiveView(id)}
-            type="button"
-          >
-            <span>{label.slice(0, 2).toUpperCase()}</span>
-            {label}
-          </button>
-        ))}
+    <main className="uaos-app">
+      <aside className="uaos-sidebar">
+        <div className="uaos-brand">
+          <div className="uaos-logo">U</div>
+          <div>
+            <strong>UAOS</strong>
+            <span>Arranger Workstation</span>
+          </div>
+        </div>
+
+        <nav className="uaos-nav">
+          <a href="#dashboard">Dashboard</a>
+          <a href="#browser">Projects</a>
+          <a href="#project">Editor</a>
+          <a href="#arranger">Arranger</a>
+          <a href="#tracks">Tracks</a>
+          <a href="#player">Player</a>
+          <a href="#export">Export</a>
+          <a href="#help">Help</a>
+        </nav>
+
+        <div className="uaos-safety">
+          <strong>Safety gates</strong>
+          <span>Public publish blocked</span>
+          <span>Device writer blocked</span>
+          <span>Local workflow only</span>
+        </div>
       </aside>
 
-      <section className="mainDesk">
-        <header className="deskHeader heroHeader">
+      <section className="uaos-main">
+        <header className="uaos-hero" id="dashboard">
           <div>
-            <p className="kicker">Real Workflow V4</p>
-            <h1>{project.title}</h1>
-            <span>{project.templateName} | {project.key} | {project.tempo} BPM | {project.groove}</span>
-            <p className="heroCopy">
-              UAOS now behaves more like a real local workstation: create, generate,
-              save, load, inspect, and export a clear safe project package.
+            <p className="uaos-kicker">Real Workflow V5</p>
+            <h1>{activeProject.title}</h1>
+            <p>
+              UAOS now manages multiple local projects like a real music workstation:
+              create, open, rename, duplicate, delete, arrange, save, and export safely.
             </p>
+            <div className="uaos-actions">
+              <a className="uaos-button primary" href="#browser">Project Browser</a>
+              <a className="uaos-button secondary" href="#arranger">Generate</a>
+              <a className="uaos-button secondary" href="#export">Export</a>
+            </div>
           </div>
-          <div className="currentCard">
-            <span>Current style</span>
-            <strong>{project.templateName}</strong>
-            <p>{project.description}</p>
-            <div className="miniGrid">
-              <b>{project.tempo} BPM</b>
-              <b>{project.key}</b>
-              <b>{project.groove}</b>
+
+          <div className="uaos-current-card">
+            <span>Active project</span>
+            <strong>{activeProject.templateName}</strong>
+            <p>{activeProject.description}</p>
+            <div className="uaos-mini-grid">
+              <b>{activeProject.bpm} BPM</b>
+              <b>{activeProject.key}</b>
+              <b>{projects.length} Projects</b>
               <b>{completionScore}% Ready</b>
             </div>
           </div>
-          <div className="sessionActions">
-            <button className="softButton" onClick={() => setActiveView("save")} type="button">
-              Save
-            </button>
-            <button className="primaryButton" onClick={generateArrangement} type="button">
-              Generate
-            </button>
-          </div>
         </header>
 
-        <section className="statusBar" role="status">
-          <span>{message}</span>
-          <strong>{project.sections.length} sections</strong>
-          <strong>{project.enabledTracks.length} tracks</strong>
-          <strong>{totalBars} bars</strong>
-          <strong>{completionScore}% ready</strong>
-          <strong>Output locked</strong>
+        <section className="uaos-status-grid">
+          <article><span>Status</span><strong>{message}</strong></article>
+          <article><span>Projects</span><strong>{projects.length}</strong></article>
+          <article><span>Tracks</span><strong>{activeTrackCount}</strong></article>
+          <article><span>Total bars</span><strong>{totalBars}</strong></article>
         </section>
 
-        <section className="contentGrid">
-          <article className="projectPanel">
-            <div className="panelTitle">
-              <p className="kicker">Step 1</p>
-              <h2>Project Setup</h2>
-            </div>
-            <div className="formGrid">
-              <label>
-                Project name
-                <input
-                  value={projectTitle}
-                  onChange={(event) => setProjectTitle(event.target.value)}
-                />
-              </label>
-              <label>
-                Musical style
-                <select
-                  value={templateId}
-                  onChange={(event) => setTemplateId(event.target.value)}
-                >
-                  {styleTemplates.map((template) => (
-                    <option key={template.id} value={template.id}>
-                      {template.name}
-                    </option>
-                  ))}
-                </select>
-              </label>
-              <button className="primaryButton createButton" onClick={startProject} type="button">
-                Create project
+        <section className="uaos-panel" id="browser">
+          <SectionHeader
+            label="Step 1"
+            title="Project Browser"
+            text="Manage multiple UAOS projects locally in this browser."
+          />
+
+          <div className="uaos-project-browser">
+            {projects.map((project) => (
+              <button
+                key={project.id}
+                className={project.id === activeProject.id ? "uaos-browser-card active" : "uaos-browser-card"}
+                onClick={() => openProject(project.id)}
+              >
+                <strong>{project.title}</strong>
+                <span>{project.templateName}</span>
+                <small>{project.bpm} BPM · {project.key} · {project.generatedAt ? "Generated" : "Draft"}</small>
               </button>
-            </div>
-            <label className="notesField">
-              Project notes
-              <textarea
-                value={project.notes}
-                onChange={(event) => updateProject({ notes: event.target.value })}
-              />
+            ))}
+          </div>
+
+          <div className="uaos-project-actions">
+            <button className="uaos-button primary" onClick={saveCurrentProject}>Save Current</button>
+            <button className="uaos-button secondary" onClick={renameCurrentProject}>Rename</button>
+            <button className="uaos-button secondary" onClick={duplicateCurrentProject}>Duplicate</button>
+            <button className="uaos-button secondary" onClick={deleteCurrentProject}>Delete Local</button>
+          </div>
+        </section>
+
+        <section className="uaos-panel" id="project">
+          <SectionHeader
+            label="Step 2"
+            title="Project Editor"
+            text="Create a new musical project or edit the current one."
+          />
+
+          <div className="uaos-project-form">
+            <label>
+              Project name
+              <input value={projectTitle} onChange={(event) => setProjectTitle(event.target.value)} />
             </label>
-            <div className="templateGrid">
-              {styleTemplates.map((template) => (
-                <button
-                  className={template.id === templateId ? "templateCard selected" : "templateCard"}
-                  key={template.id}
-                  onClick={() => setTemplateId(template.id)}
-                  type="button"
-                >
-                  <strong>{template.name}</strong>
-                  <span>{template.description}</span>
-                  <small>{template.tempo} BPM | {template.key} | {template.groove}</small>
-                </button>
-              ))}
-            </div>
-          </article>
 
-          <article className="savePanel" id="save">
-            <div className="panelTitle">
-              <p className="kicker">Step 2</p>
-              <h2>Save / Load Project</h2>
-            </div>
-            <div className="saveGrid">
-              <article>
-                <strong>Save current project</strong>
-                <p>Stores this UAOS project locally in this browser.</p>
-                <button className="primaryButton" onClick={saveProject} type="button">Save Project</button>
-              </article>
-              <article>
-                <strong>Load last project</strong>
-                <p>Restores the last project saved in this browser.</p>
-                <button className="softButton" onClick={loadProject} type="button">Load Last Project</button>
-              </article>
-              <article>
-                <strong>Clear saved project</strong>
-                <p>Removes only the browser-saved UAOS project.</p>
-                <button className="softButton" onClick={clearSavedProject} type="button">Clear Saved</button>
-              </article>
-            </div>
-          </article>
+            <label>
+              Musical style
+              <select value={templateId} onChange={(event) => setTemplateId(event.target.value)}>
+                {styleTemplates.map((template) => (
+                  <option key={template.id} value={template.id}>{template.name}</option>
+                ))}
+              </select>
+            </label>
 
-          <article className="arrangementPanel">
-            <div className="panelTitle">
-              <p className="kicker">Step 3</p>
-              <h2>Arranger Timeline</h2>
-            </div>
-            <div className="generatorSummary">
-              <strong>{project.templateName}</strong>
-              <span>{project.description}</span>
-              <button className="primaryButton" onClick={generateArrangement} type="button">
+            <button className="uaos-button primary" onClick={startProject}>Create New</button>
+          </div>
+
+          <label className="uaos-notes">
+            Project notes
+            <textarea
+              value={activeProject.notes}
+              onChange={(event) => updateActiveProject({ notes: event.target.value, savedAt: null })}
+            />
+          </label>
+
+          <div className="uaos-template-grid">
+            {styleTemplates.map((template) => (
+              <button
+                key={template.id}
+                className={template.id === templateId ? "uaos-template active" : "uaos-template"}
+                onClick={() => setTemplateId(template.id)}
+              >
+                <strong>{template.name}</strong>
+                <span>{template.description}</span>
+                <small>{template.bpm} BPM · {template.key} · {template.groove}</small>
+              </button>
+            ))}
+          </div>
+        </section>
+
+        <section className="uaos-panel" id="arranger">
+          <SectionHeader
+            label="Step 3"
+            title="Arranger Timeline"
+            text="Generate and inspect musical sections with chords, bars, and energy."
+          />
+
+          <div className="uaos-arranger-layout">
+            <div className="uaos-arranger-control">
+              <strong>{activeProject.templateName}</strong>
+              <p>{activeProject.description}</p>
+              <div className="uaos-pill-row">
+                <span>{activeProject.bpm} BPM</span>
+                <span>{activeProject.key}</span>
+                <span>{activeProject.groove}</span>
+              </div>
+              <button className="uaos-button primary full" onClick={generateArrangement}>
                 Generate Musical Arrangement
               </button>
             </div>
-            <div className="timeline">
+
+            <div className="uaos-timeline">
               {arrangement.map((section) => (
                 <button
-                  className={selectedSection?.name === section.name ? "sectionBlock focus" : "sectionBlock"}
                   key={section.name}
-                  onClick={() => {
-                    setSelectedSectionName(section.name);
-                    setMessage(`${section.name} selected.`);
-                    setActiveView("arranger");
-                  }}
-                  type="button"
+                  className={selectedSection?.name === section.name ? "uaos-section active" : "uaos-section"}
+                  onClick={() => setSelectedSectionName(section.name)}
                 >
                   <strong>{section.name}</strong>
                   <span>{section.bars} bars</span>
-                  <i><b style={{ width: `${section.energy}%` }} /></i>
-                  <small>{section.chord}</small>
+                  <small>{section.energy}%</small>
                 </button>
               ))}
             </div>
-          </article>
+          </div>
+        </section>
 
-          <article className="libraryPanel">
-            <div className="panelTitle">
-              <p className="kicker">Step 4</p>
-              <h2>Tracks and Instruments</h2>
-            </div>
-            <div className="trackRoleGrid">
-              {trackRoles.map((track) => {
-                const active = project.enabledTracks.includes(track.id);
-                return (
-                  <button
-                    className={active ? "trackRoleCard selected" : "trackRoleCard"}
-                    key={track.id}
-                    onClick={() => toggleTrack(track.id)}
-                    type="button"
-                  >
-                    <strong>{track.name}</strong>
-                    <span>{track.family}</span>
-                    <p>{track.purpose}</p>
-                    <small>{active ? "Included" : "Muted"}</small>
-                  </button>
-                );
-              })}
-            </div>
-          </article>
+        <section className="uaos-panel" id="tracks">
+          <SectionHeader
+            label="Step 4"
+            title="Tracks and Instruments"
+            text="Select the musical layers used by the arranger."
+          />
 
-          <article className="mixerPanel">
-            <div className="panelTitle">
-              <p className="kicker">Step 5</p>
-              <h2>Player and Section Detail</h2>
+          <div className="uaos-track-role-grid">
+            {trackRoles.map((track) => {
+              const active = activeProject.enabledTracks.includes(track.id);
+              return (
+                <button
+                  key={track.id}
+                  className={active ? "uaos-track-role active" : "uaos-track-role"}
+                  onClick={() => toggleTrack(track.id)}
+                >
+                  <strong>{track.name}</strong>
+                  <span>{track.family}</span>
+                  <p>{track.purpose}</p>
+                  <small>{active ? "Included" : "Muted"}</small>
+                </button>
+              );
+            })}
+          </div>
+        </section>
+
+        <section className="uaos-panel" id="player">
+          <SectionHeader
+            label="Step 5"
+            title="Player and Section Detail"
+            text="Preview the session structure and inspect the selected section."
+          />
+
+          <div className="uaos-transport">
+            <button className="uaos-play" onClick={() => setPlaying(!playing)}>
+              {playing ? "Pause" : "Play"}
+            </button>
+            <div className="uaos-meter">
+              <div className={playing ? "on" : ""}></div>
             </div>
-            <div className="transport">
-              <button onClick={() => setPlaying((value) => !value)} type="button">
-                {playing ? "Pause" : "Play"}
-              </button>
-              <button
-                onClick={() => {
-                  setPlaying(false);
-                  setMessage("Preview stopped.");
-                }}
-                type="button"
-              >
-                Stop
-              </button>
+            <div className="uaos-transport-text">
               <strong>{playing ? "Preview running" : "Preview stopped"}</strong>
-              <div className="playMeter"><i className={playing ? "on" : ""} /></div>
+              <span>{selectedSection?.name} · {activeProject.bpm} BPM · {activeProject.key}</span>
             </div>
-            <div className="sectionDetail">
-              <div className="sectionSummary">
-                <span>Selected section</span>
-                <strong>{selectedSection?.name}</strong>
-                <p>{selectedSection?.chord}</p>
-                <small>{selectedSection?.cue}</small>
-              </div>
-              <div className="generatedTracks">
-                {(selectedSection?.tracks || []).map((track) => (
-                  <article key={track.id}>
-                    <strong>{track.name}</strong>
-                    <span>{track.pattern}</span>
-                    <p>{track.purpose}</p>
-                    <div className="level"><div style={{ width: `${track.intensity}%` }} /></div>
-                  </article>
-                ))}
-              </div>
-            </div>
-          </article>
+          </div>
 
-          <article className="exportPanel">
-            <div className="panelTitle">
-              <p className="kicker">Step 6</p>
-              <h2>Export Center</h2>
+          <div className="uaos-section-detail">
+            <div className="uaos-section-summary">
+              <span>Selected section</span>
+              <strong>{selectedSection?.name}</strong>
+              <p>{selectedSection?.chord}</p>
+              <small>{selectedSection?.cue}</small>
             </div>
-            <div className="exportGrid three">
-              <button onClick={exportManifest} type="button">
-                <strong>V4 Manifest</strong>
-                <span>Project, sections, tracks, notes, summary, and safety gates</span>
-              </button>
-              <button onClick={exportProjectPackage} type="button">
-                <strong>Safe Project Package</strong>
-                <span>Richer local package for review and handoff</span>
-              </button>
-              <button disabled type="button">
-                <strong>Keyboard Output</strong>
-                <span>Blocked until real tests and approval</span>
-              </button>
-            </div>
-            <div className="projectSummary">
-              <strong>Project Summary</strong>
-              <p>{project.templateName} | {project.tempo} BPM | {project.key} | {project.groove}</p>
-              <p>{project.market}</p>
-              <p>Completion: {completionScore}% | Last export: {lastExportName || "None yet"}</p>
-            </div>
-          </article>
 
-          <article className="helpPanel">
-            <div className="panelTitle">
-              <p className="kicker">Help</p>
-              <h2>Simple user workflow</h2>
+            <div className="uaos-generated-tracks">
+              {(selectedSection?.tracks || []).map((track) => (
+                <article key={track.id}>
+                  <strong>{track.name}</strong>
+                  <span>{track.pattern}</span>
+                  <p>{track.purpose}</p>
+                  <div className="uaos-level">
+                    <div style={{ width: `${track.intensity}%` }}></div>
+                  </div>
+                </article>
+              ))}
             </div>
-            <ol>
-              <li>Create a project from a musical style.</li>
-              <li>Add project notes and save it in this browser.</li>
-              <li>Generate sections with chords and tracks.</li>
-              <li>Preview the selected section and its track patterns.</li>
-              <li>Download safe local files.</li>
-            </ol>
-          </article>
+          </div>
+        </section>
+
+        <section className="uaos-panel" id="export">
+          <SectionHeader
+            label="Step 6"
+            title="Export Center"
+            text="Export safe local files for review, handoff, and funding presentation."
+          />
+
+          <div className="uaos-export-grid">
+            <article>
+              <strong>V5 Project Manifest</strong>
+              <p>Exports the active project with sections, tracks, notes, and browser library summary.</p>
+              <button className="uaos-button primary" onClick={exportManifest}>Download Manifest</button>
+            </article>
+
+            <article>
+              <strong>Project Library Package</strong>
+              <p>Exports all local browser projects as one safe review package.</p>
+              <button className="uaos-button primary" onClick={exportLibraryPackage}>Download Library</button>
+            </article>
+
+            <article>
+              <strong>Keyboard Writer</strong>
+              <p>Still blocked. No real keyboard output in this phase.</p>
+              <button className="uaos-button secondary" disabled>Blocked</button>
+            </article>
+          </div>
+
+          <div className="uaos-project-summary">
+            <strong>Project Summary</strong>
+            <p>{activeProject.templateName} · {activeProject.bpm} BPM · {activeProject.key} · {activeProject.groove}</p>
+            <p>{activeProject.market}</p>
+            <p>Completion: {completionScore}% · Last export: {lastExportName || "None yet"}</p>
+          </div>
+        </section>
+
+        <section className="uaos-panel uaos-help" id="help">
+          <SectionHeader
+            label="Help"
+            title="Simple user workflow"
+            text="Manage projects, arrange, save, preview, and export safely."
+          />
+
+          <div className="uaos-help-grid">
+            <div><strong>1. Projects</strong><p>Open, rename, duplicate, or delete local projects.</p></div>
+            <div><strong>2. Create</strong><p>Start a new song from a musical style.</p></div>
+            <div><strong>3. Arrange</strong><p>Generate sections with chords and tracks.</p></div>
+            <div><strong>4. Preview</strong><p>Inspect the selected section in the player.</p></div>
+            <div><strong>5. Export</strong><p>Download safe local files.</p></div>
+          </div>
         </section>
       </section>
     </main>
   );
 }
-
-export default App;
