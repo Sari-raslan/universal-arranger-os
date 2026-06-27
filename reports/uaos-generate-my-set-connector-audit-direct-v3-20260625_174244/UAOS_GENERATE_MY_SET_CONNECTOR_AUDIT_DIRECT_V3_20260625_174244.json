@@ -1,0 +1,1290 @@
+﻿{
+    "phase":  "UAOS GENERATE MY SET CONNECTOR AUDIT DIRECT V3",
+    "timestamp":  "20260625_174244",
+    "root":  "C:\\Users\\ssare\\keyboard-manager-clean",
+    "outputFolder":  "C:\\Users\\ssare\\keyboard-manager-clean\\reports\\uaos-generate-my-set-connector-audit-direct-v3-20260625_174244",
+    "decision":  "GENERATE_MY_SET_DRY_RUN_CONNECTOR_POSSIBLE_FROM_EXISTING_CODE",
+    "canAssembleDryRunFromExistingCode":  true,
+    "callable":  {
+                     "voiceMelodyEngine":  true,
+                     "arrangementEngine":  true,
+                     "dawPhase7":  true,
+                     "DAWStudioPanelUseful":  true
+                 },
+    "safety":  {
+                   "delete":  "NO",
+                   "forcePush":  "NO",
+                   "payment":  "NO",
+                   "realWriter":  "NO",
+                   "realKeyboardOutput":  "NO",
+                   "productionParser":  "NO",
+                   "appJsxChanged":  "NO",
+                   "newEnginesWritten":  "NO"
+               },
+    "minimumConnectorNeeded":  [
+                                   "Unified UAOSProject JSON schema",
+                                   "Connector only: Voice to Arrangement to DAW/MIDI",
+                                   "Safe output folder only",
+                                   "QA validator for required fields",
+                                   "Dry-run JSON/MD/HTML outputs only",
+                                   "No real writer",
+                                   "No keyboard output",
+                                   "No production parser"
+                               ],
+    "audits":  [
+                   {
+                       "key":  "voiceMelodyEngine",
+                       "role":  "Voice Input / melody extraction",
+                       "path":  "C:\\Users\\ssare\\keyboard-manager-clean\\uaos-live-clean\\src\\ai\\voiceMelodyEngine.js",
+                       "status":  "READY_OR_MOST_USEFUL",
+                       "score":  8,
+                       "sizeKB":  5.56,
+                       "lineCount":  140,
+                       "functions":  [
+                                         {
+                                             "line":  3,
+                                             "name":  "clamp",
+                                             "params":  "value, min, max",
+                                             "signature":  "function clamp(value, min, max)"
+                                         },
+                                         {
+                                             "line":  7,
+                                             "name":  "classifyVoicing",
+                                             "params":  "point, threshold = 0.35",
+                                             "signature":  "export function classifyVoicing(point, threshold = 0.35)"
+                                         },
+                                         {
+                                             "line":  11,
+                                             "name":  "smoothPitchContour",
+                                             "params":  "points, smoothing = 0.35",
+                                             "signature":  "export function smoothPitchContour(points, smoothing = 0.35)"
+                                         },
+                                         {
+                                             "line":  20,
+                                             "name":  "correctOctaveJumps",
+                                             "params":  "points, semitoneLimit = 7",
+                                             "signature":  "export function correctOctaveJumps(points, semitoneLimit = 7)"
+                                         },
+                                         {
+                                             "line":  34,
+                                             "name":  "segmentMelodyNotes",
+                                             "params":  "points, {\r\n  minDuration = 0.08,\r\n  silenceGap = 0.06,\r\n  pitchChange = 1,\r\n  pitchRange = [0, 127],\r\n} = {}",
+                                             "signature":  "export function segmentMelodyNotes(points, {\r\n  minDuration = 0.08,\r\n  silenceGap = 0.06,\r\n  pitchChange = 1,\r\n  pitchRange = [0, 127],\r\n} = {})"
+                                         },
+                                         {
+                                             "line":  44,
+                                             "name":  "close",
+                                             "params":  "endTime",
+                                             "signature":  "function close(endTime)"
+                                         },
+                                         {
+                                             "line":  74,
+                                             "name":  "quantizeMelody",
+                                             "params":  "notes, { bpm = 120, subdivision = 4, swing = 0 } = {}",
+                                             "signature":  "export function quantizeMelody(notes, { bpm = 120, subdivision = 4, swing = 0 } = {})"
+                                         },
+                                         {
+                                             "line":  86,
+                                             "name":  "snapMelodyToScale",
+                                             "params":  "notes, { root = 0, mode = \"major\" } = {}",
+                                             "signature":  "export function snapMelodyToScale(notes, { root = 0, mode = \"major\" } = {})"
+                                         },
+                                         {
+                                             "line":  102,
+                                             "name":  "transposeMelody",
+                                             "params":  "notes, semitones = 0, pitchRange = [0, 127]",
+                                             "signature":  "export function transposeMelody(notes, semitones = 0, pitchRange = [0, 127])"
+                                         },
+                                         {
+                                             "line":  109,
+                                             "name":  "melodyToMidiEvents",
+                                             "params":  "notes, { channel = 1, ppq = 480, bpm = 120 } = {}",
+                                             "signature":  "export function melodyToMidiEvents(notes, { channel = 1, ppq = 480, bpm = 120 } = {})"
+                                         },
+                                         {
+                                             "line":  123,
+                                             "name":  "voiceToMelody",
+                                             "params":  "points, options = {}",
+                                             "signature":  "export function voiceToMelody(points, options = {})"
+                                         },
+                                         {
+                                             "line":  111,
+                                             "name":  "secondsToTicks",
+                                             "params":  "seconds",
+                                             "signature":  "const secondsToTicks = (seconds) =\u003e"
+                                         }
+                                     ],
+                       "exports":  [
+                                       {
+                                           "line":  7,
+                                           "name":  "classifyVoicing",
+                                           "signature":  "export function classifyVoicing(point, threshold = 0.35)"
+                                       },
+                                       {
+                                           "line":  11,
+                                           "name":  "smoothPitchContour",
+                                           "signature":  "export function smoothPitchContour(points, smoothing = 0.35)"
+                                       },
+                                       {
+                                           "line":  20,
+                                           "name":  "correctOctaveJumps",
+                                           "signature":  "export function correctOctaveJumps(points, semitoneLimit = 7)"
+                                       },
+                                       {
+                                           "line":  34,
+                                           "name":  "segmentMelodyNotes",
+                                           "signature":  "export function segmentMelodyNotes(points, {\r\n  minDuration = 0.08,\r\n  silenceGap = 0.06,\r\n  pitchChange = 1,\r\n  pitchRange = [0, 127],\r\n} = {})"
+                                       },
+                                       {
+                                           "line":  74,
+                                           "name":  "quantizeMelody",
+                                           "signature":  "export function quantizeMelody(notes, { bpm = 120, subdivision = 4, swing = 0 } = {})"
+                                       },
+                                       {
+                                           "line":  86,
+                                           "name":  "snapMelodyToScale",
+                                           "signature":  "export function snapMelodyToScale(notes, { root = 0, mode = \"major\" } = {})"
+                                       },
+                                       {
+                                           "line":  102,
+                                           "name":  "transposeMelody",
+                                           "signature":  "export function transposeMelody(notes, semitones = 0, pitchRange = [0, 127])"
+                                       },
+                                       {
+                                           "line":  109,
+                                           "name":  "melodyToMidiEvents",
+                                           "signature":  "export function melodyToMidiEvents(notes, { channel = 1, ppq = 480, bpm = 120 } = {})"
+                                       },
+                                       {
+                                           "line":  123,
+                                           "name":  "voiceToMelody",
+                                           "signature":  "export function voiceToMelody(points, options = {})"
+                                       }
+                                   ],
+                       "returnSnippets":  [
+                                              {
+                                                  "line":  5,
+                                                  "snippet":  "return Math.max(min, Math.min(max, Number(value)));"
+                                              },
+                                              {
+                                                  "line":  9,
+                                                  "snippet":  "return Boolean(point \u0026\u0026 point.frequency \u003e 0 \u0026\u0026 Number(point.confidence || 0) \u003e= threshold);"
+                                              },
+                                              {
+                                                  "line":  14,
+                                                  "snippet":  "return points.map((point) =\u003e {"
+                                              },
+                                              {
+                                                  "line":  17,
+                                                  "snippet":  "return { ...point, smoothedFrequency: previous, voiced: true };"
+                                              },
+                                              {
+                                                  "line":  23,
+                                                  "snippet":  "return points.map((point) =\u003e {"
+                                              },
+                                              {
+                                                  "line":  31,
+                                                  "snippet":  "return { ...point, midi };"
+                                              },
+                                              {
+                                                  "line":  72,
+                                                  "snippet":  "return notes;"
+                                              },
+                                              {
+                                                  "line":  78,
+                                                  "snippet":  "return notes.map((note) =\u003e {"
+                                              },
+                                              {
+                                                  "line":  83,
+                                                  "snippet":  "return { ...note, start, end: start + duration, duration, quantized: true };"
+                                              },
+                                              {
+                                                  "line":  89,
+                                                  "snippet":  "return notes.map((note) =\u003e {"
+                                              },
+                                              {
+                                                  "line":  99,
+                                                  "snippet":  "return { ...note, midi: clamp(best, 0, 127), snapped: true };"
+                                              },
+                                              {
+                                                  "line":  104,
+                                                  "snippet":  "return notes.map((note) =\u003e ({"
+                                              },
+                                              {
+                                                  "line":  112,
+                                                  "snippet":  "return notes.flatMap((note) =\u003e {"
+                                              },
+                                              {
+                                                  "line":  117,
+                                                  "snippet":  "return ["
+                                              },
+                                              {
+                                                  "line":  131,
+                                                  "snippet":  "return {"
+                                              }
+                                          ],
+                       "voiceTerms":  93,
+                       "arrangementTerms":  0,
+                       "midiTerms":  56,
+                       "dawTerms":  2,
+                       "tasteTerms":  0,
+                       "libraryTerms":  0,
+                       "outputTerms":  31,
+                       "riskWriterTerms":  0
+                   },
+                   {
+                       "key":  "arrangementEngine",
+                       "role":  "Arrangement sections / chord logic",
+                       "path":  "C:\\Users\\ssare\\keyboard-manager-clean\\uaos-live-clean\\src\\uaos-local-music-engine\\arrangement\\arrangementEngine.js",
+                       "status":  "READY_OR_MOST_USEFUL",
+                       "score":  8,
+                       "sizeKB":  2.64,
+                       "lineCount":  112,
+                       "functions":  [
+                                         {
+                                             "line":  2,
+                                             "name":  "createArrangement",
+                                             "params":  "{\n  title = \"Untitled Arrangement\",\n  tempo = 120,\n  timeSignature = \"4/4\",\n  key = \"C\"\n} = {}",
+                                             "signature":  "export function createArrangement({\n  title = \"Untitled Arrangement\",\n  tempo = 120,\n  timeSignature = \"4/4\",\n  key = \"C\"\n} = {})"
+                                         },
+                                         {
+                                             "line":  25,
+                                             "name":  "createSongSection",
+                                             "params":  "{\n  sectionId,\n  name = \"Verse\",\n  startBar = 1,\n  bars = 8,\n  chords = [\"C\", \"Am\", \"F\", \"G\"]\n} = {}",
+                                             "signature":  "export function createSongSection({\n  sectionId,\n  name = \"Verse\",\n  startBar = 1,\n  bars = 8,\n  chords = [\"C\", \"Am\", \"F\", \"G\"]\n} = {})"
+                                         },
+                                         {
+                                             "line":  48,
+                                             "name":  "generatePlaceholderStyleLanes",
+                                             "params":  "section",
+                                             "signature":  "export function generatePlaceholderStyleLanes(section)"
+                                         },
+                                         {
+                                             "line":  82,
+                                             "name":  "addSection",
+                                             "params":  "arrangement, section",
+                                             "signature":  "export function addSection(arrangement, section)"
+                                         },
+                                         {
+                                             "line":  89,
+                                             "name":  "exportArrangementToUaosProjectJson",
+                                             "params":  "arrangement",
+                                             "signature":  "export function exportArrangementToUaosProjectJson(arrangement)"
+                                         }
+                                     ],
+                       "exports":  [
+                                       {
+                                           "line":  2,
+                                           "name":  "createArrangement",
+                                           "signature":  "export function createArrangement({\n  title = \"Untitled Arrangement\",\n  tempo = 120,\n  timeSignature = \"4/4\",\n  key = \"C\"\n} = {})"
+                                       },
+                                       {
+                                           "line":  25,
+                                           "name":  "createSongSection",
+                                           "signature":  "export function createSongSection({\n  sectionId,\n  name = \"Verse\",\n  startBar = 1,\n  bars = 8,\n  chords = [\"C\", \"Am\", \"F\", \"G\"]\n} = {})"
+                                       },
+                                       {
+                                           "line":  48,
+                                           "name":  "generatePlaceholderStyleLanes",
+                                           "signature":  "export function generatePlaceholderStyleLanes(section)"
+                                       },
+                                       {
+                                           "line":  82,
+                                           "name":  "addSection",
+                                           "signature":  "export function addSection(arrangement, section)"
+                                       },
+                                       {
+                                           "line":  89,
+                                           "name":  "exportArrangementToUaosProjectJson",
+                                           "signature":  "export function exportArrangementToUaosProjectJson(arrangement)"
+                                       },
+                                       {
+                                           "line":  1,
+                                           "name":  "UAOS_ARRANGEMENT_ENGINE_VERSION",
+                                           "signature":  "export const UAOS_ARRANGEMENT_ENGINE_VERSION ="
+                                       }
+                                   ],
+                       "returnSnippets":  [
+                                              {
+                                                  "line":  9,
+                                                  "snippet":  "return {"
+                                              },
+                                              {
+                                                  "line":  33,
+                                                  "snippet":  "return {"
+                                              },
+                                              {
+                                                  "line":  52,
+                                                  "snippet":  "return {"
+                                              },
+                                              {
+                                                  "line":  84,
+                                                  "snippet":  "return {"
+                                              },
+                                              {
+                                                  "line":  94,
+                                                  "snippet":  "return {"
+                                              }
+                                          ],
+                       "voiceTerms":  3,
+                       "arrangementTerms":  64,
+                       "midiTerms":  10,
+                       "dawTerms":  26,
+                       "tasteTerms":  0,
+                       "libraryTerms":  0,
+                       "outputTerms":  19,
+                       "riskWriterTerms":  0
+                   },
+                   {
+                       "key":  "dawPhase7",
+                       "role":  "MIDI / DAW generation",
+                       "path":  "C:\\Users\\ssare\\keyboard-manager-clean\\uaos-live-clean\\src\\daw\\dawPhase7.js",
+                       "status":  "READY_OR_MOST_USEFUL",
+                       "score":  10,
+                       "sizeKB":  38.5,
+                       "lineCount":  887,
+                       "functions":  [
+                                         {
+                                             "line":  8,
+                                             "name":  "stableId",
+                                             "params":  "prefix, index = 1",
+                                             "signature":  "export function stableId(prefix, index = 1)"
+                                         },
+                                         {
+                                             "line":  12,
+                                             "name":  "clamp",
+                                             "params":  "value, min, max",
+                                             "signature":  "function clamp(value, min, max)"
+                                         },
+                                         {
+                                             "line":  16,
+                                             "name":  "sortedByTime",
+                                             "params":  "items",
+                                             "signature":  "function sortedByTime(items)"
+                                         },
+                                         {
+                                             "line":  20,
+                                             "name":  "ticksPerBar",
+                                             "params":  "timeSignature = { numerator: 4, denominator: 4 }, ppq = DEFAULT_PPQ",
+                                             "signature":  "export function ticksPerBar(timeSignature = { numerator: 4, denominator: 4 }, ppq = DEFAULT_PPQ)"
+                                         },
+                                         {
+                                             "line":  24,
+                                             "name":  "musicalToTicks",
+                                             "params":  "{ bar = 1, beat = 1, tick = 0 }, timeSignature = { numerator: 4, denominator: 4 }, ppq = DEFAULT_PPQ",
+                                             "signature":  "export function musicalToTicks({ bar = 1, beat = 1, tick = 0 }, timeSignature = { numerator: 4, denominator: 4 }, ppq = DEFAULT_PPQ)"
+                                         },
+                                         {
+                                             "line":  29,
+                                             "name":  "ticksToMusical",
+                                             "params":  "ticks, timeSignature = { numerator: 4, denominator: 4 }, ppq = DEFAULT_PPQ",
+                                             "signature":  "export function ticksToMusical(ticks, timeSignature = { numerator: 4, denominator: 4 }, ppq = DEFAULT_PPQ)"
+                                         },
+                                         {
+                                             "line":  39,
+                                             "name":  "ticksToSeconds",
+                                             "params":  "ticks, tempoMap = [{ tick: 0, bpm: 120 }], ppq = DEFAULT_PPQ",
+                                             "signature":  "export function ticksToSeconds(ticks, tempoMap = [{ tick: 0, bpm: 120 }], ppq = DEFAULT_PPQ)"
+                                         },
+                                         {
+                                             "line":  54,
+                                             "name":  "secondsToTicks",
+                                             "params":  "seconds, tempoMap = [{ tick: 0, bpm: 120 }], ppq = DEFAULT_PPQ",
+                                             "signature":  "export function secondsToTicks(seconds, tempoMap = [{ tick: 0, bpm: 120 }], ppq = DEFAULT_PPQ)"
+                                         },
+                                         {
+                                             "line":  69,
+                                             "name":  "createTrack",
+                                             "params":  "type = \"audio\", index = 1, overrides = {}",
+                                             "signature":  "export function createTrack(type = \"audio\", index = 1, overrides = {})"
+                                         },
+                                         {
+                                             "line":  101,
+                                             "name":  "createAudioClip",
+                                             "params":  "index = 1, overrides = {}",
+                                             "signature":  "export function createAudioClip(index = 1, overrides = {})"
+                                         },
+                                         {
+                                             "line":  135,
+                                             "name":  "createMidiClip",
+                                             "params":  "index = 1, overrides = {}",
+                                             "signature":  "export function createMidiClip(index = 1, overrides = {})"
+                                         },
+                                         {
+                                             "line":  160,
+                                             "name":  "sortMidiEvents",
+                                             "params":  "events",
+                                             "signature":  "export function sortMidiEvents(events)"
+                                         },
+                                         {
+                                             "line":  164,
+                                             "name":  "validateAudioClip",
+                                             "params":  "clip",
+                                             "signature":  "export function validateAudioClip(clip)"
+                                         },
+                                         {
+                                             "line":  173,
+                                             "name":  "validateMidiClip",
+                                             "params":  "clip",
+                                             "signature":  "export function validateMidiClip(clip)"
+                                         },
+                                         {
+                                             "line":  185,
+                                             "name":  "addMidiNote",
+                                             "params":  "clip, note",
+                                             "signature":  "export function addMidiNote(clip, note)"
+                                         },
+                                         {
+                                             "line":  198,
+                                             "name":  "quantizeMidiClip",
+                                             "params":  "clip, gridTicks = DEFAULT_PPQ / 4",
+                                             "signature":  "export function quantizeMidiClip(clip, gridTicks = DEFAULT_PPQ / 4)"
+                                         },
+                                         {
+                                             "line":  210,
+                                             "name":  "transposeMidiClip",
+                                             "params":  "clip, semitones = 0",
+                                             "signature":  "export function transposeMidiClip(clip, semitones = 0)"
+                                         },
+                                         {
+                                             "line":  218,
+                                             "name":  "splitClip",
+                                             "params":  "clip, splitTick",
+                                             "signature":  "export function splitClip(clip, splitTick)"
+                                         },
+                                         {
+                                             "line":  232,
+                                             "name":  "duplicateClip",
+                                             "params":  "clip, offsetTicks = clip.durationTicks",
+                                             "signature":  "export function duplicateClip(clip, offsetTicks = clip.durationTicks)"
+                                         },
+                                         {
+                                             "line":  237,
+                                             "name":  "resizeClip",
+                                             "params":  "clip, newDurationTicks",
+                                             "signature":  "export function resizeClip(clip, newDurationTicks)"
+                                         },
+                                         {
+                                             "line":  242,
+                                             "name":  "moveClip",
+                                             "params":  "clip, newStartTick, snapTicks = 1",
+                                             "signature":  "export function moveClip(clip, newStartTick, snapTicks = 1)"
+                                         },
+                                         {
+                                             "line":  248,
+                                             "name":  "placeClip",
+                                             "params":  "project, trackId, clip, options = {}",
+                                             "signature":  "export function placeClip(project, trackId, clip, options = {})"
+                                         },
+                                         {
+                                             "line":  257,
+                                             "name":  "createTimelineState",
+                                             "params":  "overrides = {}",
+                                             "signature":  "export function createTimelineState(overrides = {})"
+                                         },
+                                         {
+                                             "line":  273,
+                                             "name":  "createTransportState",
+                                             "params":  "overrides = {}",
+                                             "signature":  "export function createTransportState(overrides = {})"
+                                         },
+                                         {
+                                             "line":  291,
+                                             "name":  "reduceTransport",
+                                             "params":  "state, action, project = null",
+                                             "signature":  "export function reduceTransport(state, action, project = null)"
+                                         },
+                                         {
+                                             "line":  325,
+                                             "name":  "schedulePlayhead",
+                                             "params":  "state, elapsedSeconds, ppq = DEFAULT_PPQ",
+                                             "signature":  "export function schedulePlayhead(state, elapsedSeconds, ppq = DEFAULT_PPQ)"
+                                         },
+                                         {
+                                             "line":  335,
+                                             "name":  "createMixerState",
+                                             "params":  "tracks = []",
+                                             "signature":  "export function createMixerState(tracks = [])"
+                                         },
+                                         {
+                                             "line":  341,
+                                             "name":  "createChannelStrip",
+                                             "params":  "track, index = 1",
+                                             "signature":  "export function createChannelStrip(track, index = 1)"
+                                         },
+                                         {
+                                             "line":  362,
+                                             "name":  "updateChannelStrip",
+                                             "params":  "mixer, stripId, changes",
+                                             "signature":  "export function updateChannelStrip(mixer, stripId, changes)"
+                                         },
+                                         {
+                                             "line":  374,
+                                             "name":  "validateMixerRouting",
+                                             "params":  "mixer",
+                                             "signature":  "export function validateMixerRouting(mixer)"
+                                         },
+                                         {
+                                             "line":  384,
+                                             "name":  "preventFeedbackLoop",
+                                             "params":  "mixer, fromId, toId",
+                                             "signature":  "export function preventFeedbackLoop(mixer, fromId, toId)"
+                                         },
+                                         {
+                                             "line":  397,
+                                             "name":  "createAutomationLane",
+                                             "params":  "trackId, parameterId, points = [], overrides = {}",
+                                             "signature":  "export function createAutomationLane(trackId, parameterId, points = [], overrides = {})"
+                                         },
+                                         {
+                                             "line":  410,
+                                             "name":  "sortAutomationPoints",
+                                             "params":  "points",
+                                             "signature":  "export function sortAutomationPoints(points)"
+                                         },
+                                         {
+                                             "line":  414,
+                                             "name":  "evaluateAutomation",
+                                             "params":  "lane, tick",
+                                             "signature":  "export function evaluateAutomation(lane, tick)"
+                                         },
+                                         {
+                                             "line":  430,
+                                             "name":  "createEffect",
+                                             "params":  "type = \"gain\", overrides = {}",
+                                             "signature":  "export function createEffect(type = \"gain\", overrides = {})"
+                                         },
+                                         {
+                                             "line":  445,
+                                             "name":  "validateEffect",
+                                             "params":  "effect",
+                                             "signature":  "export function validateEffect(effect)"
+                                         },
+                                         {
+                                             "line":  452,
+                                             "name":  "createPluginHostContract",
+                                             "params":  "",
+                                             "signature":  "export function createPluginHostContract()"
+                                         },
+                                         {
+                                             "line":  520,
+                                             "name":  "createRecordingState",
+                                             "params":  "overrides = {}",
+                                             "signature":  "export function createRecordingState(overrides = {})"
+                                         },
+                                         {
+                                             "line":  547,
+                                             "name":  "startAudioRecording",
+                                             "params":  "recording, trackId, options = {}",
+                                             "signature":  "export function startAudioRecording(recording, trackId, options = {})"
+                                         },
+                                         {
+                                             "line":  571,
+                                             "name":  "stopAudioRecording",
+                                             "params":  "recording, options = {}",
+                                             "signature":  "export function stopAudioRecording(recording, options = {})"
+                                         },
+                                         {
+                                             "line":  590,
+                                             "name":  "cancelAudioRecording",
+                                             "params":  "recording",
+                                             "signature":  "export function cancelAudioRecording(recording)"
+                                         },
+                                         {
+                                             "line":  594,
+                                             "name":  "startMidiRecording",
+                                             "params":  "recording, trackId, options = {}",
+                                             "signature":  "export function startMidiRecording(recording, trackId, options = {})"
+                                         },
+                                         {
+                                             "line":  607,
+                                             "name":  "captureMidiRecordingEvent",
+                                             "params":  "recording, message, tick",
+                                             "signature":  "export function captureMidiRecordingEvent(recording, message, tick)"
+                                         },
+                                         {
+                                             "line":  618,
+                                             "name":  "stopMidiRecording",
+                                             "params":  "recording, trackId, options = {}",
+                                             "signature":  "export function stopMidiRecording(recording, trackId, options = {})"
+                                         },
+                                         {
+                                             "line":  638,
+                                             "name":  "createAutosaveState",
+                                             "params":  "overrides = {}",
+                                             "signature":  "export function createAutosaveState(overrides = {})"
+                                         },
+                                         {
+                                             "line":  652,
+                                             "name":  "createRecoverySnapshot",
+                                             "params":  "project, autosave, savedAt = \"1970-01-01T00:00:00.000Z\"",
+                                             "signature":  "export function createRecoverySnapshot(project, autosave, savedAt = \"1970-01-01T00:00:00.000Z\")"
+                                         },
+                                         {
+                                             "line":  662,
+                                             "name":  "loadRecoverySnapshot",
+                                             "params":  "snapshot",
+                                             "signature":  "export function loadRecoverySnapshot(snapshot)"
+                                         },
+                                         {
+                                             "line":  671,
+                                             "name":  "sanitizeProjectForStorage",
+                                             "params":  "project",
+                                             "signature":  "export function sanitizeProjectForStorage(project)"
+                                         },
+                                         {
+                                             "line":  678,
+                                             "name":  "createExportJob",
+                                             "params":  "project, options = {}",
+                                             "signature":  "export function createExportJob(project, options = {})"
+                                         },
+                                         {
+                                             "line":  700,
+                                             "name":  "cancelExportJob",
+                                             "params":  "job",
+                                             "signature":  "export function cancelExportJob(job)"
+                                         },
+                                         {
+                                             "line":  704,
+                                             "name":  "collectMissingAssets",
+                                             "params":  "project",
+                                             "signature":  "export function collectMissingAssets(project)"
+                                         },
+                                         {
+                                             "line":  708,
+                                             "name":  "createPerformanceLimits",
+                                             "params":  "overrides = {}",
+                                             "signature":  "export function createPerformanceLimits(overrides = {})"
+                                         },
+                                         {
+                                             "line":  728,
+                                             "name":  "validatePerformance",
+                                             "params":  "project, limits = createPerformanceLimits(",
+                                             "signature":  "export function validatePerformance(project, limits = createPerformanceLimits()"
+                                         },
+                                         {
+                                             "line":  736,
+                                             "name":  "createDawProject",
+                                             "params":  "overrides = {}",
+                                             "signature":  "export function createDawProject(overrides = {})"
+                                         },
+                                         {
+                                             "line":  779,
+                                             "name":  "validateDawProject",
+                                             "params":  "project",
+                                             "signature":  "export function validateDawProject(project)"
+                                         },
+                                         {
+                                             "line":  797,
+                                             "name":  "migrateDawProject",
+                                             "params":  "value = {}",
+                                             "signature":  "export function migrateDawProject(value = {})"
+                                         },
+                                         {
+                                             "line":  827,
+                                             "name":  "arrangerToTracks",
+                                             "params":  "arrangerState = createArrangerState(",
+                                             "signature":  "export function arrangerToTracks(arrangerState = createArrangerState()"
+                                         },
+                                         {
+                                             "line":  850,
+                                             "name":  "importAiMelody",
+                                             "params":  "voiceMelody, trackId = \"midi-001\"",
+                                             "signature":  "export function importAiMelody(voiceMelody, trackId = \"midi-001\")"
+                                         },
+                                         {
+                                             "line":  863,
+                                             "name":  "applyHardwareTransport",
+                                             "params":  "transport, hardwareCommand",
+                                             "signature":  "export function applyHardwareTransport(transport, hardwareCommand)"
+                                         },
+                                         {
+                                             "line":  871,
+                                             "name":  "linkPhase6Hardware",
+                                             "params":  "project, hardware",
+                                             "signature":  "export function linkPhase6Hardware(project, hardware)"
+                                         }
+                                     ],
+                       "exports":  [
+                                       {
+                                           "line":  8,
+                                           "name":  "stableId",
+                                           "signature":  "export function stableId(prefix, index = 1)"
+                                       },
+                                       {
+                                           "line":  20,
+                                           "name":  "ticksPerBar",
+                                           "signature":  "export function ticksPerBar(timeSignature = { numerator: 4, denominator: 4 }, ppq = DEFAULT_PPQ)"
+                                       },
+                                       {
+                                           "line":  24,
+                                           "name":  "musicalToTicks",
+                                           "signature":  "export function musicalToTicks({ bar = 1, beat = 1, tick = 0 }, timeSignature = { numerator: 4, denominator: 4 }, ppq = DEFAULT_PPQ)"
+                                       },
+                                       {
+                                           "line":  29,
+                                           "name":  "ticksToMusical",
+                                           "signature":  "export function ticksToMusical(ticks, timeSignature = { numerator: 4, denominator: 4 }, ppq = DEFAULT_PPQ)"
+                                       },
+                                       {
+                                           "line":  39,
+                                           "name":  "ticksToSeconds",
+                                           "signature":  "export function ticksToSeconds(ticks, tempoMap = [{ tick: 0, bpm: 120 }], ppq = DEFAULT_PPQ)"
+                                       },
+                                       {
+                                           "line":  54,
+                                           "name":  "secondsToTicks",
+                                           "signature":  "export function secondsToTicks(seconds, tempoMap = [{ tick: 0, bpm: 120 }], ppq = DEFAULT_PPQ)"
+                                       },
+                                       {
+                                           "line":  69,
+                                           "name":  "createTrack",
+                                           "signature":  "export function createTrack(type = \"audio\", index = 1, overrides = {})"
+                                       },
+                                       {
+                                           "line":  101,
+                                           "name":  "createAudioClip",
+                                           "signature":  "export function createAudioClip(index = 1, overrides = {})"
+                                       },
+                                       {
+                                           "line":  135,
+                                           "name":  "createMidiClip",
+                                           "signature":  "export function createMidiClip(index = 1, overrides = {})"
+                                       },
+                                       {
+                                           "line":  160,
+                                           "name":  "sortMidiEvents",
+                                           "signature":  "export function sortMidiEvents(events)"
+                                       },
+                                       {
+                                           "line":  164,
+                                           "name":  "validateAudioClip",
+                                           "signature":  "export function validateAudioClip(clip)"
+                                       },
+                                       {
+                                           "line":  173,
+                                           "name":  "validateMidiClip",
+                                           "signature":  "export function validateMidiClip(clip)"
+                                       },
+                                       {
+                                           "line":  185,
+                                           "name":  "addMidiNote",
+                                           "signature":  "export function addMidiNote(clip, note)"
+                                       },
+                                       {
+                                           "line":  198,
+                                           "name":  "quantizeMidiClip",
+                                           "signature":  "export function quantizeMidiClip(clip, gridTicks = DEFAULT_PPQ / 4)"
+                                       },
+                                       {
+                                           "line":  210,
+                                           "name":  "transposeMidiClip",
+                                           "signature":  "export function transposeMidiClip(clip, semitones = 0)"
+                                       },
+                                       {
+                                           "line":  218,
+                                           "name":  "splitClip",
+                                           "signature":  "export function splitClip(clip, splitTick)"
+                                       },
+                                       {
+                                           "line":  232,
+                                           "name":  "duplicateClip",
+                                           "signature":  "export function duplicateClip(clip, offsetTicks = clip.durationTicks)"
+                                       },
+                                       {
+                                           "line":  237,
+                                           "name":  "resizeClip",
+                                           "signature":  "export function resizeClip(clip, newDurationTicks)"
+                                       },
+                                       {
+                                           "line":  242,
+                                           "name":  "moveClip",
+                                           "signature":  "export function moveClip(clip, newStartTick, snapTicks = 1)"
+                                       },
+                                       {
+                                           "line":  248,
+                                           "name":  "placeClip",
+                                           "signature":  "export function placeClip(project, trackId, clip, options = {})"
+                                       },
+                                       {
+                                           "line":  257,
+                                           "name":  "createTimelineState",
+                                           "signature":  "export function createTimelineState(overrides = {})"
+                                       },
+                                       {
+                                           "line":  273,
+                                           "name":  "createTransportState",
+                                           "signature":  "export function createTransportState(overrides = {})"
+                                       },
+                                       {
+                                           "line":  291,
+                                           "name":  "reduceTransport",
+                                           "signature":  "export function reduceTransport(state, action, project = null)"
+                                       },
+                                       {
+                                           "line":  325,
+                                           "name":  "schedulePlayhead",
+                                           "signature":  "export function schedulePlayhead(state, elapsedSeconds, ppq = DEFAULT_PPQ)"
+                                       },
+                                       {
+                                           "line":  335,
+                                           "name":  "createMixerState",
+                                           "signature":  "export function createMixerState(tracks = [])"
+                                       },
+                                       {
+                                           "line":  341,
+                                           "name":  "createChannelStrip",
+                                           "signature":  "export function createChannelStrip(track, index = 1)"
+                                       },
+                                       {
+                                           "line":  362,
+                                           "name":  "updateChannelStrip",
+                                           "signature":  "export function updateChannelStrip(mixer, stripId, changes)"
+                                       },
+                                       {
+                                           "line":  374,
+                                           "name":  "validateMixerRouting",
+                                           "signature":  "export function validateMixerRouting(mixer)"
+                                       },
+                                       {
+                                           "line":  384,
+                                           "name":  "preventFeedbackLoop",
+                                           "signature":  "export function preventFeedbackLoop(mixer, fromId, toId)"
+                                       },
+                                       {
+                                           "line":  397,
+                                           "name":  "createAutomationLane",
+                                           "signature":  "export function createAutomationLane(trackId, parameterId, points = [], overrides = {})"
+                                       },
+                                       {
+                                           "line":  410,
+                                           "name":  "sortAutomationPoints",
+                                           "signature":  "export function sortAutomationPoints(points)"
+                                       },
+                                       {
+                                           "line":  414,
+                                           "name":  "evaluateAutomation",
+                                           "signature":  "export function evaluateAutomation(lane, tick)"
+                                       },
+                                       {
+                                           "line":  430,
+                                           "name":  "createEffect",
+                                           "signature":  "export function createEffect(type = \"gain\", overrides = {})"
+                                       },
+                                       {
+                                           "line":  445,
+                                           "name":  "validateEffect",
+                                           "signature":  "export function validateEffect(effect)"
+                                       },
+                                       {
+                                           "line":  452,
+                                           "name":  "createPluginHostContract",
+                                           "signature":  "export function createPluginHostContract()"
+                                       },
+                                       {
+                                           "line":  520,
+                                           "name":  "createRecordingState",
+                                           "signature":  "export function createRecordingState(overrides = {})"
+                                       },
+                                       {
+                                           "line":  547,
+                                           "name":  "startAudioRecording",
+                                           "signature":  "export function startAudioRecording(recording, trackId, options = {})"
+                                       },
+                                       {
+                                           "line":  571,
+                                           "name":  "stopAudioRecording",
+                                           "signature":  "export function stopAudioRecording(recording, options = {})"
+                                       },
+                                       {
+                                           "line":  590,
+                                           "name":  "cancelAudioRecording",
+                                           "signature":  "export function cancelAudioRecording(recording)"
+                                       },
+                                       {
+                                           "line":  594,
+                                           "name":  "startMidiRecording",
+                                           "signature":  "export function startMidiRecording(recording, trackId, options = {})"
+                                       },
+                                       {
+                                           "line":  607,
+                                           "name":  "captureMidiRecordingEvent",
+                                           "signature":  "export function captureMidiRecordingEvent(recording, message, tick)"
+                                       },
+                                       {
+                                           "line":  618,
+                                           "name":  "stopMidiRecording",
+                                           "signature":  "export function stopMidiRecording(recording, trackId, options = {})"
+                                       },
+                                       {
+                                           "line":  638,
+                                           "name":  "createAutosaveState",
+                                           "signature":  "export function createAutosaveState(overrides = {})"
+                                       },
+                                       {
+                                           "line":  652,
+                                           "name":  "createRecoverySnapshot",
+                                           "signature":  "export function createRecoverySnapshot(project, autosave, savedAt = \"1970-01-01T00:00:00.000Z\")"
+                                       },
+                                       {
+                                           "line":  662,
+                                           "name":  "loadRecoverySnapshot",
+                                           "signature":  "export function loadRecoverySnapshot(snapshot)"
+                                       },
+                                       {
+                                           "line":  671,
+                                           "name":  "sanitizeProjectForStorage",
+                                           "signature":  "export function sanitizeProjectForStorage(project)"
+                                       },
+                                       {
+                                           "line":  678,
+                                           "name":  "createExportJob",
+                                           "signature":  "export function createExportJob(project, options = {})"
+                                       },
+                                       {
+                                           "line":  700,
+                                           "name":  "cancelExportJob",
+                                           "signature":  "export function cancelExportJob(job)"
+                                       },
+                                       {
+                                           "line":  704,
+                                           "name":  "collectMissingAssets",
+                                           "signature":  "export function collectMissingAssets(project)"
+                                       },
+                                       {
+                                           "line":  708,
+                                           "name":  "createPerformanceLimits",
+                                           "signature":  "export function createPerformanceLimits(overrides = {})"
+                                       },
+                                       {
+                                           "line":  728,
+                                           "name":  "validatePerformance",
+                                           "signature":  "export function validatePerformance(project, limits = createPerformanceLimits()"
+                                       },
+                                       {
+                                           "line":  736,
+                                           "name":  "createDawProject",
+                                           "signature":  "export function createDawProject(overrides = {})"
+                                       },
+                                       {
+                                           "line":  779,
+                                           "name":  "validateDawProject",
+                                           "signature":  "export function validateDawProject(project)"
+                                       },
+                                       {
+                                           "line":  797,
+                                           "name":  "migrateDawProject",
+                                           "signature":  "export function migrateDawProject(value = {})"
+                                       },
+                                       {
+                                           "line":  827,
+                                           "name":  "arrangerToTracks",
+                                           "signature":  "export function arrangerToTracks(arrangerState = createArrangerState()"
+                                       },
+                                       {
+                                           "line":  850,
+                                           "name":  "importAiMelody",
+                                           "signature":  "export function importAiMelody(voiceMelody, trackId = \"midi-001\")"
+                                       },
+                                       {
+                                           "line":  863,
+                                           "name":  "applyHardwareTransport",
+                                           "signature":  "export function applyHardwareTransport(transport, hardwareCommand)"
+                                       },
+                                       {
+                                           "line":  871,
+                                           "name":  "linkPhase6Hardware",
+                                           "signature":  "export function linkPhase6Hardware(project, hardware)"
+                                       },
+                                       {
+                                           "line":  3,
+                                           "name":  "DAW_SCHEMA_VERSION",
+                                           "signature":  "export const DAW_SCHEMA_VERSION ="
+                                       },
+                                       {
+                                           "line":  5,
+                                           "name":  "DEFAULT_PPQ",
+                                           "signature":  "export const DEFAULT_PPQ ="
+                                       },
+                                       {
+                                           "line":  6,
+                                           "name":  "TRACK_TYPES",
+                                           "signature":  "export const TRACK_TYPES ="
+                                       },
+                                       {
+                                           "line":  7,
+                                           "name":  "AUTOMATION_INTERPOLATION",
+                                           "signature":  "export const AUTOMATION_INTERPOLATION ="
+                                       }
+                                   ],
+                       "returnSnippets":  [
+                                              {
+                                                  "line":  10,
+                                                  "snippet":  "return `${prefix}-${String(index).padStart(3, \"0\")}`;"
+                                              },
+                                              {
+                                                  "line":  14,
+                                                  "snippet":  "return Math.min(max, Math.max(min, Number(value)));"
+                                              },
+                                              {
+                                                  "line":  18,
+                                                  "snippet":  "return [...items].sort((a, b) =\u003e (a.startTick ?? a.tick ?? a.time ?? 0) - (b.startTick ?? b.tick ?? b.time ?? 0) || String(a.id).localeCompare(String(b.id)));"
+                                              },
+                                              {
+                                                  "line":  22,
+                                                  "snippet":  "return Number(timeSignature.numerator || 4) * ppq * (4 / Number(timeSignature.denominator || 4));"
+                                              },
+                                              {
+                                                  "line":  27,
+                                                  "snippet":  "return Math.max(0, Math.round((Number(bar) - 1) * barTicks + (Number(beat) - 1) * ppq + Number(tick)));"
+                                              },
+                                              {
+                                                  "line":  37,
+                                                  "snippet":  "return { bar, beat, tick };"
+                                              },
+                                              {
+                                                  "line":  52,
+                                                  "snippet":  "return Number(seconds.toFixed(6));"
+                                              },
+                                              {
+                                                  "line":  67,
+                                                  "snippet":  "return Math.round(cursor + (remaining / (60 / bpm)) * ppq);"
+                                              },
+                                              {
+                                                  "line":  72,
+                                                  "snippet":  "return {"
+                                              },
+                                              {
+                                                  "line":  105,
+                                                  "snippet":  "return {"
+                                              },
+                                              {
+                                                  "line":  139,
+                                                  "snippet":  "return {"
+                                              },
+                                              {
+                                                  "line":  162,
+                                                  "snippet":  "return [...events].sort((a, b) =\u003e Number(a.tick || 0) - Number(b.tick || 0) || Number(a.pitch || a.controller || 0) - Number(b.pitch || b.controller || 0));"
+                                              },
+                                              {
+                                                  "line":  171,
+                                                  "snippet":  "return { valid: errors.length === 0, errors };"
+                                              },
+                                              {
+                                                  "line":  183,
+                                                  "snippet":  "return { valid: errors.length === 0, errors };"
+                                              },
+                                              {
+                                                  "line":  196,
+                                                  "snippet":  "return { ...clip, notes: sortMidiEvents([...(clip.notes || []), nextNote]) };"
+                                              },
+                                              {
+                                                  "line":  201,
+                                                  "snippet":  "return {"
+                                              },
+                                              {
+                                                  "line":  212,
+                                                  "snippet":  "return {"
+                                              },
+                                              {
+                                                  "line":  230,
+                                                  "snippet":  "return { ok: true, clips: [left, right] };"
+                                              },
+                                              {
+                                                  "line":  235,
+                                                  "snippet":  "return { ...clip, id: `${clip.id}-copy`, startTick: clip.startTick + offset, endTick: clip.endTick + offset };"
+                                              },
+                                              {
+                                                  "line":  240,
+                                                  "snippet":  "return { ...clip, durationTicks, endTick: clip.startTick + durationTicks };"
+                                              },
+                                              {
+                                                  "line":  246,
+                                                  "snippet":  "return { ...clip, startTick, endTick: startTick + clip.durationTicks };"
+                                              },
+                                              {
+                                                  "line":  255,
+                                                  "snippet":  "return { ok: true, project: { ...project, tracks: nextTracks, modifiedAt: options.modifiedAt || project.modifiedAt } };"
+                                              },
+                                              {
+                                                  "line":  259,
+                                                  "snippet":  "return {"
+                                              },
+                                              {
+                                                  "line":  275,
+                                                  "snippet":  "return {"
+                                              },
+                                              {
+                                                  "line":  296,
+                                                  "snippet":  "return { ...current, state: current.countIn.enabled ? \"count-in\" : \"playing\", paused: false, recording: false };"
+                                              }
+                                          ],
+                       "voiceTerms":  260,
+                       "arrangementTerms":  69,
+                       "midiTerms":  325,
+                       "dawTerms":  352,
+                       "tasteTerms":  5,
+                       "libraryTerms":  19,
+                       "outputTerms":  195,
+                       "riskWriterTerms":  2
+                   },
+                   {
+                       "key":  "DAWStudioPanel",
+                       "role":  "Existing UI reference",
+                       "path":  "C:\\Users\\ssare\\keyboard-manager-clean\\uaos-live-clean\\src\\components\\DAWStudioPanel.jsx",
+                       "status":  "READY_OR_MOST_USEFUL",
+                       "score":  8,
+                       "sizeKB":  22.25,
+                       "lineCount":  364,
+                       "functions":  [
+                                         {
+                                             "line":  36,
+                                             "name":  "formatPosition",
+                                             "params":  "project",
+                                             "signature":  "function formatPosition(project)"
+                                         },
+                                         {
+                                             "line":  41,
+                                             "name":  "status",
+                                             "params":  "value",
+                                             "signature":  "function status(value)"
+                                         },
+                                         {
+                                             "line":  45,
+                                             "name":  "DAWStudioPanel",
+                                             "params":  "{ session, onSessionChange }",
+                                             "signature":  "export function DAWStudioPanel({ session, onSessionChange })"
+                                         },
+                                         {
+                                             "line":  56,
+                                             "name":  "commit",
+                                             "params":  "nextProject, label = \"edit\"",
+                                             "signature":  "function commit(nextProject, label = \"edit\")"
+                                         },
+                                         {
+                                             "line":  62,
+                                             "name":  "restore",
+                                             "params":  "nextProject, direction",
+                                             "signature":  "function restore(nextProject, direction)"
+                                         },
+                                         {
+                                             "line":  70,
+                                             "name":  "addTrack",
+                                             "params":  "type",
+                                             "signature":  "function addTrack(type)"
+                                         },
+                                         {
+                                             "line":  78,
+                                             "name":  "deleteSelectedTrack",
+                                             "params":  "",
+                                             "signature":  "function deleteSelectedTrack()"
+                                         },
+                                         {
+                                             "line":  85,
+                                             "name":  "updateTrack",
+                                             "params":  "changes",
+                                             "signature":  "function updateTrack(changes)"
+                                         },
+                                         {
+                                             "line":  93,
+                                             "name":  "addClip",
+                                             "params":  "type",
+                                             "signature":  "function addClip(type)"
+                                         },
+                                         {
+                                             "line":  105,
+                                             "name":  "editClip",
+                                             "params":  "action",
+                                             "signature":  "function editClip(action)"
+                                         },
+                                         {
+                                             "line":  119,
+                                             "name":  "editMidi",
+                                             "params":  "action",
+                                             "signature":  "function editMidi(action)"
+                                         },
+                                         {
+                                             "line":  128,
+                                             "name":  "transport",
+                                             "params":  "type",
+                                             "signature":  "function transport(type)"
+                                         },
+                                         {
+                                             "line":  132,
+                                             "name":  "saveProject",
+                                             "params":  "",
+                                             "signature":  "function saveProject()"
+                                         },
+                                         {
+                                             "line":  138,
+                                             "name":  "applyArranger",
+                                             "params":  "",
+                                             "signature":  "function applyArranger()"
+                                         },
+                                         {
+                                             "line":  143,
+                                             "name":  "importAi",
+                                             "params":  "",
+                                             "signature":  "function importAi()"
+                                         },
+                                         {
+                                             "line":  152,
+                                             "name":  "linkHardware",
+                                             "params":  "",
+                                             "signature":  "function linkHardware()"
+                                         },
+                                         {
+                                             "line":  156,
+                                             "name":  "hardwarePlay",
+                                             "params":  "",
+                                             "signature":  "function hardwarePlay()"
+                                         },
+                                         {
+                                             "line":  160,
+                                             "name":  "recordAudio",
+                                             "params":  "",
+                                             "signature":  "function recordAudio()"
+                                         },
+                                         {
+                                             "line":  174,
+                                             "name":  "recordMidi",
+                                             "params":  "",
+                                             "signature":  "function recordMidi()"
+                                         },
+                                         {
+                                             "line":  185,
+                                             "name":  "startExport",
+                                             "params":  "",
+                                             "signature":  "function startExport()"
+                                         }
+                                     ],
+                       "exports":  {
+                                       "line":  45,
+                                       "name":  "DAWStudioPanel",
+                                       "signature":  "export function DAWStudioPanel({ session, onSessionChange })"
+                                   },
+                       "returnSnippets":  [
+                                              {
+                                                  "line":  39,
+                                                  "snippet":  "return `${pos.bar}.${pos.beat}.${pos.tick}`;"
+                                              },
+                                              {
+                                                  "line":  43,
+                                                  "snippet":  "return String(value || \"unknown\").replaceAll(\"-\", \" \");"
+                                              },
+                                              {
+                                                  "line":  192,
+                                                  "snippet":  "return ("
+                                              }
+                                          ],
+                       "voiceTerms":  98,
+                       "arrangementTerms":  29,
+                       "midiTerms":  256,
+                       "dawTerms":  506,
+                       "tasteTerms":  1,
+                       "libraryTerms":  5,
+                       "outputTerms":  46,
+                       "riskWriterTerms":  0
+                   }
+               ]
+}
