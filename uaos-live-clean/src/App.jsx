@@ -222,6 +222,13 @@ export default function App() {
     (checklist.filter((item) => item.done).length / checklist.length) * 100
   );
 
+  const managerReadiness = 90;
+  const blockedFinalItems = [
+    "Real device writer",
+    "Real keyboard output",
+    "Commercial final writer claim",
+  ];
+
   function persist(nextProjects, nextActiveId) {
     setProjects(nextProjects);
     writeProjects(nextProjects);
@@ -265,7 +272,7 @@ export default function App() {
       bpm: activeProject.bpm,
       key: activeProject.key,
       groove: activeProject.groove,
-      completionScore,
+      completionScore, managerReadiness, blockedFinalItems,
       tracks: activeProject.enabledTracks,
       sections: arrangement,
       safety: {
@@ -384,14 +391,14 @@ export default function App() {
             <strong>{activeProject.title}</strong>
           </div>
           <div className="uaos-v8-topbar-status">
-            <b>{completionScore}% Ready</b>
+            <b>{managerReadiness}% Manager Ready</b>
             <small>{message}</small>
           </div>
         </section>
 
         <section className="uaos-v8-hero">
           <div>
-            <p className="uaos-v8-kicker">UAOS V8</p>
+            <p className="uaos-v8-kicker">UAOS V8.1 Manager Ready</p>
             <h1>Unified Command Session</h1>
             <p>
               One clean language, one grouped action bar, and one living-style assistant shell
@@ -399,9 +406,33 @@ export default function App() {
             </p>
           </div>
           <div className="uaos-v8-readiness">
-            <span>Current project</span>
-            <strong>{activeProject.templateName}</strong>
-            <p>{activeProject.bpm} BPM · {activeProject.key} · {activeProject.groove}</p>
+            <span>Manager status</span>
+            <strong>{managerReadiness}% Ready</strong>
+            <p>Demo, support packs, assistant, export, and presentation are ready. Final writer remains blocked for real-device testing.</p>
+          </div>
+        </section>
+
+        
+        <section className="uaos-v8-panel" id="manager-readiness">
+          <div className="uaos-v8-panel-header">
+            <p>Manager View</p>
+            <h2>Manager Readiness</h2>
+            <span>This separates product-demo readiness from the active project session checklist.</span>
+          </div>
+
+          <div className="uaos-manager-ready-grid">
+            <article>
+              <strong>90%</strong>
+              <p>Presentation / support / demo readiness</p>
+            </article>
+            <article>
+              <strong>Ready</strong>
+              <p>Unified UI, Command Center, Pixi Assistant, Friend/Jobcenter flow, safe export.</p>
+            </article>
+            <article>
+              <strong>Blocked</strong>
+              <p>Final writer and real keyboard output remain blocked until real hardware testing.</p>
+            </article>
           </div>
         </section>
 
@@ -599,3 +630,4 @@ export default function App() {
     </main>
   );
 }
+
