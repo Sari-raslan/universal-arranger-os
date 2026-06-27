@@ -588,6 +588,7 @@ export default function App() {
           <a href="#browser">Projects</a>
           <a href="#project">Editor</a>
           <a href="#demo">Demo</a>
+          <a href="#friend-review">Friend Review</a>
           <a href="#arranger">Arranger</a>
           <a href="#tracks">Tracks</a>
           <a href="#player">Player</a>
@@ -699,6 +700,45 @@ export default function App() {
               <button className="uaos-button primary" onClick={() => setDemoMode(true)}>Open Demo Mode</button>
               <button className="uaos-button secondary" onClick={exportPresentationPack}>Download Presentation Pack</button>
             </div>
+          </div>
+        </section>
+
+        <section className="uaos-panel uaos-friend-panel" id="friend-review">
+          <SectionHeader
+            label="Private review"
+            title="Friend Support"
+            text="A clear private summary for a trusted friend who may review the project and help with equipment support."
+          />
+
+          <div className="uaos-friend-grid">
+            <article>
+              <strong>What UAOS is</strong>
+              <p>
+                UAOS is a local music workstation prototype for turning song ideas into
+                structured arranger projects with sections, chords, tracks, preview, and safe exports.
+              </p>
+            </article>
+            <article>
+              <strong>What is ready now</strong>
+              <p>
+                The V7 demo has project management, arrangement generation, presentation mode,
+                local save/export, and a clear private review flow.
+              </p>
+            </article>
+            <article>
+              <strong>Support needed</strong>
+              <p>
+                The next practical need is funding for a stronger laptop or work machine
+                so development, testing, demos, and audio work can continue reliably.
+              </p>
+            </article>
+            <article>
+              <strong>Safety status</strong>
+              <p>
+                This is a private review version. It does not claim commercial completion,
+                public publishing, or real KORG/Yamaha keyboard file output.
+              </p>
+            </article>
           </div>
         </section>
 

@@ -414,6 +414,31 @@ a {
   min-width: 230px;
 }
 
+.uaos-friend-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
+.uaos-friend-grid article {
+  min-height: 210px;
+  padding: 20px;
+  border-radius: 22px;
+  background: rgba(0, 0, 0, 0.18);
+  border: 1px solid rgba(87, 242, 194, 0.18);
+}
+
+.uaos-friend-grid strong {
+  display: block;
+  color: #77ffd4;
+  font-size: 21px;
+}
+
+.uaos-friend-grid p {
+  color: #c4d4e8;
+  line-height: 1.6;
+}
+
 .uaos-project-browser {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -897,6 +922,7 @@ textarea {
   .uaos-status-grid,
   .uaos-checklist,
   .uaos-project-browser,
+  .uaos-friend-grid,
   .uaos-track-role-grid,
   .uaos-generated-tracks,
   .uaos-export-grid,
@@ -915,6 +941,7 @@ textarea {
   .uaos-status-grid,
   .uaos-checklist,
   .uaos-project-browser,
+  .uaos-friend-grid,
   .uaos-track-role-grid,
   .uaos-generated-tracks,
   .uaos-export-grid,

@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>UAOS Friend Support Pack V1</title>
+  <style>
+    :root {
+      color: #eef4ff;
+      background: #07111f;
+      font-family: Inter, "Segoe UI", Arial, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background:
+        radial-gradient(circle at 8% 0%, rgba(88, 166, 255, 0.24), transparent 34rem),
+        radial-gradient(circle at 92% 8%, rgba(87, 242, 194, 0.15), transparent 30rem),
+        #07111f;
+      color: #eef4ff;
+    }
+    main {
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 42px 0;
+      display: grid;
+      gap: 18px;
+    }
+    .hero, .panel {
+      border: 1px solid rgba(255,255,255,0.1);
+      background: rgba(255,255,255,0.06);
+      border-radius: 24px;
+      padding: clamp(22px, 4vw, 42px);
+      box-shadow: 0 24px 80px rgba(0,0,0,0.24);
+    }
+    .hero {
+      min-height: 440px;
+      display: grid;
+      align-content: center;
+      background:
+        linear-gradient(135deg, rgba(20, 43, 77, 0.92), rgba(8, 18, 33, 0.95)),
+        radial-gradient(circle at top right, rgba(87, 242, 194, 0.22), transparent 26rem);
+    }
+    .kicker {
+      margin: 0 0 12px;
+      color: #77ffd4;
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+    h1 {
+      margin: 0;
+      font-size: clamp(42px, 7vw, 86px);
+      line-height: 0.95;
+      letter-spacing: -0.05em;
+    }
+    h2 {
+      margin: 0 0 12px;
+      font-size: clamp(26px, 4vw, 42px);
+    }
+    p, li {
+      color: #c4d4e8;
+      line-height: 1.65;
+      font-size: 17px;
+    }
+    .actions, .grid, .facts {
+      display: grid;
+      gap: 14px;
+    }
+    .actions {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      margin-top: 22px;
+    }
+    a.button {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 48px;
+      padding: 12px 18px;
+      border-radius: 999px;
+      color: #04111f;
+      background: linear-gradient(135deg, #58a6ff, #57f2c2);
+      text-decoration: none;
+      font-weight: 900;
+    }
+    a.button.secondary {
+      color: #eef4ff;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+    }
+    .grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+    .facts {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+    article {
+      padding: 20px;
+      border: 1px solid rgba(255,255,255,0.09);
+      border-radius: 18px;
+      background: rgba(0,0,0,0.18);
+    }
+    article strong {
+      display: block;
+      color: #77ffd4;
+      font-size: 21px;
+      margin-bottom: 8px;
+    }
+    .need {
+      border-color: rgba(87, 242, 194, 0.28);
+      background: linear-gradient(135deg, rgba(87, 242, 194, 0.12), rgba(88, 166, 255, 0.08));
+    }
+    .arabic {
+      direction: rtl;
+      text-align: right;
+    }
+    code {
+      display: block;
+      white-space: pre-wrap;
+      overflow-wrap: anywhere;
+      color: #dfffee;
+      background: rgba(0,0,0,0.24);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 14px;
+      padding: 14px;
+    }
+    @media (max-width: 850px) {
+      .grid, .facts, .actions { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="hero">
+      <p class="kicker">Private review / Friend support</p>
+      <h1>UAOS - Universal Arranger OS</h1>
+      <p>
+        A serious local music workstation prototype for turning song ideas into structured arranger projects:
+        sections, chords, tracks, preview, demo mode, and safe local exports.
+      </p>
+      <div class="actions">
+        <a class="button" href="http://127.0.0.1:5173/universal-arranger-os/?v=friend-support-pack-v1">Open Local UAOS Demo</a>
+        <a class="button secondary" href="https://sari-raslan.github.io/universal-arranger-os/">GitHub Pages Reference</a>
+      </div>
+    </section>
+
+    <section class="panel arabic">
+      <p class="kicker">الملخص السريع</p>
+      <h2>لماذا أرسل لك هذه النسخة؟</h2>
+      <p>
+        هذه نسخة مراجعة خاصة من UAOS حتى تفهم المشروع بسرعة. المشروع وصل إلى نموذج محلي قابل للعرض،
+        وفيه واجهة برنامج موسيقي، Demo Mode، إدارة مشاريع، توليد ترتيب موسيقي مبدئي، وتصدير ملفات آمنة للمراجعة.
+      </p>
+      <p>
+        أحتاج دعمًا عمليًا الآن، خصوصًا لشراء أو تمويل لابتوب/جهاز عمل أقوى، لأن الجهاز الأفضل سيساعدني في التطوير،
+        الاختبار، العروض، وتجهيز نسخ مراجعة أوضح.
+      </p>
+    </section>
+
+    <section class="panel">
+      <p class="kicker">Project status</p>
+      <h2>What has been built</h2>
+      <div class="grid">
+        <article><strong>Real Workflow V7</strong><p>Local app workflow with project browser, arrangement generation, save/export, and presentation mode.</p></article>
+        <article><strong>Music structure</strong><p>Song sections, chords, track roles, energy levels, and preview details are represented clearly.</p></article>
+        <article><strong>Private demo</strong><p>The project can be shown locally to a friend, reviewer, or support contact without public publishing.</p></article>
+      </div>
+    </section>
+
+    <section class="panel need">
+      <p class="kicker">Support need</p>
+      <h2>What I need now</h2>
+      <p>
+        The most important practical support right now is help funding a stronger laptop or work machine.
+        This would make builds, testing, music/audio workflow, and demos much more stable.
+      </p>
+      <div class="facts">
+        <article><strong>Faster builds</strong><p>Less waiting and fewer interruptions.</p></article>
+        <article><strong>Better demos</strong><p>Smoother private review and presentation sessions.</p></article>
+        <article><strong>More testing</strong><p>More reliable QA before sharing anything publicly.</p></article>
+        <article><strong>Development continuity</strong><p>Better focus and fewer hardware limits.</p></article>
+      </div>
+    </section>
+
+    <section class="panel">
+      <p class="kicker">Safety and honesty</p>
+      <h2>What this version does not claim</h2>
+      <ul>
+        <li>This is not a finished commercial product.</li>
+        <li>No new public publish is included in this pack.</li>
+        <li>No device writer is active.</li>
+        <li>No real KORG/Yamaha/Roland/Ketron keyboard output is claimed.</li>
+        <li>This is a private review/support package only.</li>
+      </ul>
+    </section>
+
+    <section class="panel">
+      <p class="kicker">Ready message</p>
+      <h2>Short message to send</h2>
+      <code>مرحبا، هذه نسخة خاصة من مشروعي UAOS. هو برنامج موسيقي محلي يساعد على تحويل فكرة أغنية إلى مشروع منظم فيه أقسام وكوردات ومسارات ومعاينة. أحتاج رأيك ودعمك إن أمكن، خصوصًا لمساعدتي في شراء/تمويل لابتوب أو جهاز عمل أقوى حتى أستطيع إكمال التطوير والاختبار والعرض بشكل أفضل. هذه نسخة مراجعة خاصة فقط، وليست بيعًا أو نشرًا عامًا.</code>
+    </section>
+  </main>
+</body>
+</html>
