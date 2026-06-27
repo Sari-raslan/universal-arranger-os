@@ -919,6 +919,32 @@ export default function App() {
           </div>
         </section>
 
+        
+        <section className="uaos-panel" id="jobcenter-support">
+          <SectionHeader
+            label="Funding"
+            title="Jobcenter Support"
+            text="Official support view for funding discussion, work equipment, and project presentation."
+          />
+
+          <div className="uaos-demo-card">
+            <div>
+              <strong>UAOS funding-ready summary</strong>
+              <p>This section is prepared for Jobcenter review. It explains the project, current prototype state, and why a stronger laptop or work computer is necessary.</p>
+              <ul>
+                <li>Local safe prototype for music arrangement workflow.</li>
+                <li>Presentation mode and private support pack are ready.</li>
+                <li>No public publish and no real device writer are active.</li>
+                <li>Main current need: better laptop/computer for development, testing, and presentation.</li>
+              </ul>
+            </div>
+            <div className="uaos-demo-card-actions">
+              <a className="uaos-button primary" href="#demo">Open Demo Section</a>
+              <a className="uaos-button secondary" href="#export">Open Export Center</a>
+            </div>
+          </div>
+        </section>
+
         <section className="uaos-panel" id="export">
           <SectionHeader
             label="Step 6"
@@ -957,3 +983,4 @@ export default function App() {
     </main>
   );
 }
+
