@@ -50,7 +50,7 @@ a {
   width: 286px;
   height: 100vh;
   padding: 26px 20px;
-  background: rgba(4, 10, 20, 0.9);
+  background: rgba(4, 10, 20, 0.92);
   border-right: 1px solid rgba(255, 255, 255, 0.08);
   display: flex;
   flex-direction: column;
@@ -128,9 +128,80 @@ a {
 
 .uaos-main {
   width: calc(100% - 286px);
-  padding: 30px;
+  padding: 24px 30px 30px;
   display: grid;
   gap: 20px;
+}
+
+.uaos-topbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  padding: 14px 16px;
+  border-radius: 22px;
+  background: rgba(7, 17, 31, 0.86);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  backdrop-filter: blur(18px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px;
+}
+
+.uaos-topbar span,
+.uaos-current-card span,
+.uaos-status-grid span {
+  color: #9fb0c8;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.uaos-topbar strong {
+  display: block;
+  margin-top: 4px;
+  font-size: 18px;
+}
+
+.uaos-topbar-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.uaos-mini-button {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #eef4ff;
+  border-radius: 999px;
+  padding: 9px 12px;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.07);
+  font-weight: 800;
+}
+
+.uaos-mini-button:hover {
+  background: rgba(87, 242, 194, 0.11);
+}
+
+.uaos-onboarding {
+  padding: 18px;
+  border-radius: 24px;
+  border: 1px solid rgba(87, 242, 194, 0.2);
+  background: linear-gradient(135deg, rgba(87, 242, 194, 0.11), rgba(88, 166, 255, 0.08));
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  align-items: center;
+}
+
+.uaos-onboarding strong {
+  font-size: 22px;
+}
+
+.uaos-onboarding p {
+  color: #c4d4e8;
+  margin: 6px 0 0;
+  line-height: 1.55;
 }
 
 .uaos-hero {
@@ -217,14 +288,6 @@ a {
   border-radius: 28px;
 }
 
-.uaos-current-card span,
-.uaos-status-grid span {
-  color: #9fb0c8;
-  font-size: 13px;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-}
-
 .uaos-current-card strong {
   display: block;
   margin-top: 12px;
@@ -285,6 +348,37 @@ a {
   color: #adbed5;
   margin-top: 8px;
   line-height: 1.6;
+}
+
+.uaos-checklist {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+}
+
+.uaos-check {
+  padding: 16px;
+  border-radius: 18px;
+  background: rgba(0, 0, 0, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.uaos-check.done {
+  border-color: rgba(87, 242, 194, 0.35);
+  background: rgba(87, 242, 194, 0.09);
+}
+
+.uaos-check span {
+  width: 24px;
+  height: 24px;
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #77ffd4;
 }
 
 .uaos-project-browser {
@@ -550,11 +644,28 @@ textarea {
 .uaos-generated-tracks article,
 .uaos-export-grid article,
 .uaos-help-grid div,
-.uaos-project-summary {
+.uaos-project-summary,
+.uaos-empty {
   padding: 20px;
   border-radius: 22px;
   background: rgba(0, 0, 0, 0.18);
   border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.uaos-empty {
+  grid-column: 1 / -1;
+  display: grid;
+  gap: 8px;
+  place-items: start;
+}
+
+.uaos-empty strong {
+  font-size: 22px;
+}
+
+.uaos-empty p {
+  color: #b9c9dd;
+  margin: 0;
 }
 
 .uaos-section-summary span,
@@ -648,6 +759,12 @@ textarea {
     padding: 18px;
   }
 
+  .uaos-topbar,
+  .uaos-onboarding {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
   .uaos-hero,
   .uaos-arranger-layout,
   .uaos-transport,
@@ -657,6 +774,7 @@ textarea {
   }
 
   .uaos-status-grid,
+  .uaos-checklist,
   .uaos-project-browser,
   .uaos-template-grid,
   .uaos-track-role-grid,
@@ -675,6 +793,7 @@ textarea {
   }
 
   .uaos-status-grid,
+  .uaos-checklist,
   .uaos-project-browser,
   .uaos-template-grid,
   .uaos-track-role-grid,

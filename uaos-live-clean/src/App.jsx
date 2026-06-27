@@ -1,8 +1,9 @@
 ﻿import React, { useMemo, useState } from "react";
 import "./style.css";
 
-const STORAGE_KEY = "uaos_real_workflow_v5_projects";
-const ACTIVE_KEY = "uaos_real_workflow_v5_active_project_id";
+const STORAGE_KEY = "uaos_real_workflow_v6_projects";
+const ACTIVE_KEY = "uaos_real_workflow_v6_active_project_id";
+const ONBOARDING_KEY = "uaos_real_workflow_v6_onboarding_closed";
 
 const styleTemplates = [
   {
@@ -204,6 +205,16 @@ function SectionHeader({ label, title, text }) {
   );
 }
 
+function EmptyState({ title, text, action }) {
+  return (
+    <div className="uaos-empty">
+      <strong>{title}</strong>
+      <p>{text}</p>
+      {action}
+    </div>
+  );
+}
+
 export default function App() {
   const initialTemplate = styleTemplates[0];
   const initialProject = createProject(initialTemplate, "My UAOS Arrangement");
@@ -228,6 +239,7 @@ export default function App() {
   const [playing, setPlaying] = useState(false);
   const [message, setMessage] = useState("Ready");
   const [lastExportName, setLastExportName] = useState("");
+  const [showOnboarding, setShowOnboarding] = useState(() => localStorage.getItem(ONBOARDING_KEY) !== "closed");
 
   const selectedTemplate = useMemo(
     () => styleTemplates.find((template) => template.id === templateId) || styleTemplates[0],
@@ -250,13 +262,17 @@ export default function App() {
   const generated = Boolean(activeProject.generatedAt);
   const saved = Boolean(activeProject.savedAt);
 
-  const completionScore = Math.round(
-    (activeProject.title ? 20 : 0) +
-    (activeProject.sections.length ? 20 : 0) +
-    (activeTrackCount ? 20 : 0) +
-    (generated ? 25 : 0) +
-    (saved ? 15 : 0)
-  );
+  const checklist = [
+    { label: "Project created", done: Boolean(activeProject.title) },
+    { label: "Tracks selected", done: activeTrackCount > 0 },
+    { label: "Arrangement generated", done: generated },
+    { label: "Project saved", done: saved },
+    { label: "Export ready", done: generated && activeTrackCount > 0 },
+  ];
+
+  const completedChecklist = checklist.filter((item) => item.done).length;
+
+  const completionScore = Math.round((completedChecklist / checklist.length) * 100);
 
   function persist(nextProjects, nextActiveId = activeProjectId) {
     setProjects(nextProjects);
@@ -273,6 +289,11 @@ export default function App() {
         : project
     );
     persist(nextProjects, activeProject.id);
+  }
+
+  function closeOnboarding() {
+    localStorage.setItem(ONBOARDING_KEY, "closed");
+    setShowOnboarding(false);
   }
 
   function startProject() {
@@ -317,7 +338,7 @@ export default function App() {
       setMessage("Project name is empty");
       return;
     }
-    updateActiveProject({ title: name });
+    updateActiveProject({ title: name, savedAt: null });
     setMessage("Project renamed");
   }
 
@@ -382,8 +403,8 @@ export default function App() {
   function createManifest() {
     return {
       product: "UAOS - Universal Arranger OS",
-      version: "Real Workflow V5",
-      purpose: "Safe local multi-project workflow for review, demo, development handoff, and funding presentation",
+      version: "Real Workflow V6",
+      purpose: "Polished safe local multi-project music workstation session",
       safety: {
         publicPublish: false,
         vercel: false,
@@ -399,6 +420,13 @@ export default function App() {
         projectCount: projects.length,
         activeProjectId: activeProject.id,
       },
+      session: {
+        message,
+        checklist,
+        completionScore,
+        selectedSection: selectedSection?.name,
+        lastExportName,
+      },
       summary: {
         title: activeProject.title,
         style: activeProject.templateName,
@@ -411,40 +439,34 @@ export default function App() {
         totalBars,
         generated,
         saved,
-        completionScore,
       },
-      handoffUse: [
-        "Jobcenter funding presentation",
-        "Friend or private reviewer demo",
-        "Developer handoff without exposing device writer",
-      ],
     };
   }
 
   function exportManifest() {
-    const filename = `${cleanFilename(activeProject.title)}_uaos_v5_manifest.json`;
+    const filename = `${cleanFilename(activeProject.title)}_uaos_v6_manifest.json`;
     downloadJson(filename, createManifest());
     setLastExportName(filename);
-    setMessage("V5 manifest downloaded");
+    setMessage("V6 manifest downloaded");
   }
 
-  function exportLibraryPackage() {
-    const packageData = {
-      type: "UAOS_SAFE_LOCAL_MULTI_PROJECT_LIBRARY",
+  function exportSessionSummary() {
+    const summary = {
+      type: "UAOS_PRODUCT_SESSION_SUMMARY",
       exportedAt: new Date().toISOString(),
-      safety: {
-        publicPublish: false,
-        realDeviceWriter: false,
-        localOnly: true,
-      },
-      activeProjectId: activeProject.id,
-      projects,
+      title: activeProject.title,
+      oneLine: `${activeProject.templateName} · ${activeProject.bpm} BPM · ${activeProject.key}`,
+      purpose: activeProject.market,
+      progress: `${completionScore}%`,
+      checklist,
+      safeForReview: true,
+      blocked: ["Public publish", "Real device writer", "Keyboard output"],
+      nextPresentationUse: ["Jobcenter", "Private reviewer", "Developer handoff"],
     };
-
-    const filename = `uaos_v5_project_library_${new Date().toISOString().slice(0, 10)}.json`;
-    downloadJson(filename, packageData);
+    const filename = `${cleanFilename(activeProject.title)}_uaos_v6_session_summary.json`;
+    downloadJson(filename, summary);
     setLastExportName(filename);
-    setMessage("Project library package downloaded");
+    setMessage("Session summary downloaded");
   }
 
   return (
@@ -478,13 +500,35 @@ export default function App() {
       </aside>
 
       <section className="uaos-main">
+        <div className="uaos-topbar">
+          <div>
+            <span>Active session</span>
+            <strong>{activeProject.title}</strong>
+          </div>
+          <div className="uaos-topbar-actions">
+            <button className="uaos-mini-button" onClick={saveCurrentProject}>Save</button>
+            <button className="uaos-mini-button" onClick={generateArrangement}>Generate</button>
+            <button className="uaos-mini-button" onClick={exportSessionSummary}>Export Summary</button>
+          </div>
+        </div>
+
+        {showOnboarding && (
+          <section className="uaos-onboarding">
+            <div>
+              <strong>Start here</strong>
+              <p>Create or open a project, generate the arrangement, save it, then export a safe local summary. Hardware output is intentionally blocked.</p>
+            </div>
+            <button className="uaos-button secondary" onClick={closeOnboarding}>Got it</button>
+          </section>
+        )}
+
         <header className="uaos-hero" id="dashboard">
           <div>
-            <p className="uaos-kicker">Real Workflow V5</p>
+            <p className="uaos-kicker">Real Workflow V6</p>
             <h1>{activeProject.title}</h1>
             <p>
-              UAOS now manages multiple local projects like a real music workstation:
-              create, open, rename, duplicate, delete, arrange, save, and export safely.
+              A polished product session with top actions, onboarding, project status,
+              checklist progress, clearer empty states, and safe export for real review.
             </p>
             <div className="uaos-actions">
               <a className="uaos-button primary" href="#browser">Project Browser</a>
@@ -494,23 +538,40 @@ export default function App() {
           </div>
 
           <div className="uaos-current-card">
-            <span>Active project</span>
-            <strong>{activeProject.templateName}</strong>
+            <span>Session readiness</span>
+            <strong>{completionScore}% Ready</strong>
             <p>{activeProject.description}</p>
             <div className="uaos-mini-grid">
               <b>{activeProject.bpm} BPM</b>
               <b>{activeProject.key}</b>
               <b>{projects.length} Projects</b>
-              <b>{completionScore}% Ready</b>
+              <b>{saved ? "Saved" : "Unsaved"}</b>
             </div>
           </div>
         </header>
 
         <section className="uaos-status-grid">
           <article><span>Status</span><strong>{message}</strong></article>
-          <article><span>Projects</span><strong>{projects.length}</strong></article>
+          <article><span>Checklist</span><strong>{completedChecklist}/{checklist.length}</strong></article>
           <article><span>Tracks</span><strong>{activeTrackCount}</strong></article>
           <article><span>Total bars</span><strong>{totalBars}</strong></article>
+        </section>
+
+        <section className="uaos-panel uaos-checklist-panel">
+          <SectionHeader
+            label="Session"
+            title="Session Checklist"
+            text="A simple product readiness checklist for the current arrangement."
+          />
+
+          <div className="uaos-checklist">
+            {checklist.map((item) => (
+              <div className={item.done ? "uaos-check done" : "uaos-check"} key={item.label}>
+                <span>{item.done ? "✓" : "•"}</span>
+                <strong>{item.label}</strong>
+              </div>
+            ))}
+          </div>
         </section>
 
         <section className="uaos-panel" id="browser">
@@ -520,19 +581,27 @@ export default function App() {
             text="Manage multiple UAOS projects locally in this browser."
           />
 
-          <div className="uaos-project-browser">
-            {projects.map((project) => (
-              <button
-                key={project.id}
-                className={project.id === activeProject.id ? "uaos-browser-card active" : "uaos-browser-card"}
-                onClick={() => openProject(project.id)}
-              >
-                <strong>{project.title}</strong>
-                <span>{project.templateName}</span>
-                <small>{project.bpm} BPM · {project.key} · {project.generatedAt ? "Generated" : "Draft"}</small>
-              </button>
-            ))}
-          </div>
+          {projects.length ? (
+            <div className="uaos-project-browser">
+              {projects.map((project) => (
+                <button
+                  key={project.id}
+                  className={project.id === activeProject.id ? "uaos-browser-card active" : "uaos-browser-card"}
+                  onClick={() => openProject(project.id)}
+                >
+                  <strong>{project.title}</strong>
+                  <span>{project.templateName}</span>
+                  <small>{project.bpm} BPM · {project.key} · {project.generatedAt ? "Generated" : "Draft"}</small>
+                </button>
+              ))}
+            </div>
+          ) : (
+            <EmptyState
+              title="No projects yet"
+              text="Create your first UAOS project to begin."
+              action={<button className="uaos-button primary" onClick={startProject}>Create Project</button>}
+            />
+          )}
 
           <div className="uaos-project-actions">
             <button className="uaos-button primary" onClick={saveCurrentProject}>Save Current</button>
@@ -634,23 +703,27 @@ export default function App() {
             text="Select the musical layers used by the arranger."
           />
 
-          <div className="uaos-track-role-grid">
-            {trackRoles.map((track) => {
-              const active = activeProject.enabledTracks.includes(track.id);
-              return (
-                <button
-                  key={track.id}
-                  className={active ? "uaos-track-role active" : "uaos-track-role"}
-                  onClick={() => toggleTrack(track.id)}
-                >
-                  <strong>{track.name}</strong>
-                  <span>{track.family}</span>
-                  <p>{track.purpose}</p>
-                  <small>{active ? "Included" : "Muted"}</small>
-                </button>
-              );
-            })}
-          </div>
+          {trackRoles.length ? (
+            <div className="uaos-track-role-grid">
+              {trackRoles.map((track) => {
+                const active = activeProject.enabledTracks.includes(track.id);
+                return (
+                  <button
+                    key={track.id}
+                    className={active ? "uaos-track-role active" : "uaos-track-role"}
+                    onClick={() => toggleTrack(track.id)}
+                  >
+                    <strong>{track.name}</strong>
+                    <span>{track.family}</span>
+                    <p>{track.purpose}</p>
+                    <small>{active ? "Included" : "Muted"}</small>
+                  </button>
+                );
+              })}
+            </div>
+          ) : (
+            <EmptyState title="No tracks available" text="Track roles will appear here." />
+          )}
         </section>
 
         <section className="uaos-panel" id="player">
@@ -682,16 +755,24 @@ export default function App() {
             </div>
 
             <div className="uaos-generated-tracks">
-              {(selectedSection?.tracks || []).map((track) => (
-                <article key={track.id}>
-                  <strong>{track.name}</strong>
-                  <span>{track.pattern}</span>
-                  <p>{track.purpose}</p>
-                  <div className="uaos-level">
-                    <div style={{ width: `${track.intensity}%` }}></div>
-                  </div>
-                </article>
-              ))}
+              {(selectedSection?.tracks || []).length ? (
+                selectedSection.tracks.map((track) => (
+                  <article key={track.id}>
+                    <strong>{track.name}</strong>
+                    <span>{track.pattern}</span>
+                    <p>{track.purpose}</p>
+                    <div className="uaos-level">
+                      <div style={{ width: `${track.intensity}%` }}></div>
+                    </div>
+                  </article>
+                ))
+              ) : (
+                <EmptyState
+                  title="No generated tracks yet"
+                  text="Press Generate to build the arrangement tracks."
+                  action={<button className="uaos-button primary" onClick={generateArrangement}>Generate Now</button>}
+                />
+              )}
             </div>
           </div>
         </section>
@@ -705,15 +786,15 @@ export default function App() {
 
           <div className="uaos-export-grid">
             <article>
-              <strong>V5 Project Manifest</strong>
-              <p>Exports the active project with sections, tracks, notes, and browser library summary.</p>
+              <strong>V6 Project Manifest</strong>
+              <p>Exports active project, sections, tracks, checklist, and safe session data.</p>
               <button className="uaos-button primary" onClick={exportManifest}>Download Manifest</button>
             </article>
 
             <article>
-              <strong>Project Library Package</strong>
-              <p>Exports all local browser projects as one safe review package.</p>
-              <button className="uaos-button primary" onClick={exportLibraryPackage}>Download Library</button>
+              <strong>Session Summary</strong>
+              <p>Short readable project summary for Jobcenter, friend review, or developer handoff.</p>
+              <button className="uaos-button primary" onClick={exportSessionSummary}>Download Summary</button>
             </article>
 
             <article>
@@ -739,11 +820,11 @@ export default function App() {
           />
 
           <div className="uaos-help-grid">
-            <div><strong>1. Projects</strong><p>Open, rename, duplicate, or delete local projects.</p></div>
-            <div><strong>2. Create</strong><p>Start a new song from a musical style.</p></div>
-            <div><strong>3. Arrange</strong><p>Generate sections with chords and tracks.</p></div>
-            <div><strong>4. Preview</strong><p>Inspect the selected section in the player.</p></div>
-            <div><strong>5. Export</strong><p>Download safe local files.</p></div>
+            <div><strong>1. Open</strong><p>Use the browser to open or create a project.</p></div>
+            <div><strong>2. Edit</strong><p>Name the project and add notes.</p></div>
+            <div><strong>3. Generate</strong><p>Create arrangement sections and tracks.</p></div>
+            <div><strong>4. Save</strong><p>Save the project locally in the browser.</p></div>
+            <div><strong>5. Export</strong><p>Download safe review files.</p></div>
           </div>
         </section>
       </section>
