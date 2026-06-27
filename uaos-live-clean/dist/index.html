@@ -1,150 +1,18 @@
 ﻿<!doctype html>
 <html lang="en">
-<head>
-<meta charset="utf-8">
-<title>UAOS - Universal Arranger OS Public Preview</title>
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate, max-age=0">
-<style>
-:root{color-scheme:dark}
-*{box-sizing:border-box}
-body{margin:0;background:#050814;color:#eaf2ff;font-family:Segoe UI,Arial,sans-serif}
-header{padding:44px 22px;background:radial-gradient(circle at 20% 10%,rgba(57,255,182,.22),transparent 32%),linear-gradient(135deg,#132a58,#071024);border-bottom:1px solid #24375f}
-.wrap{max-width:1120px;margin:auto}
-h1{margin:0;font-size:42px;letter-spacing:-.04em}
-.sub{margin-top:12px;color:#b8c7e6;font-size:18px;line-height:1.55}
-.badges{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
-.badge{border:1px solid #2a3d66;background:#0b1428;border-radius:999px;padding:9px 12px;color:#dbe8ff;font-weight:700}
-main{max-width:1120px;margin:0 auto;padding:22px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
-.card{background:#0b1428;border:1px solid #24375f;border-radius:18px;padding:20px;margin:14px 0;box-shadow:0 20px 60px rgba(0,0,0,.25)}
-h2{margin:0 0 10px;color:#39ffb6}
-p,li{line-height:1.6;color:#cbd8f2}
-button{display:inline-block;background:#39ffb6;color:#06111f;text-decoration:none;border:0;border-radius:14px;padding:12px 16px;font-weight:900;margin:6px 6px 0 0;cursor:pointer}
-.secondary{background:#1f3158!important;color:#eaf2ff!important;border:1px solid #3a5288!important}
-.warn{color:#ffd166;font-weight:800}
-.ok{color:#39ffb6;font-weight:800}
-.small{font-size:13px;color:#9fb0cc}
-table{width:100%;border-collapse:collapse;margin-top:12px}
-th,td{border:1px solid #24375f;padding:10px;text-align:left;vertical-align:top}
-th{background:#101d3a}
-.modalBackdrop{position:fixed;inset:0;background:rgba(0,0,0,.75);display:none;align-items:center;justify-content:center;z-index:999999}
-.modal{max-width:560px;margin:20px;background:#071024;color:#eaf2ff;border:1px solid #2a3d66;border-radius:18px;padding:22px;box-shadow:0 20px 80px rgba(0,0,0,.45)}
-.modal h3{margin-top:0;color:#39ffb6}
-</style>
+  <head><meta name="description" content="UAOS is a local-first AI arranger platform for singers, creators, studios, MIDI workflows, and professional arranger keyboard planning.">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UAOS - Universal Arranger OS</title>
+  <script src="https://www.paypal.com/sdk/js?client-id=LIVE_CLIENT_ID&vault=true&intent=subscription&currency=EUR"></script>
+  <script type="module" crossorigin src="/universal-arranger-os/assets/index-BrSorNYE.js"></script>
+  <link rel="modulepreload" crossorigin href="/universal-arranger-os/assets/rolldown-runtime-Bh1tDfsg.js">
+  <link rel="modulepreload" crossorigin href="/universal-arranger-os/assets/react-vendor-CnQ8cts2.js">
+  <link rel="stylesheet" crossorigin href="/universal-arranger-os/assets/index-BCqjF8WO.css">
 </head>
-<body>
-<header>
-  <div class="wrap">
-    <h1>UAOS - Universal Arranger OS</h1>
-    <div class="sub">Public preview for Jobcenter review, private funding conversations, and early project evaluation. This is a preview only, not a public commercial release.</div>
-    <div class="badges">
-      <span class="badge">Internal Launch: PASS</span>
-      <span class="badge">Public Preview Only</span>
-      <span class="badge">Payment disabled</span>
-      <span class="badge">Checkout disabled</span>
-      <span class="badge">Public download disabled</span>
-      <span class="badge">No Real Writer Claim</span>
-      <span class="badge">No Sale-Ready Claim</span>
-    </div>
-  </div>
-</header>
-
-<main>
-  <div class="card">
-    <h2>What UAOS is</h2>
-    <p>UAOS is a digital music and arranger workflow system for singers, keyboard players, producers, and arranger users. It organizes demo audio, MIDI material, preview packs, sampler concepts, and future arranger frameworks in one structured workflow.</p>
-    <p class="warn">Safety: Payment disabled. Checkout disabled. Public download disabled. No sale-ready claim. No real KORG/Yamaha/Roland/Ketron writer claim.</p>
-    <button onclick="locked()">Request Access / Funding Info</button>
-    <button class="secondary" onclick="demoTone()">Try Audio Demo Tone</button>
-  </div>
-
-  <div class="grid">
-    <div class="card">
-      <h2>Current proof</h2>
-      <p><span class="ok">Confirmed internally:</span> Owner App, Control Room, Showroom, Preview Player, language UI, WAV/MIDI previews, ZIP packs, tester package, feedback tracker, owner self-test sweep, and online root preview.</p>
-    </div>
-    <div class="card">
-      <h2>For Jobcenter</h2>
-      <p>The project is presented as a realistic self-employment preparation case. The current need is practical: stable computer, backup, legal content resources, testing, and business preparation.</p>
-    </div>
-    <div class="card">
-      <h2>For private support</h2>
-      <p>Small support levels are realistic: equipment and beta preparation first. No unrealistic revenue claims, no public sale promise, and no unclear technical claims.</p>
-    </div>
-  </div>
-
-  <div class="card">
-    <h2>What works internally</h2>
-    <ul>
-      <li>Owner App and internal Control Room exist locally.</li>
-      <li>Showroom and preview player exist locally.</li>
-      <li>9 language areas are prepared: English, Arabic, German, Turkish, French, Spanish, Italian, Kurdish, Persian.</li>
-      <li>72 WAV previews and 72 MIDI files exist internally.</li>
-      <li>6 ZIP preview packs exist internally.</li>
-      <li>Tester ZIP and feedback tracker are ready.</li>
-      <li>Organ writer frameworks exist only as safe architecture plans, schemas, manifests, and dry-run outputs.</li>
-    </ul>
-  </div>
-
-  <div class="card">
-    <h2>Funding need - realistic</h2>
-    <table>
-      <tr><th>Scenario</th><th>Amount</th><th>Purpose</th></tr>
-      <tr><td>Minimum support</td><td>EUR 1,500 - 2,500</td><td>Stable laptop/computer, backup, first legal resources.</td></tr>
-      <tr><td>Practical support</td><td>EUR 3,000 - 5,000</td><td>Better development setup, demo material, private beta preparation.</td></tr>
-      <tr><td>6-month push</td><td>EUR 6,000 - 10,000</td><td>Focused development, beta structure, legal/licensing preparation, stronger demos.</td></tr>
-    </table>
-    <p class="small">The main immediate need is a reliable development computer because the current machine is weak and slows down builds, audio/MIDI handling, documentation, and testing.</p>
-  </div>
-
-  <div class="card">
-    <h2>Revenue expectation - conservative</h2>
-    <ul>
-      <li>Months 0-3: product stabilization and testing, little or no revenue.</li>
-      <li>Months 4-6: possible small revenue from test services or first digital packs, approx. EUR 100-500/month if demand exists.</li>
-      <li>Months 7-12: possible EUR 300-1,500/month if private beta, feedback, and legal content preparation work.</li>
-    </ul>
-    <p>No million-euro claims. This is a cautious early-stage plan.</p>
-  </div>
-
-  <div class="card">
-    <h2>Safety locks</h2>
-    <p>Payment disabled. Checkout disabled. Public download disabled. Real KORG/Yamaha/Roland/Ketron writer claim locked until real implementation, device testing, legal review, and proof.</p>
-    <p class="small">Generated: 20260625_103342</p>
-  </div>
-</main>
-
-<div class="modalBackdrop" id="m">
-  <div class="modal">
-    <h3>Preview only</h3>
-    <p>This page is for evaluation. Payment, checkout, public download, and commercial release are disabled. Funding/support discussions are separate and must be handled manually.</p>
-    <button onclick="closeModal()">OK</button>
-  </div>
-</div>
-
-<script>
-function locked(){document.getElementById('m').style.display='flex';return false;}
-function closeModal(){document.getElementById('m').style.display='none';}
-async function demoTone(){
-  try{
-    var C=window.AudioContext||window.webkitAudioContext;
-    if(!C){return locked();}
-    var c=new C(); await c.resume();
-    var o=c.createOscillator(); var g=c.createGain();
-    o.frequency.value=440; g.gain.value=.14; o.connect(g); g.connect(c.destination);
-    o.start(); setTimeout(function(){try{o.stop();}catch(e){}},500);
-    locked();
-  }catch(e){locked();}
-}
-document.addEventListener('click',function(e){
-  var t=e.target;
-  if(!t)return;
-  var txt=((t.textContent||'')+' '+(t.getAttribute&&t.getAttribute('href')||'')).toLowerCase();
-  if(txt.includes('buy')||txt.includes('checkout')||txt.includes('payment')||txt.includes('download')){
-    e.preventDefault(); locked();
-  }
-});
-</script>
-</body>
+  <body style="margin: 0; background: #080d18; color: #f7f7fb;">
+    <div id="root"></div>
+  </body>
 </html>
+
+
