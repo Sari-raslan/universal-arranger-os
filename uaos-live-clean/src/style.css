@@ -179,6 +179,12 @@ a {
   font-weight: 800;
 }
 
+.uaos-mini-button.strong {
+  background: rgba(87, 242, 194, 0.13);
+  border-color: rgba(87, 242, 194, 0.25);
+  color: #77ffd4;
+}
+
 .uaos-mini-button:hover {
   background: rgba(87, 242, 194, 0.11);
 }
@@ -381,6 +387,33 @@ a {
   color: #77ffd4;
 }
 
+.uaos-demo-card {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 18px;
+  align-items: center;
+  padding: 24px;
+  border-radius: 26px;
+  background: rgba(87, 242, 194, 0.08);
+  border: 1px solid rgba(87, 242, 194, 0.18);
+}
+
+.uaos-demo-card strong {
+  font-size: 26px;
+}
+
+.uaos-demo-card p,
+.uaos-demo-card li {
+  color: #c4d4e8;
+  line-height: 1.6;
+}
+
+.uaos-demo-card-actions {
+  display: grid;
+  gap: 10px;
+  min-width: 230px;
+}
+
 .uaos-project-browser {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -459,19 +492,12 @@ textarea {
   margin-bottom: 18px;
 }
 
-.uaos-template-grid,
 .uaos-track-role-grid,
-.uaos-export-grid,
-.uaos-help-grid {
+.uaos-export-grid {
   display: grid;
   gap: 16px;
 }
 
-.uaos-template-grid {
-  grid-template-columns: repeat(3, 1fr);
-}
-
-.uaos-template,
 .uaos-track-role {
   text-align: left;
   color: #eef4ff;
@@ -482,29 +508,23 @@ textarea {
   cursor: pointer;
 }
 
-.uaos-template.active,
 .uaos-track-role.active,
 .uaos-section.active {
   outline: 2px solid rgba(87, 242, 194, 0.72);
   background: rgba(87, 242, 194, 0.09);
 }
 
-.uaos-template strong,
-.uaos-template span,
-.uaos-template small,
 .uaos-track-role strong,
 .uaos-track-role span,
 .uaos-track-role small {
   display: block;
 }
 
-.uaos-template span,
 .uaos-track-role p {
   color: #b9c9dd;
   line-height: 1.55;
 }
 
-.uaos-template small,
 .uaos-track-role small {
   color: #77ffd4;
 }
@@ -643,7 +663,6 @@ textarea {
 .uaos-section-summary,
 .uaos-generated-tracks article,
 .uaos-export-grid article,
-.uaos-help-grid div,
 .uaos-project-summary,
 .uaos-empty {
   padding: 20px;
@@ -683,7 +702,6 @@ textarea {
 .uaos-section-summary p,
 .uaos-generated-tracks p,
 .uaos-export-grid p,
-.uaos-help-grid p,
 .uaos-project-summary p {
   color: #b9c9dd;
   line-height: 1.55;
@@ -739,8 +757,108 @@ textarea {
   font-size: 21px;
 }
 
-.uaos-help-grid {
-  grid-template-columns: repeat(5, 1fr);
+.uaos-demo-mode {
+  min-height: 100vh;
+  padding: 26px;
+  background:
+    radial-gradient(circle at 10% 10%, rgba(87, 242, 194, 0.18), transparent 34rem),
+    radial-gradient(circle at 90% 0%, rgba(88, 166, 255, 0.22), transparent 34rem),
+    #07111f;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  gap: 22px;
+}
+
+.uaos-demo-top,
+.uaos-demo-footer {
+  padding: 18px;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.055);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: center;
+}
+
+.uaos-demo-top span,
+.uaos-demo-footer span {
+  display: block;
+  color: #9fb0c8;
+}
+
+.uaos-demo-top strong,
+.uaos-demo-footer strong {
+  display: block;
+  color: #eef4ff;
+  font-size: 20px;
+}
+
+.uaos-demo-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.uaos-demo-actions button {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #eef4ff;
+  border-radius: 999px;
+  padding: 10px 13px;
+  background: rgba(255, 255, 255, 0.07);
+  cursor: pointer;
+  font-weight: 850;
+}
+
+.uaos-demo-slide {
+  padding: clamp(30px, 7vw, 80px);
+  border-radius: 34px;
+  background:
+    linear-gradient(135deg, rgba(20, 43, 77, 0.92), rgba(8, 18, 33, 0.95)),
+    radial-gradient(circle at top right, rgba(87, 242, 194, 0.22), transparent 26rem);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  display: grid;
+  align-content: center;
+}
+
+.uaos-demo-slide p {
+  color: #77ffd4;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.uaos-demo-slide h1 {
+  margin: 0;
+  font-size: clamp(48px, 8vw, 110px);
+  line-height: 0.92;
+  letter-spacing: -0.08em;
+}
+
+.uaos-demo-slide h2 {
+  max-width: 1050px;
+  color: #c4d4e8;
+  font-size: clamp(22px, 3vw, 40px);
+  line-height: 1.25;
+  font-weight: 500;
+}
+
+.uaos-demo-points {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.uaos-demo-points article {
+  padding: 24px;
+  border-radius: 24px;
+  background: rgba(87, 242, 194, 0.09);
+  border: 1px solid rgba(87, 242, 194, 0.17);
+}
+
+.uaos-demo-points strong {
+  font-size: 22px;
 }
 
 @media (max-width: 1220px) {
@@ -760,7 +878,10 @@ textarea {
   }
 
   .uaos-topbar,
-  .uaos-onboarding {
+  .uaos-onboarding,
+  .uaos-demo-card,
+  .uaos-demo-top,
+  .uaos-demo-footer {
     flex-direction: column;
     align-items: stretch;
   }
@@ -776,11 +897,10 @@ textarea {
   .uaos-status-grid,
   .uaos-checklist,
   .uaos-project-browser,
-  .uaos-template-grid,
   .uaos-track-role-grid,
   .uaos-generated-tracks,
   .uaos-export-grid,
-  .uaos-help-grid {
+  .uaos-demo-points {
     grid-template-columns: repeat(2, 1fr);
   }
 }
@@ -795,11 +915,10 @@ textarea {
   .uaos-status-grid,
   .uaos-checklist,
   .uaos-project-browser,
-  .uaos-template-grid,
   .uaos-track-role-grid,
   .uaos-generated-tracks,
   .uaos-export-grid,
-  .uaos-help-grid {
+  .uaos-demo-points {
     grid-template-columns: 1fr;
   }
 
