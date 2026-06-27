@@ -372,6 +372,7 @@ export default function App() {
           <a href="#projects">Projects</a>
           <a href="#arranger">Arranger</a>
           <a href="#assistant">Pixi Assistant</a>
+          <a href="#send-ready">Send Ready</a>
           <a href="#export">Export</a>
         </nav>
 
@@ -601,6 +602,35 @@ export default function App() {
           </div>
         </section>
 
+        
+        <section className="uaos-v8-panel" id="send-ready">
+          <div className="uaos-v8-panel-header">
+            <p>Send Ready</p>
+            <h2>Send Ready Selector</h2>
+            <span>Choose exactly what to send to a friend, Jobcenter, or full reviewer.</span>
+          </div>
+
+          <div className="uaos-send-ready-grid">
+            <article>
+              <strong>Friend</strong>
+              <p>Use the Friend Support Pack for quick private review and possible personal support.</p>
+              <small>Send: Friend Support ZIP</small>
+            </article>
+
+            <article>
+              <strong>Jobcenter</strong>
+              <p>Use the Jobcenter Pack for funding, Arbeitsmittel, and laptop/work-computer support.</p>
+              <small>Send: Jobcenter Support ZIP</small>
+            </article>
+
+            <article>
+              <strong>Master Review</strong>
+              <p>Use the Master Pack when someone needs the complete picture of UAOS.</p>
+              <small>Send: Master Final Prep ZIP</small>
+            </article>
+          </div>
+        </section>
+
         <section className="uaos-v8-panel" id="export">
           <div className="uaos-v8-panel-header">
             <p>Export</p>
@@ -630,4 +660,5 @@ export default function App() {
     </main>
   );
 }
+
 
