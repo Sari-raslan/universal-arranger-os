@@ -1,19 +1,19 @@
 {
-  "dryRunId": "dry-run-2026-06-28T20-29-46-182Z",
-  "timestamp": "2026-06-28T20:29:46.183Z",
-  "selectedTaskId": "AI-002",
-  "selectedTaskTitle": "vercel preview setup plan",
-  "ownerAgent": "release_manager",
+  "dryRunId": "dry-run-2026-06-28T21-44-14-875Z",
+  "timestamp": "2026-06-28T21:44:14.876Z",
+  "selectedTaskId": "AI-003",
+  "selectedTaskTitle": "linear workspace roadmap",
+  "ownerAgent": "product_manager",
   "risk": "LOW",
   "allowedFiles": [
-    "uaos-ai-factory/integrations/vercel/*.md"
+    "uaos-ai-factory/integrations/linear/*.md",
+    "uaos-ai-factory/integrations/linear/*.csv"
   ],
   "forbiddenFiles": [
-    ".vercel/**",
-    "vercel.json",
-    "uaos-live-clean/src/App.jsx"
+    "node_modules/**",
+    ".git/**"
   ],
-  "expectedOutput": "Preview-only plan with no production deployment.",
+  "expectedOutput": "Linear labels, statuses, and backlog import plan.",
   "requiresBuild": false,
   "requiresExternalAccount": false,
   "safetyGates": [

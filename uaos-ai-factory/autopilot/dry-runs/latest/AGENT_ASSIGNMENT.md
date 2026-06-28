@@ -1,25 +1,25 @@
 # Agent Assignment
 
-Selected task: AI-002 vercel preview setup plan
-Assigned agent: release_manager
+Selected task: AI-003 linear workspace roadmap
+Assigned agent: product_manager
 
 ## Why This Agent
 
-Report staging readiness without releasing.
+Turn roadmap items into scoped issues.
 
 ## Allowed Files
 
-- uaos-ai-factory/integrations/vercel/*.md
+- uaos-ai-factory/integrations/linear/*.md
+- uaos-ai-factory/integrations/linear/*.csv
 
 ## Forbidden Files
 
-- .vercel/**
-- vercel.json
-- uaos-live-clean/src/App.jsx
+- node_modules/**
+- .git/**
 
 ## Expected Output
 
-Preview-only plan with no production deployment.
+Linear labels, statuses, and backlog import plan.
 
 ## Stop Conditions
 

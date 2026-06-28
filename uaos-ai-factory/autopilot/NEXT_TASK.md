@@ -1,18 +1,18 @@
 # Next Task
 
-ID: AI-002
-Title: vercel preview setup plan
-Owner agent: release_manager
+ID: AI-003
+Title: linear workspace roadmap
+Owner agent: product_manager
 Risk: LOW
 Requires build: NO
 Requires external account: NO
 
 ## Expected Output
 
-Preview-only plan with no production deployment.
+Linear labels, statuses, and backlog import plan.
 
 ## Notes
 
-Planning only; external integration remains inactive.
+No Linear API calls.
 
 This selector only writes the next-task note. It does not execute the task, call AI tools, push, or deploy.

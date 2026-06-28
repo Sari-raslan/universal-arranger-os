@@ -37,6 +37,14 @@ ${state.lastExecutedTask ? `## Stage 4 Result
 - Remote unchanged.
 - External automation remains not ready.
 ` : ""}
+${state.vercelPlanStatus ? `## Stage 5 Result
+
+- AI-002 Vercel preview setup plan: ${state.vercelPlanStatus}
+- No deploy.
+- No DNS change.
+- No Vercel API use.
+- External automation remains not ready.
+` : ""}
 
 ## Ready Tasks
 

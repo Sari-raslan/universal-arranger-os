@@ -10,11 +10,13 @@ This is a dry run. No implementation was performed.
 
 ## Files It May Inspect
 
-- uaos-ai-factory/integrations/vercel/*.md
+- uaos-ai-factory/integrations/linear/*.md
+- uaos-ai-factory/integrations/linear/*.csv
 
 ## Files It May Edit
 
-- uaos-ai-factory/integrations/vercel/*.md
+- uaos-ai-factory/integrations/linear/*.md
+- uaos-ai-factory/integrations/linear/*.csv
 
 ## Commands It May Run
 

@@ -18,6 +18,7 @@
     "ai:factory:review": "node scripts/uaos-ai-factory-review-preview.mjs",
     "ai:factory:dry-run": "node scripts/uaos-ai-factory-dry-run.mjs",
     "ai:factory:identity": "node scripts/uaos-ai-factory-platform-identity-check.mjs",
+    "ai:factory:vercel-plan": "node scripts/uaos-ai-factory-vercel-plan-check.mjs",
     "check": "node scripts/uaos-static-check.mjs && npm test",
     "desktop": "npm start --prefix desktop",
     "desktop:smoke": "node scripts/uaos-desktop-smoke.mjs",

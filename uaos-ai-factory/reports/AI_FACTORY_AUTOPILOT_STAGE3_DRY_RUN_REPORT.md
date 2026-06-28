@@ -38,11 +38,11 @@ Status: PASS
 
 ## Selected Task
 
-AI-002 vercel preview setup plan
+AI-003 linear workspace roadmap
 
 ## Assigned Agent
 
-release_manager
+product_manager
 
 ## Safety Result
 
