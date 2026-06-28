@@ -3,7 +3,7 @@ import "./style.css";
 
 const productStatus = [
   ["Demo/Presentation", "100%", "ready"],
-  ["Support Packs", "100%", "ready"],
+  ["Isolated Send Packs", "100%", "ready"],
   ["Pixi Assistant Demo", "100%", "ready"],
   ["Command Center", "100%", "ready"],
   ["Send Ready Selector", "100%", "ready"],
@@ -16,15 +16,15 @@ const checklist = [
   "Generate",
   "Save",
   "Export",
-  "Send Friend ZIP",
-  "Send Jobcenter ZIP",
+  "Select isolated ZIP",
+  "Review send folder",
   "Keep writer blocked"
 ];
 
 const packs = [
-  ["Friend Pack", "Private demo ZIP", "Ready to send"],
-  ["Jobcenter Pack", "Support review ZIP", "Ready to send"],
-  ["Master Review Pack", "Reviewer/investor overview", "Ready to send"]
+  ["Tester Isolated ZIP", "Testing-only package", "Ready"],
+  ["Official Review ZIP", "Formal project package", "Ready"],
+  ["Private Support ZIP", "Simple support package", "Ready"]
 ];
 
 const safetyGates = [
@@ -36,33 +36,37 @@ const safetyGates = [
 ];
 
 const commandItems = [
+  ["Start Demo", "Begin the owner review walkthrough"],
   ["Open Pixi", "Assistant demo and guided explanation"],
+  ["What To Send", "Review the isolated send choices"],
+  ["Export Summary", "Read the current package summary"],
   ["Generate", "Create a demo-ready project result"],
   ["Save", "Keep current local session state"],
   ["Export", "Prepare demo/support files"],
-  ["What to send now", "Choose Friend, Jobcenter, or Master review pack"],
   ["Presentation Mode", "Use this screen for private walkthroughs"]
 ];
 
 export default function App() {
   const [sessionReady, setSessionReady] = useState(true);
-  const [selectedPack, setSelectedPack] = useState("Jobcenter Pack");
+  const [selectedPack, setSelectedPack] = useState("Official Review ZIP");
   const [pixiOpen, setPixiOpen] = useState(true);
   const [presentationMode, setPresentationMode] = useState(false);
   const [completed, setCompleted] = useState(["Open Pixi", "Keep writer blocked"]);
+  const [demoStarted, setDemoStarted] = useState(false);
 
   const completedCount = completed.length;
   const selectedPackInfo = packs.find(([name]) => name === selectedPack);
 
   const manifestPreview = useMemo(() => ({
-    phase: "UAOS FINAL PRODUCT FINISH 100 DISPLAY V1",
+    phase: "UAOS CONTINUOUS PRODUCT COMPLETION LOOP V1 - PHASE A",
     displayFinish: "100%",
     supportReady: true,
     selectedPack,
     sessionReady,
+    demoStarted,
     realDeviceWriter: "BLOCKED",
     commercialRelease: "NOT CLAIMED"
-  }), [selectedPack, sessionReady]);
+  }), [selectedPack, sessionReady, demoStarted]);
 
   function toggleChecklist(item) {
     setCompleted(current =>
@@ -77,11 +81,11 @@ export default function App() {
       <nav className="topbar">
         <div>
           <span className="brandMark">UAOS</span>
-          <span className="topbarTitle">Universal Arranger OS</span>
+          <span className="topbarTitle">Owner Review Console</span>
         </div>
         <div className="topbarStatus">
           <span className="statusDot readyDot" />
-          <span>Display Finish V1</span>
+          <span>Owner Review Polish</span>
           <span className="statusDot blockDot" />
           <span>Writer Blocked</span>
         </div>
@@ -89,18 +93,21 @@ export default function App() {
 
       <section className="hero">
         <div className="heroCopy">
-          <p className="eyebrow">UAOS FINAL PRODUCT FINISH 100 DISPLAY V1</p>
-          <h1>Ready for private demo, support review, and presentation.</h1>
+          <p className="eyebrow">UAOS CONTINUOUS PRODUCT COMPLETION LOOP V1</p>
+          <h1>Final owner review, clean send flow, and safety truth.</h1>
           <p className="lead">
-            UAOS is 100% ready for private demo, support review, and presentation.
-            Real writer remains blocked until real hardware testing.
+            UAOS is organized for owner review, local demo presentation, isolated
+            package selection, and honest safety status. Real writer remains
+            blocked until real hardware testing.
           </p>
           <div className="heroActions">
+            <button onClick={() => setDemoStarted(true)}>Start Demo</button>
             <button onClick={() => setPixiOpen(true)}>Open Pixi</button>
+            <a href="#send-ready">What To Send</a>
+            <a href="#export-summary">Export Summary</a>
             <button onClick={() => setPresentationMode(!presentationMode)}>
               {presentationMode ? "Exit Presentation" : "Presentation Mode"}
             </button>
-            <a href="#send-ready">What to send now</a>
           </div>
         </div>
 
@@ -109,6 +116,9 @@ export default function App() {
             <span>Manager Ready</span>
             <strong>90%</strong>
             <small>V8.1 manager readiness is visible and support-ready.</small>
+          </div>
+          <div className={demoStarted ? "sessionCard okState" : "sessionCard waitState"}>
+            {demoStarted ? "Demo walkthrough started." : "Press Start Demo when ready."}
           </div>
           <label className="sessionSwitch">
             <input
@@ -142,12 +152,19 @@ export default function App() {
       <section className="workspace">
         <article className="commandCenter">
           <div className="sectionHead">
-            <p className="eyebrow">Command Center</p>
-            <h2>Owner actions</h2>
+          <p className="eyebrow">Command Center</p>
+          <h2>Owner actions</h2>
           </div>
           <div className="commandGrid">
             {commandItems.map(([title, text]) => (
-              <button className="commandButton" key={title} onClick={() => title === "Open Pixi" && setPixiOpen(true)}>
+              <button
+                className="commandButton"
+                key={title}
+                onClick={() => {
+                  if (title === "Open Pixi") setPixiOpen(true);
+                  if (title === "Start Demo") setDemoStarted(true);
+                }}
+              >
                 <span>{title}</span>
                 <small>{text}</small>
               </button>
@@ -171,7 +188,7 @@ export default function App() {
               </p>
               <div className="pixiPrompt">
                 <b>Current answer:</b>
-                <span>Show the product, export the right pack, and keep the final writer blocked.</span>
+                <span>Start the demo, choose the isolated package, and keep the final writer blocked.</span>
               </div>
             </>
           )}
@@ -180,8 +197,8 @@ export default function App() {
 
       <section className="sendReady" id="send-ready">
         <div className="sectionHead">
-          <p className="eyebrow">Send Ready Selector</p>
-          <h2>Choose the next review pack</h2>
+          <p className="eyebrow">What To Send</p>
+          <h2>Choose one isolated package</h2>
         </div>
         <div className="packGrid">
           {packs.map(([name, desc, state]) => (
@@ -236,10 +253,10 @@ export default function App() {
         </article>
       </section>
 
-      <section className="manifestPanel">
+      <section className="manifestPanel" id="export-summary">
         <div className="sectionHead">
-          <p className="eyebrow">Final manifest snapshot</p>
-          <h2>Support-ready truth state</h2>
+          <p className="eyebrow">Export Summary</p>
+          <h2>Owner truth state</h2>
         </div>
         <pre>{JSON.stringify(manifestPreview, null, 2)}</pre>
       </section>
