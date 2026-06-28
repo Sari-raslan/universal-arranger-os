@@ -1,0 +1,23 @@
+{
+  "name": "UAOS Demo Melody Guide Patterns",
+  "type": "demo-metadata",
+  "patterns": [
+    {
+      "id": "call-response",
+      "shape": ["short-call", "space", "answer"],
+      "description": "Simple phrase shape for local demo planning."
+    },
+    {
+      "id": "rising-hook",
+      "shape": ["low-start", "step-up", "hold"],
+      "description": "Hook guide metadata."
+    },
+    {
+      "id": "maqam-turn",
+      "shape": ["tonic", "upper-neighbor", "tonic", "lower-neighbor"],
+      "description": "Modal phrase guide metadata."
+    }
+  ],
+  "safety": "No melody recording included."
+}
+
