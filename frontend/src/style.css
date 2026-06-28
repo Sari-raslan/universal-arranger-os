@@ -109,6 +109,7 @@ a {
 .statusDashboard,
 .workspace,
 .sendReady,
+.testerTools,
 .reviewArea,
 .manifestPanel {
   margin-bottom: 22px;
@@ -127,6 +128,7 @@ a {
 .statusDashboard,
 .commandCenter,
 .pixiPanel,
+.testerTools,
 .sendReady,
 .reviewArea > article,
 .manifestPanel {
@@ -280,6 +282,7 @@ h2 {
 }
 
 .statusDashboard,
+.testerTools,
 .sendReady,
 .manifestPanel {
   padding: 24px;
@@ -291,6 +294,7 @@ h2 {
 
 .statusGrid,
 .packGrid,
+.testerToolGrid,
 .commandGrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
@@ -393,6 +397,46 @@ h2 {
   color: #34d399;
 }
 
+.testerToolGrid article {
+  display: grid;
+  gap: 10px;
+  min-height: 96px;
+  padding: 16px;
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  border-radius: 8px;
+  background: rgba(2, 6, 23, 0.32);
+}
+
+.testerToolGrid span {
+  color: #cbd5e1;
+  font-weight: 800;
+}
+
+.testerToolGrid b {
+  color: #bfdbfe;
+  overflow-wrap: anywhere;
+}
+
+.wideAction {
+  width: 100%;
+  min-height: 46px;
+  margin-top: 16px;
+  border-radius: 8px;
+  background: #2dd4bf;
+  color: #0f172a;
+  font-weight: 900;
+}
+
+.toolState {
+  margin: 12px 0 0;
+  color: #cbd5e1;
+}
+
+.readyText {
+  color: #86efac;
+  font-weight: 800;
+}
+
 .sendSummary {
   margin-top: 16px;
   padding: 16px;
@@ -476,6 +520,7 @@ h2 {
   .statusDashboard,
   .commandCenter,
   .pixiPanel,
+  .testerTools,
   .sendReady,
   .reviewArea > article,
   .manifestPanel {

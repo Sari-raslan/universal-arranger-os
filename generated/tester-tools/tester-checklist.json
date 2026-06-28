@@ -1,0 +1,43 @@
+{
+  "name": "UAOS Tester Checklist",
+  "version": "1.0",
+  "audience": "Tester",
+  "items": [
+    {
+      "id": "open-local-demo",
+      "label": "Open the local demo URL",
+      "expected": "Owner Review Console loads without errors"
+    },
+    {
+      "id": "start-demo",
+      "label": "Click Start Demo",
+      "expected": "Demo walkthrough state becomes active"
+    },
+    {
+      "id": "open-pixi",
+      "label": "Open Pixi Assistant",
+      "expected": "Pixi Assistant demo panel is visible"
+    },
+    {
+      "id": "send-selector",
+      "label": "Change isolated package selection",
+      "expected": "Selected package summary updates"
+    },
+    {
+      "id": "safety-gates",
+      "label": "Review Safety Gates",
+      "expected": "Final Writer remains blocked until hardware test"
+    },
+    {
+      "id": "export-feedback",
+      "label": "Click Export Tester Feedback",
+      "expected": "Local feedback state confirms preparation"
+    }
+  ],
+  "safety": {
+    "deviceWriter": "disabled",
+    "realKeyboardOutput": "disabled",
+    "finalWriter": "blocked until hardware test"
+  }
+}
+

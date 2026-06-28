@@ -40,6 +40,7 @@ const commandItems = [
   ["Open Pixi", "Assistant demo and guided explanation"],
   ["What To Send", "Review the isolated send choices"],
   ["Export Summary", "Read the current package summary"],
+  ["Export Tester Feedback", "Prepare a local test feedback summary"],
   ["Generate", "Create a demo-ready project result"],
   ["Save", "Keep current local session state"],
   ["Export", "Prepare demo/support files"],
@@ -53,6 +54,7 @@ export default function App() {
   const [presentationMode, setPresentationMode] = useState(false);
   const [completed, setCompleted] = useState(["Open Pixi", "Keep writer blocked"]);
   const [demoStarted, setDemoStarted] = useState(false);
+  const [testerFeedbackExported, setTesterFeedbackExported] = useState(false);
 
   const completedCount = completed.length;
   const selectedPackInfo = packs.find(([name]) => name === selectedPack);
@@ -64,9 +66,10 @@ export default function App() {
     selectedPack,
     sessionReady,
     demoStarted,
+    testerFeedbackExported,
     realDeviceWriter: "BLOCKED",
     commercialRelease: "NOT CLAIMED"
-  }), [selectedPack, sessionReady, demoStarted]);
+  }), [selectedPack, sessionReady, demoStarted, testerFeedbackExported]);
 
   function toggleChecklist(item) {
     setCompleted(current =>
@@ -163,6 +166,7 @@ export default function App() {
                 onClick={() => {
                   if (title === "Open Pixi") setPixiOpen(true);
                   if (title === "Start Demo") setDemoStarted(true);
+                  if (title === "Export Tester Feedback") setTesterFeedbackExported(true);
                 }}
               >
                 <span>{title}</span>
@@ -216,6 +220,39 @@ export default function App() {
         <div className="sendSummary">
           <b>Selected:</b> {selectedPackInfo?.[0]} - {selectedPackInfo?.[1]}
         </div>
+      </section>
+
+      <section className="testerTools">
+        <div className="sectionHead">
+          <p className="eyebrow">Tester Experience Tools</p>
+          <h2>Local feedback export</h2>
+        </div>
+        <div className="testerToolGrid">
+          <article>
+            <span>Checklist</span>
+            <b>tester-checklist.json</b>
+          </article>
+          <article>
+            <span>Feedback Form</span>
+            <b>tester-feedback-form.md</b>
+          </article>
+          <article>
+            <span>Bug Template</span>
+            <b>tester-bug-template.md</b>
+          </article>
+          <article>
+            <span>Session Report</span>
+            <b>tester-session-report.html</b>
+          </article>
+        </div>
+        <button className="wideAction" onClick={() => setTesterFeedbackExported(true)}>
+          Export Tester Feedback
+        </button>
+        <p className={testerFeedbackExported ? "toolState readyText" : "toolState"}>
+          {testerFeedbackExported
+            ? "Tester feedback summary prepared for local review."
+            : "Tester feedback tools are ready for local review."}
+        </p>
       </section>
 
       <section className="reviewArea">
