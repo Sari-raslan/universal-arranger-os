@@ -1,0 +1,39 @@
+{
+    "phase":  "UAOS AUDIENCE SEPARATION FIREWALL V1",
+    "date":  "2026-06-28",
+    "localUrl":  "http://127.0.0.1:5173/universal-arranger-os/?v=final-product-finish-100-display-v1",
+    "packs":  [
+                  {
+                      "audience":  "Tester",
+                      "folder":  "generated/UAOS_AUDIENCE_SEPARATION_FIREWALL_V1/UAOS_TESTER_ISOLATED_PACK_V1",
+                      "zip":  "generated/UAOS_AUDIENCE_SEPARATION_FIREWALL_V1/UAOS_TESTER_ISOLATED_PACK_V1.zip",
+                      "audit":  "PASS"
+                  },
+                  {
+                      "audience":  "Jobcenter",
+                      "folder":  "generated/UAOS_AUDIENCE_SEPARATION_FIREWALL_V1/UAOS_JOBCENTER_ISOLATED_PACK_V1",
+                      "zip":  "generated/UAOS_AUDIENCE_SEPARATION_FIREWALL_V1/UAOS_JOBCENTER_ISOLATED_PACK_V1.zip",
+                      "audit":  "PASS"
+                  },
+                  {
+                      "audience":  "Friend / Private Support",
+                      "folder":  "generated/UAOS_AUDIENCE_SEPARATION_FIREWALL_V1/UAOS_FRIEND_ISOLATED_PACK_V1",
+                      "zip":  "generated/UAOS_AUDIENCE_SEPARATION_FIREWALL_V1/UAOS_FRIEND_ISOLATED_PACK_V1.zip",
+                      "audit":  "PASS"
+                  }
+              ],
+    "failRules":  {
+                      "tester":  "FAIL if Tester contains Jobcenter or friend support content.",
+                      "jobcenter":  "FAIL if Jobcenter contains friend/private support content.",
+                      "friend":  "FAIL if Friend contains Jobcenter, Arbeitsmittel, or Einstiegsgeld content."
+                  },
+    "safety":  {
+                   "safetyGatesChanged":  false,
+                   "deviceWriter":  "not enabled",
+                   "realKeyboardOutput":  "not enabled",
+                   "publicPublish":  "not performed",
+                   "vercel":  "not used",
+                   "commercialFinalClaim":  false
+               },
+    "auditStatus":  "PASS"
+}

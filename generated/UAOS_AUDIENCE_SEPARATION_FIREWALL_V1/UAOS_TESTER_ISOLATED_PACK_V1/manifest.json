@@ -1,0 +1,29 @@
+{
+  "pack": "UAOS_TESTER_ISOLATED_PACK_V1",
+  "audience": "Tester",
+  "purpose": "Local demo testing, feedback, known limitations, bug reporting, and safety gate review.",
+  "localUrl": "http://127.0.0.1:5173/universal-arranger-os/?v=final-product-finish-100-display-v1",
+  "allowedContent": [
+    "open instructions",
+    "test steps",
+    "test script",
+    "feedback form",
+    "known limitations",
+    "bug report",
+    "technical safety gates",
+    "Pixi Assistant as test feature",
+    "Final Writer blocked until hardware test"
+  ],
+  "blockedClaims": [
+    "commercial final release",
+    "real device writer",
+    "real keyboard output"
+  ],
+  "safety": {
+    "deviceWriter": "disabled",
+    "realKeyboardOutput": "disabled",
+    "finalWriter": "blocked until hardware test",
+    "pixi": "demo feature"
+  }
+}
+
