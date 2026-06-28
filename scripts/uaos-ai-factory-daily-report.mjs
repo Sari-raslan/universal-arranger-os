@@ -52,6 +52,14 @@ ${state.linearPlanStatus ? `## Stage 6 Result
 - No external automation enabled.
 - External automation remains not ready.
 ` : ""}
+${state.githubBranchProtectionPlanStatus ? `## Stage 7 Result
+
+- AI-004 GitHub branch protection plan: ${state.githubBranchProtectionPlanStatus}
+- No GitHub API use.
+- No gh command.
+- No repository settings changed.
+- External automation remains not ready.
+` : ""}
 
 ## Ready Tasks
 

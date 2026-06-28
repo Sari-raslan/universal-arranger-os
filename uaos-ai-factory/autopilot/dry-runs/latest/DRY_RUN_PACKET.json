@@ -1,17 +1,18 @@
 {
-  "dryRunId": "dry-run-2026-06-28T22-00-03-619Z",
-  "timestamp": "2026-06-28T22:00:03.620Z",
-  "selectedTaskId": "AI-004",
-  "selectedTaskTitle": "github branch protection plan",
-  "ownerAgent": "architect",
+  "dryRunId": "dry-run-2026-06-28T22-18-35-143Z",
+  "timestamp": "2026-06-28T22:18:35.144Z",
+  "selectedTaskId": "AI-005",
+  "selectedTaskTitle": "copilot agent first issue",
+  "ownerAgent": "product_manager",
   "risk": "LOW",
   "allowedFiles": [
-    "uaos-ai-factory/integrations/github/*.md"
+    "uaos-ai-factory/backlog/*.md",
+    ".github/ISSUE_TEMPLATE/*.yml"
   ],
   "forbiddenFiles": [
-    ".git/**"
+    "uaos-live-clean/src/App.jsx"
   ],
-  "expectedOutput": "Branch protection template and first issues import plan.",
+  "expectedOutput": "First Copilot-ready issue text.",
   "requiresBuild": false,
   "requiresExternalAccount": false,
   "safetyGates": [

@@ -1,23 +1,24 @@
 # Agent Assignment
 
-Selected task: AI-004 github branch protection plan
-Assigned agent: architect
+Selected task: AI-005 copilot agent first issue
+Assigned agent: product_manager
 
 ## Why This Agent
 
-Design safe approaches and integration plans.
+Turn roadmap items into scoped issues.
 
 ## Allowed Files
 
-- uaos-ai-factory/integrations/github/*.md
+- uaos-ai-factory/backlog/*.md
+- .github/ISSUE_TEMPLATE/*.yml
 
 ## Forbidden Files
 
-- .git/**
+- uaos-live-clean/src/App.jsx
 
 ## Expected Output
 
-Branch protection template and first issues import plan.
+First Copilot-ready issue text.
 
 ## Stop Conditions
 
