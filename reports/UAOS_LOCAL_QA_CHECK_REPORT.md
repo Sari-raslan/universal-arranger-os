@@ -1,7 +1,7 @@
 # UAOS Local QA Check Report
 
 Date: 2026-06-28
-Mode: pre-commit report generation
+Mode: strict clean check
 
 ## Summary
 
@@ -9,7 +9,7 @@ Status: PASS
 
 ## Checks
 
-- [WARN] Git clean - Working changes allowed for report generation before commit.
+- [PASS] Git clean - Working tree clean.
 - [PASS] Frontend build - npm run build completed.
 - [PASS] Required path: generated/UAOS_AUDIENCE_SEPARATION_FIREWALL_V1/UAOS_TESTER_ISOLATED_PACK_V1.zip - Found.
 - [PASS] Required path: generated/UAOS_AUDIENCE_SEPARATION_FIREWALL_V1/UAOS_JOBCENTER_ISOLATED_PACK_V1.zip - Found.
