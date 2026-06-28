@@ -1,0 +1,48 @@
+{
+  "name": "UAOS Jampler Demo Programs",
+  "version": "1.0",
+  "type": "demo-presets-only",
+  "programs": [
+    {
+      "id": "piano-sketch",
+      "name": "Piano Sketch",
+      "layers": ["soft-piano-placeholder"],
+      "controls": { "brightness": 42, "release": 58 },
+      "use": "Sketch chords and song structure."
+    },
+    {
+      "id": "oriental-strings",
+      "name": "Oriental Strings",
+      "layers": ["string-pad-placeholder", "melody-guide-placeholder"],
+      "controls": { "expression": 70, "vibrato": 24 },
+      "use": "Demo arrangement color and melodic guide."
+    },
+    {
+      "id": "basic-drums",
+      "name": "Basic Drums",
+      "layers": ["kick-placeholder", "snare-placeholder", "hat-placeholder"],
+      "controls": { "swing": 8, "density": 45 },
+      "use": "Simple rhythm planning."
+    },
+    {
+      "id": "pad-layer",
+      "name": "Pad Layer",
+      "layers": ["wide-pad-placeholder"],
+      "controls": { "attack": 62, "width": 78 },
+      "use": "Background harmony sketch."
+    },
+    {
+      "id": "bass-guide",
+      "name": "Bass Guide",
+      "layers": ["bass-placeholder"],
+      "controls": { "drive": 12, "length": 52 },
+      "use": "Bass movement planning."
+    }
+  ],
+  "claims": {
+    "realAudioEngine": false,
+    "commercialSoundLibrary": false,
+    "deviceWriter": false
+  }
+}
+
