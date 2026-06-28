@@ -1,18 +1,20 @@
 {
-  "dryRunId": "dry-run-2026-06-28T22-18-35-143Z",
-  "timestamp": "2026-06-28T22:18:35.144Z",
-  "selectedTaskId": "AI-005",
-  "selectedTaskTitle": "copilot agent first issue",
-  "ownerAgent": "product_manager",
-  "risk": "LOW",
+  "dryRunId": "dry-run-2026-06-28T22-54-53-378Z",
+  "timestamp": "2026-06-28T22:54:53.379Z",
+  "selectedTaskId": "AI-006",
+  "selectedTaskTitle": "qa build hardening",
+  "ownerAgent": "qa_worker",
+  "risk": "MEDIUM",
   "allowedFiles": [
-    "uaos-ai-factory/backlog/*.md",
-    ".github/ISSUE_TEMPLATE/*.yml"
+    "uaos-ai-factory/reports/*.md",
+    ".github/workflows/*.yml"
   ],
   "forbiddenFiles": [
-    "uaos-live-clean/src/App.jsx"
+    "node_modules/**",
+    "dist/**",
+    "build/**"
   ],
-  "expectedOutput": "First Copilot-ready issue text.",
+  "expectedOutput": "QA plan for one-check validation.",
   "requiresBuild": false,
   "requiresExternalAccount": false,
   "safetyGates": [

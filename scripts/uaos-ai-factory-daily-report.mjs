@@ -60,6 +60,14 @@ ${state.githubBranchProtectionPlanStatus ? `## Stage 7 Result
 - No repository settings changed.
 - External automation remains not ready.
 ` : ""}
+${state.copilotPlanStatus ? `## Stage 8 Result
+
+- AI-005 Copilot agent first issue plan: ${state.copilotPlanStatus}
+- No GitHub issue created.
+- No Copilot service invoked.
+- No external automation enabled.
+- External automation remains not ready.
+` : ""}
 
 ## Ready Tasks
 

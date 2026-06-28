@@ -2,8 +2,8 @@
 
 Status: PASS
 
-Selected task: AI-005 copilot agent first issue
-Assigned agent: product_manager
+Selected task: AI-006 qa build hardening
+Assigned agent: qa_worker
 Safety result: PASS
 Cost result: PASS
 Future execution allowed: NO

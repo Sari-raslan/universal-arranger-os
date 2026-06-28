@@ -38,11 +38,11 @@ Status: PASS
 
 ## Selected Task
 
-AI-005 copilot agent first issue
+AI-006 qa build hardening
 
 ## Assigned Agent
 
-product_manager
+qa_worker
 
 ## Safety Result
 

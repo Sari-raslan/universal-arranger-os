@@ -1,18 +1,18 @@
 # Next Task
 
-ID: AI-005
-Title: copilot agent first issue
-Owner agent: product_manager
-Risk: LOW
+ID: AI-006
+Title: qa build hardening
+Owner agent: qa_worker
+Risk: MEDIUM
 Requires build: NO
 Requires external account: NO
 
 ## Expected Output
 
-First Copilot-ready issue text.
+QA plan for one-check validation.
 
 ## Notes
 
-No agent execution.
+Builds stay capped at one per task.
 
 This selector only writes the next-task note. It does not execute the task, call AI tools, push, or deploy.

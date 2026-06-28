@@ -1,24 +1,26 @@
 # Agent Assignment
 
-Selected task: AI-005 copilot agent first issue
-Assigned agent: product_manager
+Selected task: AI-006 qa build hardening
+Assigned agent: qa_worker
 
 ## Why This Agent
 
-Turn roadmap items into scoped issues.
+Run scoped local validation.
 
 ## Allowed Files
 
-- uaos-ai-factory/backlog/*.md
-- .github/ISSUE_TEMPLATE/*.yml
+- uaos-ai-factory/reports/*.md
+- .github/workflows/*.yml
 
 ## Forbidden Files
 
-- uaos-live-clean/src/App.jsx
+- node_modules/**
+- dist/**
+- build/**
 
 ## Expected Output
 
-First Copilot-ready issue text.
+QA plan for one-check validation.
 
 ## Stop Conditions
 
