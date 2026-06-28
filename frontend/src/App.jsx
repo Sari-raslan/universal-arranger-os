@@ -193,6 +193,7 @@ export default function App() {
               <p className="pixiText">
                 Pixi is a local demo assistant for explaining UAOS workflows, packs,
                 and readiness. Pixi is not claimed to be conscious or equivalent to ChatGPT.
+                The Pixi Knowledge Pack is prepared for safe owner guidance.
               </p>
               <div className="pixiPrompt">
                 <b>Current answer:</b>

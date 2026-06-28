@@ -1,0 +1,52 @@
+{
+  "name": "UAOS Pixi Knowledge Pack",
+  "version": "1.0",
+  "type": "demo-assistant-knowledge",
+  "identity": {
+    "name": "Pixi",
+    "claim": "demo assistant only",
+    "notClaimed": [
+      "conscious being",
+      "human-like awareness",
+      "full ChatGPT equivalent",
+      "commercial support agent"
+    ]
+  },
+  "questions": [
+    {
+      "question": "What is UAOS?",
+      "answer": "UAOS is a local music software prototype for arranging ideas, organizing demo workflows, preparing support-ready project material, and showing the current product state honestly."
+    },
+    {
+      "question": "What should I send to the Jobcenter?",
+      "answer": "Send the isolated official review package only. It contains the formal project explanation, current development status, computer need, cost overview, 30/60/90 plan, and safety note."
+    },
+    {
+      "question": "What should I send to a friend?",
+      "answer": "Send the isolated private support package only. It contains a simple explanation, why the project matters, what is done, why a stronger computer is needed, and a short personal note."
+    },
+    {
+      "question": "How do I test UAOS?",
+      "answer": "Use the isolated tester tools: checklist, feedback form, bug template, session report, Pixi demo check, and blocked writer safety check."
+    },
+    {
+      "question": "What is forbidden?",
+      "answer": "Do not claim commercial final release, do not enable a real device writer, do not output to a real keyboard, do not use protected audio, and do not mix audience-specific documents."
+    },
+    {
+      "question": "Why is the writer blocked?",
+      "answer": "The final writer must stay blocked until real hardware testing verifies file behavior, device safety, and format correctness."
+    },
+    {
+      "question": "Why is a laptop needed?",
+      "answer": "A stronger laptop or workstation is needed for local development, builds, documentation, testing, demos, backups, and future hardware validation work."
+    }
+  ],
+  "safety": {
+    "pixiIsDemoAssistantOnly": true,
+    "deviceWriterEnabled": false,
+    "realKeyboardOutputEnabled": false,
+    "commercialFinalClaim": false
+  }
+}
+
