@@ -38,11 +38,11 @@ Status: PASS
 
 ## Selected Task
 
-AI-001 platform identity normalization
+AI-002 vercel preview setup plan
 
 ## Assigned Agent
 
-product_manager
+release_manager
 
 ## Safety Result
 

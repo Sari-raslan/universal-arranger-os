@@ -1,36 +1,25 @@
 # Agent Assignment
 
-Selected task: AI-001 platform identity normalization
-Assigned agent: product_manager
+Selected task: AI-002 vercel preview setup plan
+Assigned agent: release_manager
 
 ## Why This Agent
 
-Turn roadmap items into scoped issues.
+Report staging readiness without releasing.
 
 ## Allowed Files
 
-- README.md
-- AGENTS.md
-- package.json
-- docs/*.md
-- reports/*.md
-- .github/**/*.md
-- .github/**/*.yml
-- uaos-ai-factory/**/*.md
-- uaos-ai-factory/**/*.json
+- uaos-ai-factory/integrations/vercel/*.md
 
 ## Forbidden Files
 
-- .git/**
-- node_modules/**
-- dist/**
-- build/**
-- samples/**
+- .vercel/**
+- vercel.json
 - uaos-live-clean/src/App.jsx
 
 ## Expected Output
 
-Local docs/config identity normalization plan; remote switch remains blocked while transfer is postponed.
+Preview-only plan with no production deployment.
 
 ## Stop Conditions
 

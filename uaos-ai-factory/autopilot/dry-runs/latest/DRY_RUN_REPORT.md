@@ -2,8 +2,8 @@
 
 Status: PASS
 
-Selected task: AI-001 platform identity normalization
-Assigned agent: product_manager
+Selected task: AI-002 vercel preview setup plan
+Assigned agent: release_manager
 Safety result: PASS
 Cost result: PASS
 Future execution allowed: NO

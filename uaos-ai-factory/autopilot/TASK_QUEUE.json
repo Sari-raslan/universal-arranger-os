@@ -3,7 +3,7 @@
     {
       "id": "AI-001",
       "title": "platform identity normalization",
-      "status": "READY",
+      "status": "DONE_LOCAL_PENDING_EXTERNAL_TRANSFER",
       "risk": "LOW",
       "blocked": false,
       "ownerAgent": "product_manager",
@@ -12,7 +12,7 @@
       "expectedOutput": "Local docs/config identity normalization plan; remote switch remains blocked while transfer is postponed.",
       "requiresBuild": false,
       "requiresExternalAccount": false,
-      "notes": "Actual remote switch is blocked until the AE Platform repository is reachable."
+      "notes": "Local identity normalization is complete. Actual remote switch remains blocked until the AE Platform repository is reachable."
     },
     {
       "id": "AI-002",
@@ -142,4 +142,3 @@
     }
   ]
 }
-

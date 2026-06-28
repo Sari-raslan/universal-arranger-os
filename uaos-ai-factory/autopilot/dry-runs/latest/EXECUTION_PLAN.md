@@ -10,27 +10,11 @@ This is a dry run. No implementation was performed.
 
 ## Files It May Inspect
 
-- README.md
-- AGENTS.md
-- package.json
-- docs/*.md
-- reports/*.md
-- .github/**/*.md
-- .github/**/*.yml
-- uaos-ai-factory/**/*.md
-- uaos-ai-factory/**/*.json
+- uaos-ai-factory/integrations/vercel/*.md
 
 ## Files It May Edit
 
-- README.md
-- AGENTS.md
-- package.json
-- docs/*.md
-- reports/*.md
-- .github/**/*.md
-- .github/**/*.yml
-- uaos-ai-factory/**/*.md
-- uaos-ai-factory/**/*.json
+- uaos-ai-factory/integrations/vercel/*.md
 
 ## Commands It May Run
 

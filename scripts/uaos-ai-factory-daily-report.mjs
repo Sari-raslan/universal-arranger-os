@@ -14,6 +14,7 @@ try {
   const budget = readJson("COST_BUDGET.json");
   const safety = readJson("SAFETY_MATRIX.json");
   const ready = queue.tasks.filter((task) => task.status === "READY" && !task.blocked);
+  const completed = queue.tasks.filter((task) => task.status !== "READY" && !task.blocked);
   const blocked = queue.tasks.filter((task) => task.blocked);
   const next = ready.find((task) => task.risk !== "HIGH");
 
@@ -28,10 +29,22 @@ Status: PASS
 - Phase: ${state.phase}
 - Mode: ${state.mode}
 - GitHub transfer: ${state.githubTransferStatus}
+${state.lastExecutedTask ? `- Last executed task: ${state.lastExecutedTask}` : ""}
+
+${state.lastExecutedTask ? `## Stage 4 Result
+
+- AI-001 platform identity normalization: DONE_LOCAL_PENDING_EXTERNAL_TRANSFER
+- Remote unchanged.
+- External automation remains not ready.
+` : ""}
 
 ## Ready Tasks
 
 ${ready.map((task) => `- ${task.id}: ${task.title} (${task.risk})`).join("\n") || "- None"}
+
+## Completed / Pending External Tasks
+
+${completed.map((task) => `- ${task.id}: ${task.title} (${task.status})`).join("\n") || "- None"}
 
 ## Blocked Tasks
 
@@ -61,4 +74,3 @@ ${next ? `${next.id}: ${next.title}` : "None"}
   console.error(error.message);
   process.exit(1);
 }
-

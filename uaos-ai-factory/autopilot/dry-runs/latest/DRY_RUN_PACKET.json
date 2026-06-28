@@ -1,30 +1,19 @@
 {
-  "dryRunId": "dry-run-2026-06-28T17-45-02-518Z",
-  "timestamp": "2026-06-28T17:45:02.519Z",
-  "selectedTaskId": "AI-001",
-  "selectedTaskTitle": "platform identity normalization",
-  "ownerAgent": "product_manager",
+  "dryRunId": "dry-run-2026-06-28T20-29-46-182Z",
+  "timestamp": "2026-06-28T20:29:46.183Z",
+  "selectedTaskId": "AI-002",
+  "selectedTaskTitle": "vercel preview setup plan",
+  "ownerAgent": "release_manager",
   "risk": "LOW",
   "allowedFiles": [
-    "README.md",
-    "AGENTS.md",
-    "package.json",
-    "docs/*.md",
-    "reports/*.md",
-    ".github/**/*.md",
-    ".github/**/*.yml",
-    "uaos-ai-factory/**/*.md",
-    "uaos-ai-factory/**/*.json"
+    "uaos-ai-factory/integrations/vercel/*.md"
   ],
   "forbiddenFiles": [
-    ".git/**",
-    "node_modules/**",
-    "dist/**",
-    "build/**",
-    "samples/**",
+    ".vercel/**",
+    "vercel.json",
     "uaos-live-clean/src/App.jsx"
   ],
-  "expectedOutput": "Local docs/config identity normalization plan; remote switch remains blocked while transfer is postponed.",
+  "expectedOutput": "Preview-only plan with no production deployment.",
   "requiresBuild": false,
   "requiresExternalAccount": false,
   "safetyGates": [
