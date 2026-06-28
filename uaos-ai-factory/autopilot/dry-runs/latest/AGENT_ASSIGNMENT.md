@@ -1,25 +1,23 @@
 # Agent Assignment
 
-Selected task: AI-007 premium library metadata next step
-Assigned agent: library_worker
+Selected task: AI-008 demo status page
+Assigned agent: frontend_worker
 
 ## Why This Agent
 
-Improve library metadata, QA, and provenance.
+Implement small demo/staging UI tasks.
 
 ## Allowed Files
 
-- uaos-ai-factory/backlog/*.md
-- docs/*.md
+- issue-defined demo/staging UI files only
 
 ## Forbidden Files
 
-- samples/**
-- audio/**
+- uaos-live-clean/src/App.jsx
 
 ## Expected Output
 
-Metadata, QA, and provenance task only.
+Plan for an honest demo/staging status page.
 
 ## Stop Conditions
 

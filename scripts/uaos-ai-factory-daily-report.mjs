@@ -75,6 +75,14 @@ ${state.qaPlanStatus ? `## Stage 9 Result
 - No external automation enabled.
 - External automation remains not ready.
 ` : ""}
+${state.premiumLibraryPlanStatus ? `## Stage 10 Result
+
+- AI-007 Premium library metadata next step plan: ${state.premiumLibraryPlanStatus}
+- No audio import.
+- No sample copying.
+- No commercial readiness claim.
+- External automation remains not ready.
+` : ""}
 
 ## Ready Tasks
 

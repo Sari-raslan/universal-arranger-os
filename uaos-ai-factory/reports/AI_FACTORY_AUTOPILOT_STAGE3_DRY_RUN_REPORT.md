@@ -38,11 +38,11 @@ Status: PASS
 
 ## Selected Task
 
-AI-007 premium library metadata next step
+AI-008 demo status page
 
 ## Assigned Agent
 
-library_worker
+frontend_worker
 
 ## Safety Result
 

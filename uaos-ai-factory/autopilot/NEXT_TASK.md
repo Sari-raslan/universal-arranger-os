@@ -1,18 +1,18 @@
 # Next Task
 
-ID: AI-007
-Title: premium library metadata next step
-Owner agent: library_worker
-Risk: LOW
-Requires build: NO
+ID: AI-008
+Title: demo status page
+Owner agent: frontend_worker
+Risk: MEDIUM
+Requires build: YES
 Requires external account: NO
 
 ## Expected Output
 
-Metadata, QA, and provenance task only.
+Plan for an honest demo/staging status page.
 
 ## Notes
 
-No sample copying and no commercial-readiness claim.
+No redesign and no route changes unless issue-approved.
 
 This selector only writes the next-task note. It does not execute the task, call AI tools, push, or deploy.

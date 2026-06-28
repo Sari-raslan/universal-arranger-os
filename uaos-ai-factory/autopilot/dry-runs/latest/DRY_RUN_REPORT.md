@@ -2,8 +2,8 @@
 
 Status: PASS
 
-Selected task: AI-007 premium library metadata next step
-Assigned agent: library_worker
+Selected task: AI-008 demo status page
+Assigned agent: frontend_worker
 Safety result: PASS
 Cost result: PASS
 Future execution allowed: NO

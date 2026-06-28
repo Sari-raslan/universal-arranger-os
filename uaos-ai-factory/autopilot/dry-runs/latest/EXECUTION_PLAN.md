@@ -10,13 +10,11 @@ This is a dry run. No implementation was performed.
 
 ## Files It May Inspect
 
-- uaos-ai-factory/backlog/*.md
-- docs/*.md
+- issue-defined demo/staging UI files only
 
 ## Files It May Edit
 
-- uaos-ai-factory/backlog/*.md
-- docs/*.md
+- issue-defined demo/staging UI files only
 
 ## Commands It May Run
 

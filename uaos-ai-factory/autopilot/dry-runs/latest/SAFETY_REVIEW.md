@@ -28,6 +28,6 @@
 
 ## Risk Decision
 
-Risk: LOW
+Risk: MEDIUM
 
 Safe for future execution: YES
