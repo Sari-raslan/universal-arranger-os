@@ -1,0 +1,59 @@
+name: UAOS AI Task
+description: Scoped AI worker task with safety gates
+title: "[AI Task]: "
+labels: ["ai-task", "safety-gated"]
+body:
+  - type: textarea
+    id: scope
+    attributes:
+      label: Scope
+    validations:
+      required: true
+  - type: textarea
+    id: allowed-files
+    attributes:
+      label: Allowed files
+    validations:
+      required: true
+  - type: textarea
+    id: blocked-files
+    attributes:
+      label: Blocked files
+    validations:
+      required: true
+  - type: dropdown
+    id: safety-level
+    attributes:
+      label: Safety level
+      options:
+        - LOW
+        - MEDIUM
+        - HIGH
+    validations:
+      required: true
+  - type: textarea
+    id: expected-output
+    attributes:
+      label: Expected output
+    validations:
+      required: true
+  - type: dropdown
+    id: build-required
+    attributes:
+      label: Is build required?
+      options:
+        - "No"
+        - "Yes"
+    validations:
+      required: true
+  - type: dropdown
+    id: cost-risk
+    attributes:
+      label: Cost risk
+      options:
+        - LOW
+        - MEDIUM
+        - HIGH
+    validations:
+      required: true
+

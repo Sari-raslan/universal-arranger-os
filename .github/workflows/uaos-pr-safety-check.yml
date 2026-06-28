@@ -1,0 +1,23 @@
+name: UAOS PR Safety Check
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: uaos-pr-safety-check-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  safety:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Run AI Factory safety check
+        run: node scripts/uaos-ai-factory-safety-check.mjs
+

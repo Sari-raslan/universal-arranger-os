@@ -132,3 +132,20 @@ Keep improving until the local MVP runs.
 - Update `reports/CODEX_MASTER_STATE.json`, `reports/CODEX_BLOCKERS.md`, and `reports/CODEX_CHANGELOG.md` after each completed task group.
 - Keep PowerShell as orchestration only; application source belongs in JS, JSX, CSS, JSON, tests, and docs.
 - Preserve current public routes and label incomplete features honestly.
+
+## UAOS AI Factory Operating Constitution
+
+UAOS is currently prototype, demo, and staging oriented. The AI Factory exists to make future AI-assisted development safer, smaller, and easier to review.
+
+1. AI worker roles: product manager, architect, frontend worker, music-engine worker, library worker, QA worker, reviewer, cost guard, and release manager. Each role must work from an approved issue with defined scope, allowed files, blocked files, expected output, safety level, and cost risk.
+2. No deploy, no payment, and no real writer rules: AI workers must not deploy, activate payment flows, publish releases, enable real keyboard output, or enable real keyboard export. Real keyboard writer/export and public release require explicit approval.
+3. Branch/PR-only workflow: future AI workers must use issues, branches, and pull requests. Direct commits to `master` or `main` are not the operating model.
+4. Cost-control rules: the user has invested significant self-work already, so protect credits and compute. Avoid broad scans, repeated builds, loops, large generated archives, sample/audio library scans, and speculative background work.
+5. Vercel preview-only rule: Vercel may only be considered for preview workflows after explicit approval. No production deployment or production alias change is allowed.
+6. Linear/GitHub issue workflow: Linear requests should become GitHub issues before implementation. The issue must state scope, allowed files, blocked files, build requirements, expected output, safety level, and cost risk.
+7. Code X / Codex role: Code X / Codex is a senior engineer for scoped implementation, review, and safety validation. It is not an always-running worker.
+8. Future agent rule: Copilot, OpenHands, and future agents must operate through issues and PRs, with the same safety gates and cost-control rules.
+9. No automatic merge: no AI worker may automatically merge to `master` or `main`.
+10. Stop condition: stop at the first serious FAIL, report the cause, and propose the next smallest safe task.
+
+Proprietary arranger formats must be handled with safe readers, metadata extraction, hex/ASCII inspection, and adapter interfaces only. Premium library work is metadata, QA, and provenance first, not copied audio samples or unverified commercial claims.

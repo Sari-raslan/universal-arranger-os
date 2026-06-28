@@ -1,0 +1,26 @@
+name: UAOS Safe Feature
+description: Prototype/demo/staging feature request with safety gates
+title: "[Safe Feature]: "
+labels: ["safe-feature"]
+body:
+  - type: textarea
+    id: feature
+    attributes:
+      label: Feature summary
+      description: Use prototype, demo, or staging wording.
+    validations:
+      required: true
+  - type: textarea
+    id: safety-gates
+    attributes:
+      label: Safety gates
+      description: Confirm no deploy, no payment, no real writer/export, no proprietary samples, and no false premium claims.
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+    validations:
+      required: true
+

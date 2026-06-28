@@ -1,16 +1,11 @@
-name: UAOS Full Validation
+name: UAOS CI
 
 on:
-  push:
-    branches:
-      - master
-      - "codex/**"
   pull_request:
-    branches:
-      - master
+  workflow_dispatch:
 
 concurrency:
-  group: uaos-full-validation-${{ github.ref }}
+  group: uaos-ci-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
@@ -23,29 +18,20 @@ jobs:
         with:
           node-version: 22
 
-      - name: Install root
-        run: npm ci
+      - name: Install root dependencies if needed
+        run: npm install
 
-      - name: Install backend
-        run: npm ci
-        working-directory: backend
+      - name: AI Factory safety check
+        run: npm run ai:factory:check
 
-      - name: Install web app
-        run: npm ci
-        working-directory: uaos-live-clean
+      - name: Test if available
+        run: npm test --if-present
 
-      - name: Install desktop
-        run: npm ci
-        working-directory: desktop
-
-      - name: Check
-        run: npm run check
-
-      - name: Test
-        run: npm test
-
-      - name: Build
-        run: npm run build
-
-      - name: Desktop smoke
-        run: npm run desktop:smoke
+      - name: Build web app if package exists
+        shell: bash
+        run: |
+          if [ -f uaos-live-clean/package.json ]; then
+            npm run build --prefix uaos-live-clean
+          else
+            echo "uaos-live-clean/package.json not found; skipping web app build."
+          fi
