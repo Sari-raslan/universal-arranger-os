@@ -1,0 +1,101 @@
+{
+  "version": "UAOS SONG TO ARRANGER SEQUENCER MVP V1",
+  "testCase": "Oriental Pop Song",
+  "analysis": {
+    "title": "Oriental Pop Song",
+    "genre": "Oriental Pop",
+    "tempo": 104,
+    "key": "Nahawand",
+    "mood": "warm, melodic, modal",
+    "arrangementPlan": "Build a 14-section arranger project with modal intro, rhythmic intro, full band intro, verses, chorus, bridge, fills, break, and three endings."
+  },
+  "sections": [
+    "Intro 1",
+    "Intro 2",
+    "Intro 3",
+    "Verse A",
+    "Verse B",
+    "Chorus",
+    "Bridge",
+    "Fill 1",
+    "Fill 2",
+    "Fill 3",
+    "Break",
+    "Ending 1",
+    "Ending 2",
+    "Ending 3"
+  ],
+  "tracks": [
+    "Drums",
+    "Percussion",
+    "Bass",
+    "Chords",
+    "Pad",
+    "Strings",
+    "Lead / Melody Guide",
+    "FX / Hits"
+  ],
+  "variations": {
+    "Variation A": "quiet",
+    "Variation B": "medium",
+    "Variation C": "strong",
+    "Variation D": "full",
+    "Fill Up": "increase energy",
+    "Fill Down": "reduce energy",
+    "Break": "short stop",
+    "Ending": "final cadence"
+  },
+  "sequencerGridSample": [
+    {
+      "bar": 1,
+      "section": "Intro 1",
+      "chord": "tonic",
+      "drumsPattern": "kick:1",
+      "bassPattern": "root",
+      "chordCompPattern": "maqam-inspired",
+      "padPattern": "soft-wide-pad",
+      "melodyGuide": "Nahawand motif 1",
+      "energyLevel": 1,
+      "fillTrigger": "none",
+      "variation": "Variation A"
+    },
+    {
+      "bar": 9,
+      "section": "Intro 3",
+      "chord": "dominant",
+      "drumsPattern": "clap:2",
+      "bassPattern": "minor-seventh",
+      "chordCompPattern": "maqam-inspired",
+      "padPattern": "soft-wide-pad",
+      "melodyGuide": "Nahawand motif 1",
+      "energyLevel": 3,
+      "fillTrigger": "none",
+      "variation": "Variation C"
+    },
+    {
+      "bar": 29,
+      "section": "Chorus",
+      "chord": "tonic",
+      "drumsPattern": "kick:1",
+      "bassPattern": "root",
+      "chordCompPattern": "maqam-inspired",
+      "padPattern": "soft-wide-pad",
+      "melodyGuide": "Nahawand rising hook 1",
+      "energyLevel": 3,
+      "fillTrigger": "none",
+      "variation": "Variation C"
+    }
+  ],
+  "playbackPlan": {
+    "bpm": 104,
+    "timeline": "bars 1-64 with section transitions, chord events, drum hits, and internal note guide metadata",
+    "demoMidi": false
+  },
+  "safety": {
+    "realDeviceWriter": "BLOCKED",
+    "realKeyboardOutput": "BLOCKED",
+    "writerFormatsCreated": false,
+    "copyrightedMelodyCopied": false
+  }
+}
+

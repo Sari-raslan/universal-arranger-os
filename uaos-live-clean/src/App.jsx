@@ -60,6 +60,37 @@ const trackRoles = [
   { id: "melody", name: "Melody Guide", pattern: "Lead phrase / singer guide" },
 ];
 
+const songStyles = {
+  Pop: { genre: "Pop", tempo: 104, key: "C minor", mood: "modern and hook-focused", drums: "basic-4-4", bass: "root-pulse", chords: ["i", "VI", "iv", "V"], pad: "soft-wide-pad" },
+  Oriental: { genre: "Oriental Pop", tempo: 104, key: "Nahawand", mood: "warm, melodic, modal", drums: "darbuka + riq metadata", bass: "oriental-root", chords: ["tonic", "lower-neighbor", "dominant", "tonic"], pad: "soft-wide-pad" },
+  Ballad: { genre: "Pop Ballad", tempo: 76, key: "A minor", mood: "emotional and spacious", drums: "soft-ballad-brush", bass: "ballad-walk", chords: ["i", "VI", "III", "VII"], pad: "strong-pad" },
+  Wedding: { genre: "Wedding Keyboard", tempo: 112, key: "D Kurd", mood: "celebration and lift", drums: "oriental-pop-light", bass: "root-octave", chords: ["tonic", "VII", "VI", "dominant"], pad: "wide-pad" },
+  Dabke: { genre: "Dabke Sketch", tempo: 124, key: "D Hijaz", mood: "strong rhythmic dance", drums: "dabke-step-demo", bass: "root-octave-drive", chords: ["tonic", "flat-II", "tonic", "VII"], pad: "support-pad" },
+  "R&B": { genre: "R&B Groove", tempo: 92, key: "F minor", mood: "smooth and syncopated", drums: "rnb-pocket-demo", bass: "syncopated-root", chords: ["i7", "iv7", "VImaj7", "V7"], pad: "warm-pad" },
+  Film: { genre: "Film Score Sketch", tempo: 80, key: "D minor", mood: "cinematic slow build", drums: "cinematic-pulse", bass: "pedal-tone", chords: ["i", "VI", "III", "VII"], pad: "film-bed" },
+  Worship: { genre: "Worship Ballad", tempo: 72, key: "G major", mood: "open and reflective", drums: "soft-ballad", bass: "root-pulse", chords: ["I", "V", "vi", "IV"], pad: "soft-wide-pad" },
+};
+
+const arrangerSectionNames = [
+  "Intro 1", "Intro 2", "Intro 3", "Verse A", "Verse B", "Chorus", "Bridge",
+  "Fill 1", "Fill 2", "Fill 3", "Break", "Ending 1", "Ending 2", "Ending 3",
+];
+
+const arrangerTrackNames = [
+  "Drums", "Percussion", "Bass", "Chords", "Pad", "Strings", "Lead / Melody Guide", "FX / Hits",
+];
+
+const arrangerVariations = [
+  { name: "Variation A", energy: "quiet" },
+  { name: "Variation B", energy: "medium" },
+  { name: "Variation C", energy: "strong" },
+  { name: "Variation D", energy: "full" },
+  { name: "Fill Up", energy: "increase energy" },
+  { name: "Fill Down", energy: "reduce energy" },
+  { name: "Break", energy: "short stop" },
+  { name: "Ending", energy: "final cadence" },
+];
+
 function uid() {
   return "uaos-" + Date.now() + "-" + Math.random().toString(16).slice(2);
 }
@@ -131,8 +162,147 @@ function downloadJson(filename, data) {
   URL.revokeObjectURL(url);
 }
 
+function downloadTextFile(filename, text, type = "text/plain;charset=utf-8") {
+  const blob = new Blob([text], { type });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = filename;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+}
+
 function cleanFilename(value) {
   return value.replace(/[^a-z0-9]+/gi, "_").replace(/^_+|_+$/g, "").toLowerCase() || "uaos_project";
+}
+
+function createSongArrangerProject(input) {
+  const styleName = songStyles[input.style] ? input.style : "Oriental";
+  const preset = songStyles[styleName];
+  const title = input.title.trim() || "Untitled UAOS Song Idea";
+  const tempo = Math.max(56, Math.min(156, Number.parseInt(input.tempo, 10) || preset.tempo));
+  const key = input.key.trim() || preset.key;
+  const mood = input.mood.trim() || preset.mood;
+  let bar = 1;
+  const sections = arrangerSectionNames.map((name, index) => {
+    const bars = name.startsWith("Fill") ? 1 : name === "Break" ? 2 : name.includes("Intro 3") || name.includes("Verse") || name === "Chorus" || name === "Bridge" || name === "Ending 3" ? 8 : 4;
+    const result = { name, bars, startBar: bar, endBar: bar + bars - 1, role: sectionRole(name, index) };
+    bar += bars;
+    return result;
+  });
+
+  const grid = sections.flatMap((section, sectionIndex) =>
+    Array.from({ length: section.bars }, (_, offset) => {
+      const energyLevel = sectionEnergy(section.name, sectionIndex);
+      return {
+        bar: section.startBar + offset,
+        section: section.name,
+        chord: preset.chords[(sectionIndex + offset) % preset.chords.length],
+        drumsPattern: `${preset.drums}:${(offset % 4) + 1}`,
+        bassPattern: `${preset.bass}:${(offset % 4) + 1}`,
+        chordCompPattern: preset.chords.join(" - "),
+        padPattern: preset.pad,
+        melodyGuide: `${key} ${section.name} guide ${offset + 1}`,
+        energyLevel,
+        fillTrigger: section.name.startsWith("Fill") ? section.name : offset === section.bars - 1 && !section.name.startsWith("Ending") ? "Fill Up" : "none",
+        variation: ["Variation A", "Variation B", "Variation C", "Variation D"][Math.max(0, Math.min(3, energyLevel - 1))],
+      };
+    })
+  );
+
+  return {
+    version: "UAOS SONG TO ARRANGER SEQUENCER MVP V1",
+    generatedAt: new Date().toISOString(),
+    input: { ...input, title },
+    analysis: {
+      title,
+      referenceStyle: input.reference.trim() || "UAOS internal style inference",
+      genre: preset.genre,
+      tempo,
+      key,
+      mood,
+      arrangementPlan: `Generate ${preset.genre} arranger project with ${sections.length} sections, ${grid.length} bars, ${arrangerTrackNames.length} tracks, variations, fills, endings, and safe demo exports.`,
+    },
+    sections,
+    tracks: arrangerTrackNames.map((name, index) => ({
+      name,
+      role: name === "Lead / Melody Guide" ? "safe internal melody guide" : "arrangement support",
+      events: grid.slice(0, 8).map((row) => ({
+        bar: row.bar,
+        event: `${name} ${row.chord}`,
+        velocity: Math.min(112, 62 + row.energyLevel * 10 + index),
+      })),
+    })),
+    variations: arrangerVariations,
+    sequencerGrid: grid,
+    playbackPlan: {
+      bpm: tempo,
+      bars: grid.length,
+      timeline: sections.map((section) => ({
+        bar: section.startBar,
+        section: section.name,
+        trackEvents: ["drums", "bass", "chords", "pad", "melody guide"],
+        chordEvents: grid.filter((row) => row.bar >= section.startBar && row.bar <= section.endBar).slice(0, 4).map((row) => row.chord),
+        transition: section.name.startsWith("Fill") ? "fill trigger" : "section transition",
+      })),
+      noteEvents: grid.slice(0, 16).map((row) => ({ bar: row.bar, note: row.melodyGuide, chord: row.chord })),
+      drumHits: grid.slice(0, 16).map((row) => ({ bar: row.bar, hit: row.drumsPattern })),
+    },
+    exports: { json: true, htmlPreview: true, markdownSummary: true, demoMidi: false },
+    safety: {
+      internalProjectOnly: true,
+      realDeviceWriter: "BLOCKED",
+      realKeyboardOutput: "BLOCKED",
+      forbiddenWriterFormats: [".STY", ".SET", ".PRS", ".STL", ".PAT", ".MSP", ".KST"],
+      copyrightedMelodyCopied: false,
+    },
+  };
+}
+
+function sectionRole(name, index) {
+  if (name.startsWith("Intro")) return index === 0 ? "melodic opening" : index === 1 ? "rhythmic setup" : "full band entry";
+  if (name.startsWith("Verse")) return "song story";
+  if (name === "Chorus") return "main hook";
+  if (name === "Bridge") return "contrast";
+  if (name.startsWith("Fill")) return "transition";
+  if (name === "Break") return "short stop";
+  return "ending cadence";
+}
+
+function sectionEnergy(name, index) {
+  if (name.includes("Intro 1") || name.includes("Verse A")) return 1;
+  if (name.includes("Intro 2") || name.includes("Verse B") || name.includes("Bridge") || name === "Break") return 2;
+  if (name.includes("Intro 3") || name.includes("Chorus") || name.startsWith("Fill")) return 3;
+  if (name.includes("Ending 3")) return 4;
+  return Math.min(4, Math.max(1, (index % 4) + 1));
+}
+
+function buildSongPreviewHtml(project) {
+  const rows = project.sequencerGrid.map((row) => `<tr><td>${row.bar}</td><td>${row.section}</td><td>${row.chord}</td><td>${row.drumsPattern}</td><td>${row.bassPattern}</td><td>${row.chordCompPattern}</td><td>${row.padPattern}</td><td>${row.melodyGuide}</td><td>${row.energyLevel}</td><td>${row.fillTrigger}</td><td>${row.variation}</td></tr>`).join("");
+  return `<!doctype html><html><head><meta charset="utf-8"><title>${project.analysis.title} - UAOS Sequencer</title><style>body{font-family:Arial;background:#101827;color:#f8fafc;padding:24px}table{border-collapse:collapse;width:100%;font-size:13px}td,th{border:1px solid #334155;padding:8px}th{background:#172033}.safe{color:#86efac;font-weight:bold}</style></head><body><h1>${project.analysis.title}</h1><p class="safe">Internal UAOS demo project only. Real keyboard writer remains blocked.</p><table><thead><tr><th>Bar</th><th>Section</th><th>Chord</th><th>Drums</th><th>Bass</th><th>Comp</th><th>Pad</th><th>Melody</th><th>Energy</th><th>Fill</th><th>Variation</th></tr></thead><tbody>${rows}</tbody></table></body></html>`;
+}
+
+function buildSongMarkdown(project) {
+  return `# ${project.analysis.title} - UAOS Arranger Summary
+
+Style: ${project.analysis.genre}
+Tempo: ${project.analysis.tempo} BPM
+Key/Maqam: ${project.analysis.key}
+Mood: ${project.analysis.mood}
+
+## Arrangement Plan
+
+${project.analysis.arrangementPlan}
+
+## Safety
+
+- Internal UAOS demo project only.
+- Real keyboard writer remains blocked.
+- No real keyboard output.
+- No .STY/.SET/.PRS/.STL/.PAT/.MSP/.KST output.
+`;
 }
 
 function agentReply(input) {
@@ -191,6 +361,25 @@ export default function App() {
   const [assistantName] = useState("UAOS Pixi");
   const [assistantInput, setAssistantInput] = useState("");
   const [assistantVoiceOn, setAssistantVoiceOn] = useState(true);
+  const [songInput, setSongInput] = useState({
+    title: "Oriental Pop Song",
+    reference: "",
+    tempo: "",
+    key: "",
+    mood: "",
+    style: "Oriental",
+  });
+  const [songArrangerProject, setSongArrangerProject] = useState(() =>
+    createSongArrangerProject({
+      title: "Oriental Pop Song",
+      reference: "",
+      tempo: "",
+      key: "",
+      mood: "",
+      style: "Oriental",
+    })
+  );
+  const [songGridOpen, setSongGridOpen] = useState(true);
   const [assistantMessages, setAssistantMessages] = useState([
     {
       role: "assistant",
@@ -286,6 +475,40 @@ export default function App() {
     setMessage("Summary exported");
   }
 
+  function updateSongInput(field, value) {
+    setSongInput((current) => ({ ...current, [field]: value }));
+  }
+
+  function generateSongArrangerProject() {
+    const next = createSongArrangerProject(songInput);
+    setSongArrangerProject(next);
+    setSongGridOpen(true);
+    setMessage("Song arranger project generated");
+  }
+
+  function exportSongDemoProject() {
+    downloadJson(`${cleanFilename(songArrangerProject.analysis.title)}_uaos_arranger_project.json`, songArrangerProject);
+    setMessage("Song arranger JSON exported");
+  }
+
+  function exportSongPreview() {
+    downloadTextFile(
+      `${cleanFilename(songArrangerProject.analysis.title)}_sequencer_preview.html`,
+      buildSongPreviewHtml(songArrangerProject),
+      "text/html;charset=utf-8"
+    );
+    setMessage("Sequencer preview exported");
+  }
+
+  function exportSongMarkdown() {
+    downloadTextFile(
+      `${cleanFilename(songArrangerProject.analysis.title)}_arranger_summary.md`,
+      buildSongMarkdown(songArrangerProject),
+      "text/markdown;charset=utf-8"
+    );
+    setMessage("Markdown summary exported");
+  }
+
   function openFriendMode() {
     setMessage("Friend support mode ready");
     addAssistantSystemPrompt("Please help me explain UAOS to a friend who may support me financially.");
@@ -371,6 +594,7 @@ export default function App() {
           <a href="#command-center">Command Center</a>
           <a href="#projects">Projects</a>
           <a href="#arranger">Arranger</a>
+          <a href="#song-to-arranger">Song To Arranger</a>
           <a href="#assistant">Pixi Assistant</a>
           <a href="#send-ready">Send Ready</a>
           <a href="#export">Export</a>
@@ -448,6 +672,7 @@ export default function App() {
             <button onClick={createNewProject}>New Project</button>
             <button onClick={saveProject}>Save</button>
             <button onClick={generateProject}>Generate</button>
+            <button onClick={generateSongArrangerProject}>Generate Arranger Project</button>
             <button onClick={openFriendMode}>Friend</button>
             <button onClick={openJobcenterMode}>Jobcenter</button>
             <button onClick={exportSummary}>Export</button>
@@ -463,6 +688,134 @@ export default function App() {
                 <strong>{item.label}</strong>
               </div>
             ))}
+          </div>
+        </section>
+
+        <section className="uaos-v8-panel uaos-song-arranger" id="song-to-arranger">
+          <div className="uaos-v8-panel-header">
+            <p>Song To Arranger</p>
+            <h2>Song To Arranger Sequencer MVP</h2>
+            <span>Write a song name or idea. UAOS builds an internal arranger project with sections, tracks, variations, sequencer grid, and safe demo exports.</span>
+          </div>
+
+          <div className="uaos-song-form">
+            <label>
+              Song name
+              <input value={songInput.title} onChange={(e) => updateSongInput("title", e.target.value)} placeholder="Song name or idea" />
+            </label>
+            <label>
+              Reference style
+              <input value={songInput.reference} onChange={(e) => updateSongInput("reference", e.target.value)} placeholder="Optional artist/style reference" />
+            </label>
+            <label>
+              Tempo
+              <input value={songInput.tempo} onChange={(e) => updateSongInput("tempo", e.target.value)} placeholder="Optional BPM" inputMode="numeric" />
+            </label>
+            <label>
+              Key / Maqam
+              <input value={songInput.key} onChange={(e) => updateSongInput("key", e.target.value)} placeholder="Optional key or maqam" />
+            </label>
+            <label>
+              Mood
+              <input value={songInput.mood} onChange={(e) => updateSongInput("mood", e.target.value)} placeholder="Optional mood" />
+            </label>
+            <label>
+              Target style
+              <select value={songInput.style} onChange={(e) => updateSongInput("style", e.target.value)}>
+                {Object.keys(songStyles).map((style) => <option key={style}>{style}</option>)}
+              </select>
+            </label>
+          </div>
+
+          <div className="uaos-song-actions">
+            <button onClick={generateSongArrangerProject}>Generate Arranger Project</button>
+            <button onClick={() => setSongGridOpen(!songGridOpen)}>Open Sequencer Grid</button>
+            <button onClick={exportSongDemoProject}>Export Demo Project</button>
+            <button onClick={exportSongPreview}>Export HTML Preview</button>
+            <button onClick={exportSongMarkdown}>Export Markdown Summary</button>
+          </div>
+
+          <p className="uaos-song-safety">
+            This creates an internal UAOS arranger project and demo JSON/HTML/Markdown only. Real keyboard writer remains blocked.
+          </p>
+
+          <div className="uaos-song-analysis">
+            <article><span>Song title</span><strong>{songArrangerProject.analysis.title}</strong></article>
+            <article><span>Inferred genre/style</span><strong>{songArrangerProject.analysis.genre}</strong></article>
+            <article><span>Suggested tempo</span><strong>{songArrangerProject.analysis.tempo} BPM</strong></article>
+            <article><span>Suggested key/maqam</span><strong>{songArrangerProject.analysis.key}</strong></article>
+            <article><span>Mood</span><strong>{songArrangerProject.analysis.mood}</strong></article>
+            <article><span>Arrangement plan</span><strong>{songArrangerProject.analysis.arrangementPlan}</strong></article>
+          </div>
+
+          <div className="uaos-song-panels">
+            <article>
+              <h3>Arranger Sections</h3>
+              <div className="uaos-song-list">
+                {songArrangerProject.sections.map((section) => (
+                  <span key={section.name}>{section.name} · bars {section.startBar}-{section.endBar}</span>
+                ))}
+              </div>
+            </article>
+            <article>
+              <h3>Tracks</h3>
+              <div className="uaos-song-list">
+                {songArrangerProject.tracks.map((track) => (
+                  <span key={track.name}>{track.name} · {track.role}</span>
+                ))}
+              </div>
+            </article>
+            <article>
+              <h3>Style Variations</h3>
+              <div className="uaos-song-list">
+                {songArrangerProject.variations.map((variation) => (
+                  <span key={variation.name}>{variation.name} · {variation.energy}</span>
+                ))}
+              </div>
+            </article>
+          </div>
+
+          {songGridOpen && (
+            <div className="uaos-song-grid-wrap">
+              <h3>Sequencer Grid</h3>
+              <div className="uaos-song-grid">
+                <div className="head">Bar</div>
+                <div className="head">Section</div>
+                <div className="head">Chord</div>
+                <div className="head">Drums</div>
+                <div className="head">Bass</div>
+                <div className="head">Comp</div>
+                <div className="head">Pad</div>
+                <div className="head">Melody</div>
+                <div className="head">Energy</div>
+                <div className="head">Fill</div>
+                <div className="head">Variation</div>
+                {songArrangerProject.sequencerGrid.map((row) => (
+                  <React.Fragment key={`${row.bar}-${row.section}`}>
+                    <div>{row.bar}</div>
+                    <div>{row.section}</div>
+                    <div>{row.chord}</div>
+                    <div>{row.drumsPattern}</div>
+                    <div>{row.bassPattern}</div>
+                    <div>{row.chordCompPattern}</div>
+                    <div>{row.padPattern}</div>
+                    <div>{row.melodyGuide}</div>
+                    <div>{row.energyLevel}</div>
+                    <div>{row.fillTrigger}</div>
+                    <div>{row.variation}</div>
+                  </React.Fragment>
+                ))}
+              </div>
+            </div>
+          )}
+
+          <div className="uaos-song-playback">
+            <h3>Demo Playback Plan</h3>
+            <div className="uaos-song-list">
+              {songArrangerProject.playbackPlan.timeline.map((item) => (
+                <span key={`${item.bar}-${item.section}`}>Bar {item.bar}: {item.section} · {songArrangerProject.playbackPlan.bpm} BPM · {item.transition}</span>
+              ))}
+            </div>
           </div>
         </section>
 

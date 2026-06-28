@@ -1,0 +1,95 @@
+{
+  "styles": {
+    "Pop": {
+      "tempo": 104,
+      "key": "C minor",
+      "mood": "modern, clear, hook-focused",
+      "genre": "Pop",
+      "drums": "basic-4-4",
+      "bass": "root-pulse",
+      "chords": "i-vi-iv-v",
+      "pad": "soft-wide-pad",
+      "maqamSuggestions": ["Nahawand"]
+    },
+    "Oriental": {
+      "tempo": 104,
+      "key": "Nahawand",
+      "mood": "warm, melodic, modal",
+      "genre": "Oriental Pop",
+      "drums": "oriental-pop-light",
+      "bass": "oriental-pop-root",
+      "chords": "maqam-inspired",
+      "pad": "soft-wide-pad",
+      "maqamSuggestions": ["Nahawand", "Hijaz", "Kurd"],
+      "percussion": "darbuka + riq style metadata"
+    },
+    "Ballad": {
+      "tempo": 76,
+      "key": "A minor",
+      "mood": "emotional, spacious, building",
+      "genre": "Pop Ballad",
+      "drums": "slow-ballad-brush",
+      "bass": "ballad-walk",
+      "chords": "minor-ballad",
+      "pad": "soft-wide-pad",
+      "maqamSuggestions": ["Nahawand"]
+    },
+    "Wedding": {
+      "tempo": 112,
+      "key": "D Kurd",
+      "mood": "celebration, lift, crowd energy",
+      "genre": "Wedding Keyboard",
+      "drums": "oriental-pop-light",
+      "bass": "root-pulse",
+      "chords": "maqam-inspired",
+      "pad": "film-bed",
+      "maqamSuggestions": ["Kurd", "Hijaz"]
+    },
+    "Dabke": {
+      "tempo": 124,
+      "key": "D Hijaz",
+      "mood": "strong, rhythmic, dance",
+      "genre": "Dabke Sketch",
+      "drums": "dabke-step-demo",
+      "bass": "root-octave-drive",
+      "chords": "modal-vamp",
+      "pad": "soft-wide-pad",
+      "maqamSuggestions": ["Hijaz", "Kurd"]
+    },
+    "R&B": {
+      "tempo": 92,
+      "key": "F minor",
+      "mood": "smooth, syncopated, warm",
+      "genre": "R&B Groove",
+      "drums": "rnb-pocket-demo",
+      "bass": "syncopated-root",
+      "chords": "minor-seventh-loop",
+      "pad": "soft-wide-pad",
+      "maqamSuggestions": ["Minor"]
+    },
+    "Film": {
+      "tempo": 80,
+      "key": "D minor",
+      "mood": "cinematic, slow build, dramatic",
+      "genre": "Film Score Sketch",
+      "drums": "cinematic-pulse",
+      "bass": "pedal-tone",
+      "chords": "minor-ballad",
+      "pad": "film-bed",
+      "maqamSuggestions": ["Nahawand", "Hijaz"]
+    },
+    "Worship": {
+      "tempo": 72,
+      "key": "G major",
+      "mood": "open, steady, reflective",
+      "genre": "Worship Ballad",
+      "drums": "soft-ballad",
+      "bass": "root-pulse",
+      "chords": "I-V-vi-IV",
+      "pad": "soft-wide-pad",
+      "maqamSuggestions": ["Major"]
+    }
+  },
+  "defaultStyle": "Oriental"
+}
+
