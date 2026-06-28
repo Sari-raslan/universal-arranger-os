@@ -80,17 +80,35 @@ function walk(dir) {
 for (const file of walk(factoryRoot)) {
   const text = fs.readFileSync(file, "utf8");
   const lines = text.split(/\r?\n/);
+  const policyLines = new Set();
+  let inPolicyBlock = false;
+  lines.forEach((line, index) => {
+    const lowerLine = line.toLowerCase();
+    if (lowerLine.includes("blocked actions") || lowerLine.includes('"safetygates"') || lowerLine.includes('"blockedactions"')) {
+      inPolicyBlock = true;
+    }
+    if (inPolicyBlock) policyLines.add(index);
+    if (inPolicyBlock && (lowerLine.trim().startsWith("]") || (lowerLine.startsWith("## ") && !lowerLine.includes("blocked actions")))) {
+      inPolicyBlock = false;
+    }
+  });
   for (const phrase of forbidden) {
     const phraseLower = phrase.toLowerCase();
     lines.forEach((line, index) => {
       const lowerLine = line.toLowerCase();
+      const previousLine = index > 0 ? lines[index - 1].toLowerCase() : "";
       const policyContext =
         lowerLine.includes("blocked") ||
         lowerLine.includes("forbidden") ||
         lowerLine.includes("not allowed") ||
         lowerLine.includes("must not") ||
         lowerLine.includes("no ") ||
+        previousLine.includes("blocked actions") ||
+        previousLine.includes('"safetygates"') ||
+        previousLine.includes('"blockedactions"') ||
         lowerLine.includes('"blockedactions"') ||
+        lowerLine.includes('"safetygates"') ||
+        policyLines.has(index) ||
         lowerLine.trim().startsWith('"force push"');
       if (lowerLine.includes(phraseLower) && !policyContext) {
         failures.push(

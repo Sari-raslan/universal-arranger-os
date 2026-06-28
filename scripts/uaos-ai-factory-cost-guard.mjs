@@ -35,6 +35,8 @@ function isPolicyContext(line) {
   const lower = line.toLowerCase();
   return (
     lower.includes("no ") ||
+    lower.includes("do not") ||
+    lower.includes("does not") ||
     lower.includes("blocked") ||
     lower.includes("forbidden") ||
     lower.includes("allowed\": false") ||
@@ -75,18 +77,21 @@ try {
     let inBlockedArray = false;
     lines.forEach((line, index) => {
       const lower = line.toLowerCase();
-      if (lower.includes('"blockedactions"')) inBlockedArray = true;
+      if (lower.includes('"blockedactions"') || lower.includes('"safetygates"') || lower.includes("## blocked actions")) inBlockedArray = true;
       const previous = index > 0 ? lines[index - 1].toLowerCase() : "";
       const previousPolicyContext =
         previous.includes("blocked") ||
         previous.includes("forbidden") ||
-        previous.includes("blockedactions");
+        previous.includes("blockedactions") ||
+        previous.includes("safetygates") ||
+        previous.includes("must not") ||
+        previous.includes("do not");
       for (const phrase of blockedPhrases) {
         if (lower.includes(phrase) && !isPolicyContext(line) && !previousPolicyContext && !inBlockedArray) {
           failures.push(`${path.relative(root, file)}:${index + 1} unsafe phrase: ${phrase}`);
         }
       }
-      if (inBlockedArray && lower.trim().startsWith("]")) inBlockedArray = false;
+      if (inBlockedArray && (lower.trim().startsWith("]") || (lower.startsWith("## ") && !lower.includes("blocked actions")))) inBlockedArray = false;
     });
   }
 

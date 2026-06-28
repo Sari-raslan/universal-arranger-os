@@ -1,0 +1,55 @@
+{
+  "dryRunId": "dry-run-2026-06-28T17-45-02-518Z",
+  "timestamp": "2026-06-28T17:45:02.519Z",
+  "selectedTaskId": "AI-001",
+  "selectedTaskTitle": "platform identity normalization",
+  "ownerAgent": "product_manager",
+  "risk": "LOW",
+  "allowedFiles": [
+    "README.md",
+    "AGENTS.md",
+    "package.json",
+    "docs/*.md",
+    "reports/*.md",
+    ".github/**/*.md",
+    ".github/**/*.yml",
+    "uaos-ai-factory/**/*.md",
+    "uaos-ai-factory/**/*.json"
+  ],
+  "forbiddenFiles": [
+    ".git/**",
+    "node_modules/**",
+    "dist/**",
+    "build/**",
+    "samples/**",
+    "uaos-live-clean/src/App.jsx"
+  ],
+  "expectedOutput": "Local docs/config identity normalization plan; remote switch remains blocked while transfer is postponed.",
+  "requiresBuild": false,
+  "requiresExternalAccount": false,
+  "safetyGates": [
+    "push",
+    "deploy",
+    "payment",
+    "production release",
+    "real writer",
+    "real keyboard export",
+    "proprietary sample import",
+    "broad repo scan",
+    "force push",
+    "App.jsx edits",
+    "Vercel production deploy"
+  ],
+  "costPolicy": {
+    "monthlyBudgetMode": "strict",
+    "codexUsagePolicy": "senior-engineer-only",
+    "avoidWholeRepoScans": true,
+    "avoidLoops": true,
+    "maxBuildsPerTask": 1,
+    "maxRetriesPerTask": 1,
+    "preferCheapWorkerForDocs": true,
+    "stopOnFirstSeriousFail": true
+  },
+  "executionAllowed": false,
+  "reason": "Dry run only. No implementation in Stage 3."
+}
