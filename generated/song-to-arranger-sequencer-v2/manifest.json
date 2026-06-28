@@ -1,0 +1,24 @@
+{
+  "phase": "UAOS SONG TO ARRANGER SEQUENCER V2 - MUSICAL QUALITY + SAFE MIDI EXPORT",
+  "date": "2026-06-28",
+  "localUrl": "http://127.0.0.1:5173/universal-arranger-os/?v=song-to-arranger-sequencer-v2-midi-export",
+  "status": "PASS",
+  "demoProjectsPath": "generated/song-to-arranger-sequencer-v2/demo-projects",
+  "midiPath": "generated/song-to-arranger-sequencer-v2/midi",
+  "sequencerPreviewsPath": "generated/song-to-arranger-sequencer-v2/sequencer-previews",
+  "demoJson": [
+    "oriental-pop-song-demo-v2.json",
+    "ballad-demo-v2.json",
+    "wedding-dabke-demo-v2.json"
+  ],
+  "demoMidi": [
+    "oriental-pop-song-demo-v2.mid"
+  ],
+  "safety": {
+    "demoMidiOnly": true,
+    "realDeviceWriter": "BLOCKED",
+    "realKeyboardOutput": "BLOCKED",
+    "forbiddenWriterFormatsCreated": false,
+    "copyrightedMelodyCopied": false
+  }
+}

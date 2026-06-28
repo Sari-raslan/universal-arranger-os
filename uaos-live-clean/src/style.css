@@ -605,7 +605,7 @@ input, select {
 .uaos-song-grid {
   min-width: 1180px;
   display: grid;
-  grid-template-columns: 58px 120px repeat(9, minmax(120px, 1fr));
+  grid-template-columns: 88px 130px 90px minmax(180px, 1fr) 110px 110px 160px minmax(320px, 1.4fr);
   border: 1px solid rgba(255,255,255,.08);
   border-radius: 16px;
   overflow: hidden;
@@ -618,6 +618,7 @@ input, select {
   border-bottom: 1px solid rgba(255,255,255,.08);
   color: #d7e4f4;
   font-size: 13px;
+  overflow-wrap: anywhere;
 }
 
 .uaos-song-grid .head {
