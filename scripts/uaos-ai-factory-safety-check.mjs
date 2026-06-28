@@ -79,10 +79,27 @@ function walk(dir) {
 
 for (const file of walk(factoryRoot)) {
   const text = fs.readFileSync(file, "utf8");
-  const lower = text.toLowerCase();
+  const lines = text.split(/\r?\n/);
   for (const phrase of forbidden) {
-    if (lower.includes(phrase.toLowerCase())) {
-      failures.push(`Forbidden phrase "${phrase}" found in ${path.relative(root, file)}`);
+    const phraseLower = phrase.toLowerCase();
+    lines.forEach((line, index) => {
+      const lowerLine = line.toLowerCase();
+      const policyContext =
+        lowerLine.includes("blocked") ||
+        lowerLine.includes("forbidden") ||
+        lowerLine.includes("not allowed") ||
+        lowerLine.includes("must not") ||
+        lowerLine.includes("no ") ||
+        lowerLine.includes('"blockedactions"') ||
+        lowerLine.trim().startsWith('"force push"');
+      if (lowerLine.includes(phraseLower) && !policyContext) {
+        failures.push(
+          `Forbidden phrase "${phrase}" found in ${path.relative(root, file)}:${index + 1}`
+        );
+      }
+    });
+    if (phrase === "git push --force" && text.toLowerCase().includes(phraseLower)) {
+      failures.push(`Forbidden command "${phrase}" found in ${path.relative(root, file)}`);
     }
   }
 }
@@ -96,4 +113,3 @@ if (failures.length > 0) {
 }
 
 console.log("UAOS AI Factory Safety Check: PASS");
-

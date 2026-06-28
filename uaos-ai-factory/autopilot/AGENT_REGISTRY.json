@@ -1,0 +1,86 @@
+{
+  "agents": [
+    {
+      "id": "product_manager",
+      "role": "Turn roadmap items into scoped issues.",
+      "allowedActions": ["write task cards", "define acceptance criteria", "assign risk"],
+      "forbiddenActions": ["push", "deploy", "payment", "real writer", "real keyboard export"],
+      "allowedFiles": ["uaos-ai-factory/backlog/**/*.md", "uaos-ai-factory/autopilot/*.json", "uaos-ai-factory/autopilot/*.md"],
+      "requiredOutput": "Issue-ready task card with scope, gates, and cost risk.",
+      "maxRisk": "MEDIUM"
+    },
+    {
+      "id": "architect",
+      "role": "Design safe approaches and integration plans.",
+      "allowedActions": ["write plans", "review interfaces", "identify risks"],
+      "forbiddenActions": ["push", "deploy", "payment", "real writer", "proprietary sample import"],
+      "allowedFiles": ["uaos-ai-factory/**/*.md", "uaos-ai-factory/**/*.json"],
+      "requiredOutput": "Architecture note or plan with safety gates.",
+      "maxRisk": "MEDIUM"
+    },
+    {
+      "id": "frontend_worker",
+      "role": "Implement small demo/staging UI tasks.",
+      "allowedActions": ["issue-scoped UI edits", "local checks"],
+      "forbiddenActions": ["App.jsx edits", "deploy", "payment", "real writer"],
+      "allowedFiles": ["issue-defined frontend files only"],
+      "requiredOutput": "Small UI change with validation notes.",
+      "maxRisk": "MEDIUM"
+    },
+    {
+      "id": "music_engine_worker",
+      "role": "Improve MIDI and arranger analysis safely.",
+      "allowedActions": ["safe reader work", "metadata extraction", "adapter interfaces"],
+      "forbiddenActions": ["real writer", "real keyboard export", "proprietary sample import"],
+      "allowedFiles": ["issue-defined engine files only"],
+      "requiredOutput": "Safe parser or metadata improvement with tests.",
+      "maxRisk": "MEDIUM"
+    },
+    {
+      "id": "library_worker",
+      "role": "Improve library metadata, QA, and provenance.",
+      "allowedActions": ["metadata docs", "QA notes", "provenance records"],
+      "forbiddenActions": ["proprietary sample import", "fake premium claims", "payment"],
+      "allowedFiles": ["issue-defined library docs/config only"],
+      "requiredOutput": "Metadata or provenance artifact.",
+      "maxRisk": "LOW"
+    },
+    {
+      "id": "qa_worker",
+      "role": "Run scoped local validation.",
+      "allowedActions": ["single requested check", "short report"],
+      "forbiddenActions": ["loops", "deploy", "push", "broad repo scan"],
+      "allowedFiles": ["uaos-ai-factory/reports/*.md"],
+      "requiredOutput": "PASS/FAIL validation note.",
+      "maxRisk": "LOW"
+    },
+    {
+      "id": "reviewer",
+      "role": "Review safety, correctness, and scope.",
+      "allowedActions": ["review docs", "review diffs", "write findings"],
+      "forbiddenActions": ["automatic merge", "push", "deploy"],
+      "allowedFiles": ["uaos-ai-factory/reports/*.md"],
+      "requiredOutput": "Review findings with safety status.",
+      "maxRisk": "LOW"
+    },
+    {
+      "id": "cost_guard",
+      "role": "Protect user credits, time, and compute.",
+      "allowedActions": ["inspect task queue", "fail unsafe requests", "recommend smaller task"],
+      "forbiddenActions": ["loops", "broad repo scan", "external automation"],
+      "allowedFiles": ["uaos-ai-factory/autopilot/*.json", "uaos-ai-factory/backlog/*.md"],
+      "requiredOutput": "Cost and safety PASS/FAIL.",
+      "maxRisk": "LOW"
+    },
+    {
+      "id": "release_manager",
+      "role": "Report staging readiness without releasing.",
+      "allowedActions": ["write gate reports", "list approvals needed"],
+      "forbiddenActions": ["deploy", "production release", "payment", "real writer"],
+      "allowedFiles": ["uaos-ai-factory/reports/*.md", "uaos-ai-factory/integrations/**/*.md"],
+      "requiredOutput": "Readiness report only.",
+      "maxRisk": "LOW"
+    }
+  ]
+}
+
