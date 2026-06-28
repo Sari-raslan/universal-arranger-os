@@ -41,6 +41,7 @@ const commandItems = [
   ["What To Send", "Review the isolated send choices"],
   ["Export Summary", "Read the current package summary"],
   ["Export Tester Feedback", "Prepare a local test feedback summary"],
+  ["Load Demo Template", "Load a safe local arrangement template"],
   ["Generate", "Create a demo-ready project result"],
   ["Save", "Keep current local session state"],
   ["Export", "Prepare demo/support files"],
@@ -55,6 +56,7 @@ export default function App() {
   const [completed, setCompleted] = useState(["Open Pixi", "Keep writer blocked"]);
   const [demoStarted, setDemoStarted] = useState(false);
   const [testerFeedbackExported, setTesterFeedbackExported] = useState(false);
+  const [loadedTemplate, setLoadedTemplate] = useState("None");
 
   const completedCount = completed.length;
   const selectedPackInfo = packs.find(([name]) => name === selectedPack);
@@ -67,9 +69,10 @@ export default function App() {
     sessionReady,
     demoStarted,
     testerFeedbackExported,
+    loadedTemplate,
     realDeviceWriter: "BLOCKED",
     commercialRelease: "NOT CLAIMED"
-  }), [selectedPack, sessionReady, demoStarted, testerFeedbackExported]);
+  }), [selectedPack, sessionReady, demoStarted, testerFeedbackExported, loadedTemplate]);
 
   function toggleChecklist(item) {
     setCompleted(current =>
@@ -167,6 +170,7 @@ export default function App() {
                   if (title === "Open Pixi") setPixiOpen(true);
                   if (title === "Start Demo") setDemoStarted(true);
                   if (title === "Export Tester Feedback") setTesterFeedbackExported(true);
+                  if (title === "Load Demo Template") setLoadedTemplate("Oriental Pop Template");
                 }}
               >
                 <span>{title}</span>
@@ -253,6 +257,10 @@ export default function App() {
             ? "Tester feedback summary prepared for local review."
             : "Tester feedback tools are ready for local review."}
         </p>
+        <button className="wideAction secondaryAction" onClick={() => setLoadedTemplate("Singer To Style Template")}>
+          Load Demo Template
+        </button>
+        <p className="toolState">Loaded template: {loadedTemplate}</p>
       </section>
 
       <section className="reviewArea">
