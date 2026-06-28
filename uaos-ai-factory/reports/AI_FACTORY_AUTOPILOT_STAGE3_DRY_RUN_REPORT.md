@@ -38,11 +38,11 @@ Status: PASS
 
 ## Selected Task
 
-AI-003 linear workspace roadmap
+AI-004 github branch protection plan
 
 ## Assigned Agent
 
-product_manager
+architect
 
 ## Safety Result
 

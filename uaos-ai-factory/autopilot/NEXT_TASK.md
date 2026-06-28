@@ -1,18 +1,18 @@
 # Next Task
 
-ID: AI-003
-Title: linear workspace roadmap
-Owner agent: product_manager
+ID: AI-004
+Title: github branch protection plan
+Owner agent: architect
 Risk: LOW
 Requires build: NO
 Requires external account: NO
 
 ## Expected Output
 
-Linear labels, statuses, and backlog import plan.
+Branch protection template and first issues import plan.
 
 ## Notes
 
-No Linear API calls.
+No GitHub API calls.
 
 This selector only writes the next-task note. It does not execute the task, call AI tools, push, or deploy.

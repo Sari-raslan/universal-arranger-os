@@ -1,19 +1,17 @@
 {
-  "dryRunId": "dry-run-2026-06-28T21-44-14-875Z",
-  "timestamp": "2026-06-28T21:44:14.876Z",
-  "selectedTaskId": "AI-003",
-  "selectedTaskTitle": "linear workspace roadmap",
-  "ownerAgent": "product_manager",
+  "dryRunId": "dry-run-2026-06-28T22-00-03-619Z",
+  "timestamp": "2026-06-28T22:00:03.620Z",
+  "selectedTaskId": "AI-004",
+  "selectedTaskTitle": "github branch protection plan",
+  "ownerAgent": "architect",
   "risk": "LOW",
   "allowedFiles": [
-    "uaos-ai-factory/integrations/linear/*.md",
-    "uaos-ai-factory/integrations/linear/*.csv"
+    "uaos-ai-factory/integrations/github/*.md"
   ],
   "forbiddenFiles": [
-    "node_modules/**",
     ".git/**"
   ],
-  "expectedOutput": "Linear labels, statuses, and backlog import plan.",
+  "expectedOutput": "Branch protection template and first issues import plan.",
   "requiresBuild": false,
   "requiresExternalAccount": false,
   "safetyGates": [

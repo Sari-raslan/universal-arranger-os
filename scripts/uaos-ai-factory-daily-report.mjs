@@ -45,6 +45,13 @@ ${state.vercelPlanStatus ? `## Stage 5 Result
 - No Vercel API use.
 - External automation remains not ready.
 ` : ""}
+${state.linearPlanStatus ? `## Stage 6 Result
+
+- AI-003 Linear workspace roadmap plan: ${state.linearPlanStatus}
+- No Linear API use.
+- No external automation enabled.
+- External automation remains not ready.
+` : ""}
 
 ## Ready Tasks
 

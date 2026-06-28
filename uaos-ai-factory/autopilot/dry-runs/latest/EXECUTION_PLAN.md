@@ -10,13 +10,11 @@ This is a dry run. No implementation was performed.
 
 ## Files It May Inspect
 
-- uaos-ai-factory/integrations/linear/*.md
-- uaos-ai-factory/integrations/linear/*.csv
+- uaos-ai-factory/integrations/github/*.md
 
 ## Files It May Edit
 
-- uaos-ai-factory/integrations/linear/*.md
-- uaos-ai-factory/integrations/linear/*.csv
+- uaos-ai-factory/integrations/github/*.md
 
 ## Commands It May Run
 

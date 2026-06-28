@@ -1,0 +1,9 @@
+id,title,description,ownerAgent,risk,status,labels,blocked,requiresExternalAccount
+AI-004,GitHub branch protection plan,Plan branch protection and review gates without using GitHub API,architect,LOW,Ready,"ai-factory;github-transfer;safety-gate;risk-low",false,false
+AI-005,Copilot agent first issue,Draft first low-risk Copilot-ready issue without running agents,product_manager,LOW,Ready,"ai-factory;prototype;risk-low",false,false
+AI-006,QA build hardening,Plan conservative validation and one-check limits,qa_worker,MEDIUM,Ready,"qa;cost-guard;safety-gate;risk-medium",false,false
+AI-007,Premium library metadata next step,Plan metadata QA and provenance with no sample copying,library_worker,LOW,Ready,"library-metadata;safety-gate;risk-low",false,false
+AI-008,Demo status page,Plan honest demo staging status page without App.jsx edits,frontend_worker,MEDIUM,Ready,"frontend;demo;staging;risk-medium",false,false
+AI-009,Cost guard automation,Plan local-only cost guard improvements,cost_guard,LOW,Ready,"cost-guard;ai-factory;risk-low",false,false
+AI-010,Release gate staging only,Plan staging-only release gate with no production release,release_manager,LOW,Ready,"safety-gate;staging;no-deploy;risk-low",false,false
+

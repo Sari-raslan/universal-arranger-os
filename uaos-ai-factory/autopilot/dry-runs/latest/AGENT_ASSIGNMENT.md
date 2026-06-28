@@ -1,25 +1,23 @@
 # Agent Assignment
 
-Selected task: AI-003 linear workspace roadmap
-Assigned agent: product_manager
+Selected task: AI-004 github branch protection plan
+Assigned agent: architect
 
 ## Why This Agent
 
-Turn roadmap items into scoped issues.
+Design safe approaches and integration plans.
 
 ## Allowed Files
 
-- uaos-ai-factory/integrations/linear/*.md
-- uaos-ai-factory/integrations/linear/*.csv
+- uaos-ai-factory/integrations/github/*.md
 
 ## Forbidden Files
 
-- node_modules/**
 - .git/**
 
 ## Expected Output
 
-Linear labels, statuses, and backlog import plan.
+Branch protection template and first issues import plan.
 
 ## Stop Conditions
 
