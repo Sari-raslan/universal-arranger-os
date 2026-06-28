@@ -38,11 +38,11 @@ Status: PASS
 
 ## Selected Task
 
-AI-006 qa build hardening
+AI-007 premium library metadata next step
 
 ## Assigned Agent
 
-qa_worker
+library_worker
 
 ## Safety Result
 

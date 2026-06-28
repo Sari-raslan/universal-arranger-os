@@ -10,13 +10,13 @@ This is a dry run. No implementation was performed.
 
 ## Files It May Inspect
 
-- uaos-ai-factory/reports/*.md
-- .github/workflows/*.yml
+- uaos-ai-factory/backlog/*.md
+- docs/*.md
 
 ## Files It May Edit
 
-- uaos-ai-factory/reports/*.md
-- .github/workflows/*.yml
+- uaos-ai-factory/backlog/*.md
+- docs/*.md
 
 ## Commands It May Run
 

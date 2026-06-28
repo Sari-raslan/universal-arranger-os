@@ -1,20 +1,19 @@
 {
-  "dryRunId": "dry-run-2026-06-28T22-54-53-378Z",
-  "timestamp": "2026-06-28T22:54:53.379Z",
-  "selectedTaskId": "AI-006",
-  "selectedTaskTitle": "qa build hardening",
-  "ownerAgent": "qa_worker",
-  "risk": "MEDIUM",
+  "dryRunId": "dry-run-2026-06-28T23-05-23-960Z",
+  "timestamp": "2026-06-28T23:05:23.961Z",
+  "selectedTaskId": "AI-007",
+  "selectedTaskTitle": "premium library metadata next step",
+  "ownerAgent": "library_worker",
+  "risk": "LOW",
   "allowedFiles": [
-    "uaos-ai-factory/reports/*.md",
-    ".github/workflows/*.yml"
+    "uaos-ai-factory/backlog/*.md",
+    "docs/*.md"
   ],
   "forbiddenFiles": [
-    "node_modules/**",
-    "dist/**",
-    "build/**"
+    "samples/**",
+    "audio/**"
   ],
-  "expectedOutput": "QA plan for one-check validation.",
+  "expectedOutput": "Metadata, QA, and provenance task only.",
   "requiresBuild": false,
   "requiresExternalAccount": false,
   "safetyGates": [

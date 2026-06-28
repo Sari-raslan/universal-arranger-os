@@ -22,6 +22,7 @@
     "ai:factory:linear-plan": "node scripts/uaos-ai-factory-linear-plan-check.mjs",
     "ai:factory:github-plan": "node scripts/uaos-ai-factory-github-plan-check.mjs",
     "ai:factory:copilot-plan": "node scripts/uaos-ai-factory-copilot-plan-check.mjs",
+    "ai:factory:qa-plan": "node scripts/uaos-ai-factory-qa-plan-check.mjs",
     "check": "node scripts/uaos-static-check.mjs && npm test",
     "desktop": "npm start --prefix desktop",
     "desktop:smoke": "node scripts/uaos-desktop-smoke.mjs",

@@ -2,7 +2,7 @@
 
 ## Codex Cost Risk
 
-MEDIUM
+LOW
 
 ## Recommended Worker
 

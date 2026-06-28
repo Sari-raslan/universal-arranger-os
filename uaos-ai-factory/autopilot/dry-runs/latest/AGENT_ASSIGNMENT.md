@@ -1,26 +1,25 @@
 # Agent Assignment
 
-Selected task: AI-006 qa build hardening
-Assigned agent: qa_worker
+Selected task: AI-007 premium library metadata next step
+Assigned agent: library_worker
 
 ## Why This Agent
 
-Run scoped local validation.
+Improve library metadata, QA, and provenance.
 
 ## Allowed Files
 
-- uaos-ai-factory/reports/*.md
-- .github/workflows/*.yml
+- uaos-ai-factory/backlog/*.md
+- docs/*.md
 
 ## Forbidden Files
 
-- node_modules/**
-- dist/**
-- build/**
+- samples/**
+- audio/**
 
 ## Expected Output
 
-QA plan for one-check validation.
+Metadata, QA, and provenance task only.
 
 ## Stop Conditions
 

@@ -73,7 +73,7 @@
     {
       "id": "AI-006",
       "title": "qa build hardening",
-      "status": "READY",
+      "status": "DONE_LOCAL_PLAN_ONLY",
       "risk": "MEDIUM",
       "blocked": false,
       "ownerAgent": "qa_worker",
@@ -82,7 +82,7 @@
       "expectedOutput": "QA plan for one-check validation.",
       "requiresBuild": false,
       "requiresExternalAccount": false,
-      "notes": "Builds stay capped at one per task."
+      "notes": "Local QA build hardening plan is complete. Build remains controlled and not automatic."
     },
     {
       "id": "AI-007",

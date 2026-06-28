@@ -68,6 +68,13 @@ ${state.copilotPlanStatus ? `## Stage 8 Result
 - No external automation enabled.
 - External automation remains not ready.
 ` : ""}
+${state.qaPlanStatus ? `## Stage 9 Result
+
+- AI-006 QA build hardening plan: ${state.qaPlanStatus}
+- No build run.
+- No external automation enabled.
+- External automation remains not ready.
+` : ""}
 
 ## Ready Tasks
 
