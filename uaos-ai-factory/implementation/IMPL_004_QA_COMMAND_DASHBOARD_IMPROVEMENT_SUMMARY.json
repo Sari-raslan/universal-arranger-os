@@ -1,0 +1,47 @@
+{
+  "task": "IMPL-004",
+  "title": "QA command dashboard improvement, scripts only, no deploy",
+  "status": "DONE_LOCAL_ONLY",
+  "mode": "SCRIPTS_ONLY_NO_DEPLOY",
+  "latestKnownCommitBeforeRun": "7d00e88 Run IMPL-003 presentation send pack assembly locally",
+  "currentOrigin": "https://github.com/Sari-raslan/universal-arranger-os.git",
+  "createdOrModifiedFiles": [
+    "package.json",
+    "scripts/uaos-ai-factory-qa-command-dashboard.mjs",
+    "uaos-ai-factory/implementation/reports/IMPL_004_QA_COMMAND_DASHBOARD_IMPROVEMENT_REPORT.md",
+    "uaos-ai-factory/implementation/IMPL_004_QA_COMMAND_DASHBOARD_IMPROVEMENT_SUMMARY.json"
+  ],
+  "dashboardScript": "scripts/uaos-ai-factory-qa-command-dashboard.mjs",
+  "npmScript": "ai:factory:qa-command-dashboard",
+  "verifies": [
+    "FINAL_LOCAL_FACTORY_FREEZE exists",
+    "bounded agents completion seal exists",
+    "implementation queue exists",
+    "IMPL-001 report exists",
+    "IMPL-002 report exists",
+    "IMPL-003 report exists",
+    "push/deploy/Vercel are blocked by policy",
+    "payment is blocked",
+    "real keyboard writer/export is blocked",
+    "proprietary sample/library copying is blocked",
+    "current remote remains Sari-raslan/universal-arranger-os"
+  ],
+  "safetyGates": {
+    "pushExecuted": false,
+    "deployExecuted": false,
+    "vercelExecuted": false,
+    "paymentBehaviorCreated": false,
+    "productionReleaseFileCreated": false,
+    "realKeyboardWriterExport": "BLOCKED",
+    "keyboardFormatOutput": "BLOCKED",
+    "kontaktNativeInstrumentsProprietaryContent": "BLOCKED",
+    "samplesLibrariesAudio": "BLOCKED",
+    "appJsxChanged": false,
+    "frontendSourceChanged": false,
+    "appSourceChanged": false,
+    "externalAutomation": "BLOCKED"
+  },
+  "nextReadyTask": "IMPL-005",
+  "readyForImpl005": true,
+  "readyForExternalAutomation": false
+}
