@@ -2,7 +2,7 @@
 
 Status: LOCAL ONLY
 
-Latest local commit reference before round 031R-035 seal: `f6b2389 Seal IMPL-035 legacy quarantine approval gate locally`.
+Latest local commit reference before owner review round seal: `de804f2 Create IMPL-039 next owner decision matrix locally`.
 
 Current origin: `https://github.com/Sari-raslan/universal-arranger-os.git`
 
@@ -23,6 +23,11 @@ Planned future target only: `https://github.com/aeplatform-app/universal-arrange
 - IMPL-034 metadata-only quarantine dry-run manifest: DONE_LOCAL_ONLY.
 - IMPL-035 legacy quarantine approval gate: DONE_LOCAL_ONLY.
 - Implementation round 031R-035 seal: `uaos-ai-factory/implementation/IMPLEMENTATION_ROUND_031R_035_COMPLETION_SEAL.json`.
+- IMPL-036 owner review handoff pack: DONE_LOCAL_ONLY.
+- IMPL-037 neutral package inspection guide: DONE_LOCAL_ONLY.
+- IMPL-038 legacy `.STY` safety summary: DONE_LOCAL_ONLY.
+- IMPL-039 next owner decision matrix: DONE_LOCAL_ONLY.
+- Implementation round 036-040 owner review seal: `uaos-ai-factory/implementation/IMPLEMENTATION_ROUND_036_040_OWNER_REVIEW_SEAL.json`.
 
 ## Real-Format / Legacy Quarantine Safety
 
@@ -35,6 +40,17 @@ Planned future target only: `https://github.com/aeplatform-app/universal-arrange
 - Binary contents read/copied: NO.
 - Keyboard transfer allowed: NO.
 - Quarantine execution remains blocked until exact owner approval.
+
+## Owner Review Round 036-040
+
+- Owner review handoff pack is ready.
+- Neutral package inspection guide is ready.
+- Legacy `.STY` owner safety summary is ready.
+- Next owner decision matrix is ready.
+- `owner-neutral-002` is ready for manual owner review.
+- Recommended action: review `OWNER_NEUTRAL_002.uaos-neutral.json` and fill `OWNER_INSPECTION_NOTES_TEMPLATE.md`.
+- Real keyboard output remains blocked.
+- Keyboard transfer remains NO.
 
 ## Current UI / Send Readiness
 
@@ -110,6 +126,12 @@ The wait gate remains active until the owner manually verifies the target reposi
 
 - Implementation round 031R-035 seal report: `uaos-ai-factory/implementation/reports/IMPLEMENTATION_ROUND_031R_035_COMPLETION_SEAL_REPORT.md`
 - Implementation round 031R-035 seal JSON: `uaos-ai-factory/implementation/IMPLEMENTATION_ROUND_031R_035_COMPLETION_SEAL.json`
+- Implementation round 036-040 owner review seal report: `uaos-ai-factory/implementation/reports/IMPLEMENTATION_ROUND_036_040_OWNER_REVIEW_SEAL_REPORT.md`
+- Implementation round 036-040 owner review seal JSON: `uaos-ai-factory/implementation/IMPLEMENTATION_ROUND_036_040_OWNER_REVIEW_SEAL.json`
+- Owner review handoff pack: `uaos-ai-factory/writer-sandbox/OWNER_REVIEW_HANDOFF_PACK.md`
+- Neutral package inspection guide: `uaos-ai-factory/writer-sandbox/neutral-package-writer/outputs/owner-neutral-002/NEUTRAL_PACKAGE_INSPECTION_GUIDE.md`
+- Legacy `.STY` safety summary: `uaos-ai-factory/writer-sandbox/LEGACY_STY_OWNER_SAFETY_SUMMARY.md`
+- Next owner decision matrix: `uaos-ai-factory/writer-sandbox/NEXT_OWNER_DECISION_MATRIX.md`
 - IMPL-035 quarantine approval gate report: `uaos-ai-factory/implementation/reports/IMPL_035_LEGACY_QUARANTINE_APPROVAL_GATE_SEAL_REPORT.md`
 - IMPL-034 quarantine dry-run manifest report: `uaos-ai-factory/implementation/reports/IMPL_034_LEGACY_QUARANTINE_DRY_RUN_MANIFEST_REPORT.md`
 - IMPL-032 legacy forbidden file inventory: `uaos-ai-factory/writer-sandbox/LEGACY_FORBIDDEN_FILE_INVENTORY.md`
@@ -126,10 +148,10 @@ The wait gate remains active until the owner manually verifies the target reposi
 ## Next Safe Choices
 
 1. Owner reviews neutral package `owner-neutral-002`.
-2. Owner reviews legacy quarantine reports.
-3. Request metadata-only quarantine execution later.
-4. Stop before keyboard transfer.
-5. Continue safe writer research only.
+2. Owner fills inspection notes.
+3. Capture owner feedback in IMPL-041.
+4. Revise `owner-neutral-003` in IMPL-042 if needed.
+5. Stop before any real keyboard output.
 
 ## Ready State
 
