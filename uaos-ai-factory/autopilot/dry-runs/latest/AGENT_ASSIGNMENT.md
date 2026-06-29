@@ -1,25 +1,24 @@
 # Agent Assignment
 
-Selected task: AI-009 cost guard automation
-Assigned agent: cost_guard
+Selected task: AI-010 release gate staging only
+Assigned agent: release_manager
 
 ## Why This Agent
 
-Protect user credits, time, and compute.
+Report staging readiness without releasing.
 
 ## Allowed Files
 
-- scripts/uaos-ai-factory-cost-guard.mjs
-- uaos-ai-factory/autopilot/*.json
+- uaos-ai-factory/integrations/vercel/*.md
+- uaos-ai-factory/reports/*.md
 
 ## Forbidden Files
 
-- node_modules/**
-- .git/**
+- .vercel/**
 
 ## Expected Output
 
-Local-only cost guard improvement plan.
+Staging-only release gate checklist.
 
 ## Stop Conditions
 

@@ -91,6 +91,15 @@ ${state.demoStatusPagePlanStatus ? `## Stage 11 Result
 - No public page created.
 - External automation remains not ready.
 ` : ""}
+${state.costGuardPlanStatus ? `## Stage 12 Result
+
+- AI-009 Cost guard automation plan: ${state.costGuardPlanStatus}
+- No billing API call.
+- No autonomous spending.
+- No external automation enabled.
+- Code X remains senior engineer only.
+- External automation remains not ready.
+` : ""}
 
 ## Ready Tasks
 

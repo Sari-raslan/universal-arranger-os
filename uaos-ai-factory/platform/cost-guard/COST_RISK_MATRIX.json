@@ -1,0 +1,18 @@
+{
+  "LOW": {
+    "definition": "Docs, planning, local metadata, reports, small templates, and narrow local checks.",
+    "defaultRoute": "local script / manual"
+  },
+  "MEDIUM": {
+    "definition": "Small UI/component changes, tests, and small local scripts.",
+    "defaultRoute": "Code X small bounded prompt or Copilot later"
+  },
+  "HIGH": {
+    "definition": "Architecture rewrite, build system changes, export/writer, payment, deploy, real sample/audio, or external APIs.",
+    "defaultRoute": "owner approval required"
+  },
+  "BLOCKED": {
+    "definition": "Production deploy, payment activation, real writer/export, proprietary content, whole repo scan, destructive git history rewrite, or unapproved external automation.",
+    "defaultRoute": "do not perform"
+  }
+}

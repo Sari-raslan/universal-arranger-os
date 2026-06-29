@@ -115,16 +115,16 @@
     {
       "id": "AI-009",
       "title": "cost guard automation",
-      "status": "READY",
+      "status": "DONE_LOCAL_PLAN_ONLY",
       "risk": "LOW",
       "blocked": false,
       "ownerAgent": "cost_guard",
-      "allowedFiles": ["scripts/uaos-ai-factory-cost-guard.mjs", "uaos-ai-factory/autopilot/*.json"],
-      "forbiddenFiles": ["node_modules/**", ".git/**"],
-      "expectedOutput": "Local-only cost guard improvement plan.",
+      "allowedFiles": ["scripts/uaos-ai-factory-cost-guard-plan.mjs", "uaos-ai-factory/autopilot/*.json", "uaos-ai-factory/executions/AI-009-cost-guard-automation-plan/*", "uaos-ai-factory/platform/cost-guard/*", "uaos-ai-factory/reports/AI_FACTORY_STAGE12_AI009_COST_GUARD_PLAN_REPORT.md"],
+      "forbiddenFiles": ["node_modules/**", ".git/**", "uaos-live-clean/src/App.jsx"],
+      "expectedOutput": "Local-only cost guard automation plan.",
       "requiresBuild": false,
       "requiresExternalAccount": false,
-      "notes": "No external automation."
+      "notes": "Planning-only cost guard complete. No external automation, autonomous spending, push, deploy, payment, or writer/export enabled."
     },
     {
       "id": "AI-010",

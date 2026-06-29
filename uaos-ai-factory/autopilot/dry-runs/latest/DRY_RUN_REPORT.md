@@ -2,8 +2,8 @@
 
 Status: PASS
 
-Selected task: AI-009 cost guard automation
-Assigned agent: cost_guard
+Selected task: AI-010 release gate staging only
+Assigned agent: release_manager
 Safety result: PASS
 Cost result: PASS
 Future execution allowed: NO

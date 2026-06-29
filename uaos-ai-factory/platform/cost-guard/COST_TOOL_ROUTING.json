@@ -1,0 +1,40 @@
+{
+  "status": "local plan only",
+  "routes": [
+    {
+      "risk": "LOW",
+      "worker": "no AI / local script / manual",
+      "allowed": true,
+      "approvalRequired": false
+    },
+    {
+      "risk": "MEDIUM",
+      "worker": "Code X small bounded prompt",
+      "allowed": true,
+      "approvalRequired": false
+    },
+    {
+      "risk": "MEDIUM",
+      "worker": "Copilot later",
+      "allowed": false,
+      "approvalRequired": true,
+      "notes": "Planned only until external automation is approved."
+    },
+    {
+      "risk": "HIGH",
+      "worker": "owner-approved specialist path",
+      "allowed": false,
+      "approvalRequired": true
+    },
+    {
+      "risk": "BLOCKED",
+      "worker": "none",
+      "allowed": false,
+      "approvalRequired": false
+    }
+  ],
+  "codeXPolicy": "senior-engineer-only",
+  "localFirst": true,
+  "oneSmallTaskAtATime": true,
+  "approvalBeforeExternalAutomation": true
+}

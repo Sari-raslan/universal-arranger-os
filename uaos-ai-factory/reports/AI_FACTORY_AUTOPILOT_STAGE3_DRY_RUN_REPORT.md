@@ -38,11 +38,11 @@ Status: PASS
 
 ## Selected Task
 
-AI-009 cost guard automation
+AI-010 release gate staging only
 
 ## Assigned Agent
 
-cost_guard
+release_manager
 
 ## Safety Result
 

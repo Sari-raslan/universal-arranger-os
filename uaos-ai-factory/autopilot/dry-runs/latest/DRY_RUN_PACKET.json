@@ -1,19 +1,18 @@
 {
-  "dryRunId": "dry-run-2026-06-29T03-30-34-113Z",
-  "timestamp": "2026-06-29T03:30:34.114Z",
-  "selectedTaskId": "AI-009",
-  "selectedTaskTitle": "cost guard automation",
-  "ownerAgent": "cost_guard",
+  "dryRunId": "dry-run-2026-06-29T03-44-51-565Z",
+  "timestamp": "2026-06-29T03:44:51.566Z",
+  "selectedTaskId": "AI-010",
+  "selectedTaskTitle": "release gate staging only",
+  "ownerAgent": "release_manager",
   "risk": "LOW",
   "allowedFiles": [
-    "scripts/uaos-ai-factory-cost-guard.mjs",
-    "uaos-ai-factory/autopilot/*.json"
+    "uaos-ai-factory/integrations/vercel/*.md",
+    "uaos-ai-factory/reports/*.md"
   ],
   "forbiddenFiles": [
-    "node_modules/**",
-    ".git/**"
+    ".vercel/**"
   ],
-  "expectedOutput": "Local-only cost guard improvement plan.",
+  "expectedOutput": "Staging-only release gate checklist.",
   "requiresBuild": false,
   "requiresExternalAccount": false,
   "safetyGates": [

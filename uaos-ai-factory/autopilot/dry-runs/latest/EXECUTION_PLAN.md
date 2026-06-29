@@ -10,13 +10,13 @@ This is a dry run. No implementation was performed.
 
 ## Files It May Inspect
 
-- scripts/uaos-ai-factory-cost-guard.mjs
-- uaos-ai-factory/autopilot/*.json
+- uaos-ai-factory/integrations/vercel/*.md
+- uaos-ai-factory/reports/*.md
 
 ## Files It May Edit
 
-- scripts/uaos-ai-factory-cost-guard.mjs
-- uaos-ai-factory/autopilot/*.json
+- uaos-ai-factory/integrations/vercel/*.md
+- uaos-ai-factory/reports/*.md
 
 ## Commands It May Run
 
