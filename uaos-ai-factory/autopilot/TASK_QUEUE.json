@@ -170,6 +170,20 @@
     },
     {
       "id": "AI-013",
+      "title": "Jobcenter / supporter presentation safety plan",
+      "status": "DONE_LOCAL_PLAN_ONLY",
+      "risk": "LOW",
+      "blocked": false,
+      "ownerAgent": "release_manager",
+      "allowedFiles": ["scripts/uaos-ai-factory-presentation-safety-plan.mjs", "uaos-ai-factory/autopilot/*.json", "uaos-ai-factory/executions/AI-013-presentation-safety-plan/*", "uaos-ai-factory/platform/presentation-safety/*", "uaos-ai-factory/reports/AI_FACTORY_STAGE16_AI013_JOBCENTER_SUPPORTER_PRESENTATION_SAFETY_PLAN_REPORT.md"],
+      "forbiddenFiles": [".git/**", "node_modules/**", ".vercel/**", "uaos-live-clean/src/App.jsx"],
+      "expectedOutput": "Local-only Jobcenter/supporter presentation claims safety plan.",
+      "requiresBuild": false,
+      "requiresExternalAccount": false,
+      "notes": "Planning-only presentation safety plan complete. Materials must remain LOCAL ONLY - NOT PUBLIC RELEASE."
+    },
+    {
+      "id": "AI-014",
       "title": "release gate staging only",
       "status": "READY",
       "risk": "LOW",

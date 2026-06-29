@@ -2,7 +2,7 @@
 
 Status: PASS
 
-Selected task: AI-013 release gate staging only
+Selected task: AI-014 release gate staging only
 Assigned agent: release_manager
 Safety result: PASS
 Cost result: PASS

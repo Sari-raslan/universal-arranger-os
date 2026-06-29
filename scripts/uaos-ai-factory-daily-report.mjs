@@ -124,6 +124,14 @@ ${state.staticDemoGatewaySafetyHandoffStatus ? `## Stage 15 Result
 - No deploy performed.
 - External automation remains not ready.
 ` : ""}
+${state.presentationSafetyPlanStatus ? `## Stage 16 Result
+
+- AI-013 Jobcenter/supporter presentation safety plan: ${state.presentationSafetyPlanStatus}
+- Presentation language is LOCAL ONLY - NOT PUBLIC RELEASE.
+- No public launch, payment/live customer, writer/export, or proprietary ownership claims.
+- No deploy performed.
+- External automation remains not ready.
+` : ""}
 
 ## Ready Tasks
 

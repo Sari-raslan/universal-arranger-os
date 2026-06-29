@@ -86,7 +86,7 @@ try {
     if (!ai010 || !["READY", "DONE_LOCAL_PLAN_ONLY"].includes(ai010.status)) failures.push("AI-010 is not in an expected post-cost-guard state.");
     const laterReadyTask = queue.tasks.find((task) => task.status === "READY" && task.blocked === false);
     if (ai010.status === "DONE_LOCAL_PLAN_ONLY" && (!ai011 || !["READY", "DONE_LOCAL_PLAN_ONLY"].includes(ai011.status))) failures.push("AI-011 is not in an expected post-transfer-readiness state.");
-    if (ai011?.status === "DONE_LOCAL_PLAN_ONLY" && (!laterReadyTask || !/^AI-0(12|13)$/.test(laterReadyTask.id))) failures.push("A safe later READY task is not available after AI-011 completion.");
+    if (ai011?.status === "DONE_LOCAL_PLAN_ONLY" && (!laterReadyTask || !/^AI-0(12|13|14)$/.test(laterReadyTask.id))) failures.push("A safe later READY task is not available after AI-011 completion.");
     if (packageJson.scripts["ai:factory:cost-guard-plan"] !== "node scripts/uaos-ai-factory-cost-guard-plan.mjs") failures.push("Package script ai:factory:cost-guard-plan is missing or changed.");
     if (packageJson.scripts["ai:factory:cost-guard-plan"].match(/vercel|deploy|payment|writer|export/i)) failures.push("Cost guard plan script includes a forbidden action keyword.");
     if (!gitConfig.includes(`url = ${expectedOrigin}`)) failures.push("Git remote origin URL is not the expected current origin.");
