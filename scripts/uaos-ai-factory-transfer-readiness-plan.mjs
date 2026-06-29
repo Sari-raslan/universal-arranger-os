@@ -64,7 +64,8 @@ try {
 
     if (packet.status !== "DONE_LOCAL_PLAN_ONLY" || target.status !== "DONE_LOCAL_PLAN_ONLY") failures.push("AI-010 transfer readiness audit is not DONE_LOCAL_PLAN_ONLY.");
     if (!ai010 || ai010.status !== "DONE_LOCAL_PLAN_ONLY") failures.push("TASK_QUEUE does not mark AI-010 DONE_LOCAL_PLAN_ONLY.");
-    if (state.phase !== "LOCAL_EXECUTION_STAGE_13" || state.githubTransferReadinessAuditStatus !== "DONE_LOCAL_PLAN_ONLY") failures.push("AUTOPILOT_STATE does not mark Stage 13 complete.");
+    const phaseNumber = Number(String(state.phase || "").match(/LOCAL_EXECUTION_STAGE_(\d+)/)?.[1] || 0);
+    if (phaseNumber < 13 || state.githubTransferReadinessAuditStatus !== "DONE_LOCAL_PLAN_ONLY") failures.push("AUTOPILOT_STATE does not mark Stage 13 complete.");
     if (target.currentOrigin !== expectedOrigin || packet.currentOriginMustRemain !== expectedOrigin) failures.push("Current origin value is not the expected Sari-raslan repository.");
     if (target.plannedFutureTarget !== plannedTarget || packet.plannedFutureTargetOnly !== plannedTarget) failures.push("Planned target value is not the AE Platform repository.");
     if (!gitConfig.includes(`url = ${expectedOrigin}`)) failures.push("Local git config origin URL is not unchanged.");

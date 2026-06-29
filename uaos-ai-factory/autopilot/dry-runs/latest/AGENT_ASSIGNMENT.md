@@ -1,6 +1,6 @@
 # Agent Assignment
 
-Selected task: AI-011 release gate staging only
+Selected task: AI-012 release gate staging only
 Assigned agent: release_manager
 
 ## Why This Agent

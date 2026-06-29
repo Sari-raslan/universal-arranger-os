@@ -1,6 +1,6 @@
 # Next Task
 
-ID: AI-011
+ID: AI-012
 Title: release gate staging only
 Owner agent: release_manager
 Risk: LOW

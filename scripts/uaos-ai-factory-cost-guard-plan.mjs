@@ -84,7 +84,9 @@ try {
     if (state.pushAllowed !== false || state.deployAllowed !== false || state.paymentAllowed !== false || state.productionReleaseAllowed !== false || state.realWriterAllowed !== false) failures.push("Autopilot safety gates must remain false.");
     if (!ai009 || ai009.status !== "DONE_LOCAL_PLAN_ONLY") failures.push("TASK_QUEUE does not mark AI-009 DONE_LOCAL_PLAN_ONLY.");
     if (!ai010 || !["READY", "DONE_LOCAL_PLAN_ONLY"].includes(ai010.status)) failures.push("AI-010 is not in an expected post-cost-guard state.");
-    if (ai010.status === "DONE_LOCAL_PLAN_ONLY" && (!ai011 || ai011.status !== "READY")) failures.push("AI-011 is not the next READY task after AI-010 completion.");
+    const laterReadyTask = queue.tasks.find((task) => task.status === "READY" && task.blocked === false);
+    if (ai010.status === "DONE_LOCAL_PLAN_ONLY" && (!ai011 || !["READY", "DONE_LOCAL_PLAN_ONLY"].includes(ai011.status))) failures.push("AI-011 is not in an expected post-transfer-readiness state.");
+    if (ai011?.status === "DONE_LOCAL_PLAN_ONLY" && (!laterReadyTask || laterReadyTask.id !== "AI-012")) failures.push("AI-012 is not the next READY task after AI-011 completion.");
     if (packageJson.scripts["ai:factory:cost-guard-plan"] !== "node scripts/uaos-ai-factory-cost-guard-plan.mjs") failures.push("Package script ai:factory:cost-guard-plan is missing or changed.");
     if (packageJson.scripts["ai:factory:cost-guard-plan"].match(/vercel|deploy|payment|writer|export/i)) failures.push("Cost guard plan script includes a forbidden action keyword.");
     if (!gitConfig.includes(`url = ${expectedOrigin}`)) failures.push("Git remote origin URL is not the expected current origin.");

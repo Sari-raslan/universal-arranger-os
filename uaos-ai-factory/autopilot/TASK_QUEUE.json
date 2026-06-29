@@ -142,6 +142,20 @@
     },
     {
       "id": "AI-011",
+      "title": "local release notes / owner handoff pack",
+      "status": "DONE_LOCAL_PLAN_ONLY",
+      "risk": "LOW",
+      "blocked": false,
+      "ownerAgent": "release_manager",
+      "allowedFiles": ["scripts/uaos-ai-factory-owner-handoff-plan.mjs", "uaos-ai-factory/autopilot/*.json", "uaos-ai-factory/executions/AI-011-owner-handoff-plan/*", "uaos-ai-factory/platform/owner-handoff/*", "uaos-ai-factory/reports/AI_FACTORY_STAGE14_AI011_OWNER_HANDOFF_PLAN_REPORT.md"],
+      "forbiddenFiles": [".git/**", "node_modules/**", ".vercel/**", "uaos-live-clean/src/App.jsx"],
+      "expectedOutput": "Local-only owner handoff pack and release notes draft.",
+      "requiresBuild": false,
+      "requiresExternalAccount": false,
+      "notes": "Planning-only owner handoff complete. Local release notes are marked LOCAL ONLY - NOT PUBLIC RELEASE."
+    },
+    {
+      "id": "AI-012",
       "title": "release gate staging only",
       "status": "READY",
       "risk": "LOW",

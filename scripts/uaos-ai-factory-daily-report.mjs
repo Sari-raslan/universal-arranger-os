@@ -108,6 +108,14 @@ ${state.githubTransferReadinessAuditStatus ? `## Stage 13 Result
 - Target repository remains planning-only.
 - External automation remains not ready.
 ` : ""}
+${state.ownerHandoffPlanStatus ? `## Stage 14 Result
+
+- AI-011 Owner handoff plan: ${state.ownerHandoffPlanStatus}
+- Local release notes are LOCAL ONLY - NOT PUBLIC RELEASE.
+- No public release created.
+- No deploy performed.
+- External automation remains not ready.
+` : ""}
 
 ## Ready Tasks
 

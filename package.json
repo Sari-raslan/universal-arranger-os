@@ -27,6 +27,7 @@
     "ai:factory:demo-plan": "node scripts/uaos-ai-factory-demo-status-plan-check.mjs",
     "ai:factory:cost-guard-plan": "node scripts/uaos-ai-factory-cost-guard-plan.mjs",
     "ai:factory:transfer-readiness-plan": "node scripts/uaos-ai-factory-transfer-readiness-plan.mjs",
+    "ai:factory:owner-handoff-plan": "node scripts/uaos-ai-factory-owner-handoff-plan.mjs",
     "check": "node scripts/uaos-static-check.mjs && npm test",
     "desktop": "npm start --prefix desktop",
     "desktop:smoke": "node scripts/uaos-desktop-smoke.mjs",
