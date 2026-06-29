@@ -38,7 +38,7 @@ Status: PASS
 
 ## Selected Task
 
-AI-014 release gate staging only
+AI-015 next local-only planning task
 
 ## Assigned Agent
 

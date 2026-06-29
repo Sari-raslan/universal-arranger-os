@@ -184,17 +184,31 @@
     },
     {
       "id": "AI-014",
-      "title": "release gate staging only",
+      "title": "private demo gateway link config safety seal",
+      "status": "DONE_LOCAL_PLAN_ONLY",
+      "risk": "LOW",
+      "blocked": false,
+      "ownerAgent": "release_manager",
+      "allowedFiles": ["deploy/aeplatform-private-demo-gateway/vercel.json", "deploy/aeplatform-private-demo-gateway/vercel.broken.backup.json", "uaos-ai-factory/executions/AI-014-private-demo-gateway-config-safety-seal/*", "uaos-ai-factory/reports/AI_FACTORY_STAGE17_AI014_PRIVATE_DEMO_GATEWAY_LINK_CONFIG_SAFETY_SEAL_REPORT.md", "uaos-ai-factory/autopilot/*.json"],
+      "forbiddenFiles": [".git/**", "node_modules/**", "uaos-live-clean/src/App.jsx"],
+      "expectedOutput": "Local-only safety seal for intentional private demo gateway config changes.",
+      "requiresBuild": false,
+      "requiresExternalAccount": false,
+      "notes": "Safety seal complete. Config changes are intentional for Jobcenter/supporter screenshots only. No push, deploy, Vercel command, or public release."
+    },
+    {
+      "id": "AI-015",
+      "title": "next local-only planning task",
       "status": "READY",
       "risk": "LOW",
       "blocked": false,
       "ownerAgent": "release_manager",
-      "allowedFiles": ["uaos-ai-factory/integrations/vercel/*.md", "uaos-ai-factory/reports/*.md"],
-      "forbiddenFiles": [".vercel/**", "uaos-live-clean/src/App.jsx"],
-      "expectedOutput": "Staging-only release gate checklist.",
+      "allowedFiles": ["uaos-ai-factory/**/*.md", "uaos-ai-factory/**/*.json"],
+      "forbiddenFiles": [".git/**", "node_modules/**", ".vercel/**", "uaos-live-clean/src/App.jsx"],
+      "expectedOutput": "Local-only planning note after owner review.",
       "requiresBuild": false,
       "requiresExternalAccount": false,
-      "notes": "Readiness report only. No deploy, domain change, or production release."
+      "notes": "Placeholder only. No deploy, push, Vercel command, payment, production release, or writer/export."
     }
   ]
 }

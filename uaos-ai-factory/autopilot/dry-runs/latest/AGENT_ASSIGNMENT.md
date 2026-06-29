@@ -1,6 +1,6 @@
 # Agent Assignment
 
-Selected task: AI-014 release gate staging only
+Selected task: AI-015 next local-only planning task
 Assigned agent: release_manager
 
 ## Why This Agent
@@ -9,17 +9,19 @@ Report staging readiness without releasing.
 
 ## Allowed Files
 
-- uaos-ai-factory/integrations/vercel/*.md
-- uaos-ai-factory/reports/*.md
+- uaos-ai-factory/**/*.md
+- uaos-ai-factory/**/*.json
 
 ## Forbidden Files
 
+- .git/**
+- node_modules/**
 - .vercel/**
 - uaos-live-clean/src/App.jsx
 
 ## Expected Output
 
-Staging-only release gate checklist.
+Local-only planning note after owner review.
 
 ## Stop Conditions
 
