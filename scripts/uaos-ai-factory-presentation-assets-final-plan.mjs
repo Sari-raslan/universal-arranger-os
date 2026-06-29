@@ -34,29 +34,29 @@ function hasUnsafeClaim(text, phrase) {
 
 try {
   const requiredFiles = [
-    "uaos-ai-factory/executions/AI-015-demo-url-inventory-plan/EXECUTION_PACKET.json",
-    "uaos-ai-factory/executions/AI-015-demo-url-inventory-plan/LOCAL_DEMO_URL_INVENTORY.md",
-    "uaos-ai-factory/executions/AI-015-demo-url-inventory-plan/SCREENSHOT_MAP.md",
-    "uaos-ai-factory/executions/AI-015-demo-url-inventory-plan/CLAIMS_SAFE_SCREENSHOT_CHECKLIST.md",
-    "uaos-ai-factory/executions/AI-015-demo-url-inventory-plan/SCREENSHOT_CLAIMS_POLICY.md",
-    "uaos-ai-factory/executions/AI-015-demo-url-inventory-plan/RESULT.md",
-    "uaos-ai-factory/executions/AI-015-demo-url-inventory-plan/NEXT_ACTIONS.md",
-    "uaos-ai-factory/platform/demo-url-inventory/DEMO_URL_INVENTORY_TARGET.json",
-    "uaos-ai-factory/platform/demo-url-inventory/DEMO_URL_SCREENSHOT_SAFETY_POLICY.md",
-    "uaos-ai-factory/reports/AI_FACTORY_STAGE18_AI015_LOCAL_DEMO_URL_INVENTORY_SCREENSHOT_MAP_REPORT.md"
+    "uaos-ai-factory/executions/AI-016-presentation-asset-final-checklist/EXECUTION_PACKET.json",
+    "uaos-ai-factory/executions/AI-016-presentation-asset-final-checklist/PRESENTATION_ASSET_FINAL_CHECKLIST.md",
+    "uaos-ai-factory/executions/AI-016-presentation-asset-final-checklist/SEND_READINESS_MATRIX.md",
+    "uaos-ai-factory/executions/AI-016-presentation-asset-final-checklist/CLAIMS_FINAL_REVIEW_CHECKLIST.md",
+    "uaos-ai-factory/executions/AI-016-presentation-asset-final-checklist/OWNER_SEND_SEQUENCE.md",
+    "uaos-ai-factory/executions/AI-016-presentation-asset-final-checklist/RESULT.md",
+    "uaos-ai-factory/executions/AI-016-presentation-asset-final-checklist/NEXT_ACTIONS.md",
+    "uaos-ai-factory/platform/presentation-assets/PRESENTATION_ASSET_TARGET.json",
+    "uaos-ai-factory/platform/presentation-assets/PRESENTATION_ASSET_SAFETY_POLICY.md",
+    "uaos-ai-factory/reports/AI_FACTORY_STAGE19_AI016_PRESENTATION_ASSET_FINAL_CHECKLIST_REPORT.md"
   ];
 
   requiredFiles.forEach(requireFile);
 
   if (failures.length === 0) {
-    const packet = readJson("uaos-ai-factory/executions/AI-015-demo-url-inventory-plan/EXECUTION_PACKET.json");
-    const target = readJson("uaos-ai-factory/platform/demo-url-inventory/DEMO_URL_INVENTORY_TARGET.json");
+    const packet = readJson("uaos-ai-factory/executions/AI-016-presentation-asset-final-checklist/EXECUTION_PACKET.json");
+    const target = readJson("uaos-ai-factory/platform/presentation-assets/PRESENTATION_ASSET_TARGET.json");
     const state = readJson("uaos-ai-factory/autopilot/AUTOPILOT_STATE.json");
     const queue = readJson("uaos-ai-factory/autopilot/TASK_QUEUE.json");
     const packageJson = readJson("package.json");
-    const ai015 = queue.tasks.find((task) => task.id === "AI-015");
-    const inventory = readText("uaos-ai-factory/executions/AI-015-demo-url-inventory-plan/LOCAL_DEMO_URL_INVENTORY.md");
-    const checklist = readText("uaos-ai-factory/executions/AI-015-demo-url-inventory-plan/CLAIMS_SAFE_SCREENSHOT_CHECKLIST.md");
+    const ai016 = queue.tasks.find((task) => task.id === "AI-016");
+    const checklist = readText("uaos-ai-factory/executions/AI-016-presentation-asset-final-checklist/PRESENTATION_ASSET_FINAL_CHECKLIST.md");
+    const matrix = readText("uaos-ai-factory/executions/AI-016-presentation-asset-final-checklist/SEND_READINESS_MATRIX.md");
     const gitConfig = exists(".git/config") ? readText(".git/config") : "";
     const combinedPlanText = requiredFiles
       .filter((file) => file.endsWith(".md") || file.endsWith(".json"))
@@ -64,12 +64,11 @@ try {
       .join("\n")
       .toLowerCase();
 
-    if (packet.status !== "DONE_LOCAL_PLAN_ONLY" || target.status !== "DONE_LOCAL_PLAN_ONLY") failures.push("AI-015 demo URL inventory is not DONE_LOCAL_PLAN_ONLY.");
-    if (!ai015 || ai015.status !== "DONE_LOCAL_PLAN_ONLY") failures.push("TASK_QUEUE does not mark AI-015 DONE_LOCAL_PLAN_ONLY.");
-    const phaseNumber = Number(String(state.phase || "").match(/LOCAL_EXECUTION_STAGE_(\d+)/)?.[1] || 0);
-    if (phaseNumber < 18 || state.demoUrlInventoryPlanStatus !== "DONE_LOCAL_PLAN_ONLY") failures.push("AUTOPILOT_STATE does not mark Stage 18 complete.");
-    if (!inventory.includes("LOCAL ONLY") || !inventory.includes("STATIC LOCAL DEMO")) failures.push("Inventory entries are not clearly local/static.");
-    if (!checklist.includes("LOCAL ONLY") || !checklist.includes("STATIC LOCAL DEMO")) failures.push("Screenshot checklist entries are not clearly local/static.");
+    if (packet.status !== "DONE_LOCAL_PLAN_ONLY" || target.status !== "DONE_LOCAL_PLAN_ONLY") failures.push("AI-016 presentation asset checklist is not DONE_LOCAL_PLAN_ONLY.");
+    if (!ai016 || ai016.status !== "DONE_LOCAL_PLAN_ONLY") failures.push("TASK_QUEUE does not mark AI-016 DONE_LOCAL_PLAN_ONLY.");
+    if (state.phase !== "LOCAL_EXECUTION_STAGE_19" || state.presentationAssetFinalChecklistStatus !== "DONE_LOCAL_PLAN_ONLY") failures.push("AUTOPILOT_STATE does not mark Stage 19 complete.");
+    if (!checklist.includes("LOCAL ONLY") || !checklist.includes("STATIC LOCAL DEMO")) failures.push("Checklist does not include required local/static labels.");
+    if (!matrix.includes("LOCAL ONLY") || !matrix.includes("STATIC LOCAL DEMO")) failures.push("Send-readiness matrix does not include required local/static labels.");
     if (target.releaseType !== "LOCAL ONLY - NOT PUBLIC RELEASE" || packet.releaseType !== "LOCAL ONLY - NOT PUBLIC RELEASE") failures.push("Release type marker is incorrect.");
     if (target.currentOrigin !== expectedOrigin || packet.currentOriginMustRemain !== expectedOrigin) failures.push("Current origin value is not the expected Sari-raslan repository.");
     if (!gitConfig.includes(`url = ${expectedOrigin}`)) failures.push("Local git config origin URL is not unchanged.");
@@ -80,7 +79,8 @@ try {
     if (target.paymentAllowed !== false || packet.paymentActionPerformed !== false || state.paymentAllowed !== false) failures.push("Payment must remain blocked.");
     if (target.realWriterAllowed !== false || packet.realWriterExportCreated !== false || state.realWriterAllowed !== false) failures.push("Writer/export must remain blocked.");
     if (target.externalAutomationReady !== false || packet.externalAutomationReady !== false || state.externalAutomationReady !== false) failures.push("External automation must remain disabled.");
-    if (hasUnsafeClaim(combinedPlanText, "public launch")) failures.push("Unsafe public launch claim found.");
+    if (hasUnsafeClaim(combinedPlanText, "public release")) failures.push("Unsafe public release claim found.");
+    if (hasUnsafeClaim(combinedPlanText, "live payment")) failures.push("Unsafe live payment claim found.");
     if (hasUnsafeClaim(combinedPlanText, "live customer")) failures.push("Unsafe live customer claim found.");
     if (hasUnsafeClaim(combinedPlanText, "payment readiness")) failures.push("Unsafe payment readiness claim found.");
     if (hasUnsafeClaim(combinedPlanText, "real keyboard writer")) failures.push("Unsafe real keyboard writer claim found.");
@@ -92,19 +92,19 @@ try {
     if (combinedPlanText.includes("stripe live") || combinedPlanText.includes("production payment")) failures.push("Payment command or live payment wording was added.");
     if (combinedPlanText.includes("real keyboard writer enabled") || combinedPlanText.includes("real .sty export enabled") || combinedPlanText.includes("real .set export enabled")) failures.push("Writer/export enablement wording was added.");
     if (combinedPlanText.includes("app.jsx modification required")) failures.push("App.jsx modification is required by the plan.");
-    if (packageJson.scripts["ai:factory:demo-url-inventory-plan"] !== "node scripts/uaos-ai-factory-demo-url-inventory-plan.mjs") failures.push("Package script ai:factory:demo-url-inventory-plan is missing or changed.");
+    if (packageJson.scripts["ai:factory:presentation-assets-final-plan"] !== "node scripts/uaos-ai-factory-presentation-assets-final-plan.mjs") failures.push("Package script ai:factory:presentation-assets-final-plan is missing or changed.");
   }
 
   if (failures.length > 0) {
-    console.error("UAOS AI Factory Demo URL Inventory Plan Check: FAIL");
+    console.error("UAOS AI Factory Presentation Assets Final Plan Check: FAIL");
     failures.forEach((failure) => console.error(`- ${failure}`));
     process.exit(1);
   }
 
-  console.log("UAOS AI Factory Demo URL Inventory Plan Check: PASS");
-  console.log("AI-015=DONE_LOCAL_PLAN_ONLY; entries=LOCAL ONLY / STATIC LOCAL DEMO; remote unchanged");
+  console.log("UAOS AI Factory Presentation Assets Final Plan Check: PASS");
+  console.log("AI-016=DONE_LOCAL_PLAN_ONLY; checklist=LOCAL ONLY / STATIC LOCAL DEMO; remote unchanged");
 } catch (error) {
-  console.error("UAOS AI Factory Demo URL Inventory Plan Check: FAIL");
+  console.error("UAOS AI Factory Presentation Assets Final Plan Check: FAIL");
   console.error(error.message);
   process.exit(1);
 }

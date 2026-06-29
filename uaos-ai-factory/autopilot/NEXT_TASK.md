@@ -1,6 +1,6 @@
 # Next Task
 
-ID: AI-016
+ID: AI-017
 Title: next local-only planning task
 Owner agent: release_manager
 Risk: LOW

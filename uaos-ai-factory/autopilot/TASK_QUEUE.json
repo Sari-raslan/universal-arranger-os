@@ -212,6 +212,20 @@
     },
     {
       "id": "AI-016",
+      "title": "presentation asset final checklist",
+      "status": "DONE_LOCAL_PLAN_ONLY",
+      "risk": "LOW",
+      "blocked": false,
+      "ownerAgent": "release_manager",
+      "allowedFiles": ["scripts/uaos-ai-factory-presentation-assets-final-plan.mjs", "uaos-ai-factory/autopilot/*.json", "uaos-ai-factory/executions/AI-016-presentation-asset-final-checklist/*", "uaos-ai-factory/platform/presentation-assets/*", "uaos-ai-factory/reports/AI_FACTORY_STAGE19_AI016_PRESENTATION_ASSET_FINAL_CHECKLIST_REPORT.md"],
+      "forbiddenFiles": [".git/**", "node_modules/**", ".vercel/**", "uaos-live-clean/src/App.jsx"],
+      "expectedOutput": "Local-only final checklist for presentation assets.",
+      "requiresBuild": false,
+      "requiresExternalAccount": false,
+      "notes": "Planning-only asset checklist complete. All relevant assets remain LOCAL ONLY or STATIC LOCAL DEMO."
+    },
+    {
+      "id": "AI-017",
       "title": "next local-only planning task",
       "status": "READY",
       "risk": "LOW",
