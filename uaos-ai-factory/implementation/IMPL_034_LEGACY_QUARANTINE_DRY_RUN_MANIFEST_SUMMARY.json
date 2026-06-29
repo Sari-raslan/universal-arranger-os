@@ -1,0 +1,27 @@
+﻿{
+    "id":  "IMPL-034",
+    "title":  "Legacy Keyboard File Quarantine Dry-Run Manifest",
+    "status":  "DONE_LOCAL_ONLY",
+    "date":  "2026-06-29",
+    "scope":  "metadata-only / no move / no delete / no content copy",
+    "sourceInventoryReference":  "uaos-ai-factory/writer-sandbox/LEGACY_FORBIDDEN_FILE_INVENTORY.md",
+    "legacyFileCount":  300,
+    "action":  "DRY_RUN_ONLY",
+    "filesMoved":  false,
+    "filesCopied":  false,
+    "filesDeleted":  false,
+    "filesRestored":  false,
+    "binaryContentsReadCopied":  false,
+    "keyboardTransferAllowed":  false,
+    "candidateFolderClear":  true,
+    "outputs":  [
+                    "uaos-ai-factory/implementation/reports/IMPL_034_LEGACY_QUARANTINE_DRY_RUN_MANIFEST_REPORT.md",
+                    "uaos-ai-factory/implementation/IMPL_034_LEGACY_QUARANTINE_DRY_RUN_MANIFEST_SUMMARY.json",
+                    "uaos-ai-factory/writer-sandbox/legacy-quarantine-dry-run/LEGACY_QUARANTINE_DRY_RUN_MANIFEST.json",
+                    "uaos-ai-factory/writer-sandbox/legacy-quarantine-dry-run/LEGACY_QUARANTINE_DRY_RUN_README.md",
+                    "uaos-ai-factory/writer-sandbox/legacy-quarantine-dry-run/NO_MOVE_NO_DELETE_CERTIFICATE.md"
+                ],
+    "readyForImpl035QuarantineApprovalGateSeal":  true,
+    "readyForKeyboardTransfer":  false,
+    "readyForExternalAutomation":  false
+}
