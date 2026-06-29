@@ -1,0 +1,58 @@
+{
+  "task": "IMPL-002",
+  "title": "demo gateway link validation, local/static only, no deploy",
+  "status": "DONE_LOCAL_ONLY",
+  "mode": "LOCAL_STATIC_ONLY",
+  "latestKnownCommitBeforeRun": "f788eb7 Run IMPL-001 owner dashboard readme polish locally",
+  "aiFactoryStatus": "FINAL_LOCAL_FACTORY_FREEZE",
+  "boundedAgentsStatus": "BOUNDED_LOCAL_AGENTS_COMPLETE",
+  "implementationQueueStatus": "READY_LOCAL_ONLY",
+  "currentOrigin": "https://github.com/Sari-raslan/universal-arranger-os.git",
+  "externalAutomation": "BLOCKED",
+  "createdFiles": [
+    "uaos-ai-factory/implementation/reports/IMPL_002_DEMO_GATEWAY_LINK_VALIDATION_REPORT.md",
+    "uaos-ai-factory/implementation/IMPL_002_DEMO_GATEWAY_LINK_VALIDATION_SUMMARY.json",
+    "uaos-ai-factory/implementation/DEMO_GATEWAY_LINK_VALIDATION_CHECKLIST.md"
+  ],
+  "reviewedGatewayFiles": [
+    "deploy/aeplatform-private-demo-gateway/README_FIRST.md",
+    "deploy/aeplatform-private-demo-gateway/index.html",
+    "deploy/aeplatform-private-demo-gateway/robots.txt",
+    "deploy/aeplatform-private-demo-gateway/vercel.json",
+    "deploy/aeplatform-private-demo-gateway/vercel.broken.backup.json",
+    "deploy/aeplatform-private-demo-gateway/jc-aeplatform-2026-private-jc-7k4p9x/index.html",
+    "deploy/aeplatform-private-demo-gateway/sp-aeplatform-2026-private-sp-3m8q2v/index.html"
+  ],
+  "linkCategories": [
+    "root/private fallback",
+    "Jobcenter private static page",
+    "supporter private static page",
+    "robots/crawler safety",
+    "header/config safety reference",
+    "backup rewrite reference"
+  ],
+  "brokenOrMissingLinksFound": false,
+  "notes": [
+    "Local static page files for root, Jobcenter, and supporter were present.",
+    "Current vercel.json contains headers and no rewrite entries.",
+    "Backup rewrite config is reference-only.",
+    "External availability was not tested."
+  ],
+  "safetyGates": {
+    "vercelExecuted": false,
+    "deployExecuted": false,
+    "publicUrlCreated": false,
+    "publicReleaseClaim": false,
+    "paymentClaim": false,
+    "productionServiceClaim": false,
+    "realKeyboardWriterExport": "BLOCKED",
+    "appSourceChanged": false,
+    "frontendSourceChanged": false,
+    "gatewayFilesModified": false,
+    "externalAutomation": "BLOCKED"
+  },
+  "nextSafeOwnerAction": "Use pages for local/private screenshots only; plan hosting/password protection separately if later approved.",
+  "nextReadyTask": "IMPL-003",
+  "readyForImpl003": true,
+  "readyForExternalAutomation": false
+}
