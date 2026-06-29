@@ -1,0 +1,40 @@
+{
+  "id": "IMPL-017",
+  "title": "Owner Writer Sandbox Manifest Validator",
+  "status": "DONE_LOCAL_ONLY",
+  "date": "2026-06-29",
+  "scope": "validator only / manifest-only",
+  "realKeyboardOutputCreated": false,
+  "realWriterOutputCreated": false,
+  "realOrganKeyboardTrialPackageCreated": false,
+  "realTrialCandidateApproved": false,
+  "appJsxModified": false,
+  "frontendSourceModified": false,
+  "publicUrlsCreated": false,
+  "externalAutomationUsed": false,
+  "outputs": [
+    "scripts/uaos-ai-factory-writer-manifest-validator.mjs",
+    "uaos-ai-factory/writer-sandbox/dry-runs/owner-test-package-dry-run.validation.json",
+    "uaos-ai-factory/implementation/reports/IMPL_017_OWNER_WRITER_MANIFEST_VALIDATOR_REPORT.md",
+    "uaos-ai-factory/implementation/IMPL_017_OWNER_WRITER_MANIFEST_VALIDATOR_SUMMARY.json"
+  ],
+  "validator": {
+    "npmScript": "ai:factory:writer-manifest-validator",
+    "verifiesDryRunManifestExists": true,
+    "verifiesExperimentalLabel": true,
+    "verifiesManifestOnlyLabel": true,
+    "verifiesNotRealKeyboardFileLabel": true,
+    "verifiesNotForPublicReleaseLabel": true,
+    "verifiesNoForbiddenKeyboardExtensionsProduced": true,
+    "verifiesNoProprietarySamples": true,
+    "verifiesNoKontaktNativeInstrumentsContent": true,
+    "verifiesFutureChecksumPlaceholder": true,
+    "verifiesFutureOwnerApprovalRequired": true,
+    "verifiesNoForbiddenKeyboardOutputFilesUnderWriterSandbox": true,
+    "verifiesRemote": true
+  },
+  "validationJson": "uaos-ai-factory/writer-sandbox/dry-runs/owner-test-package-dry-run.validation.json",
+  "readyForImpl018OwnerApprovalGate": true,
+  "readyForRealKeyboardTrialCandidate": false,
+  "readyForExternalAutomation": false
+}

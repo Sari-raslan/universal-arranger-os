@@ -1,0 +1,35 @@
+{
+  "schema": "uaos-owner-writer-sandbox-validation-result-v1",
+  "id": "owner-test-package-dry-run.validation",
+  "status": "PASS",
+  "manifestPath": "uaos-ai-factory/writer-sandbox/dry-runs/owner-test-package-dry-run.json",
+  "labelsVerified": [
+    "EXPERIMENTAL",
+    "MANIFEST_ONLY",
+    "NOT_A_REAL_KEYBOARD_FILE",
+    "NOT_FOR_PUBLIC_RELEASE"
+  ],
+  "rulesVerified": {
+    "dryRunManifestExists": true,
+    "noForbiddenKeyboardExtensionsProduced": true,
+    "noProprietarySamples": true,
+    "noKontaktContent": true,
+    "noNativeInstrumentsContent": true,
+    "futureChecksumPlaceholderExists": true,
+    "futureOwnerApprovalRequired": true,
+    "noForbiddenKeyboardOutputFilesUnderWriterSandbox": true,
+    "remoteUnchanged": true
+  },
+  "forbiddenExtensionsChecked": [
+    ".STY",
+    ".SET",
+    ".PRS",
+    ".STL",
+    ".PAT",
+    ".MSP",
+    ".KST"
+  ],
+  "realKeyboardOutputCreated": false,
+  "readyForImpl018OwnerApprovalGate": true,
+  "readyForRealKeyboardTrialCandidate": false
+}
