@@ -1,0 +1,97 @@
+{
+  "status": "LOCAL_ONLY",
+  "realKeyboardOutputAllowed": false,
+  "keyboardTransferAllowed": false,
+  "tasks": [
+    {
+      "id": "SAFE-001",
+      "title": "owner-neutral-003 generation",
+      "risk": "LOW",
+      "allowedPaths": ["uaos-ai-factory/writer-sandbox/neutral-package-writer", "uaos-ai-factory/implementation"],
+      "forbiddenPaths": ["App.jsx", "frontend source", "deploy files", "legacy keyboard files"],
+      "ownerApprovalNeeded": true,
+      "expectedReportPath": "uaos-ai-factory/implementation/reports/SAFE_001_OWNER_NEUTRAL_003_GENERATION_REPORT.md"
+    },
+    {
+      "id": "SAFE-002",
+      "title": "metadata validation improvement",
+      "risk": "LOW",
+      "allowedPaths": ["scripts/uaos-ai-factory-*.mjs", "uaos-ai-factory/implementation"],
+      "forbiddenPaths": ["App.jsx", "deploy files", "keyboard-native outputs"],
+      "ownerApprovalNeeded": false,
+      "expectedReportPath": "uaos-ai-factory/implementation/reports/SAFE_002_METADATA_VALIDATION_IMPROVEMENT_REPORT.md"
+    },
+    {
+      "id": "SAFE-003",
+      "title": "UI read-only owner review panel",
+      "risk": "MEDIUM",
+      "allowedPaths": ["only after explicit approval for UI file"],
+      "forbiddenPaths": ["deploy files", "payment", "writer/export code"],
+      "ownerApprovalNeeded": true,
+      "expectedReportPath": "uaos-ai-factory/implementation/reports/SAFE_003_UI_READ_ONLY_OWNER_REVIEW_PANEL_REPORT.md"
+    },
+    {
+      "id": "SAFE-004",
+      "title": "screenshot/send pack cleanup",
+      "risk": "LOW",
+      "allowedPaths": ["uaos-ai-factory", "docs", "reports"],
+      "forbiddenPaths": ["App.jsx", "email sending", "deploy commands"],
+      "ownerApprovalNeeded": false,
+      "expectedReportPath": "uaos-ai-factory/implementation/reports/SAFE_004_SCREENSHOT_SEND_PACK_CLEANUP_REPORT.md"
+    },
+    {
+      "id": "SAFE-005",
+      "title": "safe writer research notes",
+      "risk": "LOW",
+      "allowedPaths": ["uaos-ai-factory/writer-sandbox", "uaos-ai-factory/implementation"],
+      "forbiddenPaths": ["keyboard-native outputs", "legacy binary reads"],
+      "ownerApprovalNeeded": false,
+      "expectedReportPath": "uaos-ai-factory/implementation/reports/SAFE_005_SAFE_WRITER_RESEARCH_NOTES_REPORT.md"
+    },
+    {
+      "id": "SAFE-006",
+      "title": "quarantine metadata review",
+      "risk": "MEDIUM",
+      "allowedPaths": ["metadata/report files only"],
+      "forbiddenPaths": ["legacy file movement", "deletion", "content copying"],
+      "ownerApprovalNeeded": true,
+      "expectedReportPath": "uaos-ai-factory/implementation/reports/SAFE_006_QUARANTINE_METADATA_REVIEW_REPORT.md"
+    },
+    {
+      "id": "SAFE-007",
+      "title": "local QA dashboard improvement",
+      "risk": "LOW",
+      "allowedPaths": ["scripts/uaos-ai-factory-*.mjs", "package.json", "reports"],
+      "forbiddenPaths": ["deploy scripts", "App.jsx", "payment"],
+      "ownerApprovalNeeded": false,
+      "expectedReportPath": "uaos-ai-factory/implementation/reports/SAFE_007_LOCAL_QA_DASHBOARD_IMPROVEMENT_REPORT.md"
+    },
+    {
+      "id": "SAFE-008",
+      "title": "business pack polish",
+      "risk": "LOW",
+      "allowedPaths": ["uaos-ai-factory", "docs", "reports"],
+      "forbiddenPaths": ["production release", "public URLs", "deploy"],
+      "ownerApprovalNeeded": false,
+      "expectedReportPath": "uaos-ai-factory/implementation/reports/SAFE_008_BUSINESS_PACK_POLISH_REPORT.md"
+    },
+    {
+      "id": "SAFE-009",
+      "title": "GitHub transfer wait check",
+      "risk": "LOW",
+      "allowedPaths": ["reports/docs only"],
+      "forbiddenPaths": ["remote changes", "push", "transfer execution"],
+      "ownerApprovalNeeded": true,
+      "expectedReportPath": "uaos-ai-factory/implementation/reports/SAFE_009_GITHUB_TRANSFER_WAIT_CHECK_REPORT.md"
+    },
+    {
+      "id": "SAFE-010",
+      "title": "final local handoff pack",
+      "risk": "LOW",
+      "allowedPaths": ["uaos-ai-factory", "docs", "reports"],
+      "forbiddenPaths": ["App.jsx", "deploy", "keyboard output"],
+      "ownerApprovalNeeded": false,
+      "expectedReportPath": "uaos-ai-factory/implementation/reports/SAFE_010_FINAL_LOCAL_HANDOFF_PACK_REPORT.md"
+    }
+  ]
+}
