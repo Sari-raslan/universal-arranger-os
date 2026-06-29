@@ -100,6 +100,14 @@ ${state.costGuardPlanStatus ? `## Stage 12 Result
 - Code X remains senior engineer only.
 - External automation remains not ready.
 ` : ""}
+${state.githubTransferReadinessAuditStatus ? `## Stage 13 Result
+
+- AI-010 GitHub transfer readiness audit: ${state.githubTransferReadinessAuditStatus}
+- No GitHub transfer performed.
+- Remote unchanged.
+- Target repository remains planning-only.
+- External automation remains not ready.
+` : ""}
 
 ## Ready Tasks
 

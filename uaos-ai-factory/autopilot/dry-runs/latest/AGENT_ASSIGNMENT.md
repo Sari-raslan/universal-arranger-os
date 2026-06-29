@@ -1,6 +1,6 @@
 # Agent Assignment
 
-Selected task: AI-010 release gate staging only
+Selected task: AI-011 release gate staging only
 Assigned agent: release_manager
 
 ## Why This Agent
@@ -15,6 +15,7 @@ Report staging readiness without releasing.
 ## Forbidden Files
 
 - .vercel/**
+- uaos-live-clean/src/App.jsx
 
 ## Expected Output
 

@@ -59,6 +59,7 @@ try {
     const packageJson = readJson("package.json");
     const ai009 = queue.tasks.find((task) => task.id === "AI-009");
     const ai010 = queue.tasks.find((task) => task.id === "AI-010");
+    const ai011 = queue.tasks.find((task) => task.id === "AI-011");
     const noSpend = readText("uaos-ai-factory/platform/cost-guard/COST_NO_AUTONOMOUS_SPEND_POLICY.md").toLowerCase();
     const codexPolicy = readText("uaos-ai-factory/platform/cost-guard/COST_CODEX_SENIOR_ENGINEER_ONLY_POLICY.md").toLowerCase();
     const planText = readText("uaos-ai-factory/executions/AI-009-cost-guard-automation-plan/COST_GUARD_AUTOMATION_PLAN.md").toLowerCase();
@@ -82,7 +83,8 @@ try {
     if (target.pushAllowed !== false || target.deployAllowed !== false || target.paymentAllowed !== false || target.productionReleaseAllowed !== false || target.realWriterAllowed !== false) failures.push("Push/deploy/payment/production/writer gates must remain false.");
     if (state.pushAllowed !== false || state.deployAllowed !== false || state.paymentAllowed !== false || state.productionReleaseAllowed !== false || state.realWriterAllowed !== false) failures.push("Autopilot safety gates must remain false.");
     if (!ai009 || ai009.status !== "DONE_LOCAL_PLAN_ONLY") failures.push("TASK_QUEUE does not mark AI-009 DONE_LOCAL_PLAN_ONLY.");
-    if (!ai010 || ai010.status !== "READY") failures.push("AI-010 is not the next READY task.");
+    if (!ai010 || !["READY", "DONE_LOCAL_PLAN_ONLY"].includes(ai010.status)) failures.push("AI-010 is not in an expected post-cost-guard state.");
+    if (ai010.status === "DONE_LOCAL_PLAN_ONLY" && (!ai011 || ai011.status !== "READY")) failures.push("AI-011 is not the next READY task after AI-010 completion.");
     if (packageJson.scripts["ai:factory:cost-guard-plan"] !== "node scripts/uaos-ai-factory-cost-guard-plan.mjs") failures.push("Package script ai:factory:cost-guard-plan is missing or changed.");
     if (packageJson.scripts["ai:factory:cost-guard-plan"].match(/vercel|deploy|payment|writer|export/i)) failures.push("Cost guard plan script includes a forbidden action keyword.");
     if (!gitConfig.includes(`url = ${expectedOrigin}`)) failures.push("Git remote origin URL is not the expected current origin.");

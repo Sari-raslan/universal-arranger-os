@@ -1,7 +1,7 @@
 {
-  "dryRunId": "dry-run-2026-06-29T03-44-51-565Z",
-  "timestamp": "2026-06-29T03:44:51.566Z",
-  "selectedTaskId": "AI-010",
+  "dryRunId": "dry-run-2026-06-29T04-00-23-667Z",
+  "timestamp": "2026-06-29T04:00:23.669Z",
+  "selectedTaskId": "AI-011",
   "selectedTaskTitle": "release gate staging only",
   "ownerAgent": "release_manager",
   "risk": "LOW",
@@ -10,7 +10,8 @@
     "uaos-ai-factory/reports/*.md"
   ],
   "forbiddenFiles": [
-    ".vercel/**"
+    ".vercel/**",
+    "uaos-live-clean/src/App.jsx"
   ],
   "expectedOutput": "Staging-only release gate checklist.",
   "requiresBuild": false,
