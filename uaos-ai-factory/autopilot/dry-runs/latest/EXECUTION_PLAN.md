@@ -10,11 +10,13 @@ This is a dry run. No implementation was performed.
 
 ## Files It May Inspect
 
-- issue-defined demo/staging UI files only
+- scripts/uaos-ai-factory-cost-guard.mjs
+- uaos-ai-factory/autopilot/*.json
 
 ## Files It May Edit
 
-- issue-defined demo/staging UI files only
+- scripts/uaos-ai-factory-cost-guard.mjs
+- uaos-ai-factory/autopilot/*.json
 
 ## Commands It May Run
 

@@ -1,18 +1,18 @@
 # Next Task
 
-ID: AI-008
-Title: demo status page
-Owner agent: frontend_worker
-Risk: MEDIUM
-Requires build: YES
+ID: AI-009
+Title: cost guard automation
+Owner agent: cost_guard
+Risk: LOW
+Requires build: NO
 Requires external account: NO
 
 ## Expected Output
 
-Plan for an honest demo/staging status page.
+Local-only cost guard improvement plan.
 
 ## Notes
 
-No redesign and no route changes unless issue-approved.
+No external automation.
 
 This selector only writes the next-task note. It does not execute the task, call AI tools, push, or deploy.

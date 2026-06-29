@@ -1,18 +1,20 @@
 {
-  "dryRunId": "dry-run-2026-06-28T23-18-35-913Z",
-  "timestamp": "2026-06-28T23:18:35.914Z",
-  "selectedTaskId": "AI-008",
-  "selectedTaskTitle": "demo status page",
-  "ownerAgent": "frontend_worker",
-  "risk": "MEDIUM",
+  "dryRunId": "dry-run-2026-06-29T03-30-16-464Z",
+  "timestamp": "2026-06-29T03:30:16.466Z",
+  "selectedTaskId": "AI-009",
+  "selectedTaskTitle": "cost guard automation",
+  "ownerAgent": "cost_guard",
+  "risk": "LOW",
   "allowedFiles": [
-    "issue-defined demo/staging UI files only"
+    "scripts/uaos-ai-factory-cost-guard.mjs",
+    "uaos-ai-factory/autopilot/*.json"
   ],
   "forbiddenFiles": [
-    "uaos-live-clean/src/App.jsx"
+    "node_modules/**",
+    ".git/**"
   ],
-  "expectedOutput": "Plan for an honest demo/staging status page.",
-  "requiresBuild": true,
+  "expectedOutput": "Local-only cost guard improvement plan.",
+  "requiresBuild": false,
   "requiresExternalAccount": false,
   "safetyGates": [
     "push",

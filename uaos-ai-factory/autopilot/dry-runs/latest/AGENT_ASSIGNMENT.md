@@ -1,23 +1,25 @@
 # Agent Assignment
 
-Selected task: AI-008 demo status page
-Assigned agent: frontend_worker
+Selected task: AI-009 cost guard automation
+Assigned agent: cost_guard
 
 ## Why This Agent
 
-Implement small demo/staging UI tasks.
+Protect user credits, time, and compute.
 
 ## Allowed Files
 
-- issue-defined demo/staging UI files only
+- scripts/uaos-ai-factory-cost-guard.mjs
+- uaos-ai-factory/autopilot/*.json
 
 ## Forbidden Files
 
-- uaos-live-clean/src/App.jsx
+- node_modules/**
+- .git/**
 
 ## Expected Output
 
-Plan for an honest demo/staging status page.
+Local-only cost guard improvement plan.
 
 ## Stop Conditions
 

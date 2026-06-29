@@ -2,8 +2,8 @@
 
 Status: PASS
 
-Selected task: AI-008 demo status page
-Assigned agent: frontend_worker
+Selected task: AI-009 cost guard automation
+Assigned agent: cost_guard
 Safety result: PASS
 Cost result: PASS
 Future execution allowed: NO

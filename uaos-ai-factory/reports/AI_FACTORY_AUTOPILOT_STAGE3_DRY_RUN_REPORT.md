@@ -38,11 +38,11 @@ Status: PASS
 
 ## Selected Task
 
-AI-008 demo status page
+AI-009 cost guard automation
 
 ## Assigned Agent
 
-frontend_worker
+cost_guard
 
 ## Safety Result
 

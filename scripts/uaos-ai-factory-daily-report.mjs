@@ -83,6 +83,14 @@ ${state.premiumLibraryPlanStatus ? `## Stage 10 Result
 - No commercial readiness claim.
 - External automation remains not ready.
 ` : ""}
+${state.demoStatusPagePlanStatus ? `## Stage 11 Result
+
+- AI-008 Demo status page plan: ${state.demoStatusPagePlanStatus}
+- No app source change.
+- No App.jsx change.
+- No public page created.
+- External automation remains not ready.
+` : ""}
 
 ## Ready Tasks
 
