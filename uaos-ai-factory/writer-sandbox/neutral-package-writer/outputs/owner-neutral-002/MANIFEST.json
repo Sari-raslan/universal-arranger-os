@@ -1,0 +1,30 @@
+{
+  "schema": "uaos-neutral-package-dry-run-manifest-v1",
+  "package_id": "owner-neutral-002",
+  "status": "EXPERIMENTAL_NEUTRAL_PACKAGE",
+  "owner_only": true,
+  "not_public_release": true,
+  "not_production": true,
+  "keyboard_native": false,
+  "real_keyboard_compatibility": "UNVERIFIED",
+  "safe_extension": ".uaos-neutral.json",
+  "no_push": true,
+  "no_deploy": true,
+  "no_vercel": true,
+  "no_payment": true,
+  "no_proprietary_samples": true,
+  "no_kontakt_native_instruments_content": true,
+  "musical_metadata_only": true,
+  "improvement_source": "IMPL-027 improvement plan for owner-neutral-002",
+  "file_list": [
+    "OWNER_NEUTRAL_002.uaos-neutral.json",
+    "MANIFEST.json",
+    "CHECKSUMS.sha256",
+    "VALIDATION.json",
+    "README_OWNER_NEUTRAL_002.md"
+  ],
+  "checksum_ref": "CHECKSUMS.sha256",
+  "validation_ref": "VALIDATION.json",
+  "backup_ref": "backups/IMPL_028_OWNER_NEUTRAL_002_20260629T214907Z/BACKUP_NOTE.json",
+  "rollback_notes": "Keep this output in writer-sandbox only. It may be removed or ignored if validation or owner review fails."
+}

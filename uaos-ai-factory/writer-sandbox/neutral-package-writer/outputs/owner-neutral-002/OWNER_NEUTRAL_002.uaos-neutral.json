@@ -1,0 +1,128 @@
+{
+  "package_id": "owner-neutral-002",
+  "status": "EXPERIMENTAL_NEUTRAL_PACKAGE",
+  "labels": [
+    "EXPERIMENTAL",
+    "NEUTRAL_UAOS_PACKAGE",
+    "NOT_KEYBOARD_NATIVE",
+    "NOT_PUBLIC_RELEASE",
+    "NOT_PRODUCTION",
+    "OWNER_REVIEW_ONLY"
+  ],
+  "owner_only": true,
+  "not_public_release": true,
+  "not_production": true,
+  "keyboard_native": false,
+  "real_keyboard_compatibility": "UNVERIFIED",
+  "compatibility_status": "NEUTRAL_NOT_KEYBOARD_NATIVE",
+  "safe_extension": ".uaos-neutral.json",
+  "no_push": true,
+  "no_deploy": true,
+  "no_vercel": true,
+  "no_payment": true,
+  "no_proprietary_samples": true,
+  "no_kontakt_native_instruments_content": true,
+  "tracks": [
+    {
+      "track_id": "track-001",
+      "name": "Lead Melody Metadata",
+      "role": "melody",
+      "instrument_family_hint": "lead / upper voice",
+      "metadata_only": true
+    },
+    {
+      "track_id": "track-002",
+      "name": "Chord Bed Metadata",
+      "role": "harmony",
+      "instrument_family_hint": "pad / chord support",
+      "metadata_only": true
+    },
+    {
+      "track_id": "track-003",
+      "name": "Rhythm Intent Metadata",
+      "role": "rhythm intent",
+      "instrument_family_hint": "drum pattern description only",
+      "metadata_only": true
+    }
+  ],
+  "sections": [
+    {
+      "section_id": "section-001",
+      "name": "Intro - soft entry",
+      "order": 0,
+      "metadata_only": true
+    },
+    {
+      "section_id": "section-002",
+      "name": "Verse A - main groove",
+      "order": 1,
+      "metadata_only": true
+    },
+    {
+      "section_id": "section-003",
+      "name": "Chorus - lifted phrase",
+      "order": 2,
+      "metadata_only": true
+    },
+    {
+      "section_id": "section-004",
+      "name": "Break - short transition",
+      "order": 3,
+      "metadata_only": true
+    },
+    {
+      "section_id": "section-005",
+      "name": "Ending - safe close",
+      "order": 4,
+      "metadata_only": true
+    }
+  ],
+  "metadata": {
+    "musical_metadata_only": true,
+    "tempo": 96,
+    "tempo_range": "92-100",
+    "key_center": "C minor",
+    "time_signature": "4/4",
+    "mood": "focused, hopeful, modern arranger demo",
+    "style_intent": "neutral arranger sketch metadata only",
+    "arrangement_notes": "Improved owner-neutral-002 metadata based on IMPL-027 review plan.",
+    "owner_review_notes": "Review structure and labels only. Do not treat as keyboard-native or production output.",
+    "no_audio_samples": true,
+    "no_proprietary_libraries": true,
+    "no_kontakt_native_instruments_content": true,
+    "no_keyboard_native_output": true
+  },
+  "chord_style_placeholders": {
+    "chord_map": [
+      {
+        "section_id": "section-001",
+        "chords": "Cm - Ab - Bb",
+        "metadata_only": true
+      },
+      {
+        "section_id": "section-002",
+        "chords": "Cm - Bb - Ab - G",
+        "metadata_only": true
+      },
+      {
+        "section_id": "section-003",
+        "chords": "Ab - Bb - Cm",
+        "metadata_only": true
+      }
+    ],
+    "style_family_hint": "generic neutral pop / oriental arranger intent",
+    "groove_intent": "medium tempo, metadata-only groove description",
+    "variation_notes": "No copied style data. No keyboard-native pattern data."
+  },
+  "validation_fields": {
+    "validated_extension_is_neutral": true,
+    "validated_no_keyboard_native_payload": true,
+    "validated_no_audio_samples": true,
+    "validated_no_proprietary_libraries": true,
+    "validated_no_public_release_claim": true,
+    "validated_no_payment_claim": true
+  },
+  "manifest_ref": "MANIFEST.json",
+  "checksum_ref": "CHECKSUMS.sha256",
+  "rollback_notes": "This dry-run output is local-only. Remove or ignore this folder if owner review fails. It is not keyboard-native and must not be renamed to a real keyboard extension."
+}
