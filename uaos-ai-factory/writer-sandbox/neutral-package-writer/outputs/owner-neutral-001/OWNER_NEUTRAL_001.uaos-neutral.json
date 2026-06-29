@@ -1,0 +1,65 @@
+{
+  "package_id": "owner-neutral-001",
+  "status": "EXPERIMENTAL_NEUTRAL_PACKAGE",
+  "labels": [
+    "EXPERIMENTAL",
+    "NEUTRAL_UAOS_PACKAGE",
+    "NOT_KEYBOARD_NATIVE",
+    "NOT_PUBLIC_RELEASE",
+    "NOT_PRODUCTION"
+  ],
+  "owner_only": true,
+  "not_public_release": true,
+  "not_production": true,
+  "keyboard_native": false,
+  "real_keyboard_compatibility": "UNVERIFIED",
+  "compatibility_status": "NEUTRAL_NOT_KEYBOARD_NATIVE",
+  "safe_extension": ".uaos-neutral.json",
+  "no_push": true,
+  "no_deploy": true,
+  "no_vercel": true,
+  "no_payment": true,
+  "no_proprietary_samples": true,
+  "no_kontakt_native_instruments_content": true,
+  "tracks": [
+    {
+      "track_id": "track-001",
+      "name": "Owner Melody Placeholder",
+      "role": "melody",
+      "metadata_only": true
+    },
+    {
+      "track_id": "track-002",
+      "name": "Owner Chord Placeholder",
+      "role": "chords",
+      "metadata_only": true
+    }
+  ],
+  "sections": [
+    {
+      "section_id": "section-001",
+      "name": "Intro",
+      "order": 0,
+      "metadata_only": true
+    },
+    {
+      "section_id": "section-002",
+      "name": "Main",
+      "order": 1,
+      "metadata_only": true
+    }
+  ],
+  "metadata": {
+    "musical_metadata_only": true,
+    "tempo": 96,
+    "key": "C minor",
+    "notes": "Dry-run neutral UAOS package metadata for owner review only.",
+    "no_audio_samples": true,
+    "no_proprietary_libraries": true,
+    "no_kontakt_native_instruments_content": true,
+    "no_keyboard_native_output": true
+  },
+  "manifest_ref": "MANIFEST.json",
+  "checksum_ref": "CHECKSUMS.sha256",
+  "rollback_notes": "This dry-run output is local-only. Remove or ignore this folder if owner review fails. It is not a keyboard-native file."
+}
