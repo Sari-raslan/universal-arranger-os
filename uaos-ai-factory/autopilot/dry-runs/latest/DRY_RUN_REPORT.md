@@ -2,7 +2,7 @@
 
 Status: PASS
 
-Selected task: AI-017 next local-only planning task
+Selected task: AI-018 next local-only planning task
 Assigned agent: release_manager
 Safety result: PASS
 Cost result: PASS

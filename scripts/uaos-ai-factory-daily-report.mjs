@@ -156,6 +156,14 @@ ${state.presentationAssetFinalChecklistStatus ? `## Stage 19 Result
 - No deploy performed.
 - External automation remains not ready.
 ` : ""}
+${state.githubTransferWaitGateStatus ? `## Stage 20 Result
+
+- AI-017 GitHub transfer wait gate / publication freeze: ${state.githubTransferWaitGateStatus}
+- Freeze state is publication / hosting / Vercel freeze.
+- Target readiness remains owner manual verification only.
+- No remote change performed.
+- External automation remains not ready.
+` : ""}
 
 ## Ready Tasks
 

@@ -38,7 +38,7 @@ Status: PASS
 
 ## Selected Task
 
-AI-017 next local-only planning task
+AI-018 next local-only planning task
 
 ## Assigned Agent
 

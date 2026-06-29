@@ -66,7 +66,8 @@ try {
 
     if (packet.status !== "DONE_LOCAL_PLAN_ONLY" || target.status !== "DONE_LOCAL_PLAN_ONLY") failures.push("AI-016 presentation asset checklist is not DONE_LOCAL_PLAN_ONLY.");
     if (!ai016 || ai016.status !== "DONE_LOCAL_PLAN_ONLY") failures.push("TASK_QUEUE does not mark AI-016 DONE_LOCAL_PLAN_ONLY.");
-    if (state.phase !== "LOCAL_EXECUTION_STAGE_19" || state.presentationAssetFinalChecklistStatus !== "DONE_LOCAL_PLAN_ONLY") failures.push("AUTOPILOT_STATE does not mark Stage 19 complete.");
+    const phaseNumber = Number(String(state.phase || "").match(/LOCAL_EXECUTION_STAGE_(\d+)/)?.[1] || 0);
+    if (phaseNumber < 19 || state.presentationAssetFinalChecklistStatus !== "DONE_LOCAL_PLAN_ONLY") failures.push("AUTOPILOT_STATE does not mark Stage 19 complete.");
     if (!checklist.includes("LOCAL ONLY") || !checklist.includes("STATIC LOCAL DEMO")) failures.push("Checklist does not include required local/static labels.");
     if (!matrix.includes("LOCAL ONLY") || !matrix.includes("STATIC LOCAL DEMO")) failures.push("Send-readiness matrix does not include required local/static labels.");
     if (target.releaseType !== "LOCAL ONLY - NOT PUBLIC RELEASE" || packet.releaseType !== "LOCAL ONLY - NOT PUBLIC RELEASE") failures.push("Release type marker is incorrect.");

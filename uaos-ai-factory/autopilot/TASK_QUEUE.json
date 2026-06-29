@@ -226,6 +226,20 @@
     },
     {
       "id": "AI-017",
+      "title": "GitHub transfer wait gate / publication freeze",
+      "status": "DONE_LOCAL_PLAN_ONLY",
+      "risk": "LOW",
+      "blocked": false,
+      "ownerAgent": "release_manager",
+      "allowedFiles": ["scripts/uaos-ai-factory-github-transfer-wait-gate-plan.mjs", "uaos-ai-factory/autopilot/*.json", "uaos-ai-factory/executions/AI-017-github-transfer-wait-gate/*", "uaos-ai-factory/platform/github-transfer-wait-gate/*", "stage 20 wait gate report"],
+      "forbiddenFiles": [".git/**", "node_modules/**", ".vercel/**", "uaos-live-clean/src/App.jsx"],
+      "expectedOutput": "Local-only GitHub transfer wait gate and publication freeze.",
+      "requiresBuild": false,
+      "requiresExternalAccount": false,
+      "notes": "Planning-only wait gate complete. Publication/hosting/Vercel freeze remains active until owner verifies target readiness."
+    },
+    {
+      "id": "AI-018",
       "title": "next local-only planning task",
       "status": "READY",
       "risk": "LOW",
