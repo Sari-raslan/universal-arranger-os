@@ -1,0 +1,29 @@
+{
+  "package_id": "owner-neutral-template",
+  "status": "EXPERIMENTAL_NEUTRAL_PACKAGE",
+  "labels": [
+    "EXPERIMENTAL",
+    "NEUTRAL_UAOS_PACKAGE",
+    "NOT_KEYBOARD_NATIVE",
+    "NOT_PUBLIC_RELEASE",
+    "NOT_PRODUCTION"
+  ],
+  "owner_only": true,
+  "not_public_release": true,
+  "not_production": true,
+  "keyboard_native": false,
+  "compatibility_status": "NEUTRAL_NOT_KEYBOARD_NATIVE",
+  "real_keyboard_compatibility": "UNVERIFIED",
+  "tracks": [],
+  "sections": [],
+  "metadata": {
+    "musical_metadata_only": true,
+    "no_audio_samples": true,
+    "no_proprietary_libraries": true,
+    "no_kontakt_native_instruments_content": true,
+    "no_keyboard_native_output": true
+  },
+  "manifest_ref": "MANIFEST.json",
+  "checksum_ref": "CHECKSUMS.sha256",
+  "rollback_notes": "Neutral package output must stay in writer-sandbox and may be ignored or removed if validation fails."
+}
