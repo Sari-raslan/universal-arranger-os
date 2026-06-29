@@ -6,10 +6,10 @@ Status: PASS
 
 - Project: UAOS
 - Platform: AE Platform
-- Phase: LOCAL_EXECUTION_STAGE_16
+- Phase: LOCAL_EXECUTION_STAGE_18
 - Mode: local-only
 - GitHub transfer: postponed
-- Last executed task: AI-013-presentation-safety-plan
+- Last executed task: AI-015-demo-url-inventory-plan
 
 ## Stage 4 Result
 
@@ -112,10 +112,26 @@ Status: PASS
 - No deploy performed.
 - External automation remains not ready.
 
+## Stage 17 Result
+
+- AI-014 Private demo gateway config safety seal: DONE_LOCAL_PLAN_ONLY
+- Config changes are local-only and intentional.
+- No Vercel command run.
+- No deploy performed.
+- External automation remains not ready.
+
+## Stage 18 Result
+
+- AI-015 Local demo URL inventory / screenshot map: DONE_LOCAL_PLAN_ONLY
+- Every entry is LOCAL ONLY or STATIC LOCAL DEMO.
+- No public URLs created.
+- No deploy performed.
+- External automation remains not ready.
+
 
 ## Ready Tasks
 
-- AI-014: release gate staging only (LOW)
+- AI-016: next local-only planning task (LOW)
 
 ## Completed / Pending External Tasks
 
@@ -132,6 +148,8 @@ Status: PASS
 - AI-011: local release notes / owner handoff pack (DONE_LOCAL_PLAN_ONLY)
 - AI-012: static demo gateway safety handoff (DONE_LOCAL_PLAN_ONLY)
 - AI-013: Jobcenter / supporter presentation safety plan (DONE_LOCAL_PLAN_ONLY)
+- AI-014: private demo gateway link config safety seal (DONE_LOCAL_PLAN_ONLY)
+- AI-015: local demo URL inventory / screenshot map (DONE_LOCAL_PLAN_ONLY)
 
 ## Blocked Tasks
 
@@ -160,4 +178,4 @@ Status: PASS
 
 ## Next Safe Task
 
-AI-014: release gate staging only
+AI-016: next local-only planning task

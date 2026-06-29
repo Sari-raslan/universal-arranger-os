@@ -67,7 +67,8 @@ try {
 
     if (packet.status !== "DONE_LOCAL_PLAN_ONLY" || target.status !== "DONE_LOCAL_PLAN_ONLY") failures.push("AI-013 presentation safety plan is not DONE_LOCAL_PLAN_ONLY.");
     if (!ai013 || ai013.status !== "DONE_LOCAL_PLAN_ONLY") failures.push("TASK_QUEUE does not mark AI-013 DONE_LOCAL_PLAN_ONLY.");
-    if (state.phase !== "LOCAL_EXECUTION_STAGE_16" || state.presentationSafetyPlanStatus !== "DONE_LOCAL_PLAN_ONLY") failures.push("AUTOPILOT_STATE does not mark Stage 16 complete.");
+    const phaseNumber = Number(String(state.phase || "").match(/LOCAL_EXECUTION_STAGE_(\d+)/)?.[1] || 0);
+    if (phaseNumber < 16 || state.presentationSafetyPlanStatus !== "DONE_LOCAL_PLAN_ONLY") failures.push("AUTOPILOT_STATE does not mark Stage 16 complete.");
     if (!safetyDoc.includes("LOCAL ONLY") || !safetyDoc.includes("NOT PUBLIC RELEASE")) failures.push("Presentation language is not clearly marked local-only and not public release.");
     if (target.releaseType !== "LOCAL ONLY - NOT PUBLIC RELEASE" || packet.releaseType !== "LOCAL ONLY - NOT PUBLIC RELEASE") failures.push("Release type marker is incorrect.");
     if (target.currentOrigin !== expectedOrigin || packet.currentOriginMustRemain !== expectedOrigin) failures.push("Current origin value is not the expected Sari-raslan repository.");

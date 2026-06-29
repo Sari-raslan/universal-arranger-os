@@ -132,6 +132,22 @@ ${state.presentationSafetyPlanStatus ? `## Stage 16 Result
 - No deploy performed.
 - External automation remains not ready.
 ` : ""}
+${state.privateDemoGatewayConfigSafetySealStatus ? `## Stage 17 Result
+
+- AI-014 Private demo gateway config safety seal: ${state.privateDemoGatewayConfigSafetySealStatus}
+- Config changes are local-only and intentional.
+- No Vercel command run.
+- No deploy performed.
+- External automation remains not ready.
+` : ""}
+${state.demoUrlInventoryPlanStatus ? `## Stage 18 Result
+
+- AI-015 Local demo URL inventory / screenshot map: ${state.demoUrlInventoryPlanStatus}
+- Every entry is LOCAL ONLY or STATIC LOCAL DEMO.
+- No public URLs created.
+- No deploy performed.
+- External automation remains not ready.
+` : ""}
 
 ## Ready Tasks
 

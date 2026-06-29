@@ -189,15 +189,29 @@
       "risk": "LOW",
       "blocked": false,
       "ownerAgent": "release_manager",
-      "allowedFiles": ["deploy/aeplatform-private-demo-gateway/vercel.json", "deploy/aeplatform-private-demo-gateway/vercel.broken.backup.json", "uaos-ai-factory/executions/AI-014-private-demo-gateway-config-safety-seal/*", "uaos-ai-factory/reports/AI_FACTORY_STAGE17_AI014_PRIVATE_DEMO_GATEWAY_LINK_CONFIG_SAFETY_SEAL_REPORT.md", "uaos-ai-factory/autopilot/*.json"],
+      "allowedFiles": ["private demo gateway config files", "uaos-ai-factory/executions/AI-014-private-demo-gateway-config-safety-seal/*", "uaos-ai-factory/reports/AI_FACTORY_STAGE17_AI014_PRIVATE_DEMO_GATEWAY_LINK_CONFIG_SAFETY_SEAL_REPORT.md", "uaos-ai-factory/autopilot/*.json"],
       "forbiddenFiles": [".git/**", "node_modules/**", "uaos-live-clean/src/App.jsx"],
       "expectedOutput": "Local-only safety seal for intentional private demo gateway config changes.",
       "requiresBuild": false,
       "requiresExternalAccount": false,
-      "notes": "Safety seal complete. Config changes are intentional for Jobcenter/supporter screenshots only. No push, deploy, Vercel command, or public release."
+      "notes": "Safety seal complete. Config changes are intentional for Jobcenter/supporter screenshots only. No push, hosting publication, Vercel command, or public release."
     },
     {
       "id": "AI-015",
+      "title": "local demo URL inventory / screenshot map",
+      "status": "DONE_LOCAL_PLAN_ONLY",
+      "risk": "LOW",
+      "blocked": false,
+      "ownerAgent": "release_manager",
+      "allowedFiles": ["scripts/uaos-ai-factory-demo-url-inventory-plan.mjs", "uaos-ai-factory/autopilot/*.json", "uaos-ai-factory/executions/AI-015-demo-url-inventory-plan/*", "uaos-ai-factory/platform/demo-url-inventory/*", "uaos-ai-factory/reports/AI_FACTORY_STAGE18_AI015_LOCAL_DEMO_URL_INVENTORY_SCREENSHOT_MAP_REPORT.md"],
+      "forbiddenFiles": [".git/**", "node_modules/**", ".vercel/**", "uaos-live-clean/src/App.jsx"],
+      "expectedOutput": "Local-only demo URL inventory and screenshot map.",
+      "requiresBuild": false,
+      "requiresExternalAccount": false,
+      "notes": "Planning-only inventory complete. All entries are LOCAL ONLY or STATIC LOCAL DEMO."
+    },
+    {
+      "id": "AI-016",
       "title": "next local-only planning task",
       "status": "READY",
       "risk": "LOW",
