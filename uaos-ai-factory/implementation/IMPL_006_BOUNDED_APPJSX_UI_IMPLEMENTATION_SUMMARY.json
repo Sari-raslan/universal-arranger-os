@@ -1,0 +1,49 @@
+{
+  "task": "IMPL-006",
+  "title": "bounded App.jsx UI implementation",
+  "status": "DONE_LOCAL_ONLY",
+  "mode": "LOCAL_ONLY_WITH_BACKUP_AND_BUILD_CHECK",
+  "latestKnownCommitBeforeRun": "eff1834 Plan IMPL-005 app UI implementation proposal locally",
+  "ownerApprovalPhraseReceived": "I approve bounded App.jsx UI implementation for IMPL-006 local-only, with backup, build check, no push, no deploy, no Vercel, no payment, no real keyboard writer/export.",
+  "targetAppJsxPath": "uaos-live-clean/src/App.jsx",
+  "backupPath": "backups/IMPL_006_APPJSX_BACKUP_20260629_160914/App.jsx.bak",
+  "uiChangeSummary": "Added one small Local Project Status panel under the existing hero area using existing UI classes.",
+  "panelShows": [
+    "AE Platform / UAOS local project status",
+    "LOCAL ONLY",
+    "NOT PUBLIC RELEASE",
+    "NO PUSH / NO DEPLOY / NO VERCEL",
+    "GitHub transfer pending",
+    "Jobcenter/supporter demo safe wording",
+    "real keyboard writer/export still blocked",
+    "payment still blocked"
+  ],
+  "checks": {
+    "safetyCheck": "PASS",
+    "factoryCheck": "PASS",
+    "qaCommandDashboard": "PASS",
+    "build": "PASS"
+  },
+  "safetyGates": {
+    "pushExecuted": false,
+    "deployExecuted": false,
+    "vercelExecuted": false,
+    "remoteChanged": false,
+    "publicUrlCreated": false,
+    "paymentFlowCreated": false,
+    "productionReleaseFileIntentionallyCreated": false,
+    "realKeyboardWriterExport": "BLOCKED",
+    "keyboardFormatOutput": "BLOCKED",
+    "kontaktNativeInstrumentsProprietaryContent": "BLOCKED",
+    "samplesLibrariesAudio": "BLOCKED",
+    "externalAutomation": "BLOCKED"
+  },
+  "createdOrModifiedFiles": [
+    "uaos-live-clean/src/App.jsx",
+    "backups/IMPL_006_APPJSX_BACKUP_20260629_160914/App.jsx.bak",
+    "uaos-ai-factory/implementation/reports/IMPL_006_BOUNDED_APPJSX_UI_IMPLEMENTATION_REPORT.md",
+    "uaos-ai-factory/implementation/IMPL_006_BOUNDED_APPJSX_UI_IMPLEMENTATION_SUMMARY.json"
+  ],
+  "readyForNextBoundedUiTask": true,
+  "readyForExternalAutomation": false
+}
