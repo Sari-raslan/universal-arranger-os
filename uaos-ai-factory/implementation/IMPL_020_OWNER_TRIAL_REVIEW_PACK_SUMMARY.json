@@ -1,0 +1,48 @@
+{
+  "id": "IMPL-020",
+  "title": "Owner Trial Review Pack / Keyboard Transfer Risk Checklist",
+  "status": "DONE_LOCAL_ONLY",
+  "date": "2026-06-29",
+  "scope": "docs/review checklist only",
+  "candidateFolder": "uaos-ai-factory/writer-sandbox/candidates/owner-trial-001",
+  "candidateType": "OWNER_TRIAL_001.uaos-trial.json",
+  "realKeyboardCompatibility": "UNVERIFIED",
+  "realKeyboardOutputCreated": false,
+  "realKeyboardTransferPackageCreated": false,
+  "forbiddenKeyboardExtensionsCreated": false,
+  "proprietaryContentIncluded": false,
+  "appJsxModified": false,
+  "frontendSourceModified": false,
+  "publicUrlsCreated": false,
+  "externalAutomationUsed": false,
+  "outputs": [
+    "uaos-ai-factory/implementation/reports/IMPL_020_OWNER_TRIAL_REVIEW_PACK_REPORT.md",
+    "uaos-ai-factory/implementation/IMPL_020_OWNER_TRIAL_REVIEW_PACK_SUMMARY.json",
+    "uaos-ai-factory/writer-sandbox/candidates/owner-trial-001/OWNER_REVIEW_CHECKLIST.md",
+    "uaos-ai-factory/writer-sandbox/candidates/owner-trial-001/KEYBOARD_TRANSFER_RISK_CHECKLIST.md",
+    "uaos-ai-factory/writer-sandbox/candidates/owner-trial-001/NEXT_REAL_FORMAT_APPROVAL_GATE.md"
+  ],
+  "reviewPack": {
+    "filesExistChecklist": true,
+    "safeInspectionSteps": true,
+    "doNotCopyToKeyboardWarning": true,
+    "uaosTrialJsonNotNativeKeyboardFileExplanation": true,
+    "manifestChecksumValidationReviewSteps": true,
+    "experimentalWarning": true,
+    "rollbackNoRiskNotes": true
+  },
+  "riskChecklist": {
+    "compatibilityUnverified": true,
+    "noSetStyCreated": true,
+    "keyboardTransferNotRecommendedYet": true,
+    "ownerRiskWarning": true,
+    "nextRequiredApprovalGate": true,
+    "noProprietarySamples": true,
+    "noPaymentPublicRelease": true,
+    "noPushDeployVercel": true
+  },
+  "nextApprovalPhraseRequiredBeforeImpl021": "I approve planning the first real-format keyboard candidate locally, with no push, no deploy, no Vercel, no payment, no proprietary samples, manifest, checksum, backup, and I understand real keyboard compatibility is unverified and experimental.",
+  "readyForImpl021OnlyAfterExactOwnerApproval": true,
+  "readyForRealKeyboardTransferNow": false,
+  "readyForExternalAutomation": false
+}
