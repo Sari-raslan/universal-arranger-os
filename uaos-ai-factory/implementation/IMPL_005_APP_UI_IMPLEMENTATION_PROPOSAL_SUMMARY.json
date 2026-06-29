@@ -1,0 +1,44 @@
+{
+  "task": "IMPL-005",
+  "title": "app UI implementation proposal only, requires owner approval before App.jsx",
+  "status": "DONE_LOCAL_PROPOSAL_ONLY",
+  "mode": "LOCAL_ONLY",
+  "latestKnownCommitBeforeRun": "0c3ff87 Run IMPL-004 QA command dashboard locally",
+  "currentOrigin": "https://github.com/Sari-raslan/universal-arranger-os.git",
+  "createdFiles": [
+    "uaos-ai-factory/implementation/reports/IMPL_005_APP_UI_IMPLEMENTATION_PROPOSAL_REPORT.md",
+    "uaos-ai-factory/implementation/IMPL_005_APP_UI_IMPLEMENTATION_PROPOSAL_SUMMARY.json",
+    "uaos-ai-factory/implementation/APP_UI_IMPLEMENTATION_PROPOSAL_OWNER_APPROVAL_REQUIRED.md"
+  ],
+  "proposalIncludes": [
+    "exact UI goal",
+    "why App.jsx is currently blocked",
+    "proposed smallest safe UI change later",
+    "files that would need owner approval",
+    "expected backup requirement",
+    "expected build/check commands",
+    "rollback plan",
+    "safety gates",
+    "forbidden claims",
+    "no deploy / no push / no Vercel",
+    "owner approval phrase required before any App.jsx work"
+  ],
+  "ownerApprovalPhraseRequired": "I approve bounded App.jsx UI implementation for IMPL-006 local-only, with backup, build check, no push, no deploy, no Vercel, no payment, no real keyboard writer/export.",
+  "safetyGates": {
+    "appJsxChanged": false,
+    "frontendSourceChanged": false,
+    "appSourceChanged": false,
+    "push": "BLOCKED",
+    "deploy": "BLOCKED",
+    "vercel": "BLOCKED",
+    "payment": "BLOCKED",
+    "productionRelease": "BLOCKED",
+    "realKeyboardWriterExport": "BLOCKED",
+    "keyboardFormatOutput": "BLOCKED",
+    "kontaktNativeInstrumentsProprietaryContent": "BLOCKED",
+    "samplesLibrariesAudio": "BLOCKED",
+    "externalAutomation": "BLOCKED"
+  },
+  "readyForImpl006OnlyAfterOwnerApproval": true,
+  "readyForExternalAutomation": false
+}
