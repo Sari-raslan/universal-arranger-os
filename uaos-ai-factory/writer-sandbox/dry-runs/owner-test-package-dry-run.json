@@ -1,0 +1,56 @@
+{
+  "schema": "uaos-owner-writer-sandbox-dry-run-manifest-v1",
+  "id": "owner-test-package-dry-run",
+  "status": "DRY_RUN_MANIFEST_ONLY",
+  "labels": [
+    "EXPERIMENTAL",
+    "MANIFEST_ONLY",
+    "NOT_A_REAL_KEYBOARD_FILE",
+    "NOT_FOR_PUBLIC_RELEASE",
+    "SANDBOX_ONLY"
+  ],
+  "createdBy": "scripts/uaos-ai-factory-writer-dry-run-builder.mjs",
+  "artifactPolicy": {
+    "manifestOnly": true,
+    "notARealKeyboardFile": true,
+    "notDeviceLoadable": true,
+    "noRealWriterOutput": true,
+    "noRealOrganKeyboardTrialPackage": true,
+    "forbiddenExtensionsProduced": [],
+    "forbiddenExtensionsBlocked": [
+      ".STY",
+      ".SET",
+      ".PRS",
+      ".STL",
+      ".PAT",
+      ".MSP",
+      ".KST"
+    ]
+  },
+  "contentPolicy": {
+    "proprietarySamplesIncluded": false,
+    "kontaktContentIncluded": false,
+    "nativeInstrumentsContentIncluded": false,
+    "sampleLibrariesIncluded": false
+  },
+  "futureChecksumPlaceholder": {
+    "requiredBeforeGeneratedArtifacts": true,
+    "algorithm": "sha256",
+    "items": []
+  },
+  "futureOwnerApproval": {
+    "requiredBeforeAnyTrialCandidate": true,
+    "approvalPhrase": "I approve creating the first owner keyboard trial candidate locally, sandbox-only, with manifest, checksum, backup, no push, no deploy, no Vercel, no payment, no proprietary samples, and I understand it is experimental."
+  },
+  "safetyGates": {
+    "localOnly": true,
+    "noPush": true,
+    "noDeploy": true,
+    "noVercel": true,
+    "noPayment": true,
+    "noPublicRelease": true,
+    "noRealKeyboardOutput": true,
+    "noProprietaryContent": true,
+    "externalAutomationBlocked": true
+  }
+}
