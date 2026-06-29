@@ -1,0 +1,143 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "uaos-neutral-package-schema-draft-v1",
+  "title": "UAOS Neutral Package Draft",
+  "description": "Design-only schema draft for a local-only neutral UAOS metadata package. Not a keyboard-native file.",
+  "type": "object",
+  "required": [
+    "package_id",
+    "status",
+    "owner_only",
+    "not_public_release",
+    "not_production",
+    "compatibility_status",
+    "tracks",
+    "sections",
+    "metadata",
+    "manifest_ref",
+    "checksum_ref",
+    "rollback_notes"
+  ],
+  "properties": {
+    "package_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "status": {
+      "const": "EXPERIMENTAL_NEUTRAL_PACKAGE"
+    },
+    "owner_only": {
+      "const": true
+    },
+    "not_public_release": {
+      "const": true
+    },
+    "not_production": {
+      "const": true
+    },
+    "compatibility_status": {
+      "const": "NEUTRAL_NOT_KEYBOARD_NATIVE"
+    },
+    "tracks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "track_id",
+          "name",
+          "role",
+          "metadata_only"
+        ],
+        "properties": {
+          "track_id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "role": {
+            "type": "string"
+          },
+          "metadata_only": {
+            "const": true
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "sections": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "section_id",
+          "name",
+          "order",
+          "metadata_only"
+        ],
+        "properties": {
+          "section_id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "order": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "metadata_only": {
+            "const": true
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "metadata": {
+      "type": "object",
+      "required": [
+        "no_audio_samples",
+        "no_proprietary_libraries",
+        "no_kontakt_native_instruments_content",
+        "no_keyboard_native_output"
+      ],
+      "properties": {
+        "tempo": {
+          "type": "number"
+        },
+        "key": {
+          "type": "string"
+        },
+        "notes": {
+          "type": "string"
+        },
+        "no_audio_samples": {
+          "const": true
+        },
+        "no_proprietary_libraries": {
+          "const": true
+        },
+        "no_kontakt_native_instruments_content": {
+          "const": true
+        },
+        "no_keyboard_native_output": {
+          "const": true
+        }
+      },
+      "additionalProperties": true
+    },
+    "manifest_ref": {
+      "type": "string",
+      "minLength": 1
+    },
+    "checksum_ref": {
+      "type": "string",
+      "minLength": 1
+    },
+    "rollback_notes": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,48 @@
+{
+  "id": "IMPL-023",
+  "title": "Minimal Neutral Package Writer Design",
+  "status": "DONE_LOCAL_ONLY",
+  "date": "2026-06-29",
+  "scope": "design only / no real keyboard output",
+  "selectedTarget": "Generic neutral UAOS package",
+  "proposedNeutralExtension": ".uaos-neutral.json",
+  "realKeyboardOutputCreated": false,
+  "forbiddenKeyboardExtensionsCreated": false,
+  "realWriterOutputCreated": false,
+  "keyboardTransferPackageCreated": false,
+  "appJsxModified": false,
+  "frontendSourceModified": false,
+  "publicUrlsCreated": false,
+  "externalAutomationUsed": false,
+  "requiredFields": [
+    "package_id",
+    "status",
+    "owner_only",
+    "not_public_release",
+    "not_production",
+    "compatibility_status",
+    "tracks",
+    "sections",
+    "metadata",
+    "manifest_ref",
+    "checksum_ref",
+    "rollback_notes"
+  ],
+  "safetyClassification": {
+    ".uaos-neutral.json": "LOW",
+    ".uaos-trial.json": "LOW",
+    "fake-safe simulation extension": "MEDIUM",
+    ".STY/.SET": "HIGH / blocked until explicit approval",
+    "proprietary samples": "BLOCKED"
+  },
+  "contentPolicy": {
+    "allowedMusicalMetadataOnly": true,
+    "noAudioSamples": true,
+    "noProprietaryLibraryContent": true,
+    "noKontaktNativeInstrumentsContent": true,
+    "noSetStyOutput": true
+  },
+  "readyForImpl024NeutralWriterScaffold": true,
+  "readyForRealKeyboardOutputNow": false,
+  "readyForExternalAutomation": false
+}
