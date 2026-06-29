@@ -1,0 +1,45 @@
+{
+  "task": "IMPL-010",
+  "title": "Jobcenter / supporter final send checklist",
+  "status": "DONE_LOCAL_ONLY",
+  "mode": "DOCS_ONLY_NO_SENDING",
+  "latestKnownCommitBeforeRun": "1d20ab0 Run IMPL-009 screenshot visual proof pack locally",
+  "currentOrigin": "https://github.com/Sari-raslan/universal-arranger-os.git",
+  "createdFiles": [
+    "uaos-ai-factory/implementation/reports/IMPL_010_FINAL_SEND_CHECKLIST_REPORT.md",
+    "uaos-ai-factory/implementation/IMPL_010_FINAL_SEND_CHECKLIST_SUMMARY.json",
+    "uaos-ai-factory/implementation/JOBCENTER_SUPPORTER_FINAL_SEND_CHECKLIST.md"
+  ],
+  "checklistIncludes": [
+    "Jobcenter attachment checklist",
+    "supporter/friend attachment checklist",
+    "screenshot checklist",
+    "demo link/static gateway checklist",
+    "short safe wording for Jobcenter",
+    "short safe wording for supporter/friend",
+    "what not to claim",
+    "what not to send",
+    "local-only / not-public-release label",
+    "final owner review steps before sending",
+    "next safe action after sending"
+  ],
+  "safetyGates": {
+    "emailSent": false,
+    "publicUrlCreated": false,
+    "appJsxChanged": false,
+    "frontendSourceChanged": false,
+    "appSourceChanged": false,
+    "push": "BLOCKED",
+    "deploy": "BLOCKED",
+    "vercel": "BLOCKED",
+    "payment": "BLOCKED",
+    "productionRelease": "BLOCKED",
+    "realKeyboardWriterExport": "BLOCKED",
+    "keyboardFormatOutput": "BLOCKED",
+    "kontaktNativeInstrumentsProprietaryContent": "BLOCKED",
+    "samplesLibrariesAudio": "BLOCKED",
+    "externalAutomation": "BLOCKED"
+  },
+  "readyForImpl011": true,
+  "readyForExternalAutomation": false
+}
