@@ -1,0 +1,30 @@
+{
+  "schema": "uaos-real-format-candidate-gate-manifest-v1",
+  "candidate_id": "owner-real-001",
+  "source_neutral_package": "owner-neutral-002",
+  "source_neutral_package_path": "uaos-ai-factory/writer-sandbox/neutral-package-writer/outputs/owner-neutral-002/OWNER_NEUTRAL_002.uaos-neutral.json",
+  "status": "BLOCKED_SAFE_NO_FAKE_OUTPUT",
+  "owner_only": true,
+  "not_public_release": true,
+  "not_production": true,
+  "compatibility_status": "UNVERIFIED",
+  "keyboard_may_reject": true,
+  "no_push": true,
+  "no_deploy": true,
+  "no_vercel": true,
+  "no_payment": true,
+  "no_proprietary_samples": true,
+  "no_kontakt_native_instruments_content": true,
+  "real_extension_output_created": false,
+  "fake_real_format_output_created": false,
+  "file_list": [
+    "OWNER_REAL_FORMAT_CANDIDATE_BLOCKED.md",
+    "MANIFEST.json",
+    "CHECKSUMS.sha256",
+    "VALIDATION.json",
+    "README_OWNER_REAL_001.md"
+  ],
+  "checksum_reference": "CHECKSUMS.sha256",
+  "rollback_notes": "This gate created no real keyboard-native output. Remove or ignore this folder if owner review fails.",
+  "owner_risk_warning": "Compatibility is unverified. A real keyboard may reject any future real-format file."
+}
