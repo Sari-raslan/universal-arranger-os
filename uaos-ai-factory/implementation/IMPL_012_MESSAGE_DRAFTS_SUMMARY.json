@@ -1,0 +1,47 @@
+{
+  "id": "IMPL-012",
+  "title": "Draft Jobcenter / Supporter Message Text",
+  "status": "DONE_LOCAL_ONLY",
+  "date": "2026-06-29",
+  "scope": "docs/message drafts only",
+  "sendingPerformed": false,
+  "appSourceModified": false,
+  "appJsxModified": false,
+  "publicUrlsCreated": false,
+  "externalAutomationUsed": false,
+  "outputs": [
+    "uaos-ai-factory/implementation/reports/IMPL_012_MESSAGE_DRAFTS_REPORT.md",
+    "uaos-ai-factory/implementation/IMPL_012_MESSAGE_DRAFTS_SUMMARY.json",
+    "uaos-ai-factory/implementation/JOBCENTER_MESSAGE_DRAFT_DE.md",
+    "uaos-ai-factory/implementation/SUPPORTER_MESSAGE_DRAFT_DE.md",
+    "uaos-ai-factory/implementation/MESSAGE_DRAFTS_ARABIC_HELPER.md"
+  ],
+  "draftsInclude": {
+    "shortSubjectSuggestions": true,
+    "politeGermanJobcenterMessage": true,
+    "privateSupporterFriendMessage": true,
+    "attachmentListPlaceholder": true,
+    "demoScreenshotMention": true,
+    "localOnlyPrototypeSafeWording": true,
+    "noPublicReleaseClaim": true,
+    "noPaymentOrLiveCustomerClaim": true,
+    "noRealKeyboardWriterExportClaim": true,
+    "noProprietarySampleLibraryClaim": true,
+    "modestTruthfulSupportRequest": true,
+    "ownerReviewRequiredBeforeSending": true
+  },
+  "safetyGates": {
+    "localOnly": true,
+    "noPush": true,
+    "noDeploy": true,
+    "noVercel": true,
+    "noEmailSent": true,
+    "noPaymentFlow": true,
+    "noProductionRelease": true,
+    "noRealKeyboardWriterExport": true,
+    "noProprietaryContentCopied": true,
+    "externalAutomationBlocked": true
+  },
+  "readyForOwnerManualReview": true,
+  "readyForExternalAutomation": false
+}
