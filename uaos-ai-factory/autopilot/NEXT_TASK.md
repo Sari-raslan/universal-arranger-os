@@ -1,18 +1,18 @@
 # Next Task
 
-ID: AI-018
-Title: next local-only planning task
-Owner agent: release_manager
+ID: AI-019
+Title: bounded local agent A project docs consolidation
+Owner agent: product_manager
 Risk: LOW
 Requires build: NO
 Requires external account: NO
 
 ## Expected Output
 
-Local-only planning note after owner review.
+One small local docs consolidation report using the first bounded agent packet.
 
 ## Notes
 
-Placeholder only. No deploy, push, Vercel command, payment, production release, or writer/export.
+Local docs/report task only. Stop after the written report and checks.
 
 This selector only writes the next-task note. It does not execute the task, call AI tools, push, or deploy.

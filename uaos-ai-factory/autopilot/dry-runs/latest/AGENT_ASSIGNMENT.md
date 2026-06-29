@@ -1,14 +1,16 @@
 # Agent Assignment
 
-Selected task: AI-018 next local-only planning task
-Assigned agent: release_manager
+Selected task: AI-019 bounded local agent A project docs consolidation
+Assigned agent: product_manager
 
 ## Why This Agent
 
-Report staging readiness without releasing.
+Turn roadmap items into scoped issues.
 
 ## Allowed Files
 
+- docs/**/*.md
+- reports/**/*.md
 - uaos-ai-factory/**/*.md
 - uaos-ai-factory/**/*.json
 
@@ -17,11 +19,15 @@ Report staging readiness without releasing.
 - .git/**
 - node_modules/**
 - .vercel/**
+- samples/**
+- audio/**
+- backend/**
+- uaos-live-clean/src/**
 - uaos-live-clean/src/App.jsx
 
 ## Expected Output
 
-Local-only planning note after owner review.
+One small local docs consolidation report using the first bounded agent packet.
 
 ## Stop Conditions
 

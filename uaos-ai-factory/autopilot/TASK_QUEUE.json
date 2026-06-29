@@ -240,17 +240,31 @@
     },
     {
       "id": "AI-018",
-      "title": "next local-only planning task",
-      "status": "READY",
+      "title": "final local factory freeze and bounded local agent queue",
+      "status": "FINAL_LOCAL_FACTORY_FREEZE",
       "risk": "LOW",
       "blocked": false,
       "ownerAgent": "release_manager",
-      "allowedFiles": ["uaos-ai-factory/**/*.md", "uaos-ai-factory/**/*.json"],
+      "allowedFiles": ["scripts/uaos-ai-factory-final-freeze-agent-queue.mjs", "uaos-ai-factory/autopilot/*.json", "uaos-ai-factory/FINAL_LOCAL_FACTORY_FREEZE.json", "uaos-ai-factory/agents/*", "stage 21 final freeze report"],
       "forbiddenFiles": [".git/**", "node_modules/**", ".vercel/**", "uaos-live-clean/src/App.jsx"],
-      "expectedOutput": "Local-only planning note after owner review.",
+      "expectedOutput": "Local-only final factory freeze, bounded local agent queue, first packet, and report.",
       "requiresBuild": false,
       "requiresExternalAccount": false,
-      "notes": "Placeholder only. No deploy, push, Vercel command, payment, production release, or writer/export."
+      "notes": "Final local freeze complete. Publication, hosting, paid-flow, release, and export gates remain blocked."
+    },
+    {
+      "id": "AI-019",
+      "title": "bounded local agent A project docs consolidation",
+      "status": "READY",
+      "risk": "LOW",
+      "blocked": false,
+      "ownerAgent": "product_manager",
+      "allowedFiles": ["docs/**/*.md", "reports/**/*.md", "uaos-ai-factory/**/*.md", "uaos-ai-factory/**/*.json"],
+      "forbiddenFiles": [".git/**", "node_modules/**", ".vercel/**", "samples/**", "audio/**", "backend/**", "uaos-live-clean/src/**", "uaos-live-clean/src/App.jsx"],
+      "expectedOutput": "One small local docs consolidation report using the first bounded agent packet.",
+      "requiresBuild": false,
+      "requiresExternalAccount": false,
+      "notes": "Local docs/report task only. Stop after the written report and checks."
     }
   ]
 }

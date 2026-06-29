@@ -38,11 +38,11 @@ Status: PASS
 
 ## Selected Task
 
-AI-018 next local-only planning task
+AI-019 bounded local agent A project docs consolidation
 
 ## Assigned Agent
 
-release_manager
+product_manager
 
 ## Safety Result
 

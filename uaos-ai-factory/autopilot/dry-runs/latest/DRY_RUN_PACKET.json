@@ -1,11 +1,13 @@
 {
-  "dryRunId": "dry-run-2026-06-29T07-55-11-772Z",
-  "timestamp": "2026-06-29T07:55:11.772Z",
-  "selectedTaskId": "AI-018",
-  "selectedTaskTitle": "next local-only planning task",
-  "ownerAgent": "release_manager",
+  "dryRunId": "dry-run-2026-06-29T08-10-17-135Z",
+  "timestamp": "2026-06-29T08:10:17.136Z",
+  "selectedTaskId": "AI-019",
+  "selectedTaskTitle": "bounded local agent A project docs consolidation",
+  "ownerAgent": "product_manager",
   "risk": "LOW",
   "allowedFiles": [
+    "docs/**/*.md",
+    "reports/**/*.md",
     "uaos-ai-factory/**/*.md",
     "uaos-ai-factory/**/*.json"
   ],
@@ -13,9 +15,13 @@
     ".git/**",
     "node_modules/**",
     ".vercel/**",
+    "samples/**",
+    "audio/**",
+    "backend/**",
+    "uaos-live-clean/src/**",
     "uaos-live-clean/src/App.jsx"
   ],
-  "expectedOutput": "Local-only planning note after owner review.",
+  "expectedOutput": "One small local docs consolidation report using the first bounded agent packet.",
   "requiresBuild": false,
   "requiresExternalAccount": false,
   "safetyGates": [

@@ -60,7 +60,8 @@ try {
 
     if (packet.status !== "DONE_LOCAL_PLAN_ONLY" || target.status !== "DONE_LOCAL_PLAN_ONLY") failures.push("AI-017 wait gate is not DONE_LOCAL_PLAN_ONLY.");
     if (!ai017 || ai017.status !== "DONE_LOCAL_PLAN_ONLY") failures.push("TASK_QUEUE does not mark AI-017 DONE_LOCAL_PLAN_ONLY.");
-    if (state.phase !== "LOCAL_EXECUTION_STAGE_20" || state.githubTransferWaitGateStatus !== "DONE_LOCAL_PLAN_ONLY") failures.push("AUTOPILOT_STATE does not mark Stage 20 complete.");
+    const stageNumber = Number(String(state.phase || "").replace("LOCAL_EXECUTION_STAGE_", ""));
+    if (stageNumber < 20 || state.githubTransferWaitGateStatus !== "DONE_LOCAL_PLAN_ONLY") failures.push("AUTOPILOT_STATE does not mark Stage 20 complete.");
     if (!policy.includes("NO PUSH") || !policy.includes("NO DEPLOY") || !policy.includes("NO VERCEL")) failures.push("Freeze policy does not include NO PUSH / NO DEPLOY / NO VERCEL.");
     if (!manualChecklist.includes(targetCommand) || target.targetReadinessCommand !== targetCommand) failures.push("Target readiness command is not documented.");
     if (target.targetReadinessCommandExecuted !== false || packet.targetReadinessCommandExecuted !== false) failures.push("Target readiness command must not be executed by this plan.");

@@ -1,0 +1,91 @@
+{
+  "status": "READY_LOCAL_ONLY",
+  "mode": "LOCAL_ONLY",
+  "externalAutomation": "BLOCKED",
+  "rules": {
+    "noTwentyFourHourAgents": true,
+    "noOpenEndedAgents": true,
+    "oneSmallTaskAtATime": true,
+    "stopAfterReport": true,
+    "ownerApprovalRequiredForRiskyTasks": true,
+    "proprietaryAssetsAllowed": false,
+    "realKeyboardWriterExportAllowed": false,
+    "appJsxAllowed": false,
+    "pushAllowed": false,
+    "deployAllowed": false,
+    "vercelAllowed": false,
+    "paymentAllowed": false
+  },
+  "tasks": [
+    {
+      "id": "Agent-A",
+      "title": "project docs consolidation",
+      "maxScope": "One compact pass over existing AI Factory docs, reports, packets, and local handoff notes.",
+      "allowedFilesFolders": ["docs/**/*.md", "reports/**/*.md", "uaos-ai-factory/**/*.md", "uaos-ai-factory/**/*.json"],
+      "forbiddenFilesFolders": ["uaos-live-clean/src/App.jsx", "uaos-live-clean/src/**", "backend/**", ".git/**", "node_modules/**", ".vercel/**", "samples/**", "audio/**", "deploy/**"],
+      "stopCondition": "Stop after one local report and requested checks.",
+      "reportPath": "uaos-ai-factory/agents/reports/AGENT_A_PROJECT_DOCS_CONSOLIDATION_REPORT.md",
+      "localCommitAllowed": true,
+      "appJsxAllowed": false,
+      "pushAllowed": false,
+      "deployAllowed": false,
+      "vercelAllowed": false
+    },
+    {
+      "id": "Agent-B",
+      "title": "UI copy and spec cleanup without App.jsx",
+      "maxScope": "Review local copy/spec planning files only and prepare wording recommendations.",
+      "allowedFilesFolders": ["docs/**/*.md", "uaos-ai-factory/**/*.md", "reports/**/*.md"],
+      "forbiddenFilesFolders": ["uaos-live-clean/src/App.jsx", "uaos-live-clean/src/**", "backend/**", ".git/**", "node_modules/**", ".vercel/**"],
+      "stopCondition": "Stop after a local copy/spec report.",
+      "reportPath": "uaos-ai-factory/agents/reports/AGENT_B_UI_COPY_SPEC_CLEANUP_REPORT.md",
+      "localCommitAllowed": true,
+      "appJsxAllowed": false,
+      "pushAllowed": false,
+      "deployAllowed": false,
+      "vercelAllowed": false
+    },
+    {
+      "id": "Agent-C",
+      "title": "demo checklist and report cleanup",
+      "maxScope": "Tidy local demo checklist/report planning notes without changing demo code or hosting config.",
+      "allowedFilesFolders": ["uaos-ai-factory/**/*.md", "uaos-ai-factory/**/*.json", "reports/**/*.md"],
+      "forbiddenFilesFolders": ["deploy/**", "uaos-live-clean/src/App.jsx", "uaos-live-clean/src/**", "backend/**", ".git/**", "node_modules/**", ".vercel/**"],
+      "stopCondition": "Stop after a local cleanup report.",
+      "reportPath": "uaos-ai-factory/agents/reports/AGENT_C_DEMO_CHECKLIST_REPORT_CLEANUP_REPORT.md",
+      "localCommitAllowed": true,
+      "appJsxAllowed": false,
+      "pushAllowed": false,
+      "deployAllowed": false,
+      "vercelAllowed": false
+    },
+    {
+      "id": "Agent-D",
+      "title": "premium library metadata planning only",
+      "maxScope": "Plan metadata/provenance fields and review wording; do not touch audio, samples, or proprietary material.",
+      "allowedFilesFolders": ["docs/**/*.md", "uaos-ai-factory/**/*.md", "uaos-ai-factory/**/*.json"],
+      "forbiddenFilesFolders": ["samples/**", "audio/**", "Kontakt/**", "Native Instruments/**", "uaos-live-clean/src/App.jsx", ".git/**", "node_modules/**"],
+      "stopCondition": "Stop after a metadata planning report.",
+      "reportPath": "uaos-ai-factory/agents/reports/AGENT_D_PREMIUM_LIBRARY_METADATA_PLANNING_REPORT.md",
+      "localCommitAllowed": true,
+      "appJsxAllowed": false,
+      "pushAllowed": false,
+      "deployAllowed": false,
+      "vercelAllowed": false
+    },
+    {
+      "id": "Agent-E",
+      "title": "QA and check script improvement only",
+      "maxScope": "One bounded improvement to local planning/check scripts with no app feature changes.",
+      "allowedFilesFolders": ["scripts/uaos-ai-factory-*.mjs", "uaos-ai-factory/**/*.md", "uaos-ai-factory/**/*.json"],
+      "forbiddenFilesFolders": ["uaos-live-clean/src/App.jsx", "uaos-live-clean/src/**", "backend/**", ".git/**", "node_modules/**", ".vercel/**"],
+      "stopCondition": "Stop after checks and a local QA script report.",
+      "reportPath": "uaos-ai-factory/agents/reports/AGENT_E_QA_CHECK_SCRIPT_IMPROVEMENT_REPORT.md",
+      "localCommitAllowed": true,
+      "appJsxAllowed": false,
+      "pushAllowed": false,
+      "deployAllowed": false,
+      "vercelAllowed": false
+    }
+  ]
+}

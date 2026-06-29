@@ -10,11 +10,15 @@ This is a dry run. No implementation was performed.
 
 ## Files It May Inspect
 
+- docs/**/*.md
+- reports/**/*.md
 - uaos-ai-factory/**/*.md
 - uaos-ai-factory/**/*.json
 
 ## Files It May Edit
 
+- docs/**/*.md
+- reports/**/*.md
 - uaos-ai-factory/**/*.md
 - uaos-ai-factory/**/*.json
 

@@ -164,6 +164,14 @@ ${state.githubTransferWaitGateStatus ? `## Stage 20 Result
 - No remote change performed.
 - External automation remains not ready.
 ` : ""}
+${state.finalLocalFactoryFreezeStatus ? `## Stage 21 Result
+
+- AI-018 Final local factory freeze: ${state.finalLocalFactoryFreezeStatus}
+- Bounded local agent queue: ${state.boundedLocalAgentQueueStatus}
+- First bounded agent packet: ${state.firstBoundedAgentPacketStatus}
+- Publication, hosting, Vercel, paid-flow, release, and export gates remain blocked.
+- External automation remains not ready.
+` : ""}
 
 ## Ready Tasks
 
