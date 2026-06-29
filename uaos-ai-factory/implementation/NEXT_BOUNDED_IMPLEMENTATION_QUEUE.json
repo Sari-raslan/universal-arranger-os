@@ -1,0 +1,90 @@
+{
+  "status": "READY_LOCAL_ONLY",
+  "mode": "LOCAL_ONLY",
+  "aiFactoryStatus": "FINAL_LOCAL_FACTORY_FREEZE",
+  "agentsCompletionSeal": "BOUNDED_LOCAL_AGENTS_COMPLETE",
+  "latestVerifiedCommitBeforeQueue": "ddfd24b Seal bounded local agents completion",
+  "currentOrigin": "https://github.com/Sari-raslan/universal-arranger-os.git",
+  "externalAutomation": "BLOCKED",
+  "safetyGates": {
+    "push": "BLOCKED",
+    "deploy": "BLOCKED",
+    "vercel": "BLOCKED",
+    "payment": "BLOCKED",
+    "productionRelease": "BLOCKED",
+    "realKeyboardWriterExport": "BLOCKED",
+    "keyboardFormatOutput": "BLOCKED",
+    "proprietarySamplesLibrariesAudio": "BLOCKED",
+    "kontaktNativeInstrumentsContent": "BLOCKED",
+    "appJsx": "BLOCKED",
+    "frontendSource": "BLOCKED",
+    "appSource": "BLOCKED",
+    "externalAutomation": "BLOCKED"
+  },
+  "tasks": [
+    {
+      "id": "IMPL-001",
+      "title": "owner dashboard/readme polish, docs only",
+      "status": "READY",
+      "riskLevel": "LOW",
+      "allowedPaths": ["uaos-ai-factory/**/*.md", "uaos-ai-factory/**/*.json", "docs/**/*.md", "reports/**/*.md"],
+      "forbiddenPaths": ["uaos-live-clean/src/App.jsx", "uaos-live-clean/src/**", "backend/**", "deploy/**", ".git/**", "node_modules/**", "samples/**", "audio/**"],
+      "stopCondition": "Stop after one local report and requested checks.",
+      "expectedReportPath": "uaos-ai-factory/implementation/reports/IMPL-001_OWNER_DASHBOARD_README_POLISH_REPORT.md",
+      "commitAllowed": true,
+      "ownerApprovalRequired": false
+    },
+    {
+      "id": "IMPL-002",
+      "title": "demo gateway link validation, local/static only, no deploy",
+      "status": "PLANNED",
+      "riskLevel": "LOW",
+      "allowedPaths": ["uaos-ai-factory/**/*.md", "uaos-ai-factory/**/*.json", "docs/**/*.md", "reports/**/*.md"],
+      "forbiddenPaths": ["deploy/**", "uaos-live-clean/src/App.jsx", "uaos-live-clean/src/**", "backend/**", ".vercel/**", ".git/**", "node_modules/**"],
+      "stopCondition": "Stop after a local validation report; do not edit hosting config or run deployment tooling.",
+      "expectedReportPath": "uaos-ai-factory/implementation/reports/IMPL-002_DEMO_GATEWAY_LINK_VALIDATION_REPORT.md",
+      "commitAllowed": true,
+      "ownerApprovalRequired": false,
+      "ownerApprovalRequiredBeforeConfigChange": true
+    },
+    {
+      "id": "IMPL-003",
+      "title": "presentation send pack assembly, PDF/PPT references only, no sending",
+      "status": "PLANNED",
+      "riskLevel": "LOW",
+      "allowedPaths": ["uaos-ai-factory/**/*.md", "uaos-ai-factory/**/*.json", "docs/**/*.md", "reports/**/*.md"],
+      "forbiddenPaths": ["uaos-live-clean/src/App.jsx", "uaos-live-clean/src/**", "backend/**", "deploy/**", ".git/**", "node_modules/**", "samples/**", "audio/**"],
+      "stopCondition": "Stop after local send-pack index and report; do not send anything externally.",
+      "expectedReportPath": "uaos-ai-factory/implementation/reports/IMPL-003_PRESENTATION_SEND_PACK_ASSEMBLY_REPORT.md",
+      "commitAllowed": true,
+      "ownerApprovalRequired": false,
+      "ownerApprovalRequiredBeforeSending": true
+    },
+    {
+      "id": "IMPL-004",
+      "title": "QA command dashboard improvement, scripts only, no deploy",
+      "status": "PLANNED",
+      "riskLevel": "MEDIUM",
+      "allowedPaths": ["scripts/uaos-ai-factory-*.mjs", "package.json", "uaos-ai-factory/**/*.md", "uaos-ai-factory/**/*.json"],
+      "forbiddenPaths": ["uaos-live-clean/src/App.jsx", "uaos-live-clean/src/**", "backend/**", "deploy/**", ".vercel/**", ".git/**", "node_modules/**", "samples/**", "audio/**"],
+      "stopCondition": "Stop after one script/docs improvement and local report; no deploy, Vercel, payment, writer/export, or external automation behavior.",
+      "expectedReportPath": "uaos-ai-factory/implementation/reports/IMPL-004_QA_COMMAND_DASHBOARD_IMPROVEMENT_REPORT.md",
+      "commitAllowed": true,
+      "ownerApprovalRequired": true
+    },
+    {
+      "id": "IMPL-005",
+      "title": "app UI implementation proposal only, requires owner approval before App.jsx",
+      "status": "BLOCKED_PENDING_OWNER_APPROVAL",
+      "riskLevel": "MEDIUM",
+      "allowedPaths": ["uaos-ai-factory/**/*.md", "uaos-ai-factory/**/*.json", "docs/**/*.md", "reports/**/*.md"],
+      "forbiddenPaths": ["uaos-live-clean/src/App.jsx", "uaos-live-clean/src/**", "backend/**", "deploy/**", ".git/**", "node_modules/**"],
+      "stopCondition": "Stop after proposal and report; owner approval is required before any App.jsx or frontend source work.",
+      "expectedReportPath": "uaos-ai-factory/implementation/reports/IMPL-005_APP_UI_IMPLEMENTATION_PROPOSAL_REPORT.md",
+      "commitAllowed": true,
+      "ownerApprovalRequired": true
+    }
+  ],
+  "nextReadyTask": "IMPL-001",
+  "readyForExternalAutomation": false
+}
