@@ -1,0 +1,46 @@
+{
+  "id": "IMPL-014",
+  "title": "Owner Writer Sandbox Safety Plan",
+  "status": "DONE_LOCAL_ONLY",
+  "date": "2026-06-29",
+  "scope": "planning/safety only",
+  "realWriterImplemented": false,
+  "realKeyboardOutputCreated": false,
+  "realOrganKeyboardTrialPackageCreated": false,
+  "appJsxModified": false,
+  "frontendSourceModified": false,
+  "publicUrlsCreated": false,
+  "externalAutomationUsed": false,
+  "outputs": [
+    "uaos-ai-factory/implementation/reports/IMPL_014_OWNER_WRITER_SANDBOX_SAFETY_PLAN_REPORT.md",
+    "uaos-ai-factory/implementation/IMPL_014_OWNER_WRITER_SANDBOX_SAFETY_PLAN_SUMMARY.json",
+    "uaos-ai-factory/implementation/OWNER_WRITER_SANDBOX_SAFETY_PLAN.md",
+    "uaos-ai-factory/implementation/OWNER_WRITER_SANDBOX_APPROVAL_GATES.md"
+  ],
+  "requiredApprovalPhraseBeforeRealTestCandidate": "I approve creating the first owner keyboard trial candidate locally, sandbox-only, with manifest, checksum, backup, no push, no deploy, no Vercel, no payment, no proprietary samples, and I understand it is experimental.",
+  "stagedPath": [
+    "IMPL-014 safety plan",
+    "IMPL-015 writer sandbox scaffold",
+    "IMPL-016 dry-run package builder",
+    "IMPL-017 manifest validator",
+    "IMPL-018 owner approval gate for first test candidate"
+  ],
+  "safetyGates": {
+    "localOnly": true,
+    "noPush": true,
+    "noDeploy": true,
+    "noVercel": true,
+    "noPayment": true,
+    "noProductionRelease": true,
+    "noRealKeyboardOutput": true,
+    "noRealKeyboardExtensions": true,
+    "noProprietarySamples": true,
+    "noKontaktNativeInstrumentsCopying": true,
+    "manifestRequired": true,
+    "checksumHashRequired": true,
+    "backupRequired": true
+  },
+  "readyForImpl015WriterSandboxScaffold": true,
+  "readyForRealKeyboardTrialCandidate": false,
+  "readyForExternalAutomation": false
+}
