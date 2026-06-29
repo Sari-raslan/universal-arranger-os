@@ -1,0 +1,16 @@
+﻿{
+  "cleanUrls": true,
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Robots-Tag", "value": "noindex, nofollow, noarchive" },
+        { "key": "Cache-Control", "value": "no-store, no-cache, must-revalidate, max-age=0" }
+      ]
+    }
+  ],
+  "rewrites": [
+    { "source": "/jc-aeplatform-2026-private-jc-7k4p9x", "destination": "/jc-aeplatform-2026-private-jc-7k4p9x/index.html" },
+    { "source": "/sp-aeplatform-2026-private-sp-3m8q2v", "destination": "/sp-aeplatform-2026-private-sp-3m8q2v/index.html" }
+  ]
+}
