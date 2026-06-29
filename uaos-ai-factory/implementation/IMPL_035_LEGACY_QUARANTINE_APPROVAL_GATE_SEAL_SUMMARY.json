@@ -1,0 +1,33 @@
+{
+  "id": "IMPL-035",
+  "title": "Legacy Quarantine Approval Gate Seal",
+  "status": "DONE_LOCAL_ONLY",
+  "date": "2026-06-29",
+  "scope": "docs/seal only / no move / no delete / no content copy",
+  "priorStages": {
+    "IMPL-032": "inventory complete",
+    "IMPL-033": "quarantine plan complete",
+    "IMPL-034": "metadata-only dry-run manifest complete"
+  },
+  "legacyFileCount": 300,
+  "futureQuarantineActionBlocked": true,
+  "ownerApprovalRequiredBeforeMoveCopyQuarantine": true,
+  "filesMoved": false,
+  "filesCopied": false,
+  "filesDeleted": false,
+  "filesRestored": false,
+  "fileContentsCopied": false,
+  "binaryContentsReadCopied": false,
+  "keyboardTransferAllowed": false,
+  "compatibilityClaim": false,
+  "proprietaryAssumption": false,
+  "outputs": [
+    "uaos-ai-factory/implementation/reports/IMPL_035_LEGACY_QUARANTINE_APPROVAL_GATE_SEAL_REPORT.md",
+    "uaos-ai-factory/implementation/IMPL_035_LEGACY_QUARANTINE_APPROVAL_GATE_SEAL_SUMMARY.json",
+    "uaos-ai-factory/writer-sandbox/legacy-quarantine-dry-run/QUARANTINE_APPROVAL_GATE_SEAL.md",
+    "uaos-ai-factory/writer-sandbox/legacy-quarantine-dry-run/NEXT_ACTION_OWNER_APPROVAL_REQUIRED.md"
+  ],
+  "readyForQuarantineExecutionOnlyAfterExactOwnerApproval": true,
+  "readyForKeyboardTransfer": false,
+  "readyForExternalAutomation": false
+}
