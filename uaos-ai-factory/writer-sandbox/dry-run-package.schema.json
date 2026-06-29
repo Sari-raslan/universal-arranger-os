@@ -1,0 +1,89 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "uaos-owner-writer-sandbox-dry-run-package-schema-v1",
+  "title": "UAOS Owner Writer Sandbox Dry-Run Package",
+  "type": "object",
+  "required": [
+    "id",
+    "labels",
+    "manifestPath",
+    "artifacts",
+    "safety"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "labels": {
+      "type": "array",
+      "contains": {
+        "const": "EXPERIMENTAL"
+      },
+      "items": {
+        "type": "string"
+      }
+    },
+    "manifestPath": {
+      "type": "string",
+      "minLength": 1
+    },
+    "artifacts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "path",
+          "kind",
+          "isRealKeyboardOutput",
+          "checksum"
+        ],
+        "properties": {
+          "path": {
+            "type": "string"
+          },
+          "kind": {
+            "enum": [
+              "manifest",
+              "metadata",
+              "dry-run-placeholder",
+              "report"
+            ]
+          },
+          "isRealKeyboardOutput": {
+            "const": false
+          },
+          "checksum": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "safety": {
+      "type": "object",
+      "required": [
+        "notForPublicRelease",
+        "noRealKeyboardOutput",
+        "noProprietarySamples",
+        "ownerApprovalRequiredBeforeTrialCandidate"
+      ],
+      "properties": {
+        "notForPublicRelease": {
+          "const": true
+        },
+        "noRealKeyboardOutput": {
+          "const": true
+        },
+        "noProprietarySamples": {
+          "const": true
+        },
+        "ownerApprovalRequiredBeforeTrialCandidate": {
+          "const": true
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

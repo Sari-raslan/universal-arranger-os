@@ -1,0 +1,47 @@
+{
+  "schema": "uaos-owner-writer-sandbox-manifest-template-v1",
+  "status": "TEMPLATE_ONLY",
+  "labels": [
+    "LOCAL_ONLY",
+    "EXPERIMENTAL",
+    "SANDBOX_ONLY",
+    "NOT_FOR_PUBLIC_RELEASE",
+    "NO_REAL_KEYBOARD_OUTPUT"
+  ],
+  "artifact": {
+    "id": "replace-with-dry-run-id",
+    "purpose": "dry-run planning only",
+    "generatedPaths": [],
+    "fileTypes": [],
+    "isDryRun": true,
+    "isRealKeyboardOutput": false,
+    "isDeviceLoadable": false
+  },
+  "inputs": {
+    "sourceFiles": [],
+    "ownerProvidedContent": [],
+    "proprietarySamplesIncluded": false,
+    "kontaktNativeInstrumentsContentIncluded": false
+  },
+  "checksums": {
+    "requiredForFutureGeneratedArtifacts": true,
+    "items": []
+  },
+  "backup": {
+    "required": true,
+    "path": ""
+  },
+  "approval": {
+    "firstTrialCandidateApproved": false,
+    "requiredPhrase": "I approve creating the first owner keyboard trial candidate locally, sandbox-only, with manifest, checksum, backup, no push, no deploy, no Vercel, no payment, no proprietary samples, and I understand it is experimental."
+  },
+  "safetyGates": {
+    "noPush": true,
+    "noDeploy": true,
+    "noVercel": true,
+    "noPayment": true,
+    "noPublicRelease": true,
+    "noRealKeyboardOutput": true,
+    "noProprietarySamples": true
+  }
+}

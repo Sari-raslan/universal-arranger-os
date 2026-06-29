@@ -1,0 +1,44 @@
+{
+  "id": "IMPL-015",
+  "title": "Owner Writer Sandbox Scaffold",
+  "status": "DONE_LOCAL_ONLY",
+  "date": "2026-06-29",
+  "scope": "sandbox scaffold only",
+  "realKeyboardOutputCreated": false,
+  "realWriterOutputCreated": false,
+  "realTrialCandidateApproved": false,
+  "appJsxModified": false,
+  "frontendSourceModified": false,
+  "publicUrlsCreated": false,
+  "externalAutomationUsed": false,
+  "outputs": [
+    "uaos-ai-factory/writer-sandbox/README.md",
+    "uaos-ai-factory/writer-sandbox/SANDBOX_OUTPUT_POLICY.md",
+    "uaos-ai-factory/writer-sandbox/sandbox-manifest.template.json",
+    "uaos-ai-factory/writer-sandbox/dry-run-package.schema.json",
+    "scripts/uaos-ai-factory-writer-sandbox-check.mjs",
+    "uaos-ai-factory/implementation/reports/IMPL_015_OWNER_WRITER_SANDBOX_SCAFFOLD_REPORT.md",
+    "uaos-ai-factory/implementation/IMPL_015_OWNER_WRITER_SANDBOX_SCAFFOLD_SUMMARY.json"
+  ],
+  "policy": {
+    "manifestOnlyForNow": true,
+    "noRealKeyboardBinaryOutput": true,
+    "noRealKeyboardExtensions": true,
+    "noProprietarySamples": true,
+    "noKontaktNativeInstrumentsCopying": true,
+    "checksumsRequiredForFutureGeneratedArtifacts": true,
+    "ownerApprovalRequiredBeforeFirstTrialCandidate": true,
+    "sandboxArtifactsMarkedExperimentalNotPublicRelease": true
+  },
+  "checker": {
+    "npmScript": "ai:factory:writer-sandbox-check",
+    "verifiesSandboxFolder": true,
+    "verifiesRequiredFiles": true,
+    "verifiesNoRealKeyboardOutputFiles": true,
+    "verifiesNoProprietarySampleAudioFolder": true,
+    "verifiesRemote": true
+  },
+  "readyForImpl016DryRunPackageBuilder": true,
+  "readyForRealKeyboardTrialCandidate": false,
+  "readyForExternalAutomation": false
+}
