@@ -156,6 +156,20 @@
     },
     {
       "id": "AI-012",
+      "title": "static demo gateway safety handoff",
+      "status": "DONE_LOCAL_PLAN_ONLY",
+      "risk": "LOW",
+      "blocked": false,
+      "ownerAgent": "release_manager",
+      "allowedFiles": ["scripts/uaos-ai-factory-static-gateway-safety-plan.mjs", "uaos-ai-factory/autopilot/*.json", "uaos-ai-factory/executions/AI-012-static-demo-gateway-safety-handoff/*", "uaos-ai-factory/platform/static-demo-gateway/*", "uaos-ai-factory/reports/AI_FACTORY_STAGE15_AI012_STATIC_DEMO_GATEWAY_SAFETY_HANDOFF_REPORT.md"],
+      "forbiddenFiles": [".git/**", "node_modules/**", ".vercel/**", "uaos-live-clean/src/App.jsx"],
+      "expectedOutput": "Local-only static demo gateway safety handoff.",
+      "requiresBuild": false,
+      "requiresExternalAccount": false,
+      "notes": "Planning-only gateway safety handoff complete. Gateway language is LOCAL ONLY - NOT PUBLIC RELEASE."
+    },
+    {
+      "id": "AI-013",
       "title": "release gate staging only",
       "status": "READY",
       "risk": "LOW",

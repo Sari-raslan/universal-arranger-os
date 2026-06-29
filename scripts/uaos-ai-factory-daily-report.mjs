@@ -116,6 +116,14 @@ ${state.ownerHandoffPlanStatus ? `## Stage 14 Result
 - No deploy performed.
 - External automation remains not ready.
 ` : ""}
+${state.staticDemoGatewaySafetyHandoffStatus ? `## Stage 15 Result
+
+- AI-012 Static demo gateway safety handoff: ${state.staticDemoGatewaySafetyHandoffStatus}
+- Gateway language is LOCAL ONLY - NOT PUBLIC RELEASE.
+- No Vercel command run.
+- No deploy performed.
+- External automation remains not ready.
+` : ""}
 
 ## Ready Tasks
 
