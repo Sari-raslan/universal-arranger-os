@@ -1,0 +1,42 @@
+﻿{
+    "id":  "IMPL-032",
+    "title":  "Legacy Forbidden Keyboard File Inventory",
+    "status":  "DONE_LOCAL_ONLY",
+    "date":  "2026-06-29",
+    "scope":  "read-only inventory / no delete",
+    "totalForbiddenFilesOutsideCandidate":  300,
+    "candidateFolderForbiddenFiles":  0,
+    "candidateFolderClear":  true,
+    "filesDeletedMovedRestored":  false,
+    "keyboardTransferAllowed":  false,
+    "extensionsScanned":  [
+                              ".STY",
+                              ".SET",
+                              ".PRS",
+                              ".STL",
+                              ".PAT",
+                              ".MSP",
+                              ".KST"
+                          ],
+    "outputs":  [
+                    "uaos-ai-factory/implementation/reports/IMPL_032_LEGACY_FORBIDDEN_FILE_INVENTORY_REPORT.md",
+                    "uaos-ai-factory/implementation/IMPL_032_LEGACY_FORBIDDEN_FILE_INVENTORY_SUMMARY.json",
+                    "uaos-ai-factory/writer-sandbox/LEGACY_FORBIDDEN_FILE_INVENTORY.md",
+                    "uaos-ai-factory/writer-sandbox/LEGACY_FILE_HANDLING_POLICY.md"
+                ],
+    "classification":  [
+                           "LEGACY_PRE_EXISTING",
+                           "CANDIDATE_FOLDER_CLEAR",
+                           "DO_NOT_DELETE",
+                           "DO_NOT_TRANSFER_TO_KEYBOARD"
+                       ],
+    "recommendation":  [
+                           "keep isolated",
+                           "do not use for owner trial",
+                           "do not commit new real outputs",
+                           "plan quarantine only with separate approval"
+                       ],
+    "readyForImpl033LegacyQuarantinePlan":  true,
+    "readyForKeyboardTransfer":  false,
+    "readyForExternalAutomation":  false
+}
