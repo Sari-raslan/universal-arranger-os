@@ -1,0 +1,28 @@
+{
+  "id": "IMPL-033",
+  "title": "Legacy Forbidden File Quarantine Plan",
+  "status": "DONE_LOCAL_ONLY",
+  "date": "2026-06-29",
+  "scope": "docs/plan only",
+  "inventorySource": "uaos-ai-factory/implementation/reports/IMPL_032_LEGACY_FORBIDDEN_FILE_INVENTORY_REPORT.md",
+  "legacyStyFilesFound": 300,
+  "candidateFolderClear": true,
+  "filesMoved": false,
+  "filesDeleted": false,
+  "filesRestored": false,
+  "filesCopied": false,
+  "keyboardTransferAllowed": false,
+  "recommendedFutureQuarantineFolder": "uaos-ai-factory/writer-sandbox/legacy-quarantine-dry-run/",
+  "recommendedManifestType": "metadata-only quarantine manifest",
+  "ownerApprovalRequiredBeforeMoveCopyQuarantine": true,
+  "approvalPhraseRequired": "I approve creating a metadata-only quarantine dry-run plan for legacy keyboard files, with no deletion, no movement, no copying of file contents, no push, no deploy, and no keyboard transfer.",
+  "outputs": [
+    "uaos-ai-factory/implementation/reports/IMPL_033_LEGACY_FORBIDDEN_FILE_QUARANTINE_PLAN_REPORT.md",
+    "uaos-ai-factory/implementation/IMPL_033_LEGACY_FORBIDDEN_FILE_QUARANTINE_PLAN_SUMMARY.json",
+    "uaos-ai-factory/writer-sandbox/LEGACY_QUARANTINE_PLAN.md",
+    "uaos-ai-factory/writer-sandbox/LEGACY_QUARANTINE_APPROVAL_GATE.md"
+  ],
+  "readyForImpl034QuarantineDryRunManifestOnly": true,
+  "readyForKeyboardTransfer": false,
+  "readyForExternalAutomation": false
+}
