@@ -1,0 +1,28 @@
+{
+  "schema": "uaos-owner-keyboard-trial-candidate-validation-v1",
+  "candidate_id": "owner-trial-001",
+  "status": "PASS",
+  "manifest_exists": true,
+  "checksums_exist": true,
+  "readme_exists": true,
+  "no_proprietary_samples_audio": true,
+  "no_deploy_vercel_files": true,
+  "no_payment_files": true,
+  "no_public_release_claims": true,
+  "no_forbidden_extensions": true,
+  "forbidden_extensions_explicitly_blocked": [
+    ".STY",
+    ".SET",
+    ".PRS",
+    ".STL",
+    ".PAT",
+    ".MSP",
+    ".KST"
+  ],
+  "current_remote_unchanged": true,
+  "real_keyboard_compatibility": "UNVERIFIED",
+  "transfer_to_keyboard": "OWNER_RISK_REVIEW_REQUIRED",
+  "checksum_file": "CHECKSUMS.sha256",
+  "forbidden_extension_check_result": "PASS",
+  "proprietary_content_check_result": "PASS"
+}

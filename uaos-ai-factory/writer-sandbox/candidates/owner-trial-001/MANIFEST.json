@@ -1,0 +1,27 @@
+{
+  "schema": "uaos-owner-keyboard-trial-candidate-manifest-v1",
+  "candidate_id": "owner-trial-001",
+  "status": "EXPERIMENTAL_SANDBOX_ONLY",
+  "owner_only": true,
+  "not_public_release": true,
+  "not_production": true,
+  "no_push": true,
+  "no_deploy": true,
+  "no_vercel": true,
+  "no_payment": true,
+  "no_proprietary_samples": true,
+  "no_kontakt_native_instruments_content": true,
+  "real_keyboard_compatibility": "UNVERIFIED",
+  "transfer_to_keyboard": "OWNER_RISK_REVIEW_REQUIRED",
+  "approval_phrase_received": "I approve creating the first owner keyboard trial candidate locally, sandbox-only, with manifest, checksum, backup, no push, no deploy, no Vercel, no payment, no proprietary samples, and I understand it is experimental.",
+  "backup_path": "backups/IMPL_019_OWNER_TRIAL_CANDIDATE_20260629T184416Z",
+  "rollback_notes": "Use the backup folder for prewrite state. Remove or ignore this sandbox candidate if owner review fails. Do not transfer to keyboard without owner risk review.",
+  "file_list": [
+    "OWNER_TRIAL_001.uaos-trial.json",
+    "MANIFEST.json",
+    "CHECKSUMS.sha256",
+    "README_OWNER_TRIAL_001.md",
+    "VALIDATION.json"
+  ],
+  "checksum_reference": "CHECKSUMS.sha256"
+}
