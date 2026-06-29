@@ -1,0 +1,47 @@
+{
+  "id": "IMPL-021",
+  "title": "First Real-Format Keyboard Candidate Plan",
+  "status": "DONE_LOCAL_ONLY",
+  "date": "2026-06-29",
+  "scope": "planning only / no real output",
+  "realKeyboardOutputCreated": false,
+  "forbiddenKeyboardExtensionsCreated": false,
+  "realWriterOutputCreated": false,
+  "keyboardTransferPackageCreated": false,
+  "appJsxModified": false,
+  "frontendSourceModified": false,
+  "publicUrlsCreated": false,
+  "externalAutomationUsed": false,
+  "recommendedFirstTarget": "generic neutral UAOS package",
+  "targetOptions": [
+    "KORG PA-series",
+    "Yamaha style family",
+    "generic neutral UAOS package"
+  ],
+  "riskMatrix": {
+    "neutralUaosTrialJson": "LOW",
+    "fakeSafeSimulationNonKeyboardExtension": "MEDIUM",
+    "realStySetOutput": "HIGH / OWNER APPROVAL REQUIRED",
+    "proprietarySampleInclusion": "BLOCKED",
+    "publicReleaseDeployPayment": "BLOCKED"
+  },
+  "requirements": {
+    "manifestRequired": true,
+    "checksumRequired": true,
+    "backupRequired": true,
+    "rollbackPlanRequired": true,
+    "ownerFeedbackLoopRequired": true,
+    "noProprietarySamples": true,
+    "noKontaktNativeInstrumentsContent": true
+  },
+  "nextStages": [
+    "IMPL-022 format target selection seal",
+    "IMPL-023 minimal real-format writer design",
+    "IMPL-024 fake-safe binary/header simulation or neutral package only",
+    "IMPL-025 owner approval gate before any real extension output"
+  ],
+  "approvalPhraseRequiredBeforeRealExtensionOutput": "I approve experimental real keyboard-format output locally for owner testing only, with manifest, checksum, backup, no push, no deploy, no Vercel, no payment, no proprietary samples, and I accept the risk that the keyboard may reject the file.",
+  "readyForImpl022FormatTargetSelectionSeal": true,
+  "readyForRealKeyboardOutputNow": false,
+  "readyForExternalAutomation": false
+}
