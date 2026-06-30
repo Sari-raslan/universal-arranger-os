@@ -1,0 +1,192 @@
+{
+  "id": "SAFE_DEVELOPMENT_BACKLOG_V2",
+  "status": "READY_LOCAL_ONLY",
+  "localOnly": true,
+  "realKeyboardOutputCreated": false,
+  "keyboardTransferAllowed": false,
+  "tasks": [
+    {
+      "id": "DEVNEXT-001",
+      "title": "neutral package browser data model",
+      "goal": "Define a local read-only data model for browsing neutral packages.",
+      "allowedPaths": [
+        "uaos-ai-factory/writer-sandbox/neutral-package-writer",
+        "uaos-ai-factory/implementation"
+      ],
+      "forbiddenPaths": [
+        "App.jsx",
+        "frontend source",
+        "keyboard-native output"
+      ],
+      "riskLevel": "LOW",
+      "ownerApprovalRequired": "NO",
+      "expectedOutput": "Data model JSON/MD spec",
+      "stopCondition": "Stop if UI code or keyboard-native output is requested."
+    },
+    {
+      "id": "DEVNEXT-002",
+      "title": "read-only UI proposal for selected package",
+      "goal": "Plan a future read-only UI panel without implementation.",
+      "allowedPaths": [
+        "uaos-ai-factory/implementation",
+        "docs"
+      ],
+      "forbiddenPaths": [
+        "App.jsx unless separately approved",
+        "frontend source changes",
+        "deploy/payment"
+      ],
+      "riskLevel": "MEDIUM",
+      "ownerApprovalRequired": "YES",
+      "expectedOutput": "UI proposal document only",
+      "stopCondition": "Stop before modifying UI source."
+    },
+    {
+      "id": "DEVNEXT-003",
+      "title": "metadata diff tool owner-neutral-002 vs 003",
+      "goal": "Create a local diff tool for neutral metadata only.",
+      "allowedPaths": [
+        "scripts/uaos-ai-factory-*.mjs",
+        "uaos-ai-factory/implementation"
+      ],
+      "forbiddenPaths": [
+        "keyboard-native output",
+        "legacy file reads",
+        "App.jsx"
+      ],
+      "riskLevel": "LOW",
+      "ownerApprovalRequired": "NO",
+      "expectedOutput": "Diff script and report",
+      "stopCondition": "Stop if binary or legacy content is requested."
+    },
+    {
+      "id": "DEVNEXT-004",
+      "title": "validation aggregator improvements",
+      "goal": "Improve aggregate status coverage for selected package and catalog.",
+      "allowedPaths": [
+        "scripts/uaos-ai-factory-*.mjs",
+        "uaos-ai-factory"
+      ],
+      "forbiddenPaths": [
+        "deploy/payment",
+        "App.jsx",
+        "keyboard output"
+      ],
+      "riskLevel": "LOW",
+      "ownerApprovalRequired": "NO",
+      "expectedOutput": "Aggregator v2 report/status",
+      "stopCondition": "Stop if external automation is requested."
+    },
+    {
+      "id": "DEVNEXT-005",
+      "title": "neutral package export zip plan, no binary output",
+      "goal": "Plan a future local zip export for neutral docs only.",
+      "allowedPaths": [
+        "uaos-ai-factory/implementation",
+        "docs"
+      ],
+      "forbiddenPaths": [
+        "real export execution",
+        "keyboard-native files",
+        "production release"
+      ],
+      "riskLevel": "MEDIUM",
+      "ownerApprovalRequired": "YES",
+      "expectedOutput": "Zip plan only",
+      "stopCondition": "Stop before creating archives or binary outputs."
+    },
+    {
+      "id": "DEVNEXT-006",
+      "title": "safe writer research roadmap",
+      "goal": "Define safe writer research milestones without format implementation.",
+      "allowedPaths": [
+        "uaos-ai-factory/writer-sandbox",
+        "uaos-ai-factory/implementation"
+      ],
+      "forbiddenPaths": [
+        ".SET/.STY output",
+        "reverse engineering claims",
+        "proprietary samples"
+      ],
+      "riskLevel": "LOW",
+      "ownerApprovalRequired": "NO",
+      "expectedOutput": "Research roadmap",
+      "stopCondition": "Stop if real keyboard output is requested."
+    },
+    {
+      "id": "DEVNEXT-007",
+      "title": "legacy quarantine metadata tooling",
+      "goal": "Plan metadata-only tools around legacy quarantine state.",
+      "allowedPaths": [
+        "uaos-ai-factory/writer-sandbox",
+        "uaos-ai-factory/implementation"
+      ],
+      "forbiddenPaths": [
+        "moving/deleting/restoring files",
+        "binary reads",
+        "content copying"
+      ],
+      "riskLevel": "MEDIUM",
+      "ownerApprovalRequired": "YES",
+      "expectedOutput": "Metadata tooling plan",
+      "stopCondition": "Stop if file movement or deletion is requested."
+    },
+    {
+      "id": "DEVNEXT-008",
+      "title": "business pack automation notes",
+      "goal": "Document safe local-only automation notes without running automation.",
+      "allowedPaths": [
+        "uaos-ai-factory/implementation",
+        "docs",
+        "reports"
+      ],
+      "forbiddenPaths": [
+        "external automation",
+        "email sending",
+        "public URLs"
+      ],
+      "riskLevel": "LOW",
+      "ownerApprovalRequired": "NO",
+      "expectedOutput": "Automation notes document",
+      "stopCondition": "Stop if sending/uploading is requested."
+    },
+    {
+      "id": "DEVNEXT-009",
+      "title": "local owner dashboard UI proposal",
+      "goal": "Plan owner dashboard improvements without changing UI.",
+      "allowedPaths": [
+        "uaos-ai-factory/implementation",
+        "docs"
+      ],
+      "forbiddenPaths": [
+        "App.jsx unless approved",
+        "frontend source",
+        "deploy/payment"
+      ],
+      "riskLevel": "MEDIUM",
+      "ownerApprovalRequired": "YES",
+      "expectedOutput": "Dashboard UI proposal",
+      "stopCondition": "Stop before modifying UI files."
+    },
+    {
+      "id": "DEVNEXT-010",
+      "title": "final local release candidate checklist",
+      "goal": "Create a local RC checklist that keeps release blocked.",
+      "allowedPaths": [
+        "uaos-ai-factory/implementation",
+        "docs",
+        "reports"
+      ],
+      "forbiddenPaths": [
+        "production release files",
+        "deploy",
+        "payment",
+        "keyboard output"
+      ],
+      "riskLevel": "LOW",
+      "ownerApprovalRequired": "NO",
+      "expectedOutput": "Local RC checklist",
+      "stopCondition": "Stop if public/production release is requested."
+    }
+  ]
+}
