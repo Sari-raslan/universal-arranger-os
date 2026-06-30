@@ -1,0 +1,29 @@
+{
+  "stage": "DEV-020",
+  "title": "Selected package snapshot generator",
+  "status": "PASS",
+  "local_only": true,
+  "script": "scripts/uaos-ai-factory-selected-package-snapshot.mjs",
+  "npm_script": "ai:factory:selected-package-snapshot",
+  "snapshot_outputs": {
+    "json": "uaos-ai-factory/SELECTED_NEUTRAL_PACKAGE_SNAPSHOT.json",
+    "markdown": "uaos-ai-factory/SELECTED_NEUTRAL_PACKAGE_SNAPSHOT.md"
+  },
+  "snapshot_selected_package": "owner-neutral-003",
+  "snapshot_validation_status": "PASS",
+  "safety": {
+    "data_output_only": true,
+    "frontend_source_touched": false,
+    "app_jsx_touched": false,
+    "real_keyboard_output_created": false,
+    "keyboard_transfer_allowed": false,
+    "no_push": true,
+    "no_deploy": true,
+    "no_vercel": true,
+    "no_payment": true
+  },
+  "ready_for_dashboard_reference": true,
+  "ready_for_keyboard_transfer": false,
+  "ready_for_external_automation": false
+}
+
