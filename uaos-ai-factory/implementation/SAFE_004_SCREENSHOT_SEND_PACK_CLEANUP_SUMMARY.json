@@ -1,0 +1,34 @@
+{
+  "id": "SAFE-004",
+  "title": "screenshot/send pack cleanup",
+  "status": "READY_FOR_LOCAL_VERIFICATION",
+  "localOnly": true,
+  "docsOnly": true,
+  "outputs": [
+    "uaos-ai-factory/implementation/SCREENSHOT_SEND_PACK_CLEANUP_INDEX.md",
+    "uaos-ai-factory/implementation/OWNER_SEND_READY_REVIEW_STEPS.md",
+    "uaos-ai-factory/implementation/reports/SAFE_004_SCREENSHOT_SEND_PACK_CLEANUP_REPORT.md"
+  ],
+  "coverage": {
+    "screenshotsToCapture": true,
+    "whatNotToClaim": true,
+    "jobcenterSafeWording": true,
+    "supporterSafeWording": true,
+    "attachmentChecklist": true,
+    "localOnlyLabels": true,
+    "noPublicUrlClaim": true,
+    "noPaymentLiveCustomerClaim": true,
+    "noRealKeyboardExportClaim": true,
+    "ownerManualReviewBeforeSending": true
+  },
+  "safety": {
+    "sendingPerformed": false,
+    "publicUrlCreated": false,
+    "realKeyboardOutputCreated": false,
+    "keyboardTransfer": false,
+    "pushDeployVercelPayment": false,
+    "appSourceModified": false,
+    "frontendSourceModified": false,
+    "proprietaryContentCopied": false
+  }
+}
