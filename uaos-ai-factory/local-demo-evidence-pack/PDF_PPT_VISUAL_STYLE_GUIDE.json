@@ -1,0 +1,18 @@
+﻿{
+  "schema": "uaos-pdf-ppt-visual-style-guide-v1",
+  "status": "planning_only",
+  "tone": ["clear", "calm", "factual", "private_review"],
+  "requiredFooterOptions": [
+    "LOCAL ONLY - PRIVATE REVIEW ONLY",
+    "NOT KEYBOARD OUTPUT",
+    "NO PUSH / NO DEPLOY / NO VERCEL"
+  ],
+  "blocked": {
+    "actualPdfCreatedInThisRun": false,
+    "actualPptxCreatedInThisRun": false,
+    "publicUrl": true,
+    "paymentFlow": true,
+    "keyboardTransfer": true
+  }
+}
+
