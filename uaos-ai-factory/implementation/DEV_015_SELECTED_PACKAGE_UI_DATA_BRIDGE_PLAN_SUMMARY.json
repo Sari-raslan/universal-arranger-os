@@ -1,0 +1,44 @@
+{
+  "stage": "DEV-015",
+  "title": "Selected package UI data bridge plan",
+  "status": "PASS",
+  "local_only": true,
+  "plan_only": true,
+  "implemented_in_app_source": false,
+  "selected_package_id": "owner-neutral-003",
+  "data_contract_path": "uaos-ai-factory/implementation/SELECTED_PACKAGE_UI_DATA_CONTRACT.json",
+  "contract_fields": [
+    "selectedPackageId",
+    "packageType",
+    "keyboardNative",
+    "compatibility",
+    "validationStatus",
+    "reviewStatus",
+    "realKeyboardOutput",
+    "keyboardTransfer",
+    "safetyLabels",
+    "sourcePaths",
+    "lastUpdated",
+    "noNetwork",
+    "noWrite",
+    "noExport",
+    "readOnlyOnly"
+  ],
+  "safety": {
+    "no_network": true,
+    "no_write": true,
+    "no_export": true,
+    "read_only_only": true,
+    "no_push": true,
+    "no_deploy": true,
+    "no_vercel": true,
+    "no_payment": true,
+    "real_keyboard_output_created": false,
+    "keyboard_transfer_allowed": false,
+    "app_jsx_touched": false
+  },
+  "ready_for_future_read_only_implementation_with_approval": true,
+  "ready_for_keyboard_transfer": false,
+  "ready_for_external_automation": false
+}
+
