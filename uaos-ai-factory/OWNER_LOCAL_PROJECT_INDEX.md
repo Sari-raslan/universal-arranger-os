@@ -42,6 +42,13 @@ Planned future target only: `https://github.com/aeplatform-app/universal-arrange
 - DEV-026 future App.jsx snapshot integration checklist: DONE_LOCAL_CHECKLIST_ONLY.
 - DEV-027 visual QA selected package panel checklist: DONE_LOCAL_CHECKLIST_ONLY.
 - DEV-028 development round DEV-024-028 seal: SEALED_LOCAL_UI_SPEC_INFRASTRUCTURE.
+- DEV-029 App.jsx read-only selected package snapshot integration: DONE_LOCAL_ONLY.
+- DEV-030 App.jsx snapshot visual verification: SEALED_LOCAL_ONLY.
+- DEV-031 selected package owner review checklist v2: DONE_LOCAL_ONLY.
+- DEV-032 UI snapshot regression checker: DONE_LOCAL_ONLY.
+- DEV-033 local evidence bundle index: DONE_LOCAL_ONLY.
+- DEV-034 next decision gate after UI integration: DONE_LOCAL_ONLY.
+- DEV-035 owner review evidence round seal: SEALED_LOCAL_OWNER_REVIEW_INFRASTRUCTURE.
 - Implementation round 001-008: COMPLETE.
 - IMPL-009 screenshot visual proof pack: DONE_LOCAL_ONLY.
 - IMPL-010 final send checklist: DONE_LOCAL_ONLY.
@@ -214,6 +221,18 @@ The wait gate remains active until the owner manually verifies the target reposi
 - DEV-026 future App.jsx snapshot integration approval gate: `uaos-ai-factory/implementation/FUTURE_APPJSX_SNAPSHOT_INTEGRATION_APPROVAL_GATE.md`
 - DEV-027 visual QA selected package panel report: `uaos-ai-factory/implementation/reports/DEV_027_VISUAL_QA_SELECTED_PACKAGE_PANEL_REPORT.md`
 - DEV-027 visual QA selected package panel checklist: `uaos-ai-factory/implementation/VISUAL_QA_SELECTED_PACKAGE_PANEL_CHECKLIST.md`
+- DEV-029 App.jsx snapshot integration report: `uaos-ai-factory/implementation/reports/DEV_029_APPJSX_READ_ONLY_SNAPSHOT_INTEGRATION_REPORT.md`
+- DEV-030 App.jsx snapshot visual verification report: `uaos-ai-factory/implementation/reports/DEV_030_VISUAL_VERIFICATION_AFTER_APPJSX_SNAPSHOT_REPORT.md`
+- DEV-031 selected package owner review checklist v2 report: `uaos-ai-factory/implementation/reports/DEV_031_SELECTED_PACKAGE_OWNER_REVIEW_CHECKLIST_V2_REPORT.md`
+- DEV-031 owner review checklist v2: `uaos-ai-factory/OWNER_SELECTED_PACKAGE_REVIEW_CHECKLIST_V2.md`
+- DEV-032 UI snapshot regression checker report: `uaos-ai-factory/implementation/reports/DEV_032_UI_SNAPSHOT_REGRESSION_CHECKER_REPORT.md`
+- DEV-032 UI snapshot regression status: `uaos-ai-factory/UI_SNAPSHOT_REGRESSION_STATUS.json`
+- DEV-033 local evidence bundle index report: `uaos-ai-factory/implementation/reports/DEV_033_LOCAL_EVIDENCE_BUNDLE_INDEX_REPORT.md`
+- DEV-033 local evidence bundle index: `uaos-ai-factory/LOCAL_EVIDENCE_BUNDLE_INDEX_DEV_013_032.md`
+- DEV-034 next decision gate report: `uaos-ai-factory/implementation/reports/DEV_034_NEXT_DECISION_GATE_AFTER_UI_INTEGRATION_REPORT.md`
+- DEV-034 next decision gate: `uaos-ai-factory/NEXT_DECISION_GATE_AFTER_UI_INTEGRATION.md`
+- Development round DEV-031-035 seal report: `uaos-ai-factory/implementation/reports/DEVELOPMENT_ROUND_DEV_031_035_SEAL_REPORT.md`
+- Development round DEV-031-035 seal JSON: `uaos-ai-factory/implementation/DEVELOPMENT_ROUND_DEV_031_035_SEAL.json`
 - Development round DEV-009-012 seal report: `uaos-ai-factory/implementation/reports/DEVELOPMENT_ROUND_DEV_009_012_SEAL_REPORT.md`
 - Development round DEV-009-012 seal JSON: `uaos-ai-factory/implementation/DEVELOPMENT_ROUND_DEV_009_012_SEAL.json`
 - DEV-009 metadata diff tool report: `uaos-ai-factory/implementation/reports/DEV_009_METADATA_DIFF_TOOL_REPORT.md`
