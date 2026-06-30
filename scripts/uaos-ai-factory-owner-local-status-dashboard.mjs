@@ -41,12 +41,28 @@ const selectedPackageId = "owner-neutral-003";
 const selectedPackagePath = "uaos-ai-factory/writer-sandbox/neutral-package-writer/outputs/owner-neutral-003/OWNER_NEUTRAL_003.uaos-neutral.json";
 const selectedValidationPath = "uaos-ai-factory/writer-sandbox/neutral-package-writer/outputs/owner-neutral-003/VALIDATION.json";
 const selectedReviewDataPath = "uaos-ai-factory/writer-sandbox/neutral-package-writer/outputs/owner-neutral-003/OWNER_NEUTRAL_003_REVIEW_DATA.json";
+const selectedSnapshotPath = "uaos-ai-factory/SELECTED_NEUTRAL_PACKAGE_SNAPSHOT.json";
+const dataBridgePlanPath = "uaos-ai-factory/implementation/READ_ONLY_SELECTED_PACKAGE_DATA_BRIDGE_IMPLEMENTATION_PLAN.md";
 const selectedPackageExists = fileExists(selectedPackagePath);
 const selectedValidationExists = fileExists(selectedValidationPath);
 const selectedReviewDataExists = fileExists(selectedReviewDataPath);
+const selectedSnapshotExists = fileExists(selectedSnapshotPath);
+const dataBridgePlanExists = fileExists(dataBridgePlanPath);
 if (!selectedPackageExists) failures.push("owner-neutral-003 selected package is missing.");
 if (!selectedValidationExists) failures.push("owner-neutral-003 validation data is missing.");
 if (!selectedReviewDataExists) failures.push("owner-neutral-003 review data export is missing.");
+if (!selectedSnapshotExists) failures.push("Selected neutral package snapshot is missing.");
+if (!dataBridgePlanExists) failures.push("Read-only selected package data bridge plan is missing.");
+
+let selectedSnapshot = null;
+if (selectedSnapshotExists) {
+  selectedSnapshot = readJson(selectedSnapshotPath);
+  if (selectedSnapshot.selectedPackageId !== selectedPackageId) failures.push("Selected package snapshot ID mismatch.");
+  if (selectedSnapshot.validationStatus !== "PASS") failures.push("Selected package snapshot validation is not PASS.");
+  if (selectedSnapshot.keyboardNative !== false) failures.push("Selected package snapshot keyboardNative is not false.");
+  if (selectedSnapshot.realKeyboardOutput !== "NO") failures.push("Selected package snapshot real keyboard output is not NO.");
+  if (selectedSnapshot.keyboardTransfer !== "NO") failures.push("Selected package snapshot keyboard transfer is not NO.");
+}
 
 let metadataStatus = "NOT RUN";
 try {
@@ -99,6 +115,17 @@ console.log(`Review data export path: ${rel(selectedReviewDataPath)}`);
 console.log("Real keyboard output: NO");
 console.log("Keyboard transfer: NO");
 console.log("Push/deploy/Vercel: NO");
+
+section("Selected Package Snapshot");
+console.log(`Selected package snapshot exists: ${selectedSnapshotExists ? "YES" : "NO"}`);
+console.log(`Snapshot path: ${rel(selectedSnapshotPath)}`);
+console.log(`Snapshot selectedPackageId: ${selectedSnapshot?.selectedPackageId ?? "MISSING"}`);
+console.log(`Snapshot validation status: ${selectedSnapshot?.validationStatus ?? "MISSING"}`);
+console.log("UI panel visible from DEV-014: YES");
+console.log(`Data bridge plan exists: ${dataBridgePlanExists ? "YES" : "NO"}`);
+console.log(`Data bridge plan path: ${rel(dataBridgePlanPath)}`);
+console.log("Real keyboard output: NO");
+console.log("Keyboard transfer: NO");
 
 section("Safety Status");
 console.log("Real keyboard output status: NO");
