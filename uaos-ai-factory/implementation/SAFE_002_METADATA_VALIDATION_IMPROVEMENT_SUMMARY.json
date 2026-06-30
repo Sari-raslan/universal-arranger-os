@@ -1,0 +1,33 @@
+{
+  "id": "SAFE-002",
+  "title": "metadata validation improvement",
+  "status": "READY_FOR_LOCAL_VERIFICATION",
+  "localOnly": true,
+  "ownerNeutralPackage": "owner-neutral-002",
+  "script": "scripts/uaos-ai-factory-neutral-metadata-check.mjs",
+  "npmScript": "ai:factory:neutral-metadata-check",
+  "checks": {
+    "packageExists": true,
+    "packageIdRequired": true,
+    "statusRequired": true,
+    "ownerOnlyTrue": true,
+    "keyboardNativeFalse": true,
+    "notPublicReleaseTrue": true,
+    "notProductionTrue": true,
+    "compatibilityUnverified": true,
+    "sectionsRequired": true,
+    "tracksRequired": true,
+    "metadataRequired": true,
+    "manifestAndChecksumReferencesRequired": true,
+    "noProprietarySamples": true,
+    "noKontaktNativeInstrumentsContent": true,
+    "noKeyboardNativeExtensions": true
+  },
+  "safety": {
+    "realKeyboardOutputCreated": false,
+    "keyboardTransfer": false,
+    "appSourceModified": false,
+    "frontendSourceModified": false,
+    "pushDeployVercelPayment": false
+  }
+}
