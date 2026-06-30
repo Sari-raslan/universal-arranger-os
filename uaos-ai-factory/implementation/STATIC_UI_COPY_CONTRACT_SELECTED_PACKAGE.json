@@ -1,0 +1,50 @@
+{
+  "schema": "uaos-static-ui-copy-contract-selected-package-v1",
+  "status": "PASS",
+  "localOnly": true,
+  "copyContractOnly": true,
+  "selectedPackageId": "owner-neutral-003",
+  "approvedLabels": [
+    "Selected Neutral Package",
+    "owner-neutral-003",
+    "LOCAL ONLY",
+    "READ ONLY",
+    "NOT PUBLIC RELEASE",
+    "NOT KEYBOARD OUTPUT",
+    "Keyboard-native: NO",
+    "Compatibility: UNVERIFIED",
+    "Real keyboard output: NO",
+    "Keyboard transfer: NO",
+    "Validation: PASS",
+    "Review status: Owner manual review",
+    "Safe next action: Review metadata / no keyboard transfer"
+  ],
+  "forbiddenWording": [
+    "ready for keyboard",
+    "export to organ",
+    "production",
+    "live release",
+    "payment enabled",
+    "real writer ready"
+  ],
+  "copyRules": {
+    "readOnly": true,
+    "noKeyboardCompatibilityClaim": true,
+    "noExportReadinessClaim": true,
+    "noPublicReleaseClaim": true,
+    "noProductionClaim": true,
+    "noPaymentReadinessClaim": true,
+    "noRealWriterReadinessClaim": true
+  },
+  "safety": {
+    "appJsxTouched": false,
+    "frontendSourceTouched": false,
+    "realKeyboardOutputCreated": false,
+    "keyboardTransferAllowed": false,
+    "noPush": true,
+    "noDeploy": true,
+    "noVercel": true,
+    "noPayment": true
+  }
+}
+
