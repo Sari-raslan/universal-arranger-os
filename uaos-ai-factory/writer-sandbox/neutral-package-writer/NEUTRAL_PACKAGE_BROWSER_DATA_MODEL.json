@@ -1,0 +1,90 @@
+{
+  "schema": "uaos-neutral-package-browser-data-model-v1",
+  "status": "READY_LOCAL_READ_ONLY_MODEL",
+  "localOnly": true,
+  "noAppJsxImplementation": true,
+  "packageListModel": {
+    "source": "NEUTRAL_PACKAGE_CATALOG.json",
+    "items": [
+      {
+        "package_id": "owner-neutral-001",
+        "status": "EXPERIMENTAL_NEUTRAL_PACKAGE",
+        "validation_status": "PASS",
+        "keyboard_native": false,
+        "compatibility_status": "UNVERIFIED",
+        "recommended_for_review": false
+      },
+      {
+        "package_id": "owner-neutral-002",
+        "status": "EXPERIMENTAL_NEUTRAL_PACKAGE",
+        "validation_status": "PASS",
+        "keyboard_native": false,
+        "compatibility_status": "UNVERIFIED",
+        "recommended_for_review": false
+      },
+      {
+        "package_id": "owner-neutral-003",
+        "status": "EXPERIMENTAL_NEUTRAL_PACKAGE",
+        "validation_status": "PASS",
+        "keyboard_native": false,
+        "compatibility_status": "UNVERIFIED",
+        "recommended_for_review": true
+      }
+    ]
+  },
+  "selectedPackageModel": {
+    "package_id": "owner-neutral-003",
+    "selection_source": "NEUTRAL_METADATA_DIFF_002_003.json",
+    "selection_reason": "owner-neutral-003 validation passed and metadata/safety labels are richer and clearer."
+  },
+  "validationSummaryModel": {
+    "diff_status": "PASS",
+    "selected_package": "owner-neutral-003",
+    "real_keyboard_output": "NO",
+    "keyboard_transfer": "NO"
+  },
+  "safetyLabelsModel": {
+    "showLabels": true,
+    "source": "selected package JSON labels",
+    "highlight": [
+      "NOT_KEYBOARD_NATIVE",
+      "NO_KEYBOARD_TRANSFER",
+      "NO_SET_STY_OUTPUT",
+      "NO_PROPRIETARY_SAMPLES"
+    ]
+  },
+  "reviewStatusModel": {
+    "readyForOwnerReview": true,
+    "readyForKeyboardTransfer": false,
+    "readyForExternalAutomation": false
+  },
+  "pathsModel": {
+    "catalog": "uaos-ai-factory/writer-sandbox/neutral-package-writer/NEUTRAL_PACKAGE_CATALOG.json",
+    "diff": "uaos-ai-factory/writer-sandbox/neutral-package-writer/NEUTRAL_METADATA_DIFF_002_003.json",
+    "selectedPackage": "uaos-ai-factory/writer-sandbox/neutral-package-writer/outputs/owner-neutral-003/OWNER_NEUTRAL_003.uaos-neutral.json"
+  },
+  "blockedActionsModel": [
+    "keyboard-native output",
+    "keyboard transfer",
+    "push/deploy/Vercel/payment",
+    "external automation",
+    "proprietary samples",
+    "Kontakt/Native Instruments content"
+  ],
+  "futureUiReadOnlyFields": [
+    "package_id",
+    "status",
+    "validation_status",
+    "keyboard_native",
+    "compatibility_status",
+    "safety_labels",
+    "blocked_actions",
+    "manual_open_paths"
+  ],
+  "safety": {
+    "realKeyboardOutputCreated": false,
+    "keyboardTransferAllowed": false,
+    "appJsxModified": false,
+    "frontendSourceModified": false
+  }
+}
