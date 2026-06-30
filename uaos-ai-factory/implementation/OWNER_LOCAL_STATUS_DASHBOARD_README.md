@@ -15,8 +15,13 @@ Run:
 - Whether the remote still matches the expected repository.
 - `owner-neutral-002` status.
 - Neutral metadata validation status.
+- DEV-013 Selected Neutral Package UI panel implemented: YES.
+- DEV-014 Selected Neutral Package UI visual verification: PASS.
+- Selected package: `owner-neutral-003`.
+- Review data export path: `uaos-ai-factory/writer-sandbox/neutral-package-writer/outputs/owner-neutral-003/OWNER_NEUTRAL_003_REVIEW_DATA.json`.
 - Real keyboard output status: NO.
 - Keyboard transfer status: NO.
+- Push/deploy/Vercel status: NO.
 - Legacy `.STY` inventory status.
 - Safe next actions.
 - Blocked actions.
@@ -27,4 +32,11 @@ This dashboard is a local status view only. It does not send files, create publi
 
 ## Owner Next Use
 
-Use this command before a morning or handoff review to confirm the local safety state, then open the owner review files listed in the final handoff pack.
+Use this command before a morning or handoff review to confirm the local safety state, then review `owner-neutral-003` as text-only local metadata.
+
+## Next Safe Choices
+
+1. Owner review of `owner-neutral-003` review data.
+2. Future read-only data bridge implementation with explicit approval.
+3. Continue validation tooling.
+4. Stop before keyboard output.

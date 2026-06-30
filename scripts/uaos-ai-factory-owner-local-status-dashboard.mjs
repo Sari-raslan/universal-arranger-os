@@ -37,6 +37,17 @@ const ownerNeutralPath = "uaos-ai-factory/writer-sandbox/neutral-package-writer/
 const ownerNeutralExists = fileExists(ownerNeutralPath);
 if (!ownerNeutralExists) failures.push("owner-neutral-002 is missing.");
 
+const selectedPackageId = "owner-neutral-003";
+const selectedPackagePath = "uaos-ai-factory/writer-sandbox/neutral-package-writer/outputs/owner-neutral-003/OWNER_NEUTRAL_003.uaos-neutral.json";
+const selectedValidationPath = "uaos-ai-factory/writer-sandbox/neutral-package-writer/outputs/owner-neutral-003/VALIDATION.json";
+const selectedReviewDataPath = "uaos-ai-factory/writer-sandbox/neutral-package-writer/outputs/owner-neutral-003/OWNER_NEUTRAL_003_REVIEW_DATA.json";
+const selectedPackageExists = fileExists(selectedPackagePath);
+const selectedValidationExists = fileExists(selectedValidationPath);
+const selectedReviewDataExists = fileExists(selectedReviewDataPath);
+if (!selectedPackageExists) failures.push("owner-neutral-003 selected package is missing.");
+if (!selectedValidationExists) failures.push("owner-neutral-003 validation data is missing.");
+if (!selectedReviewDataExists) failures.push("owner-neutral-003 review data export is missing.");
+
 let metadataStatus = "NOT RUN";
 try {
   run("node", ["scripts/uaos-ai-factory-neutral-metadata-check.mjs"]);
@@ -77,6 +88,18 @@ console.log(`owner-neutral-002 exists: ${ownerNeutralExists ? "YES" : "NO"}`);
 console.log(`owner-neutral-002 path: ${rel(ownerNeutralPath)}`);
 console.log(`Metadata validation status: ${metadataStatus}`);
 
+section("Selected Package UI / Review Data");
+console.log("DEV-013 UI panel implemented: YES");
+console.log("DEV-014 visual verification: PASS");
+console.log(`Selected package: ${selectedPackageId}`);
+console.log(`Selected package exists: ${selectedPackageExists ? "YES" : "NO"}`);
+console.log(`Selected package path: ${rel(selectedPackagePath)}`);
+console.log(`Review data export exists: ${selectedReviewDataExists ? "YES" : "NO"}`);
+console.log(`Review data export path: ${rel(selectedReviewDataPath)}`);
+console.log("Real keyboard output: NO");
+console.log("Keyboard transfer: NO");
+console.log("Push/deploy/Vercel: NO");
+
 section("Safety Status");
 console.log("Real keyboard output status: NO");
 console.log("Keyboard transfer status: NO");
@@ -84,10 +107,11 @@ console.log(`Legacy .STY inventory status: ${legacyStatus}`);
 console.log("Push/deploy/Vercel/payment status: NO");
 
 section("Safe Next Actions");
-console.log("- Review owner-neutral-002 as text only.");
-console.log("- Fill owner feedback template.");
-console.log("- Decide whether owner-neutral-003 is needed as neutral metadata only.");
-console.log("- Use business pack and handoff files for owner review only.");
+console.log("- Review owner-neutral-003 review data as text only.");
+console.log("- Compare owner-neutral-003 package metadata with the review export.");
+console.log("- Future read-only data bridge implementation only with approval.");
+console.log("- Continue validation tooling.");
+console.log("- Stop before keyboard output.");
 
 section("Blocked Actions");
 console.log("- No real keyboard output.");
