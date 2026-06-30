@@ -1,0 +1,39 @@
+{
+  "id": "SAFE-017",
+  "title": "owner manual review checklist and decision gate",
+  "status": "DONE_LOCAL_DECISION_GATE_ONLY",
+  "localOnly": true,
+  "reviewTarget": "owner-neutral-003",
+  "outputs": [
+    "uaos-ai-factory/implementation/reports/SAFE_017_OWNER_MANUAL_REVIEW_CHECKLIST_REPORT.md",
+    "uaos-ai-factory/implementation/SAFE_017_OWNER_MANUAL_REVIEW_CHECKLIST_SUMMARY.json",
+    "uaos-ai-factory/writer-sandbox/neutral-package-writer/OWNER_NEUTRAL_003_OWNER_DECISION_FORM.md",
+    "uaos-ai-factory/OWNER_LOCAL_PROJECT_INDEX.md"
+  ],
+  "decisionChoices": [
+    "ACCEPT_LOCAL_REVIEW_ONLY",
+    "NEEDS_FIXES_LOCAL_ONLY",
+    "BLOCKED_DO_NOT_CONTINUE"
+  ],
+  "manualReviewChecklist": {
+    "startHereFileReadable": true,
+    "reviewPacketReadable": true,
+    "noRealKeyboardOutputCreated": true,
+    "noKeyboardTransferInstructions": true,
+    "noDeployPushVercelInstructions": true,
+    "safetyGatesStillPass": true,
+    "ownerUnderstandsNotKeyboardReady": true
+  },
+  "safety": {
+    "realKeyboardOutputCreated": false,
+    "keyboardTransferAllowed": false,
+    "pushDeployVercel": false,
+    "externalAutomation": false,
+    "writerActivation": false,
+    "binaryExport": false,
+    "deletionOrFileMovement": false
+  },
+  "readyForOwnerManualReview": true,
+  "readyForKeyboardTransfer": false,
+  "readyForExternalAutomation": false
+}

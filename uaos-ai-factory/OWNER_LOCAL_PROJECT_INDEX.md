@@ -20,6 +20,7 @@ Planned future target only: `https://github.com/aeplatform-app/universal-arrange
 - SAFE-010 final local handoff pack: DONE_LOCAL_ONLY.
 - SAFE-011 final owner review seal: SEALED_LOCAL_ONLY.
 - SAFE-016 owner-neutral-003 final handoff: DONE_LOCAL_HANDOFF_ONLY.
+- SAFE-017 owner-neutral-003 owner decision gate: DONE_LOCAL_DECISION_GATE_ONLY.
 - Implementation round 001-008: COMPLETE.
 - IMPL-009 screenshot visual proof pack: DONE_LOCAL_ONLY.
 - IMPL-010 final send checklist: DONE_LOCAL_ONLY.
@@ -166,6 +167,7 @@ The wait gate remains active until the owner manually verifies the target reposi
 
 - Owner-neutral-003 start here: `uaos-ai-factory/writer-sandbox/neutral-package-writer/OWNER_NEUTRAL_003_START_HERE.md`
 - Owner-neutral-003 review packet: `uaos-ai-factory/writer-sandbox/neutral-package-writer/OWNER_NEUTRAL_003_REVIEW_PACKET.md`
+- Owner-neutral-003 owner decision form: `uaos-ai-factory/writer-sandbox/neutral-package-writer/OWNER_NEUTRAL_003_OWNER_DECISION_FORM.md`
 - Owner selected neutral review target: `uaos-ai-factory/writer-sandbox/neutral-package-writer/OWNER_SELECTED_NEUTRAL_REVIEW_TARGET.md`
 - Final neutral package comparison: `uaos-ai-factory/writer-sandbox/neutral-package-writer/FINAL_NEUTRAL_PACKAGE_COMPARISON.md`
 - SAFE-016 final handoff report: `uaos-ai-factory/implementation/reports/SAFE_016_OWNER_REVIEW_TARGET_FINAL_HANDOFF_REPORT.md`
