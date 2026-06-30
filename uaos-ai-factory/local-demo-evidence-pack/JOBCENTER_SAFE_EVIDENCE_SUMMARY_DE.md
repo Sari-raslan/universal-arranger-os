@@ -17,7 +17,7 @@ Diese Unterlagen koennen als sachlicher Nachweis fuer ein Gespraech ueber Arbeit
 ## Was nicht behauptet werden darf
 
 - Es ist keine oeffentliche Veroeffentlichung.
-- Es ist kein produktionsreifer Keyboard-Exporter.
+- Es ist ein lokaler privater Prototyp und kein Keyboard-Exporter fuer den produktiven Einsatz.
 - Es ist kein echter Keyboard-Transfer enthalten.
 - Es ist kein aktives Zahlungssystem enthalten.
 - Es ist kein Hosting und kein public Deployment aktiv.
@@ -25,4 +25,3 @@ Diese Unterlagen koennen als sachlicher Nachweis fuer ein Gespraech ueber Arbeit
 ## Warum stabile Entwicklungshardware wichtig ist
 
 Weitere Arbeit braucht stabile Entwicklungs-Hardware, damit UI, lokale Pruefungen, Dokumentation und spaetere sichere Tests zuverlaessig bearbeitet werden koennen.
-

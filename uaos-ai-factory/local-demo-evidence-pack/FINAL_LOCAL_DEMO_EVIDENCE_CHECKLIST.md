@@ -29,5 +29,4 @@ LOCAL ONLY - PRIVATE REVIEW ONLY - NOT KEYBOARD OUTPUT
 
 ## Final Review Result
 
-The local demo evidence pack is ready for private owner review only. It is not ready for keyboard transfer.
-
+The local demo evidence pack is ready for private owner review only. Keyboard transfer remains blocked.

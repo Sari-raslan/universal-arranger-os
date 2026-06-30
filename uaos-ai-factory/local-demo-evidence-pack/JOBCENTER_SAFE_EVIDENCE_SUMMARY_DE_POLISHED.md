@@ -9,7 +9,7 @@ Die Unterlagen koennen ein Gespraech ueber Arbeitsmittel, einen Arbeitscomputer 
 ## Was nicht behauptet wird
 
 - Keine Einkommenszusage.
-- Keine Produktionsreife.
+- Nicht fuer den produktiven Einsatz freigegeben.
 - Keine oeffentliche Veroeffentlichung.
 - Kein aktiver Zahlungsprozess.
 - Kein echtes Keyboard-Exportprodukt.
@@ -18,4 +18,3 @@ Die Unterlagen koennen ein Gespraech ueber Arbeitsmittel, einen Arbeitscomputer 
 ## Warum Hardware wichtig ist
 
 Eine stabile Laptop- oder Workstation-Umgebung ist wichtig, um die lokale Entwicklung, Tests, Dokumentation und spaetere sichere Demonstrationen zuverlaessig fortzusetzen.
-
