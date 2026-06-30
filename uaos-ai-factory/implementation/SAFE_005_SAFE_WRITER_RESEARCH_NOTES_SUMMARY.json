@@ -1,0 +1,36 @@
+{
+  "id": "SAFE-005",
+  "title": "safe writer research notes",
+  "status": "READY_FOR_LOCAL_VERIFICATION",
+  "localOnly": true,
+  "researchNotesOnly": true,
+  "outputs": [
+    "uaos-ai-factory/writer-sandbox/SAFE_WRITER_RESEARCH_NOTES_V2.md",
+    "uaos-ai-factory/writer-sandbox/WRITER_RESEARCH_NEXT_SAFE_STEPS.md",
+    "uaos-ai-factory/implementation/reports/SAFE_005_SAFE_WRITER_RESEARCH_NOTES_REPORT.md"
+  ],
+  "covered": {
+    "whatWeKnow": true,
+    "whatIsStillUnknown": true,
+    "whyRealFormatRemainsBlocked": true,
+    "whyFakeSetStyIsNotAllowed": true,
+    "ownerNeutral002Status": true,
+    "legacy300StyInventoryStatus": true,
+    "quarantineRemainsBlocked": true,
+    "nextSafeResearchOnlySteps": true,
+    "noCompatibilityClaim": true,
+    "noProprietarySamples": true,
+    "noKeyboardTransfer": true
+  },
+  "safety": {
+    "realKeyboardOutputCreated": false,
+    "fakeSetStyOutputCreated": false,
+    "keyboardTransfer": false,
+    "legacyFilesMovedDeletedRestored": false,
+    "legacyContentsCopied": false,
+    "proprietaryContentCopied": false,
+    "appSourceModified": false,
+    "frontendSourceModified": false,
+    "pushDeployVercelPayment": false
+  }
+}
