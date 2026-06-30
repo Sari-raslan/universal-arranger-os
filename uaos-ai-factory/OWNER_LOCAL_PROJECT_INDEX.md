@@ -19,6 +19,7 @@ Planned future target only: `https://github.com/aeplatform-app/universal-arrange
 - SAFE-008 business pack polish: DONE_LOCAL_ONLY.
 - SAFE-010 final local handoff pack: DONE_LOCAL_ONLY.
 - SAFE-011 final owner review seal: SEALED_LOCAL_ONLY.
+- SAFE-016 owner-neutral-003 final handoff: DONE_LOCAL_HANDOFF_ONLY.
 - Implementation round 001-008: COMPLETE.
 - IMPL-009 screenshot visual proof pack: DONE_LOCAL_ONLY.
 - IMPL-010 final send checklist: DONE_LOCAL_ONLY.
@@ -163,6 +164,11 @@ The wait gate remains active until the owner manually verifies the target reposi
 
 ## Latest Important Reports / Indexes
 
+- Owner-neutral-003 start here: `uaos-ai-factory/writer-sandbox/neutral-package-writer/OWNER_NEUTRAL_003_START_HERE.md`
+- Owner-neutral-003 review packet: `uaos-ai-factory/writer-sandbox/neutral-package-writer/OWNER_NEUTRAL_003_REVIEW_PACKET.md`
+- Owner selected neutral review target: `uaos-ai-factory/writer-sandbox/neutral-package-writer/OWNER_SELECTED_NEUTRAL_REVIEW_TARGET.md`
+- Final neutral package comparison: `uaos-ai-factory/writer-sandbox/neutral-package-writer/FINAL_NEUTRAL_PACKAGE_COMPARISON.md`
+- SAFE-016 final handoff report: `uaos-ai-factory/implementation/reports/SAFE_016_OWNER_REVIEW_TARGET_FINAL_HANDOFF_REPORT.md`
 - Final local handoff start here: `uaos-ai-factory/FINAL_LOCAL_HANDOFF_START_HERE.md`
 - Final local handoff pack: `uaos-ai-factory/FINAL_LOCAL_HANDOFF_PACK.md`
 - Owner local status dashboard README: `uaos-ai-factory/implementation/OWNER_LOCAL_STATUS_DASHBOARD_README.md`
@@ -199,12 +205,11 @@ The wait gate remains active until the owner manually verifies the target reposi
 
 ## Next Safe Choices
 
-1. Open `uaos-ai-factory/FINAL_LOCAL_HANDOFF_START_HERE.md`.
-2. Owner reviews neutral package `owner-neutral-002`.
-3. Owner fills `OWNER_FEEDBACK_CAPTURE_TEMPLATE.md` or `OWNER_FEEDBACK_FORM_V2.md`.
-4. Decide whether `owner-neutral-003` is needed.
-5. Use business pack polish files for manual owner review only.
-6. Stop before any real keyboard output.
+1. Open `uaos-ai-factory/writer-sandbox/neutral-package-writer/OWNER_NEUTRAL_003_START_HERE.md`.
+2. Owner manually reviews `owner-neutral-003`.
+3. Plan `owner-neutral-004` only if owner wants changes.
+4. Stop before keyboard output.
+5. High-risk real keyboard output gate later only with explicit approval.
 
 ## Ready State
 
