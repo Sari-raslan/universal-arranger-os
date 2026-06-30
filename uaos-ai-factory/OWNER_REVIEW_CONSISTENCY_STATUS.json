@@ -1,0 +1,30 @@
+{
+  "schema": "uaos-owner-review-consistency-status-v1",
+  "status": "PASS",
+  "selectedPackageId": "owner-neutral-003",
+  "checks": {
+    "catalog_selected_package": "owner-neutral-003",
+    "snapshot_selected_package": "owner-neutral-003",
+    "review_data_selected_package": "owner-neutral-003",
+    "package_selected_package": "owner-neutral-003",
+    "keyboardNativeFalseEverywhere": true,
+    "compatibilityUnverifiedEverywhere": true,
+    "validationPass": true,
+    "realKeyboardOutputNo": true,
+    "keyboardTransferNo": true,
+    "noPublicReleaseLabelsPresent": true,
+    "noPaymentDeployVercelEnabled": true,
+    "dashboardAgrees": true,
+    "remoteUnchanged": true
+  },
+  "safety": {
+    "localOnly": true,
+    "realKeyboardOutputCreated": false,
+    "keyboardTransferAllowed": false,
+    "noPush": true,
+    "noDeploy": true,
+    "noVercel": true,
+    "noPayment": true
+  },
+  "failures": []
+}
