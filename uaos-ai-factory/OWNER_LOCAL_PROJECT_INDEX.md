@@ -347,3 +347,20 @@ The wait gate remains active until the owner manually verifies the target reposi
 - Ready for owner review: YES.
 - Ready for keyboard transfer: NO.
 - Ready for external automation: NO.
+
+## NIGHT-RUN-056-075 Local Overnight Owner Handoff
+
+- NIGHT-DEV-056-060 manual review assistant pack: DONE_LOCAL_ONLY.
+- NIGHT-DEV-061-065 screenshot collection plan: DONE_LOCAL_ONLY.
+- NIGHT-DEV-066-070 PDF/PPT readiness gates: DONE_LOCAL_APPROVAL_GATES_ONLY.
+- NIGHT-DEV-071-075 final index and morning handoff: DONE_LOCAL_ONLY.
+- Master index: `uaos-ai-factory/NIGHT_RUN_056_075_MASTER_INDEX.md`
+- Morning handoff: `uaos-ai-factory/MORNING_OWNER_HANDOFF_AFTER_NIGHT_RUN.md`
+- Final seal: `uaos-ai-factory/NIGHT_RUN_056_075_FINAL_SEAL.md`
+- App.jsx touched: NO.
+- Frontend source touched: NO.
+- Actual PDF/PPTX created: NO.
+- Keyboard output created: NO.
+- Keyboard transfer allowed: NO.
+- Push/deploy/Vercel: NO.
+- Ready for morning owner review: YES.

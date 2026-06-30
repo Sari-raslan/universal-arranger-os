@@ -1,0 +1,20 @@
+﻿{
+  "schema": "uaos-night-run-master-index-v1",
+  "run": "NIGHT-DEV-056-075",
+  "status": "PASS",
+  "blocks": [
+    { "block": "NIGHT-DEV-056-060", "result": "manual review assistant pack", "commit": "50aff71" },
+    { "block": "NIGHT-DEV-061-065", "result": "screenshot collection plan", "commit": "17093ed" },
+    { "block": "NIGHT-DEV-066-070", "result": "PDF/PPT readiness gates", "commit": "647f785" },
+    { "block": "NIGHT-DEV-071-075", "result": "overnight owner handoff and final seal", "commit": "pending_final_local_commit" }
+  ],
+  "safety": {
+    "localOnly": true,
+    "appJsxTouched": false,
+    "frontendSourceTouched": false,
+    "actualPdfPptxCreated": false,
+    "keyboardOutputCreated": false,
+    "keyboardTransferAllowed": false,
+    "pushDeployVercel": false
+  }
+}
