@@ -1,0 +1,38 @@
+{
+  "stage": "DEV-016",
+  "title": "Owner-neutral-003 review data export",
+  "status": "PASS",
+  "local_only": true,
+  "selected_package": "owner-neutral-003",
+  "outputs": {
+    "json": "uaos-ai-factory/writer-sandbox/neutral-package-writer/outputs/owner-neutral-003/OWNER_NEUTRAL_003_REVIEW_DATA.json",
+    "markdown": "uaos-ai-factory/writer-sandbox/neutral-package-writer/outputs/owner-neutral-003/OWNER_NEUTRAL_003_REVIEW_DATA.md"
+  },
+  "review_data": {
+    "package_id": "owner-neutral-003",
+    "selected": true,
+    "package_type": ".uaos-neutral.json",
+    "sections_count": 5,
+    "tracks_count": 3,
+    "validation_status": "PASS",
+    "compatibility": "UNVERIFIED",
+    "keyboard_native": false,
+    "real_keyboard_output": "NO",
+    "keyboard_transfer": "NO"
+  },
+  "safety": {
+    "json_md_only": true,
+    "no_keyboard_native_output": true,
+    "real_keyboard_output_created": false,
+    "keyboard_transfer_allowed": false,
+    "no_push": true,
+    "no_deploy": true,
+    "no_vercel": true,
+    "no_payment": true,
+    "app_jsx_touched": false
+  },
+  "ready_for_dashboard_reference": true,
+  "ready_for_keyboard_transfer": false,
+  "ready_for_external_automation": false
+}
+

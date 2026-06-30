@@ -1,0 +1,104 @@
+{
+  "package_id": "owner-neutral-003",
+  "selected": true,
+  "package_type": ".uaos-neutral.json",
+  "review_status": "Owner manual review",
+  "sections_summary": {
+    "count": 5,
+    "metadata_only": true,
+    "sections": [
+      {
+        "section_id": "section-001",
+        "name": "Intro - gentle setup",
+        "order": 0
+      },
+      {
+        "section_id": "section-002",
+        "name": "Main Groove - verse foundation",
+        "order": 1
+      },
+      {
+        "section_id": "section-003",
+        "name": "Lift - chorus energy",
+        "order": 2
+      },
+      {
+        "section_id": "section-004",
+        "name": "Transition - short break",
+        "order": 3
+      },
+      {
+        "section_id": "section-005",
+        "name": "Outro - safe close",
+        "order": 4
+      }
+    ]
+  },
+  "tracks_summary": {
+    "count": 3,
+    "metadata_only": true,
+    "tracks": [
+      {
+        "track_id": "track-001",
+        "name": "Lead Line Planning Metadata",
+        "role": "melody planning"
+      },
+      {
+        "track_id": "track-002",
+        "name": "Harmony Bed Planning Metadata",
+        "role": "harmony planning"
+      },
+      {
+        "track_id": "track-003",
+        "name": "Rhythm Feel Planning Metadata",
+        "role": "rhythm feel planning"
+      }
+    ]
+  },
+  "metadata_summary": {
+    "source_package_id": "owner-neutral-002",
+    "revision_reason": "Improve owner review clarity using SAFE-012 planning requirements.",
+    "tempo": 96,
+    "tempo_range": "92-100",
+    "key_center": "C minor",
+    "time_signature": "4/4",
+    "mood": "focused, hopeful, modern arranger demo",
+    "style_intent": "neutral arranger sketch metadata only; no keyboard-native pattern data",
+    "arrangement_notes": "owner-neutral-003 refines section and track names while staying metadata-only."
+  },
+  "safety_labels": [
+    "EXPERIMENTAL",
+    "NEUTRAL_UAOS_PACKAGE",
+    "LOCAL_ONLY",
+    "OWNER_REVIEW_ONLY",
+    "NOT_KEYBOARD_NATIVE",
+    "NOT_PUBLIC_RELEASE",
+    "NOT_PRODUCTION",
+    "REAL_KEYBOARD_COMPATIBILITY_UNVERIFIED",
+    "NO_KEYBOARD_TRANSFER",
+    "NO_SET_STY_OUTPUT",
+    "NO_PROPRIETARY_SAMPLES",
+    "NO_KONTAKT_NATIVE_INSTRUMENTS_CONTENT"
+  ],
+  "validation_status": "PASS",
+  "compatibility": "UNVERIFIED",
+  "keyboard_native": false,
+  "real_keyboard_output": "NO",
+  "keyboard_transfer": "NO",
+  "recommended_owner_action": "Review owner-neutral-003 as text-only metadata for section names, track roles, safety labels, and validation status. Do not transfer to keyboard.",
+  "blocked_actions": [
+    "No keyboard-native file output.",
+    "No real keyboard output.",
+    "No keyboard transfer.",
+    "No .STY, .SET, .PRS, .STL, .PAT, .MSP, or .KST output.",
+    "No push, deploy, Vercel, payment, public release, or external automation."
+  ],
+  "source_paths": {
+    "package_json": "uaos-ai-factory/writer-sandbox/neutral-package-writer/outputs/owner-neutral-003/OWNER_NEUTRAL_003.uaos-neutral.json",
+    "validation_json": "uaos-ai-factory/writer-sandbox/neutral-package-writer/outputs/owner-neutral-003/VALIDATION.json",
+    "manifest_json": "uaos-ai-factory/writer-sandbox/neutral-package-writer/outputs/owner-neutral-003/MANIFEST.json",
+    "checksums": "uaos-ai-factory/writer-sandbox/neutral-package-writer/outputs/owner-neutral-003/CHECKSUMS.sha256"
+  },
+  "last_updated": "2026-06-30"
+}
+
