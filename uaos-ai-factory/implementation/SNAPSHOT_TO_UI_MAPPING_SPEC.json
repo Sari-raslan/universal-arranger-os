@@ -1,0 +1,84 @@
+{
+  "schema": "uaos-snapshot-to-ui-mapping-spec-v1",
+  "status": "PASS",
+  "localOnly": true,
+  "specOnly": true,
+  "sourceSnapshot": "uaos-ai-factory/SELECTED_NEUTRAL_PACKAGE_SNAPSHOT.json",
+  "targetPanel": "Selected Neutral Package",
+  "selectedPackageId": "owner-neutral-003",
+  "mappings": [
+    {
+      "snapshotField": "selectedPackageId",
+      "uiField": "Selected package",
+      "displayRule": "Display exact string."
+    },
+    {
+      "snapshotField": "packageType",
+      "uiField": "Package type",
+      "displayRule": "Display exact string."
+    },
+    {
+      "snapshotField": "keyboardNative",
+      "uiField": "Keyboard-native",
+      "displayRule": "Display NO when false."
+    },
+    {
+      "snapshotField": "compatibility",
+      "uiField": "Compatibility",
+      "displayRule": "Display exact status."
+    },
+    {
+      "snapshotField": "validationStatus",
+      "uiField": "Validation",
+      "displayRule": "Display exact status."
+    },
+    {
+      "snapshotField": "reviewStatus",
+      "uiField": "Review status",
+      "displayRule": "Display exact owner review status."
+    },
+    {
+      "snapshotField": "realKeyboardOutput",
+      "uiField": "Real keyboard output",
+      "displayRule": "Display exact status."
+    },
+    {
+      "snapshotField": "keyboardTransfer",
+      "uiField": "Keyboard transfer",
+      "displayRule": "Display exact status."
+    },
+    {
+      "snapshotField": "safetyLabels",
+      "uiField": "UI safety badges",
+      "displayRule": "Display as read-only safety labels."
+    },
+    {
+      "snapshotField": "sourcePaths",
+      "uiField": "local review links/paths",
+      "displayRule": "Display local paths only; no network links."
+    },
+    {
+      "snapshotField": "noNetwork/noWriteFromUi/noExportFromUi",
+      "uiField": "read-only constraints",
+      "displayRule": "Use as blocked behavior constraints."
+    }
+  ],
+  "constraints": {
+    "noNetwork": true,
+    "noWrite": true,
+    "noExport": true,
+    "readOnlyOnly": true,
+    "noKeyboardOutput": true,
+    "keyboardTransferAllowed": false
+  },
+  "safety": {
+    "appJsxTouched": false,
+    "frontendSourceTouched": false,
+    "realKeyboardOutputCreated": false,
+    "noPush": true,
+    "noDeploy": true,
+    "noVercel": true,
+    "noPayment": true
+  }
+}
+
