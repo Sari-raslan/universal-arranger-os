@@ -12,6 +12,12 @@ Planned future target only: `https://github.com/aeplatform-app/universal-arrange
 
 - AI Factory planning track: `FINAL_LOCAL_FACTORY_FREEZE`.
 - Bounded local agents round: `BOUNDED_LOCAL_AGENTS_COMPLETE`.
+- SAFE-002 neutral metadata validation improvement: DONE_LOCAL_ONLY.
+- SAFE-004 screenshot/send pack cleanup: DONE_LOCAL_ONLY.
+- SAFE-005 safe writer research notes: DONE_LOCAL_ONLY.
+- SAFE-007 owner local status dashboard: DONE_LOCAL_ONLY.
+- SAFE-008 business pack polish: DONE_LOCAL_ONLY.
+- SAFE-010 final local handoff pack: DONE_LOCAL_ONLY.
 - Implementation round 001-008: COMPLETE.
 - IMPL-009 screenshot visual proof pack: DONE_LOCAL_ONLY.
 - IMPL-010 final send checklist: DONE_LOCAL_ONLY.
@@ -141,6 +147,13 @@ The wait gate remains active until the owner manually verifies the target reposi
 
 ## Latest Important Reports / Indexes
 
+- Final local handoff start here: `uaos-ai-factory/FINAL_LOCAL_HANDOFF_START_HERE.md`
+- Final local handoff pack: `uaos-ai-factory/FINAL_LOCAL_HANDOFF_PACK.md`
+- Owner local status dashboard README: `uaos-ai-factory/implementation/OWNER_LOCAL_STATUS_DASHBOARD_README.md`
+- Business pack polish index: `uaos-ai-factory/implementation/BUSINESS_PACK_POLISH_INDEX.md`
+- Business pack wording bank: `uaos-ai-factory/implementation/JOBCENTER_SUPPORTER_SAFE_WORDING_BANK.md`
+- Business pack do-not-claim checklist: `uaos-ai-factory/implementation/BUSINESS_PACK_DO_NOT_CLAIM_CHECKLIST.md`
+- SAFE next implementation backlog: `uaos-ai-factory/implementation/SAFE_NEXT_IMPLEMENTATION_BACKLOG.md`
 - Implementation round 031R-035 seal report: `uaos-ai-factory/implementation/reports/IMPLEMENTATION_ROUND_031R_035_COMPLETION_SEAL_REPORT.md`
 - Implementation round 031R-035 seal JSON: `uaos-ai-factory/implementation/IMPLEMENTATION_ROUND_031R_035_COMPLETION_SEAL.json`
 - Implementation round 036-040 owner review seal report: `uaos-ai-factory/implementation/reports/IMPLEMENTATION_ROUND_036_040_OWNER_REVIEW_SEAL_REPORT.md`
@@ -170,11 +183,12 @@ The wait gate remains active until the owner manually verifies the target reposi
 
 ## Next Safe Choices
 
-1. Owner reviews neutral package `owner-neutral-002`.
-2. Owner fills `OWNER_FEEDBACK_CAPTURE_TEMPLATE.md`.
-3. Capture owner feedback from user response in IMPL-046.
-4. Generate `owner-neutral-003` in IMPL-047 only if needed and approved.
-5. Stop before any real keyboard output.
+1. Open `uaos-ai-factory/FINAL_LOCAL_HANDOFF_START_HERE.md`.
+2. Owner reviews neutral package `owner-neutral-002`.
+3. Owner fills `OWNER_FEEDBACK_CAPTURE_TEMPLATE.md` or `OWNER_FEEDBACK_FORM_V2.md`.
+4. Decide whether `owner-neutral-003` is needed.
+5. Use business pack polish files for manual owner review only.
+6. Stop before any real keyboard output.
 
 ## Ready State
 
