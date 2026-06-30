@@ -1,0 +1,44 @@
+{
+  "schema": "uaos-local-evidence-bundle-index-dev-013-032-v1",
+  "status": "PASS",
+  "localOnly": true,
+  "selectedPackage": "owner-neutral-003",
+  "coreUiEvidence": {
+    "dev013Commit": "dc00b55",
+    "dev013Report": "uaos-ai-factory/implementation/reports/DEV_013_READ_ONLY_SELECTED_PACKAGE_UI_REPORT.md",
+    "dev014VisualVerification": "uaos-ai-factory/implementation/reports/DEV_014_SELECTED_PACKAGE_UI_VISUAL_VERIFICATION_REPORT.md"
+  },
+  "dataBridgeSnapshotCheckerInfrastructure": {
+    "dev019Plan": "uaos-ai-factory/implementation/READ_ONLY_SELECTED_PACKAGE_DATA_BRIDGE_IMPLEMENTATION_PLAN.md",
+    "selectedPackageSnapshotPath": "uaos-ai-factory/SELECTED_NEUTRAL_PACKAGE_SNAPSHOT.json",
+    "consistencyStatusPath": "uaos-ai-factory/OWNER_REVIEW_CONSISTENCY_STATUS.json",
+    "dev023Seal": "uaos-ai-factory/implementation/DEVELOPMENT_ROUND_DEV_019_023_SEAL.json"
+  },
+  "mappingCopyQaApprovalGate": {
+    "dev024MappingSpec": "uaos-ai-factory/implementation/SNAPSHOT_TO_UI_MAPPING_SPEC.json",
+    "dev025CopyContract": "uaos-ai-factory/implementation/STATIC_UI_COPY_CONTRACT_SELECTED_PACKAGE.json",
+    "dev026ApprovalGate": "uaos-ai-factory/implementation/FUTURE_APPJSX_SNAPSHOT_INTEGRATION_APPROVAL_GATE.md",
+    "dev027VisualQaChecklist": "uaos-ai-factory/implementation/VISUAL_QA_SELECTED_PACKAGE_PANEL_CHECKLIST.md",
+    "dev028Seal": "uaos-ai-factory/implementation/DEVELOPMENT_ROUND_DEV_024_028_SEAL.json"
+  },
+  "appJsxSnapshotIntegrationEvidence": {
+    "dev029Commit": "99eed2f",
+    "dev029Report": "uaos-ai-factory/implementation/reports/DEV_029_APPJSX_READ_ONLY_SNAPSHOT_INTEGRATION_REPORT.md",
+    "dev029BackupPath": "E:\\keyboard-manager-clean\\backups\\DEV_029_APPJSX_SNAPSHOT_INTEGRATION_BACKUP_20260630_175750\\App.jsx.bak",
+    "dev030Commit": "d4725eb",
+    "dev030VisualSeal": "uaos-ai-factory/implementation/APPJSX_SNAPSHOT_VISUAL_VERIFICATION_SEAL.md"
+  },
+  "currentReviewEvidence": {
+    "ownerReviewChecklistV2": "uaos-ai-factory/OWNER_SELECTED_PACKAGE_REVIEW_CHECKLIST_V2.md",
+    "uiRegressionStatusPath": "uaos-ai-factory/UI_SNAPSHOT_REGRESSION_STATUS.json"
+  },
+  "safety": {
+    "realKeyboardOutput": "NO",
+    "keyboardTransfer": "NO",
+    "pushDeployVercel": "NO",
+    "payment": "NO",
+    "productionClaim": "NO"
+  },
+  "recommendedOwnerNextAction": "Review the local evidence bundle, then choose local demo evidence pack or UI/tooling polish."
+}
+
