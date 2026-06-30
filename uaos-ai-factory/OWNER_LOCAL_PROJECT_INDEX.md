@@ -37,6 +37,11 @@ Planned future target only: `https://github.com/aeplatform-app/universal-arrange
 - DEV-021 dashboard snapshot integration: DONE_LOCAL_ONLY.
 - DEV-022 owner review consistency checker: DONE_LOCAL_ONLY.
 - DEV-023 development round DEV-019-023 seal: SEALED_LOCAL_DATA_BRIDGE_INFRASTRUCTURE.
+- DEV-024 snapshot-to-UI mapping spec: DONE_LOCAL_SPEC_ONLY.
+- DEV-025 static selected package UI copy contract: DONE_LOCAL_SPEC_ONLY.
+- DEV-026 future App.jsx snapshot integration checklist: DONE_LOCAL_CHECKLIST_ONLY.
+- DEV-027 visual QA selected package panel checklist: DONE_LOCAL_CHECKLIST_ONLY.
+- DEV-028 development round DEV-024-028 seal: SEALED_LOCAL_UI_SPEC_INFRASTRUCTURE.
 - Implementation round 001-008: COMPLETE.
 - IMPL-009 screenshot visual proof pack: DONE_LOCAL_ONLY.
 - IMPL-010 final send checklist: DONE_LOCAL_ONLY.
@@ -199,6 +204,16 @@ The wait gate remains active until the owner manually verifies the target reposi
 - DEV-021 dashboard snapshot integration report: `uaos-ai-factory/implementation/reports/DEV_021_DASHBOARD_SNAPSHOT_INTEGRATION_REPORT.md`
 - DEV-022 owner review consistency checker report: `uaos-ai-factory/implementation/reports/DEV_022_OWNER_REVIEW_CONSISTENCY_CHECKER_REPORT.md`
 - DEV-022 owner review consistency status JSON: `uaos-ai-factory/OWNER_REVIEW_CONSISTENCY_STATUS.json`
+- Development round DEV-024-028 seal report: `uaos-ai-factory/implementation/reports/DEVELOPMENT_ROUND_DEV_024_028_SEAL_REPORT.md`
+- Development round DEV-024-028 seal JSON: `uaos-ai-factory/implementation/DEVELOPMENT_ROUND_DEV_024_028_SEAL.json`
+- DEV-024 snapshot-to-UI mapping spec report: `uaos-ai-factory/implementation/reports/DEV_024_SNAPSHOT_TO_UI_MAPPING_SPEC_REPORT.md`
+- DEV-024 snapshot-to-UI mapping spec JSON: `uaos-ai-factory/implementation/SNAPSHOT_TO_UI_MAPPING_SPEC.json`
+- DEV-025 static selected package UI copy contract report: `uaos-ai-factory/implementation/reports/DEV_025_STATIC_UI_COPY_CONTRACT_REPORT.md`
+- DEV-025 static selected package UI copy contract JSON: `uaos-ai-factory/implementation/STATIC_UI_COPY_CONTRACT_SELECTED_PACKAGE.json`
+- DEV-026 future App.jsx snapshot integration checklist report: `uaos-ai-factory/implementation/reports/DEV_026_FUTURE_APPJSX_INTEGRATION_CHECKLIST_REPORT.md`
+- DEV-026 future App.jsx snapshot integration approval gate: `uaos-ai-factory/implementation/FUTURE_APPJSX_SNAPSHOT_INTEGRATION_APPROVAL_GATE.md`
+- DEV-027 visual QA selected package panel report: `uaos-ai-factory/implementation/reports/DEV_027_VISUAL_QA_SELECTED_PACKAGE_PANEL_REPORT.md`
+- DEV-027 visual QA selected package panel checklist: `uaos-ai-factory/implementation/VISUAL_QA_SELECTED_PACKAGE_PANEL_CHECKLIST.md`
 - Development round DEV-009-012 seal report: `uaos-ai-factory/implementation/reports/DEVELOPMENT_ROUND_DEV_009_012_SEAL_REPORT.md`
 - Development round DEV-009-012 seal JSON: `uaos-ai-factory/implementation/DEVELOPMENT_ROUND_DEV_009_012_SEAL.json`
 - DEV-009 metadata diff tool report: `uaos-ai-factory/implementation/reports/DEV_009_METADATA_DIFF_TOOL_REPORT.md`
