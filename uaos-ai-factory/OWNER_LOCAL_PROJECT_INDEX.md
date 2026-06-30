@@ -26,6 +26,12 @@ Planned future target only: `https://github.com/aeplatform-app/universal-arrange
 - DEV-003 validation aggregator: DONE_LOCAL_ONLY.
 - DEV-004 safe development backlog v2: DONE_LOCAL_ONLY.
 - DEV-005 development infrastructure seal: SEALED_LOCAL_DEVELOPMENT_INFRASTRUCTURE.
+- DEV-013 read-only selected package UI panel: DONE_LOCAL_ONLY.
+- DEV-014 selected package UI visual verification: SEALED_LOCAL_ONLY.
+- DEV-015 selected package UI data bridge plan: DONE_LOCAL_PLAN_ONLY.
+- DEV-016 owner-neutral-003 review data export: DONE_LOCAL_ONLY.
+- DEV-017 owner local status dashboard enhancement: DONE_LOCAL_ONLY.
+- DEV-018 development round DEV-014-018 seal: SEALED_LOCAL_DEVELOPMENT_INFRASTRUCTURE.
 - Implementation round 001-008: COMPLETE.
 - IMPL-009 screenshot visual proof pack: DONE_LOCAL_ONLY.
 - IMPL-010 final send checklist: DONE_LOCAL_ONLY.
@@ -170,6 +176,15 @@ The wait gate remains active until the owner manually verifies the target reposi
 
 ## Latest Important Reports / Indexes
 
+- Development round DEV-014-018 seal report: `uaos-ai-factory/implementation/reports/DEVELOPMENT_ROUND_DEV_014_018_SEAL_REPORT.md`
+- Development round DEV-014-018 seal JSON: `uaos-ai-factory/implementation/DEVELOPMENT_ROUND_DEV_014_018_SEAL.json`
+- DEV-014 selected package UI visual verification report: `uaos-ai-factory/implementation/reports/DEV_014_SELECTED_PACKAGE_UI_VISUAL_VERIFICATION_REPORT.md`
+- DEV-014 selected package UI visual verification seal: `uaos-ai-factory/implementation/SELECTED_PACKAGE_UI_VISUAL_VERIFICATION_SEAL.md`
+- DEV-015 selected package UI data bridge plan report: `uaos-ai-factory/implementation/reports/DEV_015_SELECTED_PACKAGE_UI_DATA_BRIDGE_PLAN_REPORT.md`
+- DEV-015 selected package UI data contract: `uaos-ai-factory/implementation/SELECTED_PACKAGE_UI_DATA_CONTRACT.json`
+- DEV-016 owner-neutral-003 review data export report: `uaos-ai-factory/implementation/reports/DEV_016_OWNER_NEUTRAL_003_REVIEW_DATA_EXPORT_REPORT.md`
+- DEV-016 owner-neutral-003 review data JSON: `uaos-ai-factory/writer-sandbox/neutral-package-writer/outputs/owner-neutral-003/OWNER_NEUTRAL_003_REVIEW_DATA.json`
+- DEV-017 owner local status dashboard enhancement report: `uaos-ai-factory/implementation/reports/DEV_017_OWNER_LOCAL_STATUS_DASHBOARD_ENHANCEMENT_REPORT.md`
 - Development round DEV-009-012 seal report: `uaos-ai-factory/implementation/reports/DEVELOPMENT_ROUND_DEV_009_012_SEAL_REPORT.md`
 - Development round DEV-009-012 seal JSON: `uaos-ai-factory/implementation/DEVELOPMENT_ROUND_DEV_009_012_SEAL.json`
 - DEV-009 metadata diff tool report: `uaos-ai-factory/implementation/reports/DEV_009_METADATA_DIFF_TOOL_REPORT.md`
