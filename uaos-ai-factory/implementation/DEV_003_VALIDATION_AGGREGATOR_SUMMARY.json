@@ -1,0 +1,19 @@
+{
+  "id": "DEV-003",
+  "title": "validation aggregator",
+  "status": "DONE_LOCAL_ONLY",
+  "script": "scripts/uaos-ai-factory-validation-aggregator.mjs",
+  "npmScript": "ai:factory:validation-aggregator",
+  "outputs": [
+    "uaos-ai-factory/VALIDATION_AGGREGATE_STATUS.json",
+    "uaos-ai-factory/VALIDATION_AGGREGATE_STATUS.md",
+    "uaos-ai-factory/implementation/reports/DEV_003_VALIDATION_AGGREGATOR_REPORT.md"
+  ],
+  "safety": {
+    "realKeyboardOutput": "NO",
+    "keyboardTransfer": "NO",
+    "pushDeployVercel": "NO",
+    "legacyStyStatus": "documented/untouched",
+    "externalAutomation": "NO"
+  }
+}
