@@ -1,0 +1,23 @@
+{
+  "id": "DEV-002",
+  "title": "neutral package inspector cli",
+  "status": "DONE_LOCAL_ONLY",
+  "script": "scripts/uaos-ai-factory-neutral-package-inspector.mjs",
+  "npmScript": "ai:factory:neutral-package-inspector",
+  "selectedPackage": "owner-neutral-003",
+  "readOnly": true,
+  "checks": {
+    "readsCatalog": true,
+    "verifiesOwnerNeutral003Exists": true,
+    "verifiesKeyboardNativeFalse": true,
+    "verifiesCompatibilityUnverified": true,
+    "verifiesNoSetStyOutput": true,
+    "printsSelectedPackageSummary": true,
+    "doesNotWritePackageFiles": true
+  },
+  "safety": {
+    "realKeyboardOutputCreated": false,
+    "keyboardTransferAllowed": false,
+    "pushDeployVercelPayment": false
+  }
+}
