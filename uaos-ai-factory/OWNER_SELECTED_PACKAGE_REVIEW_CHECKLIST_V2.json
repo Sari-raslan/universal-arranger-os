@@ -1,0 +1,39 @@
+{
+  "schema": "uaos-owner-selected-package-review-checklist-v2",
+  "status": "READY_LOCAL_ONLY",
+  "selectedPackage": "owner-neutral-003",
+  "uiPanelVisibleAfterDev029": true,
+  "dev030VisualSealComplete": true,
+  "packageType": ".uaos-neutral.json",
+  "keyboardNative": "NO",
+  "compatibility": "UNVERIFIED",
+  "validation": "PASS",
+  "realKeyboardOutput": "NO",
+  "keyboardTransfer": "NO",
+  "safeOwnerAction": "review metadata only",
+  "blockedOwnerActions": [
+    "no keyboard transfer",
+    "no real device test yet",
+    "no public publish",
+    "no payment",
+    "no deploy",
+    "no production claim"
+  ],
+  "ownerReviewQuestions": [
+    "Is the selected package label clear?",
+    "Is the safety wording clear?",
+    "Is the review status understandable?",
+    "Should owner-neutral-004 be planned later?",
+    "Should UI snapshot integration stay as-is?"
+  ],
+  "safety": {
+    "localOnly": true,
+    "realKeyboardOutputCreated": false,
+    "keyboardTransferAllowed": false,
+    "noPush": true,
+    "noDeploy": true,
+    "noVercel": true,
+    "noPayment": true
+  }
+}
+

@@ -1,0 +1,42 @@
+{
+  "stage": "DEV-031",
+  "title": "Selected package owner review checklist v2",
+  "status": "PASS",
+  "local_only": true,
+  "selected_package": "owner-neutral-003",
+  "ui_panel_visible_after_dev_029": true,
+  "dev_030_visual_seal_complete": true,
+  "package_type": ".uaos-neutral.json",
+  "keyboard_native": "NO",
+  "compatibility": "UNVERIFIED",
+  "validation": "PASS",
+  "real_keyboard_output": "NO",
+  "keyboard_transfer": "NO",
+  "safe_owner_action": "review metadata only",
+  "blocked_owner_actions": [
+    "no keyboard transfer",
+    "no real device test yet",
+    "no public publish",
+    "no payment",
+    "no deploy",
+    "no production claim"
+  ],
+  "owner_review_questions": [
+    "Is the selected package label clear?",
+    "Is the safety wording clear?",
+    "Is the review status understandable?",
+    "Should owner-neutral-004 be planned later?",
+    "Should UI snapshot integration stay as-is?"
+  ],
+  "safety": {
+    "app_jsx_touched": false,
+    "frontend_source_touched": false,
+    "real_keyboard_output_created": false,
+    "keyboard_transfer_allowed": false,
+    "no_push": true,
+    "no_deploy": true,
+    "no_vercel": true,
+    "no_payment": true
+  }
+}
+
