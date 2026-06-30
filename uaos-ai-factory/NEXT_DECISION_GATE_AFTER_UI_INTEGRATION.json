@@ -1,0 +1,34 @@
+{
+  "schema": "uaos-next-decision-gate-after-ui-integration-v1",
+  "status": "READY_LOCAL_ONLY",
+  "selectedPackage": "owner-neutral-003",
+  "safeChoices": [
+    "Continue local UI/tooling polish",
+    "Create owner-neutral-004 planning only",
+    "Improve Pixi/Jobcenter/supporter presentation wording",
+    "Create local demo evidence pack",
+    "Stop and owner manually reviews"
+  ],
+  "blockedChoices": [
+    "keyboard transfer",
+    "real keyboard writer",
+    "real device output",
+    "public deploy",
+    "Vercel deploy",
+    "payment activation",
+    "production release",
+    "copying proprietary sample/library content"
+  ],
+  "recommendedNextSafeChoice": "local demo evidence pack OR UI/tooling polish",
+  "safety": {
+    "localOnly": true,
+    "realKeyboardOutputCreated": false,
+    "keyboardTransferAllowed": false,
+    "noPush": true,
+    "noDeploy": true,
+    "noVercel": true,
+    "noPayment": true,
+    "noProductionRelease": true
+  }
+}
+
