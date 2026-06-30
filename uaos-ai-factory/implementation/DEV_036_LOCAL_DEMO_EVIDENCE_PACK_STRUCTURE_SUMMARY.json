@@ -1,0 +1,32 @@
+{
+  "stage": "DEV-036",
+  "title": "Local demo evidence pack structure",
+  "status": "PASS",
+  "local_only": true,
+  "pack_path": "uaos-ai-factory/local-demo-evidence-pack/",
+  "reference_only": true,
+  "selected_package": "owner-neutral-003",
+  "safety_labels": [
+    "LOCAL ONLY",
+    "READ ONLY",
+    "NOT PUBLIC RELEASE",
+    "NOT KEYBOARD OUTPUT",
+    "NO PUSH",
+    "NO DEPLOY",
+    "NO VERCEL",
+    "NO PAYMENT",
+    "NO KEYBOARD TRANSFER"
+  ],
+  "safety": {
+    "app_jsx_touched": false,
+    "frontend_source_touched": false,
+    "real_keyboard_output_created": false,
+    "keyboard_transfer_allowed": false,
+    "no_push": true,
+    "no_deploy": true,
+    "no_vercel": true,
+    "no_payment": true,
+    "no_keyboard_native_files": true
+  }
+}
+

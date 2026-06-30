@@ -1,0 +1,38 @@
+{
+  "schema": "uaos-local-demo-evidence-pack-manifest-v1",
+  "status": "READY_LOCAL_ONLY",
+  "packPath": "uaos-ai-factory/local-demo-evidence-pack/",
+  "selectedPackage": "owner-neutral-003",
+  "safetyLabels": [
+    "LOCAL ONLY",
+    "READ ONLY",
+    "NOT PUBLIC RELEASE",
+    "NOT KEYBOARD OUTPUT",
+    "NO PUSH",
+    "NO DEPLOY",
+    "NO VERCEL",
+    "NO PAYMENT",
+    "NO KEYBOARD TRANSFER"
+  ],
+  "references": {
+    "dev029AppJsxSnapshotIntegration": "uaos-ai-factory/implementation/reports/DEV_029_APPJSX_READ_ONLY_SNAPSHOT_INTEGRATION_REPORT.md",
+    "dev030VisualVerificationSeal": "uaos-ai-factory/implementation/APPJSX_SNAPSHOT_VISUAL_VERIFICATION_SEAL.md",
+    "dev031OwnerReviewChecklistV2": "uaos-ai-factory/OWNER_SELECTED_PACKAGE_REVIEW_CHECKLIST_V2.md",
+    "dev032UiSnapshotRegressionStatus": "uaos-ai-factory/UI_SNAPSHOT_REGRESSION_STATUS.json",
+    "dev033LocalEvidenceBundleIndex": "uaos-ai-factory/LOCAL_EVIDENCE_BUNDLE_INDEX_DEV_013_032.md",
+    "dev034NextDecisionGate": "uaos-ai-factory/NEXT_DECISION_GATE_AFTER_UI_INTEGRATION.md",
+    "dev035RoundSeal": "uaos-ai-factory/implementation/DEVELOPMENT_ROUND_DEV_031_035_SEAL.json",
+    "selectedPackageSnapshot": "uaos-ai-factory/SELECTED_NEUTRAL_PACKAGE_SNAPSHOT.json",
+    "ownerReviewConsistencyStatus": "uaos-ai-factory/OWNER_REVIEW_CONSISTENCY_STATUS.json",
+    "ownerNeutral003ReviewData": "uaos-ai-factory/writer-sandbox/neutral-package-writer/outputs/owner-neutral-003/OWNER_NEUTRAL_003_REVIEW_DATA.json",
+    "dev029BackupPath": "E:\\keyboard-manager-clean\\backups\\DEV_029_APPJSX_SNAPSHOT_INTEGRATION_BACKUP_20260630_175750\\App.jsx.bak"
+  },
+  "safety": {
+    "referenceOnly": true,
+    "realKeyboardOutput": "NO",
+    "keyboardTransfer": "NO",
+    "pushDeployVercel": "NO",
+    "payment": "NO"
+  }
+}
+
