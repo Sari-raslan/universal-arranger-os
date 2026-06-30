@@ -1,0 +1,29 @@
+{
+  "id": "SAFE-007",
+  "title": "local QA dashboard improvement",
+  "status": "READY_FOR_LOCAL_VERIFICATION",
+  "localOnly": true,
+  "script": "scripts/uaos-ai-factory-owner-local-status-dashboard.mjs",
+  "npmScript": "ai:factory:owner-local-status-dashboard",
+  "coverage": {
+    "latestLocalCommitsSummary": true,
+    "gitStatusCleanDirty": true,
+    "remoteUnchanged": true,
+    "ownerNeutral002Status": true,
+    "metadataValidationStatus": true,
+    "realKeyboardOutputStatusNo": true,
+    "keyboardTransferStatusNo": true,
+    "legacyStyInventoryStatus": true,
+    "safeNextActions": true,
+    "blockedActions": true
+  },
+  "safety": {
+    "realKeyboardOutputCreated": false,
+    "keyboardTransfer": false,
+    "legacyFilesMovedDeletedRestored": false,
+    "appSourceModified": false,
+    "frontendSourceModified": false,
+    "pushDeployVercelPayment": false,
+    "externalAutomation": false
+  }
+}
