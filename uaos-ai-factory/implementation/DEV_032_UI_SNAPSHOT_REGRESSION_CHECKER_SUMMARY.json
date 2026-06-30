@@ -1,0 +1,34 @@
+{
+  "stage": "DEV-032",
+  "title": "UI snapshot regression checker",
+  "status": "PASS",
+  "local_only": true,
+  "script": "scripts/uaos-ai-factory-ui-snapshot-regression-check.mjs",
+  "npm_script": "ai:factory:ui-snapshot-regression-check",
+  "status_outputs": {
+    "json": "uaos-ai-factory/UI_SNAPSHOT_REGRESSION_STATUS.json",
+    "markdown": "uaos-ai-factory/UI_SNAPSHOT_REGRESSION_STATUS.md"
+  },
+  "checks": {
+    "app_jsx_contains_snapshot_object": true,
+    "app_jsx_contains_owner_neutral_003": true,
+    "app_jsx_contains_not_keyboard_output": true,
+    "app_jsx_contains_read_only": true,
+    "app_jsx_contains_keyboard_transfer_no": true,
+    "forbidden_wording_absent": true,
+    "dev_030_visual_seal_exists": true,
+    "selected_snapshot_json_exists": true,
+    "consistency_status_exists": true
+  },
+  "safety": {
+    "app_jsx_touched": false,
+    "frontend_source_touched": false,
+    "real_keyboard_output_created": false,
+    "keyboard_transfer_allowed": false,
+    "no_push": true,
+    "no_deploy": true,
+    "no_vercel": true,
+    "no_payment": true
+  }
+}
+

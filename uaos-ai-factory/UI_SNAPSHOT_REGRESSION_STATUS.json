@@ -1,0 +1,37 @@
+{
+  "schema": "uaos-ui-snapshot-regression-status-v1",
+  "status": "PASS",
+  "selectedPackage": "owner-neutral-003",
+  "checks": {
+    "embeddedSnapshotObject": true,
+    "ownerNeutral003": true,
+    "notKeyboardOutput": true,
+    "readOnly": true,
+    "keyboardTransferNo": true
+  },
+  "requiredFiles": {
+    "visualSealExists": true,
+    "selectedSnapshotJsonExists": true,
+    "consistencyStatusExists": true
+  },
+  "forbiddenWordingAbsent": true,
+  "forbiddenWording": [
+    "ready for keyboard",
+    "export to organ",
+    "production ready",
+    "payment enabled",
+    "live release",
+    "real writer ready"
+  ],
+  "safety": {
+    "localOnly": true,
+    "appJsxReadOnlySnapshotIntegration": true,
+    "realKeyboardOutputCreated": false,
+    "keyboardTransferAllowed": false,
+    "noPush": true,
+    "noDeploy": true,
+    "noVercel": true,
+    "noPayment": true
+  },
+  "failures": []
+}
