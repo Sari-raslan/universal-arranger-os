@@ -170,6 +170,14 @@ The wait gate remains active until the owner manually verifies the target reposi
 
 ## Latest Important Reports / Indexes
 
+- Development round DEV-009-012 seal report: `uaos-ai-factory/implementation/reports/DEVELOPMENT_ROUND_DEV_009_012_SEAL_REPORT.md`
+- Development round DEV-009-012 seal JSON: `uaos-ai-factory/implementation/DEVELOPMENT_ROUND_DEV_009_012_SEAL.json`
+- DEV-009 metadata diff tool report: `uaos-ai-factory/implementation/reports/DEV_009_METADATA_DIFF_TOOL_REPORT.md`
+- DEV-009 metadata diff output: `uaos-ai-factory/writer-sandbox/neutral-package-writer/NEUTRAL_METADATA_DIFF_002_003.md`
+- DEV-010 browser data model report: `uaos-ai-factory/implementation/reports/DEV_010_NEUTRAL_PACKAGE_BROWSER_DATA_MODEL_REPORT.md`
+- DEV-010 browser data model: `uaos-ai-factory/writer-sandbox/neutral-package-writer/NEUTRAL_PACKAGE_BROWSER_DATA_MODEL.md`
+- DEV-011 read-only UI approval gate report: `uaos-ai-factory/implementation/reports/DEV_011_READ_ONLY_UI_APPROVAL_GATE_REPORT.md`
+- DEV-011 read-only UI approval gate: `uaos-ai-factory/implementation/READ_ONLY_UI_SELECTED_PACKAGE_APPROVAL_GATE.md`
 - Neutral package catalog: `uaos-ai-factory/writer-sandbox/neutral-package-writer/NEUTRAL_PACKAGE_CATALOG.md`
 - Neutral package catalog JSON: `uaos-ai-factory/writer-sandbox/neutral-package-writer/NEUTRAL_PACKAGE_CATALOG.json`
 - Validation aggregate status: `uaos-ai-factory/VALIDATION_AGGREGATE_STATUS.md`
