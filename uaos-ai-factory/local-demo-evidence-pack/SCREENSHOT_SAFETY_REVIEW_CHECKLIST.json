@@ -1,0 +1,18 @@
+﻿{
+  "schema": "uaos-screenshot-safety-review-checklist-v1",
+  "status": "template",
+  "checks": [
+    "no public URL claim",
+    "no payment active",
+    "no keyboard transfer",
+    "no real writer ready",
+    "no production-ready wording",
+    "no private passwords/tokens",
+    "no personal sensitive documents visible"
+  ],
+  "safety": {
+    "localOnly": true,
+    "keyboardTransferAllowed": false,
+    "keyboardOutputCreated": false
+  }
+}
