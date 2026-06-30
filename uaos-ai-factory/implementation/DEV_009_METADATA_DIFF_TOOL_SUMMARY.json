@@ -1,0 +1,24 @@
+{
+  "id": "DEV-009",
+  "title": "metadata diff tool implementation",
+  "status": "DONE_LOCAL_ONLY",
+  "script": "scripts/uaos-ai-factory-neutral-metadata-diff.mjs",
+  "npmScript": "ai:factory:neutral-metadata-diff",
+  "compares": [
+    "owner-neutral-002",
+    "owner-neutral-003"
+  ],
+  "selectedPackage": "owner-neutral-003",
+  "outputs": [
+    "uaos-ai-factory/writer-sandbox/neutral-package-writer/NEUTRAL_METADATA_DIFF_002_003.json",
+    "uaos-ai-factory/writer-sandbox/neutral-package-writer/NEUTRAL_METADATA_DIFF_002_003.md",
+    "uaos-ai-factory/implementation/reports/DEV_009_METADATA_DIFF_TOOL_REPORT.md"
+  ],
+  "safety": {
+    "realKeyboardOutputCreated": false,
+    "keyboardTransferAllowed": false,
+    "keyboardNativeFilesCreated": false,
+    "pushDeployVercelPayment": false,
+    "packageFilesModifiedByTool": false
+  }
+}

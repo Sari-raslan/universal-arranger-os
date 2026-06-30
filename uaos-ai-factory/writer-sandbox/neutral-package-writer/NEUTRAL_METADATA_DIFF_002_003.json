@@ -1,0 +1,124 @@
+{
+  "schema": "uaos-neutral-metadata-diff-v1",
+  "status": "PASS",
+  "comparedPackages": [
+    "owner-neutral-002",
+    "owner-neutral-003"
+  ],
+  "selectedPackage": "owner-neutral-003",
+  "selectionReason": "owner-neutral-003 validation passed and metadata/safety labels are richer and clearer.",
+  "comparisons": {
+    "package_id": {
+      "ownerNeutral002": "owner-neutral-002",
+      "ownerNeutral003": "owner-neutral-003"
+    },
+    "status": {
+      "ownerNeutral002": "EXPERIMENTAL_NEUTRAL_PACKAGE",
+      "ownerNeutral003": "EXPERIMENTAL_NEUTRAL_PACKAGE"
+    },
+    "sections": {
+      "ownerNeutral002": [
+        "Intro - soft entry",
+        "Verse A - main groove",
+        "Chorus - lifted phrase",
+        "Break - short transition",
+        "Ending - safe close"
+      ],
+      "ownerNeutral003": [
+        "Intro - gentle setup",
+        "Main Groove - verse foundation",
+        "Lift - chorus energy",
+        "Transition - short break",
+        "Outro - safe close"
+      ],
+      "changed": true
+    },
+    "tracks": {
+      "ownerNeutral002": [
+        "Lead Melody Metadata",
+        "Chord Bed Metadata",
+        "Rhythm Intent Metadata"
+      ],
+      "ownerNeutral003": [
+        "Lead Line Planning Metadata",
+        "Harmony Bed Planning Metadata",
+        "Rhythm Feel Planning Metadata"
+      ],
+      "changed": true
+    },
+    "metadata": {
+      "ownerNeutral002KeyCount": 13,
+      "ownerNeutral003KeyCount": 22,
+      "addedIn003": [
+        "build_approval_required_for_next_revision",
+        "intended_review_audience",
+        "local_only",
+        "owner_feedback_source",
+        "owner_feedback_status",
+        "review_round",
+        "revision_reason",
+        "safety_notes",
+        "source_package_id"
+      ]
+    },
+    "validationFields": {
+      "ownerNeutral002KeyCount": 6,
+      "ownerNeutral003KeyCount": 14,
+      "addedIn003": [
+        "validated_checksum_reference_exists",
+        "validated_manifest_reference_exists",
+        "validated_no_keyboard_transfer",
+        "validated_no_kontakt_native_instruments_content",
+        "validated_no_production_claim",
+        "validated_no_set_sty_output",
+        "validated_package_id_exists",
+        "validated_source_package_id_exists"
+      ]
+    },
+    "chordStylePlaceholders": {
+      "ownerNeutral002Count": 3,
+      "ownerNeutral003Count": 5,
+      "ownerNeutral003AddsSafetyFlags": true
+    },
+    "safetyLabels": {
+      "ownerNeutral002": [
+        "EXPERIMENTAL",
+        "NEUTRAL_UAOS_PACKAGE",
+        "NOT_KEYBOARD_NATIVE",
+        "NOT_PUBLIC_RELEASE",
+        "NOT_PRODUCTION",
+        "OWNER_REVIEW_ONLY"
+      ],
+      "ownerNeutral003": [
+        "EXPERIMENTAL",
+        "NEUTRAL_UAOS_PACKAGE",
+        "LOCAL_ONLY",
+        "OWNER_REVIEW_ONLY",
+        "NOT_KEYBOARD_NATIVE",
+        "NOT_PUBLIC_RELEASE",
+        "NOT_PRODUCTION",
+        "REAL_KEYBOARD_COMPATIBILITY_UNVERIFIED",
+        "NO_KEYBOARD_TRANSFER",
+        "NO_SET_STY_OUTPUT",
+        "NO_PROPRIETARY_SAMPLES",
+        "NO_KONTAKT_NATIVE_INSTRUMENTS_CONTENT"
+      ],
+      "addedIn003": [
+        "LOCAL_ONLY",
+        "REAL_KEYBOARD_COMPATIBILITY_UNVERIFIED",
+        "NO_KEYBOARD_TRANSFER",
+        "NO_SET_STY_OUTPUT",
+        "NO_PROPRIETARY_SAMPLES",
+        "NO_KONTAKT_NATIVE_INSTRUMENTS_CONTENT"
+      ]
+    }
+  },
+  "safety": {
+    "keyboardNativeOutputCreated": false,
+    "realKeyboardOutputCreated": false,
+    "keyboardTransferAllowed": false,
+    "setStyOutputCreated": false,
+    "proprietaryContentCopied": false
+  },
+  "failures": []
+}
