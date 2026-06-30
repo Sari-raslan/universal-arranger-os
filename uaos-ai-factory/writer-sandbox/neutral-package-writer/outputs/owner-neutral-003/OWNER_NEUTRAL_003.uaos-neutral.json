@@ -1,0 +1,194 @@
+{
+  "package_id": "owner-neutral-003",
+  "status": "EXPERIMENTAL_NEUTRAL_PACKAGE",
+  "labels": [
+    "EXPERIMENTAL",
+    "NEUTRAL_UAOS_PACKAGE",
+    "LOCAL_ONLY",
+    "OWNER_REVIEW_ONLY",
+    "NOT_KEYBOARD_NATIVE",
+    "NOT_PUBLIC_RELEASE",
+    "NOT_PRODUCTION",
+    "REAL_KEYBOARD_COMPATIBILITY_UNVERIFIED",
+    "NO_KEYBOARD_TRANSFER",
+    "NO_SET_STY_OUTPUT",
+    "NO_PROPRIETARY_SAMPLES",
+    "NO_KONTAKT_NATIVE_INSTRUMENTS_CONTENT"
+  ],
+  "owner_only": true,
+  "not_public_release": true,
+  "not_production": true,
+  "keyboard_native": false,
+  "real_keyboard_compatibility": "UNVERIFIED",
+  "compatibility_status": "NEUTRAL_NOT_KEYBOARD_NATIVE",
+  "safe_extension": ".uaos-neutral.json",
+  "source_package": "owner-neutral-002",
+  "source_package_path": "uaos-ai-factory/writer-sandbox/neutral-package-writer/outputs/owner-neutral-002/OWNER_NEUTRAL_002.uaos-neutral.json",
+  "revision_source": "SAFE-012 owner-neutral-003 planning from review files",
+  "owner_approval": "approved neutral metadata only build for SAFE-013",
+  "no_push": true,
+  "no_deploy": true,
+  "no_vercel": true,
+  "no_payment": true,
+  "no_proprietary_samples": true,
+  "no_kontakt_native_instruments_content": true,
+  "no_keyboard_native_output": true,
+  "no_set_sty_output": true,
+  "keyboard_transfer_allowed": false,
+  "real_keyboard_output_created": false,
+  "tracks": [
+    {
+      "track_id": "track-001",
+      "name": "Lead Line Planning Metadata",
+      "role": "melody planning",
+      "instrument_family_hint": "lead / upper voice planning only",
+      "metadata_only": true,
+      "no_sample_library_reference": true
+    },
+    {
+      "track_id": "track-002",
+      "name": "Harmony Bed Planning Metadata",
+      "role": "harmony planning",
+      "instrument_family_hint": "pad / chord support planning only",
+      "metadata_only": true,
+      "no_sample_library_reference": true
+    },
+    {
+      "track_id": "track-003",
+      "name": "Rhythm Feel Planning Metadata",
+      "role": "rhythm feel planning",
+      "instrument_family_hint": "drum/groove description only",
+      "metadata_only": true,
+      "no_sample_library_reference": true
+    }
+  ],
+  "sections": [
+    {
+      "section_id": "section-001",
+      "name": "Intro - gentle setup",
+      "order": 0,
+      "metadata_only": true,
+      "owner_review_note": "Improved name from owner-neutral-002 intro label."
+    },
+    {
+      "section_id": "section-002",
+      "name": "Main Groove - verse foundation",
+      "order": 1,
+      "metadata_only": true,
+      "owner_review_note": "Clarifies verse/groove role without keyboard-native pattern data."
+    },
+    {
+      "section_id": "section-003",
+      "name": "Lift - chorus energy",
+      "order": 2,
+      "metadata_only": true,
+      "owner_review_note": "Clarifies chorus lift as arrangement metadata only."
+    },
+    {
+      "section_id": "section-004",
+      "name": "Transition - short break",
+      "order": 3,
+      "metadata_only": true,
+      "owner_review_note": "Clarifies break/transition function."
+    },
+    {
+      "section_id": "section-005",
+      "name": "Outro - safe close",
+      "order": 4,
+      "metadata_only": true,
+      "owner_review_note": "Clarifies ending as safe close metadata."
+    }
+  ],
+  "metadata": {
+    "musical_metadata_only": true,
+    "source_package_id": "owner-neutral-002",
+    "revision_reason": "Improve owner review clarity using SAFE-012 planning requirements.",
+    "owner_feedback_source": "OWNER_FEEDBACK_FORM_V2.md and SAFE-012 planning files",
+    "owner_feedback_status": "planning-derived; direct owner form fields not filled yet",
+    "review_round": "SAFE-013",
+    "intended_review_audience": [
+      "owner"
+    ],
+    "local_only": true,
+    "tempo": 96,
+    "tempo_range": "92-100",
+    "key_center": "C minor",
+    "time_signature": "4/4",
+    "mood": "focused, hopeful, modern arranger demo",
+    "style_intent": "neutral arranger sketch metadata only; no keyboard-native pattern data",
+    "arrangement_notes": "owner-neutral-003 refines section and track names while staying metadata-only.",
+    "owner_review_notes": "Review structure, wording, labels, and placeholders only. Do not treat as keyboard-native or production output.",
+    "safety_notes": "No keyboard-native output, no .SET/.STY, no proprietary samples, no Kontakt/Native Instruments content, no push/deploy/Vercel/payment.",
+    "build_approval_required_for_next_revision": true,
+    "no_audio_samples": true,
+    "no_proprietary_libraries": true,
+    "no_kontakt_native_instruments_content": true,
+    "no_keyboard_native_output": true
+  },
+  "chord_style_placeholders": {
+    "chord_map": [
+      {
+        "section_id": "section-001",
+        "chords": "Cm - Ab - Bb",
+        "metadata_only": true,
+        "not_keyboard_pattern_data": true,
+        "not_style_file_content": true,
+        "owner_review_note": "Readable chord planning only."
+      },
+      {
+        "section_id": "section-002",
+        "chords": "Cm - Bb - Ab - G",
+        "metadata_only": true,
+        "not_keyboard_pattern_data": true,
+        "not_style_file_content": true,
+        "owner_review_note": "Main groove harmonic planning only."
+      },
+      {
+        "section_id": "section-003",
+        "chords": "Ab - Bb - Cm",
+        "metadata_only": true,
+        "not_keyboard_pattern_data": true,
+        "not_style_file_content": true,
+        "owner_review_note": "Chorus/lift harmonic planning only."
+      },
+      {
+        "section_id": "section-004",
+        "chords": "Bb - Ab - G",
+        "metadata_only": true,
+        "not_keyboard_pattern_data": true,
+        "not_style_file_content": true,
+        "owner_review_note": "Transition placeholder only."
+      },
+      {
+        "section_id": "section-005",
+        "chords": "Cm",
+        "metadata_only": true,
+        "not_keyboard_pattern_data": true,
+        "not_style_file_content": true,
+        "owner_review_note": "Safe close placeholder only."
+      }
+    ],
+    "style_family_hint": "generic neutral pop / oriental arranger intent, metadata only",
+    "groove_intent": "medium tempo, readable planning description only",
+    "variation_notes": "No copied style data. No keyboard-native pattern data. No legacy .STY material."
+  },
+  "validation_fields": {
+    "validated_extension_is_neutral": true,
+    "validated_package_id_exists": true,
+    "validated_source_package_id_exists": true,
+    "validated_no_keyboard_native_payload": true,
+    "validated_no_keyboard_transfer": true,
+    "validated_no_set_sty_output": true,
+    "validated_no_audio_samples": true,
+    "validated_no_proprietary_libraries": true,
+    "validated_no_kontakt_native_instruments_content": true,
+    "validated_no_public_release_claim": true,
+    "validated_no_production_claim": true,
+    "validated_no_payment_claim": true,
+    "validated_manifest_reference_exists": true,
+    "validated_checksum_reference_exists": true
+  },
+  "manifest_ref": "MANIFEST.json",
+  "checksum_ref": "CHECKSUMS.sha256",
+  "rollback_notes": "This local neutral metadata package may be removed or ignored if owner review fails. It is not keyboard-native and must not be renamed to .SET, .STY, or any real keyboard extension."
+}
