@@ -1,0 +1,38 @@
+{
+  "id": "SAFE-008",
+  "title": "business pack polish",
+  "status": "READY_FOR_LOCAL_VERIFICATION",
+  "localOnly": true,
+  "docsOnly": true,
+  "outputs": [
+    "uaos-ai-factory/implementation/BUSINESS_PACK_POLISH_INDEX.md",
+    "uaos-ai-factory/implementation/JOBCENTER_SUPPORTER_SAFE_WORDING_BANK.md",
+    "uaos-ai-factory/implementation/BUSINESS_PACK_DO_NOT_CLAIM_CHECKLIST.md",
+    "uaos-ai-factory/implementation/reports/SAFE_008_BUSINESS_PACK_POLISH_REPORT.md"
+  ],
+  "coverage": {
+    "jobcenterSafeShortWording": true,
+    "supporterSafeShortWording": true,
+    "laptopWorkstationNeedWording": true,
+    "localPrototypeWording": true,
+    "whatToAttach": true,
+    "whatNotToAttach": true,
+    "noProductionPublicReleaseClaim": true,
+    "noLivePaymentClaim": true,
+    "noRealKeyboardExportClaim": true,
+    "noProprietaryLibrarySampleClaim": true,
+    "ownerReviewBeforeSending": true
+  },
+  "safety": {
+    "sendingPerformed": false,
+    "publicUrlCreated": false,
+    "productionReleaseFilesCreated": false,
+    "paymentFlowCreated": false,
+    "realKeyboardOutputCreated": false,
+    "keyboardTransfer": false,
+    "proprietaryContentCopied": false,
+    "appSourceModified": false,
+    "frontendSourceModified": false,
+    "pushDeployVercelPayment": false
+  }
+}
