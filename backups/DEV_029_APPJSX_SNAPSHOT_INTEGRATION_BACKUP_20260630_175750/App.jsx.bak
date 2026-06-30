@@ -102,41 +102,6 @@ const gmTrackMap = [
   { name: "FX / Hits", channel: 6, program: 97, baseNote: 84 },
 ];
 
-const selectedNeutralPackageSnapshot = {
-  selectedPackageId: "owner-neutral-003",
-  packageType: ".uaos-neutral.json",
-  keyboardNative: false,
-  compatibility: "UNVERIFIED",
-  validationStatus: "PASS",
-  reviewStatus: "Owner manual review",
-  realKeyboardOutput: "NO",
-  keyboardTransfer: "NO",
-  safeNextAction: "Review metadata / no keyboard transfer",
-  safetyLabels: [
-    "LOCAL ONLY",
-    "READ ONLY",
-    "NOT PUBLIC RELEASE",
-    "NOT KEYBOARD OUTPUT",
-  ],
-};
-
-const selectedNeutralPackagePanel = {
-  selectedPackageId: selectedNeutralPackageSnapshot.selectedPackageId || "owner-neutral-003",
-  packageType: selectedNeutralPackageSnapshot.packageType || ".uaos-neutral.json",
-  keyboardNative: selectedNeutralPackageSnapshot.keyboardNative === false ? "NO" : "NO",
-  compatibility: selectedNeutralPackageSnapshot.compatibility || "UNVERIFIED",
-  validationStatus: selectedNeutralPackageSnapshot.validationStatus || "PASS",
-  reviewStatus: selectedNeutralPackageSnapshot.reviewStatus || "Owner manual review",
-  realKeyboardOutput: selectedNeutralPackageSnapshot.realKeyboardOutput || "NO",
-  keyboardTransfer: selectedNeutralPackageSnapshot.keyboardTransfer || "NO",
-  safeNextAction:
-    selectedNeutralPackageSnapshot.safeNextAction || "Review metadata / no keyboard transfer",
-  safetyLabels:
-    selectedNeutralPackageSnapshot.safetyLabels?.length > 0
-      ? selectedNeutralPackageSnapshot.safetyLabels
-      : ["LOCAL ONLY", "READ ONLY", "NOT PUBLIC RELEASE", "NOT KEYBOARD OUTPUT"],
-};
-
 function uid() {
   return "uaos-" + Date.now() + "-" + Math.random().toString(16).slice(2);
 }
@@ -838,7 +803,7 @@ export default function App() {
 
         <section className="uaos-v8-panel" id="selected-neutral-package">
           <div className="uaos-v8-panel-header">
-            <p>{selectedNeutralPackagePanel.safetyLabels.join(" · ")}</p>
+            <p>LOCAL ONLY · READ ONLY · NOT PUBLIC RELEASE · NOT KEYBOARD OUTPUT</p>
             <h2>Selected Neutral Package</h2>
             <span>Owner manual review status only. No keyboard transfer, export, deploy, or payment action.</span>
           </div>
@@ -846,39 +811,39 @@ export default function App() {
           <div className="uaos-manager-ready-grid">
             <article>
               <strong>Selected package</strong>
-              <p>{selectedNeutralPackagePanel.selectedPackageId}</p>
+              <p>owner-neutral-003</p>
             </article>
             <article>
               <strong>Package type</strong>
-              <p>{selectedNeutralPackagePanel.packageType}</p>
+              <p>.uaos-neutral.json</p>
             </article>
             <article>
               <strong>Keyboard-native</strong>
-              <p>{selectedNeutralPackagePanel.keyboardNative}</p>
+              <p>NO</p>
             </article>
             <article>
               <strong>Compatibility</strong>
-              <p>{selectedNeutralPackagePanel.compatibility}</p>
+              <p>UNVERIFIED</p>
             </article>
             <article>
               <strong>Real keyboard output</strong>
-              <p>{selectedNeutralPackagePanel.realKeyboardOutput}</p>
+              <p>NO</p>
             </article>
             <article>
               <strong>Keyboard transfer</strong>
-              <p>{selectedNeutralPackagePanel.keyboardTransfer}</p>
+              <p>NO</p>
             </article>
             <article>
               <strong>Validation</strong>
-              <p>{selectedNeutralPackagePanel.validationStatus}</p>
+              <p>PASS</p>
             </article>
             <article>
               <strong>Review status</strong>
-              <p>{selectedNeutralPackagePanel.reviewStatus}</p>
+              <p>Owner manual review</p>
             </article>
             <article>
               <strong>Safe next action</strong>
-              <p>{selectedNeutralPackagePanel.safeNextAction}</p>
+              <p>Review metadata / no keyboard transfer</p>
             </article>
           </div>
         </section>
