@@ -49,6 +49,11 @@ Planned future target only: `https://github.com/aeplatform-app/universal-arrange
 - DEV-033 local evidence bundle index: DONE_LOCAL_ONLY.
 - DEV-034 next decision gate after UI integration: DONE_LOCAL_ONLY.
 - DEV-035 owner review evidence round seal: SEALED_LOCAL_OWNER_REVIEW_INFRASTRUCTURE.
+- DEV-036 local demo evidence pack structure: DONE_LOCAL_ONLY.
+- DEV-037 owner review start-here: DONE_LOCAL_ONLY.
+- DEV-038 Jobcenter/supporter safe evidence summaries: DONE_LOCAL_ONLY.
+- DEV-039 final local demo evidence checklist: DONE_LOCAL_ONLY.
+- DEV-040 local demo evidence pack round seal: SEALED_LOCAL_DEMO_EVIDENCE_PACK.
 - Implementation round 001-008: COMPLETE.
 - IMPL-009 screenshot visual proof pack: DONE_LOCAL_ONLY.
 - IMPL-010 final send checklist: DONE_LOCAL_ONLY.
@@ -233,6 +238,17 @@ The wait gate remains active until the owner manually verifies the target reposi
 - DEV-034 next decision gate: `uaos-ai-factory/NEXT_DECISION_GATE_AFTER_UI_INTEGRATION.md`
 - Development round DEV-031-035 seal report: `uaos-ai-factory/implementation/reports/DEVELOPMENT_ROUND_DEV_031_035_SEAL_REPORT.md`
 - Development round DEV-031-035 seal JSON: `uaos-ai-factory/implementation/DEVELOPMENT_ROUND_DEV_031_035_SEAL.json`
+- DEV-036 local demo evidence pack structure report: `uaos-ai-factory/implementation/reports/DEV_036_LOCAL_DEMO_EVIDENCE_PACK_STRUCTURE_REPORT.md`
+- DEV-036 local demo evidence pack index: `uaos-ai-factory/local-demo-evidence-pack/EVIDENCE_PACK_INDEX.md`
+- DEV-037 owner review start-here report: `uaos-ai-factory/implementation/reports/DEV_037_OWNER_REVIEW_START_HERE_REPORT.md`
+- DEV-037 start-here: `uaos-ai-factory/local-demo-evidence-pack/START_HERE_OWNER_REVIEW.md`
+- DEV-038 Jobcenter/supporter safe evidence summary report: `uaos-ai-factory/implementation/reports/DEV_038_JOBCENTER_SUPPORTER_SAFE_EVIDENCE_SUMMARY_REPORT.md`
+- DEV-038 Jobcenter safe evidence summary: `uaos-ai-factory/local-demo-evidence-pack/JOBCENTER_SAFE_EVIDENCE_SUMMARY_DE.md`
+- DEV-039 final local demo evidence checklist report: `uaos-ai-factory/implementation/reports/DEV_039_FINAL_LOCAL_DEMO_EVIDENCE_CHECKLIST_REPORT.md`
+- DEV-039 final local demo evidence checklist: `uaos-ai-factory/local-demo-evidence-pack/FINAL_LOCAL_DEMO_EVIDENCE_CHECKLIST.md`
+- Development round DEV-036-040 seal report: `uaos-ai-factory/implementation/reports/DEVELOPMENT_ROUND_DEV_036_040_SEAL_REPORT.md`
+- Development round DEV-036-040 seal JSON: `uaos-ai-factory/implementation/DEVELOPMENT_ROUND_DEV_036_040_SEAL.json`
+- Local demo evidence pack ready seal: `uaos-ai-factory/local-demo-evidence-pack/LOCAL_DEMO_EVIDENCE_PACK_READY_SEAL.md`
 - Development round DEV-009-012 seal report: `uaos-ai-factory/implementation/reports/DEVELOPMENT_ROUND_DEV_009_012_SEAL_REPORT.md`
 - Development round DEV-009-012 seal JSON: `uaos-ai-factory/implementation/DEVELOPMENT_ROUND_DEV_009_012_SEAL.json`
 - DEV-009 metadata diff tool report: `uaos-ai-factory/implementation/reports/DEV_009_METADATA_DIFF_TOOL_REPORT.md`
