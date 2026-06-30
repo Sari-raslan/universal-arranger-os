@@ -21,6 +21,11 @@ Planned future target only: `https://github.com/aeplatform-app/universal-arrange
 - SAFE-011 final owner review seal: SEALED_LOCAL_ONLY.
 - SAFE-016 owner-neutral-003 final handoff: DONE_LOCAL_HANDOFF_ONLY.
 - SAFE-017 owner-neutral-003 owner decision gate: DONE_LOCAL_DECISION_GATE_ONLY.
+- DEV-001 neutral package catalog: DONE_LOCAL_ONLY.
+- DEV-002 neutral package inspector: DONE_LOCAL_ONLY.
+- DEV-003 validation aggregator: DONE_LOCAL_ONLY.
+- DEV-004 safe development backlog v2: DONE_LOCAL_ONLY.
+- DEV-005 development infrastructure seal: SEALED_LOCAL_DEVELOPMENT_INFRASTRUCTURE.
 - Implementation round 001-008: COMPLETE.
 - IMPL-009 screenshot visual proof pack: DONE_LOCAL_ONLY.
 - IMPL-010 final send checklist: DONE_LOCAL_ONLY.
@@ -165,6 +170,12 @@ The wait gate remains active until the owner manually verifies the target reposi
 
 ## Latest Important Reports / Indexes
 
+- Neutral package catalog: `uaos-ai-factory/writer-sandbox/neutral-package-writer/NEUTRAL_PACKAGE_CATALOG.md`
+- Neutral package catalog JSON: `uaos-ai-factory/writer-sandbox/neutral-package-writer/NEUTRAL_PACKAGE_CATALOG.json`
+- Validation aggregate status: `uaos-ai-factory/VALIDATION_AGGREGATE_STATUS.md`
+- Safe development backlog V2: `uaos-ai-factory/implementation/SAFE_DEVELOPMENT_BACKLOG_V2.md`
+- Development round DEV-001-005 seal: `uaos-ai-factory/implementation/DEVELOPMENT_ROUND_DEV_001_005_SEAL.json`
+- Development round DEV-001-005 seal report: `uaos-ai-factory/implementation/reports/DEVELOPMENT_ROUND_DEV_001_005_SEAL_REPORT.md`
 - Owner-neutral-003 start here: `uaos-ai-factory/writer-sandbox/neutral-package-writer/OWNER_NEUTRAL_003_START_HERE.md`
 - Owner-neutral-003 review packet: `uaos-ai-factory/writer-sandbox/neutral-package-writer/OWNER_NEUTRAL_003_REVIEW_PACKET.md`
 - Owner-neutral-003 owner decision form: `uaos-ai-factory/writer-sandbox/neutral-package-writer/OWNER_NEUTRAL_003_OWNER_DECISION_FORM.md`
@@ -207,11 +218,11 @@ The wait gate remains active until the owner manually verifies the target reposi
 
 ## Next Safe Choices
 
-1. Open `uaos-ai-factory/writer-sandbox/neutral-package-writer/OWNER_NEUTRAL_003_START_HERE.md`.
-2. Owner manually reviews `owner-neutral-003`.
-3. Plan `owner-neutral-004` only if owner wants changes.
-4. Stop before keyboard output.
-5. High-risk real keyboard output gate later only with explicit approval.
+1. Metadata diff tool.
+2. Read-only UI proposal.
+3. Neutral package zip plan.
+4. Continue writer research.
+5. Stop before keyboard output.
 
 ## Ready State
 
