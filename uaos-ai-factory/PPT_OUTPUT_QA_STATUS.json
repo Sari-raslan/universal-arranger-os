@@ -1,0 +1,66 @@
+{
+  "schema": "uaos-ppt-output-qa-status-v1",
+  "status": "PASS",
+  "pptxFiles": [
+    {
+      "path": "uaos-ai-factory/local-demo-evidence-pack/ppt-output/UAOS_JOBCENTER_EVIDENCE_PACK_DE.pptx",
+      "size": 6264,
+      "zipSignature": true,
+      "first8BytesHex": "50 4B 03 04 14 00 00 00"
+    },
+    {
+      "path": "uaos-ai-factory/local-demo-evidence-pack/ppt-output/UAOS_SUPPORTER_EVIDENCE_PACK_DE.pptx",
+      "size": 6245,
+      "zipSignature": true,
+      "first8BytesHex": "50 4B 03 04 14 00 00 00"
+    },
+    {
+      "path": "uaos-ai-factory/local-demo-evidence-pack/ppt-output/UAOS_OWNER_REVIEW_PACK_AR.pptx",
+      "size": 6323,
+      "zipSignature": true,
+      "first8BytesHex": "50 4B 03 04 14 00 00 00"
+    },
+    {
+      "path": "uaos-ai-factory/local-demo-evidence-pack/ppt-output/UAOS_LOCAL_DEMO_EVIDENCE_MASTER_PACK.pptx",
+      "size": 6224,
+      "zipSignature": true,
+      "first8BytesHex": "50 4B 03 04 14 00 00 00"
+    }
+  ],
+  "sourceFiles": [
+    "uaos-ai-factory/local-demo-evidence-pack/ppt-output/source-md/JOBCENTER_PPT_SOURCE_DE.md",
+    "uaos-ai-factory/local-demo-evidence-pack/ppt-output/source-md/SUPPORTER_PPT_SOURCE_DE.md",
+    "uaos-ai-factory/local-demo-evidence-pack/ppt-output/source-md/OWNER_REVIEW_PPT_SOURCE_AR.md",
+    "uaos-ai-factory/local-demo-evidence-pack/ppt-output/source-md/MASTER_EVIDENCE_PPT_SOURCE.md"
+  ],
+  "manifest": "uaos-ai-factory/local-demo-evidence-pack/ppt-output/PPT_OUTPUT_MANIFEST.json",
+  "keyboardNativeExtensions": [
+    ".STY",
+    ".SET",
+    ".PRS",
+    ".STL",
+    ".PAT",
+    ".MSP",
+    ".KST"
+  ],
+  "forbiddenWording": [
+    "ready for keyboard",
+    "keyboard transfer ready",
+    "production ready",
+    "payment enabled",
+    "public release ready",
+    "real writer ready",
+    "produktionsreif",
+    "ط¬ط§ظ‡ط² ظ„ظ„ط¨ظٹط¹",
+    "ظ†ظ‚ظ„ ط¥ظ„ظ‰ ط§ظ„ط£ظˆط±ط؛ ط¬ط§ظ‡ط²"
+  ],
+  "failures": [],
+  "safety": {
+    "localOnly": true,
+    "keyboardOutputCreated": false,
+    "keyboardTransferAllowed": false,
+    "deploy": false,
+    "payment": false,
+    "publicRelease": false
+  }
+}
