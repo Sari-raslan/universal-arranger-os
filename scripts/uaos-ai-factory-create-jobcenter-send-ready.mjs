@@ -1,4 +1,4 @@
-import { existsSync, mkdirSync, readFileSync, rmSync, statSync, unlinkSync, writeFileSync, copyFileSync } from "node:fs";
+import { existsSync, mkdirSync, readFileSync, rmSync, statSync, writeFileSync } from "node:fs";
 import path from "node:path";
 import { spawnSync } from "node:child_process";
 
@@ -8,19 +8,95 @@ const sourceMd = path.join(packDir, "UAOS_JOBCENTER_BUSINESSPLAN_2026-07-01_DE.m
 const htmlPath = path.join(packDir, "UAOS_JOBCENTER_BUSINESSPLAN_2026-07-01_DE.html");
 const pdfPath = path.join(packDir, "UAOS_JOBCENTER_BUSINESSPLAN_2026-07-01_DE.pdf");
 const pptxPath = path.join(packDir, "UAOS_JOBCENTER_PRESENTATION_2026-07-01_DE.pptx");
+const fallbackPdfPath = path.join(packDir, "UAOS_JOBCENTER_PRESENTATION_2026-07-01_DE_PRESENTATION_FALLBACK.pdf");
 const tempDir = path.join(packDir, "temp-pptx-build");
 const chrome = "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe";
 
-function ensureDir(dir) {
-  mkdirSync(dir, { recursive: true });
-}
+const slides = [
+  {
+    title: "UAOS / Universal Arranger OS - Businessplan",
+    bullets: [
+      "Jobcenter-only Unterlage vom 01.07.2026",
+      "Lokaler, nicht veröffentlichter Projektstand",
+      "Kein Push, kein Upload, kein Deploy"
+    ]
+  },
+  {
+    title: "Kurzbeschreibung",
+    bullets: [
+      "UAOS unterstützt musikalische Arbeitsabläufe, Arrangement-Planung und strukturierte Projektentwicklung.",
+      "Der aktuelle Stand ist ein lokaler Prototyp mit Evidence-Pack und QA-Prüfungen.",
+      "Die Unterlage dient der Beratung und nachvollziehbaren Projektprüfung."
+    ]
+  },
+  {
+    title: "Aktueller Projektstand zum 01.07.2026",
+    bullets: [
+      "Lokaler Prototyp und lokale Projektstruktur sind vorhanden.",
+      "Evidence-Pack und Review-Unterlagen sind vorbereitet.",
+      "Öffentliche Freigabe, Payment, Deployment und Keyboard-Ausgabe sind nicht freigegeben."
+    ]
+  },
+  {
+    title: "Bisherige Eigenleistung",
+    bullets: [
+      "Aufbau der lokalen Projektstruktur und Dokumentation.",
+      "Erstellung von Businessplan, Statusdateien, QA-Prüfungen und Evidence-Unterlagen.",
+      "Klare Sicherheitsgrenzen für lokale Prüfung und weitere Entwicklung."
+    ]
+  },
+  {
+    title: "Bedarf an Arbeitsmitteln: Laptop / Workstation",
+    bullets: [
+      "Verlässliche lokale Entwicklungs- und Testumgebung.",
+      "Stabile Bearbeitung von Projektdateien, PDF/PPT-Unterlagen und QA-Berichten.",
+      "Grundlage für Beratung, Qualifizierung und dokumentierten Projektfortschritt."
+    ]
+  },
+  {
+    title: "Geplante nächste Entwicklungsschritte",
+    bullets: [
+      "Manuelle Jobcenter-Prüfung dieser Unterlagen.",
+      "Fortgesetzte lokale Entwicklung ohne Keyboard-Ausgabe.",
+      "Weitere UI-/Tooling-Verbesserungen und sichere Evidence-Dokumentation nach Prüfung."
+    ]
+  },
+  {
+    title: "Lokaler Nachweisstand / Evidence Pack",
+    bullets: [
+      "Businessplan-PDF und PowerPoint-Präsentation.",
+      "Send-Ready-Index, Anlagen-Checkliste und lokale QA-Statusdateien.",
+      "Nachweise bleiben lokal und enthalten keinen öffentlichen Projektlink."
+    ]
+  },
+  {
+    title: "Risiken und klare Abgrenzung",
+    bullets: [
+      "Kein öffentlicher Release, kein Payment, kein Deploy, kein Vercel.",
+      "Keine Keyboard-native Ausgabe und kein Keyboard Transfer.",
+      "Nicht für produktiven Einsatz freigegeben."
+    ]
+  },
+  {
+    title: "Projekt-Monitor: wird nach Freigabe nachgereicht",
+    bullets: [
+      "Der Projekt-Monitor ist für eine spätere Freigabe vorgesehen.",
+      "Er wird nach ausdrücklicher Upload-/Deploy-Freigabe nachgereicht.",
+      "Derzeit ist kein öffentlicher Projektlink aktiv."
+    ]
+  },
+  {
+    title: "Zusammenfassung / Gesprächswunsch",
+    bullets: [
+      "UAOS ist als lokales Entwicklungsprojekt mit klaren Grenzen dokumentiert.",
+      "Der Bedarf an geeigneten Arbeitsmitteln ist nachvollziehbar begründet.",
+      "Gewünscht ist ein Gespräch zur Prüfung der nächsten lokalen Entwicklungsschritte."
+    ]
+  }
+];
 
 function escapeHtml(value) {
   return value.replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll('"', "&quot;");
-}
-
-function escapeXml(value) {
-  return String(value).replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll('"', "&quot;").replaceAll("'", "&apos;");
 }
 
 function markdownToHtml(markdown) {
@@ -37,81 +113,92 @@ function fileUrl(filePath) {
   return `file:///${filePath.replaceAll("\\", "/").replaceAll(" ", "%20")}`;
 }
 
-function slideText(markdown) {
-  const lines = markdown.split(/\r?\n/).map((line) => line.trim()).filter(Boolean);
-  const title = lines.find((line) => line.startsWith("# "))?.slice(2) ?? "UAOS Jobcenter Businessplan";
-  const bullets = lines
-    .filter((line) => line.startsWith("- "))
-    .map((line) => line.slice(2).replaceAll("`", ""))
-    .slice(0, 16);
-  return [
-    { title, bullets: ["Datum: 01.07.2026", "Jobcenter-only", "Lokaler privater Prototyp", "Nicht öffentlich live"] },
-    { title: "Aktueller Projektstand", bullets: bullets.slice(0, 6) },
-    { title: "Projekt-Monitor", bullets: ["wird nach Freigabe des Uploads aktiviert", "Der Link ist derzeit noch nicht öffentlich live", "Kein Upload, kein Push und kein Deploy freigegeben"] },
-    { title: "Sicherheitsgrenzen", bullets: ["Kein Payment", "Kein Deploy", "Kein Vercel", "Keine Keyboard-native Ausgabe", "Kein Keyboard Transfer"] }
-  ];
+function psLiteral(value) {
+  return `'${String(value).replaceAll("'", "''")}'`;
 }
 
-function slideXml(slide, index) {
-  const body = slide.bullets.map((bullet) => `
-        <a:p>
-          <a:pPr marL="342900" indent="0"><a:buChar char="•"/></a:pPr>
-          <a:r><a:rPr lang="de-DE" sz="2200"/><a:t>${escapeXml(bullet)}</a:t></a:r>
-        </a:p>`).join("");
-  return `<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<p:sld xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" xmlns:p="http://schemas.openxmlformats.org/presentationml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships">
-  <p:cSld><p:spTree>
-    <p:nvGrpSpPr><p:cNvPr id="1" name=""/><p:cNvGrpSpPr/><p:nvPr/></p:nvGrpSpPr>
-    <p:grpSpPr><a:xfrm><a:off x="0" y="0"/><a:ext cx="0" cy="0"/><a:chOff x="0" y="0"/><a:chExt cx="0" cy="0"/></a:xfrm></p:grpSpPr>
-    <p:sp><p:nvSpPr><p:cNvPr id="${index * 10 + 1}" name="Title"/><p:cNvSpPr txBox="1"/><p:nvPr/></p:nvSpPr><p:spPr><a:xfrm><a:off x="457200" y="304800"/><a:ext cx="8229600" cy="914400"/></a:xfrm><a:prstGeom prst="rect"><a:avLst/></a:prstGeom></p:spPr><p:txBody><a:bodyPr wrap="square"/><a:lstStyle/><a:p><a:r><a:rPr lang="de-DE" sz="3300" b="1"/><a:t>${escapeXml(slide.title)}</a:t></a:r></a:p></p:txBody></p:sp>
-    <p:sp><p:nvSpPr><p:cNvPr id="${index * 10 + 2}" name="Body"/><p:cNvSpPr txBox="1"/><p:nvPr/></p:nvSpPr><p:spPr><a:xfrm><a:off x="685800" y="1524000"/><a:ext cx="7772400" cy="4572000"/></a:xfrm><a:prstGeom prst="rect"><a:avLst/></a:prstGeom></p:spPr><p:txBody><a:bodyPr wrap="square"/><a:lstStyle/>${body}</p:txBody></p:sp>
-    <p:sp><p:nvSpPr><p:cNvPr id="${index * 10 + 3}" name="Footer"/><p:cNvSpPr txBox="1"/><p:nvPr/></p:nvSpPr><p:spPr><a:xfrm><a:off x="457200" y="6400800"/><a:ext cx="8229600" cy="304800"/></a:xfrm><a:prstGeom prst="rect"><a:avLst/></a:prstGeom></p:spPr><p:txBody><a:bodyPr wrap="square"/><a:lstStyle/><a:p><a:r><a:rPr lang="de-DE" sz="1200"/><a:t>LOCAL ONLY - JOBCENTER ONLY - NOT KEYBOARD OUTPUT</a:t></a:r></a:p></p:txBody></p:sp>
-  </p:spTree></p:cSld><p:clrMapOvr><a:masterClrMapping/></p:clrMapOvr>
-</p:sld>`;
-}
-
-function contentTypes(slideCount) {
-  const slides = Array.from({ length: slideCount }, (_, index) => `<Override PartName="/ppt/slides/slide${index + 1}.xml" ContentType="application/vnd.openxmlformats-officedocument.presentationml.slide+xml"/>`).join("");
-  return `<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<Types xmlns="http://schemas.openxmlformats.org/package/2006/content-types"><Default Extension="rels" ContentType="application/vnd.openxmlformats-package.relationships+xml"/><Default Extension="xml" ContentType="application/xml"/><Override PartName="/docProps/app.xml" ContentType="application/vnd.openxmlformats-officedocument.extended-properties+xml"/><Override PartName="/docProps/core.xml" ContentType="application/vnd.openxmlformats-package.core-properties+xml"/><Override PartName="/ppt/presentation.xml" ContentType="application/vnd.openxmlformats-officedocument.presentationml.presentation.main+xml"/><Override PartName="/ppt/theme/theme1.xml" ContentType="application/vnd.openxmlformats-officedocument.theme+xml"/>${slides}</Types>`;
-}
-
-function presentationXml(slideCount) {
-  const ids = Array.from({ length: slideCount }, (_, index) => `<p:sldId id="${256 + index}" r:id="rId${index + 1}"/>`).join("");
-  return `<?xml version="1.0" encoding="UTF-8" standalone="yes"?><p:presentation xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" xmlns:p="http://schemas.openxmlformats.org/presentationml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"><p:sldIdLst>${ids}</p:sldIdLst><p:sldSz cx="9144000" cy="6858000" type="screen4x3"/><p:notesSz cx="6858000" cy="9144000"/></p:presentation>`;
-}
-
-function presentationRels(slideCount) {
-  const slides = Array.from({ length: slideCount }, (_, index) => `<Relationship Id="rId${index + 1}" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/slide" Target="slides/slide${index + 1}.xml"/>`).join("");
-  return `<?xml version="1.0" encoding="UTF-8" standalone="yes"?><Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships">${slides}<Relationship Id="rId${slideCount + 1}" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/theme" Target="theme/theme1.xml"/></Relationships>`;
-}
-
-function writePptx(markdown) {
-  const slides = slideText(markdown);
-  const deckDir = path.join(tempDir, "jobcenter-pptx");
-  const zipPath = path.join(packDir, "UAOS_JOBCENTER_PRESENTATION_2026-07-01_DE.zip");
+function createPresentationWithPowerPoint() {
   rmSync(tempDir, { recursive: true, force: true });
-  rmSync(zipPath, { force: true });
+  mkdirSync(tempDir, { recursive: true });
   rmSync(pptxPath, { force: true });
-  ensureDir(path.join(deckDir, "_rels"));
-  ensureDir(path.join(deckDir, "docProps"));
-  ensureDir(path.join(deckDir, "ppt/_rels"));
-  ensureDir(path.join(deckDir, "ppt/slides"));
-  ensureDir(path.join(deckDir, "ppt/theme"));
-  writeFileSync(path.join(deckDir, "[Content_Types].xml"), contentTypes(slides.length), "utf8");
-  writeFileSync(path.join(deckDir, "_rels/.rels"), `<?xml version="1.0" encoding="UTF-8" standalone="yes"?><Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships"><Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument" Target="ppt/presentation.xml"/><Relationship Id="rId2" Type="http://schemas.openxmlformats.org/package/2006/relationships/metadata/core-properties" Target="docProps/core.xml"/><Relationship Id="rId3" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/extended-properties" Target="docProps/app.xml"/></Relationships>`, "utf8");
-  writeFileSync(path.join(deckDir, "docProps/app.xml"), `<?xml version="1.0" encoding="UTF-8" standalone="yes"?><Properties xmlns="http://schemas.openxmlformats.org/officeDocument/2006/extended-properties"><Application>UAOS Jobcenter UTF-8 Generator</Application><Slides>${slides.length}</Slides></Properties>`, "utf8");
-  writeFileSync(path.join(deckDir, "docProps/core.xml"), `<?xml version="1.0" encoding="UTF-8" standalone="yes"?><cp:coreProperties xmlns:cp="http://schemas.openxmlformats.org/package/2006/metadata/core-properties" xmlns:dc="http://purl.org/dc/elements/1.1/"><dc:title>UAOS Jobcenter Präsentation</dc:title><dc:creator>UAOS Local</dc:creator></cp:coreProperties>`, "utf8");
-  writeFileSync(path.join(deckDir, "ppt/presentation.xml"), presentationXml(slides.length), "utf8");
-  writeFileSync(path.join(deckDir, "ppt/_rels/presentation.xml.rels"), presentationRels(slides.length), "utf8");
-  writeFileSync(path.join(deckDir, "ppt/theme/theme1.xml"), `<?xml version="1.0" encoding="UTF-8" standalone="yes"?><a:theme xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" name="UAOS Jobcenter"><a:themeElements><a:clrScheme name="UAOS"><a:dk1><a:srgbClr val="1F2933"/></a:dk1><a:lt1><a:srgbClr val="FFFFFF"/></a:lt1><a:dk2><a:srgbClr val="30424C"/></a:dk2><a:lt2><a:srgbClr val="EEF3F4"/></a:lt2><a:accent1><a:srgbClr val="2F6F73"/></a:accent1><a:accent2><a:srgbClr val="7A9E7E"/></a:accent2><a:accent3><a:srgbClr val="C19A5B"/></a:accent3><a:accent4><a:srgbClr val="5C6B73"/></a:accent4><a:accent5><a:srgbClr val="8A6F8F"/></a:accent5><a:accent6><a:srgbClr val="D17A62"/></a:accent6><a:hlink><a:srgbClr val="2F6F73"/></a:hlink><a:folHlink><a:srgbClr val="5C6B73"/></a:folHlink></a:clrScheme><a:fontScheme name="UAOS"><a:majorFont><a:latin typeface="Arial"/></a:majorFont><a:minorFont><a:latin typeface="Arial"/></a:minorFont></a:fontScheme><a:fmtScheme name="UAOS"><a:fillStyleLst><a:solidFill><a:schemeClr val="phClr"/></a:solidFill></a:fillStyleLst><a:lnStyleLst><a:ln w="9525"><a:solidFill><a:schemeClr val="phClr"/></a:solidFill></a:ln></a:lnStyleLst><a:effectStyleLst><a:effectStyle><a:effectLst/></a:effectStyle></a:effectStyleLst><a:bgFillStyleLst><a:solidFill><a:schemeClr val="phClr"/></a:solidFill></a:bgFillStyleLst></a:fmtScheme></a:themeElements></a:theme>`, "utf8");
-  slides.forEach((slide, index) => writeFileSync(path.join(deckDir, `ppt/slides/slide${index + 1}.xml`), slideXml(slide, index + 1), "utf8"));
-  const ps = spawnSync("powershell", ["-NoProfile", "-Command", `Compress-Archive -Path '${deckDir}\\*' -DestinationPath '${zipPath}' -Force`], { encoding: "utf8" });
-  if (ps.status !== 0) throw new Error(ps.stderr || ps.stdout || "PowerShell Compress-Archive failed.");
-  if (!existsSync(zipPath) || statSync(zipPath).size <= 0) throw new Error("PPTX zip archive missing or empty.");
-  copyFileSync(zipPath, pptxPath);
-  unlinkSync(zipPath);
+  rmSync(fallbackPdfPath, { force: true });
+
+  const psSlides = slides.map((slide) => {
+    const bullets = slide.bullets.map((bullet) => psLiteral(bullet)).join(", ");
+    return `[pscustomobject]@{ Title = ${psLiteral(slide.title)}; Bullets = @(${bullets}) }`;
+  }).join(",\n  ");
+
+  const psPath = path.join(tempDir, "create-jobcenter-presentation.ps1");
+  const ps = `
+$ErrorActionPreference = 'Stop'
+$pptxPath = ${psLiteral(pptxPath)}
+$fallbackPdfPath = ${psLiteral(fallbackPdfPath)}
+$slides = @(
+  ${psSlides}
+)
+$powerPoint = $null
+$presentation = $null
+try {
+  $powerPoint = New-Object -ComObject PowerPoint.Application
+  $powerPoint.DisplayAlerts = 1
+  $presentation = $powerPoint.Presentations.Add($true)
+  $presentation.PageSetup.SlideWidth = 13.333333 * 72
+  $presentation.PageSetup.SlideHeight = 7.5 * 72
+
+  for ($i = 0; $i -lt $slides.Count; $i++) {
+    $slide = $presentation.Slides.Add($i + 1, 12)
+    $slide.FollowMasterBackground = $false
+    $slide.Background.Fill.ForeColor.RGB = 16777215
+
+    $titleBox = $slide.Shapes.AddTextbox(1, 42, 34, 872, 62)
+    $titleBox.TextFrame.TextRange.Text = $slides[$i].Title
+    $titleBox.TextFrame.TextRange.Font.Name = 'Arial'
+    $titleBox.TextFrame.TextRange.Font.Size = 28
+    $titleBox.TextFrame.TextRange.Font.Bold = -1
+    $titleBox.TextFrame.TextRange.Font.Color.RGB = 3223857
+
+    $bodyBox = $slide.Shapes.AddTextbox(1, 72, 124, 820, 360)
+    $bodyText = [string]::Join([Environment]::NewLine, ($slides[$i].Bullets | ForEach-Object { [char]0x2022 + ' ' + $_ }))
+    $bodyBox.TextFrame.TextRange.Text = $bodyText
+    $bodyBox.TextFrame.TextRange.Font.Name = 'Arial'
+    $bodyBox.TextFrame.TextRange.Font.Size = 18
+    $bodyBox.TextFrame.TextRange.Font.Color.RGB = 3355443
+    $bodyBox.TextFrame.MarginLeft = 8
+    $bodyBox.TextFrame.MarginRight = 8
+    $bodyBox.TextFrame.MarginTop = 8
+    $bodyBox.TextFrame.MarginBottom = 8
+
+    $footer = $slide.Shapes.AddTextbox(1, 42, 506, 872, 24)
+    $footer.TextFrame.TextRange.Text = 'LOCAL ONLY - JOBCENTER ONLY - NO PUSH / NO DEPLOY / NO VERCEL / NO PAYMENT'
+    $footer.TextFrame.TextRange.Font.Name = 'Arial'
+    $footer.TextFrame.TextRange.Font.Size = 9
+    $footer.TextFrame.TextRange.Font.Color.RGB = 7566195
+  }
+
+  $presentation.SaveAs($pptxPath, 24)
+  $presentation.SaveAs($fallbackPdfPath, 32)
+  Write-Output 'POWERPOINT_COM'
+} finally {
+  if ($presentation -ne $null) { $presentation.Close() }
+  if ($powerPoint -ne $null) { $powerPoint.Quit() }
+}
+`;
+  writeFileSync(psPath, ps, "utf8");
+  const result = spawnSync("powershell", ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", psPath], { encoding: "utf8" });
   rmSync(tempDir, { recursive: true, force: true });
+  if (result.status !== 0) throw new Error(result.stderr || result.stdout || "PowerPoint COM presentation generation failed.");
+  if (!existsSync(pptxPath) || statSync(pptxPath).size <= 0) throw new Error("PowerPoint COM did not create a valid PPTX.");
+  return "PowerPoint COM";
+}
+
+function createPresentationWithLibreOffice() {
+  const candidates = [
+    "C:\\Program Files\\LibreOffice\\program\\soffice.exe",
+    "C:\\Program Files (x86)\\LibreOffice\\program\\soffice.exe"
+  ];
+  const soffice = candidates.find((candidate) => existsSync(candidate));
+  if (!soffice) throw new Error("Neither PowerPoint COM nor LibreOffice is available. STOP.");
+  throw new Error(`LibreOffice fallback is available at ${soffice}, but no compatible source deck exists to convert. STOP.`);
 }
 
 if (!existsSync(sourceMd)) {
@@ -158,18 +245,25 @@ if (!existsSync(pdfPath) || statSync(pdfPath).size <= 0) {
   process.exit(1);
 }
 
+let presentationCreatedBy = "";
 try {
-  writePptx(markdown);
+  presentationCreatedBy = createPresentationWithPowerPoint();
 } catch (error) {
-  console.error(error.message);
-  process.exit(1);
-}
-if (!existsSync(pptxPath) || statSync(pptxPath).size <= 0) {
-  console.error("Jobcenter PPTX generation failed or produced an empty file.");
-  process.exit(1);
+  if (!String(error.message).includes("PowerPoint")) {
+    console.error(error.message);
+    process.exit(1);
+  }
+  try {
+    presentationCreatedBy = createPresentationWithLibreOffice();
+  } catch (fallbackError) {
+    console.error(fallbackError.message);
+    process.exit(1);
+  }
 }
 
 console.log("UAOS Jobcenter Send-Ready Generation");
 console.log("Status: PASS");
 console.log(`PDF: ${path.relative(root, pdfPath).replaceAll("\\", "/")} (${statSync(pdfPath).size} bytes)`);
 console.log(`PPTX: ${path.relative(root, pptxPath).replaceAll("\\", "/")} (${statSync(pptxPath).size} bytes)`);
+console.log(`Presentation created by: ${presentationCreatedBy}`);
+if (existsSync(fallbackPdfPath)) console.log(`Presentation fallback PDF: ${path.relative(root, fallbackPdfPath).replaceAll("\\", "/")} (${statSync(fallbackPdfPath).size} bytes)`);

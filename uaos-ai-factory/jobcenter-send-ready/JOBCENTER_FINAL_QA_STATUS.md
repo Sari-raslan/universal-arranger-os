@@ -1,4 +1,4 @@
-# Jobcenter Final QA Status
+﻿# Jobcenter Final QA Status
 
 Status: PASS
 
@@ -10,11 +10,11 @@ PDF:
 PPTX:
 - `uaos-ai-factory/jobcenter-send-ready/UAOS_JOBCENTER_PRESENTATION_2026-07-01_DE.pptx`
 
-Geplanter Projekt-Monitor-Link:
-- https://sari-raslan.github.io/universal-arranger-os/jobcenter/
+Projekt-Monitor-Hinweis:
+- 
 
 Status:
-- Der Link ist derzeit noch nicht öffentlich live, da kein Upload, kein Push und kein Deploy freigegeben wurde.
+- Derzeit ist kein öffentlicher Projektlink aktiv. Es wurde kein Push, kein Upload und kein Deploy freigegeben.
 
 Ergebnis:
 - Jobcenter-only: YES
@@ -24,3 +24,4 @@ Ergebnis:
 - Keyboard output created: NO
 - Keyboard transfer allowed: NO
 - App.jsx touched: NO
+

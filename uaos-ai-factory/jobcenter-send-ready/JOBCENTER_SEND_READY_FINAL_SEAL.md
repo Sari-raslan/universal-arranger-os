@@ -1,4 +1,4 @@
-# Jobcenter Send-Ready Final Seal
+﻿# Jobcenter Send-Ready Final Seal
 
 Status: PASS
 
@@ -14,14 +14,14 @@ PPTX ready:
 
 ## Projekt-Monitor
 
-Geplanter Projekt-Monitor-Link:
-- https://sari-raslan.github.io/universal-arranger-os/jobcenter/
+Projekt-Monitor-Hinweis:
+- 
 
 Aktueller Projekt-Monitor:
-- wird nach Freigabe des Uploads aktiviert.
+- Der Projekt-Monitor ist für eine spätere Freigabe vorgesehen und wird nach ausdrücklicher Upload-/Deploy-Freigabe nachgereicht.
 
 Status:
-- Der Link ist derzeit noch nicht öffentlich live, da kein Upload, kein Push und kein Deploy freigegeben wurde.
+- Derzeit ist kein öffentlicher Projektlink aktiv. Es wurde kein Push, kein Upload und kein Deploy freigegeben.
 
 ## Safety
 
@@ -39,3 +39,4 @@ Status:
 - No keyboard transfer: YES
 - App.jsx untouched: YES
 - QA PASS: YES
+

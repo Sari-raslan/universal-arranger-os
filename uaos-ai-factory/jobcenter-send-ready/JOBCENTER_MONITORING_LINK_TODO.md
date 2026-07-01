@@ -1,4 +1,4 @@
-# Jobcenter Projekt-Monitor TODO
+﻿# Jobcenter Projekt-Monitor TODO
 
 Datum: 01.07.2026
 
@@ -8,17 +8,18 @@ Aktueller Projekt-Monitor
 
 Platzhalter:
 
-[JOBCENTER_MONITORING_LINK_HERE]
+Der Projekt-Monitor ist für eine spätere Freigabe vorgesehen und wird nach ausdrücklicher Upload-/Deploy-Freigabe nachgereicht.
 
-Geplanter Projekt-Monitor-Link:
+Projekt-Monitor-Hinweis:
 
-https://sari-raslan.github.io/universal-arranger-os/jobcenter/
+
 
 Status:
 
-Der Link ist derzeit noch nicht öffentlich live, da kein Upload, kein Push und kein Deploy freigegeben wurde.
+Derzeit ist kein öffentlicher Projektlink aktiv. Es wurde kein Push, kein Upload und kein Deploy freigegeben.
 
 ## TODO
 
 - [ ] Lokalen Projekt-Monitor einsetzen, sobald er für die Jobcenter-Unterlagen freigegeben ist.
 - [ ] Vor Versand prüfen, dass kein public release, kein payment, kein deploy und keine keyboard-native Ausgabe behauptet wird.
+

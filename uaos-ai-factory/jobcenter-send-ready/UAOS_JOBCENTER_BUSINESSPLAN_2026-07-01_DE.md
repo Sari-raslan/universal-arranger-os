@@ -1,4 +1,4 @@
-# UAOS Jobcenter Businessplan
+﻿# UAOS Jobcenter Businessplan
 
 Datum: 01.07.2026
 
@@ -9,13 +9,10 @@ Antragsteller / Projektinhaber: Sarey Raslan
 Projekt: UAOS / Universal Arranger OS / AE Platform
 
 Aktueller Projekt-Monitor:
-wird nach Freigabe des Uploads aktiviert.
-
-Geplanter Projekt-Monitor-Link:
-https://sari-raslan.github.io/universal-arranger-os/jobcenter/
+Der Projekt-Monitor ist für eine spätere Freigabe vorgesehen und wird nach ausdrücklicher Upload-/Deploy-Freigabe nachgereicht.
 
 Status:
-Der Link ist derzeit noch nicht öffentlich live, da kein Upload, kein Push und kein Deploy freigegeben wurde.
+Derzeit ist kein öffentlicher Projektlink aktiv. Es wurde kein Push, kein Upload und kein Deploy freigegeben.
 
 ## Kurzbeschreibung
 
@@ -27,8 +24,8 @@ Das Projekt ist derzeit nicht als öffentlicher Dienst, nicht als Zahlungsproduk
 
 - Lokaler Prototyp: vorhanden.
 - Aktueller lokaler Projektstand: vorhanden.
-- Evidence-Pack: vorbereitet und lokal pruefbar.
-- Ausgewaehltes Review-Paket: `owner-neutral-003`.
+- Evidence-Pack: vorbereitet und lokal prüfbar.
+- Ausgewähltes Review-Paket: `owner-neutral-003`.
 - Keyboard Writer: blockiert.
 - Kein finales Keyboard-Nativformat.
 - Keyboard-native Ausgabe: blockiert.
@@ -42,9 +39,11 @@ Das Projekt ist derzeit nicht als öffentlicher Dienst, nicht als Zahlungsproduk
 
 Sarey Raslan hat den bisherigen Projektstand eigenständig aufgebaut, geordnet und dokumentiert. Dazu gehören lokale Projektstruktur, Review-Unterlagen, sichere Claim-Tabellen, QA-Prüfungen, PDF/PPT-Evidence-Erstellung und lokale Statusdokumentation.
 
-Der bisherige Arbeitsstand zeigt technische Eigenleistung, Projektorganisation, Sicherheitsbewusstsein und die Faehigkeit, einen komplexen digitalen Arbeitsprozess nachvollziehbar zu dokumentieren.
+Der bisherige Arbeitsstand zeigt technische Eigenleistung, Projektorganisation, Sicherheitsbewusstsein und die Fähigkeit, einen komplexen digitalen Arbeitsprozess nachvollziehbar zu dokumentieren.
 
-## Warum Arbeitsmittel / Laptop oder Workstation noetig sind
+UTF-8-Prüfzeichen für die lokale Dokumentqualität: ä ö ü Ä Ö Ü ß.
+
+## Warum Arbeitsmittel / Laptop oder Workstation nötig sind
 
 Für die nächsten Entwicklungsschritte wird ein verlässliches Arbeitsmittel benötigt. Ein geeigneter Laptop oder eine Workstation ist wichtig für:
 
@@ -71,7 +70,7 @@ Der lokale Evidence-Stand ist sendefertig für eine Jobcenter-Prüfung. Er umfas
 - eine Jobcenter-PowerPoint-Präsentation,
 - einen Send-Ready-Index,
 - eine Anlagen-Checkliste,
-- einen Monitoring-Link-Platzhalter,
+- eine Projekt-Monitor-Notiz ohne Weblink,
 - lokale QA-Prüfung.
 
 ## Risiken / klare Abgrenzung
@@ -90,14 +89,12 @@ Diese Unterlagen beschreiben einen lokalen Projektstand und eine geplante Weiter
 ## Projekt-Monitor
 
 Aktueller Projekt-Monitor:
-wird nach Freigabe des Uploads aktiviert.
-
-Geplanter Projekt-Monitor-Link:
-https://sari-raslan.github.io/universal-arranger-os/jobcenter/
+Der Projekt-Monitor ist für eine spätere Freigabe vorgesehen und wird nach ausdrücklicher Upload-/Deploy-Freigabe nachgereicht.
 
 Status:
-Der Link ist derzeit noch nicht öffentlich live, da kein Upload, kein Push und kein Deploy freigegeben wurde.
+Derzeit ist kein öffentlicher Projektlink aktiv. Es wurde kein Push, kein Upload und kein Deploy freigegeben.
 
 ## Ergebnis
 
 Der Jobcenter-only Pack ist für die manuelle Prüfung vorbereitet. Er zeigt den aktuellen lokalen Projektstand vom 01.07.2026, die bisherige Eigenleistung, den Bedarf an Arbeitsmitteln und die klaren Grenzen: keine öffentliche Freigabe, kein Payment, kein Deployment, keine Keyboard-native Ausgabe und kein Keyboard Transfer.
+

@@ -1,19 +1,24 @@
 {
-  "schema": "uaos-jobcenter-pack-qa-status-v1",
+  "schema": "uaos-jobcenter-pack-qa-status-v2",
   "status": "PASS",
-  "pdfs": [
+  "businessplanPdfs": [
     "uaos-ai-factory/jobcenter-send-ready/UAOS_JOBCENTER_BUSINESSPLAN_2026-07-01_DE.pdf"
   ],
-  "pptx": [
+  "finalPptx": [
     "uaos-ai-factory/jobcenter-send-ready/UAOS_JOBCENTER_PRESENTATION_2026-07-01_DE.pptx"
   ],
+  "presentationFallbackPdfs": [
+    "uaos-ai-factory/jobcenter-send-ready/UAOS_JOBCENTER_PRESENTATION_2026-07-01_DE_PRESENTATION_FALLBACK.pdf"
+  ],
   "requiredDate": "2026-07-01",
-  "monitoringPlaceholderPresent": true,
-  "plannedJobcenterLinkPresent": true,
-  "monitorMarkedActivationAfterUploadApproval": true,
-  "linkMarkedNotLiveUntilUploadDeployApproval": true,
-  "germanUmlautQualityPass": true,
+  "removedJobcenterLinkPresent": false,
+  "clickableWebLinkPresent": false,
+  "clickableWebLinks": [],
+  "monitorMarkedAfterUploadDeployApproval": true,
+  "noPublicProjectLinkActive": true,
+  "germanUmlautsPreserved": true,
   "mojibakeMarkerPass": true,
+  "forbiddenWordingPass": true,
   "failures": [],
   "safety": {
     "localOnly": true,

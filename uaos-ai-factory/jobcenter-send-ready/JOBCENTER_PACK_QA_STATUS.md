@@ -2,15 +2,20 @@
 
 Status: PASS
 
-PDF files:
+Businessplan PDF:
 - uaos-ai-factory/jobcenter-send-ready/UAOS_JOBCENTER_BUSINESSPLAN_2026-07-01_DE.pdf
 
-PPTX files:
+Final PPTX:
 - uaos-ai-factory/jobcenter-send-ready/UAOS_JOBCENTER_PRESENTATION_2026-07-01_DE.pptx
 
-Monitoring placeholder present: YES
+Presentation fallback PDF:
+- uaos-ai-factory/jobcenter-send-ready/UAOS_JOBCENTER_PRESENTATION_2026-07-01_DE_PRESENTATION_FALLBACK.pdf
 
-German umlaut quality pass: YES
+Non-working link removed: YES
+
+Monitor after upload/deploy approval: YES
+
+German umlauts preserved: YES
 
 Mojibake marker pass: YES
 

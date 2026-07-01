@@ -1,4 +1,4 @@
-# Jobcenter Send-Ready Index
+﻿# Jobcenter Send-Ready Index
 
 Datum: 01.07.2026
 
@@ -7,13 +7,13 @@ Projekt: UAOS / Universal Arranger OS / AE Platform
 Antragsteller / Projektinhaber: Sarey Raslan
 
 Aktueller Projekt-Monitor:
-wird nach Freigabe des Uploads aktiviert.
+Der Projekt-Monitor ist für eine spätere Freigabe vorgesehen und wird nach ausdrücklicher Upload-/Deploy-Freigabe nachgereicht.
 
-Geplanter Projekt-Monitor-Link:
-https://sari-raslan.github.io/universal-arranger-os/jobcenter/
+Projekt-Monitor-Hinweis:
+
 
 Status:
-Der Link ist derzeit noch nicht öffentlich live, da kein Upload, kein Push und kein Deploy freigegeben wurde.
+Derzeit ist kein öffentlicher Projektlink aktiv. Es wurde kein Push, kein Upload und kein Deploy freigegeben.
 
 ## Enthaltene Dateien
 
@@ -41,3 +41,4 @@ Der Link ist derzeit noch nicht öffentlich live, da kein Upload, kein Push und 
 - no payment
 - no keyboard-native output
 - no keyboard transfer
+

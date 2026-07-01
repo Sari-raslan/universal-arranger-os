@@ -1,39 +1,25 @@
-import { existsSync, readdirSync, readFileSync, statSync, writeFileSync } from "node:fs";
+import { existsSync, mkdtempSync, readdirSync, readFileSync, rmSync, statSync, writeFileSync } from "node:fs";
+import os from "node:os";
 import path from "node:path";
+import { spawnSync } from "node:child_process";
 
 const root = process.cwd();
 const packDir = path.join(root, "uaos-ai-factory/jobcenter-send-ready");
 const requiredDate = "2026-07-01";
-const requiredPlaceholder = "[JOBCENTER_MONITORING_LINK_HERE]";
-const plannedJobcenterLink = "https://sari-raslan.github.io/universal-arranger-os/jobcenter/";
-const monitorActivationText = "wird nach freigabe des uploads aktiviert";
-const notLiveMarker = "der link ist derzeit noch nicht \u00f6ffentlich live, da kein upload, kein push und kein deploy freigegeben wurde";
+const businessplanPdfName = "UAOS_JOBCENTER_BUSINESSPLAN_2026-07-01_DE.pdf";
+const finalPptxName = "UAOS_JOBCENTER_PRESENTATION_2026-07-01_DE.pptx";
+const fallbackPdfName = "UAOS_JOBCENTER_PRESENTATION_2026-07-01_DE_PRESENTATION_FALLBACK.pdf";
+const removedJobcenterLink = "https://sari-raslan.github.io/universal-arranger-os/jobcenter/";
+const monitorAfterApprovalText = "der projekt-monitor ist für eine spätere freigabe vorgesehen und wird nach ausdrücklicher upload-/deploy-freigabe nachgereicht";
+const noPublicProjectLinkText = "derzeit ist kein öffentlicher projektlink aktiv. es wurde kein push, kein upload und kein deploy freigegeben";
 const keyboardNativeExtensions = [".STY", ".SET", ".PRS", ".STL", ".PAT", ".MSP", ".KST"];
-const transliterationFailures = [
-  "oeffentlich",
-  "Oeffentlich",
-  "Veroeffentlichung",
-  "Praesentation",
-  "Erklaerung",
-  "fuer",
-  "ueber",
-  "moeglich",
-  "Pruefung",
-  "Geraet"
-];
-const mojibakeMarkers = [
-  "\u00e2\u201d\u0153",
-  "\u251c",
-  "\u00c3",
-  "\u00c2",
-  "\u00ef\u00bf\u00bd",
-  "\ufffd"
-];
+const requiredUmlauts = ["ä", "ö", "ü", "Ä", "Ö", "Ü", "ß"];
+const mojibakeMarkers = ["â", "أ‚", "ï؟½", "ï¿½", "├", "Ã", "Â", "�"];
 const forbiddenPhrases = [
   "private friend",
-  "unterst\u00fctzer",
+  "unterstützer",
   "unterstuetzer",
-  "private unterst\u00fctzung",
+  "private unterstützung",
   "private unterstuetzung",
   "friend support pack",
   "supporter pack",
@@ -49,11 +35,18 @@ const forbiddenPhrases = [
   "real writer ready",
   "produktionsreif",
   "produktionsbereit",
-  "\u0637\u00ac\u0637\u00a7\u0638\u2021\u0637\u00b2 \u0638\u201e\u0638\u201e\u0637\u00a8\u0638\u064a\u0637\u00b9",
-  "\u0638\u2020\u0638\u201a\u0638\u201e \u0637\u00a5\u0638\u201e\u0638\u2030 \u0637\u00a7\u0638\u201e\u0637\u00a3\u0638\u02c6\u0637\u00b1\u0637\u061b \u0637\u00ac\u0637\u00a7\u0638\u2021\u0637\u00b2"
+  "zahlung aktiviert",
+  "deploy-fertig",
+  "keyboard-transfer bereit"
 ];
 
 const failures = [];
+const officeNamespaceHosts = [
+  "schemas.openxmlformats.org",
+  "purl.org",
+  "schemas.microsoft.com",
+  "www.w3.org"
+];
 
 function rel(file) {
   return path.relative(root, file).replaceAll("\\", "/");
@@ -67,15 +60,59 @@ function walk(dir) {
   });
 }
 
+function readExpandedPptxText(file) {
+  if (!existsSync(file)) return "";
+  const tempDir = mkdtempSync(path.join(os.tmpdir(), "uaos-jobcenter-pptx-"));
+  try {
+    const archiveCopy = path.join(tempDir, "presentation.zip");
+    writeFileSync(archiveCopy, readFileSync(file));
+    const result = spawnSync("powershell", [
+      "-NoProfile",
+      "-Command",
+      `Expand-Archive -LiteralPath '${archiveCopy.replaceAll("'", "''")}' -DestinationPath '${tempDir.replaceAll("'", "''")}' -Force`
+    ], { encoding: "utf8" });
+    if (result.status !== 0) {
+      failures.push(`Could not inspect PPTX internals: ${result.stderr || result.stdout || rel(file)}`);
+      return "";
+    }
+    return walk(tempDir)
+      .filter((expandedFile) => [".xml", ".rels"].includes(path.extname(expandedFile).toLowerCase()))
+      .map((expandedFile) => readFileSync(expandedFile, "utf8"))
+      .join("\n");
+  } finally {
+    rmSync(tempDir, { recursive: true, force: true });
+  }
+}
+
+function externalWebLinks(value) {
+  return [...new Set(value.match(/https?:\/\/[^"' <>\r\n]+/gi) ?? [])]
+    .filter((link) => {
+      try {
+        const url = new URL(link);
+        return !officeNamespaceHosts.includes(url.hostname.toLowerCase());
+      } catch {
+        return true;
+      }
+    });
+}
+
 if (!existsSync(packDir)) failures.push(`Missing pack folder: ${rel(packDir)}`);
 
 const files = existsSync(packDir) ? walk(packDir) : [];
 const pdfs = files.filter((file) => path.extname(file).toLowerCase() === ".pdf");
-const pptx = files.filter((file) => path.extname(file).toLowerCase() === ".pptx");
+const businessplanPdfs = pdfs.filter((file) => path.basename(file) === businessplanPdfName);
+const fallbackPdfs = pdfs.filter((file) => path.basename(file) === fallbackPdfName);
+const unexpectedPdfs = pdfs.filter((file) => ![businessplanPdfName, fallbackPdfName].includes(path.basename(file)));
+const pptxFiles = files.filter((file) => path.extname(file).toLowerCase() === ".pptx");
+const finalPptxFiles = pptxFiles.filter((file) => path.basename(file) === finalPptxName);
+const unexpectedPptx = pptxFiles.filter((file) => path.basename(file) !== finalPptxName);
 
-if (pdfs.length !== 1) failures.push(`Expected exactly one PDF, found ${pdfs.length}`);
-if (pptx.length !== 1) failures.push(`Expected exactly one PPTX, found ${pptx.length}`);
-for (const file of [...pdfs, ...pptx]) {
+if (businessplanPdfs.length !== 1) failures.push(`Expected exactly one Businessplan PDF, found ${businessplanPdfs.length}`);
+if (finalPptxFiles.length !== 1) failures.push(`Expected exactly one final PPTX, found ${finalPptxFiles.length}`);
+if (fallbackPdfs.length > 1) failures.push(`Expected at most one presentation fallback PDF, found ${fallbackPdfs.length}`);
+for (const file of unexpectedPdfs) failures.push(`Unexpected PDF found: ${rel(file)}`);
+for (const file of unexpectedPptx) failures.push(`Unexpected PPTX found: ${rel(file)}`);
+for (const file of [...businessplanPdfs, ...finalPptxFiles, ...fallbackPdfs]) {
   if (existsSync(file) && statSync(file).size <= 0) failures.push(`Output is empty: ${rel(file)}`);
 }
 
@@ -85,41 +122,45 @@ for (const file of files) {
 
 const generatedStatusFiles = new Set([
   "JOBCENTER_PACK_QA_STATUS.json",
-  "JOBCENTER_PACK_QA_STATUS.md",
-  "JOBCENTER_FINAL_QA_STATUS.json",
-  "JOBCENTER_FINAL_QA_STATUS.md"
+  "JOBCENTER_PACK_QA_STATUS.md"
 ]);
 const textFiles = files.filter((file) => [".md", ".json", ".html", ".txt", ".xml"].includes(path.extname(file).toLowerCase()) && !generatedStatusFiles.has(path.basename(file)));
 const rawCombinedText = textFiles.map((file) => readFileSync(file, "utf8")).join("\n");
-const combinedText = rawCombinedText.toLowerCase();
+const pptxInternalText = finalPptxFiles.map(readExpandedPptxText).join("\n");
+const searchableText = `${rawCombinedText}\n${pptxInternalText}`;
+const searchableLower = searchableText.toLowerCase();
+const visibleOrExternalLinks = externalWebLinks(searchableText);
 
-if (!combinedText.includes(requiredDate)) failures.push(`Required date missing: ${requiredDate}`);
-if (!combinedText.includes(requiredPlaceholder.toLowerCase())) failures.push("Monitoring placeholder missing");
-if (!combinedText.includes(plannedJobcenterLink)) failures.push("Planned Jobcenter link missing");
-if (!combinedText.includes(monitorActivationText)) failures.push("Project monitor is not marked as activated only after upload approval");
-if (!combinedText.includes(notLiveMarker)) failures.push("Planned monitor link is not marked as not live until upload/deploy approval");
+if (!searchableLower.includes(requiredDate)) failures.push(`Required date missing: ${requiredDate}`);
+if (searchableLower.includes(removedJobcenterLink)) failures.push("Removed GitHub Pages Jobcenter URL still present");
+if (visibleOrExternalLinks.length) failures.push(`Clickable or non-live web link remains in Jobcenter pack text/PPTX internals: ${visibleOrExternalLinks.join(", ")}`);
+if (!searchableLower.includes(monitorAfterApprovalText)) failures.push("Project monitor wording does not say it will be provided after upload/deploy approval");
+if (!searchableLower.includes(noPublicProjectLinkText)) failures.push("No-public-project-link status wording missing");
 for (const phrase of forbiddenPhrases) {
-  if (combinedText.includes(phrase)) failures.push(`Forbidden wording found: ${phrase}`);
+  if (searchableLower.includes(phrase)) failures.push(`Forbidden wording found: ${phrase}`);
 }
-for (const phrase of transliterationFailures) {
-  if (rawCombinedText.includes(phrase)) failures.push(`German umlaut quality failure: ${phrase}`);
+for (const umlaut of requiredUmlauts) {
+  if (!searchableText.includes(umlaut)) failures.push(`German umlaut missing from pack text/PPTX internals: ${umlaut}`);
 }
 for (const marker of mojibakeMarkers) {
-  if (rawCombinedText.includes(marker)) failures.push(`Mojibake marker found: ${JSON.stringify(marker)}`);
+  if (searchableText.includes(marker)) failures.push(`Mojibake marker found: ${JSON.stringify(marker)}`);
 }
 
 const status = {
-  schema: "uaos-jobcenter-pack-qa-status-v1",
+  schema: "uaos-jobcenter-pack-qa-status-v2",
   status: failures.length ? "FAIL" : "PASS",
-  pdfs: pdfs.map(rel),
-  pptx: pptx.map(rel),
+  businessplanPdfs: businessplanPdfs.map(rel),
+  finalPptx: finalPptxFiles.map(rel),
+  presentationFallbackPdfs: fallbackPdfs.map(rel),
   requiredDate,
-  monitoringPlaceholderPresent: combinedText.includes(requiredPlaceholder.toLowerCase()),
-  plannedJobcenterLinkPresent: combinedText.includes(plannedJobcenterLink),
-  monitorMarkedActivationAfterUploadApproval: combinedText.includes(monitorActivationText),
-  linkMarkedNotLiveUntilUploadDeployApproval: combinedText.includes(notLiveMarker),
-  germanUmlautQualityPass: !transliterationFailures.some((phrase) => rawCombinedText.includes(phrase)),
-  mojibakeMarkerPass: !mojibakeMarkers.some((marker) => rawCombinedText.includes(marker)),
+  removedJobcenterLinkPresent: searchableLower.includes(removedJobcenterLink),
+  clickableWebLinkPresent: visibleOrExternalLinks.length > 0,
+  clickableWebLinks: visibleOrExternalLinks,
+  monitorMarkedAfterUploadDeployApproval: searchableLower.includes(monitorAfterApprovalText),
+  noPublicProjectLinkActive: searchableLower.includes(noPublicProjectLinkText),
+  germanUmlautsPreserved: requiredUmlauts.every((umlaut) => searchableText.includes(umlaut)),
+  mojibakeMarkerPass: !mojibakeMarkers.some((marker) => searchableText.includes(marker)),
+  forbiddenWordingPass: !forbiddenPhrases.some((phrase) => searchableLower.includes(phrase)),
   failures,
   safety: {
     localOnly: true,
@@ -129,20 +170,25 @@ const status = {
   }
 };
 
-writeFileSync(path.join(root, "uaos-ai-factory/jobcenter-send-ready/JOBCENTER_PACK_QA_STATUS.json"), `${JSON.stringify(status, null, 2)}\n`, "utf8");
-writeFileSync(path.join(root, "uaos-ai-factory/jobcenter-send-ready/JOBCENTER_PACK_QA_STATUS.md"), `# Jobcenter Pack QA Status
+writeFileSync(path.join(packDir, "JOBCENTER_PACK_QA_STATUS.json"), `${JSON.stringify(status, null, 2)}\n`, "utf8");
+writeFileSync(path.join(packDir, "JOBCENTER_PACK_QA_STATUS.md"), `# Jobcenter Pack QA Status
 
 Status: ${status.status}
 
-PDF files:
-${status.pdfs.map((file) => `- ${file}`).join("\n") || "- None"}
+Businessplan PDF:
+${status.businessplanPdfs.map((file) => `- ${file}`).join("\n") || "- None"}
 
-PPTX files:
-${status.pptx.map((file) => `- ${file}`).join("\n") || "- None"}
+Final PPTX:
+${status.finalPptx.map((file) => `- ${file}`).join("\n") || "- None"}
 
-Monitoring placeholder present: ${status.monitoringPlaceholderPresent ? "YES" : "NO"}
+Presentation fallback PDF:
+${status.presentationFallbackPdfs.map((file) => `- ${file}`).join("\n") || "- None"}
 
-German umlaut quality pass: ${status.germanUmlautQualityPass ? "YES" : "NO"}
+Non-working link removed: ${!status.removedJobcenterLinkPresent ? "YES" : "NO"}
+
+Monitor after upload/deploy approval: ${status.monitorMarkedAfterUploadDeployApproval ? "YES" : "NO"}
+
+German umlauts preserved: ${status.germanUmlautsPreserved ? "YES" : "NO"}
 
 Mojibake marker pass: ${status.mojibakeMarkerPass ? "YES" : "NO"}
 

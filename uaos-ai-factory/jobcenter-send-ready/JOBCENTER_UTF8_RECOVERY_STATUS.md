@@ -1,4 +1,4 @@
-# Jobcenter UTF-8 Recovery Status
+﻿# Jobcenter UTF-8 Recovery Status
 
 Status: PASS
 
@@ -41,3 +41,4 @@ Datum: 2026-07-01
 - Keyboard output created: NO
 - Keyboard transfer allowed: NO
 - App.jsx touched: NO
+
