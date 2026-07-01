@@ -1,0 +1,43 @@
+{
+  "run": "004",
+  "cycle": "006",
+  "status": "READY",
+  "schemaName": "UAOS Safe Plugin Manifest",
+  "requiredFields": [
+    "pluginId",
+    "displayName",
+    "version",
+    "capabilities",
+    "inputSchemas",
+    "outputSchemas",
+    "safetyGates",
+    "ownerApprovalRequired"
+  ],
+  "capabilityTypes": [
+    "validator",
+    "arranger-planner",
+    "library-metadata",
+    "monitor-data",
+    "qa-reporter",
+    "owner-dashboard"
+  ],
+  "allowedOutputs": [
+    "json",
+    "md",
+    "txt"
+  ],
+  "forbiddenOutputs": [
+    "deployment",
+    "money-flow",
+    "keyboard-output",
+    "hardware-transfer",
+    "proprietary-sample-copying",
+    "frontend-edit-without-approval"
+  ],
+  "safetyGates": {
+    "appJsRequiresOwnerApproval": true,
+    "deploymentBlocked": true,
+    "restrictedOutputBlocked": true,
+    "proprietarySamplesBlocked": true
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "run": "004",
+  "cycle": "006",
+  "status": "READY",
+  "manifests": [
+    {
+      "pluginId": "uaos.validator.arranger-plan",
+      "displayName": "Arranger Plan Validator",
+      "version": "0.1.0",
+      "capabilities": ["validator"],
+      "inputSchemas": ["arrangement-plan-json"],
+      "outputSchemas": ["validation-results-json", "qa-report-md"],
+      "safetyGates": ["no-deploy", "no-keyboard-output", "no-appjs"],
+      "ownerApprovalRequired": []
+    },
+    {
+      "pluginId": "uaos.planner.song-to-arranger",
+      "displayName": "Song To Arranger Planner",
+      "version": "0.1.0",
+      "capabilities": ["arranger-planner"],
+      "inputSchemas": ["song-idea-json", "maqam-rule-json", "library-metadata-json"],
+      "outputSchemas": ["arrangement-plan-json"],
+      "safetyGates": ["json-only", "no-device-transfer", "no-restricted-output"],
+      "ownerApprovalRequired": ["real-file-export"]
+    },
+    {
+      "pluginId": "uaos.library.metadata",
+      "displayName": "Library Metadata Planner",
+      "version": "0.1.0",
+      "capabilities": ["library-metadata"],
+      "inputSchemas": ["instrument-category-json", "articulation-schema-json"],
+      "outputSchemas": ["library-metadata-json", "sample-safety-report-md"],
+      "safetyGates": ["no-proprietary-samples", "metadata-only"],
+      "ownerApprovalRequired": ["recording-session", "audio-asset-work"]
+    }
+  ]
+}
