@@ -1,4 +1,4 @@
-# Finanzielle Annahmen
+﻿# Finanzielle Annahmen 2026-07-01
 
 Datum: 01.07.2026
 
@@ -6,8 +6,14 @@ Antragsteller: Sarey Raslan
 
 Projekt: UAOS / Universal Arranger OS / AE Platform
 
-- Anfangsumsatz: 0 €
-- Keine Einkommensgarantie.
-- Aktuelle Phase: Projektentwicklungsphase.
-- Spätere Pilot- oder Serviceeinnahmen sind nur als unverbindliche Projektion möglich.
-- Es wird keine öffentliche Produktfreigabe, kein aktives Zahlungssystem und keine Keyboard-Ausgabe behauptet.
+Live Monitor: https://sari-raslan.github.io/universal-arranger-os/monitor/
+
+## Konservative Grundannahmen
+
+- Anfangsumsatz: 0 €.
+- Es gibt keine Einkommensgarantie.
+- Das Projekt befindet sich in der Projektentwicklungsphase.
+- Mögliche spätere Pilot- oder Serviceeinnahmen sind nur eine unverbindliche Projektion.
+- Keine Produktionsfreigabe, kein Payment, keine Keyboard-Ausgabe und kein Keyboard-Transfer.
+
+UTF-8-Prüfzeichen: ä ö ü Ä Ö Ü ß.
