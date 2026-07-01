@@ -12,6 +12,7 @@ Status: ACTIVE
 - Cycle 006: Safe plugin interface spec - PASS
 - Cycle 007: Arranger preset taxonomy - PASS
 - Cycle 008: Oriental strings premium roadmap - PASS
+- Cycle 009: MIDI-only demo generator plan - PASS
 
 ## Current Product Progress
 
@@ -29,6 +30,7 @@ Status: ACTIVE
 - Arranger preset taxonomy created with four safe preset families.
 - Preset section rules and test matrix created.
 - Oriental strings premium roadmap and original capture readiness checklist created.
+- MIDI-only demo generator plan and scenario specs created as JSON/spec only.
 - No deployment or restricted output work performed.
 
 ## Active Safety Gates
@@ -43,4 +45,4 @@ Status: ACTIVE
 
 ## Next Cycle
 
-Cycle 009: MIDI-only demo generator plan.
+Cycle 010: Library QA rules.

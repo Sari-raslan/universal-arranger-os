@@ -1,0 +1,45 @@
+{
+  "run": "004",
+  "cycle": "009",
+  "status": "READY",
+  "scenarioSpecs": [
+    {
+      "scenarioId": "demo_emotional_hijaz_intro",
+      "presetFamily": "eastern_ballad",
+      "maqam": "hijaz",
+      "tempoBpm": 78,
+      "meter": "6/8",
+      "targetOutput": "arrangement-plan-json",
+      "sections": ["intro", "verse", "chorus", "fill", "ending"],
+      "leadRole": "oriental-strings",
+      "safeArticulationFocus": ["emotional_sustain", "legato_connected", "portamento_expressive"]
+    },
+    {
+      "scenarioId": "demo_modern_pop_nahawand",
+      "presetFamily": "modern_pop_eastern",
+      "maqam": "nahawand",
+      "tempoBpm": 104,
+      "meter": "4/4",
+      "targetOutput": "arrangement-plan-json",
+      "sections": ["intro", "verse", "chorus", "bridge", "fill", "ending"],
+      "leadRole": "hybrid-textures",
+      "safeArticulationFocus": ["soft_entry", "layered_sustain", "motif"]
+    },
+    {
+      "scenarioId": "demo_cinematic_kurd_peak",
+      "presetFamily": "cinematic_maqam",
+      "maqam": "kurd",
+      "tempoBpm": 92,
+      "meter": "4/4",
+      "targetOutput": "arrangement-plan-json",
+      "sections": ["intro", "theme", "variation", "emotional-peak", "ending"],
+      "leadRole": "oriental-strings",
+      "safeArticulationFocus": ["tremolo_emotional", "emotional_sustain", "mordent"]
+    }
+  ],
+  "safety": {
+    "midiFilesCreated": false,
+    "restrictedHardwareNativeOutputCreated": false,
+    "audioFilesCreated": false
+  }
+}

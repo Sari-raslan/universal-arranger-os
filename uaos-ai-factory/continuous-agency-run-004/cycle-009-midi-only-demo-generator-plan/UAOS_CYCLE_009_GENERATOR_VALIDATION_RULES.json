@@ -1,0 +1,32 @@
+{
+  "run": "004",
+  "cycle": "009",
+  "status": "READY",
+  "validationRules": [
+    {
+      "ruleId": "gen_rule_001",
+      "description": "Generator output must be JSON-only.",
+      "mustBeTrue": "output.extension == .json"
+    },
+    {
+      "ruleId": "gen_rule_002",
+      "description": "Each section must have name, bars, energy, lead role, and transition intent.",
+      "requiredFields": ["sectionName", "bars", "energy", "leadRole", "transitionIntent"]
+    },
+    {
+      "ruleId": "gen_rule_003",
+      "description": "Maqam handling must be metadata-only.",
+      "mustBeTrue": "maqam.quarterToneHandling == metadata-only"
+    },
+    {
+      "ruleId": "gen_rule_004",
+      "description": "No restricted output files may be created.",
+      "forbiddenExtensions": [".STY", ".SET", ".PRS", ".STL", ".PAT", ".MSP", ".KST"]
+    },
+    {
+      "ruleId": "gen_rule_005",
+      "description": "No MIDI files are created in this planning cycle.",
+      "forbiddenExtensions": [".mid", ".midi"]
+    }
+  ]
+}
