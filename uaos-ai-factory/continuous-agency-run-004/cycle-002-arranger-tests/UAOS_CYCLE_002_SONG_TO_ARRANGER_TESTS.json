@@ -1,0 +1,70 @@
+{
+  "run": "004",
+  "cycle": "002",
+  "status": "READY",
+  "purpose": "Practical song-to-arranger tests for safe arrangement-plan output.",
+  "outputPolicy": {
+    "planJsonOnly": true,
+    "midiFilesCreated": false,
+    "restrictedHardwareNativeOutputCreated": false
+  },
+  "tests": [
+    {
+      "id": "c002_emotional_hijaz_ballad",
+      "input": {
+        "songIdea": "emotional eastern ballad with string-led chorus",
+        "tempoBpm": 78,
+        "timeSignature": "6/8",
+        "maqamHint": "hijaz",
+        "targetEnergy": "cinematic"
+      },
+      "expectedPlan": {
+        "sections": [
+          {"name": "intro", "bars": 8, "energy": "low", "lead": "oriental-strings", "articulation": "emotional_sustain"},
+          {"name": "verse", "bars": 16, "energy": "medium", "lead": "oriental-strings", "articulation": "legato_connected"},
+          {"name": "chorus", "bars": 16, "energy": "high", "lead": "oriental-strings", "articulation": "marcato_bow"},
+          {"name": "fill", "bars": 2, "energy": "medium", "lead": "percussion", "articulation": "transition_marker"},
+          {"name": "ending", "bars": 8, "energy": "low", "lead": "oriental-strings", "articulation": "emotional_sustain"}
+        ]
+      }
+    },
+    {
+      "id": "c002_nahawand_pop_structure",
+      "input": {
+        "songIdea": "modern pop song with eastern melodic color",
+        "tempoBpm": 104,
+        "timeSignature": "4/4",
+        "maqamHint": "nahawand",
+        "targetEnergy": "medium"
+      },
+      "expectedPlan": {
+        "sections": [
+          {"name": "intro", "bars": 4, "energy": "low", "lead": "hybrid-textures", "articulation": "soft_entry"},
+          {"name": "verse", "bars": 16, "energy": "medium", "lead": "keys", "articulation": "steady_comp"},
+          {"name": "chorus", "bars": 16, "energy": "high", "lead": "strings", "articulation": "layered_sustain"},
+          {"name": "bridge", "bars": 8, "energy": "medium", "lead": "plucked-strings", "articulation": "motif"},
+          {"name": "ending", "bars": 4, "energy": "low", "lead": "pads", "articulation": "fade_marker"}
+        ]
+      }
+    },
+    {
+      "id": "c002_kurd_cinematic_peak",
+      "input": {
+        "songIdea": "cinematic build with strong emotional peak",
+        "tempoBpm": 92,
+        "timeSignature": "4/4",
+        "maqamHint": "kurd",
+        "targetEnergy": "cinematic"
+      },
+      "expectedPlan": {
+        "sections": [
+          {"name": "intro", "bars": 8, "energy": "low", "lead": "pads", "articulation": "drone"},
+          {"name": "verse", "bars": 16, "energy": "medium", "lead": "oriental-strings", "articulation": "legato_connected"},
+          {"name": "chorus", "bars": 16, "energy": "high", "lead": "oriental-strings", "articulation": "tremolo_emotional"},
+          {"name": "bridge", "bars": 8, "energy": "medium", "lead": "woodwinds", "articulation": "response_phrase"},
+          {"name": "ending", "bars": 8, "energy": "low", "lead": "oriental-strings", "articulation": "emotional_sustain"}
+        ]
+      }
+    }
+  ]
+}

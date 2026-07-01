@@ -1,0 +1,50 @@
+{
+  "run": "004",
+  "cycle": "002",
+  "status": "READY",
+  "purpose": "Maqam-aware arranger rule tests using metadata-only behavior.",
+  "tests": [
+    {
+      "maqam": "hijaz",
+      "behavior": {
+        "openingRole": "establish_characteristic_color",
+        "ornamentDensity": "medium",
+        "preferredArticulations": ["legato_connected", "portamento_expressive", "emotional_sustain"],
+        "quarterToneHandling": "metadata-only"
+      },
+      "passCriteria": [
+        "intro contains characteristic melodic color",
+        "chorus can increase ornament density",
+        "no restricted output file is created"
+      ]
+    },
+    {
+      "maqam": "nahawand",
+      "behavior": {
+        "openingRole": "familiar_minor_color",
+        "ornamentDensity": "low-to-medium",
+        "preferredArticulations": ["legato_connected", "short_slide_up"],
+        "quarterToneHandling": "metadata-only"
+      },
+      "passCriteria": [
+        "arranger keeps pop-compatible structure",
+        "bridge provides contrast",
+        "no commercial launch claim is made"
+      ]
+    },
+    {
+      "maqam": "kurd",
+      "behavior": {
+        "openingRole": "direct_emotional_identity",
+        "ornamentDensity": "medium",
+        "preferredArticulations": ["emotional_sustain", "tremolo_emotional", "mordent"],
+        "quarterToneHandling": "metadata-only"
+      },
+      "passCriteria": [
+        "emotional peak uses strings safely",
+        "ending resolves with sustain metadata",
+        "no audio or hardware-native output is created"
+      ]
+    }
+  ]
+}

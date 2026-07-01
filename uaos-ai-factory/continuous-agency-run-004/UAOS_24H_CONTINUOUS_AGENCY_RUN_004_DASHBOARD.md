@@ -5,11 +5,14 @@ Status: ACTIVE
 ## Completed Cycles
 
 - Cycle 001: Validator foundation - PASS
+- Cycle 002: Arranger intelligence practical test pack - PASS
 
 ## Current Product Progress
 
 - Run 003 JSON validation foundation created.
 - Validator test results available for dashboard and QA.
+- Practical song-to-arranger test cases created.
+- Maqam-aware rule tests created for hijaz, nahawand, and kurd scenarios.
 - No deployment or restricted output work performed.
 
 ## Active Safety Gates
@@ -24,4 +27,4 @@ Status: ACTIVE
 
 ## Next Cycle
 
-Cycle 002: Arranger intelligence practical test pack.
+Cycle 003: Library factory implementation model.
