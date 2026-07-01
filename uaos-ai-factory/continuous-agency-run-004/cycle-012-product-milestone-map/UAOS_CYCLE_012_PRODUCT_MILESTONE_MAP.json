@@ -1,0 +1,56 @@
+{
+  "run": "004",
+  "cycle": "012",
+  "status": "READY",
+  "milestones": [
+    {
+      "id": "m1_foundation",
+      "name": "Product Foundation",
+      "status": "complete-for-planning",
+      "evidence": ["run-003-master-index", "cycle-001-validator-foundation", "cycle-004-module-boundaries"],
+      "nextGate": "validator implementation"
+    },
+    {
+      "id": "m2_arranger_intelligence",
+      "name": "Arranger Intelligence",
+      "status": "test-ready",
+      "evidence": ["cycle-002-tests", "cycle-007-preset-taxonomy", "cycle-009-demo-generator-plan"],
+      "nextGate": "json-only arrangement plan generator"
+    },
+    {
+      "id": "m3_library_factory",
+      "name": "Library Factory",
+      "status": "metadata-ready",
+      "evidence": ["cycle-003-library-model", "cycle-010-library-qa-rules"],
+      "nextGate": "metadata validator"
+    },
+    {
+      "id": "m4_oriental_strings",
+      "name": "Oriental Strings Identity",
+      "status": "roadmap-ready",
+      "evidence": ["cycle-003-oriental-schema", "cycle-008-premium-roadmap"],
+      "nextGate": "maqam fixture set"
+    },
+    {
+      "id": "m5_owner_monitor",
+      "name": "Owner Monitor Data",
+      "status": "dashboard-data-ready",
+      "evidence": ["cycle-005-monitor-data", "cycle-011-ui-data-plan"],
+      "nextGate": "monitor status aggregator"
+    }
+  ],
+  "blockedMilestones": [
+    {
+      "id": "ui_rendering",
+      "reason": "requires App.jsx owner approval"
+    },
+    {
+      "id": "public_deploy",
+      "reason": "deployment blocked in run 004"
+    },
+    {
+      "id": "real_export",
+      "reason": "exporters require owner approval and separate QA"
+    }
+  ]
+}
