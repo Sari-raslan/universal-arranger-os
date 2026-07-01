@@ -1,0 +1,25 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": true,
+  "routes": [
+    {
+      "src": "/",
+      "status": 308,
+      "headers": {
+        "Location": "/jobcenter/"
+      }
+    },
+    {
+      "src": "/jobcenter/?",
+      "dest": "/public/jobcenter/index.html"
+    },
+    {
+      "src": "/status/?",
+      "dest": "/public/status/index.html"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/public/$1"
+    }
+  ]
+}
