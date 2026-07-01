@@ -1,0 +1,33 @@
+﻿{
+  "type": "object",
+  "required": [
+    "id",
+    "title",
+    "family",
+    "tier",
+    "instrumentRole",
+    "maqamOrStyleCompatibility",
+    "articulationTags",
+    "demoMidiReadiness",
+    "futureRecordingReadiness",
+    "originalContentPolicy",
+    "legalSafetyStatus",
+    "uiNameQuality",
+    "qaStatus"
+  ],
+  "properties": {
+    "id": { "type": "string" },
+    "title": { "type": "string" },
+    "family": { "type": "string" },
+    "tier": { "type": "string" },
+    "instrumentRole": { "type": "string" },
+    "maqamOrStyleCompatibility": { "type": "array", "items": { "type": "string" } },
+    "articulationTags": { "type": "array", "items": { "type": "string" } },
+    "demoMidiReadiness": { "type": "string" },
+    "futureRecordingReadiness": { "type": "string" },
+    "originalContentPolicy": { "type": "string" },
+    "legalSafetyStatus": { "type": "string" },
+    "uiNameQuality": { "type": "string" },
+    "qaStatus": { "type": "string" }
+  }
+}
