@@ -1,0 +1,45 @@
+{
+  "run": "004",
+  "cycle": "008",
+  "status": "READY",
+  "milestones": [
+    {
+      "id": "os_m1_metadata_identity",
+      "name": "Metadata Identity",
+      "deliverables": ["articulation-vocabulary", "maqam-behavior-map", "quarter-tone-metadata-policy"],
+      "completionEvidence": ["json-schema", "markdown-policy", "qa-report"],
+      "audioRequired": false,
+      "ownerApprovalRequired": false
+    },
+    {
+      "id": "os_m2_arranger_integration",
+      "name": "Arranger Integration",
+      "deliverables": ["section-articulation-rules", "preset-family-links", "test-matrix"],
+      "completionEvidence": ["arranger-test-results-json", "rule-report-md"],
+      "audioRequired": false,
+      "ownerApprovalRequired": false
+    },
+    {
+      "id": "os_m3_original_source_readiness",
+      "name": "Original Source Readiness",
+      "deliverables": ["session-template", "rights-checklist", "capture-plan"],
+      "completionEvidence": ["template-md", "rights-checklist-md"],
+      "audioRequired": false,
+      "ownerApprovalRequired": true
+    },
+    {
+      "id": "os_m4_premium_prototype",
+      "name": "Premium Prototype",
+      "deliverables": ["original-source-metadata", "qa-validation", "arranger-linkage"],
+      "completionEvidence": ["owner-approved-assets", "qa-report"],
+      "audioRequired": true,
+      "ownerApprovalRequired": true
+    }
+  ],
+  "safety": {
+    "audioCreatedThisCycle": false,
+    "proprietarySampleCopying": false,
+    "restrictedOutputCreated": false,
+    "keyboardOutputCreated": false
+  }
+}
