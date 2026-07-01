@@ -40,7 +40,7 @@ Compatibility profile:
 - Dead Jobcenter URL removed: YES
 - Monitor after upload/deploy approval: YES
 - German umlauts preserved: ä ö ü Ä Ö Ü ß
-- No private/friend wording: YES
+- No private wording: YES
 - No production-ready/payment-enabled/deploy-ready claim: YES
 - No keyboard-ready or keyboard-transfer-ready claim: YES
 - No keyboard-native output files: YES

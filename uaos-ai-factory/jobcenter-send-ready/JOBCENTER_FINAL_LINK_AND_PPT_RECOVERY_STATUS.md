@@ -17,7 +17,7 @@ Date: 2026-07-01
 - PowerPoint created by: PowerPoint COM
 - PowerPoint compatibility: real Microsoft PowerPoint SaveAs `.pptx`, 16:9, standard Arial text, no animations, no videos, no embedded external links
 - Jobcenter-only wording: YES
-- Private/friend wording: NO
+- Private wording: NO
 - App.jsx touched: NO
 - Push/deploy/Vercel: NO
 - Keyboard output/transfer: NO
