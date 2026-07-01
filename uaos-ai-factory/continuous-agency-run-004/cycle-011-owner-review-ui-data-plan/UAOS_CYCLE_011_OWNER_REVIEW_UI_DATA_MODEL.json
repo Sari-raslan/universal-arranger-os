@@ -1,0 +1,44 @@
+{
+  "run": "004",
+  "cycle": "011",
+  "status": "READY",
+  "modelName": "Owner Review UI Data Model",
+  "purpose": "Prepare dashboard data contracts without editing frontend files.",
+  "panels": [
+    {
+      "panelId": "product-progress",
+      "title": "Product Progress",
+      "dataSource": "UAOS_24H_CONTINUOUS_AGENCY_RUN_004_STATUS.json",
+      "fields": ["cyclesCompleted", "currentCycle", "latestCompletedCycle", "nextAction"]
+    },
+    {
+      "panelId": "safety-gates",
+      "title": "Safety Gates",
+      "dataSource": "UAOS_24H_CONTINUOUS_AGENCY_RUN_004_STATUS.json",
+      "fields": ["appJsTouched", "deployAttempted", "vercelUsed", "paymentCode", "keyboardOutput", "proprietarySampleCopying"]
+    },
+    {
+      "panelId": "arranger-tests",
+      "title": "Arranger Tests",
+      "dataSource": "cycle-002-arranger-tests",
+      "fields": ["presetFamily", "maqam", "expectedSections", "leadRole"]
+    },
+    {
+      "panelId": "library-qa",
+      "title": "Library QA",
+      "dataSource": "cycle-010-library-qa-rules",
+      "fields": ["sourcePolicy", "rightsStatus", "qualityTierEvidence", "claimSafety"]
+    },
+    {
+      "panelId": "next-actions",
+      "title": "Next Actions",
+      "dataSource": "UAOS_24H_CONTINUOUS_AGENCY_RUN_004_NEXT_ACTIONS.md",
+      "fields": ["priority", "task", "approvalRequired"]
+    }
+  ],
+  "implementationGate": {
+    "appJsEditRequiredForUi": true,
+    "ownerApprovalRequiredBeforeFrontendWork": true,
+    "currentCycleEditsFrontend": false
+  }
+}
