@@ -17,6 +17,7 @@ Status: ACTIVE
 - Cycle 011: Owner review UI data plan - PASS
 - Cycle 012: Product milestone map - PASS
 - Cycle 013: Safe implementation tasks for next coding day - PASS
+- Cycle 014: No-false-claims public wording - PASS
 
 ## Current Product Progress
 
@@ -39,6 +40,7 @@ Status: ACTIVE
 - Owner review UI data model and panel spec created without frontend edits.
 - Product milestone map and proof matrix created.
 - Safe implementation task list and coding-day sequence created.
+- Public wording guide and product claim boundaries created.
 - No deployment or restricted output work performed.
 
 ## Active Safety Gates
@@ -53,4 +55,4 @@ Status: ACTIVE
 
 ## Next Cycle
 
-Cycle 014: No-false-claims public wording.
+Cycle 015: Test fixtures and validation matrix.
