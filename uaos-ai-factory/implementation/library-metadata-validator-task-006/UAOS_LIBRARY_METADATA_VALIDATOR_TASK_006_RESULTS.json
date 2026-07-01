@@ -1,0 +1,95 @@
+{
+  "task": "006",
+  "validator": "libraryMetadataValidator",
+  "status": "PASS",
+  "generatedAt": "2026-07-01T23:10:08.660Z",
+  "safety": {
+    "appJsTouched": false,
+    "deployAttempted": false,
+    "vercelUsed": false,
+    "paymentCode": false,
+    "keyboardOutputCreated": false,
+    "proprietaryCopying": false,
+    "jobcenterFoldersTouched": false
+  },
+  "fixtureResults": [
+    {
+      "fixture": "valid-oriental-strings-library.json",
+      "expectedStatus": "PASS",
+      "expectedCodePrefix": null,
+      "actualStatus": "PASS",
+      "matchedExpectation": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "fixture": "valid-standard-library.json",
+      "expectedStatus": "PASS",
+      "expectedCodePrefix": null,
+      "actualStatus": "PASS",
+      "matchedExpectation": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "fixture": "invalid-proprietary-source.json",
+      "expectedStatus": "FAIL",
+      "expectedCodePrefix": "invalid-source-policy",
+      "actualStatus": "FAIL",
+      "matchedExpectation": true,
+      "errors": [
+        {
+          "code": "invalid-source-policy",
+          "message": "sourcePolicy must be one of: original_recording_planned, synthesis_metadata_only, midi_spec_only."
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "fixture": "invalid-kontakt-native-instruments.json",
+      "expectedStatus": "FAIL",
+      "expectedCodePrefix": "forbidden-claim:kontakt-copying",
+      "actualStatus": "FAIL",
+      "matchedExpectation": true,
+      "errors": [
+        {
+          "code": "forbidden-claim:kontakt-copying",
+          "message": "Forbidden claim or term detected: kontakt-copying"
+        },
+        {
+          "code": "forbidden-claim:native-instruments-copying",
+          "message": "Forbidden claim or term detected: native-instruments-copying"
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "fixture": "invalid-missing-articulations.json",
+      "expectedStatus": "FAIL",
+      "expectedCodePrefix": "missing-articulations",
+      "actualStatus": "FAIL",
+      "matchedExpectation": true,
+      "errors": [
+        {
+          "code": "missing-articulations",
+          "message": "Instrument libraries must include articulations array."
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "fixture": "invalid-keyboard-output-claim.json",
+      "expectedStatus": "FAIL",
+      "expectedCodePrefix": "forbidden-claim:keyboard-output",
+      "actualStatus": "FAIL",
+      "matchedExpectation": true,
+      "errors": [
+        {
+          "code": "forbidden-claim:keyboard-output",
+          "message": "Forbidden claim or term detected: keyboard-output"
+        }
+      ],
+      "warnings": []
+    }
+  ]
+}
