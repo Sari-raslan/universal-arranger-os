@@ -12,13 +12,16 @@ PDF ready:
 PPTX ready:
 - `UAOS_JOBCENTER_PRESENTATION_2026-07-01_DE.pptx`
 
-## Jobcenter Link
+## Projekt-Monitor
 
-Geplanter Jobcenter-Projektlink:
+Geplanter Projekt-Monitor-Link:
 - https://sari-raslan.github.io/universal-arranger-os/jobcenter/
 
-Link-Status:
-- geplanter oeffentlicher Jobcenter-Projektlink, noch nicht live solange kein GitHub Pages Upload/Deploy freigegeben ist.
+Aktueller Projekt-Monitor:
+- wird nach Freigabe des Uploads aktiviert.
+
+Status:
+- Der Link ist derzeit noch nicht öffentlich live, da kein Upload, kein Push und kein Deploy freigegeben wurde.
 
 ## Safety
 
@@ -26,6 +29,7 @@ Link-Status:
 - Date 2026-07-01: YES
 - Planned Jobcenter link included: YES
 - Link not live until deploy approval: YES
+- German umlaut quality fixed: YES
 - Non-Jobcenter wording removed: YES
 - No push: YES
 - No deploy: YES

@@ -6,11 +6,14 @@ Projekt: UAOS / Universal Arranger OS / AE Platform
 
 Antragsteller / Projektinhaber: Sarey Raslan
 
-Aktueller lokaler Projektstatus / Monitoring-Link: [JOBCENTER_MONITORING_LINK_HERE]
+Aktueller Projekt-Monitor:
+wird nach Freigabe des Uploads aktiviert.
 
-Geplanter Jobcenter-Projektlink: https://sari-raslan.github.io/universal-arranger-os/jobcenter/
+Geplanter Projekt-Monitor-Link:
+https://sari-raslan.github.io/universal-arranger-os/jobcenter/
 
-Link-Status: geplanter oeffentlicher Jobcenter-Projektlink, noch nicht live solange kein GitHub Pages Upload/Deploy freigegeben ist.
+Status:
+Der Link ist derzeit noch nicht öffentlich live, da kein Upload, kein Push und kein Deploy freigegeben wurde.
 
 ## Enthaltene Dateien
 
@@ -30,7 +33,7 @@ Link-Status: geplanter oeffentlicher Jobcenter-Projektlink, noch nicht live sola
 - Keyboard Transfer: NO.
 - Kein Zahlungssystem aktiv.
 - Kein finales Keyboard-Nativformat.
-- Noch kein oeffentliches Release.
+- Noch kein öffentliches Release.
 
 ## Abgrenzung
 

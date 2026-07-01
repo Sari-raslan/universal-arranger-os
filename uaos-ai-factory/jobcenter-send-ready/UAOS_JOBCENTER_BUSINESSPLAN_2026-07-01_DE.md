@@ -8,17 +8,20 @@ Antragsteller / Projektinhaber: Sarey Raslan
 
 Projekt: UAOS / Universal Arranger OS / AE Platform
 
-Aktueller lokaler Projektstatus / Monitoring-Link: [JOBCENTER_MONITORING_LINK_HERE]
+Aktueller Projekt-Monitor:
+wird nach Freigabe des Uploads aktiviert.
 
-Geplanter Jobcenter-Projektlink: https://sari-raslan.github.io/universal-arranger-os/jobcenter/
+Geplanter Projekt-Monitor-Link:
+https://sari-raslan.github.io/universal-arranger-os/jobcenter/
 
-Link-Status: geplanter oeffentlicher Jobcenter-Projektlink, noch nicht live solange kein GitHub Pages Upload/Deploy freigegeben ist.
+Status:
+Der Link ist derzeit noch nicht öffentlich live, da kein Upload, kein Push und kein Deploy freigegeben wurde.
 
 ## Kurzbeschreibung
 
-UAOS / Universal Arranger OS / AE Platform ist ein lokales Softwareprojekt fuer musikalische Arbeitsablaeufe, Arrangement-Planung und strukturierte Projektentwicklung. Der aktuelle Stand ist ein lokaler, nicht veroeffentlichter Prototyp mit dokumentiertem Evidence-Pack, manueller Review-Struktur und klaren Sicherheitsgrenzen.
+UAOS / Universal Arranger OS / AE Platform ist ein lokales Softwareprojekt für musikalische Arbeitsabläufe, Arrangement-Planung und strukturierte Projektentwicklung. Der aktuelle Stand ist ein lokaler, nicht veröffentlichter Prototyp mit dokumentiertem Evidence-Pack, manueller Review-Struktur und klaren Sicherheitsgrenzen.
 
-Das Projekt ist derzeit nicht als oeffentlicher Dienst, nicht als Zahlungsprodukt und nicht als Keyboard-Ausgabe freigegeben. Es dient aktuell der geordneten Weiterentwicklung, Dokumentation und lokalen Demonstration des Projektstands.
+Das Projekt ist derzeit nicht als öffentlicher Dienst, nicht als Zahlungsprodukt und nicht als Keyboard-Ausgabe freigegeben. Es dient aktuell der geordneten Weiterentwicklung, Dokumentation und lokalen Demonstration des Projektstands.
 
 ## Aktueller Stand des Projekts
 
@@ -32,44 +35,44 @@ Das Projekt ist derzeit nicht als oeffentlicher Dienst, nicht als Zahlungsproduk
 - Keyboard Transfer: blockiert.
 - Kein Zahlungssystem aktiv.
 - Payment/Deploy/Vercel: blockiert.
-- Noch kein oeffentliches Release.
-- Oeffentliche Freigabe: nicht erfolgt.
+- Noch kein öffentliches Release.
+- Öffentliche Freigabe: nicht erfolgt.
 
 ## Bisherige Eigenleistung
 
-Sarey Raslan hat den bisherigen Projektstand eigenstaendig aufgebaut, geordnet und dokumentiert. Dazu gehoeren lokale Projektstruktur, Review-Unterlagen, sichere Claim-Tabellen, QA-Pruefungen, PDF/PPT-Evidence-Erstellung und lokale Statusdokumentation.
+Sarey Raslan hat den bisherigen Projektstand eigenständig aufgebaut, geordnet und dokumentiert. Dazu gehören lokale Projektstruktur, Review-Unterlagen, sichere Claim-Tabellen, QA-Prüfungen, PDF/PPT-Evidence-Erstellung und lokale Statusdokumentation.
 
 Der bisherige Arbeitsstand zeigt technische Eigenleistung, Projektorganisation, Sicherheitsbewusstsein und die Faehigkeit, einen komplexen digitalen Arbeitsprozess nachvollziehbar zu dokumentieren.
 
 ## Warum Arbeitsmittel / Laptop oder Workstation noetig sind
 
-Fuer die naechsten Entwicklungsschritte wird ein verlaessliches Arbeitsmittel benoetigt. Ein geeigneter Laptop oder eine Workstation ist wichtig fuer:
+Für die nächsten Entwicklungsschritte wird ein verlässliches Arbeitsmittel benötigt. Ein geeigneter Laptop oder eine Workstation ist wichtig für:
 
 - lokale Softwareentwicklung und Tests,
 - sichere Dokumentation ohne externe Dienste,
 - Verarbeitung von Projektdateien, PDF/PPT-Unterlagen und QA-Berichten,
-- stabile Entwicklungsumgebung fuer UI, Datenmodelle und lokale Review-Prozesse,
-- Vorbereitung weiterer Nachweise fuer Beratung, Qualifizierung und Projektfortschritt.
+- stabile Entwicklungsumgebung für UI, Datenmodelle und lokale Review-Prozesse,
+- Vorbereitung weiterer Nachweise für Beratung, Qualifizierung und Projektfortschritt.
 
-Ohne geeignetes Arbeitsmittel bleiben Entwicklung, Testlaeufe, Dokumentation und lokale Demonstration deutlich eingeschraenkt.
+Ohne geeignetes Arbeitsmittel bleiben Entwicklung, Testläufe, Dokumentation und lokale Demonstration deutlich eingeschränkt.
 
-## Geplanter naechster Entwicklungsschritt
+## Geplanter nächster Entwicklungsschritt
 
-Der naechste sichere Entwicklungsschritt ist die manuelle Jobcenter-Pruefung dieser Unterlagen und danach eine fortgesetzte lokale Projektentwicklung ohne Keyboard-Ausgabe. Danach koennen UI-/Tooling-Verbesserungen, strukturierte Statusberichte und weitere sichere Evidence-Dokumentation geplant werden.
+Der nächste sichere Entwicklungsschritt ist die manuelle Jobcenter-Prüfung dieser Unterlagen und danach eine fortgesetzte lokale Projektentwicklung ohne Keyboard-Ausgabe. Danach können UI-/Tooling-Verbesserungen, strukturierte Statusberichte und weitere sichere Evidence-Dokumentation geplant werden.
 
-Eine echte Keyboard-native Ausgabe, ein Transfer auf Hardware, Payment-Funktionen oder Deployment bleiben ausgeschlossen, bis dafuer eine spaetere ausdrueckliche Freigabe und technische Pruefung vorliegt.
+Eine echte Keyboard-native Ausgabe, ein Transfer auf Hardware, Payment-Funktionen oder Deployment bleiben ausgeschlossen, bis dafür eine spätere ausdrückliche Freigabe und technische Prüfung vorliegt.
 
 ## Lokaler Demo-/Evidence-Stand
 
-Der lokale Evidence-Stand ist sendefertig fuer eine Jobcenter-Pruefung. Er umfasst:
+Der lokale Evidence-Stand ist sendefertig für eine Jobcenter-Prüfung. Er umfasst:
 
 - diesen Jobcenter-Businessplan,
 - eine Jobcenter-PDF-Datei,
-- eine Jobcenter-PowerPoint-Praesentation,
+- eine Jobcenter-PowerPoint-Präsentation,
 - einen Send-Ready-Index,
 - eine Anlagen-Checkliste,
 - einen Monitoring-Link-Platzhalter,
-- lokale QA-Pruefung.
+- lokale QA-Prüfung.
 
 ## Risiken / klare Abgrenzung
 
@@ -79,19 +82,22 @@ Der lokale Evidence-Stand ist sendefertig fuer eine Jobcenter-Pruefung. Er umfas
 - no keyboard transfer
 - no deploy
 - no Vercel
-- nicht fuer den produktiven Einsatz freigegeben
+- nicht für den produktiven Einsatz freigegeben
 - no proprietary content
 
 Diese Unterlagen beschreiben einen lokalen Projektstand und eine geplante Weiterentwicklung. Sie sind keine Produktfreigabe, kein Zahlungsangebot und keine Keyboard-Ausgabe.
 
-## Monitoring-Link
+## Projekt-Monitor
 
-Aktueller lokaler Projektstatus / Monitoring-Link: [JOBCENTER_MONITORING_LINK_HERE]
+Aktueller Projekt-Monitor:
+wird nach Freigabe des Uploads aktiviert.
 
-Geplanter Jobcenter-Projektlink: https://sari-raslan.github.io/universal-arranger-os/jobcenter/
+Geplanter Projekt-Monitor-Link:
+https://sari-raslan.github.io/universal-arranger-os/jobcenter/
 
-Link-Status: geplanter oeffentlicher Jobcenter-Projektlink, noch nicht live solange kein GitHub Pages Upload/Deploy freigegeben ist.
+Status:
+Der Link ist derzeit noch nicht öffentlich live, da kein Upload, kein Push und kein Deploy freigegeben wurde.
 
 ## Ergebnis
 
-Der Jobcenter-only Pack ist fuer die manuelle Pruefung vorbereitet. Er zeigt den aktuellen lokalen Projektstand vom 01.07.2026, die bisherige Eigenleistung, den Bedarf an Arbeitsmitteln und die klaren Grenzen: keine oeffentliche Freigabe, kein Payment, kein Deployment, keine Keyboard-native Ausgabe und kein Keyboard Transfer.
+Der Jobcenter-only Pack ist für die manuelle Prüfung vorbereitet. Er zeigt den aktuellen lokalen Projektstand vom 01.07.2026, die bisherige Eigenleistung, den Bedarf an Arbeitsmitteln und die klaren Grenzen: keine öffentliche Freigabe, kein Payment, kein Deployment, keine Keyboard-native Ausgabe und kein Keyboard Transfer.

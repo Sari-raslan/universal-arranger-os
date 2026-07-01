@@ -1,24 +1,24 @@
-# Jobcenter Monitoring-Link TODO
+# Jobcenter Projekt-Monitor TODO
 
 Datum: 01.07.2026
 
 Label:
 
-Aktueller lokaler Projektstatus / Monitoring-Link
+Aktueller Projekt-Monitor
 
 Platzhalter:
 
 [JOBCENTER_MONITORING_LINK_HERE]
 
-Geplanter Jobcenter-Projektlink:
+Geplanter Projekt-Monitor-Link:
 
 https://sari-raslan.github.io/universal-arranger-os/jobcenter/
 
-Link-Status:
+Status:
 
-geplanter oeffentlicher Jobcenter-Projektlink, noch nicht live solange kein GitHub Pages Upload/Deploy freigegeben ist.
+Der Link ist derzeit noch nicht öffentlich live, da kein Upload, kein Push und kein Deploy freigegeben wurde.
 
 ## TODO
 
-- [ ] Lokalen Status-/Monitoring-Link einsetzen, sobald er fuer die Jobcenter-Unterlagen freigegeben ist.
-- [ ] Vor Versand pruefen, dass kein public release, kein payment, kein deploy und keine keyboard-native Ausgabe behauptet wird.
+- [ ] Lokalen Projekt-Monitor einsetzen, sobald er für die Jobcenter-Unterlagen freigegeben ist.
+- [ ] Vor Versand prüfen, dass kein public release, kein payment, kein deploy und keine keyboard-native Ausgabe behauptet wird.

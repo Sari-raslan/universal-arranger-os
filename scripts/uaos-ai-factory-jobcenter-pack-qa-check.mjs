@@ -6,8 +6,21 @@ const packDir = path.join(root, "uaos-ai-factory/jobcenter-send-ready");
 const requiredDate = "2026-07-01";
 const requiredPlaceholder = "[JOBCENTER_MONITORING_LINK_HERE]";
 const plannedJobcenterLink = "https://sari-raslan.github.io/universal-arranger-os/jobcenter/";
-const notLiveMarker = "noch nicht live";
+const monitorActivationText = "wird nach freigabe des uploads aktiviert";
+const notLiveMarker = "der link ist derzeit noch nicht öffentlich live, da kein upload, kein push und kein deploy freigegeben wurde";
 const keyboardNativeExtensions = [".STY", ".SET", ".PRS"];
+const transliterationFailures = [
+  "oeffentlich",
+  "Oeffentlich",
+  "Veroeffentlichung",
+  "Praesentation",
+  "Erklaerung",
+  "fuer",
+  "ueber",
+  "moeglich",
+  "Pruefung",
+  "Geraet"
+];
 const forbiddenPhrases = [
   "private friend",
   "unterstützer",
@@ -69,13 +82,18 @@ const generatedStatusFiles = new Set([
   "JOBCENTER_FINAL_QA_STATUS.md"
 ]);
 const textFiles = files.filter((file) => [".md", ".json", ".html", ".txt"].includes(path.extname(file).toLowerCase()) && !generatedStatusFiles.has(path.basename(file)));
-const combinedText = textFiles.map((file) => readFileSync(file, "utf8")).join("\n").toLowerCase();
+const rawCombinedText = textFiles.map((file) => readFileSync(file, "utf8")).join("\n");
+const combinedText = rawCombinedText.toLowerCase();
 if (!combinedText.includes(requiredDate)) failures.push(`Required date missing: ${requiredDate}`);
 if (!combinedText.includes(requiredPlaceholder.toLowerCase())) failures.push("Monitoring placeholder missing");
 if (!combinedText.includes(plannedJobcenterLink)) failures.push("Planned Jobcenter link missing");
-if (!combinedText.includes(notLiveMarker)) failures.push("Planned Jobcenter link is not marked as not live");
+if (!combinedText.includes(monitorActivationText)) failures.push("Project monitor is not marked as activated only after upload approval");
+if (!combinedText.includes(notLiveMarker)) failures.push("Planned monitor link is not marked as not live until upload/deploy approval");
 for (const phrase of forbiddenPhrases) {
   if (combinedText.includes(phrase)) failures.push(`Forbidden wording found: ${phrase}`);
+}
+for (const phrase of transliterationFailures) {
+  if (rawCombinedText.includes(phrase)) failures.push(`German umlaut quality failure: ${phrase}`);
 }
 
 const status = {
@@ -86,7 +104,9 @@ const status = {
   requiredDate,
   monitoringPlaceholderPresent: combinedText.includes(requiredPlaceholder.toLowerCase()),
   plannedJobcenterLinkPresent: combinedText.includes(plannedJobcenterLink),
-  linkMarkedNotLiveUntilDeployApproval: combinedText.includes(notLiveMarker),
+  monitorMarkedActivationAfterUploadApproval: combinedText.includes(monitorActivationText),
+  linkMarkedNotLiveUntilUploadDeployApproval: combinedText.includes(notLiveMarker),
+  germanUmlautQualityPass: !transliterationFailures.some((phrase) => rawCombinedText.includes(phrase)),
   failures,
   safety: {
     localOnly: true,

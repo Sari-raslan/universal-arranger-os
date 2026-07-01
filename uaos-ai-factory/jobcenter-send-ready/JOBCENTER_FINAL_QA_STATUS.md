@@ -10,15 +10,15 @@ PDF:
 PPTX:
 - `uaos-ai-factory/jobcenter-send-ready/UAOS_JOBCENTER_PRESENTATION_2026-07-01_DE.pptx`
 
-Geplanter Jobcenter-Projektlink:
+Geplanter Projekt-Monitor-Link:
 - https://sari-raslan.github.io/universal-arranger-os/jobcenter/
 
-Link-Status:
-- geplanter oeffentlicher Jobcenter-Projektlink, noch nicht live solange kein GitHub Pages Upload/Deploy freigegeben ist.
+Status:
+- Der Link ist derzeit noch nicht öffentlich live, da kein Upload, kein Push und kein Deploy freigegeben wurde.
 
 Ergebnis:
 - Jobcenter-only: YES
-- Monitoring placeholder present: YES
+- Projekt-Monitor placeholder present: YES
 - Non-Jobcenter wording removed: YES
 - Unsafe readiness wording removed: YES
 - Keyboard output created: NO
