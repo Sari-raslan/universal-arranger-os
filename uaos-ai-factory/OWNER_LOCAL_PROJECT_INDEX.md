@@ -8,6 +8,20 @@ Current origin: `https://github.com/Sari-raslan/universal-arranger-os.git`
 
 Planned future target only: `https://github.com/aeplatform-app/universal-arranger-os.git`
 
+## UAOS Live Monitor Deployment
+
+- Live monitor URL: `https://sari-raslan.github.io/universal-arranger-os/monitor/`
+- Deployment status: PASS.
+- Live test: HTTP 200, `UAOS Live Monitor` verified, `Monitor Live` badge verified.
+- Deployment commit: `0903b16`.
+- Seal commit: `7a7e331`.
+- Push/deploy approval scope: monitor page only.
+- Payment enabled: NO.
+- Keyboard output/transfer: NO.
+- Proprietary content: NO.
+- False production claims: NO.
+- Ready to reference in future Businessplan finance version: YES.
+
 ## What Is Complete
 
 - AI Factory planning track: `FINAL_LOCAL_FACTORY_FREEZE`.
