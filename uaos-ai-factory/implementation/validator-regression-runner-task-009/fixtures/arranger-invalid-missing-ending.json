@@ -1,0 +1,31 @@
+{
+  "title": "UAOS Regression Missing Ending",
+  "project": {
+    "name": "UAOS / AE Platform",
+    "title": "Missing Ending Fixture"
+  },
+  "outputMode": "midi-only",
+  "sections": [
+    {
+      "name": "intro",
+      "bars": 4,
+      "chords": ["C"],
+      "instruments": ["piano"],
+      "role": "open"
+    },
+    {
+      "name": "verse",
+      "bars": 16,
+      "chords": ["C", "F", "G"],
+      "instruments": ["piano", "bass"],
+      "role": "develop"
+    },
+    {
+      "name": "chorus",
+      "bars": 16,
+      "chords": ["F", "G", "C"],
+      "instruments": ["piano", "bass", "drums"],
+      "role": "lift"
+    }
+  ]
+}

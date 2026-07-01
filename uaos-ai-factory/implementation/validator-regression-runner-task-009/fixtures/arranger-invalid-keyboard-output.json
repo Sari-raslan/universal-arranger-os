@@ -1,0 +1,39 @@
+{
+  "title": "UAOS Regression Unsafe Arranger Claim",
+  "project": {
+    "name": "UAOS / AE Platform",
+    "title": "Unsafe Keyboard Claim Fixture"
+  },
+  "outputMode": "midi-only",
+  "notes": "This fixture intentionally claims keyboard output to confirm the validator rejects the unsafe claim.",
+  "sections": [
+    {
+      "name": "intro",
+      "bars": 4,
+      "chords": ["C"],
+      "instruments": ["piano"],
+      "role": "open"
+    },
+    {
+      "name": "verse",
+      "bars": 16,
+      "chords": ["C", "F", "G"],
+      "instruments": ["piano", "bass"],
+      "role": "develop"
+    },
+    {
+      "name": "chorus",
+      "bars": 16,
+      "chords": ["F", "G", "C"],
+      "instruments": ["piano", "bass", "drums"],
+      "role": "lift"
+    },
+    {
+      "name": "ending",
+      "bars": 4,
+      "chords": ["G", "C"],
+      "instruments": ["piano"],
+      "role": "resolve"
+    }
+  ]
+}

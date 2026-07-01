@@ -1,0 +1,182 @@
+{
+  "task": "009",
+  "runner": "validatorRegressionRunner",
+  "generatedAt": "2026-07-01T23:18:06.312Z",
+  "regressionStatus": "PASS",
+  "fixtureSummary": {
+    "total": 10,
+    "matched": 10,
+    "passedFixtures": 5,
+    "failedFixtures": 5
+  },
+  "regressionGroups": {
+    "arrangerPlanValidator": [
+      {
+        "fixture": "arranger-valid-pop-song.json",
+        "expectedStatus": "PASS",
+        "expectedCodePrefix": null,
+        "actualStatus": "PASS",
+        "matchedExpectation": true,
+        "errors": [],
+        "warnings": []
+      },
+      {
+        "fixture": "arranger-valid-maqam-song.json",
+        "expectedStatus": "PASS",
+        "expectedCodePrefix": null,
+        "actualStatus": "PASS",
+        "matchedExpectation": true,
+        "errors": [],
+        "warnings": []
+      },
+      {
+        "fixture": "arranger-invalid-missing-ending.json",
+        "expectedStatus": "FAIL",
+        "expectedCodePrefix": "missing-required-section:ending",
+        "actualStatus": "FAIL",
+        "matchedExpectation": true,
+        "errors": [
+          {
+            "code": "missing-required-section:ending",
+            "message": "Plan must include required section: ending."
+          }
+        ],
+        "warnings": []
+      },
+      {
+        "fixture": "arranger-invalid-keyboard-output.json",
+        "expectedStatus": "FAIL",
+        "expectedCodePrefix": "forbidden-claim:keyboard-output",
+        "actualStatus": "FAIL",
+        "matchedExpectation": true,
+        "errors": [
+          {
+            "code": "forbidden-claim:keyboard-output",
+            "message": "Forbidden claim or term detected: keyboard-output"
+          }
+        ],
+        "warnings": []
+      }
+    ],
+    "libraryMetadataValidator": [
+      {
+        "fixture": "library-valid-standard.json",
+        "expectedStatus": "PASS",
+        "expectedCodePrefix": null,
+        "actualStatus": "PASS",
+        "matchedExpectation": true,
+        "errors": [],
+        "warnings": []
+      },
+      {
+        "fixture": "library-valid-oriental-premium.json",
+        "expectedStatus": "PASS",
+        "expectedCodePrefix": null,
+        "actualStatus": "PASS",
+        "matchedExpectation": true,
+        "errors": [],
+        "warnings": []
+      },
+      {
+        "fixture": "library-invalid-proprietary-sample.json",
+        "expectedStatus": "FAIL",
+        "expectedCodePrefix": "invalid-source-policy",
+        "actualStatus": "FAIL",
+        "matchedExpectation": true,
+        "errors": [
+          {
+            "code": "invalid-source-policy",
+            "message": "sourcePolicy must be one of: original_recording_planned, synthesis_metadata_only, midi_spec_only."
+          }
+        ],
+        "warnings": []
+      },
+      {
+        "fixture": "library-invalid-missing-safety-policy.json",
+        "expectedStatus": "FAIL",
+        "expectedCodePrefix": "missing-source-policy",
+        "actualStatus": "FAIL",
+        "matchedExpectation": true,
+        "errors": [
+          {
+            "code": "missing-source-policy",
+            "message": "Library must include sourcePolicy."
+          }
+        ],
+        "warnings": []
+      }
+    ],
+    "monitorStatus": [
+      {
+        "fixture": "monitor-valid-status.json",
+        "expectedStatus": "PASS",
+        "expectedCodePrefix": null,
+        "actualStatus": "PASS",
+        "matchedExpectation": true,
+        "errors": [],
+        "warnings": []
+      },
+      {
+        "fixture": "monitor-invalid-payment-enabled.json",
+        "expectedStatus": "FAIL",
+        "expectedCodePrefix": "forbidden-claim:payment-functionality",
+        "actualStatus": "FAIL",
+        "matchedExpectation": true,
+        "errors": [
+          {
+            "code": "forbidden-claim:payment-functionality",
+            "message": "Monitor status must reject payment functionality."
+          }
+        ],
+        "warnings": []
+      }
+    ]
+  },
+  "upstreamStatus": {
+    "monitorStatusAggregator": "PASS",
+    "productQACore": "PASS",
+    "productQACoreComponents": {
+      "productStatus": "PASS",
+      "arrangerPlanValidator": "PASS",
+      "libraryMetadataValidator": "PASS",
+      "monitorStatusAggregator": "PASS"
+    }
+  },
+  "safetyGates": {
+    "appJsUntouched": true,
+    "noDeploy": true,
+    "noPayment": true,
+    "noKeyboardOutput": true,
+    "noProprietaryCopying": true,
+    "noJobcenterFinalFolderChange": true
+  },
+  "ownerSummary": {
+    "whatIsNowProtectedByTests": [
+      "Arranger plan sections, roles, instruments, harmony, maqam metadata, and blocked keyboard-output claims.",
+      "Library metadata identity, tier, source policy, Oriental Strings articulations, and sample-safety claims.",
+      "Monitor status safety gates, blocked payment functionality, and product status shape.",
+      "Product QA Core PASS connection across tasks 005, 006, 007, and 008."
+    ],
+    "unsafeClaimsBlocked": [
+      "keyboard output claims",
+      "keyboard transfer claims",
+      "real keyboard writer claims",
+      "restricted keyboard style file claims",
+      "Kontakt copying",
+      "Native Instruments copying",
+      "commercial sample copying",
+      "Stripe, PayPal, checkout, or payment functionality"
+    ],
+    "whatNeedsMoreFixturesNext": [
+      "More maqam and quarter-tone arranger plans.",
+      "More Oriental Strings edge cases by tier and articulation set.",
+      "More monitor safety-state permutations.",
+      "Regression tests for local dashboard export files."
+    ],
+    "nextSafestImplementationStep": "Add a local CI-style QA script that runs tasks 005 through 009 in sequence without deployment or product export."
+  },
+  "inputPaths": {
+    "monitorAggregatedResults": "E:\\keyboard-manager-clean\\uaos-ai-factory\\implementation\\monitor-status-aggregator-task-007\\UAOS_MONITOR_STATUS_AGGREGATED_TASK_007.json",
+    "productQaCoreResults": "E:\\keyboard-manager-clean\\uaos-ai-factory\\implementation\\product-qa-core-task-008\\UAOS_PRODUCT_QA_CORE_TASK_008_RESULTS.json"
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "title": "UAOS Regression Maqam Arrangement",
+  "project": {
+    "name": "UAOS / AE Platform",
+    "title": "Safe Maqam Arrangement Spec"
+  },
+  "outputMode": "spec-only",
+  "maqam": {
+    "id": "bayati",
+    "behavior": "metadata-only"
+  },
+  "quarterToneMetadata": {
+    "enabled": true,
+    "mode": "metadata-only",
+    "offsetsCents": {
+      "degree3": -50,
+      "degree7": -50
+    }
+  },
+  "sections": [
+    {
+      "name": "intro",
+      "bars": 8,
+      "harmonicPlan": ["i", "iv", "v"],
+      "instruments": ["oriental-strings", "frame-percussion"],
+      "role": "establish maqam character"
+    },
+    {
+      "name": "verse",
+      "bars": 16,
+      "harmonicPlan": ["i", "bVII", "iv", "v"],
+      "instruments": ["oriental-strings", "bass", "soft-percussion"],
+      "role": "state the melodic path"
+    },
+    {
+      "name": "chorus",
+      "bars": 16,
+      "harmonicPlan": ["iv", "i", "bVII", "v"],
+      "instruments": ["oriental-strings", "strings", "percussion"],
+      "role": "raise emotional intensity"
+    },
+    {
+      "name": "bridge",
+      "bars": 8,
+      "harmonicPlan": ["bVI", "bVII", "i"],
+      "instruments": ["pad", "oriental-strings"],
+      "role": "provide contrast"
+    },
+    {
+      "name": "ending",
+      "bars": 8,
+      "harmonicPlan": ["i", "v", "i"],
+      "instruments": ["oriental-strings", "pad"],
+      "role": "resolve the phrase"
+    }
+  ]
+}

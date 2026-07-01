@@ -1,0 +1,38 @@
+{
+  "title": "UAOS Regression Pop Arrangement",
+  "project": {
+    "name": "UAOS / AE Platform",
+    "title": "Safe Pop Arrangement Spec"
+  },
+  "outputMode": "midi-only",
+  "sections": [
+    {
+      "name": "intro",
+      "bars": 4,
+      "chords": ["C", "G"],
+      "instruments": ["piano", "pad"],
+      "role": "open the arrangement"
+    },
+    {
+      "name": "verse",
+      "bars": 16,
+      "chords": ["C", "Am", "F", "G"],
+      "instruments": ["piano", "bass", "drums"],
+      "role": "present the main theme"
+    },
+    {
+      "name": "chorus",
+      "bars": 16,
+      "harmonicPlan": ["I", "V", "vi", "IV"],
+      "instruments": ["piano", "bass", "drums", "strings"],
+      "role": "lift the song energy"
+    },
+    {
+      "name": "ending",
+      "bars": 4,
+      "chords": ["F", "G", "C"],
+      "instruments": ["piano", "pad"],
+      "role": "resolve the progression"
+    }
+  ]
+}
