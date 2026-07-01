@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>UAOS / AE Platform Jobcenter Monitor</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #07101b;
+      --panel: #101b2b;
+      --panel-2: #142235;
+      --text: #f6f8fb;
+      --muted: #a8b6c8;
+      --accent: #42d392;
+      --warn: #ffd166;
+      --line: #27384e;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Arial, Helvetica, sans-serif;
+      background:
+        linear-gradient(135deg, rgba(66, 211, 146, 0.12), transparent 34%),
+        linear-gradient(180deg, #091522, var(--bg));
+      color: var(--text);
+    }
+    header, main, footer { width: min(1120px, calc(100vw - 32px)); margin: 0 auto; }
+    header {
+      padding: 34px 0 22px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 20px;
+    }
+    h1 { margin: 0 0 10px; font-size: clamp(34px, 5vw, 58px); letter-spacing: 0; }
+    .lede { max-width: 760px; margin: 0; color: var(--muted); line-height: 1.55; font-size: 18px; }
+    .live {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 14px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(16, 27, 43, 0.92);
+      color: var(--accent);
+      font-weight: 800;
+      white-space: nowrap;
+    }
+    .pulse {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 0 rgba(66, 211, 146, 0.72);
+      animation: pulse 1.8s infinite;
+    }
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(66, 211, 146, 0.72); }
+      70% { box-shadow: 0 0 0 14px rgba(66, 211, 146, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(66, 211, 146, 0); }
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      padding-bottom: 20px;
+    }
+    .card, .panel {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(16, 27, 43, 0.9);
+      box-shadow: 0 18px 56px rgba(0, 0, 0, 0.24);
+    }
+    .card { min-height: 155px; padding: 18px; }
+    .label { margin: 0 0 10px; color: var(--muted); font-size: 13px; text-transform: uppercase; letter-spacing: 0.08em; }
+    .card h2 { margin: 0 0 10px; font-size: 23px; letter-spacing: 0; }
+    .card p, .panel p, li { color: var(--muted); line-height: 1.52; }
+    .bar { height: 9px; border-radius: 999px; background: #223149; overflow: hidden; }
+    .fill { height: 100%; border-radius: inherit; background: linear-gradient(90deg, var(--accent), #7ad7ff); }
+    .fill.warn { background: linear-gradient(90deg, var(--warn), #ff9f1c); }
+    .panel { padding: 22px; margin-bottom: 26px; }
+    .panel h2 { margin: 0 0 12px; font-size: 25px; letter-spacing: 0; }
+    .chips { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; }
+    .chip {
+      padding: 10px 12px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: var(--panel-2);
+      color: var(--text);
+      font-weight: 800;
+    }
+    footer {
+      padding: 18px 0 30px;
+      color: var(--muted);
+      display: flex;
+      justify-content: space-between;
+      gap: 14px;
+      flex-wrap: wrap;
+      border-top: 1px solid var(--line);
+    }
+    a { color: #7ad7ff; }
+    @media (max-width: 860px) {
+      header { flex-direction: column; }
+      .grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div>
+      <h1>UAOS / AE Platform</h1>
+      <p class="lede">Public Jobcenter monitor for an active prototype and preparation of self-employment. The project is serious, locally verified, and currently needs technical equipment plus an operating foundation.</p>
+    </div>
+    <div class="live"><span class="pulse"></span> Live Monitor Active</div>
+  </header>
+
+  <main>
+    <section class="grid" aria-label="Status cards">
+      <article class="card">
+        <p class="label">Project</p>
+        <h2>UAOS / AE Platform</h2>
+        <p>Structured digital founding project for music workflow planning and safe project documentation.</p>
+        <div class="bar"><div class="fill" style="width: 90%"></div></div>
+      </article>
+      <article class="card">
+        <p class="label">Status</p>
+        <h2>Prototype / Vorbereitung Selbstständigkeit</h2>
+        <p>Local prototype and finance pack are prepared for Jobcenter review.</p>
+        <div class="bar"><div class="fill" style="width: 84%"></div></div>
+      </article>
+      <article class="card">
+        <p class="label">Finance</p>
+        <h2>Finance Pro Pack Ready</h2>
+        <p>Conservative startup budget, monthly costs, own contribution value, and 12-month plan are prepared.</p>
+        <div class="bar"><div class="fill" style="width: 100%"></div></div>
+      </article>
+      <article class="card">
+        <p class="label">Monitor</p>
+        <h2>Live Monitor Active</h2>
+        <p>This route is the public aeplatform.net recovery monitor for Jobcenter visibility.</p>
+        <div class="bar"><div class="fill" style="width: 92%"></div></div>
+      </article>
+      <article class="card">
+        <p class="label">Safety</p>
+        <h2>Safety Gates Active</h2>
+        <p>No payment, no keyboard output, no proprietary sample copying.</p>
+        <div class="bar"><div class="fill warn" style="width: 100%"></div></div>
+      </article>
+      <article class="card">
+        <p class="label">Support</p>
+        <h2>Support Need Clear</h2>
+        <p>Technical equipment and operating foundation are needed before economic viability can be tested.</p>
+        <div class="bar"><div class="fill warn" style="width: 78%"></div></div>
+      </article>
+    </section>
+
+    <section class="panel">
+      <h2>Support Need</h2>
+      <p>The requested support is practical and startup-focused: workstation or laptop, monitor, backup/storage, software or cloud reserve, audio/MIDI basics, consulting, coaching, and first operating phase support.</p>
+      <div class="chips">
+        <span class="chip">Workstation</span>
+        <span class="chip">Monitor</span>
+        <span class="chip">Backup</span>
+        <span class="chip">Software/cloud</span>
+        <span class="chip">Audio/MIDI basics</span>
+        <span class="chip">Consulting</span>
+        <span class="chip">Coaching</span>
+        <span class="chip">Start phase</span>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Jobcenter Review State</h2>
+      <p>The site presents a static, safe public status view for review. It does not publish a sales flow, does not claim guaranteed income, and does not release restricted technical output.</p>
+      <p><a href="/status/">Open compact status page</a></p>
+    </section>
+  </main>
+
+  <footer>
+    <span>Domain: aeplatform.net</span>
+    <span>Recovery build: 2026-07-01</span>
+  </footer>
+</body>
+</html>
