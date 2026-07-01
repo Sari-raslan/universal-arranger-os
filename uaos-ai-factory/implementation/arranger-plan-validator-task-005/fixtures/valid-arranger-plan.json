@@ -1,0 +1,56 @@
+{
+  "title": "UAOS Safe Arranger Plan Fixture",
+  "project": {
+    "name": "UAOS / AE Platform",
+    "title": "Universal Arranger OS"
+  },
+  "outputMode": "midi-only",
+  "maqam": {
+    "id": "hijaz",
+    "behavior": "metadata-only"
+  },
+  "quarterToneMetadata": {
+    "enabled": true,
+    "mode": "metadata-only",
+    "offsetsCents": {
+      "degree2": -50
+    }
+  },
+  "sections": [
+    {
+      "name": "intro",
+      "bars": 8,
+      "harmonicPlan": ["i", "bII", "v"],
+      "instruments": ["oriental-strings", "pads"],
+      "role": "establish maqam color"
+    },
+    {
+      "name": "verse",
+      "bars": 16,
+      "chords": ["Dm", "Eb", "A"],
+      "instruments": ["oriental-strings", "bass", "soft-percussion"],
+      "role": "state main motif"
+    },
+    {
+      "name": "chorus",
+      "bars": 16,
+      "harmonicPlan": ["i", "iv", "bII", "v"],
+      "instruments": ["oriental-strings", "strings", "percussion"],
+      "role": "raise emotional energy"
+    },
+    {
+      "name": "fill",
+      "bars": 2,
+      "chords": ["A"],
+      "instruments": ["percussion"],
+      "role": "transition marker"
+    },
+    {
+      "name": "ending",
+      "bars": 8,
+      "harmonicPlan": ["i", "v", "i"],
+      "instruments": ["oriental-strings", "pads"],
+      "role": "resolve phrase"
+    }
+  ]
+}

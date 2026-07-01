@@ -1,0 +1,72 @@
+{
+  "task": "005",
+  "validator": "arrangerPlanValidator",
+  "status": "PASS",
+  "generatedAt": "2026-07-01T23:06:41.849Z",
+  "safety": {
+    "appJsTouched": false,
+    "deployAttempted": false,
+    "vercelUsed": false,
+    "paymentCode": false,
+    "keyboardOutputCreated": false,
+    "proprietaryCopying": false,
+    "jobcenterFoldersTouched": false
+  },
+  "fixtureResults": [
+    {
+      "fixture": "valid-arranger-plan.json",
+      "expectedStatus": "PASS",
+      "expectedCodePrefix": null,
+      "actualStatus": "PASS",
+      "matchedExpectation": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "fixture": "invalid-missing-sections.json",
+      "expectedStatus": "FAIL",
+      "expectedCodePrefix": "missing-required-section",
+      "actualStatus": "FAIL",
+      "matchedExpectation": true,
+      "errors": [
+        {
+          "code": "missing-required-section:verse",
+          "message": "Plan must include required section: verse."
+        },
+        {
+          "code": "missing-required-section:chorus",
+          "message": "Plan must include required section: chorus."
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "fixture": "invalid-keyboard-output-claim.json",
+      "expectedStatus": "FAIL",
+      "expectedCodePrefix": "forbidden-claim:keyboard-output",
+      "actualStatus": "FAIL",
+      "matchedExpectation": true,
+      "errors": [
+        {
+          "code": "forbidden-claim:keyboard-output",
+          "message": "Forbidden claim or term detected: keyboard-output"
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "fixture": "invalid-proprietary-output.json",
+      "expectedStatus": "FAIL",
+      "expectedCodePrefix": "forbidden-claim:restricted-style-format",
+      "actualStatus": "FAIL",
+      "matchedExpectation": true,
+      "errors": [
+        {
+          "code": "forbidden-claim:restricted-style-format",
+          "message": "Forbidden claim or term detected: restricted-style-format"
+        }
+      ],
+      "warnings": []
+    }
+  ]
+}
