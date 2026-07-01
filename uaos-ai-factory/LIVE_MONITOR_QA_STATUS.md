@@ -14,6 +14,16 @@ Monitor Live badge verified: YES
 
 Docs Monitor Live badge verified: YES
 
+Professional dashboard subtitle: YES
+
+Selected package visible: YES
+
+Done / Remaining / Total visible: YES
+
+Section cards visible: YES
+
+Blocked items visible: YES
+
 False claims check: PASS
 
 External scripts: NO

@@ -1,0 +1,131 @@
+{
+  "schema": "uaos-live-monitor-status-data-v1",
+  "lastUpdated": "2026-07-01",
+  "title": "UAOS Live Monitor",
+  "subtitle": "Public Project Status Dashboard",
+  "project": "UAOS / Universal Arranger OS / AE Platform",
+  "statusColors": {
+    "green": "completed / healthy",
+    "purple": "active / planned / info",
+    "red": "blocked / unavailable",
+    "amber": "remaining / next"
+  },
+  "summary": {
+    "completedWork": 150,
+    "remainingWork": 0,
+    "blockedItems": 4,
+    "currentFocus": "Businessplan finance update"
+  },
+  "sections": [
+    {
+      "name": "AI Factory",
+      "status": "Completed",
+      "color": "green",
+      "done": 18,
+      "remaining": 0,
+      "total": 18,
+      "highlights": ["Local planning track sealed", "Safety-first reports prepared", "Owner review materials indexed"]
+    },
+    {
+      "name": "Bounded Agents",
+      "status": "Completed",
+      "color": "green",
+      "done": 5,
+      "remaining": 0,
+      "total": 5,
+      "highlights": ["Bounded local agent round complete", "No external automation", "No unsafe output"]
+    },
+    {
+      "name": "Implementation Queue",
+      "status": "Completed",
+      "color": "green",
+      "done": 35,
+      "remaining": 0,
+      "total": 35,
+      "highlights": ["Implementation reports prepared", "Owner handoff structure ready", "Review gates documented"]
+    },
+    {
+      "name": "SAFE Queue",
+      "status": "Completed",
+      "color": "green",
+      "done": 12,
+      "remaining": 0,
+      "total": 12,
+      "highlights": ["Safety gates documented", "Business pack rules prepared", "No payment or keyboard output enabled"]
+    },
+    {
+      "name": "Development / Tooling",
+      "status": "Completed",
+      "color": "green",
+      "done": 75,
+      "remaining": 0,
+      "total": 75,
+      "highlights": ["Local tooling reports prepared", "QA command paths documented", "Evidence workflow improved"]
+    },
+    {
+      "name": "Neutral Package Sandbox",
+      "status": "Review-ready",
+      "color": "purple",
+      "done": 3,
+      "remaining": 0,
+      "total": 3,
+      "highlights": ["Selected neutral package: owner-neutral-003", "Validation: PASS", "Owner review target: YES"]
+    },
+    {
+      "name": "Evidence / Jobcenter Assets",
+      "status": "Prepared",
+      "color": "green",
+      "done": 4,
+      "remaining": 0,
+      "total": 4,
+      "highlights": ["Evidence pack prepared", "Jobcenter PDF prepared", "PowerPoint prepared", "Offline ZIP prepared"]
+    },
+    {
+      "name": "Public Monitor",
+      "status": "Live",
+      "color": "purple",
+      "done": 1,
+      "remaining": 0,
+      "total": 1,
+      "highlights": ["Monitor active", "Public status dashboard", "Safe claims only"]
+    },
+    {
+      "name": "Blocked Areas",
+      "status": "Blocked",
+      "color": "red",
+      "done": 0,
+      "remaining": 4,
+      "total": 4,
+      "highlights": ["Payment inactive", "Keyboard-native output blocked", "Keyboard transfer blocked", "Public product release not claimed"]
+    },
+    {
+      "name": "Future Work",
+      "status": "Planned",
+      "color": "amber",
+      "done": 0,
+      "remaining": 4,
+      "total": 4,
+      "highlights": ["Financial Businessplan refinement", "Library factory planning", "Oriental strings planning", "Ongoing monitor updates"]
+    }
+  ],
+  "conciseStatus": {
+    "selectedNeutralPackage": "owner-neutral-003",
+    "evidencePack": "prepared",
+    "jobcenterPdfPpt": "prepared",
+    "liveMonitor": "active",
+    "payment": "blocked",
+    "keyboardNativeOutput": "blocked",
+    "keyboardTransfer": "blocked",
+    "publicProductRelease": "blocked",
+    "businessplanFinanceVersion": "next / in preparation",
+    "libraryFactoryPlanning": "planned",
+    "orientalStringsLibraryPlanning": "planned"
+  },
+  "safety": {
+    "paymentEnabled": false,
+    "keyboardNativeOutputReleased": false,
+    "keyboardTransferEnabled": false,
+    "productionReleaseClaimed": false,
+    "proprietaryContentIncluded": false
+  }
+}
