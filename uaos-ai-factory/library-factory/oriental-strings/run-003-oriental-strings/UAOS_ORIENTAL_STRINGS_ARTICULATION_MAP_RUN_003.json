@@ -1,0 +1,58 @@
+{
+  "run": "003",
+  "status": "METADATA_ONLY",
+  "family": "oriental-strings",
+  "articulations": [
+    {
+      "id": "legato_connected",
+      "name": "Legato Connected",
+      "behavior": "smooth note connection with phrase-aware transition metadata"
+    },
+    {
+      "id": "portamento_expressive",
+      "name": "Portamento Expressive",
+      "behavior": "timed slide between notes, metadata only"
+    },
+    {
+      "id": "short_slide_up",
+      "name": "Short Slide Up",
+      "behavior": "ornamental upward slide marker"
+    },
+    {
+      "id": "short_slide_down",
+      "name": "Short Slide Down",
+      "behavior": "ornamental downward slide marker"
+    },
+    {
+      "id": "trill_fast",
+      "name": "Fast Trill",
+      "behavior": "rapid alternation ornament marker"
+    },
+    {
+      "id": "mordent",
+      "name": "Mordent",
+      "behavior": "short neighboring-note ornament marker"
+    },
+    {
+      "id": "tremolo_emotional",
+      "name": "Emotional Tremolo",
+      "behavior": "sustained repeated bow energy metadata"
+    },
+    {
+      "id": "marcato_bow",
+      "name": "Marcato Bow",
+      "behavior": "accented bow attack metadata"
+    },
+    {
+      "id": "emotional_sustain",
+      "name": "Emotional Sustain",
+      "behavior": "long sustain with dynamic curve and vibrato intensity metadata"
+    }
+  ],
+  "quarterToneMetadata": {
+    "enabled": true,
+    "type": "metadata-only",
+    "resolution": "cents-offset-per-note"
+  },
+  "restrictedOutputCreated": false
+}

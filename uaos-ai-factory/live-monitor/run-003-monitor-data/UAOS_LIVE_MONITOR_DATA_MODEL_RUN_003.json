@@ -1,0 +1,16 @@
+{
+  "run": "003",
+  "schemaName": "UAOS Live Monitor Data Model",
+  "status": "READY",
+  "fields": {
+    "productProgress": ["architecture", "libraryFactory", "orientalStrings", "arrangerIntelligence", "monitorData", "qaAudit"],
+    "agentStatus": ["agentId", "name", "status", "outputs", "blockedItems", "nextActions"],
+    "safetyGates": ["deploy", "vercel", "moneyFlow", "keyboardOutput", "proprietarySamples", "appJs"],
+    "ownerDashboard": ["summary", "firstActions", "approvalRequired", "blocked", "recommendedPrompt"]
+  },
+  "outputPolicy": {
+    "deployAttempted": false,
+    "vercelUsed": false,
+    "safeForDashboard": true
+  }
+}

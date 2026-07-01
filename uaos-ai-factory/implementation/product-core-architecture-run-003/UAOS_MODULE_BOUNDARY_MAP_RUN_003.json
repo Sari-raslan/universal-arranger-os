@@ -1,0 +1,55 @@
+{
+  "run": "003",
+  "status": "PASS",
+  "modules": [
+    {
+      "name": "runtime-core",
+      "owns": ["session-state", "safety-gates", "validation-context"],
+      "inputs": ["project-metadata", "agent-output-manifests"],
+      "outputs": ["runtime-status-json", "qa-flags"],
+      "appJsRequired": false
+    },
+    {
+      "name": "arranger-intelligence",
+      "owns": ["song-to-arrangement-schema", "section-planning", "maqam-aware-rules"],
+      "inputs": ["song-idea", "maqam-hints", "library-capabilities"],
+      "outputs": ["arrangement-plan-json", "safe-midi-plan-json"],
+      "appJsRequired": false
+    },
+    {
+      "name": "library-factory",
+      "owns": ["instrument-metadata", "articulation-schema", "quality-tiers", "recording-plan"],
+      "inputs": ["original-recording-notes", "instrument-category-definitions"],
+      "outputs": ["library-schema-json", "sample-safety-policy"],
+      "appJsRequired": false
+    },
+    {
+      "name": "oriental-strings",
+      "owns": ["ornament-map", "maqam-behavior", "quarter-tone-metadata"],
+      "inputs": ["maqam-profile", "articulation-intent"],
+      "outputs": ["oriental-strings-articulation-json", "demo-midi-spec-json"],
+      "appJsRequired": false
+    },
+    {
+      "name": "live-monitor-data",
+      "owns": ["owner-dashboard-data", "blocked-items", "agent-status"],
+      "inputs": ["run-output-index", "qa-status"],
+      "outputs": ["monitor-data-json", "next-actions-md"],
+      "appJsRequired": false
+    },
+    {
+      "name": "ui-layer",
+      "owns": ["visible-dashboard", "navigation", "interactive-controls"],
+      "inputs": ["monitor-data-json", "runtime-status-json"],
+      "outputs": ["rendered-user-interface"],
+      "appJsRequired": true
+    }
+  ],
+  "restrictedOutputs": [".STY", ".SET", ".PRS", ".STL", ".PAT", ".MSP", ".KST"],
+  "safety": {
+    "deploymentAttempted": false,
+    "vercelUsed": false,
+    "appJsTouched": false,
+    "proprietarySamplesCopied": false
+  }
+}

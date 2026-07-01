@@ -1,0 +1,36 @@
+{
+  "run": "003",
+  "status": "READY",
+  "items": [
+    {
+      "id": "safe-001",
+      "title": "Validate arranger plan JSON",
+      "folder": "uaos-ai-factory/arranger-intelligence",
+      "requiresAppJs": false
+    },
+    {
+      "id": "safe-002",
+      "title": "Validate library factory metadata schema",
+      "folder": "uaos-ai-factory/library-factory",
+      "requiresAppJs": false
+    },
+    {
+      "id": "safe-003",
+      "title": "Generate monitor status JSON from run outputs",
+      "folder": "uaos-ai-factory/live-monitor",
+      "requiresAppJs": false
+    },
+    {
+      "id": "safe-004",
+      "title": "Create original recording metadata template",
+      "folder": "uaos-ai-factory/library-factory",
+      "requiresAppJs": false
+    },
+    {
+      "id": "safe-005",
+      "title": "Create owner approval memo for UI integration",
+      "folder": "uaos-ai-factory/owner-command-center",
+      "requiresAppJs": false
+    }
+  ]
+}

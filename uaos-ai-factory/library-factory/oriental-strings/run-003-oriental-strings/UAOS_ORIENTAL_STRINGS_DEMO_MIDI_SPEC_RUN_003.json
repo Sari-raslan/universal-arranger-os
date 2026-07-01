@@ -1,0 +1,31 @@
+{
+  "run": "003",
+  "status": "SPEC_ONLY",
+  "purpose": "Define a safe demo MIDI planning structure without creating MIDI files or hardware-native output.",
+  "demoSpec": {
+    "tempoRangeBpm": [72, 96],
+    "timeSignatures": ["4/4", "6/8"],
+    "sections": ["intro", "theme", "variation", "emotional-peak", "ending"],
+    "tracks": [
+      {
+        "trackId": "lead_oriental_strings",
+        "role": "lead melody",
+        "articulationHints": ["legato_connected", "portamento_expressive", "emotional_sustain"]
+      },
+      {
+        "trackId": "support_strings",
+        "role": "counter line and pad",
+        "articulationHints": ["tremolo_emotional", "marcato_bow"]
+      }
+    ],
+    "maqamMetadata": {
+      "required": true,
+      "quarterToneOffsets": "metadata-only",
+      "ornamentDensity": ["low", "medium", "high"]
+    }
+  },
+  "filesCreated": {
+    "midi": false,
+    "restrictedHardwareNative": false
+  }
+}

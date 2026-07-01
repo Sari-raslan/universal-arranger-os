@@ -1,0 +1,42 @@
+{
+  "run": "003",
+  "schemaName": "UAOS Original Library Factory Metadata",
+  "status": "DRAFT_READY",
+  "library": {
+    "id": "uaos-original-library",
+    "version": "0.3.0",
+    "sourcePolicy": "original-recording-or-original-synthesis-only",
+    "qualityTiers": ["standard", "premium", "future-pro"]
+  },
+  "instrumentCategories": [
+    "strings",
+    "oriental-strings",
+    "plucked-strings",
+    "woodwinds",
+    "brass",
+    "percussion",
+    "pads",
+    "bass",
+    "keys",
+    "hybrid-textures"
+  ],
+  "instrumentMetadata": {
+    "required": ["instrumentId", "displayName", "category", "sourceType", "articulations", "range", "qualityTier", "safetyStatus"],
+    "sourceTypes": ["original-recording", "original-synthesis", "metadata-only"],
+    "safetyStatus": ["safe-original", "needs-review", "blocked"]
+  },
+  "articulationSchema": {
+    "fields": ["id", "name", "description", "velocityBehavior", "roundRobinPlan", "dynamicLayers", "legatoBehavior", "ornamentBehavior"],
+    "dynamicLayers": ["pp", "p", "mp", "mf", "f", "ff"],
+    "roundRobinPlan": {
+      "standard": 2,
+      "premium": 4,
+      "futurePro": 6
+    }
+  },
+  "forbidden": {
+    "proprietarySampleCopying": true,
+    "commercialSampleCopying": true,
+    "restrictedHardwareNativeOutput": true
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "run": "003",
+  "status": "READY",
+  "testCases": [
+    {
+      "id": "tc_intro_emotional_6_8",
+      "songIdea": "slow emotional eastern strings theme",
+      "tempoBpm": 78,
+      "timeSignature": "6/8",
+      "maqamHint": "hijaz",
+      "expectedSections": ["intro", "verse", "chorus", "fill", "ending"],
+      "expectedLead": "oriental-strings"
+    },
+    {
+      "id": "tc_pop_arrangement_4_4",
+      "songIdea": "modern pop arrangement with eastern color",
+      "tempoBpm": 104,
+      "timeSignature": "4/4",
+      "maqamHint": "nahawand",
+      "expectedSections": ["intro", "verse", "chorus", "bridge", "fill", "ending"],
+      "expectedLead": "hybrid-textures"
+    },
+    {
+      "id": "tc_cinematic_peak",
+      "songIdea": "cinematic build with emotional string peak",
+      "tempoBpm": 92,
+      "timeSignature": "4/4",
+      "maqamHint": "kurd",
+      "expectedSections": ["intro", "verse", "chorus", "bridge", "ending"],
+      "expectedLead": "oriental-strings"
+    }
+  ]
+}

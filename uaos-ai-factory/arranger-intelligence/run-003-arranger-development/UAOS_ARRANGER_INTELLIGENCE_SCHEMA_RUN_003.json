@@ -1,0 +1,24 @@
+{
+  "run": "003",
+  "schemaName": "UAOS Song To Arranger Plan",
+  "status": "DRAFT_READY",
+  "input": {
+    "songIdea": "string",
+    "mood": "string",
+    "tempoBpm": "number",
+    "timeSignature": "string",
+    "maqamHint": "string",
+    "targetEnergy": "low|medium|high|cinematic"
+  },
+  "arrangementPlan": {
+    "sections": ["intro", "verse", "chorus", "bridge", "fill", "ending"],
+    "sectionFields": ["sectionId", "lengthBars", "energy", "primaryInstruments", "supportInstruments", "maqamBehavior", "transitionPlan"],
+    "libraryAwareChoices": true,
+    "safeMidiOnlyPlanning": true
+  },
+  "outputs": {
+    "planJson": true,
+    "midiFile": false,
+    "restrictedHardwareNativeOutput": false
+  }
+}
