@@ -1,0 +1,21 @@
+﻿{
+  "type": "object",
+  "required": [
+    "arrangementSummary",
+    "sections",
+    "instrumentPlan",
+    "librarySuggestions",
+    "fillsAndEndings",
+    "safeDemoOutputOnly",
+    "keyboardNativeOutput"
+  ],
+  "properties": {
+    "arrangementSummary": { "type": "string" },
+    "sections": { "type": "array" },
+    "instrumentPlan": { "type": "array" },
+    "librarySuggestions": { "type": "array" },
+    "fillsAndEndings": { "type": "array" },
+    "safeDemoOutputOnly": { "type": "boolean" },
+    "keyboardNativeOutput": { "type": "boolean" }
+  }
+}
