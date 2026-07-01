@@ -1,0 +1,52 @@
+{
+  "title": "UAOS Edge Nahawand Quarter-Tone Plan",
+  "project": {
+    "name": "UAOS / AE Platform",
+    "title": "Nahawand Metadata Plan"
+  },
+  "outputMode": "spec-only",
+  "maqamBehaviorDeclared": true,
+  "maqam": {
+    "id": "nahawand",
+    "root": "D",
+    "behavior": "metadata-only"
+  },
+  "quarterToneMetadata": {
+    "enabled": true,
+    "mode": "metadata-only",
+    "offsetsCents": {
+      "degree2": 0,
+      "degree6": -50
+    }
+  },
+  "sections": [
+    {
+      "name": "intro",
+      "bars": 4,
+      "harmonicPlan": ["i", "iv"],
+      "instruments": ["oriental-strings", "pad"],
+      "role": "establish mode"
+    },
+    {
+      "name": "verse",
+      "bars": 16,
+      "harmonicPlan": ["i", "bVII", "iv", "v"],
+      "instruments": ["oriental-strings", "bass"],
+      "role": "state phrase"
+    },
+    {
+      "name": "chorus",
+      "bars": 16,
+      "harmonicPlan": ["iv", "i", "v", "i"],
+      "instruments": ["oriental-strings", "percussion"],
+      "role": "lift phrase"
+    },
+    {
+      "name": "ending",
+      "bars": 4,
+      "harmonicPlan": ["v", "i"],
+      "instruments": ["oriental-strings"],
+      "role": "resolve"
+    }
+  ]
+}

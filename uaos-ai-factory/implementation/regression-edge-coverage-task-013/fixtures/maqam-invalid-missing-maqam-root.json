@@ -1,0 +1,47 @@
+{
+  "title": "UAOS Edge Missing Maqam Root",
+  "project": {
+    "name": "UAOS / AE Platform",
+    "title": "Missing Root Plan"
+  },
+  "outputMode": "spec-only",
+  "maqamBehaviorDeclared": true,
+  "maqam": {
+    "id": "hijaz",
+    "behavior": "metadata-only"
+  },
+  "quarterToneMetadata": {
+    "enabled": true,
+    "mode": "metadata-only"
+  },
+  "sections": [
+    {
+      "name": "intro",
+      "bars": 4,
+      "harmonicPlan": ["i"],
+      "instruments": ["oriental-strings"],
+      "role": "open"
+    },
+    {
+      "name": "verse",
+      "bars": 16,
+      "harmonicPlan": ["i", "bII", "v"],
+      "instruments": ["oriental-strings", "bass"],
+      "role": "develop"
+    },
+    {
+      "name": "chorus",
+      "bars": 16,
+      "harmonicPlan": ["iv", "i", "v"],
+      "instruments": ["oriental-strings", "percussion"],
+      "role": "lift"
+    },
+    {
+      "name": "ending",
+      "bars": 4,
+      "harmonicPlan": ["v", "i"],
+      "instruments": ["oriental-strings"],
+      "role": "resolve"
+    }
+  ]
+}

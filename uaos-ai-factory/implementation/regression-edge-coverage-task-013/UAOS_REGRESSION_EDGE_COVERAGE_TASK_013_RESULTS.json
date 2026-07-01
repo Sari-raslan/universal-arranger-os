@@ -1,0 +1,213 @@
+{
+  "task": "013",
+  "runner": "edgeRegressionRunner",
+  "generatedAt": "2026-07-01T23:43:03.734Z",
+  "edgeCoverageStatus": "PASS",
+  "fixtureSummary": {
+    "total": 13,
+    "matched": 13,
+    "validPassed": 7,
+    "invalidFailed": 6
+  },
+  "edgeGroups": {
+    "maqamQuarterTone": [
+      {
+        "fixture": "maqam-valid-nahawand-quarter-tone.json",
+        "expectedStatus": "PASS",
+        "expectedCodePrefix": null,
+        "actualStatus": "PASS",
+        "matchedExpectation": true,
+        "errors": [],
+        "warnings": []
+      },
+      {
+        "fixture": "maqam-valid-bayat-quarter-tone.json",
+        "expectedStatus": "PASS",
+        "expectedCodePrefix": null,
+        "actualStatus": "PASS",
+        "matchedExpectation": true,
+        "errors": [],
+        "warnings": []
+      },
+      {
+        "fixture": "maqam-invalid-missing-maqam-root.json",
+        "expectedStatus": "FAIL",
+        "expectedCodePrefix": "missing-maqam-root",
+        "actualStatus": "FAIL",
+        "matchedExpectation": true,
+        "errors": [
+          {
+            "code": "missing-maqam-root",
+            "message": "Maqam metadata must include a root when maqam behavior is declared."
+          }
+        ],
+        "warnings": []
+      },
+      {
+        "fixture": "maqam-invalid-unsafe-keyboard-export.json",
+        "expectedStatus": "FAIL",
+        "expectedCodePrefix": "forbidden-claim:quarter-tone-keyboard-export",
+        "actualStatus": "FAIL",
+        "matchedExpectation": true,
+        "errors": [
+          {
+            "code": "forbidden-claim:quarter-tone-keyboard-export",
+            "message": "Quarter-tone metadata must not imply keyboard export."
+          }
+        ],
+        "warnings": []
+      }
+    ],
+    "libraryTiers": [
+      {
+        "fixture": "library-tier-valid-standard.json",
+        "expectedStatus": "PASS",
+        "expectedCodePrefix": null,
+        "actualStatus": "PASS",
+        "matchedExpectation": true,
+        "errors": [],
+        "warnings": []
+      },
+      {
+        "fixture": "library-tier-valid-premium.json",
+        "expectedStatus": "PASS",
+        "expectedCodePrefix": null,
+        "actualStatus": "PASS",
+        "matchedExpectation": true,
+        "errors": [],
+        "warnings": []
+      },
+      {
+        "fixture": "library-tier-valid-future-pro.json",
+        "expectedStatus": "PASS",
+        "expectedCodePrefix": null,
+        "actualStatus": "PASS",
+        "matchedExpectation": true,
+        "errors": [],
+        "warnings": []
+      },
+      {
+        "fixture": "library-tier-invalid-unknown-tier.json",
+        "expectedStatus": "FAIL",
+        "expectedCodePrefix": "invalid-tier",
+        "actualStatus": "FAIL",
+        "matchedExpectation": true,
+        "errors": [
+          {
+            "code": "invalid-tier",
+            "message": "Tier must be one of: standard, premium, future_pro."
+          }
+        ],
+        "warnings": []
+      }
+    ],
+    "orientalStringsArticulations": [
+      {
+        "fixture": "oriental-strings-valid-full-articulations.json",
+        "expectedStatus": "PASS",
+        "expectedCodePrefix": null,
+        "actualStatus": "PASS",
+        "matchedExpectation": true,
+        "errors": [],
+        "warnings": []
+      },
+      {
+        "fixture": "oriental-strings-invalid-missing-emotional-sustain.json",
+        "expectedStatus": "FAIL",
+        "expectedCodePrefix": "missing-oriental-strings-articulation:emotional_sustain",
+        "actualStatus": "FAIL",
+        "matchedExpectation": true,
+        "errors": [
+          {
+            "code": "missing-oriental-strings-articulation:emotional_sustain",
+            "message": "Oriental Strings library must include articulation: emotional_sustain."
+          }
+        ],
+        "warnings": []
+      }
+    ],
+    "monitorSafety": [
+      {
+        "fixture": "monitor-valid-safety-blocked.json",
+        "expectedStatus": "PASS",
+        "expectedCodePrefix": null,
+        "actualStatus": "PASS",
+        "matchedExpectation": true,
+        "errors": [],
+        "warnings": []
+      },
+      {
+        "fixture": "monitor-invalid-payment-enabled.json",
+        "expectedStatus": "FAIL",
+        "expectedCodePrefix": "forbidden-claim:payment-enabled",
+        "actualStatus": "FAIL",
+        "matchedExpectation": true,
+        "errors": [
+          {
+            "code": "forbidden-claim:payment-enabled",
+            "message": "Monitor safety state must block payment."
+          },
+          {
+            "code": "forbidden-claim:payment-functionality",
+            "message": "Monitor must not claim payment functionality."
+          }
+        ],
+        "warnings": []
+      },
+      {
+        "fixture": "monitor-invalid-false-commercial-launch.json",
+        "expectedStatus": "FAIL",
+        "expectedCodePrefix": "false-claim:commercial-launch-active",
+        "actualStatus": "FAIL",
+        "matchedExpectation": true,
+        "errors": [
+          {
+            "code": "false-claim:commercial-launch-active",
+            "message": "Commercial launch claims must be marked future/not active."
+          }
+        ],
+        "warnings": []
+      }
+    ]
+  },
+  "upstreamStatus": {
+    "validatorRegressionRunnerTask009": "PASS",
+    "localCiTask010": "PASS",
+    "ownerQaStatusIndexTask012": "PASS"
+  },
+  "safetyStatus": {
+    "appJsUntouched": true,
+    "noDeploy": true,
+    "noVercel": true,
+    "noToken": true,
+    "noPaymentCode": true,
+    "noKeyboardOutput": true,
+    "noProprietaryCopying": true,
+    "noJobcenterFinalFolderChange": true,
+    "noFinalBusinessplanPackChange": true
+  },
+  "ownerSummary": {
+    "whatIsNowCovered": [
+      "Maqam metadata presence when maqam behavior is declared.",
+      "Maqam root requirements.",
+      "Quarter-tone metadata as metadata-only planning information.",
+      "Library tier allow-list: standard, premium, future_pro.",
+      "Oriental Strings required articulation preservation.",
+      "Monitor safety blocks for payment, keyboard output, proprietary copying, and false commercial launch claims."
+    ],
+    "whatFailsByDesign": [
+      "Missing maqam root.",
+      "Quarter-tone metadata implying keyboard export.",
+      "Unknown library tier.",
+      "Oriental Strings missing emotional_sustain.",
+      "Monitor payment enabled state.",
+      "Monitor active commercial launch claim without future/not-active marking."
+    ],
+    "nextSafeTask": "Add a local dashboard reader for Task 012 and Task 013 outputs without deployment or export."
+  },
+  "inputPaths": {
+    "task009Results": "E:\\keyboard-manager-clean\\uaos-ai-factory\\implementation\\validator-regression-runner-task-009\\UAOS_VALIDATOR_REGRESSION_TASK_009_RESULTS.json",
+    "task010Results": "E:\\keyboard-manager-clean\\uaos-ai-factory\\implementation\\local-ci-qa-runner-task-010\\UAOS_LOCAL_CI_TASK_010_RESULTS.json",
+    "task012Index": "E:\\keyboard-manager-clean\\uaos-ai-factory\\implementation\\owner-qa-status-index-task-012\\UAOS_OWNER_QA_STATUS_INDEX_TASK_012.json"
+  }
+}

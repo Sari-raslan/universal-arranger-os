@@ -1,0 +1,49 @@
+{
+  "title": "UAOS Edge Unsafe Quarter-Tone Export Claim",
+  "project": {
+    "name": "UAOS / AE Platform",
+    "title": "Unsafe Export Claim Plan"
+  },
+  "outputMode": "spec-only",
+  "maqamBehaviorDeclared": true,
+  "maqam": {
+    "id": "rast",
+    "root": "C",
+    "behavior": "metadata-only"
+  },
+  "quarterToneMetadata": {
+    "enabled": true,
+    "mode": "metadata-only",
+    "unsafeClaim": "keyboard export"
+  },
+  "sections": [
+    {
+      "name": "intro",
+      "bars": 4,
+      "harmonicPlan": ["i"],
+      "instruments": ["oriental-strings"],
+      "role": "open"
+    },
+    {
+      "name": "verse",
+      "bars": 16,
+      "harmonicPlan": ["i", "iv", "v"],
+      "instruments": ["oriental-strings", "bass"],
+      "role": "develop"
+    },
+    {
+      "name": "chorus",
+      "bars": 16,
+      "harmonicPlan": ["iv", "i", "v"],
+      "instruments": ["oriental-strings", "percussion"],
+      "role": "lift"
+    },
+    {
+      "name": "ending",
+      "bars": 4,
+      "harmonicPlan": ["v", "i"],
+      "instruments": ["oriental-strings"],
+      "role": "resolve"
+    }
+  ]
+}

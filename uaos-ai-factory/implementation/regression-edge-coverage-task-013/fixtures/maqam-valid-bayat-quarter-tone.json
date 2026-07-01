@@ -1,0 +1,52 @@
+{
+  "title": "UAOS Edge Bayat Quarter-Tone Plan",
+  "project": {
+    "name": "UAOS / AE Platform",
+    "title": "Bayat Metadata Plan"
+  },
+  "outputMode": "midi-only",
+  "maqamBehaviorDeclared": true,
+  "maqam": {
+    "id": "bayat",
+    "root": "G",
+    "behavior": "metadata-only"
+  },
+  "quarterToneMetadata": {
+    "enabled": true,
+    "mode": "metadata-only",
+    "offsetsCents": {
+      "degree3": -50,
+      "degree7": -50
+    }
+  },
+  "sections": [
+    {
+      "name": "intro",
+      "bars": 8,
+      "harmonicPlan": ["i", "iv"],
+      "instruments": ["oriental-strings", "soft-percussion"],
+      "role": "open mode"
+    },
+    {
+      "name": "verse",
+      "bars": 16,
+      "harmonicPlan": ["i", "bVII", "iv"],
+      "instruments": ["oriental-strings", "bass"],
+      "role": "develop melody"
+    },
+    {
+      "name": "chorus",
+      "bars": 16,
+      "harmonicPlan": ["iv", "i", "v"],
+      "instruments": ["oriental-strings", "drums"],
+      "role": "increase energy"
+    },
+    {
+      "name": "ending",
+      "bars": 8,
+      "harmonicPlan": ["v", "i"],
+      "instruments": ["oriental-strings", "pad"],
+      "role": "close safely"
+    }
+  ]
+}
