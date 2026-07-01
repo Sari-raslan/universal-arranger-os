@@ -1,0 +1,29 @@
+{
+  "run": "004",
+  "cycle": "003",
+  "status": "READY",
+  "modelName": "UAOS Library Metadata Implementation Model",
+  "sourcePolicy": "original-recording-or-original-synthesis-or-metadata-only",
+  "entities": {
+    "library": {
+      "required": ["libraryId", "name", "version", "sourcePolicy", "qualityTier", "rightsStatus"]
+    },
+    "instrument": {
+      "required": ["instrumentId", "displayName", "category", "range", "articulations", "sourceType", "safetyStatus"],
+      "categories": ["strings", "oriental-strings", "plucked-strings", "woodwinds", "brass", "percussion", "pads", "bass", "keys", "hybrid-textures"]
+    },
+    "articulation": {
+      "required": ["articulationId", "name", "dynamicLayers", "roundRobinPlan", "transitionBehavior", "metadataOnly"],
+      "dynamicLayers": ["pp", "p", "mp", "mf", "f", "ff"]
+    },
+    "recordingSession": {
+      "required": ["sessionId", "date", "sourceOwner", "rightsStatus", "instrumentId", "captureNotes", "qaStatus"]
+    }
+  },
+  "safety": {
+    "containsAudio": false,
+    "copiesCommercialSamples": false,
+    "createsRestrictedHardwareNativeOutput": false,
+    "requiresOwnerApprovalForRecording": true
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "run": "004",
+  "cycle": "003",
+  "status": "READY",
+  "family": "oriental-strings",
+  "schema": {
+    "commonFields": ["articulationId", "displayName", "phraseRole", "dynamicBehavior", "ornamentDensity", "quarterToneAware", "metadataOnly"],
+    "articulations": [
+      {
+        "articulationId": "legato_connected",
+        "phraseRole": ["intro", "verse", "ending"],
+        "dynamicBehavior": "smooth connected phrase",
+        "ornamentDensity": "low-to-medium",
+        "quarterToneAware": true,
+        "metadataOnly": true
+      },
+      {
+        "articulationId": "portamento_expressive",
+        "phraseRole": ["transition", "emotional-peak"],
+        "dynamicBehavior": "expressive slide intent",
+        "ornamentDensity": "medium",
+        "quarterToneAware": true,
+        "metadataOnly": true
+      },
+      {
+        "articulationId": "tremolo_emotional",
+        "phraseRole": ["chorus", "emotional-peak"],
+        "dynamicBehavior": "repeated bow energy intent",
+        "ornamentDensity": "medium-to-high",
+        "quarterToneAware": false,
+        "metadataOnly": true
+      },
+      {
+        "articulationId": "emotional_sustain",
+        "phraseRole": ["intro", "verse", "ending"],
+        "dynamicBehavior": "long sustained expressive tone",
+        "ornamentDensity": "low",
+        "quarterToneAware": true,
+        "metadataOnly": true
+      }
+    ]
+  },
+  "safety": {
+    "audioCreated": false,
+    "restrictedOutputCreated": false,
+    "proprietarySampleCopying": false
+  }
+}
