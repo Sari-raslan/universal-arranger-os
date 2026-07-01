@@ -1,0 +1,36 @@
+{
+  "run": "004",
+  "cycle": "010",
+  "status": "READY",
+  "matrix": [
+    {
+      "sourceType": "metadata-only",
+      "rightsRequirement": "no-audio-rights-needed",
+      "allowedFor": ["schema", "roadmap", "articulation-map", "arranger-planning"],
+      "publicClaimAllowed": "planning-only"
+    },
+    {
+      "sourceType": "original-synthesis",
+      "rightsRequirement": "source-project-owned-or-documented",
+      "allowedFor": ["prototype", "internal-demo-after-qa"],
+      "publicClaimAllowed": "only-after-owner-review"
+    },
+    {
+      "sourceType": "original-recording",
+      "rightsRequirement": "performer-consent-and-usage-rights-documented",
+      "allowedFor": ["premium-prototype-after-approval"],
+      "publicClaimAllowed": "only-after-rights-and-qa"
+    },
+    {
+      "sourceType": "third-party-commercial",
+      "rightsRequirement": "blocked",
+      "allowedFor": [],
+      "publicClaimAllowed": "never"
+    }
+  ],
+  "safety": {
+    "audioCreatedThisCycle": false,
+    "sampleCopying": false,
+    "restrictedOutputCreated": false
+  }
+}

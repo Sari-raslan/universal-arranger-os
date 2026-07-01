@@ -1,0 +1,42 @@
+{
+  "run": "004",
+  "cycle": "010",
+  "status": "READY",
+  "ruleSet": "UAOS Library Metadata QA Rules",
+  "rules": [
+    {
+      "ruleId": "lib_qa_001",
+      "name": "Source policy required",
+      "requiredFields": ["sourcePolicy", "sourceType", "rightsStatus"],
+      "failureSeverity": "blocker"
+    },
+    {
+      "ruleId": "lib_qa_002",
+      "name": "Original source declaration",
+      "allowedSourceTypes": ["original-recording", "original-synthesis", "metadata-only"],
+      "failureSeverity": "blocker"
+    },
+    {
+      "ruleId": "lib_qa_003",
+      "name": "No proprietary sample copying",
+      "mustBeFalse": ["proprietarySampleCopying", "commercialSampleCopying"],
+      "failureSeverity": "blocker"
+    },
+    {
+      "ruleId": "lib_qa_004",
+      "name": "Quality tier evidence",
+      "requiredByTier": {
+        "standard": ["metadata-complete", "basic-articulation-map"],
+        "premium": ["rights-reviewed", "extended-articulation-map", "qa-reviewed"],
+        "future-pro": ["owner-approved", "source-rights-complete", "implementation-qa-complete"]
+      },
+      "failureSeverity": "warning-until-public-claim"
+    },
+    {
+      "ruleId": "lib_qa_005",
+      "name": "Restricted output blocked",
+      "forbiddenExtensions": [".STY", ".SET", ".PRS", ".STL", ".PAT", ".MSP", ".KST"],
+      "failureSeverity": "blocker"
+    }
+  ]
+}
