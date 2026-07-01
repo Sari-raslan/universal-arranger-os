@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>UAOS Live Monitor</title>
+  <meta name="description" content="Current public monitor for UAOS project status.">
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #101315;
+      --panel: #181d20;
+      --panel-soft: #20272b;
+      --text: #f4f7f7;
+      --muted: #b7c3c4;
+      --accent: #7ab85b;
+      --line: #344047;
+      --warn: #e2bd6b;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Arial, Calibri, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+    }
+    main {
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 40px 0;
+    }
+    header {
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 24px;
+      margin-bottom: 28px;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      min-height: 30px;
+      padding: 4px 12px;
+      border: 1px solid rgba(122, 184, 91, 0.65);
+      background: rgba(122, 184, 91, 0.12);
+      color: #dff3d5;
+      font-size: 14px;
+      font-weight: 700;
+      border-radius: 999px;
+      margin-bottom: 18px;
+    }
+    h1 {
+      margin: 0 0 10px;
+      font-size: clamp(34px, 6vw, 64px);
+      line-height: 1.04;
+      letter-spacing: 0;
+    }
+    .subtitle {
+      margin: 0;
+      color: var(--muted);
+      font-size: 18px;
+      max-width: 780px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 16px;
+    }
+    section {
+      grid-column: span 6;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 20px;
+    }
+    section.wide { grid-column: span 12; }
+    h2 {
+      margin: 0 0 12px;
+      font-size: 20px;
+      letter-spacing: 0;
+    }
+    p { margin: 0 0 10px; color: var(--muted); }
+    ul {
+      margin: 0;
+      padding-left: 20px;
+      color: var(--muted);
+    }
+    li + li { margin-top: 6px; }
+    .status-list {
+      display: grid;
+      gap: 10px;
+      padding: 0;
+      list-style: none;
+    }
+    .status-list li {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 12px;
+      background: var(--panel-soft);
+      border: 1px solid var(--line);
+      border-radius: 6px;
+    }
+    .value { color: var(--text); font-weight: 700; text-align: right; }
+    .blocked .value { color: var(--warn); }
+    footer {
+      margin-top: 24px;
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 14px;
+    }
+    @media (max-width: 760px) {
+      main { width: min(100% - 24px, 1120px); padding: 24px 0; }
+      section { grid-column: span 12; padding: 16px; }
+      .status-list li { display: block; }
+      .value { display: block; text-align: left; margin-top: 4px; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <div class="badge">Monitor Live</div>
+      <h1>UAOS Live Monitor</h1>
+      <p class="subtitle">Current public monitor for UAOS project status. This page is a project status monitor, not a product sales page.</p>
+    </header>
+
+    <div class="grid">
+      <section class="wide">
+        <h2>Aktueller Status</h2>
+        <ul class="status-list">
+          <li><span>Project</span><span class="value">UAOS / Universal Arranger OS / AE Platform</span></li>
+          <li><span>Date</span><span class="value">01.07.2026</span></li>
+          <li><span>Current phase</span><span class="value">Local prototype / evidence-ready</span></li>
+          <li><span>Businessplan</span><span class="value">Businessplan financial version in preparation</span></li>
+          <li><span>Presentation</span><span class="value">Jobcenter presentation prepared</span></li>
+          <li><span>Evidence</span><span class="value">Local evidence pack prepared</span></li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Project Evidence</h2>
+        <p>Local prototype and evidence pack are prepared. The current materials document project status, review boundaries, and next development steps.</p>
+      </section>
+
+      <section>
+        <h2>Funding / Workstation Need</h2>
+        <p>A reliable laptop/workstation is required for continued development, local testing, documentation, and evidence preparation.</p>
+      </section>
+
+      <section>
+        <h2>Safety Boundaries</h2>
+        <ul class="blocked">
+          <li><span>Payment</span><span class="value">Blocked / not active</span></li>
+          <li><span>Keyboard-native output</span><span class="value">Blocked / not released</span></li>
+          <li><span>Keyboard transfer</span><span class="value">Blocked / not enabled</span></li>
+          <li><span>Public product release</span><span class="value">Not claimed</span></li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Next Steps</h2>
+        <ul>
+          <li>Financial Businessplan update</li>
+          <li>Monitor update after verified changes</li>
+          <li>Continued local development</li>
+          <li>Library factory planning</li>
+          <li>Oriental strings library planning</li>
+        </ul>
+      </section>
+    </div>
+
+    <footer>
+      No payment system is active. No keyboard-native output is released. No keyboard transfer is enabled. No production release is claimed. No proprietary content is included.
+    </footer>
+  </main>
+</body>
+</html>
