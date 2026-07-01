@@ -1,0 +1,43 @@
+{
+  "run": "004",
+  "cycle": "007",
+  "status": "READY",
+  "testMatrix": [
+    {
+      "testId": "preset_eastern_ballad_hijaz",
+      "presetFamily": "eastern_ballad",
+      "maqam": "hijaz",
+      "tempoBpm": 78,
+      "expectedSections": ["intro", "verse", "chorus", "fill", "ending"],
+      "expectedLead": "oriental-strings",
+      "passCriteria": ["metadata-only", "contains-emotional-arc", "no-restricted-output"]
+    },
+    {
+      "testId": "preset_modern_pop_nahawand",
+      "presetFamily": "modern_pop_eastern",
+      "maqam": "nahawand",
+      "tempoBpm": 104,
+      "expectedSections": ["intro", "verse", "chorus", "bridge", "fill", "ending"],
+      "expectedLead": "hybrid-textures",
+      "passCriteria": ["pop-structure", "library-aware", "no-device-transfer"]
+    },
+    {
+      "testId": "preset_cinematic_kurd",
+      "presetFamily": "cinematic_maqam",
+      "maqam": "kurd",
+      "tempoBpm": 92,
+      "expectedSections": ["intro", "theme", "variation", "emotional-peak", "ending"],
+      "expectedLead": "oriental-strings",
+      "passCriteria": ["peak-section-present", "quarter-tone-metadata-only", "no-audio-created"]
+    },
+    {
+      "testId": "preset_dance_oriental_light",
+      "presetFamily": "dance_oriental_light",
+      "maqam": "nahawand",
+      "tempoBpm": 120,
+      "expectedSections": ["intro", "verse", "chorus", "fill", "break", "ending"],
+      "expectedLead": "plucked-strings",
+      "passCriteria": ["rhythmic-drive", "safe-ornament-hints", "no-keyboard-output"]
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "run": "004",
+  "cycle": "007",
+  "status": "READY",
+  "taxonomyName": "UAOS Arranger Preset Taxonomy",
+  "outputPolicy": {
+    "metadataOnly": true,
+    "midiFilesCreated": false,
+    "restrictedHardwareNativeOutputCreated": false,
+    "appJsTouched": false
+  },
+  "presetFamilies": [
+    {
+      "familyId": "eastern_ballad",
+      "displayName": "Eastern Ballad",
+      "defaultTempoRangeBpm": [68, 88],
+      "defaultMeters": ["4/4", "6/8"],
+      "primaryMaqamContexts": ["hijaz", "nahawand", "kurd"],
+      "sectionDefaults": ["intro", "verse", "chorus", "fill", "ending"],
+      "leadInstrumentCategories": ["oriental-strings", "woodwinds"],
+      "supportInstrumentCategories": ["pads", "bass", "percussion"],
+      "emotionalArc": "slow-build-to-expressive-chorus"
+    },
+    {
+      "familyId": "modern_pop_eastern",
+      "displayName": "Modern Pop Eastern",
+      "defaultTempoRangeBpm": [92, 116],
+      "defaultMeters": ["4/4"],
+      "primaryMaqamContexts": ["nahawand", "kurd"],
+      "sectionDefaults": ["intro", "verse", "chorus", "bridge", "fill", "ending"],
+      "leadInstrumentCategories": ["hybrid-textures", "keys", "oriental-strings"],
+      "supportInstrumentCategories": ["bass", "percussion", "pads"],
+      "emotionalArc": "radio-structure-with-eastern-color"
+    },
+    {
+      "familyId": "cinematic_maqam",
+      "displayName": "Cinematic Maqam",
+      "defaultTempoRangeBpm": [72, 104],
+      "defaultMeters": ["4/4", "6/8"],
+      "primaryMaqamContexts": ["hijaz", "kurd", "bayati"],
+      "sectionDefaults": ["intro", "theme", "variation", "emotional-peak", "ending"],
+      "leadInstrumentCategories": ["oriental-strings", "strings"],
+      "supportInstrumentCategories": ["pads", "percussion", "hybrid-textures"],
+      "emotionalArc": "ambient-entry-to-large-emotional-peak"
+    },
+    {
+      "familyId": "dance_oriental_light",
+      "displayName": "Dance Oriental Light",
+      "defaultTempoRangeBpm": [112, 128],
+      "defaultMeters": ["4/4"],
+      "primaryMaqamContexts": ["nahawand", "hijaz"],
+      "sectionDefaults": ["intro", "verse", "chorus", "fill", "break", "ending"],
+      "leadInstrumentCategories": ["plucked-strings", "oriental-strings"],
+      "supportInstrumentCategories": ["bass", "percussion", "hybrid-textures"],
+      "emotionalArc": "rhythmic-drive-with-safe-melodic-ornaments"
+    }
+  ],
+  "safety": {
+    "commercialLaunchClaim": false,
+    "keyboardOutput": false,
+    "hardwareTransfer": false,
+    "proprietarySampleCopying": false
+  }
+}

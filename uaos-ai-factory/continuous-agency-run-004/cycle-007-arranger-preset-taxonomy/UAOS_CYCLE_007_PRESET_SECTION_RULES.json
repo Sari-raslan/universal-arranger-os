@@ -1,0 +1,48 @@
+{
+  "run": "004",
+  "cycle": "007",
+  "status": "READY",
+  "rules": [
+    {
+      "section": "intro",
+      "purpose": "establish maqam color and arrangement identity",
+      "energyRange": ["low", "medium"],
+      "safeArticulationHints": ["emotional_sustain", "legato_connected", "soft_entry"]
+    },
+    {
+      "section": "verse",
+      "purpose": "state motif and maintain lyrical space",
+      "energyRange": ["low", "medium"],
+      "safeArticulationHints": ["legato_connected", "short_slide_up", "steady_comp"]
+    },
+    {
+      "section": "chorus",
+      "purpose": "increase emotional and textural density",
+      "energyRange": ["medium", "high"],
+      "safeArticulationHints": ["marcato_bow", "tremolo_emotional", "layered_sustain"]
+    },
+    {
+      "section": "bridge",
+      "purpose": "provide contrast in register, harmony, or texture",
+      "energyRange": ["medium"],
+      "safeArticulationHints": ["response_phrase", "motif", "portamento_expressive"]
+    },
+    {
+      "section": "fill",
+      "purpose": "short transition marker between sections",
+      "energyRange": ["medium", "high"],
+      "safeArticulationHints": ["transition_marker", "short_slide_down", "ornament_hit"]
+    },
+    {
+      "section": "ending",
+      "purpose": "resolve phrase and reduce energy",
+      "energyRange": ["low", "medium"],
+      "safeArticulationHints": ["emotional_sustain", "fade_marker", "final_cadence"]
+    }
+  ],
+  "outputPolicy": {
+    "jsonOnly": true,
+    "midiFilesCreated": false,
+    "restrictedHardwareNativeOutputCreated": false
+  }
+}
