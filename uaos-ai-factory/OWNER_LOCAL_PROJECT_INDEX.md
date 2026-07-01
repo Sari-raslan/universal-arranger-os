@@ -364,3 +364,27 @@ The wait gate remains active until the owner manually verifies the target reposi
 - Keyboard transfer allowed: NO.
 - Push/deploy/Vercel: NO.
 - Ready for morning owner review: YES.
+
+## PDF-001R-005R Local PDF Creation Recovery
+
+- PDF-001R source markdown consolidation: DONE_LOCAL_ONLY.
+- PDF-002R local HTML/browser-print generator: DONE_LOCAL_ONLY.
+- PDF-003R local PDF creation: DONE_LOCAL_ONLY.
+- PDF-004R PDF output QA: PASS.
+- PDF-005R local PDF creation seal: SEALED_LOCAL_ONLY.
+- Recovery method: local HTML plus Chrome browser print.
+- PDF output folder: `uaos-ai-factory/local-demo-evidence-pack/pdf-output/`
+- PDF files created:
+  - `UAOS_JOBCENTER_EVIDENCE_PACK_DE.pdf`
+  - `UAOS_SUPPORTER_EVIDENCE_PACK_DE.pdf`
+  - `UAOS_OWNER_REVIEW_PACK_AR.pdf`
+  - `UAOS_LOCAL_DEMO_EVIDENCE_MASTER_PACK.pdf`
+- App.jsx touched: NO.
+- Frontend source touched: NO.
+- Real keyboard output created: NO.
+- Keyboard transfer allowed: NO.
+- Push/deploy/Vercel: NO.
+- Payment created/enabled: NO.
+- Proprietary content copied: NO.
+- Ready to review PDFs manually: YES.
+- Ready for keyboard transfer: NO.
