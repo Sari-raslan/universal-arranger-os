@@ -1,0 +1,31 @@
+{
+  "run": "004",
+  "cycle": "015",
+  "status": "READY",
+  "matrix": [
+    {
+      "validator": "run003SchemaValidator",
+      "inputCycles": ["001"],
+      "checks": ["json-valid", "required-keys", "safety-fields"],
+      "resultType": "validation-results-json"
+    },
+    {
+      "validator": "arrangerPlanValidator",
+      "inputCycles": ["002", "007", "009"],
+      "checks": ["section-coverage", "maqam-metadata", "no-restricted-output"],
+      "resultType": "validation-results-json"
+    },
+    {
+      "validator": "libraryMetadataValidator",
+      "inputCycles": ["003", "008", "010"],
+      "checks": ["source-policy", "rights-status", "quality-tier-evidence", "no-sample-copying"],
+      "resultType": "validation-results-json"
+    },
+    {
+      "validator": "monitorStatusAggregator",
+      "inputCycles": ["001", "002", "003", "004", "005", "006", "007", "008", "009", "010", "011", "012", "013", "014", "015"],
+      "checks": ["cycle-status", "safety-log", "next-action", "commit-log"],
+      "resultType": "aggregate-monitor-json"
+    }
+  ]
+}

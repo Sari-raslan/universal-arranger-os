@@ -1,0 +1,46 @@
+{
+  "run": "004",
+  "cycle": "015",
+  "status": "READY",
+  "fixtures": [
+    {
+      "fixtureId": "fx_arranger_hijaz_ballad",
+      "covers": ["arranger-intelligence", "maqam-rules", "preset-taxonomy"],
+      "inputs": {
+        "songIdea": "emotional hijaz ballad",
+        "presetFamily": "eastern_ballad",
+        "maqam": "hijaz",
+        "tempoBpm": 78
+      },
+      "expected": {
+        "sections": ["intro", "verse", "chorus", "fill", "ending"],
+        "metadataOnly": true
+      }
+    },
+    {
+      "fixtureId": "fx_library_oriental_strings",
+      "covers": ["library-factory", "oriental-strings", "sample-safety"],
+      "inputs": {
+        "instrumentCategory": "oriental-strings",
+        "sourceType": "metadata-only",
+        "qualityTier": "standard"
+      },
+      "expected": {
+        "rightsStatusRequired": true,
+        "audioCreated": false
+      }
+    },
+    {
+      "fixtureId": "fx_monitor_owner_dashboard",
+      "covers": ["live-monitor-data", "owner-dashboard", "safety-gates"],
+      "inputs": {
+        "cyclesCompleted": 15,
+        "currentCycle": "cycle-016-final-summary"
+      },
+      "expected": {
+        "appJsTouched": false,
+        "deployAttempted": false
+      }
+    }
+  ]
+}
