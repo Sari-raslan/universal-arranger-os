@@ -1,0 +1,54 @@
+{
+  "run": "004",
+  "cycle": "013",
+  "status": "READY",
+  "tasks": [
+    {
+      "taskId": "impl_001",
+      "title": "Build arrangerPlanValidator",
+      "inputs": ["cycle-002-arranger-tests", "cycle-007-preset-taxonomy", "cycle-009-generator-rules"],
+      "outputs": ["validation-results-json", "qa-report-md"],
+      "safeWithoutAppJs": true,
+      "priority": 1
+    },
+    {
+      "taskId": "impl_002",
+      "title": "Build libraryMetadataValidator",
+      "inputs": ["cycle-003-library-model", "cycle-010-library-qa-rules"],
+      "outputs": ["validation-results-json", "qa-report-md"],
+      "safeWithoutAppJs": true,
+      "priority": 2
+    },
+    {
+      "taskId": "impl_003",
+      "title": "Build monitorStatusAggregator",
+      "inputs": ["run-004-status-json", "cycle-qa-reports", "commit-log"],
+      "outputs": ["aggregated-monitor-json", "owner-summary-md"],
+      "safeWithoutAppJs": true,
+      "priority": 3
+    },
+    {
+      "taskId": "impl_004",
+      "title": "Create maqamFixtureSet",
+      "inputs": ["cycle-002-maqam-rules", "cycle-008-roadmap"],
+      "outputs": ["maqam-fixtures-json", "qa-report-md"],
+      "safeWithoutAppJs": true,
+      "priority": 4
+    },
+    {
+      "taskId": "impl_005",
+      "title": "Prepare owner App.jsx approval packet",
+      "inputs": ["cycle-011-ui-data-plan", "cycle-004-approval-gate"],
+      "outputs": ["approval-packet-md"],
+      "safeWithoutAppJs": true,
+      "priority": 5
+    }
+  ],
+  "blockedTasks": [
+    "frontend-rendering",
+    "deployment",
+    "real-exporters",
+    "hardware-transfer",
+    "audio-recording"
+  ]
+}
