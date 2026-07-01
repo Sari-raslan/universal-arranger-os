@@ -7,8 +7,8 @@ const requiredDate = "2026-07-01";
 const requiredPlaceholder = "[JOBCENTER_MONITORING_LINK_HERE]";
 const plannedJobcenterLink = "https://sari-raslan.github.io/universal-arranger-os/jobcenter/";
 const monitorActivationText = "wird nach freigabe des uploads aktiviert";
-const notLiveMarker = "der link ist derzeit noch nicht öffentlich live, da kein upload, kein push und kein deploy freigegeben wurde";
-const keyboardNativeExtensions = [".STY", ".SET", ".PRS"];
+const notLiveMarker = "der link ist derzeit noch nicht \u00f6ffentlich live, da kein upload, kein push und kein deploy freigegeben wurde";
+const keyboardNativeExtensions = [".STY", ".SET", ".PRS", ".STL", ".PAT", ".MSP", ".KST"];
 const transliterationFailures = [
   "oeffentlich",
   "Oeffentlich",
@@ -21,11 +21,19 @@ const transliterationFailures = [
   "Pruefung",
   "Geraet"
 ];
+const mojibakeMarkers = [
+  "\u00e2\u201d\u0153",
+  "\u251c",
+  "\u00c3",
+  "\u00c2",
+  "\u00ef\u00bf\u00bd",
+  "\ufffd"
+];
 const forbiddenPhrases = [
   "private friend",
-  "unterstützer",
+  "unterst\u00fctzer",
   "unterstuetzer",
-  "private unterstützung",
+  "private unterst\u00fctzung",
   "private unterstuetzung",
   "friend support pack",
   "supporter pack",
@@ -41,8 +49,8 @@ const forbiddenPhrases = [
   "real writer ready",
   "produktionsreif",
   "produktionsbereit",
-  "ط¬ط§ظ‡ط² ظ„ظ„ط¨ظٹط¹",
-  "ظ†ظ‚ظ„ ط¥ظ„ظ‰ ط§ظ„ط£ظˆط±ط؛ ط¬ط§ظ‡ط²"
+  "\u0637\u00ac\u0637\u00a7\u0638\u2021\u0637\u00b2 \u0638\u201e\u0638\u201e\u0637\u00a8\u0638\u064a\u0637\u00b9",
+  "\u0638\u2020\u0638\u201a\u0638\u201e \u0637\u00a5\u0638\u201e\u0638\u2030 \u0637\u00a7\u0638\u201e\u0637\u00a3\u0638\u02c6\u0637\u00b1\u0637\u061b \u0637\u00ac\u0637\u00a7\u0638\u2021\u0637\u00b2"
 ];
 
 const failures = [];
@@ -81,9 +89,10 @@ const generatedStatusFiles = new Set([
   "JOBCENTER_FINAL_QA_STATUS.json",
   "JOBCENTER_FINAL_QA_STATUS.md"
 ]);
-const textFiles = files.filter((file) => [".md", ".json", ".html", ".txt"].includes(path.extname(file).toLowerCase()) && !generatedStatusFiles.has(path.basename(file)));
+const textFiles = files.filter((file) => [".md", ".json", ".html", ".txt", ".xml"].includes(path.extname(file).toLowerCase()) && !generatedStatusFiles.has(path.basename(file)));
 const rawCombinedText = textFiles.map((file) => readFileSync(file, "utf8")).join("\n");
 const combinedText = rawCombinedText.toLowerCase();
+
 if (!combinedText.includes(requiredDate)) failures.push(`Required date missing: ${requiredDate}`);
 if (!combinedText.includes(requiredPlaceholder.toLowerCase())) failures.push("Monitoring placeholder missing");
 if (!combinedText.includes(plannedJobcenterLink)) failures.push("Planned Jobcenter link missing");
@@ -94,6 +103,9 @@ for (const phrase of forbiddenPhrases) {
 }
 for (const phrase of transliterationFailures) {
   if (rawCombinedText.includes(phrase)) failures.push(`German umlaut quality failure: ${phrase}`);
+}
+for (const marker of mojibakeMarkers) {
+  if (rawCombinedText.includes(marker)) failures.push(`Mojibake marker found: ${JSON.stringify(marker)}`);
 }
 
 const status = {
@@ -107,6 +119,7 @@ const status = {
   monitorMarkedActivationAfterUploadApproval: combinedText.includes(monitorActivationText),
   linkMarkedNotLiveUntilUploadDeployApproval: combinedText.includes(notLiveMarker),
   germanUmlautQualityPass: !transliterationFailures.some((phrase) => rawCombinedText.includes(phrase)),
+  mojibakeMarkerPass: !mojibakeMarkers.some((marker) => rawCombinedText.includes(marker)),
   failures,
   safety: {
     localOnly: true,
@@ -116,7 +129,7 @@ const status = {
   }
 };
 
-writeFileSync(path.join(root, "uaos-ai-factory/jobcenter-send-ready/JOBCENTER_PACK_QA_STATUS.json"), `${JSON.stringify(status, null, 2)}\n`);
+writeFileSync(path.join(root, "uaos-ai-factory/jobcenter-send-ready/JOBCENTER_PACK_QA_STATUS.json"), `${JSON.stringify(status, null, 2)}\n`, "utf8");
 writeFileSync(path.join(root, "uaos-ai-factory/jobcenter-send-ready/JOBCENTER_PACK_QA_STATUS.md"), `# Jobcenter Pack QA Status
 
 Status: ${status.status}
@@ -129,9 +142,13 @@ ${status.pptx.map((file) => `- ${file}`).join("\n") || "- None"}
 
 Monitoring placeholder present: ${status.monitoringPlaceholderPresent ? "YES" : "NO"}
 
+German umlaut quality pass: ${status.germanUmlautQualityPass ? "YES" : "NO"}
+
+Mojibake marker pass: ${status.mojibakeMarkerPass ? "YES" : "NO"}
+
 Failures:
 ${failures.length ? failures.map((failure) => `- ${failure}`).join("\n") : "- None"}
-`);
+`, "utf8");
 
 console.log("UAOS Jobcenter Pack QA Check");
 console.log(`Status: ${status.status}`);

@@ -10,5 +10,9 @@ PPTX files:
 
 Monitoring placeholder present: YES
 
+German umlaut quality pass: YES
+
+Mojibake marker pass: YES
+
 Failures:
 - None
