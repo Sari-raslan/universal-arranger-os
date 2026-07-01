@@ -20,8 +20,8 @@ The PowerPoint was rebuilt locally using Microsoft PowerPoint COM automation. Ma
 - German umlauts were preserved: für, öffentlich, Veröffentlichung, Präsentation, Unterstützung, Arbeitsgerät, zuverlässig, nächste, Prüfung, benötigt, eigenständig.
 - Ten PNG slide proofs were exported.
 - A fallback PDF was exported.
-- Planned monitor link included as non-live reference: YES
-- Planned monitor link marked not active: YES
+- Monitor marked as nachgereicht: YES
+- Clickable monitor URL included: NO
 
 ## Safety
 
@@ -43,5 +43,5 @@ The PowerPoint was rebuilt locally using Microsoft PowerPoint COM automation. Ma
 - Visual proof exported: YES
 - Backgrounds visible: YES
 - German umlauts preserved: YES
-- Planned monitor link visible: YES
-- Planned monitor link marked inactive: YES
+- GitHub Pages monitor URL removed: YES
+- Monitor marked as nachgereicht: YES

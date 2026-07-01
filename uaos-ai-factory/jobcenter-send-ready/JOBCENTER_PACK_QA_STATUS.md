@@ -11,9 +11,9 @@ Final PPTX:
 Presentation fallback PDF:
 - uaos-ai-factory/jobcenter-send-ready/ppt-visual-proof/UAOS_JOBCENTER_PRESENTATION_2026-07-01_DE_PRESENTATION_FALLBACK.pdf
 
-Planned monitor link present: YES
+GitHub Pages URL removed: YES
 
-Marked not active until upload/deploy approval: YES
+Monitor marked nachgereicht: YES
 
 German umlauts preserved: YES
 

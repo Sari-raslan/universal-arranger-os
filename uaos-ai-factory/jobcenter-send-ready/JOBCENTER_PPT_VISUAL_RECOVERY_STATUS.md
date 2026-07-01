@@ -12,9 +12,9 @@ Slide PNG count: 10
 
 Background visible proof exported: YES
 
-Planned monitor link present: YES
+GitHub Pages URL removed: YES
 
-Marked not active until upload/deploy approval: YES
+Monitor marked nachgereicht: YES
 
 German umlauts preserved: YES
 

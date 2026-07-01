@@ -9,9 +9,10 @@ const requiredDate = "2026-07-01";
 const businessplanPdfName = "UAOS_JOBCENTER_BUSINESSPLAN_2026-07-01_DE.pdf";
 const finalPptxName = "UAOS_JOBCENTER_PRESENTATION_2026-07-01_DE.pptx";
 const fallbackPdfName = "UAOS_JOBCENTER_PRESENTATION_2026-07-01_DE_PRESENTATION_FALLBACK.pdf";
-const plannedJobcenterLink = "https://sari-raslan.github.io/universal-arranger-os/jobcenter/";
-const plannedMonitorLabel = "geplanter projekt-monitor:";
-const inactiveStatusText = "der link ist derzeit noch nicht öffentlich aktiv. er wird erst nach ausdrücklicher upload-/deploy-freigabe aktiviert. es wurde kein push, kein upload und kein deploy freigegeben.";
+const removedJobcenterLink = "https://sari-raslan.github.io/universal-arranger-os/jobcenter/";
+const monitorLabel = "projekt-monitor:";
+const monitorNachgereichtText = "der projekt-monitor ist vorgesehen und wird nach technischer freigabe separat nachgereicht.";
+const noActivePublicLinkText = "derzeit wird kein öffentlicher projektlink als aktiver nachweis verwendet. es wurde kein push, kein upload und kein deploy freigegeben.";
 const keyboardNativeExtensions = [".STY", ".SET", ".PRS", ".STL", ".PAT", ".MSP", ".KST"];
 const requiredUmlauts = ["ä", "ö", "ü", "Ä", "Ö", "Ü", "ß"];
 const mojibakeMarkers = ["â”œ", "أ‚", "ï؟½", "ï¿½", "├", "Ã", "Â", "�"];
@@ -39,7 +40,6 @@ const forbiddenPhrases = [
   "deploy-fertig",
   "keyboard-transfer bereit"
 ];
-const allowedExternalLinks = new Set([plannedJobcenterLink]);
 const officeNamespaceHosts = [
   "schemas.openxmlformats.org",
   "purl.org",
@@ -135,13 +135,14 @@ const pptxInternalText = finalPptxFiles.map(readExpandedPptxText).join("\n");
 const searchableText = `${rawCombinedText}\n${pptxInternalText}`;
 const searchableLower = searchableText.toLowerCase();
 const externalLinks = externalWebLinks(searchableText).map(normalizeLink);
-const unexpectedLinks = externalLinks.filter((link) => !allowedExternalLinks.has(link));
+const unexpectedLinks = externalLinks.filter((link) => link !== removedJobcenterLink);
 
 if (!searchableLower.includes(requiredDate)) failures.push(`Required date missing: ${requiredDate}`);
-if (!searchableLower.includes(plannedMonitorLabel)) failures.push("Planned project monitor label missing");
-if (!searchableLower.includes(plannedJobcenterLink)) failures.push("Planned Jobcenter monitor URL missing");
-if (!searchableLower.includes(inactiveStatusText)) failures.push("Planned monitor URL is not marked inactive until explicit upload/deploy approval");
-if (unexpectedLinks.length) failures.push(`Unexpected web link remains in Jobcenter pack text/PPTX internals: ${[...new Set(unexpectedLinks)].join(", ")}`);
+if (searchableLower.includes(removedJobcenterLink)) failures.push("GitHub Pages Jobcenter URL still present");
+if (!searchableLower.includes(monitorLabel)) failures.push("Project monitor label missing");
+if (!searchableLower.includes(monitorNachgereichtText)) failures.push("Project monitor wording does not say it will be provided separately later");
+if (!searchableLower.includes(noActivePublicLinkText)) failures.push("No-active-public-link status wording missing");
+if (unexpectedLinks.length) failures.push(`Unexpected clickable web link remains in Jobcenter pack text/PPTX internals: ${[...new Set(unexpectedLinks)].join(", ")}`);
 for (const phrase of forbiddenPhrases) {
   if (searchableLower.includes(phrase)) failures.push(`Forbidden wording found: ${phrase}`);
 }
@@ -159,9 +160,11 @@ const status = {
   finalPptx: finalPptxFiles.map(rel),
   presentationFallbackPdfs: fallbackPdfs.map(rel),
   requiredDate,
-  plannedJobcenterLinkPresent: searchableLower.includes(plannedJobcenterLink),
-  plannedMonitorLabelPresent: searchableLower.includes(plannedMonitorLabel),
-  plannedLinkMarkedInactive: searchableLower.includes(inactiveStatusText),
+  removedJobcenterLinkPresent: searchableLower.includes(removedJobcenterLink),
+  clickableMonitorUrlPresent: externalLinks.includes(removedJobcenterLink),
+  monitorLabelPresent: searchableLower.includes(monitorLabel),
+  monitorMarkedNachgereicht: searchableLower.includes(monitorNachgereichtText),
+  noActivePublicProjectLink: searchableLower.includes(noActivePublicLinkText),
   unexpectedWebLinks: [...new Set(unexpectedLinks)],
   germanUmlautsPreserved: requiredUmlauts.every((umlaut) => searchableText.includes(umlaut)),
   mojibakeMarkerPass: !mojibakeMarkers.some((marker) => searchableText.includes(marker)),
@@ -189,9 +192,9 @@ ${status.finalPptx.map((file) => `- ${file}`).join("\n") || "- None"}
 Presentation fallback PDF:
 ${status.presentationFallbackPdfs.map((file) => `- ${file}`).join("\n") || "- None"}
 
-Planned monitor link present: ${status.plannedJobcenterLinkPresent ? "YES" : "NO"}
+GitHub Pages URL removed: ${!status.removedJobcenterLinkPresent ? "YES" : "NO"}
 
-Marked not active until upload/deploy approval: ${status.plannedLinkMarkedInactive ? "YES" : "NO"}
+Monitor marked nachgereicht: ${status.monitorMarkedNachgereicht ? "YES" : "NO"}
 
 German umlauts preserved: ${status.germanUmlautsPreserved ? "YES" : "NO"}
 
