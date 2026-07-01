@@ -9,7 +9,9 @@ const fallbackPdfPath = path.join(proofDir, "UAOS_JOBCENTER_PRESENTATION_2026-07
 const statusJsonPath = path.join(packDir, "JOBCENTER_PPT_VISUAL_RECOVERY_STATUS.json");
 const statusMdPath = path.join(packDir, "JOBCENTER_PPT_VISUAL_RECOVERY_STATUS.md");
 
-const removedUrl = "https://sari-raslan.github.io/universal-arranger-os/jobcenter";
+const plannedJobcenterLink = "https://sari-raslan.github.io/universal-arranger-os/jobcenter/";
+const plannedMonitorLabel = "geplanter projekt-monitor:";
+const inactiveStatusText = "der link ist derzeit noch nicht öffentlich aktiv. er wird erst nach ausdrücklicher upload-/deploy-freigabe aktiviert. es wurde kein push, kein upload und kein deploy freigegeben.";
 const forbiddenPhrases = [
   "supporter",
   "friend",
@@ -51,9 +53,7 @@ function assertNonEmpty(file, label) {
 assertNonEmpty(pptxPath, "PPTX");
 assertNonEmpty(fallbackPdfPath, "Fallback PDF");
 
-if (!existsSync(proofDir)) {
-  failures.push(`Visual proof folder missing: ${rel(proofDir)}`);
-}
+if (!existsSync(proofDir)) failures.push(`Visual proof folder missing: ${rel(proofDir)}`);
 
 const pngs = existsSync(proofDir)
   ? readdirSync(proofDir, { withFileTypes: true })
@@ -75,7 +75,9 @@ const inspectFiles = [
 const combinedText = inspectFiles.map((file) => readFileSync(file, "utf8")).join("\n");
 const combinedLower = combinedText.toLowerCase();
 
-if (combinedLower.includes(removedUrl)) failures.push("GitHub Pages Jobcenter URL remains in source/status/manifest text");
+if (!combinedLower.includes(plannedMonitorLabel)) failures.push("Planned project monitor label missing");
+if (!combinedLower.includes(plannedJobcenterLink)) failures.push("Planned Jobcenter monitor URL missing");
+if (!combinedLower.includes(inactiveStatusText)) failures.push("Planned monitor URL is not marked inactive until explicit upload/deploy approval");
 for (const phrase of forbiddenPhrases) {
   if (combinedLower.includes(phrase)) failures.push(`Forbidden wording found: ${phrase}`);
 }
@@ -87,14 +89,16 @@ for (const term of requiredUmlauts) {
 }
 
 const status = {
-  schema: "uaos-jobcenter-ppt-visual-qa-status-v1",
+  schema: "uaos-jobcenter-ppt-visual-qa-status-v2",
   status: failures.length ? "FAIL" : "PASS",
   pptx: rel(pptxPath),
   fallbackPdf: rel(fallbackPdfPath),
   visualProofFolder: rel(proofDir),
   slidePngCount: pngs.length,
   allPngsNonEmpty: pngs.every((png) => existsSync(png) && statSync(png).size > 0),
-  githubPagesUrlPresent: combinedLower.includes(removedUrl),
+  plannedJobcenterLinkPresent: combinedLower.includes(plannedJobcenterLink),
+  plannedMonitorLabelPresent: combinedLower.includes(plannedMonitorLabel),
+  plannedLinkMarkedInactive: combinedLower.includes(inactiveStatusText),
   germanUmlautsPreserved: requiredUmlauts.every((term) => combinedText.includes(term)),
   mojibakeMarkerPass: !mojibakeMarkers.some((marker) => combinedText.includes(marker)),
   forbiddenWordingPass: !forbiddenPhrases.some((phrase) => combinedLower.includes(phrase)),
@@ -122,9 +126,11 @@ Slide PNG count: ${status.slidePngCount}
 
 Background visible proof exported: ${status.slidePngCount >= 10 && status.allPngsNonEmpty ? "YES" : "NO"}
 
-German umlauts preserved: ${status.germanUmlautsPreserved ? "YES" : "NO"}
+Planned monitor link present: ${status.plannedJobcenterLinkPresent ? "YES" : "NO"}
 
-Non-working link removed: ${!status.githubPagesUrlPresent ? "YES" : "NO"}
+Marked not active until upload/deploy approval: ${status.plannedLinkMarkedInactive ? "YES" : "NO"}
+
+German umlauts preserved: ${status.germanUmlautsPreserved ? "YES" : "NO"}
 
 Failures:
 ${failures.length ? failures.map((failure) => `- ${failure}`).join("\n") : "- None"}

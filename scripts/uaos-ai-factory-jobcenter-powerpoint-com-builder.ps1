@@ -77,8 +77,10 @@ $Slides = @(
   [pscustomobject]@{
     Title = "Projekt-Monitor"
     Body = @(
-      "Der Projekt-Monitor ist für eine spätere Freigabe vorgesehen und wird nach ausdrücklicher Upload-/Deploy-Freigabe nachgereicht.",
-      "Derzeit ist kein öffentlicher Projektlink aktiv. Es wurde kein Push, kein Upload und kein Deploy freigegeben."
+      "Geplanter Projekt-Monitor:",
+      "https://sari-raslan.github.io/universal-arranger-os/jobcenter/",
+      "Status:",
+      "Der Link ist derzeit noch nicht öffentlich aktiv. Er wird erst nach ausdrücklicher Upload-/Deploy-Freigabe aktiviert. Es wurde kein Push, kein Upload und kein Deploy freigegeben."
     )
   },
   [pscustomobject]@{

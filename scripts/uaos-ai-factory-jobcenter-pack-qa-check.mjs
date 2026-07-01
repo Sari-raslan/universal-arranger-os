@@ -9,12 +9,12 @@ const requiredDate = "2026-07-01";
 const businessplanPdfName = "UAOS_JOBCENTER_BUSINESSPLAN_2026-07-01_DE.pdf";
 const finalPptxName = "UAOS_JOBCENTER_PRESENTATION_2026-07-01_DE.pptx";
 const fallbackPdfName = "UAOS_JOBCENTER_PRESENTATION_2026-07-01_DE_PRESENTATION_FALLBACK.pdf";
-const removedJobcenterLink = "https://sari-raslan.github.io/universal-arranger-os/jobcenter/";
-const monitorAfterApprovalText = "der projekt-monitor ist für eine spätere freigabe vorgesehen und wird nach ausdrücklicher upload-/deploy-freigabe nachgereicht";
-const noPublicProjectLinkText = "derzeit ist kein öffentlicher projektlink aktiv. es wurde kein push, kein upload und kein deploy freigegeben";
+const plannedJobcenterLink = "https://sari-raslan.github.io/universal-arranger-os/jobcenter/";
+const plannedMonitorLabel = "geplanter projekt-monitor:";
+const inactiveStatusText = "der link ist derzeit noch nicht öffentlich aktiv. er wird erst nach ausdrücklicher upload-/deploy-freigabe aktiviert. es wurde kein push, kein upload und kein deploy freigegeben.";
 const keyboardNativeExtensions = [".STY", ".SET", ".PRS", ".STL", ".PAT", ".MSP", ".KST"];
 const requiredUmlauts = ["ä", "ö", "ü", "Ä", "Ö", "Ü", "ß"];
-const mojibakeMarkers = ["â", "أ‚", "ï؟½", "ï¿½", "├", "Ã", "Â", "�"];
+const mojibakeMarkers = ["â”œ", "أ‚", "ï؟½", "ï¿½", "├", "Ã", "Â", "�"];
 const forbiddenPhrases = [
   "private friend",
   "unterstützer",
@@ -39,14 +39,15 @@ const forbiddenPhrases = [
   "deploy-fertig",
   "keyboard-transfer bereit"
 ];
-
-const failures = [];
+const allowedExternalLinks = new Set([plannedJobcenterLink]);
 const officeNamespaceHosts = [
   "schemas.openxmlformats.org",
   "purl.org",
   "schemas.microsoft.com",
   "www.w3.org"
 ];
+
+const failures = [];
 
 function rel(file) {
   return path.relative(root, file).replaceAll("\\", "/");
@@ -96,6 +97,10 @@ function externalWebLinks(value) {
     });
 }
 
+function normalizeLink(link) {
+  return link.endsWith("/") ? link : `${link}/`;
+}
+
 if (!existsSync(packDir)) failures.push(`Missing pack folder: ${rel(packDir)}`);
 
 const files = existsSync(packDir) ? walk(packDir) : [];
@@ -129,13 +134,14 @@ const rawCombinedText = textFiles.map((file) => readFileSync(file, "utf8")).join
 const pptxInternalText = finalPptxFiles.map(readExpandedPptxText).join("\n");
 const searchableText = `${rawCombinedText}\n${pptxInternalText}`;
 const searchableLower = searchableText.toLowerCase();
-const visibleOrExternalLinks = externalWebLinks(searchableText);
+const externalLinks = externalWebLinks(searchableText).map(normalizeLink);
+const unexpectedLinks = externalLinks.filter((link) => !allowedExternalLinks.has(link));
 
 if (!searchableLower.includes(requiredDate)) failures.push(`Required date missing: ${requiredDate}`);
-if (searchableLower.includes(removedJobcenterLink)) failures.push("Removed GitHub Pages Jobcenter URL still present");
-if (visibleOrExternalLinks.length) failures.push(`Clickable or non-live web link remains in Jobcenter pack text/PPTX internals: ${visibleOrExternalLinks.join(", ")}`);
-if (!searchableLower.includes(monitorAfterApprovalText)) failures.push("Project monitor wording does not say it will be provided after upload/deploy approval");
-if (!searchableLower.includes(noPublicProjectLinkText)) failures.push("No-public-project-link status wording missing");
+if (!searchableLower.includes(plannedMonitorLabel)) failures.push("Planned project monitor label missing");
+if (!searchableLower.includes(plannedJobcenterLink)) failures.push("Planned Jobcenter monitor URL missing");
+if (!searchableLower.includes(inactiveStatusText)) failures.push("Planned monitor URL is not marked inactive until explicit upload/deploy approval");
+if (unexpectedLinks.length) failures.push(`Unexpected web link remains in Jobcenter pack text/PPTX internals: ${[...new Set(unexpectedLinks)].join(", ")}`);
 for (const phrase of forbiddenPhrases) {
   if (searchableLower.includes(phrase)) failures.push(`Forbidden wording found: ${phrase}`);
 }
@@ -147,17 +153,16 @@ for (const marker of mojibakeMarkers) {
 }
 
 const status = {
-  schema: "uaos-jobcenter-pack-qa-status-v2",
+  schema: "uaos-jobcenter-pack-qa-status-v3",
   status: failures.length ? "FAIL" : "PASS",
   businessplanPdfs: businessplanPdfs.map(rel),
   finalPptx: finalPptxFiles.map(rel),
   presentationFallbackPdfs: fallbackPdfs.map(rel),
   requiredDate,
-  removedJobcenterLinkPresent: searchableLower.includes(removedJobcenterLink),
-  clickableWebLinkPresent: visibleOrExternalLinks.length > 0,
-  clickableWebLinks: visibleOrExternalLinks,
-  monitorMarkedAfterUploadDeployApproval: searchableLower.includes(monitorAfterApprovalText),
-  noPublicProjectLinkActive: searchableLower.includes(noPublicProjectLinkText),
+  plannedJobcenterLinkPresent: searchableLower.includes(plannedJobcenterLink),
+  plannedMonitorLabelPresent: searchableLower.includes(plannedMonitorLabel),
+  plannedLinkMarkedInactive: searchableLower.includes(inactiveStatusText),
+  unexpectedWebLinks: [...new Set(unexpectedLinks)],
   germanUmlautsPreserved: requiredUmlauts.every((umlaut) => searchableText.includes(umlaut)),
   mojibakeMarkerPass: !mojibakeMarkers.some((marker) => searchableText.includes(marker)),
   forbiddenWordingPass: !forbiddenPhrases.some((phrase) => searchableLower.includes(phrase)),
@@ -184,9 +189,9 @@ ${status.finalPptx.map((file) => `- ${file}`).join("\n") || "- None"}
 Presentation fallback PDF:
 ${status.presentationFallbackPdfs.map((file) => `- ${file}`).join("\n") || "- None"}
 
-Non-working link removed: ${!status.removedJobcenterLinkPresent ? "YES" : "NO"}
+Planned monitor link present: ${status.plannedJobcenterLinkPresent ? "YES" : "NO"}
 
-Monitor after upload/deploy approval: ${status.monitorMarkedAfterUploadDeployApproval ? "YES" : "NO"}
+Marked not active until upload/deploy approval: ${status.plannedLinkMarkedInactive ? "YES" : "NO"}
 
 German umlauts preserved: ${status.germanUmlautsPreserved ? "YES" : "NO"}
 

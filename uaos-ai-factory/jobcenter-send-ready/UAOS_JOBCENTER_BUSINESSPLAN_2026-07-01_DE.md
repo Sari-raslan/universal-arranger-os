@@ -8,11 +8,11 @@ Antragsteller / Projektinhaber: Sarey Raslan
 
 Projekt: UAOS / Universal Arranger OS / AE Platform
 
-Aktueller Projekt-Monitor:
-Der Projekt-Monitor ist für eine spätere Freigabe vorgesehen und wird nach ausdrücklicher Upload-/Deploy-Freigabe nachgereicht.
+Geplanter Projekt-Monitor:
+https://sari-raslan.github.io/universal-arranger-os/jobcenter/
 
 Status:
-Derzeit ist kein öffentlicher Projektlink aktiv. Es wurde kein Push, kein Upload und kein Deploy freigegeben.
+Der Link ist derzeit noch nicht öffentlich aktiv. Er wird erst nach ausdrücklicher Upload-/Deploy-Freigabe aktiviert. Es wurde kein Push, kein Upload und kein Deploy freigegeben.
 
 ## Kurzbeschreibung
 
@@ -70,7 +70,7 @@ Der lokale Evidence-Stand ist sendefertig für eine Jobcenter-Prüfung. Er umfas
 - eine Jobcenter-PowerPoint-Präsentation,
 - einen Send-Ready-Index,
 - eine Anlagen-Checkliste,
-- eine Projekt-Monitor-Notiz ohne Weblink,
+- eine Projekt-Monitor-Notiz mit geplantem, nicht aktivem Link,
 - lokale QA-Prüfung.
 
 ## Risiken / klare Abgrenzung
@@ -88,11 +88,11 @@ Diese Unterlagen beschreiben einen lokalen Projektstand und eine geplante Weiter
 
 ## Projekt-Monitor
 
-Aktueller Projekt-Monitor:
-Der Projekt-Monitor ist für eine spätere Freigabe vorgesehen und wird nach ausdrücklicher Upload-/Deploy-Freigabe nachgereicht.
+Geplanter Projekt-Monitor:
+https://sari-raslan.github.io/universal-arranger-os/jobcenter/
 
 Status:
-Derzeit ist kein öffentlicher Projektlink aktiv. Es wurde kein Push, kein Upload und kein Deploy freigegeben.
+Der Link ist derzeit noch nicht öffentlich aktiv. Er wird erst nach ausdrücklicher Upload-/Deploy-Freigabe aktiviert. Es wurde kein Push, kein Upload und kein Deploy freigegeben.
 
 ## Ergebnis
 

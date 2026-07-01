@@ -12,9 +12,11 @@ Slide PNG count: 10
 
 Background visible proof exported: YES
 
-German umlauts preserved: YES
+Planned monitor link present: YES
 
-Non-working link removed: YES
+Marked not active until upload/deploy approval: YES
+
+German umlauts preserved: YES
 
 Failures:
 - None

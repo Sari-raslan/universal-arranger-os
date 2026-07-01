@@ -78,11 +78,12 @@ const slides = [
     ]
   },
   {
-    title: "Projekt-Monitor: wird nach Freigabe nachgereicht",
+    title: "Projekt-Monitor",
     bullets: [
-      "Der Projekt-Monitor ist für eine spätere Freigabe vorgesehen.",
-      "Er wird nach ausdrücklicher Upload-/Deploy-Freigabe nachgereicht.",
-      "Derzeit ist kein öffentlicher Projektlink aktiv."
+      "Geplanter Projekt-Monitor:",
+      "https://sari-raslan.github.io/universal-arranger-os/jobcenter/",
+      "Status:",
+      "Der Link ist derzeit noch nicht öffentlich aktiv. Er wird erst nach ausdrücklicher Upload-/Deploy-Freigabe aktiviert. Es wurde kein Push, kein Upload und kein Deploy freigegeben."
     ]
   },
   {
