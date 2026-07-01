@@ -1,0 +1,42 @@
+{
+  "run": "004",
+  "cycle": "004",
+  "status": "READY",
+  "boundaries": [
+    {
+      "module": "validators",
+      "allowedInputs": ["run-003-json", "run-004-json"],
+      "allowedOutputs": ["validation-results-json", "qa-report-md"],
+      "forbidden": ["deployment", "app-js-edit", "restricted-output"]
+    },
+    {
+      "module": "arranger-intelligence",
+      "allowedInputs": ["song-idea-json", "maqam-rule-json", "library-metadata-json"],
+      "allowedOutputs": ["arrangement-plan-json", "test-result-json"],
+      "forbidden": ["midi-file-creation", "hardware-native-output", "keyboard-writer"]
+    },
+    {
+      "module": "library-factory",
+      "allowedInputs": ["original-recording-plan", "instrument-metadata", "articulation-schema"],
+      "allowedOutputs": ["metadata-json", "quality-tier-md", "safety-qa-md"],
+      "forbidden": ["commercial-sample-copying", "proprietary-sample-copying", "audio-pack-creation"]
+    },
+    {
+      "module": "live-monitor-data",
+      "allowedInputs": ["cycle-status-json", "qa-report-md", "commit-log-md"],
+      "allowedOutputs": ["dashboard-json", "owner-summary-md"],
+      "forbidden": ["deploy", "vercel", "frontend-edit"]
+    },
+    {
+      "module": "ui-integration",
+      "allowedInputs": ["approved-owner-scope"],
+      "allowedOutputs": ["frontend-changes-after-approval"],
+      "forbiddenUntilApproval": ["App.jsx", "routes", "interactive-export-controls"]
+    }
+  ],
+  "safety": {
+    "appJsTouched": false,
+    "deployAttempted": false,
+    "vercelUsed": false
+  }
+}
