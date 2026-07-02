@@ -1,0 +1,313 @@
+# UAOS PA3X PRF Boundary Inventory Report 008
+
+Status: PASS
+PRF files analyzed: 16
+Structural consistency score: 0.22 (low)
+
+## Common boundary offsets
+- 0: 16 files
+- 17: 16 files
+- 23: 16 files
+- 47: 11 files
+- 49: 2 files
+- 69: 4 files
+- 73: 2 files
+- 90: 3 files
+- 93: 3 files
+- 95: 4 files
+- 98: 2 files
+- 116: 4 files
+- 117: 4 files
+- 119: 2 files
+- 138: 2 files
+- 140: 2 files
+- 141: 2 files
+- 142: 2 files
+- 143: 2 files
+- 144: 3 files
+- 161: 2 files
+- 165: 3 files
+- 167: 3 files
+- 168: 2 files
+- 186: 2 files
+- 189: 2 files
+- 191: 2 files
+- 192: 2 files
+- 193: 2 files
+- 194: 2 files
+- 211: 2 files
+- 214: 3 files
+- 215: 4 files
+- 217: 2 files
+- 235: 2 files
+- 236: 2 files
+- 239: 7 files
+- 241: 2 files
+- 259: 2 files
+- 263: 4 files
+- 264: 4 files
+- 282: 2 files
+- 283: 5 files
+- 287: 4 files
+- 289: 2 files
+- 309: 4 files
+- 310: 4 files
+- 311: 2 files
+- 333: 6 files
+- 335: 2 files
+- 336: 2 files
+- 357: 2 files
+- 358: 3 files
+- 359: 3 files
+- 362: 4 files
+- 378: 2 files
+- 381: 4 files
+- 382: 2 files
+- 383: 3 files
+- 385: 4 files
+- 403: 3 files
+- 406: 3 files
+- 408: 4 files
+- 431: 4 files
+- 432: 2 files
+- 433: 2 files
+- 434: 2 files
+- 451: 3 files
+- 453: 2 files
+- 458: 3 files
+- 473: 2 files
+- 478: 5 files
+- 479: 5 files
+- 498: 2 files
+- 499: 5 files
+- 502: 3 files
+- 505: 3 files
+- 521: 2 files
+- 522: 2 files
+- 524: 3 files
+- 526: 5 files
+- 529: 2 files
+- 549: 4 files
+- 550: 2 files
+- 551: 2 files
+- 553: 2 files
+- 554: 2 files
+- 575: 2 files
+- 576: 3 files
+- 577: 3 files
+- 595: 2 files
+- 597: 4 files
+- 601: 3 files
+- 619: 2 files
+- 620: 2 files
+- 622: 3 files
+- 623: 2 files
+- 625: 2 files
+- 645: 4 files
+- 647: 4 files
+- 649: 3 files
+- 650: 2 files
+- 669: 3 files
+- 672: 2 files
+- 673: 3 files
+- 674: 3 files
+- 691: 2 files
+- 694: 3 files
+- 695: 5 files
+- 696: 2 files
+- 717: 2 files
+- 720: 2 files
+- 721: 4 files
+- 722: 4 files
+- 742: 2 files
+- 743: 5 files
+- 745: 2 files
+- 765: 5 files
+- 767: 2 files
+- 768: 5 files
+- 787: 2 files
+- 789: 3 files
+- 793: 6 files
+- 813: 2 files
+- 815: 3 files
+- 817: 2 files
+- 839: 6 files
+- 840: 2 files
+- 860: 2 files
+- 863: 2 files
+- 864: 2 files
+- 865: 2 files
+- 869: 2 files
+- 885: 2 files
+- 889: 3 files
+- 893: 2 files
+- 911: 4 files
+- 913: 2 files
+- 935: 2 files
+- 941: 2 files
+- 953: 2 files
+- 959: 2 files
+- 960: 2 files
+- 983: 2 files
+- 1013: 5 files
+- 1809: 2 files
+
+## Region length distribution
+- 6 bytes: 16 regions (tiny)
+- 9 bytes: 1 regions (tiny)
+- 14 bytes: 1 regions (tiny)
+- 16 bytes: 5 regions (tiny)
+- 17 bytes: 25 regions (small)
+- 18 bytes: 11 regions (small)
+- 19 bytes: 10 regions (small)
+- 20 bytes: 31 regions (small)
+- 21 bytes: 40 regions (small)
+- 22 bytes: 47 regions (small)
+- 23 bytes: 46 regions (small)
+- 24 bytes: 97 regions (small)
+- 25 bytes: 52 regions (small)
+- 26 bytes: 46 regions (small)
+- 27 bytes: 38 regions (small)
+- 28 bytes: 27 regions (small)
+- 29 bytes: 16 regions (small)
+- 30 bytes: 22 regions (small)
+- 31 bytes: 7 regions (small)
+- 32 bytes: 3 regions (small)
+- 33 bytes: 2 regions (small)
+- 35 bytes: 1 regions (small)
+- 37 bytes: 1 regions (small)
+- 39 bytes: 1 regions (small)
+- 43 bytes: 3 regions (small)
+- 44 bytes: 2 regions (small)
+- 45 bytes: 4 regions (small)
+- 46 bytes: 3 regions (small)
+- 47 bytes: 3 regions (small)
+- 48 bytes: 2 regions (small)
+- 49 bytes: 3 regions (small)
+- 50 bytes: 4 regions (small)
+- 51 bytes: 1 regions (small)
+- 52 bytes: 4 regions (small)
+- 53 bytes: 1 regions (small)
+- 55 bytes: 1 regions (small)
+- 56 bytes: 1 regions (small)
+- 67 bytes: 1 regions (medium)
+- 69 bytes: 1 regions (medium)
+- 71 bytes: 1 regions (medium)
+- 72 bytes: 1 regions (medium)
+- 73 bytes: 1 regions (medium)
+- 74 bytes: 1 regions (medium)
+- 75 bytes: 1 regions (medium)
+- 93 bytes: 1 regions (medium)
+- 96 bytes: 1 regions (medium)
+- 252 bytes: 1 regions (medium)
+- 484 bytes: 1 regions (large)
+- 628 bytes: 1 regions (large)
+- 670 bytes: 1 regions (large)
+- 681 bytes: 1 regions (large)
+- 688 bytes: 2 regions (large)
+- 694 bytes: 1 regions (large)
+- 695 bytes: 1 regions (large)
+- 700 bytes: 1 regions (large)
+- 701 bytes: 2 regions (large)
+- 703 bytes: 1 regions (large)
+- 707 bytes: 1 regions (large)
+- 710 bytes: 1 regions (large)
+- 715 bytes: 1 regions (large)
+- 716 bytes: 1 regions (large)
+- 717 bytes: 1 regions (large)
+- 720 bytes: 2 regions (large)
+- 721 bytes: 2 regions (large)
+- 722 bytes: 2 regions (large)
+- 723 bytes: 2 regions (large)
+- 724 bytes: 1 regions (large)
+- 725 bytes: 2 regions (large)
+- 727 bytes: 1 regions (large)
+- 729 bytes: 1 regions (large)
+- 730 bytes: 1 regions (large)
+- 731 bytes: 1 regions (large)
+- 732 bytes: 2 regions (large)
+- 734 bytes: 1 regions (large)
+- 736 bytes: 1 regions (large)
+- 737 bytes: 1 regions (large)
+- 739 bytes: 1 regions (large)
+- 743 bytes: 1 regions (large)
+- 744 bytes: 1 regions (large)
+- 745 bytes: 2 regions (large)
+- 746 bytes: 1 regions (large)
+- 748 bytes: 1 regions (large)
+- 750 bytes: 1 regions (large)
+- 754 bytes: 1 regions (large)
+- 756 bytes: 2 regions (large)
+- 758 bytes: 2 regions (large)
+- 760 bytes: 3 regions (large)
+- 761 bytes: 1 regions (large)
+- 763 bytes: 1 regions (large)
+- 764 bytes: 3 regions (large)
+- 765 bytes: 2 regions (large)
+- 767 bytes: 1 regions (large)
+- 768 bytes: 1 regions (large)
+- 769 bytes: 1 regions (large)
+- 772 bytes: 1 regions (large)
+- 773 bytes: 1 regions (large)
+- 774 bytes: 2 regions (large)
+- 775 bytes: 1 regions (large)
+- 776 bytes: 1 regions (large)
+- 779 bytes: 2 regions (large)
+- 781 bytes: 1 regions (large)
+- 783 bytes: 1 regions (large)
+- 784 bytes: 1 regions (large)
+- 786 bytes: 1 regions (large)
+- 789 bytes: 1 regions (large)
+- 790 bytes: 1 regions (large)
+- 793 bytes: 1 regions (large)
+- 796 bytes: 7 regions (large)
+- 798 bytes: 1 regions (large)
+- 802 bytes: 1 regions (large)
+- 812 bytes: 1 regions (large)
+- 814 bytes: 1 regions (large)
+- 828 bytes: 1 regions (large)
+- 850 bytes: 1 regions (large)
+- 867 bytes: 1 regions (large)
+- 1122 bytes: 1 regions (xlarge)
+- 1211 bytes: 1 regions (xlarge)
+- 1258 bytes: 1 regions (xlarge)
+- 1265 bytes: 1 regions (xlarge)
+- 1276 bytes: 1 regions (xlarge)
+- 1298 bytes: 1 regions (xlarge)
+- 1467 bytes: 1 regions (xlarge)
+- 1731 bytes: 1 regions (xlarge)
+- 1771 bytes: 1 regions (xlarge)
+- 1786 bytes: 1 regions (xlarge)
+- 4285 bytes: 1 regions (xlarge)
+- 4355 bytes: 1 regions (xlarge)
+- 6087 bytes: 1 regions (xlarge)
+- 8208 bytes: 1 regions (xlarge)
+- 8391 bytes: 1 regions (xlarge)
+- 8445 bytes: 1 regions (xlarge)
+- 8504 bytes: 1 regions (xlarge)
+- 8505 bytes: 1 regions (xlarge)
+- 8543 bytes: 1 regions (xlarge)
+- 8631 bytes: 1 regions (xlarge)
+- 8750 bytes: 1 regions (xlarge)
+- 8769 bytes: 1 regions (xlarge)
+- 8775 bytes: 1 regions (xlarge)
+- 8809 bytes: 1 regions (xlarge)
+- 8848 bytes: 1 regions (xlarge)
+- 9355 bytes: 1 regions (xlarge)
+- 9959 bytes: 1 regions (xlarge)
+- 11216 bytes: 1 regions (xlarge)
+- 15401 bytes: 1 regions (xlarge)
+
+## Recurring structural fingerprints
+- No recurring full structural fingerprints across files.
+
+## Header/body/footer
+- Likely fixed header length: 17
+- Likely variable body areas: Regions after the fixed header candidate vary by file and remain structural-only.
+- Possible footer area: Only a footer candidate can be named; unread tails are not decoded.
+
+## Unknown regions
+- Any bytes outside the 16384-byte prefix and all byte-field meanings remain unknown.
+
+## No value decoding
+- This run does not decode values, performance names/settings, musical meaning, or proprietary payloads.
