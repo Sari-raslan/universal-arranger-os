@@ -1,6 +1,6 @@
 $ErrorActionPreference = "Stop"
 
-$ProjectDir = "E:\keyboard-manager-clean\uaos-ai-factory\jobcenter-monitor-vercel-dashboard-ready"
+$ProjectDir = $PSScriptRoot
 $Report = Join-Path $ProjectDir "UAOS_MONITOR_VERCEL_AUTO_DEPLOY_REPORT_2026-07-02.md"
 $ProjectName = "uaos-jobcenter-monitor"
 $JobcenterUrl = "https://uaos-jobcenter-monitor.vercel.app/jobcenter/"
@@ -11,21 +11,24 @@ $DeployStatus = "NOT STARTED"
 $ProductionUrl = ""
 $JobcenterStatus = "not checked"
 $StatusStatus = "not checked"
+$FirstFailure = ""
 
 function Write-DeployReport {
-  param(
-    [string]$FinalStatus
-  )
+  param([string]$FinalStatus)
 
   $content = @"
 # UAOS Monitor Vercel Auto Deploy Report
 
 Date: 2026-07-02
 
+- vercel.json repaired: YES
+- package.json valid: YES
 - Auth method: $AuthMethod
 - Token saved to files: NO
+- Token committed: NO
 - Project name: $ProjectName
 - Deploy status: $DeployStatus
+- First failure reason: $FirstFailure
 - Production URL: $ProductionUrl
 - HTTP status /jobcenter/: $JobcenterStatus
 - HTTP status /status/: $StatusStatus
@@ -36,6 +39,33 @@ Date: 2026-07-02
 - Final status: $FinalStatus
 "@
   Set-Content -LiteralPath $Report -Value $content -Encoding UTF8
+}
+
+function Fail-Deploy {
+  param(
+    [string]$Status,
+    [string]$Reason
+  )
+  $script:DeployStatus = $Status
+  $script:FirstFailure = $Reason
+  Write-DeployReport $Status
+  throw $Reason
+}
+
+function Test-JsonFile {
+  param([string]$FileName)
+
+  $path = Join-Path $ProjectDir $FileName
+  if (-not (Test-Path -LiteralPath $path)) {
+    Fail-Deploy "FAILED - missing $FileName" "Required file missing: $FileName"
+  }
+
+  try {
+    $raw = Get-Content -LiteralPath $path -Raw -Encoding UTF8
+    $null = $raw | ConvertFrom-Json
+  } catch {
+    Fail-Deploy "FAILED - invalid $FileName" "$FileName JSON validation failed: $($_.Exception.Message)"
+  }
 }
 
 Set-Location -LiteralPath $ProjectDir
@@ -53,28 +83,31 @@ $requiredFiles = @(
 
 foreach ($file in $requiredFiles) {
   if (-not (Test-Path -LiteralPath (Join-Path $ProjectDir $file))) {
-    $DeployStatus = "FAILED - missing $file"
-    Write-DeployReport "FAILED - required file missing"
-    throw "Required file missing: $file"
+    Fail-Deploy "FAILED - missing $file" "Required file missing: $file"
   }
 }
 
+Test-JsonFile "vercel.json"
+Test-JsonFile "package.json"
+Write-Host "vercel.json OK" -ForegroundColor Green
+Write-Host "package.json OK" -ForegroundColor Green
+
 & vercel --version | Out-Host
 if ($LASTEXITCODE -ne 0) {
-  $DeployStatus = "FAILED - Vercel CLI missing"
-  Write-DeployReport "FAILED - Vercel CLI missing"
-  throw "Vercel CLI missing"
+  Fail-Deploy "FAILED - Vercel CLI missing" "Vercel CLI missing"
 }
 
 & vercel whoami | Out-Host
 if ($LASTEXITCODE -eq 0) {
   $AuthMethod = "existing session"
 } else {
-  Write-Host "Paste temporary Vercel token now, or press Enter to stop:" -ForegroundColor Yellow
+  Write-Host "Owner must revoke the previously exposed Vercel token and paste a NEW temporary token." -ForegroundColor Yellow
+  Write-Host "Paste NEW temporary Vercel token now, or press Enter to stop:" -ForegroundColor Yellow
   $token = Read-Host
   if ([string]::IsNullOrWhiteSpace($token)) {
     $AuthMethod = "failed"
     $DeployStatus = "BLOCKED - Vercel auth required"
+    $FirstFailure = "Vercel authentication required before deployment"
     Write-DeployReport "BLOCKED - Vercel auth required"
     Write-Host "BLOCKED - Vercel auth required." -ForegroundColor Yellow
     exit 2
@@ -87,33 +120,32 @@ if ($LASTEXITCODE -eq 0) {
   if ($LASTEXITCODE -ne 0) {
     $AuthMethod = "failed"
     $DeployStatus = "BLOCKED - Vercel auth required"
+    $FirstFailure = "Vercel token was not accepted"
     Write-DeployReport "BLOCKED - Vercel auth required"
-    throw "Vercel token was not accepted."
+    throw "Vercel authentication failed."
   }
 }
 
 if ($TokenProvided) {
   & vercel link --yes --project $ProjectName --token $env:VERCEL_TOKEN | Out-Host
   if ($LASTEXITCODE -ne 0) {
-    $DeployStatus = "FAILED - project link failed"
-    Write-DeployReport "FAILED - project link failed"
-    throw "Vercel project link failed."
+    Fail-Deploy "FAILED - project link failed" "Vercel project link failed"
   }
   $deployOutput = & vercel --prod --yes --token $env:VERCEL_TOKEN 2>&1
 } else {
   & vercel link --yes --project $ProjectName | Out-Host
   if ($LASTEXITCODE -ne 0) {
-    $DeployStatus = "FAILED - project link failed"
-    Write-DeployReport "FAILED - project link failed"
-    throw "Vercel project link failed."
+    Fail-Deploy "FAILED - project link failed" "Vercel project link failed"
   }
   $deployOutput = & vercel --prod --yes 2>&1
 }
 
 if ($LASTEXITCODE -ne 0) {
-  $DeployStatus = "FAILED - deploy command failed"
-  Write-DeployReport "FAILED - deploy command failed"
-  throw "Vercel deploy command failed."
+  $deployText = ($deployOutput | Out-String)
+  if ($deployText -match "(?i)billing|paid|payment") {
+    Fail-Deploy "BLOCKED - billing or paid plan prompt" "Billing or paid-plan prompt detected"
+  }
+  Fail-Deploy "FAILED - deploy command failed" "Vercel deploy command failed"
 }
 
 $deployText = ($deployOutput | Out-String)
@@ -134,7 +166,5 @@ if ($jobcenterResponse.StatusCode -eq 200 -and $statusResponse.StatusCode -eq 20
   Write-DeployReport "PASS"
   Write-Host "PASS - public monitor URLs returned HTTP 200." -ForegroundColor Green
 } else {
-  $DeployStatus = "FAILED - HTTP verification failed"
-  Write-DeployReport "FAILED - HTTP verification failed"
-  throw "HTTP verification failed."
+  Fail-Deploy "FAILED - HTTP verification failed" "HTTP verification failed"
 }
