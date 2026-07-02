@@ -1,0 +1,23 @@
+# UAOS Jobcenter Businessplan Reviewed Final QA Report - 2026-07-02
+
+- PDF exists: YES
+- PDF page count: 10
+- Page count 8-14: YES
+- Monitor URL visible/copyable: YES (https://sari-raslan.github.io/universal-arranger-os/monitor/)
+- PDF contains URI marker for clickable link: YES
+- PDF contains 4.700 EUR: YES
+- PDF contains all finance table items: YES
+- PDF contains Ertragserwartung: YES
+- PDF contains Kundenzahlen: YES
+- PDF contains Kundengewinnung: YES
+- PDF contains operative costs: YES
+- PDF contains Krankenversicherung/Pflegeversicherung: YES
+- PDF contains Rentenbeitrag/Altersvorsorge: YES
+- PDF contains Steuer-Ruecklage: YES
+- PDF contains Gewinnmarge / Break-even: YES
+- PDF contains Kleinunternehmerregelung: YES
+- Old finance ranges absent: YES
+- German characters generated from UTF-8 source: YES
+- No mojibake in generated source: YES
+- App.jsx touched: NO
+- Deploy/Vercel used: NO
