@@ -1,53 +1,184 @@
-﻿<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="de">
 <head>
-<meta charset="UTF-8">
-<meta http-equiv="refresh" content="10">
-<title>UAOS Monitor</title>
-<style>
-body{font-family:Arial;background:#06070d;color:white;padding:30px}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.card{background:#111421;border:1px solid #ffffff22;border-radius:20px;padding:24px}
-.ok{color:#39ff88}.warn{color:#ffd166}.bad{color:#ff5c7a}
-h1{font-size:42px}
-.big{font-size:34px;font-weight:900}
-pre{white-space:pre-wrap;background:#070a15;padding:18px;border-radius:14px;max-height:240px;overflow:auto}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>UAOS / AE Platform - Öffentlicher Projektmonitor</title>
+  <meta name="description" content="Öffentlicher Projektmonitor zur Vorbereitung der Selbstständigkeit: UAOS / AE Platform.">
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #071018;
+      --panel: #0f1d2a;
+      --panel-2: #13283a;
+      --line: rgba(132, 204, 255, 0.22);
+      --text: #eef8ff;
+      --muted: #aac2d7;
+      --cyan: #4dd8ff;
+      --blue: #3b82f6;
+      --green: #4ade80;
+      --amber: #fbbf24;
+      --red: #fb7185;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at 18% 0%, rgba(77, 216, 255, 0.18), transparent 34rem),
+        radial-gradient(circle at 86% 8%, rgba(59, 130, 246, 0.22), transparent 32rem),
+        linear-gradient(180deg, #071018 0%, #09131d 48%, #050a10 100%);
+      color: var(--text);
+      line-height: 1.55;
+    }
+    main { width: min(1180px, calc(100% - 32px)); margin: 0 auto; padding: 34px 0 48px; }
+    header { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(280px, .65fr); gap: 16px; margin-bottom: 16px; }
+    section, article { border: 1px solid var(--line); background: linear-gradient(145deg, rgba(19, 40, 58, .95), rgba(10, 20, 30, .96)); border-radius: 8px; box-shadow: 0 20px 70px rgba(0,0,0,.28); }
+    .hero { padding: 28px; }
+    .kicker { display: inline-flex; align-items: center; gap: 8px; color: #dff8ff; border: 1px solid rgba(77,216,255,.55); background: rgba(77,216,255,.11); border-radius: 999px; padding: 6px 12px; font-size: 13px; font-weight: 800; }
+    .kicker::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--green); box-shadow: 0 0 20px var(--green); }
+    h1 { margin: 18px 0 8px; font-size: clamp(42px, 8vw, 78px); line-height: .95; letter-spacing: 0; }
+    h2 { margin: 0 0 12px; font-size: 22px; }
+    h3 { margin: 18px 0 8px; font-size: 18px; color: #dff8ff; }
+    p { margin: 0; color: var(--muted); }
+    .subtitle { font-size: 20px; color: #c7dded; max-width: 760px; }
+    .meta { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; }
+    .pill { border: 1px solid var(--line); background: rgba(255,255,255,.04); border-radius: 999px; padding: 7px 11px; color: var(--muted); font-size: 13px; }
+    .focus { padding: 22px; display: grid; align-content: center; gap: 12px; }
+    .focus strong { display: block; font-size: 34px; color: var(--cyan); line-height: 1.05; }
+    .cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin: 16px 0; }
+    .card { padding: 18px; min-height: 132px; }
+    .label { display: block; color: var(--muted); font-size: 13px; font-weight: 800; text-transform: uppercase; }
+    .value { display: block; margin-top: 10px; font-size: 25px; font-weight: 900; line-height: 1.1; color: var(--text); }
+    .note { display: block; margin-top: 8px; color: var(--muted); font-size: 14px; }
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 12px; }
+    .wide { grid-column: 1 / -1; }
+    .panel { padding: 22px; }
+    table { width: 100%; border-collapse: collapse; overflow: hidden; border-radius: 8px; }
+    th, td { border-bottom: 1px solid rgba(132,204,255,.16); padding: 11px 10px; text-align: left; color: var(--muted); vertical-align: top; }
+    th { color: var(--text); background: rgba(77,216,255,.08); font-size: 13px; text-transform: uppercase; }
+    td:last-child, th:last-child { text-align: right; color: var(--text); font-weight: 800; white-space: nowrap; }
+    .total td { color: var(--text); font-size: 18px; font-weight: 900; border-bottom: 0; }
+    ul { margin: 0; padding-left: 20px; color: var(--muted); }
+    li + li { margin-top: 6px; }
+    .timeline { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+    .mini { border: 1px solid rgba(132,204,255,.18); background: rgba(255,255,255,.035); border-radius: 8px; padding: 14px; }
+    .mini strong { display: block; color: var(--cyan); margin-bottom: 6px; }
+    .status-cols { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+    .tag { display: inline-flex; margin-bottom: 10px; border-radius: 999px; padding: 5px 10px; font-size: 13px; font-weight: 900; }
+    .done { color: #dcfce7; background: rgba(74,222,128,.13); border: 1px solid rgba(74,222,128,.45); }
+    .work { color: #dff8ff; background: rgba(77,216,255,.12); border: 1px solid rgba(77,216,255,.42); }
+    .plan { color: #fff7d6; background: rgba(251,191,36,.13); border: 1px solid rgba(251,191,36,.42); }
+    .danger { color: #ffe4e9; background: rgba(251,113,133,.12); border: 1px solid rgba(251,113,133,.42); }
+    footer { margin-top: 16px; padding: 18px 0 0; color: var(--muted); border-top: 1px solid var(--line); font-size: 14px; }
+    @media (max-width: 940px) { header, .cards, .grid, .timeline, .status-cols { grid-template-columns: 1fr; } main { width: min(100% - 24px, 1180px); } }
+  </style>
 </head>
 <body>
-<h1> UAOS Launch Monitor</h1>
-<p>Auto refresh every 10 seconds</p>
+<main>
+  <header>
+    <section class="hero">
+      <span class="kicker">Öffentlicher Projektmonitor</span>
+      <h1>UAOS / AE Platform</h1>
+      <p class="subtitle">Öffentlicher Projektmonitor zur Vorbereitung der Selbstständigkeit</p>
+      <div class="meta">
+        <span class="pill">Aktiver Prototyp</span>
+        <span class="pill">Vorbereitung der Selbstständigkeit</span>
+        <span class="pill">Letzte Aktualisierung: 02.07.2026 14:10:39</span>
+      </div>
+    </section>
+    <section class="focus">
+      <span class="label">Maximaler Finanzierungsbedarf</span>
+      <strong>4.700 €</strong>
+      <p>Konservative, unverbindliche Planung ohne Umsatzgarantie und ohne Rechnung.</p>
+    </section>
+  </header>
 
-<div class="grid">
-<div class="card"><h2>Website</h2><div class="big ok">LIVE</div><p>GitHub Pages ready</p></div>
-<div class="card"><h2>Payment</h2><div class="big ok">READY</div><p>PayPal connected</p></div>
-<div class="card"><h2>Mobile</h2><div class="big ok">PREPARED</div><p>Android / iOS scaffold</p></div>
-<div class="card"><h2>Videos</h2><div class="big ok">GENERATED</div><p>output_v2 ready</p></div>
-<div class="card"><h2>Languages</h2><div class="big ok">6 LANGS</div><p>EN / AR / DE / ES / FR / TR</p></div>
-<div class="card"><h2>Launch</h2><div class="big warn">MANUAL PUBLISH</div><p>Upload videos to socials</p></div>
-</div>
+  <section class="cards" aria-label="Projektüberblick">
+    <article class="card"><span class="label">Projektstatus</span><span class="value">Aktiver Prototyp</span><span class="note">Vorbereitung der Selbstständigkeit</span></article>
+    <article class="card"><span class="label">Finanzierungsbedarf</span><span class="value">4.700 €</span><span class="note">Maximaler Finanzierungsbedarf</span></article>
+    <article class="card"><span class="label">Anfangsumsatz</span><span class="value">0 €</span><span class="note">Keine Umsatzgarantie</span></article>
+    <article class="card"><span class="label">Unterlagen</span><span class="value">Final vorbereitet</span><span class="note">Businessplan und Präsentation</span></article>
+  </section>
 
-<h2>Final Links</h2>
-<div class="card">
-<p><b>Website:</b> https://AE Platform.github.io/universal-arranger-os/</p>
-<p><b>Payment:</b> https://www.paypal.com/ncp/payment/ZB63CA66C98AN</p>
-<p><b>Support:</b> admin@aeplatform.app</p>
-</div>
+  <section class="grid">
+    <article class="panel wide">
+      <h2>Finanzierungsbedarf</h2>
+      <table>
+        <thead><tr><th>Position</th><th>Betrag</th></tr></thead>
+        <tbody>
+          <tr><td>Laptop / Workstation</td><td>2.400 €</td></tr>
+          <tr><td>Externer Monitor</td><td>350 €</td></tr>
+          <tr><td>Tastatur / Maus / Speicher / Zubehör</td><td>350 €</td></tr>
+          <tr><td>Software- / Entwicklungsreserve</td><td>750 €</td></tr>
+          <tr><td>Backup / Datensicherung / Cloud-Reserve</td><td>250 €</td></tr>
+          <tr><td>Dokumentation / Präsentation / Verwaltung</td><td>250 €</td></tr>
+          <tr><td>Werbematerial / Flyer / einfache Öffentlichkeitsarbeit</td><td>250 €</td></tr>
+          <tr><td>Reserve für unvorhergesehene technische Kosten</td><td>100 €</td></tr>
+          <tr class="total"><td>Gesamt</td><td>4.700 €</td></tr>
+        </tbody>
+      </table>
+    </article>
 
-<h2>Latest Report</h2>
-<pre>
-UAOS NO-RESTART FRESH BUILD REPORT
+    <article class="panel wide">
+      <h2>Ertragserwartung</h2>
+      <div class="timeline">
+        <div class="mini"><strong>Monate 1–3</strong><p>0 € Umsatz, 5–15 qualifizierte Gespräche / Feedbackkontakte</p></div>
+        <div class="mini"><strong>Monate 4–6</strong><p>0–300 € monatlich möglich, 1–3 kleine Kunden/Testaufträge</p></div>
+        <div class="mini"><strong>Monate 7–9</strong><p>100–600 € monatlich möglich, 2–5 Kunden/Aufträge</p></div>
+        <div class="mini"><strong>Monate 10–12</strong><p>300–1.000 € monatlich möglich, 3–8 Kunden/Aufträge</p></div>
+      </div>
+      <h3>Hinweis</h3>
+      <p>Alle Werte sind konservativ, unverbindlich und keine Umsatzgarantie.</p>
+    </article>
 
-Completed:
-- Landing page rebuilt
-- Music logo added
-- PWA manifest created
-- Android package scaffold created
-- iOS package scaffold created
-- Multilingual support added
-- Store descriptions prepared
-- Privacy policy draft prepared
-</pre>
+    <article class="panel">
+      <h2>Kundengewinnung</h2>
+      <ul>
+        <li>Musikmessen und Fachveranstaltungen</li>
+        <li>Konzerte und größere Musikveranstaltungen</li>
+        <li>Flyer mit QR-Code zum Projektmonitor</li>
+        <li>Direktkontakte zu Musikern, Sängern, Produzenten und Studios</li>
+        <li>Musiker-Communities</li>
+        <li>Online-Präsenz und öffentlicher Projektmonitor</li>
+      </ul>
+    </article>
+
+    <article class="panel">
+      <h2>Kostenbasis</h2>
+      <table>
+        <tbody>
+          <tr><td>Operative feste Kosten</td><td>95–320 € monatlich</td></tr>
+          <tr><td>Persönliche Pflicht-/Vorsorgekosten</td><td>382–700 € monatlich</td></tr>
+          <tr class="total"><td>Gesamte monatliche Kostenbasis</td><td>477–1.020 € monatlich</td></tr>
+        </tbody>
+      </table>
+      <h3>Break-even</h3>
+      <p>Ein monatlicher Break-even wird konservativ erst bei wiederkehrend ca. 700–1.000 € Monatsumsatz realistisch eingeschätzt. Dies ist frühestens gegen Ende des ersten Jahres möglich, aber nicht garantiert.</p>
+    </article>
+
+    <article class="panel wide">
+      <h2>Projektdateien / Nachweise</h2>
+      <div class="status-cols">
+        <div class="mini"><span class="tag done">Abgeschlossen</span><ul><li>Businessplan FINAL 4.700 € mit Link</li><li>Präsentation FINAL 4.700 € mit Link</li><li>Finanzplanung und Kostenbasis</li><li>Ertragserwartung und Kundenzahlen</li><li>Kundengewinnung / Marketingplan</li><li>Projektmonitor</li></ul></div>
+        <div class="mini"><span class="tag work">In Entwicklung</span><ul><li>Product QA Core</li><li>Library Factory</li><li>Arranger Intelligence</li><li>Live Monitor Datenmodell</li><li>Dashboard Reader</li></ul></div>
+        <div class="mini"><span class="tag plan">Geplant</span><ul><li>Flyer / QR-Code Material</li><li>Demo-Gesprächsleitfaden</li><li>Nutzerfeedback-Formular</li><li>Angebotsstruktur</li><li>Weitere QA-Validierung</li></ul></div>
+      </div>
+    </article>
+
+    <article class="panel">
+      <h2>Changelog</h2>
+      <h3>2026-07-02</h3>
+      <ul><li>Finanzierungsbedarf auf 4.700 € vereinheitlicht</li><li>Ertragserwartung, Kundenzahlen und Kostenbasis ergänzt</li><li>Businessplan und Präsentation finalisiert</li><li>Monitor-Inhalte professionalisiert</li></ul>
+    </article>
+
+    <article class="panel">
+      <h2>Sicherheitsgrenzen</h2>
+      <ul><li>Keine Zahlungsfunktion</li><li>Kein Checkout</li><li>Kein Keyboard-Output</li><li>Keine Keyboard-Übertragung</li><li>Keine proprietären Samples</li><li>Keine falschen Umsatzversprechen</li></ul>
+    </article>
+  </section>
+  <footer>Letzte Aktualisierung: 02.07.2026 14:10:39 · Öffentlicher Projektmonitor zur Vorbereitung der Selbstständigkeit.</footer>
+</main>
 </body>
 </html>
-

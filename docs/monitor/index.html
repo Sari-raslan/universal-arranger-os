@@ -1,395 +1,184 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="de">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>UAOS Live Monitor</title>
-  <meta name="description" content="Public Project Status Dashboard for UAOS / Universal Arranger OS / AE Platform.">
+  <title>UAOS / AE Platform - Öffentlicher Projektmonitor</title>
+  <meta name="description" content="Öffentlicher Projektmonitor zur Vorbereitung der Selbstständigkeit: UAOS / AE Platform.">
   <style>
     :root {
       color-scheme: dark;
-      --bg: #0d1014;
-      --panel: #151a21;
-      --panel-2: #1b222b;
-      --line: #2b3440;
-      --text: #f4f7fb;
-      --muted: #aeb9c8;
-      --green: #62c773;
-      --green-soft: rgba(98, 199, 115, 0.16);
-      --purple: #a987ff;
-      --purple-soft: rgba(169, 135, 255, 0.16);
-      --red: #f06d6d;
-      --red-soft: rgba(240, 109, 109, 0.15);
-      --amber: #f1bd63;
-      --amber-soft: rgba(241, 189, 99, 0.16);
+      --bg: #071018;
+      --panel: #0f1d2a;
+      --panel-2: #13283a;
+      --line: rgba(132, 204, 255, 0.22);
+      --text: #eef8ff;
+      --muted: #aac2d7;
+      --cyan: #4dd8ff;
+      --blue: #3b82f6;
+      --green: #4ade80;
+      --amber: #fbbf24;
+      --red: #fb7185;
     }
     * { box-sizing: border-box; }
     body {
       margin: 0;
       min-height: 100vh;
-      font-family: Arial, Calibri, sans-serif;
+      font-family: Arial, Helvetica, sans-serif;
       background:
-        radial-gradient(circle at top left, rgba(98, 199, 115, 0.13), transparent 28rem),
-        radial-gradient(circle at top right, rgba(169, 135, 255, 0.16), transparent 30rem),
-        var(--bg);
+        radial-gradient(circle at 18% 0%, rgba(77, 216, 255, 0.18), transparent 34rem),
+        radial-gradient(circle at 86% 8%, rgba(59, 130, 246, 0.22), transparent 32rem),
+        linear-gradient(180deg, #071018 0%, #09131d 48%, #050a10 100%);
       color: var(--text);
-      line-height: 1.5;
+      line-height: 1.55;
     }
-    main {
-      width: min(1180px, calc(100% - 32px));
-      margin: 0 auto;
-      padding: 36px 0 48px;
-    }
-    header {
-      display: grid;
-      grid-template-columns: minmax(0, 1.4fr) minmax(280px, 0.6fr);
-      gap: 24px;
-      align-items: stretch;
-      margin-bottom: 22px;
-    }
-    .hero, .summary-card, .section-card, .panel {
-      border: 1px solid var(--line);
-      background: linear-gradient(145deg, rgba(27, 34, 43, 0.96), rgba(17, 22, 28, 0.96));
-      border-radius: 8px;
-      box-shadow: 0 18px 60px rgba(0, 0, 0, 0.24);
-    }
+    main { width: min(1180px, calc(100% - 32px)); margin: 0 auto; padding: 34px 0 48px; }
+    header { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(280px, .65fr); gap: 16px; margin-bottom: 16px; }
+    section, article { border: 1px solid var(--line); background: linear-gradient(145deg, rgba(19, 40, 58, .95), rgba(10, 20, 30, .96)); border-radius: 8px; box-shadow: 0 20px 70px rgba(0,0,0,.28); }
     .hero { padding: 28px; }
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      min-height: 30px;
-      padding: 4px 12px;
-      border-radius: 999px;
-      border: 1px solid rgba(98, 199, 115, 0.7);
-      background: var(--green-soft);
-      color: #dffbe5;
-      font-weight: 800;
-      font-size: 14px;
-    }
-    .badge::before {
-      content: "";
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--green);
-      box-shadow: 0 0 18px var(--green);
-    }
-    h1 {
-      margin: 18px 0 8px;
-      font-size: clamp(38px, 7vw, 76px);
-      line-height: 1;
-      letter-spacing: 0;
-    }
-    .subtitle {
-      color: var(--muted);
-      font-size: 20px;
-      margin: 0 0 20px;
-    }
-    .hero-meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 22px;
-    }
-    .pill {
-      border: 1px solid var(--line);
-      background: rgba(255, 255, 255, 0.04);
-      border-radius: 999px;
-      padding: 8px 12px;
-      color: var(--muted);
-      font-size: 14px;
-    }
-    .focus-card {
-      padding: 22px;
-      background: linear-gradient(160deg, var(--purple-soft), rgba(17, 22, 28, 0.98));
-      border-color: rgba(169, 135, 255, 0.34);
-    }
-    .focus-card h2, .panel h2 {
-      margin: 0 0 10px;
-      font-size: 20px;
-    }
-    .focus-card p, .panel p { margin: 0; color: var(--muted); }
-    .summary {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 14px;
-      margin: 22px 0;
-    }
-    .summary-card { padding: 18px; min-height: 132px; }
-    .summary-card .label {
-      color: var(--muted);
-      font-size: 14px;
-      font-weight: 700;
-      text-transform: uppercase;
-    }
-    .summary-card .number {
-      display: block;
-      margin-top: 10px;
-      font-size: 42px;
-      line-height: 1;
-      font-weight: 900;
-    }
-    .summary-card .note { margin-top: 8px; color: var(--muted); font-size: 14px; }
-    .green { --state: var(--green); --state-soft: var(--green-soft); }
-    .purple { --state: var(--purple); --state-soft: var(--purple-soft); }
-    .red { --state: var(--red); --state-soft: var(--red-soft); }
-    .amber { --state: var(--amber); --state-soft: var(--amber-soft); }
-    .state {
-      display: inline-flex;
-      border: 1px solid color-mix(in srgb, var(--state), transparent 34%);
-      background: var(--state-soft);
-      color: var(--state);
-      border-radius: 999px;
-      padding: 4px 10px;
-      font-size: 13px;
-      font-weight: 800;
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 14px;
-    }
-    .section-card { padding: 18px; }
-    .section-top {
-      display: flex;
-      justify-content: space-between;
-      gap: 14px;
-      align-items: flex-start;
-      margin-bottom: 14px;
-    }
-    .section-card h2 { margin: 0; font-size: 20px; }
-    .metrics {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 8px;
-      margin: 12px 0;
-    }
-    .metric {
-      background: rgba(255, 255, 255, 0.04);
-      border: 1px solid var(--line);
-      border-radius: 6px;
-      padding: 9px;
-    }
-    .metric span { display: block; color: var(--muted); font-size: 12px; }
-    .metric strong { display: block; font-size: 22px; margin-top: 2px; }
-    .meter {
-      height: 9px;
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.08);
-      overflow: hidden;
-      margin: 12px 0 14px;
-    }
-    .meter > span {
-      display: block;
-      width: var(--progress);
-      height: 100%;
-      background: linear-gradient(90deg, var(--state), color-mix(in srgb, var(--state), white 24%));
-      border-radius: inherit;
-    }
-    ul {
-      margin: 0;
-      padding-left: 18px;
-      color: var(--muted);
-    }
-    li + li { margin-top: 5px; }
-    .panels {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 14px;
-      margin-top: 14px;
-    }
-    .panel { padding: 20px; }
-    .selected-table {
-      display: grid;
-      gap: 8px;
-      margin-top: 12px;
-    }
-    .selected-row {
-      display: flex;
-      justify-content: space-between;
-      gap: 14px;
-      border-bottom: 1px solid var(--line);
-      padding-bottom: 8px;
-      color: var(--muted);
-    }
-    .selected-row strong { color: var(--text); text-align: right; }
-    footer {
-      margin-top: 22px;
-      color: var(--muted);
-      border-top: 1px solid var(--line);
-      padding-top: 18px;
-      font-size: 14px;
-    }
-    @media (max-width: 900px) {
-      header, .summary, .grid, .panels { grid-template-columns: 1fr; }
-      main { width: min(100% - 24px, 1180px); padding-top: 24px; }
-      .hero { padding: 22px; }
-      .metrics { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-    }
-    @media (max-width: 520px) {
-      .section-top, .selected-row { display: block; }
-      .state { margin-top: 8px; }
-      .metrics { grid-template-columns: 1fr; }
-    }
+    .kicker { display: inline-flex; align-items: center; gap: 8px; color: #dff8ff; border: 1px solid rgba(77,216,255,.55); background: rgba(77,216,255,.11); border-radius: 999px; padding: 6px 12px; font-size: 13px; font-weight: 800; }
+    .kicker::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--green); box-shadow: 0 0 20px var(--green); }
+    h1 { margin: 18px 0 8px; font-size: clamp(42px, 8vw, 78px); line-height: .95; letter-spacing: 0; }
+    h2 { margin: 0 0 12px; font-size: 22px; }
+    h3 { margin: 18px 0 8px; font-size: 18px; color: #dff8ff; }
+    p { margin: 0; color: var(--muted); }
+    .subtitle { font-size: 20px; color: #c7dded; max-width: 760px; }
+    .meta { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; }
+    .pill { border: 1px solid var(--line); background: rgba(255,255,255,.04); border-radius: 999px; padding: 7px 11px; color: var(--muted); font-size: 13px; }
+    .focus { padding: 22px; display: grid; align-content: center; gap: 12px; }
+    .focus strong { display: block; font-size: 34px; color: var(--cyan); line-height: 1.05; }
+    .cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin: 16px 0; }
+    .card { padding: 18px; min-height: 132px; }
+    .label { display: block; color: var(--muted); font-size: 13px; font-weight: 800; text-transform: uppercase; }
+    .value { display: block; margin-top: 10px; font-size: 25px; font-weight: 900; line-height: 1.1; color: var(--text); }
+    .note { display: block; margin-top: 8px; color: var(--muted); font-size: 14px; }
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 12px; }
+    .wide { grid-column: 1 / -1; }
+    .panel { padding: 22px; }
+    table { width: 100%; border-collapse: collapse; overflow: hidden; border-radius: 8px; }
+    th, td { border-bottom: 1px solid rgba(132,204,255,.16); padding: 11px 10px; text-align: left; color: var(--muted); vertical-align: top; }
+    th { color: var(--text); background: rgba(77,216,255,.08); font-size: 13px; text-transform: uppercase; }
+    td:last-child, th:last-child { text-align: right; color: var(--text); font-weight: 800; white-space: nowrap; }
+    .total td { color: var(--text); font-size: 18px; font-weight: 900; border-bottom: 0; }
+    ul { margin: 0; padding-left: 20px; color: var(--muted); }
+    li + li { margin-top: 6px; }
+    .timeline { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+    .mini { border: 1px solid rgba(132,204,255,.18); background: rgba(255,255,255,.035); border-radius: 8px; padding: 14px; }
+    .mini strong { display: block; color: var(--cyan); margin-bottom: 6px; }
+    .status-cols { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+    .tag { display: inline-flex; margin-bottom: 10px; border-radius: 999px; padding: 5px 10px; font-size: 13px; font-weight: 900; }
+    .done { color: #dcfce7; background: rgba(74,222,128,.13); border: 1px solid rgba(74,222,128,.45); }
+    .work { color: #dff8ff; background: rgba(77,216,255,.12); border: 1px solid rgba(77,216,255,.42); }
+    .plan { color: #fff7d6; background: rgba(251,191,36,.13); border: 1px solid rgba(251,191,36,.42); }
+    .danger { color: #ffe4e9; background: rgba(251,113,133,.12); border: 1px solid rgba(251,113,133,.42); }
+    footer { margin-top: 16px; padding: 18px 0 0; color: var(--muted); border-top: 1px solid var(--line); font-size: 14px; }
+    @media (max-width: 940px) { header, .cards, .grid, .timeline, .status-cols { grid-template-columns: 1fr; } main { width: min(100% - 24px, 1180px); } }
   </style>
 </head>
 <body>
-  <main>
-    <header>
-      <section class="hero">
-        <div class="badge">Monitor Live</div>
-        <h1>UAOS Live Monitor</h1>
-        <p class="subtitle">Public Project Status Dashboard</p>
-        <div class="hero-meta">
-          <span class="pill">Date: 01.07.2026</span>
-          <span class="pill">Project: UAOS / Universal Arranger OS / AE Platform</span>
-          <span class="pill">Current phase: Local prototype / evidence-ready</span>
-        </div>
-      </section>
-      <section class="hero focus-card purple">
-        <span class="state">Current Focus</span>
-        <h2>Businessplan financial version in preparation</h2>
-        <p>Continued local development, library factory planning, oriental strings planning, and verified monitor updates remain the next public-safe steps.</p>
-      </section>
-    </header>
-
-    <section class="summary" aria-label="Executive summary cards">
-      <article class="summary-card green">
-        <span class="label">Completed Work</span>
-        <strong class="number">150</strong>
-        <span class="note">Documented completed items across active workstreams</span>
-      </article>
-      <article class="summary-card amber">
-        <span class="label">Remaining Work</span>
-        <strong class="number">0</strong>
-        <span class="note">Current documented queues are closed; next work is planned</span>
-      </article>
-      <article class="summary-card red">
-        <span class="label">Blocked Items</span>
-        <strong class="number">4</strong>
-        <span class="note">Payment, keyboard output, keyboard transfer, public product release</span>
-      </article>
-      <article class="summary-card purple">
-        <span class="label">Current Focus</span>
-        <strong class="number">1</strong>
-        <span class="note">Financial Businessplan update</span>
-      </article>
+<main>
+  <header>
+    <section class="hero">
+      <span class="kicker">Öffentlicher Projektmonitor</span>
+      <h1>UAOS / AE Platform</h1>
+      <p class="subtitle">Öffentlicher Projektmonitor zur Vorbereitung der Selbstständigkeit</p>
+      <div class="meta">
+        <span class="pill">Aktiver Prototyp</span>
+        <span class="pill">Vorbereitung der Selbstständigkeit</span>
+        <span class="pill">Letzte Aktualisierung: 02.07.2026 14:10:39</span>
+      </div>
     </section>
-
-    <section class="grid" aria-label="Project sections grid">
-      <article class="section-card green" style="--progress: 100%;">
-        <div class="section-top"><h2>AI Factory</h2><span class="state">Completed</span></div>
-        <div class="metrics"><div class="metric"><span>Done</span><strong>18</strong></div><div class="metric"><span>Remaining</span><strong>0</strong></div><div class="metric"><span>Total</span><strong>18</strong></div></div>
-        <div class="meter"><span></span></div>
-        <ul><li>Local planning track sealed</li><li>Safety-first reports prepared</li><li>Owner review materials indexed</li></ul>
-      </article>
-
-      <article class="section-card green" style="--progress: 100%;">
-        <div class="section-top"><h2>Bounded Agents</h2><span class="state">Completed</span></div>
-        <div class="metrics"><div class="metric"><span>Done</span><strong>5</strong></div><div class="metric"><span>Remaining</span><strong>0</strong></div><div class="metric"><span>Total</span><strong>5</strong></div></div>
-        <div class="meter"><span></span></div>
-        <ul><li>Bounded local agent round complete</li><li>No external automation</li><li>No unsafe output</li></ul>
-      </article>
-
-      <article class="section-card green" style="--progress: 100%;">
-        <div class="section-top"><h2>Implementation Queue</h2><span class="state">Completed</span></div>
-        <div class="metrics"><div class="metric"><span>Done</span><strong>35</strong></div><div class="metric"><span>Remaining</span><strong>0</strong></div><div class="metric"><span>Total</span><strong>35</strong></div></div>
-        <div class="meter"><span></span></div>
-        <ul><li>Implementation reports prepared</li><li>Owner handoff structure ready</li><li>Review gates documented</li></ul>
-      </article>
-
-      <article class="section-card green" style="--progress: 100%;">
-        <div class="section-top"><h2>SAFE Queue</h2><span class="state">Completed</span></div>
-        <div class="metrics"><div class="metric"><span>Done</span><strong>12</strong></div><div class="metric"><span>Remaining</span><strong>0</strong></div><div class="metric"><span>Total</span><strong>12</strong></div></div>
-        <div class="meter"><span></span></div>
-        <ul><li>Safety gates documented</li><li>Business pack rules prepared</li><li>No payment or keyboard output enabled</li></ul>
-      </article>
-
-      <article class="section-card green" style="--progress: 100%;">
-        <div class="section-top"><h2>Development / Tooling</h2><span class="state">Completed</span></div>
-        <div class="metrics"><div class="metric"><span>Done</span><strong>75</strong></div><div class="metric"><span>Remaining</span><strong>0</strong></div><div class="metric"><span>Total</span><strong>75</strong></div></div>
-        <div class="meter"><span></span></div>
-        <ul><li>Local tooling reports prepared</li><li>QA command paths documented</li><li>Evidence workflow improved</li></ul>
-      </article>
-
-      <article class="section-card purple" style="--progress: 100%;">
-        <div class="section-top"><h2>Neutral Package Sandbox</h2><span class="state">Review-ready</span></div>
-        <div class="metrics"><div class="metric"><span>Done</span><strong>3</strong></div><div class="metric"><span>Remaining</span><strong>0</strong></div><div class="metric"><span>Total</span><strong>3</strong></div></div>
-        <div class="meter"><span></span></div>
-        <ul><li>Selected neutral package: owner-neutral-003</li><li>Validation: PASS</li><li>Owner review target: YES</li></ul>
-      </article>
-
-      <article class="section-card green" style="--progress: 100%;">
-        <div class="section-top"><h2>Evidence / Jobcenter Assets</h2><span class="state">Prepared</span></div>
-        <div class="metrics"><div class="metric"><span>Done</span><strong>4</strong></div><div class="metric"><span>Remaining</span><strong>0</strong></div><div class="metric"><span>Total</span><strong>4</strong></div></div>
-        <div class="meter"><span></span></div>
-        <ul><li>Evidence pack prepared</li><li>Jobcenter PDF/PPT prepared</li><li>Offline ZIP prepared</li></ul>
-      </article>
-
-      <article class="section-card purple" style="--progress: 100%;">
-        <div class="section-top"><h2>Public Monitor</h2><span class="state">Live</span></div>
-        <div class="metrics"><div class="metric"><span>Done</span><strong>1</strong></div><div class="metric"><span>Remaining</span><strong>0</strong></div><div class="metric"><span>Total</span><strong>1</strong></div></div>
-        <div class="meter"><span></span></div>
-        <ul><li>Monitor active</li><li>Public status dashboard</li><li>Safe claims only</li></ul>
-      </article>
-
-      <article class="section-card amber" style="--progress: 0%;">
-        <div class="section-top"><h2>Future Work</h2><span class="state">Planned</span></div>
-        <div class="metrics"><div class="metric"><span>Done</span><strong>0</strong></div><div class="metric"><span>Remaining</span><strong>4</strong></div><div class="metric"><span>Total</span><strong>4</strong></div></div>
-        <div class="meter"><span></span></div>
-        <ul><li>Financial Businessplan refinement</li><li>Library factory planning</li><li>Oriental strings planning</li></ul>
-      </article>
-
-      <article class="section-card red" style="--progress: 0%;">
-        <div class="section-top"><h2>Blocked Areas</h2><span class="state">Blocked</span></div>
-        <div class="metrics"><div class="metric"><span>Done</span><strong>0</strong></div><div class="metric"><span>Remaining</span><strong>4</strong></div><div class="metric"><span>Total</span><strong>4</strong></div></div>
-        <div class="meter"><span></span></div>
-        <ul><li>Payment inactive</li><li>Keyboard-native output blocked</li><li>Keyboard transfer blocked</li><li>Public product release not claimed</li></ul>
-      </article>
+    <section class="focus">
+      <span class="label">Maximaler Finanzierungsbedarf</span>
+      <strong>4.700 €</strong>
+      <p>Konservative, unverbindliche Planung ohne Umsatzgarantie und ohne Rechnung.</p>
     </section>
+  </header>
 
-    <section class="panels">
-      <article class="panel purple">
-        <span class="state">Selected Package</span>
-        <h2>Neutral Package Review</h2>
-        <div class="selected-table">
-          <div class="selected-row"><span>Selected neutral package</span><strong>owner-neutral-003</strong></div>
-          <div class="selected-row"><span>Validation</span><strong>PASS</strong></div>
-          <div class="selected-row"><span>Owner review target</span><strong>YES</strong></div>
-          <div class="selected-row"><span>Keyboard output</span><strong>NO</strong></div>
-          <div class="selected-row"><span>Keyboard transfer</span><strong>NO</strong></div>
-        </div>
-      </article>
+  <section class="cards" aria-label="Projektüberblick">
+    <article class="card"><span class="label">Projektstatus</span><span class="value">Aktiver Prototyp</span><span class="note">Vorbereitung der Selbstständigkeit</span></article>
+    <article class="card"><span class="label">Finanzierungsbedarf</span><span class="value">4.700 €</span><span class="note">Maximaler Finanzierungsbedarf</span></article>
+    <article class="card"><span class="label">Anfangsumsatz</span><span class="value">0 €</span><span class="note">Keine Umsatzgarantie</span></article>
+    <article class="card"><span class="label">Unterlagen</span><span class="value">Final vorbereitet</span><span class="note">Businessplan und Präsentation</span></article>
+  </section>
 
-      <article class="panel red">
-        <span class="state">Safety Boundaries</span>
-        <h2>Blocked / unavailable</h2>
-        <ul>
-          <li>Payment inactive</li>
-          <li>Keyboard-native output blocked</li>
-          <li>Keyboard transfer blocked</li>
-          <li>Public product release not claimed</li>
-        </ul>
-      </article>
-    </section>
+  <section class="grid">
+    <article class="panel wide">
+      <h2>Finanzierungsbedarf</h2>
+      <table>
+        <thead><tr><th>Position</th><th>Betrag</th></tr></thead>
+        <tbody>
+          <tr><td>Laptop / Workstation</td><td>2.400 €</td></tr>
+          <tr><td>Externer Monitor</td><td>350 €</td></tr>
+          <tr><td>Tastatur / Maus / Speicher / Zubehör</td><td>350 €</td></tr>
+          <tr><td>Software- / Entwicklungsreserve</td><td>750 €</td></tr>
+          <tr><td>Backup / Datensicherung / Cloud-Reserve</td><td>250 €</td></tr>
+          <tr><td>Dokumentation / Präsentation / Verwaltung</td><td>250 €</td></tr>
+          <tr><td>Werbematerial / Flyer / einfache Öffentlichkeitsarbeit</td><td>250 €</td></tr>
+          <tr><td>Reserve für unvorhergesehene technische Kosten</td><td>100 €</td></tr>
+          <tr class="total"><td>Gesamt</td><td>4.700 €</td></tr>
+        </tbody>
+      </table>
+    </article>
 
-    <section class="panel amber" style="margin-top: 14px;">
-      <span class="state">Next Steps</span>
-      <h2>Planned work</h2>
+    <article class="panel wide">
+      <h2>Ertragserwartung</h2>
+      <div class="timeline">
+        <div class="mini"><strong>Monate 1–3</strong><p>0 € Umsatz, 5–15 qualifizierte Gespräche / Feedbackkontakte</p></div>
+        <div class="mini"><strong>Monate 4–6</strong><p>0–300 € monatlich möglich, 1–3 kleine Kunden/Testaufträge</p></div>
+        <div class="mini"><strong>Monate 7–9</strong><p>100–600 € monatlich möglich, 2–5 Kunden/Aufträge</p></div>
+        <div class="mini"><strong>Monate 10–12</strong><p>300–1.000 € monatlich möglich, 3–8 Kunden/Aufträge</p></div>
+      </div>
+      <h3>Hinweis</h3>
+      <p>Alle Werte sind konservativ, unverbindlich und keine Umsatzgarantie.</p>
+    </article>
+
+    <article class="panel">
+      <h2>Kundengewinnung</h2>
       <ul>
-        <li>Businessplan finance update</li>
-        <li>Continued local development</li>
-        <li>Library factory planning</li>
-        <li>Oriental strings planning</li>
-        <li>Ongoing monitor updates</li>
+        <li>Musikmessen und Fachveranstaltungen</li>
+        <li>Konzerte und größere Musikveranstaltungen</li>
+        <li>Flyer mit QR-Code zum Projektmonitor</li>
+        <li>Direktkontakte zu Musikern, Sängern, Produzenten und Studios</li>
+        <li>Musiker-Communities</li>
+        <li>Online-Präsenz und öffentlicher Projektmonitor</li>
       </ul>
-    </section>
+    </article>
 
-    <footer>
-      Neutral public status monitor. No false production claims. No payment system is active. No keyboard-native output is released. No keyboard transfer is enabled. Last updated: 01.07.2026.
-    </footer>
-  </main>
+    <article class="panel">
+      <h2>Kostenbasis</h2>
+      <table>
+        <tbody>
+          <tr><td>Operative feste Kosten</td><td>95–320 € monatlich</td></tr>
+          <tr><td>Persönliche Pflicht-/Vorsorgekosten</td><td>382–700 € monatlich</td></tr>
+          <tr class="total"><td>Gesamte monatliche Kostenbasis</td><td>477–1.020 € monatlich</td></tr>
+        </tbody>
+      </table>
+      <h3>Break-even</h3>
+      <p>Ein monatlicher Break-even wird konservativ erst bei wiederkehrend ca. 700–1.000 € Monatsumsatz realistisch eingeschätzt. Dies ist frühestens gegen Ende des ersten Jahres möglich, aber nicht garantiert.</p>
+    </article>
+
+    <article class="panel wide">
+      <h2>Projektdateien / Nachweise</h2>
+      <div class="status-cols">
+        <div class="mini"><span class="tag done">Abgeschlossen</span><ul><li>Businessplan FINAL 4.700 € mit Link</li><li>Präsentation FINAL 4.700 € mit Link</li><li>Finanzplanung und Kostenbasis</li><li>Ertragserwartung und Kundenzahlen</li><li>Kundengewinnung / Marketingplan</li><li>Projektmonitor</li></ul></div>
+        <div class="mini"><span class="tag work">In Entwicklung</span><ul><li>Product QA Core</li><li>Library Factory</li><li>Arranger Intelligence</li><li>Live Monitor Datenmodell</li><li>Dashboard Reader</li></ul></div>
+        <div class="mini"><span class="tag plan">Geplant</span><ul><li>Flyer / QR-Code Material</li><li>Demo-Gesprächsleitfaden</li><li>Nutzerfeedback-Formular</li><li>Angebotsstruktur</li><li>Weitere QA-Validierung</li></ul></div>
+      </div>
+    </article>
+
+    <article class="panel">
+      <h2>Changelog</h2>
+      <h3>2026-07-02</h3>
+      <ul><li>Finanzierungsbedarf auf 4.700 € vereinheitlicht</li><li>Ertragserwartung, Kundenzahlen und Kostenbasis ergänzt</li><li>Businessplan und Präsentation finalisiert</li><li>Monitor-Inhalte professionalisiert</li></ul>
+    </article>
+
+    <article class="panel">
+      <h2>Sicherheitsgrenzen</h2>
+      <ul><li>Keine Zahlungsfunktion</li><li>Kein Checkout</li><li>Kein Keyboard-Output</li><li>Keine Keyboard-Übertragung</li><li>Keine proprietären Samples</li><li>Keine falschen Umsatzversprechen</li></ul>
+    </article>
+  </section>
+  <footer>Letzte Aktualisierung: 02.07.2026 14:10:39 · Öffentlicher Projektmonitor zur Vorbereitung der Selbstständigkeit.</footer>
+</main>
 </body>
 </html>
-
