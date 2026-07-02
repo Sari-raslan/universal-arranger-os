@@ -7,3 +7,5 @@ Cycle 001 backup bytes: 73738
 Cycle 002 backup bytes: 75062
 
 Cycle 003 backup bytes: 77060
+
+Cycle 004 backup bytes: 78951
