@@ -1,0 +1,37 @@
+{
+  "generatedAt": "2026-07-02T16:37:52.385Z",
+  "readOnlySchemaDraft": true,
+  "decodedMusicalFields": false,
+  "schema": {
+    "fileHeader": {
+      "startOffset": 0,
+      "length": 256,
+      "fields": [],
+      "note": "Structural region only; no values decoded."
+    },
+    "metadataRegion": {
+      "startOffset": 256,
+      "length": "unknown",
+      "fields": [],
+      "note": "Candidate only; requires Run 008 approval."
+    },
+    "blockRegion": {
+      "startOffset": "candidate common boundaries",
+      "length": "unknown",
+      "fields": [],
+      "note": "Boundary offsets only."
+    },
+    "unknownRegion": {
+      "startOffset": 8192,
+      "length": "fileSize - 8192 when positive",
+      "fields": [],
+      "note": "Unread in Run 007."
+    },
+    "footerRegion": {
+      "startOffset": "not detected safely",
+      "length": "unknown",
+      "fields": [],
+      "note": "No footer claim from PRF prefix-only parsing."
+    }
+  }
+}

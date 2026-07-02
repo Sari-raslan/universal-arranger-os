@@ -1,0 +1,192 @@
+# UAOS PA3X PRF Structural Report 007
+
+Status: PASS
+PRF files analyzed: 16
+
+## File size patterns
+- Min bytes: 21975
+- Max bytes: 32230
+- Unique sizes: 21975, 22598, 22954, 23152, 23741, 24709, 24810, 25481, 26615, 28111, 29244, 29437, 30181, 31626, 31879, 32230
+- All same size: NO
+
+## Common header regions
+- Offset 0, 256-byte fixed window, medium structural confidence.
+
+## Common boundary offsets
+- 0: 16 files
+- 17: 16 files
+- 23: 16 files
+- 47: 11 files
+- 49: 2 files
+- 69: 4 files
+- 73: 2 files
+- 90: 3 files
+- 93: 3 files
+- 95: 4 files
+- 98: 2 files
+- 116: 4 files
+- 117: 4 files
+- 119: 2 files
+- 138: 2 files
+- 140: 2 files
+- 141: 2 files
+- 142: 2 files
+- 143: 2 files
+- 144: 3 files
+- 161: 2 files
+- 165: 3 files
+- 167: 3 files
+- 168: 2 files
+- 186: 2 files
+- 189: 2 files
+- 191: 2 files
+- 192: 2 files
+- 193: 2 files
+- 194: 2 files
+- 211: 2 files
+- 214: 3 files
+- 215: 4 files
+- 217: 2 files
+- 235: 2 files
+- 236: 2 files
+- 239: 7 files
+- 241: 2 files
+- 259: 2 files
+- 263: 4 files
+- 264: 4 files
+- 282: 2 files
+- 283: 5 files
+- 287: 4 files
+- 289: 2 files
+- 309: 4 files
+- 310: 4 files
+- 311: 2 files
+- 333: 6 files
+- 335: 2 files
+- 336: 2 files
+- 357: 2 files
+- 358: 3 files
+- 359: 3 files
+- 362: 4 files
+- 378: 2 files
+- 381: 4 files
+- 382: 2 files
+- 383: 3 files
+- 385: 4 files
+- 403: 3 files
+- 406: 3 files
+- 408: 4 files
+- 431: 4 files
+- 432: 2 files
+- 433: 2 files
+- 434: 2 files
+- 451: 3 files
+- 453: 2 files
+- 458: 3 files
+- 473: 2 files
+- 478: 5 files
+- 479: 5 files
+- 498: 2 files
+- 499: 5 files
+- 502: 3 files
+- 505: 3 files
+- 521: 2 files
+- 522: 2 files
+- 524: 3 files
+- 526: 5 files
+- 529: 2 files
+- 549: 4 files
+- 550: 2 files
+- 551: 2 files
+- 553: 2 files
+- 554: 2 files
+- 575: 2 files
+- 576: 3 files
+- 577: 3 files
+- 595: 2 files
+- 597: 4 files
+- 601: 3 files
+- 619: 2 files
+- 620: 2 files
+- 622: 3 files
+- 623: 2 files
+- 625: 2 files
+- 645: 4 files
+- 647: 4 files
+- 649: 3 files
+- 650: 2 files
+- 669: 3 files
+- 672: 2 files
+- 673: 3 files
+- 674: 3 files
+- 691: 2 files
+- 694: 3 files
+- 695: 5 files
+- 696: 2 files
+- 717: 2 files
+- 720: 2 files
+- 721: 4 files
+- 722: 4 files
+- 742: 2 files
+- 743: 5 files
+- 745: 2 files
+- 765: 5 files
+- 767: 2 files
+- 768: 5 files
+- 787: 2 files
+- 789: 3 files
+- 793: 6 files
+- 813: 2 files
+- 815: 3 files
+- 817: 2 files
+- 839: 6 files
+- 840: 2 files
+- 860: 2 files
+- 863: 2 files
+- 864: 2 files
+- 865: 2 files
+- 869: 2 files
+- 885: 2 files
+- 889: 3 files
+- 893: 2 files
+- 911: 4 files
+- 913: 2 files
+- 935: 2 files
+- 941: 2 files
+- 953: 2 files
+- 959: 2 files
+- 960: 2 files
+- 983: 2 files
+- 1013: 5 files
+- 1809: 2 files
+
+## Possible repeated record sizes
+- 16 bytes
+- 17 bytes
+- 18 bytes
+- 19 bytes
+- 20 bytes
+- 21 bytes
+- 22 bytes
+- 23 bytes
+- 24 bytes
+- 25 bytes
+- 26 bytes
+- 27 bytes
+- 28 bytes
+- 29 bytes
+- 30 bytes
+- 31 bytes
+- 758 bytes
+- 764 bytes
+- 765 bytes
+
+## Unknown regions
+- Bytes after offset 8192 remain unread for larger files.
+- Any byte-field meaning remains unknown.
+
+## Safe to parse next
+- One deeper read-only PRF structure pass may inventory boundary offsets and region lengths only.
+
+## Still blocked
+- Value decoding, performance names/settings, musical meaning, keyboard-native output, USB transfer, sample extraction.
