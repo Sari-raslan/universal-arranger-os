@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>UAOS Status</title><style>
+:root {
+  --nacht: #111827; --tinte: #172033; --karte: #1F2937; --linie: #334155;
+  --text: #F8FAFC; --muted: #CBD5E1; --accent: #38BDF8; --gold: #FACC15; --green: #34D399;
+}
+* { box-sizing: border-box; }
+body { margin:0; font-family: Arial, system-ui, sans-serif; background: var(--nacht); color: var(--text); line-height:1.55; }
+body::before { content:""; position:fixed; inset:0; background: linear-gradient(135deg, #111827 0%, #172033 55%, #0f172a 100%); z-index:-2; }
+.topbar { height:5px; background: var(--accent); }
+.wrap { width:min(1120px, calc(100% - 32px)); margin:0 auto; }
+.hero { padding:56px 0 34px; display:grid; grid-template-columns: 1.25fr .75fr; gap:28px; align-items:end; }
+.kicker { color:var(--accent); font-weight:700; letter-spacing:.08em; text-transform:uppercase; font-size:12px; }
+h1 { font-size: clamp(34px, 6vw, 64px); line-height:1.03; margin:12px 0 16px; }
+h2 { font-size:28px; margin:0 0 16px; }
+h3 { margin:0 0 6px; color:var(--accent); font-size:15px; }
+p { color:var(--muted); margin:0; }
+.grid { display:grid; grid-template-columns: repeat(4, 1fr); gap:16px; margin:24px 0; }
+.card { background: rgba(31,41,55,.92); border:1px solid var(--linie); border-radius:10px; padding:18px; box-shadow: 0 18px 40px rgba(0,0,0,.22); }
+.metric { font-size:26px; font-weight:800; color:var(--text); }
+section { padding:26px 0; }
+.panel { background: rgba(23,32,51,.84); border:1px solid var(--linie); border-radius:12px; padding:24px; }
+table { width:100%; border-collapse: collapse; overflow:hidden; border-radius:10px; }
+th, td { padding:13px 14px; border-bottom:1px solid var(--linie); text-align:left; }
+th { color:var(--accent); font-size:13px; }
+td:last-child { color:var(--text); font-weight:700; }
+.badges { display:flex; gap:10px; flex-wrap:wrap; }
+.badge { border:1px solid var(--linie); background:rgba(56,189,248,.09); color:var(--text); border-radius:999px; padding:8px 12px; }
+.accent { color:var(--gold); }
+.footer { color:var(--muted); font-size:13px; padding:34px 0; border-top:1px solid var(--linie); margin-top:30px; }
+a { color:var(--accent); word-break:break-word; }
+@media (max-width:850px) { .hero { grid-template-columns:1fr; } .grid { grid-template-columns:1fr 1fr; } }
+@media (max-width:560px) { .grid { grid-template-columns:1fr; } h1 { font-size:36px; } }
+</style></head>
+<body><div class="topbar"></div><main class="wrap">
+<header class="hero"><div><div class="kicker">Statusseite</div><h1>Projektstatus</h1><p>Kurze öffentliche Übersicht im gleichen Designsystem wie Präsentation und PDF.</p></div><div class="card"><h3>Status</h3><div class="metric">Aktiv vorbereitet</div><p>Prototyp / Vorbereitung der Selbstständigkeit</p></div><div class="card"><h3>Prüfung</h3><p>Änderung, Öffnung, Überprüfung und Maßnahme sind sichtbar dokumentiert.</p></div></header>
+<div class="grid"><div class="card"><h3>Monitor</h3><p><a href="/jobcenter/">Jobcenter-Monitor öffnen</a></p></div><div class="card"><h3>Umsatz</h3><div class="metric">0 €</div></div><div class="card"><h3>Planung</h3><p>Konservativ und unverbindlich</p></div><div class="card"><h3>Sicherheit</h3><p>Keine Zahlungsfunktion, keine Ausgabe an reale Instrumente.</p></div></div>
+<section><div class="panel"><h2>Nächste Schritte</h2><p>Dokumentation fortführen, Arbeitsgrundlage sichern und wirtschaftliche Prüfung vorbereiten.</p></div></section>
+<footer class="footer">UAOS / AE Platform · Stand: 02.07.2026</footer>
+</main></body></html>

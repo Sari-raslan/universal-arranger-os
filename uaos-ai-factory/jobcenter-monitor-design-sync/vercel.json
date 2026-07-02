@@ -1,0 +1,20 @@
+{
+  "version": 2,
+  "public": true,
+  "cleanUrls": true,
+  "trailingSlash": true,
+  "rewrites": [
+    {
+      "source": "/",
+      "destination": "/jobcenter/index.html"
+    },
+    {
+      "source": "/jobcenter/",
+      "destination": "/jobcenter/index.html"
+    },
+    {
+      "source": "/status/",
+      "destination": "/status/index.html"
+    }
+  ]
+}

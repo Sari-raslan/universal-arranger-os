@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>UAOS Jobcenter Projektmonitor</title><style>
+:root {
+  --nacht: #111827; --tinte: #172033; --karte: #1F2937; --linie: #334155;
+  --text: #F8FAFC; --muted: #CBD5E1; --accent: #38BDF8; --gold: #FACC15; --green: #34D399;
+}
+* { box-sizing: border-box; }
+body { margin:0; font-family: Arial, system-ui, sans-serif; background: var(--nacht); color: var(--text); line-height:1.55; }
+body::before { content:""; position:fixed; inset:0; background: linear-gradient(135deg, #111827 0%, #172033 55%, #0f172a 100%); z-index:-2; }
+.topbar { height:5px; background: var(--accent); }
+.wrap { width:min(1120px, calc(100% - 32px)); margin:0 auto; }
+.hero { padding:56px 0 34px; display:grid; grid-template-columns: 1.25fr .75fr; gap:28px; align-items:end; }
+.kicker { color:var(--accent); font-weight:700; letter-spacing:.08em; text-transform:uppercase; font-size:12px; }
+h1 { font-size: clamp(34px, 6vw, 64px); line-height:1.03; margin:12px 0 16px; }
+h2 { font-size:28px; margin:0 0 16px; }
+h3 { margin:0 0 6px; color:var(--accent); font-size:15px; }
+p { color:var(--muted); margin:0; }
+.grid { display:grid; grid-template-columns: repeat(4, 1fr); gap:16px; margin:24px 0; }
+.card { background: rgba(31,41,55,.92); border:1px solid var(--linie); border-radius:10px; padding:18px; box-shadow: 0 18px 40px rgba(0,0,0,.22); }
+.metric { font-size:26px; font-weight:800; color:var(--text); }
+section { padding:26px 0; }
+.panel { background: rgba(23,32,51,.84); border:1px solid var(--linie); border-radius:12px; padding:24px; }
+table { width:100%; border-collapse: collapse; overflow:hidden; border-radius:10px; }
+th, td { padding:13px 14px; border-bottom:1px solid var(--linie); text-align:left; }
+th { color:var(--accent); font-size:13px; }
+td:last-child { color:var(--text); font-weight:700; }
+.badges { display:flex; gap:10px; flex-wrap:wrap; }
+.badge { border:1px solid var(--linie); background:rgba(56,189,248,.09); color:var(--text); border-radius:999px; padding:8px 12px; }
+.accent { color:var(--gold); }
+.footer { color:var(--muted); font-size:13px; padding:34px 0; border-top:1px solid var(--linie); margin-top:30px; }
+a { color:var(--accent); word-break:break-word; }
+@media (max-width:850px) { .hero { grid-template-columns:1fr; } .grid { grid-template-columns:1fr 1fr; } }
+@media (max-width:560px) { .grid { grid-template-columns:1fr; } h1 { font-size:36px; } }
+</style></head>
+<body><div class="topbar"></div><main class="wrap">
+<header class="hero"><div><div class="kicker">Öffentlicher Projektmonitor</div><h1>UAOS / AE Platform</h1><p>Einheitlicher Projektstand für die Vorbereitung der Selbstständigkeit. Der Monitor nutzt dieselbe Gestaltung wie Präsentation und PDF.</p></div><div class="card"><h3>Kurzstatus</h3><div class="metric">Prototyp / Vorbereitung</div><p>Anfangsumsatz: 0 €<br>Keine Umsatzgarantie<br>Konservative, unverbindliche Planung</p></div><div class="card"><h3>Prüfung</h3><p>Änderung, Öffnung, Überprüfung und Maßnahme sind sichtbar dokumentiert.</p></div></header>
+<div class="grid"><div class="card"><h3>Finanzierungsbedarf</h3><div class="metric">2.200–3.950 €</div></div><div class="card"><h3>Betriebskosten</h3><div class="metric">75–210 €</div></div><div class="card"><h3>Eigenleistung</h3><div class="metric">450–750 Std.</div></div><div class="card"><h3>Interner Wert</h3><div class="metric">11.250–33.750 €</div></div></div>
+<section><div class="panel"><h2>Aktueller Projektstand</h2><p>Vorhanden sind ein lokaler Prototyp, eine Kostenübersicht, eine Belegliste, eine Präsentation und eine nachvollziehbare Dokumentation für die sachliche Prüfung.</p></div></section>
+<section><div class="panel"><h2>Finanzierungsbedarf</h2><table><thead><tr><th>Position</th><th>Betrag</th></tr></thead><tbody><tr><td>Laptop / Arbeitsstation</td><td>1.500–2.500 €</td></tr><tr><td>Externer Monitor</td><td>150–300 €</td></tr><tr><td>Tastatur / Maus / Speicher / Zubehör</td><td>150–300 €</td></tr><tr><td>Software- und Entwicklungsreserve</td><td>300–600 €</td></tr><tr><td>Dokumentation / Präsentation / Verwaltung</td><td>100–250 €</td></tr><tr><td>Gesamtbedarf</td><td>2.200–3.950 €</td></tr></tbody></table></div></section>
+<section><div class="panel"><h2>Monatliche Betriebskosten</h2><table><thead><tr><th>Position</th><th>Betrag</th></tr></thead><tbody><tr><td>Software / Dienste</td><td>30–80 €</td></tr><tr><td>Internet / Stromanteil</td><td>20–50 €</td></tr><tr><td>Backup / Speicher</td><td>5–20 €</td></tr><tr><td>Buchhaltung / Verwaltung</td><td>20–60 €</td></tr><tr><td>Gesamt monatlich</td><td>75–210 €</td></tr></tbody></table></div></section>
+<section><div class="panel"><h2>Eigenleistung</h2><table><thead><tr><th>Position</th><th>Betrag</th></tr></thead><tbody><tr><td>Eigenleistung</td><td>450–750 Stunden</td></tr><tr><td>Interne Bewertung</td><td>25–45 € / Stunde</td></tr><tr><td>Interner Wert</td><td>11.250–33.750 €</td></tr></tbody></table></div></section>
+<section><div class="panel"><h2>Sicherheitsgrenzen</h2><div class="badges"><span class="badge">Keine Zahlungsfunktion</span><span class="badge">Keine Ausgabe an reale Instrumente</span><span class="badge">Keine Übernahme geschützter Inhalte</span><span class="badge">Keine Rechnung</span></div></div></section>
+<section><div class="panel"><h2>Nächste Schritte</h2><p>Arbeitsmittel stabilisieren, Beratung vorbereiten, Dokumentation fortführen, Kosten prüfen und die wirtschaftliche Tragfähigkeit schrittweise bewerten.</p></div></section>
+<footer class="footer">UAOS / AE Platform · Öffentlicher Projektmonitor · Stand: 02.07.2026 · <a href="status/">Statusseite öffnen</a></footer>
+</main></body></html>
