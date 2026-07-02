@@ -2,6 +2,7 @@
 
 Status: PASS
 Backup root: E:\keyboard-manager-clean\UAOS_LOCAL_BACKUPS\PA3X_WRITER_TRACK_LONG_RUN_20260702_222647
-Files: 70
-Bytes: 80871
+Files: 75
+Bytes: 82815
 Mode: incremental copy only, no mirror, no delete, no purge.
+
