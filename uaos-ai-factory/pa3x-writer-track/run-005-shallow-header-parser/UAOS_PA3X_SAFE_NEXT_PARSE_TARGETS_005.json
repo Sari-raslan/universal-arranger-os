@@ -1,0 +1,33 @@
+{
+  "generatedAt": "2026-07-02T15:32:19.622Z",
+  "readOnlyOnly": true,
+  "smallestSafeNextStep": "Build a read-only section-boundary probe for STYLE, PAD, and PERFORMANCE using fixed byte windows and no value decoding.",
+  "safeTargets": [
+    {
+      "group": "performance-related .prf",
+      "reason": "16 similar KORF-bearing bank files; useful for slot map readiness.",
+      "allowedNextRead": "controlled boundary windows only"
+    },
+    {
+      "group": "pad-related .pad",
+      "reason": "10 similar KORF-bearing pad files; good for bank consistency checks.",
+      "allowedNextRead": "controlled boundary windows only"
+    },
+    {
+      "group": "style-related .sty",
+      "reason": "single large KORF-bearing style bank required for eventual writer understanding.",
+      "allowedNextRead": "boundary windows only, no event decoding"
+    }
+  ],
+  "unknownTargets": [],
+  "blockedTargets": [
+    {
+      "group": "PCM/sample-related",
+      "reason": "sample/audio content remains blocked; none detected in this fixture by Run 003"
+    },
+    {
+      "group": "native output formats",
+      "reason": "real output requires later explicit owner approval"
+    }
+  ]
+}
