@@ -1,0 +1,20 @@
+{
+  "status": "PASS",
+  "referencePrfFiles": 16,
+  "fixturePrfSizeRangeBytes": {
+    "min": 21975,
+    "max": 32230,
+    "average": 26796.44
+  },
+  "candidateSizeBytes": 4096,
+  "candidateSizeRatioToMin": 0.1864,
+  "candidateSizeRatioToAverage": 0.1529,
+  "run011ParserConfidence": 0.915,
+  "run010Confidence": 0.915,
+  "run009ConsistencyScore": 0.433,
+  "run009Decision": "B. Need one more PRF structural check",
+  "run008LikelyFixedHeaderLength": 17,
+  "run008RegionLengthDistributionCount": 144,
+  "candidateStructuralCategory": "structurally closer but unsafe",
+  "compatibilityClaim": false
+}
