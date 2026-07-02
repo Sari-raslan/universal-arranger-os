@@ -1,0 +1,13 @@
+﻿{
+    "validator":  "pa3xNativeOutputSafetyValidatorDesign026",
+    "designOnly":  true,
+    "failIf":  [
+                   "not labeled TEST_UNVERIFIED",
+                   "contains proprietary sample claims",
+                   "targets internal keyboard memory",
+                   "contains overwrite instruction",
+                   "missing backup confirmation",
+                   "missing owner approval",
+                   "not isolated to test output folder"
+               ]
+}

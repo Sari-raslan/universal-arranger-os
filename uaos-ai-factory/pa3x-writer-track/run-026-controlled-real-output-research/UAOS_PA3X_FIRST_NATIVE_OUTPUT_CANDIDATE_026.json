@@ -1,0 +1,23 @@
+﻿{
+    "run":  "026",
+    "status":  "RESEARCH_DESIGN_ONLY",
+    "selectedCandidate":  "B. Minimal metadata-only PRF-like output",
+    "safestReason":  "PRF is the best researched component so far because Runs 007-011 produced a read-only PRF structural catalogue and stable-offset validation. A metadata-only PRF-like research target is narrower than STYLE/PAD pattern content and lower risk than native STYLE/PAD placeholders.",
+    "futureRequiredExtension":  ".PRF",
+    "generationBlockedThisRun":  true,
+    "blockedReason":  "Run 026 is not approved to generate native keyboard files. It may only define the candidate, blueprint, risk controls, and future approval gate.",
+    "rejectedAlternatives":  [
+                                 {
+                                     "option":  "A",
+                                     "reason":  "Folder-only .SET is already done and remains non-native."
+                                 },
+                                 {
+                                     "option":  "C",
+                                     "reason":  "STYLE-like placeholder is higher risk because style pattern structure is less mature."
+                                 },
+                                 {
+                                     "option":  "D",
+                                     "reason":  "PAD-like placeholder has multiple files but less parser readiness than PRF."
+                                 }
+                             ]
+}

@@ -1,0 +1,33 @@
+﻿{
+    "run":  "026",
+    "designOnly":  true,
+    "selectedCandidate":  "minimal metadata-only PRF-like output",
+    "actualNativeFileCreated":  false,
+    "futureFileExtension":  ".PRF",
+    "futureLabelRequirement":  "TEST_UNVERIFIED",
+    "futureOutputFolder":  "to be approved in Run 027",
+    "intendedFutureStructure":  [
+                                    {
+                                        "region":  "fileHeader",
+                                        "source":  "PRF structural catalogue v1",
+                                        "valueDecoding":  false
+                                    },
+                                    {
+                                        "region":  "metadataRegion",
+                                        "source":  "future metadata-only placeholder",
+                                        "valueDecoding":  false
+                                    },
+                                    {
+                                        "region":  "unknownRegion",
+                                        "source":  "must remain untouched/zero-safe until approved",
+                                        "valueDecoding":  false
+                                    }
+                                ],
+    "forbiddenNow":  [
+                         "native file generation",
+                         "USB write",
+                         "keyboard transfer",
+                         "overwrite",
+                         "proprietary sample inclusion"
+                     ]
+}
