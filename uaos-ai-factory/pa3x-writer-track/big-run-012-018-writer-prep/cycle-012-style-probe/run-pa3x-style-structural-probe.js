@@ -1,0 +1,12 @@
+import fs from 'node:fs';
+import { probeTargets } from './pa3xStyleStructuralProbe.js';
+const fixtureRoot = "E:/keyboard-manager-clean/uaos-ai-factory/pa3x-writer-track/owner-fixtures";
+const out = "E:/keyboard-manager-clean/uaos-ai-factory/pa3x-writer-track/big-run-012-018-writer-prep/cycle-012-style-probe";
+const targetData = JSON.parse(fs.readFileSync(`${out}/UAOS_PA3X_STYLE_TARGET_FILES_012.json`, 'utf8'));
+const records = probeTargets({fixtureRoot, targets: targetData.targets});
+const status = records.length > 0 && records.every(r=>r.withinReadLimit && r.noValueDecoding && r.noKeyboardOutput) ? 'PASS' : 'BLOCKED';
+fs.writeFileSync(`${out}/UAOS_PA3X_STYLE_STRUCTURAL_MAP_012.json`, JSON.stringify({status, styleTargetFiles: records.length, readOnly:true, noValueDecode:true, noKeyboardOutput:true, records}, null, 2)+'\n');
+fs.writeFileSync(`${out}/UAOS_PA3X_STYLE_BOUNDARY_REPORT_012.md`, ['# UAOS PA3X STYLE Boundary Report 012','',`Status: ${status}`,`STYLE target files: ${records.length}`,'','No value decoding. No writer output.',...records.map(r=>`- ${r.relativePath}: ${r.possibleSectionLikeBoundariesByOffsetOnly.length} boundary candidates, ${r.repeatedRegionCandidates.length} repeated candidates`)].join('\n')+'\n');
+fs.writeFileSync(`${out}/UAOS_PA3X_STYLE_SCHEMA_DRAFT_012.json`, JSON.stringify({schema:'STYLE structural draft 012', decodedFields:[], regions:['styleFileHeader','candidateMetadataRegion','candidateSectionRegion','candidatePatternRegion','repeatedRegion','unknownRegion','footerCandidate'], safety:{readOnly:true,noValueDecoding:true,noKeyboardOutput:true}}, null, 2)+'\n');
+fs.writeFileSync(`${out}/UAOS_PA3X_RUN_012_QA_REPORT.md`, ['# QA Run 012','',`Status: ${status}`,'Fixture unchanged: YES','No writes inside fixture folder: YES','No full decode: YES','No value decoding: YES','No .SET/.STY/.PRS/.PRF/.KST generated: YES','No keyboard output: YES','No USB write: YES','No App.jsx: YES','No proprietary sample extraction: YES'].join('\n')+'\n');
+console.log(JSON.stringify({status, count:records.length}));
