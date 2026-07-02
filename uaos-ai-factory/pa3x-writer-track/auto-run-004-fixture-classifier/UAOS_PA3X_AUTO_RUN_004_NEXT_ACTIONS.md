@@ -10,4 +10,4 @@ Nach Run 004: Owner-Entscheidung, ob ein tieferer read-only Header-/Container-Pa
 - Tiefe proprietäre Inhaltsdekodierung ohne explizite Owner-Freigabe.
 
 ## Aktueller Zyklus
-cycle-002 - parser-design
+cycle-003 - classifier-implementation
