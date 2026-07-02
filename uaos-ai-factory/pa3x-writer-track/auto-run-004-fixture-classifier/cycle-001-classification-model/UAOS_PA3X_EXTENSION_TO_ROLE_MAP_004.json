@@ -1,0 +1,47 @@
+{
+  ".sty": {
+    "role": "style-related",
+    "confidence": "high",
+    "parserNeed": "Style bank metadata parser; deep content parse remains owner-approved only."
+  },
+  ".pad": {
+    "role": "pad-related",
+    "confidence": "high",
+    "parserNeed": "Pad bank metadata parser; no musical/proprietary event decoding yet."
+  },
+  ".prf": {
+    "role": "performance-related",
+    "confidence": "high",
+    "parserNeed": "Performance bank metadata parser and slot mapper."
+  },
+  ".gbl": {
+    "role": "global-related",
+    "confidence": "high",
+    "parserNeed": "Global settings header/section boundary mapper."
+  },
+  ".mxp": {
+    "role": "global-mixer-preset-related",
+    "confidence": "medium",
+    "parserNeed": "Mixer preset metadata classifier."
+  },
+  ".voc": {
+    "role": "vocal-preset-related",
+    "confidence": "medium",
+    "parserNeed": "Vocal preset metadata classifier."
+  },
+  ".sbd": {
+    "role": "songbook-related",
+    "confidence": "medium",
+    "parserNeed": "SongBook bank metadata classifier."
+  },
+  ".sbl": {
+    "role": "songbook-list-related",
+    "confidence": "medium",
+    "parserNeed": "SongBook list metadata classifier."
+  },
+  ".md": {
+    "role": "metadata-report",
+    "confidence": "high",
+    "parserNeed": "None; documentation only."
+  }
+}
