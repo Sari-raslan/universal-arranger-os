@@ -10,4 +10,4 @@ Owner-Entscheidung über einen shallow Header Parser für ausgewählte PA3X-Date
 - Tiefe proprietäre Inhaltsdekodierung ohne explizite Owner-Freigabe.
 
 ## Aktueller Zyklus
-cycle-006 - real-writer-roadmap
+cycle-007 - owner-dashboard
