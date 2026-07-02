@@ -1,0 +1,23 @@
+﻿{
+    "status":  "PASS",
+    "cycle":  "005",
+    "knownStructuralAnchors":  [
+                                   "reference size band 21975-32230 bytes",
+                                   "V3 size 24576 bytes",
+                                   "stable offsets 0,17,23",
+                                   "TEST_UNVERIFIED safety labeling"
+                               ],
+    "openGaps":  [
+                     "region count semantics unknown",
+                     "checksum or footer behavior unknown",
+                     "internal PRF field meanings unknown",
+                     "hardware rejection behavior untested"
+                 ],
+    "nextSafeWork":  [
+                         "read-only region histogram",
+                         "entropy comparison of candidate against reference summaries",
+                         "validator rules for future approval gates"
+                     ],
+    "nativeOutputAllowed":  false,
+    "deviceActionAllowed":  false
+}
