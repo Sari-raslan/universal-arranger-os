@@ -1,0 +1,25 @@
+{
+  "generatedAt": "2026-07-02T18:24:56.662Z",
+  "decision": "A. Move to STYLE structural probe",
+  "nextSafeAction": "Approve Run 012 STYLE read-only structural probe, fixed windows only, no value decoding, no writer output.",
+  "prfParserV1Provides": [
+    "PRF structural catalogue",
+    "region offsets and lengths",
+    "confidence per region",
+    "unknown region tracking"
+  ],
+  "whyNoWriterYet": [
+    "PRF alone is not a full SET model",
+    "STYLE/PAD/GLOBAL relationships remain unmapped",
+    "no values decoded",
+    "no output schema exists"
+  ],
+  "neededNextForRealPa3xSet": "STYLE structural probe is needed next because STYLE data is central for arranger content relationships.",
+  "remainsBlockedBeforeWriter": [
+    "value decoding",
+    "musical meaning",
+    "native keyboard generation",
+    "USB write",
+    "keyboard transfer"
+  ]
+}

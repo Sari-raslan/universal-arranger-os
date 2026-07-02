@@ -1,0 +1,38 @@
+{
+  "generatedAt": "2026-07-02T18:24:56.650Z",
+  "schemaVersion": "PRF-structural-v3-readonly-parser-v1",
+  "outputType": "non-keyboard structural catalogue JSON",
+  "decodedFields": [],
+  "regionTypes": {
+    "fileHeader": {
+      "description": "start-of-file structural region",
+      "decodedFields": []
+    },
+    "stableRegion": {
+      "description": "offset validated by Run 010 stable-offset subset",
+      "decodedFields": []
+    },
+    "variableRegion": {
+      "description": "candidate region that varies by file",
+      "decodedFields": []
+    },
+    "repeatedRegion": {
+      "description": "region length pattern observed in earlier catalogues",
+      "decodedFields": []
+    },
+    "unknownRegion": {
+      "description": "unread or undecoded region",
+      "decodedFields": []
+    },
+    "footerCandidate": {
+      "description": "low-confidence structural tail candidate",
+      "decodedFields": []
+    }
+  },
+  "safety": {
+    "readOnly": true,
+    "noValueDecoding": true,
+    "noMusicalMeaning": true,
+    "noKeyboardOutput": true
+  }
+}
