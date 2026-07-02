@@ -1,0 +1,40 @@
+{
+  "generatedAt": "2026-07-02T16:47:02+02:00",
+  "targetDevice": "KORG PA-3X Oriental",
+  "status": "DRY-RUN / STRUCTURE TEST / MIDI-SPEC TEST ONLY",
+  "existingAssets": {
+    "arrangerSchemas": [
+      "uaos-ai-factory/arranger-intelligence/run-003-arranger-development/UAOS_ARRANGER_INTELLIGENCE_SCHEMA_RUN_003.json",
+      "uaos-ai-factory/arranger-intelligence/test-cases/ARRANGER_EXPECTED_OUTPUT_SCHEMA.json",
+      "uaos-ai-factory/arranger-intelligence/test-cases/ARRANGER_TEST_CASES_V1.json"
+    ],
+    "orientalStringsMetadata": [
+      "uaos-ai-factory/library-factory/oriental-strings/PATCH_LIST_V1.json",
+      "uaos-ai-factory/library-factory/oriental-strings/MAQAM_PERFORMANCE_MAPPING.md",
+      "uaos-ai-factory/library-factory/oriental-strings/ORIENTAL_VIOLIN_ARTICULATION_MAP.md",
+      "uaos-ai-factory/library-factory/oriental-strings/demo-midi-spec/ORIENTAL_STRINGS_DEMO_MIDI_SPEC_V1.json",
+      "uaos-ai-factory/library-factory/oriental-strings/run-003-oriental-strings/UAOS_ORIENTAL_STRINGS_DEMO_MIDI_SPEC_RUN_003.json"
+    ],
+    "validators": [
+      "uaos-ai-factory/implementation/arranger-plan-validator-task-005/arrangerPlanValidator.js",
+      "uaos-ai-factory/implementation/library-metadata-validator-task-006/libraryMetadataValidator.js",
+      "uaos-ai-factory/implementation/product-qa-core-task-008/productQACore.js",
+      "uaos-ai-factory/implementation/validator-regression-runner-task-009/validatorRegressionRunner.js",
+      "uaos-ai-factory/implementation/local-ci-qa-runner-task-010/uaosLocalCI.js",
+      "uaos-ai-factory/implementation/local-qa-entrypoint-task-011/runLocalQAOnly.js"
+    ],
+    "writerSandbox": [
+      "uaos-ai-factory/writer-sandbox/README.md",
+      "uaos-ai-factory/writer-sandbox/SANDBOX_OUTPUT_POLICY.md",
+      "uaos-ai-factory/writer-sandbox/dry-run-package.schema.json",
+      "uaos-ai-factory/writer-sandbox/neutral-package-writer/outputs/owner-neutral-003/OWNER_NEUTRAL_003.uaos-neutral.json",
+      "uaos-ai-factory/writer-sandbox/real-format-candidates/owner-real-001/OWNER_REAL_FORMAT_CANDIDATE_BLOCKED.md"
+    ],
+    "blockedStates": [
+      "Real keyboard writer/export remains blocked without owner approval and real fixture validation.",
+      "No validated PA3X binary writer found.",
+      "No PA3X load-test evidence exists in the audited local state.",
+      "Existing materials support dry-run metadata and MIDI-spec planning only."
+    ]
+  }
+}

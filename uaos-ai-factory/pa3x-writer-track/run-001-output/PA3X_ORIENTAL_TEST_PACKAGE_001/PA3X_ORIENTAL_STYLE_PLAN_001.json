@@ -1,0 +1,49 @@
+{
+  "id": "pa3x-oriental-style-test-001",
+  "status": "DRY-RUN / MIDI-SPEC TEST ONLY",
+  "targetDevice": "KORG PA-3X Oriental",
+  "styleFamily": "oriental pop / arabic ballad test",
+  "tempoBpm": 96,
+  "timeSignature": "4/4",
+  "maqamHint": "Nahawand / Hijaz-safe planning references",
+  "sections": {
+    "intro": {
+      "bars": 4,
+      "energy": "medium",
+      "role": "safe original motif plan"
+    },
+    "variation1": {
+      "bars": 8,
+      "energy": "low-medium",
+      "role": "basic groove sketch"
+    },
+    "variation2": {
+      "bars": 8,
+      "energy": "medium",
+      "role": "expanded accompaniment sketch"
+    },
+    "variation3": {
+      "bars": 8,
+      "energy": "medium-high",
+      "role": "fuller arrangement sketch"
+    },
+    "fill": {
+      "bars": 1,
+      "energy": "transition",
+      "role": "safe transition plan"
+    },
+    "ending": {
+      "bars": 4,
+      "energy": "resolution",
+      "role": "safe ending plan"
+    }
+  },
+  "instrumentPlan": [
+    "drums percussion symbolic",
+    "bass symbolic",
+    "oriental strings symbolic",
+    "pad symbolic",
+    "lead phrase symbolic"
+  ],
+  "nativePa3xClaim": false
+}

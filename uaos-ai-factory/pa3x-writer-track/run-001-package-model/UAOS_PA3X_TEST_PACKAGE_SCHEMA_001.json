@@ -1,0 +1,39 @@
+{
+  "schemaName": "UAOS PA3X Test Package Schema 001",
+  "status": "DRY-RUN / STRUCTURE TEST / MIDI-SPEC TEST ONLY",
+  "requiredLabels": [
+    "TEST PACKAGE",
+    "UNVERIFIED",
+    "NO KEYBOARD-NATIVE FILES"
+  ],
+  "package": {
+    "id": "PA3X_ORIENTAL_TEST_PACKAGE_001",
+    "targetDevice": "KORG PA-3X Oriental",
+    "packageType": "dry-run folder + JSON specs",
+    "containsKeyboardNativeFiles": false,
+    "containsProprietarySamples": false,
+    "requiresOwnerApprovalBeforeUsbCopy": true
+  },
+  "sections": [
+    "intro",
+    "variation1",
+    "variation2",
+    "variation3",
+    "fill",
+    "ending"
+  ],
+  "allowedOutputs": [
+    "README.md",
+    "manifest.json",
+    "style-plan.json",
+    "midi-spec.json",
+    "sections.json",
+    "qa-report.md",
+    "owner-instructions.md"
+  ],
+  "blockedOutputs": [
+    "keyboard-native package files",
+    "proprietary samples",
+    "USB transfer"
+  ]
+}
