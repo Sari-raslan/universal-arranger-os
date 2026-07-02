@@ -3,76 +3,21 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>UAOS / AE Platform - Öffentlicher Projektmonitor</title>
-  <meta name="description" content="Öffentlicher Projektmonitor zur Vorbereitung der Selbstständigkeit: UAOS / AE Platform.">
+  <title>UAOS / AE Platform - Projektzahlen und Umsetzungsstand</title>
+  <meta name="description" content="Öffentlicher Projektmonitor mit Projektzahlen, Finanzierungsbedarf, QA-Status und Umsetzungsstand.">
   <style>
-    :root {
-      color-scheme: dark;
-      --bg: #071018;
-      --panel: #0f1d2a;
-      --panel-2: #13283a;
-      --line: rgba(132, 204, 255, 0.22);
-      --text: #eef8ff;
-      --muted: #aac2d7;
-      --cyan: #4dd8ff;
-      --blue: #3b82f6;
-      --green: #4ade80;
-      --amber: #fbbf24;
-      --red: #fb7185;
-    }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      min-height: 100vh;
-      font-family: Arial, Helvetica, sans-serif;
-      background:
-        radial-gradient(circle at 18% 0%, rgba(77, 216, 255, 0.18), transparent 34rem),
-        radial-gradient(circle at 86% 8%, rgba(59, 130, 246, 0.22), transparent 32rem),
-        linear-gradient(180deg, #071018 0%, #09131d 48%, #050a10 100%);
-      color: var(--text);
-      line-height: 1.55;
-    }
-    main { width: min(1180px, calc(100% - 32px)); margin: 0 auto; padding: 34px 0 48px; }
-    header { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(280px, .65fr); gap: 16px; margin-bottom: 16px; }
-    section, article { border: 1px solid var(--line); background: linear-gradient(145deg, rgba(19, 40, 58, .95), rgba(10, 20, 30, .96)); border-radius: 8px; box-shadow: 0 20px 70px rgba(0,0,0,.28); }
-    .hero { padding: 28px; }
-    .kicker { display: inline-flex; align-items: center; gap: 8px; color: #dff8ff; border: 1px solid rgba(77,216,255,.55); background: rgba(77,216,255,.11); border-radius: 999px; padding: 6px 12px; font-size: 13px; font-weight: 800; }
-    .kicker::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--green); box-shadow: 0 0 20px var(--green); }
-    h1 { margin: 18px 0 8px; font-size: clamp(42px, 8vw, 78px); line-height: .95; letter-spacing: 0; }
-    h2 { margin: 0 0 12px; font-size: 22px; }
-    h3 { margin: 18px 0 8px; font-size: 18px; color: #dff8ff; }
-    p { margin: 0; color: var(--muted); }
-    .subtitle { font-size: 20px; color: #c7dded; max-width: 760px; }
-    .meta { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; }
-    .pill { border: 1px solid var(--line); background: rgba(255,255,255,.04); border-radius: 999px; padding: 7px 11px; color: var(--muted); font-size: 13px; }
-    .focus { padding: 22px; display: grid; align-content: center; gap: 12px; }
-    .focus strong { display: block; font-size: 34px; color: var(--cyan); line-height: 1.05; }
-    .cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin: 16px 0; }
-    .card { padding: 18px; min-height: 132px; }
-    .label { display: block; color: var(--muted); font-size: 13px; font-weight: 800; text-transform: uppercase; }
-    .value { display: block; margin-top: 10px; font-size: 25px; font-weight: 900; line-height: 1.1; color: var(--text); }
-    .note { display: block; margin-top: 8px; color: var(--muted); font-size: 14px; }
-    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 12px; }
-    .wide { grid-column: 1 / -1; }
-    .panel { padding: 22px; }
-    table { width: 100%; border-collapse: collapse; overflow: hidden; border-radius: 8px; }
-    th, td { border-bottom: 1px solid rgba(132,204,255,.16); padding: 11px 10px; text-align: left; color: var(--muted); vertical-align: top; }
-    th { color: var(--text); background: rgba(77,216,255,.08); font-size: 13px; text-transform: uppercase; }
-    td:last-child, th:last-child { text-align: right; color: var(--text); font-weight: 800; white-space: nowrap; }
-    .total td { color: var(--text); font-size: 18px; font-weight: 900; border-bottom: 0; }
-    ul { margin: 0; padding-left: 20px; color: var(--muted); }
-    li + li { margin-top: 6px; }
-    .timeline { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
-    .mini { border: 1px solid rgba(132,204,255,.18); background: rgba(255,255,255,.035); border-radius: 8px; padding: 14px; }
-    .mini strong { display: block; color: var(--cyan); margin-bottom: 6px; }
-    .status-cols { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
-    .tag { display: inline-flex; margin-bottom: 10px; border-radius: 999px; padding: 5px 10px; font-size: 13px; font-weight: 900; }
-    .done { color: #dcfce7; background: rgba(74,222,128,.13); border: 1px solid rgba(74,222,128,.45); }
-    .work { color: #dff8ff; background: rgba(77,216,255,.12); border: 1px solid rgba(77,216,255,.42); }
-    .plan { color: #fff7d6; background: rgba(251,191,36,.13); border: 1px solid rgba(251,191,36,.42); }
-    .danger { color: #ffe4e9; background: rgba(251,113,133,.12); border: 1px solid rgba(251,113,133,.42); }
-    footer { margin-top: 16px; padding: 18px 0 0; color: var(--muted); border-top: 1px solid var(--line); font-size: 14px; }
-    @media (max-width: 940px) { header, .cards, .grid, .timeline, .status-cols { grid-template-columns: 1fr; } main { width: min(100% - 24px, 1180px); } }
+    :root{color-scheme:dark;--bg:#071018;--panel:#0f1d2a;--panel2:#13283a;--line:rgba(125,211,252,.22);--text:#eef8ff;--muted:#aac2d7;--cyan:#4dd8ff;--blue:#3b82f6;--green:#4ade80;--amber:#fbbf24;--red:#fb7185;--soft:rgba(255,255,255,.045)}
+    *{box-sizing:border-box} body{margin:0;min-height:100vh;font-family:Arial,Helvetica,sans-serif;background:radial-gradient(circle at 16% 0%,rgba(77,216,255,.18),transparent 34rem),radial-gradient(circle at 90% 4%,rgba(59,130,246,.22),transparent 32rem),linear-gradient(180deg,#071018 0%,#09131d 48%,#050a10 100%);color:var(--text);line-height:1.55}
+    main{width:min(1200px,calc(100% - 32px));margin:0 auto;padding:34px 0 48px} section,article{border:1px solid var(--line);background:linear-gradient(145deg,rgba(19,40,58,.95),rgba(10,20,30,.96));border-radius:8px;box-shadow:0 20px 70px rgba(0,0,0,.28)}
+    header{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(280px,.65fr);gap:16px;margin-bottom:16px}.hero{padding:28px}.focus{padding:22px;display:grid;align-content:center;gap:12px}.focus strong{display:block;font-size:36px;color:var(--cyan);line-height:1.05}
+    .kicker{display:inline-flex;align-items:center;gap:8px;color:#dff8ff;border:1px solid rgba(77,216,255,.55);background:rgba(77,216,255,.11);border-radius:999px;padding:6px 12px;font-size:13px;font-weight:800}.kicker:before{content:"";width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 20px var(--green)}
+    h1{margin:18px 0 8px;font-size:clamp(42px,8vw,78px);line-height:.95;letter-spacing:0} h2{margin:0 0 12px;font-size:22px} h3{margin:18px 0 8px;font-size:18px;color:#dff8ff} p{margin:0;color:var(--muted)} .subtitle{font-size:20px;color:#c7dded;max-width:760px}
+    .meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}.pill{border:1px solid var(--line);background:var(--soft);border-radius:999px;padding:7px 11px;color:var(--muted);font-size:13px}.label{display:block;color:var(--muted);font-size:13px;font-weight:800;text-transform:uppercase}.value{display:block;margin-top:8px;font-size:28px;font-weight:900;line-height:1.05;color:var(--text)}.note{display:block;margin-top:8px;color:var(--muted);font-size:14px}
+    .cards{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;margin:16px 0}.card{padding:16px;min-height:120px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}.wide{grid-column:1/-1}.panel{padding:22px}
+    table{width:100%;border-collapse:collapse;overflow:hidden;border-radius:8px} th,td{border-bottom:1px solid rgba(132,204,255,.16);padding:10px;text-align:left;color:var(--muted);vertical-align:top} th{color:var(--text);background:rgba(77,216,255,.08);font-size:13px;text-transform:uppercase} td:last-child,th:last-child{text-align:right;color:var(--text);font-weight:800}.total td{color:var(--text);font-size:18px;font-weight:900;border-bottom:0;background:rgba(77,216,255,.075)}
+    ul{margin:0;padding-left:20px;color:var(--muted)} li+li{margin-top:6px}.mini-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.status-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.mini{border:1px solid rgba(132,204,255,.18);background:rgba(255,255,255,.035);border-radius:8px;padding:14px}.mini strong{display:block;color:var(--cyan);margin-bottom:6px}.tag{display:inline-flex;margin-bottom:10px;border-radius:999px;padding:5px 10px;font-size:13px;font-weight:900}.done{color:#dcfce7;background:rgba(74,222,128,.13);border:1px solid rgba(74,222,128,.45)}.work{color:#dff8ff;background:rgba(77,216,255,.12);border:1px solid rgba(77,216,255,.42)}.plan{color:#fff7d6;background:rgba(251,191,36,.13);border:1px solid rgba(251,191,36,.42)}.pass{color:#dcfce7}.warn{color:#fde68a}
+    .progress-list{display:grid;gap:12px}.progress-row{display:grid;grid-template-columns:170px 1fr 56px;gap:12px;align-items:center;color:var(--muted)}.bar{height:11px;border-radius:999px;background:rgba(255,255,255,.08);overflow:hidden}.bar span{display:block;height:100%;width:var(--p);background:linear-gradient(90deg,var(--blue),var(--cyan));border-radius:inherit}.pct{text-align:right;color:var(--text);font-weight:900}.callout{border:1px solid rgba(251,191,36,.35);background:rgba(251,191,36,.08);padding:14px;border-radius:8px;color:#fde68a;margin-top:12px}
+    footer{margin-top:16px;padding:18px 0 0;color:var(--muted);border-top:1px solid var(--line);font-size:14px}@media(max-width:1050px){.cards{grid-template-columns:repeat(2,1fr)} header,.grid,.mini-grid,.status-cols{grid-template-columns:1fr}}@media(max-width:620px){main{width:min(100% - 24px,1200px)}.cards{grid-template-columns:1fr}.progress-row{grid-template-columns:1fr}.pct{text-align:left}td:last-child,th:last-child{text-align:left;white-space:normal}}
   </style>
 </head>
 <body>
@@ -81,104 +26,74 @@
     <section class="hero">
       <span class="kicker">Öffentlicher Projektmonitor</span>
       <h1>UAOS / AE Platform</h1>
-      <p class="subtitle">Öffentlicher Projektmonitor zur Vorbereitung der Selbstständigkeit</p>
-      <div class="meta">
-        <span class="pill">Aktiver Prototyp</span>
-        <span class="pill">Vorbereitung der Selbstständigkeit</span>
-        <span class="pill">Letzte Aktualisierung: 02.07.2026 14:10:39</span>
-      </div>
+      <p class="subtitle">Öffentlicher Projektmonitor zur Vorbereitung der Selbstständigkeit mit Projektzahlen, Finanzplanung, QA-Status und Umsetzungsstand.</p>
+      <div class="meta"><span class="pill">Status: fortlaufend aktualisierter Projektmonitor</span><span class="pill">Letzte Aktualisierung: 02.07.2026 14:21:31</span><span class="pill">Keine Umsatzgarantie</span></div>
     </section>
-    <section class="focus">
-      <span class="label">Maximaler Finanzierungsbedarf</span>
-      <strong>4.700 €</strong>
-      <p>Konservative, unverbindliche Planung ohne Umsatzgarantie und ohne Rechnung.</p>
-    </section>
+    <section class="focus"><span class="label">Maximaler Finanzierungsbedarf</span><strong>4.700 €</strong><p>Planungswert für technische Arbeitsfähigkeit, Dokumentation, Datensicherung und einfache Öffentlichkeitsarbeit.</p></section>
   </header>
 
-  <section class="cards" aria-label="Projektüberblick">
-    <article class="card"><span class="label">Projektstatus</span><span class="value">Aktiver Prototyp</span><span class="note">Vorbereitung der Selbstständigkeit</span></article>
-    <article class="card"><span class="label">Finanzierungsbedarf</span><span class="value">4.700 €</span><span class="note">Maximaler Finanzierungsbedarf</span></article>
-    <article class="card"><span class="label">Anfangsumsatz</span><span class="value">0 €</span><span class="note">Keine Umsatzgarantie</span></article>
-    <article class="card"><span class="label">Unterlagen</span><span class="value">Final vorbereitet</span><span class="note">Businessplan und Präsentation</span></article>
+  <section class="panel wide">
+    <h2>Projektzahlen und Umsetzungsstand</h2>
+    <p>Diese Kennzahlen sind interne Projekt- und Planungsindikatoren. Sie beschreiben Arbeitsstand, Vorbereitung und Nachweise, nicht garantierte Umsätze.</p>
+    <div class="cards">
+      <article class="card"><span class="label">Projektbereiche</span><span class="value">10</span><span class="note">Gesamtstruktur</span></article>
+      <article class="card"><span class="label">Abgeschlossen</span><span class="value">6</span><span class="note">Nachweise vorbereitet</span></article>
+      <article class="card"><span class="label">In Bearbeitung</span><span class="value">4</span><span class="note">Aktive Arbeitsstränge</span></article>
+      <article class="card"><span class="label">Nächste Schritte</span><span class="value">5</span><span class="note">Offen / geplant</span></article>
+      <article class="card"><span class="label">Finanzierung</span><span class="value">4.700 €</span><span class="note">Maximaler Bedarf</span></article>
+      <article class="card"><span class="label">Anfangsumsatz</span><span class="value">0 €</span><span class="note">Keine Garantie</span></article>
+    </div>
+    <div class="callout">Lokale QA-Kette: 7 geprüfte Module. Erwartete Erstumsätze Jahr 1: 0–4.000 €, konservativ und nicht garantiert.</div>
   </section>
 
   <section class="grid">
     <article class="panel wide">
-      <h2>Finanzierungsbedarf</h2>
-      <table>
-        <thead><tr><th>Position</th><th>Betrag</th></tr></thead>
-        <tbody>
-          <tr><td>Laptop / Workstation</td><td>2.400 €</td></tr>
-          <tr><td>Externer Monitor</td><td>350 €</td></tr>
-          <tr><td>Tastatur / Maus / Speicher / Zubehör</td><td>350 €</td></tr>
-          <tr><td>Software- / Entwicklungsreserve</td><td>750 €</td></tr>
-          <tr><td>Backup / Datensicherung / Cloud-Reserve</td><td>250 €</td></tr>
-          <tr><td>Dokumentation / Präsentation / Verwaltung</td><td>250 €</td></tr>
-          <tr><td>Werbematerial / Flyer / einfache Öffentlichkeitsarbeit</td><td>250 €</td></tr>
-          <tr><td>Reserve für unvorhergesehene technische Kosten</td><td>100 €</td></tr>
-          <tr class="total"><td>Gesamt</td><td>4.700 €</td></tr>
-        </tbody>
-      </table>
+      <h2>Finanzierungszahlen</h2>
+      <table><thead><tr><th>Kategorie</th><th>Status</th><th>Betrag</th></tr></thead><tbody>
+        <tr><td>Laptop / Workstation</td><td>geplant</td><td>2.400 €</td></tr><tr><td>Externer Monitor</td><td>geplant</td><td>350 €</td></tr><tr><td>Tastatur / Maus / Speicher / Zubehör</td><td>geplant</td><td>350 €</td></tr><tr><td>Software- / Entwicklungsreserve</td><td>geplant</td><td>750 €</td></tr><tr><td>Backup / Datensicherung / Cloud-Reserve</td><td>geplant</td><td>250 €</td></tr><tr><td>Dokumentation / Präsentation / Verwaltung</td><td>geplant</td><td>250 €</td></tr><tr><td>Werbematerial / Flyer / einfache Öffentlichkeitsarbeit</td><td>geplant</td><td>250 €</td></tr><tr><td>Reserve für unvorhergesehene technische Kosten</td><td>geplant</td><td>100 €</td></tr><tr class="total"><td>Gesamt</td><td>geplant</td><td>4.700 €</td></tr>
+      </tbody></table>
+      <p class="callout">Die Beträge sind Planungswerte. Tatsächliche Anschaffungen erfolgen erst nach Angebot, Verfügbarkeit und Abstimmung mit dem Jobcenter.</p>
     </article>
 
     <article class="panel wide">
-      <h2>Ertragserwartung</h2>
-      <div class="timeline">
-        <div class="mini"><strong>Monate 1–3</strong><p>0 € Umsatz, 5–15 qualifizierte Gespräche / Feedbackkontakte</p></div>
-        <div class="mini"><strong>Monate 4–6</strong><p>0–300 € monatlich möglich, 1–3 kleine Kunden/Testaufträge</p></div>
-        <div class="mini"><strong>Monate 7–9</strong><p>100–600 € monatlich möglich, 2–5 Kunden/Aufträge</p></div>
-        <div class="mini"><strong>Monate 10–12</strong><p>300–1.000 € monatlich möglich, 3–8 Kunden/Aufträge</p></div>
-      </div>
-      <h3>Hinweis</h3>
-      <p>Alle Werte sind konservativ, unverbindlich und keine Umsatzgarantie.</p>
-    </article>
-
-    <article class="panel">
-      <h2>Kundengewinnung</h2>
-      <ul>
-        <li>Musikmessen und Fachveranstaltungen</li>
-        <li>Konzerte und größere Musikveranstaltungen</li>
-        <li>Flyer mit QR-Code zum Projektmonitor</li>
-        <li>Direktkontakte zu Musikern, Sängern, Produzenten und Studios</li>
-        <li>Musiker-Communities</li>
-        <li>Online-Präsenz und öffentlicher Projektmonitor</li>
-      </ul>
-    </article>
-
-    <article class="panel">
-      <h2>Kostenbasis</h2>
-      <table>
-        <tbody>
-          <tr><td>Operative feste Kosten</td><td>95–320 € monatlich</td></tr>
-          <tr><td>Persönliche Pflicht-/Vorsorgekosten</td><td>382–700 € monatlich</td></tr>
-          <tr class="total"><td>Gesamte monatliche Kostenbasis</td><td>477–1.020 € monatlich</td></tr>
-        </tbody>
-      </table>
-      <h3>Break-even</h3>
-      <p>Ein monatlicher Break-even wird konservativ erst bei wiederkehrend ca. 700–1.000 € Monatsumsatz realistisch eingeschätzt. Dies ist frühestens gegen Ende des ersten Jahres möglich, aber nicht garantiert.</p>
+      <h2>Operative und persönliche Kosten</h2>
+      <table><thead><tr><th>Kostenbereich</th><th>Status</th><th>Monatliche Spanne</th></tr></thead><tbody>
+        <tr><td>Operative feste Kosten</td><td>geplant</td><td>95–320 €</td></tr><tr><td>Krankenversicherung / Pflegeversicherung</td><td>zu klären / geplant</td><td>270–350 €</td></tr><tr><td>Rentenversicherung / Altersvorsorge</td><td>zu klären / geplant</td><td>112–200 €</td></tr><tr><td>Steuer-Rücklage</td><td>abhängig vom Gewinn</td><td>0–150 €</td></tr><tr class="total"><td>Gesamte monatliche Kostenbasis</td><td>geplant</td><td>477–1.020 €</td></tr>
+      </tbody></table>
     </article>
 
     <article class="panel wide">
-      <h2>Projektdateien / Nachweise</h2>
+      <h2>Ertragserwartung und Kundenzahlen</h2>
+      <table><thead><tr><th>Zeitraum</th><th>Status</th><th>Erwartete Kunden / Kontakte</th><th>Umsatz</th></tr></thead><tbody>
+        <tr><td>Monate 1–3</td><td>Aufbauphase</td><td>0 zahlende Kunden, 5–15 Feedbackkontakte</td><td>0 €</td></tr><tr><td>Monate 4–6</td><td>vorsichtiger Start</td><td>1–3 kleine Kunden/Testaufträge möglich</td><td>0–300 € monatlich</td></tr><tr><td>Monate 7–9</td><td>Ausbauphase</td><td>2–5 Kunden/Aufträge möglich</td><td>100–600 € monatlich</td></tr><tr><td>Monate 10–12</td><td>Stabilisierung</td><td>3–8 Kunden/Aufträge möglich</td><td>300–1.000 € monatlich</td></tr>
+      </tbody></table><p class="callout">Alle Umsatzwerte sind konservativ, unverbindlich und nicht garantiert.</p>
+    </article>
+
+    <article class="panel wide">
+      <h2>Dateien / Nachweise</h2>
       <div class="status-cols">
-        <div class="mini"><span class="tag done">Abgeschlossen</span><ul><li>Businessplan FINAL 4.700 € mit Link</li><li>Präsentation FINAL 4.700 € mit Link</li><li>Finanzplanung und Kostenbasis</li><li>Ertragserwartung und Kundenzahlen</li><li>Kundengewinnung / Marketingplan</li><li>Projektmonitor</li></ul></div>
-        <div class="mini"><span class="tag work">In Entwicklung</span><ul><li>Product QA Core</li><li>Library Factory</li><li>Arranger Intelligence</li><li>Live Monitor Datenmodell</li><li>Dashboard Reader</li></ul></div>
-        <div class="mini"><span class="tag plan">Geplant</span><ul><li>Flyer / QR-Code Material</li><li>Demo-Gesprächsleitfaden</li><li>Nutzerfeedback-Formular</li><li>Angebotsstruktur</li><li>Weitere QA-Validierung</li></ul></div>
+        <div class="mini"><span class="tag done">Abgeschlossen</span><ol><li>Businessplan FINAL 4.700 € mit Monitor-Link</li><li>Präsentation FINAL 4.700 € mit klickbarem Monitor-Link</li><li>Finanzierungsplanung</li><li>Ertragserwartung und Kundenzahlen</li><li>Kundengewinnung / Marketingplan</li><li>GitHub Pages Projektmonitor</li></ol></div>
+        <div class="mini"><span class="tag work">In Bearbeitung</span><ol><li>Product QA Core</li><li>Library Factory</li><li>Arranger Intelligence</li><li>Live Monitor Datenmodell</li></ol></div>
+        <div class="mini"><span class="tag plan">Geplant / nächste Schritte</span><ol><li>Flyer / QR-Code Material</li><li>Demo-Gesprächsleitfaden</li><li>Nutzerfeedback-Formular</li><li>Angebotsstruktur</li><li>Weitere QA-Validierung</li></ol></div>
       </div>
     </article>
 
     <article class="panel">
-      <h2>Changelog</h2>
-      <h3>2026-07-02</h3>
-      <ul><li>Finanzierungsbedarf auf 4.700 € vereinheitlicht</li><li>Ertragserwartung, Kundenzahlen und Kostenbasis ergänzt</li><li>Businessplan und Präsentation finalisiert</li><li>Monitor-Inhalte professionalisiert</li></ul>
+      <h2>QA / technische Nachweise</h2><p><strong class="pass">Geprüfte QA-Module: 7</strong></p><ul><li>Arranger Plan Validator</li><li>Library Metadata Validator</li><li>Monitor Status Aggregator</li><li>Product QA Core</li><li>Validator Regression Runner</li><li>Local CI QA Runner</li><li>Regression Edge Coverage</li></ul>
+      <h3>Status</h3><ul><li>Lokale QA: <strong class="pass">PASS</strong></li><li>Keine Zahlungsfunktion: <strong class="pass">PASS</strong></li><li>Kein Keyboard-Output: <strong class="pass">PASS</strong></li><li>Keine proprietären Samples: <strong class="pass">PASS</strong></li><li>Keine falschen Umsatzversprechen: <strong class="pass">PASS</strong></li></ul>
     </article>
 
     <article class="panel">
-      <h2>Sicherheitsgrenzen</h2>
-      <ul><li>Keine Zahlungsfunktion</li><li>Kein Checkout</li><li>Kein Keyboard-Output</li><li>Keine Keyboard-Übertragung</li><li>Keine proprietären Samples</li><li>Keine falschen Umsatzversprechen</li></ul>
+      <h2>Fortschritt</h2><div class="progress-list">
+        <div class="progress-row"><span>Businessplan</span><div class="bar" style="--p:100%"><span></span></div><span class="pct">100 %</span></div><div class="progress-row"><span>Präsentation</span><div class="bar" style="--p:100%"><span></span></div><span class="pct">100 %</span></div><div class="progress-row"><span>Monitor</span><div class="bar" style="--p:85%"><span></span></div><span class="pct">85 %</span></div><div class="progress-row"><span>Finanzplanung</span><div class="bar" style="--p:100%"><span></span></div><span class="pct">100 %</span></div><div class="progress-row"><span>Kundengewinnung</span><div class="bar" style="--p:80%"><span></span></div><span class="pct">80 %</span></div><div class="progress-row"><span>Produktentwicklung</span><div class="bar" style="--p:55%"><span></span></div><span class="pct">55 %</span></div><div class="progress-row"><span>QA-Struktur</span><div class="bar" style="--p:75%"><span></span></div><span class="pct">75 %</span></div><div class="progress-row"><span>Markt-/Feedbackphase</span><div class="bar" style="--p:25%"><span></span></div><span class="pct">25 %</span></div>
+      </div><p class="callout">Diese Fortschrittsbalken sind interne Projektindikatoren und keine Umsatzgarantien.</p>
+    </article>
+
+    <article class="panel wide">
+      <h2>Changelog</h2><div class="mini"><strong>2026-07-02</strong><ul><li>Monitor auf funktionierendem GitHub-Pages-Link aktualisiert</li><li>Finanzierungsbedarf auf 4.700 € vereinheitlicht</li><li>Businessplan und Präsentation mit Monitor-Link finalisiert</li><li>Projektzahlen, Umsetzungsstand und offene Aufgaben ergänzt</li><li>Ertragserwartung, Kundengewinnung und Kostenbasis sichtbar gemacht</li></ul></div>
     </article>
   </section>
-  <footer>Letzte Aktualisierung: 02.07.2026 14:10:39 · Öffentlicher Projektmonitor zur Vorbereitung der Selbstständigkeit.</footer>
+  <footer>Letzte Aktualisierung: 02.07.2026 14:21:31 · Status: fortlaufend aktualisierter Projektmonitor · Öffentlicher Link: https://sari-raslan.github.io/universal-arranger-os/monitor/</footer>
 </main>
 </body>
 </html>
