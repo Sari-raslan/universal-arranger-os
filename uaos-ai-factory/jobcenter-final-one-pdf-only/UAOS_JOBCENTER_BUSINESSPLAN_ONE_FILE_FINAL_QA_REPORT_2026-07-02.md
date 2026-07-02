@@ -1,0 +1,23 @@
+# UAOS Jobcenter One File Final QA Report - 2026-07-02
+
+- PDF exists: YES
+- PDF page count: 20
+- Page count 18-26: YES
+- File size bytes: 207003
+- File size under 9 MB: YES
+- German only: YES
+- 4.700 EUR present: YES
+- Old ranges absent: YES
+- Forbidden scan findings: NONE
+- Monitor URL visible/copyable: YES (https://sari-raslan.github.io/universal-arranger-os/monitor/)
+- PDF contains URI marker for clickable link: YES
+- All key sections included: YES
+- Tables readable: YES
+- No table overlaps expected: YES
+- No empty cards/bullets: YES
+- German characters generated from UTF-8 source: YES
+- No mojibake in generated source: YES
+- App.jsx touched: NO
+- Deploy/Vercel used: NO
+- Separate PowerPoint output: NO
+- DOCX/TXT/ZIP output: NO
