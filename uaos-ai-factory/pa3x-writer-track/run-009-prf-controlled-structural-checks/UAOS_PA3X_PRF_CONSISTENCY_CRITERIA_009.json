@@ -1,0 +1,30 @@
+{
+  "commonHeaderPatternPresence": {
+    "weight": 0.2,
+    "requiredForParserV1": true
+  },
+  "commonFooterCandidatePresence": {
+    "weight": 0.1,
+    "requiredForParserV1": false
+  },
+  "regionCountSimilarity": {
+    "weight": 0.2,
+    "requiredForParserV1": true
+  },
+  "regionLengthDistributionSimilarity": {
+    "weight": 0.2,
+    "requiredForParserV1": true
+  },
+  "fingerprintSimilarity": {
+    "weight": 0.15,
+    "requiredForParserV1": false
+  },
+  "outlierDetection": {
+    "weight": 0.15,
+    "requiredForParserV1": true
+  },
+  "noValueDecoding": true,
+  "noWriterOutput": true,
+  "parserV1Threshold": 0.62,
+  "oneMorePrfCheckThreshold": 0.35
+}
