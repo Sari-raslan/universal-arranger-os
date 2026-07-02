@@ -1,0 +1,18 @@
+{
+  "stableOffsetExistsInMajorityOfPrfFiles": {
+    "threshold": 0.75,
+    "required": true
+  },
+  "offsetWindowCanBeReadSafely": {
+    "windowBytes": 64,
+    "maxOffsetsPerFile": 32,
+    "maxBytesPerFileRead": 4096,
+    "required": true
+  },
+  "onlyStructuralFingerprintComparison": true,
+  "noDecodedValues": true,
+  "noMusicalMeaning": true,
+  "noWriterOutput": true,
+  "parserV1ReadyThreshold": 0.72,
+  "moveToStylePadThreshold": 0.45
+}

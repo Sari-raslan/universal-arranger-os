@@ -1,0 +1,1736 @@
+{
+  "generatedAt": "2026-07-02T18:21:59.581Z",
+  "readOnly": true,
+  "source": "Run 009 stable regions plus 64-byte fixture windows only",
+  "stableOffsetWindowBytes": 64,
+  "maxStableOffsetsPerFile": 32,
+  "maxBytesPerFileRead": 4096,
+  "prfFilesValidated": 16,
+  "stableOffsetCountFromRun009": 3,
+  "validatedOffsetCount": 3,
+  "stableOffsetCount": 3,
+  "unstableOffsetCount": 0,
+  "variableOffsetCount": 0,
+  "unknownOffsetCount": 0,
+  "outlierFiles": [],
+  "confidenceScore": 0.915,
+  "parserV1Readiness": {
+    "ready": true,
+    "finalDecision": "A. PRF ready for read-only parser v1",
+    "reason": "Stable offsets validated strongly enough for a read-only parser v1."
+  },
+  "offsetResults": [
+    {
+      "offset": 0,
+      "filesPresentInRun009": 16,
+      "windowsValidated": 16,
+      "presentRatio": 1,
+      "averageStructuralSimilarity": 0.9508,
+      "status": "stable",
+      "outliers": []
+    },
+    {
+      "offset": 17,
+      "filesPresentInRun009": 16,
+      "windowsValidated": 16,
+      "presentRatio": 1,
+      "averageStructuralSimilarity": 0.9019,
+      "status": "stable",
+      "outliers": []
+    },
+    {
+      "offset": 23,
+      "filesPresentInRun009": 16,
+      "windowsValidated": 16,
+      "presentRatio": 1,
+      "averageStructuralSimilarity": 0.899,
+      "status": "stable",
+      "outliers": []
+    }
+  ],
+  "perFile": [
+    {
+      "relativePath": "PLACE_PA3X_BACKUP_HERE/NEWNAME.SET/PERFORM/BANK01.PRF",
+      "sizeBytes": 29244,
+      "stableOffsetsChecked": 3,
+      "totalBytesRead": 192,
+      "withinReadLimit": true,
+      "windows": [
+        {
+          "requestedOffset": 0,
+          "actualStartOffset": 0,
+          "bytesRead": 64,
+          "structuralFingerprint": {
+            "sha256": "a70cc5d68ca57d3930b3609115a7bc2b9c5485817d7a55cdc1c736bbbf40a3cc",
+            "first16Hex": "0100011400007234020000180000000c",
+            "zeroRatio": 0.4688,
+            "printableRatio": 0.3281,
+            "histogram16": [
+              39,
+              3,
+              2,
+              2,
+              7,
+              8,
+              1,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0
+            ]
+          },
+          "decodedValue": false,
+          "musicalMeaning": false
+        },
+        {
+          "requestedOffset": 17,
+          "actualStartOffset": 17,
+          "bytesRead": 64,
+          "structuralFingerprint": {
+            "sha256": "014168109a9889e49b7c5f942a652973f1f561b6818f85d0512ff3c449a43a77",
+            "first16Hex": "0000000000004b4f5246000500001800",
+            "zeroRatio": 0.5,
+            "printableRatio": 0.375,
+            "histogram16": [
+              38,
+              1,
+              3,
+              1,
+              9,
+              10,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0
+            ]
+          },
+          "decodedValue": false,
+          "musicalMeaning": false
+        },
+        {
+          "requestedOffset": 23,
+          "actualStartOffset": 23,
+          "bytesRead": 64,
+          "structuralFingerprint": {
+            "sha256": "d05a19721ebc5656040f41378664971ba246f6e7f07d5d716b4f9d6f3affb006",
+            "first16Hex": "4b4f52460005000018000003c06d2d53",
+            "zeroRatio": 0.4375,
+            "printableRatio": 0.4219,
+            "histogram16": [
+              35,
+              1,
+              4,
+              1,
+              9,
+              11,
+              2,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0
+            ]
+          },
+          "decodedValue": false,
+          "musicalMeaning": false
+        }
+      ],
+      "noValueDecoding": true,
+      "noMusicalMeaning": true,
+      "noKeyboardOutput": true
+    },
+    {
+      "relativePath": "PLACE_PA3X_BACKUP_HERE/NEWNAME.SET/PERFORM/BANK02.PRF",
+      "sizeBytes": 25481,
+      "stableOffsetsChecked": 3,
+      "totalBytesRead": 192,
+      "withinReadLimit": true,
+      "windows": [
+        {
+          "requestedOffset": 0,
+          "actualStartOffset": 0,
+          "bytesRead": 64,
+          "structuralFingerprint": {
+            "sha256": "c4a05cffee46869f97b3c2435891d58ea6d9ad73dd052b440e046e7f9ce6d132",
+            "first16Hex": "0100011400006381020000180000000c",
+            "zeroRatio": 0.4531,
+            "printableRatio": 0.3125,
+            "histogram16": [
+              39,
+              3,
+              2,
+              1,
+              8,
+              7,
+              2,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0
+            ]
+          },
+          "decodedValue": false,
+          "musicalMeaning": false
+        },
+        {
+          "requestedOffset": 17,
+          "actualStartOffset": 17,
+          "bytesRead": 64,
+          "structuralFingerprint": {
+            "sha256": "bddf7eb9daa8d0e3fb147e102ec454faf1ba0ba591b372720d51d0f700184063",
+            "first16Hex": "0000000000004b4f5246000500001800",
+            "zeroRatio": 0.4531,
+            "printableRatio": 0.3906,
+            "histogram16": [
+              37,
+              1,
+              4,
+              2,
+              10,
+              8,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0
+            ]
+          },
+          "decodedValue": false,
+          "musicalMeaning": false
+        },
+        {
+          "requestedOffset": 23,
+          "actualStartOffset": 23,
+          "bytesRead": 64,
+          "structuralFingerprint": {
+            "sha256": "9f1df98a157f3dfe54fbc20252155439de5871b12a1c9949618f15d66264443c",
+            "first16Hex": "4b4f52460005000018000003c06d2d53",
+            "zeroRatio": 0.3906,
+            "printableRatio": 0.4375,
+            "histogram16": [
+              34,
+              1,
+              4,
+              2,
+              12,
+              9,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0
+            ]
+          },
+          "decodedValue": false,
+          "musicalMeaning": false
+        }
+      ],
+      "noValueDecoding": true,
+      "noMusicalMeaning": true,
+      "noKeyboardOutput": true
+    },
+    {
+      "relativePath": "PLACE_PA3X_BACKUP_HERE/NEWNAME.SET/PERFORM/BANK03.PRF",
+      "sizeBytes": 24810,
+      "stableOffsetsChecked": 3,
+      "totalBytesRead": 192,
+      "withinReadLimit": true,
+      "windows": [
+        {
+          "requestedOffset": 0,
+          "actualStartOffset": 0,
+          "bytesRead": 64,
+          "structuralFingerprint": {
+            "sha256": "2eccc06205f0482f71dd7e11c2fd4f1b07bf9bad186b92a3b44bbba20865585d",
+            "first16Hex": "01000114000060e2020000180000000c",
+            "zeroRatio": 0.4219,
+            "printableRatio": 0.3438,
+            "histogram16": [
+              37,
+              3,
+              2,
+              1,
+              15,
+              3,
+              1,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0
+            ]
+          },
+          "decodedValue": false,
+          "musicalMeaning": false
+        },
+        {
+          "requestedOffset": 17,
+          "actualStartOffset": 17,
+          "bytesRead": 64,
+          "structuralFingerprint": {
+            "sha256": "d33eff0733715eb653f45ec1422efdf1b7a7929b3623e8b0b279f28a2e363a6c",
+            "first16Hex": "0000000000004b4f5246000500001800",
+            "zeroRatio": 0.375,
+            "printableRatio": 0.4688,
+            "histogram16": [
+              32,
+              1,
+              3,
+              2,
+              21,
+              4,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "decodedValue": false,
+          "musicalMeaning": false
+        },
+        {
+          "requestedOffset": 23,
+          "actualStartOffset": 23,
+          "bytesRead": 64,
+          "structuralFingerprint": {
+            "sha256": "20916e4690c60f5d830945288ca987e2d914d7ec4804563e00965dd56060140f",
+            "first16Hex": "4b4f52460005000018000003904b454d",
+            "zeroRatio": 0.3125,
+            "printableRatio": 0.5156,
+            "histogram16": [
+              29,
+              1,
+              3,
+              2,
+              23,
+              5,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "decodedValue": false,
+          "musicalMeaning": false
+        }
+      ],
+      "noValueDecoding": true,
+      "noMusicalMeaning": true,
+      "noKeyboardOutput": true
+    },
+    {
+      "relativePath": "PLACE_PA3X_BACKUP_HERE/NEWNAME.SET/PERFORM/BANK04.PRF",
+      "sizeBytes": 24709,
+      "stableOffsetsChecked": 3,
+      "totalBytesRead": 192,
+      "withinReadLimit": true,
+      "windows": [
+        {
+          "requestedOffset": 0,
+          "actualStartOffset": 0,
+          "bytesRead": 64,
+          "structuralFingerprint": {
+            "sha256": "77554b3aa843babd5cbeff03c386373e04322b8db36b0309bb27985d9e985fe0",
+            "first16Hex": "010001140000607d020000180000000c",
+            "zeroRatio": 0.4063,
+            "printableRatio": 0.375,
+            "histogram16": [
+              36,
+              3,
+              3,
+              0,
+              9,
+              1,
+              9,
+              2,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0
+            ]
+          },
+          "decodedValue": false,
+          "musicalMeaning": false
+        },
+        {
+          "requestedOffset": 17,
+          "actualStartOffset": 17,
+          "bytesRead": 64,
+          "structuralFingerprint": {
+            "sha256": "4002ac9bc94d5709c0ba186b021788fdfa8b194e3d3fd99fe89510d8ed1fe71b",
+            "first16Hex": "0000000000004b4f5246000500001800",
+            "zeroRatio": 0.3438,
+            "printableRatio": 0.5,
+            "histogram16": [
+              30,
+              1,
+              4,
+              0,
+              10,
+              2,
+              14,
+              2,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0
+            ]
+          },
+          "decodedValue": false,
+          "musicalMeaning": false
+        },
+        {
+          "requestedOffset": 23,
+          "actualStartOffset": 23,
+          "bytesRead": 64,
+          "structuralFingerprint": {
+            "sha256": "133390c2a145affc6757a925bf24e396ef0a839537e4ce9a1fb3cac5f958b8e0",
+            "first16Hex": "4b4f52460005000018000003c0414820",
+            "zeroRatio": 0.2813,
+            "printableRatio": 0.5469,
+            "histogram16": [
+              27,
+              1,
+              5,
+              0,
+              12,
+              2,
+              14,
+              2,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0
+            ]
+          },
+          "decodedValue": false,
+          "musicalMeaning": false
+        }
+      ],
+      "noValueDecoding": true,
+      "noMusicalMeaning": true,
+      "noKeyboardOutput": true
+    },
+    {
+      "relativePath": "PLACE_PA3X_BACKUP_HERE/NEWNAME.SET/PERFORM/BANK05.PRF",
+      "sizeBytes": 23741,
+      "stableOffsetsChecked": 3,
+      "totalBytesRead": 192,
+      "withinReadLimit": true,
+      "windows": [
+        {
+          "requestedOffset": 0,
+          "actualStartOffset": 0,
+          "bytesRead": 64,
+          "structuralFingerprint": {
+            "sha256": "7fed8466238eab8b2773eca82c590b4054ebcb853b2cac43d63f8dd5a964e71d",
+            "first16Hex": "0100011400005cb5020000180000000c",
+            "zeroRatio": 0.4688,
+            "printableRatio": 0.3125,
+            "histogram16": [
+              40,
+              3,
+              2,
+              1,
+              8,
+              8,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "decodedValue": false,
+          "musicalMeaning": false
+        },
+        {
+          "requestedOffset": 17,
+          "actualStartOffset": 17,
+          "bytesRead": 64,
+          "structuralFingerprint": {
+            "sha256": "73d753c03861bc984d5c5e82a77efd623ed806cedc39111d8fb9b4e0c4791874",
+            "first16Hex": "0000000000004b4f5246000500001800",
+            "zeroRatio": 0.5625,
+            "printableRatio": 0.2969,
+            "histogram16": [
+              44,
+              1,
+              2,
+              1,
+              8,
+              7,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "decodedValue": false,
+          "musicalMeaning": false
+        },
+        {
+          "requestedOffset": 23,
+          "actualStartOffset": 23,
+          "bytesRead": 64,
+          "structuralFingerprint": {
+            "sha256": "60d98ac93155382b279b7cc4e8cbc2b8dcf3b1a9b33e0eb924d97d08492c8ec5",
+            "first16Hex": "4b4f52460005000018000003486d2d53",
+            "zeroRatio": 0.5,
+            "printableRatio": 0.3438,
+            "histogram16": [
+              41,
+              1,
+              2,
+              1,
+              9,
+              9,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "decodedValue": false,
+          "musicalMeaning": false
+        }
+      ],
+      "noValueDecoding": true,
+      "noMusicalMeaning": true,
+      "noKeyboardOutput": true
+    },
+    {
+      "relativePath": "PLACE_PA3X_BACKUP_HERE/NEWNAME.SET/PERFORM/BANK06.PRF",
+      "sizeBytes": 23152,
+      "stableOffsetsChecked": 3,
+      "totalBytesRead": 192,
+      "withinReadLimit": true,
+      "windows": [
+        {
+          "requestedOffset": 0,
+          "actualStartOffset": 0,
+          "bytesRead": 64,
+          "structuralFingerprint": {
+            "sha256": "693a7b78dd9918e45ac53445622e3265fe163d10eaea3aecee6e7be893da997a",
+            "first16Hex": "0100011400005a68020000180000000c",
+            "zeroRatio": 0.4531,
+            "printableRatio": 0.3438,
+            "histogram16": [
+              39,
+              3,
+              2,
+              2,
+              9,
+              7,
+              2,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "decodedValue": false,
+          "musicalMeaning": false
+        },
+        {
+          "requestedOffset": 17,
+          "actualStartOffset": 17,
+          "bytesRead": 64,
+          "structuralFingerprint": {
+            "sha256": "28fabea2a260d5fe5bc40b22a3ae335d6f3d3ba6b3f0faf7a8bcd55cb636a88a",
+            "first16Hex": "0000000000004b4f5246000500001800",
+            "zeroRatio": 0.5313,
+            "printableRatio": 0.3281,
+            "histogram16": [
+              42,
+              1,
+              2,
+              2,
+              9,
+              7,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "decodedValue": false,
+          "musicalMeaning": false
+        },
+        {
+          "requestedOffset": 23,
+          "actualStartOffset": 23,
+          "bytesRead": 64,
+          "structuralFingerprint": {
+            "sha256": "fa362974cf79fb1e4ac8ab916232f9cbe2fcde41e3193cb897f7111270681cc2",
+            "first16Hex": "4b4f52460005000018000003306d2d53",
+            "zeroRatio": 0.4688,
+            "printableRatio": 0.375,
+            "histogram16": [
+              39,
+              1,
+              2,
+              2,
+              10,
+              9,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "decodedValue": false,
+          "musicalMeaning": false
+        }
+      ],
+      "noValueDecoding": true,
+      "noMusicalMeaning": true,
+      "noKeyboardOutput": true
+    },
+    {
+      "relativePath": "PLACE_PA3X_BACKUP_HERE/NEWNAME.SET/PERFORM/BANK07.PRF",
+      "sizeBytes": 28111,
+      "stableOffsetsChecked": 3,
+      "totalBytesRead": 192,
+      "withinReadLimit": true,
+      "windows": [
+        {
+          "requestedOffset": 0,
+          "actualStartOffset": 0,
+          "bytesRead": 64,
+          "structuralFingerprint": {
+            "sha256": "c568fadbad583d991b3f366476fb908891fbbcd15c6e95e3aeac8cf36c8eabe9",
+            "first16Hex": "0100011400006dc7020000180000000c",
+            "zeroRatio": 0.4531,
+            "printableRatio": 0.3281,
+            "histogram16": [
+              39,
+              3,
+              2,
+              1,
+              6,
+              5,
+              5,
+              2,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0
+            ]
+          },
+          "decodedValue": false,
+          "musicalMeaning": false
+        },
+        {
+          "requestedOffset": 17,
+          "actualStartOffset": 17,
+          "bytesRead": 64,
+          "structuralFingerprint": {
+            "sha256": "58f6de883ce4e50dfef30adea0dc291c144b3dc340857c4a5d05621b57afc81a",
+            "first16Hex": "0000000000004b4f5246000500001800",
+            "zeroRatio": 0.4844,
+            "printableRatio": 0.375,
+            "histogram16": [
+              39,
+              1,
+              3,
+              1,
+              6,
+              5,
+              7,
+              2,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "decodedValue": false,
+          "musicalMeaning": false
+        },
+        {
+          "requestedOffset": 23,
+          "actualStartOffset": 23,
+          "bytesRead": 64,
+          "structuralFingerprint": {
+            "sha256": "c0263431d81bb6c0befede893a476f68ff8e629a189dc7bfdb33517d4890cc24",
+            "first16Hex": "4b4f52460005000018000003786d2d53",
+            "zeroRatio": 0.4219,
+            "printableRatio": 0.4219,
+            "histogram16": [
+              36,
+              1,
+              4,
+              1,
+              8,
+              5,
+              7,
+              2,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "decodedValue": false,
+          "musicalMeaning": false
+        }
+      ],
+      "noValueDecoding": true,
+      "noMusicalMeaning": true,
+      "noKeyboardOutput": true
+    },
+    {
+      "relativePath": "PLACE_PA3X_BACKUP_HERE/NEWNAME.SET/PERFORM/BANK08.PRF",
+      "sizeBytes": 22954,
+      "stableOffsetsChecked": 3,
+      "totalBytesRead": 192,
+      "withinReadLimit": true,
+      "windows": [
+        {
+          "requestedOffset": 0,
+          "actualStartOffset": 0,
+          "bytesRead": 64,
+          "structuralFingerprint": {
+            "sha256": "4dd7366041e7b28cca5d641124d9368d3173e6408332cadfa121d6cc61eabbc6",
+            "first16Hex": "01000114000059a2020000180000000c",
+            "zeroRatio": 0.4531,
+            "printableRatio": 0.3281,
+            "histogram16": [
+              39,
+              3,
+              3,
+              1,
+              7,
+              7,
+              2,
+              1,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "decodedValue": false,
+          "musicalMeaning": false
+        },
+        {
+          "requestedOffset": 17,
+          "actualStartOffset": 17,
+          "bytesRead": 64,
+          "structuralFingerprint": {
+            "sha256": "1c39e89b5ee395001a17aa7b20eb76bd49f9ad2a10e76c04592efe3cf97cb8bc",
+            "first16Hex": "0000000000004b4f5246000500001800",
+            "zeroRatio": 0.4688,
+            "printableRatio": 0.3906,
+            "histogram16": [
+              38,
+              1,
+              4,
+              2,
+              8,
+              8,
+              2,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "decodedValue": false,
+          "musicalMeaning": false
+        },
+        {
+          "requestedOffset": 23,
+          "actualStartOffset": 23,
+          "bytesRead": 64,
+          "structuralFingerprint": {
+            "sha256": "7abb38bbc11e6c473f8eb53af914a3521ea2c09bec621e3141bbb75bf00c926f",
+            "first16Hex": "4b4f52460005000018000003486d2d53",
+            "zeroRatio": 0.4063,
+            "printableRatio": 0.4375,
+            "histogram16": [
+              35,
+              1,
+              4,
+              2,
+              9,
+              10,
+              2,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "decodedValue": false,
+          "musicalMeaning": false
+        }
+      ],
+      "noValueDecoding": true,
+      "noMusicalMeaning": true,
+      "noKeyboardOutput": true
+    },
+    {
+      "relativePath": "PLACE_PA3X_BACKUP_HERE/NEWNAME.SET/PERFORM/BANK09.PRF",
+      "sizeBytes": 32230,
+      "stableOffsetsChecked": 3,
+      "totalBytesRead": 192,
+      "withinReadLimit": true,
+      "windows": [
+        {
+          "requestedOffset": 0,
+          "actualStartOffset": 0,
+          "bytesRead": 64,
+          "structuralFingerprint": {
+            "sha256": "ed5041d716a1fb5a1467ab86ea6e4cc6eee75f8f183b4bf4a02da0487bcd6001",
+            "first16Hex": "0100011400007dde020000180000000c",
+            "zeroRatio": 0.4531,
+            "printableRatio": 0.3125,
+            "histogram16": [
+              39,
+              3,
+              2,
+              1,
+              7,
+              5,
+              2,
+              3,
+              0,
+              0,
+              0,
+              0,
+              1,
+              1,
+              0,
+              0
+            ]
+          },
+          "decodedValue": false,
+          "musicalMeaning": false
+        },
+        {
+          "requestedOffset": 17,
+          "actualStartOffset": 17,
+          "bytesRead": 64,
+          "structuralFingerprint": {
+            "sha256": "48ef4304fdb8c3a61007d7dec150d3ced994798f671834caf41c643c73be1834",
+            "first16Hex": "0000000000004b4f5246000500001800",
+            "zeroRatio": 0.4063,
+            "printableRatio": 0.4375,
+            "histogram16": [
+              34,
+              1,
+              3,
+              1,
+              8,
+              5,
+              5,
+              6,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0
+            ]
+          },
+          "decodedValue": false,
+          "musicalMeaning": false
+        },
+        {
+          "requestedOffset": 23,
+          "actualStartOffset": 23,
+          "bytesRead": 64,
+          "structuralFingerprint": {
+            "sha256": "bfe63a52a15aa2766d346a9e575896505d83080c16f917895278b436ff390c0d",
+            "first16Hex": "4b4f52460005000018000003c06d2d53",
+            "zeroRatio": 0.3438,
+            "printableRatio": 0.4844,
+            "histogram16": [
+              31,
+              1,
+              3,
+              1,
+              8,
+              6,
+              6,
+              7,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0
+            ]
+          },
+          "decodedValue": false,
+          "musicalMeaning": false
+        }
+      ],
+      "noValueDecoding": true,
+      "noMusicalMeaning": true,
+      "noKeyboardOutput": true
+    },
+    {
+      "relativePath": "PLACE_PA3X_BACKUP_HERE/NEWNAME.SET/PERFORM/BANK10.PRF",
+      "sizeBytes": 31879,
+      "stableOffsetsChecked": 3,
+      "totalBytesRead": 192,
+      "withinReadLimit": true,
+      "windows": [
+        {
+          "requestedOffset": 0,
+          "actualStartOffset": 0,
+          "bytesRead": 64,
+          "structuralFingerprint": {
+            "sha256": "b4476658180ce06f5cf306c54b690860d76bf1c70788a71fb6f0f15b68c107d9",
+            "first16Hex": "0100011400007c7f020000180000000c",
+            "zeroRatio": 0.4531,
+            "printableRatio": 0.3281,
+            "histogram16": [
+              39,
+              3,
+              2,
+              1,
+              7,
+              8,
+              1,
+              2,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0
+            ]
+          },
+          "decodedValue": false,
+          "musicalMeaning": false
+        },
+        {
+          "requestedOffset": 17,
+          "actualStartOffset": 17,
+          "bytesRead": 64,
+          "structuralFingerprint": {
+            "sha256": "91b50ff1c20d3bef6f66aeb7ad97df00c1d73b09273d46dd36d7e8b59d1038bd",
+            "first16Hex": "0000000000004b4f5246000500001800",
+            "zeroRatio": 0.375,
+            "printableRatio": 0.5,
+            "histogram16": [
+              32,
+              1,
+              6,
+              1,
+              8,
+              10,
+              4,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0
+            ]
+          },
+          "decodedValue": false,
+          "musicalMeaning": false
+        },
+        {
+          "requestedOffset": 23,
+          "actualStartOffset": 23,
+          "bytesRead": 64,
+          "structuralFingerprint": {
+            "sha256": "5b8a0e720fc8fd5b154b09809dc5b75f58c06b726f14201c835ca9f50e469b15",
+            "first16Hex": "4b4f52460005000018000003c06d2d53",
+            "zeroRatio": 0.3125,
+            "printableRatio": 0.5469,
+            "histogram16": [
+              29,
+              1,
+              7,
+              2,
+              8,
+              11,
+              4,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0
+            ]
+          },
+          "decodedValue": false,
+          "musicalMeaning": false
+        }
+      ],
+      "noValueDecoding": true,
+      "noMusicalMeaning": true,
+      "noKeyboardOutput": true
+    },
+    {
+      "relativePath": "PLACE_PA3X_BACKUP_HERE/NEWNAME.SET/PERFORM/BANK11.PRF",
+      "sizeBytes": 29437,
+      "stableOffsetsChecked": 3,
+      "totalBytesRead": 192,
+      "withinReadLimit": true,
+      "windows": [
+        {
+          "requestedOffset": 0,
+          "actualStartOffset": 0,
+          "bytesRead": 64,
+          "structuralFingerprint": {
+            "sha256": "291b1c6ea38d6540e25a5296c2cb19dc470e0181e9b115a347b78081d801c655",
+            "first16Hex": "01000114000072f5020000180000000c",
+            "zeroRatio": 0.4531,
+            "printableRatio": 0.3281,
+            "histogram16": [
+              39,
+              3,
+              2,
+              1,
+              7,
+              5,
+              3,
+              2,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1
+            ]
+          },
+          "decodedValue": false,
+          "musicalMeaning": false
+        },
+        {
+          "requestedOffset": 17,
+          "actualStartOffset": 17,
+          "bytesRead": 64,
+          "structuralFingerprint": {
+            "sha256": "cf6f339bf24b850cfcc6fd0419f1aafa8e3aa8b02ac9e65aba4eb8f5514f3ff4",
+            "first16Hex": "0000000000004b4f5246000500001800",
+            "zeroRatio": 0.4375,
+            "printableRatio": 0.4375,
+            "histogram16": [
+              36,
+              1,
+              4,
+              2,
+              7,
+              5,
+              6,
+              2,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "decodedValue": false,
+          "musicalMeaning": false
+        },
+        {
+          "requestedOffset": 23,
+          "actualStartOffset": 23,
+          "bytesRead": 64,
+          "structuralFingerprint": {
+            "sha256": "b06318112b86100a74993050cf8aaf4328ec24beecb58ae4c082c84fafd7cb9c",
+            "first16Hex": "4b4f52460005000018000003a86d2d53",
+            "zeroRatio": 0.375,
+            "printableRatio": 0.4844,
+            "histogram16": [
+              33,
+              1,
+              4,
+              2,
+              9,
+              6,
+              6,
+              2,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "decodedValue": false,
+          "musicalMeaning": false
+        }
+      ],
+      "noValueDecoding": true,
+      "noMusicalMeaning": true,
+      "noKeyboardOutput": true
+    },
+    {
+      "relativePath": "PLACE_PA3X_BACKUP_HERE/NEWNAME.SET/PERFORM/BANK12.PRF",
+      "sizeBytes": 26615,
+      "stableOffsetsChecked": 3,
+      "totalBytesRead": 192,
+      "withinReadLimit": true,
+      "windows": [
+        {
+          "requestedOffset": 0,
+          "actualStartOffset": 0,
+          "bytesRead": 64,
+          "structuralFingerprint": {
+            "sha256": "5c2873a3d22dd4e059c9dd729bbc91301d54eea83eb9b78fb13e6fbc9999d154",
+            "first16Hex": "01000114000067ef020000180000000c",
+            "zeroRatio": 0.4531,
+            "printableRatio": 0.3281,
+            "histogram16": [
+              39,
+              3,
+              2,
+              2,
+              7,
+              5,
+              4,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0
+            ]
+          },
+          "decodedValue": false,
+          "musicalMeaning": false
+        },
+        {
+          "requestedOffset": 17,
+          "actualStartOffset": 17,
+          "bytesRead": 64,
+          "structuralFingerprint": {
+            "sha256": "e53f2ce880b494d92329cfb59b275d13502ed1808fd979c059f5a2027b776216",
+            "first16Hex": "0000000000004b4f5246000500001800",
+            "zeroRatio": 0.5156,
+            "printableRatio": 0.3438,
+            "histogram16": [
+              41,
+              1,
+              2,
+              2,
+              7,
+              5,
+              5,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "decodedValue": false,
+          "musicalMeaning": false
+        },
+        {
+          "requestedOffset": 23,
+          "actualStartOffset": 23,
+          "bytesRead": 64,
+          "structuralFingerprint": {
+            "sha256": "1137bdfbc5a827fc10784ca687d338d421f98d342d70f30657d10ef01d7d51ad",
+            "first16Hex": "4b4f52460005000018000003306d2d53",
+            "zeroRatio": 0.4531,
+            "printableRatio": 0.3906,
+            "histogram16": [
+              38,
+              1,
+              2,
+              2,
+              7,
+              5,
+              7,
+              2,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "decodedValue": false,
+          "musicalMeaning": false
+        }
+      ],
+      "noValueDecoding": true,
+      "noMusicalMeaning": true,
+      "noKeyboardOutput": true
+    },
+    {
+      "relativePath": "PLACE_PA3X_BACKUP_HERE/NEWNAME.SET/PERFORM/BANK13.PRF",
+      "sizeBytes": 31626,
+      "stableOffsetsChecked": 3,
+      "totalBytesRead": 192,
+      "withinReadLimit": true,
+      "windows": [
+        {
+          "requestedOffset": 0,
+          "actualStartOffset": 0,
+          "bytesRead": 64,
+          "structuralFingerprint": {
+            "sha256": "1bc30d7503e013c5ad9253d2d1248e89feba4f56b0c96825535355ee93d3f987",
+            "first16Hex": "0100011400007b82020000180000000c",
+            "zeroRatio": 0.4219,
+            "printableRatio": 0.3438,
+            "histogram16": [
+              37,
+              3,
+              2,
+              0,
+              7,
+              5,
+              2,
+              6,
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0
+            ]
+          },
+          "decodedValue": false,
+          "musicalMeaning": false
+        },
+        {
+          "requestedOffset": 17,
+          "actualStartOffset": 17,
+          "bytesRead": 64,
+          "structuralFingerprint": {
+            "sha256": "8e347a6ed783ec91a6355316b65a647ed5e1f87551c9aaec1b469844e998aa47",
+            "first16Hex": "0000000000004b4f5246000500001800",
+            "zeroRatio": 0.3281,
+            "printableRatio": 0.5156,
+            "histogram16": [
+              29,
+              1,
+              4,
+              0,
+              12,
+              7,
+              4,
+              6,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0
+            ]
+          },
+          "decodedValue": false,
+          "musicalMeaning": false
+        },
+        {
+          "requestedOffset": 23,
+          "actualStartOffset": 23,
+          "bytesRead": 64,
+          "structuralFingerprint": {
+            "sha256": "a71dd35cfaa32ecc3596a35ca1d4f3a89e11c17c2dfc219b854f4959193e107d",
+            "first16Hex": "4b4f52460005000018000003c0495354",
+            "zeroRatio": 0.2656,
+            "printableRatio": 0.5625,
+            "histogram16": [
+              26,
+              1,
+              4,
+              0,
+              13,
+              9,
+              4,
+              6,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0
+            ]
+          },
+          "decodedValue": false,
+          "musicalMeaning": false
+        }
+      ],
+      "noValueDecoding": true,
+      "noMusicalMeaning": true,
+      "noKeyboardOutput": true
+    },
+    {
+      "relativePath": "PLACE_PA3X_BACKUP_HERE/NEWNAME.SET/PERFORM/BANK14.PRF",
+      "sizeBytes": 22598,
+      "stableOffsetsChecked": 3,
+      "totalBytesRead": 192,
+      "withinReadLimit": true,
+      "windows": [
+        {
+          "requestedOffset": 0,
+          "actualStartOffset": 0,
+          "bytesRead": 64,
+          "structuralFingerprint": {
+            "sha256": "2891dc68b146e2079e034c29d611ddbfa7841adc386de05897acf3500a003409",
+            "first16Hex": "010001140000583e020000180000000c",
+            "zeroRatio": 0.5,
+            "printableRatio": 0.3125,
+            "histogram16": [
+              42,
+              3,
+              1,
+              1,
+              7,
+              7,
+              2,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "decodedValue": false,
+          "musicalMeaning": false
+        },
+        {
+          "requestedOffset": 17,
+          "actualStartOffset": 17,
+          "bytesRead": 64,
+          "structuralFingerprint": {
+            "sha256": "5ff90662a1a1ef6e25f0d288a0d337f3869ded1a1873335cb4ed7db353b2c36d",
+            "first16Hex": "0000000000004b4f5246000500001800",
+            "zeroRatio": 0.5469,
+            "printableRatio": 0.3438,
+            "histogram16": [
+              43,
+              1,
+              1,
+              0,
+              7,
+              6,
+              3,
+              3,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "decodedValue": false,
+          "musicalMeaning": false
+        },
+        {
+          "requestedOffset": 23,
+          "actualStartOffset": 23,
+          "bytesRead": 64,
+          "structuralFingerprint": {
+            "sha256": "9c4101ac80804336c5f3cdda338c313be22a550cee54721dab50454ae91ef976",
+            "first16Hex": "4b4f52460005000018000003004d4559",
+            "zeroRatio": 0.4844,
+            "printableRatio": 0.3906,
+            "histogram16": [
+              40,
+              1,
+              1,
+              0,
+              9,
+              7,
+              3,
+              3,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "decodedValue": false,
+          "musicalMeaning": false
+        }
+      ],
+      "noValueDecoding": true,
+      "noMusicalMeaning": true,
+      "noKeyboardOutput": true
+    },
+    {
+      "relativePath": "PLACE_PA3X_BACKUP_HERE/NEWNAME.SET/PERFORM/BANK15.PRF",
+      "sizeBytes": 30181,
+      "stableOffsetsChecked": 3,
+      "totalBytesRead": 192,
+      "withinReadLimit": true,
+      "windows": [
+        {
+          "requestedOffset": 0,
+          "actualStartOffset": 0,
+          "bytesRead": 64,
+          "structuralFingerprint": {
+            "sha256": "143ae7819198345a5a163bae6c7de662943f57483a8dc2a549b9430dfa7f6200",
+            "first16Hex": "01000114000075dd020000180000000c",
+            "zeroRatio": 0.4531,
+            "printableRatio": 0.3281,
+            "histogram16": [
+              39,
+              3,
+              2,
+              1,
+              8,
+              7,
+              1,
+              2,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0
+            ]
+          },
+          "decodedValue": false,
+          "musicalMeaning": false
+        },
+        {
+          "requestedOffset": 17,
+          "actualStartOffset": 17,
+          "bytesRead": 64,
+          "structuralFingerprint": {
+            "sha256": "d129270a0d3d4cd2d33055a9c1ad0f3c4111963f8b2bddf8a23ed180ef3cc8a9",
+            "first16Hex": "0000000000004b4f5246000500001800",
+            "zeroRatio": 0.4688,
+            "printableRatio": 0.3906,
+            "histogram16": [
+              38,
+              1,
+              3,
+              1,
+              11,
+              8,
+              1,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "decodedValue": false,
+          "musicalMeaning": false
+        },
+        {
+          "requestedOffset": 23,
+          "actualStartOffset": 23,
+          "bytesRead": 64,
+          "structuralFingerprint": {
+            "sha256": "ad65977a2e307b81061142a68bfc4e2850d2cea563b433aa9a877da4d67175b0",
+            "first16Hex": "4b4f52460005000018000003786d2d53",
+            "zeroRatio": 0.4063,
+            "printableRatio": 0.4375,
+            "histogram16": [
+              35,
+              1,
+              3,
+              1,
+              13,
+              9,
+              1,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "decodedValue": false,
+          "musicalMeaning": false
+        }
+      ],
+      "noValueDecoding": true,
+      "noMusicalMeaning": true,
+      "noKeyboardOutput": true
+    },
+    {
+      "relativePath": "PLACE_PA3X_BACKUP_HERE/NEWNAME.SET/PERFORM/BANK16.PRF",
+      "sizeBytes": 21975,
+      "stableOffsetsChecked": 3,
+      "totalBytesRead": 192,
+      "withinReadLimit": true,
+      "windows": [
+        {
+          "requestedOffset": 0,
+          "actualStartOffset": 0,
+          "bytesRead": 64,
+          "structuralFingerprint": {
+            "sha256": "86022bce50564c682e855586408bac84ce7f01f867407f69abeb118266b158e9",
+            "first16Hex": "01000114000055cf020000180000000c",
+            "zeroRatio": 0.4688,
+            "printableRatio": 0.2969,
+            "histogram16": [
+              40,
+              4,
+              0,
+              0,
+              10,
+              9,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0
+            ]
+          },
+          "decodedValue": false,
+          "musicalMeaning": false
+        },
+        {
+          "requestedOffset": 17,
+          "actualStartOffset": 17,
+          "bytesRead": 64,
+          "structuralFingerprint": {
+            "sha256": "5dc014084807a7bcf65dc2011e3939d2fa724bdeb0728bc4727bbf9526f15a33",
+            "first16Hex": "0000000000004b4f5246000500001800",
+            "zeroRatio": 0.4844,
+            "printableRatio": 0.3594,
+            "histogram16": [
+              39,
+              2,
+              1,
+              0,
+              14,
+              8,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "decodedValue": false,
+          "musicalMeaning": false
+        },
+        {
+          "requestedOffset": 23,
+          "actualStartOffset": 23,
+          "bytesRead": 64,
+          "structuralFingerprint": {
+            "sha256": "d0c29861306292272c23c2a790d33f8d02a6c2752d4c43b3e01f58a390e99352",
+            "first16Hex": "4b4f5246000500001800000318444953",
+            "zeroRatio": 0.4219,
+            "printableRatio": 0.4063,
+            "histogram16": [
+              36,
+              2,
+              2,
+              0,
+              16,
+              8,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "decodedValue": false,
+          "musicalMeaning": false
+        }
+      ],
+      "noValueDecoding": true,
+      "noMusicalMeaning": true,
+      "noKeyboardOutput": true
+    }
+  ],
+  "noValueDecoding": true,
+  "noMusicalMeaning": true,
+  "noKeyboardOutput": true
+}
