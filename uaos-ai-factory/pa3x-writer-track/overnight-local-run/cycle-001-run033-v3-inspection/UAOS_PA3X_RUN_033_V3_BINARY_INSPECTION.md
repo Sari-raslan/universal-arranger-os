@@ -1,0 +1,19 @@
+﻿# UAOS PA3X Run 033 V3 Binary Inspection
+
+Status: PASS
+Candidate: UAOS_TEST_UNVERIFIED_MINIMAL_003.PRF
+Size: 24576 bytes
+SHA256: b6ab635a30ac483d910a16008d4083f85849b100f36b2bf85641cf513de18e21
+Structural score: 1
+
+## First 256 Bytes Hex
+
+`
+4b 4f 52 46 55 41 4f 53 5f 54 45 53 54 5f 30 30 33 52 31 54 45 53 54 52 32 54 45 53 54 5f 55 4e 56 45 52 49 46 49 45 44 5f 4c 4f 43 41 4c 5f 4f 4e 4c 59 75 86 97 a8 b9 ca db ec 02 13 24 35 46 57 68 79 8a 9b ac bd ce df f0 06 17 28 39 4a 5b 6c 7d 8e 9f b0 c1 d2 e3 f4 0a 1b 2c 3d 4e 5f 70 81 92 a3 b4 c5 d6 e7 f8 0e 1f 30 41 52 63 74 85 96 a7 b8 c9 da eb 01 12 23 34 45 56 67 78 89 9a ab bc cd de ef 05 16 27 38 49 5a 6b 7c 8d 9e af c0 d1 e2 f3 09 1a 2b 3c 4d 5e 6f 80 91 a2 b3 c4 d5 e6 f7 0d 1e 2f 40 51 62 73 84 95 a6 b7 c8 d9 ea 00 11 22 33 44 55 66 77 88 99 aa bb cc dd ee 04 15 26 37 48 59 6a 7b 8c 9d ae bf d0 e1 f2 08 19 2a 3b 4c 5d 6e 7f 90 a1 b2 c3 d4 e5 f6 0c 1d 2e 3f 50 61 72 83 94 a5 b6 c7 d8 e9 fa 10 21 32 43 54 65 76 87 98 a9 ba cb dc ed 03 14 25 36 47
+`
+
+## Findings
+- Size is inside the observed PRF reference range from earlier read-only reports.
+- Synthetic stable-offset markers are present at offsets 0, 17, and 23.
+- Manifest safety flags remain false for device actions.
+- This inspection does not approve device use.
