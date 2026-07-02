@@ -1,4 +1,4 @@
-# UAOS Jobcenter Monitor Update und Redeploy
+﻿# UAOS Jobcenter Monitor Update und Redeploy
 
 Der Monitor wurde als professioneller öffentlicher Projektmonitor aktualisiert.
 
@@ -27,3 +27,5 @@ Der Monitor wurde als professioneller öffentlicher Projektmonitor aktualisiert.
 - Arbeitsströme, Nachweise, Planung und Tagesänderungen
 
 Keine automatische Veröffentlichung wurde ausgeführt, solange die Vercel CLI nicht angemeldet ist.
+
+

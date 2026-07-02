@@ -1,25 +1,31 @@
-{
+﻿{
+  "version": 2,
   "cleanUrls": true,
   "trailingSlash": true,
-  "routes": [
+  "buildCommand": "echo static",
+  "outputDirectory": "public",
+  "installCommand": "echo no-install",
+  "rewrites": [
     {
-      "src": "/",
-      "status": 308,
-      "headers": {
-        "Location": "/jobcenter/"
-      }
+      "source": "/",
+      "destination": "/index.html"
     },
     {
-      "src": "/jobcenter/?",
-      "dest": "/public/jobcenter/index.html"
+      "source": "/jobcenter",
+      "destination": "/jobcenter/index.html"
     },
     {
-      "src": "/status/?",
-      "dest": "/public/status/index.html"
+      "source": "/jobcenter/",
+      "destination": "/jobcenter/index.html"
     },
     {
-      "src": "/(.*)",
-      "dest": "/public/$1"
+      "source": "/status",
+      "destination": "/status/index.html"
+    },
+    {
+      "source": "/status/",
+      "destination": "/status/index.html"
     }
   ]
 }
+
