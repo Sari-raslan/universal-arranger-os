@@ -1,0 +1,42 @@
+{
+  "run": "004",
+  "readOnly": true,
+  "tests": [
+    {
+      "id": "T-STYLE-001",
+      "role": "style-related",
+      "input": "metadata record for STYLE/USER01.STY",
+      "expect": "classified high, no deep parse"
+    },
+    {
+      "id": "T-PAD-001",
+      "role": "pad-related",
+      "input": "metadata records for PAD banks",
+      "expect": "classified high, bank count retained"
+    },
+    {
+      "id": "T-PRF-001",
+      "role": "performance-related",
+      "input": "PERFORM bank metadata",
+      "expect": "16 performance banks detected"
+    },
+    {
+      "id": "T-GLOBAL-001",
+      "role": "global-related",
+      "input": "GLOBAL metadata",
+      "expect": "global/preset roles identified"
+    },
+    {
+      "id": "T-SONGBOOK-001",
+      "role": "songbook-related",
+      "input": "SONGBOOK metadata",
+      "expect": "songbook banks classified medium"
+    },
+    {
+      "id": "T-SAFETY-001",
+      "role": "safety",
+      "input": "output folder",
+      "expect": "no native keyboard output files generated"
+    }
+  ]
+}
