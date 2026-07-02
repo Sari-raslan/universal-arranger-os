@@ -1,0 +1,15 @@
+{
+  "schema": "dryrun set manifest only",
+  "rootName": "DRYRUN_SET_STRUCTURE_ONLY",
+  "fields": [
+    "component",
+    "sourceRole",
+    "status",
+    "notes"
+  ],
+  "forbidden": [
+    "real .SET folder",
+    "native keyboard files",
+    "USB write"
+  ]
+}
