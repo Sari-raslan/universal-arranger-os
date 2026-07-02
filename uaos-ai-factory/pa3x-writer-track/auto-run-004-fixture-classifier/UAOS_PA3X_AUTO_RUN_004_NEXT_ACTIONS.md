@@ -1,7 +1,7 @@
 # UAOS PA3X Auto Run 004 Next Actions
 
 ## Nächster sinnvoller Schritt
-Nach Run 004: Owner-Entscheidung, ob ein tieferer read-only Header-/Container-Parser für ausgewählte PA3X-Dateitypen freigegeben wird.
+Owner-Entscheidung über einen shallow Header Parser für ausgewählte PA3X-Dateien, weiterhin read-only und ohne Writer-Ausgabe.
 
 ## Noch blockiert
 - Realer Writer.
@@ -10,4 +10,4 @@ Nach Run 004: Owner-Entscheidung, ob ein tieferer read-only Header-/Container-Pa
 - Tiefe proprietäre Inhaltsdekodierung ohne explizite Owner-Freigabe.
 
 ## Aktueller Zyklus
-cycle-004 - parser-test-matrix
+cycle-005 - dryrun-validator-upgrade
