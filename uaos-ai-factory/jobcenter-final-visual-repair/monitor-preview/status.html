@@ -1,0 +1,28 @@
+<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>UAOS Status Vorschau</title><style>
+:root { --bg: #0B1220; --bg2: #111A2E; --panel: #182338; --panel2: #22304A; --line: #34435F; --text: #F8FAFC; --muted: #C9D4E5; --accent: #38BDF8; --gold: #FACC15; --green: #34D399; }
+* { box-sizing: border-box; }
+body { margin:0; font-family: Arial, system-ui, sans-serif; color:var(--text); background: linear-gradient(135deg, var(--bg), var(--bg2)); line-height:1.55; }
+.top { height:5px; background:var(--accent); }
+.wrap { max-width:1120px; margin:0 auto; padding:0 20px; }
+.hero { padding:58px 0 26px; display:grid; grid-template-columns:1.3fr .7fr; gap:24px; align-items:end; }
+.kicker { color:var(--accent); font-weight:800; font-size:12px; letter-spacing:.08em; text-transform:uppercase; }
+h1 { font-size:clamp(36px, 6vw, 66px); margin:10px 0; line-height:1.02; }
+h2 { font-size:28px; margin:0 0 16px; }
+h3 { color:var(--accent); margin:0 0 8px; font-size:15px; }
+p { color:var(--muted); margin:0; }
+a { color:var(--accent); word-break:break-word; }
+.grid { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; margin:22px 0; }
+.card, .panel { background:rgba(24,35,56,.94); border:1px solid var(--line); border-radius:12px; padding:18px; box-shadow:0 18px 45px rgba(0,0,0,.25); }
+.metric { font-size:26px; font-weight:900; color:var(--text); }
+section { padding:22px 0; }
+table { width:100%; border-collapse:collapse; }
+th, td { padding:13px 14px; border-bottom:1px solid var(--line); text-align:left; }
+th { color:var(--accent); }
+td:last-child { color:var(--gold); font-weight:800; }
+.badges { display:flex; gap:10px; flex-wrap:wrap; }
+.badge { border:1px solid var(--line); background:rgba(56,189,248,.09); border-radius:999px; padding:8px 12px; }
+.timeline { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; }
+.footer { border-top:1px solid var(--line); padding:28px 0 40px; color:var(--muted); font-size:13px; margin-top:28px; }
+@media (max-width:850px) { .hero, .grid, .timeline { grid-template-columns:1fr 1fr; } }
+@media (max-width:560px) { .hero, .grid, .timeline { grid-template-columns:1fr; } }
+</style></head><body><div class="top"></div><main class="wrap"><header class="hero"><div><div class="kicker">Status</div><h1>Projektstatus</h1><p>Lokale Vorschau im gleichen Design wie PDF und Präsentation.</p></div><div class="card"><h3>Stand</h3><div class="metric">Vorbereitung</div><p>Gründungsphase, konservative Planung, keine Umsatzgarantie.</p></div></header><section><div class="panel"><h2>Nächste Schritte</h2><p>Technische Grundlage stabilisieren, Prototyp weiter ausbauen, Testfälle dokumentieren und wirtschaftliche Vorbereitung fortführen.</p></div></section><footer class="footer"><a href="jobcenter.html">Zur Jobcenter-Vorschau</a></footer></main></body></html>
