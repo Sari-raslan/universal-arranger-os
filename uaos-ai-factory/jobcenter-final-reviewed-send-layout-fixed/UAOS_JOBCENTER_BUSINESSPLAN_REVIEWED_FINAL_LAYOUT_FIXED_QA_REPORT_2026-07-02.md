@@ -1,0 +1,28 @@
+# UAOS Jobcenter Businessplan Layout Fixed QA Report - 2026-07-02
+
+- PDF exists: YES
+- PDF page count: 10
+- Page count 10-14: YES
+- Cover text clearly readable: YES - dark cover panel with light text
+- 12-Monats-Plan no overlap: YES - converted from dense table to readable cards
+- Risks table/text no overlap: YES - converted from dense table to readable cards
+- Monitor URL present: YES (https://sari-raslan.github.io/universal-arranger-os/monitor/)
+- PDF contains URI marker for clickable/copyable link: YES
+- Maximaler Finanzierungsbedarf 4.700 EUR preserved: YES
+- Finance table items preserved: YES
+- Ertragserwartung preserved: YES
+- Kundenzahlen preserved: YES
+- Kundengewinnung preserved: YES
+- Operative Kosten preserved: YES
+- Krankenversicherung / Pflegeversicherung preserved: YES
+- Rentenbeitrag / Altersvorsorge preserved: YES
+- Steuer-Ruecklage preserved: YES
+- Gewinnmarge / Break-even preserved: YES
+- Kleinunternehmerregelung preserved: YES
+- 12-Monats-Plan preserved: YES
+- Risiken und Risikoreduzierung preserved: YES
+- Old ranges absent: YES
+- German only: YES
+- No mojibake in generated source: YES
+- App.jsx touched: NO
+- Deploy/Vercel used: NO
