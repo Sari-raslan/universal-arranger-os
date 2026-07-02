@@ -9,7 +9,7 @@ Date: 2026-07-02
 - Token committed: NO
 - Project name: uaos-jobcenter-monitor
 - Deploy status: BLOCKED - Vercel auth required
-- First failure reason: Vercel authentication required before deployment
+- First failure reason: Vercel token was not accepted
 - Production URL: 
 - HTTP status /jobcenter/: not checked
 - HTTP status /status/: not checked
