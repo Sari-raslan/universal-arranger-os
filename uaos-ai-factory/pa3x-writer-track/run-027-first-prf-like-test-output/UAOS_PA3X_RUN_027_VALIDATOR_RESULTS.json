@@ -1,0 +1,61 @@
+{
+  "status": "PASS",
+  "generatedAt": "2026-07-02T19:14:34.190Z",
+  "outputRoot": "E:/keyboard-manager-clean/uaos-ai-factory/pa3x-writer-track/run-027-first-prf-like-test-output",
+  "prfFiles": [
+    "UAOS_TEST_UNVERIFIED_MINIMAL_001.PRF"
+  ],
+  "otherNativeFiles": [],
+  "checks": [
+    {
+      "name": "exactly one .PRF file exists",
+      "pass": true,
+      "detail": "1"
+    },
+    {
+      "name": "no .SET/.STY/.PRS/.KST exists",
+      "pass": true,
+      "detail": "0"
+    },
+    {
+      "name": "output is not inside fixture folder",
+      "pass": true,
+      "detail": "0"
+    },
+    {
+      "name": "README has DO NOT LOAD warning",
+      "pass": true,
+      "detail": "E:/keyboard-manager-clean/uaos-ai-factory/pa3x-writer-track/run-027-first-prf-like-test-output/README_DO_NOT_LOAD_TO_KEYBOARD_RUN_027.md"
+    },
+    {
+      "name": "manifest keyboardReady false",
+      "pass": true,
+      "detail": "false"
+    },
+    {
+      "name": "manifest usbWriteApproved false",
+      "pass": true,
+      "detail": "false"
+    },
+    {
+      "name": "manifest keyboardLoadApproved false",
+      "pass": true,
+      "detail": "false"
+    },
+    {
+      "name": "no proprietary sample/audio claim",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "no ready/compatibility claim",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "no USB write instruction",
+      "pass": true,
+      "detail": ""
+    }
+  ]
+}
