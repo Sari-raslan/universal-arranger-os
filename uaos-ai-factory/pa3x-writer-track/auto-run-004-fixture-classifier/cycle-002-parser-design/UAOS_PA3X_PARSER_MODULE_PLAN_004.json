@@ -1,0 +1,37 @@
+{
+  "run": "004",
+  "readOnly": true,
+  "modules": [
+    {
+      "name": "FixtureMetadataLoader",
+      "input": "Run 003 JSON only",
+      "output": "normalized metadata records"
+    },
+    {
+      "name": "RoleClassifier",
+      "input": "normalized metadata records",
+      "output": "role/confidence/parserNeed"
+    },
+    {
+      "name": "HeaderBoundaryProbe",
+      "input": "first32BytesHex only",
+      "output": "signature flags, no deep decode"
+    },
+    {
+      "name": "ParserReadinessReporter",
+      "input": "classification results",
+      "output": "blocked/ready parser plan"
+    },
+    {
+      "name": "DryrunSafetyValidator",
+      "input": "generated package manifests/docs",
+      "output": "PASS/BLOCKED safety result"
+    }
+  ],
+  "never": [
+    "write fixture",
+    "generate keyboard output",
+    "decode proprietary sample/audio content",
+    "USB write"
+  ]
+}
