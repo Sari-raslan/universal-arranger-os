@@ -1,0 +1,53 @@
+{
+  "generatedAt": "2026-07-02T16:16:44.294Z",
+  "readOnlyOnly": true,
+  "recommendedSafestGroup": "performance-related .prf",
+  "reason": "Repeated bank files with consistent fixed-window boundary behavior; lowest risk for a tiny structural parser.",
+  "run007ShouldRead": [
+    {
+      "role": "performance-related",
+      "windows": [
+        0,
+        256,
+        512,
+        1024
+      ],
+      "allowed": "boundary marker inventory only, no value decoding"
+    },
+    {
+      "role": "pad-related",
+      "windows": [
+        0,
+        256,
+        512
+      ],
+      "allowed": "compare repeated structural markers only"
+    },
+    {
+      "role": "style-related",
+      "windows": [
+        0,
+        256,
+        512,
+        1024,
+        "middle",
+        "last256"
+      ],
+      "allowed": "boundary map only, no event decoding"
+    }
+  ],
+  "mustRemainBlocked": [
+    "value decoding",
+    "musical interpretation",
+    "native output generation",
+    "USB write",
+    "sample extraction"
+  ],
+  "stillMissingForRealWriter": [
+    "controlled parser schema",
+    "synthetic output design",
+    "owner approval",
+    "isolated USB test plan",
+    "physical PA3X load result"
+  ]
+}
