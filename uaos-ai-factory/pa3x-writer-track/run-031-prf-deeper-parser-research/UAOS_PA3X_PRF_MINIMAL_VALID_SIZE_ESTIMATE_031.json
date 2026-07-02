@@ -1,0 +1,19 @@
+{
+  "status": "RESEARCH_ONLY",
+  "referencePrfFiles": 16,
+  "referenceSizeRangeBytes": {
+    "min": 21975,
+    "max": 32230,
+    "average": 26796.44
+  },
+  "v2SizeBytes": 4096,
+  "v2SizeRatioToMin": 0.1864,
+  "v2SizeRatioToAverage": 0.1529,
+  "estimate": {
+    "minimumBytes": 21975,
+    "recommendedV3Bytes": 24576,
+    "upperResearchBoundBytes": 32230,
+    "reason": "V2 was 4096 bytes, only 18.64% of the smallest reference PRF. V3 should be at least the observed minimum-size class before any further inspection."
+  },
+  "generationApproved": false
+}

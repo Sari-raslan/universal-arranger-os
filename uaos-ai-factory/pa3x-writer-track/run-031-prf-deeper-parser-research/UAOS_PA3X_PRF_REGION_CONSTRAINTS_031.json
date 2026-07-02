@@ -1,0 +1,27 @@
+{
+  "status": "RESEARCH_ONLY",
+  "sourceRuns": [
+    "008",
+    "010",
+    "011",
+    "030"
+  ],
+  "stableOffsets": [
+    0,
+    17,
+    23
+  ],
+  "stableOffsetCount": 3,
+  "regionLengthDistributionCount": 144,
+  "regionCountDistributionCount": 11,
+  "constraintsForV3": {
+    "mustPreserveStableOffsets": true,
+    "mustIncludeRegionMarkersThatScoreAsRegions": true,
+    "mustRepresentUnknownRegionsExplicitly": true,
+    "mustNotDecodeValues": true,
+    "mustNotUseFixtureBytes": true,
+    "mustNotIncludeAudioOrSamples": true,
+    "mustRemainTestUnverified": true
+  },
+  "note": "Constraints are structural research only and are not a compatibility claim."
+}

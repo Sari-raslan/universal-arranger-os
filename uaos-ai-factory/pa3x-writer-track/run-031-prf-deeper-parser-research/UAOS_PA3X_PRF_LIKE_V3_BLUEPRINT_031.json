@@ -1,0 +1,64 @@
+{
+  "status": "RESEARCH_ONLY_BLUEPRINT",
+  "v3GenerationCanBeApprovedNext": true,
+  "approvalScope": "local-only TEST_UNVERIFIED PRF-like V3 candidate, followed by Run 033 binary safety inspection",
+  "recommendedFileName": "UAOS_TEST_UNVERIFIED_MINIMAL_003.PRF",
+  "recommendedSizeBytes": 24576,
+  "mustRemainLocalOnly": true,
+  "mustNotWriteUsb": true,
+  "mustNotTransferToKeyboard": true,
+  "mustNotClaimCompatible": true,
+  "layoutBlueprint": [
+    {
+      "region": "syntheticHeader",
+      "offset": 0,
+      "length": 17,
+      "constraints": [
+        "TEST_UNVERIFIED label",
+        "generic structural marker only"
+      ]
+    },
+    {
+      "region": "stableOffsetRegion0",
+      "offset": 0,
+      "constraints": [
+        "synthetic marker",
+        "no decoded values"
+      ]
+    },
+    {
+      "region": "stableOffsetRegion1",
+      "offset": 17,
+      "constraints": [
+        "synthetic marker",
+        "no decoded values"
+      ]
+    },
+    {
+      "region": "stableOffsetRegion2",
+      "offset": 23,
+      "constraints": [
+        "synthetic marker",
+        "no decoded values"
+      ]
+    },
+    {
+      "region": "variableBodyPadding",
+      "offset": "after stable regions",
+      "length": "fill to recommended size with deterministic zero-safe pattern",
+      "constraints": [
+        "no audio/sample data",
+        "no personal data"
+      ]
+    },
+    {
+      "region": "footerCandidate",
+      "offset": 24320,
+      "length": 256,
+      "constraints": [
+        "synthetic footer marker",
+        "no device-use claim"
+      ]
+    }
+  ]
+}
