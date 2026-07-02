@@ -1,0 +1,26 @@
+﻿{
+    "run":  "026",
+    "status":  "RESEARCH_ONLY",
+    "ownerDecision":  "Option C from Run 025",
+    "generationAllowed":  false,
+    "usbWriteAllowed":  false,
+    "keyboardTransferAllowed":  false,
+    "overwriteAllowed":  false,
+    "pa3xReadyClaimAllowed":  false,
+    "minimalNativeOutputResearchTarget":  "future smallest native test candidate, exact type not generated in this run",
+    "blockedNativeExtensions":  [
+                                    ".SET",
+                                    ".STY",
+                                    ".PRS",
+                                    ".PRF",
+                                    ".KST"
+                                ],
+    "prerequisiteForFutureGeneration":  [
+                                            "owner approves exact output type",
+                                            "owner approves exact output folder",
+                                            "no overwrite policy remains active",
+                                            "empty isolated media plan exists",
+                                            "PA3X backup confirmed",
+                                            "hardware test plan reviewed"
+                                        ]
+}
