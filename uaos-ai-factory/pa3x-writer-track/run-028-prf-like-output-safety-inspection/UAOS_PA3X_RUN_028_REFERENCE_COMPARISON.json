@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "referencePrfFiles": 16,
+  "fixturePrfSizeRangeBytes": {
+    "min": 21975,
+    "max": 32230,
+    "average": 26796.44
+  },
+  "candidateSizeBytes": 208,
+  "candidateVsFixtureSize": "far smaller than fixture PRF range",
+  "referenceHeaderExpectation": "KORF marker / binary-like PRF structure from reference catalogue windows",
+  "candidateHeaderObservation": "ASCII metadata-only; no KORF marker",
+  "run011ParserConfidence": 0.915,
+  "run010Confidence": 0.915,
+  "run009ConsistencyDecision": "B. Need one more PRF structural check",
+  "structuralAssessment": "too small / placeholder only",
+  "compatibilityClaim": false
+}
