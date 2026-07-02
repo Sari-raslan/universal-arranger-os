@@ -1,6 +1,6 @@
 ﻿# UAOS PA3X Local Long Run Dashboard
 
 Status: RUNNING
-Cycles completed: 2
-Latest state: Future approval gate draft prepared only.
-Latest decision: Blocked until owner separate approval.
+Cycles completed: 3
+Latest state: Expanded safety validator complete.
+Latest decision: Validator PASS.
