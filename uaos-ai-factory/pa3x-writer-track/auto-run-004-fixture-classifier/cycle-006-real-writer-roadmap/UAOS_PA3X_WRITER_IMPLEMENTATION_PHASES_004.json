@@ -1,0 +1,31 @@
+{
+  "run": "004",
+  "writerOutputAllowed": false,
+  "phases": [
+    {
+      "phase": 1,
+      "name": "Metadata classifier hardening",
+      "allowed": "Run metadata and fixture inventory only"
+    },
+    {
+      "phase": 2,
+      "name": "Owner-approved shallow parser",
+      "allowed": "headers and section boundaries only"
+    },
+    {
+      "phase": 3,
+      "name": "Synthetic dry-run structure builder",
+      "allowed": "non-keyboard JSON fixtures only"
+    },
+    {
+      "phase": 4,
+      "name": "Compatibility review gate",
+      "allowed": "manual review, no keyboard output"
+    },
+    {
+      "phase": 5,
+      "name": "First real output gate",
+      "allowed": "requires explicit owner approval in a later task"
+    }
+  ]
+}

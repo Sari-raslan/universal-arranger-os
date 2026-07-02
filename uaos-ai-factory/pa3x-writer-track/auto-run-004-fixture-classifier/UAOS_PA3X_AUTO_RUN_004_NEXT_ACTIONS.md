@@ -10,4 +10,4 @@ Owner-Entscheidung über einen shallow Header Parser für ausgewählte PA3X-Date
 - Tiefe proprietäre Inhaltsdekodierung ohne explizite Owner-Freigabe.
 
 ## Aktueller Zyklus
-cycle-005 - dryrun-validator-upgrade
+cycle-006 - real-writer-roadmap
