@@ -1,7 +1,7 @@
 # UAOS Final Owner Push Monitor Report - 2026-07-02
 
 ## GitHub user used
-Sari-raslan
+aeplatform-app
 
 ## Target repo
 https://github.com/aeplatform-app/uaos-jobcenter-monitor.git
@@ -10,14 +10,16 @@ https://github.com/aeplatform-app/uaos-jobcenter-monitor.git
 bc910a1
 
 ## Push status
-NOT PUSHED - owner-authorized GitHub login required.
+PASS
 
 ## Public URL status
-- https://uaos-jobcenter-monitor.vercel.app/jobcenter/: not retested by owner launcher yet
-- https://uaos-jobcenter-monitor.vercel.app/status/: not retested by owner launcher yet
+- Jobcenter URL: https://uaos-jobcenter-monitor.vercel.app/jobcenter/
+- Jobcenter HTTP: 200
+- Status URL: https://uaos-jobcenter-monitor.vercel.app/status/
+- Status HTTP: 200
 
 ## Content updated
-NO - public monitor still requires owner-authorized push and Vercel redeploy if auto-deploy does not run.
+NO - missing: 4.700 â‚¬, Ertragserwartung, Kundengewinnung, Kostenbasis, Changelog, Letzte Aktualisierung
 
 ## Safety
 - No Vercel CLI used: YES
@@ -29,4 +31,4 @@ NO - public monitor still requires owner-authorized push and Vercel redeploy if 
 - No force push: YES
 
 ## Next action
-Run `E:\keyboard-manager-clean\FINAL_PUSH_MONITOR_WITH_OWNER_GITHUB_LOGIN.cmd`, login with the GitHub owner/write-access account, push commit `bc910a1`, then use the opened Vercel Deployments page to redeploy with cache off if the public monitor is still old.
+PUSH PASS - Vercel manual redeploy required. Open Deployments, click Redeploy, Cache OFF.
