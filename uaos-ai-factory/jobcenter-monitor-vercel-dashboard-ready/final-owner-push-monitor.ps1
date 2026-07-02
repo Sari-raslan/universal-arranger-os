@@ -35,8 +35,10 @@ $ExpectedCommit
 $PushStatus
 
 ## Public URL status
-- $JobcenterUrl: $JobcenterHttp
-- $StatusUrl: $StatusHttp
+- Jobcenter URL: $JobcenterUrl
+- Jobcenter HTTP: $JobcenterHttp
+- Status URL: $StatusUrl
+- Status HTTP: $StatusHttp
 
 ## Content updated
 $ContentUpdated
@@ -149,7 +151,8 @@ try {
   $StatusHttp = "ERROR - $($_.Exception.Message)"
 }
 
-$RequiredTerms = @("4.700 €", "Ertragserwartung", "Kundengewinnung", "Kostenbasis", "Changelog", "Letzte Aktualisierung")
+$Euro = [char]0x20AC
+$RequiredTerms = @("4.700 $Euro", "Ertragserwartung", "Kundengewinnung", "Kostenbasis", "Changelog", "Letzte Aktualisierung")
 $MissingTerms = @()
 foreach ($term in $RequiredTerms) {
   if (-not $CombinedContent.Contains($term)) {

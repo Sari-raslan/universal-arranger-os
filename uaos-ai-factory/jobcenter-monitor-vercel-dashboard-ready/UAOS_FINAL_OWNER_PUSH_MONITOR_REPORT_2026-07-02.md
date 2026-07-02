@@ -19,7 +19,7 @@ PASS
 - Status HTTP: 200
 
 ## Content updated
-NO - missing: 4.700 â‚¬, Ertragserwartung, Kundengewinnung, Kostenbasis, Changelog, Letzte Aktualisierung
+NO - missing: 4.700 €, Ertragserwartung, Kundengewinnung, Kostenbasis, Changelog, Letzte Aktualisierung
 
 ## Safety
 - No Vercel CLI used: YES
