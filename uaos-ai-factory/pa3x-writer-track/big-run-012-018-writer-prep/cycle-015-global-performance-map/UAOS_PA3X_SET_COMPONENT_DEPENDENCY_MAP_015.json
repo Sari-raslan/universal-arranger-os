@@ -1,0 +1,31 @@
+{
+  "dependencies": [
+    {
+      "component": "PRF",
+      "dependsOn": [
+        "GLOBAL context",
+        "STYLE/PAD references - unverified"
+      ]
+    },
+    {
+      "component": "STYLE",
+      "dependsOn": [
+        "STYLE bank container structure"
+      ]
+    },
+    {
+      "component": "PAD",
+      "dependsOn": [
+        "PAD bank container structure"
+      ]
+    },
+    {
+      "component": "GLOBAL",
+      "dependsOn": [
+        "global setup/preset context"
+      ]
+    }
+  ],
+  "hypothesisOnly": true,
+  "noWriterOutput": true
+}

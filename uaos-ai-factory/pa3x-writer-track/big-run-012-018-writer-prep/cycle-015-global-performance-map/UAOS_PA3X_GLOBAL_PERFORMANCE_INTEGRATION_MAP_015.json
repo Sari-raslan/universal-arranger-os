@@ -1,0 +1,20 @@
+{
+  "status": "PASS",
+  "readOnly": true,
+  "components": {
+    "PRF": 16,
+    "STYLE": 1,
+    "PAD": 10,
+    "GLOBAL": 3
+  },
+  "relationships": [
+    {
+      "from": "PRF",
+      "to": "STYLE/PAD/GLOBAL",
+      "type": "hypothesis-only",
+      "decodedValues": false
+    }
+  ],
+  "noValueDecode": true,
+  "noKeyboardOutput": true
+}
