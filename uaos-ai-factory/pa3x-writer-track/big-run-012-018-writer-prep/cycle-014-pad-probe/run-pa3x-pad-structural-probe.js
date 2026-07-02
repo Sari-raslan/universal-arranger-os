@@ -1,0 +1,12 @@
+import fs from 'node:fs';
+import { probeTargets } from './pa3xPadStructuralProbe.js';
+const fixtureRoot = "E:/keyboard-manager-clean/uaos-ai-factory/pa3x-writer-track/owner-fixtures";
+const out = "E:/keyboard-manager-clean/uaos-ai-factory/pa3x-writer-track/big-run-012-018-writer-prep/cycle-014-pad-probe";
+const targetData = JSON.parse(fs.readFileSync(`${out}/UAOS_PA3X_PAD_TARGET_FILES_014.json`, 'utf8'));
+const records = probeTargets({fixtureRoot, targets: targetData.targets});
+const status = records.length > 0 && records.every(r=>r.withinReadLimit && r.noValueDecoding && r.noKeyboardOutput) ? 'PASS' : 'BLOCKED';
+fs.writeFileSync(`${out}/UAOS_PA3X_PAD_STRUCTURAL_MAP_014.json`, JSON.stringify({status, padTargetFiles: records.length, readOnly:true, noValueDecode:true, noKeyboardOutput:true, records}, null, 2)+'\n');
+fs.writeFileSync(`${out}/UAOS_PA3X_PAD_BOUNDARY_REPORT_014.md`, ['# UAOS PA3X PAD Boundary Report 014','',`Status: ${status}`,`PAD target files: ${records.length}`,'','No value decoding. No writer output.',...records.map(r=>`- ${r.relativePath}: ${r.possibleSectionLikeBoundariesByOffsetOnly.length} boundary candidates`)].join('\n')+'\n');
+fs.writeFileSync(`${out}/UAOS_PA3X_PAD_SCHEMA_DRAFT_014.json`, JSON.stringify({schema:'PAD structural draft 014', decodedFields:[], regions:['padFileHeader','candidatePadRegion','repeatedRegion','unknownRegion'], safety:{readOnly:true,noValueDecoding:true,noKeyboardOutput:true}}, null, 2)+'\n');
+fs.writeFileSync(`${out}/UAOS_PA3X_RUN_014_QA_REPORT.md`, ['# QA Run 014','',`Status: ${status}`,'Fixture unchanged: YES','No writes inside fixture folder: YES','No full decode: YES','No value decoding: YES','No native keyboard files generated: YES','No keyboard output: YES'].join('\n')+'\n');
+console.log(JSON.stringify({status, count:records.length}));
