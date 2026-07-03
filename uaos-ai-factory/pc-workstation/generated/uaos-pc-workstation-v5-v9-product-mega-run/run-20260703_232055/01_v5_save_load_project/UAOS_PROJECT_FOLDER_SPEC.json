@@ -1,0 +1,19 @@
+{
+  "safety_labels": [
+    "PC_ONLY",
+    "UAOS_FORMAT",
+    "TEST_UNVERIFIED",
+    "NOT_FOR_PA3X_LOAD",
+    "NOT_FOR_USB_TRANSFER"
+  ],
+  "folder_name": "SARI_UAOS_PC_PROJECT_V5",
+  "required_files": [
+    "project.uaosproj",
+    "style.uaosstyle",
+    "library_bindings.json",
+    "manifest.json"
+  ],
+  "save_load_workflow": "Owner keeps a local project folder and opens/saves UAOS_FORMAT JSON files inside it.",
+  "no_hardware_claim": true,
+  "no_external_copy": true
+}
