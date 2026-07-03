@@ -1,0 +1,1 @@
+# Next Code X Tasks After Run 100`n`n1. Continue V11 design-only research.`n2. Or request owner approval for one future local-only TEST_UNVERIFIED candidate.`n3. Or run USB verification only when a real empty USB exists.`n4. Or prepare a reports-only external technical review pack later.`n5. Keep known 12 blockers untouched until separately resolved.

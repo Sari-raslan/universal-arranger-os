@@ -1,0 +1,1 @@
+# Parser V7 Blueprint`n`nFuture validator model: allowlisted path, extension, size, sha256, string markers, manifest agreement, forbidden terms/paths, fixture/proprietary indicators, USB/external references, hardware-ready wording, and final PASS meaning local-only validation only.

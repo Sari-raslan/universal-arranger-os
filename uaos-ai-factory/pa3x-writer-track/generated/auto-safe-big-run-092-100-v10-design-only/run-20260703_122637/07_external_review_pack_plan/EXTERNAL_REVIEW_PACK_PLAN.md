@@ -1,0 +1,1 @@
+# External Review Pack Plan`n`nDo not package or copy in this run. Future external review is reports-only unless separately approved. It must include safety seals and explicit no-compatibility/no-hardware statements.

@@ -1,0 +1,1 @@
+# Owner Summary Run 092-100`n`nStatus: V10 DESIGN ONLY. V10/V9/V8/V7 candidates NOT_CREATED. Current best local candidate V6 TEST_UNVERIFIED ONLY. USB readiness NOT READY. Known 12 blockers untouched. Safety gates active.

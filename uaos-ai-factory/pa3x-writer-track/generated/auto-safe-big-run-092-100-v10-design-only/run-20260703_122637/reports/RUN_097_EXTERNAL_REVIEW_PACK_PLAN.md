@@ -1,0 +1,1 @@
+# Run 097: External Review Pack Plan`n`nPlan only. No package or copy was created. A future review pack may include V6 current best candidate status report, V7 blocked seal, V8 design-only seal, V9 design-only seal, V10 design-only seal, readiness roadmap, safety gate model, no compatibility claim, and no USB/PA3X execution proof.

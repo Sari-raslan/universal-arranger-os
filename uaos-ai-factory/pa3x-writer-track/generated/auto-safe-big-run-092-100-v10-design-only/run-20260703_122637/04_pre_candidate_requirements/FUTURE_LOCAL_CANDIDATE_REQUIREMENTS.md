@@ -1,0 +1,12 @@
+# Future Local Candidate Requirements`n`nA future candidate is blocked until all requirements are met:`n`n- explicit owner approval
+- clean write-scope
+- output root allowlisted
+- no fixture access
+- no proprietary content
+- no USB/external copy
+- no PA3X load
+- no App.jsx/deploy/payment
+- local-only naming
+- TEST_UNVERIFIED wording
+- validator plan ready
+- final seal plan ready

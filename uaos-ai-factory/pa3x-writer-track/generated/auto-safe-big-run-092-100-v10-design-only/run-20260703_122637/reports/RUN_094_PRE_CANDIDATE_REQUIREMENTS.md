@@ -1,0 +1,12 @@
+# Run 094: Pre-Candidate Requirements`n`n- explicit owner approval
+- clean write-scope
+- output root allowlisted
+- no fixture access
+- no proprietary content
+- no USB/external copy
+- no PA3X load
+- no App.jsx/deploy/payment
+- local-only naming
+- TEST_UNVERIFIED wording
+- validator plan ready
+- final seal plan ready

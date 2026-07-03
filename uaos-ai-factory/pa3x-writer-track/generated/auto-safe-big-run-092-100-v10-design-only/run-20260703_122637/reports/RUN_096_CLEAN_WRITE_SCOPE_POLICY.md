@@ -1,0 +1,1 @@
+# Run 096: Clean Write-Scope Policy`n`nAllowed future output roots must be under pa3x-writer-track/generated/. Known 12 blockers remain untouched/uncommitted. Owner-fixtures, implementation files, vercel/deploy/payment, Jobcenter/upload/backup roots, App.jsx, fixture modification are blocked. Candidate creation requires separate owner approval.

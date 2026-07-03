@@ -1,0 +1,1 @@
+# Clean Write-Scope Policy`n`nOnly allowlisted generated output roots may be written in future runs. No source, owner fixture, deploy/payment, App.jsx, USB, external copy, or root upload/backup folders may be staged or committed by PA3X writer-track research.

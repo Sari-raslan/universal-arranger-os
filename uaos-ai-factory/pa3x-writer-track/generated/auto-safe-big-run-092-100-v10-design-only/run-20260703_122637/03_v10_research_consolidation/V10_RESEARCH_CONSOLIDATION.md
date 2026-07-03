@@ -1,0 +1,1 @@
+# V10 Research Consolidation`n`nV10 is the pre-candidate consolidation pass. It does not create files intended as PRF, binary, USB package, or keyboard load material. It brings together V7 blocked status, V8 design controls, V9 safety gates, and remaining proof requirements.

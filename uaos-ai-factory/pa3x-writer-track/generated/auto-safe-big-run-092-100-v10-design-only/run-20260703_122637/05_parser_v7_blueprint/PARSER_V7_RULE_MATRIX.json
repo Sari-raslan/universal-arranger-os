@@ -1,0 +1,16 @@
+{
+    "rules":  [
+                  "path allowlist",
+                  "extension check",
+                  "size check",
+                  "sha256",
+                  "string marker scan",
+                  "manifest agreement",
+                  "no forbidden terms",
+                  "no forbidden paths",
+                  "no fixture/proprietary indicators",
+                  "no USB/external references",
+                  "no hardware-ready wording",
+                  "PASS means local-only validation not PA3X compatibility"
+              ]
+}

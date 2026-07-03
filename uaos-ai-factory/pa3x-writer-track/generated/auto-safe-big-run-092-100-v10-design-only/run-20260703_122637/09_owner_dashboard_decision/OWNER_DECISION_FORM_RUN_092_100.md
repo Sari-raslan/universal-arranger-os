@@ -1,0 +1,1 @@
+# Owner Decision Form`n`nA. Continue V11 design-only research.`n`nB. Approve one future local-only TEST_UNVERIFIED candidate later.`n`nC. Wait for real empty USB and run USB verification only.`n`nD. Prepare reports-only external technical review pack.
