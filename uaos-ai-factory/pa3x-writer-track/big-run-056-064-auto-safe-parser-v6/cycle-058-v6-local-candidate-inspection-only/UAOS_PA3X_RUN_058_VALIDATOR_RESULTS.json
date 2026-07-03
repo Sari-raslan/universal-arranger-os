@@ -1,0 +1,97 @@
+{
+  "status": "PASS",
+  "run": "058",
+  "checks": [
+    {
+      "name": "exactly one PRF candidate exists",
+      "pass": true,
+      "detail": "UAOS_TEST_UNVERIFIED_MINIMAL_006_V6.PRF"
+    },
+    {
+      "name": "no SET/STY/PRS/KST exists",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "manifest keyboardReady false",
+      "pass": true,
+      "detail": "false"
+    },
+    {
+      "name": "manifest usbWriteApproved false",
+      "pass": true,
+      "detail": "false"
+    },
+    {
+      "name": "manifest keyboardLoadApproved false",
+      "pass": true,
+      "detail": "false"
+    },
+    {
+      "name": "manifest packageCopyApproved false",
+      "pass": true,
+      "detail": "false"
+    },
+    {
+      "name": "manifest fixtureModified false",
+      "pass": true,
+      "detail": "false"
+    },
+    {
+      "name": "manifest compatibilityClaim false",
+      "pass": true,
+      "detail": "false"
+    },
+    {
+      "name": "manifest pa3xReadyClaim false",
+      "pass": true,
+      "detail": "false"
+    },
+    {
+      "name": "manifest usbPathUsed false",
+      "pass": true,
+      "detail": "false"
+    },
+    {
+      "name": "manifest packagePathUsed false",
+      "pass": true,
+      "detail": "false"
+    },
+    {
+      "name": "manifest run037CopyScriptExecuted false",
+      "pass": true,
+      "detail": "false"
+    },
+    {
+      "name": "testUnverified true",
+      "pass": true,
+      "detail": "true"
+    },
+    {
+      "name": "warning says DO NOT LOAD ON PA3X",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "warning says DO NOT COPY TO USB",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "sha256 matches manifest",
+      "pass": true,
+      "detail": "20caf3800e2d082cce69f0e09c267cf1d62e8e160c85bc966f05d3be531fdb72"
+    },
+    {
+      "name": "candidate not modified after creation",
+      "pass": true,
+      "detail": "20caf3800e2d082cce69f0e09c267cf1d62e8e160c85bc966f05d3be531fdb72"
+    }
+  ],
+  "usbWritePerformed": false,
+  "packageCopyPerformed": false,
+  "keyboardTransferPerformed": false,
+  "pa3xLoadPerformed": false,
+  "fixtureModified": false,
+  "run037CopyScriptExecuted": false
+}

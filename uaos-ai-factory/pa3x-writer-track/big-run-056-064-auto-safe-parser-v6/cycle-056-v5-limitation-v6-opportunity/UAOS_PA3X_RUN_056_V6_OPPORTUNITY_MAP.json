@@ -1,0 +1,40 @@
+{
+  "status": "PASS",
+  "run": "056",
+  "opportunities": [
+    {
+      "name": "more regular guard spacing",
+      "source": "structural metadata only"
+    },
+    {
+      "name": "clearer V6 marker labels",
+      "source": "local synthetic design only"
+    },
+    {
+      "name": "stricter validator mutation check",
+      "source": "manifest and hash checks"
+    }
+  ],
+  "anchors": [
+    {
+      "offset": 0,
+      "role": "anchor only",
+      "decodedMeaning": false
+    },
+    {
+      "offset": 17,
+      "role": "anchor only",
+      "decodedMeaning": false
+    },
+    {
+      "offset": 23,
+      "role": "anchor only",
+      "decodedMeaning": false
+    }
+  ],
+  "safety": {
+    "proprietaryDecoding": false,
+    "fixtureBinaryCopying": false,
+    "usbWrite": false
+  }
+}

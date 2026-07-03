@@ -1,0 +1,47 @@
+# UAOS PA3X Big Run 056-064 Master Index
+
+Status: PASS
+
+- cycle-056-v5-limitation-v6-opportunity/UAOS_PA3X_RUN_056_QA_REPORT.md
+- cycle-056-v5-limitation-v6-opportunity/UAOS_PA3X_RUN_056_SAFE_ANCHOR_REVIEW.md
+- cycle-056-v5-limitation-v6-opportunity/UAOS_PA3X_RUN_056_V5_LIMITATION_ANALYSIS.md
+- cycle-056-v5-limitation-v6-opportunity/UAOS_PA3X_RUN_056_V6_OPPORTUNITY_MAP.json
+- cycle-057-v6-design-only/UAOS_PA3X_RUN_057_QA_REPORT.md
+- cycle-057-v6-design-only/UAOS_PA3X_RUN_057_V5_TO_V6_CHANGELOG.md
+- cycle-057-v6-design-only/UAOS_PA3X_RUN_057_V6_ANCHOR_REFINEMENT_PLAN.md
+- cycle-057-v6-design-only/UAOS_PA3X_RUN_057_V6_DESIGN_OVERVIEW.md
+- cycle-057-v6-design-only/UAOS_PA3X_RUN_057_V6_RISK_REGISTER.md
+- cycle-057-v6-design-only/UAOS_PA3X_RUN_057_V6_STRUCTURE_PLAN.json
+- cycle-057-v6-design-only/UAOS_PA3X_RUN_057_V6_VALIDATOR_PLAN.md
+- cycle-058-v6-local-candidate-inspection-only/UAOS_PA3X_RUN_058_BINARY_GENERATION_NOTES.md
+- cycle-058-v6-local-candidate-inspection-only/UAOS_PA3X_RUN_058_DO_NOT_LOAD_WARNING.md
+- cycle-058-v6-local-candidate-inspection-only/UAOS_PA3X_RUN_058_QA_REPORT.md
+- cycle-058-v6-local-candidate-inspection-only/UAOS_PA3X_RUN_058_VALIDATOR_RESULTS.json
+- cycle-058-v6-local-candidate-inspection-only/UAOS_TEST_UNVERIFIED_MINIMAL_006_V6.PRF
+- cycle-058-v6-local-candidate-inspection-only/UAOS_TEST_UNVERIFIED_MINIMAL_006_V6_MANIFEST.json
+- cycle-058-v6-local-candidate-inspection-only/validate-run-058-v6-candidate.js
+- cycle-059-v6-binary-inspection/UAOS_PA3X_RUN_059_QA_REPORT.md
+- cycle-059-v6-binary-inspection/UAOS_PA3X_RUN_059_V6_BINARY_INSPECTION.json
+- cycle-059-v6-binary-inspection/UAOS_PA3X_RUN_059_V6_BINARY_INSPECTION.md
+- cycle-059-v6-binary-inspection/UAOS_PA3X_RUN_059_V6_REFERENCE_COMPARISON.json
+- cycle-059-v6-binary-inspection/UAOS_PA3X_RUN_059_V6_REFERENCE_COMPARISON.md
+- cycle-059-v6-binary-inspection/UAOS_PA3X_RUN_059_V6_RISK_DECISION.md
+- cycle-060-v4-v5-v6-comparison/UAOS_PA3X_RUN_060_BEST_CURRENT_LOCAL_CANDIDATE_DECISION.md
+- cycle-060-v4-v5-v6-comparison/UAOS_PA3X_RUN_060_QA_REPORT.md
+- cycle-060-v4-v5-v6-comparison/UAOS_PA3X_RUN_060_V4_V5_V6_COMPARISON.json
+- cycle-060-v4-v5-v6-comparison/UAOS_PA3X_RUN_060_V4_V5_V6_COMPARISON.md
+- cycle-061-parser-v3-validator-upgrade/UAOS_PA3X_RUN_061_PARSER_V3_VALIDATOR_REPORT.md
+- cycle-061-parser-v3-validator-upgrade/UAOS_PA3X_RUN_061_PARSER_V3_VALIDATOR_REQUIREMENTS.md
+- cycle-061-parser-v3-validator-upgrade/UAOS_PA3X_RUN_061_PARSER_V3_VALIDATOR_RESULTS.json
+- cycle-061-parser-v3-validator-upgrade/UAOS_PA3X_RUN_061_QA_REPORT.md
+- cycle-061-parser-v3-validator-upgrade/validate-prf-parser-v3-local-only.js
+- cycle-062-readiness-roadmap-without-usb/UAOS_PA3X_RUN_062_QA_REPORT.md
+- cycle-062-readiness-roadmap-without-usb/UAOS_PA3X_RUN_062_READINESS_ROADMAP_WITHOUT_USB.md
+- cycle-062-readiness-roadmap-without-usb/UAOS_PA3X_RUN_062_REAL_USB_VERIFICATION_GATE.md
+- cycle-062-readiness-roadmap-without-usb/UAOS_PA3X_RUN_062_USB_WAITING_REQUIREMENTS.md
+- cycle-063-owner-dashboard/UAOS_PA3X_RUN_063_DECISION_FORM.md
+- cycle-063-owner-dashboard/UAOS_PA3X_RUN_063_OWNER_DASHBOARD.md
+- cycle-063-owner-dashboard/UAOS_PA3X_RUN_063_QA_REPORT.md
+- cycle-063-owner-dashboard/UAOS_PA3X_RUN_063_TECHNICAL_SUMMARY.md
+- cycle-064-final-seal/UAOS_PA3X_RUN_064_FINAL_SEAL.md
+- cycle-064-final-seal/UAOS_PA3X_RUN_064_NEXT_CODEX_TASKS.md

@@ -1,0 +1,16 @@
+import fs from 'fs';
+import path from 'path';
+import crypto from 'crypto';
+import { fileURLToPath } from 'url';
+const __dirname=path.dirname(fileURLToPath(import.meta.url));
+const candidateDir=path.resolve(__dirname,'../cycle-058-v6-local-candidate-inspection-only');
+const manifestPath=path.join(candidateDir,'UAOS_TEST_UNVERIFIED_MINIMAL_006_V6_MANIFEST.json');
+const candidatePath=path.join(candidateDir,'UAOS_TEST_UNVERIFIED_MINIMAL_006_V6.PRF');
+const manifest=JSON.parse(fs.readFileSync(manifestPath,'utf8'));
+const sha=crypto.createHash('sha256').update(fs.readFileSync(candidatePath)).digest('hex');
+const checks=[]; const check=(name,pass,detail='')=>checks.push({name,pass,detail});
+check('selected best candidate exists',fs.existsSync(candidatePath),candidatePath); check('selected best candidate has manifest',fs.existsSync(manifestPath),manifestPath);
+for(const k of ['keyboardReady','usbWriteApproved','keyboardLoadApproved','packageCopyApproved','fixtureModified','compatibilityClaim','pa3xReadyClaim','usbPathUsed','packagePathUsed']) check(k+' false',manifest[k]===false,String(manifest[k]));
+check('candidate is TEST_UNVERIFIED',manifest.testUnverified===true,String(manifest.testUnverified)); check('no keyboard load marker',manifest.keyboardLoadApproved===false); check('no proprietary content copied',manifest.proprietaryContentCopied===false,String(manifest.proprietaryContentCopied)); check('no candidate mutation after creation',sha===manifest.createdSha256,sha);
+const result={status:checks.every(c=>c.pass)?'PASS':'FAIL',run:'061',selectedCandidate:'V6',checks,readOnly:true,usbWritePerformed:false,packageCopyPerformed:false,keyboardTransferPerformed:false,pa3xLoadPerformed:false,fixtureModified:false};
+fs.writeFileSync(path.join(__dirname,'UAOS_PA3X_RUN_061_PARSER_V3_VALIDATOR_RESULTS.json'),JSON.stringify(result,null,2)+'\n'); console.log(JSON.stringify(result,null,2));
