@@ -1,0 +1,20 @@
+{
+    "overall_status":  "BLOCKED_BY_SAFETY",
+    "reason":  "BLOCKED_BY_SAFETY: a setup marker file was created outside the retry output root before candidate generation. Per safety rules, V7 candidate creation was skipped and no commit will be made.",
+    "known_12_blockers_untouched":  "YES",
+    "v7_candidate":  "NOT_CREATED",
+    "current_best_local_candidate":  "V6",
+    "candidate_status":  "TEST_UNVERIFIED ONLY",
+    "hardware_readiness":  "NOT_READY",
+    "commit":  "NOT_COMMITTED",
+    "safety":  {
+                   "usb_write":  "NO",
+                   "external_copy":  "NO",
+                   "pa3x_load":  "NO",
+                   "fixture_modification":  "NO",
+                   "proprietary_content_copied":  "NO",
+                   "app_jsx_touched":  "NO",
+                   "deploy_payment":  "NO",
+                   "run_037_copy_script_executed":  "NO"
+               }
+}
