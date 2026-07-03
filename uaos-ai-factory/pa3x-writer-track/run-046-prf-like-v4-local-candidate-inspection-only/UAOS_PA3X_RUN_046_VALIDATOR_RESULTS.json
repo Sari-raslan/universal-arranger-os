@@ -1,0 +1,87 @@
+{
+  "status": "PASS",
+  "run": "046",
+  "checks": [
+    {
+      "name": "Exactly one PRF candidate exists",
+      "pass": true,
+      "detail": "UAOS_TEST_UNVERIFIED_MINIMAL_004_V4.PRF"
+    },
+    {
+      "name": "No SET/STY/PRS/KST files created",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Candidate exists",
+      "pass": true,
+      "detail": "E:\\keyboard-manager-clean\\uaos-ai-factory\\pa3x-writer-track\\run-046-prf-like-v4-local-candidate-inspection-only\\UAOS_TEST_UNVERIFIED_MINIMAL_004_V4.PRF"
+    },
+    {
+      "name": "Manifest exists",
+      "pass": true,
+      "detail": "E:\\keyboard-manager-clean\\uaos-ai-factory\\pa3x-writer-track\\run-046-prf-like-v4-local-candidate-inspection-only\\UAOS_TEST_UNVERIFIED_MINIMAL_004_V4_MANIFEST.json"
+    },
+    {
+      "name": "Warning file exists",
+      "pass": true,
+      "detail": "E:\\keyboard-manager-clean\\uaos-ai-factory\\pa3x-writer-track\\run-046-prf-like-v4-local-candidate-inspection-only\\UAOS_PA3X_RUN_046_DO_NOT_LOAD_WARNING.md"
+    },
+    {
+      "name": "Manifest keyboardReady false",
+      "pass": true,
+      "detail": "false"
+    },
+    {
+      "name": "Manifest usbWriteApproved false",
+      "pass": true,
+      "detail": "false"
+    },
+    {
+      "name": "Manifest keyboardLoadApproved false",
+      "pass": true,
+      "detail": "false"
+    },
+    {
+      "name": "Manifest testUnverified true",
+      "pass": true,
+      "detail": "true"
+    },
+    {
+      "name": "Manifest fixtureModified false",
+      "pass": true,
+      "detail": "false"
+    },
+    {
+      "name": "Manifest run037CopyScriptExecuted false",
+      "pass": true,
+      "detail": "false"
+    },
+    {
+      "name": "Candidate SHA256 matches manifest",
+      "pass": true,
+      "detail": "91518c4dfa4ae23a41bca4292fda66d57d5b8a52111c5701d433f85f7005c6fe"
+    },
+    {
+      "name": "Candidate byte length matches manifest",
+      "pass": true,
+      "detail": "24576"
+    },
+    {
+      "name": "Warning says DO NOT LOAD ON PA3X",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Warning says DO NOT COPY TO USB",
+      "pass": true,
+      "detail": ""
+    }
+  ],
+  "usbWritePerformed": false,
+  "packageCopyPerformed": false,
+  "keyboardTransferPerformed": false,
+  "pa3xLoadPerformed": false,
+  "fixtureModified": false,
+  "run037CopyScriptExecuted": false
+}
