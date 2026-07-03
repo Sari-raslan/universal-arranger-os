@@ -1,0 +1,99 @@
+{
+  "status": "PASS",
+  "checks": [
+    {
+      "name": "package.json exists",
+      "ok": true,
+      "detail": "E:\\keyboard-manager-clean\\uaos-ai-factory\\pc-workstation\\stable\\UAOS_PC_WORKSTATION_APP_V10\\electron\\package.json"
+    },
+    {
+      "name": "main.js exists",
+      "ok": true,
+      "detail": "E:\\keyboard-manager-clean\\uaos-ai-factory\\pc-workstation\\stable\\UAOS_PC_WORKSTATION_APP_V10\\electron\\main.js"
+    },
+    {
+      "name": "preload.js exists",
+      "ok": true,
+      "detail": "E:\\keyboard-manager-clean\\uaos-ai-factory\\pc-workstation\\stable\\UAOS_PC_WORKSTATION_APP_V10\\electron\\preload.js"
+    },
+    {
+      "name": "START_ELECTRON_DEV.cmd exists",
+      "ok": true,
+      "detail": "E:\\keyboard-manager-clean\\uaos-ai-factory\\pc-workstation\\stable\\UAOS_PC_WORKSTATION_APP_V10\\electron\\START_ELECTRON_DEV.cmd"
+    },
+    {
+      "name": "README_ELECTRON_LOCAL_ONLY.md exists",
+      "ok": true,
+      "detail": "E:\\keyboard-manager-clean\\uaos-ai-factory\\pc-workstation\\stable\\UAOS_PC_WORKSTATION_APP_V10\\electron\\README_ELECTRON_LOCAL_ONLY.md"
+    },
+    {
+      "name": "ELECTRON_SAFETY_POLICY.md exists",
+      "ok": true,
+      "detail": "E:\\keyboard-manager-clean\\uaos-ai-factory\\pc-workstation\\stable\\UAOS_PC_WORKSTATION_APP_V10\\electron\\ELECTRON_SAFETY_POLICY.md"
+    },
+    {
+      "name": "package has expected name",
+      "ok": true,
+      "detail": "package.json"
+    },
+    {
+      "name": "package has expected version",
+      "ok": true,
+      "detail": "package.json"
+    },
+    {
+      "name": "package has start script only",
+      "ok": true,
+      "detail": "package.json"
+    },
+    {
+      "name": "main loads local home file",
+      "ok": true,
+      "detail": "main.js"
+    },
+    {
+      "name": "main has no external URL load",
+      "ok": true,
+      "detail": "main.js"
+    },
+    {
+      "name": "preload is minimal label bridge",
+      "ok": true,
+      "detail": "preload.js"
+    },
+    {
+      "name": "start checks local electron dependency",
+      "ok": true,
+      "detail": "START_ELECTRON_DEV.cmd"
+    },
+    {
+      "name": "start does not run package install",
+      "ok": true,
+      "detail": "START_ELECTRON_DEV.cmd"
+    },
+    {
+      "name": "no forbidden claims or paths",
+      "ok": true,
+      "detail": "[]"
+    },
+    {
+      "name": "no external URLs",
+      "ok": true,
+      "detail": "electron scaffold"
+    },
+    {
+      "name": "no deploy or payment behavior in executable scaffold",
+      "ok": true,
+      "detail": "package/main/preload/start"
+    }
+  ],
+  "electron_installed": "NO",
+  "electron_executed": "NO",
+  "npm_install_executed": "NO",
+  "pa3x_ready_claim": "NO",
+  "usb_write": "NO",
+  "external_copy_outside_repo": "NO",
+  "pa3x_load": "NO",
+  "app_jsx_touched": "NO",
+  "deploy_payment": "NO"
+}
