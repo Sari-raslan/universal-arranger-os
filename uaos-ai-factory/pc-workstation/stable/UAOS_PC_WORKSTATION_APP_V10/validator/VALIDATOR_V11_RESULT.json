@@ -1,0 +1,62 @@
+{
+  "status": "PASS",
+  "stable_folder": "E:\\keyboard-manager-clean\\uaos-ai-factory\\pc-workstation\\stable\\UAOS_PC_WORKSTATION_APP_V10",
+  "checks": [
+    {
+      "name": "stable folder exists",
+      "ok": true,
+      "detail": "E:\\keyboard-manager-clean\\uaos-ai-factory\\pc-workstation\\stable\\UAOS_PC_WORKSTATION_APP_V10"
+    },
+    {
+      "name": "V11 internal player exists",
+      "ok": true,
+      "detail": "preview/UAOS_INTERNAL_PLAYER_V11.html"
+    },
+    {
+      "name": "player data exists",
+      "ok": true,
+      "detail": "preview/player_v11_data.json"
+    },
+    {
+      "name": "home HTML exists",
+      "ok": true,
+      "detail": "UAOS_PC_WORKSTATION_HOME.html"
+    },
+    {
+      "name": "home HTML links to V11 player",
+      "ok": true,
+      "detail": "UAOS_PC_WORKSTATION_HOME.html"
+    },
+    {
+      "name": "MIDI file still exists",
+      "ok": true,
+      "detail": "midi/SARI_ARABIC_POP_ORIENTAL_BALLAD_V9.mid"
+    },
+    {
+      "name": "library manager exists",
+      "ok": true,
+      "detail": "library/UAOS_LIBRARY_MANAGER_V7.html"
+    },
+    {
+      "name": "Arabic strings pack exists",
+      "ok": true,
+      "detail": "library/arabic_strings/UAOS_ARABIC_STRINGS_PACK_V1.uaoslib"
+    },
+    {
+      "name": "no forbidden strings or paths",
+      "ok": true,
+      "detail": "[]"
+    }
+  ],
+  "forbidden_findings": [],
+  "safety": {
+    "pc_software_only": "YES",
+    "webaudio_synthetic_only": "YES",
+    "usb_write": "NO",
+    "external_copy_outside_repo": "NO",
+    "pa3x_load": "NO",
+    "app_jsx_touched": "NO",
+    "deploy_payment": "NO",
+    "proprietary_content_copied": "NO"
+  }
+}
