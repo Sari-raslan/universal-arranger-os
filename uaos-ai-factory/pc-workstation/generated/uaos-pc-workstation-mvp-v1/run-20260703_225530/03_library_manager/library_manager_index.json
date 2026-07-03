@@ -1,0 +1,39 @@
+﻿{
+    "markers":  [
+                    "PC_ONLY",
+                    "UAOS_FORMAT",
+                    "TEST_UNVERIFIED",
+                    "NOT_FOR_PA3X_LOAD",
+                    "NOT_FOR_USB_TRANSFER"
+                ],
+    "manager":  "UAOS Library Manager MVP V1",
+    "capabilities":  [
+                         "list libraries",
+                         "list instruments",
+                         "map instruments to style tracks",
+                         "Arabic strings category",
+                         "future user-owned samples path placeholder",
+                         "no proprietary samples"
+                     ],
+    "libraries":  [
+                      {
+                          "id":  "uaos_arabic_strings_v1",
+                          "name":  "UAOS Arabic Strings Library V1",
+                          "category":  "Arabic strings",
+                          "instruments":  [
+                                              "Arabic Strings Ensemble Soft",
+                                              "Arabic Strings Tremolo Light",
+                                              "Arabic Strings Octave Lead",
+                                              "Arabic Strings Pad Wide",
+                                              "Arabic Violin Guide"
+                                          ]
+                      }
+                  ],
+    "track_map":  {
+                      "arabic_strings":  "Arabic Strings Ensemble Soft",
+                      "pad":  "Arabic Strings Pad Wide",
+                      "melody_guide":  "Arabic Violin Guide"
+                  },
+    "future_user_owned_samples_path_placeholder":  "USER_OWNED_SAMPLES_ONLY/PLACEHOLDER",
+    "proprietary_samples":  "NONE"
+}
