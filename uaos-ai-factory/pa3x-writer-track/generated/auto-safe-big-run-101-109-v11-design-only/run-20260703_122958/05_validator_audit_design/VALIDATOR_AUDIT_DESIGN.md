@@ -1,0 +1,1 @@
+# Validator Audit Design`n`nFuture audit should be read-only and evidence-first. It should produce a report schema with status, scope, read paths, hash, manifest agreement, forbidden hits, local-only evidence, TEST_UNVERIFIED evidence, and stop-gate results. PASS remains local-only validation, not PA3X compatibility.

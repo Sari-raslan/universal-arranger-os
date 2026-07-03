@@ -1,0 +1,29 @@
+{
+    "may_read":  [
+                     "allowlisted candidate",
+                     "manifest",
+                     "inspection report",
+                     "local reports"
+                 ],
+    "must_never_write":  [
+                             "candidate",
+                             "fixtures",
+                             "owner-fixtures",
+                             "USB",
+                             "external drive",
+                             "App.jsx",
+                             "deploy/payment",
+                             "source files"
+                         ],
+    "checks":  [
+                   "path allowlist",
+                   "candidate hash",
+                   "manifest agreement",
+                   "forbidden phrase scan",
+                   "forbidden path scan",
+                   "local-only proof",
+                   "TEST_UNVERIFIED proof",
+                   "report schema",
+                   "audit stop gates"
+               ]
+}

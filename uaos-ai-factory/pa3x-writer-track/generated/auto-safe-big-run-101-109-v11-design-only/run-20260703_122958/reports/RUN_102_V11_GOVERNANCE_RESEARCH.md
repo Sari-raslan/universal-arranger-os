@@ -1,0 +1,1 @@
+# Run 102: V11 Governance Research`n`nV11 governance separates report-only continuation, candidate creation, USB verification, USB copy, PA3X load, and external review. Each action requires its own approval boundary and evidence. Claim wording must remain TEST_UNVERIFIED ONLY with no compatibility or PA3X-ready claim. Dirty tree control and known blocker isolation remain active.

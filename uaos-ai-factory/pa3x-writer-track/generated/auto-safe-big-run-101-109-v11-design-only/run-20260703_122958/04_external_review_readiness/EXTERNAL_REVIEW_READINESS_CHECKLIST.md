@@ -1,0 +1,1 @@
+# External Review Readiness Checklist`n`n- V6 status summary`n- V7 blocked summary`n- V8 design-only summary`n- V9 design-only summary`n- V10 design-only summary`n- Safety proof list`n- No compatibility claim`n- No USB/PA3X proof`n- Candidate status wording`n- Recommended reviewer questions
