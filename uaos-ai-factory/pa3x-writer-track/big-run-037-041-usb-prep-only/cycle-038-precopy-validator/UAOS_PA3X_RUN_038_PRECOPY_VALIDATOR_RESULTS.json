@@ -1,0 +1,66 @@
+{
+  "status": "PASS",
+  "validatorRun": "038",
+  "usbWritePerformed": false,
+  "keyboardTransferPerformed": false,
+  "pa3xLoadPerformed": false,
+  "fixtureModified": false,
+  "appJsModified": false,
+  "checks": [
+    {
+      "name": "Run 035 folder exists",
+      "pass": true,
+      "detail": "E:\\keyboard-manager-clean\\uaos-ai-factory\\pa3x-writer-track\\run-035-isolated-usb-package-folder-only"
+    },
+    {
+      "name": "Manifest exists",
+      "pass": true,
+      "detail": "E:\\keyboard-manager-clean\\uaos-ai-factory\\pa3x-writer-track\\run-035-isolated-usb-package-folder-only\\UAOS_PA3X_RUN_035_USB_REVIEW_MANIFEST.json"
+    },
+    {
+      "name": "Candidate exists",
+      "pass": true,
+      "detail": "E:\\keyboard-manager-clean\\uaos-ai-factory\\pa3x-writer-track\\run-035-isolated-usb-package-folder-only\\USB_REVIEW_ONLY_DO_NOT_COPY_TO_USB\\UAOS_PA3X_TEST_UNVERIFIED_035.SET\\PERFORM\\UAOS_TEST_UNVERIFIED_MINIMAL_003.PRF"
+    },
+    {
+      "name": "keyboardReady false",
+      "pass": true,
+      "detail": "false"
+    },
+    {
+      "name": "usbWriteApproved false",
+      "pass": true,
+      "detail": "false"
+    },
+    {
+      "name": "keyboardLoadApproved false",
+      "pass": true,
+      "detail": "false"
+    },
+    {
+      "name": "overwriteAllowed false",
+      "pass": true,
+      "detail": "false"
+    },
+    {
+      "name": "Candidate name is TEST_UNVERIFIED",
+      "pass": true,
+      "detail": "UAOS_TEST_UNVERIFIED_MINIMAL_003.PRF"
+    },
+    {
+      "name": "Exactly one PRF in Run 035 package",
+      "pass": true,
+      "detail": "1"
+    },
+    {
+      "name": "Candidate SHA256 matches manifest",
+      "pass": true,
+      "detail": "b6ab635a30ac483d910a16008d4083f85849b100f36b2bf85641cf513de18e21"
+    },
+    {
+      "name": "Candidate byte length matches manifest",
+      "pass": true,
+      "detail": "24576"
+    }
+  ]
+}
