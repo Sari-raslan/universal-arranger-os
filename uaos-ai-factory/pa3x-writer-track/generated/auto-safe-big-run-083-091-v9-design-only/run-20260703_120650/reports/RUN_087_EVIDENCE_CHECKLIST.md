@@ -1,0 +1,1 @@
+# Run 087: Evidence Checklist`n`nTwo evidence checklists were created: future local-only candidate evidence and future USB verification-only evidence. They are separate to avoid mixing local research with hardware readiness.

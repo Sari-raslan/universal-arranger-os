@@ -1,0 +1,1 @@
+# Safety Gate Model V9`n`nG1 dirty tree gate; G2 known blockers gate; G3 write-scope allowlist gate; G4 owner approval gate; G5 fixture isolation gate; G6 proprietary-content gate; G7 USB gate; G8 PA3X hardware gate; G9 App.jsx/deploy/payment gate; G10 claim wording gate.

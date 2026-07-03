@@ -1,0 +1,1 @@
+# Future USB Verification Only Evidence Checklist`n`n- Real removable drive detected`n- Read-only detection`n- Volume label`n- Drive letter`n- Filesystem`n- Free space`n- No copy`n- No package transfer`n- No Run 037 execution

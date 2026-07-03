@@ -1,0 +1,1 @@
+# Parser V6 Design Plan`n`nParser v6 should be read-only and produce local evidence only. It must never modify candidates, fixtures, owner fixtures, USB, external paths, source app files, App.jsx, deploy, or payment files. PASS must mean local-only validation, not compatibility.

@@ -1,0 +1,1 @@
+# Run 084: V9 Research Scope`n`nV9 scope is report-only, clean-room design only, no binary output, no fixture access, no candidate, no compatibility claim, no USB, and no PA3X. The focus is narrowing safe future candidate requirements.

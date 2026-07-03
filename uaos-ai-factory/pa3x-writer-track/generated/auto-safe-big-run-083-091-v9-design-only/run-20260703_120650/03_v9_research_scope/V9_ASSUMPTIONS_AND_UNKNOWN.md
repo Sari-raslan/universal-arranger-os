@@ -1,0 +1,1 @@
+# V9 Assumptions And Unknowns`n`nAssumptions: V6 remains best local TEST_UNVERIFIED candidate; V8 and V7 candidates were not created; known 12 blockers are owner-reviewed and left untouched; USB readiness is NOT READY. Unknowns: exact PA3X PRF format, checksum rules, byte-region meaning, hardware acceptance, and whether future synthetic labels map safely to a real format.

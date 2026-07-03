@@ -1,0 +1,1 @@
+# Run 086: Parser V6 Plan`n`nParser v6 is a plan only. It defines future read-only checks for candidate path allowlist, file existence, extension consistency, size limit, sha256, local-only marker, TEST_UNVERIFIED marker, manifest/candidate agreement, forbidden words/paths, USB/external references, proprietary content signal, fixture similarity claim, and hardware-ready wording.

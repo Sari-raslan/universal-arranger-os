@@ -1,0 +1,1 @@
+# Parser V6 Stop Gates`n`nStop on non-allowlisted path, missing manifest, fixture reference, owner-fixture access, USB/external path, proprietary signal, PA3X-ready wording, App.jsx/deploy/payment path, unknown dirty tree, or any request to write binary data.

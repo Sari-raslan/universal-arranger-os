@@ -1,0 +1,1 @@
+# Next Code X Tasks After Run 091`n`n1. Continue V10 design-only research.`n2. Or request owner approval for one future local-only TEST_UNVERIFIED candidate.`n3. Or run USB verification only when a real empty USB exists.`n4. Keep known 12 blockers untouched until separately resolved.

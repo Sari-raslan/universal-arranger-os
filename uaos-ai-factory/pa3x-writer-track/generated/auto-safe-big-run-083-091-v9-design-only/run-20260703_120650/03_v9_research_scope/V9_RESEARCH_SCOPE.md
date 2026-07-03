@@ -1,0 +1,1 @@
+# V9 Research Scope`n`nAllowed: reports, clean-room design notes, parser plan, evidence checklist, safety gate model, dashboards, manifests, final seal. Blocked: candidate creation, PRF/binary output, fixture access, owner-fixture access, proprietary content, USB/external copy, PA3X load, App.jsx, deploy/payment, compatibility wording.

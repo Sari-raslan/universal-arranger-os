@@ -1,0 +1,1 @@
+# Clean-Room V9 Blueprint`n`nFuture structure idea: manifest first; generated-byte provenance; synthetic metadata; required markers; inspection report before commit; validator result before any owner decision. This is not a candidate and not a compatibility claim.

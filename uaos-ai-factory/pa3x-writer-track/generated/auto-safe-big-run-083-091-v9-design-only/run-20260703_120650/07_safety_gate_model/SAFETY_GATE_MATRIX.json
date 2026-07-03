@@ -1,0 +1,94 @@
+{
+    "gates":  [
+                  {
+                      "id":  "G1",
+                      "name":  "dirty tree gate",
+                      "trigger":  "before future candidate or commit",
+                      "allowed_action":  "reports-only or explicitly approved local-only step",
+                      "blocked_action":  "candidate/USB/PA3X/fixture/source/deploy/payment/claim violation",
+                      "evidence_required":  "status log, manifest, owner approval if applicable, cached diff check",
+                      "current_state":  "ACTIVE_PASS_FOR_DESIGN_ONLY"
+                  },
+                  {
+                      "id":  "G2",
+                      "name":  "known blockers gate",
+                      "trigger":  "before future candidate or commit",
+                      "allowed_action":  "reports-only or explicitly approved local-only step",
+                      "blocked_action":  "candidate/USB/PA3X/fixture/source/deploy/payment/claim violation",
+                      "evidence_required":  "status log, manifest, owner approval if applicable, cached diff check",
+                      "current_state":  "ACTIVE_PASS_FOR_DESIGN_ONLY"
+                  },
+                  {
+                      "id":  "G3",
+                      "name":  "write-scope allowlist gate",
+                      "trigger":  "before future candidate or commit",
+                      "allowed_action":  "reports-only or explicitly approved local-only step",
+                      "blocked_action":  "candidate/USB/PA3X/fixture/source/deploy/payment/claim violation",
+                      "evidence_required":  "status log, manifest, owner approval if applicable, cached diff check",
+                      "current_state":  "ACTIVE_PASS_FOR_DESIGN_ONLY"
+                  },
+                  {
+                      "id":  "G4",
+                      "name":  "owner approval gate",
+                      "trigger":  "before future candidate or commit",
+                      "allowed_action":  "reports-only or explicitly approved local-only step",
+                      "blocked_action":  "candidate/USB/PA3X/fixture/source/deploy/payment/claim violation",
+                      "evidence_required":  "status log, manifest, owner approval if applicable, cached diff check",
+                      "current_state":  "ACTIVE_PASS_FOR_DESIGN_ONLY"
+                  },
+                  {
+                      "id":  "G5",
+                      "name":  "fixture isolation gate",
+                      "trigger":  "before future candidate or commit",
+                      "allowed_action":  "reports-only or explicitly approved local-only step",
+                      "blocked_action":  "candidate/USB/PA3X/fixture/source/deploy/payment/claim violation",
+                      "evidence_required":  "status log, manifest, owner approval if applicable, cached diff check",
+                      "current_state":  "ACTIVE_PASS_FOR_DESIGN_ONLY"
+                  },
+                  {
+                      "id":  "G6",
+                      "name":  "proprietary-content gate",
+                      "trigger":  "before future candidate or commit",
+                      "allowed_action":  "reports-only or explicitly approved local-only step",
+                      "blocked_action":  "candidate/USB/PA3X/fixture/source/deploy/payment/claim violation",
+                      "evidence_required":  "status log, manifest, owner approval if applicable, cached diff check",
+                      "current_state":  "ACTIVE_PASS_FOR_DESIGN_ONLY"
+                  },
+                  {
+                      "id":  "G7",
+                      "name":  "USB gate",
+                      "trigger":  "before future candidate or commit",
+                      "allowed_action":  "reports-only or explicitly approved local-only step",
+                      "blocked_action":  "candidate/USB/PA3X/fixture/source/deploy/payment/claim violation",
+                      "evidence_required":  "status log, manifest, owner approval if applicable, cached diff check",
+                      "current_state":  "ACTIVE_PASS_FOR_DESIGN_ONLY"
+                  },
+                  {
+                      "id":  "G8",
+                      "name":  "PA3X hardware gate",
+                      "trigger":  "before future candidate or commit",
+                      "allowed_action":  "reports-only or explicitly approved local-only step",
+                      "blocked_action":  "candidate/USB/PA3X/fixture/source/deploy/payment/claim violation",
+                      "evidence_required":  "status log, manifest, owner approval if applicable, cached diff check",
+                      "current_state":  "ACTIVE_PASS_FOR_DESIGN_ONLY"
+                  },
+                  {
+                      "id":  "G9",
+                      "name":  "App.jsx/deploy/payment gate",
+                      "trigger":  "before future candidate or commit",
+                      "allowed_action":  "reports-only or explicitly approved local-only step",
+                      "blocked_action":  "candidate/USB/PA3X/fixture/source/deploy/payment/claim violation",
+                      "evidence_required":  "status log, manifest, owner approval if applicable, cached diff check",
+                      "current_state":  "ACTIVE_PASS_FOR_DESIGN_ONLY"
+                  },
+                  {
+                      "id":  "G10",
+                      "name":  "claim wording gate",
+                      "trigger":  "before future candidate or commit",
+                      "allowed_action":  "reports-only or explicitly approved local-only step",
+                      "blocked_action":  "candidate/USB/PA3X/fixture/source/deploy/payment/claim violation",
+                      "evidence_required":  "status log, manifest, owner approval if applicable, cached diff check",
+                      "current_state":  "ACTIVE_PASS_FOR_DESIGN_ONLY"
+                  }
+              ]
+}

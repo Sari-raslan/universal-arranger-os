@@ -1,0 +1,1 @@
+# Future Local-Only Candidate Evidence Checklist`n`n- Owner approval text`n- Clean write-scope`n- Allowed output root`n- Manifest`n- Hash`n- Marker`n- Inspection report`n- Validator result`n- No fixture/proprietary/USB/PA3X/App.jsx/deploy/payment
