@@ -1,0 +1,77 @@
+{
+  "status": "DRAFT_ONLY",
+  "run": "044A",
+  "schemaName": "UAOS_PA3X_PRF_SCHEMA_V4_DRAFT",
+  "outputType": "read-only-structural-schema",
+  "nativeOutputGenerationAllowed": false,
+  "fixtureModificationAllowed": false,
+  "sampleExtractionAllowed": false,
+  "usbWorkflowAllowed": false,
+  "regionClasses": [
+    {
+      "name": "fileHeader",
+      "required": true,
+      "evidence": "Run 011 region summaries",
+      "confidence": "medium",
+      "readOnlyFields": [
+        "startOffset",
+        "lengthEstimate",
+        "presence"
+      ]
+    },
+    {
+      "name": "stableAnchor",
+      "required": true,
+      "knownOffsets": [
+        0,
+        17,
+        23
+      ],
+      "evidence": "Runs 009 and 010",
+      "confidence": "high-for-read-only",
+      "readOnlyFields": [
+        "offset",
+        "presentRatio",
+        "windowCount",
+        "outlierCount"
+      ]
+    },
+    {
+      "name": "repeatedRegion",
+      "required": false,
+      "evidence": "Run 011 region summaries",
+      "confidence": "medium-for-grouping",
+      "readOnlyFields": [
+        "count",
+        "lengthBand",
+        "presence"
+      ]
+    },
+    {
+      "name": "variableRegion",
+      "required": false,
+      "evidence": "Run 011 region summaries",
+      "confidence": "low-for-writing",
+      "readOnlyFields": [
+        "count",
+        "presence"
+      ]
+    },
+    {
+      "name": "unknownRegion",
+      "required": true,
+      "evidence": "Run 011 region summaries",
+      "confidence": "stop-zone",
+      "readOnlyFields": [
+        "presence",
+        "relativePosition"
+      ]
+    }
+  ],
+  "validationRules": [
+    "Reject parser confidence upgrade if fixture count is below 16.",
+    "Reject native output generation in this schema.",
+    "Require unknown regions to remain non-writable.",
+    "Require all reports to preserve TEST_UNVERIFIED status when discussing candidates."
+  ]
+}

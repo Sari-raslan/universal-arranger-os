@@ -1,0 +1,85 @@
+{
+  "status": "PASS",
+  "run": "044A",
+  "scope": "PREVIOUS_PARSER_DELTA_ANALYSIS_ONLY",
+  "sourceRuns": [
+    "007",
+    "008",
+    "009",
+    "010",
+    "011",
+    "031",
+    "032"
+  ],
+  "missingExpectedRuns": [
+    "033"
+  ],
+  "stableOffsetsFromRun009": [
+    {
+      "offset": 0,
+      "filesPresent": 16,
+      "stability": "stable-offset"
+    },
+    {
+      "offset": 17,
+      "filesPresent": 16,
+      "stability": "stable-offset"
+    },
+    {
+      "offset": 23,
+      "filesPresent": 16,
+      "stability": "stable-offset"
+    }
+  ],
+  "run010Validation": {
+    "prfFilesValidated": 16,
+    "stableOffsetCount": 3,
+    "unstableOffsetCount": 0,
+    "confidenceScore": 0.915,
+    "offsets": [
+      {
+        "offset": 0,
+        "status": "stable",
+        "windowsValidated": 16,
+        "presentRatio": 1,
+        "outliers": 0
+      },
+      {
+        "offset": 17,
+        "status": "stable",
+        "windowsValidated": 16,
+        "presentRatio": 1,
+        "outliers": 0
+      },
+      {
+        "offset": 23,
+        "status": "stable",
+        "windowsValidated": 16,
+        "presentRatio": 1,
+        "outliers": 0
+      }
+    ]
+  },
+  "run011RegionPattern": {
+    "prfFilesParsed": 16,
+    "commonLabels": [
+      "fileHeader",
+      "stableRegion",
+      "repeatedRegion",
+      "variableRegion",
+      "unknownRegion"
+    ],
+    "notes": [
+      "Every parsed PRF has one fileHeader and one unknownRegion in the read-only parser v1 summary.",
+      "Every parsed PRF has two stableRegion entries after the fileHeader label.",
+      "RepeatedRegion counts vary with file length and bank content.",
+      "VariableRegion count is usually 0 to 2."
+    ]
+  },
+  "safety": {
+    "fixtureModified": false,
+    "sampleExtractionPerformed": false,
+    "nativeCandidateGenerated": false,
+    "usbWritePerformed": false
+  }
+}

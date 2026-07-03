@@ -1,0 +1,72 @@
+{
+  "status": "PASS",
+  "run": "044A",
+  "scope": "SAFER_STABLE_REGION_CANDIDATES_ONLY",
+  "candidateRegions": [
+    {
+      "id": "stable-anchor-00000",
+      "startOffset": 0,
+      "evidence": [
+        "Run 009 stable-offset across 16 PRFs",
+        "Run 010 stable validation across 16 windows",
+        "Run 010 present ratio 1",
+        "Run 010 outliers 0"
+      ],
+      "confidence": "high-for-read-only-parsing",
+      "allowedUse": "read-only anchoring and schema validation",
+      "disallowedUse": "writer proof or hardware-use proof"
+    },
+    {
+      "id": "stable-anchor-00017",
+      "startOffset": 17,
+      "evidence": [
+        "Run 009 stable-offset across 16 PRFs",
+        "Run 010 stable validation across 16 windows",
+        "Run 010 present ratio 1",
+        "Run 010 outliers 0"
+      ],
+      "confidence": "high-for-read-only-parsing",
+      "allowedUse": "read-only anchoring and schema validation",
+      "disallowedUse": "writer proof or hardware-use proof"
+    },
+    {
+      "id": "stable-anchor-00023",
+      "startOffset": 23,
+      "evidence": [
+        "Run 009 stable-offset across 16 PRFs",
+        "Run 010 stable validation across 16 windows",
+        "Run 010 present ratio 1",
+        "Run 010 outliers 0"
+      ],
+      "confidence": "high-for-read-only-parsing",
+      "allowedUse": "read-only anchoring and schema validation",
+      "disallowedUse": "writer proof or hardware-use proof"
+    },
+    {
+      "id": "region-pattern-repeated-regions",
+      "startOffset": "variable",
+      "evidence": [
+        "Run 011 region summaries show repeatedRegion in every parsed PRF",
+        "Counts vary by file and bank"
+      ],
+      "confidence": "medium-for-read-only-grouping",
+      "allowedUse": "grouping and boundary hypothesis only",
+      "disallowedUse": "direct byte synthesis"
+    },
+    {
+      "id": "trailing-unknown-region",
+      "startOffset": "file-dependent",
+      "evidence": [
+        "Run 011 region summaries show one unknownRegion per parsed PRF"
+      ],
+      "confidence": "low-for-writing",
+      "allowedUse": "do-not-write boundary marker in parser",
+      "disallowedUse": "candidate generation"
+    }
+  ],
+  "safety": {
+    "noFixtureModification": true,
+    "noNativeCandidateGenerated": true,
+    "noUsbWork": true
+  }
+}
