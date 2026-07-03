@@ -1,0 +1,73 @@
+﻿{
+    "options":  [
+                    {
+                        "id":  "A",
+                        "label":  "Continue V16 design-only research",
+                        "safety_level":  "HIGH",
+                        "required_approval":  "reports-only instruction",
+                        "blocked_actions":  [
+                                                "candidate creation",
+                                                "binaries",
+                                                "USB",
+                                                "PA3X load",
+                                                "fixture access"
+                                            ],
+                        "expected_output":  "generated reports/dashboard/seal only",
+                        "current_recommendation":  "RECOMMENDED_SAFEST_CONTINUATION"
+                    },
+                    {
+                        "id":  "B",
+                        "label":  "Owner approves one future local-only TEST_UNVERIFIED candidate",
+                        "safety_level":  "MEDIUM",
+                        "required_approval":  "explicit separate owner approval text",
+                        "blocked_actions":  [
+                                                "USB",
+                                                "PA3X load",
+                                                "fixture modification",
+                                                "proprietary content",
+                                                "App.jsx",
+                                                "deploy/payment"
+                                            ],
+                        "expected_output":  "one local-only TEST_UNVERIFIED candidate package later",
+                        "current_recommendation":  "WAIT_FOR_EXPLICIT_APPROVAL"
+                    },
+                    {
+                        "id":  "C",
+                        "label":  "Wait for real empty USB and run USB verification only",
+                        "safety_level":  "MEDIUM",
+                        "required_approval":  "owner instruction plus real empty removable USB",
+                        "blocked_actions":  [
+                                                "copy",
+                                                "package transfer",
+                                                "Run 037",
+                                                "PA3X load"
+                                            ],
+                        "expected_output":  "read-only USB detection evidence",
+                        "current_recommendation":  "ONLY_WHEN_DEVICE_EXISTS"
+                    },
+                    {
+                        "id":  "D",
+                        "label":  "Prepare reports-only external technical review pack",
+                        "safety_level":  "HIGH",
+                        "required_approval":  "owner instruction for report pack creation",
+                        "blocked_actions":  [
+                                                "candidate creation",
+                                                "USB/external copy",
+                                                "PA3X load"
+                                            ],
+                        "expected_output":  "generated review report pack only",
+                        "current_recommendation":  "GOOD_NEXT_REPORTING_STEP"
+                    },
+                    {
+                        "id":  "E",
+                        "label":  "Stop PA3X writer track and preserve current evidence",
+                        "safety_level":  "HIGH",
+                        "required_approval":  "owner decision to stop",
+                        "blocked_actions":  [
+                                                "all further generation except preservation notes"
+                                            ],
+                        "expected_output":  "committed evidence remains preserved",
+                        "current_recommendation":  "VALID_IF_OWNER_WANTS_CLOSURE"
+                    }
+                ]
+}
