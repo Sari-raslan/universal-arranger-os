@@ -1,0 +1,29 @@
+﻿{
+    "options":  [
+                    {
+                        "id":  "A",
+                        "label":  "Continue V18 design-only research",
+                        "status":  "GO"
+                    },
+                    {
+                        "id":  "B",
+                        "label":  "Manually share reports-only review index with external reviewer",
+                        "status":  "GO_MANUAL_ONLY"
+                    },
+                    {
+                        "id":  "C",
+                        "label":  "Owner approves one future local-only TEST_UNVERIFIED candidate",
+                        "status":  "NO_GO_UNTIL_EXPLICIT_APPROVAL"
+                    },
+                    {
+                        "id":  "D",
+                        "label":  "Wait for real empty USB and run USB verification only",
+                        "status":  "NO_GO_UNTIL_REAL_EMPTY_USB"
+                    },
+                    {
+                        "id":  "E",
+                        "label":  "Stop and preserve evidence",
+                        "status":  "GO"
+                    }
+                ]
+}
