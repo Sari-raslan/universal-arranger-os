@@ -1,0 +1,27 @@
+﻿git : warning: in the working copy of 
+'uaos-ai-factory/implementation/local-ci-qa-runner-task-010/UAOS_LOCAL_CI_TASK_010_OWNER_SUMMARY.md', LF will be 
+replaced by CRLF the next time Git touches it
+At line:19 char:14
++ $diffStat = (git diff --stat 2>&1 | Out-String).TrimEnd()
++              ~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (warning: in the... Git touches it:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+warning: in the working copy of 
+'uaos-ai-factory/implementation/local-ci-qa-runner-task-010/UAOS_LOCAL_CI_TASK_010_REPORT.md', LF will be replaced by 
+CRLF the next time Git touches it
+warning: in the working copy of 
+'uaos-ai-factory/implementation/local-ci-qa-runner-task-010/UAOS_LOCAL_CI_TASK_010_RESULTS.json', LF will be replaced 
+by CRLF the next time Git touches it
+warning: in the working copy of 
+'uaos-ai-factory/implementation/local-qa-entrypoint-task-011/UAOS_LOCAL_QA_ENTRYPOINT_TASK_011_REPORT.md', LF will be 
+replaced by CRLF the next time Git touches it
+warning: in the working copy of 
+'uaos-ai-factory/implementation/local-qa-entrypoint-task-011/UAOS_LOCAL_QA_ENTRYPOINT_TASK_011_RESULTS.json', LF will 
+be replaced by CRLF the next time Git touches it
+ .../local-ci-qa-runner-task-010/UAOS_LOCAL_CI_TASK_010_OWNER_SUMMARY.md | 2 +-
+ .../local-ci-qa-runner-task-010/UAOS_LOCAL_CI_TASK_010_REPORT.md        | 2 +-
+ .../local-ci-qa-runner-task-010/UAOS_LOCAL_CI_TASK_010_RESULTS.json     | 2 +-
+ .../UAOS_LOCAL_QA_ENTRYPOINT_TASK_011_REPORT.md                         | 2 +-
+ .../UAOS_LOCAL_QA_ENTRYPOINT_TASK_011_RESULTS.json                      | 2 +-
+ 5 files changed, 5 insertions(+), 5 deletions(-)
