@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>UAOS Project Editor V13</title>
+  <style>
+    :root{--ink:#1d2530;--muted:#637083;--paper:#f5f1e9;--panel:#fff;--line:#d8d0c3;--accent:#176b72;--accent2:#8a3c24;--warn:#7b1f1f}
+    *{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:Arial,Tahoma,sans-serif;line-height:1.55}
+    header{background:#17202b;color:white;padding:28px clamp(18px,4vw,46px)}main{max-width:1120px;margin:auto;padding:22px clamp(14px,3vw,28px)}
+    h1,h2{margin:0 0 10px}.sub{margin:0;color:#dfe7ea;direction:ltr}.safety{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:8px;margin:18px 0}
+    .safety span{background:var(--warn);color:#fff;border-radius:6px;padding:8px 10px;text-align:center;font-weight:700;direction:ltr}
+    .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.card{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:16px}
+    label{display:block;font-weight:700;margin:10px 0 5px}input,textarea,select{width:100%;border:1px solid #c9c0b2;border-radius:6px;padding:10px;background:#fff;color:var(--ink);font:inherit}
+    textarea{min-height:110px;resize:vertical}.buttons{display:grid;grid-template-columns:repeat(auto-fit,minmax(165px,1fr));gap:10px;margin-top:16px}
+    button,a.button{border:0;border-radius:6px;background:var(--accent);color:#fff;text-decoration:none;min-height:42px;padding:10px 12px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;text-align:center}
+    button.secondary,a.secondary{background:var(--accent2)}.notice{background:#fff7ed;border:1px solid #e7c99c;border-radius:8px;padding:12px;margin:14px 0}.preview{direction:ltr;text-align:left;white-space:pre-wrap;background:#16202b;color:#edf7f8;border-radius:8px;padding:14px;overflow:auto;max-height:320px}
+    @media(max-width:760px){.grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>محرر مشروع UAOS V13</h1>
+    <p class="sub">UAOS Project Editor V13 - local browser JSON export</p>
+  </header>
+  <main>
+    <section class="safety">
+      <span>PC_ONLY</span><span>UAOS_FORMAT</span><span>TEST_UNVERIFIED</span><span>NOT_FOR_PA3X_LOAD</span><span>NOT_FOR_USB_TRANSFER</span><span>NOT_COMPATIBILITY_VERIFIED</span>
+    </section>
+    <div class="notice">
+      Exported JSON is for UAOS PC writer only. Not PA3X SET. Not USB. Not for keyboard load.
+    </div>
+    <section class="grid">
+      <div class="card">
+        <h2>بيانات المشروع / Project</h2>
+        <label for="project_name">Project name</label>
+        <input id="project_name" value="Sari UAOS PC Workstation V13">
+        <label for="style_name">Style name</label>
+        <input id="style_name" value="Arabic Pop Oriental Ballad V13">
+        <label for="owner">Author / owner name</label>
+        <input id="owner" value="Sari Raslan">
+        <label for="notes">Notes</label>
+        <textarea id="notes">PC-only UAOS internal project editor state. Exported JSON is for UAOS PC writer only.</textarea>
+      </div>
+      <div class="card">
+        <h2>بيانات الستايل / Style</h2>
+        <label for="tempo">Tempo</label>
+        <input id="tempo" type="number" min="40" max="220" value="102">
+        <label for="meter">Meter</label>
+        <input id="meter" value="4/4">
+        <label for="chords">Chord progression</label>
+        <input id="chords" value="Dm, Bb, C, A7">
+        <label for="mood">Musical mood</label>
+        <input id="mood" value="Syrian / Arabic pop ballad">
+        <label for="preset">Default Arabic strings preset</label>
+        <select id="preset">
+          <option selected>Arabic Strings Tremolo Light</option>
+          <option>Arabic Strings Ensemble Soft</option>
+          <option>Arabic Strings Octave Lead</option>
+          <option>Arabic Strings Pad Wide</option>
+          <option>Arabic Violin Guide</option>
+        </select>
+      </div>
+    </section>
+    <section class="card" style="margin-top:14px">
+      <h2>التصدير / Export</h2>
+      <div class="buttons">
+        <button type="button" id="exportProject">Export Project JSON</button>
+        <button type="button" id="exportStyle">Export Style JSON</button>
+        <button type="button" id="exportFull">Export Full Session JSON</button>
+        <button type="button" id="resetDefault" class="secondary">Reset to Default</button>
+        <button type="button" id="loadDefault" class="secondary">Load Default State</button>
+        <a class="button secondary" href="../UAOS_PC_WORKSTATION_HOME.html">Back to Home</a>
+      </div>
+    </section>
+    <section class="card" style="margin-top:14px">
+      <h2>JSON Preview</h2>
+      <pre id="preview" class="preview"></pre>
+    </section>
+  </main>
+  <script>
+    const safetyLabels = ["PC_ONLY","UAOS_FORMAT","TEST_UNVERIFIED","NOT_FOR_PA3X_LOAD","NOT_FOR_USB_TRANSFER","NOT_COMPATIBILITY_VERIFIED"];
+    const defaults = {
+      project_name:"Sari UAOS PC Workstation V13",
+      style_name:"Arabic Pop Oriental Ballad V13",
+      tempo:102,
+      meter:"4/4",
+      chords:["Dm","Bb","C","A7"],
+      mood:"Syrian / Arabic pop ballad",
+      default_arabic_strings_preset:"Arabic Strings Tremolo Light",
+      owner:"Sari Raslan",
+      notes:"PC-only UAOS internal project editor state. Exported JSON is for UAOS PC writer only."
+    };
+    const ids = ["project_name","style_name","tempo","meter","chords","mood","preset","owner","notes"];
+    function field(id){return document.getElementById(id)}
+    function collect(){
+      return {
+        safety_labels:safetyLabels,
+        format:"UAOS_FORMAT",
+        status:"TEST_UNVERIFIED",
+        project_name:field("project_name").value.trim(),
+        style_name:field("style_name").value.trim(),
+        tempo:Number(field("tempo").value || 102),
+        meter:field("meter").value.trim(),
+        chords:field("chords").value.split(",").map(v=>v.trim()).filter(Boolean),
+        mood:field("mood").value.trim(),
+        default_arabic_strings_preset:field("preset").value,
+        owner:field("owner").value.trim(),
+        notes:field("notes").value.trim(),
+        warning:"Exported JSON is for UAOS PC writer only. Not for keyboard load. Not for transfer media."
+      };
+    }
+    function projectPayload(){const data=collect();return {safety_labels:safetyLabels,format:data.format,status:data.status,project_name:data.project_name,owner:data.owner,notes:data.notes,warning:data.warning}}
+    function stylePayload(){const data=collect();return {safety_labels:safetyLabels,format:data.format,status:data.status,style_name:data.style_name,tempo:data.tempo,meter:data.meter,chords:data.chords,mood:data.mood,default_arabic_strings_preset:data.default_arabic_strings_preset,warning:data.warning}}
+    function fullPayload(){return {safety_labels:safetyLabels,format:"UAOS_FORMAT",status:"TEST_UNVERIFIED",project:projectPayload(),style:stylePayload(),exported_by:"UAOS_PROJECT_EDITOR_V13"}}
+    function downloadJson(name,payload){const blob=new Blob([JSON.stringify(payload,null,2)],{type:"application/json"});const url=URL.createObjectURL(blob);const a=document.createElement("a");a.href=url;a.download=name;document.body.appendChild(a);a.click();a.remove();URL.revokeObjectURL(url)}
+    function render(){document.getElementById("preview").textContent=JSON.stringify(fullPayload(),null,2)}
+    function loadDefaults(){field("project_name").value=defaults.project_name;field("style_name").value=defaults.style_name;field("tempo").value=defaults.tempo;field("meter").value=defaults.meter;field("chords").value=defaults.chords.join(", ");field("mood").value=defaults.mood;field("preset").value=defaults.default_arabic_strings_preset;field("owner").value=defaults.owner;field("notes").value=defaults.notes;render()}
+    ids.forEach(id=>field(id).addEventListener("input",render));
+    field("preset").addEventListener("change",render);
+    document.getElementById("exportProject").addEventListener("click",()=>downloadJson("UAOS_PROJECT_V13.json",projectPayload()));
+    document.getElementById("exportStyle").addEventListener("click",()=>downloadJson("UAOS_STYLE_V13.json",stylePayload()));
+    document.getElementById("exportFull").addEventListener("click",()=>downloadJson("UAOS_FULL_SESSION_V13.json",fullPayload()));
+    document.getElementById("resetDefault").addEventListener("click",loadDefaults);
+    document.getElementById("loadDefault").addEventListener("click",loadDefaults);
+    loadDefaults();
+  </script>
+</body>
+</html>

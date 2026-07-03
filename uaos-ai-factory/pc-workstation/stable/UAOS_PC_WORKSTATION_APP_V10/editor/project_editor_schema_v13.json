@@ -1,0 +1,30 @@
+{
+  "schema_name": "UAOS Project Editor V13 Schema",
+  "format": "UAOS_FORMAT",
+  "status": "TEST_UNVERIFIED",
+  "safety_labels": [
+    "PC_ONLY",
+    "UAOS_FORMAT",
+    "TEST_UNVERIFIED",
+    "NOT_FOR_PA3X_LOAD",
+    "NOT_FOR_USB_TRANSFER",
+    "NOT_COMPATIBILITY_VERIFIED"
+  ],
+  "fields": {
+    "project_name": "string",
+    "style_name": "string",
+    "tempo": "number",
+    "meter": "string",
+    "chords": "array<string>",
+    "mood": "string",
+    "default_arabic_strings_preset": "string",
+    "owner": "string",
+    "notes": "string"
+  },
+  "export_targets": [
+    "project_json",
+    "style_json",
+    "full_session_json"
+  ],
+  "warning": "Exported JSON is for UAOS PC writer only. Not for keyboard load. Not for transfer media."
+}
