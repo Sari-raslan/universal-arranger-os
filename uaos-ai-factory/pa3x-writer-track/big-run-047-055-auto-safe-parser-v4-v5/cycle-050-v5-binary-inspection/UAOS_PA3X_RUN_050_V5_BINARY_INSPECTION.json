@@ -1,0 +1,51 @@
+{
+  "status": "PASS",
+  "run": "050",
+  "decision": "C. V5 structurally improved but still TEST_UNVERIFIED",
+  "candidate": {
+    "name": "V5",
+    "path": "E:\\keyboard-manager-clean\\uaos-ai-factory\\pa3x-writer-track\\big-run-047-055-auto-safe-parser-v4-v5\\cycle-049-v5-local-candidate-inspection-only\\UAOS_TEST_UNVERIFIED_MINIMAL_005_V5.PRF",
+    "exists": true,
+    "bytes": 24576,
+    "sha256": "ff100e70247e5756b2256cc80071f5f6eb4c950b9b846f988280179d0fb60530",
+    "zeroByteCount": 947,
+    "ffByteCount": 0,
+    "printableAsciiByteCount": 9052,
+    "zeroByteRatio": 0.038534,
+    "ffByteRatio": 0,
+    "printableAsciiRatio": 0.368327,
+    "anchors": [
+      {
+        "offset": 0,
+        "hex": "55414f535f56355f544553545f554e56004131375635214132335f544553545f",
+        "asciiPreview": "UAOS_V5_TEST_UNV.A17V5!A23_TEST_"
+      },
+      {
+        "offset": 17,
+        "hex": "4131375635214132335f544553545f554e56455249464945445f4c4f43414c5f",
+        "asciiPreview": "A17V5!A23_TEST_UNVERIFIED_LOCAL_"
+      },
+      {
+        "offset": 23,
+        "hex": "4132335f544553545f554e56455249464945445f4c4f43414c5f4f4e4c595f56",
+        "asciiPreview": "A23_TEST_UNVERIFIED_LOCAL_ONLY_V"
+      }
+    ],
+    "manifestSafety": {
+      "testUnverified": true,
+      "keyboardReady": false,
+      "usbWriteApproved": false,
+      "keyboardLoadApproved": false,
+      "packageCopyApproved": false,
+      "localOnly": true
+    }
+  },
+  "comparedToV4": {
+    "v4Bytes": 24576,
+    "v5Bytes": 24576,
+    "v4Sha256": "91518c4dfa4ae23a41bca4292fda66d57d5b8a52111c5701d433f85f7005c6fe",
+    "v5Sha256": "ff100e70247e5756b2256cc80071f5f6eb4c950b9b846f988280179d0fb60530",
+    "sameSize": true,
+    "differentHash": true
+  }
+}

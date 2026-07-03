@@ -1,0 +1,18 @@
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
+const __dirname=path.dirname(fileURLToPath(import.meta.url));
+const candidateDir=path.resolve(__dirname,'../cycle-049-v5-local-candidate-inspection-only');
+const manifestPath=path.join(candidateDir,'UAOS_TEST_UNVERIFIED_MINIMAL_005_V5_MANIFEST.json');
+const candidatePath=path.join(candidateDir,'UAOS_TEST_UNVERIFIED_MINIMAL_005_V5.PRF');
+const manifest=JSON.parse(fs.readFileSync(manifestPath,'utf8'));
+const checks=[]; const check=(name,pass,detail='')=>checks.push({name,pass,detail});
+check('selected candidate exists', fs.existsSync(candidatePath), candidatePath);
+check('selected candidate has manifest', fs.existsSync(manifestPath), manifestPath);
+for (const k of ['keyboardReady','usbWriteApproved','keyboardLoadApproved','packageCopyApproved','fixtureModified','compatibilityClaim','pa3xReadyClaim','usbPathUsed','packagePathUsed']) check(k+' false', manifest[k]===false, String(manifest[k]));
+check('candidate is TEST_UNVERIFIED', manifest.testUnverified===true, String(manifest.testUnverified));
+check('no keyboard load marker', manifest.keyboardLoadApproved===false);
+check('no proprietary content copied', manifest.proprietaryContentCopied===false, String(manifest.proprietaryContentCopied));
+const result={status:checks.every(c=>c.pass)?'PASS':'FAIL',run:'052',selectedCandidate:'V5',checks,readOnly:true,usbWritePerformed:false,packageCopyPerformed:false,keyboardTransferPerformed:false,pa3xLoadPerformed:false,fixtureModified:false};
+fs.writeFileSync(path.join(__dirname,'UAOS_PA3X_RUN_052_PARSER_V2_VALIDATOR_RESULTS.json'), JSON.stringify(result,null,2)+'\n');
+console.log(JSON.stringify(result,null,2));

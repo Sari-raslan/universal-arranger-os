@@ -1,0 +1,27 @@
+{
+  "status": "PASS",
+  "run": "047",
+  "comparisonType": "fixture metadata only",
+  "candidate": {
+    "bytes": 24576,
+    "zeroByteRatio": 0.038289,
+    "printableAsciiRatio": 0.372925
+  },
+  "fixtureMetadata": {
+    "source": "Run 044A metadata scan only",
+    "prfCount": 16,
+    "minBytes": 21975,
+    "maxBytes": 32230,
+    "averageBytes": 26796.44,
+    "sizeRangeIncludes24576": true,
+    "zeroByteRatioRange": [
+      0.119554,
+      0.155724
+    ],
+    "printableAsciiRatioRange": [
+      0.366254,
+      0.396543
+    ]
+  },
+  "conclusion": "V4 size sits inside observed PRF size range, but this does not prove native validity."
+}

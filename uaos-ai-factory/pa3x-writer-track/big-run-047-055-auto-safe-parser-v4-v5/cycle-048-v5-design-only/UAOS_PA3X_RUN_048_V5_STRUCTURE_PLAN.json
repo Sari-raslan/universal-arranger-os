@@ -1,0 +1,36 @@
+{
+  "status": "PASS",
+  "run": "048",
+  "designOnly": true,
+  "anchors": [
+    {
+      "offset": 0,
+      "role": "structural anchor only",
+      "decodedMeaning": false
+    },
+    {
+      "offset": 17,
+      "role": "structural anchor only",
+      "decodedMeaning": false
+    },
+    {
+      "offset": 23,
+      "role": "structural anchor only",
+      "decodedMeaning": false
+    }
+  ],
+  "generationRulesForCycle049": {
+    "onePrfOnly": true,
+    "name": "UAOS_TEST_UNVERIFIED_MINIMAL_005_V5.PRF",
+    "testUnverified": true,
+    "localOnly": true,
+    "fixtureBinaryContentCopied": false,
+    "setStyPrsKstGenerated": false
+  },
+  "validatorRequirements": [
+    "exactly one PRF",
+    "manifest safety fields false",
+    "testUnverified true",
+    "warning blocks USB and PA3X load"
+  ]
+}

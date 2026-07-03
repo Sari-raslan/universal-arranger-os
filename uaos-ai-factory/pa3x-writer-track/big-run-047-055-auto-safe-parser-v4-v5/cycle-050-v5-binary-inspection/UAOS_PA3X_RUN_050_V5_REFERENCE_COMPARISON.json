@@ -1,0 +1,32 @@
+{
+  "status": "PASS",
+  "run": "050",
+  "comparisonType": "fixture metadata only plus V4 local inspection metadata",
+  "fixtureMetadata": {
+    "source": "Run 044A metadata scan only",
+    "prfCount": 16,
+    "minBytes": 21975,
+    "maxBytes": 32230,
+    "averageBytes": 26796.44,
+    "sizeRangeIncludes24576": true,
+    "zeroByteRatioRange": [
+      0.119554,
+      0.155724
+    ],
+    "printableAsciiRatioRange": [
+      0.366254,
+      0.396543
+    ]
+  },
+  "v4": {
+    "bytes": 24576,
+    "sha256": "91518c4dfa4ae23a41bca4292fda66d57d5b8a52111c5701d433f85f7005c6fe",
+    "zeroByteRatio": 0.038289
+  },
+  "v5": {
+    "bytes": 24576,
+    "sha256": "ff100e70247e5756b2256cc80071f5f6eb4c950b9b846f988280179d0fb60530",
+    "zeroByteRatio": 0.038534
+  },
+  "conclusion": "V5 keeps local-only TEST_UNVERIFIED status."
+}

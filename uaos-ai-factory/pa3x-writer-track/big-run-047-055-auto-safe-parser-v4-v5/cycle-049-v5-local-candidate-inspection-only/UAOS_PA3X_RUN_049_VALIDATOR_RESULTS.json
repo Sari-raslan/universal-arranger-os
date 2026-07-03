@@ -1,0 +1,92 @@
+{
+  "status": "PASS",
+  "run": "049",
+  "checks": [
+    {
+      "name": "exactly one PRF candidate exists",
+      "pass": true,
+      "detail": "UAOS_TEST_UNVERIFIED_MINIMAL_005_V5.PRF"
+    },
+    {
+      "name": "no SET/STY/PRS/KST exists",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "manifest keyboardReady false",
+      "pass": true,
+      "detail": "false"
+    },
+    {
+      "name": "manifest usbWriteApproved false",
+      "pass": true,
+      "detail": "false"
+    },
+    {
+      "name": "manifest keyboardLoadApproved false",
+      "pass": true,
+      "detail": "false"
+    },
+    {
+      "name": "manifest packageCopyApproved false",
+      "pass": true,
+      "detail": "false"
+    },
+    {
+      "name": "manifest fixtureModified false",
+      "pass": true,
+      "detail": "false"
+    },
+    {
+      "name": "manifest compatibilityClaim false",
+      "pass": true,
+      "detail": "false"
+    },
+    {
+      "name": "manifest pa3xReadyClaim false",
+      "pass": true,
+      "detail": "false"
+    },
+    {
+      "name": "manifest usbPathUsed false",
+      "pass": true,
+      "detail": "false"
+    },
+    {
+      "name": "manifest packagePathUsed false",
+      "pass": true,
+      "detail": "false"
+    },
+    {
+      "name": "manifest run037CopyScriptExecuted false",
+      "pass": true,
+      "detail": "false"
+    },
+    {
+      "name": "testUnverified true",
+      "pass": true,
+      "detail": "true"
+    },
+    {
+      "name": "warning says DO NOT LOAD ON PA3X",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "warning says DO NOT COPY TO USB",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "sha256 matches manifest",
+      "pass": true,
+      "detail": "ff100e70247e5756b2256cc80071f5f6eb4c950b9b846f988280179d0fb60530"
+    }
+  ],
+  "usbWritePerformed": false,
+  "packageCopyPerformed": false,
+  "keyboardTransferPerformed": false,
+  "pa3xLoadPerformed": false,
+  "fixtureModified": false,
+  "run037CopyScriptExecuted": false
+}
