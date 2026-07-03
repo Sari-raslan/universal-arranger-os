@@ -1,0 +1,1 @@
+# Run 074: V6/V7 Block Review`n`nV6 remains the best local TEST_UNVERIFIED candidate. V7 was not created, and the V7 retry was blocked and sealed. V8 must stay design-only because the project is still in local research mode, USB readiness is NOT READY, and candidate creation requires explicit future approval. Known 12 blockers were left untouched.

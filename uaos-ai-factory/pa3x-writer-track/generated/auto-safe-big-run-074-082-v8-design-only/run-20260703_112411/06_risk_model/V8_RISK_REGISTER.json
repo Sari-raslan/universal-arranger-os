@@ -1,0 +1,94 @@
+{
+    "risks":  [
+                  {
+                      "id":  "R1",
+                      "category":  "binary misunderstanding",
+                      "severity":  "HIGH",
+                      "likelihood":  "MEDIUM",
+                      "mitigation":  "design-only scope, allowlisted staging, explicit stop gate",
+                      "stop_gate":  "stop on candidate, USB, fixture, App.jsx, deploy/payment, unknown dirty path, or compatibility claim",
+                      "current_status":  "CONTROLLED"
+                  },
+                  {
+                      "id":  "R2",
+                      "category":  "false compatibility claim",
+                      "severity":  "HIGH",
+                      "likelihood":  "MEDIUM",
+                      "mitigation":  "design-only scope, allowlisted staging, explicit stop gate",
+                      "stop_gate":  "stop on candidate, USB, fixture, App.jsx, deploy/payment, unknown dirty path, or compatibility claim",
+                      "current_status":  "CONTROLLED"
+                  },
+                  {
+                      "id":  "R3",
+                      "category":  "fixture contamination",
+                      "severity":  "HIGH",
+                      "likelihood":  "MEDIUM",
+                      "mitigation":  "design-only scope, allowlisted staging, explicit stop gate",
+                      "stop_gate":  "stop on candidate, USB, fixture, App.jsx, deploy/payment, unknown dirty path, or compatibility claim",
+                      "current_status":  "CONTROLLED"
+                  },
+                  {
+                      "id":  "R4",
+                      "category":  "USB copy risk",
+                      "severity":  "HIGH",
+                      "likelihood":  "MEDIUM",
+                      "mitigation":  "design-only scope, allowlisted staging, explicit stop gate",
+                      "stop_gate":  "stop on candidate, USB, fixture, App.jsx, deploy/payment, unknown dirty path, or compatibility claim",
+                      "current_status":  "CONTROLLED"
+                  },
+                  {
+                      "id":  "R5",
+                      "category":  "owner-fixture accidental staging",
+                      "severity":  "MEDIUM",
+                      "likelihood":  "MEDIUM",
+                      "mitigation":  "design-only scope, allowlisted staging, explicit stop gate",
+                      "stop_gate":  "stop on candidate, USB, fixture, App.jsx, deploy/payment, unknown dirty path, or compatibility claim",
+                      "current_status":  "CONTROLLED"
+                  },
+                  {
+                      "id":  "R6",
+                      "category":  "deploy/payment contamination",
+                      "severity":  "MEDIUM",
+                      "likelihood":  "MEDIUM",
+                      "mitigation":  "design-only scope, allowlisted staging, explicit stop gate",
+                      "stop_gate":  "stop on candidate, USB, fixture, App.jsx, deploy/payment, unknown dirty path, or compatibility claim",
+                      "current_status":  "CONTROLLED"
+                  },
+                  {
+                      "id":  "R7",
+                      "category":  "App.jsx contamination",
+                      "severity":  "MEDIUM",
+                      "likelihood":  "MEDIUM",
+                      "mitigation":  "design-only scope, allowlisted staging, explicit stop gate",
+                      "stop_gate":  "stop on candidate, USB, fixture, App.jsx, deploy/payment, unknown dirty path, or compatibility claim",
+                      "current_status":  "CONTROLLED"
+                  },
+                  {
+                      "id":  "R8",
+                      "category":  "dirty tree confusion",
+                      "severity":  "MEDIUM",
+                      "likelihood":  "MEDIUM",
+                      "mitigation":  "design-only scope, allowlisted staging, explicit stop gate",
+                      "stop_gate":  "stop on candidate, USB, fixture, App.jsx, deploy/payment, unknown dirty path, or compatibility claim",
+                      "current_status":  "CONTROLLED"
+                  },
+                  {
+                      "id":  "R9",
+                      "category":  "proprietary content risk",
+                      "severity":  "MEDIUM",
+                      "likelihood":  "MEDIUM",
+                      "mitigation":  "design-only scope, allowlisted staging, explicit stop gate",
+                      "stop_gate":  "stop on candidate, USB, fixture, App.jsx, deploy/payment, unknown dirty path, or compatibility claim",
+                      "current_status":  "CONTROLLED"
+                  },
+                  {
+                      "id":  "R10",
+                      "category":  "hardware load risk",
+                      "severity":  "HIGH",
+                      "likelihood":  "MEDIUM",
+                      "mitigation":  "design-only scope, allowlisted staging, explicit stop gate",
+                      "stop_gate":  "stop on candidate, USB, fixture, App.jsx, deploy/payment, unknown dirty path, or compatibility claim",
+                      "current_status":  "CONTROLLED"
+                  }
+              ]
+}

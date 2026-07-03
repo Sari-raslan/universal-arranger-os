@@ -1,0 +1,1 @@
+# Parser V5 Read-Only Validator Plan`n`nRead only candidate and reports. Never write to candidate, fixture, USB, external drive, App.jsx, deploy, or payment paths. Emit local-only validation evidence.

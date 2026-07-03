@@ -1,0 +1,1 @@
+# Future V8 Candidate Gate`n`n1. Owner approval. 2. Write-scope clean. 3. Known blockers ignored but unstaged. 4. Candidate output root allowlisted. 5. No fixture read/write. 6. No USB/external copy. 7. No PA3X load. 8. TEST_UNVERIFIED label.

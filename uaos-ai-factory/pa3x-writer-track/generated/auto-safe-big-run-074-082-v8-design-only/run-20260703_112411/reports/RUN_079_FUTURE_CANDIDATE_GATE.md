@@ -1,0 +1,1 @@
+# Run 079: Future Candidate Gate`n`nV8 candidate may be created only with explicit owner approval, clean write-scope, known blockers not staged, allowlisted output root, no fixture read/write, no USB/external copy, no PA3X load, and TEST_UNVERIFIED labels.

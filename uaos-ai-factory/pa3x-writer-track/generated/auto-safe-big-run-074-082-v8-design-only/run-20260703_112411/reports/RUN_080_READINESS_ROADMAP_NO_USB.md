@@ -1,0 +1,1 @@
+# Run 080: Readiness Roadmap No USB`n`nHardware readiness: NOT READY. Reason: no real removable USB verified. Next USB step: USB VERIFICATION ONLY. No copy, no package transfer, no PA3X load, no Run 037 execution. Research path: V8 design-only, then possible candidate only with approval.

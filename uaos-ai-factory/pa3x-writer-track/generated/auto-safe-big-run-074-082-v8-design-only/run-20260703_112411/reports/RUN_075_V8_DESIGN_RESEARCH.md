@@ -1,0 +1,1 @@
+# Run 075: V8 Design Research`n`nLocal report-only research found safe V8 improvements: stricter manifest matching, byte-region documentation placeholders, forbidden-path scan design, clearer TEST_UNVERIFIED labels, and write-scope proof before future candidate creation. All remain TEST_UNVERIFIED because no hardware, USB, proprietary format, or compatibility validation exists.

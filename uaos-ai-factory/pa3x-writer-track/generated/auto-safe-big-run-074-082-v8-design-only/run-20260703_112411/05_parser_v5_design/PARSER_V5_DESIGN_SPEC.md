@@ -1,0 +1,1 @@
+# Parser V5 Design Spec`n`nRead-only validator design. Inputs are a future candidate, manifest, and inspection report. Outputs are PASS/WARN/FAIL, hash, size, marker result, forbidden hits, manifest match, and local-only statement. PASS is not compatibility.

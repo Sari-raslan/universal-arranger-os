@@ -1,0 +1,1 @@
+I approve creating one local-only TEST_UNVERIFIED V8 candidate inside pa3x-writer-track generated output only. No USB, no PA3X load, no fixture modification, no proprietary content, no App.jsx, no deploy/payment.

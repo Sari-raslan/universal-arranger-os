@@ -1,0 +1,1 @@
+# V8 Safe Structure Hypotheses`n`nFuture V8 structure should require manifest-byte traceability, explicit labels, forbidden-term scan, local-only output root, and byte-region documentation. These are design hypotheses only and not compatibility claims.

@@ -1,0 +1,1 @@
+# Run 076: V8 No-Candidate Policy`n`nNo V8 PRF file created. No binary created. No fixture modified. No owner fixture touched. No USB. No PA3X. No compatibility claim. V8 is design-only until write-scope is fully clean and owner approves candidate creation.

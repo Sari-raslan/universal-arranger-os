@@ -1,0 +1,1 @@
+# V8 Design Research Notes`n`nAssumptions: V6 is the prior best local candidate, V7 was not created, and known 12 blockers remain owner-reviewed but unresolved. Unknowns: true PRF structure, checksum rules, accepted metadata, hardware load behavior, and safe synthetic envelope limits.
