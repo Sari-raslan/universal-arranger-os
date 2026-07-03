@@ -1,0 +1,74 @@
+{
+  "status": "DESIGN_ONLY",
+  "run": "045",
+  "designName": "UAOS_TEST_UNVERIFIED_MINIMAL_004_V4",
+  "nativeOutputGenerated": false,
+  "allowedFutureCandidateName": "UAOS_TEST_UNVERIFIED_MINIMAL_004_V4.PRF",
+  "sourceEvidence": [
+    "Run 044A safer stable region candidates",
+    "Run 044A schema v4 draft",
+    "Run 032 V3 manifest and validator records"
+  ],
+  "anchors": [
+    {
+      "offset": 0,
+      "role": "structural anchor only",
+      "decodedMeaning": false
+    },
+    {
+      "offset": 17,
+      "role": "structural anchor only",
+      "decodedMeaning": false
+    },
+    {
+      "offset": 23,
+      "role": "structural anchor only",
+      "decodedMeaning": false
+    }
+  ],
+  "plannedRegions": [
+    {
+      "name": "testUnverifiedHeader",
+      "intent": "make local inspection status explicit",
+      "contentSource": "synthetic design text only",
+      "fixtureContentCopied": false
+    },
+    {
+      "name": "anchorMarkerBlock",
+      "intent": "mark offsets 0, 17, and 23 as structural anchors",
+      "contentSource": "synthetic deterministic markers only",
+      "fixtureContentCopied": false
+    },
+    {
+      "name": "unknownRegionGuards",
+      "intent": "separate unknown areas from anchor areas for binary inspection",
+      "contentSource": "synthetic deterministic filler only",
+      "fixtureContentCopied": false
+    },
+    {
+      "name": "localOnlyFooter",
+      "intent": "repeat local-only and inspection-only status",
+      "contentSource": "synthetic design text only",
+      "fixtureContentCopied": false
+    }
+  ],
+  "safetyFlagsRequiredForFutureManifest": {
+    "testUnverified": true,
+    "localOnly": true,
+    "keyboardReady": false,
+    "usbWriteApproved": false,
+    "keyboardLoadApproved": false,
+    "packageCopyApproved": false,
+    "fixtureModified": false
+  },
+  "disallowedInRun045": [
+    "PRF generation",
+    "SET generation",
+    "STY generation",
+    "PRS generation",
+    "KST generation",
+    "USB write",
+    "PA3X load",
+    "fixture modification"
+  ]
+}
