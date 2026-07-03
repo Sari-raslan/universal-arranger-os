@@ -1,0 +1,72 @@
+﻿{
+    "markers":  [
+                    "PC_ONLY",
+                    "UAOS_FORMAT",
+                    "TEST_UNVERIFIED",
+                    "NOT_FOR_PA3X_LOAD",
+                    "NOT_FOR_USB_TRANSFER",
+                    "NOT_COMPATIBILITY_VERIFIED"
+                ],
+    "tempo":  96,
+    "meter":  "4/4",
+    "chord_progression":  [
+                              "Cm",
+                              "Ab",
+                              "Bb",
+                              "G7"
+                          ],
+    "sections":  [
+                     {
+                         "name":  "intro",
+                         "bars":  4,
+                         "role":  "establish groove"
+                     },
+                     {
+                         "name":  "verse",
+                         "bars":  16,
+                         "role":  "main vocal bed"
+                     },
+                     {
+                         "name":  "chorus",
+                         "bars":  16,
+                         "role":  "wide hook"
+                     },
+                     {
+                         "name":  "fill",
+                         "bars":  1,
+                         "role":  "transition accent"
+                     },
+                     {
+                         "name":  "ending",
+                         "bars":  4,
+                         "role":  "resolved close"
+                     }
+                 ],
+    "tracks":  [
+                   {
+                       "name":  "drums",
+                       "role":  "rhythm foundation"
+                   },
+                   {
+                       "name":  "bass",
+                       "role":  "root motion"
+                   },
+                   {
+                       "name":  "chords",
+                       "role":  "harmony"
+                   },
+                   {
+                       "name":  "pad",
+                       "role":  "wide support"
+                   },
+                   {
+                       "name":  "arabic_strings",
+                       "role":  "main Arabic color"
+                   },
+                   {
+                       "name":  "melody_guide",
+                       "role":  "original guide only"
+                   }
+               ],
+    "safety":  "PC_ONLY UAOS_FORMAT TEST_UNVERIFIED NOT_FOR_PA3X_LOAD NOT_FOR_USB_TRANSFER NOT_COMPATIBILITY_VERIFIED"
+}
