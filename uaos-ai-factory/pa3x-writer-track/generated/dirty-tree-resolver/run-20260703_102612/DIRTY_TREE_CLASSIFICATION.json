@@ -1,0 +1,93 @@
+{
+    "run":  "UAOS_PA3X_DIRTY_TREE_RESOLVER",
+    "timestamp":  "20260703_102612",
+    "main_path":  "E:\\keyboard-manager-clean",
+    "track_path":  "E:\\keyboard-manager-clean\\uaos-ai-factory\\pa3x-writer-track",
+    "status":  "STILL_BLOCKED_DIRTY_TREE",
+    "safe_commit_allowed":  false,
+    "commit_hash":  "NOT_COMMITTED",
+    "forbidden_path_scan":  {
+                                "app_jsx_found_in_dirty_paths":  false,
+                                "fixture_found_in_dirty_paths":  true,
+                                "usb_found_in_dirty_paths":  false,
+                                "deploy_found_in_dirty_paths":  true,
+                                "payment_found_in_dirty_paths":  false,
+                                "external_drive_found_in_dirty_paths":  false,
+                                "one_drive_or_google_drive_copy_target_found":  false
+                            },
+    "entries":  [
+                    {
+                        "status":  "M",
+                        "path":  "uaos-ai-factory/implementation/local-ci-qa-runner-task-010/UAOS_LOCAL_CI_TASK_010_OWNER_SUMMARY.md",
+                        "classification":  "BLOCK_COMMIT",
+                        "reason":  "Outside uaos-ai-factory/pa3x-writer-track; implementation report path is not allowed for this resolver commit."
+                    },
+                    {
+                        "status":  "M",
+                        "path":  "uaos-ai-factory/implementation/local-ci-qa-runner-task-010/UAOS_LOCAL_CI_TASK_010_REPORT.md",
+                        "classification":  "BLOCK_COMMIT",
+                        "reason":  "Outside uaos-ai-factory/pa3x-writer-track; implementation report path is not allowed for this resolver commit."
+                    },
+                    {
+                        "status":  "M",
+                        "path":  "uaos-ai-factory/implementation/local-ci-qa-runner-task-010/UAOS_LOCAL_CI_TASK_010_RESULTS.json",
+                        "classification":  "BLOCK_COMMIT",
+                        "reason":  "Outside uaos-ai-factory/pa3x-writer-track; implementation result path is not allowed for this resolver commit."
+                    },
+                    {
+                        "status":  "M",
+                        "path":  "uaos-ai-factory/implementation/local-qa-entrypoint-task-011/UAOS_LOCAL_QA_ENTRYPOINT_TASK_011_REPORT.md",
+                        "classification":  "BLOCK_COMMIT",
+                        "reason":  "Outside uaos-ai-factory/pa3x-writer-track; implementation report path is not allowed for this resolver commit."
+                    },
+                    {
+                        "status":  "M",
+                        "path":  "uaos-ai-factory/implementation/local-qa-entrypoint-task-011/UAOS_LOCAL_QA_ENTRYPOINT_TASK_011_RESULTS.json",
+                        "classification":  "BLOCK_COMMIT",
+                        "reason":  "Outside uaos-ai-factory/pa3x-writer-track; implementation result path is not allowed for this resolver commit."
+                    },
+                    {
+                        "status":  "??",
+                        "path":  "UAOS_FINAL_FILES_FOR_CHATGPT_REVIEW_20260702/",
+                        "classification":  "BLOCK_COMMIT",
+                        "reason":  "Untracked root-level folder outside uaos-ai-factory/pa3x-writer-track."
+                    },
+                    {
+                        "status":  "??",
+                        "path":  "UAOS_JOBCENTER_UPLOAD_FINAL_PDF_ONLY/",
+                        "classification":  "BLOCK_COMMIT",
+                        "reason":  "Untracked root-level folder outside uaos-ai-factory/pa3x-writer-track."
+                    },
+                    {
+                        "status":  "??",
+                        "path":  "UAOS_JOBCENTER_UPLOAD_FINAL_PDF_ONLY_V2_CORRECT/",
+                        "classification":  "BLOCK_COMMIT",
+                        "reason":  "Untracked root-level folder outside uaos-ai-factory/pa3x-writer-track."
+                    },
+                    {
+                        "status":  "??",
+                        "path":  "UAOS_Jobcenter_Sendepaket_FINAL_NET_20260701/",
+                        "classification":  "BLOCK_COMMIT",
+                        "reason":  "Untracked root-level folder outside uaos-ai-factory/pa3x-writer-track."
+                    },
+                    {
+                        "status":  "??",
+                        "path":  "UAOS_LOCAL_BACKUPS/",
+                        "classification":  "BLOCK_COMMIT",
+                        "reason":  "Untracked root-level folder outside uaos-ai-factory/pa3x-writer-track."
+                    },
+                    {
+                        "status":  "??",
+                        "path":  "uaos-ai-factory/pa3x-writer-track/owner-fixtures/PLACE_PA3X_BACKUP_HERE/NEWNAME.SET/",
+                        "classification":  "BLOCK_COMMIT",
+                        "reason":  "Path includes fixture/owner-fixtures; forbidden by resolver safety rules."
+                    },
+                    {
+                        "status":  "??",
+                        "path":  "uaos-ai-factory/vercel-linked-monitor-repo-sync/",
+                        "classification":  "BLOCK_COMMIT",
+                        "reason":  "Outside writer track and deploy-related by path/name."
+                    }
+                ],
+    "blocking_count":  12
+}

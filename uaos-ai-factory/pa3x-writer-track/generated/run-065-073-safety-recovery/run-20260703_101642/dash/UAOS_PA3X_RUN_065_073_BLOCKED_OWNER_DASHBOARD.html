@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>UAOS PA3X Run 065-073 Blocked Dashboard</title>
+<style>
+body{font-family:Arial,sans-serif;margin:0;background:#f5f5f2;color:#1d1d1f}main{max-width:980px;margin:0 auto;padding:32px}.status{background:#2f3b52;color:white;padding:20px;border-radius:8px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-top:18px}.card{background:white;border:1px solid #d8d8d0;border-radius:8px;padding:16px}h1,h2{margin:0 0 10px}.tag{display:inline-block;background:#efe2a0;padding:4px 8px;border-radius:4px;font-weight:bold}.lock{color:#0f6b45;font-weight:bold}li{margin:8px 0}</style>
+</head>
+<body><main>
+<section class="status"><h1>UAOS PA3X Run 065-073</h1><p><span class="tag">BLOCKED_BY_SAFETY</span></p><p>Reason: dirty working tree safety gate.</p></section>
+<section class="grid">
+<div class="card"><h2>Candidate</h2><p>V7 candidate: <strong>BLOCKED / NOT_CREATED</strong></p><p>Current best local candidate: <strong>V6</strong></p><p>Candidate status: <strong>TEST_UNVERIFIED ONLY</strong></p></div>
+<div class="card"><h2>Hardware</h2><p>USB readiness: <strong>NOT READY</strong></p><p>USB write: <span class="lock">NO</span></p><p>PA3X load: <span class="lock">NO</span></p></div>
+<div class="card"><h2>Safety Locks</h2><p>External copy: <span class="lock">NO</span></p><p>Fixture modification: <span class="lock">NO</span></p><p>App.jsx: <span class="lock">NO</span></p><p>Deploy/payment: <span class="lock">NO</span></p></div>
+</section>
+<section class="card" style="margin-top:18px"><h2>Next Choices</h2><ol><li>Resolve dirty working tree safely.</li><li>Retry Run 065-073 after tree is clean.</li><li>Skip V7 and continue V8 design-only after clean tree.</li><li>Wait for real empty USB and run USB verification only.</li></ol></section>
+</main></body></html>

@@ -1,0 +1,128 @@
+{
+    "run":  "UAOS_PA3X_OWNER_REVIEW_12_BLOCKING_FILES",
+    "status":  "REVIEW_READY",
+    "timestamp":  "20260703_105412",
+    "source_resolver_classification":  "E:\\keyboard-manager-clean\\uaos-ai-factory\\pa3x-writer-track\\generated\\dirty-tree-resolver\\run-20260703_102612\\DIRTY_TREE_CLASSIFICATION.json",
+    "blocking_files_count":  12,
+    "commit":  "NO",
+    "files_changed_by_review":  "reports only",
+    "safety":  {
+                   "usb_write":  "NO",
+                   "external_copy":  "NO",
+                   "pa3x_load":  "NO",
+                   "fixture_modification":  "NO",
+                   "app_jsx_touched":  "NO",
+                   "deploy_payment":  "NO",
+                   "run_037_copy_script_executed":  "NO"
+               },
+    "blocking_files":  [
+                           {
+                               "path":  "uaos-ai-factory/implementation/local-ci-qa-runner-task-010/UAOS_LOCAL_CI_TASK_010_OWNER_SUMMARY.md",
+                               "status":  "M",
+                               "reason":  "Outside pa3x-writer-track; implementation report path is not allowed for the PA3X-only commit.",
+                               "inside_pa3x_writer_track":  "NO",
+                               "risk_category":  "MEDIUM_UNKNOWN",
+                               "recommended_owner_decision":  "KEEP_UNCOMMITTED_FOR_MANUAL_REVIEW",
+                               "safe_next_command_category":  "read-only diff/review only"
+                           },
+                           {
+                               "path":  "uaos-ai-factory/implementation/local-ci-qa-runner-task-010/UAOS_LOCAL_CI_TASK_010_REPORT.md",
+                               "status":  "M",
+                               "reason":  "Outside pa3x-writer-track; implementation report path is not allowed for the PA3X-only commit.",
+                               "inside_pa3x_writer_track":  "NO",
+                               "risk_category":  "MEDIUM_UNKNOWN",
+                               "recommended_owner_decision":  "KEEP_UNCOMMITTED_FOR_MANUAL_REVIEW",
+                               "safe_next_command_category":  "read-only diff/review only"
+                           },
+                           {
+                               "path":  "uaos-ai-factory/implementation/local-ci-qa-runner-task-010/UAOS_LOCAL_CI_TASK_010_RESULTS.json",
+                               "status":  "M",
+                               "reason":  "Outside pa3x-writer-track; implementation result path is not allowed for the PA3X-only commit.",
+                               "inside_pa3x_writer_track":  "NO",
+                               "risk_category":  "MEDIUM_UNKNOWN",
+                               "recommended_owner_decision":  "KEEP_UNCOMMITTED_FOR_MANUAL_REVIEW",
+                               "safe_next_command_category":  "read-only diff/review only"
+                           },
+                           {
+                               "path":  "uaos-ai-factory/implementation/local-qa-entrypoint-task-011/UAOS_LOCAL_QA_ENTRYPOINT_TASK_011_REPORT.md",
+                               "status":  "M",
+                               "reason":  "Outside pa3x-writer-track; implementation report path is not allowed for the PA3X-only commit.",
+                               "inside_pa3x_writer_track":  "NO",
+                               "risk_category":  "MEDIUM_UNKNOWN",
+                               "recommended_owner_decision":  "KEEP_UNCOMMITTED_FOR_MANUAL_REVIEW",
+                               "safe_next_command_category":  "read-only diff/review only"
+                           },
+                           {
+                               "path":  "uaos-ai-factory/implementation/local-qa-entrypoint-task-011/UAOS_LOCAL_QA_ENTRYPOINT_TASK_011_RESULTS.json",
+                               "status":  "M",
+                               "reason":  "Outside pa3x-writer-track; implementation result path is not allowed for the PA3X-only commit.",
+                               "inside_pa3x_writer_track":  "NO",
+                               "risk_category":  "MEDIUM_UNKNOWN",
+                               "recommended_owner_decision":  "KEEP_UNCOMMITTED_FOR_MANUAL_REVIEW",
+                               "safe_next_command_category":  "read-only diff/review only"
+                           },
+                           {
+                               "path":  "UAOS_FINAL_FILES_FOR_CHATGPT_REVIEW_20260702/",
+                               "status":  "??",
+                               "reason":  "Untracked root-level folder outside pa3x-writer-track.",
+                               "inside_pa3x_writer_track":  "NO",
+                               "risk_category":  "MEDIUM_UNKNOWN",
+                               "recommended_owner_decision":  "MOVE_TO_SEPARATE_REVIEW",
+                               "safe_next_command_category":  "inventory/review untracked folder only"
+                           },
+                           {
+                               "path":  "UAOS_JOBCENTER_UPLOAD_FINAL_PDF_ONLY/",
+                               "status":  "??",
+                               "reason":  "Untracked root-level folder outside pa3x-writer-track.",
+                               "inside_pa3x_writer_track":  "NO",
+                               "risk_category":  "MEDIUM_UNKNOWN",
+                               "recommended_owner_decision":  "MOVE_TO_SEPARATE_REVIEW",
+                               "safe_next_command_category":  "inventory/review untracked folder only"
+                           },
+                           {
+                               "path":  "UAOS_JOBCENTER_UPLOAD_FINAL_PDF_ONLY_V2_CORRECT/",
+                               "status":  "??",
+                               "reason":  "Untracked root-level folder outside pa3x-writer-track.",
+                               "inside_pa3x_writer_track":  "NO",
+                               "risk_category":  "MEDIUM_UNKNOWN",
+                               "recommended_owner_decision":  "MOVE_TO_SEPARATE_REVIEW",
+                               "safe_next_command_category":  "inventory/review untracked folder only"
+                           },
+                           {
+                               "path":  "UAOS_Jobcenter_Sendepaket_FINAL_NET_20260701/",
+                               "status":  "??",
+                               "reason":  "Untracked root-level folder outside pa3x-writer-track.",
+                               "inside_pa3x_writer_track":  "NO",
+                               "risk_category":  "MEDIUM_UNKNOWN",
+                               "recommended_owner_decision":  "MOVE_TO_SEPARATE_REVIEW",
+                               "safe_next_command_category":  "inventory/review untracked folder only"
+                           },
+                           {
+                               "path":  "UAOS_LOCAL_BACKUPS/",
+                               "status":  "??",
+                               "reason":  "Untracked root-level folder outside pa3x-writer-track.",
+                               "inside_pa3x_writer_track":  "NO",
+                               "risk_category":  "MEDIUM_UNKNOWN",
+                               "recommended_owner_decision":  "MOVE_TO_SEPARATE_REVIEW",
+                               "safe_next_command_category":  "inventory/review untracked folder only"
+                           },
+                           {
+                               "path":  "uaos-ai-factory/pa3x-writer-track/owner-fixtures/PLACE_PA3X_BACKUP_HERE/NEWNAME.SET/",
+                               "status":  "??",
+                               "reason":  "Path includes owner-fixtures/fixture; fixture paths are forbidden for the PA3X resolver commit.",
+                               "inside_pa3x_writer_track":  "YES",
+                               "risk_category":  "HIGH_SOURCE_OR_FIXTURE",
+                               "recommended_owner_decision":  "DO_NOT_TOUCH",
+                               "safe_next_command_category":  "manual fixture review only"
+                           },
+                           {
+                               "path":  "uaos-ai-factory/vercel-linked-monitor-repo-sync/",
+                               "status":  "??",
+                               "reason":  "Outside pa3x-writer-track and deploy-related by path/name.",
+                               "inside_pa3x_writer_track":  "NO",
+                               "risk_category":  "FORBIDDEN_DEPLOY_PAYMENT",
+                               "recommended_owner_decision":  "DO_NOT_TOUCH",
+                               "safe_next_command_category":  "manual deploy-related review only"
+                           }
+                       ]
+}

@@ -1,0 +1,119 @@
+{
+    "run":  "UAOS_PA3X_RUN_065_073_SAFETY_RECOVERY",
+    "status":  "BLOCKED_BY_SAFETY",
+    "audit_time":  "20260703_101642",
+    "allowed_root":  "E:\\keyboard-manager-clean\\uaos-ai-factory\\pa3x-writer-track",
+    "blocking_for_commit":  true,
+    "app_jsx_touched_by_git_evidence":  false,
+    "entries":  [
+                    {
+                        "classifications":  [
+                                                "UNKNOWN_REVIEW_REQUIRED",
+                                                "BLOCKING_FOR_COMMIT"
+                                            ],
+                        "status":  "M",
+                        "path":  "uaos-ai-factory/implementation/local-ci-qa-runner-task-010/UAOS_LOCAL_CI_TASK_010_OWNER_SUMMARY.md",
+                        "reason":  "Modified file outside pa3x-writer-track."
+                    },
+                    {
+                        "classifications":  [
+                                                "UNKNOWN_REVIEW_REQUIRED",
+                                                "BLOCKING_FOR_COMMIT"
+                                            ],
+                        "status":  "M",
+                        "path":  "uaos-ai-factory/implementation/local-ci-qa-runner-task-010/UAOS_LOCAL_CI_TASK_010_REPORT.md",
+                        "reason":  "Modified file outside pa3x-writer-track."
+                    },
+                    {
+                        "classifications":  [
+                                                "UNKNOWN_REVIEW_REQUIRED",
+                                                "BLOCKING_FOR_COMMIT"
+                                            ],
+                        "status":  "M",
+                        "path":  "uaos-ai-factory/implementation/local-ci-qa-runner-task-010/UAOS_LOCAL_CI_TASK_010_RESULTS.json",
+                        "reason":  "Modified file outside pa3x-writer-track."
+                    },
+                    {
+                        "classifications":  [
+                                                "UNKNOWN_REVIEW_REQUIRED",
+                                                "BLOCKING_FOR_COMMIT"
+                                            ],
+                        "status":  "M",
+                        "path":  "uaos-ai-factory/implementation/local-qa-entrypoint-task-011/UAOS_LOCAL_QA_ENTRYPOINT_TASK_011_REPORT.md",
+                        "reason":  "Modified file outside pa3x-writer-track."
+                    },
+                    {
+                        "classifications":  [
+                                                "UNKNOWN_REVIEW_REQUIRED",
+                                                "BLOCKING_FOR_COMMIT"
+                                            ],
+                        "status":  "M",
+                        "path":  "uaos-ai-factory/implementation/local-qa-entrypoint-task-011/UAOS_LOCAL_QA_ENTRYPOINT_TASK_011_RESULTS.json",
+                        "reason":  "Modified file outside pa3x-writer-track."
+                    },
+                    {
+                        "classifications":  [
+                                                "UNKNOWN_REVIEW_REQUIRED",
+                                                "BLOCKING_FOR_COMMIT"
+                                            ],
+                        "status":  "??",
+                        "path":  "UAOS_FINAL_FILES_FOR_CHATGPT_REVIEW_20260702/",
+                        "reason":  "Untracked root folder outside pa3x-writer-track."
+                    },
+                    {
+                        "classifications":  [
+                                                "UNKNOWN_REVIEW_REQUIRED",
+                                                "BLOCKING_FOR_COMMIT"
+                                            ],
+                        "status":  "??",
+                        "path":  "UAOS_JOBCENTER_UPLOAD_FINAL_PDF_ONLY/",
+                        "reason":  "Untracked root folder outside pa3x-writer-track."
+                    },
+                    {
+                        "classifications":  [
+                                                "UNKNOWN_REVIEW_REQUIRED",
+                                                "BLOCKING_FOR_COMMIT"
+                                            ],
+                        "status":  "??",
+                        "path":  "UAOS_JOBCENTER_UPLOAD_FINAL_PDF_ONLY_V2_CORRECT/",
+                        "reason":  "Untracked root folder outside pa3x-writer-track."
+                    },
+                    {
+                        "classifications":  [
+                                                "UNKNOWN_REVIEW_REQUIRED",
+                                                "BLOCKING_FOR_COMMIT"
+                                            ],
+                        "status":  "??",
+                        "path":  "UAOS_Jobcenter_Sendepaket_FINAL_NET_20260701/",
+                        "reason":  "Untracked root folder outside pa3x-writer-track."
+                    },
+                    {
+                        "classifications":  [
+                                                "UNKNOWN_REVIEW_REQUIRED",
+                                                "BLOCKING_FOR_COMMIT"
+                                            ],
+                        "status":  "??",
+                        "path":  "UAOS_LOCAL_BACKUPS/",
+                        "reason":  "Untracked root folder outside pa3x-writer-track."
+                    },
+                    {
+                        "classifications":  [
+                                                "FORBIDDEN_FIXTURE",
+                                                "BLOCKING_FOR_COMMIT"
+                                            ],
+                        "status":  "??",
+                        "path":  "uaos-ai-factory/pa3x-writer-track/owner-fixtures/PLACE_PA3X_BACKUP_HERE/NEWNAME.SET/",
+                        "reason":  "Untracked owner-fixture folder; fixtures must not be modified or included."
+                    },
+                    {
+                        "classifications":  [
+                                                "FORBIDDEN_DEPLOY_PAYMENT",
+                                                "BLOCKING_FOR_COMMIT"
+                                            ],
+                        "status":  "??",
+                        "path":  "uaos-ai-factory/vercel-linked-monitor-repo-sync/",
+                        "reason":  "Untracked Vercel/deploy-related folder outside pa3x-writer-track."
+                    }
+                ],
+    "recovery_commit_allowed":  false
+}
