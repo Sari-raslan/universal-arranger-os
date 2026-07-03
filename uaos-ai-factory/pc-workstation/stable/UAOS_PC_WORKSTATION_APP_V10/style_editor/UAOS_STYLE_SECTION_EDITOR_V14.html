@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>UAOS Style Section Editor V14</title>
+  <style>
+    :root{--ink:#1d2530;--paper:#f5f1e9;--panel:#fff;--line:#d8d0c3;--accent:#176b72;--accent2:#8a3c24;--warn:#7b1f1f}
+    *{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:Arial,Tahoma,sans-serif;line-height:1.5}
+    header{background:#17202b;color:#fff;padding:28px clamp(18px,4vw,46px)}main{max-width:1240px;margin:auto;padding:22px clamp(14px,3vw,28px)}
+    h1,h2{margin:0 0 10px}.sub{direction:ltr;color:#dfe7ea;margin:0}.safety{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:8px;margin:18px 0}
+    .safety span{background:var(--warn);color:white;border-radius:6px;padding:8px;text-align:center;font-weight:700;direction:ltr}.card{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:16px;margin-top:14px}
+    table{width:100%;border-collapse:collapse;direction:ltr}th,td{border-bottom:1px solid #e5ded3;padding:8px;text-align:left;vertical-align:middle}th{background:#f0ebe2}
+    input,select{width:100%;border:1px solid #c9c0b2;border-radius:6px;padding:8px;font:inherit}.narrow{max-width:90px}.buttons{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px;margin-top:14px}
+    button,a.button{border:0;border-radius:6px;background:var(--accent);color:#fff;text-decoration:none;min-height:42px;padding:10px 12px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;text-align:center}.secondary{background:var(--accent2)!important}
+    .preview{direction:ltr;text-align:left;white-space:pre-wrap;background:#16202b;color:#edf7f8;border-radius:8px;padding:14px;max-height:300px;overflow:auto}.notice{background:#fff7ed;border:1px solid #e7c99c;border-radius:8px;padding:12px;margin:14px 0}
+  </style>
+</head>
+<body>
+  <header><h1>محرر أقسام الستايل V14</h1><p class="sub">UAOS Style Section Editor V14 - local browser JSON export</p></header>
+  <main>
+    <section class="safety"><span>PC_ONLY</span><span>UAOS_FORMAT</span><span>TEST_UNVERIFIED</span><span>NOT_FOR_PA3X_LOAD</span><span>NOT_FOR_USB_TRANSFER</span><span>NOT_COMPATIBILITY_VERIFIED</span></section>
+    <div class="notice">Exported JSON is for UAOS PC workflow only. Not for keyboard load. Not for transfer media.</div>
+    <section class="card"><h2>الأقسام / Sections</h2><div style="overflow:auto"><table id="sectionsTable"></table></div></section>
+    <section class="card"><h2>التراكات / Tracks</h2><div style="overflow:auto"><table id="tracksTable"></table></div></section>
+    <section class="card">
+      <h2>التصدير / Export</h2>
+      <div class="buttons">
+        <button id="exportSections">Export Style Sections JSON</button>
+        <button id="exportTracks">Export Track Map JSON</button>
+        <button id="exportFull">Export Full Style Edit JSON</button>
+        <button id="arabicPop" class="secondary">Apply Arabic Pop Default</button>
+        <button id="balladSoft" class="secondary">Apply Ballad Soft Default</button>
+        <button id="reset" class="secondary">Reset</button>
+        <a class="button secondary" href="../UAOS_PC_WORKSTATION_HOME.html">Back to Home</a>
+      </div>
+    </section>
+    <section class="card"><h2>JSON Preview</h2><pre id="preview" class="preview"></pre></section>
+  </main>
+  <script>
+    const labels=["PC_ONLY","UAOS_FORMAT","TEST_UNVERIFIED","NOT_FOR_PA3X_LOAD","NOT_FOR_USB_TRANSFER","NOT_COMPATIBILITY_VERIFIED"];
+    const defaultSections=[
+      {name:"intro",enabled:true,bars:4,chord_pattern:"Dm Bb",energy:"low",main_track_focus:"pad",notes:"soft opening"},
+      {name:"verse",enabled:true,bars:16,chord_pattern:"Dm Bb C A7",energy:"medium",main_track_focus:"arabic_strings",notes:"main vocal support"},
+      {name:"chorus",enabled:true,bars:16,chord_pattern:"Dm Bb C A7",energy:"high",main_track_focus:"arabic_strings",notes:"emotional lift"},
+      {name:"bridge",enabled:true,bars:8,chord_pattern:"Bb C Dm A7",energy:"medium",main_track_focus:"chords",notes:"contrast"},
+      {name:"fill",enabled:true,bars:1,chord_pattern:"A7",energy:"high",main_track_focus:"drums",notes:"transition"},
+      {name:"ending",enabled:true,bars:4,chord_pattern:"Dm",energy:"low",main_track_focus:"pad",notes:"resolve"}
+    ];
+    const defaultTracks=[
+      {name:"drums",enabled:true,role:"rhythm pulse",default_preset:"Arabic Pop Soft Kit",volume_hint:78,pan_hint:0},
+      {name:"bass",enabled:true,role:"root motion",default_preset:"Warm Pick Bass",volume_hint:72,pan_hint:0},
+      {name:"chords",enabled:true,role:"harmony support",default_preset:"Soft Keys",volume_hint:66,pan_hint:-8},
+      {name:"pad",enabled:true,role:"wide bed",default_preset:"Warm Pad",volume_hint:58,pan_hint:12},
+      {name:"arabic_strings",enabled:true,role:"main oriental color",default_preset:"Arabic Strings Tremolo Light",volume_hint:82,pan_hint:0},
+      {name:"melody_guide",enabled:true,role:"guide motif only",default_preset:"Arabic Violin Guide",volume_hint:62,pan_hint:6}
+    ];
+    let sections=[],tracks=[];
+    function clone(v){return JSON.parse(JSON.stringify(v))}
+    function select(options,value){return `<select>${options.map(o=>`<option ${o===value?"selected":""}>${o}</option>`).join("")}</select>`}
+    function renderSections(){const heads=["enabled","section","bars","chord pattern","energy","main track focus","notes"];sectionsTable.innerHTML=`<tr>${heads.map(h=>`<th>${h}</th>`).join("")}</tr>`+sections.map((s,i)=>`<tr data-i="${i}"><td><input type="checkbox" ${s.enabled?"checked":""}></td><td>${s.name}</td><td><input class="narrow" type="number" value="${s.bars}"></td><td><input value="${s.chord_pattern}"></td><td>${select(["low","medium","high"],s.energy)}</td><td>${select(["drums","bass","chords","pad","arabic_strings","melody_guide"],s.main_track_focus)}</td><td><input value="${s.notes}"></td></tr>`).join("")}
+    function renderTracks(){const heads=["enabled","track","role","default preset","volume hint","pan hint"];tracksTable.innerHTML=`<tr>${heads.map(h=>`<th>${h}</th>`).join("")}</tr>`+tracks.map((t,i)=>`<tr data-i="${i}"><td><input type="checkbox" ${t.enabled?"checked":""}></td><td>${t.name}</td><td><input value="${t.role}"></td><td><input value="${t.default_preset}"></td><td><input class="narrow" type="number" value="${t.volume_hint}"></td><td><input class="narrow" type="number" value="${t.pan_hint}"></td></tr>`).join("")}
+    function collectSections(){return [...sectionsTable.querySelectorAll("tr[data-i]")].map(row=>{const c=row.querySelectorAll("input,select");return {name:sections[row.dataset.i].name,enabled:c[0].checked,bars:Number(c[1].value),chord_pattern:c[2].value,energy:c[3].value,main_track_focus:c[4].value,notes:c[5].value}})}
+    function collectTracks(){return [...tracksTable.querySelectorAll("tr[data-i]")].map(row=>{const c=row.querySelectorAll("input");return {name:tracks[row.dataset.i].name,enabled:c[0].checked,role:c[1].value,default_preset:c[2].value,volume_hint:Number(c[3].value),pan_hint:Number(c[4].value)}})}
+    function sectionsPayload(){return {safety_labels:labels,format:"UAOS_FORMAT",status:"TEST_UNVERIFIED",sections:collectSections(),warning:"PC workflow JSON only. Not for keyboard load. Not for transfer media."}}
+    function tracksPayload(){return {safety_labels:labels,format:"UAOS_FORMAT",status:"TEST_UNVERIFIED",tracks:collectTracks(),warning:"PC workflow JSON only. Not for keyboard load. Not for transfer media."}}
+    function fullPayload(){return {safety_labels:labels,format:"UAOS_FORMAT",status:"TEST_UNVERIFIED",style_sections:sectionsPayload(),track_map:tracksPayload(),exported_by:"UAOS_STYLE_SECTION_EDITOR_V14"}}
+    function renderPreview(){preview.textContent=JSON.stringify(fullPayload(),null,2)}
+    function download(name,payload){const blob=new Blob([JSON.stringify(payload,null,2)],{type:"application/json"});const url=URL.createObjectURL(blob);const a=document.createElement("a");a.href=url;a.download=name;document.body.appendChild(a);a.click();a.remove();URL.revokeObjectURL(url)}
+    function loadDefault(){sections=clone(defaultSections);tracks=clone(defaultTracks);renderSections();renderTracks();renderPreview()}
+    function balladSoft(){loadDefault();sectionsTable.querySelectorAll("tr[data-i]").forEach(r=>{const s=r.querySelectorAll("input,select");s[3].value="low";s[5].value="soft ballad layer"});renderPreview()}
+    document.addEventListener("input",renderPreview);document.addEventListener("change",renderPreview);
+    exportSections.onclick=()=>download("UAOS_STYLE_SECTIONS_V14.json",sectionsPayload());exportTracks.onclick=()=>download("UAOS_TRACK_MAP_V14.json",tracksPayload());exportFull.onclick=()=>download("UAOS_FULL_STYLE_EDIT_V14.json",fullPayload());
+    arabicPop.onclick=loadDefault;balladSoft.onclick=balladSoft;reset.onclick=loadDefault;loadDefault();
+  </script>
+</body>
+</html>
