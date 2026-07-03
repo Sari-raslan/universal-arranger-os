@@ -1,0 +1,12 @@
+﻿# Evidence Freeze Index
+
+- V4/V5/V6 history
+- V6 current best local candidate
+- V7 blocked/sealed
+- V8-V20 design-only reports
+- Run 155-163 external review pack
+- Run 173-181 manual reviewer sharing prep
+- Run 191-199 final strategic gate
+- USB detector 042/043 no removable USB
+- Run 037 not executed
+- known 12 blockers untouched
