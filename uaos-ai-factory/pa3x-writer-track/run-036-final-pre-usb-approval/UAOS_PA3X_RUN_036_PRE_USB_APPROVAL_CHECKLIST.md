@@ -1,36 +1,56 @@
 # UAOS PA3X Run 036 Pre-USB Approval Checklist
 
-Status: BLOCKED - RUN 035 INPUT NOT FOUND
+Status: PASS - FINAL PRE-USB APPROVAL GATE ONLY
 
-Run 036 is reports only. It does not copy to USB, does not load PA3X, and does not write to a keyboard.
+Run 036 re-checks the Run 035 isolated review package and prepares the owner decision gate for a possible future Run 037. Run 036 does not copy to USB, does not load PA3X, does not write to keyboard, and does not approve compatibility or readiness.
 
-## Required Input Check
+## Verified Input
 
-Expected Run 035 folder:
+Run 035 folder exists: YES
+
+Input folder:
 E:\keyboard-manager-clean\uaos-ai-factory\pa3x-writer-track\run-035-isolated-usb-package-folder-only
 
-Result: NOT FOUND
+Expected candidate:
+UAOS_TEST_UNVERIFIED_MINIMAL_003.PRF
 
-Expected candidate path:
-E:\keyboard-manager-clean\uaos-ai-factory\pa3x-writer-track\run-035-isolated-usb-package-folder-only\USB_REVIEW_ONLY_DO_NOT_COPY_TO_USB\UAOS_PA3X_TEST_UNVERIFIED_035.SET\PERFORM\UAOS_TEST_UNVERIFIED_MINIMAL_003.PRF
+Expected review path:
+USB_REVIEW_ONLY_DO_NOT_COPY_TO_USB\UAOS_PA3X_TEST_UNVERIFIED_035.SET\PERFORM\UAOS_TEST_UNVERIFIED_MINIMAL_003.PRF
 
-Result: NOT VERIFIED
+Candidate exists at expected review path: YES
+Candidate appears only once inside the Run 035 isolated review folder: YES
+Candidate remains TEST_UNVERIFIED: YES
 
-## Checklist Result
+Candidate SHA256:
+B6AB635A30AC483D910A16008D4083F85849B100F36B2BF85641CF513DE18E21
 
-- Run 035 folder exists: NO
-- Candidate PRF exists only inside isolated review folder: NOT VERIFIED
-- Candidate remains TEST_UNVERIFIED: NOT VERIFIED
-- Manifest keyboardReady false: NOT VERIFIED
-- Manifest usbWriteApproved false: NOT VERIFIED
-- Manifest keyboardLoadApproved false: NOT VERIFIED
-- Manifest overwriteAllowed false: NOT VERIFIED
-- Full PA3X backup confirmation required: YES
-- Empty USB only required for any future approved copy: YES
-- No internal memory overwrite allowed: YES
-- Separate Run 037 approval required before any USB copy: YES
-- Failure or rejection by PA3X is acceptable as a future test outcome: YES
+Candidate bytes:
+24576
 
-## Decision
+## Manifest Safety Fields
 
-Run 036 cannot clear any future USB copy until Run 035 exists and passes validation.
+keyboardReady: false
+usbWriteApproved: false
+keyboardLoadApproved: false
+overwriteAllowed: false
+
+Manifest safety status: PASS
+
+## Required Before Any Future Hardware Step
+
+- Full PA3X backup confirmation is still required.
+- Empty USB only is required.
+- No internal memory overwrite is allowed.
+- Owner must approve Run 037 separately before any USB copy.
+- Failure or rejection by PA3X is acceptable and expected as a test outcome.
+
+## Run 036 Boundary
+
+No USB write: YES
+No keyboard transfer: YES
+No PA3X load: YES
+No overwrite: YES
+No internal keyboard memory access: YES
+No fixture modification: YES
+No App.jsx change: YES
+Reports only: YES

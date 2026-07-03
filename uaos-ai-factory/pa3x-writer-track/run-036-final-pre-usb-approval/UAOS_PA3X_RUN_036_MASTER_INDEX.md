@@ -1,6 +1,8 @@
 # UAOS PA3X Run 036 Master Index
 
-Status: BLOCKED - RUN 035 INPUT NOT FOUND
+Status: PASS - FINAL PRE-USB APPROVAL CHECKLIST COMPLETE
+
+Run 036 re-runs the final pre-USB approval gate after Run 035 exists. It creates reports only and does not approve a USB copy, PA3X load, keyboard transfer, overwrite, or compatibility claim.
 
 ## Files
 
@@ -12,12 +14,23 @@ Status: BLOCKED - RUN 035 INPUT NOT FOUND
 - UAOS_PA3X_RUN_036_QA_REPORT.md
 - UAOS_PA3X_RUN_036_MASTER_INDEX.md
 
-## Scope
+## Source Reviewed
 
-Run 036 created reports only.
+Run 035 input folder:
+E:\keyboard-manager-clean\uaos-ai-factory\pa3x-writer-track\run-035-isolated-usb-package-folder-only
 
-No USB write, keyboard transfer, PA3X load, overwrite, fixture modification, App.jsx change, or new native file generation occurred.
+Candidate:
+USB_REVIEW_ONLY_DO_NOT_COPY_TO_USB\UAOS_PA3X_TEST_UNVERIFIED_035.SET\PERFORM\UAOS_TEST_UNVERIFIED_MINIMAL_003.PRF
 
-## Next Action
+## Safety Result
 
-Complete or restore Run 035 isolated review package, then re-run this pre-USB approval checklist.
+Run 035 folder exists: YES
+Candidate is TEST_UNVERIFIED: YES
+Manifest blocks USB write: YES
+Manifest blocks keyboard load: YES
+Manifest blocks overwrite: YES
+Run 037 separate owner approval required before USB copy: YES
+
+## Recommended Next Action
+
+B - prepare USB copy script only, but do not run it.

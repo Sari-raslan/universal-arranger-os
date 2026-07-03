@@ -1,28 +1,35 @@
 # UAOS PA3X Run 036 Failure Recovery Plan
 
-Status: FUTURE PLAN ONLY
+Status: RECOVERY PLAN ONLY
 
-## If Run 035 Is Missing
+Failure or rejection by PA3X is acceptable and expected as a test outcome. A failed recognition test must not be treated as permission to force a load, overwrite data, or modify keyboard memory.
 
-1. Stop the pre-USB approval flow.
-2. Do not create a USB copy.
-3. Recreate or complete Run 035 as an isolated review package only.
-4. Re-run final pre-USB validation after Run 035 exists.
+## Acceptable Outcomes
 
-## If A Future USB Copy Fails
+- PA3X does not display the package.
+- PA3X rejects the package.
+- PA3X reports invalid or unsupported data.
+- PA3X ignores the candidate PRF.
+- Owner chooses to stop before hardware testing.
 
-1. Stop immediately.
-2. Do not retry with overwrite behavior.
-3. Confirm the USB path was empty and selected explicitly.
-4. Return to script-only review.
+## Required Response To Failure
 
-## If A Future PA3X Test Rejects The File
+- Stop the test.
+- Do not retry with overwrite.
+- Do not write to internal keyboard memory.
+- Do not rename the package as compatible.
+- Preserve the USB state for inspection if a future Run 037 copy is ever approved.
+- Record the exact PA3X message or behavior.
+- Return to parser research or script-only preparation.
 
-1. Treat rejection as an acceptable test result.
-2. Stop immediately.
-3. Record the exact message or behavior.
-4. Do not overwrite internal memory.
-5. Do not modify the owner fixture.
-6. Return to read-only parser research.
+## Recovery Priority
 
-Run 036 performs none of these actions; it only documents the recovery plan.
+1. Protect the PA3X and existing keyboard data.
+2. Preserve the full PA3X backup.
+3. Preserve the TEST_UNVERIFIED label.
+4. Document the failure or rejection.
+5. Do not escalate beyond the approved run scope.
+
+## Run 036 Statement
+
+Run 036 performs no hardware test. This recovery plan is prepared only for owner review before any possible later approval.
