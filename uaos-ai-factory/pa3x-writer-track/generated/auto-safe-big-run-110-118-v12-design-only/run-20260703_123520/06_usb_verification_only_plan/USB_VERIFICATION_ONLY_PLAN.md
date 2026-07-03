@@ -1,0 +1,1 @@
+# USB Verification-Only Plan`n`nFuture steps: detect real removable drive in read-only mode; record drive letter, volume label, filesystem, free space; confirm empty if possible; produce report. Blocked actions: copy, package transfer, Run 037 execution, PA3X load.

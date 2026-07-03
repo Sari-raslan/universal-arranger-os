@@ -1,0 +1,1 @@
+# External Review Index Plan`n`nThe future index should point to report-only evidence. It should not include a candidate package unless separately approved, and should not copy to USB or external drives in this run.

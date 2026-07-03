@@ -1,0 +1,1 @@
+# Run 114: USB Verification-Only Plan`n`nPlan only. No USB access required or performed. Future USB verification should detect removable drive read-only, record drive letter, volume label, filesystem, free space, confirm empty if possible, and explicitly perform no copy, no package transfer, no Run 037 execution, and no PA3X load.

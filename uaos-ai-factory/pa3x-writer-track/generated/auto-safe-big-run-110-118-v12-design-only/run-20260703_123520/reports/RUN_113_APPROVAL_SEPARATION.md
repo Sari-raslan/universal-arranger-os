@@ -1,0 +1,1 @@
+# Run 113: Approval Separation`n`nApproval types are separate: design-only approval, local-only TEST_UNVERIFIED candidate approval, USB verification-only approval, USB copy approval, PA3X load approval, and external review package approval. Approval for one does not approve the next.

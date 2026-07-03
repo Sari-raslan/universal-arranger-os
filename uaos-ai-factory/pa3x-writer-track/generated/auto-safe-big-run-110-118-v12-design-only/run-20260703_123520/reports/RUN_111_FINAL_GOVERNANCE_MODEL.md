@@ -1,0 +1,1 @@
+# Run 111: Final Governance Model`n`nFinal pre-candidate governance separates design-only continuation, candidate creation, USB verification, USB copy, PA3X load, and external review. Known blockers remain isolated, and claim wording remains controlled as TEST_UNVERIFIED ONLY with no compatibility, PA3X-ready, or real-keyboard claim.

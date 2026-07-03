@@ -1,0 +1,1 @@
+# Run 115: External Review Index Plan`n`nPlan only. No package or copy was created. Future review sections: current candidate V6 TEST_UNVERIFIED, V7 blocked history, V8-V12 design-only sequence, safety proof, no compatibility claim, no USB/PA3X proof, owner decision gates, and reviewer questions.

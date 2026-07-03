@@ -1,0 +1,1 @@
+# Approval Separation Policy`n`nEach approval is independent. Design-only approval does not approve candidate creation. Candidate approval does not approve USB verification or copy. USB verification does not approve copy. USB copy does not approve PA3X load. PA3X load does not approve compatibility claims. External review approval does not approve candidate, USB, or PA3X actions.

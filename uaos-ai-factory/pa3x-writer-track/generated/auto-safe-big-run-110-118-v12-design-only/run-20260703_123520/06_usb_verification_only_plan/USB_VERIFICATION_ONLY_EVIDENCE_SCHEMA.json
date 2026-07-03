@@ -1,0 +1,21 @@
+{
+    "fields":  [
+                   "removable_drive_detected",
+                   "read_only_detection",
+                   "drive_letter",
+                   "volume_label",
+                   "filesystem",
+                   "free_space",
+                   "empty_status_if_possible",
+                   "copy_performed",
+                   "package_transfer_performed",
+                   "run_037_executed",
+                   "pa3x_load_performed"
+               ],
+    "required_no_values":  [
+                               "copy_performed",
+                               "package_transfer_performed",
+                               "run_037_executed",
+                               "pa3x_load_performed"
+                           ]
+}
