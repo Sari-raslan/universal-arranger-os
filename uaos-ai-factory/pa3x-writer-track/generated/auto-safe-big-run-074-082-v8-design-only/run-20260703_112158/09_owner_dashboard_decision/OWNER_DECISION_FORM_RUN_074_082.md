@@ -1,0 +1,1 @@
+# Owner Decision Form`n`nA. Continue V9 design-only research.`n`nB. Approve one local-only TEST_UNVERIFIED V8 candidate later.`n`nC. Wait for real empty USB and run USB verification only.`n`nD. Package reports for external technical review.

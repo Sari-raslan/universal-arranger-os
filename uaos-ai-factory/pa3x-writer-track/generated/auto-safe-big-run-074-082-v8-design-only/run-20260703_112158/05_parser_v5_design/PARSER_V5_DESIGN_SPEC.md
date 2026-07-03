@@ -1,0 +1,1 @@
+# Parser V5 Design Spec`n`nRead-only parser v5 should consume a future candidate plus its manifest and reports. It must not modify candidates, fixtures, USB devices, external paths, or source files. It should return PASS/WARN/FAIL where PASS means local-only validation, not compatibility.

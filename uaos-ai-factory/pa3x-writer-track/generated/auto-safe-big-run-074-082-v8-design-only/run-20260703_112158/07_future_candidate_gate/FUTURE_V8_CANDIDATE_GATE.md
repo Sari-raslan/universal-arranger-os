@@ -1,0 +1,1 @@
+# Future V8 Candidate Gate`n`nRequired gates: owner approval; clean write-scope; known blockers not staged; allowlisted output root; no fixture read/write; no USB/external copy; no PA3X load; TEST_UNVERIFIED labels.

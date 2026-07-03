@@ -1,0 +1,1 @@
+# Run 078: V8 Risk Model`n`nRisk register and matrix created for R1-R10. All risks are controlled in this run by design-only scope, no candidate creation, no USB, no fixture modification, and allowlisted commit rules.

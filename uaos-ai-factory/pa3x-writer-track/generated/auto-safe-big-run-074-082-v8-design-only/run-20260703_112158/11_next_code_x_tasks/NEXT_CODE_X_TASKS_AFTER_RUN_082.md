@@ -1,0 +1,1 @@
+# Next Code X Tasks After Run 082`n`n1. Continue V9 design-only research.`n2. Or request owner approval for one local-only TEST_UNVERIFIED V8 candidate later.`n3. Or run USB verification only when a real empty USB exists.`n4. Keep known 12 blockers untouched until separately resolved.

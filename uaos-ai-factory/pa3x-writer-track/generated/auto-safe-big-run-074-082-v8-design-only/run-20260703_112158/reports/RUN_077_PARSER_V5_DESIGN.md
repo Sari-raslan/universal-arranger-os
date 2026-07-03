@@ -1,0 +1,1 @@
+# Run 077: Parser V5 Design`n`nParser v5 is designed only. No executable validator is required in this run. Future checks include candidate existence, hash, marker, forbidden path scan, proprietary term scan, manifest match, version label match, byte-region documentation, local-only status, TEST_UNVERIFIED wording, and no USB/external path check.

@@ -1,0 +1,1 @@
+# V8 No-Candidate Policy`n`nV8 is reports-only. No PRF, binary, sample, fixture-derived bytes, USB transfer, external copy, PA3X load, App.jsx, deploy, payment, or compatibility claim is allowed in this run.
