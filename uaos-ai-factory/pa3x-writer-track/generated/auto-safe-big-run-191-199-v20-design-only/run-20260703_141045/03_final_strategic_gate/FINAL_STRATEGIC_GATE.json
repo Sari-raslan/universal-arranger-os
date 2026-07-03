@@ -1,0 +1,44 @@
+﻿{
+    "options":  [
+                    {
+                        "option":  "A. Continue V21 design-only research",
+                        "allowed":  "reports, dashboards, manifests, seals",
+                        "blocked":  "candidate, USB, PA3X, external sharing",
+                        "approval":  "reports-only owner instruction",
+                        "risk":  "LOW",
+                        "recommendation":  "Safe but lower-value after V20"
+                    },
+                    {
+                        "option":  "B. Owner manually shares reports with external reviewer",
+                        "allowed":  "owner manual sharing outside Code X",
+                        "blocked":  "Code X send/upload/copy",
+                        "approval":  "owner choice",
+                        "risk":  "LOW-MEDIUM",
+                        "recommendation":  "Recommended next practical path"
+                    },
+                    {
+                        "option":  "C. Owner explicitly approves one future local-only TEST_UNVERIFIED candidate",
+                        "allowed":  "one local-only TEST_UNVERIFIED candidate later",
+                        "blocked":  "USB, PA3X load, fixture modification, proprietary content",
+                        "approval":  "exact explicit owner text",
+                        "risk":  "MEDIUM",
+                        "recommendation":  "Only if owner wants candidate"
+                    },
+                    {
+                        "option":  "D. Wait for real empty USB and run USB verification only",
+                        "allowed":  "read-only USB detection later",
+                        "blocked":  "copy, Run 037, PA3X load",
+                        "approval":  "real empty removable USB plus owner instruction",
+                        "risk":  "MEDIUM",
+                        "recommendation":  "Only when real USB exists"
+                    },
+                    {
+                        "option":  "E. Stop and preserve evidence",
+                        "allowed":  "preserve committed reports",
+                        "blocked":  "further candidate/USB/PA3X",
+                        "approval":  "owner stop decision",
+                        "risk":  "LOW",
+                        "recommendation":  "Valid closure path"
+                    }
+                ]
+}
