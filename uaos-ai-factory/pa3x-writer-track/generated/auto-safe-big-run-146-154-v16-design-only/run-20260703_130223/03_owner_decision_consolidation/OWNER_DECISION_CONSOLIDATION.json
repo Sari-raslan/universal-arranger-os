@@ -1,0 +1,97 @@
+﻿{
+    "choices":  [
+                    {
+                        "id":  "A",
+                        "label":  "Continue V17 design-only research",
+                        "required_approval":  "reports-only instruction",
+                        "allowed_actions":  [
+                                                "reports",
+                                                "dashboards",
+                                                "manifests",
+                                                "logs",
+                                                "seals"
+                                            ],
+                        "blocked_actions":  [
+                                                "candidate creation",
+                                                "binaries",
+                                                "USB",
+                                                "PA3X load",
+                                                "fixture access"
+                                            ],
+                        "risk_level":  "LOW",
+                        "expected_output":  "new generated design-only package",
+                        "current_recommendation":  "SAFE_CONTINUATION"
+                    },
+                    {
+                        "id":  "B",
+                        "label":  "Approve one future local-only TEST_UNVERIFIED candidate",
+                        "required_approval":  "explicit separate owner approval",
+                        "allowed_actions":  [
+                                                "one local-only TEST_UNVERIFIED generated candidate later"
+                                            ],
+                        "blocked_actions":  [
+                                                "USB",
+                                                "PA3X load",
+                                                "fixture modification",
+                                                "proprietary content",
+                                                "App.jsx",
+                                                "deploy/payment"
+                                            ],
+                        "risk_level":  "MEDIUM",
+                        "expected_output":  "future local candidate package only",
+                        "current_recommendation":  "ONLY_IF_OWNER_EXPLICITLY_WANTS_CANDIDATE"
+                    },
+                    {
+                        "id":  "C",
+                        "label":  "Prepare reports-only external technical review pack",
+                        "required_approval":  "owner instruction for reports-only pack",
+                        "allowed_actions":  [
+                                                "consolidate evidence",
+                                                "reviewer materials under generated output"
+                                            ],
+                        "blocked_actions":  [
+                                                "candidate creation",
+                                                "USB/external copy",
+                                                "PA3X load"
+                                            ],
+                        "risk_level":  "LOW",
+                        "expected_output":  "review pack files only",
+                        "current_recommendation":  "PREFERRED_OVER_CANDIDATE_FOR_SAFETY"
+                    },
+                    {
+                        "id":  "D",
+                        "label":  "Wait for real empty USB and run USB verification only",
+                        "required_approval":  "owner instruction plus real empty removable USB",
+                        "allowed_actions":  [
+                                                "read-only detection",
+                                                "evidence recording"
+                                            ],
+                        "blocked_actions":  [
+                                                "copy",
+                                                "package transfer",
+                                                "Run 037",
+                                                "PA3X load"
+                                            ],
+                        "risk_level":  "MEDIUM",
+                        "expected_output":  "USB verification evidence only",
+                        "current_recommendation":  "ONLY_WHEN_DEVICE_EXISTS"
+                    },
+                    {
+                        "id":  "E",
+                        "label":  "Stop and preserve current evidence",
+                        "required_approval":  "owner stop decision",
+                        "allowed_actions":  [
+                                                "preserve committed reports and seals"
+                                            ],
+                        "blocked_actions":  [
+                                                "further candidate",
+                                                "USB",
+                                                "PA3X",
+                                                "deploy/payment actions"
+                                            ],
+                        "risk_level":  "LOW",
+                        "expected_output":  "no further PA3X writer-track work",
+                        "current_recommendation":  "VALID_CLOSURE_OPTION"
+                    }
+                ]
+}

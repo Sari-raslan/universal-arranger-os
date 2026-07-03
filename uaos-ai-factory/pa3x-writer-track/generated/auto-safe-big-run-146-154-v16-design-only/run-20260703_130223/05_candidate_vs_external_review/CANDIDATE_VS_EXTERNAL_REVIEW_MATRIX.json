@@ -1,0 +1,31 @@
+﻿{
+    "future_candidate_path":  {
+                                  "safety":  "MEDIUM",
+                                  "usefulness":  "local generation assumptions",
+                                  "risk":  "higher because candidate artifact exists",
+                                  "owner_approval_needed":  "EXPLICIT",
+                                  "blocked_actions":  [
+                                                          "USB",
+                                                          "PA3X load",
+                                                          "fixture modification",
+                                                          "proprietary content",
+                                                          "App.jsx",
+                                                          "deploy/payment"
+                                                      ],
+                                  "deliverables":  "one local-only TEST_UNVERIFIED generated candidate later",
+                                  "recommendation":  "only if owner explicitly wants candidate"
+                              },
+    "reports_only_external_review_path":  {
+                                              "safety":  "HIGH",
+                                              "usefulness":  "independent technical review",
+                                              "risk":  "lower",
+                                              "owner_approval_needed":  "owner instruction for reports-only pack",
+                                              "blocked_actions":  [
+                                                                      "candidate creation",
+                                                                      "USB/external copy",
+                                                                      "PA3X load"
+                                                                  ],
+                                              "deliverables":  "evidence pack, reviewer questions, decision forms",
+                                              "recommendation":  "safer than candidate creation unless owner explicitly wants a candidate"
+                                          }
+}
