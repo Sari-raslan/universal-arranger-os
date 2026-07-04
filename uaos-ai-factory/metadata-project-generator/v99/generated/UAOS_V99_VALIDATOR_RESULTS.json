@@ -1,0 +1,17 @@
+{
+  "validator": "UAOS_V99_VALIDATOR",
+  "status": "PASS",
+  "generated_at": "2026-07-04T23:29:16.458405+00:00",
+  "checks": [
+    {
+      "name": "feedback gate exists",
+      "passed": true,
+      "detail": "E:\\keyboard-manager-clean\\uaos-ai-factory\\metadata-project-generator\\v99\\feedback-gate\\UAOS_V99_FEEDBACK_READY_GATE.json"
+    },
+    {
+      "name": "gate states correct",
+      "passed": true,
+      "detail": "{\"status\": \"PASS\", \"owner_feedback_received\": false, \"upgrade_ready_without_feedback\": true, \"feedback_can_override_defaults\": true, \"korg_output_allowed\": false, \"usb_write_allowed\": false, \"pa3x_load_allowed\": false}"
+    }
+  ]
+}

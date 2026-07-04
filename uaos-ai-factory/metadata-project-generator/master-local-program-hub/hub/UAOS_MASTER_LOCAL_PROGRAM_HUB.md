@@ -44,6 +44,12 @@ export_allowed: false
 - V93 Improvement Queue: `../v93/improvement/UAOS_V93_MIDI_IMPROVEMENT_QUEUE.md`
 - V95 DAW Test ZIP: `../v95/exports/UAOS_V95_DAW_TEST_PACKAGE.zip`
 - V91-V95 DAW Test Batch: `../batch-v91-v95-daw-test-feedback/UAOS_BATCH_V91_V95_DAW_TEST_OPEN_HERE.html`
+- V96 Diagnosis Prep: `../v96/diagnosis/UAOS_V96_MIDI_QUALITY_DIAGNOSIS_PREP.md`
+- V97 Musical Rule Map: `../v97/rules/UAOS_V97_MIDI_MUSICAL_RULE_MAP.md`
+- V98 Upgrade Spec: `../v98/upgrade-spec/UAOS_V98_ARRANGEMENT_DEPTH_UPGRADE_SPEC.md`
+- V99 Feedback Gate: `../v99/feedback-gate/UAOS_V99_FEEDBACK_READY_GATE.md`
+- V100 Next MIDI Upgrade Plan: `../v100/plan/UAOS_V100_NEXT_MIDI_UPGRADE_EXECUTION_PLAN.md`
+- V96-V100 MIDI Quality Prep Batch: `../batch-v96-v100-midi-quality-prep/UAOS_BATCH_V96_V100_MIDI_QUALITY_PREP_OPEN_HERE.html`
 - Export Blocker / Research Gates: blocked and research-only.
 - QA Reports: `../master-local-program-hub/reports/`
 - Owner Dashboards: `../master-local-program-hub/dashboards/UAOS_MASTER_OWNER_REVIEW_DASHBOARD.html`
@@ -54,4 +60,4 @@ export_allowed: false
 This hub links local metadata, static dashboard outputs, approved local V71-V73 export artifacts, V74 validation, the V75 static local preview, and the V76-V80 static local RC package only. It does not integrate with React, deploy, accept payment, or create KORG files.
 
 ## Next Action Options
-Next safe action: owner imports MIDI into Cubase and fills feedback form
+Next safe action: V101-V105 improved MIDI generation batch
