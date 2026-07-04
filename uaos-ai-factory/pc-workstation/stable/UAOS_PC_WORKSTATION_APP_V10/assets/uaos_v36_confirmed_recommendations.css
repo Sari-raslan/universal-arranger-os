@@ -1,0 +1,19 @@
+:root{--bg:#030712;--panel:#0b1220;--line:#273449;--text:#f8fafc;--muted:#9ca3af;--cyan:#22d3ee;--green:#22c55e;--amber:#f59e0b;--rose:#fb7185}
+*{box-sizing:border-box}
+body{margin:0;background:#030712;color:var(--text);font-family:Arial,Tahoma,sans-serif}
+.topbar{display:flex;justify-content:space-between;align-items:center;gap:18px;padding:18px 22px;background:#050914;border-bottom:1px solid var(--line)}
+.topbar p{margin:0;color:var(--cyan);font-weight:800}.topbar h1{margin:4px 0 0;font-size:28px}
+.badges{display:flex;gap:8px;flex-wrap:wrap}.badges span{border:1px solid rgba(34,211,238,.35);background:rgba(34,211,238,.1);border-radius:999px;padding:6px 9px;font-size:12px;font-weight:800}
+main{padding:14px}.hero{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px}
+.hero article,.panel,.choiceCard,.row,.tagGrid div{background:linear-gradient(180deg,rgba(17,24,39,.98),rgba(8,13,24,.98));border:1px solid var(--line);border-radius:8px;padding:14px}
+.hero span,.choiceCard span,.row span,.tagGrid span,.safety span{display:block;color:var(--muted);font-size:12px;margin-bottom:6px}
+.hero strong{font-size:25px;color:var(--green)}.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0}
+.tabs button{border:1px solid var(--line);background:#111827;color:var(--text);border-radius:8px;padding:11px 13px;font-weight:800;cursor:pointer}
+.tabs button.active{background:var(--cyan);color:#061018;border-color:var(--cyan)}
+.panel{display:none}.panel.active{display:block}h2{margin:0 0 12px}.note,p{color:var(--muted);line-height:1.7}
+.choiceGrid,.rows,.tagGrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px}
+.choiceCard strong,.row strong,.tagGrid strong,.safety strong{color:var(--green)}
+.choiceCard em{display:block;color:var(--cyan);font-style:normal;font-weight:800;margin-top:8px}
+.row b{display:block;color:var(--text);margin-bottom:7px}.row small{display:block;color:var(--amber);line-height:1.5}
+.safety div{display:flex;justify-content:space-between;gap:12px;border-top:1px solid var(--line);padding-top:8px;margin-top:8px}
+@media(max-width:850px){.topbar{display:block}.badges{margin-top:10px}.topbar h1{font-size:24px}}

@@ -1,0 +1,5 @@
+item,owner_choice,confirmed_type,safe_action_now,blocked_action,confidence,next_step,output_metadata_key
+NEWNAME.SET\GLOBAL\MXPRESET.MXP,confirm_weak,weak_global_metadata_candidate,review metadata role and mark as weak/global metadata candidate,"write, replace, or map into keyboard format",medium,backup completeness check and safe format mapping research,weak_global_metadata_candidate
+NEWNAME.SET\STYLE\USER01.STY,confirm_style,style_source,classify as style source and create style metadata tags,direct style editing,high,style review JSON in V37 metadata project,style_source_user01
+Sampler candidates,unknown,sampler_unknown,explain not detected and request wider backup if available,sample extraction,medium,full backup completeness check for PCM/KMP/KSF if owner provides it,sampler_presence_unknown
+DSP plan,confirm_dsp_only,dsp_only_plan,create category-based DSP metadata plan,assigning DSP to keyboard data,medium,DSP plan JSON in V37 metadata project,dsp_metadata_plan

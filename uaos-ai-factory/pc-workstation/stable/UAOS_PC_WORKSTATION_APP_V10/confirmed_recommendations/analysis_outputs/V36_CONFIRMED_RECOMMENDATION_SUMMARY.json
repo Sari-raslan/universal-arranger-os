@@ -1,0 +1,64 @@
+{
+  "status": "PASS_WITH_WARNINGS",
+  "base_state": "V35 PASS, 4 owner confirmations",
+  "fallback_used": false,
+  "warnings": [
+    "V35 export mismatch for NEWNAME.SET\\GLOBAL\\MXPRESET.MXP; used run-brief confirmed choice confirm_weak.",
+    "V35 export mismatch for NEWNAME.SET\\STYLE\\USER01.STY; used run-brief confirmed choice confirm_style."
+  ],
+  "confirmed_items": 4,
+  "weak_confirmed": 1,
+  "style_confirmed": 1,
+  "sampler_unknown": 1,
+  "dsp_only": 1,
+  "inputs_read": {
+    "owner_export": true,
+    "v35_items": true,
+    "v34_review_actions": true,
+    "v33_dsp": true,
+    "v33_suggestions": true,
+    "v33_classification": true,
+    "v31_inventory": true
+  },
+  "confirmed_choices": [
+    {
+      "item": "NEWNAME.SET\\GLOBAL\\MXPRESET.MXP",
+      "owner_choice": "confirm_weak",
+      "confidence": "low",
+      "dsp_category_guess": "Unknown",
+      "reason": "very small binary/metadata"
+    },
+    {
+      "item": "NEWNAME.SET\\STYLE\\USER01.STY",
+      "owner_choice": "confirm_style",
+      "confidence": "medium",
+      "dsp_category_guess": "Drums",
+      "reason": "style container is the largest/most useful review target"
+    },
+    {
+      "item": "Sampler candidates",
+      "owner_choice": "unknown",
+      "confidence": "medium",
+      "dsp_category_guess": "Unknown",
+      "reason": "لم تظهر ملفات سامبلر واضحة من الامتدادات/الأسماء المقروءة. هذا لا يثبت أن الست لا يحتوي سامبلر؛ يعني فقط أن V33 لم يكتشف ملفات sample/multisample مكشوفة."
+    },
+    {
+      "item": "DSP plan",
+      "owner_choice": "confirm_dsp_only",
+      "confidence": "medium",
+      "dsp_category_guess": "Unknown",
+      "reason": "38 metadata DSP assignments available"
+    }
+  ],
+  "safety": {
+    "read_only": true,
+    "original_set_modified": false,
+    "usb_write": false,
+    "pa3x_load": false,
+    "binary_writer": false,
+    "sample_extraction": false,
+    "compatibility_claim": false,
+    "keyboard_ready_claim": false,
+    "deploy_payment": false
+  }
+}

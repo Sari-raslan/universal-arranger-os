@@ -1,0 +1,26 @@
+{
+  "status": "WARN",
+  "engine_status": "PASS_WITH_WARNINGS",
+  "counts": {
+    "confirmed_items": 4,
+    "weak_confirmed": 1,
+    "style_confirmed": 1,
+    "sampler_unknown": 1,
+    "dsp_only": 1
+  },
+  "errors": [],
+  "warnings": [
+    "V35 export mismatch for NEWNAME.SET\\GLOBAL\\MXPRESET.MXP; used run-brief confirmed choice confirm_weak.",
+    "V35 export mismatch for NEWNAME.SET\\STYLE\\USER01.STY; used run-brief confirmed choice confirm_style."
+  ],
+  "safety": {
+    "read_only": true,
+    "original_set_modified": false,
+    "usb_write": false,
+    "pa3x_load": false,
+    "binary_writer": false,
+    "sample_extraction": false,
+    "app_js_touched": false,
+    "deploy_payment": false
+  }
+}

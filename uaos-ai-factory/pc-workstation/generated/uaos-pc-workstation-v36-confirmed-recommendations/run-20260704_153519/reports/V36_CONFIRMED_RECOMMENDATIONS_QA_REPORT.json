@@ -1,0 +1,28 @@
+{
+  "status": "PASS_WITH_WARNINGS",
+  "engine_status": "PASS_WITH_WARNINGS",
+  "confirmed_items": 4,
+  "weak_confirmed": 1,
+  "style_confirmed": 1,
+  "sampler_unknown": 1,
+  "dsp_only": 1,
+  "warnings": [
+    "V35 export mismatch for MXPRESET.MXP; used run-brief confirmed choice confirm_weak.",
+    "V35 export mismatch for USER01.STY; used run-brief confirmed choice confirm_style."
+  ],
+  "validator": {
+    "status": "WARN",
+    "errors": 0,
+    "warnings": 2
+  },
+  "safety": {
+    "read_only": true,
+    "original_set_modified": false,
+    "usb_write": false,
+    "pa3x_load": false,
+    "binary_writer": false,
+    "sample_extraction": false,
+    "app_js_touched": false,
+    "deploy_payment": false
+  }
+}

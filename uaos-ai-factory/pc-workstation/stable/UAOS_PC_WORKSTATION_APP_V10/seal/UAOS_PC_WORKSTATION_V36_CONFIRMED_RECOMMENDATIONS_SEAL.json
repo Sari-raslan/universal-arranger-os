@@ -1,0 +1,28 @@
+{
+  "status": "PASS_WITH_WARNINGS",
+  "base_state": "V35 PASS, 4 owner confirmations",
+  "dashboard": "UAOS_PC_WORKSTATION_APP_V36_CONFIRMED_RECOMMENDATIONS.html",
+  "engine_status": "PASS_WITH_WARNINGS",
+  "confirmed_items": 4,
+  "weak_confirmed": 1,
+  "style_confirmed": 1,
+  "sampler_unknown": 1,
+  "dsp_only": 1,
+  "validator": {
+    "status": "WARN",
+    "errors": 0,
+    "warnings": 2
+  },
+  "safety": {
+    "read_only": true,
+    "original_set_modified": false,
+    "usb_write": false,
+    "pa3x_load": false,
+    "binary_writer": false,
+    "sample_extraction": false,
+    "korg_compatibility_claim": false,
+    "keyboard_ready_claim": false,
+    "app_js_touched": false,
+    "deploy_payment": false
+  }
+}

@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>UAOS V36 Confirmed Recommendations</title>
+  <link rel="stylesheet" href="assets/uaos_v36_confirmed_recommendations.css">
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <p>UAOS PC Workstation</p>
+      <h1>V36 Confirmed Recommendations</h1>
+    </div>
+    <div class="badges"><span>READ ONLY</span><span>METADATA ONLY</span><span>NO USB</span><span>NO PA3X</span><span>NO WRITER</span></div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <article><span>Confirmed items</span><strong>4</strong></article>
+      <article><span>Weak confirmed</span><strong>1</strong></article>
+      <article><span>Style confirmed</span><strong>1</strong></article>
+      <article><span>Sampler unknown</span><strong>1</strong></article>
+      <article><span>DSP only</span><strong>1</strong></article>
+      <article><span>SET modified</span><strong>NO</strong></article>
+      <article><span>Writer</span><strong>NO</strong></article>
+      <article><span>USB</span><strong>NO</strong></article>
+      <article><span>PA3X</span><strong>NO</strong></article>
+    </section>
+
+    <nav class="tabs" aria-label="V36 sections">
+      <button class="active" data-panel="owner">تأكيدات المالك</button>
+      <button data-panel="plan">الخطة العملية الآن</button>
+      <button data-panel="weak">العنصر الضعيف</button>
+      <button data-panel="style">الستايل المؤكد</button>
+      <button data-panel="sampler">السامبلر غير معروف</button>
+      <button data-panel="dsp">DSP فقط</button>
+      <button data-panel="blocked">ما هو الممنوع</button>
+      <button data-panel="next">الخطوة التالية</button>
+    </nav>
+
+    <section class="panel active" id="owner">
+      <h2>تأكيدات المالك</h2>
+      <div id="choiceGrid" class="choiceGrid"></div>
+      <p class="note">تم اعتماد اختيارات V36 المؤكدة من brief التشغيل. يوجد تحذير لأن ملف التصدير المحلي كان مختلفًا في عنصرين.</p>
+    </section>
+
+    <section class="panel" id="plan">
+      <h2>الخطة العملية الآن</h2>
+      <div id="actionPlan" class="rows"></div>
+    </section>
+
+    <section class="panel" id="weak">
+      <h2>العنصر الضعيف</h2>
+      <p>NEWNAME.SET\GLOBAL\MXPRESET.MXP يتم التعامل معه كمرشح global/weak metadata. الإجراء الآمن الآن هو مراجعة الدور وتوثيقه، مع فحص اكتمال النسخة الاحتياطية لاحقًا.</p>
+    </section>
+
+    <section class="panel" id="style">
+      <h2>الستايل المؤكد</h2>
+      <div class="tagGrid">
+        <div><span>style_bank</span><strong>USER01</strong></div>
+        <div><span>style_type</span><strong>owner_style</strong></div>
+        <div><span>review_needed</span><strong>YES</strong></div>
+        <div><span>dsp_dependency</span><strong>style tracks unknown</strong></div>
+      </div>
+      <p>USER01.STY مصدر ستايل مؤكد. لا يوجد تعديل مباشر، فقط وسوم ميتاداتا وخطة مراجعة.</p>
+    </section>
+
+    <section class="panel" id="sampler">
+      <h2>السامبلر غير معروف</h2>
+      <p>عدم اكتشاف السامبلر ليس دليلًا على عدم وجود عينات. الخطوة الآمنة هي طلب backup أوسع أو كامل إذا كان متاحًا ويحتوي PCM/KMP/KSF. لا توجد أي عملية استخراج عينات.</p>
+    </section>
+
+    <section class="panel" id="dsp">
+      <h2>DSP فقط</h2>
+      <div id="dspPlan" class="rows"></div>
+    </section>
+
+    <section class="panel safety" id="blocked">
+      <h2>ما هو الممنوع</h2>
+      <div><span>تعديل SET الأصلي</span><strong>NO</strong></div>
+      <div><span>كتابة Binary</span><strong>NO</strong></div>
+      <div><span>استخراج عينات</span><strong>NO</strong></div>
+      <div><span>نقل USB</span><strong>NO</strong></div>
+      <div><span>تحميل PA3X</span><strong>NO</strong></div>
+      <div><span>Deploy/payment</span><strong>NO</strong></div>
+    </section>
+
+    <section class="panel" id="next">
+      <h2>الخطوة التالية</h2>
+      <p>V37 المقترح: UAOS Metadata Project Generator. ينشئ مشروع .uaosproject JSON داخلي، وخطة DSP JSON، وخطة مراجعة ستايل JSON، بدون كتابة KORG وبدون تعديل SET.</p>
+    </section>
+  </main>
+
+  <script src="assets/uaos_v36_confirmed_recommendations.js"></script>
+</body>
+</html>
