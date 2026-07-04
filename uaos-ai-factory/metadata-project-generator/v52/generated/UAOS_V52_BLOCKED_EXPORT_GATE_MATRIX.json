@@ -1,0 +1,126 @@
+{
+  "schemaVersion": "uaos.v52.blocked.export.gate.matrix.v1",
+  "generatedAt": "2026-07-04T17:38:26.542Z",
+  "gates": [
+    {
+      "gateId": "gate-01",
+      "title": "Gate 1: owner decision complete",
+      "approved": false,
+      "exportAllowed": false,
+      "usbAllowed": false,
+      "keyboardLoadAllowed": false,
+      "currentStatus": "blocked",
+      "safetyNote": "No export, USB write, or keyboard load is allowed by this metadata-only gate matrix."
+    },
+    {
+      "gateId": "gate-02",
+      "title": "Gate 2: metadata dry-run apply preview PASS",
+      "approved": false,
+      "exportAllowed": false,
+      "usbAllowed": false,
+      "keyboardLoadAllowed": false,
+      "currentStatus": "blocked",
+      "safetyNote": "No export, USB write, or keyboard load is allowed by this metadata-only gate matrix."
+    },
+    {
+      "gateId": "gate-03",
+      "title": "Gate 3: internal style engine integration PASS",
+      "approved": false,
+      "exportAllowed": false,
+      "usbAllowed": false,
+      "keyboardLoadAllowed": false,
+      "currentStatus": "blocked",
+      "safetyNote": "No export, USB write, or keyboard load is allowed by this metadata-only gate matrix."
+    },
+    {
+      "gateId": "gate-04",
+      "title": "Gate 4: KORG writer design review PASS",
+      "approved": false,
+      "exportAllowed": false,
+      "usbAllowed": false,
+      "keyboardLoadAllowed": false,
+      "currentStatus": "blocked",
+      "safetyNote": "No export, USB write, or keyboard load is allowed by this metadata-only gate matrix."
+    },
+    {
+      "gateId": "gate-05",
+      "title": "Gate 5: native output candidate inspection PASS",
+      "approved": false,
+      "exportAllowed": false,
+      "usbAllowed": false,
+      "keyboardLoadAllowed": false,
+      "currentStatus": "blocked",
+      "safetyNote": "No export, USB write, or keyboard load is allowed by this metadata-only gate matrix."
+    },
+    {
+      "gateId": "gate-06",
+      "title": "Gate 6: empty USB verification PASS",
+      "approved": false,
+      "exportAllowed": false,
+      "usbAllowed": false,
+      "keyboardLoadAllowed": false,
+      "currentStatus": "blocked",
+      "safetyNote": "No export, USB write, or keyboard load is allowed by this metadata-only gate matrix."
+    },
+    {
+      "gateId": "gate-07",
+      "title": "Gate 7: PA3X full backup confirmed",
+      "approved": false,
+      "exportAllowed": false,
+      "usbAllowed": false,
+      "keyboardLoadAllowed": false,
+      "currentStatus": "blocked",
+      "safetyNote": "No export, USB write, or keyboard load is allowed by this metadata-only gate matrix."
+    },
+    {
+      "gateId": "gate-08",
+      "title": "Gate 8: isolated PA3X hardware test approved",
+      "approved": false,
+      "exportAllowed": false,
+      "usbAllowed": false,
+      "keyboardLoadAllowed": false,
+      "currentStatus": "blocked",
+      "safetyNote": "No export, USB write, or keyboard load is allowed by this metadata-only gate matrix."
+    },
+    {
+      "gateId": "gate-09",
+      "title": "Gate 9: hardware test observed",
+      "approved": false,
+      "exportAllowed": false,
+      "usbAllowed": false,
+      "keyboardLoadAllowed": false,
+      "currentStatus": "blocked",
+      "safetyNote": "No export, USB write, or keyboard load is allowed by this metadata-only gate matrix."
+    },
+    {
+      "gateId": "gate-10",
+      "title": "Gate 10: compatibility claim review",
+      "approved": false,
+      "exportAllowed": false,
+      "usbAllowed": false,
+      "keyboardLoadAllowed": false,
+      "currentStatus": "blocked",
+      "safetyNote": "No export, USB write, or keyboard load is allowed by this metadata-only gate matrix."
+    }
+  ],
+  "allGatesBlocked": true,
+  "readyForKorgExport": false,
+  "readyForUsb": false,
+  "readyForKeyboardLoad": false,
+  "safety": {
+    "metadataOnly": true,
+    "gapAnalysisOnly": true,
+    "noExport": true,
+    "sourceProjectModified": false,
+    "autoApplyEnabled": false,
+    "realApplyAllowed": false,
+    "exportAllowed": false,
+    "korgOutputAllowed": false,
+    "setModificationAllowed": false,
+    "usbWriteAllowed": false,
+    "keyboardLoadAllowed": false,
+    "compatibilityClaim": false,
+    "pa3xReadyClaim": false,
+    "exportApproval": false
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "status": "PASS",
+  "checkedAt": "2026-07-04T17:38:31.057Z",
+  "checkedFiles": {
+    "seal": "generated/UAOS_V52_METADATA_FREEZE_ACCEPTANCE_SEAL.json",
+    "sealMd": "generated/UAOS_V52_METADATA_FREEZE_ACCEPTANCE_SEAL.md",
+    "gap": "generated/UAOS_V52_EXPORT_READINESS_GAP_ANALYSIS.json",
+    "gapMd": "generated/UAOS_V52_EXPORT_READINESS_GAP_ANALYSIS.md",
+    "gates": "generated/UAOS_V52_BLOCKED_EXPORT_GATE_MATRIX.json",
+    "gatesMd": "generated/UAOS_V52_BLOCKED_EXPORT_GATE_MATRIX.md",
+    "matrix": "generated/UAOS_V52_NEXT_RECOMMENDATION_MATRIX.json"
+  },
+  "errors": [],
+  "warnings": [],
+  "safety": {
+    "metadataOnly": true,
+    "gapAnalysisOnly": true,
+    "freezeSealDocumentationOnly": true,
+    "noExport": true,
+    "noRealApply": true,
+    "noSourceProjectMutation": true,
+    "noKorgOutput": true,
+    "noSetStylePerfPresetKst": true,
+    "noAudioSampleBinaries": true,
+    "noUsbWrite": true,
+    "noKeyboardLoad": true,
+    "noFixtureModification": true,
+    "noAppJs": true,
+    "noDeploy": true,
+    "noPayment": true,
+    "noExportApproval": true
+  }
+}

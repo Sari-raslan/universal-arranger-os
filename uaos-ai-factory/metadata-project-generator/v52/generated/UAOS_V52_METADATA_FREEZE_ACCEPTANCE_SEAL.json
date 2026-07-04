@@ -1,0 +1,71 @@
+{
+  "schemaVersion": "uaos.v52.metadata.freeze.acceptance.seal.v1",
+  "sealId": "uaos-v52-freeze-seal-20260704173812",
+  "createdAt": "2026-07-04T17:38:12.451Z",
+  "coveredVersions": [
+    "V37",
+    "V38",
+    "V39",
+    "V40",
+    "V41",
+    "V42",
+    "V43",
+    "V44",
+    "V45",
+    "V46",
+    "V47",
+    "V48",
+    "V49",
+    "V50",
+    "V51",
+    "V52"
+  ],
+  "acceptedScope": [
+    "metadata project generator workflow",
+    "metadata review workflow",
+    "suggestion review workflow",
+    "dry-run preview workflow",
+    "local review portal workflow",
+    "governance freeze documentation"
+  ],
+  "excludedScope": [
+    "KORG writer",
+    "PA3X hardware export",
+    "USB copy",
+    "SET modification",
+    "App.jsx integration",
+    "deploy/payment"
+  ],
+  "metadataFreezeAccepted": true,
+  "ownerReviewReady": true,
+  "readyForKorgExport": false,
+  "readyForUsb": false,
+  "readyForKeyboardLoad": false,
+  "compatibilityClaim": false,
+  "pa3xReadyClaim": false,
+  "sourceSummary": {
+    "v49FreezePackPath": "E:\\keyboard-manager-clean\\uaos-ai-factory\\metadata-project-generator\\v49\\generated\\UAOS_V49_METADATA_GOVERNANCE_FREEZE_PACK.json",
+    "v50AuditSealPath": "E:\\keyboard-manager-clean\\uaos-ai-factory\\metadata-project-generator\\v50\\generated\\UAOS_V50_GOVERNANCE_AUDIT_SEAL.json",
+    "v51AcceptancePackPath": "E:\\keyboard-manager-clean\\uaos-ai-factory\\metadata-project-generator\\v51\\generated\\UAOS_V51_METADATA_WORKFLOW_FREEZE_ACCEPTANCE_PACK.json",
+    "v51ChecklistPath": "E:\\keyboard-manager-clean\\uaos-ai-factory\\metadata-project-generator\\v51\\generated\\UAOS_V51_FREEZE_ACCEPTANCE_CHECKLIST.json",
+    "v51PortalPath": "E:\\keyboard-manager-clean\\uaos-ai-factory\\metadata-project-generator\\v51\\generated\\UAOS_V51_OWNER_REVIEW_PORTAL_POLISHED.html",
+    "v48RegressionStatus": "PASS",
+    "v47ArchiveReadyForOwnerReview": true,
+    "v49FrozenScopeCount": 4
+  },
+  "safety": {
+    "metadataOnly": true,
+    "freezeSealDocumentationOnly": true,
+    "sourceProjectModified": false,
+    "autoApplyEnabled": false,
+    "realApplyAllowed": false,
+    "exportAllowed": false,
+    "korgOutputAllowed": false,
+    "setModificationAllowed": false,
+    "usbWriteAllowed": false,
+    "keyboardLoadAllowed": false,
+    "compatibilityClaim": false,
+    "pa3xReadyClaim": false,
+    "exportApproval": false
+  }
+}

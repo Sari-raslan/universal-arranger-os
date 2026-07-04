@@ -1,0 +1,143 @@
+{
+  "schemaVersion": "uaos.v52.export.readiness.gap.analysis.v1",
+  "generatedAt": "2026-07-04T17:38:26.542Z",
+  "sourceSealId": "uaos-v52-freeze-seal-20260704173812",
+  "metadataOnly": true,
+  "noExport": true,
+  "gaps": [
+    {
+      "gapId": "metadataToInternalProjectGap",
+      "title": "Metadata to internal project mapping",
+      "currentStatus": "metadata workflow accepted, no real mapping applied",
+      "requiredBeforeExport": "signed mapping spec and dry-run tests",
+      "riskLevel": "medium",
+      "ownerApprovalRequired": true,
+      "canBeWorkedNowSafely": true,
+      "safeNextAction": "Draft internal project integration plan.",
+      "blockedAction": "real project mutation"
+    },
+    {
+      "gapId": "internalProjectToStyleEngineGap",
+      "title": "Internal project to style engine bridge",
+      "currentStatus": "not implemented",
+      "requiredBeforeExport": "metadata bridge design and test fixtures",
+      "riskLevel": "high",
+      "ownerApprovalRequired": true,
+      "canBeWorkedNowSafely": true,
+      "safeNextAction": "Plan style engine metadata bridge.",
+      "blockedAction": "style engine execution"
+    },
+    {
+      "gapId": "styleEngineToKorgWriterGap",
+      "title": "Style engine to KORG writer handoff",
+      "currentStatus": "not implemented",
+      "requiredBeforeExport": "writer design review and isolated candidate inspection",
+      "riskLevel": "blocker",
+      "ownerApprovalRequired": true,
+      "canBeWorkedNowSafely": false,
+      "safeNextAction": "Document writer handoff requirements only.",
+      "blockedAction": "KORG writer output"
+    },
+    {
+      "gapId": "korgWriterValidationGap",
+      "title": "KORG writer validation",
+      "currentStatus": "not available",
+      "requiredBeforeExport": "native candidate validator and independent review",
+      "riskLevel": "blocker",
+      "ownerApprovalRequired": true,
+      "canBeWorkedNowSafely": false,
+      "safeNextAction": "Define validation checklist only.",
+      "blockedAction": "native file generation"
+    },
+    {
+      "gapId": "hardwareFixtureGap",
+      "title": "Hardware fixture readiness",
+      "currentStatus": "not verified",
+      "requiredBeforeExport": "approved non-proprietary fixture strategy",
+      "riskLevel": "high",
+      "ownerApprovalRequired": true,
+      "canBeWorkedNowSafely": false,
+      "safeNextAction": "Inventory fixture requirements without copying samples.",
+      "blockedAction": "fixture modification"
+    },
+    {
+      "gapId": "USBVerificationGap",
+      "title": "USB verification",
+      "currentStatus": "blocked",
+      "requiredBeforeExport": "empty USB verification and owner approval",
+      "riskLevel": "blocker",
+      "ownerApprovalRequired": true,
+      "canBeWorkedNowSafely": false,
+      "safeNextAction": "Write USB gate checklist only.",
+      "blockedAction": "USB write"
+    },
+    {
+      "gapId": "PA3XBackupGateGap",
+      "title": "PA3X backup gate",
+      "currentStatus": "blocked",
+      "requiredBeforeExport": "confirmed full PA3X backup",
+      "riskLevel": "blocker",
+      "ownerApprovalRequired": true,
+      "canBeWorkedNowSafely": false,
+      "safeNextAction": "Document backup confirmation gate.",
+      "blockedAction": "PA3X load"
+    },
+    {
+      "gapId": "PA3XLoadTestGap",
+      "title": "PA3X isolated load test",
+      "currentStatus": "blocked",
+      "requiredBeforeExport": "isolated hardware test approval and observation",
+      "riskLevel": "blocker",
+      "ownerApprovalRequired": true,
+      "canBeWorkedNowSafely": false,
+      "safeNextAction": "Define test observation plan only.",
+      "blockedAction": "keyboard load"
+    },
+    {
+      "gapId": "legalCompatibilityClaimGap",
+      "title": "Compatibility claim review",
+      "currentStatus": "not reviewed",
+      "requiredBeforeExport": "legal/owner claim review",
+      "riskLevel": "high",
+      "ownerApprovalRequired": true,
+      "canBeWorkedNowSafely": true,
+      "safeNextAction": "Prepare claim review checklist.",
+      "blockedAction": "compatibility or PA3X-ready claim"
+    },
+    {
+      "gapId": "UIIntegrationGap",
+      "title": "UI integration",
+      "currentStatus": "not integrated",
+      "requiredBeforeExport": "separate planning approval before App.jsx work",
+      "riskLevel": "medium",
+      "ownerApprovalRequired": true,
+      "canBeWorkedNowSafely": true,
+      "safeNextAction": "Create planning-only UI integration plan.",
+      "blockedAction": "App.jsx modification"
+    }
+  ],
+  "gapCount": 10,
+  "blockerCount": 5,
+  "safeWorkNowCount": 4,
+  "readyForKorgExport": false,
+  "readyForUsb": false,
+  "readyForKeyboardLoad": false,
+  "compatibilityClaim": false,
+  "pa3xReadyClaim": false,
+  "safety": {
+    "metadataOnly": true,
+    "gapAnalysisOnly": true,
+    "noExport": true,
+    "sourceProjectModified": false,
+    "autoApplyEnabled": false,
+    "realApplyAllowed": false,
+    "exportAllowed": false,
+    "korgOutputAllowed": false,
+    "setModificationAllowed": false,
+    "usbWriteAllowed": false,
+    "keyboardLoadAllowed": false,
+    "compatibilityClaim": false,
+    "pa3xReadyClaim": false,
+    "exportApproval": false
+  }
+}
