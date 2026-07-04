@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "uaosproject.v1",
+  "projectId": "uaos-v37-example-project",
+  "projectName": "UAOS V37 Example Metadata Project",
+  "createdAt": "2026-07-04T13:49:34.281Z",
+  "sourceMode": "metadata_only",
+  "targetKeyboard": "KORG_PA3X_ORIENTAL_UNVERIFIED",
+  "safety": {
+    "metadataOnly": true,
+    "korgOutputAllowed": false,
+    "setModificationAllowed": false,
+    "usbWriteAllowed": false,
+    "keyboardLoadAllowed": false,
+    "compatibilityClaim": false,
+    "pa3xReadyClaim": false
+  },
+  "musicalIntent": {
+    "styleFamily": "oriental_pop",
+    "tempo": 96,
+    "timeSignature": "4/4",
+    "scaleMode": "hijaz_oriental_reference",
+    "chordProgression": [
+      "Dm",
+      "C",
+      "Bb",
+      "A"
+    ],
+    "sections": [
+      "intro",
+      "variation1",
+      "variation2",
+      "variation3",
+      "variation4",
+      "fill",
+      "ending"
+    ]
+  },
+  "tracks": [
+    {
+      "trackId": "drums",
+      "role": "rhythm",
+      "intent": "balanced darbuka and kit reference metadata"
+    },
+    {
+      "trackId": "bass",
+      "role": "low_end",
+      "intent": "simple root movement metadata"
+    },
+    {
+      "trackId": "chords",
+      "role": "harmony",
+      "intent": "short chord stabs metadata"
+    },
+    {
+      "trackId": "pad",
+      "role": "texture",
+      "intent": "soft sustained layer metadata"
+    },
+    {
+      "trackId": "melodyGuide",
+      "role": "guide",
+      "intent": "non-rendered melody contour metadata"
+    }
+  ],
+  "links": {
+    "dspPlanPath": "generated/UAOS_EXAMPLE_DSP_PLAN_V37.json",
+    "styleReviewPlanPath": "generated/UAOS_EXAMPLE_STYLE_REVIEW_PLAN_V37.json",
+    "manifestPath": "generated/UAOS_EXAMPLE_PROJECT_BUNDLE_MANIFEST_V37.json"
+  }
+}

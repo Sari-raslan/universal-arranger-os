@@ -1,0 +1,56 @@
+{
+  "schemaVersion": "uaos.dsp.plan.v1",
+  "projectId": "uaos-v37-example-project",
+  "master": {
+    "targetLufs": -14,
+    "peakCeilingDb": -1,
+    "sampleRate": 48000
+  },
+  "channels": [
+    {
+      "trackId": "drums",
+      "role": "rhythm",
+      "eqIntent": "tight low mids, clean highs",
+      "compressionIntent": "controlled transient metadata",
+      "reverbIntent": "short room reference",
+      "stereoIntent": "center-weighted"
+    },
+    {
+      "trackId": "bass",
+      "role": "low_end",
+      "eqIntent": "stable sub and low-mid separation",
+      "compressionIntent": "gentle leveling metadata",
+      "reverbIntent": "dry",
+      "stereoIntent": "mono"
+    },
+    {
+      "trackId": "chords",
+      "role": "harmony",
+      "eqIntent": "reduce mud, preserve body",
+      "compressionIntent": "light glue metadata",
+      "reverbIntent": "small plate reference",
+      "stereoIntent": "moderate width"
+    },
+    {
+      "trackId": "pad",
+      "role": "texture",
+      "eqIntent": "soft high pass metadata",
+      "compressionIntent": "minimal",
+      "reverbIntent": "wide hall reference",
+      "stereoIntent": "wide"
+    },
+    {
+      "trackId": "melodyGuide",
+      "role": "guide",
+      "eqIntent": "presence guide only",
+      "compressionIntent": "none",
+      "reverbIntent": "none",
+      "stereoIntent": "center"
+    }
+  ],
+  "safety": {
+    "audioRenderAllowed": false,
+    "pluginExecutionAllowed": false,
+    "metadataOnly": true
+  }
+}
