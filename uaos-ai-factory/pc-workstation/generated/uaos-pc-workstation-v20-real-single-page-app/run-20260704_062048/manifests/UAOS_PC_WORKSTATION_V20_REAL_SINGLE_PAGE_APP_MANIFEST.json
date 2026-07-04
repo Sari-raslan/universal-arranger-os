@@ -1,0 +1,41 @@
+{
+  "status": "PASS",
+  "base_commit": "23d762b",
+  "commit": "NOT_COMMITTED",
+  "deliverable": "REAL_SINGLE_PAGE_APP_V20",
+  "stable_files": [
+    "UAOS_PC_WORKSTATION_APP_V20.html",
+    "START_UAOS_PC_WORKSTATION_V20.cmd",
+    "tools/OPEN_PROJECT_FOLDER.cmd",
+    "tools/OPEN_WRITER_OUTPUTS.cmd",
+    "tools/OPEN_MIDI_FOLDER.cmd",
+    "tools/OPEN_LIBRARY_FOLDER.cmd",
+    "tools/OPEN_DOCS_FOLDER.cmd",
+    "docs/START_HERE_V20_AR.md",
+    "docs/START_HERE_V20_EN.md",
+    "validator/validate_v20_real_single_page_app.py",
+    "validator/VALIDATOR_V20_REAL_APP_RESULT.json",
+    "seal/UAOS_PC_WORKSTATION_V20_REAL_APP_SEAL.md",
+    "seal/UAOS_PC_WORKSTATION_V20_REAL_APP_SEAL.json",
+    "UAOS_PC_WORKSTATION_HOME.html"
+  ],
+  "generated_reports": [
+    "reports/V20_REAL_SINGLE_PAGE_APP_REPORT.md",
+    "reports/V20_VALIDATOR_REPORT.md",
+    "reports/V20_QA_REPORT.md",
+    "manifests/UAOS_PC_WORKSTATION_V20_REAL_SINGLE_PAGE_APP_MANIFEST.json",
+    "10_final_seal/UAOS_PC_WORKSTATION_V20_REAL_SINGLE_PAGE_APP_FINAL_SEAL.md",
+    "10_final_seal/UAOS_PC_WORKSTATION_V20_REAL_SINGLE_PAGE_APP_FINAL_SEAL.json"
+  ],
+  "safety": {
+    "pa3x_ready_claim": "NO",
+    "usb_write": "NO",
+    "external_copy_outside_repo": "NO",
+    "pa3x_load": "NO",
+    "fixture_modification": "NO",
+    "owner_fixture_access": "NO",
+    "proprietary_content_copied": "NO",
+    "app_jsx_touched": "NO",
+    "deploy_payment": "NO"
+  }
+}

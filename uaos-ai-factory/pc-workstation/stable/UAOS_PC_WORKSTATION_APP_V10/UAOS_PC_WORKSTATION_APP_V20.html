@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>UAOS PC Workstation V20</title>
+  <style>
+    :root{--ink:#18212b;--muted:#667085;--line:#d6dde5;--paper:#f7f8f9;--panel:#fff;--accent:#176b6f;--warm:#9a4d1f;--danger:#8a1f1f}
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--paper);color:var(--ink);font-family:Arial,Tahoma,sans-serif}
+    .warning{background:var(--danger);color:white;padding:10px 18px;font-weight:700;text-align:center;letter-spacing:0}
+    .app{display:grid;grid-template-columns:240px minmax(0,1fr);min-height:calc(100vh - 38px)}
+    aside{background:#162331;color:white;padding:18px;border-left:1px solid #0d141d}
+    aside h1{font-size:20px;margin:0 0 8px}
+    aside p{color:#c7d2de;font-size:13px;line-height:1.5;margin:0 0 18px}
+    nav{display:grid;gap:8px}
+    nav button{border:0;background:#223348;color:white;padding:11px 12px;border-radius:6px;text-align:right;cursor:pointer;font-weight:700}
+    nav button.active{background:var(--accent)}
+    main{padding:18px;max-width:1280px;width:100%;margin:0 auto}
+    section{display:none}
+    section.active{display:block}
+    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:14px}
+    .card{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:16px}
+    .span4{grid-column:span 4}.span6{grid-column:span 6}.span8{grid-column:span 8}.span12{grid-column:span 12}
+    h2{font-size:24px;margin:0 0 12px} h3{font-size:17px;margin:0 0 10px}
+    label{display:block;font-size:12px;color:var(--muted);margin:10px 0 5px}
+    input,select,textarea{width:100%;border:1px solid var(--line);border-radius:6px;padding:9px;background:white;color:var(--ink);font:inherit}
+    textarea{min-height:78px;resize:vertical}
+    .row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    .actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+    .actions button,.linkbtn{border:0;background:var(--accent);color:white;border-radius:6px;padding:10px 12px;font-weight:700;cursor:pointer;text-decoration:none;display:inline-block}
+    .actions button.secondary,.linkbtn.secondary{background:var(--warm)}
+    .actions button.stop{background:var(--danger)}
+    table{width:100%;border-collapse:collapse;background:white}
+    th,td{border-bottom:1px solid var(--line);padding:8px;text-align:right;vertical-align:top}
+    th{font-size:12px;color:var(--muted);background:#f1f4f7}
+    td input,td select{min-width:90px}
+    .ltr{direction:ltr;text-align:left;font-family:Consolas,monospace;white-space:pre-wrap;word-break:break-word}
+    .pill{display:inline-block;background:#eef6f6;color:#0f5558;border:1px solid #c9e3e4;border-radius:999px;padding:5px 9px;margin:3px;font-weight:700;font-size:12px}
+    .status{font-weight:700;color:#0f5558}
+    @media(max-width:860px){.app{grid-template-columns:1fr}aside{position:static}.span4,.span6,.span8{grid-column:span 12}.row{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <div class="warning">PC_ONLY / NOT_FOR_PA3X_LOAD / NOT_FOR_USB_TRANSFER / NOT_COMPATIBILITY_VERIFIED</div>
+  <div class="app">
+    <aside>
+      <h1>UAOS PC Workstation V20</h1>
+      <p>التطبيق الرئيسي المحلي. عدل المشروع والاستايل والمكتبة وشغل معاينة صوت صناعية من نفس الصفحة.</p>
+      <nav id="nav">
+        <button data-view="dashboard" class="active">Dashboard</button>
+        <button data-view="project">Project</button>
+        <button data-view="style">Style</button>
+        <button data-view="library">Library</button>
+        <button data-view="player">Player</button>
+        <button data-view="writer">Writer</button>
+        <button data-view="files">Files</button>
+        <button data-view="safety">Safety</button>
+      </nav>
+    </aside>
+    <main>
+      <section id="dashboard" class="active">
+        <h2>لوحة العمل</h2>
+        <div class="grid">
+          <div class="card span4"><h3>المشروع الحالي</h3><p id="dashProject" class="status"></p><p id="dashMood"></p></div>
+          <div class="card span4"><h3>الستايل</h3><p id="dashStyle" class="status"></p><p id="dashTempo"></p></div>
+          <div class="card span4"><h3>المكتبة</h3><p id="dashLibrary" class="status"></p><p>Strings preset selected locally.</p></div>
+          <div class="card span12"><h3>حالة السلامة</h3><span class="pill">PA3X-ready claim: NO</span><span class="pill">USB write: NO</span><span class="pill">Local browser only</span><span class="pill">Synthetic audio only</span></div>
+        </div>
+      </section>
+
+      <section id="project">
+        <h2>Project Editor</h2>
+        <div class="card">
+          <div class="row"><div><label>Project name</label><input id="projectName"></div><div><label>Style name</label><input id="styleName"></div></div>
+          <div class="row"><div><label>Tempo</label><input id="tempo" type="number" min="40" max="220"></div><div><label>Meter</label><input id="meter"></div></div>
+          <label>Chord progression</label><input id="chords">
+          <div class="row"><div><label>Mood</label><input id="mood"></div><div><label>Notes</label><textarea id="notes"></textarea></div></div>
+          <div class="actions"><button onclick="saveProject()">Save in browser memory</button><button class="secondary" onclick="resetProject()">Reset</button><button onclick="exportJson('uaos_project_v20.json',projectPayload())">Export Project JSON</button></div>
+        </div>
+      </section>
+
+      <section id="style">
+        <h2>Style Section Editor</h2>
+        <div class="card">
+          <table><thead><tr><th>Section</th><th>Enabled</th><th>Bars</th><th>Chords</th><th>Energy</th><th>Focus</th></tr></thead><tbody id="styleRows"></tbody></table>
+          <div class="actions"><button onclick="exportJson('uaos_style_v20.json',stylePayload())">Export Style JSON</button><button class="secondary" onclick="applyStylePreset('pop')">Apply Arabic Pop Default</button><button class="secondary" onclick="applyStylePreset('ballad')">Apply Ballad Soft</button></div>
+        </div>
+      </section>
+
+      <section id="library">
+        <h2>Library Preset Selector</h2>
+        <div class="card">
+          <label>Preset</label><select id="libraryPreset" onchange="renderLibrary()"></select>
+          <h3>Articulations</h3><div id="articulations"></div>
+          <div class="actions"><button onclick="exportJson('uaos_library_binding_v20.json',libraryPayload())">Export Library Binding JSON</button></div>
+        </div>
+      </section>
+
+      <section id="player">
+        <h2>Internal WebAudio Player</h2>
+        <div class="grid">
+          <div class="card span6"><h3>Controls</h3><div class="actions"><button onclick="playPattern('chord')">Play Chord Pulse</button><button onclick="playPattern('bass')">Play Bass Guide</button><button onclick="playPattern('strings')">Play Arabic Strings Guide</button><button onclick="playPattern('full')">Play Full Simple Preview</button><button class="stop" onclick="stopAudio()">Stop</button></div></div>
+          <div class="card span6"><h3>Now Playing</h3><p>Currently playing: <b id="playing">Stopped</b></p><p>Current chord: <b id="currentChord">-</b></p><p>Current section: <b id="currentSection">-</b></p><p>No bundled audio files. No copyrighted melody. Synthetic oscillator only.</p></div>
+        </div>
+      </section>
+
+      <section id="writer">
+        <h2>Writer</h2>
+        <div class="card">
+          <p>المتصفح لا يستطيع تشغيل الكاتب تلقائيا. للتوليد المحلي شغل الملف التالي بنفسك من ويندوز:</p>
+          <p class="ltr">writer\RUN_WRITER_V17.cmd</p>
+          <div class="actions"><a class="linkbtn" href="writer/RUN_WRITER_V17.cmd">RUN_WRITER_V17.cmd</a><a class="linkbtn secondary" href="writer/">Writer folder</a><a class="linkbtn secondary" href="writer/generated_v17_outputs/">Generated outputs</a></div>
+        </div>
+      </section>
+
+      <section id="files">
+        <h2>Files</h2>
+        <div class="card">
+          <p>Helper commands are local folder openers only:</p>
+          <p class="ltr">START_UAOS_PC_WORKSTATION_V20.cmd
+tools\OPEN_PROJECT_FOLDER.cmd
+tools\OPEN_WRITER_OUTPUTS.cmd
+tools\OPEN_MIDI_FOLDER.cmd
+tools\OPEN_LIBRARY_FOLDER.cmd
+tools\OPEN_DOCS_FOLDER.cmd</p>
+        </div>
+      </section>
+
+      <section id="safety">
+        <h2>Safety</h2>
+        <div class="card">
+          <p><b>PA3X-ready claim:</b> NO</p><p><b>USB write:</b> NO</p><p><b>PA3X load:</b> NO</p><p><b>React app file touched:</b> NO</p><p><b>Release or billing system:</b> NO</p><p><b>Private content copied:</b> NO</p><p><b>Bundled audio files:</b> NO</p>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script>
+    const defaults={projectName:"Sari UAOS PC Workstation V20",styleName:"Arabic Pop Oriental Ballad",tempo:92,meter:"4/4",chords:"Dm | Bb | C | Dm",mood:"Emotional Arabic pop, soft oriental strings",notes:"PC-only sketch for local browser editing."};
+    let sections=[["intro",true,4,"Dm | C","low","strings pad"],["verse",true,8,"Dm | Bb | C | Dm","medium","bass and soft strings"],["chorus",true,8,"F | C | Dm | Bb","high","wide strings"],["bridge",true,4,"Gm | Bb | A | A","medium","tension"],["fill",true,1,"A","high","short marcato"],["ending",true,4,"Dm | Bb | C | Dm","low","soft close"]];
+    const libraries={
+      "Arabic Strings Ensemble Soft":["sustain","slide_hint","ornament_hint"],
+      "Arabic Strings Tremolo Light":["tremolo","sustain","ornament_hint"],
+      "Arabic Strings Octave Lead":["sustain","octave_layer","slide_hint"],
+      "Arabic Strings Pad Wide":["sustain","octave_layer"],
+      "Arabic Violin Guide":["sustain","slide_hint","ornament_hint"],
+      "Syrian Strings Emotional Pad":["sustain","tremolo","slide_hint"],
+      "Oriental Strings Short Marcato":["staccato","ornament_hint"]
+    };
+    let audioCtx=null,timers=[],oscillators=[];
+    function $(id){return document.getElementById(id)}
+    document.querySelectorAll("#nav button").forEach(btn=>btn.addEventListener("click",()=>{document.querySelectorAll("#nav button,main section").forEach(x=>x.classList.remove("active"));btn.classList.add("active");$(btn.dataset.view).classList.add("active")}));
+    function loadProject(){const saved=localStorage.getItem("uaos_v20_project");const data=saved?JSON.parse(saved):defaults;Object.keys(defaults).forEach(k=>$(k).value=data[k]||defaults[k]);updateDash()}
+    function projectPayload(){return{version:"V20",projectName:$("projectName").value,styleName:$("styleName").value,tempo:Number($("tempo").value),meter:$("meter").value,chords:$("chords").value,mood:$("mood").value,notes:$("notes").value,pcOnly:true}}
+    function saveProject(){localStorage.setItem("uaos_v20_project",JSON.stringify(projectPayload()));updateDash()}
+    function resetProject(){localStorage.removeItem("uaos_v20_project");loadProject()}
+    function updateDash(){const p=projectPayload();$("dashProject").textContent=p.projectName;$("dashStyle").textContent=p.styleName;$("dashTempo").textContent=`${p.tempo} BPM / ${p.meter} / ${p.chords}`;$("dashMood").textContent=p.mood;$("dashLibrary").textContent=$("libraryPreset")?.value||"Arabic Strings Ensemble Soft"}
+    function renderStyle(){const body=$("styleRows");body.innerHTML="";sections.forEach((s,i)=>{body.insertAdjacentHTML("beforeend",`<tr><td>${s[0]}</td><td><input type="checkbox" ${s[1]?"checked":""} onchange="sections[${i}][1]=this.checked"></td><td><input type="number" value="${s[2]}" onchange="sections[${i}][2]=Number(this.value)"></td><td><input value="${s[3]}" onchange="sections[${i}][3]=this.value"></td><td><select onchange="sections[${i}][4]=this.value">${["low","medium","high"].map(v=>`<option ${v===s[4]?"selected":""}>${v}</option>`).join("")}</select></td><td><input value="${s[5]}" onchange="sections[${i}][5]=this.value"></td></tr>`)})}
+    function stylePayload(){return{version:"V20",styleName:$("styleName").value,sections:sections.map(s=>({name:s[0],enabled:s[1],bars:s[2],chords:s[3],energy:s[4],focus:s[5]}))}}
+    function applyStylePreset(kind){sections=kind==="ballad"?[["intro",true,4,"Dm | Bb","low","soft pad"],["verse",true,8,"Dm | C | Bb | A","low","breath"],["chorus",true,8,"F | C | Bb | A","medium","warm strings"],["bridge",true,4,"Gm | Dm | A | A","medium","lift"],["fill",true,1,"A","medium","small fill"],["ending",true,4,"Dm | Bb | A | Dm","low","fade"]]:[["intro",true,4,"Dm | C","medium","hook"],["verse",true,8,"Dm | Bb | C | Dm","medium","groove"],["chorus",true,8,"F | C | Dm | Bb","high","wide hook"],["bridge",true,4,"Gm | Bb | A | A","high","lift"],["fill",true,1,"A","high","hit"],["ending",true,4,"Dm | C | Dm","medium","tag"]];renderStyle()}
+    function renderLibrary(){const select=$("libraryPreset");if(!select.options.length){Object.keys(libraries).forEach(k=>select.add(new Option(k,k)))}$("articulations").innerHTML=libraries[select.value].map(a=>`<span class="pill">${a}</span>`).join("");updateDash()}
+    function libraryPayload(){return{version:"V20",preset:$("libraryPreset").value,articulations:libraries[$("libraryPreset").value],audioFilesIncluded:false,pcOnly:true}}
+    function exportJson(name,payload){const blob=new Blob([JSON.stringify(payload,null,2)],{type:"application/json"});const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download=name;a.click();URL.revokeObjectURL(a.href)}
+    function freq(note){return{D:146.83,F:174.61,A:220,Bb:233.08,C:261.63,G:196}[note]||220}
+    function stopAudio(){timers.forEach(clearTimeout);timers=[];oscillators.forEach(o=>{try{o.stop()}catch(e){}});oscillators=[];$("playing").textContent="Stopped";$("currentChord").textContent="-";$("currentSection").textContent="-"}
+    function tone(f,start,dur,type,gain){const ctx=audioCtx||(audioCtx=new (window.AudioContext||window.webkitAudioContext)());const o=ctx.createOscillator(),g=ctx.createGain();o.type=type;o.frequency.value=f;g.gain.setValueAtTime(0.0001,ctx.currentTime+start);g.gain.exponentialRampToValueAtTime(gain,ctx.currentTime+start+0.03);g.gain.exponentialRampToValueAtTime(0.0001,ctx.currentTime+start+dur);o.connect(g).connect(ctx.destination);o.start(ctx.currentTime+start);o.stop(ctx.currentTime+start+dur+0.05);oscillators.push(o)}
+    function playPattern(mode){stopAudio();$("playing").textContent=mode;const chords=$("chords").value.split("|").map(x=>x.trim());chords.forEach((ch,i)=>{timers.push(setTimeout(()=>{$("currentChord").textContent=ch;$("currentSection").textContent=sections[i%sections.length][0]},i*650));const root=ch.split(/[ m]/)[0].replace("m","");if(mode==="bass"||mode==="full")tone(freq(root)/2,i*.65,.5,"sine",.16);if(mode==="chord"||mode==="full"){tone(freq(root),i*.65,.45,"triangle",.08);tone(freq(root)*1.25,i*.65,.45,"triangle",.06);tone(freq(root)*1.5,i*.65,.45,"triangle",.05)}if(mode==="strings"||mode==="full"){tone(freq(root)*2,i*.65,.6,"sawtooth",.035);tone(freq(root)*2.01,i*.65,.6,"sawtooth",.025)}})}
+    loadProject();renderStyle();renderLibrary();
+  </script>
+</body>
+</html>
