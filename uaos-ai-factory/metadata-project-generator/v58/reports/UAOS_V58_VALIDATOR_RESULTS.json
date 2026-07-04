@@ -1,0 +1,37 @@
+{
+  "status": "PASS",
+  "checkedAt": "2026-07-04T19:02:30.844Z",
+  "checkedFiles": {
+    "inputPack": "generated/UAOS_V58_REAL_OWNER_DECISION_INPUT_PACK.json",
+    "inputPackMd": "generated/UAOS_V58_REAL_OWNER_DECISION_INPUT_PACK.md",
+    "printableForm": "generated/UAOS_V58_REAL_OWNER_DECISION_FORM_PRINTABLE.md",
+    "formData": "generated/UAOS_V58_REAL_OWNER_DECISION_FORM_DATA.json",
+    "dryrun": "generated/UAOS_V58_INTERNAL_STYLE_GENERATION_DRYRUN_V4.json",
+    "dryrunMd": "generated/UAOS_V58_INTERNAL_STYLE_GENERATION_DRYRUN_V4.md",
+    "intent": "generated/UAOS_V58_STYLE_INTENT_REAL_OWNER_PENDING_PREVIEW.json",
+    "sections": "generated/UAOS_V58_STYLE_SECTION_PLAN_REAL_OWNER_PENDING_PREVIEW.json",
+    "gates": "generated/UAOS_V58_EXPORT_GATE_VALIDATOR_V5_RESULTS.json",
+    "gatesMd": "generated/UAOS_V58_EXPORT_GATE_VALIDATOR_V5_REPORT.md",
+    "matrix": "generated/UAOS_V58_NEXT_RECOMMENDATION_MATRIX.json"
+  },
+  "errors": [],
+  "warnings": [],
+  "safety": {
+    "manualInputPackOnly": true,
+    "dryRunOnly": true,
+    "metadataOnly": true,
+    "noAutomaticRealOwnerDecision": true,
+    "noRealApply": true,
+    "noAudioRender": true,
+    "noMidiGeneration": true,
+    "noKorgOutput": true,
+    "noSetStyPrfPrsKst": true,
+    "noUsbWrite": true,
+    "noKeyboardLoad": true,
+    "noSourceProjectMutation": true,
+    "noFixtureModification": true,
+    "noAppJs": true,
+    "noDeploy": true,
+    "noPayment": true
+  }
+}

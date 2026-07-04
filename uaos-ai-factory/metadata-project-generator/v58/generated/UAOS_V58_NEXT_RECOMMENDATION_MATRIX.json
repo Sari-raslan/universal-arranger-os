@@ -1,0 +1,32 @@
+{
+  "schemaVersion": "uaos.v58.next.recommendation.matrix.v1",
+  "createdAt": "2026-07-04T19:02:26.848Z",
+  "metadataOnly": true,
+  "manualInputOnly": true,
+  "recommendations": [
+    {
+      "id": "A",
+      "action": "V59 Owner Decision Form Local HTML, manual-only/no App.jsx",
+      "recommended": true
+    },
+    {
+      "id": "B",
+      "action": "V59 Internal Style Generation Dry-run v5, metadata-only",
+      "recommended": true
+    },
+    {
+      "id": "C",
+      "action": "V59 Export Gate Validator v6, no export",
+      "recommended": true
+    },
+    {
+      "id": "D",
+      "action": "Stop",
+      "recommended": false
+    }
+  ],
+  "recommendedCombinedNext": "A + B + C together if safe",
+  "approvedForKorgExport": false,
+  "approvedForUsb": false,
+  "approvedForKeyboardLoad": false
+}

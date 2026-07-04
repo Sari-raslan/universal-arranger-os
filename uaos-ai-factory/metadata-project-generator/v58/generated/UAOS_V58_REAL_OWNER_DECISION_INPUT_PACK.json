@@ -1,0 +1,332 @@
+{
+  "schemaVersion": "uaos.v58.real.owner.decision.input.pack.v1",
+  "createdAt": "2026-07-04T19:02:21.484Z",
+  "manualInputPackOnly": true,
+  "metadataOnly": true,
+  "dryRunOnly": true,
+  "noDecisionAutoFilled": true,
+  "sampleV57IsNotRealApproval": true,
+  "noExportApproval": true,
+  "noUsbApproval": true,
+  "noPa3xLoadApproval": true,
+  "sourceFiles": {
+    "v56Checklist": "v56/generated/UAOS_V56_HUMAN_REVIEW_CHECKLIST_STYLE_INTENT.json",
+    "v57Sample": "v57/generated/UAOS_V57_HUMAN_REVIEW_FILLED_EXAMPLE.json",
+    "v57DryrunV3": "v57/generated/UAOS_V57_INTERNAL_STYLE_GENERATION_DRYRUN_V3.json"
+  },
+  "sourceDryRunId": "uaos-v57-style-dryrun-v3-20260704182805",
+  "decisionItems": [
+    {
+      "decisionId": "v58-owner-decision-01",
+      "sourceChecklistItemId": "v56-review-01",
+      "category": "musicalIntent",
+      "question": "Does the refined intent match oriental_pop at 96 BPM?",
+      "sampleReferenceFromV57": {
+        "sampleDecision": "approve_metadata_intent",
+        "sampleOwnerNote": "Sample note: metadata intent is clear enough for dry-run preview only.",
+        "sampleOnly": true,
+        "notRealApproval": true
+      },
+      "realOwnerDecision": "pending",
+      "allowedDecisions": [
+        "approve_metadata_intent",
+        "request_revision",
+        "reject",
+        "defer"
+      ],
+      "ownerNote": "",
+      "ownerSignatureRequiredForFinal": true,
+      "metadataOnly": true,
+      "dryRunOnly": true,
+      "autoApplyAllowed": false,
+      "realApplyAllowed": false,
+      "exportApprovalImpact": false,
+      "korgOutputAllowed": false,
+      "usbWriteAllowed": false,
+      "keyboardLoadAllowed": false
+    },
+    {
+      "decisionId": "v58-owner-decision-02",
+      "sourceChecklistItemId": "v56-review-02",
+      "category": "sectionStructure",
+      "question": "Do the 7 planned sections make musical sense for owner review?",
+      "sampleReferenceFromV57": {
+        "sampleDecision": "approve_metadata_intent",
+        "sampleOwnerNote": "Sample note: metadata intent is clear enough for dry-run preview only.",
+        "sampleOnly": true,
+        "notRealApproval": true
+      },
+      "realOwnerDecision": "pending",
+      "allowedDecisions": [
+        "approve_metadata_intent",
+        "request_revision",
+        "reject",
+        "defer"
+      ],
+      "ownerNote": "",
+      "ownerSignatureRequiredForFinal": true,
+      "metadataOnly": true,
+      "dryRunOnly": true,
+      "autoApplyAllowed": false,
+      "realApplyAllowed": false,
+      "exportApprovalImpact": false,
+      "korgOutputAllowed": false,
+      "usbWriteAllowed": false,
+      "keyboardLoadAllowed": false
+    },
+    {
+      "decisionId": "v58-owner-decision-03",
+      "sourceChecklistItemId": "v56-review-03",
+      "category": "rhythmDensity",
+      "question": "Is the rhythm density appropriate across intro, variations, fill, and ending?",
+      "sampleReferenceFromV57": {
+        "sampleDecision": "request_revision",
+        "sampleOwnerNote": "Sample note: clarify this area before any real owner decision or implementation.",
+        "sampleOnly": true,
+        "notRealApproval": true
+      },
+      "realOwnerDecision": "pending",
+      "allowedDecisions": [
+        "approve_metadata_intent",
+        "request_revision",
+        "reject",
+        "defer"
+      ],
+      "ownerNote": "",
+      "ownerSignatureRequiredForFinal": true,
+      "metadataOnly": true,
+      "dryRunOnly": true,
+      "autoApplyAllowed": false,
+      "realApplyAllowed": false,
+      "exportApprovalImpact": false,
+      "korgOutputAllowed": false,
+      "usbWriteAllowed": false,
+      "keyboardLoadAllowed": false
+    },
+    {
+      "decisionId": "v58-owner-decision-04",
+      "sourceChecklistItemId": "v56-review-04",
+      "category": "bassMovement",
+      "question": "Is the bass movement supportive without crowding the arrangement?",
+      "sampleReferenceFromV57": {
+        "sampleDecision": "request_revision",
+        "sampleOwnerNote": "Sample note: clarify this area before any real owner decision or implementation.",
+        "sampleOnly": true,
+        "notRealApproval": true
+      },
+      "realOwnerDecision": "pending",
+      "allowedDecisions": [
+        "approve_metadata_intent",
+        "request_revision",
+        "reject",
+        "defer"
+      ],
+      "ownerNote": "",
+      "ownerSignatureRequiredForFinal": true,
+      "metadataOnly": true,
+      "dryRunOnly": true,
+      "autoApplyAllowed": false,
+      "realApplyAllowed": false,
+      "exportApprovalImpact": false,
+      "korgOutputAllowed": false,
+      "usbWriteAllowed": false,
+      "keyboardLoadAllowed": false
+    },
+    {
+      "decisionId": "v58-owner-decision-05",
+      "sourceChecklistItemId": "v56-review-05",
+      "category": "chordRhythm",
+      "question": "Is the chord rhythm clear enough for arranger usability?",
+      "sampleReferenceFromV57": {
+        "sampleDecision": "request_revision",
+        "sampleOwnerNote": "Sample note: clarify this area before any real owner decision or implementation.",
+        "sampleOnly": true,
+        "notRealApproval": true
+      },
+      "realOwnerDecision": "pending",
+      "allowedDecisions": [
+        "approve_metadata_intent",
+        "request_revision",
+        "reject",
+        "defer"
+      ],
+      "ownerNote": "",
+      "ownerSignatureRequiredForFinal": true,
+      "metadataOnly": true,
+      "dryRunOnly": true,
+      "autoApplyAllowed": false,
+      "realApplyAllowed": false,
+      "exportApprovalImpact": false,
+      "korgOutputAllowed": false,
+      "usbWriteAllowed": false,
+      "keyboardLoadAllowed": false
+    },
+    {
+      "decisionId": "v58-owner-decision-06",
+      "sourceChecklistItemId": "v56-review-06",
+      "category": "orientalFeel",
+      "question": "Does the oriental feel read correctly as metadata intent without a compatibility claim?",
+      "sampleReferenceFromV57": {
+        "sampleDecision": "request_revision",
+        "sampleOwnerNote": "Sample note: clarify this area before any real owner decision or implementation.",
+        "sampleOnly": true,
+        "notRealApproval": true
+      },
+      "realOwnerDecision": "pending",
+      "allowedDecisions": [
+        "approve_metadata_intent",
+        "request_revision",
+        "reject",
+        "defer"
+      ],
+      "ownerNote": "",
+      "ownerSignatureRequiredForFinal": true,
+      "metadataOnly": true,
+      "dryRunOnly": true,
+      "autoApplyAllowed": false,
+      "realApplyAllowed": false,
+      "exportApprovalImpact": false,
+      "korgOutputAllowed": false,
+      "usbWriteAllowed": false,
+      "keyboardLoadAllowed": false
+    },
+    {
+      "decisionId": "v58-owner-decision-07",
+      "sourceChecklistItemId": "v56-review-07",
+      "category": "melodySpace",
+      "question": "Is there enough room for live melody and expression?",
+      "sampleReferenceFromV57": {
+        "sampleDecision": "approve_metadata_intent",
+        "sampleOwnerNote": "Sample note: metadata intent is clear enough for dry-run preview only.",
+        "sampleOnly": true,
+        "notRealApproval": true
+      },
+      "realOwnerDecision": "pending",
+      "allowedDecisions": [
+        "approve_metadata_intent",
+        "request_revision",
+        "reject",
+        "defer"
+      ],
+      "ownerNote": "",
+      "ownerSignatureRequiredForFinal": true,
+      "metadataOnly": true,
+      "dryRunOnly": true,
+      "autoApplyAllowed": false,
+      "realApplyAllowed": false,
+      "exportApprovalImpact": false,
+      "korgOutputAllowed": false,
+      "usbWriteAllowed": false,
+      "keyboardLoadAllowed": false
+    },
+    {
+      "decisionId": "v58-owner-decision-08",
+      "sourceChecklistItemId": "v56-review-08",
+      "category": "dspIntent",
+      "question": "Are the DSP intentions clear as metadata-only mix guidance?",
+      "sampleReferenceFromV57": {
+        "sampleDecision": "approve_metadata_intent",
+        "sampleOwnerNote": "Sample note: metadata intent is clear enough for dry-run preview only.",
+        "sampleOnly": true,
+        "notRealApproval": true
+      },
+      "realOwnerDecision": "pending",
+      "allowedDecisions": [
+        "approve_metadata_intent",
+        "request_revision",
+        "reject",
+        "defer"
+      ],
+      "ownerNote": "",
+      "ownerSignatureRequiredForFinal": true,
+      "metadataOnly": true,
+      "dryRunOnly": true,
+      "autoApplyAllowed": false,
+      "realApplyAllowed": false,
+      "exportApprovalImpact": false,
+      "korgOutputAllowed": false,
+      "usbWriteAllowed": false,
+      "keyboardLoadAllowed": false
+    },
+    {
+      "decisionId": "v58-owner-decision-09",
+      "sourceChecklistItemId": "v56-review-09",
+      "category": "arrangerUsability",
+      "question": "Would a human arranger understand the intent before any future implementation?",
+      "sampleReferenceFromV57": {
+        "sampleDecision": "request_revision",
+        "sampleOwnerNote": "Sample note: clarify this area before any real owner decision or implementation.",
+        "sampleOnly": true,
+        "notRealApproval": true
+      },
+      "realOwnerDecision": "pending",
+      "allowedDecisions": [
+        "approve_metadata_intent",
+        "request_revision",
+        "reject",
+        "defer"
+      ],
+      "ownerNote": "",
+      "ownerSignatureRequiredForFinal": true,
+      "metadataOnly": true,
+      "dryRunOnly": true,
+      "autoApplyAllowed": false,
+      "realApplyAllowed": false,
+      "exportApprovalImpact": false,
+      "korgOutputAllowed": false,
+      "usbWriteAllowed": false,
+      "keyboardLoadAllowed": false
+    },
+    {
+      "decisionId": "v58-owner-decision-10",
+      "sourceChecklistItemId": "v56-review-10",
+      "category": "safetyGate",
+      "question": "Do all safety gates remain closed for export, USB, PA3X load, and KORG output?",
+      "sampleReferenceFromV57": {
+        "sampleDecision": "defer",
+        "sampleOwnerNote": "Sample note: export, USB, keyboard load, and safety approvals remain deferred and blocked.",
+        "sampleOnly": true,
+        "notRealApproval": true
+      },
+      "realOwnerDecision": "pending",
+      "allowedDecisions": [
+        "approve_metadata_intent",
+        "request_revision",
+        "reject",
+        "defer"
+      ],
+      "ownerNote": "",
+      "ownerSignatureRequiredForFinal": true,
+      "metadataOnly": true,
+      "dryRunOnly": true,
+      "autoApplyAllowed": false,
+      "realApplyAllowed": false,
+      "exportApprovalImpact": false,
+      "korgOutputAllowed": false,
+      "usbWriteAllowed": false,
+      "keyboardLoadAllowed": false
+    }
+  ],
+  "summary": {
+    "totalDecisionItems": 10,
+    "pendingDecisionCount": 10,
+    "completedRealOwnerDecisionCount": 0,
+    "realOwnerDecisionsApplied": false,
+    "exportRemainsBlocked": true
+  },
+  "safety": {
+    "metadataOnly": true,
+    "dryRunOnly": true,
+    "autoApplyAllowed": false,
+    "realApplyAllowed": false,
+    "audioRenderAllowed": false,
+    "midiGenerationAllowed": false,
+    "korgOutputAllowed": false,
+    "exportAllowed": false,
+    "usbWriteAllowed": false,
+    "keyboardLoadAllowed": false,
+    "sourceProjectModified": false,
+    "compatibilityClaimAllowed": false,
+    "pa3xReadyClaimAllowed": false
+  }
+}
