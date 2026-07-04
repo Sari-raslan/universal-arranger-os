@@ -8,6 +8,7 @@ factory_status: "PASS"
 - V58 linked: YES
 - V59 linked: YES
 - V60 linked: YES
+- V61-V65 batch linked: YES
 
 ## Safety
 - Static local only: YES

@@ -3,7 +3,7 @@
 status: "DRAFT_ONLY"
 
 ## Next Safe Action
-Review the master hub locally, then run validator before any later metadata-only planning commit.
+Review the V61-V65 batch locally, then execute V66-V70 as the next metadata-only batch after validator PASS.
 
 ## Blocked Actions
 - Export remains blocked.

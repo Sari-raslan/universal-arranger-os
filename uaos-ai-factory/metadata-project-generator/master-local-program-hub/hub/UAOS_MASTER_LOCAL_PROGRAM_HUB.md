@@ -12,6 +12,7 @@ export_allowed: false
 - V58 Owner Decision Input Pack: `../v58/`
 - V59 Owner Decision Normalizer: `../v59/`
 - V60 Owner Decision Simulator: `../v60/`
+- V61-V65 Batch Outputs: `../batch-v61-v65/`
 - Export Blocker / Research Gates: blocked and research-only.
 - QA Reports: `../master-local-program-hub/reports/`
 - Owner Dashboards: `../master-local-program-hub/dashboards/UAOS_MASTER_OWNER_REVIEW_DASHBOARD.html`
@@ -19,4 +20,4 @@ export_allowed: false
 - Next Safe Execution Queue: `../master-local-program-hub/navigation/UAOS_NEXT_ACTIONS_QUEUE.md`
 
 ## Boundary
-This hub links local metadata and static dashboard outputs only. It does not integrate with React, deploy, accept payment, or create export files.
+This hub links local metadata and static dashboard outputs only. It does not integrate with React, deploy, accept payment, or create export files. The V61-V65 batch is linked as metadata-only local output.

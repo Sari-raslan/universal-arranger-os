@@ -1,0 +1,86 @@
+{
+  "validator_result": "PASS",
+  "checked_at": "2026-07-04T19:39:21.427219+00:00",
+  "master_hub_exists": true,
+  "batch_dashboard_exists": true,
+  "v61_to_v65_outputs_exist": true,
+  "version_validator_results": [
+    {
+      "path": "v61/validators/UAOS_V61_BATCH_VALIDATOR_RESULTS.json",
+      "validator_result": "PASS"
+    },
+    {
+      "path": "v62/validators/UAOS_V62_VALIDATOR_RESULTS.json",
+      "validator_result": "PASS"
+    },
+    {
+      "path": "v63/validators/UAOS_V63_VALIDATOR_RESULTS.json",
+      "validator_result": "PASS"
+    },
+    {
+      "path": "v64/validators/UAOS_V64_VALIDATOR_RESULTS.json",
+      "validator_result": "PASS"
+    },
+    {
+      "path": "v65/validators/UAOS_V65_VALIDATOR_RESULTS.json",
+      "validator_result": "PASS"
+    }
+  ],
+  "metadata_only": true,
+  "dry_run_local_only": true,
+  "export_allowed": false,
+  "korg_output": false,
+  "midi_audio": false,
+  "usb_path": false,
+  "app_jsx_touched": false,
+  "react_integration": false,
+  "deploy_payment": false,
+  "required_findings": [
+    {
+      "path": "master-local-program-hub/hub/UAOS_MASTER_LOCAL_PROGRAM_HUB.html",
+      "exists": true
+    },
+    {
+      "path": "batch-v61-v65/UAOS_BATCH_V61_V65_OWNER_DASHBOARD.html",
+      "exists": true
+    },
+    {
+      "path": "v61/validators/UAOS_V61_BATCH_VALIDATOR_RESULTS.json",
+      "exists": true
+    },
+    {
+      "path": "v62/validators/UAOS_V62_VALIDATOR_RESULTS.json",
+      "exists": true
+    },
+    {
+      "path": "v63/validators/UAOS_V63_VALIDATOR_RESULTS.json",
+      "exists": true
+    },
+    {
+      "path": "v64/validators/UAOS_V64_VALIDATOR_RESULTS.json",
+      "exists": true
+    },
+    {
+      "path": "v65/validators/UAOS_V65_VALIDATOR_RESULTS.json",
+      "exists": true
+    },
+    {
+      "path": "v62/metadata/UAOS_V62_STYLE_INTENT_EXPANSION.json",
+      "exists": true
+    },
+    {
+      "path": "v63/metadata/UAOS_V63_ARRANGEMENT_QA_MATRIX.json",
+      "exists": true
+    },
+    {
+      "path": "v64/metadata/UAOS_V64_EXPORT_UNKNOWNS_REGISTER.json",
+      "exists": true
+    },
+    {
+      "path": "v65/metadata/UAOS_V65_HUMAN_REVIEW_CHECKLIST.md",
+      "exists": true
+    }
+  ],
+  "forbidden_files": [],
+  "forbidden_claims": []
+}
