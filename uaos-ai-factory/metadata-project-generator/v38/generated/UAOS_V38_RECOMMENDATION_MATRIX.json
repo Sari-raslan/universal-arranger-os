@@ -1,0 +1,51 @@
+{
+  "schemaVersion": "uaos.v38.recommendation.matrix.v1",
+  "generatedAt": "2026-07-04T13:58:28.447Z",
+  "metadataOnly": true,
+  "korgOutputAllowed": false,
+  "setModificationAllowed": false,
+  "usbWriteAllowed": false,
+  "keyboardLoadAllowed": false,
+  "compatibilityClaim": false,
+  "pa3xReadyClaim": false,
+  "recommendations": [
+    {
+      "id": "A",
+      "action": "Improve metadata completeness",
+      "priority": "low"
+    },
+    {
+      "id": "B",
+      "action": "Add more musical-intent fields",
+      "priority": "low"
+    },
+    {
+      "id": "C",
+      "action": "Add human review notes",
+      "priority": "high"
+    },
+    {
+      "id": "D",
+      "action": "Continue to V39 metadata viewer or CLI report exporter",
+      "priority": "high"
+    },
+    {
+      "id": "E",
+      "action": "Stop",
+      "priority": "available"
+    }
+  ],
+  "recommended": [
+    "A",
+    "C"
+  ],
+  "safety": {
+    "metadataOnly": true,
+    "korgOutputAllowed": false,
+    "setModificationAllowed": false,
+    "usbWriteAllowed": false,
+    "keyboardLoadAllowed": false,
+    "compatibilityClaim": false,
+    "pa3xReadyClaim": false
+  }
+}
