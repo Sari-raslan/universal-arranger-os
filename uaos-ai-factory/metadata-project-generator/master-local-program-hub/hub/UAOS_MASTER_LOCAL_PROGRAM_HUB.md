@@ -39,6 +39,11 @@ export_allowed: false
 - V89 Final Local Trial ZIP: `../v89/exports/UAOS_V89_FINAL_LOCAL_TRIAL_PACKAGE.zip`
 - V90 Final Summary: `../v90/summary/UAOS_V90_FINAL_V71_TO_V90_TRIAL_SUMMARY.md`
 - V86-V90 Final Local Trial Batch: `../batch-v86-v90-final-local-trial/UAOS_BATCH_V86_V90_FINAL_LOCAL_TRIAL_OPEN_HERE.html`
+- V91 DAW Test Start: `../v91/daw-test/UAOS_V91_OWNER_DAW_TEST_START_HERE.md`
+- V92 Feedback Form: `../v92/feedback/UAOS_V92_MIDI_LISTENING_FEEDBACK_FORM.md`
+- V93 Improvement Queue: `../v93/improvement/UAOS_V93_MIDI_IMPROVEMENT_QUEUE.md`
+- V95 DAW Test ZIP: `../v95/exports/UAOS_V95_DAW_TEST_PACKAGE.zip`
+- V91-V95 DAW Test Batch: `../batch-v91-v95-daw-test-feedback/UAOS_BATCH_V91_V95_DAW_TEST_OPEN_HERE.html`
 - Export Blocker / Research Gates: blocked and research-only.
 - QA Reports: `../master-local-program-hub/reports/`
 - Owner Dashboards: `../master-local-program-hub/dashboards/UAOS_MASTER_OWNER_REVIEW_DASHBOARD.html`
@@ -49,4 +54,4 @@ export_allowed: false
 This hub links local metadata, static dashboard outputs, approved local V71-V73 export artifacts, V74 validation, the V75 static local preview, and the V76-V80 static local RC package only. It does not integrate with React, deploy, accept payment, or create KORG files.
 
 ## Next Action Options
-Next safe action: owner tests MIDI in DAW, then choose next gate
+Next safe action: owner imports MIDI into Cubase and fills feedback form
