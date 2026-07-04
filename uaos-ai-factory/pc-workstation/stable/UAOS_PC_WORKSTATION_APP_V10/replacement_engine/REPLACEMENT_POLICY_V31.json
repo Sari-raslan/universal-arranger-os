@@ -1,0 +1,10 @@
+{
+  "mode": "HYPOTHESIS_ONLY",
+  "rules": [
+    "empty slot -> manual review unless category confidence exists",
+    "duplicate sample -> one keep candidate and one possible unused candidate",
+    "large sample not referenced -> possible unused, needs confirmation",
+    "Arabic strings names -> suggest Arabic strings presets from internal metadata",
+    "never claim confirmed mapping unless scanner confirms it"
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "mode": "READ_ONLY",
+  "inventory_fields": ["relative_path", "file_name", "extension", "size", "modified_timestamp", "sha256", "category_guess", "confidence", "relationship"],
+  "relationships": ["CONFIRMED", "HYPOTHESIS", "UNKNOWN"],
+  "outputs": {
+    "scanner": "set_analyzer/analysis_outputs",
+    "dsp": "dsp_planner/analysis_outputs",
+    "replacement": "replacement_engine/analysis_outputs"
+  }
+}

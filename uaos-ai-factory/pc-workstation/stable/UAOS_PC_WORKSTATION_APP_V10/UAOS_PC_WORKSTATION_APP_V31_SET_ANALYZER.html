@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>UAOS Owner SET Analyzer V31</title>
+  <link rel="stylesheet" href="assets/uaos_v31_set_analyzer.css">
+</head>
+<body>
+  <header class="top">
+    <div>
+      <p>UAOS PC Workstation</p>
+      <h1>Owner SET Analyzer V31</h1>
+    </div>
+    <div class="badges">
+      <span>READ_ONLY</span>
+      <span>PC_ONLY</span>
+      <span>TEST_UNVERIFIED</span>
+      <span>NO USB</span>
+      <span>NO PA3X</span>
+    </div>
+  </header>
+  <main class="layout">
+    <section class="panel hero">
+      <h2>ضع الست هنا</h2>
+      <p>ضع الست داخل `owner_set_input` ثم شغل `set_analyzer\RUN_SET_ANALYZER_V31.cmd`. المتصفح لا يستطيع فحص المجلدات مباشرة، لذلك افتح النتائج بعد تشغيل الأمر.</p>
+      <div class="paths">
+        <div><span>Input folder</span><strong>owner_set_input</strong></div>
+        <div><span>Run analyzer</span><strong>set_analyzer\RUN_SET_ANALYZER_V31.cmd</strong></div>
+      </div>
+    </section>
+    <section class="panel">
+      <h2>نتائج التحليل</h2>
+      <div class="stats" id="stats"></div>
+      <p class="note" id="emptyHint">ضع الست هنا ثم شغل التحليل.</p>
+    </section>
+    <section class="panel">
+      <h2>الأماكن الفارغة</h2>
+      <table><thead><tr><th>slot/file</th><th>reason</th><th>confidence</th><th>suggested action</th></tr></thead><tbody id="emptyRows"></tbody></table>
+    </section>
+    <section class="panel">
+      <h2>السامبلر</h2>
+      <table><thead><tr><th>sample candidate</th><th>size</th><th>duplicate hash</th><th>likely category</th><th>used/unused hypothesis</th></tr></thead><tbody id="samplerRows"></tbody></table>
+    </section>
+    <section class="panel">
+      <h2>اقتراحات التبديل</h2>
+      <table><thead><tr><th>empty/weak item</th><th>suggested replacement</th><th>confidence</th><th>reason</th></tr></thead><tbody id="replacementRows"></tbody></table>
+    </section>
+    <section class="panel">
+      <h2>خطة DSP الموحدة</h2>
+      <div class="cards" id="dspCards"></div>
+    </section>
+    <section class="panel">
+      <h2>تقرير يدوي</h2>
+      <pre id="manualReview">Manual review list appears after running analyzer.</pre>
+    </section>
+    <section class="panel safety">
+      <h2>الأمان</h2>
+      <div><span>Read-only</span><strong>YES</strong></div>
+      <div><span>Original SET modification</span><strong>NO</strong></div>
+      <div><span>USB write</span><strong>NO</strong></div>
+      <div><span>PA3X load</span><strong>NO</strong></div>
+      <div><span>Compatibility claim</span><strong>NO</strong></div>
+    </section>
+  </main>
+  <footer>Local metadata analyzer only. Relationships stay UNKNOWN or HYPOTHESIS until safely confirmed.</footer>
+  <script src="assets/uaos_v31_set_analyzer.js"></script>
+</body>
+</html>

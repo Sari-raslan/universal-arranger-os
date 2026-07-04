@@ -1,0 +1,48 @@
+{
+  "mode": "METADATA_ONLY",
+  "no_audio_processing": true,
+  "no_sample_modification": true,
+  "no_set_write": true,
+  "global_goals": [
+    "normalize perceived loudness target concept",
+    "avoid clipping",
+    "organize sounds by category",
+    "keep changes as suggestions only"
+  ],
+  "chains": {
+    "Arabic Strings": [
+      "EQ gentle high shelf",
+      "low cut",
+      "light compression",
+      "short room reverb",
+      "optional stereo width"
+    ],
+    "Bass": [
+      "low control",
+      "compression",
+      "no wide stereo"
+    ],
+    "Drums": [
+      "punch EQ",
+      "bus compression hint",
+      "room send"
+    ],
+    "Pads": [
+      "high cut",
+      "wide reverb",
+      "slow attack"
+    ],
+    "Unknown": [
+      "safe neutral chain",
+      "gain trim",
+      "no destructive processing"
+    ]
+  },
+  "files_by_category": {
+    "Arabic Strings": [],
+    "Bass": [],
+    "Drums": [],
+    "Pads": [],
+    "Unknown": []
+  }
+}
