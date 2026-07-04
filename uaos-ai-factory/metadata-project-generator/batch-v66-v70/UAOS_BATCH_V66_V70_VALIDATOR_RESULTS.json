@@ -1,0 +1,92 @@
+{
+  "validator_result": "PASS",
+  "checked_at": "2026-07-04T19:46:04.386942+00:00",
+  "master_hub_updated": true,
+  "batch_dashboard_exists": true,
+  "v66_to_v70_outputs_exist": true,
+  "version_validator_results": [
+    {
+      "path": "v66/generated/UAOS_V66_VALIDATOR_RESULTS.json",
+      "validator_result": "PASS"
+    },
+    {
+      "path": "v67/generated/UAOS_V67_VALIDATOR_RESULTS.json",
+      "validator_result": "PASS"
+    },
+    {
+      "path": "v68/generated/UAOS_V68_VALIDATOR_RESULTS.json",
+      "validator_result": "PASS"
+    },
+    {
+      "path": "v69/generated/UAOS_V69_VALIDATOR_RESULTS.json",
+      "validator_result": "PASS"
+    },
+    {
+      "path": "v70/generated/UAOS_V70_VALIDATOR_RESULTS.json",
+      "validator_result": "PASS"
+    }
+  ],
+  "metadata_only": true,
+  "dry_run_local_only": true,
+  "review_only": true,
+  "export_allowed": false,
+  "korg_output": false,
+  "midi_audio_generation": false,
+  "usb_write": false,
+  "pa3x_load": false,
+  "app_jsx_touched": false,
+  "react_integration": false,
+  "deploy_payment": false,
+  "required_findings": [
+    {
+      "path": "batch-v66-v70/UAOS_BATCH_V66_V70_OWNER_DASHBOARD.html",
+      "exists": true
+    },
+    {
+      "path": "master-local-program-hub/hub/UAOS_MASTER_LOCAL_PROGRAM_HUB.html",
+      "exists": true
+    },
+    {
+      "path": "v66/generated/UAOS_V66_VALIDATOR_RESULTS.json",
+      "exists": true
+    },
+    {
+      "path": "v67/generated/UAOS_V67_VALIDATOR_RESULTS.json",
+      "exists": true
+    },
+    {
+      "path": "v68/generated/UAOS_V68_VALIDATOR_RESULTS.json",
+      "exists": true
+    },
+    {
+      "path": "v69/generated/UAOS_V69_VALIDATOR_RESULTS.json",
+      "exists": true
+    },
+    {
+      "path": "v70/generated/UAOS_V70_VALIDATOR_RESULTS.json",
+      "exists": true
+    },
+    {
+      "path": "v66/generated/UAOS_V66_EXTERNAL_REVIEWER_PACK.json",
+      "exists": true
+    },
+    {
+      "path": "v67/generated/UAOS_V67_MOCK_EXPORT_MANIFEST_ONLY.json",
+      "exists": true
+    },
+    {
+      "path": "v68/generated/UAOS_V68_SAFETY_GATE_HARDENING_RESULTS.json",
+      "exists": true
+    },
+    {
+      "path": "v69/generated/UAOS_V69_COMMERCIAL_READINESS_MAP_NO_CLAIMS.json",
+      "exists": true
+    },
+    {
+      "path": "v70/generated/UAOS_V70_PHASE_SUMMARY_APPROVAL_GATE.json",
+      "exists": true
+    }
+  ],
+  "forbidden_files": [],
+  "forbidden_claims": []
+}
