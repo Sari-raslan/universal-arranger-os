@@ -3,6 +3,11 @@
 status: "PLAN_ONLY"
 
 ## Checks
+- Agent prep files exist.
+- Agent outputs exist.
+- Decision gate exists.
+- Owner approval form exists.
+- Implementation plan exists.
 - No .SET/.STY/.PRF/.PRS/.KST created.
 - No .MID created in this run.
 - No .WAV/.MP3 created.

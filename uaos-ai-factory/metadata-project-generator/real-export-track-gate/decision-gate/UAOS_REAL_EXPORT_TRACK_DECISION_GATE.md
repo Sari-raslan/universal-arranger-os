@@ -11,35 +11,35 @@ midi_created_in_this_run: false
 ### Level 1: Real MIDI Export
 - status: "SAFE_CANDIDATE_REQUIRES_OWNER_APPROVAL"
 - output: `.mid` in a future approved run
-- risk: low/medium
+- risk: "LOW_MEDIUM"
 - KORG output: false
 
 ### Level 2: UAOS Project Package Export
 - status: "SAFE_CANDIDATE_REQUIRES_OWNER_APPROVAL"
 - output: `.uaos.json` or `.json` package in a future approved run
-- risk: low
+- risk: "LOW"
 - KORG output: false
 
 ### Level 3: Generic Style Package Export
 - status: "SAFE_CANDIDATE_REQUIRES_OWNER_APPROVAL"
 - output: `.zip` containing JSON/MD/MIDI later
-- risk: medium
+- risk: "MEDIUM"
 - KORG output: false
 
 ### Level 4: KORG Research Only
 - status: "RESEARCH_ONLY"
 - output: reports only
-- risk: medium/high
+- risk: "MEDIUM_HIGH"
 - KORG writer: false
 
 ### Level 5: KORG Writer Sandbox
 - status: "BLOCKED_REQUIRES_EXPLICIT_OWNER_APPROVAL"
 - output: sandbox test files only
-- risk: high
+- risk: "HIGH"
 - real keyboard load: false
 
 ### Level 6: Real KORG Export
 - status: "BLOCKED_NOT_ALLOWED_NOW"
 - output: `.STY`/`.SET` future only
-- risk: high
+- risk: "HIGH"
 - requires explicit separate approval

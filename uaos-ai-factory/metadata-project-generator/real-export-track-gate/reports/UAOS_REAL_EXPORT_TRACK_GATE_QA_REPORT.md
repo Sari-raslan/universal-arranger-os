@@ -3,7 +3,7 @@
 status: "PASS"
 
 ## Scope
-Decision gate, export path plans, owner approval forms, implementation plan, dashboards, and final seal are present.
+Agent preparation, decision gate, export path plans, owner approval forms, implementation plan, dashboards, and final seal are present.
 
 ## Safety
 - KORG output created: NO
