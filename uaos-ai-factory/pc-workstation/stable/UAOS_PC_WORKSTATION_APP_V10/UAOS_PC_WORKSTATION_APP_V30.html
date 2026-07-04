@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>UAOS PC Workstation Owner Beta V30</title>
+  <link rel="stylesheet" href="assets/uaos_v30_dark_theme.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">UAOS PC Workstation</p>
+        <h1>Owner Beta V30</h1>
+      </div>
+      <div class="project-chip">
+        <span>المشروع الحالي</span>
+        <strong id="currentProjectName">Sari Oriental Ballad</strong>
+      </div>
+      <div class="safety-badges" aria-label="Safety labels">
+        <span>PC_ONLY</span>
+        <span>TEST_UNVERIFIED</span>
+        <span>NOT_FOR_PA3X_LOAD</span>
+        <span>NOT_FOR_USB_TRANSFER</span>
+        <span>NOT_COMPATIBILITY_VERIFIED</span>
+      </div>
+    </header>
+
+    <aside class="sidebar" aria-label="Main navigation">
+      <button class="nav-button active" data-page="dashboard">الرئيسية</button>
+      <button class="nav-button" data-page="project">المشروع</button>
+      <button class="nav-button" data-page="style">الستايل</button>
+      <button class="nav-button" data-page="library">المكتبة</button>
+      <button class="nav-button" data-page="player">المشغل</button>
+      <button class="nav-button" data-page="writer">الرايتر</button>
+      <button class="nav-button" data-page="files">الملفات</button>
+      <button class="nav-button" data-page="safety">الأمان</button>
+    </aside>
+
+    <main class="workspace">
+      <section class="page active" id="dashboard" data-title="لوحة البداية">
+        <div class="page-head">
+          <p class="eyebrow">لوحة البداية</p>
+          <h2>واجهة داكنة واضحة للعمل السريع</h2>
+        </div>
+        <div class="action-grid">
+          <article class="action-card">
+            <span class="status ready">جاهز</span>
+            <h3>ابدأ المشروع</h3>
+            <p>افتح إعدادات المشروع الأساسية: الاسم، الستايل، السرعة، والكوردات.</p>
+            <button class="primary action-jump" data-page="project">افتح</button>
+          </article>
+          <article class="action-card">
+            <span class="status ready">محلي</span>
+            <h3>عدّل الستايل</h3>
+            <p>رتّب Intro و Verse و Chorus و Fill و Ending من شاشة واحدة.</p>
+            <button class="primary action-jump" data-page="style">عدّل</button>
+          </article>
+          <article class="action-card">
+            <span class="status safe">Metadata</span>
+            <h3>اختر الكمنجات</h3>
+            <p>اختر preset عربي للمعاينة بدون نسخ عينات أو ملفات خارجية.</p>
+            <button class="primary action-jump" data-page="library">اختر</button>
+          </article>
+          <article class="action-card">
+            <span class="status preview">WebAudio</span>
+            <h3>شغّل المعاينة</h3>
+            <p>اسمع معاينة صناعية داخل المتصفح فقط، ثم أوقفها بزر واحد.</p>
+            <button class="primary action-jump" data-page="player">شغّل</button>
+          </article>
+          <article class="action-card">
+            <span class="status warn">يدوي</span>
+            <h3>ولّد ملفات UAOS PC</h3>
+            <p>افتح تعليمات Writer V17 وشغّله يدويًا من مجلد الرايتر.</p>
+            <button class="primary action-jump" data-page="writer">افتح</button>
+          </article>
+        </div>
+      </section>
+
+      <section class="page" id="project" data-title="المشروع">
+        <div class="page-head">
+          <p class="eyebrow">المشروع</p>
+          <h2>الحقول المهمة أولًا</h2>
+        </div>
+        <form class="panel form-panel" id="projectForm">
+          <label>اسم المشروع<input id="projectName" name="projectName" value="Sari Oriental Ballad"></label>
+          <label>اسم الستايل<input id="styleName" name="styleName" value="Arabic Pop Oriental"></label>
+          <label>السرعة<input id="tempo" name="tempo" type="number" min="60" max="180" value="96"></label>
+          <label>الكوردات<input id="chords" name="chords" value="Dm | Gm | A7 | Dm"></label>
+          <details>
+            <summary>حقول متقدمة</summary>
+            <label>المقام<input id="maqam" name="maqam" value="Nahawand"></label>
+            <label>ملاحظات<input id="notes" name="notes" value="PC only synthetic preview"></label>
+          </details>
+          <div class="button-row">
+            <button type="button" class="primary" id="saveProject">احفظ</button>
+            <button type="button" class="secondary" id="loadProject">افتح</button>
+            <button type="button" class="secondary" id="exportProject">صدّر</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="page" id="style" data-title="الستايل">
+        <div class="page-head">
+          <p class="eyebrow">الستايل</p>
+          <h2>أقسام واضحة وزر تصدير واحد</h2>
+        </div>
+        <div class="panel">
+          <div class="section-chips" id="sectionChips">
+            <button class="chip active" data-section="Intro">Intro</button>
+            <button class="chip" data-section="Verse">Verse</button>
+            <button class="chip" data-section="Chorus">Chorus</button>
+            <button class="chip" data-section="Bridge">Bridge</button>
+            <button class="chip" data-section="Fill">Fill</button>
+            <button class="chip" data-section="Ending">Ending</button>
+          </div>
+          <table class="style-table">
+            <thead><tr><th>القسم</th><th>الكورد</th><th>الإحساس</th><th>الحالة</th></tr></thead>
+            <tbody id="styleRows"></tbody>
+          </table>
+          <button class="primary" id="exportStyle">صدّر</button>
+        </div>
+      </section>
+
+      <section class="page" id="library" data-title="المكتبة">
+        <div class="page-head">
+          <p class="eyebrow">المكتبة</p>
+          <h2>Presets عربية للمعاينة</h2>
+        </div>
+        <div class="preset-grid" id="presetGrid"></div>
+      </section>
+
+      <section class="page" id="player" data-title="المشغل">
+        <div class="page-head">
+          <p class="eyebrow">المشغل</p>
+          <h2>أزرار كبيرة للمعاينة</h2>
+        </div>
+        <div class="transport-grid">
+          <button class="transport" data-sound="full">▶ تشغيل كامل</button>
+          <button class="transport" data-sound="strings">كمنجات</button>
+          <button class="transport" data-sound="chords">كوردات</button>
+          <button class="transport" data-sound="rhythm">إيقاع</button>
+          <button class="transport stop" id="stopAudio">■ إيقاف</button>
+        </div>
+      </section>
+
+      <section class="page" id="writer" data-title="الرايتر">
+        <div class="page-head">
+          <p class="eyebrow">الرايتر</p>
+          <h2>لتوليد الملفات شغّل Writer V17</h2>
+        </div>
+        <div class="panel writer-panel">
+          <p>التوليد يبقى يدويًا ومحليًا. افتح الأمر التالي من داخل مجلد الرايتر عند الحاجة.</p>
+          <a class="primary link-button" href="writer/RUN_WRITER_V17.cmd">RUN_WRITER_V17.cmd</a>
+          <p class="muted">Output folder: writer\output</p>
+        </div>
+      </section>
+
+      <section class="page" id="files" data-title="الملفات">
+        <div class="page-head">
+          <p class="eyebrow">الملفات</p>
+          <h2>روابط محلية مفيدة</h2>
+        </div>
+        <div class="panel file-list">
+          <a href="docs/START_HERE_V30_AR.md">START_HERE_V30_AR.md</a>
+          <a href="docs/V30_DARK_UI_CHANGELOG_AR.md">V30_DARK_UI_CHANGELOG_AR.md</a>
+          <a href="electron/START_ELECTRON_LOCAL_V30.cmd">START_ELECTRON_LOCAL_V30.cmd</a>
+        </div>
+      </section>
+
+      <section class="page" id="safety" data-title="الأمان">
+        <div class="page-head">
+          <p class="eyebrow">الأمان</p>
+          <h2>قائمة أمان خضراء وبسيطة</h2>
+        </div>
+        <div class="panel safety-list">
+          <div><span>USB</span><strong>NO</strong></div>
+          <div><span>PA3X</span><strong>NO</strong></div>
+          <div><span>Deploy</span><strong>NO</strong></div>
+          <div><span>Payment</span><strong>NO</strong></div>
+          <div><span>App.jsx</span><strong>NO</strong></div>
+        </div>
+      </section>
+    </main>
+
+    <aside class="inspector">
+      <p class="eyebrow">Inspector</p>
+      <h2 id="inspectorTitle">لوحة البداية</h2>
+      <div class="metric"><span>الحالة</span><strong>Local only</strong></div>
+      <div class="metric"><span>الصوت</span><strong id="audioState">متوقف</strong></div>
+      <div class="metric"><span>Preset</span><strong id="selectedPreset">كمنجات شرقية</strong></div>
+      <div class="metric"><span>اختبار ذاتي</span><strong id="selfTestState">جاهز</strong></div>
+      <button class="secondary" id="runSelfTest">افحص</button>
+    </aside>
+
+    <footer class="bottombar">
+      <span>PC_ONLY</span>
+      <span>No USB</span>
+      <span>No PA3X</span>
+      <span>Local only</span>
+    </footer>
+  </div>
+  <script src="assets/uaos_v30_app.js"></script>
+</body>
+</html>

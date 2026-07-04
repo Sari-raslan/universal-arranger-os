@@ -5,8 +5,8 @@ const { app, BrowserWindow } = require("electron");
 const appRoot = app.isPackaged
   ? path.join(process.resourcesPath, "app_content")
   : path.resolve(__dirname, "..");
-const preferredHome = path.join(appRoot, "UAOS_PC_WORKSTATION_OWNER_BETA_HOME_V27.html");
-const fallbackHome = path.join(appRoot, "UAOS_PC_WORKSTATION_APP_V25.html");
+const preferredHome = path.join(appRoot, "UAOS_PC_WORKSTATION_APP_V30.html");
+const fallbackHome = path.join(appRoot, "UAOS_PC_WORKSTATION_OWNER_BETA_HOME_V27.html");
 
 function isInsideAppRoot(targetPath) {
   const resolved = path.resolve(targetPath);
@@ -25,7 +25,7 @@ function createWindow() {
     minHeight: 720,
     title: "UAOS PC Workstation Owner Beta",
     autoHideMenuBar: true,
-    backgroundColor: "#101821",
+    backgroundColor: "#030509",
     webPreferences: {
       preload: path.join(__dirname, "preload.js"),
       contextIsolation: true,
