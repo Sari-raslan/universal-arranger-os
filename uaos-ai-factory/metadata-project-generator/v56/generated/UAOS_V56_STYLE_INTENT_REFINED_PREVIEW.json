@@ -1,0 +1,50 @@
+{
+  "schemaVersion": "uaos.v56.style.intent.refined.preview.v1",
+  "createdAt": "2026-07-04T18:13:09.255Z",
+  "sourceInputs": {
+    "v55DryRunId": "uaos-v55-style-dryrun-20260704180254",
+    "v55BridgeReadinessScore": 76,
+    "v54BridgeStatus": "DRY_RUN"
+  },
+  "styleFamily": "oriental_pop",
+  "tempo": 96,
+  "timeSignature": "4/4",
+  "scaleMode": "hijaz_oriental_reference",
+  "chordProgression": [
+    "Dm",
+    "C",
+    "Bb",
+    "A"
+  ],
+  "rhythmDensityIntent": "requires_owner_or_scoring_confirmation",
+  "bassMovementIntent": "requires_owner_or_scoring_confirmation",
+  "chordRhythmIntent": "requires_owner_or_scoring_confirmation",
+  "orientalFeelIntent": "metadata_description_only",
+  "melodySpaceIntent": "leave room for human review",
+  "dspIntent": {
+    "master": "controlled loudness preview only",
+    "drums": "tight transient presence metadata",
+    "bass": "stable low-mid definition metadata",
+    "chords": "clear rhythmic support metadata",
+    "pad": "wide but non-masking metadata",
+    "melodyGuide": "review-only guide placement"
+  },
+  "humanReviewRequired": true,
+  "safety": {
+    "metadataOnly": true,
+    "dryRunOnly": true,
+    "humanReviewOnly": true,
+    "audioRenderAllowed": false,
+    "midiGenerationAllowed": false,
+    "korgOutputAllowed": false,
+    "nativeKeyboardFilesAllowed": false,
+    "setModificationAllowed": false,
+    "exportAllowed": false,
+    "usbWriteAllowed": false,
+    "keyboardLoadAllowed": false,
+    "sourceProjectModified": false,
+    "autoApplyAllowed": false,
+    "compatibilityClaimAllowed": false,
+    "pa3xReadyClaimAllowed": false
+  }
+}

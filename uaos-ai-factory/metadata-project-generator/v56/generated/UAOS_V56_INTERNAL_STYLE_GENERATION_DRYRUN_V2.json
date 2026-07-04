@@ -1,0 +1,269 @@
+{
+  "schemaVersion": "uaos.v56.internal.style.generation.dryrun.v2",
+  "dryRunId": "uaos-v56-style-dryrun-v2-20260704181309",
+  "createdAt": "2026-07-04T18:13:09.255Z",
+  "version": "v2",
+  "metadataOnly": true,
+  "dryRunOnly": true,
+  "audioRenderAllowed": false,
+  "midiGenerationAllowed": false,
+  "korgOutputAllowed": false,
+  "exportAllowed": false,
+  "usbWriteAllowed": false,
+  "keyboardLoadAllowed": false,
+  "sourceProjectModified": false,
+  "refinedStyleIntentPreview": {
+    "schemaVersion": "uaos.v56.style.intent.refined.preview.v1",
+    "createdAt": "2026-07-04T18:13:09.255Z",
+    "sourceInputs": {
+      "v55DryRunId": "uaos-v55-style-dryrun-20260704180254",
+      "v55BridgeReadinessScore": 76,
+      "v54BridgeStatus": "DRY_RUN"
+    },
+    "styleFamily": "oriental_pop",
+    "tempo": 96,
+    "timeSignature": "4/4",
+    "scaleMode": "hijaz_oriental_reference",
+    "chordProgression": [
+      "Dm",
+      "C",
+      "Bb",
+      "A"
+    ],
+    "rhythmDensityIntent": "requires_owner_or_scoring_confirmation",
+    "bassMovementIntent": "requires_owner_or_scoring_confirmation",
+    "chordRhythmIntent": "requires_owner_or_scoring_confirmation",
+    "orientalFeelIntent": "metadata_description_only",
+    "melodySpaceIntent": "leave room for human review",
+    "dspIntent": {
+      "master": "controlled loudness preview only",
+      "drums": "tight transient presence metadata",
+      "bass": "stable low-mid definition metadata",
+      "chords": "clear rhythmic support metadata",
+      "pad": "wide but non-masking metadata",
+      "melodyGuide": "review-only guide placement"
+    },
+    "humanReviewRequired": true,
+    "safety": {
+      "metadataOnly": true,
+      "dryRunOnly": true,
+      "humanReviewOnly": true,
+      "audioRenderAllowed": false,
+      "midiGenerationAllowed": false,
+      "korgOutputAllowed": false,
+      "nativeKeyboardFilesAllowed": false,
+      "setModificationAllowed": false,
+      "exportAllowed": false,
+      "usbWriteAllowed": false,
+      "keyboardLoadAllowed": false,
+      "sourceProjectModified": false,
+      "autoApplyAllowed": false,
+      "compatibilityClaimAllowed": false,
+      "pa3xReadyClaimAllowed": false
+    }
+  },
+  "refinedSectionPlanPreview": [
+    {
+      "sectionId": "intro",
+      "intendedEnergy": "setup",
+      "arrangementPurpose": "announce style identity without claiming hardware readiness",
+      "drumDensityIntent": "sparse_entry_metadata",
+      "bassMovementIntent": "requires_owner_or_scoring_confirmation",
+      "chordRhythmIntent": "requires_owner_or_scoring_confirmation",
+      "orientalFeelIntent": "metadata_description_only",
+      "melodySpaceIntent": "leave room for human review",
+      "dspIntent": "section balance metadata only",
+      "sourceV55RoleSummary": {
+        "drumRole": "metadata role only",
+        "bassRole": "metadata role only",
+        "chordRole": "metadata role only"
+      },
+      "humanReviewRequired": true,
+      "generatedAudio": false,
+      "generatedMidi": false,
+      "generatedKorgFile": false
+    },
+    {
+      "sectionId": "variation1",
+      "intendedEnergy": "low",
+      "arrangementPurpose": "establish groove and leave melodic space",
+      "drumDensityIntent": "balanced_metadata_density",
+      "bassMovementIntent": "requires_owner_or_scoring_confirmation",
+      "chordRhythmIntent": "requires_owner_or_scoring_confirmation",
+      "orientalFeelIntent": "metadata_description_only",
+      "melodySpaceIntent": "leave room for human review",
+      "dspIntent": "section balance metadata only",
+      "sourceV55RoleSummary": {
+        "drumRole": "metadata role only",
+        "bassRole": "metadata role only",
+        "chordRole": "metadata role only"
+      },
+      "humanReviewRequired": true,
+      "generatedAudio": false,
+      "generatedMidi": false,
+      "generatedKorgFile": false
+    },
+    {
+      "sectionId": "variation2",
+      "intendedEnergy": "medium",
+      "arrangementPurpose": "add rhythmic interest while preserving clarity",
+      "drumDensityIntent": "balanced_metadata_density",
+      "bassMovementIntent": "requires_owner_or_scoring_confirmation",
+      "chordRhythmIntent": "requires_owner_or_scoring_confirmation",
+      "orientalFeelIntent": "metadata_description_only",
+      "melodySpaceIntent": "leave room for human review",
+      "dspIntent": "section balance metadata only",
+      "sourceV55RoleSummary": {
+        "drumRole": "metadata role only",
+        "bassRole": "metadata role only",
+        "chordRole": "metadata role only"
+      },
+      "humanReviewRequired": true,
+      "generatedAudio": false,
+      "generatedMidi": false,
+      "generatedKorgFile": false
+    },
+    {
+      "sectionId": "variation3",
+      "intendedEnergy": "medium_high",
+      "arrangementPurpose": "increase arranger momentum with controlled density",
+      "drumDensityIntent": "balanced_metadata_density",
+      "bassMovementIntent": "requires_owner_or_scoring_confirmation",
+      "chordRhythmIntent": "requires_owner_or_scoring_confirmation",
+      "orientalFeelIntent": "metadata_description_only",
+      "melodySpaceIntent": "leave room for human review",
+      "dspIntent": "section balance metadata only",
+      "sourceV55RoleSummary": {
+        "drumRole": "metadata role only",
+        "bassRole": "metadata role only",
+        "chordRole": "metadata role only"
+      },
+      "humanReviewRequired": true,
+      "generatedAudio": false,
+      "generatedMidi": false,
+      "generatedKorgFile": false
+    },
+    {
+      "sectionId": "variation4",
+      "intendedEnergy": "peak",
+      "arrangementPurpose": "fullest metadata arrangement before ending or fill",
+      "drumDensityIntent": "full_metadata_density_review_required",
+      "bassMovementIntent": "requires_owner_or_scoring_confirmation",
+      "chordRhythmIntent": "requires_owner_or_scoring_confirmation",
+      "orientalFeelIntent": "metadata_description_only",
+      "melodySpaceIntent": "leave room for human review",
+      "dspIntent": "section balance metadata only",
+      "sourceV55RoleSummary": {
+        "drumRole": "metadata role only",
+        "bassRole": "metadata role only",
+        "chordRole": "metadata role only"
+      },
+      "humanReviewRequired": true,
+      "generatedAudio": false,
+      "generatedMidi": false,
+      "generatedKorgFile": false
+    },
+    {
+      "sectionId": "fill",
+      "intendedEnergy": "transition",
+      "arrangementPurpose": "short movement between variations",
+      "drumDensityIntent": "balanced_metadata_density",
+      "bassMovementIntent": "requires_owner_or_scoring_confirmation",
+      "chordRhythmIntent": "requires_owner_or_scoring_confirmation",
+      "orientalFeelIntent": "metadata_description_only",
+      "melodySpaceIntent": "leave room for human review",
+      "dspIntent": "short transition clarity metadata",
+      "sourceV55RoleSummary": {
+        "drumRole": "metadata role only",
+        "bassRole": "metadata role only",
+        "chordRole": "metadata role only"
+      },
+      "humanReviewRequired": true,
+      "generatedAudio": false,
+      "generatedMidi": false,
+      "generatedKorgFile": false
+    },
+    {
+      "sectionId": "ending",
+      "intendedEnergy": "close",
+      "arrangementPurpose": "resolve arrangement with clear final cadence",
+      "drumDensityIntent": "balanced_metadata_density",
+      "bassMovementIntent": "requires_owner_or_scoring_confirmation",
+      "chordRhythmIntent": "requires_owner_or_scoring_confirmation",
+      "orientalFeelIntent": "metadata_description_only",
+      "melodySpaceIntent": "leave room for human review",
+      "dspIntent": "section balance metadata only",
+      "sourceV55RoleSummary": {
+        "drumRole": "metadata role only",
+        "bassRole": "metadata role only",
+        "chordRole": "metadata role only"
+      },
+      "humanReviewRequired": true,
+      "generatedAudio": false,
+      "generatedMidi": false,
+      "generatedKorgFile": false
+    }
+  ],
+  "sectionRiskNotes": [
+    {
+      "sectionId": "intro",
+      "riskLevel": "low_metadata_review",
+      "note": "Human owner review required before any future implementation or export consideration.",
+      "blocksExport": true
+    },
+    {
+      "sectionId": "variation1",
+      "riskLevel": "low_metadata_review",
+      "note": "Human owner review required before any future implementation or export consideration.",
+      "blocksExport": true
+    },
+    {
+      "sectionId": "variation2",
+      "riskLevel": "low_metadata_review",
+      "note": "Human owner review required before any future implementation or export consideration.",
+      "blocksExport": true
+    },
+    {
+      "sectionId": "variation3",
+      "riskLevel": "low_metadata_review",
+      "note": "Human owner review required before any future implementation or export consideration.",
+      "blocksExport": true
+    },
+    {
+      "sectionId": "variation4",
+      "riskLevel": "medium_metadata_density_review",
+      "note": "Human owner review required before any future implementation or export consideration.",
+      "blocksExport": true
+    },
+    {
+      "sectionId": "fill",
+      "riskLevel": "low_metadata_review",
+      "note": "Human owner review required before any future implementation or export consideration.",
+      "blocksExport": true
+    },
+    {
+      "sectionId": "ending",
+      "riskLevel": "low_metadata_review",
+      "note": "Human owner review required before any future implementation or export consideration.",
+      "blocksExport": true
+    }
+  ],
+  "humanReviewRequired": true,
+  "safety": {
+    "metadataOnly": true,
+    "dryRunOnly": true,
+    "humanReviewOnly": true,
+    "audioRenderAllowed": false,
+    "midiGenerationAllowed": false,
+    "korgOutputAllowed": false,
+    "nativeKeyboardFilesAllowed": false,
+    "setModificationAllowed": false,
+    "exportAllowed": false,
+    "usbWriteAllowed": false,
+    "keyboardLoadAllowed": false,
+    "sourceProjectModified": false,
+    "autoApplyAllowed": false,
+    "compatibilityClaimAllowed": false,
+    "pa3xReadyClaimAllowed": false
+  }
+}
