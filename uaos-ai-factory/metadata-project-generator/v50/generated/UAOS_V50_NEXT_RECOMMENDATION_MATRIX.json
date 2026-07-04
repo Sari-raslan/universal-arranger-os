@@ -1,0 +1,48 @@
+{
+  "schemaVersion": "uaos.v50.next.recommendation.matrix.v1",
+  "generatedAt": "2026-07-04T17:26:31.189Z",
+  "metadataOnly": true,
+  "approvedForKorgExport": false,
+  "approvedForUsb": false,
+  "approvedForKeyboardLoad": false,
+  "recommendations": [
+    {
+      "id": "A",
+      "action": "V51 Metadata Workflow Freeze Acceptance Pack",
+      "safety": "metadata-only",
+      "recommended": true
+    },
+    {
+      "id": "B",
+      "action": "V51 Owner Review Portal Polish",
+      "safety": "local-only, no App.jsx, no deploy",
+      "recommended": true
+    },
+    {
+      "id": "C",
+      "action": "V51 UI Integration Plan",
+      "safety": "planning only, no App.jsx",
+      "recommended": false
+    },
+    {
+      "id": "D",
+      "action": "Stop",
+      "safety": "always available",
+      "recommended": false
+    }
+  ],
+  "recommendedTogether": [
+    "A",
+    "B"
+  ],
+  "safety": {
+    "metadataOnly": true,
+    "localPortalOnly": true,
+    "governanceAuditOnly": true,
+    "sourceProjectModified": false,
+    "korgOutputAllowed": false,
+    "usbWriteAllowed": false,
+    "keyboardLoadAllowed": false,
+    "approvedForExport": false
+  }
+}
