@@ -1,0 +1,19 @@
+{
+  "schema_version": "uaos.v61.export.research.gate.status.blocked.v1",
+  "created_at": "2026-07-04T19:15:52.812Z",
+  "source_v60_validator_status": "PASS",
+  "export_gate_status": "RESEARCH_ONLY_BLOCKED",
+  "export_allowed": false,
+  "owner_final_decision_applied": false,
+  "korg_output_allowed": false,
+  "real_owner_approval_applied": false,
+  "auto_apply_allowed": false,
+  "source_mutation_allowed": false,
+  "blocked_reasons": [
+    "owner final decision input only",
+    "technical research incomplete",
+    "export approval absent",
+    "hardware testing absent"
+  ],
+  "next_safe_step": "Continue research-only documentation or stop."
+}
