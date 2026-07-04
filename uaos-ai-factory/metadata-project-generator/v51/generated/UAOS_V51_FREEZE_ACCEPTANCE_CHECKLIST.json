@@ -1,0 +1,139 @@
+{
+  "schemaVersion": "uaos.v51.freeze.acceptance.checklist.v1",
+  "createdAt": "2026-07-04T17:32:27.678Z",
+  "items": [
+    {
+      "label": "V37 project generator exists",
+      "localPath": "E:\\keyboard-manager-clean\\uaos-ai-factory\\metadata-project-generator\\v37\\tools\\uaos-metadata-project-generator-v37.js",
+      "passed": true,
+      "metadataOnly": true
+    },
+    {
+      "label": "V38 inspector/scoring exists",
+      "localPath": "E:\\keyboard-manager-clean\\uaos-ai-factory\\metadata-project-generator\\v38",
+      "passed": true,
+      "metadataOnly": true
+    },
+    {
+      "label": "V39 report/rules exists",
+      "localPath": "E:\\keyboard-manager-clean\\uaos-ai-factory\\metadata-project-generator\\v39\\generated\\UAOS_V39_METADATA_REPORT.html",
+      "passed": true,
+      "metadataOnly": true
+    },
+    {
+      "label": "V40 suggestions/index exists",
+      "localPath": "E:\\keyboard-manager-clean\\uaos-ai-factory\\metadata-project-generator\\v40\\generated\\UAOS_V40_STYLE_IMPROVEMENT_SUGGESTIONS.json",
+      "passed": true,
+      "metadataOnly": true
+    },
+    {
+      "label": "V41 review/comparison exists",
+      "localPath": "E:\\keyboard-manager-clean\\uaos-ai-factory\\metadata-project-generator\\v41\\generated\\UAOS_V41_SUGGESTION_REVIEW_PACK.json",
+      "passed": true,
+      "metadataOnly": true
+    },
+    {
+      "label": "V42 dry-run dashboard exists",
+      "localPath": "E:\\keyboard-manager-clean\\uaos-ai-factory\\metadata-project-generator\\v42",
+      "passed": true,
+      "metadataOnly": true
+    },
+    {
+      "label": "V43 decision collector/index exists",
+      "localPath": "E:\\keyboard-manager-clean\\uaos-ai-factory\\metadata-project-generator\\v43\\generated\\UAOS_V43_OWNER_DECISION_TEMPLATE.json",
+      "passed": true,
+      "metadataOnly": true
+    },
+    {
+      "label": "V44 owner review form exists",
+      "localPath": "E:\\keyboard-manager-clean\\uaos-ai-factory\\metadata-project-generator\\v44\\generated\\UAOS_V44_OWNER_REVIEW_FORM.html",
+      "passed": true,
+      "metadataOnly": true
+    },
+    {
+      "label": "V45 printable decision sheet exists",
+      "localPath": "E:\\keyboard-manager-clean\\uaos-ai-factory\\metadata-project-generator\\v45\\generated\\UAOS_V45_OWNER_REVIEW_PRINTABLE_DECISION_SHEET.md",
+      "passed": true,
+      "metadataOnly": true
+    },
+    {
+      "label": "V46 review pack ZIP exists",
+      "localPath": "E:\\keyboard-manager-clean\\uaos-ai-factory\\metadata-project-generator\\v46\\generated\\UAOS_V46_LOCAL_REVIEW_PACK_METADATA_ONLY.zip",
+      "passed": true,
+      "metadataOnly": true
+    },
+    {
+      "label": "V47 archive inspection exists",
+      "localPath": "E:\\keyboard-manager-clean\\uaos-ai-factory\\metadata-project-generator\\v47\\generated\\UAOS_V47_REVIEW_PACK_INSPECTION.json",
+      "passed": true,
+      "metadataOnly": true
+    },
+    {
+      "label": "V48 regression PASS/WARN not BLOCKED",
+      "localPath": "E:\\keyboard-manager-clean\\uaos-ai-factory\\metadata-project-generator\\v48\\generated\\UAOS_V48_ARCHIVE_INTEGRITY_REGRESSION_RESULTS.json",
+      "passed": true,
+      "metadataOnly": true
+    },
+    {
+      "label": "V49 freeze pack exists",
+      "localPath": "E:\\keyboard-manager-clean\\uaos-ai-factory\\metadata-project-generator\\v49\\generated\\UAOS_V49_METADATA_GOVERNANCE_FREEZE_PACK.json",
+      "passed": true,
+      "metadataOnly": true
+    },
+    {
+      "label": "V50 governance audit PASS/WARN not BLOCKED",
+      "localPath": "E:\\keyboard-manager-clean\\uaos-ai-factory\\metadata-project-generator\\v50\\generated\\UAOS_V50_GOVERNANCE_AUDIT_SEAL.json",
+      "passed": true,
+      "metadataOnly": true
+    },
+    {
+      "label": "no App.jsx",
+      "localPath": null,
+      "passed": true,
+      "metadataOnly": true
+    },
+    {
+      "label": "no KORG output",
+      "localPath": null,
+      "passed": true,
+      "metadataOnly": true
+    },
+    {
+      "label": "no USB",
+      "localPath": null,
+      "passed": true,
+      "metadataOnly": true
+    },
+    {
+      "label": "no PA3X load",
+      "localPath": null,
+      "passed": true,
+      "metadataOnly": true
+    },
+    {
+      "label": "no deploy",
+      "localPath": null,
+      "passed": true,
+      "metadataOnly": true
+    }
+  ],
+  "v48RegressionStatus": "PASS",
+  "v50GovernanceStatus": "PASS",
+  "readyForKorgExport": false,
+  "readyForUsb": false,
+  "readyForKeyboardLoad": false,
+  "safety": {
+    "metadataOnly": true,
+    "acceptanceDocumentationOnly": true,
+    "sourceProjectModified": false,
+    "autoApplyEnabled": false,
+    "realApplyAllowed": false,
+    "korgOutputAllowed": false,
+    "setModificationAllowed": false,
+    "usbWriteAllowed": false,
+    "keyboardLoadAllowed": false,
+    "compatibilityClaim": false,
+    "pa3xReadyClaim": false,
+    "exportApproval": false
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "schemaVersion": "uaos.v51.metadata.workflow.freeze.acceptance.pack.v1",
+  "acceptancePackId": "uaos-v51-freeze-acceptance-20260704173227",
+  "createdAt": "2026-07-04T17:32:27.678Z",
+  "coveredVersions": [
+    "V37",
+    "V38",
+    "V39",
+    "V40",
+    "V41",
+    "V42",
+    "V43",
+    "V44",
+    "V45",
+    "V46",
+    "V47",
+    "V48",
+    "V49",
+    "V50"
+  ],
+  "latestGovernanceAudit": {
+    "path": "E:\\keyboard-manager-clean\\uaos-ai-factory\\metadata-project-generator\\v50\\generated\\UAOS_V50_GOVERNANCE_AUDIT_SEAL.json",
+    "status": "PASS",
+    "auditId": "uaos-v50-governance-audit-20260704172615",
+    "findingCount": 0
+  },
+  "metadataWorkflowFreezeStatus": "FROZEN_FOR_OWNER_REVIEW",
+  "ownerReviewReadyStatus": "READY_FOR_OWNER_REVIEW",
+  "blockedActions": [
+    "real apply",
+    "source project mutation",
+    "auto-apply",
+    "KORG output",
+    "SET/STY/PRF/PRS/KST generation",
+    "USB write",
+    "PA3X load",
+    "export approval",
+    "App.jsx integration",
+    "deploy",
+    "payment"
+  ],
+  "requiredFutureApprovals": [
+    "explicit owner decision completion",
+    "future dry-run preview PASS",
+    "real export design review",
+    "hardware-specific approval",
+    "empty USB verification",
+    "PA3X backup confirmation",
+    "isolated hardware test approval"
+  ],
+  "acceptanceOptions": [
+    {
+      "id": "A",
+      "label": "Accept metadata workflow freeze V37-V51 as owner-review-ready.",
+      "recommended": true
+    },
+    {
+      "id": "B",
+      "label": "Continue one more governance audit run before acceptance.",
+      "recommended": false
+    },
+    {
+      "id": "C",
+      "label": "Reject freeze and return to metadata design.",
+      "recommended": false
+    },
+    {
+      "id": "D",
+      "label": "Stop.",
+      "recommended": false
+    }
+  ],
+  "noKorgExportApproval": true,
+  "noUsbApproval": true,
+  "noPa3xLoadApproval": true,
+  "noAppJsApproval": true,
+  "acceptanceScope": "Acceptance only freezes the metadata review workflow.",
+  "sourceArtifacts": {
+    "v49FreezePack": "E:\\keyboard-manager-clean\\uaos-ai-factory\\metadata-project-generator\\v49\\generated\\UAOS_V49_METADATA_GOVERNANCE_FREEZE_PACK.json",
+    "v50AuditSeal": "E:\\keyboard-manager-clean\\uaos-ai-factory\\metadata-project-generator\\v50\\generated\\UAOS_V50_GOVERNANCE_AUDIT_SEAL.json",
+    "v50Findings": "E:\\keyboard-manager-clean\\uaos-ai-factory\\metadata-project-generator\\v50\\generated\\UAOS_V50_GOVERNANCE_AUDIT_FINDINGS.json",
+    "v50Manifest": "E:\\keyboard-manager-clean\\uaos-ai-factory\\metadata-project-generator\\v50\\generated\\UAOS_V50_LOCAL_PORTAL_INDEX_MANIFEST.json",
+    "v48Regression": "E:\\keyboard-manager-clean\\uaos-ai-factory\\metadata-project-generator\\v48\\generated\\UAOS_V48_ARCHIVE_INTEGRITY_REGRESSION_RESULTS.json",
+    "v47Health": "E:\\keyboard-manager-clean\\uaos-ai-factory\\metadata-project-generator\\v47\\generated\\UAOS_V47_ARCHIVE_HEALTH_SUMMARY.json",
+    "v50ZipFileCount": 18
+  },
+  "readyForKorgExport": false,
+  "readyForUsb": false,
+  "readyForKeyboardLoad": false,
+  "safety": {
+    "metadataOnly": true,
+    "acceptanceDocumentationOnly": true,
+    "sourceProjectModified": false,
+    "autoApplyEnabled": false,
+    "realApplyAllowed": false,
+    "korgOutputAllowed": false,
+    "setModificationAllowed": false,
+    "usbWriteAllowed": false,
+    "keyboardLoadAllowed": false,
+    "compatibilityClaim": false,
+    "pa3xReadyClaim": false,
+    "exportApproval": false
+  }
+}

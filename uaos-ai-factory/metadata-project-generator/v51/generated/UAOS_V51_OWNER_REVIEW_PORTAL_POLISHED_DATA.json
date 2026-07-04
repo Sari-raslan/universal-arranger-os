@@ -1,0 +1,190 @@
+{
+  "schemaVersion": "uaos.v51.owner.review.portal.polished.data.v1",
+  "generatedAt": "2026-07-04T17:32:41.007Z",
+  "timeline": [
+    {
+      "version": "V37",
+      "folder": "E:\\keyboard-manager-clean\\uaos-ai-factory\\metadata-project-generator\\v37",
+      "status": "available"
+    },
+    {
+      "version": "V38",
+      "folder": "E:\\keyboard-manager-clean\\uaos-ai-factory\\metadata-project-generator\\v38",
+      "status": "available"
+    },
+    {
+      "version": "V39",
+      "folder": "E:\\keyboard-manager-clean\\uaos-ai-factory\\metadata-project-generator\\v39",
+      "status": "available"
+    },
+    {
+      "version": "V40",
+      "folder": "E:\\keyboard-manager-clean\\uaos-ai-factory\\metadata-project-generator\\v40",
+      "status": "available"
+    },
+    {
+      "version": "V41",
+      "folder": "E:\\keyboard-manager-clean\\uaos-ai-factory\\metadata-project-generator\\v41",
+      "status": "available"
+    },
+    {
+      "version": "V42",
+      "folder": "E:\\keyboard-manager-clean\\uaos-ai-factory\\metadata-project-generator\\v42",
+      "status": "available"
+    },
+    {
+      "version": "V43",
+      "folder": "E:\\keyboard-manager-clean\\uaos-ai-factory\\metadata-project-generator\\v43",
+      "status": "available"
+    },
+    {
+      "version": "V44",
+      "folder": "E:\\keyboard-manager-clean\\uaos-ai-factory\\metadata-project-generator\\v44",
+      "status": "available"
+    },
+    {
+      "version": "V45",
+      "folder": "E:\\keyboard-manager-clean\\uaos-ai-factory\\metadata-project-generator\\v45",
+      "status": "available"
+    },
+    {
+      "version": "V46",
+      "folder": "E:\\keyboard-manager-clean\\uaos-ai-factory\\metadata-project-generator\\v46",
+      "status": "available"
+    },
+    {
+      "version": "V47",
+      "folder": "E:\\keyboard-manager-clean\\uaos-ai-factory\\metadata-project-generator\\v47",
+      "status": "available"
+    },
+    {
+      "version": "V48",
+      "folder": "E:\\keyboard-manager-clean\\uaos-ai-factory\\metadata-project-generator\\v48",
+      "status": "available"
+    },
+    {
+      "version": "V49",
+      "folder": "E:\\keyboard-manager-clean\\uaos-ai-factory\\metadata-project-generator\\v49",
+      "status": "available"
+    },
+    {
+      "version": "V50",
+      "folder": "E:\\keyboard-manager-clean\\uaos-ai-factory\\metadata-project-generator\\v50",
+      "status": "available"
+    },
+    {
+      "version": "V51",
+      "folder": "E:\\keyboard-manager-clean\\uaos-ai-factory\\metadata-project-generator\\v51",
+      "status": "available"
+    }
+  ],
+  "startHere": "Open the decision form, review the checklist, then choose an acceptance option manually.",
+  "ownerDecisionWorkflow": [
+    {
+      "id": "A",
+      "label": "Accept metadata workflow freeze V37-V51 as owner-review-ready.",
+      "recommended": true
+    },
+    {
+      "id": "B",
+      "label": "Continue one more governance audit run before acceptance.",
+      "recommended": false
+    },
+    {
+      "id": "C",
+      "label": "Reject freeze and return to metadata design.",
+      "recommended": false
+    },
+    {
+      "id": "D",
+      "label": "Stop.",
+      "recommended": false
+    }
+  ],
+  "freezeAcceptance": {
+    "status": "FROZEN_FOR_OWNER_REVIEW",
+    "ownerReviewReadyStatus": "READY_FOR_OWNER_REVIEW",
+    "checklistPassed": true
+  },
+  "safetyStatus": "PASS",
+  "blockedActions": [
+    "real apply",
+    "source project mutation",
+    "auto-apply",
+    "KORG output",
+    "SET/STY/PRF/PRS/KST generation",
+    "USB write",
+    "PA3X load",
+    "export approval",
+    "App.jsx integration",
+    "deploy",
+    "payment"
+  ],
+  "keyFiles": [
+    {
+      "label": "Acceptance pack",
+      "localPath": "E:\\keyboard-manager-clean\\uaos-ai-factory\\metadata-project-generator\\v51\\generated\\UAOS_V51_METADATA_WORKFLOW_FREEZE_ACCEPTANCE_PACK.json"
+    },
+    {
+      "label": "Decision form",
+      "localPath": "E:\\keyboard-manager-clean\\uaos-ai-factory\\metadata-project-generator\\v51\\generated\\UAOS_V51_FREEZE_ACCEPTANCE_DECISION_FORM.md"
+    },
+    {
+      "label": "Checklist",
+      "localPath": "E:\\keyboard-manager-clean\\uaos-ai-factory\\metadata-project-generator\\v51\\generated\\UAOS_V51_FREEZE_ACCEPTANCE_CHECKLIST.json"
+    },
+    {
+      "label": "V50 governance audit",
+      "localPath": "E:\\keyboard-manager-clean\\uaos-ai-factory\\metadata-project-generator\\v50\\generated\\UAOS_V50_GOVERNANCE_AUDIT_SEAL.json"
+    },
+    {
+      "label": "V49 static portal",
+      "localPath": "E:\\keyboard-manager-clean\\uaos-ai-factory\\metadata-project-generator\\v49\\generated\\UAOS_V49_LOCAL_STATIC_REVIEW_PORTAL.html"
+    }
+  ],
+  "nextSafeActions": [
+    {
+      "id": "A",
+      "action": "V52 Metadata Freeze Acceptance Seal",
+      "safety": "metadata-only",
+      "recommended": true
+    },
+    {
+      "id": "B",
+      "action": "V52 UI Integration Plan",
+      "safety": "planning only, no App.jsx",
+      "recommended": false
+    },
+    {
+      "id": "C",
+      "action": "V52 Export Readiness Gap Analysis",
+      "safety": "no export and no KORG output",
+      "recommended": true
+    },
+    {
+      "id": "D",
+      "action": "Stop",
+      "safety": "always available",
+      "recommended": false
+    }
+  ],
+  "inheritedV49ArchiveRegressionStatus": "PASS",
+  "inheritedV50GovernanceStatus": "PASS",
+  "readyForKorgExport": false,
+  "readyForUsb": false,
+  "readyForKeyboardLoad": false,
+  "safety": {
+    "metadataOnly": true,
+    "localPortalPolishOnly": true,
+    "sourceProjectModified": false,
+    "autoApplyEnabled": false,
+    "realApplyAllowed": false,
+    "korgOutputAllowed": false,
+    "setModificationAllowed": false,
+    "usbWriteAllowed": false,
+    "keyboardLoadAllowed": false,
+    "compatibilityClaim": false,
+    "pa3xReadyClaim": false,
+    "exportApproval": false
+  }
+}
