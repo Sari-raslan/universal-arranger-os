@@ -1,0 +1,73 @@
+{
+  "validator": "UAOS_BATCH_V86_V90_FINAL_LOCAL_TRIAL_VALIDATOR",
+  "status": "PASS",
+  "generated_at": "2026-07-04T21:27:11.735334+00:00",
+  "checks": [
+    {
+      "name": "V86 PASS",
+      "passed": true,
+      "detail": "PASS"
+    },
+    {
+      "name": "V87 PASS",
+      "passed": true,
+      "detail": "PASS"
+    },
+    {
+      "name": "V88 PASS",
+      "passed": true,
+      "detail": "PASS"
+    },
+    {
+      "name": "V89 PASS",
+      "passed": true,
+      "detail": "PASS"
+    },
+    {
+      "name": "V90 PASS",
+      "passed": true,
+      "detail": "PASS"
+    },
+    {
+      "name": "V71 MIDI exists and valid",
+      "passed": true,
+      "detail": "V71"
+    },
+    {
+      "name": "V81 MIDI exists and valid",
+      "passed": true,
+      "detail": "V81"
+    },
+    {
+      "name": "V82 MIDI exists and valid",
+      "passed": true,
+      "detail": "V82"
+    },
+    {
+      "name": "V85 ZIP exists",
+      "passed": true,
+      "detail": "V85"
+    },
+    {
+      "name": "V89 final ZIP exists and valid",
+      "passed": true,
+      "detail": "E:\\keyboard-manager-clean\\uaos-ai-factory\\metadata-project-generator\\v89\\exports\\UAOS_V89_FINAL_LOCAL_TRIAL_PACKAGE.zip"
+    },
+    {
+      "name": "no .SET/.STY/.PRF/.PRS/.KST",
+      "passed": true,
+      "detail": "none"
+    },
+    {
+      "name": "no USB/PA3X/React/deploy/payment/claims",
+      "passed": true,
+      "detail": "{}"
+    },
+    {
+      "name": "no App.jsx touched",
+      "passed": true,
+      "detail": "git diff HEAD"
+    }
+  ],
+  "next_fastest_action": "owner tests MIDI in DAW, then choose next gate"
+}

@@ -3,7 +3,7 @@
 status: "DRAFT_ONLY"
 
 ## Next Safe Action
-Execute V86-V90 Final Local Trial + External Tester Package after V81-V85 MIDI upgrade PASS.
+Owner tests MIDI in DAW, then choose next gate.
 
 ## Completed Safe Actions
 - V74 Export Validator Hardening: PASS
@@ -11,6 +11,7 @@ Execute V86-V90 Final Local Trial + External Tester Package after V81-V85 MIDI u
 - V74-V75 batch dashboard: PASS
 - V76-V80 Local Program RC Export Trial: PASS
 - V81-V85 Real MIDI Arrangement Upgrade: PASS
+- V86-V90 Final Local Trial + External Tester Package: PASS
 
 ## Next Action Options
 1. improve MIDI arrangement depth

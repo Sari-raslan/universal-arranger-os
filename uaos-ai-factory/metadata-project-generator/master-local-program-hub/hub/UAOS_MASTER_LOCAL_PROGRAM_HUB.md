@@ -33,6 +33,12 @@ export_allowed: false
 - V84 Tester Handoff: `../v84/tester/UAOS_V84_MIDI_TESTER_HANDOFF_README.md`
 - V85 MIDI Test ZIP: `../v85/exports/UAOS_V85_GENERIC_MIDI_TEST_PACKAGE.zip`
 - V81-V85 MIDI Upgrade Batch: `../batch-v81-v85-midi-upgrade/UAOS_BATCH_V81_V85_MIDI_UPGRADE_OPEN_HERE.html`
+- V86 Final Trial Dashboard: `../v86/trial/UAOS_V86_FINAL_LOCAL_TRIAL_DASHBOARD.html`
+- V87 External Tester Handoff: `../v87/external-tester/UAOS_V87_EXTERNAL_TESTER_START_HERE.md`
+- V88 Evidence Index: `../v88/evidence/UAOS_V88_MIDI_TEST_EVIDENCE_INDEX.json`
+- V89 Final Local Trial ZIP: `../v89/exports/UAOS_V89_FINAL_LOCAL_TRIAL_PACKAGE.zip`
+- V90 Final Summary: `../v90/summary/UAOS_V90_FINAL_V71_TO_V90_TRIAL_SUMMARY.md`
+- V86-V90 Final Local Trial Batch: `../batch-v86-v90-final-local-trial/UAOS_BATCH_V86_V90_FINAL_LOCAL_TRIAL_OPEN_HERE.html`
 - Export Blocker / Research Gates: blocked and research-only.
 - QA Reports: `../master-local-program-hub/reports/`
 - Owner Dashboards: `../master-local-program-hub/dashboards/UAOS_MASTER_OWNER_REVIEW_DASHBOARD.html`
@@ -43,4 +49,4 @@ export_allowed: false
 This hub links local metadata, static dashboard outputs, approved local V71-V73 export artifacts, V74 validation, the V75 static local preview, and the V76-V80 static local RC package only. It does not integrate with React, deploy, accept payment, or create KORG files.
 
 ## Next Action Options
-Next safe action: V86-V90 Final Local Trial + External Tester Package
+Next safe action: owner tests MIDI in DAW, then choose next gate
