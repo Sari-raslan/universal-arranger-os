@@ -1,0 +1,155 @@
+{
+  "schemaVersion": "uaos.v54.style.engine.bridge.dryrun.output.v1",
+  "bridgeRunId": "uaos-v54-bridge-dryrun-20260704175547",
+  "createdAt": "2026-07-04T17:55:47.791Z",
+  "dryRunOnly": true,
+  "metadataOnly": true,
+  "inputProjectId": "uaos-v37-example-project",
+  "mappingResults": [
+    {
+      "category": "tempo",
+      "inputPath": "uaosproject.musicalIntent.tempo",
+      "outputPath": "styleEngine.tempo",
+      "status": "mapped_as_metadata_preview"
+    },
+    {
+      "category": "timeSignature",
+      "inputPath": "uaosproject.musicalIntent.timeSignature",
+      "outputPath": "styleEngine.timeSignature",
+      "status": "mapped_as_metadata_preview"
+    },
+    {
+      "category": "scaleMode",
+      "inputPath": "uaosproject.musicalIntent.scaleMode",
+      "outputPath": "styleEngine.scaleMode",
+      "status": "mapped_as_metadata_preview"
+    },
+    {
+      "category": "chordProgression",
+      "inputPath": "uaosproject.musicalIntent.chordProgression",
+      "outputPath": "styleEngine.chordProgression",
+      "status": "mapped_as_metadata_preview"
+    },
+    {
+      "category": "sections",
+      "inputPath": "uaosproject.musicalIntent.sections",
+      "outputPath": "styleEngine.sections",
+      "status": "mapped_as_metadata_preview"
+    },
+    {
+      "category": "trackRoles",
+      "inputPath": "uaosproject.musicalIntent.trackRoles",
+      "outputPath": "styleEngine.trackRoles",
+      "status": "mapped_as_metadata_preview"
+    },
+    {
+      "category": "rhythmDensity",
+      "inputPath": "uaosproject.musicalIntent.rhythmDensity",
+      "outputPath": "styleEngine.rhythmDensity",
+      "status": "mapped_as_metadata_preview"
+    },
+    {
+      "category": "bassMovement",
+      "inputPath": "uaosproject.musicalIntent.bassMovement",
+      "outputPath": "styleEngine.bassMovement",
+      "status": "mapped_as_metadata_preview"
+    },
+    {
+      "category": "chordRhythm",
+      "inputPath": "uaosproject.musicalIntent.chordRhythm",
+      "outputPath": "styleEngine.chordRhythm",
+      "status": "mapped_as_metadata_preview"
+    },
+    {
+      "category": "orientalFeel",
+      "inputPath": "uaosproject.musicalIntent.orientalFeel",
+      "outputPath": "styleEngine.orientalFeel",
+      "status": "mapped_as_metadata_preview"
+    },
+    {
+      "category": "dspIntent",
+      "inputPath": "dspPlan.channels",
+      "outputPath": "styleEngine.dspIntent",
+      "status": "mapped_as_metadata_preview"
+    },
+    {
+      "category": "humanReviewStatus",
+      "inputPath": "uaosproject.musicalIntent.humanReviewStatus",
+      "outputPath": "styleEngine.humanReviewStatus",
+      "status": "mapped_as_metadata_preview"
+    }
+  ],
+  "missingMappings": [
+    "rhythmDensity must be confirmed by scoring or owner review",
+    "bassMovement must be confirmed by scoring or owner review",
+    "chordRhythm must be confirmed by scoring or owner review",
+    "humanReviewStatus must come from owner decision workflow"
+  ],
+  "generatedStyleIntentPreview": {
+    "family": "oriental_pop",
+    "tempo": 96,
+    "sections": [
+      "intro",
+      "variation1",
+      "variation2",
+      "variation3",
+      "variation4",
+      "fill",
+      "ending"
+    ],
+    "trackRoles": [
+      "rhythm",
+      "low_end",
+      "harmony",
+      "texture",
+      "guide"
+    ]
+  },
+  "styleEngineInputPreview": {
+    "tempo": 96,
+    "timeSignature": "4/4",
+    "scaleMode": "hijaz_oriental_reference",
+    "chordProgression": [
+      "Dm",
+      "C",
+      "Bb",
+      "A"
+    ],
+    "sections": [
+      "intro",
+      "variation1",
+      "variation2",
+      "variation3",
+      "variation4",
+      "fill",
+      "ending"
+    ],
+    "trackRoles": [
+      "rhythm",
+      "low_end",
+      "harmony",
+      "texture",
+      "guide"
+    ],
+    "rhythmDensityIntent": "requires_owner_or_scoring_confirmation",
+    "bassMovementIntent": "requires_owner_or_scoring_confirmation",
+    "chordRhythmIntent": "requires_owner_or_scoring_confirmation",
+    "orientalFeelIntent": "metadata_description_only",
+    "dspIntentSummary": "linked_via_project_dsp_plan"
+  },
+  "humanReviewRequired": true,
+  "realStyleGenerationAllowed": false,
+  "korgOutputAllowed": false,
+  "exportAllowed": false,
+  "usbAllowed": false,
+  "keyboardLoadAllowed": false,
+  "safety": {
+    "dryRunOnly": true,
+    "metadataOnly": true,
+    "realStyleGenerationAllowed": false,
+    "korgOutputAllowed": false,
+    "exportAllowed": false,
+    "usbAllowed": false,
+    "keyboardLoadAllowed": false
+  }
+}

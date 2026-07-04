@@ -1,0 +1,29 @@
+{
+  "status": "PASS",
+  "checkedAt": "2026-07-04T17:55:54.445Z",
+  "checkedFiles": {
+    "adapter": "generated/UAOS_V54_INTERNAL_PROJECT_ADAPTER_OUTPUT.json",
+    "adapterMd": "generated/UAOS_V54_INTERNAL_PROJECT_ADAPTER_OUTPUT.md",
+    "bridge": "generated/UAOS_V54_STYLE_ENGINE_BRIDGE_DRYRUN_OUTPUT.json",
+    "bridgeMd": "generated/UAOS_V54_STYLE_ENGINE_BRIDGE_DRYRUN_OUTPUT.md",
+    "foundation": "generated/UAOS_V54_EXPORT_GATE_VALIDATOR_FOUNDATION.json",
+    "results": "generated/UAOS_V54_EXPORT_GATE_VALIDATOR_RESULTS.json",
+    "report": "generated/UAOS_V54_EXPORT_GATE_VALIDATOR_REPORT.md",
+    "matrix": "generated/UAOS_V54_NEXT_RECOMMENDATION_MATRIX.json"
+  },
+  "errors": [],
+  "warnings": [],
+  "safety": {
+    "readOnlyPrototypeOnly": true,
+    "metadataOnly": true,
+    "dryRunOnly": true,
+    "noRealAppIntegration": true,
+    "noSourceProjectMutation": true,
+    "noKorgOutput": true,
+    "noUsbWrite": true,
+    "noKeyboardLoad": true,
+    "noAppJs": true,
+    "noDeploy": true,
+    "noPayment": true
+  }
+}

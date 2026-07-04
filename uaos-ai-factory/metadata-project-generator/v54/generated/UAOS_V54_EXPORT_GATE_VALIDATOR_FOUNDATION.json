@@ -1,0 +1,133 @@
+{
+  "schemaVersion": "uaos.v54.export.gate.validator.foundation.v1",
+  "validatorId": "uaos-v54-export-gate-validator-20260704175553",
+  "createdAt": "2026-07-04T17:55:53.172Z",
+  "gatesChecked": 13,
+  "gateResults": [
+    {
+      "gateId": "gate-01",
+      "title": "Metadata freeze accepted",
+      "status": "PASS_METADATA_ONLY",
+      "exportAllowed": false,
+      "usbAllowed": false,
+      "keyboardLoadAllowed": false
+    },
+    {
+      "gateId": "gate-02",
+      "title": "Owner decisions filled",
+      "status": "BLOCKED",
+      "exportAllowed": false,
+      "usbAllowed": false,
+      "keyboardLoadAllowed": false
+    },
+    {
+      "gateId": "gate-03",
+      "title": "Decision dry-run preview PASS",
+      "status": "BLOCKED",
+      "exportAllowed": false,
+      "usbAllowed": false,
+      "keyboardLoadAllowed": false
+    },
+    {
+      "gateId": "gate-04",
+      "title": "Internal project adapter PASS",
+      "status": "PASS_METADATA_ONLY",
+      "exportAllowed": false,
+      "usbAllowed": false,
+      "keyboardLoadAllowed": false
+    },
+    {
+      "gateId": "gate-05",
+      "title": "Style engine bridge dry-run PASS",
+      "status": "PASS_METADATA_ONLY",
+      "exportAllowed": false,
+      "usbAllowed": false,
+      "keyboardLoadAllowed": false
+    },
+    {
+      "gateId": "gate-06",
+      "title": "Internal style generation test PASS",
+      "status": "BLOCKED",
+      "exportAllowed": false,
+      "usbAllowed": false,
+      "keyboardLoadAllowed": false
+    },
+    {
+      "gateId": "gate-07",
+      "title": "KORG writer design review PASS",
+      "status": "BLOCKED",
+      "exportAllowed": false,
+      "usbAllowed": false,
+      "keyboardLoadAllowed": false
+    },
+    {
+      "gateId": "gate-08",
+      "title": "Native output candidate inspection PASS",
+      "status": "BLOCKED",
+      "exportAllowed": false,
+      "usbAllowed": false,
+      "keyboardLoadAllowed": false
+    },
+    {
+      "gateId": "gate-09",
+      "title": "Empty USB verification PASS",
+      "status": "BLOCKED",
+      "exportAllowed": false,
+      "usbAllowed": false,
+      "keyboardLoadAllowed": false
+    },
+    {
+      "gateId": "gate-10",
+      "title": "PA3X full backup confirmed",
+      "status": "BLOCKED",
+      "exportAllowed": false,
+      "usbAllowed": false,
+      "keyboardLoadAllowed": false
+    },
+    {
+      "gateId": "gate-11",
+      "title": "Hardware test approval",
+      "status": "BLOCKED",
+      "exportAllowed": false,
+      "usbAllowed": false,
+      "keyboardLoadAllowed": false
+    },
+    {
+      "gateId": "gate-12",
+      "title": "PA3X observation completed",
+      "status": "BLOCKED",
+      "exportAllowed": false,
+      "usbAllowed": false,
+      "keyboardLoadAllowed": false
+    },
+    {
+      "gateId": "gate-13",
+      "title": "Compatibility claim review completed",
+      "status": "BLOCKED",
+      "exportAllowed": false,
+      "usbAllowed": false,
+      "keyboardLoadAllowed": false
+    }
+  ],
+  "blockerCount": 10,
+  "warningCount": 0,
+  "passCount": 3,
+  "exportAllowed": false,
+  "usbAllowed": false,
+  "keyboardLoadAllowed": false,
+  "korgOutputAllowed": false,
+  "compatibilityClaimAllowed": false,
+  "sourceSummary": {
+    "v52GateCount": 10,
+    "v53RoadmapGateCount": 13
+  },
+  "safety": {
+    "metadataOnly": true,
+    "dryRunOnly": true,
+    "exportAllowed": false,
+    "usbAllowed": false,
+    "keyboardLoadAllowed": false,
+    "korgOutputAllowed": false,
+    "compatibilityClaimAllowed": false
+  }
+}
