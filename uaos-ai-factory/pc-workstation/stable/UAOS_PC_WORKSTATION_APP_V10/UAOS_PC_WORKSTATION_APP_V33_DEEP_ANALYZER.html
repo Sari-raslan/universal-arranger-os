@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>UAOS V33 Deep Analyzer</title>
+  <link rel="stylesheet" href="assets/uaos_v33_deep_analyzer.css">
+</head>
+<body>
+  <header class="topbar">
+    <div><p>UAOS PC Workstation</p><h1>V33 Deep SET Heuristic Analyzer</h1></div>
+    <div class="badges"><span>READ ONLY</span><span>HYPOTHESIS ONLY</span><span>NO USB</span><span>NO PA3X</span></div>
+  </header>
+  <main>
+    <section class="hero">
+      <article><span>Files analyzed</span><strong>38</strong></article>
+      <article><span>SET structure</span><strong>YES</strong></article>
+      <article><span>Sampler candidates</span><strong>0</strong></article>
+      <article><span>Weak candidates</span><strong>1</strong></article>
+      <article><span>Useful suggestions</span><strong>1</strong></article>
+    </section>
+    <nav class="tabs">
+      <button class="active" data-panel="summary">ملخص الست</button>
+      <button data-panel="structure">هيكل المجلدات</button>
+      <button data-panel="classification">الأصوات/الستايلات/السامبلر</button>
+      <button data-panel="weak">الفارغ والضعيف</button>
+      <button data-panel="duplicates">المكرر</button>
+      <button data-panel="sampler">مجموعات السامبلر</button>
+      <button data-panel="dsp">DSP موحد</button>
+      <button data-panel="suggestions">اقتراحات V33</button>
+      <button data-panel="manual">مراجعة يدوية</button>
+      <button data-panel="safety">الأمان</button>
+    </nav>
+    <section class="panel active" id="summary">
+      <h2>ملخص الست</h2>
+      <p>V33 وجد هيكل SET بشكل جزئي/واضح من المسار، وصنف 38 ملفًا بقواعد امتداد ومجلد محافظة.</p>
+      <div class="grid" id="classificationCards"></div>
+    </section>
+    <section class="panel" id="structure">
+      <h2>هيكل المجلدات</h2>
+      <p>تم التعرف على GLOBAL و PERFORM/PAD و SONGBOOK و STYLE داخل NEWNAME.SET كهيكل SET محتمل. هذا ليس parse ثنائي كامل.</p>
+    </section>
+    <section class="panel" id="classification">
+      <h2>الأصوات/الستايلات/السامبلر</h2>
+      <p>likely_sound_container: 26، likely_style_container: 1، likely_songbook: 8، likely_global: 3.</p>
+    </section>
+    <section class="panel" id="weak">
+      <h2>الفارغ والضعيف</h2>
+      <p>تم العثور على مرشح ضعيف واحد فقط حسب الحجم/الغموض. لا يوجد فراغ مؤكد.</p>
+    </section>
+    <section class="panel" id="duplicates"><h2>المكرر</h2><p>Duplicate groups: 0 حسب sha256.</p></section>
+    <section class="panel" id="sampler"><h2>مجموعات السامبلر</h2><p>Sampler groups: 0. لا توجد امتدادات sample-like واضحة، والعلاقات الداخلية ما زالت UNKNOWN.</p></section>
+    <section class="panel" id="dsp"><h2>DSP موحد</h2><div class="grid" id="dspCards"></div></section>
+    <section class="panel" id="suggestions">
+      <h2>اقتراحات V33</h2>
+      <p>Useful suggestions: 1. نوعها مراجعة/تحسين يدوي، وليست كتابة أو تبديل داخل SET.</p>
+      <p>كل اقتراح: hypothesis_only_no_write.</p>
+    </section>
+    <section class="panel" id="manual"><h2>مراجعة يدوية</h2><p>افتح V33_MANUAL_REVIEW_REQUIRED_AR.md لمراجعة الهدف والسبب والخطوة التالية.</p></section>
+    <section class="panel safety" id="safety">
+      <h2>الأمان</h2>
+      <div><span>Read-only</span><strong>YES</strong></div>
+      <div><span>Original SET modified</span><strong>NO</strong></div>
+      <div><span>Binary writer</span><strong>NO</strong></div>
+      <div><span>Sample extraction</span><strong>NO</strong></div>
+      <div><span>USB write</span><strong>NO</strong></div>
+      <div><span>PA3X load</span><strong>NO</strong></div>
+    </section>
+  </main>
+  <script src="assets/uaos_v33_deep_analyzer.js"></script>
+</body>
+</html>
