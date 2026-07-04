@@ -1,0 +1,165 @@
+{
+  "source_status": {
+    "inventory": "FOUND",
+    "empty": "FOUND",
+    "duplicates": "FOUND",
+    "sampler": "FOUND",
+    "used_unused": "FOUND",
+    "dsp_plan": "FOUND",
+    "suggestions": "FOUND",
+    "fill_plan": "FOUND"
+  },
+  "set_read": "PASS",
+  "files_analyzed": 38,
+  "suggestions_found": 0,
+  "extension_counts": {
+    ".mxp": 1,
+    ".gbl": 1,
+    ".voc": 1,
+    ".pad": 10,
+    ".prf": 16,
+    ".sbl": 1,
+    ".sty": 1,
+    ".sbd": 7
+  },
+  "category_counts": {
+    "possible_unknown_binary": 11,
+    "possible_performance_file": 26,
+    "possible_style_file": 1
+  },
+  "top_largest_files": [
+    {
+      "relative_path": "NEWNAME.SET\\STYLE\\USER01.STY",
+      "file_name": "USER01.STY",
+      "extension": ".sty",
+      "size": 767611,
+      "modified_timestamp": "2007-06-28T09:46:22+00:00",
+      "sha256": "628f80e276227c10e92f3d7d6a35f94df3f905824da55fa412cff82e3db340f6",
+      "category_guess": "possible_style_file",
+      "confidence": 0.72,
+      "relationship": "UNKNOWN",
+      "note": "Binary structure is not parsed in V31; relationships are conservative metadata hypotheses."
+    },
+    {
+      "relative_path": "NEWNAME.SET\\SONGBOOK\\SONGDB.SBD\\BANK06.SBD",
+      "file_name": "BANK06.SBD",
+      "extension": ".sbd",
+      "size": 51534,
+      "modified_timestamp": "2007-06-28T09:46:16+00:00",
+      "sha256": "a1152afc2ae4bae998397866178d36149b4471c5adcb44e94804ee733cf62ebf",
+      "category_guess": "possible_unknown_binary",
+      "confidence": 0.35,
+      "relationship": "UNKNOWN",
+      "note": "Binary structure is not parsed in V31; relationships are conservative metadata hypotheses."
+    },
+    {
+      "relative_path": "NEWNAME.SET\\SONGBOOK\\SONGDB.SBD\\BANK03.SBD",
+      "file_name": "BANK03.SBD",
+      "extension": ".sbd",
+      "size": 47913,
+      "modified_timestamp": "2007-06-28T09:46:14+00:00",
+      "sha256": "b2aa0b2366dfecec0279f9fa90ba7b504320bca9e076294adf31c7a7d77305c8",
+      "category_guess": "possible_unknown_binary",
+      "confidence": 0.35,
+      "relationship": "UNKNOWN",
+      "note": "Binary structure is not parsed in V31; relationships are conservative metadata hypotheses."
+    },
+    {
+      "relative_path": "NEWNAME.SET\\SONGBOOK\\SONGDB.SBD\\BANK02.SBD",
+      "file_name": "BANK02.SBD",
+      "extension": ".sbd",
+      "size": 47582,
+      "modified_timestamp": "2007-06-28T09:46:14+00:00",
+      "sha256": "0eac12193874dde7805c4f28544c78711d4f0cc6a9eb115aa0db89db22e8de74",
+      "category_guess": "possible_unknown_binary",
+      "confidence": 0.35,
+      "relationship": "UNKNOWN",
+      "note": "Binary structure is not parsed in V31; relationships are conservative metadata hypotheses."
+    },
+    {
+      "relative_path": "NEWNAME.SET\\SONGBOOK\\SONGDB.SBD\\BANK04.SBD",
+      "file_name": "BANK04.SBD",
+      "extension": ".sbd",
+      "size": 47200,
+      "modified_timestamp": "2007-06-28T09:46:16+00:00",
+      "sha256": "5e2f55d6d44c2991b53a22f7ee5c50da2ce62dc836211ef20dd36824dfff9a8f",
+      "category_guess": "possible_unknown_binary",
+      "confidence": 0.35,
+      "relationship": "UNKNOWN",
+      "note": "Binary structure is not parsed in V31; relationships are conservative metadata hypotheses."
+    },
+    {
+      "relative_path": "NEWNAME.SET\\SONGBOOK\\SONGDB.SBD\\BANK05.SBD",
+      "file_name": "BANK05.SBD",
+      "extension": ".sbd",
+      "size": 46636,
+      "modified_timestamp": "2007-06-28T09:46:16+00:00",
+      "sha256": "b22c9bdebc60ed362737e38e2326625b5e7ca28e9cd99cce34deeee43ca9ee80",
+      "category_guess": "possible_unknown_binary",
+      "confidence": 0.35,
+      "relationship": "UNKNOWN",
+      "note": "Binary structure is not parsed in V31; relationships are conservative metadata hypotheses."
+    },
+    {
+      "relative_path": "NEWNAME.SET\\SONGBOOK\\SONGDB.SBD\\BANK01.SBD",
+      "file_name": "BANK01.SBD",
+      "extension": ".sbd",
+      "size": 46514,
+      "modified_timestamp": "2007-06-28T09:46:14+00:00",
+      "sha256": "7022ac3b8174d98b86419bd63fa57cab37e242e6991b9ee0b772a8035789db53",
+      "category_guess": "possible_unknown_binary",
+      "confidence": 0.35,
+      "relationship": "UNKNOWN",
+      "note": "Binary structure is not parsed in V31; relationships are conservative metadata hypotheses."
+    },
+    {
+      "relative_path": "NEWNAME.SET\\GLOBAL\\VPPRESET.VOC",
+      "file_name": "VPPRESET.VOC",
+      "extension": ".voc",
+      "size": 34304,
+      "modified_timestamp": "2007-06-28T09:46:14+00:00",
+      "sha256": "b12f1e0272ce324d4f05de8af5e4901458c75357cec63506609a47bec048235b",
+      "category_guess": "possible_unknown_binary",
+      "confidence": 0.35,
+      "relationship": "UNKNOWN",
+      "note": "Binary structure is not parsed in V31; relationships are conservative metadata hypotheses."
+    },
+    {
+      "relative_path": "NEWNAME.SET\\PERFORM\\BANK09.PRF",
+      "file_name": "BANK09.PRF",
+      "extension": ".prf",
+      "size": 32230,
+      "modified_timestamp": "2007-06-28T09:46:16+00:00",
+      "sha256": "902d4423699da54ee64e15f875a19e4940bbf4cb3bac7985a90b1318686efad5",
+      "category_guess": "possible_performance_file",
+      "confidence": 0.6,
+      "relationship": "UNKNOWN",
+      "note": "Binary structure is not parsed in V31; relationships are conservative metadata hypotheses."
+    },
+    {
+      "relative_path": "NEWNAME.SET\\PERFORM\\BANK10.PRF",
+      "file_name": "BANK10.PRF",
+      "extension": ".prf",
+      "size": 31879,
+      "modified_timestamp": "2007-06-28T09:46:18+00:00",
+      "sha256": "55478ed1987c4c2a0376db96ea6ccbaaaab191227932398dd7845ecf15c2abd3",
+      "category_guess": "possible_performance_file",
+      "confidence": 0.6,
+      "relationship": "UNKNOWN",
+      "note": "Binary structure is not parsed in V31; relationships are conservative metadata hypotheses."
+    }
+  ],
+  "duplicates_count": 0,
+  "empty_candidates_count": 0,
+  "sampler_candidates_count": 0,
+  "unknown_binaries_count": 11,
+  "confidence_summary": {
+    "CONFIRMED": 0,
+    "HYPOTHESIS": 0,
+    "UNKNOWN": 38
+  },
+  "replacement_explanation": "Replacement suggestions are 0 because V31 has no confirmed Sound/Sample reference mapping and no confident empty-slot-to-category match yet.",
+  "read_only": "YES",
+  "original_set_modified": "NO",
+  "manual_review_count": 38
+}

@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>UAOS V32 Results Dashboard</title>
+  <link rel="stylesheet" href="assets/uaos_v32_results_dashboard.css">
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <p>UAOS PC Workstation</p>
+      <h1>V32 Results Dashboard</h1>
+    </div>
+    <div class="badges"><span>READ ONLY</span><span>PC ONLY</span><span>NO USB</span><span>NO PA3X</span></div>
+  </header>
+  <main>
+    <section class="hero-grid">
+      <article class="status-card good"><span>SET READ</span><strong>PASS</strong></article>
+      <article class="status-card"><span>Files</span><strong id="filesCount">38</strong></article>
+      <article class="status-card warn"><span>Suggestions</span><strong id="suggestionsCount">0</strong></article>
+      <article class="status-card good"><span>Read-only</span><strong>YES</strong></article>
+    </section>
+
+    <nav class="tabs">
+      <button class="active" data-panel="summary">الملخص</button>
+      <button data-panel="files">الملفات</button>
+      <button data-panel="sampler">السامبلر</button>
+      <button data-panel="empty">الفارغ/المكرر</button>
+      <button data-panel="dsp">DSP</button>
+      <button data-panel="why">لماذا لا توجد اقتراحات؟</button>
+      <button data-panel="next">الخطوة التالية</button>
+      <button data-panel="safety">الأمان</button>
+    </nav>
+
+    <section class="panel active" id="summary">
+      <h2>الملخص</h2>
+      <div class="answer-grid">
+        <div><span>هل الست انقرأ؟</span><strong>نعم</strong></div>
+        <div><span>كم ملف وجدنا؟</span><strong>38</strong></div>
+        <div><span>هل في سامبلر؟</span><strong>لم يظهر مرشح سامبلر واضح</strong></div>
+        <div><span>هل في ملفات فارغة؟</span><strong>0</strong></div>
+        <div><span>هل في مكرر؟</span><strong>0</strong></div>
+        <div><span>هل تم تعديل الست؟</span><strong>NO</strong></div>
+      </div>
+      <p class="note">هذه المرحلة تقرأ metadata فقط، لذلك العلاقات بين Sound/Sample قد تكون غير مؤكدة.</p>
+    </section>
+
+    <section class="panel" id="files">
+      <h2>الملفات</h2>
+      <div class="charts" id="categoryCards"></div>
+      <table><thead><tr><th>Extension</th><th>Count</th></tr></thead><tbody id="extensionRows"></tbody></table>
+    </section>
+
+    <section class="panel" id="sampler">
+      <h2>السامبلر</h2>
+      <p class="note">Sampler candidates: 0. هذا لا يعني عدم وجود سامبلر نهائياً؛ فقط لا يوجد امتداد sample-like مؤكد في V31.</p>
+      <table><thead><tr><th>Item</th><th>Status</th><th>Reason</th></tr></thead><tbody><tr><td>Sampler references</td><td>UNKNOWN</td><td>V31 لا يقرأ علاقات binary داخلية.</td></tr></tbody></table>
+    </section>
+
+    <section class="panel" id="empty">
+      <h2>الفارغ/المكرر</h2>
+      <div class="answer-grid">
+        <div><span>Empty candidates</span><strong>0</strong></div>
+        <div><span>Duplicate groups</span><strong>0</strong></div>
+        <div><span>Manual review rows</span><strong>38</strong></div>
+      </div>
+    </section>
+
+    <section class="panel" id="dsp">
+      <h2>DSP</h2>
+      <div class="charts" id="dspCards"></div>
+    </section>
+
+    <section class="panel" id="why">
+      <h2>لماذا لا توجد اقتراحات؟</h2>
+      <p>الاقتراحات = 0 لأن V31 يملك inventory وهاشات وتصنيفات عامة، لكنه لا يملك parser يؤكد علاقة Sound إلى Sample أو Slot إلى Program.</p>
+      <p>أي اقتراح تبديل حقيقي يحتاج V33 بقواعد أعمق وتأكيد يدوي، بدون كتابة داخل SET.</p>
+    </section>
+
+    <section class="panel" id="next">
+      <h2>الخطوة التالية</h2>
+      <ul>
+        <li>deeper extension mapping</li>
+        <li>KORG SET folder pattern detection</li>
+        <li>PCG/PRG/STY/KMP/KSF/PCM metadata heuristics</li>
+        <li>bank/slot naming heuristic</li>
+        <li>empty slot inference</li>
+        <li>sampler reference hypothesis</li>
+        <li>owner manual confirmation workflow</li>
+        <li>still no binary writer</li>
+      </ul>
+    </section>
+
+    <section class="panel safety" id="safety">
+      <h2>الأمان</h2>
+      <div><span>Read-only</span><strong>YES</strong></div>
+      <div><span>Original SET modified</span><strong>NO</strong></div>
+      <div><span>USB write</span><strong>NO</strong></div>
+      <div><span>PA3X load</span><strong>NO</strong></div>
+      <div><span>Compatibility claim</span><strong>NO</strong></div>
+      <div><span>Deploy/payment</span><strong>NO</strong></div>
+    </section>
+  </main>
+  <script src="assets/uaos_v32_results_dashboard.js"></script>
+</body>
+</html>
