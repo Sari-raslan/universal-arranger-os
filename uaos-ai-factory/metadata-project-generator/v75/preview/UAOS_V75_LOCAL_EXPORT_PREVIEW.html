@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>UAOS V75 Local Export Preview</title>
+  <style>
+    :root{--ink:#202124;--muted:#5f6368;--line:#d8d8d0;--panel:#fff;--bg:#f5f6f3;--ok:#1f6b3b;--block:#8a1f1f}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Arial,sans-serif;background:var(--bg);color:var(--ink)}
+    main{max-width:1120px;margin:0 auto;padding:32px}
+    h1{margin:0 0 8px;font-size:32px}
+    h2{margin:0 0 10px;font-size:19px}
+    p{line-height:1.45}
+    .note{color:var(--muted);margin:0 0 24px}
+    .grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:22px 0}
+    .card{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:14px;min-height:90px}
+    .label{font-size:13px;color:var(--muted);margin-bottom:8px}
+    .created{color:var(--ok);font-weight:700}.blocked{color:var(--block);font-weight:700}.neutral{font-weight:700}
+    .links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+    a{color:#174ea6}
+    footer{margin-top:24px;color:var(--muted);font-size:13px}
+    @media(max-width:760px){main{padding:20px}.grid,.links{grid-template-columns:1fr}h1{font-size:26px}}
+  </style>
+</head>
+<body>
+<main>
+  <h1>UAOS V75 Local Export Preview</h1>
+  <p class="note">Generic MIDI/UAOS export only -- not KORG/PA3X ready. Static local preview only.</p>
+
+  <section class="grid" aria-label="status cards">
+    <article class="card"><div class="label">Real MIDI Export</div><div class="created">CREATED</div></article>
+    <article class="card"><div class="label">UAOS Project Package</div><div class="created">CREATED</div></article>
+    <article class="card"><div class="label">Generic ZIP Package</div><div class="created">CREATED</div></article>
+    <article class="card"><div class="label">KORG Export</div><div class="blocked">BLOCKED</div></article>
+    <article class="card"><div class="label">USB Write</div><div class="blocked">BLOCKED</div></article>
+    <article class="card"><div class="label">PA3X Load</div><div class="blocked">BLOCKED</div></article>
+    <article class="card"><div class="label">App.jsx</div><div class="neutral">NOT TOUCHED</div></article>
+    <article class="card"><div class="label">Deploy</div><div class="blocked">BLOCKED</div></article>
+  </section>
+
+  <section>
+    <h2>Local Artifact Links</h2>
+    <div class="links">
+      <p><a href="../../v71/midi/UAOS_V71_REAL_MIDI_EXPORT_FOUNDATION.mid">V71 MIDI foundation</a></p>
+      <p><a href="../../v72/package/UAOS_V72_PROJECT_PACKAGE.uaos.json">V72 UAOS project package</a></p>
+      <p><a href="../../v73/exports/UAOS_V73_GENERIC_STYLE_PACKAGE.zip">V73 generic ZIP package</a></p>
+      <p><a href="../../v74/generated/UAOS_V74_EXPORT_ARTIFACT_INTEGRITY_REPORT.json">V74 validator report</a></p>
+      <p><a href="../../batch-v74-v75-export-preview/UAOS_BATCH_V74_V75_OWNER_DASHBOARD.html">V74-V75 batch dashboard</a></p>
+    </div>
+  </section>
+
+  <footer>No KORG output, no USB write, no PA3X load, no App.jsx edit, and no deploy action is performed by this preview.</footer>
+</main>
+</body>
+</html>

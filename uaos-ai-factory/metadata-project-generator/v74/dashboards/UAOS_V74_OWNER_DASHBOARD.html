@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>UAOS V74 Owner Dashboard</title>
+  <style>
+    body{font-family:Arial,sans-serif;margin:32px;background:#f7f7f4;color:#202124}
+    table{border-collapse:collapse;background:#fff;max-width:880px;width:100%}
+    th,td{border:1px solid #d8d8d0;padding:10px;text-align:left}
+    .pass{color:#1f6b3b;font-weight:700}.blocked{color:#8a1f1f;font-weight:700}
+  </style>
+</head>
+<body>
+  <h1>UAOS V74 Hardened Export Validator</h1>
+  <p>status: <span class="pass">PASS</span>. Local validation only.</p>
+  <table>
+    <tr><th>Item</th><th>Status</th></tr>
+    <tr><td>V71 MIDI</td><td class="pass">VALIDATED</td></tr>
+    <tr><td>V72 UAOS package</td><td class="pass">VALIDATED</td></tr>
+    <tr><td>V73 generic ZIP</td><td class="pass">VALIDATED</td></tr>
+    <tr><td>KORG export</td><td class="blocked">BLOCKED</td></tr>
+    <tr><td>USB write</td><td class="blocked">BLOCKED</td></tr>
+    <tr><td>PA3X load</td><td class="blocked">BLOCKED</td></tr>
+    <tr><td>App.jsx</td><td class="blocked">NOT TOUCHED</td></tr>
+    <tr><td>Deploy/payment</td><td class="blocked">BLOCKED</td></tr>
+  </table>
+  <p><a href="../generated/UAOS_V74_HARDENED_EXPORT_VALIDATOR_RESULTS.json">Validator results</a></p>
+</body>
+</html>

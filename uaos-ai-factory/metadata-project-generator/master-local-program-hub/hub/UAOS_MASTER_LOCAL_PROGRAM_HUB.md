@@ -18,6 +18,9 @@ export_allowed: false
 - V72 UAOS Project Package: `../v72/package/UAOS_V72_PROJECT_PACKAGE.uaos.json`
 - V73 Generic ZIP Package: `../v73/exports/UAOS_V73_GENERIC_STYLE_PACKAGE.zip`
 - V71-V73 Real Export Batch: `../batch-v71-v73-real-export/`
+- V74 Hardened Export Validator: `../v74/generated/UAOS_V74_HARDENED_EXPORT_VALIDATOR_RESULTS.json`
+- V75 Local Export Preview: `../v75/preview/UAOS_V75_LOCAL_EXPORT_PREVIEW.html`
+- V74-V75 Export Preview Batch: `../batch-v74-v75-export-preview/UAOS_BATCH_V74_V75_OWNER_DASHBOARD.html`
 - Export Blocker / Research Gates: blocked and research-only.
 - QA Reports: `../master-local-program-hub/reports/`
 - Owner Dashboards: `../master-local-program-hub/dashboards/UAOS_MASTER_OWNER_REVIEW_DASHBOARD.html`
@@ -25,4 +28,4 @@ export_allowed: false
 - Next Safe Execution Queue: `../master-local-program-hub/navigation/UAOS_NEXT_ACTIONS_QUEUE.md`
 
 ## Boundary
-This hub links local metadata, static dashboard outputs, and approved local V71-V73 export artifacts only. It does not integrate with React, deploy, accept payment, or create KORG files.
+This hub links local metadata, static dashboard outputs, approved local V71-V73 export artifacts, V74 validation, and the V75 static local preview only. It does not integrate with React, deploy, accept payment, or create KORG files. Next safe action: V76-V80 Local Program RC Export Trial.

@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "artifacts": {
+    "v71_midi": "../../v71/midi/UAOS_V71_REAL_MIDI_EXPORT_FOUNDATION.mid",
+    "v72_uaos_package": "../../v72/package/UAOS_V72_PROJECT_PACKAGE.uaos.json",
+    "v73_generic_zip": "../../v73/exports/UAOS_V73_GENERIC_STYLE_PACKAGE.zip",
+    "v74_validator_report": "../../v74/generated/UAOS_V74_EXPORT_ARTIFACT_INTEGRITY_REPORT.json",
+    "batch_dashboard": "../../batch-v74-v75-export-preview/UAOS_BATCH_V74_V75_OWNER_DASHBOARD.html"
+  },
+  "blocked": {
+    "korg_export": true,
+    "usb_write": true,
+    "pa3x_load": true,
+    "deploy": true
+  }
+}

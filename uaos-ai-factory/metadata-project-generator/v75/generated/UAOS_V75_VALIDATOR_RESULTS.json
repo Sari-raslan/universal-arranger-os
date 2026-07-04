@@ -1,0 +1,55 @@
+{
+  "validator": "UAOS_V75_LOCAL_EXPORT_PREVIEW_VALIDATOR",
+  "status": "PASS",
+  "generated_at": "2026-07-04T20:37:11.511430+00:00",
+  "preview": "E:\\keyboard-manager-clean\\uaos-ai-factory\\metadata-project-generator\\v75\\preview\\UAOS_V75_LOCAL_EXPORT_PREVIEW.html",
+  "checks": [
+    {
+      "name": "Preview HTML exists",
+      "passed": true,
+      "detail": "E:\\keyboard-manager-clean\\uaos-ai-factory\\metadata-project-generator\\v75\\preview\\UAOS_V75_LOCAL_EXPORT_PREVIEW.html"
+    },
+    {
+      "name": "Static HTML has no script tag",
+      "passed": true,
+      "detail": "no script"
+    },
+    {
+      "name": "No React integration",
+      "passed": true,
+      "detail": "react blocked"
+    },
+    {
+      "name": "No server dependency",
+      "passed": true,
+      "detail": "local relative links only"
+    },
+    {
+      "name": "Required artifact links present",
+      "passed": true,
+      "detail": "[\"../../v71/midi/UAOS_V71_REAL_MIDI_EXPORT_FOUNDATION.mid\", \"../../v72/package/UAOS_V72_PROJECT_PACKAGE.uaos.json\", \"../../v73/exports/UAOS_V73_GENERIC_STYLE_PACKAGE.zip\", \"../../v74/generated/UAOS_V74_EXPORT_ARTIFACT_INTEGRITY_REPORT.json\", \"../../batch-v74-v75-export-preview/UAOS_BATCH_V74_V75_OWNER_DASHBOARD.html\"]"
+    },
+    {
+      "name": "Required status cards present",
+      "passed": true,
+      "detail": "[\"Real MIDI Export\", \"CREATED\", \"UAOS Project Package\", \"Generic ZIP Package\", \"KORG Export\", \"BLOCKED\", \"USB Write\", \"PA3X Load\", \"App.jsx\", \"NOT TOUCHED\", \"Deploy\"]"
+    },
+    {
+      "name": "Generic-only safety phrase present",
+      "passed": true,
+      "detail": "generic only"
+    },
+    {
+      "name": "No KORG writer or USB path",
+      "passed": true,
+      "detail": "blocked"
+    }
+  ],
+  "export_states": {
+    "korg_export": "BLOCKED",
+    "usb_write": "BLOCKED",
+    "pa3x_load": "BLOCKED",
+    "deploy": "BLOCKED",
+    "appjsx": "NOT_TOUCHED"
+  }
+}
