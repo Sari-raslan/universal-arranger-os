@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>UAOS PC Workstation V23</title>
+  <link rel="stylesheet" href="assets/uaos_v23_theme.css">
+</head>
+<body>
+  <div class="app">
+    <header class="top">
+      <div class="brand"><b>UAOS PC Workstation V23</b><small>Autonomous polish + interaction QA</small></div>
+      <div class="topmeta">
+        <div class="chip"><span class="sub">Project</span> <strong id="topTitle"></strong></div>
+        <div class="chip"><span class="sub">Style</span> <strong id="topStyle"></strong></div>
+        <div class="chip"><span class="sub">Tempo</span> <strong id="topTempo"></strong></div>
+      </div>
+      <div class="actions">
+        <button id="saveSession" class="btn ghost" type="button">Save Session</button>
+        <button id="topExport" class="btn" type="button">Export</button>
+        <a class="btn amber" href="writer/RUN_WRITER_V17.cmd">Writer</a>
+        <button class="btn ghost" data-goto="help" type="button">Help</button>
+        <span class="badge">PC_ONLY</span>
+      </div>
+    </header>
+
+    <aside class="side">
+      <h1>محطة العمل</h1>
+      <p>واجهة V23 مصقولة للاستخدام اليومي: أقل ازدحاماً، أوضح في الأزرار، وفيها فحص داخلي قبل اختبار المالك.</p>
+      <nav class="nav">
+        <button class="active" data-view="dashboard" type="button"><span class="num">01</span><span>Dashboard<small>الرئيسية</small></span></button>
+        <button data-view="project" type="button"><span class="num">02</span><span>Project<small>المشروع</small></span></button>
+        <button data-view="arrangement" type="button"><span class="num">03</span><span>Arrangement<small>التوزيع</small></span></button>
+        <button data-view="style" type="button"><span class="num">04</span><span>Style<small>الستايل</small></span></button>
+        <button data-view="library" type="button"><span class="num">05</span><span>Library<small>المكتبة</small></span></button>
+        <button data-view="player" type="button"><span class="num">06</span><span>Player<small>المعاينة</small></span></button>
+        <button data-view="writer" type="button"><span class="num">07</span><span>Writer<small>التوليد</small></span></button>
+        <button data-view="files" type="button"><span class="num">08</span><span>Files<small>الملفات</small></span></button>
+        <button data-view="safety" type="button"><span class="num">09</span><span>Safety<small>السلامة</small></span></button>
+        <button data-view="help" type="button"><span class="num">10</span><span>Help<small>المساعدة</small></span></button>
+        <button data-view="daily" type="button"><span class="num">11</span><span>Daily Workflow<small>العمل اليومي</small></span></button>
+        <button data-view="selftest" type="button"><span class="num">12</span><span>Self-Test<small>فحص الواجهة</small></span></button>
+      </nav>
+    </aside>
+
+    <main class="main">
+      <section id="dashboard" class="view active">
+        <div class="head"><div><h2>Dashboard / الشاشة الرئيسية</h2><p>واجهة مركزة تعرض حالة العمل، الجاهزية، وأقصر طريق للخطوة التالية.</p></div><span class="badge lock">OWNER-READY CANDIDATE</span></div>
+        <div class="grid">
+          <article class="tile span3"><h3>Project</h3><strong id="dashProject"></strong><p>Ready for local editing</p></article>
+          <article class="tile span3"><h3>Style</h3><strong id="dashStyle"></strong><p>Arrangement metadata</p></article>
+          <article class="tile span3"><h3>Tempo</h3><strong id="dashTempo"></strong><p>Session clock</p></article>
+          <article class="tile span3"><h3>Library</h3><strong id="dashLibrary"></strong><p>Metadata only</p></article>
+          <article class="panel span8"><h3>Arrangement strip</h3><div id="dashStrip" class="strip"></div></article>
+          <article class="panel span4"><h3>Quick actions</h3><div class="quick"><button class="btn ghost" data-goto="project" type="button">Project</button><button class="btn ghost" data-goto="style" type="button">Style</button><button class="btn ghost" data-goto="library" type="button">Library</button><button class="btn" data-goto="player" type="button">Preview</button><button class="btn amber" data-goto="writer" type="button">Writer</button><a class="btn dark" href="midi/SARI_ARABIC_POP_ORIENTAL_BALLAD_V9.mid">MIDI</a></div></article>
+          <article class="panel span8"><h3>Workflow pipeline</h3><div class="pipeline"><div class="pipe"><b>Project</b><small>edit fields</small></div><div class="pipe"><b>Style</b><small>sections</small></div><div class="pipe"><b>Library</b><small>strings</small></div><div class="pipe"><b>Preview</b><small>WebAudio</small></div><div class="pipe"><b>Writer</b><small>manual CMD</small></div><div class="pipe"><b>MIDI</b><small>Cubase</small></div></div></article>
+          <article class="panel span4"><h3>Recent outputs</h3><div class="worklist"><div><span>Writer V17 folder</span><b>available</b></div><div><span>MIDI preview</span><b>available</b></div><div><span>V22 self-test</span><b>PASS</b></div></div></article>
+          <article class="panel span4"><h3>Safety summary</h3><p><span class="badge">PC_ONLY</span> <span class="badge warn">NOT_FOR_PA3X_LOAD</span> <span class="badge warn">NOT_FOR_USB_TRANSFER</span></p></article>
+          <article class="panel span4"><h3>What works now</h3><p>Project editing, timeline selection, style table, preset browser, synthetic player, JSON exports, daily workflow, diagnostics.</p></article>
+          <article class="panel span4"><h3>What is not hardware-ready</h3><p>No hardware compatibility claim, no removable-media write, no device load, no bundled samples.</p></article>
+        </div>
+      </section>
+
+      <section id="project" class="view">
+        <div class="head"><div><h2>Project / المشروع</h2><p>Compact real form with immediate preview summary.</p></div><button id="exportProject" class="btn ghost" type="button">Export Project JSON</button></div>
+        <div class="grid">
+          <article class="panel span7">
+            <div class="formgrid">
+              <div><label>Project title</label><input id="projectTitle"></div>
+              <div><label>Current style</label><input id="projectStyle"></div>
+              <div><label>Tempo</label><input id="projectTempo" type="number" min="40" max="220"></div>
+              <div><label>Meter</label><input id="projectMeter"></div>
+              <div><label>Key / scale</label><input id="projectKey"></div>
+              <div><label>Mood</label><input id="projectMood"></div>
+            </div>
+            <label>Chord plan</label><input id="projectChords">
+            <label>Notes</label><textarea id="projectNotes"></textarea>
+            <div class="rowactions"><button id="applyProject" class="btn" type="button">Apply</button><button id="resetProject" class="btn amber" type="button">Reset</button></div>
+          </article>
+          <article class="panel span5"><h3>Preview summary</h3><div id="projectSummary"></div><p>Changes remain in browser memory until exported.</p></article>
+        </div>
+      </section>
+
+      <section id="arrangement" class="view">
+        <div class="head"><div><h2>Arrangement / التوزيع</h2><p>Clickable timeline. Add and duplicate are browser-memory only.</p></div><button id="exportArrangement" class="btn ghost" type="button">Export Arrangement JSON</button></div>
+        <article class="panel timeline"><div id="arrangementStrip" class="strip"></div><div class="rowactions"><button id="addSection" class="btn ghost" type="button">Add Section</button><button id="duplicateSection" class="btn amber" type="button">Duplicate Section</button></div></article>
+      </section>
+
+      <section id="style" class="view">
+        <div class="head"><div><h2>Style / محرر الستايل</h2><p>Section table and mixer rows in a tighter editor surface.</p></div><button id="exportStyle" class="btn ghost" type="button">Export Style JSON</button></div>
+        <div class="grid">
+          <article class="panel span7"><h3>Section table</h3><table><thead><tr><th>Section</th><th>Bars</th><th>Chords</th><th>Energy</th><th>Focus</th></tr></thead><tbody id="styleRows"></tbody></table></article>
+          <article class="panel span5"><h3>Track mixer</h3><div id="mixerRows" class="mixer"></div></article>
+        </div>
+      </section>
+
+      <section id="library" class="view">
+        <div class="head"><div><h2>Library / المكتبة</h2><p>Preset browser with search, category chips, articulations, and assignment.</p></div><button id="exportLibrary" class="btn ghost" type="button">Export Library Binding JSON</button></div>
+        <article class="panel">
+          <div class="presetbar"><input id="librarySearch" placeholder="Search presets"><button class="btn small ghost" data-cat="all" type="button">All</button><button class="btn small ghost" data-cat="ensemble" type="button">Ensemble</button><button class="btn small ghost" data-cat="lead" type="button">Lead</button><button class="btn small ghost" data-cat="pad" type="button">Pad</button><button class="btn small ghost" data-cat="short" type="button">Short</button><span class="badge warn">METADATA_ONLY / NO_SAMPLES_INCLUDED</span></div>
+          <div class="grid"><div class="span8"><div id="presetGrid" class="presetgrid"></div></div><div class="panel span4"><h3>Track assignment</h3><p id="assignment"></p><p>Target track: arabic_strings. This binds metadata only.</p></div></div>
+        </article>
+      </section>
+
+      <section id="player" class="view">
+        <div class="head"><div><h2>Player / المشغل</h2><p>WebAudio oscillator only. Click page first if browser blocks audio.</p></div></div>
+        <div class="grid">
+          <article class="panel span7"><h3>Transport</h3><div class="transport"><button class="btn" data-play="full" type="button">Play Full</button><button class="btn ghost" data-play="chords" type="button">Play Chords</button><button class="btn ghost" data-play="bass" type="button">Play Bass</button><button class="btn ghost" data-play="strings" type="button">Play Strings</button><button id="stopAudio" class="btn red" type="button">Stop</button></div><div class="playhead"><span></span></div><p>No external samples. Synthetic oscillator preview only.</p></article>
+          <article class="panel span5"><h3>Current state</h3><div class="display"><small>Status</small><br><b id="playerState">STOPPED</b><div>Chord: <span id="currentChord">-</span></div><div>Section: <span id="currentSection">-</span></div></div><div class="meters"><div class="meter" style="--h:30%"><span></span></div><div class="meter" style="--h:70%"><span></span></div><div class="meter" style="--h:48%"><span></span></div><div class="meter" style="--h:84%"><span></span></div><div class="meter" style="--h:55%"><span></span></div><div class="meter" style="--h:38%"><span></span></div><div class="meter" style="--h:64%"><span></span></div><div class="meter" style="--h:42%"><span></span></div></div></article>
+        </div>
+      </section>
+
+      <section id="writer" class="view">
+        <div class="head"><div><h2>Writer / مسار التوليد</h2><p>Practical command panel. Browsers cannot run command files directly.</p></div></div>
+        <div class="grid">
+          <article class="panel span12"><div class="flow"><div><b>1 Input JSON</b><p>Project / Style / Library</p></div><div><b>2 Writer V17</b><p>Manual CMD</p></div><div><b>3 UAOS outputs</b><p>metadata files</p></div><div><b>4 MIDI</b><p>open in Cubase</p></div></div></article>
+          <article class="panel span6"><h3>Command path</h3><textarea class="path">writer\RUN_WRITER_V17.cmd</textarea><a class="btn" href="writer/RUN_WRITER_V17.cmd">Open RUN_WRITER_V17.cmd</a></article>
+          <article class="panel span6"><h3>Expected output files</h3><p class="path">writer\generated_v17_outputs</p><p class="path">midi\SARI_ARABIC_POP_ORIENTAL_BALLAD_V9.mid</p><a class="btn amber" href="writer/generated_v17_outputs/">Open outputs folder</a></article>
+        </div>
+      </section>
+
+      <section id="files" class="view">
+        <div class="head"><div><h2>Files / الملفات</h2><p>File-browser style list for local paths.</p></div></div>
+        <article class="panel filelist">
+          <div class="fileitem"><b>Stable folder</b><span class="path">E:\keyboard-manager-clean\uaos-ai-factory\pc-workstation\stable\UAOS_PC_WORKSTATION_APP_V10</span></div>
+          <div class="fileitem"><b>Project data</b><span class="path">data\v22_project_state.json</span></div>
+          <div class="fileitem"><b>Writer outputs</b><span class="path">writer\generated_v17_outputs</span></div>
+          <div class="fileitem"><b>MIDI path</b><span class="path">midi\SARI_ARABIC_POP_ORIENTAL_BALLAD_V9.mid</span></div>
+          <div class="fileitem"><b>Docs</b><span class="path">docs\START_HERE_V22_AR.md / docs\START_HERE_V22_EN.md</span></div>
+          <div class="fileitem"><b>Helper CMD</b><span class="path">START_UAOS_PC_WORKSTATION_V22.cmd</span></div>
+        </article>
+      </section>
+
+      <section id="safety" class="view">
+        <div class="head"><div><h2>Safety / السلامة</h2><p>Locked matrix. Green means blocked from unsafe claim/action.</p></div></div>
+        <article class="panel"><table class="matrix"><tbody><tr><td>PA3X-ready claim</td><td>NO / LOCKED</td></tr><tr><td>USB write</td><td>NO / LOCKED</td></tr><tr><td>PA3X load</td><td>NO / LOCKED</td></tr><tr><td>Hardware compatibility verified</td><td>NO / LOCKED</td></tr><tr><td>Proprietary samples</td><td>NO / LOCKED</td></tr><tr><td>App.jsx touched</td><td>NO / LOCKED</td></tr><tr><td>Release/payment action</td><td>NO / LOCKED</td></tr></tbody></table><p><span class="badge">PC_ONLY</span> <span class="badge lock">UAOS_FORMAT</span> <span class="badge warn">NOT_COMPATIBILITY_VERIFIED</span></p></article>
+      </section>
+
+      <section id="help" class="view">
+        <div class="head"><div><h2>Help / المساعدة</h2><p>Daily workflow and troubleshooting.</p></div></div>
+        <div class="grid">
+          <article class="panel span6"><h3>الخطوات اليومية</h3><ol><li>افتح V22 من ملف START.</li><li>عدّل Project.</li><li>رتّب Arrangement و Style.</li><li>اختر Library.</li><li>اسمع من Player.</li><li>شغّل Writer يدوياً عند الحاجة.</li><li>افتح MIDI في Cubase.</li></ol></article>
+          <article class="panel span6"><h3>Troubleshooting</h3><p>If sound does not play, click inside the page once, then press Play again.</p><p>If writer does not run from browser, run the CMD manually from Windows.</p><p>English summary: V22 is the main local PC workstation UI. Older pages are support tools only.</p></article>
+          <article class="panel span12"><h3>Diagnostics / Self-Test</h3><button class="btn ghost" data-goto="selftest" type="button">Open Self-Test Panel</button><pre id="diagOutput" class="diag"></pre></article>
+        </div>
+      </section>
+
+      <section id="daily" class="view">
+        <div class="head"><div><h2>Daily Workflow / سير العمل اليومي</h2><p>وضع يومي واضح من فتح المشروع إلى MIDI/Cubase.</p></div><span class="badge">OWNER-TEST READY CANDIDATE</span></div>
+        <div class="grid">
+          <article class="panel span4"><h3>1. Project</h3><p><b>Status:</b> Ready</p><p>راجع اسم المشروع، السرعة، والكوردات.</p><p><b>Expected output:</b> project JSON.</p><button class="btn ghost" data-goto="project" type="button">Open Project</button></article>
+          <article class="panel span4"><h3>2. Style</h3><p><b>Status:</b> Ready</p><p>عدّل الأقسام والطاقة والمسارات.</p><p><b>Expected output:</b> style JSON.</p><button class="btn ghost" data-goto="style" type="button">Open Style</button></article>
+          <article class="panel span4"><h3>3. Library</h3><p><b>Status:</b> Metadata only</p><p>اختر preset للكمنجات بدون عينات.</p><p><b>Expected output:</b> library binding JSON.</p><button class="btn ghost" data-goto="library" type="button">Open Library</button></article>
+          <article class="panel span4"><h3>4. Preview</h3><p><b>Status:</b> Synthetic audio</p><p>اسمع WebAudio preview فقط.</p><p><b>Expected output:</b> internal confidence check.</p><button class="btn" data-goto="player" type="button">Open Player</button></article>
+          <article class="panel span4"><h3>5. Writer</h3><p><b>Status:</b> Manual CMD</p><p>شغّل Writer يدوياً من Windows عند الحاجة.</p><p><b>Expected output:</b> writer generated files.</p><button class="btn amber" data-goto="writer" type="button">Open Writer</button></article>
+          <article class="panel span4"><h3>6. MIDI/Cubase</h3><p><b>Status:</b> Preserved</p><p>افتح MIDI في Cubase للمراجعة الموسيقية.</p><p><b>Expected output:</b> DAW preview.</p><a class="btn dark" href="midi/SARI_ARABIC_POP_ORIENTAL_BALLAD_V9.mid">Open MIDI</a></article>
+        </div>
+      </section>
+
+      <section id="selftest" class="view">
+        <div class="head"><div><h2>Self-Test / فحص الواجهة</h2><p>فحص داخلي للتفاعل قبل طلب اختبار المالك.</p></div><button id="runSelfTest" class="btn" type="button">Run UI Self-Test</button></div>
+        <div class="grid">
+          <article class="panel span7"><h3>Result table</h3><table><thead><tr><th>Check</th><th>Result</th></tr></thead><tbody id="selfTestRows"><tr><td>Run UI Self-Test</td><td>Waiting</td></tr></tbody></table></article>
+          <article class="panel span5"><h3>Owner-ready checklist</h3><div class="worklist"><div><span>UI is not just buttons</span><b>YES</b></div><div><span>Daily workflow exists</span><b>YES</b></div><div><span>Self-test exists</span><b>YES</b></div><div><span>Safety preserved</span><b>YES</b></div><div><span>Owner-test ready candidate</span><b>YES</b></div></div></article>
+          <article class="panel span12"><h3>Diagnostics JSON</h3><pre id="diagOutputSelf" class="diag"></pre></article>
+        </div>
+      </section>
+    </main>
+
+    <aside class="inspect">
+      <h2>Inspector / المفتش</h2>
+      <div id="inspector"></div>
+    </aside>
+
+    <footer class="bottom">
+      <span id="statusText">V23 ready.</span>
+      <span class="center"><button class="btn small" data-play="full" type="button">Play</button><button class="btn small red" data-goto="player" type="button">Transport</button></span>
+      <span>PC_ONLY | NOT_FOR_PA3X_LOAD | NOT_FOR_USB_TRANSFER | NOT_COMPATIBILITY_VERIFIED</span>
+    </footer>
+  </div>
+  <script src="assets/uaos_v23_app.js"></script>
+</body>
+</html>
