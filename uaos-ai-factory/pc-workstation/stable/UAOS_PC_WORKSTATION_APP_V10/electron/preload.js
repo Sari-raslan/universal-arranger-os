@@ -1,7 +1,8 @@
 const { contextBridge } = require("electron");
 
-contextBridge.exposeInMainWorld("uaosApp", {
-  label: "UAOS PC Workstation",
+contextBridge.exposeInMainWorld("uaosDesktop", {
+  label: "UAOS PC Workstation Owner Beta",
+  mode: "LOCAL_DESKTOP_ONLY",
   safety: [
     "PC_ONLY",
     "UAOS_FORMAT",

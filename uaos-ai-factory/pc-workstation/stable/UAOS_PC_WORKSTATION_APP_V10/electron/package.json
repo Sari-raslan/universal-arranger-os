@@ -1,10 +1,49 @@
 {
-  "name": "uaos-pc-workstation",
-  "version": "0.12.0",
-  "description": "UAOS PC Workstation local Electron scaffold. PC_ONLY UAOS_FORMAT TEST_UNVERIFIED NOT_FOR_PA3X_LOAD NOT_FOR_USB_TRANSFER NOT_COMPATIBILITY_VERIFIED.",
+  "name": "uaos-pc-workstation-owner-beta",
+  "version": "0.28.0",
+  "description": "UAOS PC Workstation Owner Beta local Electron app. PC_ONLY UAOS_FORMAT TEST_UNVERIFIED NOT_FOR_PA3X_LOAD NOT_FOR_USB_TRANSFER NOT_COMPATIBILITY_VERIFIED.",
   "main": "main.js",
   "private": true,
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "package:dir": "electron-builder --dir --publish never --config.directories.output=dist-local"
+  },
+  "devDependencies": {
+    "electron": "^31.7.7",
+    "electron-builder": "^24.13.3"
+  },
+  "build": {
+    "appId": "local.uaos.pcworkstation.ownerbeta",
+    "productName": "UAOS PC Workstation Owner Beta",
+    "asar": false,
+    "directories": {
+      "output": "dist-local"
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "package.json"
+    ],
+    "extraResources": [
+      {"from": "../UAOS_PC_WORKSTATION_OWNER_BETA_HOME_V27.html", "to": "app_content/UAOS_PC_WORKSTATION_OWNER_BETA_HOME_V27.html"},
+      {"from": "../UAOS_PC_WORKSTATION_APP_V25.html", "to": "app_content/UAOS_PC_WORKSTATION_APP_V25.html"},
+      {"from": "../UAOS_PC_WORKSTATION_HOME.html", "to": "app_content/UAOS_PC_WORKSTATION_HOME.html"},
+      {"from": "../assets", "to": "app_content/assets"},
+      {"from": "../data", "to": "app_content/data"},
+      {"from": "../docs", "to": "app_content/docs"},
+      {"from": "../dash", "to": "app_content/dash"},
+      {"from": "../editor", "to": "app_content/editor"},
+      {"from": "../style_editor", "to": "app_content/style_editor"},
+      {"from": "../library", "to": "app_content/library"},
+      {"from": "../preview", "to": "app_content/preview"},
+      {"from": "../writer", "to": "app_content/writer"},
+      {"from": "../midi", "to": "app_content/midi"},
+      {"from": "../seal", "to": "app_content/seal"}
+    ],
+    "win": {
+      "target": [
+        "dir"
+      ]
+    }
   }
 }
