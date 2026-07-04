@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>UAOS PC Workstation Self-Check V18</title>
+  <style>
+    :root{--ink:#1d2530;--paper:#f5f1e9;--panel:#fff;--line:#d8d0c3;--accent:#176b72;--accent2:#8a3c24;--warn:#7b1f1f;--ok:#315c34}
+    *{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:Arial,Tahoma,sans-serif;line-height:1.55}
+    header{background:#17202b;color:#fff;padding:28px clamp(18px,4vw,46px)}main{max-width:1200px;margin:auto;padding:22px clamp(14px,3vw,28px)}
+    h1,h2{margin:0 0 10px}.sub{direction:ltr;color:#dfe7ea;margin:0}.safety{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:8px;margin:18px 0}
+    .safety span{background:var(--warn);color:white;border-radius:6px;padding:8px;text-align:center;font-weight:700;direction:ltr}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}.card{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:16px;margin-top:14px}
+    .component{display:grid;gap:8px}.component strong{direction:ltr}.status{display:inline-block;background:#eaf1ef;color:var(--ok);border:1px solid #bfd4d2;border-radius:6px;padding:5px 8px;font-weight:700;direction:ltr}.path{direction:ltr;text-align:left;background:#f5f1e9;border:1px solid #e0d6c6;border-radius:6px;padding:8px;overflow:auto}a{color:#0d5f67;font-weight:700}.warning{background:#fff7ed;border:1px solid #e7c99c;border-radius:8px;padding:12px;margin:14px 0}
+  </style>
+</head>
+<body>
+  <header><h1>لوحة الفحص الذاتي V18</h1><p class="sub">UAOS PC Workstation Self-Check V18 - local final QA dashboard</p></header>
+  <main>
+    <section class="safety"><span>PC_ONLY</span><span>NOT_FOR_PA3X_LOAD</span><span>NOT_FOR_USB_TRANSFER</span><span>NOT_COMPATIBILITY_VERIFIED</span><span>NO USB</span><span>NO PA3X LOAD</span></section>
+    <section class="card">
+      <h2>Overall Status</h2>
+      <p><span class="status">EXPECTED</span> This dashboard lists the expected local PC workstation components. Validator V18 confirms file presence and safety locks.</p>
+      <p><a href="../UAOS_PC_WORKSTATION_HOME.html">Back to Home</a></p>
+    </section>
+    <section class="warning">Local self-check only. No hardware files, no transfer media, no external copy, no dependency install, no release publishing, no billing workflow.</section>
+    <section class="card"><h2>Stable App Files</h2><div class="grid" id="stable"></div></section>
+    <section class="card"><h2>Editors</h2><div class="grid" id="editors"></div></section>
+    <section class="card"><h2>Player</h2><div class="grid" id="player"></div></section>
+    <section class="card"><h2>Library</h2><div class="grid" id="library"></div></section>
+    <section class="card"><h2>Writer</h2><div class="grid" id="writer"></div></section>
+    <section class="card"><h2>MIDI</h2><div class="grid" id="midi"></div></section>
+    <section class="card"><h2>Electron Scaffold</h2><div class="grid" id="electron"></div></section>
+    <section class="card"><h2>Safety Locks</h2><div class="grid" id="safetyLocks"></div></section>
+    <section class="card"><h2>Next Actions</h2><p>Create V19 owner package / final daily workflow dashboard.</p></section>
+  </main>
+  <script>
+    const components=[
+      ["stable","Home HTML","../UAOS_PC_WORKSTATION_HOME.html","FOUND_BY_VALIDATOR","Open home"],
+      ["stable","START cmd","../START_UAOS_PC_WORKSTATION.cmd","CHECK_MANUALLY","Open launcher"],
+      ["editors","Project Editor V13","../editor/UAOS_PROJECT_EDITOR_V13.html","FOUND_BY_VALIDATOR","Open editor"],
+      ["editors","Style Section Editor V14","../style_editor/UAOS_STYLE_SECTION_EDITOR_V14.html","FOUND_BY_VALIDATOR","Open style editor"],
+      ["player","Internal Audio Player V15","../preview/UAOS_INTERNAL_PLAYER_V15.html","FOUND_BY_VALIDATOR","Open player"],
+      ["library","Library Manager V16","../library/UAOS_LIBRARY_MANAGER_V16.html","FOUND_BY_VALIDATOR","Open library"],
+      ["writer","Writer Automation V17","../writer/RUN_WRITER_V17.cmd","FOUND_BY_VALIDATOR","Run cmd"],
+      ["writer","Writer Outputs","../writer/generated_v17_outputs/","FOUND_BY_VALIDATOR","Open outputs"],
+      ["midi","MIDI Preview","../writer/generated_v17_outputs/SARI_ARABIC_POP_ORIENTAL_BALLAD_V17.mid","FOUND_BY_VALIDATOR","Open MIDI"],
+      ["electron","Electron Scaffold V12","../electron/package.json","FOUND_BY_VALIDATOR","Open package"],
+      ["safetyLocks","Validator V18","../validator/VALIDATOR_V18_SELF_CHECK_RESULT.json","EXPECTED","Open validator result"],
+      ["safetyLocks","Final Seal","../seal/UAOS_PC_WORKSTATION_V18_SELF_CHECK_SEAL.md","EXPECTED","Open seal"]
+    ];
+    function card(name,path,status,label){return `<div class="component"><strong>${name}</strong><span class="status">${status}</span><div class="path">${path.replace("../","")}</div><a href="${path}">${label}</a><small>Safety: PC_ONLY / NOT_FOR_PA3X_LOAD / NOT_FOR_USB_TRANSFER</small></div>`}
+    components.forEach(c=>{document.getElementById(c[0]).insertAdjacentHTML("beforeend",card(c[1],c[2],c[3],c[4]))});
+  </script>
+</body>
+</html>

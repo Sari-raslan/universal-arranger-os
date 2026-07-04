@@ -1,0 +1,33 @@
+{
+  "safety_labels": ["PC_ONLY", "UAOS_FORMAT", "TEST_UNVERIFIED", "NOT_FOR_PA3X_LOAD", "NOT_FOR_USB_TRANSFER", "NOT_COMPATIBILITY_VERIFIED"],
+  "components": [
+    {"name": "Home HTML", "path": "UAOS_PC_WORKSTATION_HOME.html", "status": "EXPECTED"},
+    {"name": "START cmd", "path": "START_UAOS_PC_WORKSTATION.cmd", "status": "EXPECTED"},
+    {"name": "Project Editor V13", "path": "editor/UAOS_PROJECT_EDITOR_V13.html", "status": "EXPECTED"},
+    {"name": "Style Section Editor V14", "path": "style_editor/UAOS_STYLE_SECTION_EDITOR_V14.html", "status": "EXPECTED"},
+    {"name": "Internal Audio Player V15", "path": "preview/UAOS_INTERNAL_PLAYER_V15.html", "status": "EXPECTED"},
+    {"name": "Library Manager V16", "path": "library/UAOS_LIBRARY_MANAGER_V16.html", "status": "EXPECTED"},
+    {"name": "Writer Automation V17", "path": "writer/RUN_WRITER_V17.cmd", "status": "EXPECTED"},
+    {"name": "Writer Outputs", "path": "writer/generated_v17_outputs", "status": "EXPECTED"},
+    {"name": "MIDI Preview", "path": "writer/generated_v17_outputs/SARI_ARABIC_POP_ORIENTAL_BALLAD_V17.mid", "status": "EXPECTED"},
+    {"name": "Electron Scaffold V12", "path": "electron/package.json", "status": "EXPECTED"},
+    {"name": "Validator V18", "path": "validator/VALIDATOR_V18_SELF_CHECK_RESULT.json", "status": "EXPECTED"},
+    {"name": "Final Seal", "path": "seal/UAOS_PC_WORKSTATION_V18_SELF_CHECK_SEAL.md", "status": "EXPECTED"}
+  ],
+  "validators": [
+    "validator/VALIDATOR_V13_PROJECT_EDITOR_RESULT.json",
+    "validator/VALIDATOR_V14_STYLE_SECTION_EDITOR_RESULT.json",
+    "validator/VALIDATOR_V15_INTERNAL_PLAYER_RESULT.json",
+    "validator/VALIDATOR_V16_LIBRARY_MANAGER_RESULT.json",
+    "validator/VALIDATOR_V17_WRITER_AUTOMATION_RESULT.json",
+    "validator/VALIDATOR_V18_SELF_CHECK_RESULT.json"
+  ],
+  "safety_seals": [
+    "seal/UAOS_PC_WORKSTATION_V13_PROJECT_EDITOR_SEAL.md",
+    "seal/UAOS_PC_WORKSTATION_V14_STYLE_SECTION_EDITOR_SEAL.md",
+    "seal/UAOS_PC_WORKSTATION_V15_INTERNAL_PLAYER_SEAL.md",
+    "seal/UAOS_PC_WORKSTATION_V16_LIBRARY_MANAGER_SEAL.md",
+    "seal/UAOS_PC_WORKSTATION_V17_WRITER_AUTOMATION_SEAL.md",
+    "seal/UAOS_PC_WORKSTATION_V18_SELF_CHECK_SEAL.md"
+  ]
+}
