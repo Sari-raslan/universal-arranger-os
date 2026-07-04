@@ -1,0 +1,50 @@
+{
+  "schemaVersion": "uaos.v39.next.recommendation.matrix.v1",
+  "generatedAt": "2026-07-04T14:47:49.964Z",
+  "metadataOnly": true,
+  "korgOutputAllowed": false,
+  "setModificationAllowed": false,
+  "usbWriteAllowed": false,
+  "keyboardLoadAllowed": false,
+  "compatibilityClaim": false,
+  "pa3xReadyClaim": false,
+  "recommendations": [
+    {
+      "id": "A",
+      "action": "V40 Batch Metadata Project Generator",
+      "safety": "metadata-only",
+      "recommended": false
+    },
+    {
+      "id": "B",
+      "action": "V40 Rule-Based Style Improvement Suggestions",
+      "safety": "metadata-only",
+      "recommended": true
+    },
+    {
+      "id": "C",
+      "action": "V40 Local HTML Index for V37-V39 reports",
+      "safety": "no App.jsx, no deploy",
+      "recommended": true
+    },
+    {
+      "id": "D",
+      "action": "Stop",
+      "safety": "always available",
+      "recommended": false
+    }
+  ],
+  "recommendedTogether": [
+    "B",
+    "C"
+  ],
+  "safety": {
+    "metadataOnly": true,
+    "korgOutputAllowed": false,
+    "setModificationAllowed": false,
+    "usbWriteAllowed": false,
+    "keyboardLoadAllowed": false,
+    "compatibilityClaim": false,
+    "pa3xReadyClaim": false
+  }
+}

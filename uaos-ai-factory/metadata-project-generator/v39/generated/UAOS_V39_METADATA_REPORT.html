@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>UAOS V39 Metadata Report</title>
+  <style>
+    :root{--bg:#030712;--panel:#111827;--line:#2b3649;--text:#f8fafc;--muted:#9ca3af;--green:#22c55e;--cyan:#22d3ee;--amber:#f59e0b}
+    *{box-sizing:border-box}body{margin:0;background:#030712;color:var(--text);font-family:Arial,Tahoma,sans-serif;line-height:1.5}
+    header{padding:22px;background:#050914;border-bottom:1px solid var(--line)}h1{margin:4px 0 0;font-size:30px}header p{margin:0;color:var(--cyan);font-weight:800}
+    main{padding:16px;display:grid;gap:14px}.hero,.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+    section,.card{background:linear-gradient(180deg,rgba(17,24,39,.98),rgba(8,13,24,.98));border:1px solid var(--line);border-radius:8px;padding:14px}
+    .warning{border-color:var(--amber)}.badge{display:inline-block;border:1px solid rgba(34,211,238,.45);border-radius:999px;padding:6px 9px;margin:3px;color:var(--cyan);font-weight:800}
+    h2{margin:0 0 10px}table{width:100%;border-collapse:collapse}td,th{border-top:1px solid var(--line);padding:8px;text-align:left}td:first-child{color:var(--muted)}
+    li{margin:6px 0}.ok{color:var(--green);font-weight:800}.blocked{color:var(--amber);font-weight:800}
+  </style>
+</head>
+<body>
+  <header>
+    <p>UAOS Metadata Project Generator</p>
+    <h1>V39 Metadata HTML Report</h1>
+    <span class="badge">METADATA ONLY</span>
+    <span class="badge">NOT KORG OUTPUT</span>
+    <span class="badge">NOT PA3X READY</span>
+    <span class="badge">NO USB APPROVAL</span>
+    <span class="badge">NO KEYBOARD LOAD APPROVAL</span>
+  </header>
+  <main>
+    <section class="warning">
+      <h2>Metadata-only Warning</h2>
+      <p>This static report is metadata-only. It is NOT KORG OUTPUT, NOT PA3X READY, gives NO USB APPROVAL, and gives NO KEYBOARD LOAD APPROVAL.</p>
+    </section>
+    <section>
+      <h2>Project Overview</h2>
+      <div class="grid">
+        <div class="card"><strong>UAOS V37 Example Metadata Project</strong><br><span>uaos-v37-example-project</span></div>
+        <div class="card">Source mode<br><strong>metadata_only</strong></div>
+        <div class="card">Target label<br><strong>KORG_PA3X_ORIENTAL_UNVERIFIED</strong></div>
+        <div class="card">Bundle inspection<br><strong class="ok">VALID</strong></div>
+      </div>
+    </section>
+    <section>
+      <h2>Safety Status</h2>
+      <p class="ok">Metadata-only: YES</p>
+      <p>KORG output allowed: NO. SET modification allowed: NO. USB write allowed: NO. Keyboard load allowed: NO.</p>
+    </section>
+    <section>
+      <h2>Bundle Inspection Summary</h2>
+      <p>Missing fields: none</p>
+      <p>Warnings: none</p>
+    </section>
+    <section>
+      <h2>Style Scoring Summary</h2>
+      <table><tbody><tr><td>structureCompletenessScore</td><td>100</td></tr><tr><td>dspPlanCompletenessScore</td><td>100</td></tr><tr><td>styleReviewCompletenessScore</td><td>100</td></tr><tr><td>safetyScore</td><td>100</td></tr><tr><td>arrangerReadinessScore</td><td>100</td></tr><tr><td>humanReviewNeedScore</td><td>100</td></tr></tbody></table>
+    </section>
+    <section>
+      <h2>DSP Plan Summary</h2>
+      <table><thead><tr><th>Track</th><th>Role</th><th>EQ Intent</th><th>Reverb Intent</th></tr></thead><tbody><tr><td>drums</td><td>rhythm</td><td>tight low mids, clean highs</td><td>short room reference</td></tr><tr><td>bass</td><td>low_end</td><td>stable sub and low-mid separation</td><td>dry</td></tr><tr><td>chords</td><td>harmony</td><td>reduce mud, preserve body</td><td>small plate reference</td></tr><tr><td>pad</td><td>texture</td><td>soft high pass metadata</td><td>wide hall reference</td></tr><tr><td>melodyGuide</td><td>guide</td><td>presence guide only</td><td>none</td></tr></tbody></table>
+    </section>
+    <section>
+      <h2>Style Review Checklist</h2>
+      <table><tbody><tr><td>intro</td><td>metadata review required</td></tr><tr><td>variation1</td><td>metadata review required</td></tr><tr><td>variation2</td><td>metadata review required</td></tr><tr><td>variation3</td><td>metadata review required</td></tr><tr><td>variation4</td><td>metadata review required</td></tr><tr><td>fill</td><td>metadata review required</td></tr><tr><td>ending</td><td>metadata review required</td></tr></tbody></table>
+    </section>
+    <section>
+      <h2>Recommendation Matrix</h2>
+      <ul><li><strong>A</strong>: Improve metadata completeness <span>low</span></li><li><strong>B</strong>: Add more musical-intent fields <span>low</span></li><li><strong>C</strong>: Add human review notes <span>high</span></li><li><strong>D</strong>: Continue to V39 metadata viewer or CLI report exporter <span>high</span></li><li><strong>E</strong>: Stop <span>available</span></li></ul>
+    </section>
+    <section>
+      <h2>Blocked Actions</h2>
+      <ul class="blocked"><li>KORG output</li><li>SET modification</li><li>STY/PRF/PRS/KST generation</li><li>USB approval</li><li>Keyboard load approval</li><li>PA3X-ready claim</li><li>Compatibility claim</li><li>Deploy or payment flow</li></ul>
+    </section>
+    <section>
+      <h2>Next Safe Actions</h2>
+      <ul><li>Expand metadata-only style review rules.</li><li>Create local HTML index for V37-V39 reports.</li><li>Continue with metadata-only rule-based style suggestions.</li></ul>
+    </section>
+  </main>
+</body>
+</html>

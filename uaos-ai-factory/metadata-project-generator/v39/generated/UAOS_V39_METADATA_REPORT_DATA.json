@@ -1,0 +1,160 @@
+{
+  "schemaVersion": "uaos.v39.metadata.report.data.v1",
+  "generatedAt": "2026-07-04T14:47:49.728Z",
+  "metadataOnly": true,
+  "korgOutputAllowed": false,
+  "setModificationAllowed": false,
+  "usbWriteAllowed": false,
+  "keyboardLoadAllowed": false,
+  "compatibilityClaim": false,
+  "pa3xReadyClaim": false,
+  "project": {
+    "schemaVersion": "uaosproject.v1",
+    "projectId": "uaos-v37-example-project",
+    "projectName": "UAOS V37 Example Metadata Project",
+    "createdAt": "2026-07-04T13:49:34.281Z",
+    "sourceMode": "metadata_only",
+    "targetKeyboard": "KORG_PA3X_ORIENTAL_UNVERIFIED",
+    "safety": {
+      "metadataOnly": true,
+      "korgOutputAllowed": false,
+      "setModificationAllowed": false,
+      "usbWriteAllowed": false,
+      "keyboardLoadAllowed": false,
+      "compatibilityClaim": false,
+      "pa3xReadyClaim": false
+    },
+    "musicalIntent": {
+      "styleFamily": "oriental_pop",
+      "tempo": 96,
+      "timeSignature": "4/4",
+      "scaleMode": "hijaz_oriental_reference",
+      "chordProgression": [
+        "Dm",
+        "C",
+        "Bb",
+        "A"
+      ],
+      "sections": [
+        "intro",
+        "variation1",
+        "variation2",
+        "variation3",
+        "variation4",
+        "fill",
+        "ending"
+      ]
+    },
+    "tracks": [
+      {
+        "trackId": "drums",
+        "role": "rhythm",
+        "intent": "balanced darbuka and kit reference metadata"
+      },
+      {
+        "trackId": "bass",
+        "role": "low_end",
+        "intent": "simple root movement metadata"
+      },
+      {
+        "trackId": "chords",
+        "role": "harmony",
+        "intent": "short chord stabs metadata"
+      },
+      {
+        "trackId": "pad",
+        "role": "texture",
+        "intent": "soft sustained layer metadata"
+      },
+      {
+        "trackId": "melodyGuide",
+        "role": "guide",
+        "intent": "non-rendered melody contour metadata"
+      }
+    ],
+    "links": {
+      "dspPlanPath": "generated/UAOS_EXAMPLE_DSP_PLAN_V37.json",
+      "styleReviewPlanPath": "generated/UAOS_EXAMPLE_STYLE_REVIEW_PLAN_V37.json",
+      "manifestPath": "generated/UAOS_EXAMPLE_PROJECT_BUNDLE_MANIFEST_V37.json"
+    }
+  },
+  "dspSummary": {
+    "channelCount": 5,
+    "sampleRate": 48000,
+    "targetLufs": -14,
+    "peakCeilingDb": -1
+  },
+  "styleChecklist": {
+    "intro": "metadata review required",
+    "variation1": "metadata review required",
+    "variation2": "metadata review required",
+    "variation3": "metadata review required",
+    "variation4": "metadata review required",
+    "fill": "metadata review required",
+    "ending": "metadata review required"
+  },
+  "bundleInspection": {
+    "validBundle": true,
+    "missingFields": [],
+    "warnings": []
+  },
+  "styleScore": {
+    "structureCompletenessScore": 100,
+    "dspPlanCompletenessScore": 100,
+    "styleReviewCompletenessScore": 100,
+    "safetyScore": 100,
+    "arrangerReadinessScore": 100,
+    "humanReviewNeedScore": 100
+  },
+  "recommendationMatrix": [
+    {
+      "id": "A",
+      "action": "Improve metadata completeness",
+      "priority": "low"
+    },
+    {
+      "id": "B",
+      "action": "Add more musical-intent fields",
+      "priority": "low"
+    },
+    {
+      "id": "C",
+      "action": "Add human review notes",
+      "priority": "high"
+    },
+    {
+      "id": "D",
+      "action": "Continue to V39 metadata viewer or CLI report exporter",
+      "priority": "high"
+    },
+    {
+      "id": "E",
+      "action": "Stop",
+      "priority": "available"
+    }
+  ],
+  "blockedActions": [
+    "KORG output",
+    "SET modification",
+    "STY/PRF/PRS/KST generation",
+    "USB approval",
+    "Keyboard load approval",
+    "PA3X-ready claim",
+    "Compatibility claim",
+    "Deploy or payment flow"
+  ],
+  "nextSafeActions": [
+    "Expand metadata-only style review rules.",
+    "Create local HTML index for V37-V39 reports.",
+    "Continue with metadata-only rule-based style suggestions."
+  ],
+  "safety": {
+    "metadataOnly": true,
+    "korgOutputAllowed": false,
+    "setModificationAllowed": false,
+    "usbWriteAllowed": false,
+    "keyboardLoadAllowed": false,
+    "compatibilityClaim": false,
+    "pa3xReadyClaim": false
+  }
+}

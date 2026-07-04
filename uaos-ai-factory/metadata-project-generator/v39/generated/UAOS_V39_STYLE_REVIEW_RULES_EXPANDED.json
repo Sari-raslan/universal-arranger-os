@@ -1,0 +1,220 @@
+{
+  "schemaVersion": "uaos.v39.style.review.rules.expanded.v1",
+  "generatedAt": "2026-07-04T14:47:49.964Z",
+  "metadataOnly": true,
+  "korgOutputAllowed": false,
+  "setModificationAllowed": false,
+  "usbWriteAllowed": false,
+  "keyboardLoadAllowed": false,
+  "compatibilityClaim": false,
+  "pa3xReadyClaim": false,
+  "categories": {
+    "sectionStructureRules": [
+      {
+        "ruleId": "V39-SEC-001",
+        "category": "sectionStructureRules",
+        "title": "Intro present",
+        "description": "Intro metadata should exist for owner review.",
+        "severity": "info",
+        "metadataField": "styleChecklist.intro",
+        "expectedCondition": "exists",
+        "passFailOnly": true,
+        "scoreImpact": 5,
+        "exportApprovalImpact": false
+      },
+      {
+        "ruleId": "V39-SEC-002",
+        "category": "sectionStructureRules",
+        "title": "Four variations present",
+        "description": "Variation1-4 metadata should exist.",
+        "severity": "warning",
+        "metadataField": "styleChecklist.variation1-4",
+        "expectedCondition": "all exist",
+        "passFailOnly": true,
+        "scoreImpact": 8,
+        "exportApprovalImpact": false
+      }
+    ],
+    "rhythmDensityRules": [
+      {
+        "ruleId": "V39-RHY-001",
+        "category": "rhythmDensityRules",
+        "title": "Drum density noted",
+        "description": "Drum density should describe arranger intent.",
+        "severity": "info",
+        "metadataField": "arrangerNotes.drumDensity",
+        "expectedCondition": "non-empty",
+        "passFailOnly": false,
+        "scoreImpact": 5,
+        "exportApprovalImpact": false
+      },
+      {
+        "ruleId": "V39-RHY-002",
+        "category": "rhythmDensityRules",
+        "title": "Fill review required",
+        "description": "Fill metadata should remain under human review.",
+        "severity": "warning",
+        "metadataField": "styleChecklist.fill",
+        "expectedCondition": "metadata review required",
+        "passFailOnly": true,
+        "scoreImpact": 6,
+        "exportApprovalImpact": false
+      }
+    ],
+    "bassMovementRules": [
+      {
+        "ruleId": "V39-BAS-001",
+        "category": "bassMovementRules",
+        "title": "Bass movement noted",
+        "description": "Bass movement should be described before suggestions.",
+        "severity": "info",
+        "metadataField": "arrangerNotes.bassMovement",
+        "expectedCondition": "non-empty",
+        "passFailOnly": false,
+        "scoreImpact": 5,
+        "exportApprovalImpact": false
+      }
+    ],
+    "chordRhythmRules": [
+      {
+        "ruleId": "V39-CHR-001",
+        "category": "chordRhythmRules",
+        "title": "Chord rhythm noted",
+        "description": "Chord rhythm should define comping feel as metadata.",
+        "severity": "info",
+        "metadataField": "arrangerNotes.chordRhythm",
+        "expectedCondition": "non-empty",
+        "passFailOnly": false,
+        "scoreImpact": 5,
+        "exportApprovalImpact": false
+      }
+    ],
+    "orientalFeelRules": [
+      {
+        "ruleId": "V39-ORI-001",
+        "category": "orientalFeelRules",
+        "title": "Oriental feel noted",
+        "description": "Oriental feel should remain reference intent only.",
+        "severity": "warning",
+        "metadataField": "arrangerNotes.orientalFeel",
+        "expectedCondition": "reference intent only",
+        "passFailOnly": false,
+        "scoreImpact": 7,
+        "exportApprovalImpact": false
+      }
+    ],
+    "melodySpaceRules": [
+      {
+        "ruleId": "V39-MEL-001",
+        "category": "melodySpaceRules",
+        "title": "Melody space noted",
+        "description": "Metadata should reserve space for live lead.",
+        "severity": "info",
+        "metadataField": "arrangerNotes.melodySpace",
+        "expectedCondition": "non-empty",
+        "passFailOnly": false,
+        "scoreImpact": 5,
+        "exportApprovalImpact": false
+      }
+    ],
+    "dspIntentRules": [
+      {
+        "ruleId": "V39-DSP-001",
+        "category": "dspIntentRules",
+        "title": "DSP channel intents exist",
+        "description": "Each channel should include EQ, compression, reverb, and stereo intent.",
+        "severity": "warning",
+        "metadataField": "dsp.channels",
+        "expectedCondition": "all intent fields exist",
+        "passFailOnly": true,
+        "scoreImpact": 10,
+        "exportApprovalImpact": false
+      },
+      {
+        "ruleId": "V39-DSP-002",
+        "category": "dspIntentRules",
+        "title": "No plugin execution",
+        "description": "DSP metadata must not run plugins.",
+        "severity": "blocker",
+        "metadataField": "dsp.safety.pluginExecutionAllowed",
+        "expectedCondition": "false",
+        "passFailOnly": true,
+        "scoreImpact": 20,
+        "exportApprovalImpact": false
+      }
+    ],
+    "humanReviewRules": [
+      {
+        "ruleId": "V39-HUM-001",
+        "category": "humanReviewRules",
+        "title": "Human review required",
+        "description": "Human review must stay required before future phases.",
+        "severity": "blocker",
+        "metadataField": "reviewStatus.humanReviewRequired",
+        "expectedCondition": "true",
+        "passFailOnly": true,
+        "scoreImpact": 20,
+        "exportApprovalImpact": false
+      },
+      {
+        "ruleId": "V39-HUM-002",
+        "category": "humanReviewRules",
+        "title": "Keyboard test not completed",
+        "description": "Keyboard test must remain not completed until separately verified.",
+        "severity": "blocker",
+        "metadataField": "reviewStatus.keyboardTestCompleted",
+        "expectedCondition": "false",
+        "passFailOnly": true,
+        "scoreImpact": 20,
+        "exportApprovalImpact": false
+      }
+    ],
+    "safetyGateRules": [
+      {
+        "ruleId": "V39-SAFE-001",
+        "category": "safetyGateRules",
+        "title": "No export approval",
+        "description": "Export approval must remain false.",
+        "severity": "blocker",
+        "metadataField": "reviewStatus.approvedForKorgExport",
+        "expectedCondition": "false",
+        "passFailOnly": true,
+        "scoreImpact": 30,
+        "exportApprovalImpact": false
+      },
+      {
+        "ruleId": "V39-SAFE-002",
+        "category": "safetyGateRules",
+        "title": "No USB approval",
+        "description": "USB approval must remain false.",
+        "severity": "blocker",
+        "metadataField": "summary.approvedForUsb",
+        "expectedCondition": "false",
+        "passFailOnly": true,
+        "scoreImpact": 30,
+        "exportApprovalImpact": false
+      },
+      {
+        "ruleId": "V39-SAFE-003",
+        "category": "safetyGateRules",
+        "title": "No keyboard load approval",
+        "description": "Keyboard load approval must remain false.",
+        "severity": "blocker",
+        "metadataField": "summary.approvedForKeyboardLoad",
+        "expectedCondition": "false",
+        "passFailOnly": true,
+        "scoreImpact": 30,
+        "exportApprovalImpact": false
+      }
+    ]
+  },
+  "safety": {
+    "metadataOnly": true,
+    "korgOutputAllowed": false,
+    "setModificationAllowed": false,
+    "usbWriteAllowed": false,
+    "keyboardLoadAllowed": false,
+    "compatibilityClaim": false,
+    "pa3xReadyClaim": false
+  }
+}
