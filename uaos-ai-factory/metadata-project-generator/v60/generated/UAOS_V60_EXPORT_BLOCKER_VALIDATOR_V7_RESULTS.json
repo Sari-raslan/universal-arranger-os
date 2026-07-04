@@ -1,0 +1,31 @@
+{
+  "schema_version": "uaos.v60.export.blocker.validator.v7.results.v1",
+  "status": "PASS",
+  "checked_files": {
+    "simulator": "generated/UAOS_V60_OWNER_DECISION_SIMULATOR_RESULTS.json",
+    "matrix_generated": "generated/UAOS_V60_STYLE_EXPORT_REQUIREMENTS_MATRIX_DRYRUN_V1.json",
+    "simulator_trace": "simulator/UAOS_V60_OWNER_DECISION_SIMULATOR_TRACE.json",
+    "matrix_requirements": "requirements/UAOS_V60_STYLE_EXPORT_REQUIREMENTS_MATRIX_DRYRUN_V1.json"
+  },
+  "v59_reference_count": 4,
+  "errors": [],
+  "warnings": [],
+  "safety": {
+    "metadata_only": true,
+    "dry_run_only": true,
+    "simulation_only": true,
+    "real_owner_approval_applied": false,
+    "auto_apply": false,
+    "export_allowed": false,
+    "korg_output": false,
+    "midi_audio_generation": false,
+    "usb_write": false,
+    "pa3x_load": false,
+    "source_mutation": false,
+    "app_js_touched": false,
+    "react_integration": false,
+    "deploy_payment": false,
+    "compatibility_claim": false,
+    "pa3x_ready_claim": false
+  }
+}

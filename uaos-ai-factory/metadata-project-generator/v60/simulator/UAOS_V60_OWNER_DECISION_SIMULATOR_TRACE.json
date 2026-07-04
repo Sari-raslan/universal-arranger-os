@@ -1,0 +1,19 @@
+{
+  "schema_version": "uaos.v60.owner.decision.simulator.trace.v1",
+  "created_at": "2026-07-04T19:11:52.858Z",
+  "inputs_read": [
+    "v59/generated/UAOS_V59_OWNER_DECISION_NORMALIZED_PENDING.json"
+  ],
+  "reference_only": true,
+  "simulation_only_not_owner_decision": true,
+  "steps": [
+    "read_v59_pending_owner_decisions",
+    "create_three_sample_scenarios",
+    "force_all_output_and_apply_flags_false"
+  ],
+  "git_status_before_changes": " M uaos-ai-factory/implementation/local-ci-qa-runner-task-010/UAOS_LOCAL_CI_TASK_010_OWNER_SUMMARY.md\n M uaos-ai-factory/implementation/local-ci-qa-runner-task-010/UAOS_LOCAL_CI_TASK_010_REPORT.md\n M uaos-ai-factory/implementation/local-ci-qa-runner-task-010/UAOS_LOCAL_CI_TASK_010_RESULTS.json\n M uaos-ai-factory/implementation/local-qa-entrypoint-task-011/UAOS_LOCAL_QA_ENTRYPOINT_TASK_011_REPORT.md\n M uaos-ai-factory/implementation/local-qa-entrypoint-task-011/UAOS_LOCAL_QA_ENTRYPOINT_TASK_011_RESULTS.json\n M uaos-ai-factory/pc-workstation/stable/UAOS_PC_WORKSTATION_APP_V10/dsp_planner/analysis_outputs/DSP_BY_CATEGORY_V31.json\n M uaos-ai-factory/pc-workstation/stable/UAOS_PC_WORKSTATION_APP_V10/dsp_planner/analysis_outputs/DSP_UNIFICATION_PLAN_V31.json\n M uaos-ai-factory/pc-workstation/stable/UAOS_PC_WORKSTATION_APP_V10/set_analyzer/analysis_outputs/OWNER_SET_ANALYSIS_SUMMARY_V31.md\n M uaos-ai-factory/pc-workstation/stable/UAOS_PC_WORKSTATION_APP_V10/set_analyzer/analysis_outputs/OWNER_SET_INVENTORY_V31.csv\n M uaos-ai-factory/pc-workstation/stable/UAOS_PC_WORKSTATION_APP_V10/set_analyzer/analysis_outputs/OWNER_SET_INVENTORY_V31.json\n?? UAOS_FINAL_FILES_FOR_CHATGPT_REVIEW_20260702/\n?? UAOS_JOBCENTER_UPLOAD_FINAL_PDF_ONLY/\n?? UAOS_JOBCENTER_UPLOAD_FINAL_PDF_ONLY_V2_CORRECT/\n?? UAOS_Jobcenter_Sendepaket_FINAL_NET_20260701/\n?? UAOS_LOCAL_BACKUPS/\n?? uaos-ai-factory/pa3x-writer-track/owner-fixtures/PLACE_PA3X_BACKUP_HERE/NEWNAME.SET/\n?? uaos-ai-factory/pc-workstation/stable/UAOS_PC_WORKSTATION_APP_V10/confirmed_recommendations/__pycache__/\n?? uaos-ai-factory/pc-workstation/stable/UAOS_PC_WORKSTATION_APP_V10/electron/.electron-builder-cache/\n?? uaos-ai-factory/pc-workstation/stable/UAOS_PC_WORKSTATION_APP_V10/electron/.npm-cache/\n?? uaos-ai-factory/pc-workstation/stable/UAOS_PC_WORKSTATION_APP_V10/electron/dist-local/\n?? uaos-ai-factory/pc-workstation/stable/UAOS_PC_WORKSTATION_APP_V10/owner_confirmation/__pycache__/\n?? uaos-ai-factory/pc-workstation/stable/UAOS_PC_WORKSTATION_APP_V10/owner_confirmation/analysis_outputs/UAOS_OWNER_CONFIRMATIONS_V35.json\n?? uaos-ai-factory/pc-workstation/stable/UAOS_PC_WORKSTATION_APP_V10/validator/__pycache__/\n?? uaos-ai-factory/vercel-linked-monitor-repo-sync/\n",
+  "outputs": [
+    "generated/UAOS_V60_OWNER_DECISION_SIMULATOR_RESULTS.json",
+    "simulator/UAOS_V60_OWNER_DECISION_SIMULATOR_SCENARIOS.md"
+  ]
+}

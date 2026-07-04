@@ -1,0 +1,321 @@
+{
+  "schema_version": "uaos.v60.owner.decision.simulator.results.v1",
+  "created_at": "2026-07-04T19:11:52.858Z",
+  "simulation_label": "SIMULATION_ONLY_NOT_OWNER_DECISION",
+  "source_v59_normalized_decisions": "v59/generated/UAOS_V59_OWNER_DECISION_NORMALIZED_PENDING.json",
+  "real_owner_approval_applied": false,
+  "export_allowed": false,
+  "korg_output_allowed": false,
+  "auto_apply_allowed": false,
+  "source_mutation_allowed": false,
+  "metadata_only": true,
+  "dry_run_only": true,
+  "scenarios": [
+    {
+      "scenario_id": "scenario-01",
+      "scenario_name": "conservative blocked review",
+      "simulation_label": "SIMULATION_ONLY_NOT_OWNER_DECISION",
+      "summary": "All simulated decisions defer or request revision; export research remains blocked.",
+      "simulated_owner_decisions": [
+        {
+          "decision_id": "v58-owner-decision-01",
+          "category": "musicalIntent",
+          "simulated_decision": "defer",
+          "real_owner_decision": "not_applied_simulation_only",
+          "simulation_only_not_owner_decision": true,
+          "export_impact": false
+        },
+        {
+          "decision_id": "v58-owner-decision-02",
+          "category": "sectionStructure",
+          "simulated_decision": "request_revision",
+          "real_owner_decision": "not_applied_simulation_only",
+          "simulation_only_not_owner_decision": true,
+          "export_impact": false
+        },
+        {
+          "decision_id": "v58-owner-decision-03",
+          "category": "rhythmDensity",
+          "simulated_decision": "defer",
+          "real_owner_decision": "not_applied_simulation_only",
+          "simulation_only_not_owner_decision": true,
+          "export_impact": false
+        },
+        {
+          "decision_id": "v58-owner-decision-04",
+          "category": "bassMovement",
+          "simulated_decision": "request_revision",
+          "real_owner_decision": "not_applied_simulation_only",
+          "simulation_only_not_owner_decision": true,
+          "export_impact": false
+        },
+        {
+          "decision_id": "v58-owner-decision-05",
+          "category": "chordRhythm",
+          "simulated_decision": "defer",
+          "real_owner_decision": "not_applied_simulation_only",
+          "simulation_only_not_owner_decision": true,
+          "export_impact": false
+        },
+        {
+          "decision_id": "v58-owner-decision-06",
+          "category": "orientalFeel",
+          "simulated_decision": "request_revision",
+          "real_owner_decision": "not_applied_simulation_only",
+          "simulation_only_not_owner_decision": true,
+          "export_impact": false
+        },
+        {
+          "decision_id": "v58-owner-decision-07",
+          "category": "melodySpace",
+          "simulated_decision": "defer",
+          "real_owner_decision": "not_applied_simulation_only",
+          "simulation_only_not_owner_decision": true,
+          "export_impact": false
+        },
+        {
+          "decision_id": "v58-owner-decision-08",
+          "category": "dspIntent",
+          "simulated_decision": "request_revision",
+          "real_owner_decision": "not_applied_simulation_only",
+          "simulation_only_not_owner_decision": true,
+          "export_impact": false
+        },
+        {
+          "decision_id": "v58-owner-decision-09",
+          "category": "arrangerUsability",
+          "simulated_decision": "defer",
+          "real_owner_decision": "not_applied_simulation_only",
+          "simulation_only_not_owner_decision": true,
+          "export_impact": false
+        },
+        {
+          "decision_id": "v58-owner-decision-10",
+          "category": "safetyGate",
+          "simulated_decision": "request_revision",
+          "real_owner_decision": "not_applied_simulation_only",
+          "simulation_only_not_owner_decision": true,
+          "export_impact": false
+        }
+      ],
+      "real_owner_approval_applied": false,
+      "export_allowed": false,
+      "korg_output_allowed": false,
+      "auto_apply_allowed": false,
+      "source_mutation_allowed": false,
+      "midi_generation_allowed": false,
+      "audio_render_allowed": false,
+      "usb_write_allowed": false,
+      "pa3x_load_allowed": false,
+      "compatibility_claim": false,
+      "pa3x_ready_claim": false,
+      "metadata_only": true,
+      "dry_run_only": true,
+      "review_only": true
+    },
+    {
+      "scenario_id": "scenario-02",
+      "scenario_name": "partial metadata planning approval only",
+      "simulation_label": "SIMULATION_ONLY_NOT_OWNER_DECISION",
+      "summary": "Some metadata planning items are simulated as approved, but export and hardware approvals remain blocked.",
+      "simulated_owner_decisions": [
+        {
+          "decision_id": "v58-owner-decision-01",
+          "category": "musicalIntent",
+          "simulated_decision": "approve_metadata_intent",
+          "real_owner_decision": "not_applied_simulation_only",
+          "simulation_only_not_owner_decision": true,
+          "export_impact": false
+        },
+        {
+          "decision_id": "v58-owner-decision-02",
+          "category": "sectionStructure",
+          "simulated_decision": "approve_metadata_intent",
+          "real_owner_decision": "not_applied_simulation_only",
+          "simulation_only_not_owner_decision": true,
+          "export_impact": false
+        },
+        {
+          "decision_id": "v58-owner-decision-03",
+          "category": "rhythmDensity",
+          "simulated_decision": "approve_metadata_intent",
+          "real_owner_decision": "not_applied_simulation_only",
+          "simulation_only_not_owner_decision": true,
+          "export_impact": false
+        },
+        {
+          "decision_id": "v58-owner-decision-04",
+          "category": "bassMovement",
+          "simulated_decision": "approve_metadata_intent",
+          "real_owner_decision": "not_applied_simulation_only",
+          "simulation_only_not_owner_decision": true,
+          "export_impact": false
+        },
+        {
+          "decision_id": "v58-owner-decision-05",
+          "category": "chordRhythm",
+          "simulated_decision": "defer",
+          "real_owner_decision": "not_applied_simulation_only",
+          "simulation_only_not_owner_decision": true,
+          "export_impact": false
+        },
+        {
+          "decision_id": "v58-owner-decision-06",
+          "category": "orientalFeel",
+          "simulated_decision": "defer",
+          "real_owner_decision": "not_applied_simulation_only",
+          "simulation_only_not_owner_decision": true,
+          "export_impact": false
+        },
+        {
+          "decision_id": "v58-owner-decision-07",
+          "category": "melodySpace",
+          "simulated_decision": "defer",
+          "real_owner_decision": "not_applied_simulation_only",
+          "simulation_only_not_owner_decision": true,
+          "export_impact": false
+        },
+        {
+          "decision_id": "v58-owner-decision-08",
+          "category": "dspIntent",
+          "simulated_decision": "defer",
+          "real_owner_decision": "not_applied_simulation_only",
+          "simulation_only_not_owner_decision": true,
+          "export_impact": false
+        },
+        {
+          "decision_id": "v58-owner-decision-09",
+          "category": "arrangerUsability",
+          "simulated_decision": "defer",
+          "real_owner_decision": "not_applied_simulation_only",
+          "simulation_only_not_owner_decision": true,
+          "export_impact": false
+        },
+        {
+          "decision_id": "v58-owner-decision-10",
+          "category": "safetyGate",
+          "simulated_decision": "defer",
+          "real_owner_decision": "not_applied_simulation_only",
+          "simulation_only_not_owner_decision": true,
+          "export_impact": false
+        }
+      ],
+      "real_owner_approval_applied": false,
+      "export_allowed": false,
+      "korg_output_allowed": false,
+      "auto_apply_allowed": false,
+      "source_mutation_allowed": false,
+      "midi_generation_allowed": false,
+      "audio_render_allowed": false,
+      "usb_write_allowed": false,
+      "pa3x_load_allowed": false,
+      "compatibility_claim": false,
+      "pa3x_ready_claim": false,
+      "metadata_only": true,
+      "dry_run_only": true,
+      "review_only": true
+    },
+    {
+      "scenario_id": "scenario-03",
+      "scenario_name": "rejected / needs rewrite",
+      "simulation_label": "SIMULATION_ONLY_NOT_OWNER_DECISION",
+      "summary": "The plan is simulated as rejected and sent back for rewrite.",
+      "simulated_owner_decisions": [
+        {
+          "decision_id": "v58-owner-decision-01",
+          "category": "musicalIntent",
+          "simulated_decision": "reject",
+          "real_owner_decision": "not_applied_simulation_only",
+          "simulation_only_not_owner_decision": true,
+          "export_impact": false
+        },
+        {
+          "decision_id": "v58-owner-decision-02",
+          "category": "sectionStructure",
+          "simulated_decision": "reject",
+          "real_owner_decision": "not_applied_simulation_only",
+          "simulation_only_not_owner_decision": true,
+          "export_impact": false
+        },
+        {
+          "decision_id": "v58-owner-decision-03",
+          "category": "rhythmDensity",
+          "simulated_decision": "reject",
+          "real_owner_decision": "not_applied_simulation_only",
+          "simulation_only_not_owner_decision": true,
+          "export_impact": false
+        },
+        {
+          "decision_id": "v58-owner-decision-04",
+          "category": "bassMovement",
+          "simulated_decision": "reject",
+          "real_owner_decision": "not_applied_simulation_only",
+          "simulation_only_not_owner_decision": true,
+          "export_impact": false
+        },
+        {
+          "decision_id": "v58-owner-decision-05",
+          "category": "chordRhythm",
+          "simulated_decision": "reject",
+          "real_owner_decision": "not_applied_simulation_only",
+          "simulation_only_not_owner_decision": true,
+          "export_impact": false
+        },
+        {
+          "decision_id": "v58-owner-decision-06",
+          "category": "orientalFeel",
+          "simulated_decision": "reject",
+          "real_owner_decision": "not_applied_simulation_only",
+          "simulation_only_not_owner_decision": true,
+          "export_impact": false
+        },
+        {
+          "decision_id": "v58-owner-decision-07",
+          "category": "melodySpace",
+          "simulated_decision": "reject",
+          "real_owner_decision": "not_applied_simulation_only",
+          "simulation_only_not_owner_decision": true,
+          "export_impact": false
+        },
+        {
+          "decision_id": "v58-owner-decision-08",
+          "category": "dspIntent",
+          "simulated_decision": "reject",
+          "real_owner_decision": "not_applied_simulation_only",
+          "simulation_only_not_owner_decision": true,
+          "export_impact": false
+        },
+        {
+          "decision_id": "v58-owner-decision-09",
+          "category": "arrangerUsability",
+          "simulated_decision": "reject",
+          "real_owner_decision": "not_applied_simulation_only",
+          "simulation_only_not_owner_decision": true,
+          "export_impact": false
+        },
+        {
+          "decision_id": "v58-owner-decision-10",
+          "category": "safetyGate",
+          "simulated_decision": "reject",
+          "real_owner_decision": "not_applied_simulation_only",
+          "simulation_only_not_owner_decision": true,
+          "export_impact": false
+        }
+      ],
+      "real_owner_approval_applied": false,
+      "export_allowed": false,
+      "korg_output_allowed": false,
+      "auto_apply_allowed": false,
+      "source_mutation_allowed": false,
+      "midi_generation_allowed": false,
+      "audio_render_allowed": false,
+      "usb_write_allowed": false,
+      "pa3x_load_allowed": false,
+      "compatibility_claim": false,
+      "pa3x_ready_claim": false,
+      "metadata_only": true,
+      "dry_run_only": true,
+      "review_only": true
+    }
+  ]
+}
