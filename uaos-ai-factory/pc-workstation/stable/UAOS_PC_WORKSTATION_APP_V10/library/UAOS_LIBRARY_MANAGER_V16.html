@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>UAOS Library Manager V16</title>
+  <style>
+    :root{--ink:#1d2530;--paper:#f5f1e9;--panel:#fff;--line:#d8d0c3;--accent:#176b72;--accent2:#8a3c24;--warn:#7b1f1f}
+    *{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:Arial,Tahoma,sans-serif;line-height:1.55}
+    header{background:#17202b;color:#fff;padding:28px clamp(18px,4vw,46px)}main{max-width:1180px;margin:auto;padding:22px clamp(14px,3vw,28px)}
+    h1,h2{margin:0 0 10px}.sub{direction:ltr;color:#dfe7ea;margin:0}.safety{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:8px;margin:18px 0}
+    .safety span{background:var(--warn);color:white;border-radius:6px;padding:8px;text-align:center;font-weight:700;direction:ltr}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.card{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:16px;margin-top:14px}
+    .pillgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px}.pill{background:#eaf1ef;border:1px solid #bfd4d2;border-radius:6px;padding:8px;text-align:center;direction:ltr;font-weight:700}
+    table{width:100%;border-collapse:collapse;direction:ltr}th,td{border-bottom:1px solid #e5ded3;padding:8px;text-align:left;vertical-align:top}th{background:#f0ebe2}
+    select{width:100%;border:1px solid #c9c0b2;border-radius:6px;padding:10px;font:inherit}.buttons{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:10px;margin-top:14px}
+    button,a.button{border:0;border-radius:6px;background:var(--accent);color:#fff;text-decoration:none;min-height:42px;padding:10px 12px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;text-align:center}.secondary{background:var(--accent2)!important}.preview{direction:ltr;text-align:left;white-space:pre-wrap;background:#16202b;color:#edf7f8;border-radius:8px;padding:14px;max-height:300px;overflow:auto}.notice{background:#fff7ed;border:1px solid #e7c99c;border-radius:8px;padding:12px;margin:14px 0}
+    @media(max-width:850px){.grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <header><h1>مدير مكتبة UAOS V16</h1><p class="sub">UAOS Library Manager V16 - metadata-only local browser workflow</p></header>
+  <main>
+    <section class="safety"><span>PC_ONLY</span><span>METADATA_ONLY</span><span>NO_SAMPLES_INCLUDED</span><span>NOT_FOR_PA3X_LOAD</span><span>NOT_FOR_USB_TRANSFER</span><span>NOT_COMPATIBILITY_VERIFIED</span></section>
+    <div class="notice">Metadata only. No real samples. No proprietary content. Exported JSON is for UAOS PC workflow only.</div>
+    <section class="grid">
+      <div class="card">
+        <h2>Library Overview</h2>
+        <div class="pillgrid" id="categories"></div>
+      </div>
+      <div class="card">
+        <h2>Safety Status</h2>
+        <div class="pillgrid"><span class="pill">PC_ONLY</span><span class="pill">UAOS_FORMAT</span><span class="pill">TEST_UNVERIFIED</span><span class="pill">METADATA_ONLY</span><span class="pill">NO_SAMPLES_INCLUDED</span></div>
+      </div>
+    </section>
+    <section class="card"><h2>Arabic Strings Presets</h2><div style="overflow:auto"><table id="presetsTable"></table></div></section>
+    <section class="card"><h2>Articulations</h2><div class="pillgrid" id="articulations"></div></section>
+    <section class="card">
+      <h2>Track Mapping</h2>
+      <div class="grid">
+        <label>arabic_strings track<select id="arabic_strings"></select></label>
+        <label>pad track<select id="pad"></select></label>
+        <label>melody_guide track<select id="melody_guide"></select></label>
+      </div>
+    </section>
+    <section class="card">
+      <h2>Future User-Owned Samples Placeholder</h2>
+      <p>This area is reserved for future owner-supplied and licensed local material. This V16 package includes metadata only and no audio files.</p>
+    </section>
+    <section class="card">
+      <h2>Export Library Binding</h2>
+      <div class="buttons">
+        <button id="exportBinding">Export Library Binding JSON</button>
+        <button id="exportPresets">Export Arabic Strings Preset List</button>
+        <button id="exportFull">Export Full Library State</button>
+        <a class="button secondary" href="../UAOS_PC_WORKSTATION_HOME.html">Back to Home</a>
+      </div>
+    </section>
+    <section class="card"><h2>JSON Preview</h2><pre id="preview" class="preview"></pre></section>
+  </main>
+  <script>
+    const safety=["PC_ONLY","UAOS_FORMAT","TEST_UNVERIFIED","METADATA_ONLY","NO_SAMPLES_INCLUDED","NOT_FOR_PA3X_LOAD","NOT_FOR_USB_TRANSFER","NOT_COMPATIBILITY_VERIFIED"];
+    const categoryList=["Arabic Strings","Drums","Bass","Chords","Pads","Melody Guide"];
+    const articulations=["sustain","tremolo","staccato","slide_hint","ornament_hint","octave_layer","dynamic_swell","short_marcato","soft_attack","emotional_fall"];
+    const presets=[
+      ["Arabic Strings Ensemble Soft","Arabic Strings","sustain, soft_attack, dynamic_swell"],
+      ["Arabic Strings Tremolo Light","Arabic Strings","tremolo, dynamic_swell"],
+      ["Arabic Strings Octave Lead","Arabic Strings","octave_layer, ornament_hint"],
+      ["Arabic Strings Pad Wide","Pads","sustain, dynamic_swell"],
+      ["Arabic Violin Guide","Melody Guide","slide_hint, ornament_hint"],
+      ["Syrian Strings Emotional Pad","Pads","soft_attack, emotional_fall"],
+      ["Oriental Strings Short Marcato","Arabic Strings","short_marcato, staccato"],
+      ["Arabic Strings Slow Swell","Arabic Strings","dynamic_swell, soft_attack"],
+      ["Arabic Strings High Octave Response","Arabic Strings","octave_layer, staccato"],
+      ["Arabic Strings Background Layer","Pads","sustain, soft_attack"]
+    ];
+    const $=id=>document.getElementById(id);
+    function render(){
+      $("categories").innerHTML=categoriesData().map(c=>`<span class="pill">${c}</span>`).join("");
+      $("articulations").innerHTML=articulations.map(a=>`<span class="pill">${a}</span>`).join("");
+      presetsTable.innerHTML="<tr><th>Preset</th><th>Category</th><th>Articulations</th></tr>"+presets.map(p=>`<tr><td>${p[0]}</td><td>${p[1]}</td><td>${p[2]}</td></tr>`).join("");
+      ["arabic_strings","pad","melody_guide"].forEach(id=>{const sel=$(id);sel.innerHTML=presets.map(p=>`<option>${p[0]}</option>`).join("")});
+      $("arabic_strings").value="Arabic Strings Tremolo Light";$("pad").value="Syrian Strings Emotional Pad";$("melody_guide").value="Arabic Violin Guide";previewState();
+    }
+    function categoriesData(){return categoryList}
+    function binding(){return {safety_labels:safety,format:"UAOS_FORMAT",status:"TEST_UNVERIFIED",samples_included:"NO",track_mappings:{arabic_strings:$("arabic_strings").value,pad:$("pad").value,melody_guide:$("melody_guide").value},warning:"Metadata only. No audio files included."}}
+    function presetPayload(){return {safety_labels:safety,format:"UAOS_FORMAT",status:"TEST_UNVERIFIED",samples_included:"NO",presets:presets.map(p=>({name:p[0],category:p[1],articulations:p[2].split(", ")}))}}
+    function fullState(){return {safety_labels:safety,format:"UAOS_FORMAT",status:"TEST_UNVERIFIED",library_overview:{categories:categoriesData(),samples_included:"NO"},articulations,arabic_strings_presets:presetPayload().presets,track_binding:binding(),future_user_owned_samples_placeholder:"Metadata placeholder only. Owner must supply licensed local material manually later."}}
+    function previewState(){preview.textContent=JSON.stringify(fullState(),null,2)}
+    function download(name,payload){const blob=new Blob([JSON.stringify(payload,null,2)],{type:"application/json"});const url=URL.createObjectURL(blob);const a=document.createElement("a");a.href=url;a.download=name;document.body.appendChild(a);a.click();a.remove();URL.revokeObjectURL(url)}
+    exportBinding.onclick=()=>download("UAOS_LIBRARY_BINDING_V16.json",binding());exportPresets.onclick=()=>download("UAOS_ARABIC_STRINGS_PRESETS_V16.json",presetPayload());exportFull.onclick=()=>download("UAOS_FULL_LIBRARY_STATE_V16.json",fullState());
+    document.addEventListener("change",previewState);render();
+  </script>
+</body>
+</html>
