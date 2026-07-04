@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>UAOS Daily Workflow V19</title>
+  <style>
+    :root{--ink:#1d2530;--paper:#f5f1e9;--panel:#fff;--line:#d8d0c3;--accent:#176b72;--accent2:#8a3c24;--warn:#7b1f1f;--ok:#315c34}
+    *{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:Arial,Tahoma,sans-serif;line-height:1.55}
+    header{background:#17202b;color:#fff;padding:28px clamp(18px,4vw,46px)}main{max-width:1180px;margin:auto;padding:22px clamp(14px,3vw,28px)}
+    h1,h2{margin:0 0 10px}.sub{direction:ltr;color:#dfe7ea;margin:0}.safety{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:8px;margin:18px 0}
+    .safety span{background:var(--warn);color:white;border-radius:6px;padding:8px;text-align:center;font-weight:700;direction:ltr}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}.card{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:16px}
+    .step{display:grid;gap:8px}.num{display:inline-flex;width:34px;height:34px;border-radius:50%;align-items:center;justify-content:center;background:var(--accent);color:white;font-weight:700}.result{color:var(--ok);font-weight:700}.path{direction:ltr;text-align:left;background:#f5f1e9;border:1px solid #e0d6c6;border-radius:6px;padding:8px;overflow:auto}.button{display:inline-flex;align-items:center;justify-content:center;background:var(--accent2);color:white;text-decoration:none;border-radius:6px;padding:10px 12px;font-weight:700}.warn{background:#fff7ed;border:1px solid #e7c99c;border-radius:8px;padding:12px;margin:14px 0}
+  </style>
+</head>
+<body>
+  <header><h1>لوحة العمل اليومية V19</h1><p class="sub">UAOS PC Workstation Daily Workflow V19</p></header>
+  <main>
+    <section class="safety"><span>PC_ONLY</span><span>NOT_FOR_PA3X_LOAD</span><span>NOT_FOR_USB_TRANSFER</span><span>NOT_COMPATIBILITY_VERIFIED</span><span>NO USB</span><span>NO PA3X LOAD</span></section>
+    <section class="warn">PA3X الحقيقي لاحقا فقط بعد موافقة واختبار منفصل. USB غير جاهز الآن.</section>
+    <section class="grid" id="steps"></section>
+  </main>
+  <script>
+    const steps=[
+      [1,"افتح البرنامج","Open App","../UAOS_PC_WORKSTATION_HOME.html","Open the local home page.","Home opens."],
+      [2,"عدّل المشروع","Edit Project","../editor/UAOS_PROJECT_EDITOR_V13.html","Edit project name, tempo, chords, notes.","Project JSON can be exported."],
+      [3,"عدّل أقسام الستايل","Edit Style Sections","../style_editor/UAOS_STYLE_SECTION_EDITOR_V14.html","Edit intro, verse, chorus, bridge, fill, ending.","Style section JSON can be exported."],
+      [4,"اختر مكتبة الكمنجات","Choose Arabic Strings","../library/UAOS_LIBRARY_MANAGER_V16.html","Choose Arabic strings preset and track mapping.","Library binding JSON can be exported."],
+      [5,"اسمع Preview","Preview","../preview/UAOS_INTERNAL_PLAYER_V15.html","Play synthetic browser preview only.","Synthetic preview plays with no samples."],
+      [6,"شغّل Writer","Run Writer","../writer/RUN_WRITER_V17.cmd","Run the local writer command.","PC-only UAOS outputs are generated."],
+      [7,"افتح MIDI في Cubase","Open MIDI in DAW","../writer/generated_v17_outputs/SARI_ARABIC_POP_ORIENTAL_BALLAD_V17.mid","Open the generated MIDI in Cubase or DAW.","MIDI opens in DAW."],
+      [8,"افحص الحالة","Self Check","../dash/UAOS_PC_WORKSTATION_SELF_CHECK_V18.html","Review component presence and safety locks.","Self-check page opens."],
+      [9,"حدود النسخة الحالية","Current Limits","../docs/WHAT_IS_READY_AND_NOT_READY_V19_EN.md","Read what is ready and not ready.","Limits are clear before next work."]
+    ];
+    function card(s){return `<article class="card step"><div class="num">${s[0]}</div><h2>${s[1]}</h2><strong dir="ltr">${s[2]}</strong><p>${s[4]}</p><div class="path">${s[3].replace("../","")}</div><a class="button" href="${s[3]}">Open</a><p class="result">Expected: ${s[5]}</p><small>Safety: PC_ONLY / not for keyboard load / not for transfer media.</small></article>`}
+    const stepsEl=document.getElementById("steps");
+    steps.forEach(s=>stepsEl.insertAdjacentHTML("beforeend",card(s)));
+  </script>
+</body>
+</html>

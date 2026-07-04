@@ -1,0 +1,29 @@
+{
+  "safety_labels": ["PC_ONLY", "UAOS_FORMAT", "TEST_UNVERIFIED", "NOT_FOR_PA3X_LOAD", "NOT_FOR_USB_TRANSFER", "NOT_COMPATIBILITY_VERIFIED"],
+  "workflow_steps": [
+    {"step": 1, "title": "Open App", "path": "UAOS_PC_WORKSTATION_HOME.html", "status": "READY"},
+    {"step": 2, "title": "Edit Project", "path": "editor/UAOS_PROJECT_EDITOR_V13.html", "status": "READY"},
+    {"step": 3, "title": "Edit Style Sections", "path": "style_editor/UAOS_STYLE_SECTION_EDITOR_V14.html", "status": "READY"},
+    {"step": 4, "title": "Choose Arabic Strings", "path": "library/UAOS_LIBRARY_MANAGER_V16.html", "status": "READY"},
+    {"step": 5, "title": "Preview", "path": "preview/UAOS_INTERNAL_PLAYER_V15.html", "status": "READY"},
+    {"step": 6, "title": "Run Writer", "path": "writer/RUN_WRITER_V17.cmd", "status": "READY"},
+    {"step": 7, "title": "Open MIDI in DAW", "path": "writer/generated_v17_outputs/SARI_ARABIC_POP_ORIENTAL_BALLAD_V17.mid", "status": "READY"},
+    {"step": 8, "title": "Self Check", "path": "dash/UAOS_PC_WORKSTATION_SELF_CHECK_V18.html", "status": "READY"},
+    {"step": 9, "title": "Current Limits", "path": "docs/WHAT_IS_READY_AND_NOT_READY_V19_EN.md", "status": "READ_FIRST"}
+  ],
+  "component_status": {
+    "project_editor_v13": "YES",
+    "style_editor_v14": "YES",
+    "internal_player_v15": "YES",
+    "library_manager_v16": "YES",
+    "writer_v17": "YES",
+    "self_check_v18": "YES",
+    "midi_preview": "YES",
+    "electron_scaffold": "YES"
+  },
+  "next_possible_product_improvements": [
+    "V20 Electron install/package plan",
+    "V20 audio preview improvement",
+    "V20 library workflow improvement"
+  ]
+}
