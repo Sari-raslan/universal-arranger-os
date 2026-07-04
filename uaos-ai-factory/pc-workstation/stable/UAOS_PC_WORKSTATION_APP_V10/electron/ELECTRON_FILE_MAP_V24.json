@@ -1,0 +1,59 @@
+{
+  "version": "V24",
+  "status": "PLAN_ONLY",
+  "stable_folder": "E:\\keyboard-manager-clean\\uaos-ai-factory\\pc-workstation\\stable\\UAOS_PC_WORKSTATION_APP_V10",
+  "home_html": "UAOS_PC_WORKSTATION_HOME.html",
+  "current_web_app": "UAOS_PC_WORKSTATION_APP_V23.html",
+  "css": [
+    "assets\\uaos_v23_theme.css"
+  ],
+  "js": [
+    "assets\\uaos_v23_app.js"
+  ],
+  "data": [
+    "data\\v23_default_project.json",
+    "data\\v23_ui_selftest.json"
+  ],
+  "preview_midi": [
+    "midi\\SARI_ARABIC_POP_ORIENTAL_BALLAD_V9.mid"
+  ],
+  "writer_cmd": [
+    "writer\\RUN_WRITER_V17.cmd"
+  ],
+  "project_files": [
+    "project\\"
+  ],
+  "library_files": [
+    "library\\"
+  ],
+  "validator_files": [
+    "validator\\validate_v23_autonomous_polish.py",
+    "validator\\validate_v24_electron_packaging_plan.py",
+    "validator\\VALIDATOR_V24_ELECTRON_PLAN_RESULT.json"
+  ],
+  "docs": [
+    "docs\\START_HERE_V23_AR.md",
+    "docs\\V23_POLISH_NOTES_AR.md",
+    "docs\\V24_ELECTRON_PACKAGING_PLAN_AR.md",
+    "docs\\V24_ELECTRON_PACKAGING_PLAN_EN.md"
+  ],
+  "seals": [
+    "seal\\UAOS_PC_WORKSTATION_V23_POLISH_SEAL.md",
+    "seal\\UAOS_PC_WORKSTATION_V24_ELECTRON_PLAN_SEAL.md",
+    "seal\\UAOS_PC_WORKSTATION_V24_ELECTRON_PLAN_SEAL.json"
+  ],
+  "electron_scaffold": [
+    "electron\\package.json",
+    "electron\\main.js",
+    "electron\\preload.js",
+    "electron\\README_ELECTRON_LOCAL_ONLY.md",
+    "electron\\ELECTRON_SAFETY_POLICY.md",
+    "electron\\START_ELECTRON_DEV.cmd"
+  ],
+  "not_created_by_v24": [
+    "node_modules",
+    "dist",
+    "release",
+    "installer"
+  ]
+}
