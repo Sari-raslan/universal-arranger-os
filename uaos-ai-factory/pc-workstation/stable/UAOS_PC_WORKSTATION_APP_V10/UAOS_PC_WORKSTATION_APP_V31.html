@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>UAOS PC Workstation V31</title>
+  <link rel="stylesheet" href="assets/uaos_v31_workstation.css">
+</head>
+<body>
+  <div class="workstation" data-app="UAOS V31 5of10 UI sprint">
+    <header class="transport-bar" aria-label="transport">
+      <div class="brand-block">
+        <span class="brand-mark">UAOS</span>
+        <div>
+          <strong id="topProject">Sari Oriental Ballad</strong>
+          <small id="topStyle">Arabic Pop Oriental</small>
+        </div>
+      </div>
+      <label>BPM <input id="bpmInput" type="number" min="60" max="180" value="96"></label>
+      <div class="transport-actions">
+        <button class="primary" id="playFull">تشغيل</button>
+        <button class="ghost danger" id="stopPreview">إيقاف</button>
+        <button class="ghost" id="exportProject">تصدير</button>
+        <button class="ghost" id="openWriter">افتح الرايتر</button>
+      </div>
+      <span class="safety-pill">PC_ONLY</span>
+    </header>
+
+    <aside class="left-nav" aria-label="navigation">
+      <button class="nav active" data-panel="dashboard">Dashboard</button>
+      <button class="nav" data-panel="project">Project</button>
+      <button class="nav" data-panel="arrangement">Arrangement</button>
+      <button class="nav" data-panel="mixer">Mixer</button>
+      <button class="nav" data-panel="library">Library</button>
+      <button class="nav" data-panel="player">Player</button>
+      <button class="nav" data-panel="writer">Writer</button>
+      <button class="nav" data-panel="files">Files</button>
+      <button class="nav" data-panel="safety">Safety</button>
+    </aside>
+
+    <main class="main-workspace">
+      <section class="panel-view active" id="dashboard">
+        <div class="workspace-grid">
+          <section class="module timeline-module">
+            <div class="module-head">
+              <h2>Arrangement timeline</h2>
+              <span>Intro 4 | Verse 16 | Chorus 16 | Bridge 8 | Fill 1 | Ending 4</span>
+            </div>
+            <div class="timeline" id="timeline"></div>
+            <div class="playhead-wrap"><div id="playhead" class="playhead"></div></div>
+          </section>
+
+          <section class="module editor-module">
+            <div class="module-head">
+              <h2>Selected section editor</h2>
+              <span id="sectionTitle">Intro</span>
+            </div>
+            <div class="editor-grid">
+              <label>Bars<input id="sectionBars" type="number" min="1" max="32"></label>
+              <label>Chord<input id="sectionChord"></label>
+              <label>Focus<input id="sectionFocus"></label>
+              <button class="primary" id="saveSection">تعديل</button>
+            </div>
+          </section>
+
+          <section class="module mixer-module">
+            <div class="module-head">
+              <h2>Track mixer</h2>
+              <span>Drums / Bass / Chords / Pad / Arabic Strings / Melody Guide</span>
+            </div>
+            <div class="mixer" id="mixer"></div>
+          </section>
+
+          <section class="module progress-module">
+            <div class="module-head">
+              <h2>Workflow progress</h2>
+              <span>UI target: 5/10 owner beta sprint</span>
+            </div>
+            <div class="workflow">
+              <span>Project</span><span>Style</span><span>Library</span><span>Preview</span><span>Writer</span><span>MIDI</span>
+            </div>
+          </section>
+        </div>
+      </section>
+
+      <section class="panel-view" id="project">
+        <div class="module form-module">
+          <div class="module-head"><h2>Project setup</h2><span>Dense controls, fewer distractions</span></div>
+          <div class="form-grid">
+            <label>Project name<input id="projectName" value="Sari Oriental Ballad"></label>
+            <label>Style name<input id="styleName" value="Arabic Pop Oriental"></label>
+            <label>BPM<input id="projectBpm" type="number" value="96"></label>
+            <label>Main chords<input id="projectChords" value="Dm | Gm | A7 | Dm"></label>
+          </div>
+          <div class="command-row"><button class="primary" id="saveSession">حفظ</button><button class="ghost" id="loadSession">فتح</button></div>
+        </div>
+      </section>
+
+      <section class="panel-view" id="arrangement">
+        <div class="module">
+          <div class="module-head"><h2>Arrangement editor</h2><span>اختر قسمًا من التايملاين وعدّل البارات والكورد</span></div>
+          <div class="timeline large" id="arrangementTimeline"></div>
+          <div class="command-row"><button class="primary" id="exportArrangement">تصدير</button></div>
+        </div>
+      </section>
+
+      <section class="panel-view" id="mixer">
+        <div class="module">
+          <div class="module-head"><h2>Mixer lanes</h2><span>Mute + volume visual controls</span></div>
+          <div class="mixer large" id="mixerPanel"></div>
+        </div>
+      </section>
+
+      <section class="panel-view" id="library">
+        <div class="module">
+          <div class="module-head"><h2>Library presets</h2><span id="libraryFocus">Arabic Strings Tremolo Light</span></div>
+          <div class="preset-rack" id="presetRack"></div>
+          <button class="primary" id="exportLibrary">تصدير</button>
+        </div>
+      </section>
+
+      <section class="panel-view" id="player">
+        <div class="module">
+          <div class="module-head"><h2>Player</h2><span id="currentChord">Current chord: Dm</span></div>
+          <div class="player-grid">
+            <button class="primary play-mode" data-mode="full">تشغيل Full</button>
+            <button class="ghost play-mode" data-mode="chords">تشغيل Chords</button>
+            <button class="ghost play-mode" data-mode="bass">تشغيل Bass</button>
+            <button class="ghost play-mode" data-mode="strings">تشغيل Strings</button>
+            <button class="ghost danger" id="stopPlayer">إيقاف</button>
+          </div>
+          <p class="note">WebAudio oscillator only. No samples.</p>
+        </div>
+      </section>
+
+      <section class="panel-view" id="writer">
+        <div class="module">
+          <div class="module-head"><h2>Writer handoff</h2><span>Manual only</span></div>
+          <div class="path-grid">
+            <div><span>CMD</span><strong>writer\RUN_WRITER_V17.cmd</strong></div>
+            <div><span>Generated outputs</span><strong>writer\output</strong></div>
+            <div><span>MIDI path</span><strong>midi\SARI_ARABIC_POP_ORIENTAL_BALLAD_V9.mid</strong></div>
+          </div>
+          <p class="note">Browser cannot execute cmd directly due to security. افتح الرايتر يدويًا من Windows عند الحاجة.</p>
+          <div class="command-row">
+            <button class="primary" type="button" id="writerButton">افتح الرايتر</button>
+            <a class="ghost midi-link" href="midi/SARI_ARABIC_POP_ORIENTAL_BALLAD_V9.mid">افتح MIDI</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel-view" id="files">
+        <div class="module">
+          <div class="module-head"><h2>Files</h2><span>Local references</span></div>
+          <div class="path-grid">
+            <div><span>Project JSON</span><strong>data\v31_project.json</strong></div>
+            <div><span>Arrangement JSON</span><strong>data\v31_arrangement.json</strong></div>
+            <div><span>Library JSON</span><strong>data\v31_library.json</strong></div>
+            <div><span>Mixer JSON</span><strong>data\v31_mixer.json</strong></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel-view" id="safety">
+        <div class="module">
+          <div class="module-head"><h2>Safety</h2><span>PC software only</span></div>
+          <div class="safety-grid">
+            <div><span>PA3X-ready claim</span><strong>NO</strong></div>
+            <div><span>USB write</span><strong>NO</strong></div>
+            <div><span>PA3X load</span><strong>NO</strong></div>
+            <div><span>Deploy/payment</span><strong>NO</strong></div>
+            <div><span>App.jsx touched</span><strong>NO</strong></div>
+            <div><span>Test-unverified</span><strong>YES</strong></div>
+          </div>
+          <button class="primary" id="runSelfTest">تشغيل Self-Test</button>
+        </div>
+      </section>
+    </main>
+
+    <aside class="inspector" aria-label="inspector">
+      <h2>Inspector</h2>
+      <div class="readout"><span>Selected section</span><strong id="inspectSection">Intro</strong></div>
+      <div class="readout"><span>Selected preset</span><strong id="inspectPreset">Arabic Strings Tremolo Light</strong></div>
+      <div class="readout"><span>Current chord</span><strong id="inspectChord">Dm</strong></div>
+      <div class="readout"><span>Writer status</span><strong id="writerStatus">Manual</strong></div>
+      <div class="readout"><span>Self-test status</span><strong id="selfTestStatus">Not run</strong></div>
+      <div class="readout"><span>Last action</span><strong id="inspectAction">Ready</strong></div>
+    </aside>
+
+    <footer class="status-bar" aria-label="status">
+      <span>Local only</span>
+      <span>No USB</span>
+      <span>No PA3X</span>
+      <span>Test-unverified</span>
+      <span id="lastAction">Last action: Ready</span>
+    </footer>
+  </div>
+  <script src="assets/uaos_v31_workstation.js"></script>
+</body>
+</html>
