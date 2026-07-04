@@ -1,0 +1,163 @@
+{
+  "schemaVersion": "uaos.v46.decision.import.apply.preview.v3",
+  "generatedAt": "2026-07-04T16:55:02.340Z",
+  "previewId": "uaos-v46-preview-v3-20260704165502",
+  "sourceProjectPath": "../v37/generated/UAOS_EXAMPLE_PROJECT_V37.uaosproject.json",
+  "importedDecisionTemplatePath": "../v45/generated/UAOS_V45_MANUAL_DECISION_IMPORT_TEMPLATE.json",
+  "v43DecisionTemplatePath": "../v43/generated/UAOS_V43_OWNER_DECISION_TEMPLATE.json",
+  "v44ApplyPreviewPath": "../v44/generated/UAOS_V44_DECISION_APPLY_PREVIEW_V2.json",
+  "v45DryrunSummaryPath": "../v45/generated/UAOS_V45_IMPORTED_DECISION_DRYRUN_SUMMARY.json",
+  "acceptedDecisionCount": 0,
+  "pendingDecisionCount": 9,
+  "rejectedDecisionCount": 0,
+  "deferredDecisionCount": 0,
+  "needsMoreReviewCount": 0,
+  "appliedPreviewChanges": [],
+  "skippedPendingChanges": [
+    {
+      "decisionId": "V43-DEC-001",
+      "sourceReviewItemId": "V41-REV-001",
+      "sourceSuggestionId": "V40-SEC-001",
+      "category": "sectionStructure",
+      "title": "Add owner notes per section",
+      "proposedMetadataChange": "Add optional ownerNote fields for intro, variations, fill, and ending.",
+      "selectedDecision": "pending",
+      "skippedReason": "owner_decision_pending"
+    },
+    {
+      "decisionId": "V43-DEC-002",
+      "sourceReviewItemId": "V41-REV-002",
+      "sourceSuggestionId": "V40-RHY-001",
+      "category": "rhythmDensity",
+      "title": "Define density targets by section",
+      "proposedMetadataChange": "Add low/medium/high density intent for each section.",
+      "selectedDecision": "pending",
+      "skippedReason": "owner_decision_pending"
+    },
+    {
+      "decisionId": "V43-DEC-003",
+      "sourceReviewItemId": "V41-REV-003",
+      "sourceSuggestionId": "V40-BAS-001",
+      "category": "bassMovement",
+      "title": "Add bass movement contour",
+      "proposedMetadataChange": "Add root_hold, passing_motion, and turnaround tags as metadata only.",
+      "selectedDecision": "pending",
+      "skippedReason": "owner_decision_pending"
+    },
+    {
+      "decisionId": "V43-DEC-004",
+      "sourceReviewItemId": "V41-REV-004",
+      "sourceSuggestionId": "V40-CHR-001",
+      "category": "chordRhythm",
+      "title": "Add chord rhythm pattern labels",
+      "proposedMetadataChange": "Add metadata labels such as stab, syncopated, held, and push.",
+      "selectedDecision": "pending",
+      "skippedReason": "owner_decision_pending"
+    },
+    {
+      "decisionId": "V43-DEC-005",
+      "sourceReviewItemId": "V41-REV-005",
+      "sourceSuggestionId": "V40-ORI-001",
+      "category": "orientalFeel",
+      "title": "Separate feel from compatibility",
+      "proposedMetadataChange": "Keep maqam/feel notes as reference-only metadata.",
+      "selectedDecision": "pending",
+      "skippedReason": "owner_decision_pending"
+    },
+    {
+      "decisionId": "V43-DEC-006",
+      "sourceReviewItemId": "V41-REV-006",
+      "sourceSuggestionId": "V40-MEL-001",
+      "category": "melodySpace",
+      "title": "Add melody space map",
+      "proposedMetadataChange": "Add sparse/medium/busy melody-space values per section.",
+      "selectedDecision": "pending",
+      "skippedReason": "owner_decision_pending"
+    },
+    {
+      "decisionId": "V43-DEC-007",
+      "sourceReviewItemId": "V41-REV-007",
+      "sourceSuggestionId": "V40-DSP-001",
+      "category": "dspIntent",
+      "title": "Add DSP intent confidence",
+      "proposedMetadataChange": "Add low/medium/high confidence metadata for each DSP channel.",
+      "selectedDecision": "pending",
+      "skippedReason": "owner_decision_pending"
+    },
+    {
+      "decisionId": "V43-DEC-008",
+      "sourceReviewItemId": "V41-REV-008",
+      "sourceSuggestionId": "V40-HUM-001",
+      "category": "humanReview",
+      "title": "Add reviewer checklist slots",
+      "proposedMetadataChange": "Add empty metadata-only reviewer note fields.",
+      "selectedDecision": "pending",
+      "skippedReason": "owner_decision_pending"
+    },
+    {
+      "decisionId": "V43-DEC-009",
+      "sourceReviewItemId": "V41-REV-009",
+      "sourceSuggestionId": "V40-SAFE-001",
+      "category": "safetyGate",
+      "title": "Keep export gates locked",
+      "proposedMetadataChange": "Mirror approvedForKorgExport, approvedForUsb, and approvedForKeyboardLoad as false.",
+      "selectedDecision": "pending",
+      "skippedReason": "owner_decision_pending"
+    }
+  ],
+  "ownerDecisionStatus": "owner_decisions_pending",
+  "ownerDecisionNote": "All imported/manual decisions are still pending; no metadata changes are applied in this preview.",
+  "beforeSummary": {
+    "projectId": "uaos-v37-example-project",
+    "projectName": "UAOS V37 Example Metadata Project",
+    "trackCount": 5,
+    "targetKeyboard": "KORG_PA3X_ORIENTAL_UNVERIFIED",
+    "sourceMode": "metadata_only",
+    "sourceHashes": {
+      "v37ProjectSha256Before": "eb87fdce56fd548742c29721e2883a515f08fdd5b9fae893a72b00e2dffaaf37",
+      "v42DryrunProjectSha256Before": "6711b2e024c1d1b0349674b6fae33aaffe1d19aed94da343787e82ade065bf2b",
+      "v44DryrunProjectSha256Before": "7bb6dd64a2a5ea468be09d10a1c261fafad0689401e90a57bf433fbb15a9988e"
+    },
+    "v43DecisionCount": 9,
+    "v44AcceptedDecisionCount": 0,
+    "v45PendingCount": 9
+  },
+  "afterPreviewSummary": {
+    "previewArtifact": true,
+    "acceptedChangeCount": 0,
+    "skippedPendingCount": 9,
+    "sourceProjectModified": false,
+    "dryRunOnly": true,
+    "metadataOnly": true,
+    "approvedForKorgExport": false,
+    "approvedForUsb": false,
+    "approvedForKeyboardLoad": false
+  },
+  "dryRunOnly": true,
+  "metadataOnly": true,
+  "sourceProjectModified": false,
+  "autoApplyEnabled": false,
+  "realApplyAllowed": false,
+  "humanReviewRequired": true,
+  "exportApprovalImpact": false,
+  "korgOutputAllowed": false,
+  "usbWriteAllowed": false,
+  "keyboardLoadAllowed": false,
+  "approvedForKorgExport": false,
+  "approvedForUsb": false,
+  "approvedForKeyboardLoad": false,
+  "safety": {
+    "metadataOnly": true,
+    "dryRunOnly": true,
+    "sourceProjectModified": false,
+    "autoApplyEnabled": false,
+    "realApplyAllowed": false,
+    "korgOutputAllowed": false,
+    "setModificationAllowed": false,
+    "usbWriteAllowed": false,
+    "keyboardLoadAllowed": false,
+    "compatibilityClaim": false,
+    "pa3xReadyClaim": false,
+    "exportApprovalImpact": false
+  }
+}

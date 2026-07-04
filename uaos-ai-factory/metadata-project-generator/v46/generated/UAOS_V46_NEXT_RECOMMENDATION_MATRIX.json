@@ -1,0 +1,53 @@
+{
+  "schemaVersion": "uaos.v46.next.recommendation.matrix.v1",
+  "generatedAt": "2026-07-04T16:55:02.340Z",
+  "metadataOnly": true,
+  "dryRunOnly": true,
+  "approvedForKorgExport": false,
+  "approvedForUsb": false,
+  "approvedForKeyboardLoad": false,
+  "recommendations": [
+    {
+      "id": "A",
+      "action": "V47 Review Pack Reader / Inspector",
+      "safety": "metadata-only",
+      "recommended": true
+    },
+    {
+      "id": "B",
+      "action": "V47 Owner Decision Filled Example",
+      "safety": "sample and dry-run only",
+      "recommended": false
+    },
+    {
+      "id": "C",
+      "action": "V47 Local Archive Index V37-V46",
+      "safety": "no App.jsx, no deploy",
+      "recommended": true
+    },
+    {
+      "id": "D",
+      "action": "Stop",
+      "safety": "always available",
+      "recommended": false
+    }
+  ],
+  "recommendedTogether": [
+    "A",
+    "C"
+  ],
+  "safety": {
+    "metadataOnly": true,
+    "dryRunOnly": true,
+    "sourceProjectModified": false,
+    "autoApplyEnabled": false,
+    "realApplyAllowed": false,
+    "korgOutputAllowed": false,
+    "setModificationAllowed": false,
+    "usbWriteAllowed": false,
+    "keyboardLoadAllowed": false,
+    "compatibilityClaim": false,
+    "pa3xReadyClaim": false,
+    "exportApprovalImpact": false
+  }
+}
