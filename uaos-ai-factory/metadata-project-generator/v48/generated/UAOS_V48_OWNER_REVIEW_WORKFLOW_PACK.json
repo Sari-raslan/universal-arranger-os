@@ -1,0 +1,215 @@
+{
+  "schemaVersion": "uaos.v48.owner.review.workflow.pack.v1",
+  "generatedAt": "2026-07-04T17:09:42.798Z",
+  "metadataOnly": true,
+  "reviewWorkflowOnly": true,
+  "readInspectOnly": true,
+  "sourceProjectModified": false,
+  "workflowSteps": [
+    {
+      "stepId": "step-01",
+      "title": "Open V47 local archive index",
+      "localPath": "E:\\keyboard-manager-clean\\uaos-ai-factory\\metadata-project-generator\\v47\\generated\\UAOS_V47_LOCAL_ARCHIVE_INDEX_V37_V46.html",
+      "ownerAction": "Open the local index and confirm V37-V47 materials are visible.",
+      "expectedOutput": "Owner sees the local archive map.",
+      "safetyNote": "Metadata-only review step. No real apply, no source mutation, no export approval, no USB write, and no keyboard load.",
+      "blockedActions": [
+        "real apply",
+        "source project mutation",
+        "auto-apply",
+        "KORG output",
+        "SET/STY/PRF/PRS/KST generation",
+        "USB write",
+        "PA3X load",
+        "export approval",
+        "App.jsx integration",
+        "deploy"
+      ]
+    },
+    {
+      "stepId": "step-02",
+      "title": "Review V39 metadata report",
+      "localPath": "E:\\keyboard-manager-clean\\uaos-ai-factory\\metadata-project-generator\\v39\\generated\\UAOS_V39_METADATA_REPORT.html",
+      "ownerAction": "Read the metadata report for context before deciding.",
+      "expectedOutput": "Owner understands the current metadata report.",
+      "safetyNote": "Metadata-only review step. No real apply, no source mutation, no export approval, no USB write, and no keyboard load.",
+      "blockedActions": [
+        "real apply",
+        "source project mutation",
+        "auto-apply",
+        "KORG output",
+        "SET/STY/PRF/PRS/KST generation",
+        "USB write",
+        "PA3X load",
+        "export approval",
+        "App.jsx integration",
+        "deploy"
+      ]
+    },
+    {
+      "stepId": "step-03",
+      "title": "Review V40 suggestions",
+      "localPath": "E:\\keyboard-manager-clean\\uaos-ai-factory\\metadata-project-generator\\v40\\generated\\UAOS_V40_STYLE_IMPROVEMENT_SUGGESTIONS.json",
+      "ownerAction": "Review rule-based style improvement suggestions.",
+      "expectedOutput": "Owner identifies which suggestions need decisions.",
+      "safetyNote": "Metadata-only review step. No real apply, no source mutation, no export approval, no USB write, and no keyboard load.",
+      "blockedActions": [
+        "real apply",
+        "source project mutation",
+        "auto-apply",
+        "KORG output",
+        "SET/STY/PRF/PRS/KST generation",
+        "USB write",
+        "PA3X load",
+        "export approval",
+        "App.jsx integration",
+        "deploy"
+      ]
+    },
+    {
+      "stepId": "step-04",
+      "title": "Review V41 suggestion review pack",
+      "localPath": "E:\\keyboard-manager-clean\\uaos-ai-factory\\metadata-project-generator\\v41\\generated\\UAOS_V41_SUGGESTION_REVIEW_PACK.json",
+      "ownerAction": "Review grouped suggestion items and scores.",
+      "expectedOutput": "Owner sees the review candidates.",
+      "safetyNote": "Metadata-only review step. No real apply, no source mutation, no export approval, no USB write, and no keyboard load.",
+      "blockedActions": [
+        "real apply",
+        "source project mutation",
+        "auto-apply",
+        "KORG output",
+        "SET/STY/PRF/PRS/KST generation",
+        "USB write",
+        "PA3X load",
+        "export approval",
+        "App.jsx integration",
+        "deploy"
+      ]
+    },
+    {
+      "stepId": "step-05",
+      "title": "Open V44 owner review form",
+      "localPath": "E:\\keyboard-manager-clean\\uaos-ai-factory\\metadata-project-generator\\v44\\generated\\UAOS_V44_OWNER_REVIEW_FORM.html",
+      "ownerAction": "Use the local form as a guided review screen.",
+      "expectedOutput": "Owner can compare decision areas without saving automatically.",
+      "safetyNote": "Metadata-only review step. No real apply, no source mutation, no export approval, no USB write, and no keyboard load.",
+      "blockedActions": [
+        "real apply",
+        "source project mutation",
+        "auto-apply",
+        "KORG output",
+        "SET/STY/PRF/PRS/KST generation",
+        "USB write",
+        "PA3X load",
+        "export approval",
+        "App.jsx integration",
+        "deploy"
+      ]
+    },
+    {
+      "stepId": "step-06",
+      "title": "Use V45 printable decision sheet",
+      "localPath": "E:\\keyboard-manager-clean\\uaos-ai-factory\\metadata-project-generator\\v45\\generated\\UAOS_V45_OWNER_REVIEW_PRINTABLE_DECISION_SHEET.md",
+      "ownerAction": "Mark decisions manually on the printable sheet.",
+      "expectedOutput": "Owner has a human-readable decision record.",
+      "safetyNote": "Metadata-only review step. No real apply, no source mutation, no export approval, no USB write, and no keyboard load.",
+      "blockedActions": [
+        "real apply",
+        "source project mutation",
+        "auto-apply",
+        "KORG output",
+        "SET/STY/PRF/PRS/KST generation",
+        "USB write",
+        "PA3X load",
+        "export approval",
+        "App.jsx integration",
+        "deploy"
+      ]
+    },
+    {
+      "stepId": "step-07",
+      "title": "Record decisions in V43/V45 decision template",
+      "localPath": "E:\\keyboard-manager-clean\\uaos-ai-factory\\metadata-project-generator\\v45\\generated\\UAOS_V45_MANUAL_DECISION_IMPORT_TEMPLATE.json",
+      "ownerAction": "Enter decisions manually using allowed decision values only.",
+      "expectedOutput": "Decision template is ready for a future dry-run import preview.",
+      "safetyNote": "Metadata-only review step. No real apply, no source mutation, no export approval, no USB write, and no keyboard load.",
+      "blockedActions": [
+        "real apply",
+        "source project mutation",
+        "auto-apply",
+        "KORG output",
+        "SET/STY/PRF/PRS/KST generation",
+        "USB write",
+        "PA3X load",
+        "export approval",
+        "App.jsx integration",
+        "deploy"
+      ]
+    },
+    {
+      "stepId": "step-08",
+      "title": "Run future dry-run import preview only",
+      "localPath": "E:\\keyboard-manager-clean\\uaos-ai-factory\\metadata-project-generator\\v46\\generated\\UAOS_V46_DECISION_IMPORT_APPLY_PREVIEW_V3.json",
+      "ownerAction": "Use only a future dry-run preview to inspect accepted metadata changes.",
+      "expectedOutput": "Owner sees a preview artifact, not a mutated source project.",
+      "safetyNote": "Metadata-only review step. No real apply, no source mutation, no export approval, no USB write, and no keyboard load.",
+      "blockedActions": [
+        "real apply",
+        "source project mutation",
+        "auto-apply",
+        "KORG output",
+        "SET/STY/PRF/PRS/KST generation",
+        "USB write",
+        "PA3X load",
+        "export approval",
+        "App.jsx integration",
+        "deploy"
+      ]
+    },
+    {
+      "stepId": "step-09",
+      "title": "Do not export, do not USB, do not PA3X load",
+      "localPath": "E:\\keyboard-manager-clean\\uaos-ai-factory\\metadata-project-generator\\v48\\reports\\UAOS_V48_FINAL_SEAL.md",
+      "ownerAction": "Keep all hardware and export gates closed.",
+      "expectedOutput": "No export approval, no USB write, and no keyboard load.",
+      "safetyNote": "Metadata-only review step. No real apply, no source mutation, no export approval, no USB write, and no keyboard load.",
+      "blockedActions": [
+        "real apply",
+        "source project mutation",
+        "auto-apply",
+        "KORG output",
+        "SET/STY/PRF/PRS/KST generation",
+        "USB write",
+        "PA3X load",
+        "export approval",
+        "App.jsx integration",
+        "deploy"
+      ]
+    }
+  ],
+  "decisionMapPath": "E:\\keyboard-manager-clean\\uaos-ai-factory\\metadata-project-generator\\v48\\generated\\UAOS_V48_OWNER_REVIEW_DECISION_MAP.json",
+  "sourceSummary": {
+    "v41ReviewItemCount": 9,
+    "v43DecisionCount": 9,
+    "v46ReviewPackFileCount": 31,
+    "v47ArchiveReadyForOwnerReview": true
+  },
+  "readyForKorgExport": false,
+  "readyForUsb": false,
+  "readyForKeyboardLoad": false,
+  "safety": {
+    "metadataOnly": true,
+    "reviewWorkflowOnly": true,
+    "readInspectOnly": true,
+    "sourceProjectModified": false,
+    "autoApplyEnabled": false,
+    "realApplyAllowed": false,
+    "korgOutputAllowed": false,
+    "setModificationAllowed": false,
+    "usbWriteAllowed": false,
+    "keyboardLoadAllowed": false,
+    "compatibilityClaim": false,
+    "pa3xReadyClaim": false,
+    "exportApproval": false
+  }
+}

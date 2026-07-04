@@ -1,0 +1,55 @@
+{
+  "schemaVersion": "uaos.v48.next.recommendation.matrix.v1",
+  "generatedAt": "2026-07-04T17:09:59.696Z",
+  "metadataOnly": true,
+  "reviewWorkflowOnly": true,
+  "regressionTestOnly": true,
+  "approvedForKorgExport": false,
+  "approvedForUsb": false,
+  "approvedForKeyboardLoad": false,
+  "recommendations": [
+    {
+      "id": "A",
+      "action": "V49 Local Static Review Portal",
+      "safety": "no App.jsx and no deploy",
+      "recommended": true
+    },
+    {
+      "id": "B",
+      "action": "V49 Owner Decision Filled Example",
+      "safety": "sample and dry-run only",
+      "recommended": false
+    },
+    {
+      "id": "C",
+      "action": "V49 Metadata Governance Freeze Pack",
+      "safety": "metadata-only",
+      "recommended": true
+    },
+    {
+      "id": "D",
+      "action": "Stop",
+      "safety": "always available",
+      "recommended": false
+    }
+  ],
+  "recommendedTogether": [
+    "A",
+    "C"
+  ],
+  "safety": {
+    "metadataOnly": true,
+    "regressionTestOnly": true,
+    "readInspectOnly": true,
+    "sourceProjectModified": false,
+    "autoApplyEnabled": false,
+    "realApplyAllowed": false,
+    "korgOutputAllowed": false,
+    "setModificationAllowed": false,
+    "usbWriteAllowed": false,
+    "keyboardLoadAllowed": false,
+    "compatibilityClaim": false,
+    "pa3xReadyClaim": false,
+    "exportApproval": false
+  }
+}

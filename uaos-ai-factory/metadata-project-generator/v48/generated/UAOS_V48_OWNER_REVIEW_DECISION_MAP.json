@@ -1,0 +1,72 @@
+{
+  "schemaVersion": "uaos.v48.owner.review.decision.map.v1",
+  "generatedAt": "2026-07-04T17:09:42.798Z",
+  "decisionItems": [
+    {
+      "decisionArea": "style_suggestions",
+      "relatedFile": "E:\\keyboard-manager-clean\\uaos-ai-factory\\metadata-project-generator\\v40\\generated\\UAOS_V40_STYLE_IMPROVEMENT_SUGGESTIONS.json",
+      "allowedDecision": "accept_for_future_metadata_plan_only",
+      "ownerRequired": true,
+      "canAutoApply": false,
+      "metadataOnly": true,
+      "dryRunOnly": true,
+      "exportApprovalImpact": false
+    },
+    {
+      "decisionArea": "suggestion_review_pack",
+      "relatedFile": "E:\\keyboard-manager-clean\\uaos-ai-factory\\metadata-project-generator\\v41\\generated\\UAOS_V41_SUGGESTION_REVIEW_PACK.json",
+      "allowedDecision": "reject",
+      "ownerRequired": true,
+      "canAutoApply": false,
+      "metadataOnly": true,
+      "dryRunOnly": true,
+      "exportApprovalImpact": false
+    },
+    {
+      "decisionArea": "owner_form_review",
+      "relatedFile": "E:\\keyboard-manager-clean\\uaos-ai-factory\\metadata-project-generator\\v44\\generated\\UAOS_V44_OWNER_REVIEW_FORM.html",
+      "allowedDecision": "needs_more_review",
+      "ownerRequired": true,
+      "canAutoApply": false,
+      "metadataOnly": true,
+      "dryRunOnly": true,
+      "exportApprovalImpact": false
+    },
+    {
+      "decisionArea": "printable_decision_sheet",
+      "relatedFile": "E:\\keyboard-manager-clean\\uaos-ai-factory\\metadata-project-generator\\v45\\generated\\UAOS_V45_OWNER_REVIEW_PRINTABLE_DECISION_SHEET.md",
+      "allowedDecision": "defer",
+      "ownerRequired": true,
+      "canAutoApply": false,
+      "metadataOnly": true,
+      "dryRunOnly": true,
+      "exportApprovalImpact": false
+    },
+    {
+      "decisionArea": "manual_import_template",
+      "relatedFile": "E:\\keyboard-manager-clean\\uaos-ai-factory\\metadata-project-generator\\v45\\generated\\UAOS_V45_MANUAL_DECISION_IMPORT_TEMPLATE.json",
+      "allowedDecision": "accept_for_future_metadata_plan_only",
+      "ownerRequired": true,
+      "canAutoApply": false,
+      "metadataOnly": true,
+      "dryRunOnly": true,
+      "exportApprovalImpact": false
+    }
+  ],
+  "sourceDecisionCount": 9,
+  "safety": {
+    "metadataOnly": true,
+    "reviewWorkflowOnly": true,
+    "readInspectOnly": true,
+    "sourceProjectModified": false,
+    "autoApplyEnabled": false,
+    "realApplyAllowed": false,
+    "korgOutputAllowed": false,
+    "setModificationAllowed": false,
+    "usbWriteAllowed": false,
+    "keyboardLoadAllowed": false,
+    "compatibilityClaim": false,
+    "pa3xReadyClaim": false,
+    "exportApproval": false
+  }
+}
