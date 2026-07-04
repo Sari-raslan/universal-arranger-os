@@ -1,0 +1,30 @@
+{
+  "status": "PASS",
+  "checkedAt": "2026-07-04T18:03:00.625Z",
+  "checkedFiles": {
+    "dryrun": "generated/UAOS_V55_INTERNAL_STYLE_GENERATION_DRYRUN.json",
+    "dryrunMd": "generated/UAOS_V55_INTERNAL_STYLE_GENERATION_DRYRUN.md",
+    "intent": "generated/UAOS_V55_STYLE_INTENT_PREVIEW.json",
+    "sections": "generated/UAOS_V55_STYLE_SECTION_PLAN_PREVIEW.json",
+    "score": "generated/UAOS_V55_BRIDGE_QUALITY_SCORE.json",
+    "scoreMd": "generated/UAOS_V55_BRIDGE_QUALITY_SCORE.md",
+    "gates": "generated/UAOS_V55_EXPORT_GATE_VALIDATOR_V2_RESULTS.json",
+    "gatesMd": "generated/UAOS_V55_EXPORT_GATE_VALIDATOR_V2_REPORT.md",
+    "matrix": "generated/UAOS_V55_NEXT_RECOMMENDATION_MATRIX.json"
+  },
+  "errors": [],
+  "warnings": [],
+  "safety": {
+    "dryRunOnly": true,
+    "metadataOnly": true,
+    "noAudioRender": true,
+    "noMidiGeneration": true,
+    "noKorgOutput": true,
+    "noUsbWrite": true,
+    "noKeyboardLoad": true,
+    "noSourceProjectMutation": true,
+    "noAppJs": true,
+    "noDeploy": true,
+    "noPayment": true
+  }
+}
