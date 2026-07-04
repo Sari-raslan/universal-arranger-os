@@ -1,0 +1,90 @@
+{
+  "schemaVersion": "uaos.v41.local.project.comparison.matrix.v1",
+  "generatedAt": "2026-07-04T14:56:49.977Z",
+  "metadataOnly": true,
+  "comparedArtifacts": [
+    "V37 project bundle",
+    "V38 inspection/scoring",
+    "V39 rules/report",
+    "V40 suggestions",
+    "V41 review pack"
+  ],
+  "dimensions": [
+    {
+      "dimension": "metadataCompleteness",
+      "v37": 85,
+      "v38": 100,
+      "v39": 100,
+      "v40": 100,
+      "v41": 100
+    },
+    {
+      "dimension": "styleReviewDepth",
+      "v37": 70,
+      "v38": 100,
+      "v39": 100,
+      "v40": 95,
+      "v41": 100
+    },
+    {
+      "dimension": "dspPlanCompleteness",
+      "v37": 90,
+      "v38": 100,
+      "v39": 95,
+      "v40": 100,
+      "v41": 100
+    },
+    {
+      "dimension": "safetyCoverage",
+      "v37": 100,
+      "v38": 100,
+      "v39": 100,
+      "v40": 100,
+      "v41": 100
+    },
+    {
+      "dimension": "humanReviewReadiness",
+      "v37": 75,
+      "v38": 100,
+      "v39": 95,
+      "v40": 100,
+      "v41": 100
+    },
+    {
+      "dimension": "exportBlockedStatus",
+      "v37": 100,
+      "v38": 100,
+      "v39": 100,
+      "v40": 100,
+      "v41": 100
+    },
+    {
+      "dimension": "ownerReviewReadiness",
+      "v37": 60,
+      "v38": 75,
+      "v39": 85,
+      "v40": 90,
+      "v41": 100
+    }
+  ],
+  "notes": [
+    "Scores are metadata-only.",
+    "Scores do not imply KORG compatibility.",
+    "Scores do not imply PA3X readiness.",
+    "Scores do not approve export."
+  ],
+  "approvedForKorgExport": false,
+  "approvedForUsb": false,
+  "approvedForKeyboardLoad": false,
+  "safety": {
+    "metadataOnly": true,
+    "korgOutputAllowed": false,
+    "setModificationAllowed": false,
+    "usbWriteAllowed": false,
+    "keyboardLoadAllowed": false,
+    "compatibilityClaim": false,
+    "pa3xReadyClaim": false,
+    "exportApproval": false,
+    "autoApply": false
+  }
+}
