@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>UAOS V77 Local Program RC Dashboard</title>
+  <style>
+    body{margin:0;font-family:Arial,sans-serif;background:#f5f6f3;color:#202124}
+    main{max-width:1120px;margin:0 auto;padding:32px}
+    h1{margin:0 0 8px}.sub{color:#5f6368;margin:0 0 22px}
+    .grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}
+    .card{background:#fff;border:1px solid #d8d8d0;border-radius:8px;padding:14px;min-height:88px}
+    .label{font-size:13px;color:#5f6368;margin-bottom:8px}.ok{color:#1f6b3b;font-weight:700}.block{color:#8a1f1f;font-weight:700}.neutral{font-weight:700}
+    a{color:#174ea6}.links{margin-top:24px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+    @media(max-width:820px){main{padding:20px}.grid,.links{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+<main>
+  <h1>UAOS V77 Local Program RC Dashboard</h1>
+  <p class="sub">Owner opening dashboard for generic MIDI/UAOS/ZIP RC review. Static local only.</p>
+  <section class="grid">
+    <article class="card"><div class="label">Real MIDI Export</div><div class="ok">CREATED</div></article>
+    <article class="card"><div class="label">UAOS Project Package</div><div class="ok">CREATED</div></article>
+    <article class="card"><div class="label">Generic ZIP Package</div><div class="ok">CREATED</div></article>
+    <article class="card"><div class="label">Export Validator</div><div class="ok">PASS</div></article>
+    <article class="card"><div class="label">Local Preview</div><div class="ok">READY</div></article>
+    <article class="card"><div class="label">KORG Export</div><div class="block">BLOCKED</div></article>
+    <article class="card"><div class="label">USB Write</div><div class="block">BLOCKED</div></article>
+    <article class="card"><div class="label">PA3X Load</div><div class="block">BLOCKED</div></article>
+    <article class="card"><div class="label">App.jsx</div><div class="neutral">NOT TOUCHED</div></article>
+    <article class="card"><div class="label">Deploy</div><div class="block">BLOCKED</div></article>
+  </section>
+  <section class="links">
+    <p><a href="../../v71/midi/UAOS_V71_REAL_MIDI_EXPORT_FOUNDATION.mid">V71 MIDI</a></p>
+    <p><a href="../../v72/package/UAOS_V72_PROJECT_PACKAGE.uaos.json">V72 UAOS package</a></p>
+    <p><a href="../../v73/exports/UAOS_V73_GENERIC_STYLE_PACKAGE.zip">V73 generic ZIP</a></p>
+    <p><a href="../../v75/preview/UAOS_V75_LOCAL_EXPORT_PREVIEW.html">V75 local preview</a></p>
+    <p><a href="../../v78/approval/UAOS_V78_NEXT_EXPORT_APPROVAL_GATE.md">V78 next approval gate</a></p>
+    <p><a href="../../v79/trial/UAOS_V79_OWNER_TEST_STEPS.md">V79 owner test steps</a></p>
+  </section>
+</main>
+</body>
+</html>

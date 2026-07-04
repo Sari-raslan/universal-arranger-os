@@ -3,12 +3,19 @@
 status: "DRAFT_ONLY"
 
 ## Next Safe Action
-Execute V76-V80 Local Program RC Export Trial after V74 hardened validation and V75 local export preview PASS.
+Choose one V80 roadmap option for the next safe run.
 
 ## Completed Safe Actions
 - V74 Export Validator Hardening: PASS
 - V75 Local Export Preview UI: PASS
 - V74-V75 batch dashboard: PASS
+- V76-V80 Local Program RC Export Trial: PASS
+
+## Next Action Options
+1. improve MIDI arrangement depth
+2. create read-only KORG research pack
+3. build local desktop wrapper spec only
+4. prepare external tester handoff
 
 ## Blocked Actions
 - Export remains blocked.

@@ -1,0 +1,21 @@
+{
+  "status": "PENDING_OWNER_DECISION",
+  "approval_applied_in_this_run": false,
+  "options": [
+    "keep current generic MIDI/UAOS/ZIP export only",
+    "approve deeper MIDI arrangement export",
+    "approve read-only KORG research",
+    "keep KORG writer blocked",
+    "keep USB blocked",
+    "keep PA3X load blocked",
+    "keep App.jsx blocked",
+    "keep deploy blocked"
+  ],
+  "blocked": {
+    "korg_writer": true,
+    "usb_write": true,
+    "pa3x_load": true,
+    "appjsx": true,
+    "deploy": true
+  }
+}

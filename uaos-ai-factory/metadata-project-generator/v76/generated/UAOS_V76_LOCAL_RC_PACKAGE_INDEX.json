@@ -1,0 +1,21 @@
+{
+  "status": "PASS",
+  "package": "UAOS V76 Local RC Package Index",
+  "static_local_only": true,
+  "artifacts": {
+    "v71_midi": "../v71/midi/UAOS_V71_REAL_MIDI_EXPORT_FOUNDATION.mid",
+    "v72_uaos_package": "../v72/package/UAOS_V72_PROJECT_PACKAGE.uaos.json",
+    "v73_generic_zip": "../v73/exports/UAOS_V73_GENERIC_STYLE_PACKAGE.zip",
+    "v74_hardened_validator": "../v74/generated/UAOS_V74_HARDENED_EXPORT_VALIDATOR_RESULTS.json",
+    "v75_local_preview": "../v75/preview/UAOS_V75_LOCAL_EXPORT_PREVIEW.html",
+    "batch_v71_v73_dashboard": "../batch-v71-v73-real-export/UAOS_BATCH_V71_V73_REAL_EXPORT_OWNER_DASHBOARD.html",
+    "batch_v74_v75_dashboard": "../batch-v74-v75-export-preview/UAOS_BATCH_V74_V75_OWNER_DASHBOARD.html"
+  },
+  "blocked": {
+    "korg_output": true,
+    "usb_write": true,
+    "pa3x_load": true,
+    "appjsx": true,
+    "deploy": true
+  }
+}
