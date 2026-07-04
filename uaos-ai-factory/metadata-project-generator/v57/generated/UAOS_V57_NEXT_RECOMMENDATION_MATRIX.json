@@ -1,0 +1,32 @@
+{
+  "schemaVersion": "uaos.v57.next.recommendation.matrix.v1",
+  "createdAt": "2026-07-04T18:28:08.934Z",
+  "metadataOnly": true,
+  "sampleOnly": true,
+  "recommendations": [
+    {
+      "id": "A",
+      "action": "V58 Real Owner Decision Input Pack, metadata-only/manual input only",
+      "recommended": true
+    },
+    {
+      "id": "B",
+      "action": "V58 Internal Style Generation Dry-run v4, metadata-only",
+      "recommended": true
+    },
+    {
+      "id": "C",
+      "action": "V58 Export Gate Validator v5, no export",
+      "recommended": true
+    },
+    {
+      "id": "D",
+      "action": "Stop",
+      "recommended": false
+    }
+  ],
+  "recommendedCombinedNext": "A + B + C together if safe",
+  "approvedForKorgExport": false,
+  "approvedForUsb": false,
+  "approvedForKeyboardLoad": false
+}

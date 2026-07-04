@@ -1,0 +1,34 @@
+{
+  "status": "PASS",
+  "checkedAt": "2026-07-04T18:28:11.794Z",
+  "checkedFiles": {
+    "sample": "generated/UAOS_V57_HUMAN_REVIEW_FILLED_EXAMPLE.json",
+    "sampleMd": "generated/UAOS_V57_HUMAN_REVIEW_FILLED_EXAMPLE.md",
+    "dryrun": "generated/UAOS_V57_INTERNAL_STYLE_GENERATION_DRYRUN_V3.json",
+    "dryrunMd": "generated/UAOS_V57_INTERNAL_STYLE_GENERATION_DRYRUN_V3.md",
+    "intent": "generated/UAOS_V57_STYLE_INTENT_OWNER_REVIEWED_PREVIEW.json",
+    "sections": "generated/UAOS_V57_STYLE_SECTION_PLAN_OWNER_REVIEWED_PREVIEW.json",
+    "gates": "generated/UAOS_V57_EXPORT_GATE_VALIDATOR_V4_RESULTS.json",
+    "gatesMd": "generated/UAOS_V57_EXPORT_GATE_VALIDATOR_V4_REPORT.md",
+    "matrix": "generated/UAOS_V57_NEXT_RECOMMENDATION_MATRIX.json"
+  },
+  "errors": [],
+  "warnings": [],
+  "safety": {
+    "sampleOnly": true,
+    "dryRunOnly": true,
+    "metadataOnly": true,
+    "noRealOwnerApprovalApplied": true,
+    "noAudioRender": true,
+    "noMidiGeneration": true,
+    "noKorgOutput": true,
+    "noSetStyPrfPrsKst": true,
+    "noUsbWrite": true,
+    "noKeyboardLoad": true,
+    "noSourceProjectMutation": true,
+    "noFixtureModification": true,
+    "noAppJs": true,
+    "noDeploy": true,
+    "noPayment": true
+  }
+}
