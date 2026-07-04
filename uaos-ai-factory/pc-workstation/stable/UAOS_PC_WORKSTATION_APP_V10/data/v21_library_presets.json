@@ -1,0 +1,62 @@
+{
+  "version": "V21",
+  "safety_labels": [
+    "PC_ONLY",
+    "UAOS_FORMAT",
+    "TEST_UNVERIFIED",
+    "NOT_FOR_PA3X_LOAD",
+    "NOT_FOR_USB_TRANSFER",
+    "NOT_COMPATIBILITY_VERIFIED"
+  ],
+  "audio_files_included": false,
+  "presets": [
+    {
+      "name": "Arabic Strings Ensemble Soft",
+      "family": "strings",
+      "articulations": ["sustain", "slide_hint", "ornament_hint"],
+      "role": "warm backing layers"
+    },
+    {
+      "name": "Arabic Strings Tremolo Light",
+      "family": "strings",
+      "articulations": ["sustain", "tremolo", "ornament_hint"],
+      "role": "light tremolo movement"
+    },
+    {
+      "name": "Arabic Strings Octave Lead",
+      "family": "strings",
+      "articulations": ["sustain", "slide_hint", "octave_layer"],
+      "role": "melody guide doubling"
+    },
+    {
+      "name": "Arabic Strings Pad Wide",
+      "family": "strings",
+      "articulations": ["sustain", "octave_layer"],
+      "role": "wide cinematic pad"
+    },
+    {
+      "name": "Arabic Violin Guide",
+      "family": "violin",
+      "articulations": ["sustain", "slide_hint", "ornament_hint"],
+      "role": "lead guide"
+    },
+    {
+      "name": "Syrian Strings Emotional Pad",
+      "family": "strings",
+      "articulations": ["sustain", "tremolo", "slide_hint"],
+      "role": "emotional bridge layer"
+    },
+    {
+      "name": "Oriental Strings Short Marcato",
+      "family": "strings",
+      "articulations": ["staccato", "ornament_hint"],
+      "role": "short rhythmic accents"
+    },
+    {
+      "name": "Arabic Strings Slow Swell",
+      "family": "strings",
+      "articulations": ["sustain", "slide_hint", "octave_layer"],
+      "role": "slow intro and ending swell"
+    }
+  ]
+}

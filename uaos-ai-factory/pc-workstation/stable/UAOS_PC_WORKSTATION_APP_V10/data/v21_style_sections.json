@@ -1,0 +1,27 @@
+{
+  "version": "V21",
+  "safety_labels": [
+    "PC_ONLY",
+    "UAOS_FORMAT",
+    "TEST_UNVERIFIED",
+    "NOT_FOR_PA3X_LOAD",
+    "NOT_FOR_USB_TRANSFER",
+    "NOT_COMPATIBILITY_VERIFIED"
+  ],
+  "sections": [
+    {"name": "Intro", "bars": 4, "chords": "Dm / C", "energy": "low", "focus_track": "arabic_strings"},
+    {"name": "Verse", "bars": 8, "chords": "Dm / Bb / C / A7", "energy": "medium", "focus_track": "bass"},
+    {"name": "Chorus", "bars": 8, "chords": "F / C / Dm / Bb", "energy": "high", "focus_track": "arabic_strings"},
+    {"name": "Bridge", "bars": 4, "chords": "Gm / Bb / A7 / A7", "energy": "medium", "focus_track": "pad"},
+    {"name": "Fill", "bars": 1, "chords": "A7", "energy": "high", "focus_track": "drums"},
+    {"name": "Ending", "bars": 4, "chords": "Dm / Bb / C / Dm", "energy": "low", "focus_track": "arabic_strings"}
+  ],
+  "tracks": [
+    {"id": "drums", "label": "Drums", "enabled": true, "volume": 78, "pan": 0, "preset": "Synthetic Pop Kit Guide"},
+    {"id": "bass", "label": "Bass", "enabled": true, "volume": 72, "pan": -8, "preset": "Soft Root Bass"},
+    {"id": "chords", "label": "Chords", "enabled": true, "volume": 66, "pan": 8, "preset": "Warm Keys Guide"},
+    {"id": "pad", "label": "Pad", "enabled": true, "volume": 58, "pan": 18, "preset": "Air Pad"},
+    {"id": "arabic_strings", "label": "Arabic Strings", "enabled": true, "volume": 82, "pan": 0, "preset": "Arabic Strings Tremolo Light"},
+    {"id": "melody_guide", "label": "Melody Guide", "enabled": false, "volume": 52, "pan": 0, "preset": "Sine Lead Placeholder"}
+  ]
+}

@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>UAOS PC Workstation V21</title>
+  <link rel="stylesheet" href="assets/uaos_v21_theme.css">
+</head>
+<body>
+  <div class="uaos-shell">
+    <header class="topbar">
+      <div class="brand">
+        <strong>UAOS PC Workstation V21</strong>
+        <span>Real local music workstation interface</span>
+      </div>
+      <div id="topProjectName" class="project-pill">Sari UAOS PC Workstation V21</div>
+      <div class="toolbar-actions">
+        <button id="saveSession" class="btn ghost" type="button">حفظ الجلسة JSON</button>
+        <button id="exportProjectTop" class="btn" type="button">تصدير المشروع</button>
+        <button id="exportStyleTop" class="btn" type="button">تصدير الستايل</button>
+        <button id="exportLibraryTop" class="btn" type="button">تصدير المكتبة</button>
+        <a class="btn secondary" href="writer/RUN_WRITER_V17.cmd">فتح Writer</a>
+        <span class="badge danger">PC_ONLY</span>
+      </div>
+    </header>
+
+    <aside class="sidebar">
+      <div class="side-title">
+        <h1>لوحة العمل</h1>
+        <p>واجهة عربية محلية لإدارة المشروع والستايل والمكتبة والمعاينة بدون أي تحميل على أجهزة خارجية.</p>
+      </div>
+      <nav class="nav-stack" aria-label="UAOS V21 panels">
+        <button class="nav-btn active" data-view="dashboard" type="button"><span class="nav-icon">01</span><span>Dashboard<small>الرئيسية</small></span></button>
+        <button class="nav-btn" data-view="project" type="button"><span class="nav-icon">02</span><span>Project<small>بيانات المشروع</small></span></button>
+        <button class="nav-btn" data-view="arrangement" type="button"><span class="nav-icon">03</span><span>Arrangement<small>خريطة التوزيع</small></span></button>
+        <button class="nav-btn" data-view="style" type="button"><span class="nav-icon">04</span><span>Style Editor<small>محرر الستايل</small></span></button>
+        <button class="nav-btn" data-view="library" type="button"><span class="nav-icon">05</span><span>Library<small>مكتبة الكمنجات</small></span></button>
+        <button class="nav-btn" data-view="player" type="button"><span class="nav-icon">06</span><span>Player<small>المعاينة الصوتية</small></span></button>
+        <button class="nav-btn" data-view="writer" type="button"><span class="nav-icon">07</span><span>Writer<small>مسار التوليد</small></span></button>
+        <button class="nav-btn" data-view="files" type="button"><span class="nav-icon">08</span><span>Files<small>الملفات والمسارات</small></span></button>
+        <button class="nav-btn" data-view="safety" type="button"><span class="nav-icon">09</span><span>Safety<small>حدود السلامة</small></span></button>
+        <button class="nav-btn" data-view="help" type="button"><span class="nav-icon">10</span><span>Help<small>خطوات الاستخدام</small></span></button>
+      </nav>
+    </aside>
+
+    <main class="workspace">
+      <section id="dashboard" class="view active">
+        <div class="view-head">
+          <div>
+            <h2>Dashboard / الشاشة الرئيسية</h2>
+            <p>ملخص حي للمشروع مع خطوات العمل السريعة.</p>
+          </div>
+          <span class="badge">PC_ONLY / NOT_FOR_PA3X_LOAD / NOT_FOR_USB_TRANSFER</span>
+        </div>
+        <div class="grid">
+          <article class="metric span-3"><h3>المشروع</h3><strong id="dashProject"></strong><p>Project card</p></article>
+          <article class="metric span-3"><h3>الستايل</h3><strong id="dashStyle"></strong><p>Style card</p></article>
+          <article class="metric span-2"><h3>السرعة</h3><strong id="dashTempo"></strong><p>Tempo card</p></article>
+          <article class="metric span-2"><h3>الكوردات</h3><strong id="dashChords"></strong><p>Chords card</p></article>
+          <article class="metric span-2"><h3>الكمنجات</h3><strong id="dashStrings"></strong><p>Arabic strings card</p></article>
+          <article class="panel span-7">
+            <h3>Workflow progress / تقدم العمل</h3>
+            <div class="workflow">
+              <div class="step"><b>1 Project</b><small>تجهيز المشروع</small></div>
+              <div class="step"><b>2 Style</b><small>تحرير الأقسام</small></div>
+              <div class="step"><b>3 Library</b><small>اختيار الصوت</small></div>
+              <div class="step"><b>4 Preview</b><small>سماع معاينة</small></div>
+              <div class="step"><b>5 Writer</b><small>تشغيل يدوي</small></div>
+              <div class="step"><b>6 MIDI</b><small>فتح في Cubase</small></div>
+            </div>
+          </article>
+          <article class="panel span-5">
+            <h3>Quick actions / إجراءات سريعة</h3>
+            <div class="quick-actions">
+              <button class="btn ghost" data-goto="project" type="button">Edit Project</button>
+              <button class="btn ghost" data-goto="style" type="button">Edit Style</button>
+              <button class="btn ghost" data-goto="library" type="button">Choose Library</button>
+              <button class="btn" data-goto="player" type="button">Play Preview</button>
+              <button class="btn secondary" data-goto="writer" type="button">Run Writer</button>
+              <a class="btn dark" href="midi/SARI_ARABIC_POP_ORIENTAL_BALLAD_V9.mid">Open MIDI</a>
+            </div>
+          </article>
+          <article class="panel span-12">
+            <h3>Mini arrangement timeline / خريطة التوزيع المصغرة</h3>
+            <div id="dashTimeline" class="timeline-strip"></div>
+          </article>
+          <article class="panel span-12">
+            <span class="badge danger">PC_ONLY</span>
+            <span class="badge warn">NOT_FOR_PA3X_LOAD</span>
+            <span class="badge warn">NOT_FOR_USB_TRANSFER</span>
+            <span class="badge gray">NOT_COMPATIBILITY_VERIFIED</span>
+          </article>
+        </div>
+      </section>
+
+      <section id="project" class="view">
+        <div class="view-head">
+          <div><h2>Project / محرر المشروع</h2><p>عدّل بيانات المشروع، ثم طبّق التغييرات أو صدّر JSON.</p></div>
+        </div>
+        <article class="panel">
+          <div class="field-grid">
+            <div><label>Project Name</label><input id="projectName"></div>
+            <div><label>Style Name</label><input id="styleName"></div>
+            <div><label>BPM</label><input id="tempo" type="number" min="40" max="220"></div>
+            <div><label>Meter</label><input id="meter"></div>
+            <div><label>Key / Scale text</label><input id="keyScale"></div>
+            <div><label>Mood</label><input id="mood"></div>
+          </div>
+          <label>Notes</label>
+          <textarea id="notes"></textarea>
+          <div class="actions">
+            <button id="applyProject" class="btn" type="button">Apply Changes</button>
+            <button id="resetProject" class="btn secondary" type="button">Reset</button>
+            <button id="exportProject" class="btn ghost" type="button">Export Project JSON</button>
+          </div>
+        </article>
+      </section>
+
+      <section id="arrangement" class="view">
+        <div class="view-head">
+          <div><h2>Arrangement / خريطة التوزيع</h2><p>اضغط على أي قسم لتحديث المفتش الجانبي.</p></div>
+          <button id="exportArrangement" class="btn ghost" type="button">Export Arrangement JSON</button>
+        </div>
+        <article class="panel timeline">
+          <div id="playhead" class="playhead"></div>
+          <div id="arrangementTimeline" class="timeline-strip"></div>
+          <div class="actions">
+            <button id="duplicateSection" class="btn secondary" type="button">Duplicate Section</button>
+          </div>
+        </article>
+      </section>
+
+      <section id="style" class="view">
+        <div class="view-head">
+          <div><h2>Style Editor / محرر الستايل</h2><p>جدول الأقسام ومكسر المسارات داخل نفس الشاشة.</p></div>
+          <button id="exportStyle" class="btn ghost" type="button">Export Style JSON</button>
+        </div>
+        <div class="grid">
+          <article class="panel span-7">
+            <h3>Sections table</h3>
+            <table>
+              <thead><tr><th>Section</th><th>Bars</th><th>Chords</th><th>Energy</th><th>Focus track</th></tr></thead>
+              <tbody id="sectionRows"></tbody>
+            </table>
+          </article>
+          <article class="panel span-5">
+            <h3>Track mixer</h3>
+            <div id="mixerRows" class="mixer"></div>
+          </article>
+        </div>
+      </section>
+
+      <section id="library" class="view">
+        <div class="view-head">
+          <div><h2>Library / مكتبة الكمنجات</h2><p>بطاقات presets للربط metadata فقط، بدون عينات صوتية.</p></div>
+          <button id="exportLibrary" class="btn ghost" type="button">Export Library Binding JSON</button>
+        </div>
+        <div class="panel">
+          <div class="actions">
+            <span class="badge danger">METADATA_ONLY</span>
+            <span class="badge warn">NO_SAMPLES_INCLUDED</span>
+          </div>
+          <div id="presetGrid" class="preset-grid"></div>
+        </div>
+      </section>
+
+      <section id="player" class="view">
+        <div class="view-head">
+          <div><h2>Player / مشغل المعاينة</h2><p>WebAudio oscillator synthetic only. No samples.</p></div>
+        </div>
+        <div class="grid">
+          <article class="panel span-7">
+            <h3>Transport</h3>
+            <div class="transport">
+              <button class="btn" data-play="full" type="button">Play Full Preview</button>
+              <button class="btn ghost" data-play="chords" type="button">Play Chords</button>
+              <button class="btn ghost" data-play="bass" type="button">Play Bass</button>
+              <button class="btn ghost" data-play="strings" type="button">Play Arabic Strings</button>
+              <button id="stopAudio" class="btn danger" type="button">Stop</button>
+            </div>
+            <div class="timeline" style="margin-top:12px">
+              <div class="timeline-strip">
+                <div class="section-tile"><h4>Intro</h4><p>Start</p></div>
+                <div class="section-tile"><h4>Verse</h4><p>Groove</p></div>
+                <div class="section-tile"><h4>Chorus</h4><p>Lift</p></div>
+                <div class="section-tile"><h4>Bridge</h4><p>Change</p></div>
+                <div class="section-tile"><h4>Fill</h4><p>Hit</p></div>
+                <div class="section-tile"><h4>Ending</h4><p>Close</p></div>
+              </div>
+            </div>
+          </article>
+          <article class="panel span-5">
+            <h3>Now playing</h3>
+            <div class="kv"><b>Status</b><span id="nowMode">Stopped</span></div>
+            <div class="kv"><b>Current chord</b><span id="nowChord">-</span></div>
+            <div class="kv"><b>Current section</b><span id="nowSection">-</span></div>
+            <div class="meter-bank"><div class="meter"><span></span></div><div class="meter"><span></span></div><div class="meter"><span></span></div><div class="meter"><span></span></div><div class="meter"><span></span></div><div class="meter"><span></span></div></div>
+            <p><a href="midi/SARI_ARABIC_POP_ORIENTAL_BALLAD_V9.mid">midi\SARI_ARABIC_POP_ORIENTAL_BALLAD_V9.mid</a></p>
+            <p><a href="writer/generated_v17_outputs/">writer generated V17 MIDI folder if exists</a></p>
+          </article>
+        </div>
+      </section>
+
+      <section id="writer" class="view">
+        <div class="view-head">
+          <div><h2>Writer / مسار التوليد</h2><p>المتصفح لا يشغّل CMD مباشرة بسبب حماية Chrome. شغّل ملف Writer يدوياً من ويندوز.</p></div>
+        </div>
+        <div class="grid">
+          <article class="panel span-12">
+            <div class="flow">
+              <div class="flow-card"><b>Input JSON</b><span>Project / Style / Library</span></div>
+              <div class="flow-card"><b>Writer V17</b><span>writer\RUN_WRITER_V17.cmd</span></div>
+              <div class="flow-card"><b>UAOS output</b><span>project/style/library metadata</span></div>
+              <div class="flow-card"><b>MIDI</b><span>Open in Cubase</span></div>
+            </div>
+          </article>
+          <article class="panel span-6">
+            <h3>Writer command</h3>
+            <p class="path-box">writer\RUN_WRITER_V17.cmd</p>
+            <a class="btn" href="writer/RUN_WRITER_V17.cmd">RUN_WRITER_V17.cmd</a>
+          </article>
+          <article class="panel span-6">
+            <h3>Generated output folder</h3>
+            <p class="path-box">writer\generated_v17_outputs</p>
+            <a class="btn secondary" href="writer/generated_v17_outputs/">Open generated outputs</a>
+          </article>
+        </div>
+      </section>
+
+      <section id="files" class="view">
+        <div class="view-head">
+          <div><h2>Files / الملفات</h2><p>مسارات محلية قابلة للنسخ بدون تنفيذ أو نقل خارجي.</p></div>
+        </div>
+        <div class="grid">
+          <article class="panel span-6"><h3>Stable folder</h3><textarea class="copy-path">E:\keyboard-manager-clean\uaos-ai-factory\pc-workstation\stable\UAOS_PC_WORKSTATION_APP_V10</textarea></article>
+          <article class="panel span-6"><h3>Generated output root</h3><textarea class="copy-path">E:\keyboard-manager-clean\uaos-ai-factory\pc-workstation\generated\uaos-pc-workstation-v21-real-ui-overhaul</textarea></article>
+          <article class="panel span-6"><h3>Helper commands</h3><textarea class="copy-path">START_UAOS_PC_WORKSTATION_V21.cmd
+writer\RUN_WRITER_V17.cmd
+tools\OPEN_PROJECT_FOLDER.cmd
+tools\OPEN_MIDI_FOLDER.cmd
+tools\OPEN_DOCS_FOLDER.cmd</textarea></article>
+          <article class="panel span-6"><h3>Docs folder</h3><textarea class="copy-path">docs\START_HERE_V21_AR.md
+docs\START_HERE_V21_EN.md</textarea></article>
+        </div>
+      </section>
+
+      <section id="safety" class="view">
+        <div class="view-head">
+          <div><h2>Safety / السلامة</h2><p>هذا مسار PC حقيقي وليس تصدير عتاد.</p></div>
+        </div>
+        <article class="panel">
+          <div class="big-status">PC WORKSTATION ONLY</div>
+          <table class="safety-table">
+            <tbody>
+              <tr><td>PA3X-ready claim</td><td>NO</td></tr>
+              <tr><td>USB write</td><td>NO</td></tr>
+              <tr><td>PA3X load</td><td>NO</td></tr>
+              <tr><td>Compatibility verified</td><td>NO</td></tr>
+              <tr><td>Proprietary samples</td><td>NO</td></tr>
+              <tr><td>App.jsx touched</td><td>NO</td></tr>
+              <tr><td>Deploy/payment</td><td>NO</td></tr>
+            </tbody>
+          </table>
+          <p class="rtl-note">هذه الواجهة تنظّم مشروع PC فقط: بيانات، ستايل، مكتبة metadata، ومعاينة WebAudio صناعية داخل المتصفح.</p>
+        </article>
+      </section>
+
+      <section id="help" class="view">
+        <div class="view-head">
+          <div><h2>Help / المساعدة</h2><p>خطوات مختصرة للعمل اليومي.</p></div>
+        </div>
+        <article class="panel">
+          <ol>
+            <li>عدّل المشروع من Project.</li>
+            <li>عدّل التوزيع من Arrangement و Style Editor.</li>
+            <li>اختر الكمنجات من Library.</li>
+            <li>اسمع preview من Player.</li>
+            <li>شغّل Writer يدوياً من Writer.</li>
+            <li>افتح MIDI في Cubase.</li>
+          </ol>
+          <p class="en">English summary: edit the local project, choose metadata-only strings, preview with synthetic WebAudio, run the V17 writer manually, then open the MIDI in your DAW. This is PC only and not a hardware export.</p>
+        </article>
+      </section>
+    </main>
+
+    <aside class="inspector">
+      <h2>Inspector / المفتش</h2>
+      <div id="inspectorBody"></div>
+    </aside>
+
+    <footer class="statusbar">
+      <span id="statusMessage">UAOS V21 ready.</span>
+      <span>PC_ONLY | TEST_UNVERIFIED | NOT_FOR_PA3X_LOAD | NOT_FOR_USB_TRANSFER | NOT_COMPATIBILITY_VERIFIED</span>
+    </footer>
+  </div>
+  <script src="assets/uaos_v21_app.js"></script>
+</body>
+</html>
