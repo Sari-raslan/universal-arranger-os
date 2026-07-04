@@ -1,0 +1,59 @@
+{
+  "schemaVersion": "uaos.v49.metadata.governance.freeze.pack.v1",
+  "generatedAt": "2026-07-04T17:18:01.776Z",
+  "metadataOnly": true,
+  "governanceFreezeDocumentationOnly": true,
+  "frozenScope": [
+    "metadata schema drafts",
+    "review workflow artifacts",
+    "suggestion scoring artifacts",
+    "local dashboard/archive artifacts"
+  ],
+  "notFrozenScope": [
+    "KORG writer",
+    "PA3X hardware export",
+    "USB copy",
+    "App.jsx UI integration",
+    "deploy"
+  ],
+  "notApproved": {
+    "korgWriter": true,
+    "usbCopy": true,
+    "appJsIntegrationPerformed": false,
+    "deployPerformed": false,
+    "exportApproval": false
+  },
+  "frozenRules": [
+    "no source mutation without explicit owner approval",
+    "no auto-apply",
+    "no export approval from metadata score",
+    "no PA3X-ready claim",
+    "no USB copy from review packs"
+  ],
+  "requiredGatesBeforeExport": [
+    "owner decision completed",
+    "dry-run preview PASS",
+    "real export design review",
+    "hardware-specific approval",
+    "empty USB verification",
+    "PA3X backup confirmation",
+    "isolated hardware test approval"
+  ],
+  "readyForKorgExport": false,
+  "readyForUsb": false,
+  "readyForKeyboardLoad": false,
+  "safety": {
+    "metadataOnly": true,
+    "governanceFreezeDocumentationOnly": true,
+    "sourceProjectModified": false,
+    "autoApplyEnabled": false,
+    "realApplyAllowed": false,
+    "korgOutputAllowed": false,
+    "setModificationAllowed": false,
+    "usbWriteAllowed": false,
+    "keyboardLoadAllowed": false,
+    "compatibilityClaim": false,
+    "pa3xReadyClaim": false,
+    "exportApproval": false
+  }
+}

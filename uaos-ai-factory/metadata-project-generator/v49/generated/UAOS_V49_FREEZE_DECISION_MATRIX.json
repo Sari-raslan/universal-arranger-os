@@ -1,0 +1,57 @@
+{
+  "schemaVersion": "uaos.v49.freeze.decision.matrix.v1",
+  "generatedAt": "2026-07-04T17:18:01.776Z",
+  "options": [
+    {
+      "id": "A",
+      "decision": "Freeze metadata review workflow V37-V49 as owner-review-ready.",
+      "recommended": true,
+      "safety": "metadata-only freeze documentation"
+    },
+    {
+      "id": "B",
+      "decision": "Continue V50 governance audit, metadata-only.",
+      "recommended": true,
+      "safety": "metadata-only audit"
+    },
+    {
+      "id": "C",
+      "decision": "Build V50 local portal index ZIP, metadata-only.",
+      "recommended": false,
+      "safety": "local metadata packaging only"
+    },
+    {
+      "id": "D",
+      "decision": "Start separate UI integration plan, no App.jsx changes yet.",
+      "recommended": false,
+      "safety": "planning only"
+    },
+    {
+      "id": "E",
+      "decision": "Stop.",
+      "recommended": false,
+      "safety": "always available"
+    }
+  ],
+  "recommendedTogether": [
+    "A",
+    "B"
+  ],
+  "readyForKorgExport": false,
+  "readyForUsb": false,
+  "readyForKeyboardLoad": false,
+  "safety": {
+    "metadataOnly": true,
+    "governanceFreezeDocumentationOnly": true,
+    "sourceProjectModified": false,
+    "autoApplyEnabled": false,
+    "realApplyAllowed": false,
+    "korgOutputAllowed": false,
+    "setModificationAllowed": false,
+    "usbWriteAllowed": false,
+    "keyboardLoadAllowed": false,
+    "compatibilityClaim": false,
+    "pa3xReadyClaim": false,
+    "exportApproval": false
+  }
+}
