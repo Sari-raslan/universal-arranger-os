@@ -1,0 +1,160 @@
+{
+  "schemaVersion": "uaos.v53.style.engine.metadata.bridge.plan.v1",
+  "bridgeId": "uaos-v53-style-bridge-20260704174355",
+  "createdAt": "2026-07-04T17:43:55.127Z",
+  "inputMetadataFields": [
+    "tempo",
+    "timeSignature",
+    "scaleMode",
+    "chordProgression",
+    "sections",
+    "trackRoles",
+    "rhythmDensity",
+    "bassMovement",
+    "chordRhythm",
+    "orientalFeel",
+    "dspIntent",
+    "humanReviewStatus"
+  ],
+  "styleEngineExpectedFields": [
+    "styleEngine.tempo",
+    "styleEngine.timeSignature",
+    "styleEngine.scaleMode",
+    "styleEngine.chordProgression",
+    "styleEngine.sections",
+    "styleEngine.trackRoles",
+    "styleEngine.rhythmDensity",
+    "styleEngine.bassMovement",
+    "styleEngine.chordRhythm",
+    "styleEngine.orientalFeel",
+    "styleEngine.dspIntent",
+    "styleEngine.humanReviewStatus"
+  ],
+  "mappingTable": [
+    {
+      "category": "tempo",
+      "inputPath": "uaosproject.musicalIntent.tempo",
+      "outputPath": "styleEngine.tempo",
+      "transform": "draft_passthrough_or_normalize",
+      "required": true
+    },
+    {
+      "category": "timeSignature",
+      "inputPath": "uaosproject.musicalIntent.timeSignature",
+      "outputPath": "styleEngine.timeSignature",
+      "transform": "draft_passthrough_or_normalize",
+      "required": true
+    },
+    {
+      "category": "scaleMode",
+      "inputPath": "uaosproject.musicalIntent.scaleMode",
+      "outputPath": "styleEngine.scaleMode",
+      "transform": "draft_passthrough_or_normalize",
+      "required": true
+    },
+    {
+      "category": "chordProgression",
+      "inputPath": "uaosproject.musicalIntent.chordProgression",
+      "outputPath": "styleEngine.chordProgression",
+      "transform": "draft_passthrough_or_normalize",
+      "required": true
+    },
+    {
+      "category": "sections",
+      "inputPath": "uaosproject.musicalIntent.sections",
+      "outputPath": "styleEngine.sections",
+      "transform": "draft_passthrough_or_normalize",
+      "required": true
+    },
+    {
+      "category": "trackRoles",
+      "inputPath": "uaosproject.musicalIntent.trackRoles",
+      "outputPath": "styleEngine.trackRoles",
+      "transform": "draft_passthrough_or_normalize",
+      "required": true
+    },
+    {
+      "category": "rhythmDensity",
+      "inputPath": "uaosproject.musicalIntent.rhythmDensity",
+      "outputPath": "styleEngine.rhythmDensity",
+      "transform": "draft_passthrough_or_normalize",
+      "required": true
+    },
+    {
+      "category": "bassMovement",
+      "inputPath": "uaosproject.musicalIntent.bassMovement",
+      "outputPath": "styleEngine.bassMovement",
+      "transform": "draft_passthrough_or_normalize",
+      "required": true
+    },
+    {
+      "category": "chordRhythm",
+      "inputPath": "uaosproject.musicalIntent.chordRhythm",
+      "outputPath": "styleEngine.chordRhythm",
+      "transform": "draft_passthrough_or_normalize",
+      "required": true
+    },
+    {
+      "category": "orientalFeel",
+      "inputPath": "uaosproject.musicalIntent.orientalFeel",
+      "outputPath": "styleEngine.orientalFeel",
+      "transform": "draft_passthrough_or_normalize",
+      "required": true
+    },
+    {
+      "category": "dspIntent",
+      "inputPath": "dspPlan.channels",
+      "outputPath": "styleEngine.dspIntent",
+      "transform": "draft_passthrough_or_normalize",
+      "required": true
+    },
+    {
+      "category": "humanReviewStatus",
+      "inputPath": "uaosproject.musicalIntent.humanReviewStatus",
+      "outputPath": "styleEngine.humanReviewStatus",
+      "transform": "draft_passthrough_or_normalize",
+      "required": true
+    }
+  ],
+  "missingFields": [
+    "rhythmDensity must be confirmed by scoring or owner review",
+    "bassMovement must be confirmed by scoring or owner review",
+    "chordRhythm must be confirmed by scoring or owner review",
+    "humanReviewStatus must come from owner decision workflow"
+  ],
+  "transformationRulesDraft": [
+    "Normalize tempo to integer BPM.",
+    "Normalize timeSignature to numerator/denominator text.",
+    "Map section names to internal arrangement section ids.",
+    "Keep orientalFeel descriptive until a real style engine schema is approved."
+  ],
+  "validationRules": [
+    "Reject missing tempo/timeSignature/sections.",
+    "Reject export flags or KORG output flags.",
+    "Require human review status before any future bridge dry-run.",
+    "Keep real style generation disabled."
+  ],
+  "dryRunBridgeOnly": true,
+  "realStyleGenerationAllowed": false,
+  "korgOutputAllowed": false,
+  "exportAllowed": false,
+  "readyForKorgExport": false,
+  "readyForUsb": false,
+  "readyForKeyboardLoad": false,
+  "sourceInputs": {
+    "v52GapAnalysis": "E:\\keyboard-manager-clean\\uaos-ai-factory\\metadata-project-generator\\v52\\generated\\UAOS_V52_EXPORT_READINESS_GAP_ANALYSIS.json"
+  },
+  "safety": {
+    "planningOnly": true,
+    "metadataOnly": true,
+    "dryRunBridgeOnly": true,
+    "realStyleGenerationAllowed": false,
+    "korgOutputAllowed": false,
+    "exportAllowed": false,
+    "sourceProjectModified": false,
+    "usbWriteAllowed": false,
+    "keyboardLoadAllowed": false,
+    "compatibilityClaim": false,
+    "pa3xReadyClaim": false
+  }
+}

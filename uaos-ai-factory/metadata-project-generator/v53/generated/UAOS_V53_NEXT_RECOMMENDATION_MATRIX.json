@@ -1,0 +1,49 @@
+{
+  "schemaVersion": "uaos.v53.next.recommendation.matrix.v1",
+  "createdAt": "2026-07-04T17:44:03.255Z",
+  "metadataOnly": true,
+  "approvedForKorgExport": false,
+  "approvedForUsb": false,
+  "approvedForKeyboardLoad": false,
+  "recommendations": [
+    {
+      "id": "A",
+      "action": "V54 Read-only Internal Project Adapter Prototype",
+      "safety": "no App.jsx",
+      "recommended": true
+    },
+    {
+      "id": "B",
+      "action": "V54 Style Engine Bridge Dry-run",
+      "safety": "metadata-only",
+      "recommended": true
+    },
+    {
+      "id": "C",
+      "action": "V54 Export Gate Validator Foundation",
+      "safety": "no export",
+      "recommended": true
+    },
+    {
+      "id": "D",
+      "action": "Stop",
+      "safety": "always available",
+      "recommended": false
+    }
+  ],
+  "recommendedTogether": [
+    "A",
+    "B",
+    "C"
+  ],
+  "safety": {
+    "planningOnly": true,
+    "metadataOnly": true,
+    "noExport": true,
+    "sourceProjectModified": false,
+    "korgOutputAllowed": false,
+    "usbWriteAllowed": false,
+    "keyboardLoadAllowed": false,
+    "exportApproval": false
+  }
+}

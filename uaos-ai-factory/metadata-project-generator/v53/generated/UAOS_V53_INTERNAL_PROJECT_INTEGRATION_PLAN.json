@@ -1,0 +1,104 @@
+{
+  "schemaVersion": "uaos.v53.internal.project.integration.plan.v1",
+  "createdAt": "2026-07-04T17:43:55.034Z",
+  "integrationScope": [
+    "Read .uaosproject metadata as an internal project candidate.",
+    "Map musical intent, tracks, links, and safety flags to internal project manager fields.",
+    "Keep all import behavior read-only until explicit owner approval."
+  ],
+  "dataFlow": [
+    "uaosproject JSON",
+    "read-only parser",
+    "validation layer",
+    "internal project preview model",
+    "owner review screen or report"
+  ],
+  "internalProjectFields": {
+    "projectId": "uaos-v37-example-project",
+    "projectName": "UAOS V37 Example Metadata Project",
+    "sourceMode": "metadata_only",
+    "targetKeyboard": "KORG_PA3X_ORIENTAL_UNVERIFIED",
+    "musicalIntent": [
+      "styleFamily",
+      "tempo",
+      "timeSignature",
+      "scaleMode",
+      "chordProgression",
+      "sections"
+    ],
+    "tracks": [
+      "drums",
+      "bass",
+      "chords",
+      "pad",
+      "melodyGuide"
+    ],
+    "links": [
+      "dspPlanPath",
+      "styleReviewPlanPath",
+      "manifestPath"
+    ],
+    "safety": [
+      "metadataOnly",
+      "korgOutputAllowed",
+      "setModificationAllowed",
+      "usbWriteAllowed",
+      "keyboardLoadAllowed",
+      "compatibilityClaim",
+      "pa3xReadyClaim"
+    ]
+  },
+  "requiredAdapters": [
+    "uaosproject schema reader",
+    "track role normalizer",
+    "safety gate reader",
+    "owner review status adapter",
+    "dry-run preview adapter"
+  ],
+  "readOnlyImportPlan": [
+    "Load project JSON from a user-selected local path.",
+    "Validate schema and safety flags.",
+    "Create an in-memory preview only.",
+    "Write no source files and mutate no project state."
+  ],
+  "savePlan": [
+    "No save is allowed in V53.",
+    "Future save requires owner approval, validator pass, and source mutation gate."
+  ],
+  "validationPlan": [
+    "Reject any metadata with export flags enabled.",
+    "Reject missing schemaVersion/projectId/projectName.",
+    "Verify dry-run-only and safety gates before preview.",
+    "Cross-check V52 blocked gates remain closed."
+  ],
+  "UIIntegrationBlockedUntilApproval": true,
+  "appJsChangeRequiredLater": true,
+  "appJsTouchedNow": false,
+  "implementationAllowedNow": false,
+  "sourceProjectModified": false,
+  "sourceInputs": {
+    "v37ProjectPath": "E:\\keyboard-manager-clean\\uaos-ai-factory\\metadata-project-generator\\v37\\generated\\UAOS_EXAMPLE_PROJECT_V37.uaosproject.json",
+    "v52SealPath": "E:\\keyboard-manager-clean\\uaos-ai-factory\\metadata-project-generator\\v52\\generated\\UAOS_V52_METADATA_FREEZE_ACCEPTANCE_SEAL.json",
+    "v52GapPath": "E:\\keyboard-manager-clean\\uaos-ai-factory\\metadata-project-generator\\v52\\generated\\UAOS_V52_EXPORT_READINESS_GAP_ANALYSIS.json",
+    "v52GatePath": "E:\\keyboard-manager-clean\\uaos-ai-factory\\metadata-project-generator\\v52\\generated\\UAOS_V52_BLOCKED_EXPORT_GATE_MATRIX.json"
+  },
+  "sourceStatuses": {
+    "freezeAccepted": true,
+    "gapCount": 10,
+    "blockedGateCount": 10
+  },
+  "safety": {
+    "planningOnly": true,
+    "metadataOnly": true,
+    "implementationAllowedNow": false,
+    "sourceProjectModified": false,
+    "autoApplyEnabled": false,
+    "realApplyAllowed": false,
+    "korgOutputAllowed": false,
+    "usbWriteAllowed": false,
+    "keyboardLoadAllowed": false,
+    "compatibilityClaim": false,
+    "pa3xReadyClaim": false,
+    "exportApproval": false
+  }
+}

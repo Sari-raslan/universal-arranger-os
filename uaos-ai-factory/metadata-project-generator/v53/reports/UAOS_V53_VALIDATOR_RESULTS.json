@@ -1,0 +1,30 @@
+{
+  "status": "PASS",
+  "checkedAt": "2026-07-04T17:44:03.786Z",
+  "checkedFiles": {
+    "integration": "generated/UAOS_V53_INTERNAL_PROJECT_INTEGRATION_PLAN.json",
+    "integrationMd": "generated/UAOS_V53_INTERNAL_PROJECT_INTEGRATION_PLAN.md",
+    "bridge": "generated/UAOS_V53_STYLE_ENGINE_METADATA_BRIDGE_PLAN.json",
+    "bridgeMd": "generated/UAOS_V53_STYLE_ENGINE_METADATA_BRIDGE_PLAN.md",
+    "roadmap": "generated/UAOS_V53_EXPORT_GATE_ROADMAP_PACK.json",
+    "roadmapMd": "generated/UAOS_V53_EXPORT_GATE_ROADMAP_PACK.md",
+    "sequence": "generated/UAOS_V53_SAFE_IMPLEMENTATION_SEQUENCE.json",
+    "matrix": "generated/UAOS_V53_NEXT_RECOMMENDATION_MATRIX.json"
+  },
+  "errors": [],
+  "warnings": [],
+  "safety": {
+    "planningOnly": true,
+    "metadataOnly": true,
+    "noImplementation": true,
+    "noSourceProjectMutation": true,
+    "noKorgOutput": true,
+    "noAudioSampleBinaries": true,
+    "noUsbWrite": true,
+    "noKeyboardLoad": true,
+    "noFixtureModification": true,
+    "noAppJs": true,
+    "noDeploy": true,
+    "noPayment": true
+  }
+}
