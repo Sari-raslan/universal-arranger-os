@@ -1,0 +1,5 @@
+id,file_or_item,current_guess,confidence,reason,recommended_owner_choice,dsp_category_guess,replacement_suggestion,safety_status
+V35-001,NEWNAME.SET\GLOBAL\MXPRESET.MXP,likely_global,low,very small binary/metadata,confirm_weak,Unknown,review_manually,metadata_only_no_set_write
+V35-002,NEWNAME.SET\STYLE\USER01.STY,likely_style_container,medium,style container is the largest/most useful review target,unknown,Drums,"DSP first, replacement later",metadata_only_no_set_write
+V35-003,Sampler candidates,sampler_zero,medium,لم تظهر ملفات سامبلر واضحة من الامتدادات/الأسماء المقروءة. هذا لا يثبت أن الست لا يحتوي سامبلر؛ يعني فقط أن V33 لم يكتشف ملفات sample/multisample مكشوفة.,unknown,Unknown,needs_full_backup,metadata_only_no_set_write
+V35-004,DSP plan,dsp,medium,38 metadata DSP assignments available,confirm_dsp_only,Unknown,dsp_plan_only,metadata_only_no_set_write

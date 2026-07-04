@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>UAOS V35 Owner Confirmation</title>
+  <link rel="stylesheet" href="assets/uaos_v35_owner_confirmation.css">
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <p>UAOS PC Workstation</p>
+      <h1>V35 Owner Confirmation</h1>
+    </div>
+    <div class="badges">
+      <span>READ ONLY</span>
+      <span>NO USB</span>
+      <span>NO PA3X</span>
+      <span>NO WRITER</span>
+      <span>LOCAL SAVE</span>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" aria-label="V35 summary">
+      <article><span>Base files</span><strong>38</strong></article>
+      <article><span>Weak candidate</span><strong>1</strong></article>
+      <article><span>Suggestion</span><strong>1</strong></article>
+      <article><span>Review items</span><strong id="itemCount">4</strong></article>
+      <article><span>Saved choices</span><strong id="savedCount">0</strong></article>
+    </section>
+
+    <section class="workspace">
+      <aside class="itemList" aria-label="Review items">
+        <div class="sectionTitle">
+          <h2>قائمة المراجعة</h2>
+          <button id="resetChoices" type="button">مسح اختيارات هذه الصفحة</button>
+        </div>
+        <div id="itemButtons" class="itemButtons"></div>
+      </aside>
+
+      <section class="detailPanel" aria-live="polite">
+        <div class="sectionTitle">
+          <div>
+            <span id="activeId" class="itemId">V35-001</span>
+            <h2 id="activeName">...</h2>
+          </div>
+          <span id="activeStatus" class="statusPill">غير محفوظ</span>
+        </div>
+
+        <div class="facts">
+          <div><span>التخمين الحالي</span><strong id="currentGuess"></strong></div>
+          <div><span>الثقة</span><strong id="confidence"></strong></div>
+          <div><span>DSP</span><strong id="dspGuess"></strong></div>
+          <div><span>الاقتراح</span><strong id="replacementSuggestion"></strong></div>
+        </div>
+
+        <p id="reasonText" class="reasonText"></p>
+
+        <div class="decisionBlock">
+          <h3>اختيار المالك</h3>
+          <div id="choiceButtons" class="choiceButtons"></div>
+        </div>
+
+        <label class="noteLabel" for="ownerNote">ملاحظة المالك</label>
+        <textarea id="ownerNote" rows="4" placeholder="اكتب ملاحظة قصيرة لهذا العنصر"></textarea>
+
+        <div class="actions">
+          <button id="saveChoice" type="button">حفظ محلي</button>
+          <button id="exportJson" type="button">تصدير JSON</button>
+        </div>
+      </section>
+    </section>
+
+    <section class="referenceGrid">
+      <article>
+        <h2>الدليل</h2>
+        <p>راجع ملف V35_OWNER_CONFIRMATION_GUIDE_AR.md لفهم معنى كل اختيار قبل اعتماد قرارك.</p>
+      </article>
+      <article>
+        <h2>خطة الترقية</h2>
+        <p>راجع V35_RECOMMENDATION_UPGRADE_PLAN_AR.md. كل شيء هنا قراءة وتنظيم فقط.</p>
+      </article>
+      <article class="safety">
+        <h2>الأمان</h2>
+        <div><span>Read-only</span><strong>YES</strong></div>
+        <div><span>Original SET modified</span><strong>NO</strong></div>
+        <div><span>USB write</span><strong>NO</strong></div>
+        <div><span>PA3X load</span><strong>NO</strong></div>
+        <div><span>Binary writer</span><strong>NO</strong></div>
+        <div><span>Sample extraction</span><strong>NO</strong></div>
+      </article>
+    </section>
+  </main>
+
+  <script src="assets/uaos_v35_owner_confirmation.js"></script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+[
+  {
+    "id": "V35-001",
+    "file_or_item": "NEWNAME.SET\\GLOBAL\\MXPRESET.MXP",
+    "current_guess": "likely_global",
+    "confidence": "low",
+    "reason": "very small binary/metadata",
+    "recommended_owner_choice": "confirm_weak",
+    "allowed_choices": [
+      "confirm_sound",
+      "confirm_style",
+      "confirm_sample",
+      "confirm_weak",
+      "confirm_keep",
+      "confirm_replace_later",
+      "confirm_dsp_only",
+      "unknown"
+    ],
+    "dsp_category_guess": "Unknown",
+    "replacement_suggestion": "review_manually",
+    "safety_status": "metadata_only_no_set_write"
+  },
+  {
+    "id": "V35-002",
+    "file_or_item": "NEWNAME.SET\\STYLE\\USER01.STY",
+    "current_guess": "likely_style_container",
+    "confidence": "medium",
+    "reason": "style container is the largest/most useful review target",
+    "recommended_owner_choice": "unknown",
+    "allowed_choices": [
+      "confirm_sound",
+      "confirm_style",
+      "confirm_sample",
+      "confirm_weak",
+      "confirm_keep",
+      "confirm_replace_later",
+      "confirm_dsp_only",
+      "unknown"
+    ],
+    "dsp_category_guess": "Drums",
+    "replacement_suggestion": "DSP first, replacement later",
+    "safety_status": "metadata_only_no_set_write"
+  },
+  {
+    "id": "V35-003",
+    "file_or_item": "Sampler candidates",
+    "current_guess": "sampler_zero",
+    "confidence": "medium",
+    "reason": "لم تظهر ملفات سامبلر واضحة من الامتدادات/الأسماء المقروءة. هذا لا يثبت أن الست لا يحتوي سامبلر؛ يعني فقط أن V33 لم يكتشف ملفات sample/multisample مكشوفة.",
+    "recommended_owner_choice": "unknown",
+    "allowed_choices": [
+      "confirm_sound",
+      "confirm_style",
+      "confirm_sample",
+      "confirm_weak",
+      "confirm_keep",
+      "confirm_replace_later",
+      "confirm_dsp_only",
+      "unknown"
+    ],
+    "dsp_category_guess": "Unknown",
+    "replacement_suggestion": "needs_full_backup",
+    "safety_status": "metadata_only_no_set_write"
+  },
+  {
+    "id": "V35-004",
+    "file_or_item": "DSP plan",
+    "current_guess": "dsp",
+    "confidence": "medium",
+    "reason": "38 metadata DSP assignments available",
+    "recommended_owner_choice": "confirm_dsp_only",
+    "allowed_choices": [
+      "confirm_sound",
+      "confirm_style",
+      "confirm_sample",
+      "confirm_weak",
+      "confirm_keep",
+      "confirm_replace_later",
+      "confirm_dsp_only",
+      "unknown"
+    ],
+    "dsp_category_guess": "Unknown",
+    "replacement_suggestion": "dsp_plan_only",
+    "safety_status": "metadata_only_no_set_write"
+  }
+]
