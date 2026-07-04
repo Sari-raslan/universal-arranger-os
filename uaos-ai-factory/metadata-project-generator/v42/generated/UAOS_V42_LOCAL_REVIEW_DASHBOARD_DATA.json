@@ -1,0 +1,71 @@
+{
+  "schemaVersion": "uaos.v42.local.review.dashboard.data.v1",
+  "generatedAt": "2026-07-04T15:04:25.168Z",
+  "metadataOnly": true,
+  "dryRunOnly": true,
+  "sourceProjectModified": false,
+  "autoApplyEnabled": false,
+  "approvedForKorgExport": false,
+  "approvedForUsb": false,
+  "approvedForKeyboardLoad": false,
+  "projectSummary": {
+    "projectId": "uaos-v37-example-project",
+    "projectName": "UAOS V37 Example Metadata Project",
+    "trackCount": 5,
+    "sourceMode": "metadata_only"
+  },
+  "suggestionsSummary": {
+    "totalSuggestions": 9,
+    "highPriority": 4
+  },
+  "reviewPackSummary": {
+    "reviewItems": 9,
+    "pendingItems": 9
+  },
+  "simulationPreview": {
+    "simulationId": "uaos-v42-dryrun-20260704150424",
+    "pendingChangeCount": 9,
+    "acceptedChangeCount": 0
+  },
+  "pendingOwnerDecisions": [
+    "V41-REV-001",
+    "V41-REV-002",
+    "V41-REV-003",
+    "V41-REV-004",
+    "V41-REV-005",
+    "V41-REV-006",
+    "V41-REV-007",
+    "V41-REV-008",
+    "V41-REV-009"
+  ],
+  "blockedActions": [
+    "Real apply",
+    "Source project mutation",
+    "Auto-apply suggestions",
+    "KORG output",
+    "SET modification",
+    "STY/PRF/PRS/KST generation",
+    "USB approval",
+    "Keyboard load approval",
+    "Deploy output",
+    "App.jsx changes"
+  ],
+  "nextSafeActions": [
+    "Collect owner decisions in V43 metadata-only form.",
+    "Create local dashboard index for V37-V42.",
+    "Keep all export and keyboard load gates closed."
+  ],
+  "safety": {
+    "metadataOnly": true,
+    "dryRunOnly": true,
+    "sourceProjectModified": false,
+    "autoApplyEnabled": false,
+    "korgOutputAllowed": false,
+    "setModificationAllowed": false,
+    "usbWriteAllowed": false,
+    "keyboardLoadAllowed": false,
+    "compatibilityClaim": false,
+    "pa3xReadyClaim": false,
+    "exportApproval": false
+  }
+}

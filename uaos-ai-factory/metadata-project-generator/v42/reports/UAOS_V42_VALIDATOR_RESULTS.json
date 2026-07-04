@@ -1,0 +1,32 @@
+{
+  "status": "PASS",
+  "checkedAt": "2026-07-04T15:04:52.946Z",
+  "checkedFiles": {
+    "plan": "generated/UAOS_V42_METADATA_APPLY_SIMULATION_PLAN.json",
+    "preview": "generated/UAOS_V42_METADATA_APPLY_SIMULATION_PREVIEW.json",
+    "previewMd": "generated/UAOS_V42_METADATA_APPLY_SIMULATION_PREVIEW.md",
+    "dryrunProject": "generated/UAOS_V42_DRYRUN_PROJECT_AFTER_PREVIEW.uaosproject.json",
+    "dashboard": "generated/UAOS_V42_LOCAL_REVIEW_DASHBOARD.html",
+    "dashboardData": "generated/UAOS_V42_LOCAL_REVIEW_DASHBOARD_DATA.json",
+    "matrix": "generated/UAOS_V42_NEXT_RECOMMENDATION_MATRIX.json"
+  },
+  "errors": [],
+  "warnings": [],
+  "safety": {
+    "metadataOnly": true,
+    "dryRunOnly": true,
+    "noRealApply": true,
+    "sourceProjectModified": false,
+    "noAutoApply": true,
+    "noKorgOutput": true,
+    "noSetModification": true,
+    "noUsbWrite": true,
+    "noPa3xLoad": true,
+    "noPackageCopy": true,
+    "noFixtureModification": true,
+    "noProprietarySampleExtraction": true,
+    "appJsUntouched": true,
+    "noDeployOutput": true,
+    "noExportApproval": true
+  }
+}

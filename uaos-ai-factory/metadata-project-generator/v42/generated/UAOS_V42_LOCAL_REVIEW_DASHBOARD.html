@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>UAOS V42 Local Review Dashboard</title>
+  <style>
+    :root{--bg:#030712;--panel:#111827;--line:#2b3649;--text:#f8fafc;--muted:#9ca3af;--cyan:#22d3ee;--green:#22c55e;--amber:#f59e0b}
+    *{box-sizing:border-box}body{margin:0;background:#030712;color:var(--text);font-family:Arial,Tahoma,sans-serif;line-height:1.5}
+    header{padding:22px;background:#050914;border-bottom:1px solid var(--line)}h1{margin:4px 0 0}header p{margin:0;color:var(--cyan);font-weight:800}
+    main{padding:16px;display:grid;gap:14px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+    section,.card{background:linear-gradient(180deg,rgba(17,24,39,.98),rgba(8,13,24,.98));border:1px solid var(--line);border-radius:8px;padding:14px}
+    .badge{display:inline-block;border:1px solid rgba(34,211,238,.45);border-radius:999px;padding:6px 9px;margin:3px;color:var(--cyan);font-weight:800}
+    table{width:100%;border-collapse:collapse}td,th{border-top:1px solid var(--line);padding:8px;text-align:left}td:last-child{color:var(--amber)}
+    .ok{color:var(--green);font-weight:800}.blocked{color:var(--amber);font-weight:800}
+  </style>
+</head>
+<body>
+  <header>
+    <p>UAOS Metadata Project Generator</p>
+    <h1>V42 Local Review Dashboard</h1>
+    <span class="badge">LOCAL DASHBOARD ONLY</span>
+    <span class="badge">DRY-RUN ONLY</span>
+    <span class="badge">METADATA ONLY</span>
+    <span class="badge">SOURCE PROJECT NOT MODIFIED</span>
+    <span class="badge">NOT DEPLOYED</span>
+    <span class="badge">NOT KORG OUTPUT</span>
+    <span class="badge">NOT PA3X READY</span>
+    <span class="badge">NO USB APPROVAL</span>
+    <span class="badge">NO KEYBOARD LOAD APPROVAL</span>
+  </header>
+  <main>
+    <section>
+      <h2>Safety Status</h2>
+      <p class="ok">Dry-run only. Metadata only. Source project not modified. No approval for export, USB, or keyboard load.</p>
+    </section>
+    <section>
+      <h2>V37 Project Summary</h2>
+      <div class="grid">
+        <div class="card">Project<br><strong>UAOS V37 Example Metadata Project</strong></div>
+        <div class="card">Project id<br><strong>uaos-v37-example-project</strong></div>
+        <div class="card">Tracks<br><strong>5</strong></div>
+        <div class="card">Source mode<br><strong>metadata_only</strong></div>
+      </div>
+    </section>
+    <section>
+      <h2>V40 Suggestions Summary</h2>
+      <p>Total suggestions: 9. High priority: 4.</p>
+    </section>
+    <section>
+      <h2>V41 Review Pack Summary</h2>
+      <p>Review items: 9. Pending items: 9.</p>
+    </section>
+    <section>
+      <h2>V42 Simulation Preview</h2>
+      <p>Simulation id: uaos-v42-dryrun-20260704150424</p>
+      <table><thead><tr><th>Suggestion</th><th>Field</th><th>Preview change</th><th>Status</th></tr></thead><tbody><tr><td>V40-SEC-001</td><td>styleChecklist.*.ownerNote</td><td>Add optional ownerNote fields for intro, variations, fill, and ending.</td><td>pending_owner_decision</td></tr><tr><td>V40-RHY-001</td><td>arrangerNotes.rhythmDensityBySection</td><td>Add low/medium/high density intent for each section.</td><td>pending_owner_decision</td></tr><tr><td>V40-BAS-001</td><td>arrangerNotes.bassMovementContour</td><td>Add root_hold, passing_motion, and turnaround tags as metadata only.</td><td>pending_owner_decision</td></tr><tr><td>V40-CHR-001</td><td>arrangerNotes.chordRhythmPatterns</td><td>Add metadata labels such as stab, syncopated, held, and push.</td><td>pending_owner_decision</td></tr><tr><td>V40-ORI-001</td><td>arrangerNotes.orientalFeelReference</td><td>Keep maqam/feel notes as reference-only metadata.</td><td>pending_owner_decision</td></tr><tr><td>V40-MEL-001</td><td>arrangerNotes.melodySpaceBySection</td><td>Add sparse/medium/busy melody-space values per section.</td><td>pending_owner_decision</td></tr><tr><td>V40-DSP-001</td><td>dsp.channels[].intentConfidence</td><td>Add low/medium/high confidence metadata for each DSP channel.</td><td>pending_owner_decision</td></tr><tr><td>V40-HUM-001</td><td>reviewStatus.humanReviewerNotes</td><td>Add empty metadata-only reviewer note fields.</td><td>pending_owner_decision</td></tr><tr><td>V40-SAFE-001</td><td>safety.exportGates</td><td>Mirror approvedForKorgExport, approvedForUsb, and approvedForKeyboardLoad as false.</td><td>pending_owner_decision</td></tr></tbody></table>
+    </section>
+    <section>
+      <h2>Pending Owner Decisions</h2>
+      <p>V41-REV-001, V41-REV-002, V41-REV-003, V41-REV-004, V41-REV-005, V41-REV-006, V41-REV-007, V41-REV-008, V41-REV-009</p>
+    </section>
+    <section>
+      <h2>Blocked Actions List</h2>
+      <ul class="blocked"><li>Real apply</li><li>Source project mutation</li><li>Auto-apply suggestions</li><li>KORG output</li><li>SET modification</li><li>STY/PRF/PRS/KST generation</li><li>USB approval</li><li>Keyboard load approval</li><li>Deploy output</li><li>App.jsx changes</li></ul>
+    </section>
+    <section>
+      <h2>Next Safe Actions</h2>
+      <ul><li>Collect owner decisions in V43 metadata-only form.</li><li>Create local dashboard index for V37-V42.</li><li>Keep all export and keyboard load gates closed.</li></ul>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,145 @@
+{
+  "schemaVersion": "uaosproject.v1",
+  "projectId": "uaos-v37-example-project",
+  "projectName": "UAOS V37 Example Metadata Project",
+  "createdAt": "2026-07-04T13:49:34.281Z",
+  "sourceMode": "metadata_only",
+  "targetKeyboard": "KORG_PA3X_ORIENTAL_UNVERIFIED",
+  "safety": {
+    "metadataOnly": true,
+    "korgOutputAllowed": false,
+    "setModificationAllowed": false,
+    "usbWriteAllowed": false,
+    "keyboardLoadAllowed": false,
+    "compatibilityClaim": false,
+    "pa3xReadyClaim": false
+  },
+  "musicalIntent": {
+    "styleFamily": "oriental_pop",
+    "tempo": 96,
+    "timeSignature": "4/4",
+    "scaleMode": "hijaz_oriental_reference",
+    "chordProgression": [
+      "Dm",
+      "C",
+      "Bb",
+      "A"
+    ],
+    "sections": [
+      "intro",
+      "variation1",
+      "variation2",
+      "variation3",
+      "variation4",
+      "fill",
+      "ending"
+    ]
+  },
+  "tracks": [
+    {
+      "trackId": "drums",
+      "role": "rhythm",
+      "intent": "balanced darbuka and kit reference metadata"
+    },
+    {
+      "trackId": "bass",
+      "role": "low_end",
+      "intent": "simple root movement metadata"
+    },
+    {
+      "trackId": "chords",
+      "role": "harmony",
+      "intent": "short chord stabs metadata"
+    },
+    {
+      "trackId": "pad",
+      "role": "texture",
+      "intent": "soft sustained layer metadata"
+    },
+    {
+      "trackId": "melodyGuide",
+      "role": "guide",
+      "intent": "non-rendered melody contour metadata"
+    }
+  ],
+  "links": {
+    "dspPlanPath": "generated/UAOS_EXAMPLE_DSP_PLAN_V37.json",
+    "styleReviewPlanPath": "generated/UAOS_EXAMPLE_STYLE_REVIEW_PLAN_V37.json",
+    "manifestPath": "generated/UAOS_EXAMPLE_PROJECT_BUNDLE_MANIFEST_V37.json"
+  },
+  "previewArtifact": true,
+  "previewSource": "UAOS V42 dry-run simulation",
+  "previewCreatedAt": "2026-07-04T15:04:24.979Z",
+  "sourceProjectModified": false,
+  "dryRunOnly": true,
+  "metadataOnly": true,
+  "approvedForKorgExport": false,
+  "approvedForUsb": false,
+  "approvedForKeyboardLoad": false,
+  "pendingMetadataPreview": [
+    {
+      "field": "styleChecklist.*.ownerNote",
+      "sourceSuggestionId": "V40-SEC-001",
+      "previewChange": "Add optional ownerNote fields for intro, variations, fill, and ending.",
+      "status": "pending_owner_decision",
+      "applied": false
+    },
+    {
+      "field": "arrangerNotes.rhythmDensityBySection",
+      "sourceSuggestionId": "V40-RHY-001",
+      "previewChange": "Add low/medium/high density intent for each section.",
+      "status": "pending_owner_decision",
+      "applied": false
+    },
+    {
+      "field": "arrangerNotes.bassMovementContour",
+      "sourceSuggestionId": "V40-BAS-001",
+      "previewChange": "Add root_hold, passing_motion, and turnaround tags as metadata only.",
+      "status": "pending_owner_decision",
+      "applied": false
+    },
+    {
+      "field": "arrangerNotes.chordRhythmPatterns",
+      "sourceSuggestionId": "V40-CHR-001",
+      "previewChange": "Add metadata labels such as stab, syncopated, held, and push.",
+      "status": "pending_owner_decision",
+      "applied": false
+    },
+    {
+      "field": "arrangerNotes.orientalFeelReference",
+      "sourceSuggestionId": "V40-ORI-001",
+      "previewChange": "Keep maqam/feel notes as reference-only metadata.",
+      "status": "pending_owner_decision",
+      "applied": false
+    },
+    {
+      "field": "arrangerNotes.melodySpaceBySection",
+      "sourceSuggestionId": "V40-MEL-001",
+      "previewChange": "Add sparse/medium/busy melody-space values per section.",
+      "status": "pending_owner_decision",
+      "applied": false
+    },
+    {
+      "field": "dsp.channels[].intentConfidence",
+      "sourceSuggestionId": "V40-DSP-001",
+      "previewChange": "Add low/medium/high confidence metadata for each DSP channel.",
+      "status": "pending_owner_decision",
+      "applied": false
+    },
+    {
+      "field": "reviewStatus.humanReviewerNotes",
+      "sourceSuggestionId": "V40-HUM-001",
+      "previewChange": "Add empty metadata-only reviewer note fields.",
+      "status": "pending_owner_decision",
+      "applied": false
+    },
+    {
+      "field": "safety.exportGates",
+      "sourceSuggestionId": "V40-SAFE-001",
+      "previewChange": "Mirror approvedForKorgExport, approvedForUsb, and approvedForKeyboardLoad as false.",
+      "status": "pending_owner_decision",
+      "applied": false
+    }
+  ],
+  "sourceProjectSha256Before": "eb87fdce56fd548742c29721e2883a515f08fdd5b9fae893a72b00e2dffaaf37"
+}
