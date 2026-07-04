@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>UAOS V34 Owner Decision Pack</title>
+  <link rel="stylesheet" href="assets/uaos_v34_owner_decision.css">
+</head>
+<body>
+  <header class="topbar">
+    <div><p>UAOS PC Workstation</p><h1>V34 Owner Decision Pack</h1></div>
+    <div class="badges"><span>READ ONLY</span><span>NO USB</span><span>NO PA3X</span><span>NO WRITER</span></div>
+  </header>
+  <main>
+    <section class="hero">
+      <article><span>Files</span><strong>38</strong></article>
+      <article><span>Weak</span><strong>1</strong></article>
+      <article><span>Suggestions</span><strong>1</strong></article>
+      <article><span>Sampler</span><strong>0</strong></article>
+      <article><span>SET modified</span><strong>NO</strong></article>
+    </section>
+    <section class="quick">
+      <h2>القرار السريع</h2>
+      <div class="buttons">
+        <button data-path="decision_pack\\analysis_outputs\\V34_OWNER_DECISION_SUMMARY_AR.md">افتح ملخص V34</button>
+        <button data-path="decision_pack\\analysis_outputs\\V34_REVIEW_ACTIONS.csv">افتح جدول القرارات</button>
+        <button data-path="deep_analyzer\\analysis_outputs">افتح نتائج V33</button>
+        <button data-path="owner_set_input">افتح مجلد الست</button>
+      </div>
+      <p>المتصفح لا يشغل أوامر Windows مباشرة. استخدم OPEN_V34_RESULTS.cmd لفتح الملفات بضغطة واحدة.</p>
+    </section>
+    <nav class="tabs">
+      <button class="active" data-panel="weak">العنصر الضعيف</button>
+      <button data-panel="suggestion">الاقتراح المفيد</button>
+      <button data-panel="sampler">لماذا السامبلر صفر؟</button>
+      <button data-panel="dsp">خطة DSP</button>
+      <button data-panel="now">ماذا نفعل الآن؟</button>
+      <button data-panel="approval">ما يحتاج موافقة لاحقة؟</button>
+      <button data-panel="safety">الأمان</button>
+    </nav>
+    <section class="panel active" id="weak"><h2>العنصر الضعيف</h2><p>V33 وجد مرشحًا واحدًا ضعيفًا/غير واضح. القرار الآمن الآن: review_manually فقط.</p></section>
+    <section class="panel" id="suggestion"><h2>الاقتراح المفيد</h2><p>يوجد اقتراح واحد مفيد للمراجعة. هو hypothesis_only_no_write وليس تغييرًا داخل الست.</p></section>
+    <section class="panel" id="sampler"><h2>لماذا السامبلر صفر؟</h2><p>لم تظهر ملفات سامبلر واضحة من الامتدادات/الأسماء المقروءة. هذا لا يثبت أن الست لا يحتوي سامبلر؛ يعني فقط أن V33 لم يكتشف ملفات sample/multisample مكشوفة.</p></section>
+    <section class="panel" id="dsp"><h2>خطة DSP</h2><p>يمكن استخدام DSP كخطة قراءة وتنظيم فقط: Unknown / Pad / Drums حسب V33. لا توجد معالجة صوت ولا تعديل للست.</p></section>
+    <section class="panel" id="now"><h2>ماذا نفعل الآن؟</h2><ul><li>راجع جدول القرارات.</li><li>افتح نتائج V33.</li><li>راجع المرشح الضعيف يدويًا.</li><li>احتفظ بالست الأصلي كما هو.</li></ul></section>
+    <section class="panel" id="approval"><h2>ما يحتاج موافقة لاحقة؟</h2><ul><li>تحسين قواعد V35.</li><li>توفير backup أوسع إذا أراد المالك.</li><li>أي import metadata-only لاحق.</li><li>أي كتابة مستقبلية تحتاج موافقة منفصلة.</li></ul></section>
+    <section class="panel safety" id="safety"><h2>الأمان</h2><div><span>Read-only</span><strong>YES</strong></div><div><span>Original SET modified</span><strong>NO</strong></div><div><span>Binary writer</span><strong>NO</strong></div><div><span>Sample extraction</span><strong>NO</strong></div><div><span>USB write</span><strong>NO</strong></div><div><span>PA3X load</span><strong>NO</strong></div></section>
+  </main>
+  <script src="assets/uaos_v34_owner_decision.js"></script>
+</body>
+</html>
