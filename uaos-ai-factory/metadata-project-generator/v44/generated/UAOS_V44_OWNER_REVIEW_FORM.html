@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>UAOS V44 Owner Review Form</title>
+  <style>
+    :root{--bg:#030712;--panel:#111827;--line:#2b3649;--text:#f8fafc;--cyan:#22d3ee;--green:#22c55e;--amber:#f59e0b}
+    *{box-sizing:border-box}body{margin:0;background:#030712;color:var(--text);font-family:Arial,Tahoma,sans-serif;line-height:1.5}
+    header{padding:22px;background:#050914;border-bottom:1px solid var(--line)}h1{margin:4px 0 0}header p{margin:0;color:var(--cyan);font-weight:800}
+    main{padding:16px;display:grid;gap:14px}section,.decision{background:linear-gradient(180deg,rgba(17,24,39,.98),rgba(8,13,24,.98));border:1px solid var(--line);border-radius:8px;padding:14px}
+    .badge{display:inline-block;border:1px solid rgba(34,211,238,.45);border-radius:999px;padding:6px 9px;margin:3px;color:var(--cyan);font-weight:800}
+    .decision{margin-bottom:10px}.options{display:flex;gap:8px;flex-wrap:wrap}.options span{border:1px solid var(--line);border-radius:8px;padding:8px;color:var(--amber)}code{color:var(--green)}
+  </style>
+</head>
+<body>
+  <header>
+    <p>UAOS Metadata Project Generator</p>
+    <h1>V44 Owner Review HTML Form</h1>
+    <span class="badge">LOCAL FORM ONLY</span>
+    <span class="badge">DOES NOT SAVE AUTOMATICALLY</span>
+    <span class="badge">DRY-RUN ONLY</span>
+    <span class="badge">METADATA ONLY</span>
+    <span class="badge">SOURCE PROJECT NOT MODIFIED</span>
+    <span class="badge">NOT DEPLOYED</span>
+    <span class="badge">NOT KORG OUTPUT</span>
+    <span class="badge">NOT PA3X READY</span>
+    <span class="badge">NO USB APPROVAL</span>
+    <span class="badge">NO KEYBOARD LOAD APPROVAL</span>
+    <span class="badge">NO EXPORT APPROVAL</span>
+  </header>
+  <main>
+    <section>
+      <h2>Safety Banner</h2>
+      <p>This HTML does not save decisions automatically. Edit the JSON template manually or use a future decision collector. It does not apply changes, does not generate KORG files, does not approve USB, and does not approve keyboard load.</p>
+      <p>V43 decision template: <code>../v43/generated/UAOS_V43_OWNER_DECISION_TEMPLATE.json</code></p>
+      <p>V44 preview: <code>generated/UAOS_V44_DECISION_APPLY_PREVIEW_V2.json</code></p>
+    </section>
+    <section>
+      <h2>Owner Decision List</h2>
+      
+  <article class="decision">
+    <h3>V43-DEC-001 Add owner notes per section</h3>
+    <p><strong>Category:</strong> sectionStructure</p>
+    <p><strong>Reason/change:</strong> Add optional ownerNote fields for intro, variations, fill, and ending.</p>
+    <p><strong>Source suggestion:</strong> V40-SEC-001</p>
+    <div class="options"><span>accept_for_future_metadata_plan_only</span><span>reject</span><span>needs_more_review</span><span>defer</span></div>
+  </article>
+  <article class="decision">
+    <h3>V43-DEC-002 Define density targets by section</h3>
+    <p><strong>Category:</strong> rhythmDensity</p>
+    <p><strong>Reason/change:</strong> Add low/medium/high density intent for each section.</p>
+    <p><strong>Source suggestion:</strong> V40-RHY-001</p>
+    <div class="options"><span>accept_for_future_metadata_plan_only</span><span>reject</span><span>needs_more_review</span><span>defer</span></div>
+  </article>
+  <article class="decision">
+    <h3>V43-DEC-003 Add bass movement contour</h3>
+    <p><strong>Category:</strong> bassMovement</p>
+    <p><strong>Reason/change:</strong> Add root_hold, passing_motion, and turnaround tags as metadata only.</p>
+    <p><strong>Source suggestion:</strong> V40-BAS-001</p>
+    <div class="options"><span>accept_for_future_metadata_plan_only</span><span>reject</span><span>needs_more_review</span><span>defer</span></div>
+  </article>
+  <article class="decision">
+    <h3>V43-DEC-004 Add chord rhythm pattern labels</h3>
+    <p><strong>Category:</strong> chordRhythm</p>
+    <p><strong>Reason/change:</strong> Add metadata labels such as stab, syncopated, held, and push.</p>
+    <p><strong>Source suggestion:</strong> V40-CHR-001</p>
+    <div class="options"><span>accept_for_future_metadata_plan_only</span><span>reject</span><span>needs_more_review</span><span>defer</span></div>
+  </article>
+  <article class="decision">
+    <h3>V43-DEC-005 Separate feel from compatibility</h3>
+    <p><strong>Category:</strong> orientalFeel</p>
+    <p><strong>Reason/change:</strong> Keep maqam/feel notes as reference-only metadata.</p>
+    <p><strong>Source suggestion:</strong> V40-ORI-001</p>
+    <div class="options"><span>accept_for_future_metadata_plan_only</span><span>reject</span><span>needs_more_review</span><span>defer</span></div>
+  </article>
+  <article class="decision">
+    <h3>V43-DEC-006 Add melody space map</h3>
+    <p><strong>Category:</strong> melodySpace</p>
+    <p><strong>Reason/change:</strong> Add sparse/medium/busy melody-space values per section.</p>
+    <p><strong>Source suggestion:</strong> V40-MEL-001</p>
+    <div class="options"><span>accept_for_future_metadata_plan_only</span><span>reject</span><span>needs_more_review</span><span>defer</span></div>
+  </article>
+  <article class="decision">
+    <h3>V43-DEC-007 Add DSP intent confidence</h3>
+    <p><strong>Category:</strong> dspIntent</p>
+    <p><strong>Reason/change:</strong> Add low/medium/high confidence metadata for each DSP channel.</p>
+    <p><strong>Source suggestion:</strong> V40-DSP-001</p>
+    <div class="options"><span>accept_for_future_metadata_plan_only</span><span>reject</span><span>needs_more_review</span><span>defer</span></div>
+  </article>
+  <article class="decision">
+    <h3>V43-DEC-008 Add reviewer checklist slots</h3>
+    <p><strong>Category:</strong> humanReview</p>
+    <p><strong>Reason/change:</strong> Add empty metadata-only reviewer note fields.</p>
+    <p><strong>Source suggestion:</strong> V40-HUM-001</p>
+    <div class="options"><span>accept_for_future_metadata_plan_only</span><span>reject</span><span>needs_more_review</span><span>defer</span></div>
+  </article>
+  <article class="decision">
+    <h3>V43-DEC-009 Keep export gates locked</h3>
+    <p><strong>Category:</strong> safetyGate</p>
+    <p><strong>Reason/change:</strong> Mirror approvedForKorgExport, approvedForUsb, and approvedForKeyboardLoad as false.</p>
+    <p><strong>Source suggestion:</strong> V40-SAFE-001</p>
+    <div class="options"><span>accept_for_future_metadata_plan_only</span><span>reject</span><span>needs_more_review</span><span>defer</span></div>
+  </article>
+    </section>
+  </main>
+</body>
+</html>

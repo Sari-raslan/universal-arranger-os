@@ -1,0 +1,72 @@
+{
+  "schemaVersion": "uaos.v44.preview.diff.summary.v1",
+  "generatedAt": "2026-07-04T15:25:09.084Z",
+  "previewId": "uaos-v44-preview-20260704152509",
+  "changedFieldsPreview": [],
+  "unchangedFields": [
+    "schemaVersion",
+    "projectId",
+    "projectName",
+    "createdAt",
+    "sourceMode",
+    "targetKeyboard",
+    "musicalIntent",
+    "tracks",
+    "links",
+    "safety"
+  ],
+  "pendingOwnerDecisions": [
+    "V43-DEC-001",
+    "V43-DEC-002",
+    "V43-DEC-003",
+    "V43-DEC-004",
+    "V43-DEC-005",
+    "V43-DEC-006",
+    "V43-DEC-007",
+    "V43-DEC-008",
+    "V43-DEC-009"
+  ],
+  "blockedActions": [
+    "real apply",
+    "source project mutation",
+    "auto-apply",
+    "KORG output",
+    "SET modification",
+    "USB approval",
+    "keyboard load approval",
+    "deploy"
+  ],
+  "riskNotes": [
+    "All owner decisions are pending; no metadata changes are applied in this preview.",
+    "Preview v2 is separate from the source project.",
+    "No V42 dry-run project mutation occurred.",
+    "No export approval is created."
+  ],
+  "nextSafeActions": [
+    "Collect manual owner decisions in V45.",
+    "Create a printable owner review form v2.",
+    "Keep all hardware and export gates closed."
+  ],
+  "dryRunOnly": true,
+  "metadataOnly": true,
+  "sourceProjectModified": false,
+  "autoApplyEnabled": false,
+  "realApplyAllowed": false,
+  "approvedForKorgExport": false,
+  "approvedForUsb": false,
+  "approvedForKeyboardLoad": false,
+  "safety": {
+    "metadataOnly": true,
+    "dryRunOnly": true,
+    "sourceProjectModified": false,
+    "autoApplyEnabled": false,
+    "realApplyAllowed": false,
+    "korgOutputAllowed": false,
+    "setModificationAllowed": false,
+    "usbWriteAllowed": false,
+    "keyboardLoadAllowed": false,
+    "compatibilityClaim": false,
+    "pa3xReadyClaim": false,
+    "exportApproval": false
+  }
+}

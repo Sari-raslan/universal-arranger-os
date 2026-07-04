@@ -1,0 +1,53 @@
+{
+  "schemaVersion": "uaos.v44.next.recommendation.matrix.v1",
+  "generatedAt": "2026-07-04T15:25:09.084Z",
+  "metadataOnly": true,
+  "dryRunOnly": true,
+  "approvedForKorgExport": false,
+  "approvedForUsb": false,
+  "approvedForKeyboardLoad": false,
+  "recommendations": [
+    {
+      "id": "A",
+      "action": "V45 Manual Decision Importer",
+      "safety": "metadata-only dry-run",
+      "recommended": true
+    },
+    {
+      "id": "B",
+      "action": "V45 Owner Review Form v2 with printable decision sheet",
+      "safety": "local-only, no App.jsx, no deploy",
+      "recommended": true
+    },
+    {
+      "id": "C",
+      "action": "V45 Batch Metadata Project Generator",
+      "safety": "metadata-only",
+      "recommended": false
+    },
+    {
+      "id": "D",
+      "action": "Stop",
+      "safety": "always available",
+      "recommended": false
+    }
+  ],
+  "recommendedTogether": [
+    "A",
+    "B"
+  ],
+  "safety": {
+    "metadataOnly": true,
+    "dryRunOnly": true,
+    "sourceProjectModified": false,
+    "autoApplyEnabled": false,
+    "realApplyAllowed": false,
+    "korgOutputAllowed": false,
+    "setModificationAllowed": false,
+    "usbWriteAllowed": false,
+    "keyboardLoadAllowed": false,
+    "compatibilityClaim": false,
+    "pa3xReadyClaim": false,
+    "exportApproval": false
+  }
+}
