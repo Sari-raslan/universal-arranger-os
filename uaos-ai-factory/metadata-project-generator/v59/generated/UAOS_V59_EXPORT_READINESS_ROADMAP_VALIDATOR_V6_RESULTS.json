@@ -1,0 +1,39 @@
+{
+  "schema_version": "uaos.v59.export.readiness.roadmap.validator.v6.results.v1",
+  "status": "PASS",
+  "checked_files": {
+    "normalized": "generated/UAOS_V59_OWNER_DECISION_NORMALIZED_PENDING.json",
+    "trace": "generated/UAOS_V59_OWNER_DECISION_NORMALIZER_TRACE.json",
+    "consolidation": "generated/UAOS_V59_STYLE_PLAN_CONSOLIDATION_DRYRUN_V5.json",
+    "intent": "generated/UAOS_V59_CONSOLIDATED_STYLE_INTENT_PENDING_OWNER_REVIEW.json",
+    "sections": "generated/UAOS_V59_CONSOLIDATED_SECTION_PLAN_PENDING_OWNER_REVIEW.json",
+    "owner_form": "owner-input/UAOS_V59_OWNER_PENDING_INPUT_REVIEW_FORM.json",
+    "roadmap": "roadmap/UAOS_V59_EXPORT_READINESS_ROADMAP_BLOCKED.json"
+  },
+  "readiness_classification": [
+    "BLOCKED",
+    "OWNER_INPUT_REQUIRED",
+    "TECHNICAL_RESEARCH_REQUIRED",
+    "EXPORT_NOT_ALLOWED"
+  ],
+  "errors": [],
+  "warnings": [],
+  "safety": {
+    "metadata_only": true,
+    "dry_run_only": true,
+    "manual_owner_input_required": true,
+    "real_owner_approval_applied": false,
+    "auto_apply": false,
+    "export_allowed": false,
+    "korg_output": false,
+    "midi_audio_generation": false,
+    "usb_write": false,
+    "pa3x_load": false,
+    "source_mutation": false,
+    "app_js_touched": false,
+    "react_integration": false,
+    "deploy_payment": false,
+    "compatibility_claim": false,
+    "pa3x_ready_claim": false
+  }
+}

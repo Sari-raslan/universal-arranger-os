@@ -1,0 +1,532 @@
+{
+  "schema_version": "uaos.v59.owner.decision.normalized.pending.v1",
+  "created_at": "2026-07-04T19:06:26.680Z",
+  "source_v58_pack": "v58/generated/UAOS_V58_REAL_OWNER_DECISION_INPUT_PACK.json",
+  "source_printable_form_reference_character_count": 3823,
+  "owner_decision_status": "PENDING_MANUAL_OWNER_INPUT",
+  "real_owner_approval_applied": false,
+  "auto_apply_allowed": false,
+  "export_allowed": false,
+  "korg_output_allowed": false,
+  "source_mutation_allowed": false,
+  "normalized_decision_items": [
+    {
+      "decision_id": "v58-owner-decision-01",
+      "source_checklist_item_id": "v56-review-01",
+      "category": "musicalIntent",
+      "question": "Does the refined intent match oriental_pop at 96 BPM?",
+      "owner_decision_status": "PENDING_MANUAL_OWNER_INPUT",
+      "real_owner_decision": "pending",
+      "selectable_decision_fields": [
+        "approve_metadata_intent",
+        "request_revision",
+        "reject",
+        "defer"
+      ],
+      "unanswered_owner_inputs": [
+        "real_owner_decision",
+        "owner_note",
+        "owner_signature",
+        "owner_decision_date"
+      ],
+      "blocked_decision_fields": [
+        "export_approval",
+        "usb_approval",
+        "pa3x_load_approval",
+        "korg_output_approval",
+        "source_mutation_approval"
+      ],
+      "missing_confirmations": [
+        "owner_signature_required_for_final",
+        "manual_owner_review_required"
+      ],
+      "export_blocking_item": true,
+      "next_manual_review_requirement": "Owner must manually choose a decision and sign before any later metadata phase may treat the item as reviewed.",
+      "sample_reference_from_v57": {
+        "sampleDecision": "approve_metadata_intent",
+        "sampleOwnerNote": "Sample note: metadata intent is clear enough for dry-run preview only.",
+        "sampleOnly": true,
+        "notRealApproval": true
+      },
+      "real_owner_approval_applied": false,
+      "auto_apply_allowed": false,
+      "export_allowed": false,
+      "korg_output_allowed": false,
+      "source_mutation_allowed": false,
+      "metadata_only": true,
+      "dry_run_only": true
+    },
+    {
+      "decision_id": "v58-owner-decision-02",
+      "source_checklist_item_id": "v56-review-02",
+      "category": "sectionStructure",
+      "question": "Do the 7 planned sections make musical sense for owner review?",
+      "owner_decision_status": "PENDING_MANUAL_OWNER_INPUT",
+      "real_owner_decision": "pending",
+      "selectable_decision_fields": [
+        "approve_metadata_intent",
+        "request_revision",
+        "reject",
+        "defer"
+      ],
+      "unanswered_owner_inputs": [
+        "real_owner_decision",
+        "owner_note",
+        "owner_signature",
+        "owner_decision_date"
+      ],
+      "blocked_decision_fields": [
+        "export_approval",
+        "usb_approval",
+        "pa3x_load_approval",
+        "korg_output_approval",
+        "source_mutation_approval"
+      ],
+      "missing_confirmations": [
+        "owner_signature_required_for_final",
+        "manual_owner_review_required"
+      ],
+      "export_blocking_item": true,
+      "next_manual_review_requirement": "Owner must manually choose a decision and sign before any later metadata phase may treat the item as reviewed.",
+      "sample_reference_from_v57": {
+        "sampleDecision": "approve_metadata_intent",
+        "sampleOwnerNote": "Sample note: metadata intent is clear enough for dry-run preview only.",
+        "sampleOnly": true,
+        "notRealApproval": true
+      },
+      "real_owner_approval_applied": false,
+      "auto_apply_allowed": false,
+      "export_allowed": false,
+      "korg_output_allowed": false,
+      "source_mutation_allowed": false,
+      "metadata_only": true,
+      "dry_run_only": true
+    },
+    {
+      "decision_id": "v58-owner-decision-03",
+      "source_checklist_item_id": "v56-review-03",
+      "category": "rhythmDensity",
+      "question": "Is the rhythm density appropriate across intro, variations, fill, and ending?",
+      "owner_decision_status": "PENDING_MANUAL_OWNER_INPUT",
+      "real_owner_decision": "pending",
+      "selectable_decision_fields": [
+        "approve_metadata_intent",
+        "request_revision",
+        "reject",
+        "defer"
+      ],
+      "unanswered_owner_inputs": [
+        "real_owner_decision",
+        "owner_note",
+        "owner_signature",
+        "owner_decision_date"
+      ],
+      "blocked_decision_fields": [
+        "export_approval",
+        "usb_approval",
+        "pa3x_load_approval",
+        "korg_output_approval",
+        "source_mutation_approval"
+      ],
+      "missing_confirmations": [
+        "owner_signature_required_for_final",
+        "manual_owner_review_required"
+      ],
+      "export_blocking_item": true,
+      "next_manual_review_requirement": "Owner must manually choose a decision and sign before any later metadata phase may treat the item as reviewed.",
+      "sample_reference_from_v57": {
+        "sampleDecision": "request_revision",
+        "sampleOwnerNote": "Sample note: clarify this area before any real owner decision or implementation.",
+        "sampleOnly": true,
+        "notRealApproval": true
+      },
+      "real_owner_approval_applied": false,
+      "auto_apply_allowed": false,
+      "export_allowed": false,
+      "korg_output_allowed": false,
+      "source_mutation_allowed": false,
+      "metadata_only": true,
+      "dry_run_only": true
+    },
+    {
+      "decision_id": "v58-owner-decision-04",
+      "source_checklist_item_id": "v56-review-04",
+      "category": "bassMovement",
+      "question": "Is the bass movement supportive without crowding the arrangement?",
+      "owner_decision_status": "PENDING_MANUAL_OWNER_INPUT",
+      "real_owner_decision": "pending",
+      "selectable_decision_fields": [
+        "approve_metadata_intent",
+        "request_revision",
+        "reject",
+        "defer"
+      ],
+      "unanswered_owner_inputs": [
+        "real_owner_decision",
+        "owner_note",
+        "owner_signature",
+        "owner_decision_date"
+      ],
+      "blocked_decision_fields": [
+        "export_approval",
+        "usb_approval",
+        "pa3x_load_approval",
+        "korg_output_approval",
+        "source_mutation_approval"
+      ],
+      "missing_confirmations": [
+        "owner_signature_required_for_final",
+        "manual_owner_review_required"
+      ],
+      "export_blocking_item": true,
+      "next_manual_review_requirement": "Owner must manually choose a decision and sign before any later metadata phase may treat the item as reviewed.",
+      "sample_reference_from_v57": {
+        "sampleDecision": "request_revision",
+        "sampleOwnerNote": "Sample note: clarify this area before any real owner decision or implementation.",
+        "sampleOnly": true,
+        "notRealApproval": true
+      },
+      "real_owner_approval_applied": false,
+      "auto_apply_allowed": false,
+      "export_allowed": false,
+      "korg_output_allowed": false,
+      "source_mutation_allowed": false,
+      "metadata_only": true,
+      "dry_run_only": true
+    },
+    {
+      "decision_id": "v58-owner-decision-05",
+      "source_checklist_item_id": "v56-review-05",
+      "category": "chordRhythm",
+      "question": "Is the chord rhythm clear enough for arranger usability?",
+      "owner_decision_status": "PENDING_MANUAL_OWNER_INPUT",
+      "real_owner_decision": "pending",
+      "selectable_decision_fields": [
+        "approve_metadata_intent",
+        "request_revision",
+        "reject",
+        "defer"
+      ],
+      "unanswered_owner_inputs": [
+        "real_owner_decision",
+        "owner_note",
+        "owner_signature",
+        "owner_decision_date"
+      ],
+      "blocked_decision_fields": [
+        "export_approval",
+        "usb_approval",
+        "pa3x_load_approval",
+        "korg_output_approval",
+        "source_mutation_approval"
+      ],
+      "missing_confirmations": [
+        "owner_signature_required_for_final",
+        "manual_owner_review_required"
+      ],
+      "export_blocking_item": true,
+      "next_manual_review_requirement": "Owner must manually choose a decision and sign before any later metadata phase may treat the item as reviewed.",
+      "sample_reference_from_v57": {
+        "sampleDecision": "request_revision",
+        "sampleOwnerNote": "Sample note: clarify this area before any real owner decision or implementation.",
+        "sampleOnly": true,
+        "notRealApproval": true
+      },
+      "real_owner_approval_applied": false,
+      "auto_apply_allowed": false,
+      "export_allowed": false,
+      "korg_output_allowed": false,
+      "source_mutation_allowed": false,
+      "metadata_only": true,
+      "dry_run_only": true
+    },
+    {
+      "decision_id": "v58-owner-decision-06",
+      "source_checklist_item_id": "v56-review-06",
+      "category": "orientalFeel",
+      "question": "Does the oriental feel read correctly as metadata intent without a compatibility claim?",
+      "owner_decision_status": "PENDING_MANUAL_OWNER_INPUT",
+      "real_owner_decision": "pending",
+      "selectable_decision_fields": [
+        "approve_metadata_intent",
+        "request_revision",
+        "reject",
+        "defer"
+      ],
+      "unanswered_owner_inputs": [
+        "real_owner_decision",
+        "owner_note",
+        "owner_signature",
+        "owner_decision_date"
+      ],
+      "blocked_decision_fields": [
+        "export_approval",
+        "usb_approval",
+        "pa3x_load_approval",
+        "korg_output_approval",
+        "source_mutation_approval"
+      ],
+      "missing_confirmations": [
+        "owner_signature_required_for_final",
+        "manual_owner_review_required"
+      ],
+      "export_blocking_item": true,
+      "next_manual_review_requirement": "Owner must manually choose a decision and sign before any later metadata phase may treat the item as reviewed.",
+      "sample_reference_from_v57": {
+        "sampleDecision": "request_revision",
+        "sampleOwnerNote": "Sample note: clarify this area before any real owner decision or implementation.",
+        "sampleOnly": true,
+        "notRealApproval": true
+      },
+      "real_owner_approval_applied": false,
+      "auto_apply_allowed": false,
+      "export_allowed": false,
+      "korg_output_allowed": false,
+      "source_mutation_allowed": false,
+      "metadata_only": true,
+      "dry_run_only": true
+    },
+    {
+      "decision_id": "v58-owner-decision-07",
+      "source_checklist_item_id": "v56-review-07",
+      "category": "melodySpace",
+      "question": "Is there enough room for live melody and expression?",
+      "owner_decision_status": "PENDING_MANUAL_OWNER_INPUT",
+      "real_owner_decision": "pending",
+      "selectable_decision_fields": [
+        "approve_metadata_intent",
+        "request_revision",
+        "reject",
+        "defer"
+      ],
+      "unanswered_owner_inputs": [
+        "real_owner_decision",
+        "owner_note",
+        "owner_signature",
+        "owner_decision_date"
+      ],
+      "blocked_decision_fields": [
+        "export_approval",
+        "usb_approval",
+        "pa3x_load_approval",
+        "korg_output_approval",
+        "source_mutation_approval"
+      ],
+      "missing_confirmations": [
+        "owner_signature_required_for_final",
+        "manual_owner_review_required"
+      ],
+      "export_blocking_item": true,
+      "next_manual_review_requirement": "Owner must manually choose a decision and sign before any later metadata phase may treat the item as reviewed.",
+      "sample_reference_from_v57": {
+        "sampleDecision": "approve_metadata_intent",
+        "sampleOwnerNote": "Sample note: metadata intent is clear enough for dry-run preview only.",
+        "sampleOnly": true,
+        "notRealApproval": true
+      },
+      "real_owner_approval_applied": false,
+      "auto_apply_allowed": false,
+      "export_allowed": false,
+      "korg_output_allowed": false,
+      "source_mutation_allowed": false,
+      "metadata_only": true,
+      "dry_run_only": true
+    },
+    {
+      "decision_id": "v58-owner-decision-08",
+      "source_checklist_item_id": "v56-review-08",
+      "category": "dspIntent",
+      "question": "Are the DSP intentions clear as metadata-only mix guidance?",
+      "owner_decision_status": "PENDING_MANUAL_OWNER_INPUT",
+      "real_owner_decision": "pending",
+      "selectable_decision_fields": [
+        "approve_metadata_intent",
+        "request_revision",
+        "reject",
+        "defer"
+      ],
+      "unanswered_owner_inputs": [
+        "real_owner_decision",
+        "owner_note",
+        "owner_signature",
+        "owner_decision_date"
+      ],
+      "blocked_decision_fields": [
+        "export_approval",
+        "usb_approval",
+        "pa3x_load_approval",
+        "korg_output_approval",
+        "source_mutation_approval"
+      ],
+      "missing_confirmations": [
+        "owner_signature_required_for_final",
+        "manual_owner_review_required"
+      ],
+      "export_blocking_item": true,
+      "next_manual_review_requirement": "Owner must manually choose a decision and sign before any later metadata phase may treat the item as reviewed.",
+      "sample_reference_from_v57": {
+        "sampleDecision": "approve_metadata_intent",
+        "sampleOwnerNote": "Sample note: metadata intent is clear enough for dry-run preview only.",
+        "sampleOnly": true,
+        "notRealApproval": true
+      },
+      "real_owner_approval_applied": false,
+      "auto_apply_allowed": false,
+      "export_allowed": false,
+      "korg_output_allowed": false,
+      "source_mutation_allowed": false,
+      "metadata_only": true,
+      "dry_run_only": true
+    },
+    {
+      "decision_id": "v58-owner-decision-09",
+      "source_checklist_item_id": "v56-review-09",
+      "category": "arrangerUsability",
+      "question": "Would a human arranger understand the intent before any future implementation?",
+      "owner_decision_status": "PENDING_MANUAL_OWNER_INPUT",
+      "real_owner_decision": "pending",
+      "selectable_decision_fields": [
+        "approve_metadata_intent",
+        "request_revision",
+        "reject",
+        "defer"
+      ],
+      "unanswered_owner_inputs": [
+        "real_owner_decision",
+        "owner_note",
+        "owner_signature",
+        "owner_decision_date"
+      ],
+      "blocked_decision_fields": [
+        "export_approval",
+        "usb_approval",
+        "pa3x_load_approval",
+        "korg_output_approval",
+        "source_mutation_approval"
+      ],
+      "missing_confirmations": [
+        "owner_signature_required_for_final",
+        "manual_owner_review_required"
+      ],
+      "export_blocking_item": true,
+      "next_manual_review_requirement": "Owner must manually choose a decision and sign before any later metadata phase may treat the item as reviewed.",
+      "sample_reference_from_v57": {
+        "sampleDecision": "request_revision",
+        "sampleOwnerNote": "Sample note: clarify this area before any real owner decision or implementation.",
+        "sampleOnly": true,
+        "notRealApproval": true
+      },
+      "real_owner_approval_applied": false,
+      "auto_apply_allowed": false,
+      "export_allowed": false,
+      "korg_output_allowed": false,
+      "source_mutation_allowed": false,
+      "metadata_only": true,
+      "dry_run_only": true
+    },
+    {
+      "decision_id": "v58-owner-decision-10",
+      "source_checklist_item_id": "v56-review-10",
+      "category": "safetyGate",
+      "question": "Do all safety gates remain closed for export, USB, PA3X load, and KORG output?",
+      "owner_decision_status": "PENDING_MANUAL_OWNER_INPUT",
+      "real_owner_decision": "pending",
+      "selectable_decision_fields": [
+        "approve_metadata_intent",
+        "request_revision",
+        "reject",
+        "defer"
+      ],
+      "unanswered_owner_inputs": [
+        "real_owner_decision",
+        "owner_note",
+        "owner_signature",
+        "owner_decision_date"
+      ],
+      "blocked_decision_fields": [
+        "export_approval",
+        "usb_approval",
+        "pa3x_load_approval",
+        "korg_output_approval",
+        "source_mutation_approval"
+      ],
+      "missing_confirmations": [
+        "owner_signature_required_for_final",
+        "manual_owner_review_required"
+      ],
+      "export_blocking_item": true,
+      "next_manual_review_requirement": "Owner must manually choose a decision and sign before any later metadata phase may treat the item as reviewed.",
+      "sample_reference_from_v57": {
+        "sampleDecision": "defer",
+        "sampleOwnerNote": "Sample note: export, USB, keyboard load, and safety approvals remain deferred and blocked.",
+        "sampleOnly": true,
+        "notRealApproval": true
+      },
+      "real_owner_approval_applied": false,
+      "auto_apply_allowed": false,
+      "export_allowed": false,
+      "korg_output_allowed": false,
+      "source_mutation_allowed": false,
+      "metadata_only": true,
+      "dry_run_only": true
+    }
+  ],
+  "unanswered_owner_inputs": [
+    "v58-owner-decision-01",
+    "v58-owner-decision-02",
+    "v58-owner-decision-03",
+    "v58-owner-decision-04",
+    "v58-owner-decision-05",
+    "v58-owner-decision-06",
+    "v58-owner-decision-07",
+    "v58-owner-decision-08",
+    "v58-owner-decision-09",
+    "v58-owner-decision-10"
+  ],
+  "selectable_decision_fields": [
+    "approve_metadata_intent",
+    "request_revision",
+    "reject",
+    "defer"
+  ],
+  "blocked_decision_fields": [
+    "export_approval",
+    "usb_approval",
+    "pa3x_load_approval",
+    "korg_output_approval",
+    "source_mutation_approval"
+  ],
+  "missing_confirmations": [
+    "real_owner_decisions",
+    "owner_signature",
+    "owner_decision_date",
+    "manual_final_review"
+  ],
+  "export_blocking_items": [
+    "v58-owner-decision-01",
+    "v58-owner-decision-02",
+    "v58-owner-decision-03",
+    "v58-owner-decision-04",
+    "v58-owner-decision-05",
+    "v58-owner-decision-06",
+    "v58-owner-decision-07",
+    "v58-owner-decision-08",
+    "v58-owner-decision-09",
+    "v58-owner-decision-10"
+  ],
+  "next_manual_review_requirement": "Complete manual owner input outside this dry-run before any future approval logic is considered.",
+  "safety": {
+    "metadata_only": true,
+    "dry_run_only": true,
+    "local_only": true,
+    "review_only": true,
+    "no_korg_output": true,
+    "no_export_approval": true,
+    "no_usb_write": true,
+    "no_pa3x_load": true,
+    "no_app_js": true,
+    "no_react_integration": true,
+    "no_deploy": true,
+    "no_payment": true
+  }
+}

@@ -1,0 +1,647 @@
+{
+  "schema_version": "uaos.v59.style.plan.consolidation.dryrun.v5",
+  "created_at": "2026-07-04T19:06:26.680Z",
+  "label": "STYLE_PLAN_CONSOLIDATION_METADATA_DRY_RUN_ONLY",
+  "dry_run_id": "uaos-v59-style-plan-consolidation-v5-20260704190626",
+  "metadata_only": true,
+  "dry_run_only": true,
+  "real_owner_approval_applied": false,
+  "auto_apply_allowed": false,
+  "export_allowed": false,
+  "korg_output_allowed": false,
+  "source_mutation_allowed": false,
+  "consolidated_style_intent_draft": {
+    "schema_version": "uaos.v59.consolidated.style.intent.pending.owner.review.v1",
+    "created_at": "2026-07-04T19:06:26.680Z",
+    "label": "STYLE_PLAN_CONSOLIDATION_METADATA_DRY_RUN_ONLY",
+    "inherited_from_v58": true,
+    "source_v58_dry_run_id": "uaos-v58-style-dryrun-v4-20260704190224",
+    "style_family": "oriental_pop",
+    "tempo": 96,
+    "time_signature": "4/4",
+    "scale_mode": "hijaz_oriental_reference",
+    "chord_progression": [
+      "Dm",
+      "C",
+      "Bb",
+      "A"
+    ],
+    "pending_decision_notice": "Owner decisions are pending. This consolidated intent is reviewable metadata only.",
+    "owner_dependent_decision_ids": [
+      "v58-owner-decision-01",
+      "v58-owner-decision-02",
+      "v58-owner-decision-03",
+      "v58-owner-decision-04",
+      "v58-owner-decision-05",
+      "v58-owner-decision-06",
+      "v58-owner-decision-07",
+      "v58-owner-decision-08",
+      "v58-owner-decision-09",
+      "v58-owner-decision-10"
+    ],
+    "compatibility_claim": false,
+    "pa3x_ready_claim": false,
+    "export_allowed": false,
+    "korg_output_allowed": false
+  },
+  "consolidated_section_plan_draft": [
+    {
+      "schema_label": "STYLE_PLAN_CONSOLIDATION_METADATA_DRY_RUN_ONLY",
+      "section_id": "intro",
+      "inherited_from_v58": true,
+      "pending_real_owner_review": true,
+      "revision_required": null,
+      "owner_dependent_decision_map": [
+        {
+          "decision_id": "v58-owner-decision-01",
+          "category": "musicalIntent",
+          "status": "PENDING_MANUAL_OWNER_INPUT"
+        },
+        {
+          "decision_id": "v58-owner-decision-02",
+          "category": "sectionStructure",
+          "status": "PENDING_MANUAL_OWNER_INPUT"
+        },
+        {
+          "decision_id": "v58-owner-decision-03",
+          "category": "rhythmDensity",
+          "status": "PENDING_MANUAL_OWNER_INPUT"
+        },
+        {
+          "decision_id": "v58-owner-decision-04",
+          "category": "bassMovement",
+          "status": "PENDING_MANUAL_OWNER_INPUT"
+        },
+        {
+          "decision_id": "v58-owner-decision-05",
+          "category": "chordRhythm",
+          "status": "PENDING_MANUAL_OWNER_INPUT"
+        },
+        {
+          "decision_id": "v58-owner-decision-06",
+          "category": "orientalFeel",
+          "status": "PENDING_MANUAL_OWNER_INPUT"
+        },
+        {
+          "decision_id": "v58-owner-decision-07",
+          "category": "melodySpace",
+          "status": "PENDING_MANUAL_OWNER_INPUT"
+        },
+        {
+          "decision_id": "v58-owner-decision-08",
+          "category": "dspIntent",
+          "status": "PENDING_MANUAL_OWNER_INPUT"
+        },
+        {
+          "decision_id": "v58-owner-decision-09",
+          "category": "arrangerUsability",
+          "status": "PENDING_MANUAL_OWNER_INPUT"
+        },
+        {
+          "decision_id": "v58-owner-decision-10",
+          "category": "safetyGate",
+          "status": "PENDING_MANUAL_OWNER_INPUT"
+        }
+      ],
+      "unresolved_musical_assumptions": [
+        "rhythm_density_owner_choice_pending",
+        "bass_movement_owner_choice_pending",
+        "chord_rhythm_owner_choice_pending",
+        "oriental_feel_owner_choice_pending"
+      ],
+      "safety_risk_flags": [
+        "export_blocked",
+        "real_owner_input_required",
+        "no_keyboard_compatibility_claim"
+      ],
+      "generated_audio": false,
+      "generated_midi": false,
+      "generated_korg_file": false
+    },
+    {
+      "schema_label": "STYLE_PLAN_CONSOLIDATION_METADATA_DRY_RUN_ONLY",
+      "section_id": "variation1",
+      "inherited_from_v58": true,
+      "pending_real_owner_review": true,
+      "revision_required": null,
+      "owner_dependent_decision_map": [
+        {
+          "decision_id": "v58-owner-decision-01",
+          "category": "musicalIntent",
+          "status": "PENDING_MANUAL_OWNER_INPUT"
+        },
+        {
+          "decision_id": "v58-owner-decision-02",
+          "category": "sectionStructure",
+          "status": "PENDING_MANUAL_OWNER_INPUT"
+        },
+        {
+          "decision_id": "v58-owner-decision-03",
+          "category": "rhythmDensity",
+          "status": "PENDING_MANUAL_OWNER_INPUT"
+        },
+        {
+          "decision_id": "v58-owner-decision-04",
+          "category": "bassMovement",
+          "status": "PENDING_MANUAL_OWNER_INPUT"
+        },
+        {
+          "decision_id": "v58-owner-decision-05",
+          "category": "chordRhythm",
+          "status": "PENDING_MANUAL_OWNER_INPUT"
+        },
+        {
+          "decision_id": "v58-owner-decision-06",
+          "category": "orientalFeel",
+          "status": "PENDING_MANUAL_OWNER_INPUT"
+        },
+        {
+          "decision_id": "v58-owner-decision-07",
+          "category": "melodySpace",
+          "status": "PENDING_MANUAL_OWNER_INPUT"
+        },
+        {
+          "decision_id": "v58-owner-decision-08",
+          "category": "dspIntent",
+          "status": "PENDING_MANUAL_OWNER_INPUT"
+        },
+        {
+          "decision_id": "v58-owner-decision-09",
+          "category": "arrangerUsability",
+          "status": "PENDING_MANUAL_OWNER_INPUT"
+        },
+        {
+          "decision_id": "v58-owner-decision-10",
+          "category": "safetyGate",
+          "status": "PENDING_MANUAL_OWNER_INPUT"
+        }
+      ],
+      "unresolved_musical_assumptions": [
+        "rhythm_density_owner_choice_pending",
+        "bass_movement_owner_choice_pending",
+        "chord_rhythm_owner_choice_pending",
+        "oriental_feel_owner_choice_pending"
+      ],
+      "safety_risk_flags": [
+        "export_blocked",
+        "real_owner_input_required",
+        "no_keyboard_compatibility_claim"
+      ],
+      "generated_audio": false,
+      "generated_midi": false,
+      "generated_korg_file": false
+    },
+    {
+      "schema_label": "STYLE_PLAN_CONSOLIDATION_METADATA_DRY_RUN_ONLY",
+      "section_id": "variation2",
+      "inherited_from_v58": true,
+      "pending_real_owner_review": true,
+      "revision_required": null,
+      "owner_dependent_decision_map": [
+        {
+          "decision_id": "v58-owner-decision-01",
+          "category": "musicalIntent",
+          "status": "PENDING_MANUAL_OWNER_INPUT"
+        },
+        {
+          "decision_id": "v58-owner-decision-02",
+          "category": "sectionStructure",
+          "status": "PENDING_MANUAL_OWNER_INPUT"
+        },
+        {
+          "decision_id": "v58-owner-decision-03",
+          "category": "rhythmDensity",
+          "status": "PENDING_MANUAL_OWNER_INPUT"
+        },
+        {
+          "decision_id": "v58-owner-decision-04",
+          "category": "bassMovement",
+          "status": "PENDING_MANUAL_OWNER_INPUT"
+        },
+        {
+          "decision_id": "v58-owner-decision-05",
+          "category": "chordRhythm",
+          "status": "PENDING_MANUAL_OWNER_INPUT"
+        },
+        {
+          "decision_id": "v58-owner-decision-06",
+          "category": "orientalFeel",
+          "status": "PENDING_MANUAL_OWNER_INPUT"
+        },
+        {
+          "decision_id": "v58-owner-decision-07",
+          "category": "melodySpace",
+          "status": "PENDING_MANUAL_OWNER_INPUT"
+        },
+        {
+          "decision_id": "v58-owner-decision-08",
+          "category": "dspIntent",
+          "status": "PENDING_MANUAL_OWNER_INPUT"
+        },
+        {
+          "decision_id": "v58-owner-decision-09",
+          "category": "arrangerUsability",
+          "status": "PENDING_MANUAL_OWNER_INPUT"
+        },
+        {
+          "decision_id": "v58-owner-decision-10",
+          "category": "safetyGate",
+          "status": "PENDING_MANUAL_OWNER_INPUT"
+        }
+      ],
+      "unresolved_musical_assumptions": [
+        "rhythm_density_owner_choice_pending",
+        "bass_movement_owner_choice_pending",
+        "chord_rhythm_owner_choice_pending",
+        "oriental_feel_owner_choice_pending"
+      ],
+      "safety_risk_flags": [
+        "export_blocked",
+        "real_owner_input_required",
+        "no_keyboard_compatibility_claim"
+      ],
+      "generated_audio": false,
+      "generated_midi": false,
+      "generated_korg_file": false
+    },
+    {
+      "schema_label": "STYLE_PLAN_CONSOLIDATION_METADATA_DRY_RUN_ONLY",
+      "section_id": "variation3",
+      "inherited_from_v58": true,
+      "pending_real_owner_review": true,
+      "revision_required": null,
+      "owner_dependent_decision_map": [
+        {
+          "decision_id": "v58-owner-decision-01",
+          "category": "musicalIntent",
+          "status": "PENDING_MANUAL_OWNER_INPUT"
+        },
+        {
+          "decision_id": "v58-owner-decision-02",
+          "category": "sectionStructure",
+          "status": "PENDING_MANUAL_OWNER_INPUT"
+        },
+        {
+          "decision_id": "v58-owner-decision-03",
+          "category": "rhythmDensity",
+          "status": "PENDING_MANUAL_OWNER_INPUT"
+        },
+        {
+          "decision_id": "v58-owner-decision-04",
+          "category": "bassMovement",
+          "status": "PENDING_MANUAL_OWNER_INPUT"
+        },
+        {
+          "decision_id": "v58-owner-decision-05",
+          "category": "chordRhythm",
+          "status": "PENDING_MANUAL_OWNER_INPUT"
+        },
+        {
+          "decision_id": "v58-owner-decision-06",
+          "category": "orientalFeel",
+          "status": "PENDING_MANUAL_OWNER_INPUT"
+        },
+        {
+          "decision_id": "v58-owner-decision-07",
+          "category": "melodySpace",
+          "status": "PENDING_MANUAL_OWNER_INPUT"
+        },
+        {
+          "decision_id": "v58-owner-decision-08",
+          "category": "dspIntent",
+          "status": "PENDING_MANUAL_OWNER_INPUT"
+        },
+        {
+          "decision_id": "v58-owner-decision-09",
+          "category": "arrangerUsability",
+          "status": "PENDING_MANUAL_OWNER_INPUT"
+        },
+        {
+          "decision_id": "v58-owner-decision-10",
+          "category": "safetyGate",
+          "status": "PENDING_MANUAL_OWNER_INPUT"
+        }
+      ],
+      "unresolved_musical_assumptions": [
+        "rhythm_density_owner_choice_pending",
+        "bass_movement_owner_choice_pending",
+        "chord_rhythm_owner_choice_pending",
+        "oriental_feel_owner_choice_pending"
+      ],
+      "safety_risk_flags": [
+        "export_blocked",
+        "real_owner_input_required",
+        "no_keyboard_compatibility_claim"
+      ],
+      "generated_audio": false,
+      "generated_midi": false,
+      "generated_korg_file": false
+    },
+    {
+      "schema_label": "STYLE_PLAN_CONSOLIDATION_METADATA_DRY_RUN_ONLY",
+      "section_id": "variation4",
+      "inherited_from_v58": true,
+      "pending_real_owner_review": true,
+      "revision_required": null,
+      "owner_dependent_decision_map": [
+        {
+          "decision_id": "v58-owner-decision-01",
+          "category": "musicalIntent",
+          "status": "PENDING_MANUAL_OWNER_INPUT"
+        },
+        {
+          "decision_id": "v58-owner-decision-02",
+          "category": "sectionStructure",
+          "status": "PENDING_MANUAL_OWNER_INPUT"
+        },
+        {
+          "decision_id": "v58-owner-decision-03",
+          "category": "rhythmDensity",
+          "status": "PENDING_MANUAL_OWNER_INPUT"
+        },
+        {
+          "decision_id": "v58-owner-decision-04",
+          "category": "bassMovement",
+          "status": "PENDING_MANUAL_OWNER_INPUT"
+        },
+        {
+          "decision_id": "v58-owner-decision-05",
+          "category": "chordRhythm",
+          "status": "PENDING_MANUAL_OWNER_INPUT"
+        },
+        {
+          "decision_id": "v58-owner-decision-06",
+          "category": "orientalFeel",
+          "status": "PENDING_MANUAL_OWNER_INPUT"
+        },
+        {
+          "decision_id": "v58-owner-decision-07",
+          "category": "melodySpace",
+          "status": "PENDING_MANUAL_OWNER_INPUT"
+        },
+        {
+          "decision_id": "v58-owner-decision-08",
+          "category": "dspIntent",
+          "status": "PENDING_MANUAL_OWNER_INPUT"
+        },
+        {
+          "decision_id": "v58-owner-decision-09",
+          "category": "arrangerUsability",
+          "status": "PENDING_MANUAL_OWNER_INPUT"
+        },
+        {
+          "decision_id": "v58-owner-decision-10",
+          "category": "safetyGate",
+          "status": "PENDING_MANUAL_OWNER_INPUT"
+        }
+      ],
+      "unresolved_musical_assumptions": [
+        "rhythm_density_owner_choice_pending",
+        "bass_movement_owner_choice_pending",
+        "chord_rhythm_owner_choice_pending",
+        "oriental_feel_owner_choice_pending"
+      ],
+      "safety_risk_flags": [
+        "export_blocked",
+        "real_owner_input_required",
+        "no_keyboard_compatibility_claim"
+      ],
+      "generated_audio": false,
+      "generated_midi": false,
+      "generated_korg_file": false
+    },
+    {
+      "schema_label": "STYLE_PLAN_CONSOLIDATION_METADATA_DRY_RUN_ONLY",
+      "section_id": "fill",
+      "inherited_from_v58": true,
+      "pending_real_owner_review": true,
+      "revision_required": null,
+      "owner_dependent_decision_map": [
+        {
+          "decision_id": "v58-owner-decision-01",
+          "category": "musicalIntent",
+          "status": "PENDING_MANUAL_OWNER_INPUT"
+        },
+        {
+          "decision_id": "v58-owner-decision-02",
+          "category": "sectionStructure",
+          "status": "PENDING_MANUAL_OWNER_INPUT"
+        },
+        {
+          "decision_id": "v58-owner-decision-03",
+          "category": "rhythmDensity",
+          "status": "PENDING_MANUAL_OWNER_INPUT"
+        },
+        {
+          "decision_id": "v58-owner-decision-04",
+          "category": "bassMovement",
+          "status": "PENDING_MANUAL_OWNER_INPUT"
+        },
+        {
+          "decision_id": "v58-owner-decision-05",
+          "category": "chordRhythm",
+          "status": "PENDING_MANUAL_OWNER_INPUT"
+        },
+        {
+          "decision_id": "v58-owner-decision-06",
+          "category": "orientalFeel",
+          "status": "PENDING_MANUAL_OWNER_INPUT"
+        },
+        {
+          "decision_id": "v58-owner-decision-07",
+          "category": "melodySpace",
+          "status": "PENDING_MANUAL_OWNER_INPUT"
+        },
+        {
+          "decision_id": "v58-owner-decision-08",
+          "category": "dspIntent",
+          "status": "PENDING_MANUAL_OWNER_INPUT"
+        },
+        {
+          "decision_id": "v58-owner-decision-09",
+          "category": "arrangerUsability",
+          "status": "PENDING_MANUAL_OWNER_INPUT"
+        },
+        {
+          "decision_id": "v58-owner-decision-10",
+          "category": "safetyGate",
+          "status": "PENDING_MANUAL_OWNER_INPUT"
+        }
+      ],
+      "unresolved_musical_assumptions": [
+        "rhythm_density_owner_choice_pending",
+        "bass_movement_owner_choice_pending",
+        "chord_rhythm_owner_choice_pending",
+        "oriental_feel_owner_choice_pending"
+      ],
+      "safety_risk_flags": [
+        "export_blocked",
+        "real_owner_input_required",
+        "no_keyboard_compatibility_claim"
+      ],
+      "generated_audio": false,
+      "generated_midi": false,
+      "generated_korg_file": false
+    },
+    {
+      "schema_label": "STYLE_PLAN_CONSOLIDATION_METADATA_DRY_RUN_ONLY",
+      "section_id": "ending",
+      "inherited_from_v58": true,
+      "pending_real_owner_review": true,
+      "revision_required": null,
+      "owner_dependent_decision_map": [
+        {
+          "decision_id": "v58-owner-decision-01",
+          "category": "musicalIntent",
+          "status": "PENDING_MANUAL_OWNER_INPUT"
+        },
+        {
+          "decision_id": "v58-owner-decision-02",
+          "category": "sectionStructure",
+          "status": "PENDING_MANUAL_OWNER_INPUT"
+        },
+        {
+          "decision_id": "v58-owner-decision-03",
+          "category": "rhythmDensity",
+          "status": "PENDING_MANUAL_OWNER_INPUT"
+        },
+        {
+          "decision_id": "v58-owner-decision-04",
+          "category": "bassMovement",
+          "status": "PENDING_MANUAL_OWNER_INPUT"
+        },
+        {
+          "decision_id": "v58-owner-decision-05",
+          "category": "chordRhythm",
+          "status": "PENDING_MANUAL_OWNER_INPUT"
+        },
+        {
+          "decision_id": "v58-owner-decision-06",
+          "category": "orientalFeel",
+          "status": "PENDING_MANUAL_OWNER_INPUT"
+        },
+        {
+          "decision_id": "v58-owner-decision-07",
+          "category": "melodySpace",
+          "status": "PENDING_MANUAL_OWNER_INPUT"
+        },
+        {
+          "decision_id": "v58-owner-decision-08",
+          "category": "dspIntent",
+          "status": "PENDING_MANUAL_OWNER_INPUT"
+        },
+        {
+          "decision_id": "v58-owner-decision-09",
+          "category": "arrangerUsability",
+          "status": "PENDING_MANUAL_OWNER_INPUT"
+        },
+        {
+          "decision_id": "v58-owner-decision-10",
+          "category": "safetyGate",
+          "status": "PENDING_MANUAL_OWNER_INPUT"
+        }
+      ],
+      "unresolved_musical_assumptions": [
+        "rhythm_density_owner_choice_pending",
+        "bass_movement_owner_choice_pending",
+        "chord_rhythm_owner_choice_pending",
+        "oriental_feel_owner_choice_pending"
+      ],
+      "safety_risk_flags": [
+        "export_blocked",
+        "real_owner_input_required",
+        "no_keyboard_compatibility_claim"
+      ],
+      "generated_audio": false,
+      "generated_midi": false,
+      "generated_korg_file": false
+    }
+  ],
+  "owner_dependent_decision_map": [
+    {
+      "decision_id": "v58-owner-decision-01",
+      "category": "musicalIntent",
+      "status": "PENDING_MANUAL_OWNER_INPUT"
+    },
+    {
+      "decision_id": "v58-owner-decision-02",
+      "category": "sectionStructure",
+      "status": "PENDING_MANUAL_OWNER_INPUT"
+    },
+    {
+      "decision_id": "v58-owner-decision-03",
+      "category": "rhythmDensity",
+      "status": "PENDING_MANUAL_OWNER_INPUT"
+    },
+    {
+      "decision_id": "v58-owner-decision-04",
+      "category": "bassMovement",
+      "status": "PENDING_MANUAL_OWNER_INPUT"
+    },
+    {
+      "decision_id": "v58-owner-decision-05",
+      "category": "chordRhythm",
+      "status": "PENDING_MANUAL_OWNER_INPUT"
+    },
+    {
+      "decision_id": "v58-owner-decision-06",
+      "category": "orientalFeel",
+      "status": "PENDING_MANUAL_OWNER_INPUT"
+    },
+    {
+      "decision_id": "v58-owner-decision-07",
+      "category": "melodySpace",
+      "status": "PENDING_MANUAL_OWNER_INPUT"
+    },
+    {
+      "decision_id": "v58-owner-decision-08",
+      "category": "dspIntent",
+      "status": "PENDING_MANUAL_OWNER_INPUT"
+    },
+    {
+      "decision_id": "v58-owner-decision-09",
+      "category": "arrangerUsability",
+      "status": "PENDING_MANUAL_OWNER_INPUT"
+    },
+    {
+      "decision_id": "v58-owner-decision-10",
+      "category": "safetyGate",
+      "status": "PENDING_MANUAL_OWNER_INPUT"
+    }
+  ],
+  "unresolved_musical_assumptions": [
+    "owner has not confirmed musical intent",
+    "owner has not confirmed section plan",
+    "owner has not signed manual review form"
+  ],
+  "safety_risk_flags": [
+    "export_not_allowed",
+    "korg_output_not_allowed",
+    "usb_write_not_allowed",
+    "pa3x_load_not_allowed",
+    "compatibility_claim_not_allowed"
+  ],
+  "export_blockers": [
+    "pending_owner_decisions",
+    "no_korg_writer_design_review",
+    "no_native_output_inspection",
+    "no_empty_usb_verification",
+    "no_hardware_approval"
+  ],
+  "dry_run_trace": [
+    "read_v58_dryrun_v4",
+    "read_v58_pending_previews",
+    "read_v59_normalized_pending_decisions",
+    "consolidate_reviewable_metadata_only"
+  ],
+  "no_output_confirmation": {
+    "audio": false,
+    "midi": false,
+    "korg": false,
+    "native_keyboard_files": false,
+    "usb": false,
+    "export": false
+  },
+  "compatibility_claim": false,
+  "pa3x_ready_claim": false
+}

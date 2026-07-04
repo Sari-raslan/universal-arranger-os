@@ -1,0 +1,88 @@
+{
+  "schema_version": "uaos.v59.owner.pending.input.review.form.v1",
+  "created_at": "2026-07-04T19:06:26.680Z",
+  "owner_decision_status": "PENDING_MANUAL_OWNER_INPUT",
+  "real_owner_approval_applied": false,
+  "decisions": [
+    {
+      "decision_id": "v58-owner-decision-01",
+      "category": "musicalIntent",
+      "question": "Does the refined intent match oriental_pop at 96 BPM?",
+      "real_owner_decision": "pending",
+      "owner_note": "",
+      "owner_signature_required_for_final": true
+    },
+    {
+      "decision_id": "v58-owner-decision-02",
+      "category": "sectionStructure",
+      "question": "Do the 7 planned sections make musical sense for owner review?",
+      "real_owner_decision": "pending",
+      "owner_note": "",
+      "owner_signature_required_for_final": true
+    },
+    {
+      "decision_id": "v58-owner-decision-03",
+      "category": "rhythmDensity",
+      "question": "Is the rhythm density appropriate across intro, variations, fill, and ending?",
+      "real_owner_decision": "pending",
+      "owner_note": "",
+      "owner_signature_required_for_final": true
+    },
+    {
+      "decision_id": "v58-owner-decision-04",
+      "category": "bassMovement",
+      "question": "Is the bass movement supportive without crowding the arrangement?",
+      "real_owner_decision": "pending",
+      "owner_note": "",
+      "owner_signature_required_for_final": true
+    },
+    {
+      "decision_id": "v58-owner-decision-05",
+      "category": "chordRhythm",
+      "question": "Is the chord rhythm clear enough for arranger usability?",
+      "real_owner_decision": "pending",
+      "owner_note": "",
+      "owner_signature_required_for_final": true
+    },
+    {
+      "decision_id": "v58-owner-decision-06",
+      "category": "orientalFeel",
+      "question": "Does the oriental feel read correctly as metadata intent without a compatibility claim?",
+      "real_owner_decision": "pending",
+      "owner_note": "",
+      "owner_signature_required_for_final": true
+    },
+    {
+      "decision_id": "v58-owner-decision-07",
+      "category": "melodySpace",
+      "question": "Is there enough room for live melody and expression?",
+      "real_owner_decision": "pending",
+      "owner_note": "",
+      "owner_signature_required_for_final": true
+    },
+    {
+      "decision_id": "v58-owner-decision-08",
+      "category": "dspIntent",
+      "question": "Are the DSP intentions clear as metadata-only mix guidance?",
+      "real_owner_decision": "pending",
+      "owner_note": "",
+      "owner_signature_required_for_final": true
+    },
+    {
+      "decision_id": "v58-owner-decision-09",
+      "category": "arrangerUsability",
+      "question": "Would a human arranger understand the intent before any future implementation?",
+      "real_owner_decision": "pending",
+      "owner_note": "",
+      "owner_signature_required_for_final": true
+    },
+    {
+      "decision_id": "v58-owner-decision-10",
+      "category": "safetyGate",
+      "question": "Do all safety gates remain closed for export, USB, PA3X load, and KORG output?",
+      "real_owner_decision": "pending",
+      "owner_note": "",
+      "owner_signature_required_for_final": true
+    }
+  ]
+}
