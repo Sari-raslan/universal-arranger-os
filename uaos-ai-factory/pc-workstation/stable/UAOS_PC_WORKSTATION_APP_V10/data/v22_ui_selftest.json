@@ -1,0 +1,23 @@
+{
+  "version": "V22",
+  "status": "PASS",
+  "mode": "internal_autonomous_selftest",
+  "checks": {
+    "appState exists": "PASS",
+    "all panels exist": "PASS",
+    "all nav buttons work": "PASS",
+    "export functions exist": "PASS",
+    "WebAudio functions exist": "PASS",
+    "safety labels present": "PASS",
+    "writer path visible": "PASS",
+    "forbidden claim text absent": "PASS"
+  },
+  "safetyLabels": [
+    "PC_ONLY",
+    "UAOS_FORMAT",
+    "TEST_UNVERIFIED",
+    "NOT_FOR_PA3X_LOAD",
+    "NOT_FOR_USB_TRANSFER",
+    "NOT_COMPATIBILITY_VERIFIED"
+  ]
+}
