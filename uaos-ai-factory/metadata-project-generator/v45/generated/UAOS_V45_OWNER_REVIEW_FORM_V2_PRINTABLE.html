@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>UAOS V45 Owner Review Form v2 Printable</title>
+  <style>
+    :root{--bg:#030712;--panel:#111827;--line:#2b3649;--text:#f8fafc;--cyan:#22d3ee;--amber:#f59e0b}
+    *{box-sizing:border-box}body{margin:0;background:#030712;color:var(--text);font-family:Arial,Tahoma,sans-serif;line-height:1.45}
+    header{padding:22px;background:#050914;border-bottom:1px solid var(--line)}h1{margin:4px 0 0}header p{margin:0;color:var(--cyan);font-weight:800}
+    main{padding:16px}section{background:linear-gradient(180deg,rgba(17,24,39,.98),rgba(8,13,24,.98));border:1px solid var(--line);border-radius:8px;padding:14px;margin-bottom:14px}
+    .badge{display:inline-block;border:1px solid rgba(34,211,238,.45);border-radius:999px;padding:6px 9px;margin:3px;color:var(--cyan);font-weight:800}
+    table{width:100%;border-collapse:collapse;font-size:13px}td,th{border:1px solid var(--line);padding:8px;vertical-align:top}.blank{min-width:130px;height:54px;background:rgba(255,255,255,.04)}
+    code{color:var(--amber)}@media print{body{background:#fff;color:#000}header,section{background:#fff;color:#000;border-color:#999}.badge{color:#000;border-color:#999}}
+  </style>
+</head>
+<body>
+  <header>
+    <p>UAOS Metadata Project Generator</p>
+    <h1>V45 Owner Review Form v2 Printable</h1>
+    <span class="badge">LOCAL PRINTABLE FORM ONLY</span>
+    <span class="badge">DOES NOT SAVE AUTOMATICALLY</span>
+    <span class="badge">MANUAL REVIEW ONLY</span>
+    <span class="badge">DRY-RUN ONLY</span>
+    <span class="badge">METADATA ONLY</span>
+    <span class="badge">SOURCE PROJECT NOT MODIFIED</span>
+    <span class="badge">NOT DEPLOYED</span>
+    <span class="badge">NOT KORG OUTPUT</span>
+    <span class="badge">NOT PA3X READY</span>
+    <span class="badge">NO USB APPROVAL</span>
+    <span class="badge">NO KEYBOARD LOAD APPROVAL</span>
+    <span class="badge">NO EXPORT APPROVAL</span>
+  </header>
+  <main>
+    <section>
+      <h2>Owner Instructions</h2>
+      <p>This printable form does not save automatically. Use it for manual review, then edit <code>generated/UAOS_V45_MANUAL_DECISION_IMPORT_TEMPLATE.json</code> if you want to record decisions later.</p>
+      <p>V43 template path: <code>../v43/generated/UAOS_V43_OWNER_DECISION_TEMPLATE.json</code></p>
+      <p>V44 preview path: <code>../v44/generated/UAOS_V44_DECISION_APPLY_PREVIEW_V2.json</code></p>
+      <p>V45 template path: <code>generated/UAOS_V45_MANUAL_DECISION_IMPORT_TEMPLATE.json</code></p>
+    </section>
+    <section>
+      <h2>Decision Table</h2>
+      <table><thead><tr><th>ID</th><th>Category</th><th>Title</th><th>Proposed metadata change</th><th>Allowed decisions</th><th>Selected decision</th><th>Owner note</th></tr></thead><tbody><tr><td>V43-DEC-001</td><td>sectionStructure</td><td>Add owner notes per section</td><td>Add optional ownerNote fields for intro, variations, fill, and ending.</td><td>accept_for_future_metadata_plan_only<br>reject<br>needs_more_review<br>defer</td><td class="blank"></td><td class="blank"></td></tr><tr><td>V43-DEC-002</td><td>rhythmDensity</td><td>Define density targets by section</td><td>Add low/medium/high density intent for each section.</td><td>accept_for_future_metadata_plan_only<br>reject<br>needs_more_review<br>defer</td><td class="blank"></td><td class="blank"></td></tr><tr><td>V43-DEC-003</td><td>bassMovement</td><td>Add bass movement contour</td><td>Add root_hold, passing_motion, and turnaround tags as metadata only.</td><td>accept_for_future_metadata_plan_only<br>reject<br>needs_more_review<br>defer</td><td class="blank"></td><td class="blank"></td></tr><tr><td>V43-DEC-004</td><td>chordRhythm</td><td>Add chord rhythm pattern labels</td><td>Add metadata labels such as stab, syncopated, held, and push.</td><td>accept_for_future_metadata_plan_only<br>reject<br>needs_more_review<br>defer</td><td class="blank"></td><td class="blank"></td></tr><tr><td>V43-DEC-005</td><td>orientalFeel</td><td>Separate feel from compatibility</td><td>Keep maqam/feel notes as reference-only metadata.</td><td>accept_for_future_metadata_plan_only<br>reject<br>needs_more_review<br>defer</td><td class="blank"></td><td class="blank"></td></tr><tr><td>V43-DEC-006</td><td>melodySpace</td><td>Add melody space map</td><td>Add sparse/medium/busy melody-space values per section.</td><td>accept_for_future_metadata_plan_only<br>reject<br>needs_more_review<br>defer</td><td class="blank"></td><td class="blank"></td></tr><tr><td>V43-DEC-007</td><td>dspIntent</td><td>Add DSP intent confidence</td><td>Add low/medium/high confidence metadata for each DSP channel.</td><td>accept_for_future_metadata_plan_only<br>reject<br>needs_more_review<br>defer</td><td class="blank"></td><td class="blank"></td></tr><tr><td>V43-DEC-008</td><td>humanReview</td><td>Add reviewer checklist slots</td><td>Add empty metadata-only reviewer note fields.</td><td>accept_for_future_metadata_plan_only<br>reject<br>needs_more_review<br>defer</td><td class="blank"></td><td class="blank"></td></tr><tr><td>V43-DEC-009</td><td>safetyGate</td><td>Keep export gates locked</td><td>Mirror approvedForKorgExport, approvedForUsb, and approvedForKeyboardLoad as false.</td><td>accept_for_future_metadata_plan_only<br>reject<br>needs_more_review<br>defer</td><td class="blank"></td><td class="blank"></td></tr></tbody></table>
+    </section>
+    <section>
+      <h2>Safety Confirmation</h2>
+      <p>This is not an export approval. It does not approve KORG output, USB, or keyboard load.</p>
+      <p>Owner signature: ________________________________ Date: __________________</p>
+    </section>
+  </main>
+</body>
+</html>
