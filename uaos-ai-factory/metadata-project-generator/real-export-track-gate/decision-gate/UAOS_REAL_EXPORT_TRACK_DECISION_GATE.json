@@ -1,0 +1,60 @@
+{
+  "status": "PASS_PENDING_OWNER_DECISION",
+  "local_only": true,
+  "planning_gate_only": true,
+  "korg_output_created": false,
+  "midi_created_in_this_run": false,
+  "levels": [
+    {
+      "level": 1,
+      "name": "Real MIDI Export",
+      "status": "SAFE_CANDIDATE_REQUIRES_OWNER_APPROVAL",
+      "output": ".mid",
+      "risk": "low/medium",
+      "korg_output": false,
+      "executed_now": false
+    },
+    {
+      "level": 2,
+      "name": "UAOS Project Package Export",
+      "status": "SAFE_CANDIDATE_REQUIRES_OWNER_APPROVAL",
+      "output": ".uaos.json or .json package",
+      "risk": "low",
+      "korg_output": false,
+      "executed_now": false
+    },
+    {
+      "level": 3,
+      "name": "Generic Style Package Export",
+      "status": "SAFE_CANDIDATE_REQUIRES_OWNER_APPROVAL",
+      "output": ".zip containing JSON/MD/MIDI later",
+      "risk": "medium",
+      "korg_output": false,
+      "executed_now": false
+    },
+    {
+      "level": 4,
+      "name": "KORG Research Only",
+      "status": "RESEARCH_ONLY",
+      "output": "reports only",
+      "risk": "medium/high",
+      "korg_writer": false
+    },
+    {
+      "level": 5,
+      "name": "KORG Writer Sandbox",
+      "status": "BLOCKED_REQUIRES_EXPLICIT_OWNER_APPROVAL",
+      "output": "sandbox test files only",
+      "risk": "high",
+      "real_keyboard_load": false
+    },
+    {
+      "level": 6,
+      "name": "Real KORG Export",
+      "status": "BLOCKED_NOT_ALLOWED_NOW",
+      "output": ".STY/.SET future only",
+      "risk": "high",
+      "requires_explicit_separate_approval": true
+    }
+  ]
+}
