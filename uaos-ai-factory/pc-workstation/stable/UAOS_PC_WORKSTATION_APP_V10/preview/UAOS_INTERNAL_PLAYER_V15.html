@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>UAOS Internal Audio Player V15</title>
+  <style>
+    :root{--ink:#1d2530;--paper:#f5f1e9;--panel:#fff;--line:#d8d0c3;--accent:#176b72;--accent2:#8a3c24;--warn:#7b1f1f;--ok:#315c34}
+    *{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:Arial,Tahoma,sans-serif;line-height:1.55}
+    header{background:#17202b;color:#fff;padding:28px clamp(18px,4vw,46px)}main{max-width:1180px;margin:auto;padding:22px clamp(14px,3vw,28px)}
+    h1,h2{margin:0 0 10px}.sub{direction:ltr;color:#dfe7ea;margin:0}.safety{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:8px;margin:18px 0}
+    .safety span{background:var(--warn);color:white;border-radius:6px;padding:8px;text-align:center;font-weight:700;direction:ltr}.grid{display:grid;grid-template-columns:1.15fr .85fr;gap:14px}.card{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:16px;margin-top:14px}
+    .meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}.tile{border:1px solid var(--line);border-radius:6px;background:#fbfaf7;padding:10px}.label{display:block;color:#637083;font-size:13px}.value{display:block;font-weight:700;direction:ltr}
+    .buttons{display:grid;grid-template-columns:repeat(auto-fit,minmax(165px,1fr));gap:10px;margin-top:14px}button,a.button{border:0;border-radius:6px;background:var(--accent);color:#fff;text-decoration:none;min-height:42px;padding:10px 12px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;text-align:center}.secondary{background:var(--accent2)!important}.stop{background:#4a5565!important}
+    .status{background:#eef3ef;border:1px solid #c9d9cc;color:var(--ok);border-radius:8px;padding:12px;margin-top:12px;font-weight:700}.list{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:8px}.pill{background:#eaf1ef;border:1px solid #bfd4d2;border-radius:6px;padding:8px;text-align:center;direction:ltr;font-weight:700}.progress{height:10px;background:#e6ded2;border-radius:999px;overflow:hidden}.bar{height:100%;width:0;background:var(--accent);transition:width .12s linear}
+    @media(max-width:850px){.grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <header><h1>مشغل الصوت الداخلي V15</h1><p class="sub">UAOS Internal Audio Player V15 - WebAudio synthetic preview</p></header>
+  <main>
+    <section class="safety"><span>PC_ONLY</span><span>SYNTHETIC_PREVIEW_ONLY</span><span>NOT_FOR_PA3X_LOAD</span><span>NOT_FOR_USB_TRANSFER</span><span>NOT_COMPATIBILITY_VERIFIED</span></section>
+    <section class="grid">
+      <div class="card">
+        <h2>البيانات / Metadata</h2>
+        <div class="meta">
+          <div class="tile"><span class="label">Project</span><span class="value">Sari UAOS PC Workstation</span></div>
+          <div class="tile"><span class="label">Style</span><span class="value">Arabic Pop Oriental Ballad</span></div>
+          <div class="tile"><span class="label">Tempo</span><span class="value">102</span></div>
+          <div class="tile"><span class="label">Meter</span><span class="value">4/4</span></div>
+          <div class="tile"><span class="label">Chords</span><span class="value">Dm / Bb / C / A7</span></div>
+          <div class="tile"><span class="label">Arabic strings preset</span><span class="value">Arabic Strings Tremolo Light</span></div>
+        </div>
+        <h2 style="margin-top:16px">التشغيل / Controls</h2>
+        <div class="buttons">
+          <button id="full">Play Full Pattern</button>
+          <button id="drums">Play Drums Pulse</button>
+          <button id="bass">Play Bass Guide</button>
+          <button id="chords">Play Chord Pad</button>
+          <button id="strings">Play Arabic Strings Guide</button>
+          <button id="melody">Play Melody Guide</button>
+          <button id="stop" class="stop">Stop</button>
+          <a class="button" href="../midi/SARI_ARABIC_POP_ORIENTAL_BALLAD_V9.mid">Open MIDI Preview</a>
+          <a class="button secondary" href="../UAOS_PC_WORKSTATION_HOME.html">Back to Home</a>
+        </div>
+        <div class="status" id="status">Ready. Synthetic preview only. No samples.</div>
+        <div class="progress" style="margin-top:12px"><div class="bar" id="bar"></div></div>
+      </div>
+      <div class="card">
+        <h2>المؤشرات / Indicators</h2>
+        <div class="meta">
+          <div class="tile"><span class="label">Current mode</span><span class="value" id="mode">Stopped</span></div>
+          <div class="tile"><span class="label">Current section</span><span class="value" id="section">-</span></div>
+          <div class="tile"><span class="label">Current chord</span><span class="value" id="chord">-</span></div>
+          <div class="tile"><span class="label">Safety</span><span class="value">PC_ONLY</span></div>
+        </div>
+        <h2 style="margin-top:16px">Sections</h2>
+        <div class="list"><span class="pill">intro 4</span><span class="pill">verse 16</span><span class="pill">chorus 16</span><span class="pill">bridge 8</span><span class="pill">fill 1</span><span class="pill">ending 4</span></div>
+        <h2 style="margin-top:16px">Tracks</h2>
+        <div class="list"><span class="pill">drums</span><span class="pill">bass</span><span class="pill">chords</span><span class="pill">pad</span><span class="pill">arabic_strings</span><span class="pill">melody_guide</span></div>
+      </div>
+    </section>
+  </main>
+  <script>
+    const AudioContextClass=window.AudioContext||window.webkitAudioContext;let ctx=null,nodes=[],timers=[],anim=null;
+    const sections=["intro","verse","chorus","bridge","fill","ending"],chordNames=["Dm","Bb","C","A7"],roots=[146.83,116.54,130.81,110.00];
+    const $=id=>document.getElementById(id);function set(mode,sec="-",ch="-",msg=""){ $("mode").textContent=mode;$("section").textContent=sec;$("chord").textContent=ch;if(msg)$("status").textContent=msg }
+    function audio(){if(!AudioContextClass){set("Unavailable","-","-","WebAudio is not available in this browser.");return null}if(!ctx)ctx=new AudioContextClass();return ctx}
+    function clear(){timers.forEach(clearTimeout);timers=[];if(anim)cancelAnimationFrame(anim);nodes.forEach(n=>{try{n.stop(0)}catch(e){}try{n.disconnect()}catch(e){}});nodes=[];$("bar").style.width="0%";set("Stopped","-","-","Stopped.")}
+    function tone(freq,start,len,type="sine",gainValue=.06){const c=audio();if(!c)return;const o=c.createOscillator(),g=c.createGain();o.type=type;o.frequency.setValueAtTime(freq,start);g.gain.setValueAtTime(.0001,start);g.gain.exponentialRampToValueAtTime(gainValue,start+.02);g.gain.exponentialRampToValueAtTime(.0001,start+len);o.connect(g).connect(c.destination);o.start(start);o.stop(start+len+.05);nodes.push(o)}
+    function chord(freq,start,len=.55){tone(freq,start,len,"triangle",.04);tone(freq*1.2,start,len,"triangle",.03);tone(freq*1.5,start,len,"sine",.025)}
+    function animate(total){const start=performance.now();function tick(now){const p=Math.min(100,((now-start)/total)*100);$("bar").style.width=p+"%";if(p<100)anim=requestAnimationFrame(tick)}anim=requestAnimationFrame(tick)}
+    function sequence(mode,steps,totalMs){clear();const c=audio();if(!c)return;set(mode,"intro","Dm",mode+" running. WebAudio oscillator only.");animate(totalMs);steps.forEach((s,i)=>{timers.push(setTimeout(()=>set(mode,s.section,s.chord,mode+" running. Synthetic preview only."),s.ms));s.play(c.currentTime+s.ms/1000)});timers.push(setTimeout(clear,totalMs+250))}
+    function full(){const beat=60/102,total=5600,steps=[];for(let i=0;i<8;i++){steps.push({ms:i*700,section:sections[i%sections.length],chord:chordNames[i%4],play:t=>{tone(90,t,.12,"square",.025);tone(65,t+.18,.28,"sine",.045);chord(roots[i%4],t+.05,.45);tone(roots[i%4]*2,t+.32,.22,"triangle",.04)}})}sequence("Full Pattern",steps,total)}
+    function drums(){sequence("Drums Pulse",[0,300,600,900,1200,1500,1800,2100].map((ms,i)=>({ms,section:sections[i%6],chord:chordNames[i%4],play:t=>tone(i%2?180:90,t,.07,"square",.04)})),2500)}
+    function bass(){sequence("Bass Guide",roots.map((f,i)=>({ms:i*500,section:sections[i],chord:chordNames[i],play:t=>tone(f/2,t,.38,"sine",.07)})),2400)}
+    function chordsOnly(){sequence("Chord Pad",roots.map((f,i)=>({ms:i*700,section:sections[i],chord:chordNames[i],play:t=>chord(f,t,.62)})),3300)}
+    function strings(){sequence("Arabic Strings Guide",[293.66,329.63,349.23,440,392,349.23].map((f,i)=>({ms:i*260,section:sections[i%6],chord:chordNames[i%4],play:t=>tone(f,t,.22,i%2?"sine":"triangle",.045)})),1900)}
+    function melody(){sequence("Melody Guide",[293.66,349.23,329.63,293.66,261.63,293.66].map((f,i)=>({ms:i*300,section:sections[i%6],chord:chordNames[i%4],play:t=>tone(f,t,.25,"sine",.04)})),2200)}
+    $("full").onclick=full;$("drums").onclick=drums;$("bass").onclick=bass;$("chords").onclick=chordsOnly;$("strings").onclick=strings;$("melody").onclick=melody;$("stop").onclick=clear;
+    if(!AudioContextClass)set("Unavailable","-","-","WebAudio is not available in this browser.");
+  </script>
+</body>
+</html>
