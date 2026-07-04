@@ -1,0 +1,73 @@
+{
+  "validator": "UAOS_BATCH_V81_V85_MIDI_UPGRADE_VALIDATOR",
+  "status": "PASS",
+  "generated_at": "2026-07-04T20:54:28.799204+00:00",
+  "checks": [
+    {
+      "name": "V81 PASS",
+      "passed": true,
+      "detail": "PASS"
+    },
+    {
+      "name": "V82 PASS",
+      "passed": true,
+      "detail": "PASS"
+    },
+    {
+      "name": "V83 PASS",
+      "passed": true,
+      "detail": "PASS"
+    },
+    {
+      "name": "V84 PASS",
+      "passed": true,
+      "detail": "PASS"
+    },
+    {
+      "name": "V85 PASS",
+      "passed": true,
+      "detail": "PASS"
+    },
+    {
+      "name": "V71 MIDI exists",
+      "passed": true,
+      "detail": "V71"
+    },
+    {
+      "name": "V81 MIDI exists and valid",
+      "passed": true,
+      "detail": "V81"
+    },
+    {
+      "name": "V82 MIDI exists and valid",
+      "passed": true,
+      "detail": "V82"
+    },
+    {
+      "name": "V83 package exists and valid",
+      "passed": true,
+      "detail": "V83"
+    },
+    {
+      "name": "V85 ZIP exists and valid",
+      "passed": true,
+      "detail": "E:\\keyboard-manager-clean\\uaos-ai-factory\\metadata-project-generator\\v85\\exports\\UAOS_V85_GENERIC_MIDI_TEST_PACKAGE.zip"
+    },
+    {
+      "name": "no forbidden KORG files",
+      "passed": true,
+      "detail": "none"
+    },
+    {
+      "name": "no USB/PA3X/React/deploy/payment/claims",
+      "passed": true,
+      "detail": "{}"
+    },
+    {
+      "name": "no App.jsx touched",
+      "passed": true,
+      "detail": "git diff HEAD"
+    }
+  ],
+  "next_fastest_action": "V86-V90 Final Local Trial + External Tester Package"
+}

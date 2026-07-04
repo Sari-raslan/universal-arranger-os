@@ -3,27 +3,127 @@
   "static_local_only": true,
   "export_allowed": false,
   "outputs": [
-    {"name": "Product Surface Factory", "path": "../product-surface-factory/"},
-    {"name": "Website Draft", "path": "../product-surface-factory/website/index.html"},
-    {"name": "UI Mockups", "path": "../product-surface-factory/ui-mockups/"},
-    {"name": "Local Program Spec", "path": "../product-surface-factory/local-program-spec/"},
-    {"name": "V58 Owner Decision Input Pack", "path": "../v58/"},
-    {"name": "V59 Owner Decision Normalizer", "path": "../v59/"},
-    {"name": "V60 Owner Decision Simulator", "path": "../v60/"},
-    {"name": "V61-V65 Batch Outputs", "path": "../batch-v61-v65/"},
-    {"name": "V66-V70 Batch Outputs", "path": "../batch-v66-v70/"},
-    {"name": "V71 Real MIDI Export", "path": "../v71/midi/UAOS_V71_REAL_MIDI_EXPORT_FOUNDATION.mid"},
-    {"name": "V72 UAOS Project Package", "path": "../v72/package/UAOS_V72_PROJECT_PACKAGE.uaos.json"},
-    {"name": "V73 Generic ZIP Package", "path": "../v73/exports/UAOS_V73_GENERIC_STYLE_PACKAGE.zip"},
-    {"name": "V71-V73 Real Export Batch", "path": "../batch-v71-v73-real-export/"},
-    {"name": "V74 Hardened Export Validator", "path": "../v74/generated/UAOS_V74_HARDENED_EXPORT_VALIDATOR_RESULTS.json", "korg_export_state": "BLOCKED"},
-    {"name": "V75 Local Export Preview", "path": "../v75/preview/UAOS_V75_LOCAL_EXPORT_PREVIEW.html", "static_local_only": true},
-    {"name": "V74-V75 Export Preview Batch", "path": "../batch-v74-v75-export-preview/UAOS_BATCH_V74_V75_OWNER_DASHBOARD.html", "korg_export_state": "BLOCKED"},
-    {"name": "V76 Local RC Package", "path": "../v76/rc/UAOS_V76_LOCAL_RC_OPEN_HERE.html", "static_local_only": true},
-    {"name": "V77 Local Program RC Dashboard", "path": "../v77/program/UAOS_V77_LOCAL_PROGRAM_RC_DASHBOARD.html", "static_local_only": true},
-    {"name": "V78 Next Export Approval Gate", "path": "../v78/approval/UAOS_V78_NEXT_EXPORT_APPROVAL_GATE.md", "approval_applied": false},
-    {"name": "V79 Owner Test Steps", "path": "../v79/trial/UAOS_V79_OWNER_TEST_STEPS.md"},
-    {"name": "V80 Final Safe Export Track Summary", "path": "../v80/summary/UAOS_V80_FINAL_SAFE_EXPORT_TRACK_SUMMARY.md"},
-    {"name": "V76-V80 Local RC Batch Open", "path": "../batch-v76-v80-local-rc/UAOS_BATCH_V76_V80_LOCAL_RC_OPEN_HERE.html", "korg_export_state": "BLOCKED"}
+    {
+      "name": "Product Surface Factory",
+      "path": "../product-surface-factory/"
+    },
+    {
+      "name": "Website Draft",
+      "path": "../product-surface-factory/website/index.html"
+    },
+    {
+      "name": "UI Mockups",
+      "path": "../product-surface-factory/ui-mockups/"
+    },
+    {
+      "name": "Local Program Spec",
+      "path": "../product-surface-factory/local-program-spec/"
+    },
+    {
+      "name": "V58 Owner Decision Input Pack",
+      "path": "../v58/"
+    },
+    {
+      "name": "V59 Owner Decision Normalizer",
+      "path": "../v59/"
+    },
+    {
+      "name": "V60 Owner Decision Simulator",
+      "path": "../v60/"
+    },
+    {
+      "name": "V61-V65 Batch Outputs",
+      "path": "../batch-v61-v65/"
+    },
+    {
+      "name": "V66-V70 Batch Outputs",
+      "path": "../batch-v66-v70/"
+    },
+    {
+      "name": "V71 Real MIDI Export",
+      "path": "../v71/midi/UAOS_V71_REAL_MIDI_EXPORT_FOUNDATION.mid"
+    },
+    {
+      "name": "V72 UAOS Project Package",
+      "path": "../v72/package/UAOS_V72_PROJECT_PACKAGE.uaos.json"
+    },
+    {
+      "name": "V73 Generic ZIP Package",
+      "path": "../v73/exports/UAOS_V73_GENERIC_STYLE_PACKAGE.zip"
+    },
+    {
+      "name": "V71-V73 Real Export Batch",
+      "path": "../batch-v71-v73-real-export/"
+    },
+    {
+      "name": "V74 Hardened Export Validator",
+      "path": "../v74/generated/UAOS_V74_HARDENED_EXPORT_VALIDATOR_RESULTS.json",
+      "korg_export_state": "BLOCKED"
+    },
+    {
+      "name": "V75 Local Export Preview",
+      "path": "../v75/preview/UAOS_V75_LOCAL_EXPORT_PREVIEW.html",
+      "static_local_only": true
+    },
+    {
+      "name": "V74-V75 Export Preview Batch",
+      "path": "../batch-v74-v75-export-preview/UAOS_BATCH_V74_V75_OWNER_DASHBOARD.html",
+      "korg_export_state": "BLOCKED"
+    },
+    {
+      "name": "V76 Local RC Package",
+      "path": "../v76/rc/UAOS_V76_LOCAL_RC_OPEN_HERE.html",
+      "static_local_only": true
+    },
+    {
+      "name": "V77 Local Program RC Dashboard",
+      "path": "../v77/program/UAOS_V77_LOCAL_PROGRAM_RC_DASHBOARD.html",
+      "static_local_only": true
+    },
+    {
+      "name": "V78 Next Export Approval Gate",
+      "path": "../v78/approval/UAOS_V78_NEXT_EXPORT_APPROVAL_GATE.md",
+      "approval_applied": false
+    },
+    {
+      "name": "V79 Owner Test Steps",
+      "path": "../v79/trial/UAOS_V79_OWNER_TEST_STEPS.md"
+    },
+    {
+      "name": "V80 Final Safe Export Track Summary",
+      "path": "../v80/summary/UAOS_V80_FINAL_SAFE_EXPORT_TRACK_SUMMARY.md"
+    },
+    {
+      "name": "V76-V80 Local RC Batch Open",
+      "path": "../batch-v76-v80-local-rc/UAOS_BATCH_V76_V80_LOCAL_RC_OPEN_HERE.html",
+      "korg_export_state": "BLOCKED"
+    },
+    {
+      "name": "V81 Section MIDI",
+      "path": "../v81/midi/UAOS_V81_SECTION_BASED_REAL_MIDI_EXPORT.mid",
+      "korg_export_state": "BLOCKED"
+    },
+    {
+      "name": "V82 Multitrack MIDI",
+      "path": "../v82/midi/UAOS_V82_MULTITRACK_ARRANGEMENT_EXPORT.mid",
+      "korg_export_state": "BLOCKED"
+    },
+    {
+      "name": "V83 MIDI Upgrade Package",
+      "path": "../v83/package/UAOS_V83_MIDI_UPGRADE_PROJECT_PACKAGE.uaos.json"
+    },
+    {
+      "name": "V84 Tester Handoff",
+      "path": "../v84/tester/UAOS_V84_MIDI_TESTER_HANDOFF_README.md"
+    },
+    {
+      "name": "V85 MIDI Test ZIP",
+      "path": "../v85/exports/UAOS_V85_GENERIC_MIDI_TEST_PACKAGE.zip",
+      "korg_export_state": "BLOCKED"
+    },
+    {
+      "name": "V81-V85 MIDI Upgrade Batch",
+      "path": "../batch-v81-v85-midi-upgrade/UAOS_BATCH_V81_V85_MIDI_UPGRADE_OPEN_HERE.html"
+    }
   ]
 }

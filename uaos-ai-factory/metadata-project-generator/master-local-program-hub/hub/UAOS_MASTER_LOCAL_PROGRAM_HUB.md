@@ -27,6 +27,12 @@ export_allowed: false
 - V79 Owner Test Steps: `../v79/trial/UAOS_V79_OWNER_TEST_STEPS.md`
 - V80 Final Safe Export Track Summary: `../v80/summary/UAOS_V80_FINAL_SAFE_EXPORT_TRACK_SUMMARY.md`
 - V76-V80 Local RC Batch Open: `../batch-v76-v80-local-rc/UAOS_BATCH_V76_V80_LOCAL_RC_OPEN_HERE.html`
+- V81 Section MIDI: `../v81/midi/UAOS_V81_SECTION_BASED_REAL_MIDI_EXPORT.mid`
+- V82 Multitrack MIDI: `../v82/midi/UAOS_V82_MULTITRACK_ARRANGEMENT_EXPORT.mid`
+- V83 MIDI Upgrade Package: `../v83/package/UAOS_V83_MIDI_UPGRADE_PROJECT_PACKAGE.uaos.json`
+- V84 Tester Handoff: `../v84/tester/UAOS_V84_MIDI_TESTER_HANDOFF_README.md`
+- V85 MIDI Test ZIP: `../v85/exports/UAOS_V85_GENERIC_MIDI_TEST_PACKAGE.zip`
+- V81-V85 MIDI Upgrade Batch: `../batch-v81-v85-midi-upgrade/UAOS_BATCH_V81_V85_MIDI_UPGRADE_OPEN_HERE.html`
 - Export Blocker / Research Gates: blocked and research-only.
 - QA Reports: `../master-local-program-hub/reports/`
 - Owner Dashboards: `../master-local-program-hub/dashboards/UAOS_MASTER_OWNER_REVIEW_DASHBOARD.html`
@@ -37,7 +43,4 @@ export_allowed: false
 This hub links local metadata, static dashboard outputs, approved local V71-V73 export artifacts, V74 validation, the V75 static local preview, and the V76-V80 static local RC package only. It does not integrate with React, deploy, accept payment, or create KORG files.
 
 ## Next Action Options
-1. improve MIDI arrangement depth
-2. create read-only KORG research pack
-3. build local desktop wrapper spec only
-4. prepare external tester handoff
+Next safe action: V86-V90 Final Local Trial + External Tester Package
