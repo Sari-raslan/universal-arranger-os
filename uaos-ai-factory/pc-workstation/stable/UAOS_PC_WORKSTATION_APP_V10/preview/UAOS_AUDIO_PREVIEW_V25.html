@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>UAOS Audio Preview V25</title>
+  <link rel="stylesheet" href="../assets/uaos_v25_theme.css">
+</head>
+<body>
+  <main class="main" style="height:auto">
+    <div class="head"><div><h2>Audio Preview V25</h2><p>Focused WebAudio preview. Synthetic oscillator only.</p></div><a class="btn ghost" href="../UAOS_PC_WORKSTATION_APP_V25.html">Back to V25 App</a></div>
+    <div class="grid">
+      <article class="panel span7"><h3>Transport</h3><div class="transport"><button class="btn ghost" data-play="chords" type="button">Play Chords</button><button class="btn ghost" data-play="bass" type="button">Play Bass</button><button class="btn ghost" data-play="strings_pulse" type="button">Play Strings Pulse</button><button class="btn ghost" data-play="strings_tremolo" type="button">Play Strings Tremolo Simulation</button><button class="btn" data-play="full" type="button">Play Full Preview</button><button id="stopAudio" class="btn red" type="button">Stop</button></div><div class="playline"><span></span></div><p><span class="badge warn">NO_SAMPLES_INCLUDED</span> <span class="badge">PC_ONLY</span></p></article>
+      <article class="panel span5"><h3>Now playing</h3><div class="display"><small>Mode</small><br><b id="previewMode">stopped</b><div>Chord: <span id="previewChord">-</span></div><div>Section: <span id="previewSection">-</span></div></div></article>
+    </div>
+  </main>
+  <script src="../assets/uaos_v25_app.js"></script>
+</body>
+</html>

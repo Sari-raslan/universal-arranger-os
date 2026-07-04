@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>UAOS PC Workstation V25</title>
+  <link rel="stylesheet" href="assets/uaos_v25_theme.css">
+</head>
+<body>
+  <div class="shell">
+    <header class="top">
+      <div class="brand"><b>UAOS PC Workstation V25</b><small>Audio + Library Polish</small></div>
+      <div class="meta"><div class="chip">Project: <b>Sari UAOS PC Workstation V25</b></div><div class="chip">Style: <b>Arabic Pop Oriental Ballad</b></div><div class="chip">Tempo: <b>102 BPM</b></div></div>
+      <div class="actions"><button id="saveSession" class="btn ghost" type="button">Save Session</button><button class="btn" data-export="library" type="button">Export Library</button><button class="btn amber" data-export="audio" type="button">Export Audio Pattern</button><span class="badge">PC_ONLY</span></div>
+    </header>
+    <aside class="side">
+      <h1>V25 Audio + Library</h1>
+      <p>صقل المعاينة الصوتية ومكتبة الكمنجات قبل أي تغليف Electron.</p>
+      <nav class="nav">
+        <button class="active" data-view="dashboard" type="button"><span class="num">01</span><span>Dashboard<small>الرئيسية</small></span></button>
+        <button data-view="project" type="button"><span class="num">02</span><span>Project<small>المشروع</small></span></button>
+        <button data-view="style" type="button"><span class="num">03</span><span>Style<small>الستايل</small></span></button>
+        <button data-view="library" type="button"><span class="num">04</span><span>Library<small>المكتبة</small></span></button>
+        <button data-view="audio" type="button"><span class="num">05</span><span>Audio Preview<small>المعاينة</small></span></button>
+        <button data-view="writer" type="button"><span class="num">06</span><span>Writer<small>التوليد</small></span></button>
+        <button data-view="safety" type="button"><span class="num">07</span><span>Safety<small>السلامة</small></span></button>
+        <button data-view="help" type="button"><span class="num">08</span><span>Help<small>المساعدة</small></span></button>
+      </nav>
+    </aside>
+    <main class="main">
+      <section id="dashboard" class="view active">
+        <div class="head"><div><h2>V25 Audio + Library Polish</h2><p>مركز مختصر لاختبار الصوت الصناعي وربط مكتبة الكمنجات metadata فقط.</p></div><span class="badge warn">NO_SAMPLES_INCLUDED</span></div>
+        <div class="grid">
+          <article class="tile span3"><h3>Project</h3><strong id="dashProject"></strong><p>Current PC project</p></article>
+          <article class="tile span3"><h3>Style</h3><strong id="dashStyle"></strong><p>Oriental ballad workflow</p></article>
+          <article class="tile span3"><h3>Arabic strings</h3><strong id="dashPreset"></strong><p>Selected preset</p></article>
+          <article class="tile span3"><h3>Preview modes</h3><strong id="dashModes"></strong><p>WebAudio only</p></article>
+          <article class="panel span8"><h3>Fast preview</h3><div class="transport"><button class="btn ghost" data-play="chords" type="button">Play Chords</button><button class="btn ghost" data-play="bass" type="button">Play Bass</button><button class="btn ghost" data-play="strings_pulse" type="button">Play Strings Pulse</button><button class="btn ghost" data-play="strings_tremolo" type="button">Play Strings Tremolo Simulation</button><button class="btn" data-play="full" type="button">Play Full Preview</button><button id="stopAudio" class="btn red" type="button">Stop</button></div><div class="playline"><span></span></div></article>
+          <article class="panel span4"><h3>Safety status</h3><p><span class="badge">PC_ONLY</span> <span class="badge warn">NO_SAMPLES_INCLUDED</span> <span class="badge lock">NOT_COMPATIBILITY_VERIFIED</span></p><p>No external audio. No samples. No copyrighted melody.</p></article>
+        </div>
+      </section>
+      <section id="project" class="view"><div class="head"><div><h2>Project</h2><p>V25 keeps the V23 project as the current owner-ready base.</p></div></div><article class="panel"><table><tbody><tr><td>Project</td><td>Sari UAOS PC Workstation V25</td></tr><tr><td>Style</td><td>Arabic Pop Oriental Ballad</td></tr><tr><td>Tempo</td><td>102 BPM / 4/4</td></tr><tr><td>MIDI preview</td><td class="path">midi\SARI_ARABIC_POP_ORIENTAL_BALLAD_V9.mid</td></tr></tbody></table></article></section>
+      <section id="style" class="view"><div class="head"><div><h2>Style</h2><p>Section metadata used by the synthetic preview.</p></div><button class="btn ghost" data-export="audio" type="button">Export Audio Pattern JSON</button></div><article class="panel"><table><thead><tr><th>Section</th><th>Chords</th><th>Use</th></tr></thead><tbody><tr><td>Intro</td><td>Dm / C</td><td>low string entry</td></tr><tr><td>Verse</td><td>Dm / Bb / C / A7</td><td>bass and chord guide</td></tr><tr><td>Chorus</td><td>F / C / Dm / Bb</td><td>wide strings</td></tr><tr><td>Bridge</td><td>Gm / Bb / A7 / A7</td><td>emotional lift</td></tr><tr><td>Fill</td><td>A7</td><td>short accent</td></tr><tr><td>Ending</td><td>Dm / Bb / C / Dm</td><td>slow close</td></tr></tbody></table></article></section>
+      <section id="library" class="view"><div class="head"><div><h2>Library</h2><p>Better Arabic strings preset browser. Metadata only.</p></div><button class="btn ghost" data-export="library" type="button">Export Library Binding JSON</button></div><article class="panel"><div class="presetbar"><input id="librarySearch" placeholder="Filter mood, role, articulation"><span id="assignment" class="badge lock"></span><a class="btn amber" href="library/UAOS_LIBRARY_MANAGER_V25.html">Open Library Manager V25</a></div><div id="presetGrid" class="presetgrid"></div></article></section>
+      <section id="audio" class="view"><div class="head"><div><h2>Audio Preview</h2><p>WebAudio only. No external audio, samples, or copyrighted melody.</p></div><a class="btn ghost" href="preview/UAOS_AUDIO_PREVIEW_V25.html">Open Preview Page</a></div><div class="grid"><article class="panel span7"><h3>Transport</h3><div class="transport"><button class="btn ghost" data-play="chords" type="button">Play Chords</button><button class="btn ghost" data-play="bass" type="button">Play Bass</button><button class="btn ghost" data-play="strings_pulse" type="button">Play Strings Pulse</button><button class="btn ghost" data-play="strings_tremolo" type="button">Play Strings Tremolo Simulation</button><button class="btn" data-play="full" type="button">Play Full Preview</button><button class="btn red" onclick="stopAudio()" type="button">Stop</button></div><div class="playline"><span></span></div></article><article class="panel span5"><h3>Now playing</h3><div class="display"><small>Mode</small><br><b id="playerMode">stopped</b><div>Chord: <span id="currentChord">-</span></div><div>Section: <span id="currentSection">-</span></div></div><div class="meters"><div class="meter" style="--h:35%"><span></span></div><div class="meter" style="--h:70%"><span></span></div><div class="meter" style="--h:48%"><span></span></div><div class="meter" style="--h:86%"><span></span></div><div class="meter" style="--h:55%"><span></span></div><div class="meter" style="--h:38%"><span></span></div><div class="meter" style="--h:64%"><span></span></div><div class="meter" style="--h:42%"><span></span></div></div></article></div></section>
+      <section id="writer" class="view"><div class="head"><div><h2>Writer</h2><p>Writer V17 is preserved. Browser cannot run command files directly.</p></div></div><article class="panel"><p class="path">writer\RUN_WRITER_V17.cmd</p><p class="path">writer\generated_v17_outputs</p><p>Generated MIDI can be opened in Cubase. This is a PC workflow only and has no hardware claim.</p><a class="btn amber" href="writer/RUN_WRITER_V17.cmd">Open Writer CMD</a></article></section>
+      <section id="safety" class="view"><div class="head"><div><h2>Safety</h2><p>All V25 audio/library work remains local and metadata-only.</p></div></div><article class="panel"><table><tbody><tr><td>Samples included</td><td>NO</td></tr><tr><td>Electron installed</td><td>NO</td></tr><tr><td>Electron executed</td><td>NO</td></tr><tr><td>Build executed</td><td>NO</td></tr><tr><td>PA3X-ready claim</td><td>NO</td></tr><tr><td>USB write</td><td>NO</td></tr><tr><td>App.jsx touched</td><td>NO</td></tr></tbody></table></article></section>
+      <section id="help" class="view"><div class="head"><div><h2>Help</h2><p>Use V25 for audio/library testing. V23 remains owner-ready app. V24 remains Electron plan only.</p></div><button id="runSelfTest" class="btn ghost" type="button">Run Self-Test</button></div><article class="panel"><pre id="selfTestOutput" class="path">Self-test not run yet.</pre></article></section>
+    </main>
+    <aside class="inspect"><h2>Inspector</h2><div id="inspector"></div></aside>
+    <footer class="bottom"><span id="statusText">V25 ready.</span><span>PC_ONLY | NO_SAMPLES_INCLUDED | NOT_FOR_PA3X_LOAD | NOT_FOR_USB_TRANSFER</span></footer>
+  </div>
+  <script src="assets/uaos_v25_app.js"></script>
+</body>
+</html>

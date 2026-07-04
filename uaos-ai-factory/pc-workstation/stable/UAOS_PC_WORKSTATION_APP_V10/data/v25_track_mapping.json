@@ -1,0 +1,21 @@
+{
+  "version": "V25",
+  "format": "UAOS_FORMAT",
+  "safety_labels": [
+    "PC_ONLY",
+    "UAOS_FORMAT",
+    "TEST_UNVERIFIED",
+    "NO_SAMPLES_INCLUDED",
+    "NOT_FOR_PA3X_LOAD",
+    "NOT_FOR_USB_TRANSFER",
+    "NOT_COMPATIBILITY_VERIFIED"
+  ],
+  "mapping": [
+    {"track": "drums", "source": "synthetic_preview", "role": "rhythm guide", "samples_included": false},
+    {"track": "bass", "source": "synthetic_preview", "role": "root guide", "samples_included": false},
+    {"track": "chords", "source": "synthetic_preview", "role": "harmony pulse", "samples_included": false},
+    {"track": "pad", "source": "arabic_strings_library_metadata", "role": "wide support", "samples_included": false},
+    {"track": "arabic_strings", "source": "arabic_strings_library_metadata", "role": "main string layer", "samples_included": false},
+    {"track": "melody_guide", "source": "arabic_strings_library_metadata", "role": "lead guide", "samples_included": false}
+  ]
+}

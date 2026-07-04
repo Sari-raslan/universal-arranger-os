@@ -1,0 +1,28 @@
+{
+  "version": "V25",
+  "format": "UAOS_FORMAT",
+  "safety_labels": [
+    "PC_ONLY",
+    "UAOS_FORMAT",
+    "TEST_UNVERIFIED",
+    "NO_SAMPLES_INCLUDED",
+    "NOT_FOR_PA3X_LOAD",
+    "NOT_FOR_USB_TRANSFER",
+    "NOT_COMPATIBILITY_VERIFIED"
+  ],
+  "samples_included": false,
+  "presets": [
+    {"name": "Arabic Strings Ensemble Soft", "mood": "warm", "role": "backing layer", "track_target": "arabic_strings", "articulation_hints": ["sustain", "slide_hint", "ornament_hint"], "velocity_hint": "medium-soft", "octave_hint": "mid", "safety_labels": ["PC_ONLY", "NO_SAMPLES_INCLUDED"]},
+    {"name": "Arabic Strings Tremolo Light", "mood": "moving", "role": "tremolo color", "track_target": "arabic_strings", "articulation_hints": ["tremolo", "sustain", "ornament_hint"], "velocity_hint": "medium", "octave_hint": "mid-high", "safety_labels": ["PC_ONLY", "NO_SAMPLES_INCLUDED"]},
+    {"name": "Arabic Strings Octave Lead", "mood": "bright", "role": "melody doubling", "track_target": "arabic_strings", "articulation_hints": ["octave_layer", "slide_hint"], "velocity_hint": "medium-high", "octave_hint": "high", "safety_labels": ["PC_ONLY", "NO_SAMPLES_INCLUDED"]},
+    {"name": "Arabic Strings Pad Wide", "mood": "wide", "role": "pad", "track_target": "pad", "articulation_hints": ["sustain", "wide_layer"], "velocity_hint": "soft", "octave_hint": "mid-wide", "safety_labels": ["PC_ONLY", "NO_SAMPLES_INCLUDED"]},
+    {"name": "Arabic Violin Guide", "mood": "expressive", "role": "guide lead", "track_target": "melody_guide", "articulation_hints": ["slide_hint", "ornament_hint"], "velocity_hint": "medium", "octave_hint": "high", "safety_labels": ["PC_ONLY", "NO_SAMPLES_INCLUDED"]},
+    {"name": "Syrian Strings Emotional Pad", "mood": "emotional", "role": "bridge pad", "track_target": "pad", "articulation_hints": ["sustain", "tremolo", "slow_swell"], "velocity_hint": "soft-medium", "octave_hint": "mid", "safety_labels": ["PC_ONLY", "NO_SAMPLES_INCLUDED"]},
+    {"name": "Oriental Strings Short Marcato", "mood": "rhythmic", "role": "short accent", "track_target": "arabic_strings", "articulation_hints": ["staccato", "marcato", "ornament_hint"], "velocity_hint": "medium-high", "octave_hint": "mid", "safety_labels": ["PC_ONLY", "NO_SAMPLES_INCLUDED"]},
+    {"name": "Arabic Strings Slow Swell", "mood": "cinematic", "role": "intro swell", "track_target": "arabic_strings", "articulation_hints": ["slow_swell", "sustain"], "velocity_hint": "soft-rising", "octave_hint": "low-mid", "safety_labels": ["PC_ONLY", "NO_SAMPLES_INCLUDED"]},
+    {"name": "Arabic Strings High Octave Response", "mood": "answering", "role": "high response", "track_target": "arabic_strings", "articulation_hints": ["octave_layer", "short_answer"], "velocity_hint": "medium", "octave_hint": "high", "safety_labels": ["PC_ONLY", "NO_SAMPLES_INCLUDED"]},
+    {"name": "Arabic Strings Background Layer", "mood": "subtle", "role": "background bed", "track_target": "pad", "articulation_hints": ["sustain", "low_motion"], "velocity_hint": "soft", "octave_hint": "low-mid", "safety_labels": ["PC_ONLY", "NO_SAMPLES_INCLUDED"]},
+    {"name": "Arabic Strings Cinematic Wide", "mood": "cinematic", "role": "wide layer", "track_target": "arabic_strings", "articulation_hints": ["wide_layer", "octave_layer", "slow_swell"], "velocity_hint": "medium", "octave_hint": "wide", "safety_labels": ["PC_ONLY", "NO_SAMPLES_INCLUDED"]},
+    {"name": "Arabic Violin Emotional Lead", "mood": "emotional", "role": "lead guide", "track_target": "melody_guide", "articulation_hints": ["slide_hint", "ornament_hint", "sustain"], "velocity_hint": "expressive", "octave_hint": "high", "safety_labels": ["PC_ONLY", "NO_SAMPLES_INCLUDED"]}
+  ]
+}

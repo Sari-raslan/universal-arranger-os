@@ -1,0 +1,32 @@
+{
+  "version": "V25",
+  "format": "UAOS_FORMAT",
+  "safety_labels": [
+    "PC_ONLY",
+    "UAOS_FORMAT",
+    "TEST_UNVERIFIED",
+    "NO_SAMPLES_INCLUDED",
+    "NOT_FOR_PA3X_LOAD",
+    "NOT_FOR_USB_TRANSFER",
+    "NOT_COMPATIBILITY_VERIFIED"
+  ],
+  "project": "Sari UAOS PC Workstation V25",
+  "style": "Arabic Pop Oriental Ballad",
+  "tempo_bpm": 102,
+  "meter": "4/4",
+  "sections": [
+    {"name": "Intro", "bars": 4, "chords": ["Dm", "C"], "energy": "low"},
+    {"name": "Verse", "bars": 8, "chords": ["Dm", "Bb", "C", "A7"], "energy": "medium"},
+    {"name": "Chorus", "bars": 8, "chords": ["F", "C", "Dm", "Bb"], "energy": "high"},
+    {"name": "Bridge", "bars": 4, "chords": ["Gm", "Bb", "A7", "A7"], "energy": "medium"},
+    {"name": "Fill", "bars": 1, "chords": ["A7"], "energy": "high"},
+    {"name": "Ending", "bars": 4, "chords": ["Dm", "Bb", "C", "Dm"], "energy": "low"}
+  ],
+  "preview_modes": [
+    {"id": "chords", "label": "Chord pulse", "oscillators": ["triangle"], "description": "Short chord pulses for harmonic checking."},
+    {"id": "bass", "label": "Bass guide", "oscillators": ["sine"], "description": "Root-note bass guide."},
+    {"id": "strings_pulse", "label": "Strings layer", "oscillators": ["sawtooth"], "description": "Soft synthetic string pulses."},
+    {"id": "strings_tremolo", "label": "Strings tremolo simulation", "oscillators": ["sawtooth", "triangle"], "description": "Fast tremolo-like synthetic modulation."},
+    {"id": "full", "label": "Full synthetic preview", "oscillators": ["sine", "triangle", "sawtooth"], "description": "Combined bass, chords, and strings."}
+  ]
+}
