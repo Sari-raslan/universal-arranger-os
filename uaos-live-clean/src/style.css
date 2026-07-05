@@ -822,6 +822,23 @@ input, select {
   line-height: 1.55;
 }
 
+.uaos-owner-path-box {
+  display: grid;
+  gap: 6px;
+  padding: 10px;
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.22);
+  border: 1px solid rgba(226, 232, 240, 0.08);
+}
+
+.uaos-owner-path-box em {
+  color: #d8ff77;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
 .uaos-owner-program-grid small {
   color: #9fb0c8;
   font-size: 12px;

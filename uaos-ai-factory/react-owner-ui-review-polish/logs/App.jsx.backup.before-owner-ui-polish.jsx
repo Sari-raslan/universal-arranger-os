@@ -143,7 +143,6 @@ const ownerProgramSections = [
     status: "PASS",
     localPath: "E:\\keyboard-manager-clean\\uaos-ai-factory\\UAOS_FINAL_LOCAL_OWNER_PROGRAM_V2",
     ownerTest: "Open the owner program dashboard and review the complete local workflow.",
-    actionLabel: "Open/Test owner program folder",
     blocked: "No deploy, no push, no device writer.",
   },
   {
@@ -151,7 +150,6 @@ const ownerProgramSections = [
     status: "PASS",
     localPath: "E:\\keyboard-manager-clean\\uaos-ai-factory\\style-package-rc",
     ownerTest: "Review the release-candidate style package metadata and owner notes.",
-    actionLabel: "Open/Test RC metadata",
     blocked: "Real keyboard style generation remains blocked.",
   },
   {
@@ -159,7 +157,6 @@ const ownerProgramSections = [
     status: "PASS",
     localPath: "E:\\keyboard-manager-clean\\uaos-ai-factory\\style-midi-sync-track",
     ownerTest: "Compare section maps against the generated MIDI test materials.",
-    actionLabel: "Open/Test section sync",
     blocked: "No keyboard-native export approval.",
   },
   {
@@ -167,7 +164,6 @@ const ownerProgramSections = [
     status: "PASS",
     localPath: "E:\\keyboard-manager-clean\\uaos-ai-factory\\style-export-track-v2",
     ownerTest: "Load the generic MIDI files in a DAW and record listening feedback.",
-    actionLabel: "Open/Test generic MIDI",
     blocked: "No USB transfer and no PA3X load.",
   },
   {
@@ -175,7 +171,6 @@ const ownerProgramSections = [
     status: "PASS",
     localPath: "E:\\keyboard-manager-clean\\uaos-ai-factory\\priority-library-midi-test-arrangement",
     ownerTest: "Audition top-priority arrangement tests and mark favorites.",
-    actionLabel: "Open/Test priority MIDI",
     blocked: "No commercial claim and no keyboard compatibility claim.",
   },
   {
@@ -183,7 +178,6 @@ const ownerProgramSections = [
     status: "PASS",
     localPath: "E:\\keyboard-manager-clean\\uaos-ai-factory\\sound-library-priority-refinement",
     ownerTest: "Review the top packs, presets, and priority refinement notes.",
-    actionLabel: "Open/Test sound library",
     blocked: "No real KORG writer use.",
   },
   {
@@ -191,7 +185,6 @@ const ownerProgramSections = [
     status: "READ ONLY",
     localPath: "E:\\keyboard-manager-clean\\uaos-ai-factory\\korg-readonly-research-gate",
     ownerTest: "Read format notes and research gates without writing files.",
-    actionLabel: "Open read-only research",
     blocked: "KORG Writer BLOCKED.",
   },
   {
@@ -199,7 +192,6 @@ const ownerProgramSections = [
     status: "READ ONLY",
     localPath: "E:\\keyboard-manager-clean\\uaos-ai-factory\\korg-readonly-parser-scaffold",
     ownerTest: "Inspect parser scaffold reports with write paths disabled.",
-    actionLabel: "Open read-only parser",
     blocked: "Binary writer and real style generation blocked.",
   },
   {
@@ -207,7 +199,6 @@ const ownerProgramSections = [
     status: "ACTIVE",
     localPath: "E:\\keyboard-manager-clean\\uaos-ai-factory\\UAOS_RELAXED_PRODUCT_MODE_POLICY.md",
     ownerTest: "Confirm relaxed product mode still blocks real KORG writer actions.",
-    actionLabel: "Open policy file",
     blocked: "No push or deploy in this task.",
   },
   {
@@ -215,17 +206,16 @@ const ownerProgramSections = [
     status: "READY",
     localPath: "E:\\keyboard-manager-clean\\uaos-ai-factory\\react-app-integration-relaxed-mode",
     ownerTest: "Review this React integration dashboard, then choose local owner QA.",
-    actionLabel: "Open integration evidence",
     blocked: "Deploy and push only when explicitly requested.",
   },
 ];
 
 const ownerSafetyGates = [
-  "KORG Writer: BLOCKED",
-  ".STY/.SET: BLOCKED",
-  "USB: BLOCKED",
-  "PA3X Load: BLOCKED",
-  "Deploy: NOT RUN",
+  "KORG Writer BLOCKED",
+  ".STY/.SET BLOCKED",
+  "USB BLOCKED",
+  "PA3X Load BLOCKED",
+  "Deploy NOT RUN IN THIS TASK",
 ];
 
 function uid() {
@@ -1190,8 +1180,8 @@ export default function App() {
         <section className="uaos-v8-panel uaos-owner-program-panel" id="owner-program">
           <div className="uaos-v8-panel-header">
             <p>Relaxed Product Mode</p>
-            <h2>Owner Review Home</h2>
-            <span>Review the final owner program, test safe local outputs, and keep blocked keyboard/device actions visibly separated.</span>
+            <h2>Final Owner Program Integration</h2>
+            <span>React UI integration is allowed for this requested local build. Writer, USB, PA3X, push, and deploy actions remain blocked.</span>
           </div>
 
           <div className="uaos-owner-safety-strip">
@@ -1208,10 +1198,7 @@ export default function App() {
                   <h3>{section.title}</h3>
                 </div>
                 <p>{section.ownerTest}</p>
-                <div className="uaos-owner-path-box">
-                  <em>{section.actionLabel}</em>
-                  <small>{section.localPath}</small>
-                </div>
+                <small>{section.localPath}</small>
                 <b>{section.blocked}</b>
               </article>
             ))}
