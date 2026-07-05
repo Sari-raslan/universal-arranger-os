@@ -164,3 +164,24 @@ Next safe action: generate MIDI test arrangement using priority packs metadata
 - Dummy dry-run: `..\..\korg-readonly-parser-scaffold\v157_synthetic_dummy_dryrun\UAOS_V157_SYNTHETIC_DUMMY_DRYRUN_REPORT.json`
 - Validator results: `..\..\korg-readonly-parser-scaffold\validators\UAOS_READONLY_PARSER_VALIDATOR_RESULTS.json`
 - Next executable batch: V161-V170 Fixture Research, only after owner provides fixture approval.
+
+## Rank 1 Fixture Read-only Scan V161-V170
+
+Status: PASS
+
+Dashboard: E:\keyboard-manager-clean\uaos-ai-factory\fixture-rank1-readonly-scan-v161-v170\08_dashboards\UAOS_RANK1_FIXTURE_READONLY_SCAN_DASHBOARD.html
+
+Selection record: E:\keyboard-manager-clean\uaos-ai-factory\fixture-rank1-readonly-scan-v161-v170\00_rank_selection\UAOS_RANK_1_SELECTION_RECORD.md
+
+Hash baseline: E:\keyboard-manager-clean\uaos-ai-factory\fixture-rank1-readonly-scan-v161-v170\02_hash_baseline\UAOS_RANK_1_HASH_BASELINE.md
+
+Header scan: E:\keyboard-manager-clean\uaos-ai-factory\fixture-rank1-readonly-scan-v161-v170\03_header_scan\UAOS_RANK_1_HEADER_SCAN.md
+
+Unknown chunk scan: E:\keyboard-manager-clean\uaos-ai-factory\fixture-rank1-readonly-scan-v161-v170\04_unknown_chunk_scan\UAOS_RANK_1_UNKNOWN_CHUNK_SCAN.md
+
+Research summary: E:\keyboard-manager-clean\uaos-ai-factory\fixture-rank1-readonly-scan-v161-v170\05_research_summary\UAOS_RANK_1_FIXTURE_RESEARCH_SUMMARY.md
+
+Final seal: E:\keyboard-manager-clean\uaos-ai-factory\fixture-rank1-readonly-scan-v161-v170\11_seal\UAOS_RANK1_FIXTURE_READONLY_SCAN_FINAL_SEAL.md
+
+Next action: parser refinement if useful.
+
