@@ -86,3 +86,14 @@ Generate MIDI test arrangement using priority packs metadata.
 - V135 RC ZIP: `..\..\style-package-rc\v135_rc_package_zip\UAOS_V135_STYLE_PACKAGE_RC.zip`
 - Updated Final Owner Program V2 style RC center: `..\..\UAOS_FINAL_LOCAL_OWNER_PROGRAM_V2\16_style_rc\UAOS_STYLE_RC_CENTER.html`
 - Next action: choose KORG read-only research gate or continue generic style RCs.
+
+
+## V141-V150 KORG Read-only Research Gate
+
+- KORG read-only research open page: `..\..\korg-readonly-research-gate\batch-v141-v150-korg-readonly-research\UAOS_BATCH_V141_V150_KORG_READONLY_RESEARCH_OPEN_HERE.html`
+- Format unknowns register: `..\..\korg-readonly-research-gate\v142_format_unknowns\UAOS_V142_KORG_FORMAT_UNKNOWNS_REGISTER.md`
+- Fixture policy: `..\..\korg-readonly-research-gate\v143_fixture_policy\UAOS_V143_SAFE_FIXTURE_POLICY.md`
+- Read-only parser design: `..\..\korg-readonly-research-gate\v144_readonly_parser_design\UAOS_V144_READONLY_KORG_PARSER_DESIGN.md`
+- Writer sandbox blocked notice: `..\..\korg-readonly-research-gate\v146_writer_sandbox_blocked\UAOS_V146_KORG_WRITER_SANDBOX_BLOCKED.md`
+- Owner approval gate: `..\..\korg-readonly-research-gate\v148_owner_approval_gate\UAOS_V148_KORG_RESEARCH_OWNER_APPROVAL_GATE.md`
+- Next action: V151-V160 read-only parser scaffold design or continue UAOS generic style RCs.
