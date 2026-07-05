@@ -1,0 +1,46 @@
+{
+  "policy_id": "UAOS_RELAXED_PRODUCT_MODE",
+  "status": "ACTIVE",
+  "workflow": {
+    "agents_prewrite_files": true,
+    "code_x_final_integrator": true
+  },
+  "allowed_when_requested": {
+    "app_jsx_changes": true,
+    "react_integration": true,
+    "frontend_ui_integration": true,
+    "local_app_build": true,
+    "product_ui": true,
+    "final_owner_program_integration": true,
+    "dashboards_integrated_into_app": true,
+    "git_commit": true,
+    "git_push_only_if_explicitly_requested": true,
+    "deploy_only_if_explicitly_requested": true
+  },
+  "allowed_generic_uaos_outputs": [
+    ".uaosstyle.json",
+    ".style.json",
+    ".mid",
+    ".zip",
+    ".json",
+    ".html",
+    ".md",
+    "React/UI files when requested"
+  ],
+  "blocked": {
+    "korg_writer_implementation": true,
+    "binary_korg_writer": true,
+    "real_sty_generation": true,
+    "real_set_generation": true,
+    "prs_generation": true,
+    "prf_generation": true,
+    "kst_generation": true,
+    "usb_write": true,
+    "package_copy_to_usb": true,
+    "pa3x_load": true,
+    "pa3x_ready_claim": true,
+    "korg_compatible_claim": true,
+    "real_korg_export_works_claim": true
+  },
+  "safety_confirmation": "APP/REACT ALLOWED WHEN REQUESTED / DEPLOY ONLY WHEN REQUESTED / KORG WRITER BLOCKED / NO .STY .SET / NO USB / NO PA3X"
+}
