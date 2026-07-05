@@ -1,0 +1,47 @@
+{
+  "checks": {
+    "vercelignore_exists": {
+      "pass": true,
+      "detail": "E:\\keyboard-manager-clean\\uaos-live-clean.vercelignore"
+    },
+    "large_local_artifacts_ignored": {
+      "pass": true,
+      "detail": "missing: "
+    },
+    "required_app_files_not_ignored": {
+      "pass": true,
+      "detail": "ignored required: "
+    },
+    "build_pass": {
+      "pass": true,
+      "detail": "E:\\keyboard-manager-clean\\uaos-ai-factory\\vercel-slim-deploy-prep\\slim-config\\UAOS_SLIM_DEPLOY_BUILD_CHECK.json"
+    },
+    "appjsx_unchanged": {
+      "pass": true,
+      "detail": ""
+    },
+    "deploy_not_executed": {
+      "pass": true,
+      "detail": "prep run only"
+    },
+    "no_payment_activation": {
+      "pass": true,
+      "detail": "payment remains off"
+    },
+    "korg_writer_blocked": {
+      "pass": true,
+      "detail": "blocked state recorded"
+    },
+    "no_false_claim_strings": {
+      "pass": true,
+      "detail": "exact false claim strings absent"
+    },
+    "no_blocked_korg_files_created_in_run_folder": {
+      "pass": true,
+      "detail": ""
+    }
+  },
+  "errors": [],
+  "pass": true,
+  "validator": "uaos_vercel_slim_deploy_prep_validator.py"
+}
