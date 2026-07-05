@@ -131,3 +131,15 @@ Next safe action: generate MIDI test arrangement using priority packs metadata
 - Writer sandbox blocked notice: `..\..\korg-readonly-research-gate\v146_writer_sandbox_blocked\UAOS_V146_KORG_WRITER_SANDBOX_BLOCKED.md`
 - Owner approval gate: `..\..\korg-readonly-research-gate\v148_owner_approval_gate\UAOS_V148_KORG_RESEARCH_OWNER_APPROVAL_GATE.md`
 - Next action: V151-V160 read-only parser scaffold design or continue UAOS generic style RCs.
+
+
+## V151-V160 Read-only Parser Scaffold
+
+- Read-only parser open page: `..\..\korg-readonly-parser-scaffold\batch-v151-v160-readonly-parser-scaffold\UAOS_BATCH_V151_V160_READONLY_PARSER_OPEN_HERE.html`
+- Fixture intake template: `..\..\korg-readonly-parser-scaffold\v152_fixture_intake\UAOS_V152_FIXTURE_INTAKE_TEMPLATE.md`
+- Hash inspector spec: `..\..\korg-readonly-parser-scaffold\v153_hash_inspector\UAOS_V153_HASH_INSPECTOR_SPEC.md`
+- Header scanner spec: `..\..\korg-readonly-parser-scaffold\v154_header_scanner\UAOS_V154_HEADER_SCANNER_SPEC.md`
+- Parser scaffold: `..\..\korg-readonly-parser-scaffold\src\uaos_korg_readonly_parser_scaffold.py`
+- Dummy dry-run report: `..\..\korg-readonly-parser-scaffold\v157_synthetic_dummy_dryrun\UAOS_V157_SYNTHETIC_DUMMY_DRYRUN_REPORT.json`
+- Validator results: `..\..\korg-readonly-parser-scaffold\validators\UAOS_READONLY_PARSER_VALIDATOR_RESULTS.json`
+- Next action: owner-provided fixture approval OR continue generic UAOS style RCs.
