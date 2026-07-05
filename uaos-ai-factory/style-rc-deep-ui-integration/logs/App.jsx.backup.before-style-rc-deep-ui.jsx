@@ -228,53 +228,6 @@ const ownerSafetyGates = [
   "Deploy: NOT RUN",
 ];
 
-const styleRcDeepReviewLinks = [
-  {
-    label: "UAOS Style RC",
-    status: "UAOS generic style RC created",
-    ownerAction: "Open the Style RC center and review the local package overview.",
-    localPath: "E:\\keyboard-manager-clean\\uaos-ai-factory\\style-package-rc\\batch-v131-v140-style-package-rc\\UAOS_BATCH_V131_V140_STYLE_PACKAGE_RC_OPEN_HERE.html",
-  },
-  {
-    label: "Section MIDI files",
-    status: "Section MIDI files available",
-    ownerAction: "Test V122 section MIDI files locally in a DAW.",
-    localPath: "E:\\keyboard-manager-clean\\uaos-ai-factory\\style-midi-sync-track\\v122_section_midi_exports\\midi",
-  },
-  {
-    label: "Full Style MIDI",
-    status: "Full Style MIDI available",
-    ownerAction: "Open the V125 full style MIDI for local listening review.",
-    localPath: "E:\\keyboard-manager-clean\\uaos-ai-factory\\style-midi-sync-track\\v125_full_style_midi_export\\UAOS_V125_FULL_STYLE_SYNC_EXPORT.mid",
-  },
-  {
-    label: "Style Package ZIP",
-    status: "Style package folder ready for local review",
-    ownerAction: "Review the V135 package folder and manifest before any external handoff.",
-    localPath: "E:\\keyboard-manager-clean\\uaos-ai-factory\\style-package-rc\\v135_rc_package_zip",
-  },
-  {
-    label: "Owner Test Form",
-    status: "Owner result capture ready",
-    ownerAction: "Fill the owner result capture form after testing.",
-    localPath: "E:\\keyboard-manager-clean\\uaos-ai-factory\\owner-test-result-capture\\result-capture\\UAOS_OWNER_TEST_RESULT_FORM.md",
-  },
-  {
-    label: "Next Action Gate",
-    status: "Manual gate ready",
-    ownerAction: "Choose the next safe action manually; nothing is auto-applied.",
-    localPath: "E:\\keyboard-manager-clean\\uaos-ai-factory\\owner-test-result-capture\\next-gate\\UAOS_NEXT_ACTION_GATE_AFTER_OWNER_TEST.md",
-  },
-];
-
-const styleRcDeepStatus = [
-  "UAOS generic style RC created",
-  "KORG Writer blocked",
-  ".STY/.SET blocked",
-  "USB blocked",
-  "PA3X load blocked",
-];
-
 function uid() {
   return "uaos-" + Date.now() + "-" + Math.random().toString(16).slice(2);
 }
@@ -1245,34 +1198,6 @@ export default function App() {
             {ownerSafetyGates.map((gate) => (
               <strong key={gate}>{gate}</strong>
             ))}
-          </div>
-
-          <div className="uaos-style-rc-deep-panel">
-            <div className="uaos-style-rc-deep-head">
-              <div>
-                <span>Style RC Deep Review</span>
-                <h3>Test Style RC Locally</h3>
-                <p>Use this owner-facing map to open the generic Style RC, section MIDI files, full style MIDI, package folder, owner result form, and next-action gate.</p>
-              </div>
-              <strong>Manual local test only</strong>
-            </div>
-
-            <div className="uaos-style-rc-status-row">
-              {styleRcDeepStatus.map((item) => (
-                <b key={item}>{item}</b>
-              ))}
-            </div>
-
-            <div className="uaos-style-rc-link-grid">
-              {styleRcDeepReviewLinks.map((item) => (
-                <article key={item.label}>
-                  <span>{item.status}</span>
-                  <h4>{item.label}</h4>
-                  <p>{item.ownerAction}</p>
-                  <small>{item.localPath}</small>
-                </article>
-              ))}
-            </div>
           </div>
 
           <div className="uaos-owner-program-grid">

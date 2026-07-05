@@ -852,9 +852,124 @@ input, select {
   line-height: 1.45;
 }
 
+.uaos-style-rc-deep-panel {
+  display: grid;
+  gap: 14px;
+  margin: 18px 0;
+  padding: 18px;
+  border-radius: 8px;
+  background: rgba(216, 255, 119, 0.055);
+  border: 1px solid rgba(216, 255, 119, 0.18);
+}
+
+.uaos-style-rc-deep-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  align-items: start;
+}
+
+.uaos-style-rc-deep-head span {
+  color: #d8ff77;
+  font-size: 12px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.uaos-style-rc-deep-head h3 {
+  margin: 4px 0 8px;
+  color: #eef4f8;
+  font-size: 28px;
+  line-height: 1.1;
+}
+
+.uaos-style-rc-deep-head p {
+  max-width: 820px;
+  margin: 0;
+  color: #c4d4e8;
+  line-height: 1.55;
+}
+
+.uaos-style-rc-deep-head strong {
+  flex: 0 0 auto;
+  padding: 8px 10px;
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.24);
+  color: #ecffd0;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.uaos-style-rc-status-row {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.uaos-style-rc-status-row b {
+  min-height: 44px;
+  display: grid;
+  place-items: center;
+  padding: 8px;
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.2);
+  color: #fff2c6;
+  font-size: 12px;
+  text-align: center;
+  overflow-wrap: anywhere;
+}
+
+.uaos-style-rc-link-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.uaos-style-rc-link-grid article {
+  display: grid;
+  gap: 9px;
+  padding: 14px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.055);
+  border: 1px solid rgba(226, 232, 240, 0.1);
+}
+
+.uaos-style-rc-link-grid span {
+  color: #d8ff77;
+  font-size: 11px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.uaos-style-rc-link-grid h4 {
+  margin: 0;
+  color: #eef4f8;
+  font-size: 20px;
+  line-height: 1.15;
+}
+
+.uaos-style-rc-link-grid p {
+  margin: 0;
+  color: #c4d4e8;
+  line-height: 1.45;
+}
+
+.uaos-style-rc-link-grid small {
+  color: #9fb0c8;
+  font-size: 12px;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+
 @media (max-width: 1000px) {
   .uaos-owner-safety-strip,
-  .uaos-owner-program-grid {
+  .uaos-owner-program-grid,
+  .uaos-style-rc-status-row,
+  .uaos-style-rc-link-grid {
     grid-template-columns: 1fr;
+  }
+
+  .uaos-style-rc-deep-head {
+    display: grid;
   }
 }
