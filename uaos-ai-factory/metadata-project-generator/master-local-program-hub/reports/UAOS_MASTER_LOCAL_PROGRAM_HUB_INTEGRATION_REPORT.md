@@ -82,3 +82,19 @@ React app workbench status: E:\keyboard-manager-clean\uaos-ai-factory\real-write
 
 Next decision form: E:\keyboard-manager-clean\uaos-ai-factory\real-writer-workbench-v191-v220\owner-gates\UAOS_NEXT_OWNER_DECISION_FORM.md
 
+## V221-V240 Writer Sandbox Design
+
+Status: PASS
+
+Dashboard: E:\keyboard-manager-clean\uaos-ai-factory\writer-sandbox-design-v221-v240\dashboards\UAOS_WRITER_SANDBOX_DESIGN_DASHBOARD.html
+
+Architecture: E:\keyboard-manager-clean\uaos-ai-factory\writer-sandbox-design-v221-v240\architecture\UAOS_WRITER_SANDBOX_ARCHITECTURE.md
+
+IO contracts: E:\keyboard-manager-clean\uaos-ai-factory\writer-sandbox-design-v221-v240\input-output-contracts\UAOS_WRITER_SANDBOX_OUTPUT_CONTRACT.md
+
+Safety locks: E:\keyboard-manager-clean\uaos-ai-factory\writer-sandbox-design-v221-v240\safety-locks\UAOS_WRITER_SANDBOX_SAFETY_LOCKS.md
+
+Owner gates: E:\keyboard-manager-clean\uaos-ai-factory\writer-sandbox-design-v221-v240\owner-gates\UAOS_OWNER_DECISION_FORM.md
+
+Final seal: E:\keyboard-manager-clean\uaos-ai-factory\writer-sandbox-design-v221-v240\seal\UAOS_WRITER_SANDBOX_DESIGN_FINAL_SEAL.md
+

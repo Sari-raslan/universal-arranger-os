@@ -296,19 +296,6 @@ const realWriterWorkbench = {
   nextGate: "More parser research or explicit writer sandbox gate",
 };
 
-const writerSandboxDesign = {
-  dashboardPath: "E:\\keyboard-manager-clean\\uaos-ai-factory\\writer-sandbox-design-v221-v240\\dashboards\\UAOS_WRITER_SANDBOX_DESIGN_DASHBOARD.html",
-  architecturePath: "E:\\keyboard-manager-clean\\uaos-ai-factory\\writer-sandbox-design-v221-v240\\architecture\\UAOS_WRITER_SANDBOX_ARCHITECTURE.md",
-  ownerGatePath: "E:\\keyboard-manager-clean\\uaos-ai-factory\\writer-sandbox-design-v221-v240\\owner-gates\\UAOS_OWNER_DECISION_FORM.md",
-  status: [
-    { label: "Design ready", value: "YES" },
-    { label: "Implementation", value: "BLOCKED" },
-    { label: "Real .STY/.SET", value: "BLOCKED" },
-    { label: "USB/PA3X", value: "BLOCKED" },
-  ],
-  nextGate: "Owner approval for sandbox implementation only",
-};
-
 function uid() {
   return "uaos-" + Date.now() + "-" + Math.random().toString(16).slice(2);
 }
@@ -1321,44 +1308,6 @@ export default function App() {
                 <h4>{realWriterWorkbench.nextGate}</h4>
                 <p>Choose the next safe owner action manually. Nothing is auto-applied.</p>
                 <small>{realWriterWorkbench.nextGatePath}</small>
-              </article>
-            </div>
-          </div>
-
-          <div className="uaos-style-rc-deep-panel">
-            <div className="uaos-style-rc-deep-head">
-              <div>
-                <span>Writer Sandbox Design</span>
-                <h3>Architecture and Safety Locks</h3>
-                <p>Design-only sandbox plan for a future implementation gate. No writer code, keyboard output, USB action, PA3X action, or deployment is active.</p>
-              </div>
-              <strong>{writerSandboxDesign.nextGate}</strong>
-            </div>
-
-            <div className="uaos-style-rc-status-row">
-              {writerSandboxDesign.status.map((item) => (
-                <b key={item.label}>{item.label}: {item.value}</b>
-              ))}
-            </div>
-
-            <div className="uaos-style-rc-link-grid">
-              <article>
-                <span>Design dashboard</span>
-                <h4>Open sandbox status</h4>
-                <p>Review the design-only workbench plan, safety locks, and owner gates.</p>
-                <small>{writerSandboxDesign.dashboardPath}</small>
-              </article>
-              <article>
-                <span>Architecture</span>
-                <h4>Future component map</h4>
-                <p>Read the planned sandbox components without enabling implementation.</p>
-                <small>{writerSandboxDesign.architecturePath}</small>
-              </article>
-              <article>
-                <span>Owner gate</span>
-                <h4>Manual decision form</h4>
-                <p>Choose the next safe action manually; no gate is auto-applied.</p>
-                <small>{writerSandboxDesign.ownerGatePath}</small>
               </article>
             </div>
           </div>
