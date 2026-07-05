@@ -324,21 +324,6 @@ const writerSandboxPlanning = {
   nextGate: "Dummy-output sandbox implementation approval",
 };
 
-const dummyWriterSandbox = {
-  dashboardPath: "E:\\keyboard-manager-clean\\uaos-ai-factory\\writer-sandbox-dummy-implementation-v261-v280\\dashboards\\UAOS_DUMMY_WRITER_SANDBOX_DASHBOARD.html",
-  dummyOutputPath: "E:\\keyboard-manager-clean\\uaos-ai-factory\\writer-sandbox-dummy-implementation-v261-v280\\dummy-output\\UAOS_DUMMY_WRITER_OUTPUT.uaoswriter-sandbox.json",
-  blockerReportPath: "E:\\keyboard-manager-clean\\uaos-ai-factory\\writer-sandbox-dummy-implementation-v261-v280\\runtime-safety\\UAOS_RUNTIME_EXTENSION_BLOCKER_REPORT.md",
-  ownerGatePath: "E:\\keyboard-manager-clean\\uaos-ai-factory\\writer-sandbox-dummy-implementation-v261-v280\\owner-gates\\UAOS_NEXT_OWNER_DECISION_FORM.md",
-  status: [
-    { label: "Dummy sandbox", value: "READY" },
-    { label: "Real writer", value: "BLOCKED" },
-    { label: ".STY/.SET", value: "BLOCKED" },
-    { label: "USB/PA3X", value: "BLOCKED" },
-    { label: "Deploy", value: "NOT RUN" },
-  ],
-  nextGate: "External review gate before any real writer work",
-};
-
 function uid() {
   return "uaos-" + Date.now() + "-" + Math.random().toString(16).slice(2);
 }
@@ -1433,50 +1418,6 @@ export default function App() {
                 <h4>Manual next decision</h4>
                 <p>Choose whether to continue planning, approve a later dummy sandbox, or keep all blocked zones closed.</p>
                 <small>{writerSandboxPlanning.ownerGatePath}</small>
-              </article>
-            </div>
-          </div>
-
-          <div className="uaos-style-rc-deep-panel">
-            <div className="uaos-style-rc-deep-head">
-              <div>
-                <span>Dummy Writer Sandbox</span>
-                <h3>UAOS-Only Dummy Output Ready</h3>
-                <p>Safe local sandbox output is available for review with the non-keyboard marker. Real writer, keyboard output, USB, PA3X, deploy, and payment actions remain blocked.</p>
-              </div>
-              <strong>{dummyWriterSandbox.nextGate}</strong>
-            </div>
-
-            <div className="uaos-style-rc-status-row">
-              {dummyWriterSandbox.status.map((item) => (
-                <b key={item.label}>{item.label}: {item.value}</b>
-              ))}
-            </div>
-
-            <div className="uaos-style-rc-link-grid">
-              <article>
-                <span>Sandbox dashboard</span>
-                <h4>Open dummy status</h4>
-                <p>Review the V261-V280 safe sandbox run, validation status, and owner-facing summary.</p>
-                <small>{dummyWriterSandbox.dashboardPath}</small>
-              </article>
-              <article>
-                <span>Dummy output</span>
-                <h4>UAOS-only file</h4>
-                <p>Inspect the marker-bearing dummy output. It is not keyboard output and must not be loaded on hardware.</p>
-                <small>{dummyWriterSandbox.dummyOutputPath}</small>
-              </article>
-              <article>
-                <span>Extension blocker</span>
-                <h4>Forbidden attempts blocked</h4>
-                <p>Review the runtime blocker report for keyboard-file extensions and unsafe destinations.</p>
-                <small>{dummyWriterSandbox.blockerReportPath}</small>
-              </article>
-              <article>
-                <span>Owner gate</span>
-                <h4>Manual next decision</h4>
-                <p>Choose review, further dummy work, or keep all real-writer paths closed. No next action is automatic.</p>
-                <small>{dummyWriterSandbox.ownerGatePath}</small>
               </article>
             </div>
           </div>

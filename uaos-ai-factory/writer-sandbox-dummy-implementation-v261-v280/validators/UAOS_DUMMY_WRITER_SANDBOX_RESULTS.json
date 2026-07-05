@@ -1,0 +1,75 @@
+{
+  "checks": {
+    "source_files_exist": {
+      "pass": true,
+      "detail": "source"
+    },
+    "runner_exists": {
+      "pass": true,
+      "detail": "runner"
+    },
+    "dummy_output_exists": {
+      "pass": true,
+      "detail": "outputs"
+    },
+    "dummy_output_marker_exists": {
+      "pass": true,
+      "detail": "marker"
+    },
+    "allowed_extensions_only": {
+      "pass": true,
+      "detail": "UAOS_DUMMY_WRITER_OUTPUT.uaos-dummybin, UAOS_DUMMY_WRITER_OUTPUT.uaoswriter-sandbox.json, UAOS_DUMMY_WRITER_OUTPUT_MANIFEST.json, UAOS_DUMMY_WRITER_REPORT.uaoswriter-report.md"
+    },
+    "forbidden_extension_attempts_blocked": {
+      "pass": true,
+      "detail": "blocked"
+    },
+    "no_sty_set_generated": {
+      "pass": true,
+      "detail": ""
+    },
+    "no_prs_prf_kst_generated": {
+      "pass": true,
+      "detail": ""
+    },
+    "no_real_writer_implementation": {
+      "pass": true,
+      "detail": "no real writer code"
+    },
+    "no_korg_binary_output": {
+      "pass": true,
+      "detail": ""
+    },
+    "no_usb": {
+      "pass": true,
+      "detail": "USB blocked"
+    },
+    "no_pa3x_load": {
+      "pass": true,
+      "detail": "PA3X blocked"
+    },
+    "no_deploy": {
+      "pass": true,
+      "detail": "no deploy"
+    },
+    "no_payment_activation": {
+      "pass": true,
+      "detail": "no payment"
+    },
+    "no_device_compatibility_claim": {
+      "pass": true,
+      "detail": "claim absent"
+    },
+    "no_pa3x_readiness_claim": {
+      "pass": true,
+      "detail": "claim absent"
+    },
+    "react_build_pass_if_touched": {
+      "pass": true,
+      "detail": "True"
+    }
+  },
+  "errors": [],
+  "status": "PASS",
+  "pass": true
+}
