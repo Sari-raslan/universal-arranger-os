@@ -1,0 +1,63 @@
+{
+  "checks": {
+    "launcher_exists": {
+      "pass": true,
+      "detail": "E:\\keyboard-manager-clean\\uaos-ai-factory\\night-super-agent-v301-v400\\00_launcher\\RUN_UAOS_NIGHT_SUPER_AGENT_V301_V400.cmd"
+    },
+    "agents_exist": {
+      "pass": true,
+      "detail": 12
+    },
+    "agent_outputs_exist": {
+      "pass": true,
+      "detail": 12
+    },
+    "v301_v400_draft_plans_exist": {
+      "pass": true,
+      "detail": "100 draft plans"
+    },
+    "batch_blueprints_exist": {
+      "pass": true,
+      "detail": 5
+    },
+    "integrator_queue_exists": {
+      "pass": true,
+      "detail": "E:\\keyboard-manager-clean\\uaos-ai-factory\\night-super-agent-v301-v400\\05_integrator_queue\\UAOS_V301_V400_INTEGRATOR_QUEUE.json"
+    },
+    "future_versions_draft_not_run": {
+      "pass": true,
+      "detail": "all draft locked"
+    },
+    "no_future_pass_claims": {
+      "pass": true,
+      "detail": "no future pass claims"
+    },
+    "no_real_writer_implementation": {
+      "pass": true,
+      "detail": "no unsafe positive actions"
+    },
+    "no_generated_korg_output": {
+      "pass": true,
+      "detail": "none"
+    },
+    "no_sty_set_generated": {
+      "pass": true,
+      "detail": "none"
+    },
+    "no_prs_prf_kst_generated": {
+      "pass": true,
+      "detail": "none"
+    },
+    "no_usb_pa3x_deploy_payment_positive_action": {
+      "pass": true,
+      "detail": "no unsafe positive actions"
+    },
+    "no_exact_false_claims": {
+      "pass": true,
+      "detail": "absent"
+    }
+  },
+  "errors": [],
+  "status": "PASS",
+  "pass": true
+}

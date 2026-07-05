@@ -139,3 +139,10 @@ Final seal: E:\keyboard-manager-clean\uaos-ai-factory\writer-sandbox-dummy-imple
 - Owner decision gate: E:\keyboard-manager-clean\uaos-ai-factory\dummy-writer-external-review-v281-v300\owner-gates\UAOS_V300_OWNER_DECISION_GATE.md
 - Final seal: E:\keyboard-manager-clean\uaos-ai-factory\dummy-writer-external-review-v281-v300\seal\UAOS_DUMMY_WRITER_EXTERNAL_REVIEW_FINAL_SEAL.md
 
+## V301-V400 Night Super Agent Pipeline
+
+- Night super agent dashboard: E:\keyboard-manager-clean\uaos-ai-factory\night-super-agent-v301-v400\13_dashboards\UAOS_NIGHT_SUPER_AGENT_V301_V400_DASHBOARD.html
+- V301-V400 pipeline dashboard: E:\keyboard-manager-clean\uaos-ai-factory\night-super-agent-v301-v400\13_dashboards\UAOS_V301_V400_PIPELINE_DASHBOARD.html
+- Integrator queue: E:\keyboard-manager-clean\uaos-ai-factory\night-super-agent-v301-v400\05_integrator_queue\UAOS_V301_V400_INTEGRATOR_QUEUE.md
+- Next executable batch: V301-V320 Dummy Writer Hardening
+
