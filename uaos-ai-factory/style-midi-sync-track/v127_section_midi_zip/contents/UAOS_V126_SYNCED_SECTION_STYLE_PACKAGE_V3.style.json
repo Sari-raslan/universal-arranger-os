@@ -1,0 +1,246 @@
+{
+  "package_id": "UAOS_V126_SYNCED_SECTION_STYLE_PACKAGE_V3",
+  "sections": {
+    "intro_1": {
+      "bars": 4,
+      "energy_level": "low",
+      "track_roles": [
+        "drums",
+        "percussion",
+        "pad",
+        "melody_guide"
+      ],
+      "allowed_transition_to": [
+        "variation_a",
+        "intro_2"
+      ],
+      "midi_ref_placeholder": "v81_section_midi",
+      "style_usage_note": "short opening cue"
+    },
+    "intro_2": {
+      "bars": 4,
+      "energy_level": "medium",
+      "track_roles": [
+        "drums",
+        "percussion",
+        "bass",
+        "chord_1",
+        "pad",
+        "melody_guide"
+      ],
+      "allowed_transition_to": [
+        "variation_a",
+        "variation_b"
+      ],
+      "midi_ref_placeholder": "priority_section",
+      "style_usage_note": "fuller opening cue"
+    },
+    "variation_a": {
+      "bars": 8,
+      "energy_level": "low",
+      "track_roles": [
+        "drums",
+        "bass",
+        "chord_1",
+        "pad"
+      ],
+      "allowed_transition_to": [
+        "fill_a",
+        "variation_b",
+        "ending_1"
+      ],
+      "midi_ref_placeholder": "v81_section_midi",
+      "style_usage_note": "simple low-density groove"
+    },
+    "variation_b": {
+      "bars": 8,
+      "energy_level": "medium",
+      "track_roles": [
+        "drums",
+        "percussion",
+        "bass",
+        "chord_1",
+        "chord_2",
+        "pad"
+      ],
+      "allowed_transition_to": [
+        "fill_b",
+        "variation_c",
+        "break",
+        "ending_1"
+      ],
+      "midi_ref_placeholder": "v82_multitrack_midi",
+      "style_usage_note": "medium density groove"
+    },
+    "variation_c": {
+      "bars": 8,
+      "energy_level": "strong",
+      "track_roles": [
+        "drums",
+        "percussion",
+        "bass",
+        "chord_1",
+        "chord_2",
+        "pad",
+        "phrase"
+      ],
+      "allowed_transition_to": [
+        "fill_c",
+        "variation_d",
+        "break",
+        "ending_2"
+      ],
+      "midi_ref_placeholder": "priority_arrangement",
+      "style_usage_note": "stronger arranger section"
+    },
+    "variation_d": {
+      "bars": 8,
+      "energy_level": "full",
+      "track_roles": [
+        "drums",
+        "percussion",
+        "bass",
+        "chord_1",
+        "chord_2",
+        "pad",
+        "phrase",
+        "melody_guide"
+      ],
+      "allowed_transition_to": [
+        "fill_d",
+        "ending_2",
+        "break"
+      ],
+      "midi_ref_placeholder": "priority_multitrack",
+      "style_usage_note": "highest-density full section"
+    },
+    "fill_a": {
+      "bars": 1,
+      "energy_level": "transition_low",
+      "track_roles": [
+        "drums",
+        "percussion"
+      ],
+      "allowed_transition_to": [
+        "variation_b"
+      ],
+      "midi_ref_placeholder": "v81_section_midi",
+      "style_usage_note": "fill leads into next variation"
+    },
+    "fill_b": {
+      "bars": 1,
+      "energy_level": "transition_medium",
+      "track_roles": [
+        "drums",
+        "percussion",
+        "bass"
+      ],
+      "allowed_transition_to": [
+        "variation_c"
+      ],
+      "midi_ref_placeholder": "priority_section",
+      "style_usage_note": "fill leads into next variation"
+    },
+    "fill_c": {
+      "bars": 1,
+      "energy_level": "transition_strong",
+      "track_roles": [
+        "drums",
+        "percussion",
+        "bass",
+        "phrase"
+      ],
+      "allowed_transition_to": [
+        "variation_d"
+      ],
+      "midi_ref_placeholder": "priority_section",
+      "style_usage_note": "fill leads into next variation"
+    },
+    "fill_d": {
+      "bars": 1,
+      "energy_level": "transition_full",
+      "track_roles": [
+        "drums",
+        "percussion",
+        "phrase"
+      ],
+      "allowed_transition_to": [
+        "variation_a",
+        "ending_2"
+      ],
+      "midi_ref_placeholder": "priority_multitrack",
+      "style_usage_note": "fill resolves or cycles"
+    },
+    "break": {
+      "bars": 1,
+      "energy_level": "drop",
+      "track_roles": [
+        "percussion",
+        "phrase"
+      ],
+      "allowed_transition_to": [
+        "variation_a",
+        "variation_c",
+        "variation_d"
+      ],
+      "midi_ref_placeholder": "priority_section",
+      "style_usage_note": "break stops or reduces drums/chords"
+    },
+    "ending_1": {
+      "bars": 4,
+      "energy_level": "resolve_simple",
+      "track_roles": [
+        "drums",
+        "bass",
+        "chord_1",
+        "pad"
+      ],
+      "allowed_transition_to": [],
+      "midi_ref_placeholder": "v81_section_midi",
+      "style_usage_note": "short ending resolution"
+    },
+    "ending_2": {
+      "bars": 4,
+      "energy_level": "resolve_full",
+      "track_roles": [
+        "drums",
+        "percussion",
+        "bass",
+        "chord_1",
+        "chord_2",
+        "pad",
+        "melody_guide"
+      ],
+      "allowed_transition_to": [],
+      "midi_ref_placeholder": "priority_arrangement",
+      "style_usage_note": "full ending resolution"
+    }
+  },
+  "section_midi_refs": {
+    "intro_1": "E:\\keyboard-manager-clean\\uaos-ai-factory\\style-midi-sync-track\\v122_section_midi_exports\\midi\\UAOS_V122_INTRO_1.mid",
+    "intro_2": "E:\\keyboard-manager-clean\\uaos-ai-factory\\style-midi-sync-track\\v122_section_midi_exports\\midi\\UAOS_V122_INTRO_2.mid",
+    "variation_a": "E:\\keyboard-manager-clean\\uaos-ai-factory\\style-midi-sync-track\\v122_section_midi_exports\\midi\\UAOS_V122_VARIATION_A.mid",
+    "variation_b": "E:\\keyboard-manager-clean\\uaos-ai-factory\\style-midi-sync-track\\v122_section_midi_exports\\midi\\UAOS_V122_VARIATION_B.mid",
+    "variation_c": "E:\\keyboard-manager-clean\\uaos-ai-factory\\style-midi-sync-track\\v122_section_midi_exports\\midi\\UAOS_V122_VARIATION_C.mid",
+    "variation_d": "E:\\keyboard-manager-clean\\uaos-ai-factory\\style-midi-sync-track\\v122_section_midi_exports\\midi\\UAOS_V122_VARIATION_D.mid",
+    "fill_a": "E:\\keyboard-manager-clean\\uaos-ai-factory\\style-midi-sync-track\\v122_section_midi_exports\\midi\\UAOS_V122_FILL_A.mid",
+    "fill_b": "E:\\keyboard-manager-clean\\uaos-ai-factory\\style-midi-sync-track\\v122_section_midi_exports\\midi\\UAOS_V122_FILL_B.mid",
+    "fill_c": "E:\\keyboard-manager-clean\\uaos-ai-factory\\style-midi-sync-track\\v122_section_midi_exports\\midi\\UAOS_V122_FILL_C.mid",
+    "fill_d": "E:\\keyboard-manager-clean\\uaos-ai-factory\\style-midi-sync-track\\v122_section_midi_exports\\midi\\UAOS_V122_FILL_D.mid",
+    "break": "E:\\keyboard-manager-clean\\uaos-ai-factory\\style-midi-sync-track\\v122_section_midi_exports\\midi\\UAOS_V122_BREAK.mid",
+    "ending_1": "E:\\keyboard-manager-clean\\uaos-ai-factory\\style-midi-sync-track\\v122_section_midi_exports\\midi\\UAOS_V122_ENDING_1.mid",
+    "ending_2": "E:\\keyboard-manager-clean\\uaos-ai-factory\\style-midi-sync-track\\v122_section_midi_exports\\midi\\UAOS_V122_ENDING_2.mid"
+  },
+  "full_style_midi_ref": "E:\\keyboard-manager-clean\\uaos-ai-factory\\style-midi-sync-track\\v125_full_style_midi_export\\UAOS_V125_FULL_STYLE_SYNC_EXPORT.mid",
+  "export_status": "GENERIC_MIDI_ONLY",
+  "korg_output": false,
+  "pa3x_ready": false,
+  "korg_writer_implemented": false,
+  "usb_write": false,
+  "pa3x_load": false,
+  "app_jsx_touched": false,
+  "react_integration": false,
+  "deploy_payment": false,
+  "compatibility_claim": false,
+  "pa3x_ready_claim": false
+}
