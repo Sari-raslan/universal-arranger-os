@@ -1,0 +1,68 @@
+{
+  "version": "v161-v170-smart-narrowing",
+  "metadata_only": true,
+  "extension_priority": {
+    ".STY": 100,
+    ".SET": 75,
+    ".PCG": 45,
+    ".PRS": 35,
+    ".PRF": 35,
+    ".KST": 30,
+    ".PAD": 25,
+    ".SBD": 25,
+    ".KMP": 20,
+    ".KSF": 20
+  },
+  "context_bonus_terms": [
+    "owned",
+    "owner",
+    "test",
+    "style",
+    "pa3x",
+    "korg",
+    "fixture",
+    "backup",
+    "true_source",
+    "true_full",
+    "recovery",
+    "newname"
+  ],
+  "trusted_root_bonus": [
+    "E:\\keyboard-manager-clean",
+    "E:\\UAOS_FULL_BACKUP_NEW_20260626_215910",
+    "E:\\UAOS_TRUE_SOURCE_PACKAGE",
+    "E:\\UAOS_TRUE_FULL_PACKAGE"
+  ],
+  "low_value_path_terms": [
+    "node_modules",
+    "dist",
+    "build",
+    ".git",
+    "reports",
+    "dashboards",
+    "cache",
+    "temp",
+    "__pycache__",
+    "generated",
+    "dummy",
+    "placeholder",
+    "usb_review_only",
+    "review_only",
+    "minimal_candidate",
+    "local_candidate",
+    "parser",
+    "cycle-",
+    "run-0",
+    "big-run",
+    "vercel-linked-monitor-repo-sync",
+    "/repo/samples/",
+    "/samples/"
+  ],
+  "size_policy": {
+    "zero": "exclude_low_confidence",
+    "tiny_under_1024": "low_confidence",
+    "reasonable_1kb_to_256mb": "preferred",
+    "huge_over_256mb": "not_primary_fixture"
+  },
+  "scan_policy": "no scan in narrowing run; owner approval required before any later read-only scan"
+}
