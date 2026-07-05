@@ -16,6 +16,7 @@ if errorlevel 1 (
   exit /b 1
 )
 echo Owner test setup finished.
-echo Local URL: http://127.0.0.1:4173/universal-arranger-os/
+echo Working URL is recorded in:
+echo %UAOS_RUN%\01_setup\UAOS_OWNER_TEST_SETUP_STATUS.json
 echo Dashboard: %UAOS_RUN%\02_owner_flow\UAOS_OWNER_TEST_FLOW_DASHBOARD.html
 endlocal

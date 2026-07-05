@@ -1,0 +1,51 @@
+{
+  "candidate_urls": [
+    "http://127.0.0.1:4173/",
+    "http://127.0.0.1:4173/universal-arranger-os/",
+    "http://127.0.0.1:5173/",
+    "http://127.0.0.1:5173/universal-arranger-os/",
+    "http://127.0.0.1:5180/",
+    "http://127.0.0.1:5180/universal-arranger-os/"
+  ],
+  "probe_results": [
+    {
+      "url": "http://127.0.0.1:4173/",
+      "reachable": false,
+      "status": "ERR",
+      "error": "\u062a\u0639\u0630\u0631 \u0627\u0644\u0627\u062a\u0635\u0627\u0644 \u0628\u0627\u0644\u0645\u0644\u0642\u0645 \u0627\u0644\u0628\u0639\u064a\u062f"
+    },
+    {
+      "url": "http://127.0.0.1:4173/universal-arranger-os/",
+      "reachable": false,
+      "status": "ERR",
+      "error": "\u062a\u0639\u0630\u0631 \u0627\u0644\u0627\u062a\u0635\u0627\u0644 \u0628\u0627\u0644\u0645\u0644\u0642\u0645 \u0627\u0644\u0628\u0639\u064a\u062f"
+    },
+    {
+      "url": "http://127.0.0.1:5173/",
+      "reachable": false,
+      "status": "ERR",
+      "error": "\u062a\u0639\u0630\u0631 \u0627\u0644\u0627\u062a\u0635\u0627\u0644 \u0628\u0627\u0644\u0645\u0644\u0642\u0645 \u0627\u0644\u0628\u0639\u064a\u062f"
+    },
+    {
+      "url": "http://127.0.0.1:5173/universal-arranger-os/",
+      "reachable": false,
+      "status": "ERR",
+      "error": "\u062a\u0639\u0630\u0631 \u0627\u0644\u0627\u062a\u0635\u0627\u0644 \u0628\u0627\u0644\u0645\u0644\u0642\u0645 \u0627\u0644\u0628\u0639\u064a\u062f"
+    },
+    {
+      "url": "http://127.0.0.1:5180/",
+      "reachable": true,
+      "status": 200,
+      "title": "UAOS \u00e2\u0080\u0094 Universal Arranger OS | AE Platform"
+    },
+    {
+      "url": "http://127.0.0.1:5180/universal-arranger-os/",
+      "reachable": true,
+      "status": 200,
+      "title": "UAOS \u00e2\u0080\u0094 Universal Arranger OS | AE Platform"
+    }
+  ],
+  "first_working_url": "http://127.0.0.1:5180/",
+  "recommended_app_url": "http://127.0.0.1:5180/universal-arranger-os/",
+  "broken_old_url_no_longer_only_option": true
+}

@@ -1,0 +1,28 @@
+{
+  "created_at": "2026-07-05T18:10:36",
+  "broken_url_reported": "http://127.0.0.1:4173/universal-arranger-os/",
+  "broken_url_confirmed": true,
+  "package_script_check": {
+    "scripts": {
+      "build": "vite build --config vite.config.code-splitting.mjs",
+      "preview": "vite preview --host 127.0.0.1 --port 5180",
+      "dev": "vite --host 127.0.0.1 --port 5173"
+    },
+    "has_build": true,
+    "has_preview": true,
+    "has_dev": true,
+    "expected_preview_port": 5180
+  },
+  "vite_base_path_check": {
+    "vite_config_path": "E:\\keyboard-manager-clean\\uaos-live-clean\\vite.config.js",
+    "base_path": "/universal-arranger-os/",
+    "base_path_required": true,
+    "appjsx_touched": false
+  },
+  "build_pass": true,
+  "dist_exists": true,
+  "server_output": "Vite preview printed http://127.0.0.1:5180/universal-arranger-os/",
+  "root_route_works_on_5180": true,
+  "base_route_works_on_5180": true,
+  "repair_needed": "Launcher was hardcoded to 4173 while preview script uses 5180."
+}

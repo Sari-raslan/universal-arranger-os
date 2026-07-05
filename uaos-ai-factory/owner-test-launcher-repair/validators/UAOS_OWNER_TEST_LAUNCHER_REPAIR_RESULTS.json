@@ -1,0 +1,59 @@
+{
+  "checks": {
+    "build_pass": {
+      "pass": true,
+      "detail": "npm run build"
+    },
+    "url_probe_completed": {
+      "pass": true,
+      "detail": "probe results recorded"
+    },
+    "working_url_or_diagnostic_recorded": {
+      "pass": true,
+      "detail": "http://127.0.0.1:5180/"
+    },
+    "launcher_repaired": {
+      "pass": true,
+      "detail": "launcher"
+    },
+    "setup_helper_repaired": {
+      "pass": true,
+      "detail": "helper"
+    },
+    "old_url_not_only_option": {
+      "pass": true,
+      "detail": "http://127.0.0.1:5180/"
+    },
+    "appjsx_unchanged": {
+      "pass": true,
+      "detail": ""
+    },
+    "no_deploy": {
+      "pass": true,
+      "detail": "no deploy commands"
+    },
+    "no_push": {
+      "pass": true,
+      "detail": "no push commands"
+    },
+    "korg_writer_blocked": {
+      "pass": true,
+      "detail": "blocked state recorded"
+    },
+    "no_blocked_korg_files_in_run_folder": {
+      "pass": true,
+      "detail": ""
+    },
+    "no_usb_pa3x_payment": {
+      "pass": true,
+      "detail": "blocked actions absent"
+    },
+    "no_false_claim_strings": {
+      "pass": true,
+      "detail": "claim strings absent"
+    }
+  },
+  "errors": [],
+  "pass": true,
+  "validator": "uaos_owner_test_launcher_repair_validator.py"
+}

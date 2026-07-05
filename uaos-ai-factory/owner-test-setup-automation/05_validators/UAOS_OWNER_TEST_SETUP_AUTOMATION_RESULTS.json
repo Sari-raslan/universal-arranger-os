@@ -1,63 +1,66 @@
-{
-  "checks": {
-    "launcher_exists": {
-      "pass": true,
-      "detail": "launcher"
-    },
-    "setup_helper_exists": {
-      "pass": true,
-      "detail": "helper"
-    },
-    "owner_flow_dashboard_exists": {
-      "pass": true,
-      "detail": "dashboard"
-    },
-    "link_index_exists": {
-      "pass": true,
-      "detail": "link index"
-    },
-    "test_session_templates_exist": {
-      "pass": true,
-      "detail": "templates"
-    },
-    "build_pass": {
-      "pass": true,
-      "detail": "npm run build"
-    },
-    "local_url_or_fallback_recorded": {
-      "pass": true,
-      "detail": "http://127.0.0.1:4173/universal-arranger-os/"
-    },
-    "appjsx_unchanged": {
-      "pass": true,
-      "detail": ""
-    },
-    "no_deploy": {
-      "pass": true,
-      "detail": "no deploy commands"
-    },
-    "no_push": {
-      "pass": true,
-      "detail": "no push commands"
-    },
-    "korg_writer_blocked": {
-      "pass": true,
-      "detail": "blocked state recorded"
-    },
-    "no_blocked_korg_files_in_run_folder": {
-      "pass": true,
-      "detail": ""
-    },
-    "no_usb_pa3x_payment": {
-      "pass": true,
-      "detail": "blocked actions absent"
-    },
-    "no_false_claim_strings": {
-      "pass": true,
-      "detail": "claim strings absent"
-    }
-  },
-  "errors": [],
-  "pass": true,
-  "validator": "uaos_owner_test_setup_automation_validator.py"
+﻿{
+    "checks":  {
+                   "launcher_exists":  {
+                                           "pass":  true,
+                                           "detail":  "launcher"
+                                       },
+                   "setup_helper_exists":  {
+                                               "pass":  true,
+                                               "detail":  "helper"
+                                           },
+                   "owner_flow_dashboard_exists":  {
+                                                       "pass":  true,
+                                                       "detail":  "dashboard"
+                                                   },
+                   "link_index_exists":  {
+                                             "pass":  true,
+                                             "detail":  "link index"
+                                         },
+                   "test_session_templates_exist":  {
+                                                        "pass":  true,
+                                                        "detail":  "templates"
+                                                    },
+                   "build_pass":  {
+                                      "pass":  true,
+                                      "detail":  "npm run build"
+                                  },
+                   "local_url_or_fallback_recorded":  {
+                                                          "pass":  true,
+                                                          "detail":  "http://127.0.0.1:4173/universal-arranger-os/"
+                                                      },
+                   "appjsx_unchanged":  {
+                                            "pass":  true,
+                                            "detail":  ""
+                                        },
+                   "no_deploy":  {
+                                     "pass":  true,
+                                     "detail":  "no deploy commands"
+                                 },
+                   "no_push":  {
+                                   "pass":  true,
+                                   "detail":  "no push commands"
+                               },
+                   "korg_writer_blocked":  {
+                                               "pass":  true,
+                                               "detail":  "blocked state recorded"
+                                           },
+                   "no_blocked_korg_files_in_run_folder":  {
+                                                               "pass":  true,
+                                                               "detail":  ""
+                                                           },
+                   "no_usb_pa3x_payment":  {
+                                               "pass":  true,
+                                               "detail":  "blocked actions absent"
+                                           },
+                   "no_false_claim_strings":  {
+                                                  "pass":  true,
+                                                  "detail":  "claim strings absent"
+                                              }
+               },
+    "errors":  [
+
+               ],
+    "pass":  true,
+    "validator":  "uaos_owner_test_setup_automation_validator.py",
+    "commit_hash":  "daa5459ba0ab6ca7e72d2dd437e4afd0cc4885be"
 }
