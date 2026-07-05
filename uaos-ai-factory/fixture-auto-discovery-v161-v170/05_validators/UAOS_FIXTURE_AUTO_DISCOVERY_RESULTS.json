@@ -1,0 +1,73 @@
+{
+  "checks": {
+    "discovery_script_exists": {
+      "pass": true,
+      "detail": "script"
+    },
+    "discovery_results_exist": {
+      "pass": true,
+      "detail": "discovery json"
+    },
+    "candidate_selection_exists": {
+      "pass": true,
+      "detail": "selection json"
+    },
+    "metadata_only_discovery": {
+      "pass": true,
+      "detail": "metadata_only"
+    },
+    "no_fixture_copied": {
+      "pass": true,
+      "detail": "no fixture files in run folder"
+    },
+    "no_writer_implementation": {
+      "pass": true,
+      "detail": "no writer code"
+    },
+    "no_generated_keyboard_outputs": {
+      "pass": true,
+      "detail": ""
+    },
+    "no_usb": {
+      "pass": true,
+      "detail": "USB blocked"
+    },
+    "no_pa3x_load": {
+      "pass": true,
+      "detail": "PA3X blocked"
+    },
+    "no_deploy": {
+      "pass": true,
+      "detail": "no deploy commands"
+    },
+    "no_appjsx_change": {
+      "pass": true,
+      "detail": ""
+    },
+    "no_device_compatibility_claim": {
+      "pass": true,
+      "detail": "claim absent"
+    },
+    "no_pa3x_readiness_claim": {
+      "pass": true,
+      "detail": "claim absent"
+    },
+    "multiple_candidate_status": {
+      "pass": true,
+      "detail": "OWNER_SELECTION_REQUIRED"
+    },
+    "multiple_candidate_no_scan_pass_claim": {
+      "pass": true,
+      "detail": "no scan pass claim"
+    },
+    "multiple_candidate_top20": {
+      "pass": true,
+      "detail": "top candidates listed"
+    }
+  },
+  "errors": [],
+  "status": "PASS",
+  "pass": true,
+  "candidate_status": "OWNER_SELECTION_REQUIRED",
+  "candidates_found_count": 2409
+}
