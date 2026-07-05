@@ -31,3 +31,14 @@ Generate MIDI test arrangement using priority packs metadata.
 - KORG output remains blocked.
 - USB write remains blocked.
 - PA3X load remains blocked.
+
+
+## Priority Library MIDI Test Arrangement
+
+- Priority library MIDI dashboard: `..\..\priority-library-midi-test-arrangement\dashboards\UAOS_PRIORITY_LIBRARY_MIDI_TEST_DASHBOARD.html`
+- Main MIDI arrangement: `..\..\priority-library-midi-test-arrangement\midi\UAOS_PRIORITY_LIBRARY_TEST_ARRANGEMENT.mid`
+- Section MIDI test: `..\..\priority-library-midi-test-arrangement\midi\UAOS_PRIORITY_LIBRARY_SECTION_TEST.mid`
+- Multitrack MIDI test: `..\..\priority-library-midi-test-arrangement\midi\UAOS_PRIORITY_LIBRARY_MULTITRACK_TEST.mid`
+- Test ZIP: `..\..\priority-library-midi-test-arrangement\exports\UAOS_PRIORITY_LIBRARY_MIDI_TEST_PACKAGE.zip`
+- Cubase test steps: `..\..\priority-library-midi-test-arrangement\package\UAOS_PRIORITY_LIBRARY_CUBASE_TEST_STEPS.md`
+- Next action: build final local owner program including priority library MIDI test.

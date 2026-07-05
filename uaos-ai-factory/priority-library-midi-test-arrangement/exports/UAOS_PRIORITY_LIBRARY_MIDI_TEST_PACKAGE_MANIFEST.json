@@ -1,0 +1,42 @@
+{
+  "package_id": "UAOS_PRIORITY_LIBRARY_MIDI_TEST_PACKAGE",
+  "allowed_contents": [
+    ".mid",
+    ".json",
+    ".md"
+  ],
+  "forbidden_contents": [
+    ".SET",
+    ".STY",
+    ".PRF",
+    ".PRS",
+    ".KST",
+    ".WAV",
+    ".MP3",
+    "proprietary samples",
+    "Kontakt/NI files",
+    "USB scripts",
+    "deploy scripts",
+    "KORG writer files"
+  ],
+  "files": [
+    "UAOS_PRIORITY_LIBRARY_MULTITRACK_TEST.mid",
+    "UAOS_PRIORITY_LIBRARY_SECTION_TEST.mid",
+    "UAOS_PRIORITY_LIBRARY_TEST_ARRANGEMENT.mid",
+    "UAOS_PRIORITY_LIBRARY_MIDI_GENERATION_TRACE.json",
+    "UAOS_PRIORITY_LIBRARY_MIDI_PROJECT.json",
+    "UAOS_PRIORITY_LIBRARY_MIDI_ROLE_MAP.json",
+    "UAOS_PRIORITY_LIBRARY_PRESET_USAGE_MAP.json",
+    "UAOS_PRIORITY_LIBRARY_SECTION_MAP.json",
+    "UAOS_PRIORITY_LIBRARY_MIDI_TEST_README.md",
+    "UAOS_PRIORITY_LIBRARY_CUBASE_TEST_STEPS.md",
+    "UAOS_PRIORITY_LIBRARY_FEEDBACK_FORM.md",
+    "UAOS_PRIORITY_LIBRARY_MIDI_TEST_PACKAGE_MANIFEST.json"
+  ],
+  "sample_dependency": false,
+  "proprietary_source_used": false,
+  "korg_output": false,
+  "pa3x_ready": false,
+  "compatibility_claim": false,
+  "export_allowed": false
+}
