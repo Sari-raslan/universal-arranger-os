@@ -1,0 +1,59 @@
+{
+  "validator": "uaos_owner_test_result_capture_validator",
+  "generatedAt": "2026-07-05T07:46:43.189784+00:00",
+  "result": "PASS",
+  "checks": [
+    {
+      "name": "result_capture_files_exist",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "next_action_gate_exists",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "required_result_fields_exist",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "auto_apply_disabled",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "gate_has_eight_options",
+      "passed": true,
+      "detail": "8"
+    },
+    {
+      "name": "gate_auto_apply_disabled",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "no_false_claims",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "no_deploy_push_writer_usb_pa3x_actions",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "no_blocked_korg_files_generated",
+      "passed": true,
+      "detail": ""
+    }
+  ],
+  "autoApplyNextAction": "NO",
+  "deploy": "NO",
+  "push": "NO",
+  "korgWriter": "BLOCKED",
+  "stySetGenerated": "NO",
+  "usb": "NO",
+  "pa3x": "NO"
+}
