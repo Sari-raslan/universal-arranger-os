@@ -1,0 +1,85 @@
+{
+  "pack_id": "UAOS_PRIORITY_PACK_002",
+  "pack_name": "Dabke Percussion",
+  "tier": "Standard arranger-style libraries",
+  "category": "Dabke Kits",
+  "intended_user": "UAOS owner and future arranger metadata designer",
+  "musical_use_cases": [
+    "DAW MIDI testing",
+    "arranger-style draft planning",
+    "metadata-driven future pack design"
+  ],
+  "instrument_roles": [
+    "kick",
+    "snare",
+    "dabke clap",
+    "floor tom",
+    "percussion fill"
+  ],
+  "style_sections_supported": [
+    "intro",
+    "verse",
+    "chorus",
+    "fill",
+    "ending"
+  ],
+  "MIDI_channel_suggestions": {
+    "drums": 10,
+    "bass": 2,
+    "chords": 3,
+    "pad": 4,
+    "melody_guide": 5,
+    "percussion": 10
+  },
+  "velocity_behavior": "metadata-only dynamic range 42-112 with humanized accents",
+  "articulation_placeholders": [
+    "short",
+    "long",
+    "accent",
+    "fill",
+    "ornament placeholder only"
+  ],
+  "preset_links": [
+    "../expanded-presets/items/UAOS_EXP_PRESET_002_001.json",
+    "../expanded-presets/items/UAOS_EXP_PRESET_002_002.json",
+    "../expanded-presets/items/UAOS_EXP_PRESET_002_003.json",
+    "../expanded-presets/items/UAOS_EXP_PRESET_002_004.json",
+    "../expanded-presets/items/UAOS_EXP_PRESET_002_005.json",
+    "../expanded-presets/items/UAOS_EXP_PRESET_002_006.json",
+    "../expanded-presets/items/UAOS_EXP_PRESET_002_007.json",
+    "../expanded-presets/items/UAOS_EXP_PRESET_002_008.json",
+    "../expanded-presets/items/UAOS_EXP_PRESET_002_009.json",
+    "../expanded-presets/items/UAOS_EXP_PRESET_002_010.json",
+    "../expanded-presets/items/UAOS_EXP_PRESET_002_011.json",
+    "../expanded-presets/items/UAOS_EXP_PRESET_002_012.json",
+    "../expanded-presets/items/UAOS_EXP_PRESET_002_013.json",
+    "../expanded-presets/items/UAOS_EXP_PRESET_002_014.json",
+    "../expanded-presets/items/UAOS_EXP_PRESET_002_015.json",
+    "../expanded-presets/items/UAOS_EXP_PRESET_002_016.json",
+    "../expanded-presets/items/UAOS_EXP_PRESET_002_017.json",
+    "../expanded-presets/items/UAOS_EXP_PRESET_002_018.json",
+    "../expanded-presets/items/UAOS_EXP_PRESET_002_019.json",
+    "../expanded-presets/items/UAOS_EXP_PRESET_002_020.json",
+    "../expanded-presets/items/UAOS_EXP_PRESET_002_021.json",
+    "../expanded-presets/items/UAOS_EXP_PRESET_002_022.json",
+    "../expanded-presets/items/UAOS_EXP_PRESET_002_023.json",
+    "../expanded-presets/items/UAOS_EXP_PRESET_002_024.json",
+    "../expanded-presets/items/UAOS_EXP_PRESET_002_025.json",
+    "../expanded-presets/items/UAOS_EXP_PRESET_002_026.json",
+    "../expanded-presets/items/UAOS_EXP_PRESET_002_027.json",
+    "../expanded-presets/items/UAOS_EXP_PRESET_002_028.json",
+    "../expanded-presets/items/UAOS_EXP_PRESET_002_029.json",
+    "../expanded-presets/items/UAOS_EXP_PRESET_002_030.json"
+  ],
+  "DAW_test_relevance": [
+    "map roles to V81 section MIDI",
+    "map roles to V82 multitrack MIDI",
+    "review in V95 DAW test package context"
+  ],
+  "sample_status": "PLACEHOLDER_NO_PROPRIETARY_AUDIO",
+  "proprietary_source_used": false,
+  "export_allowed": false,
+  "korg_output": false,
+  "pa3x_ready": false,
+  "compatibility_claim": false
+}

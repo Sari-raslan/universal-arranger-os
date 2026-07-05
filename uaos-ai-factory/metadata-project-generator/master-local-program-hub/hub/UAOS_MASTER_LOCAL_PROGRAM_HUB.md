@@ -50,6 +50,10 @@ export_allowed: false
 - V99 Feedback Gate: `../v99/feedback-gate/UAOS_V99_FEEDBACK_READY_GATE.md`
 - V100 Next MIDI Upgrade Plan: `../v100/plan/UAOS_V100_NEXT_MIDI_UPGRADE_EXECUTION_PLAN.md`
 - V96-V100 MIDI Quality Prep Batch: `../batch-v96-v100-midi-quality-prep/UAOS_BATCH_V96_V100_MIDI_QUALITY_PREP_OPEN_HERE.html`
+- Sound Library Factory Dashboard: `../../../sound-library-factory-night-run/dashboards/UAOS_SOUND_LIBRARY_FACTORY_DASHBOARD.html`
+- Priority Refinement Dashboard: `../../../sound-library-priority-refinement/dashboards/UAOS_SOUND_LIBRARY_PRIORITY_REFINEMENT_DASHBOARD.html`
+- Refined Pack Review Dashboard: `../../../sound-library-priority-refinement/dashboards/UAOS_PRIORITY_PACK_REVIEW_DASHBOARD.html`
+- Expanded Preset Index: `../../../sound-library-priority-refinement/expanded-presets/UAOS_EXPANDED_PRESET_INDEX.json`
 - Export Blocker / Research Gates: blocked and research-only.
 - QA Reports: `../master-local-program-hub/reports/`
 - Owner Dashboards: `../master-local-program-hub/dashboards/UAOS_MASTER_OWNER_REVIEW_DASHBOARD.html`
@@ -60,4 +64,4 @@ export_allowed: false
 This hub links local metadata, static dashboard outputs, approved local V71-V73 export artifacts, V74 validation, the V75 static local preview, and the V76-V80 static local RC package only. It does not integrate with React, deploy, accept payment, or create KORG files.
 
 ## Next Action Options
-Next safe action: V101-V105 improved MIDI generation batch
+Next safe action: generate MIDI test arrangement using priority packs metadata

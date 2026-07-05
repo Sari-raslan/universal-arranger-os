@@ -1,0 +1,49 @@
+{
+  "validator": "UAOS_SOUND_LIBRARY_PRIORITY_REFINEMENT_VALIDATOR",
+  "validator_result": "PASS",
+  "checked_at": "2026-07-05T05:47:33.990792+00:00",
+  "refined_pack_count": 5,
+  "expanded_preset_count": 150,
+  "checks": [
+    {
+      "name": "5 refined packs exist",
+      "passed": true,
+      "detail": "5"
+    },
+    {
+      "name": "at least 150 expanded presets exist",
+      "passed": true,
+      "detail": "150"
+    },
+    {
+      "name": "MIDI role maps exist",
+      "passed": true,
+      "detail": "E:\\keyboard-manager-clean\\uaos-ai-factory\\sound-library-priority-refinement\\midi-role-maps\\UAOS_PRIORITY_PACK_MIDI_ROLE_MAP.json,E:\\keyboard-manager-clean\\uaos-ai-factory\\sound-library-priority-refinement\\midi-role-maps\\UAOS_ORIENTAL_DRUMS_MIDI_ROLE_MAP.md,E:\\keyboard-manager-clean\\uaos-ai-factory\\sound-library-priority-refinement\\midi-role-maps\\UAOS_DABKE_PERCUSSION_MIDI_ROLE_MAP.md,E:\\keyboard-manager-clean\\uaos-ai-factory\\sound-library-priority-refinement\\midi-role-maps\\UAOS_ARABIC_STRINGS_MIDI_ROLE_MAP.md,E:\\keyboard-manager-clean\\uaos-ai-factory\\sound-library-priority-refinement\\midi-role-maps\\UAOS_OUD_QANUN_NAY_MIDI_ROLE_MAP.md,E:\\keyboard-manager-clean\\uaos-ai-factory\\sound-library-priority-refinement\\midi-role-maps\\UAOS_FULL_STYLE_STARTER_MIDI_ROLE_MAP.md"
+    },
+    {
+      "name": "style links exist",
+      "passed": true,
+      "detail": "E:\\keyboard-manager-clean\\uaos-ai-factory\\sound-library-priority-refinement\\style-links\\UAOS_PRIORITY_PACK_TO_STYLE_SECTION_MAP.json,E:\\keyboard-manager-clean\\uaos-ai-factory\\sound-library-priority-refinement\\style-links\\UAOS_PRIORITY_PACK_TO_V81_V82_MIDI_LINKS.md,E:\\keyboard-manager-clean\\uaos-ai-factory\\sound-library-priority-refinement\\style-links\\UAOS_PRIORITY_PACK_DAW_TEST_USAGE.md"
+    },
+    {
+      "name": "review pack exists",
+      "passed": true,
+      "detail": "E:\\keyboard-manager-clean\\uaos-ai-factory\\sound-library-priority-refinement\\review\\UAOS_PRIORITY_PACK_OWNER_REVIEW_FORM.md,E:\\keyboard-manager-clean\\uaos-ai-factory\\sound-library-priority-refinement\\review\\UAOS_PRIORITY_PACK_OWNER_REVIEW_FORM.json,E:\\keyboard-manager-clean\\uaos-ai-factory\\sound-library-priority-refinement\\review\\UAOS_PRIORITY_PACK_SELECTION_GUIDE_AR.md,E:\\keyboard-manager-clean\\uaos-ai-factory\\sound-library-priority-refinement\\review\\UAOS_PRIORITY_PACK_SELECTION_GUIDE_EN.md,E:\\keyboard-manager-clean\\uaos-ai-factory\\sound-library-priority-refinement\\review\\UAOS_PRIORITY_PACK_NEXT_REFINEMENT_QUEUE.md"
+    },
+    {
+      "name": "no KORG/audio/device files",
+      "passed": true,
+      "detail": "none"
+    },
+    {
+      "name": "no commercial/proprietary/Kontakt/NI/USB/PA3X/App/claim text",
+      "passed": true,
+      "detail": "{}"
+    },
+    {
+      "name": "no App.jsx touched",
+      "passed": true,
+      "detail": "git diff HEAD"
+    }
+  ]
+}

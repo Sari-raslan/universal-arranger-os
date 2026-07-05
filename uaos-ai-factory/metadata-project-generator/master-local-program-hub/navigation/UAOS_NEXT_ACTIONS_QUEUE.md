@@ -3,7 +3,7 @@
 status: "DRAFT_ONLY"
 
 ## Next Safe Action
-V101-V105 improved MIDI generation batch.
+Generate MIDI test arrangement using priority packs metadata.
 
 ## Completed Safe Actions
 - V74 Export Validator Hardening: PASS
@@ -14,6 +14,8 @@ V101-V105 improved MIDI generation batch.
 - V86-V90 Final Local Trial + External Tester Package: PASS
 - V91-V95 DAW Test + MIDI Feedback Loop: PASS
 - V96-V100 MIDI Quality Upgrade Prep: PASS
+- Sound Library Factory Night Run: PASS
+- Sound Library Priority Refinement: PASS
 
 ## Next Action Options
 1. improve MIDI arrangement depth

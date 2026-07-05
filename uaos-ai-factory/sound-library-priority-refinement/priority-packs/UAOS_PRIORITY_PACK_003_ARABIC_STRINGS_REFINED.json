@@ -1,0 +1,84 @@
+{
+  "pack_id": "UAOS_PRIORITY_PACK_003",
+  "pack_name": "Arabic Strings",
+  "tier": "Standard arranger-style libraries",
+  "category": "Strings",
+  "intended_user": "UAOS owner and future arranger metadata designer",
+  "musical_use_cases": [
+    "DAW MIDI testing",
+    "arranger-style draft planning",
+    "metadata-driven future pack design"
+  ],
+  "instrument_roles": [
+    "ensemble strings",
+    "short strings",
+    "legato strings",
+    "section pad"
+  ],
+  "style_sections_supported": [
+    "intro",
+    "verse",
+    "chorus",
+    "fill",
+    "ending"
+  ],
+  "MIDI_channel_suggestions": {
+    "drums": 10,
+    "bass": 2,
+    "chords": 3,
+    "pad": 4,
+    "melody_guide": 5,
+    "percussion": 10
+  },
+  "velocity_behavior": "metadata-only dynamic range 42-112 with humanized accents",
+  "articulation_placeholders": [
+    "short",
+    "long",
+    "accent",
+    "fill",
+    "ornament placeholder only"
+  ],
+  "preset_links": [
+    "../expanded-presets/items/UAOS_EXP_PRESET_003_001.json",
+    "../expanded-presets/items/UAOS_EXP_PRESET_003_002.json",
+    "../expanded-presets/items/UAOS_EXP_PRESET_003_003.json",
+    "../expanded-presets/items/UAOS_EXP_PRESET_003_004.json",
+    "../expanded-presets/items/UAOS_EXP_PRESET_003_005.json",
+    "../expanded-presets/items/UAOS_EXP_PRESET_003_006.json",
+    "../expanded-presets/items/UAOS_EXP_PRESET_003_007.json",
+    "../expanded-presets/items/UAOS_EXP_PRESET_003_008.json",
+    "../expanded-presets/items/UAOS_EXP_PRESET_003_009.json",
+    "../expanded-presets/items/UAOS_EXP_PRESET_003_010.json",
+    "../expanded-presets/items/UAOS_EXP_PRESET_003_011.json",
+    "../expanded-presets/items/UAOS_EXP_PRESET_003_012.json",
+    "../expanded-presets/items/UAOS_EXP_PRESET_003_013.json",
+    "../expanded-presets/items/UAOS_EXP_PRESET_003_014.json",
+    "../expanded-presets/items/UAOS_EXP_PRESET_003_015.json",
+    "../expanded-presets/items/UAOS_EXP_PRESET_003_016.json",
+    "../expanded-presets/items/UAOS_EXP_PRESET_003_017.json",
+    "../expanded-presets/items/UAOS_EXP_PRESET_003_018.json",
+    "../expanded-presets/items/UAOS_EXP_PRESET_003_019.json",
+    "../expanded-presets/items/UAOS_EXP_PRESET_003_020.json",
+    "../expanded-presets/items/UAOS_EXP_PRESET_003_021.json",
+    "../expanded-presets/items/UAOS_EXP_PRESET_003_022.json",
+    "../expanded-presets/items/UAOS_EXP_PRESET_003_023.json",
+    "../expanded-presets/items/UAOS_EXP_PRESET_003_024.json",
+    "../expanded-presets/items/UAOS_EXP_PRESET_003_025.json",
+    "../expanded-presets/items/UAOS_EXP_PRESET_003_026.json",
+    "../expanded-presets/items/UAOS_EXP_PRESET_003_027.json",
+    "../expanded-presets/items/UAOS_EXP_PRESET_003_028.json",
+    "../expanded-presets/items/UAOS_EXP_PRESET_003_029.json",
+    "../expanded-presets/items/UAOS_EXP_PRESET_003_030.json"
+  ],
+  "DAW_test_relevance": [
+    "map roles to V81 section MIDI",
+    "map roles to V82 multitrack MIDI",
+    "review in V95 DAW test package context"
+  ],
+  "sample_status": "PLACEHOLDER_NO_PROPRIETARY_AUDIO",
+  "proprietary_source_used": false,
+  "export_allowed": false,
+  "korg_output": false,
+  "pa3x_ready": false,
+  "compatibility_claim": false
+}
