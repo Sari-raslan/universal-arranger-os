@@ -276,26 +276,6 @@ const styleRcDeepStatus = [
   "PA3X load blocked",
 ];
 
-const realWriterWorkbench = {
-  stage: "Fixture Research / Parser Confidence",
-  dashboardPath: "E:\\keyboard-manager-clean\\uaos-ai-factory\\real-writer-workbench-v191-v220\\dashboards\\UAOS_REAL_WRITER_WORKBENCH_DASHBOARD.html",
-  parserConfidencePath: "E:\\keyboard-manager-clean\\uaos-ai-factory\\real-writer-workbench-v191-v220\\parser-confidence\\UAOS_PARSER_CONFIDENCE_MATRIX_V4.md",
-  nextGatePath: "E:\\keyboard-manager-clean\\uaos-ai-factory\\real-writer-workbench-v191-v220\\owner-gates\\UAOS_NEXT_OWNER_DECISION_FORM.md",
-  rankStatus: [
-    { label: "Rank 1 scan", value: "PASS" },
-    { label: "Rank 2 scan", value: "PASS" },
-    { label: "Rank 3 scan", value: "PASS" },
-    { label: "Parser confidence", value: "V4 report ready" },
-  ],
-  lockedZones: [
-    "Writer: BLOCKED",
-    ".STY/.SET: BLOCKED",
-    "USB: BLOCKED",
-    "PA3X: BLOCKED",
-  ],
-  nextGate: "More parser research or explicit writer sandbox gate",
-};
-
 function uid() {
   return "uaos-" + Date.now() + "-" + Math.random().toString(16).slice(2);
 }
@@ -1266,50 +1246,6 @@ export default function App() {
             {ownerSafetyGates.map((gate) => (
               <strong key={gate}>{gate}</strong>
             ))}
-          </div>
-
-          <div className="uaos-style-rc-deep-panel">
-            <div className="uaos-style-rc-deep-head">
-              <div>
-                <span>Real Writer Workbench</span>
-                <h3>Fixture Research and Parser Confidence</h3>
-                <p>Owner workbench shell for future writer/export gates. Research is read-only; writer, keyboard output, USB, PA3X, and deploy actions remain locked.</p>
-              </div>
-              <strong>{realWriterWorkbench.stage}</strong>
-            </div>
-
-            <div className="uaos-style-rc-status-row">
-              {realWriterWorkbench.rankStatus.map((item) => (
-                <b key={item.label}>{item.label}: {item.value}</b>
-              ))}
-            </div>
-
-            <div className="uaos-style-rc-status-row">
-              {realWriterWorkbench.lockedZones.map((item) => (
-                <b key={item}>{item}</b>
-              ))}
-            </div>
-
-            <div className="uaos-style-rc-link-grid">
-              <article>
-                <span>Workbench dashboard</span>
-                <h4>Open workbench</h4>
-                <p>Review Rank 1/2/3 research, parser confidence V4, locked zones, and owner gates.</p>
-                <small>{realWriterWorkbench.dashboardPath}</small>
-              </article>
-              <article>
-                <span>Parser confidence</span>
-                <h4>V4 confidence matrix</h4>
-                <p>Review confidence levels; writer readiness remains blocked.</p>
-                <small>{realWriterWorkbench.parserConfidencePath}</small>
-              </article>
-              <article>
-                <span>Next gate</span>
-                <h4>{realWriterWorkbench.nextGate}</h4>
-                <p>Choose the next safe owner action manually. Nothing is auto-applied.</p>
-                <small>{realWriterWorkbench.nextGatePath}</small>
-              </article>
-            </div>
           </div>
 
           <div className="uaos-style-rc-deep-panel">
