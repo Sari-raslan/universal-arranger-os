@@ -1,0 +1,57 @@
+{
+  "checks": {
+    "app_vercelignore_exists": {
+      "pass": true,
+      "detail": "E:\\keyboard-manager-clean\\uaos-live-clean\\.vercelignore"
+    },
+    "linked_project_confirmed": {
+      "pass": true,
+      "detail": "sari-raslan-universal-arranger-os"
+    },
+    "build_pass": {
+      "pass": true,
+      "detail": "npm run build"
+    },
+    "deploy_retry_executed": {
+      "pass": true,
+      "detail": "deploy command started"
+    },
+    "public_url_recorded": {
+      "pass": true,
+      "detail": "https://sari-raslan-universal-arranger-67ey65wk1.vercel.app"
+    },
+    "public_ready_confirmed": {
+      "pass": false,
+      "detail": "UNKNOWN"
+    },
+    "appjsx_unchanged": {
+      "pass": true,
+      "detail": ""
+    },
+    "no_product_rewrite": {
+      "pass": true,
+      "detail": "no app code rewrite recorded"
+    },
+    "korg_writer_blocked": {
+      "pass": true,
+      "detail": "blocked state recorded"
+    },
+    "no_blocked_korg_files_in_run_folder": {
+      "pass": true,
+      "detail": ""
+    },
+    "no_usb_pa3x_payment": {
+      "pass": true,
+      "detail": "blocked actions absent"
+    },
+    "no_false_claim_strings": {
+      "pass": true,
+      "detail": "exact false claim strings absent"
+    }
+  },
+  "errors": [
+    "public_ready_confirmed: UNKNOWN"
+  ],
+  "pass": false,
+  "validator": "uaos_vercel_deploy_retry_slim_validator.py"
+}
