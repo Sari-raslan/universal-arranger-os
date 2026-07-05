@@ -1,11 +1,32 @@
 from pathlib import Path
 import json,re
 BASE=Path(__file__).resolve().parents[1]
+ROOT=BASE.parent
+PIPE=ROOT/'super-agent-launcher-v151-v200'
 OUT=BASE/'v158_parser_validator/UAOS_V158_READONLY_PARSER_VALIDATOR_RESULTS.json'
 SELF=Path(__file__).resolve(); checks=[]
 def add(n,o,d=''): checks.append({'name':n,'ok':bool(o),'detail':d})
-required=['src/uaos_readonly_hash_inspector.py','src/uaos_readonly_header_scanner.py','src/uaos_korg_readonly_parser_scaffold.py','v151_parser_scope/UAOS_V151_READONLY_PARSER_SCOPE.md','v152_fixture_intake/UAOS_V152_FIXTURE_INTAKE_TEMPLATE.md','v153_hash_inspector/UAOS_V153_HASH_INSPECTOR_SPEC.md','v154_header_scanner/UAOS_V154_HEADER_SCANNER_SPEC.md','v155_chunk_map_schema/UAOS_V155_READONLY_CHUNK_MAP_SCHEMA.json','v156_readonly_parser_scaffold/UAOS_V156_PARSER_SCAFFOLD_SPEC.md','v157_synthetic_dummy_dryrun/UAOS_V157_SYNTHETIC_DUMMY_DRYRUN_REPORT.json']
+required=['src/uaos_readonly_hash_inspector.py','src/uaos_readonly_header_scanner.py','src/uaos_korg_readonly_parser_scaffold.py','v151_parser_scope/UAOS_V151_READONLY_PARSER_SCOPE.md','v152_fixture_intake/UAOS_V152_FIXTURE_INTAKE_TEMPLATE.md','v153_hash_inspector/UAOS_V153_HASH_INSPECTOR_SPEC.md','v154_header_scanner/UAOS_V154_HEADER_SCANNER_SPEC.md','v155_chunk_map_schema/UAOS_V155_READONLY_CHUNK_MAP_SCHEMA.json','v156_readonly_parser_scaffold/UAOS_V156_PARSER_SCAFFOLD_SPEC.md','v157_synthetic_dummy_dryrun/UAOS_V157_SYNTHETIC_DUMMY_DRYRUN_REPORT.json','logs/UAOS_V151_V160_INTEGRATOR_SOURCE_TRACE.json']
 for r in required: add('required output '+r,(BASE/r).exists(),r)
+source_agents=['AGENT_01_KORG_READONLY_PARSER.md','AGENT_02_FIXTURE_POLICY_MANAGER.md','AGENT_05_VALIDATOR_ENGINEER.md','AGENT_06_OWNER_DASHBOARD_ENGINEER.md','AGENT_08_FINAL_INTEGRATOR.md','AGENT_09_SAFETY_GOVERNANCE.md']
+for a in source_agents: add('source agent exists '+a,(PIPE/'01_agents'/a).exists(),a)
+for v in range(151,161): add('source draft plan exists V'+str(v),(PIPE/'03_draft_pipeline'/f'UAOS_V{v}_DRAFT_PLAN.md').exists(),str(v))
+add('source batch blueprint exists',(PIPE/'05_batch_blueprints/UAOS_BATCH_V151_V160_READONLY_PARSER_BLUEPRINT.md').exists(),'blueprint')
+try:
+    trace=json.loads((BASE/'logs/UAOS_V151_V160_INTEGRATOR_SOURCE_TRACE.json').read_text(encoding='utf-8'))
+    add('agent pipeline used recorded',trace.get('agent_pipeline_used') is True,str(trace.get('agent_pipeline_used')))
+    add('Code X integrator role recorded',trace.get('code_x_role')=='FINAL_INTEGRATOR_ONLY',trace.get('code_x_role',''))
+except Exception as e: add('integrator trace parses',False,str(e))
+future_ok=True; bad_future=[]
+for v in range(161,201):
+    p=PIPE/'03_draft_pipeline'/f'UAOS_V{v}_DRAFT_PLAN.json'
+    try:
+        data=json.loads(p.read_text(encoding='utf-8'))
+        if data.get('status')!='DRAFT_NOT_RUN' or data.get('pass_claim_allowed') is not False:
+            future_ok=False; bad_future.append(f'V{v}:{data.get("status")}/{data.get("pass_claim_allowed")}')
+    except Exception as e:
+        future_ok=False; bad_future.append(f'V{v}:{e}')
+add('future V161-V200 drafts remain DRAFT_NOT_RUN',future_ok,'; '.join(bad_future[:10]))
 try:
     dry=json.loads((BASE/'v157_synthetic_dummy_dryrun/UAOS_V157_SYNTHETIC_DUMMY_DRYRUN_REPORT.json').read_text(encoding='utf-8'))
     add('dummy dry-run PASS',dry.get('dry_run_pass') is True,str(dry.get('dry_run_pass')))

@@ -152,3 +152,15 @@ Next safe action: generate MIDI test arrangement using priority packs metadata
 - V151-V200 pipeline dashboard: `..\..\super-agent-launcher-v151-v200\07_dashboards\UAOS_V151_V200_PIPELINE_DASHBOARD.html`
 - Integrator queue: `..\..\super-agent-launcher-v151-v200\04_integrator_queue\UAOS_INTEGRATOR_QUEUE_V151_V200.md`
 - Next fastest executable batch: V151-V160 Read-only Parser Scaffold.
+
+
+## V151-V160 Prewritten Parser Scaffold Integration
+
+- V151-V160 parser open page: `..\..\korg-readonly-parser-scaffold\batch-v151-v160-readonly-parser-scaffold\UAOS_BATCH_V151_V160_READONLY_PARSER_OPEN_HERE.html`
+- Fixture intake template: `..\..\korg-readonly-parser-scaffold\v152_fixture_intake\UAOS_V152_FIXTURE_INTAKE_TEMPLATE.md`
+- Hash inspector: `..\..\korg-readonly-parser-scaffold\src\uaos_readonly_hash_inspector.py`
+- Header scanner: `..\..\korg-readonly-parser-scaffold\src\uaos_readonly_header_scanner.py`
+- Parser scaffold: `..\..\korg-readonly-parser-scaffold\src\uaos_korg_readonly_parser_scaffold.py`
+- Dummy dry-run: `..\..\korg-readonly-parser-scaffold\v157_synthetic_dummy_dryrun\UAOS_V157_SYNTHETIC_DUMMY_DRYRUN_REPORT.json`
+- Validator results: `..\..\korg-readonly-parser-scaffold\validators\UAOS_READONLY_PARSER_VALIDATOR_RESULTS.json`
+- Next executable batch: V161-V170 Fixture Research, only after owner provides fixture approval.
