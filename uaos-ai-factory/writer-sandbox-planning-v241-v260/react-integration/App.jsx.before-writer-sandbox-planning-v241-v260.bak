@@ -309,21 +309,6 @@ const writerSandboxDesign = {
   nextGate: "Owner approval for sandbox implementation only",
 };
 
-const writerSandboxPlanning = {
-  dashboardPath: "E:\\keyboard-manager-clean\\uaos-ai-factory\\writer-sandbox-planning-v241-v260\\dashboards\\UAOS_WRITER_SANDBOX_PLANNING_DASHBOARD.html",
-  implementationPlanPath: "E:\\keyboard-manager-clean\\uaos-ai-factory\\writer-sandbox-planning-v241-v260\\implementation-plan\\UAOS_WRITER_SANDBOX_IMPLEMENTATION_PLAN.md",
-  dummyFormatPath: "E:\\keyboard-manager-clean\\uaos-ai-factory\\writer-sandbox-planning-v241-v260\\dummy-output-format\\UAOS_DUMMY_OUTPUT_FORMAT_SPEC.md",
-  ownerGatePath: "E:\\keyboard-manager-clean\\uaos-ai-factory\\writer-sandbox-planning-v241-v260\\owner-gates\\UAOS_OWNER_NEXT_DECISION_FORM.md",
-  status: [
-    { label: "Planning ready", value: "YES" },
-    { label: "Dummy output format", value: "READY" },
-    { label: "Real writer", value: "BLOCKED" },
-    { label: ".STY/.SET", value: "BLOCKED" },
-    { label: "USB/PA3X", value: "BLOCKED" },
-  ],
-  nextGate: "Dummy-output sandbox implementation approval",
-};
-
 function uid() {
   return "uaos-" + Date.now() + "-" + Math.random().toString(16).slice(2);
 }
@@ -1374,50 +1359,6 @@ export default function App() {
                 <h4>Manual decision form</h4>
                 <p>Choose the next safe action manually; no gate is auto-applied.</p>
                 <small>{writerSandboxDesign.ownerGatePath}</small>
-              </article>
-            </div>
-          </div>
-
-          <div className="uaos-style-rc-deep-panel">
-            <div className="uaos-style-rc-deep-head">
-              <div>
-                <span>Writer Sandbox Planning</span>
-                <h3>Safe Dummy Output Contracts</h3>
-                <p>Planning package for future UAOS-only dummy sandbox files. Real writer, keyboard output, USB, PA3X, deploy, and payment actions remain blocked.</p>
-              </div>
-              <strong>{writerSandboxPlanning.nextGate}</strong>
-            </div>
-
-            <div className="uaos-style-rc-status-row">
-              {writerSandboxPlanning.status.map((item) => (
-                <b key={item.label}>{item.label}: {item.value}</b>
-              ))}
-            </div>
-
-            <div className="uaos-style-rc-link-grid">
-              <article>
-                <span>Planning dashboard</span>
-                <h4>Open planning status</h4>
-                <p>Review the implementation planning package and safe dummy-output contracts.</p>
-                <small>{writerSandboxPlanning.dashboardPath}</small>
-              </article>
-              <article>
-                <span>Implementation plan</span>
-                <h4>Planning only</h4>
-                <p>Read the planned sequence; real writer implementation is not active.</p>
-                <small>{writerSandboxPlanning.implementationPlanPath}</small>
-              </article>
-              <article>
-                <span>Dummy format</span>
-                <h4>UAOS-only marker</h4>
-                <p>Review the non-keyboard dummy marker and output contract.</p>
-                <small>{writerSandboxPlanning.dummyFormatPath}</small>
-              </article>
-              <article>
-                <span>Owner gate</span>
-                <h4>Manual next decision</h4>
-                <p>Choose whether to continue planning, approve a later dummy sandbox, or keep all blocked zones closed.</p>
-                <small>{writerSandboxPlanning.ownerGatePath}</small>
               </article>
             </div>
           </div>
