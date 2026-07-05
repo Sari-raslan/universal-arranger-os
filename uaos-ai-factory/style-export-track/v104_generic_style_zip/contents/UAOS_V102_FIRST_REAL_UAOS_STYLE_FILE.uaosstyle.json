@@ -1,0 +1,217 @@
+{
+  "style_id": "UAOS_V102_FIRST_REAL_UAOS_STYLE_FILE",
+  "style_name": "UAOS First Generic Priority Style",
+  "tempo": 104,
+  "time_signature": "4/4",
+  "sections": {
+    "intro": {
+      "bars": 4,
+      "midi_ref": "v81_section_midi",
+      "active_roles": [
+        "drums",
+        "percussion",
+        "bass",
+        "chords",
+        "pad",
+        "melody_guide"
+      ]
+    },
+    "variation_a": {
+      "bars": 8,
+      "midi_ref": "v82_multitrack_midi",
+      "active_roles": [
+        "drums",
+        "percussion",
+        "bass",
+        "chords",
+        "pad",
+        "melody_guide"
+      ]
+    },
+    "variation_b": {
+      "bars": 8,
+      "midi_ref": "v82_multitrack_midi",
+      "active_roles": [
+        "drums",
+        "percussion",
+        "bass",
+        "chords",
+        "pad",
+        "melody_guide"
+      ]
+    },
+    "variation_c": {
+      "bars": 8,
+      "midi_ref": "v82_multitrack_midi",
+      "active_roles": [
+        "drums",
+        "percussion",
+        "bass",
+        "chords",
+        "pad",
+        "melody_guide"
+      ]
+    },
+    "variation_d": {
+      "bars": 8,
+      "midi_ref": "v82_multitrack_midi",
+      "active_roles": [
+        "drums",
+        "percussion",
+        "bass",
+        "chords",
+        "pad",
+        "melody_guide"
+      ]
+    },
+    "fill": {
+      "bars": 2,
+      "midi_ref": "v81_section_midi",
+      "active_roles": [
+        "drums",
+        "percussion",
+        "bass",
+        "chords",
+        "pad",
+        "melody_guide"
+      ]
+    },
+    "break": {
+      "bars": 2,
+      "midi_ref": "v82_multitrack_midi",
+      "active_roles": [
+        "drums",
+        "percussion",
+        "bass",
+        "chords",
+        "pad",
+        "melody_guide"
+      ]
+    },
+    "ending": {
+      "bars": 4,
+      "midi_ref": "v81_section_midi",
+      "active_roles": [
+        "drums",
+        "percussion",
+        "bass",
+        "chords",
+        "pad",
+        "melody_guide"
+      ]
+    }
+  },
+  "tracks": {
+    "drums": {
+      "role": "drums",
+      "source": "safe generated MIDI refs",
+      "library_pack_refs": [
+        "UAOS_PRIORITY_PACK_001"
+      ]
+    },
+    "percussion": {
+      "role": "percussion",
+      "source": "safe generated MIDI refs",
+      "library_pack_refs": [
+        "UAOS_PRIORITY_PACK_002"
+      ]
+    },
+    "bass": {
+      "role": "bass",
+      "source": "safe generated MIDI refs",
+      "library_pack_refs": [
+        "UAOS_PRIORITY_PACK_005"
+      ]
+    },
+    "chords": {
+      "role": "chords",
+      "source": "safe generated MIDI refs",
+      "library_pack_refs": [
+        "UAOS_PRIORITY_PACK_003",
+        "UAOS_PRIORITY_PACK_005"
+      ]
+    },
+    "pad": {
+      "role": "pad",
+      "source": "safe generated MIDI refs",
+      "library_pack_refs": [
+        "UAOS_PRIORITY_PACK_003",
+        "UAOS_PRIORITY_PACK_005"
+      ]
+    },
+    "melody_guide": {
+      "role": "melody_guide",
+      "source": "safe generated MIDI refs",
+      "library_pack_refs": [
+        "UAOS_PRIORITY_PACK_004"
+      ]
+    }
+  },
+  "midi_refs": [
+    {
+      "id": "v81_section_midi",
+      "path": "E:\\keyboard-manager-clean\\uaos-ai-factory\\metadata-project-generator\\v81\\midi\\UAOS_V81_SECTION_BASED_REAL_MIDI_EXPORT.mid"
+    },
+    {
+      "id": "v82_multitrack_midi",
+      "path": "E:\\keyboard-manager-clean\\uaos-ai-factory\\metadata-project-generator\\v82\\midi\\UAOS_V82_MULTITRACK_ARRANGEMENT_EXPORT.mid"
+    },
+    {
+      "id": "priority_arrangement",
+      "path": "E:\\keyboard-manager-clean\\uaos-ai-factory\\priority-library-midi-test-arrangement\\midi\\UAOS_PRIORITY_LIBRARY_TEST_ARRANGEMENT.mid"
+    },
+    {
+      "id": "priority_section",
+      "path": "E:\\keyboard-manager-clean\\uaos-ai-factory\\priority-library-midi-test-arrangement\\midi\\UAOS_PRIORITY_LIBRARY_SECTION_TEST.mid"
+    },
+    {
+      "id": "priority_multitrack",
+      "path": "E:\\keyboard-manager-clean\\uaos-ai-factory\\priority-library-midi-test-arrangement\\midi\\UAOS_PRIORITY_LIBRARY_MULTITRACK_TEST.mid"
+    }
+  ],
+  "library_pack_refs": [
+    {
+      "pack_id": "UAOS_PRIORITY_PACK_001",
+      "pack_name": "Oriental Drums",
+      "role": "drums",
+      "preset_ref": "expanded-presets/items/UAOS_EXP_PRESET_001_001.json"
+    },
+    {
+      "pack_id": "UAOS_PRIORITY_PACK_002",
+      "pack_name": "Dabke Percussion",
+      "role": "percussion",
+      "preset_ref": "expanded-presets/items/UAOS_EXP_PRESET_002_001.json"
+    },
+    {
+      "pack_id": "UAOS_PRIORITY_PACK_003",
+      "pack_name": "Arabic Strings",
+      "role": "pad/chords",
+      "preset_ref": "expanded-presets/items/UAOS_EXP_PRESET_003_001.json"
+    },
+    {
+      "pack_id": "UAOS_PRIORITY_PACK_004",
+      "pack_name": "Oud/Qanun/Nay",
+      "role": "melody_guide",
+      "preset_ref": "expanded-presets/items/UAOS_EXP_PRESET_004_001.json"
+    },
+    {
+      "pack_id": "UAOS_PRIORITY_PACK_005",
+      "pack_name": "Full Style Starter",
+      "role": "bass/chords/pad",
+      "preset_ref": "expanded-presets/items/UAOS_EXP_PRESET_005_001.json"
+    }
+  ],
+  "preset_refs": [
+    "expanded-presets/items/UAOS_EXP_PRESET_001_001.json",
+    "expanded-presets/items/UAOS_EXP_PRESET_002_001.json",
+    "expanded-presets/items/UAOS_EXP_PRESET_003_001.json",
+    "expanded-presets/items/UAOS_EXP_PRESET_004_001.json",
+    "expanded-presets/items/UAOS_EXP_PRESET_005_001.json"
+  ],
+  "korg_output": false,
+  "pa3x_ready": false,
+  "compatibility_claim": false,
+  "usb_write": false,
+  "real_korg_writer_used": false,
+  "export_status": "UAOS_GENERIC_STYLE_ONLY_REAL_KORG_BLOCKED"
+}

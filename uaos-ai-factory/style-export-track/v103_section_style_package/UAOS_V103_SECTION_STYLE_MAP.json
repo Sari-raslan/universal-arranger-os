@@ -1,0 +1,115 @@
+{
+  "sections": {
+    "intro": {
+      "bars": 4,
+      "midi_ref": "v81_section_midi",
+      "active_roles": [
+        "drums",
+        "percussion",
+        "bass",
+        "chords",
+        "pad",
+        "melody_guide"
+      ]
+    },
+    "variation_a": {
+      "bars": 8,
+      "midi_ref": "v82_multitrack_midi",
+      "active_roles": [
+        "drums",
+        "percussion",
+        "bass",
+        "chords",
+        "pad",
+        "melody_guide"
+      ]
+    },
+    "variation_b": {
+      "bars": 8,
+      "midi_ref": "v82_multitrack_midi",
+      "active_roles": [
+        "drums",
+        "percussion",
+        "bass",
+        "chords",
+        "pad",
+        "melody_guide"
+      ]
+    },
+    "variation_c": {
+      "bars": 8,
+      "midi_ref": "v82_multitrack_midi",
+      "active_roles": [
+        "drums",
+        "percussion",
+        "bass",
+        "chords",
+        "pad",
+        "melody_guide"
+      ]
+    },
+    "variation_d": {
+      "bars": 8,
+      "midi_ref": "v82_multitrack_midi",
+      "active_roles": [
+        "drums",
+        "percussion",
+        "bass",
+        "chords",
+        "pad",
+        "melody_guide"
+      ]
+    },
+    "fill": {
+      "bars": 2,
+      "midi_ref": "v81_section_midi",
+      "active_roles": [
+        "drums",
+        "percussion",
+        "bass",
+        "chords",
+        "pad",
+        "melody_guide"
+      ]
+    },
+    "break": {
+      "bars": 2,
+      "midi_ref": "v82_multitrack_midi",
+      "active_roles": [
+        "drums",
+        "percussion",
+        "bass",
+        "chords",
+        "pad",
+        "melody_guide"
+      ]
+    },
+    "ending": {
+      "bars": 4,
+      "midi_ref": "v81_section_midi",
+      "active_roles": [
+        "drums",
+        "percussion",
+        "bass",
+        "chords",
+        "pad",
+        "melody_guide"
+      ]
+    }
+  },
+  "transition_map": {
+    "intro": "variation_a",
+    "variation_a": "variation_b",
+    "variation_b": "fill",
+    "fill": "variation_c",
+    "variation_c": "variation_d",
+    "variation_d": "ending",
+    "break": "variation_a"
+  },
+  "korg_output": false,
+  "pa3x_ready": false,
+  "compatibility_claim": false,
+  "usb_write": false,
+  "real_korg_writer_used": false,
+  "export_status": "UAOS_GENERIC_STYLE_ONLY_REAL_KORG_BLOCKED"
+}

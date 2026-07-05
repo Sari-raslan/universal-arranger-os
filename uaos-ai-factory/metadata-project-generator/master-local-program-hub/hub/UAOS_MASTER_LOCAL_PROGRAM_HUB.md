@@ -76,3 +76,13 @@ Next safe action: generate MIDI test arrangement using priority packs metadata
 - Test ZIP: `..\..\priority-library-midi-test-arrangement\exports\UAOS_PRIORITY_LIBRARY_MIDI_TEST_PACKAGE.zip`
 - Cubase test steps: `..\..\priority-library-midi-test-arrangement\package\UAOS_PRIORITY_LIBRARY_CUBASE_TEST_STEPS.md`
 - Next action: build final local owner program including priority library MIDI test.
+
+
+## V101-V110 Style Export Foundation
+
+- UAOS style file: `..\..\style-export-track\v102_uaos_style_file\UAOS_V102_FIRST_REAL_UAOS_STYLE_FILE.uaosstyle.json`
+- Section style package: `..\..\style-export-track\v103_section_style_package\UAOS_V103_SECTION_STYLE_PACKAGE.style.json`
+- Generic style ZIP: `..\..\style-export-track\v104_generic_style_zip\UAOS_V104_GENERIC_STYLE_PACKAGE.zip`
+- Style preview dashboard: `..\..\style-export-track\v106_style_preview\UAOS_V106_STYLE_PREVIEW_DASHBOARD.html`
+- KORG research gate: `..\..\style-export-track\v107_korg_research_gate\UAOS_V107_KORG_RESEARCH_GATE_READ_ONLY.md`
+- Next approval gate: `..\..\style-export-track\v109_owner_approval_gate\UAOS_V109_NEXT_STYLE_EXPORT_APPROVAL_GATE.md`

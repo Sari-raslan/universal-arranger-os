@@ -1,0 +1,87 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "UAOS Style File Schema V101",
+  "type": "object",
+  "required": [
+    "style_id",
+    "style_name",
+    "tempo",
+    "time_signature",
+    "sections",
+    "tracks",
+    "midi_refs",
+    "library_pack_refs",
+    "preset_refs",
+    "export_status",
+    "korg_output",
+    "pa3x_ready",
+    "compatibility_claim",
+    "usb_write",
+    "real_korg_writer_used"
+  ],
+  "properties": {
+    "style_id": {
+      "type": "string"
+    },
+    "style_name": {
+      "type": "string"
+    },
+    "tempo": {
+      "type": "integer"
+    },
+    "time_signature": {
+      "type": "string"
+    },
+    "sections": {
+      "type": "object",
+      "required": [
+        "intro",
+        "variation_a",
+        "variation_b",
+        "variation_c",
+        "variation_d",
+        "fill",
+        "break",
+        "ending"
+      ]
+    },
+    "tracks": {
+      "type": "object",
+      "required": [
+        "drums",
+        "percussion",
+        "bass",
+        "chords",
+        "pad",
+        "melody_guide"
+      ]
+    },
+    "midi_refs": {
+      "type": "array"
+    },
+    "library_pack_refs": {
+      "type": "array"
+    },
+    "preset_refs": {
+      "type": "array"
+    },
+    "export_status": {
+      "type": "string"
+    },
+    "korg_output": {
+      "const": false
+    },
+    "pa3x_ready": {
+      "const": false
+    },
+    "compatibility_claim": {
+      "const": false
+    },
+    "usb_write": {
+      "const": false
+    },
+    "real_korg_writer_used": {
+      "const": false
+    }
+  }
+}
