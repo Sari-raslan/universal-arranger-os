@@ -185,3 +185,21 @@ Final seal: E:\keyboard-manager-clean\uaos-ai-factory\fixture-rank1-readonly-sca
 
 Next action: parser refinement if useful.
 
+## V171-V180 Parser Refinement From Rank 1 Fixture
+
+Status: PASS
+
+Open page: E:\keyboard-manager-clean\uaos-ai-factory\parser-refinement-v171-v180\batch-v171-v180-parser-refinement\UAOS_BATCH_V171_V180_PARSER_REFINEMENT_OPEN_HERE.html
+
+Observation import: E:\keyboard-manager-clean\uaos-ai-factory\parser-refinement-v171-v180\v171_observation_import\UAOS_V171_RANK1_OBSERVATION_IMPORT.md
+
+Unknown taxonomy: E:\keyboard-manager-clean\uaos-ai-factory\parser-refinement-v171-v180\v173_unknown_chunk_taxonomy\UAOS_V173_UNKNOWN_CHUNK_TAXONOMY.md
+
+Schema v2: E:\keyboard-manager-clean\uaos-ai-factory\parser-refinement-v171-v180\v176_safe_parser_schema_v2\UAOS_V176_READONLY_PARSER_SCHEMA_V2.json
+
+Parser refinement plan: E:\keyboard-manager-clean\uaos-ai-factory\parser-refinement-v171-v180\v177_parser_refinement_plan\UAOS_V177_PARSER_REFINEMENT_PLAN.md
+
+Final seal: E:\keyboard-manager-clean\uaos-ai-factory\parser-refinement-v171-v180\seal\UAOS_PARSER_REFINEMENT_V171_V180_FINAL_SEAL.md
+
+Next action: DEFER_RANK2_SCAN; refine Rank 1 parser observations first.
+

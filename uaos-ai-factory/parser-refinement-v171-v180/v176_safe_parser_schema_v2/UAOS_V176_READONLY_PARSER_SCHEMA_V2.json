@@ -1,0 +1,123 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "UAOS Read-only Parser Observation Schema V2",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "source",
+    "read_only",
+    "format_interpretation",
+    "unknown_regions",
+    "safety"
+  ],
+  "properties": {
+    "source": {
+      "type": "object",
+      "properties": {
+        "basename": {
+          "type": "string"
+        },
+        "extension": {
+          "type": "string"
+        },
+        "size": {
+          "type": "integer"
+        },
+        "sha256": {
+          "type": "string"
+        },
+        "path_recorded": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "read_only": {
+      "const": true
+    },
+    "format_interpretation": {
+      "enum": [
+        "UNKNOWN/UNCONFIRMED"
+      ]
+    },
+    "unknown_regions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "offset",
+          "label",
+          "confidence",
+          "interpretation"
+        ],
+        "properties": {
+          "offset": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "token": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "label": {
+            "enum": [
+              "possible_container_header",
+              "possible_section_metadata",
+              "possible_track_program_reference",
+              "possible_binary_payload",
+              "unknown_region",
+              "requires_more_fixtures",
+              "unsafe_to_infer"
+            ]
+          },
+          "confidence": {
+            "enum": [
+              "LOW",
+              "MEDIUM",
+              "HIGH"
+            ]
+          },
+          "interpretation": {
+            "enum": [
+              "UNKNOWN/UNCONFIRMED",
+              "HYPOTHESIS_ONLY"
+            ]
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "safety": {
+      "type": "object",
+      "properties": {
+        "writer_fields_present": {
+          "const": false
+        },
+        "korg_output_fields_present": {
+          "const": false
+        },
+        "mutation_actions_present": {
+          "const": false
+        },
+        "usb_action_present": {
+          "const": false
+        },
+        "pa3x_action_present": {
+          "const": false
+        }
+      },
+      "required": [
+        "writer_fields_present",
+        "korg_output_fields_present",
+        "mutation_actions_present",
+        "usb_action_present",
+        "pa3x_action_present"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "status": "PASS",
+  "source": "bounded header scan only",
+  "bytes_reviewed": 4096,
+  "patterns": [
+    {
+      "pattern": "bounded_header_present",
+      "status": "OBSERVED",
+      "evidence": "4096-byte maximum header scan report exists",
+      "interpretation": "UNKNOWN/UNCONFIRMED"
+    },
+    {
+      "pattern": "first_32_bytes_hex_summary",
+      "status": "OBSERVED",
+      "evidence": "01 00 01 14 00 0b b6 73 02 00 00 18 00 00 00 0c 0b 00 00 00 00 00 00 4b 4f 52 46 00 05 01 01 18",
+      "interpretation": "UNKNOWN/UNCONFIRMED"
+    },
+    {
+      "pattern": "ascii_token_like_runs",
+      "status": "OBSERVED",
+      "evidence": [
+        "KORF",
+        "Wehda",
+        "G800",
+        "Gipsy",
+        "G800",
+        "Night3",
+        "G800",
+        "Gipsy",
+        "G800",
+        "Saidi",
+        "G800",
+        "Jean",
+        "G800",
+        "NIGHT",
+        "GIPSY",
+        "SAIDI22",
+        "ZANNE",
+        "GIPSY2",
+        "SAIDI",
+        "SAIDI",
+        "LABED1",
+        "WEHDA",
+        "POMPOM",
+        "LABED2",
+        "4444_1",
+        "4444_2",
+        "LABED3",
+        "LABED4",
+        "Fares4",
+        "G800",
+        "LABED1",
+        "WEHDA",
+        "POMPOM",
+        "LABED2",
+        "4444_1",
+        "4444_2",
+        "LABED3",
+        "SAIDI",
+        "LABED4",
+        "NIGHT"
+      ],
+      "interpretation": "UNKNOWN/UNCONFIRMED"
+    },
+    {
+      "pattern": "container_signature",
+      "status": "UNKNOWN",
+      "evidence": "No verified signature rule established",
+      "interpretation": "UNKNOWN/UNCONFIRMED"
+    },
+    {
+      "pattern": "section_table_boundary",
+      "status": "UNKNOWN",
+      "evidence": "No confirmed offsets",
+      "interpretation": "UNKNOWN/UNCONFIRMED"
+    }
+  ],
+  "mapping_solved": false,
+  "compatibility_claim": false,
+  "all_interpretations": "UNKNOWN/UNCONFIRMED"
+}
