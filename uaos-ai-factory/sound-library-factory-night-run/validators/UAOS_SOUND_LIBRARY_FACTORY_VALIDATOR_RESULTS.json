@@ -1,0 +1,59 @@
+{
+  "validator": "UAOS_SOUND_LIBRARY_FACTORY_NIGHT_VALIDATOR",
+  "validator_result": "PASS",
+  "checked_at": "2026-07-05T05:35:10.633696+00:00",
+  "pack_count": 20,
+  "preset_count": 100,
+  "checks": [
+    {
+      "name": "catalog exists",
+      "passed": true,
+      "detail": "E:\\keyboard-manager-clean\\uaos-ai-factory\\sound-library-factory-night-run\\catalog\\UAOS_SOUND_LIBRARY_MASTER_CATALOG.json"
+    },
+    {
+      "name": "at least 20 pack drafts exist",
+      "passed": true,
+      "detail": "20"
+    },
+    {
+      "name": "at least 100 preset metadata files exist",
+      "passed": true,
+      "detail": "100"
+    },
+    {
+      "name": "schemas exist",
+      "passed": true,
+      "detail": "E:\\keyboard-manager-clean\\uaos-ai-factory\\sound-library-factory-night-run\\schemas\\UAOS_SOUND_LIBRARY_PACK_SCHEMA.json,E:\\keyboard-manager-clean\\uaos-ai-factory\\sound-library-factory-night-run\\schemas\\UAOS_PRESET_SCHEMA.json,E:\\keyboard-manager-clean\\uaos-ai-factory\\sound-library-factory-night-run\\schemas\\UAOS_INSTRUMENT_ROLE_SCHEMA.json,E:\\keyboard-manager-clean\\uaos-ai-factory\\sound-library-factory-night-run\\schemas\\UAOS_STYLE_LIBRARY_SCHEMA.json,E:\\keyboard-manager-clean\\uaos-ai-factory\\sound-library-factory-night-run\\schemas\\UAOS_SAMPLE_PLACEHOLDER_SCHEMA.json"
+    },
+    {
+      "name": "manifests exist",
+      "passed": true,
+      "detail": "E:\\keyboard-manager-clean\\uaos-ai-factory\\sound-library-factory-night-run\\manifests\\UAOS_SOUND_LIBRARY_FACTORY_MANIFEST.json,E:\\keyboard-manager-clean\\uaos-ai-factory\\sound-library-factory-night-run\\manifests\\UAOS_SOUND_LIBRARY_FACTORY_OUTPUT_INDEX.json,E:\\keyboard-manager-clean\\uaos-ai-factory\\sound-library-factory-night-run\\manifests\\UAOS_SOUND_LIBRARY_FACTORY_FILE_REGISTRY.json"
+    },
+    {
+      "name": "no .SET/.STY/.PRF/.PRS/.KST",
+      "passed": true,
+      "detail": "none"
+    },
+    {
+      "name": "no commercial/proprietary/Kontakt/NI paths or unsafe claims",
+      "passed": true,
+      "detail": "{}"
+    },
+    {
+      "name": "no App.jsx touched",
+      "passed": true,
+      "detail": "git diff HEAD"
+    },
+    {
+      "name": "no huge binary junk files",
+      "passed": true,
+      "detail": "none"
+    },
+    {
+      "name": "optional synthetic WAV files tiny and labeled if created",
+      "passed": true,
+      "detail": "none"
+    }
+  ]
+}
