@@ -1,0 +1,59 @@
+{
+  "queue": [
+    {
+      "batch": "V151-V160",
+      "name": "READONLY_PARSER",
+      "status": "BLUEPRINT_ONLY_NOT_RUN",
+      "commit_message": "Create UAOS KORG read-only parser scaffold V151-V160",
+      "next_action": "execute only when owner requests"
+    },
+    {
+      "batch": "V161-V170",
+      "name": "FIXTURE_RESEARCH",
+      "status": "BLUEPRINT_ONLY_NOT_RUN",
+      "commit_message": "Create UAOS fixture research pack V161-V170",
+      "next_action": "execute only when owner requests"
+    },
+    {
+      "batch": "V171-V180",
+      "name": "STYLE_RC_EXPANSION",
+      "status": "BLUEPRINT_ONLY_NOT_RUN",
+      "commit_message": "Expand UAOS style RC pipeline V171-V180",
+      "next_action": "execute only when owner requests"
+    },
+    {
+      "batch": "V181-V190",
+      "name": "WRITER_SANDBOX_DESIGN_BLOCKED",
+      "status": "BLUEPRINT_ONLY_NOT_RUN",
+      "commit_message": "Create blocked writer sandbox design pack V181-V190",
+      "next_action": "execute only when owner requests"
+    },
+    {
+      "batch": "V191-V200",
+      "name": "FINAL_INTEGRATION",
+      "status": "BLUEPRINT_ONLY_NOT_RUN",
+      "commit_message": "Create UAOS final integration pack V191-V200",
+      "next_action": "execute only when owner requests"
+    }
+  ],
+  "strategy": [
+    "Agents prewrite",
+    "Safety agent scans",
+    "Validator agent checks forbidden output/claims",
+    "Dashboard agent builds owner view",
+    "Integrator assembles actual batch only when requested",
+    "Commit only after validator success",
+    "Never mark draft stages PASS"
+  ],
+  "status": "DRAFT_NOT_RUN",
+  "pass_claim_allowed": false,
+  "korg_output_allowed": false,
+  "writer_allowed": false,
+  "usb_allowed": false,
+  "pa3x_load_allowed": false,
+  "app_jsx_touched": false,
+  "react_integration": false,
+  "deploy_payment": false,
+  "compatibility_claim_allowed": false,
+  "pa3x_ready_claim_allowed": false
+}

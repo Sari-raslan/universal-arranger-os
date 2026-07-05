@@ -1,0 +1,46 @@
+{
+  "version": "V177",
+  "version_title": "Style RC Owner Feedback Loop",
+  "owner_purpose": "Prewrite planning for Style RC Owner Feedback Loop.",
+  "responsible_agent": "AGENT_03_STYLE_RC_ENGINEER",
+  "required_inputs": [
+    "prior safe UAOS outputs",
+    "explicit owner request for actual execution"
+  ],
+  "planned_outputs": [
+    "metadata docs",
+    "validator inputs",
+    "dashboard notes",
+    "seal template"
+  ],
+  "validator_rules": [
+    "no forbidden KORG extensions",
+    "no writer",
+    "no USB",
+    "no PA3X load",
+    "no App.jsx",
+    "no deploy",
+    "no future PASS claim"
+  ],
+  "dashboard_requirements": [
+    "show draft status",
+    "show blocked gates",
+    "show integrator handoff"
+  ],
+  "final_seal_requirements": [
+    "status remains DRAFT_NOT_RUN until actual run",
+    "no future PASS claim"
+  ],
+  "commit_message": "Execute UAOS Style RC Owner Feedback Loop V177",
+  "status": "DRAFT_NOT_RUN",
+  "pass_claim_allowed": false,
+  "korg_output_allowed": false,
+  "writer_allowed": false,
+  "usb_allowed": false,
+  "pa3x_load_allowed": false,
+  "app_jsx_touched": false,
+  "react_integration": false,
+  "deploy_payment": false,
+  "compatibility_claim_allowed": false,
+  "pa3x_ready_claim_allowed": false
+}

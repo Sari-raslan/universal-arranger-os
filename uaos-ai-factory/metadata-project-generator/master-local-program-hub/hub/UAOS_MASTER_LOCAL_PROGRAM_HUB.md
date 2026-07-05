@@ -143,3 +143,12 @@ Next safe action: generate MIDI test arrangement using priority packs metadata
 - Dummy dry-run report: `..\..\korg-readonly-parser-scaffold\v157_synthetic_dummy_dryrun\UAOS_V157_SYNTHETIC_DUMMY_DRYRUN_REPORT.json`
 - Validator results: `..\..\korg-readonly-parser-scaffold\validators\UAOS_READONLY_PARSER_VALIDATOR_RESULTS.json`
 - Next action: owner-provided fixture approval OR continue generic UAOS style RCs.
+
+
+## Super Agent Launcher V151-V200
+
+- Super Agent Launcher dashboard: `..\..\super-agent-launcher-v151-v200\07_dashboards\UAOS_SUPER_AGENT_LAUNCHER_DASHBOARD.html`
+- Agent department dashboard: `..\..\super-agent-launcher-v151-v200\07_dashboards\UAOS_AGENT_DEPARTMENT_DASHBOARD.html`
+- V151-V200 pipeline dashboard: `..\..\super-agent-launcher-v151-v200\07_dashboards\UAOS_V151_V200_PIPELINE_DASHBOARD.html`
+- Integrator queue: `..\..\super-agent-launcher-v151-v200\04_integrator_queue\UAOS_INTEGRATOR_QUEUE_V151_V200.md`
+- Next fastest executable batch: V151-V160 Read-only Parser Scaffold.

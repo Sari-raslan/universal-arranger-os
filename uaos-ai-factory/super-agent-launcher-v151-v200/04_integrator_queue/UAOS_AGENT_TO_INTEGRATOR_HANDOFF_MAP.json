@@ -1,0 +1,65 @@
+{
+  "handoffs": [
+    {
+      "agent": "AGENT_01_KORG_READONLY_PARSER",
+      "folder": "02_agent_outputs/agent_01_korg_readonly_parser",
+      "integrator": "AGENT_08_FINAL_INTEGRATOR"
+    },
+    {
+      "agent": "AGENT_02_FIXTURE_POLICY_MANAGER",
+      "folder": "02_agent_outputs/agent_02_fixture_policy",
+      "integrator": "AGENT_08_FINAL_INTEGRATOR"
+    },
+    {
+      "agent": "AGENT_03_STYLE_RC_ENGINEER",
+      "folder": "02_agent_outputs/agent_03_style_rc",
+      "integrator": "AGENT_08_FINAL_INTEGRATOR"
+    },
+    {
+      "agent": "AGENT_04_STYLE_TO_MIDI_SYNC_ENGINEER",
+      "folder": "02_agent_outputs/agent_04_style_midi_sync",
+      "integrator": "AGENT_08_FINAL_INTEGRATOR"
+    },
+    {
+      "agent": "AGENT_05_VALIDATOR_ENGINEER",
+      "folder": "02_agent_outputs/agent_05_validators",
+      "integrator": "AGENT_08_FINAL_INTEGRATOR"
+    },
+    {
+      "agent": "AGENT_06_OWNER_DASHBOARD_ENGINEER",
+      "folder": "02_agent_outputs/agent_06_dashboards",
+      "integrator": "AGENT_08_FINAL_INTEGRATOR"
+    },
+    {
+      "agent": "AGENT_07_EXTERNAL_REVIEW_ENGINEER",
+      "folder": "02_agent_outputs/agent_07_external_review",
+      "integrator": "AGENT_08_FINAL_INTEGRATOR"
+    },
+    {
+      "agent": "AGENT_08_FINAL_INTEGRATOR",
+      "folder": "02_agent_outputs/agent_08_integrator",
+      "integrator": "AGENT_08_FINAL_INTEGRATOR"
+    },
+    {
+      "agent": "AGENT_09_SAFETY_GOVERNANCE",
+      "folder": "02_agent_outputs/agent_09_safety",
+      "integrator": "AGENT_08_FINAL_INTEGRATOR"
+    },
+    {
+      "agent": "AGENT_10_ROADMAP_MANAGER",
+      "folder": "02_agent_outputs/agent_10_roadmap",
+      "integrator": "AGENT_08_FINAL_INTEGRATOR"
+    }
+  ],
+  "status": "DRAFT_NOT_RUN",
+  "pass_claim_allowed": false,
+  "korg_output_allowed": false,
+  "writer_allowed": false,
+  "usb_allowed": false,
+  "pa3x_load_allowed": false,
+  "app_jsx_touched": false,
+  "react_integration": false,
+  "deploy_payment": false,
+  "compatibility_claim_allowed": false,
+  "pa3x_ready_claim_allowed": false
+}
