@@ -113,9 +113,9 @@ const selectedNeutralPackageSnapshot = {
   keyboardTransfer: "NO",
   safeNextAction: "Review metadata / no keyboard transfer",
   safetyLabels: [
-    "LOCAL ONLY",
+    "OWNER TEST MODE",
     "READ ONLY",
-    "NOT PUBLIC RELEASE",
+    "APP/REACT ALLOWED BY REQUEST",
     "NOT KEYBOARD OUTPUT",
   ],
 };
@@ -134,7 +134,7 @@ const selectedNeutralPackagePanel = {
   safetyLabels:
     selectedNeutralPackageSnapshot.safetyLabels?.length > 0
       ? selectedNeutralPackageSnapshot.safetyLabels
-      : ["LOCAL ONLY", "READ ONLY", "NOT PUBLIC RELEASE", "NOT KEYBOARD OUTPUT"],
+      : ["OWNER TEST MODE", "READ ONLY", "APP/REACT ALLOWED BY REQUEST", "NOT KEYBOARD OUTPUT"],
 };
 
 const ownerProgramSections = [
@@ -144,7 +144,7 @@ const ownerProgramSections = [
     localPath: "E:\\keyboard-manager-clean\\uaos-ai-factory\\UAOS_FINAL_LOCAL_OWNER_PROGRAM_V2",
     ownerTest: "Open the owner program dashboard and review the complete local workflow.",
     actionLabel: "Open/Test owner program folder",
-    blocked: "No deploy, no push, no device writer.",
+    blocked: "Push/deploy use approval gates; device writer remains blocked.",
   },
   {
     title: "Style Package RC",
@@ -208,7 +208,7 @@ const ownerProgramSections = [
     localPath: "E:\\keyboard-manager-clean\\uaos-ai-factory\\UAOS_RELAXED_PRODUCT_MODE_POLICY.md",
     ownerTest: "Confirm relaxed product mode still blocks real KORG writer actions.",
     actionLabel: "Open policy file",
-    blocked: "No push or deploy in this task.",
+    blocked: "Push/deploy optional only by explicit owner approval.",
   },
   {
     title: "Next Actions",
@@ -225,7 +225,8 @@ const ownerSafetyGates = [
   ".STY/.SET: BLOCKED",
   "USB: BLOCKED",
   "PA3X Load: BLOCKED",
-  "Deploy: NOT RUN",
+  "Payment: BLOCKED",
+  "Push/Deploy: approval gate",
 ];
 
 const styleRcDeepReviewLinks = [
@@ -918,9 +919,9 @@ export default function App() {
         <div className="uaos-v8-safety">
           <strong>Safety gates</strong>
           <span>One language only</span>
-          <span>No public publish</span>
+          <span>Push/deploy by approval gate</span>
           <span>No device writer</span>
-          <span>Local workflow only</span>
+          <span>Owner test mode active</span>
         </div>
       </aside>
 
@@ -955,22 +956,22 @@ export default function App() {
         <section className="uaos-v8-panel" id="local-project-status">
           <div className="uaos-v8-panel-header">
             <p>AE Platform / UAOS</p>
-            <h2>Local Project Status</h2>
-            <span>LOCAL ONLY · NOT PUBLIC RELEASE · GitHub transfer pending</span>
+            <h2>Owner Test Status</h2>
+            <span>Current test mode: local owner test active · Push/Deploy controlled by approval gate</span>
           </div>
 
           <div className="uaos-manager-ready-grid">
             <article>
-              <strong>LOCAL ONLY</strong>
-              <p>Owner dashboard, Jobcenter/supporter demo wording, and implementation queue are local/private planning materials.</p>
+              <strong>Owner test active</strong>
+              <p>Owner dashboard, Jobcenter/supporter demo wording, and implementation queue are review materials for this local test session.</p>
             </article>
             <article>
-              <strong>NO PUSH / NO DEPLOY / NO VERCEL</strong>
-              <p>Remote transfer is pending. Public release, hosting publication, and external automation remain blocked.</p>
+              <strong>Approval gate</strong>
+              <p>Push and deploy are optional only after explicit owner approval; no release action is automatic.</p>
             </article>
             <article>
               <strong>Blocked</strong>
-              <p>Payment and real keyboard writer/export remain blocked. Demo wording is safe for Jobcenter/supporter explanation only.</p>
+              <p>Payment activation and real keyboard writer/export remain blocked. Demo wording is for controlled review only.</p>
             </article>
           </div>
         </section>
@@ -979,7 +980,7 @@ export default function App() {
           <div className="uaos-v8-panel-header">
             <p>{selectedNeutralPackagePanel.safetyLabels.join(" · ")}</p>
             <h2>Selected Neutral Package</h2>
-            <span>Owner manual review status only. No keyboard transfer, export, deploy, or payment action.</span>
+            <span>Owner manual review status only. Keyboard transfer, real export, and payment activation stay blocked.</span>
           </div>
 
           <div className="uaos-manager-ready-grid">
@@ -1025,8 +1026,8 @@ export default function App() {
         <section className="uaos-v8-panel" id="owner-review-map">
           <div className="uaos-v8-panel-header">
             <p>Owner Review</p>
-            <h2>Safe Local Review Map</h2>
-            <span>Local-only checkpoints for private review. No public URLs, release, payment, or export claims.</span>
+            <h2>Owner Review Map</h2>
+            <span>Owner-test checkpoints with approval gates for push/deploy and hard blocks for payment, USB, PA3X, and real writer actions.</span>
           </div>
 
           <div className="uaos-manager-ready-grid">
@@ -1036,7 +1037,7 @@ export default function App() {
             </article>
             <article>
               <strong>Jobcenter Pack</strong>
-              <p>Use private prototype wording only: LOCAL ONLY, NOT PUBLIC RELEASE.</p>
+              <p>Use controlled prototype wording: owner test active, approval gates for push/deploy, and real device output blocked.</p>
             </article>
             <article>
               <strong>Supporter Pack</strong>
@@ -1044,7 +1045,7 @@ export default function App() {
             </article>
             <article>
               <strong>Demo Gateway</strong>
-              <p>Static/local screenshot reference only. No deploy, Vercel, or public URL creation.</p>
+              <p>Use local screenshot references now; deploy/public URL work only happens through an explicit owner approval gate.</p>
             </article>
             <article>
               <strong>GitHub Transfer Wait Gate</strong>
@@ -1479,7 +1480,7 @@ export default function App() {
 
             <article>
               <strong>Writer status</strong>
-              <p>Still blocked. No public publish, no device writer, no real keyboard output.</p>
+              <p>Still blocked. Publishing uses approval gates; device writer and real keyboard output remain blocked.</p>
             </article>
           </div>
         </section>
