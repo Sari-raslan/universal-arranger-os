@@ -8,13 +8,14 @@ $StatusPath = Join-Path $Run "01_setup\UAOS_OWNER_TEST_SETUP_STATUS.json"
 $Dashboard = Join-Path $Run "02_owner_flow\UAOS_OWNER_TEST_FLOW_DASHBOARD.html"
 $RepairDashboard = Join-Path $RepairRun "dashboards\UAOS_OWNER_TEST_LAUNCHER_REPAIR_DASHBOARD.html"
 $PreviewPort = 5180
+$FallbackUrl = "http://127.0.0.1:5180/universal-arranger-os/"
 $CandidateUrls = @(
+  "http://127.0.0.1:5180/",
+  "http://127.0.0.1:5180/universal-arranger-os/",
   "http://127.0.0.1:4173/",
   "http://127.0.0.1:4173/universal-arranger-os/",
   "http://127.0.0.1:5173/",
-  "http://127.0.0.1:5173/universal-arranger-os/",
-  "http://127.0.0.1:5180/",
-  "http://127.0.0.1:5180/universal-arranger-os/"
+  "http://127.0.0.1:5173/universal-arranger-os/"
 )
 
 $PreviewStarted = $false
@@ -26,12 +27,20 @@ $Errors = @()
 function Test-UaosUrl {
   param([string]$Url)
   try {
-    $response = Invoke-WebRequest -Uri $Url -UseBasicParsing -TimeoutSec 5
+    $request = [System.Net.HttpWebRequest]::Create($Url)
+    $request.Timeout = 5000
+    $response = $request.GetResponse()
+    $stream = $response.GetResponseStream()
+    $memory = New-Object System.IO.MemoryStream
+    $stream.CopyTo($memory)
+    $content = [System.Text.Encoding]::UTF8.GetString($memory.ToArray())
+    $stream.Close()
+    $response.Close()
     return [ordered]@{
       url = $Url
       reachable = $true
       status = [int]$response.StatusCode
-      title = ([regex]::Match($response.Content, "<title>(.*?)</title>")).Groups[1].Value
+      title = ([regex]::Match($content, "<title>(.*?)</title>")).Groups[1].Value
     }
   } catch {
     $status = "ERR"
@@ -98,7 +107,8 @@ $status = [ordered]@{
   candidate_urls = $CandidateUrls
   probe_results = $ProbeResults
   working_url = $WorkingUrl
-  fallback = "If no URL opens, run npm run preview from E:\keyboard-manager-clean\uaos-live-clean and open http://127.0.0.1:5180/universal-arranger-os/."
+  fallback_url = $FallbackUrl
+  fallback = "If no URL opens, run npm run preview from E:\keyboard-manager-clean\uaos-live-clean and open $FallbackUrl."
   deploy = "NO"
   push = "NO"
   payment_activation = "NO"
