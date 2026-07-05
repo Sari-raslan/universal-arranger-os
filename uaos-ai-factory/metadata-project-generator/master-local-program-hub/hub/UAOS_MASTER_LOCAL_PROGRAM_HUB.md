@@ -109,3 +109,14 @@ Next safe action: generate MIDI test arrangement using priority packs metadata
 - V129 preview dashboard: `..\..\style-midi-sync-track\v129_sync_preview\UAOS_V129_STYLE_MIDI_SYNC_PREVIEW.html`
 - V130 final seal: `..\..\style-midi-sync-track\v130_final_sync_seal\UAOS_V130_FINAL_SEAL.md`
 - Next action: V131-V140 UAOS Style Package RC + Owner Test Program Update.
+
+
+## V131-V140 Style Package RC
+
+- Style Package RC open page: `..\..\style-package-rc\batch-v131-v140-style-package-rc\UAOS_BATCH_V131_V140_STYLE_PACKAGE_RC_OPEN_HERE.html`
+- V132 style RC files: `..\..\style-package-rc\v132_rc_style_files`
+- V133 MIDI bundle: `..\..\style-package-rc\v133_rc_midi_bundle\midi`
+- V134 test center: `..\..\style-package-rc\v134_rc_test_center\UAOS_V134_STYLE_RC_TEST_CENTER.html`
+- V135 RC ZIP: `..\..\style-package-rc\v135_rc_package_zip\UAOS_V135_STYLE_PACKAGE_RC.zip`
+- Updated Final Owner Program V2 style RC center: `..\..\UAOS_FINAL_LOCAL_OWNER_PROGRAM_V2\16_style_rc\UAOS_STYLE_RC_CENTER.html`
+- Next action: choose KORG read-only research gate or continue generic style RCs.
