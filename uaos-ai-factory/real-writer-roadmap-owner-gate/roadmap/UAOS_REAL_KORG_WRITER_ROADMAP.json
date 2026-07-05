@@ -1,0 +1,61 @@
+{
+  "status": "PASS",
+  "current_stage": "Style RC / Read-only Parser Scaffold",
+  "writer_status": "BLOCKED",
+  "stages": [
+    {
+      "number": 1,
+      "name": "Owner-owned fixture approval",
+      "state": "next required input"
+    },
+    {
+      "number": 2,
+      "name": "Read-only fixture scan",
+      "state": "future gate"
+    },
+    {
+      "number": 3,
+      "name": "Real parser report",
+      "state": "future gate"
+    },
+    {
+      "number": 4,
+      "name": "Format gap closure",
+      "state": "future gate"
+    },
+    {
+      "number": 5,
+      "name": "Writer sandbox design",
+      "state": "future gate"
+    },
+    {
+      "number": 6,
+      "name": "Binary writer sandbox on dummy files",
+      "state": "future gate"
+    },
+    {
+      "number": 7,
+      "name": "External review",
+      "state": "future gate"
+    },
+    {
+      "number": 8,
+      "name": "Backup/recovery policy",
+      "state": "future gate"
+    },
+    {
+      "number": 9,
+      "name": "USB workflow dry-run",
+      "state": "future gate"
+    },
+    {
+      "number": 10,
+      "name": "PA3X hardware test approval",
+      "state": "future gate"
+    }
+  ],
+  "next_required_input": "owner-owned fixture path approval",
+  "no_writer_implemented": true,
+  "no_usb": true,
+  "no_pa3x_load": true
+}
