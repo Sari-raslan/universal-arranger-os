@@ -52,3 +52,14 @@ Generate MIDI test arrangement using priority packs metadata.
 - Style preview dashboard: `..\..\style-export-track\v106_style_preview\UAOS_V106_STYLE_PREVIEW_DASHBOARD.html`
 - KORG research gate: `..\..\style-export-track\v107_korg_research_gate\UAOS_V107_KORG_RESEARCH_GATE_READ_ONLY.md`
 - Next approval gate: `..\..\style-export-track\v109_owner_approval_gate\UAOS_V109_NEXT_STYLE_EXPORT_APPROVAL_GATE.md`
+
+
+## V111-V120 Style Package V2
+
+- Style Package v2 open page: `..\..\style-export-track-v2\batch-v111-v120-style-package-v2\UAOS_BATCH_V111_V120_STYLE_PACKAGE_V2_OPEN_HERE.html`
+- V117 `.uaosstyle.json`: `..\..\style-export-track-v2\v117_generic_style_package_v2\UAOS_V117_GENERIC_STYLE_PACKAGE_V2.uaosstyle.json`
+- V117 `.style.json`: `..\..\style-export-track-v2\v117_generic_style_package_v2\UAOS_V117_SECTION_STYLE_PACKAGE_V2.style.json`
+- V117 generic ZIP v2: `..\..\style-export-track-v2\v117_generic_style_package_v2\UAOS_V117_GENERIC_STYLE_PACKAGE_V2.zip`
+- V119 preview dashboard: `..\..\style-export-track-v2\v119_style_package_v2_preview\UAOS_V119_STYLE_PACKAGE_V2_PREVIEW.html`
+- V120 final seal: `..\..\style-export-track-v2\v120_final_style_package_v2_seal\UAOS_V120_FINAL_SEAL.md`
+- Next action: V121-V130 UAOS Style-to-MIDI Section Export Sync or KORG Research Read-only Gate.

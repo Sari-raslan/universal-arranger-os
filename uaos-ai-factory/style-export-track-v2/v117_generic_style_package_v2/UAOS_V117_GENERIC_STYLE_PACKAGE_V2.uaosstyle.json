@@ -1,0 +1,605 @@
+{
+  "style_id": "UAOS_V117_GENERIC_STYLE_PACKAGE_V2",
+  "style_name": "UAOS Generic Style Package V2",
+  "tempo": 104,
+  "time_signature": "4/4",
+  "sections": {
+    "intro_1": {
+      "bars": 4,
+      "energy_level": "low",
+      "track_roles": [
+        "drums",
+        "percussion",
+        "pad",
+        "melody_guide"
+      ],
+      "allowed_transition_to": [
+        "variation_a",
+        "intro_2"
+      ],
+      "midi_ref_placeholder": "v81_section_midi",
+      "style_usage_note": "short opening cue"
+    },
+    "intro_2": {
+      "bars": 4,
+      "energy_level": "medium",
+      "track_roles": [
+        "drums",
+        "percussion",
+        "bass",
+        "chord_1",
+        "pad",
+        "melody_guide"
+      ],
+      "allowed_transition_to": [
+        "variation_a",
+        "variation_b"
+      ],
+      "midi_ref_placeholder": "priority_section",
+      "style_usage_note": "fuller opening cue"
+    },
+    "variation_a": {
+      "bars": 8,
+      "energy_level": "low",
+      "track_roles": [
+        "drums",
+        "bass",
+        "chord_1",
+        "pad"
+      ],
+      "allowed_transition_to": [
+        "fill_a",
+        "variation_b",
+        "ending_1"
+      ],
+      "midi_ref_placeholder": "v81_section_midi",
+      "style_usage_note": "simple low-density groove"
+    },
+    "variation_b": {
+      "bars": 8,
+      "energy_level": "medium",
+      "track_roles": [
+        "drums",
+        "percussion",
+        "bass",
+        "chord_1",
+        "chord_2",
+        "pad"
+      ],
+      "allowed_transition_to": [
+        "fill_b",
+        "variation_c",
+        "break",
+        "ending_1"
+      ],
+      "midi_ref_placeholder": "v82_multitrack_midi",
+      "style_usage_note": "medium density groove"
+    },
+    "variation_c": {
+      "bars": 8,
+      "energy_level": "strong",
+      "track_roles": [
+        "drums",
+        "percussion",
+        "bass",
+        "chord_1",
+        "chord_2",
+        "pad",
+        "phrase"
+      ],
+      "allowed_transition_to": [
+        "fill_c",
+        "variation_d",
+        "break",
+        "ending_2"
+      ],
+      "midi_ref_placeholder": "priority_arrangement",
+      "style_usage_note": "stronger arranger section"
+    },
+    "variation_d": {
+      "bars": 8,
+      "energy_level": "full",
+      "track_roles": [
+        "drums",
+        "percussion",
+        "bass",
+        "chord_1",
+        "chord_2",
+        "pad",
+        "phrase",
+        "melody_guide"
+      ],
+      "allowed_transition_to": [
+        "fill_d",
+        "ending_2",
+        "break"
+      ],
+      "midi_ref_placeholder": "priority_multitrack",
+      "style_usage_note": "highest-density full section"
+    },
+    "fill_a": {
+      "bars": 1,
+      "energy_level": "transition_low",
+      "track_roles": [
+        "drums",
+        "percussion"
+      ],
+      "allowed_transition_to": [
+        "variation_b"
+      ],
+      "midi_ref_placeholder": "v81_section_midi",
+      "style_usage_note": "fill leads into next variation"
+    },
+    "fill_b": {
+      "bars": 1,
+      "energy_level": "transition_medium",
+      "track_roles": [
+        "drums",
+        "percussion",
+        "bass"
+      ],
+      "allowed_transition_to": [
+        "variation_c"
+      ],
+      "midi_ref_placeholder": "priority_section",
+      "style_usage_note": "fill leads into next variation"
+    },
+    "fill_c": {
+      "bars": 1,
+      "energy_level": "transition_strong",
+      "track_roles": [
+        "drums",
+        "percussion",
+        "bass",
+        "phrase"
+      ],
+      "allowed_transition_to": [
+        "variation_d"
+      ],
+      "midi_ref_placeholder": "priority_section",
+      "style_usage_note": "fill leads into next variation"
+    },
+    "fill_d": {
+      "bars": 1,
+      "energy_level": "transition_full",
+      "track_roles": [
+        "drums",
+        "percussion",
+        "phrase"
+      ],
+      "allowed_transition_to": [
+        "variation_a",
+        "ending_2"
+      ],
+      "midi_ref_placeholder": "priority_multitrack",
+      "style_usage_note": "fill resolves or cycles"
+    },
+    "break": {
+      "bars": 1,
+      "energy_level": "drop",
+      "track_roles": [
+        "percussion",
+        "phrase"
+      ],
+      "allowed_transition_to": [
+        "variation_a",
+        "variation_c",
+        "variation_d"
+      ],
+      "midi_ref_placeholder": "priority_section",
+      "style_usage_note": "break stops or reduces drums/chords"
+    },
+    "ending_1": {
+      "bars": 4,
+      "energy_level": "resolve_simple",
+      "track_roles": [
+        "drums",
+        "bass",
+        "chord_1",
+        "pad"
+      ],
+      "allowed_transition_to": [],
+      "midi_ref_placeholder": "v81_section_midi",
+      "style_usage_note": "short ending resolution"
+    },
+    "ending_2": {
+      "bars": 4,
+      "energy_level": "resolve_full",
+      "track_roles": [
+        "drums",
+        "percussion",
+        "bass",
+        "chord_1",
+        "chord_2",
+        "pad",
+        "melody_guide"
+      ],
+      "allowed_transition_to": [],
+      "midi_ref_placeholder": "priority_arrangement",
+      "style_usage_note": "full ending resolution"
+    }
+  },
+  "variations": {
+    "variation_a": {
+      "density": "simple / low density",
+      "energy": 1,
+      "roles": [
+        "drums",
+        "bass",
+        "chord_1",
+        "pad"
+      ]
+    },
+    "variation_b": {
+      "density": "medium",
+      "energy": 2,
+      "roles": [
+        "drums",
+        "percussion",
+        "bass",
+        "chord_1",
+        "chord_2",
+        "pad"
+      ]
+    },
+    "variation_c": {
+      "density": "stronger",
+      "energy": 3,
+      "roles": [
+        "drums",
+        "percussion",
+        "bass",
+        "chord_1",
+        "chord_2",
+        "pad",
+        "phrase"
+      ]
+    },
+    "variation_d": {
+      "density": "full / highest density",
+      "energy": 4,
+      "roles": [
+        "drums",
+        "percussion",
+        "bass",
+        "chord_1",
+        "chord_2",
+        "pad",
+        "phrase",
+        "melody_guide"
+      ]
+    },
+    "korg_writer_implemented": false,
+    "korg_output": false,
+    "usb_write": false,
+    "pa3x_load": false,
+    "app_jsx_touched": false,
+    "react_integration": false,
+    "deploy_payment": false,
+    "compatibility_claim": false,
+    "pa3x_ready_claim": false,
+    "format": "UAOS_GENERIC_STYLE_V2_ONLY"
+  },
+  "fill_break_ending_logic": {
+    "fills": {
+      "fill_a": "lead to variation_b",
+      "fill_b": "lead to variation_c",
+      "fill_c": "lead to variation_d",
+      "fill_d": "cycle or resolve"
+    },
+    "break": "stops or reduces drums/chords",
+    "endings": {
+      "ending_1": "simple resolution",
+      "ending_2": "full resolution"
+    },
+    "no_real_time_arranger_engine_claim": true,
+    "no_korg_compatibility_claim": true,
+    "korg_writer_implemented": false,
+    "korg_output": false,
+    "usb_write": false,
+    "pa3x_load": false,
+    "app_jsx_touched": false,
+    "react_integration": false,
+    "deploy_payment": false,
+    "compatibility_claim": false,
+    "pa3x_ready_claim": false,
+    "format": "UAOS_GENERIC_STYLE_V2_ONLY"
+  },
+  "arranger_track_roles": {
+    "drums": {
+      "channel_suggestion": 10,
+      "purpose": "drums",
+      "used_in": [
+        "intro_1",
+        "intro_2",
+        "variation_a",
+        "variation_b",
+        "variation_c",
+        "variation_d",
+        "fill_a",
+        "fill_b",
+        "fill_c",
+        "fill_d",
+        "ending_1",
+        "ending_2"
+      ]
+    },
+    "percussion": {
+      "channel_suggestion": 2,
+      "purpose": "percussion",
+      "used_in": [
+        "intro_1",
+        "intro_2",
+        "variation_b",
+        "variation_c",
+        "variation_d",
+        "fill_a",
+        "fill_b",
+        "fill_c",
+        "fill_d",
+        "break",
+        "ending_2"
+      ]
+    },
+    "bass": {
+      "channel_suggestion": 3,
+      "purpose": "bass",
+      "used_in": [
+        "intro_2",
+        "variation_a",
+        "variation_b",
+        "variation_c",
+        "variation_d",
+        "fill_b",
+        "fill_c",
+        "ending_1",
+        "ending_2"
+      ]
+    },
+    "chord_1": {
+      "channel_suggestion": 4,
+      "purpose": "chord 1",
+      "used_in": [
+        "intro_2",
+        "variation_a",
+        "variation_b",
+        "variation_c",
+        "variation_d",
+        "ending_1",
+        "ending_2"
+      ]
+    },
+    "chord_2": {
+      "channel_suggestion": 5,
+      "purpose": "chord 2",
+      "used_in": [
+        "variation_b",
+        "variation_c",
+        "variation_d",
+        "ending_2"
+      ]
+    },
+    "pad": {
+      "channel_suggestion": 6,
+      "purpose": "pad",
+      "used_in": [
+        "intro_1",
+        "intro_2",
+        "variation_a",
+        "variation_b",
+        "variation_c",
+        "variation_d",
+        "ending_1",
+        "ending_2"
+      ]
+    },
+    "phrase": {
+      "channel_suggestion": 7,
+      "purpose": "phrase",
+      "used_in": [
+        "variation_c",
+        "variation_d",
+        "fill_c",
+        "fill_d",
+        "break"
+      ]
+    },
+    "melody_guide": {
+      "channel_suggestion": 8,
+      "purpose": "melody guide",
+      "used_in": [
+        "intro_1",
+        "intro_2",
+        "variation_d",
+        "ending_2"
+      ]
+    }
+  },
+  "priority_library_binding": {
+    "priority_library_binding": [
+      {
+        "pack_name": "Oriental Drums",
+        "bound_roles": "drums",
+        "sample_dependency": false,
+        "metadata_preset_refs_only": true
+      },
+      {
+        "pack_name": "Dabke Percussion",
+        "bound_roles": "percussion",
+        "sample_dependency": false,
+        "metadata_preset_refs_only": true
+      },
+      {
+        "pack_name": "Arabic Strings",
+        "bound_roles": "chord_1/chord_2/pad",
+        "sample_dependency": false,
+        "metadata_preset_refs_only": true
+      },
+      {
+        "pack_name": "Oud/Qanun/Nay",
+        "bound_roles": "phrase/melody_guide",
+        "sample_dependency": false,
+        "metadata_preset_refs_only": true
+      },
+      {
+        "pack_name": "Full Style Starter",
+        "bound_roles": "bass/chord_1/pad",
+        "sample_dependency": false,
+        "metadata_preset_refs_only": true
+      }
+    ],
+    "section_binding": {
+      "intro_1": [
+        "Oriental Drums",
+        "Dabke Percussion",
+        "Arabic Strings",
+        "Oud/Qanun/Nay",
+        "Full Style Starter"
+      ],
+      "intro_2": [
+        "Oriental Drums",
+        "Dabke Percussion",
+        "Arabic Strings",
+        "Oud/Qanun/Nay",
+        "Full Style Starter"
+      ],
+      "variation_a": [
+        "Oriental Drums",
+        "Dabke Percussion",
+        "Arabic Strings",
+        "Oud/Qanun/Nay",
+        "Full Style Starter"
+      ],
+      "variation_b": [
+        "Oriental Drums",
+        "Dabke Percussion",
+        "Arabic Strings",
+        "Oud/Qanun/Nay",
+        "Full Style Starter"
+      ],
+      "variation_c": [
+        "Oriental Drums",
+        "Dabke Percussion",
+        "Arabic Strings",
+        "Oud/Qanun/Nay",
+        "Full Style Starter"
+      ],
+      "variation_d": [
+        "Oriental Drums",
+        "Dabke Percussion",
+        "Arabic Strings",
+        "Oud/Qanun/Nay",
+        "Full Style Starter"
+      ],
+      "fill_a": [
+        "Oriental Drums",
+        "Dabke Percussion",
+        "Arabic Strings",
+        "Oud/Qanun/Nay",
+        "Full Style Starter"
+      ],
+      "fill_b": [
+        "Oriental Drums",
+        "Dabke Percussion",
+        "Arabic Strings",
+        "Oud/Qanun/Nay",
+        "Full Style Starter"
+      ],
+      "fill_c": [
+        "Oriental Drums",
+        "Dabke Percussion",
+        "Arabic Strings",
+        "Oud/Qanun/Nay",
+        "Full Style Starter"
+      ],
+      "fill_d": [
+        "Oriental Drums",
+        "Dabke Percussion",
+        "Arabic Strings",
+        "Oud/Qanun/Nay",
+        "Full Style Starter"
+      ],
+      "break": [
+        "Oriental Drums",
+        "Dabke Percussion",
+        "Arabic Strings",
+        "Oud/Qanun/Nay",
+        "Full Style Starter"
+      ],
+      "ending_1": [
+        "Oriental Drums",
+        "Dabke Percussion",
+        "Arabic Strings",
+        "Oud/Qanun/Nay",
+        "Full Style Starter"
+      ],
+      "ending_2": [
+        "Oriental Drums",
+        "Dabke Percussion",
+        "Arabic Strings",
+        "Oud/Qanun/Nay",
+        "Full Style Starter"
+      ]
+    },
+    "korg_writer_implemented": false,
+    "korg_output": false,
+    "usb_write": false,
+    "pa3x_load": false,
+    "app_jsx_touched": false,
+    "react_integration": false,
+    "deploy_payment": false,
+    "compatibility_claim": false,
+    "pa3x_ready_claim": false,
+    "format": "UAOS_GENERIC_STYLE_V2_ONLY"
+  },
+  "midi_reference_binding": {
+    "midi_refs": [
+      {
+        "id": "v81_section_midi",
+        "path": "E:\\keyboard-manager-clean\\uaos-ai-factory\\metadata-project-generator\\v81\\midi\\UAOS_V81_SECTION_BASED_REAL_MIDI_EXPORT.mid",
+        "exists": true
+      },
+      {
+        "id": "v82_multitrack_midi",
+        "path": "E:\\keyboard-manager-clean\\uaos-ai-factory\\metadata-project-generator\\v82\\midi\\UAOS_V82_MULTITRACK_ARRANGEMENT_EXPORT.mid",
+        "exists": true
+      },
+      {
+        "id": "priority_arrangement",
+        "path": "E:\\keyboard-manager-clean\\uaos-ai-factory\\priority-library-midi-test-arrangement\\midi\\UAOS_PRIORITY_LIBRARY_TEST_ARRANGEMENT.mid",
+        "exists": true
+      },
+      {
+        "id": "priority_section",
+        "path": "E:\\keyboard-manager-clean\\uaos-ai-factory\\priority-library-midi-test-arrangement\\midi\\UAOS_PRIORITY_LIBRARY_SECTION_TEST.mid",
+        "exists": true
+      },
+      {
+        "id": "priority_multitrack",
+        "path": "E:\\keyboard-manager-clean\\uaos-ai-factory\\priority-library-midi-test-arrangement\\midi\\UAOS_PRIORITY_LIBRARY_MULTITRACK_TEST.mid",
+        "exists": true
+      }
+    ],
+    "safe_midi_only": true,
+    "korg_writer_implemented": false,
+    "korg_output": false,
+    "usb_write": false,
+    "pa3x_load": false,
+    "app_jsx_touched": false,
+    "react_integration": false,
+    "deploy_payment": false,
+    "compatibility_claim": false,
+    "pa3x_ready_claim": false,
+    "format": "UAOS_GENERIC_STYLE_V2_ONLY"
+  },
+  "korg_writer_implemented": false,
+  "korg_output": false,
+  "usb_write": false,
+  "pa3x_load": false,
+  "app_jsx_touched": false,
+  "react_integration": false,
+  "deploy_payment": false,
+  "compatibility_claim": false,
+  "pa3x_ready_claim": false,
+  "format": "UAOS_GENERIC_STYLE_V2_ONLY"
+}
