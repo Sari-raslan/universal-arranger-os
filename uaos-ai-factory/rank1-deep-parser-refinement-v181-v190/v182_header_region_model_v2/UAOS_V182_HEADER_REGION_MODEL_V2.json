@@ -1,0 +1,98 @@
+{
+  "status": "PASS",
+  "bounded_header_only": true,
+  "regions": [
+    {
+      "region_id": "HR-0000-0512",
+      "start_offset": 0,
+      "end_offset_exclusive": 512,
+      "label": "observed bytes",
+      "status": "HYPOTHESIS",
+      "interpretation": "UNKNOWN/UNCONFIRMED",
+      "confidence": "MEDIUM",
+      "reason_not_solved": "No verified chunk map or multi-fixture comparison."
+    },
+    {
+      "region_id": "HR-0512-1024",
+      "start_offset": 512,
+      "end_offset_exclusive": 1024,
+      "label": "possible metadata region",
+      "status": "HYPOTHESIS",
+      "interpretation": "UNKNOWN/UNCONFIRMED",
+      "confidence": "LOW",
+      "reason_not_solved": "No verified chunk map or multi-fixture comparison."
+    },
+    {
+      "region_id": "HR-1024-1536",
+      "start_offset": 1024,
+      "end_offset_exclusive": 1536,
+      "label": "possible metadata region",
+      "status": "HYPOTHESIS",
+      "interpretation": "UNKNOWN/UNCONFIRMED",
+      "confidence": "LOW",
+      "reason_not_solved": "No verified chunk map or multi-fixture comparison."
+    },
+    {
+      "region_id": "HR-1536-2048",
+      "start_offset": 1536,
+      "end_offset_exclusive": 2048,
+      "label": "possible metadata region",
+      "status": "HYPOTHESIS",
+      "interpretation": "UNKNOWN/UNCONFIRMED",
+      "confidence": "LOW",
+      "reason_not_solved": "No verified chunk map or multi-fixture comparison."
+    },
+    {
+      "region_id": "HR-2048-2560",
+      "start_offset": 2048,
+      "end_offset_exclusive": 2560,
+      "label": "possible metadata region",
+      "status": "HYPOTHESIS",
+      "interpretation": "UNKNOWN/UNCONFIRMED",
+      "confidence": "LOW",
+      "reason_not_solved": "No verified chunk map or multi-fixture comparison."
+    },
+    {
+      "region_id": "HR-2560-3072",
+      "start_offset": 2560,
+      "end_offset_exclusive": 3072,
+      "label": "possible metadata region",
+      "status": "HYPOTHESIS",
+      "interpretation": "UNKNOWN/UNCONFIRMED",
+      "confidence": "LOW",
+      "reason_not_solved": "No verified chunk map or multi-fixture comparison."
+    },
+    {
+      "region_id": "HR-3072-3584",
+      "start_offset": 3072,
+      "end_offset_exclusive": 3584,
+      "label": "possible metadata region",
+      "status": "HYPOTHESIS",
+      "interpretation": "UNKNOWN/UNCONFIRMED",
+      "confidence": "LOW",
+      "reason_not_solved": "No verified chunk map or multi-fixture comparison."
+    },
+    {
+      "region_id": "HR-3584-4096",
+      "start_offset": 3584,
+      "end_offset_exclusive": 4096,
+      "label": "unknown",
+      "status": "HYPOTHESIS",
+      "interpretation": "UNKNOWN/UNCONFIRMED",
+      "confidence": "LOW",
+      "reason_not_solved": "No verified chunk map or multi-fixture comparison."
+    },
+    {
+      "region_id": "HR-UNSAFE-INFER",
+      "start_offset": null,
+      "end_offset_exclusive": null,
+      "label": "unsafe to infer",
+      "status": "HYPOTHESIS",
+      "interpretation": "UNKNOWN/UNCONFIRMED",
+      "confidence": "LOW",
+      "reason_not_solved": "Rank 1 alone cannot close format mapping."
+    }
+  ],
+  "mapping_solved": false,
+  "rank2_scanned": false
+}

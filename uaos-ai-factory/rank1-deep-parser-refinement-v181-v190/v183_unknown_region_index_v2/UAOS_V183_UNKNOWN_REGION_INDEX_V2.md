@@ -1,0 +1,44 @@
+# UAOS V183 Unknown Region Index V2
+
+Mapping solved: NO
+
+- UR-001 @ 23: possible container header / UNKNOWN/UNCONFIRMED
+- UR-002 @ 50: possible container header / UNKNOWN/UNCONFIRMED
+- UR-003 @ 135: unknown region / UNKNOWN/UNCONFIRMED
+- UR-004 @ 217: unknown region / UNKNOWN/UNCONFIRMED
+- UR-005 @ 297: unknown region / UNKNOWN/UNCONFIRMED
+- UR-006 @ 379: unknown region / UNKNOWN/UNCONFIRMED
+- UR-007 @ 461: unknown region / UNKNOWN/UNCONFIRMED
+- UR-008 @ 535: unknown region / UNKNOWN/UNCONFIRMED
+- UR-009 @ 613: unknown region / UNKNOWN/UNCONFIRMED
+- UR-010 @ 691: unknown region / UNKNOWN/UNCONFIRMED
+- UR-011 @ 771: unknown region / UNKNOWN/UNCONFIRMED
+- UR-012 @ 849: unknown region / UNKNOWN/UNCONFIRMED
+- UR-013 @ 928: unknown region / UNKNOWN/UNCONFIRMED
+- UR-014 @ 1006: unknown region / UNKNOWN/UNCONFIRMED
+- UR-015 @ 1088: unknown region / UNKNOWN/UNCONFIRMED
+- UR-016 @ 1167: unknown region / UNKNOWN/UNCONFIRMED
+- UR-017 @ 1245: unknown region / UNKNOWN/UNCONFIRMED
+- UR-018 @ 1324: unknown region / UNKNOWN/UNCONFIRMED
+- UR-019 @ 1403: unknown region / UNKNOWN/UNCONFIRMED
+- UR-020 @ 1479: unknown region / UNKNOWN/UNCONFIRMED
+- UR-021 @ 1555: unknown region / UNKNOWN/UNCONFIRMED
+- UR-022 @ 1634: unknown region / UNKNOWN/UNCONFIRMED
+- UR-023 @ 1720: unknown region / UNKNOWN/UNCONFIRMED
+- UR-024 @ 1794: unknown region / UNKNOWN/UNCONFIRMED
+- UR-025 @ 1870: unknown region / UNKNOWN/UNCONFIRMED
+- UR-026 @ 1945: unknown region / UNKNOWN/UNCONFIRMED
+- UR-027 @ 2021: unknown region / UNKNOWN/UNCONFIRMED
+- UR-028 @ 2097: unknown region / UNKNOWN/UNCONFIRMED
+- UR-029 @ 2173: unknown region / UNKNOWN/UNCONFIRMED
+- UR-030 @ 2249: unknown region / UNKNOWN/UNCONFIRMED
+- UR-031 @ 2325: unknown region / UNKNOWN/UNCONFIRMED
+- UR-032 @ 2404: unknown region / UNKNOWN/UNCONFIRMED
+- UR-033 @ 2480: unknown region / UNKNOWN/UNCONFIRMED
+- UR-034 @ 2555: unknown region / UNKNOWN/UNCONFIRMED
+- UR-035 @ 2630: unknown region / UNKNOWN/UNCONFIRMED
+- UR-036 @ 2707: unknown region / UNKNOWN/UNCONFIRMED
+- UR-037 @ 2782: unknown region / UNKNOWN/UNCONFIRMED
+- UR-038 @ 2858: unknown region / UNKNOWN/UNCONFIRMED
+- UR-039 @ 2933: unknown region / UNKNOWN/UNCONFIRMED
+- UR-040 @ 3016: unknown region / UNKNOWN/UNCONFIRMED

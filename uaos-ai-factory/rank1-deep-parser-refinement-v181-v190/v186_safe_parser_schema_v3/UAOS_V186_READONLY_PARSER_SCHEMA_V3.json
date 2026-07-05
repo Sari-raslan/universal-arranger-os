@@ -1,0 +1,115 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "UAOS Read-only Parser Observation Schema V3",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "evidence_references",
+    "unknown_region_index",
+    "confidence_matrix",
+    "safety"
+  ],
+  "properties": {
+    "evidence_references": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "path",
+          "kind"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "path": {
+            "type": "string"
+          },
+          "kind": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "unknown_region_index": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "unknown_region_id",
+          "confidence",
+          "possible_meaning_hypothesis",
+          "interpretation"
+        ],
+        "properties": {
+          "unknown_region_id": {
+            "type": "string"
+          },
+          "offset": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "token": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "confidence": {
+            "enum": [
+              "LOW",
+              "MEDIUM",
+              "HIGH"
+            ]
+          },
+          "possible_meaning_hypothesis": {
+            "type": "string"
+          },
+          "interpretation": {
+            "enum": [
+              "UNKNOWN/UNCONFIRMED",
+              "HYPOTHESIS"
+            ]
+          },
+          "reason_not_solved": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "confidence_matrix": {
+      "type": "object"
+    },
+    "safety": {
+      "type": "object",
+      "required": [
+        "writer_fields_present",
+        "sty_set_output_fields_present",
+        "mutation_actions_present",
+        "usb_actions_present",
+        "pa3x_actions_present"
+      ],
+      "properties": {
+        "writer_fields_present": {
+          "const": false
+        },
+        "sty_set_output_fields_present": {
+          "const": false
+        },
+        "mutation_actions_present": {
+          "const": false
+        },
+        "usb_actions_present": {
+          "const": false
+        },
+        "pa3x_actions_present": {
+          "const": false
+        }
+      }
+    }
+  }
+}

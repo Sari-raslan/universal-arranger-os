@@ -1,0 +1,28 @@
+{
+  "status": "PASS",
+  "rank2_scanned": false,
+  "items": {
+    "header_understanding": {
+      "confidence": "MEDIUM",
+      "reason": "Bounded header and token observations exist but semantics remain unverified."
+    },
+    "section_mapping_confidence": {
+      "confidence": "LOW",
+      "reason": "No solved section table or mapping."
+    },
+    "track_mapping_confidence": {
+      "confidence": "LOW",
+      "reason": "No verified program/track offsets."
+    },
+    "format_closure_confidence": {
+      "confidence": "LOW",
+      "reason": "Single-fixture evidence is insufficient."
+    },
+    "writer_readiness_confidence": {
+      "confidence": "NONE",
+      "writer_ready": false,
+      "reason": "Writer remains blocked and format closure is low."
+    }
+  },
+  "writer_ready": false
+}

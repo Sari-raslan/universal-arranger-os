@@ -1,0 +1,25 @@
+{
+  "report_generator_design_only": true,
+  "executable_writer": false,
+  "korg_output": false,
+  "sections": [
+    "evidence_summary",
+    "header_region_model",
+    "unknown_region_index",
+    "hypothesis_summary",
+    "confidence_matrix",
+    "safety_lock"
+  ],
+  "allowed_outputs": [
+    "json",
+    "md",
+    "html"
+  ],
+  "blocked_outputs": [
+    "sty",
+    "set",
+    "prs",
+    "prf",
+    "kst"
+  ]
+}
