@@ -1,0 +1,61 @@
+{
+  "generatedAt": "2026-07-05T08:11:13.267833+00:00",
+  "title": "UAOS Push/Deploy Approval Gate",
+  "localAppUrl": "http://127.0.0.1:5181/universal-arranger-os/",
+  "autoApply": false,
+  "pushExecuted": false,
+  "deployExecuted": false,
+  "options": [
+    {
+      "id": 1,
+      "label": "approve git push only",
+      "autoApplied": false
+    },
+    {
+      "id": 2,
+      "label": "approve Vercel deploy only",
+      "autoApplied": false
+    },
+    {
+      "id": 3,
+      "label": "approve GitHub Pages deploy only",
+      "autoApplied": false
+    },
+    {
+      "id": 4,
+      "label": "approve push + deploy",
+      "autoApplied": false
+    },
+    {
+      "id": 5,
+      "label": "keep local only",
+      "autoApplied": false
+    },
+    {
+      "id": 6,
+      "label": "request more UI polish",
+      "autoApplied": false
+    },
+    {
+      "id": 7,
+      "label": "keep KORG writer blocked",
+      "autoApplied": false
+    },
+    {
+      "id": 8,
+      "label": "keep .STY/.SET blocked",
+      "autoApplied": false
+    },
+    {
+      "id": 9,
+      "label": "keep USB/PA3X blocked",
+      "autoApplied": false
+    }
+  ],
+  "blocked": {
+    "korgWriter": "BLOCKED",
+    "stySetGenerated": "NO",
+    "usb": "NO",
+    "pa3x": "NO"
+  }
+}

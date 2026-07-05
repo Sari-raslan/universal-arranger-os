@@ -1,0 +1,64 @@
+{
+  "validator": "uaos_push_deploy_approval_gate_validator",
+  "generatedAt": "2026-07-05T08:11:58.181747+00:00",
+  "result": "PASS",
+  "checks": [
+    {
+      "name": "build_pass",
+      "passed": true,
+      "detail": "E:\\keyboard-manager-clean\\uaos-live-clean\\dist\\index.html"
+    },
+    {
+      "name": "approval_gate_exists",
+      "passed": true,
+      "detail": "E:\\keyboard-manager-clean\\uaos-ai-factory\\push-deploy-approval-gate\\approval-gate\\UAOS_PUSH_DEPLOY_APPROVAL_GATE.json"
+    },
+    {
+      "name": "deploy_plans_exist",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "release_checklist_exists",
+      "passed": true,
+      "detail": "E:\\keyboard-manager-clean\\uaos-ai-factory\\push-deploy-approval-gate\\release-checklist\\UAOS_RELEASE_READINESS_CHECKLIST.json"
+    },
+    {
+      "name": "no_push_executed",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "no_deploy_executed",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "no_option_auto_applied",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "no_false_claims",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "no_push_deploy_writer_usb_pa3x_actions",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "no_blocked_keyboard_files_generated",
+      "passed": true,
+      "detail": ""
+    }
+  ],
+  "buildPass": "YES",
+  "pushExecuted": "NO",
+  "deployExecuted": "NO",
+  "korgWriter": "BLOCKED",
+  "stySetGenerated": "NO",
+  "usb": "NO",
+  "pa3x": "NO"
+}
