@@ -1,0 +1,72 @@
+# UAOS Pre-Deploy Status
+
+Branch: `master`
+Latest local commit: `0ecc56fab01d17ce5af23799d1ed2337ac8d3ef2`
+Remote URL: `https://github.com/Sari-raslan/universal-arranger-os.git`
+Last pushed commit present: YES
+
+Build PASS: YES
+Deploy approval: deploy only
+
+Unrelated dirty local files exist and were not staged for this run.
+
+Git status snapshot:
+
+```text
+ M uaos-ai-factory/git-push-only-release/push-check/UAOS_GIT_PUSH_RESULT.json
+ M uaos-ai-factory/git-push-only-release/push-check/UAOS_GIT_PUSH_RESULT.md
+ M uaos-ai-factory/git-push-only-release/reports/UAOS_GIT_PUSH_ONLY_OWNER_DASHBOARD.md
+ M uaos-ai-factory/git-push-only-release/reports/UAOS_GIT_PUSH_ONLY_QA_REPORT.md
+ M uaos-ai-factory/git-push-only-release/seal/UAOS_GIT_PUSH_ONLY_FINAL_SEAL.md
+ M uaos-ai-factory/git-push-only-release/validators/UAOS_GIT_PUSH_ONLY_RESULTS.json
+ M uaos-ai-factory/implementation/local-ci-qa-runner-task-010/UAOS_LOCAL_CI_TASK_010_OWNER_SUMMARY.md
+ M uaos-ai-factory/implementation/local-ci-qa-runner-task-010/UAOS_LOCAL_CI_TASK_010_REPORT.md
+ M uaos-ai-factory/implementation/local-ci-qa-runner-task-010/UAOS_LOCAL_CI_TASK_010_RESULTS.json
+ M uaos-ai-factory/implementation/local-qa-entrypoint-task-011/UAOS_LOCAL_QA_ENTRYPOINT_TASK_011_REPORT.md
+ M uaos-ai-factory/implementation/local-qa-entrypoint-task-011/UAOS_LOCAL_QA_ENTRYPOINT_TASK_011_RESULTS.json
+ M uaos-ai-factory/owner-hands-on-test-pass/seal/UAOS_OWNER_HANDS_ON_TEST_FINAL_SEAL.md
+ M uaos-ai-factory/owner-hands-on-test-pass/validators/UAOS_OWNER_HANDS_ON_TEST_RESULTS.json
+ M uaos-ai-factory/owner-test-result-capture/seal/UAOS_OWNER_TEST_RESULT_CAPTURE_FINAL_SEAL.md
+ M uaos-ai-factory/owner-test-result-capture/validators/UAOS_OWNER_TEST_RESULT_CAPTURE_RESULTS.json
+ M uaos-ai-factory/pc-workstation/stable/UAOS_PC_WORKSTATION_APP_V10/dsp_planner/analysis_outputs/DSP_BY_CATEGORY_V31.json
+ M uaos-ai-factory/pc-workstation/stable/UAOS_PC_WORKSTATION_APP_V10/dsp_planner/analysis_outputs/DSP_UNIFICATION_PLAN_V31.json
+ M uaos-ai-factory/pc-workstation/stable/UAOS_PC_WORKSTATION_APP_V10/set_analyzer/analysis_outputs/OWNER_SET_ANALYSIS_SUMMARY_V31.md
+ M uaos-ai-factory/pc-workstation/stable/UAOS_PC_WORKSTATION_APP_V10/set_analyzer/analysis_outputs/OWNER_SET_INVENTORY_V31.csv
+ M uaos-ai-factory/pc-workstation/stable/UAOS_PC_WORKSTATION_APP_V10/set_analyzer/analysis_outputs/OWNER_SET_INVENTORY_V31.json
+ M uaos-ai-factory/push-deploy-approval-gate/seal/UAOS_PUSH_DEPLOY_APPROVAL_GATE_FINAL_SEAL.md
+ M uaos-ai-factory/push-deploy-approval-gate/validators/UAOS_PUSH_DEPLOY_APPROVAL_GATE_RESULTS.json
+ M uaos-ai-factory/react-app-integration-relaxed-mode/seal/UAOS_REACT_APP_INTEGRATION_FINAL_SEAL.md
+ M uaos-ai-factory/react-app-integration-relaxed-mode/validators/UAOS_REACT_APP_INTEGRATION_VALIDATOR_RESULTS.json
+ M uaos-ai-factory/react-local-browser-walkthrough/seal/UAOS_LOCAL_BROWSER_WALKTHROUGH_FINAL_SEAL.md
+ M uaos-ai-factory/react-local-browser-walkthrough/validators/UAOS_LOCAL_BROWSER_WALKTHROUGH_RESULTS.json
+ M uaos-ai-factory/react-owner-ui-review-polish/seal/UAOS_OWNER_UI_REVIEW_POLISH_FINAL_SEAL.md
+ M uaos-ai-factory/react-owner-ui-review-polish/validators/UAOS_OWNER_UI_REVIEW_POLISH_RESULTS.json
+ M uaos-ai-factory/sound-library-priority-refinement/validators/UAOS_SOUND_LIBRARY_PRIORITY_REFINEMENT_RESULTS.json
+ M uaos-ai-factory/style-rc-deep-ui-integration/seal/UAOS_STYLE_RC_DEEP_UI_INTEGRATION_FINAL_SEAL.md
+ M uaos-ai-factory/style-rc-deep-ui-integration/validators/UAOS_STYLE_RC_DEEP_UI_RESULTS.json
+ M uaos-ai-factory/style-rc-local-browser-qa/seal/UAOS_STYLE_RC_LOCAL_BROWSER_QA_FINAL_SEAL.md
+ M uaos-ai-factory/style-rc-local-browser-qa/validators/UAOS_STYLE_RC_LOCAL_BROWSER_QA_RESULTS.json
+ M uaos-live-clean/dist/index.html
+?? UAOS_FINAL_FILES_FOR_CHATGPT_REVIEW_20260702/
+?? UAOS_JOBCENTER_UPLOAD_FINAL_PDF_ONLY/
+?? UAOS_JOBCENTER_UPLOAD_FINAL_PDF_ONLY_V2_CORRECT/
+?? UAOS_Jobcenter_Sendepaket_FINAL_NET_20260701/
+?? UAOS_LOCAL_BACKUPS/
+?? uaos-ai-factory/metadata-project-generator/executive-multi-agent-factory/
+?? uaos-ai-factory/pa3x-writer-track/owner-fixtures/PLACE_PA3X_BACKUP_HERE/NEWNAME.SET/
+?? uaos-ai-factory/pc-workstation/stable/UAOS_PC_WORKSTATION_APP_V10/confirmed_recommendations/__pycache__/
+?? uaos-ai-factory/pc-workstation/stable/UAOS_PC_WORKSTATION_APP_V10/electron/.electron-builder-cache/
+?? uaos-ai-factory/pc-workstation/stable/UAOS_PC_WORKSTATION_APP_V10/electron/.npm-cache/
+?? uaos-ai-factory/pc-workstation/stable/UAOS_PC_WORKSTATION_APP_V10/electron/dist-local/
+?? uaos-ai-factory/pc-workstation/stable/UAOS_PC_WORKSTATION_APP_V10/owner_confirmation/__pycache__/
+?? uaos-ai-factory/pc-workstation/stable/UAOS_PC_WORKSTATION_APP_V10/owner_confirmation/analysis_outputs/UAOS_OWNER_CONFIRMATIONS_V35.json
+?? uaos-ai-factory/pc-workstation/stable/UAOS_PC_WORKSTATION_APP_V10/validator/__pycache__/
+?? uaos-ai-factory/vercel-linked-monitor-repo-sync/
+
+```
+
+KORG Writer: BLOCKED
+.STY/.SET generated: NO
+USB: NO
+PA3X: NO
+Payment activation: NO
