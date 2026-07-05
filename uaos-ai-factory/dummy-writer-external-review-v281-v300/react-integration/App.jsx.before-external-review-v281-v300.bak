@@ -339,23 +339,6 @@ const dummyWriterSandbox = {
   nextGate: "External review gate before any real writer work",
 };
 
-const dummyWriterExternalReview = {
-  dashboardPath: "E:\\keyboard-manager-clean\\uaos-ai-factory\\dummy-writer-external-review-v281-v300\\dashboards\\UAOS_DUMMY_WRITER_EXTERNAL_REVIEW_DASHBOARD.html",
-  hardeningDashboardPath: "E:\\keyboard-manager-clean\\uaos-ai-factory\\dummy-writer-external-review-v281-v300\\dashboards\\UAOS_DUMMY_WRITER_HARDENING_DASHBOARD.html",
-  packagePath: "E:\\keyboard-manager-clean\\uaos-ai-factory\\dummy-writer-external-review-v281-v300\\external-package\\UAOS_DUMMY_WRITER_EXTERNAL_REVIEW_PACKAGE.zip",
-  auditPath: "E:\\keyboard-manager-clean\\uaos-ai-factory\\dummy-writer-external-review-v281-v300\\dummy-output-audit\\UAOS_DUMMY_OUTPUT_AUDIT_REPORT.md",
-  ownerGatePath: "E:\\keyboard-manager-clean\\uaos-ai-factory\\dummy-writer-external-review-v281-v300\\owner-gates\\UAOS_V300_OWNER_DECISION_GATE.md",
-  status: [
-    { label: "Dummy sandbox", value: "PASS" },
-    { label: "External review package", value: "READY" },
-    { label: "Hardening gate", value: "READY" },
-    { label: "Real writer", value: "BLOCKED" },
-    { label: ".STY/.SET", value: "BLOCKED" },
-    { label: "USB/PA3X", value: "BLOCKED" },
-  ],
-  nextGate: "Owner decision before any next step",
-};
-
 function uid() {
   return "uaos-" + Date.now() + "-" + Math.random().toString(16).slice(2);
 }
@@ -1494,56 +1477,6 @@ export default function App() {
                 <h4>Manual next decision</h4>
                 <p>Choose review, further dummy work, or keep all real-writer paths closed. No next action is automatic.</p>
                 <small>{dummyWriterSandbox.ownerGatePath}</small>
-              </article>
-            </div>
-          </div>
-
-          <div className="uaos-style-rc-deep-panel">
-            <div className="uaos-style-rc-deep-head">
-              <div>
-                <span>Dummy Writer External Review</span>
-                <h3>Review Package and Hardening Gate Ready</h3>
-                <p>External review materials, dummy-output audit, and hardening gates are prepared for local review only. Real writer, keyboard output, USB, PA3X, deploy, payment, and device readiness claims remain blocked.</p>
-              </div>
-              <strong>{dummyWriterExternalReview.nextGate}</strong>
-            </div>
-
-            <div className="uaos-style-rc-status-row">
-              {dummyWriterExternalReview.status.map((item) => (
-                <b key={item.label}>{item.label}: {item.value}</b>
-              ))}
-            </div>
-
-            <div className="uaos-style-rc-link-grid">
-              <article>
-                <span>Review dashboard</span>
-                <h4>Open review status</h4>
-                <p>Review V281-V300 package status, audit result, hardening status, and blocked zones.</p>
-                <small>{dummyWriterExternalReview.dashboardPath}</small>
-              </article>
-              <article>
-                <span>Review ZIP</span>
-                <h4>External handoff package</h4>
-                <p>Open the local review bundle with dummy-output files and no hardware or deploy scripts.</p>
-                <small>{dummyWriterExternalReview.packagePath}</small>
-              </article>
-              <article>
-                <span>Dummy audit</span>
-                <h4>Marker and extension proof</h4>
-                <p>Confirm the dummy marker, allowed extensions, and no keyboard-loadable claim.</p>
-                <small>{dummyWriterExternalReview.auditPath}</small>
-              </article>
-              <article>
-                <span>Hardening</span>
-                <h4>Safety locks V2</h4>
-                <p>Review the hardening dashboard and owner gate before any later decision.</p>
-                <small>{dummyWriterExternalReview.hardeningDashboardPath}</small>
-              </article>
-              <article>
-                <span>Owner gate</span>
-                <h4>Manual V300 decision</h4>
-                <p>Choose whether to continue dummy hardening, hand off for review, or stop the writer track.</p>
-                <small>{dummyWriterExternalReview.ownerGatePath}</small>
               </article>
             </div>
           </div>

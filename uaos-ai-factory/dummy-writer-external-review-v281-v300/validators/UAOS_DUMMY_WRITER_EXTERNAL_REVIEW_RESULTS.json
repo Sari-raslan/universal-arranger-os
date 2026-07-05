@@ -1,0 +1,67 @@
+{
+  "checks": {
+    "external_review_docs_exist": {
+      "pass": true,
+      "detail": "E:\\keyboard-manager-clean\\uaos-ai-factory\\dummy-writer-external-review-v281-v300\\external-review\\UAOS_EXTERNAL_REVIEW_START_HERE.md"
+    },
+    "dummy_output_audit_exists": {
+      "pass": true,
+      "detail": "E:\\keyboard-manager-clean\\uaos-ai-factory\\dummy-writer-external-review-v281-v300\\dummy-output-audit\\UAOS_DUMMY_OUTPUT_AUDIT_REPORT.json"
+    },
+    "marker_check_pass": {
+      "pass": true,
+      "detail": "PASS"
+    },
+    "stress_test_reports_exist": {
+      "pass": true,
+      "detail": "E:\\keyboard-manager-clean\\uaos-ai-factory\\dummy-writer-external-review-v281-v300\\validator-stress\\UAOS_EXTENSION_BLOCKER_STRESS_TEST.json"
+    },
+    "stress_test_pass": {
+      "pass": true,
+      "detail": "PASS"
+    },
+    "hardening_files_exist": {
+      "pass": true,
+      "detail": "E:\\keyboard-manager-clean\\uaos-ai-factory\\dummy-writer-external-review-v281-v300\\hardening\\UAOS_RUNTIME_SAFETY_LOCKS_V2.json"
+    },
+    "owner_gate_exists": {
+      "pass": true,
+      "detail": "E:\\keyboard-manager-clean\\uaos-ai-factory\\dummy-writer-external-review-v281-v300\\owner-gates\\UAOS_V300_OWNER_DECISION_GATE.json"
+    },
+    "external_review_zip_exists": {
+      "pass": true,
+      "detail": "E:\\keyboard-manager-clean\\uaos-ai-factory\\dummy-writer-external-review-v281-v300\\external-package\\UAOS_DUMMY_WRITER_EXTERNAL_REVIEW_PACKAGE.zip"
+    },
+    "zip_contains_only_allowed_files": {
+      "pass": true,
+      "detail": "allowed"
+    },
+    "react_build_pass_if_touched": {
+      "pass": true,
+      "detail": true
+    },
+    "no_real_writer_implementation": {
+      "pass": true,
+      "detail": "no real writer code"
+    },
+    "no_generated_korg_output": {
+      "pass": true,
+      "detail": "none"
+    },
+    "no_sty_set_generated": {
+      "pass": true,
+      "detail": "none"
+    },
+    "no_prs_prf_kst_generated": {
+      "pass": true,
+      "detail": "none"
+    },
+    "no_usb_pa3x_deploy_payment_positive_action": {
+      "pass": true,
+      "detail": "no positive unsafe action"
+    }
+  },
+  "errors": [],
+  "status": "PASS",
+  "pass": true
+}

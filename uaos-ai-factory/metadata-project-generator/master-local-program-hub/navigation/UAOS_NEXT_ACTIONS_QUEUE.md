@@ -253,3 +253,12 @@ Owner gates: E:\keyboard-manager-clean\uaos-ai-factory\writer-sandbox-dummy-impl
 
 Final seal: E:\keyboard-manager-clean\uaos-ai-factory\writer-sandbox-dummy-implementation-v261-v280\seal\UAOS_DUMMY_WRITER_SANDBOX_FINAL_SEAL.md
 
+## V281-V300 Dummy Writer External Review
+
+- External review dashboard: E:\keyboard-manager-clean\uaos-ai-factory\dummy-writer-external-review-v281-v300\dashboards\UAOS_DUMMY_WRITER_EXTERNAL_REVIEW_DASHBOARD.html
+- Dummy output audit: E:\keyboard-manager-clean\uaos-ai-factory\dummy-writer-external-review-v281-v300\dummy-output-audit\UAOS_DUMMY_OUTPUT_AUDIT_REPORT.md
+- Hardening plan: E:\keyboard-manager-clean\uaos-ai-factory\dummy-writer-external-review-v281-v300\hardening\UAOS_DUMMY_SANDBOX_HARDENING_PLAN.md
+- External review ZIP: E:\keyboard-manager-clean\uaos-ai-factory\dummy-writer-external-review-v281-v300\external-package\UAOS_DUMMY_WRITER_EXTERNAL_REVIEW_PACKAGE.zip
+- Owner decision gate: E:\keyboard-manager-clean\uaos-ai-factory\dummy-writer-external-review-v281-v300\owner-gates\UAOS_V300_OWNER_DECISION_GATE.md
+- Final seal: E:\keyboard-manager-clean\uaos-ai-factory\dummy-writer-external-review-v281-v300\seal\UAOS_DUMMY_WRITER_EXTERNAL_REVIEW_FINAL_SEAL.md
+
