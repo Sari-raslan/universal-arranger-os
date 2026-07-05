@@ -1,0 +1,55 @@
+{
+  "validator": "uaos_owner_hands_on_test_validator",
+  "generatedAt": "2026-07-05T07:42:58.508164+00:00",
+  "result": "PASS",
+  "checks": [
+    {
+      "name": "test_files_exist",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "local_app_url_recorded",
+      "passed": true,
+      "detail": "http://127.0.0.1:5180/universal-arranger-os/"
+    },
+    {
+      "name": "checklist_exists",
+      "passed": true,
+      "detail": "14"
+    },
+    {
+      "name": "result_template_exists",
+      "passed": true,
+      "detail": "E:\\keyboard-manager-clean\\uaos-ai-factory\\owner-hands-on-test-pass\\test-pass\\UAOS_OWNER_TEST_RESULT_TEMPLATE.json"
+    },
+    {
+      "name": "build_pass_if_app_changed",
+      "passed": true,
+      "detail": "App.jsx not touched"
+    },
+    {
+      "name": "no_false_claims",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "no_deploy_push_writer_usb_pa3x_actions",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "no_blocked_korg_files_generated",
+      "passed": true,
+      "detail": ""
+    }
+  ],
+  "appJsxTouched": "NO",
+  "buildPassIfTouched": "N/A",
+  "deploy": "NO",
+  "push": "NO",
+  "korgWriter": "BLOCKED",
+  "stySetGenerated": "NO",
+  "usb": "NO",
+  "pa3x": "NO"
+}
