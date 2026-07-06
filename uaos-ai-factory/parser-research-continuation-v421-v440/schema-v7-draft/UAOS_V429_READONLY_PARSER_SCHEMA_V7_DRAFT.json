@@ -1,0 +1,98 @@
+{
+  "schemaId": "UAOS_V429_READONLY_PARSER_SCHEMA_V7_DRAFT",
+  "draft": true,
+  "readOnly": true,
+  "writerReady": false,
+  "nativeOutputAllowed": false,
+  "fixtureModificationAllowed": false,
+  "usbWriteAllowed": false,
+  "keyboardLoadAllowed": false,
+  "source": "V401-V420 schema v6 continuation",
+  "evidenceReferences": {
+    "schema_v6": {
+      "path": "E:\\keyboard-manager-clean\\uaos-ai-factory\\parser-research-continuation-v401-v420\\schema-v6\\UAOS_V406_READONLY_PARSER_SCHEMA_V6.json",
+      "exists": true,
+      "bytes": 3988,
+      "use": "reference_only_no_proprietary_content_copying"
+    },
+    "confidence_v6": {
+      "path": "E:\\keyboard-manager-clean\\uaos-ai-factory\\parser-research-continuation-v401-v420\\confidence-v6\\UAOS_V409_PARSER_CONFIDENCE_MATRIX_V6.md",
+      "exists": true,
+      "bytes": 238,
+      "use": "reference_only_no_proprietary_content_copying"
+    },
+    "fixture_strategy_v6": {
+      "path": "E:\\keyboard-manager-clean\\uaos-ai-factory\\parser-research-continuation-v401-v420\\fixture-strategy\\UAOS_V412_NEXT_FIXTURE_STRATEGY.md",
+      "exists": true,
+      "bytes": 179,
+      "use": "reference_only_no_proprietary_content_copying"
+    },
+    "writer_readiness_v6": {
+      "path": "E:\\keyboard-manager-clean\\uaos-ai-factory\\parser-research-continuation-v401-v420\\writer-readiness\\UAOS_V416_WRITER_READINESS_REVIEW.md",
+      "exists": true,
+      "bytes": 203,
+      "use": "reference_only_no_proprietary_content_copying"
+    },
+    "dashboard_v6": {
+      "path": "E:\\keyboard-manager-clean\\uaos-ai-factory\\parser-research-continuation-v401-v420\\dashboards\\UAOS_PARSER_RESEARCH_CONTINUATION_V401_V420_DASHBOARD.html",
+      "exists": true,
+      "bytes": 1502,
+      "use": "reference_only_no_proprietary_content_copying"
+    }
+  },
+  "reviewFocus": [
+    "stable header anchors",
+    "unknown structural regions",
+    "section mapping deltas",
+    "track mapping deltas",
+    "checksum/compression/encryption uncertainty",
+    "read-only fixture intake metadata"
+  ],
+  "unknownFields": [
+    {
+      "id": "v7_unknown_region_semantics",
+      "confidence": "LOW",
+      "status": "UNKNOWN"
+    },
+    {
+      "id": "v7_section_boundary_model",
+      "confidence": "LOW",
+      "status": "UNCONFIRMED"
+    },
+    {
+      "id": "v7_track_role_model",
+      "confidence": "LOW",
+      "status": "UNCONFIRMED"
+    },
+    {
+      "id": "v7_checksum_or_integrity_model",
+      "confidence": "LOW",
+      "status": "UNKNOWN"
+    },
+    {
+      "id": "v7_compression_or_encryption_model",
+      "confidence": "LOW",
+      "status": "UNKNOWN"
+    }
+  ],
+  "excluded": [
+    "writer fields",
+    "native output fields",
+    "mutation actions",
+    "USB actions",
+    "keyboard load actions"
+  ],
+  "safety": {
+    "readOnly": true,
+    "writerReady": false,
+    "nativeOutputAllowed": false,
+    "fixtureModificationAllowed": false,
+    "usbWriteAllowed": false,
+    "keyboardLoadAllowed": false,
+    "realWriterImplemented": false,
+    "proprietaryContentCopied": false,
+    "sampleExtractionAllowed": false,
+    "deploy": false,
+    "payment": false
+  }
+}
