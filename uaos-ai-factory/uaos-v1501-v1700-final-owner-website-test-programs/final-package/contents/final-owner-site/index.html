@@ -1,0 +1,117 @@
+﻿<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>UAOS Final Owner Website</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>UAOS Final Owner Website</h1>
+  <div class="subtitle">V1501-V1700  Local final website + test programs</div>
+  <div class="subtitle">Previous checkpoint: 62237a78</div>
+</header>
+
+<div class="grid">
+  <aside class="panel nav">
+    <h2>Navigation</h2>
+    <button id="btn-dashboard">Dashboard</button>
+    <button id="btn-demo">Demo Center</button>
+    <button id="btn-safety">Safety Center</button>
+    <button id="btn-tests">Test Center</button>
+    <button id="btn-package">Package Center</button>
+    <button id="btn-report">Report Center</button>
+  </aside>
+
+  <main>
+    <section class="panel">
+      <h2>Owner Action Buttons</h2>
+      <div class="action-row">
+        <button id="btn-owner-flow">Run Full Owner Flow</button>
+        <button id="btn-run-demo">Run Demo</button>
+        <button id="btn-run-safety">Run Safety Check</button>
+        <button id="btn-run-tests">Run UI Tests</button>
+        <button id="btn-open-package">Open Package Center</button>
+        <button id="btn-open-report">Open Final Report</button>
+        <button id="btn-export-json">Export Session JSON</button>
+        <button id="btn-reset-console">Reset Console</button>
+      </div>
+    </section>
+
+    <section id="section-dashboard" class="panel section">
+      <h2>Dashboard</h2>
+      <div class="card-grid">
+        <div class="card"><b>Website</b><br><span class="good">READY</span></div>
+        <div class="card"><b>Buttons</b><br><span class="good">WIRED</span></div>
+        <div class="card"><b>Mode</b><br><span class="warn">LOCAL ONLY</span></div>
+        <div class="card"><b>Safety</b><br><span class="good">LOCKED</span></div>
+        <div class="card"><b>Testing</b><br><span id="test-status" class="warn">PENDING</span></div>
+        <div class="card"><b>Demo</b><br><span id="demo-status" class="warn">PENDING</span></div>
+      </div>
+    </section>
+
+    <section id="section-demo" class="panel section">
+      <h2>Demo Center</h2>
+      <p>This is a local browser demo. It does not access hardware, deployment, payment, or target-device package generation.</p>
+      <ol>
+        <li>Open Dashboard.</li>
+        <li>Run Safety Check.</li>
+        <li>Run UI Tests.</li>
+        <li>Open Package Center.</li>
+        <li>Open Final Report.</li>
+      </ol>
+    </section>
+
+    <section id="section-safety" class="panel section">
+      <h2>Safety Center</h2>
+      <p>Status: <b id="safety-status" class="warn">PENDING</b></p>
+      <table>
+        <tr><th>Lock</th><th>Value</th></tr>
+        <tr><td>writer_ready</td><td>false</td></tr>
+        <tr><td>real_writer_implemented</td><td>NO</td></tr>
+        <tr><td>keyboard_package_output_generated</td><td>NO</td></tr>
+        <tr><td>USB write</td><td>NO</td></tr>
+        <tr><td>Hardware load</td><td>NO</td></tr>
+        <tr><td>Deploy</td><td>NO</td></tr>
+        <tr><td>Payment</td><td>NO</td></tr>
+        <tr><td>Compatibility claims</td><td>NO</td></tr>
+      </table>
+    </section>
+
+    <section id="section-tests" class="panel section">
+      <h2>Test Center</h2>
+      <p>Browser-side tests run from the buttons. PowerShell test programs are included in the final package.</p>
+      <table>
+        <thead><tr><th>Test</th><th>Status</th></tr></thead>
+        <tbody id="test-table-body"></tbody>
+      </table>
+    </section>
+
+    <section id="section-package" class="panel section">
+      <h2>Package Center</h2>
+      <p>Final local package is created by the executor script.</p>
+      <p><b>Package:</b> UAOS_V1501_V1700_FINAL_OWNER_WEBSITE_TEST_PROGRAMS_PACKAGE.zip</p>
+      <p><b>Programs:</b> RUN_ALL_LOCAL_TESTS.ps1, RUN_UI_SMOKE_TEST.ps1, RUN_SAFETY_TEST.ps1, RUN_PACKAGE_TEST.ps1</p>
+    </section>
+
+    <section id="section-report" class="panel section">
+      <h2>Report Center</h2>
+      <p>Final report and seal are generated beside the package.</p>
+      <p><b>Report:</b> UAOS_V1501_V1700_FINAL_REPORT.md</p>
+      <p><b>Seal:</b> UAOS_V1501_V1700_FINAL_SEAL.md</p>
+    </section>
+
+    <section class="panel">
+      <h2>Console</h2>
+      <div id="console" class="console"></div>
+    </section>
+  </main>
+</div>
+
+<div class="footer">
+  UAOS local final owner website. No deploy. No payment. No real writer. No target-device package output.
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
