@@ -1,0 +1,25 @@
+﻿{
+    "run":  "V701-V900",
+    "batches":  [
+                    "V701-V720 Previous Checkpoint Import",
+                    "V721-V740 Validator Hardening",
+                    "V741-V760 Owner UI Stabilization",
+                    "V761-V780 Dashboard Stabilization",
+                    "V781-V800 Package Consolidation",
+                    "V801-V820 Parser Research V7/V8",
+                    "V821-V840 Dummy Sandbox Hardening V4",
+                    "V841-V860 Generic Metadata Expansion",
+                    "V861-V880 Local QA Matrix",
+                    "V881-V900 Final Package and Seal"
+                ],
+    "safety":  {
+                   "writer_ready":  false,
+                   "real_writer_implemented":  "NO",
+                   "keyboard_package_output_generated":  "NO",
+                   "usb_write":  "NO",
+                   "pa3x_load":  "NO",
+                   "deploy":  "NO",
+                   "payment":  "NO",
+                   "branded_ready_claims":  "NO"
+               }
+}

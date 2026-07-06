@@ -1,0 +1,23 @@
+﻿{
+    "run":  "V701-V900",
+    "previousCommit":  "04f7ed69",
+    "artifactClass":  "research_only_local_qa",
+    "includes":  [
+                     "V441-V460 external parser review reference",
+                     "V461-V560 fallback continuation reference",
+                     "V561-V700 planned Gemini continuation reference",
+                     "V461-V700 final executor checkpoint",
+                     "V701-V900 stabilization outputs"
+                 ],
+    "safety":  {
+                   "writer_ready":  false,
+                   "real_writer_implemented":  "NO",
+                   "keyboard_package_output_generated":  "NO",
+                   "usb_write":  "NO",
+                   "pa3x_load":  "NO",
+                   "deploy":  "NO",
+                   "payment":  "NO",
+                   "branded_ready_claims":  "NO"
+               },
+    "createdAt":  "2026-07-06T13:20:26.6930697+02:00"
+}
