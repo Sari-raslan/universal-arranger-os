@@ -356,21 +356,6 @@ const dummyWriterExternalReview = {
   nextGate: "Owner decision before any next step",
 };
 
-const dummyWriterHardening = {
-  dashboardPath: "E:\\keyboard-manager-clean\\uaos-ai-factory\\dummy-writer-hardening-v301-v320\\dashboards\\UAOS_DUMMY_WRITER_HARDENING_V301_V320_DASHBOARD.html",
-  auditPath: "E:\\keyboard-manager-clean\\uaos-ai-factory\\dummy-writer-hardening-v301-v320\\v301_dummy_output_audit_v2\\UAOS_V301_DUMMY_OUTPUT_AUDIT_V2.md",
-  stressPath: "E:\\keyboard-manager-clean\\uaos-ai-factory\\dummy-writer-hardening-v301-v320\\v302_extension_blocker_stress_v2\\UAOS_V302_EXTENSION_BLOCKER_STRESS_V2.md",
-  scannerPath: "E:\\keyboard-manager-clean\\uaos-ai-factory\\dummy-writer-hardening-v301-v320\\v303_false_claim_scanner_v2\\UAOS_V303_FALSE_CLAIM_SCANNER_V2.md",
-  finalSealPath: "E:\\keyboard-manager-clean\\uaos-ai-factory\\dummy-writer-hardening-v301-v320\\seal\\UAOS_DUMMY_WRITER_HARDENING_V301_V320_FINAL_SEAL.md",
-  status: [
-    { label: "Hardening", value: "PASS" },
-    { label: "Real Writer", value: "BLOCKED" },
-    { label: ".STY/.SET", value: "BLOCKED" },
-    { label: "USB/PA3X", value: "BLOCKED" },
-  ],
-  nextGate: "V321-V340 External Review Package",
-};
-
 function uid() {
   return "uaos-" + Date.now() + "-" + Math.random().toString(16).slice(2);
 }
@@ -1559,56 +1544,6 @@ export default function App() {
                 <h4>Manual V300 decision</h4>
                 <p>Choose whether to continue dummy hardening, hand off for review, or stop the writer track.</p>
                 <small>{dummyWriterExternalReview.ownerGatePath}</small>
-              </article>
-            </div>
-          </div>
-
-          <div className="uaos-style-rc-deep-panel">
-            <div className="uaos-style-rc-deep-head">
-              <div>
-                <span>Dummy Writer Hardening</span>
-                <h3>V301-V320 Safety Hardening Complete</h3>
-                <p>Dummy output audit, extension stress, false-claim scanning, hardware locks, and validator hardening are ready for owner review. Real writer, keyboard output, USB, PA3X, deploy, and payment actions remain blocked.</p>
-              </div>
-              <strong>{dummyWriterHardening.nextGate}</strong>
-            </div>
-
-            <div className="uaos-style-rc-status-row">
-              {dummyWriterHardening.status.map((item) => (
-                <b key={item.label}>{item.label}: {item.value}</b>
-              ))}
-            </div>
-
-            <div className="uaos-style-rc-link-grid">
-              <article>
-                <span>Hardening dashboard</span>
-                <h4>Open V301-V320 status</h4>
-                <p>Review the full dummy writer hardening batch and safety gates.</p>
-                <small>{dummyWriterHardening.dashboardPath}</small>
-              </article>
-              <article>
-                <span>Dummy audit</span>
-                <h4>Marker and extension check</h4>
-                <p>Confirm allowed dummy extensions and the required no-load marker.</p>
-                <small>{dummyWriterHardening.auditPath}</small>
-              </article>
-              <article>
-                <span>Extension stress</span>
-                <h4>Forbidden attempts blocked</h4>
-                <p>Review blocked extension attempts recorded without creating forbidden files.</p>
-                <small>{dummyWriterHardening.stressPath}</small>
-              </article>
-              <article>
-                <span>Claim scanner</span>
-                <h4>Unsafe claims blocked</h4>
-                <p>Review scanner evidence for blocked compatibility, readiness, hardware, and USB wording.</p>
-                <small>{dummyWriterHardening.scannerPath}</small>
-              </article>
-              <article>
-                <span>Final seal</span>
-                <h4>Hardening sealed</h4>
-                <p>Open the final V301-V320 hardening seal and next batch gate.</p>
-                <small>{dummyWriterHardening.finalSealPath}</small>
               </article>
             </div>
           </div>
