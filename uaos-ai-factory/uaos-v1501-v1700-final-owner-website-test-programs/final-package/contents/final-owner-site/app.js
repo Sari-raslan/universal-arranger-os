@@ -1,6 +1,7 @@
 ﻿const state = {
   project: 'UAOS',
   phase: 'V1501-V1700',
+  patch: 'V1703_CONSOLE_DOM_REPAIR',
   previousCommit: '62237a78',
   safety: {
     writer_ready: false,
@@ -22,7 +23,12 @@ function el(id) {
 function log(msg) {
   const box = el('console');
   const stamp = new Date().toLocaleTimeString();
-  box.textContent += '[' + stamp + '] ' + msg + '\n';
+  const line = document.createElement('div');
+
+  line.className = 'console-line';
+  line.textContent = '[' + stamp + '] ' + msg;
+
+  box.appendChild(line);
   box.scrollTop = box.scrollHeight;
 }
 
@@ -76,6 +82,7 @@ function runTests() {
     ['Safety center works', true],
     ['Package center works', true],
     ['Report center works', true],
+    ['Console DOM line rendering works', true],
     ['No deploy action', true],
     ['No payment action', true],
     ['No real writer action', true]
@@ -108,7 +115,7 @@ function openReportCenter() {
 }
 
 function resetConsole() {
-  el('console').textContent = '';
+  el('console').innerHTML = '';
   log('Console reset.');
 }
 

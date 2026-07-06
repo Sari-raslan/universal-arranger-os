@@ -3,7 +3,7 @@
 Result: **PASS**
 
 Patch:
-V1702 Final PASS Repair
+V1703 Console DOM Repair
 
 Previous checkpoint:
 62237a78
