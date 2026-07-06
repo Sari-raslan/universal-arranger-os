@@ -1,0 +1,40 @@
+﻿{
+    "phase":  "V1301-V1500",
+    "questions":  [
+                      {
+                          "id":  "Q1",
+                          "question":  "Is the local review flow clear?",
+                          "response_type":  "text"
+                      },
+                      {
+                          "id":  "Q2",
+                          "question":  "Are the safety boundaries visible and consistent?",
+                          "response_type":  "yes_no_text"
+                      },
+                      {
+                          "id":  "Q3",
+                          "question":  "Does the evidence index cover the required artifacts?",
+                          "response_type":  "yes_no_text"
+                      },
+                      {
+                          "id":  "Q4",
+                          "question":  "Does the package inspector provide enough integrity evidence?",
+                          "response_type":  "yes_no_text"
+                      },
+                      {
+                          "id":  "Q5",
+                          "question":  "Are any terms too close to compatibility or readiness claims?",
+                          "response_type":  "text"
+                      }
+                  ],
+    "safety":  {
+                   "writer_ready":  false,
+                   "real_writer_implemented":  "NO",
+                   "keyboard_package_output_generated":  "NO",
+                   "usb_write":  "NO",
+                   "pa3x_load":  "NO",
+                   "deploy":  "NO",
+                   "payment":  "NO",
+                   "brand_device_compat_claims":  "NO"
+               }
+}

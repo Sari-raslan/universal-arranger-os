@@ -1,0 +1,13 @@
+﻿# UAOS V1301-V1500 Traceability Matrix
+
+| ID | Requirement | Artifact | Gate |
+|---|---|---|---|
+| TR-001 | Previous checkpoint import | 01_checkpoint_import | PREV_CHECKPOINT_IMPORT |
+| TR-002 | Reviewer intake | 02_external_reviewer_intake | REVIEWER_INTAKE_EXISTS |
+| TR-003 | Feedback simulation | 03_feedback_simulation | FEEDBACK_SIM_EXISTS |
+| TR-004 | RC freeze hardening | 04_rc_freeze_hardening | RC_FREEZE_EXISTS |
+| TR-005 | Owner UI V9 | 05_owner_setup_v9 | OWNER_UI_V9_EXISTS |
+| TR-006 | Dashboard V4 | 06_dashboard_v4 | DASHBOARD_EXISTS |
+| TR-007 | Reviewer questionnaire | 08_reviewer_questionnaire | QUESTIONNAIRE_EXISTS |
+| TR-008 | Final seal | 16_seal | FINAL_SEAL_EXISTS |
+

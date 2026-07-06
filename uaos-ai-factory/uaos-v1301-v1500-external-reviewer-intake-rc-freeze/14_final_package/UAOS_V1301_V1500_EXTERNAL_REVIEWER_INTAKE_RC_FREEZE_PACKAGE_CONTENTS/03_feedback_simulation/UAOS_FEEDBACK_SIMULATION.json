@@ -1,0 +1,39 @@
+﻿{
+    "phase":  "V1301-V1500",
+    "simulated_feedback":  [
+                               {
+                                   "id":  "FB-001",
+                                   "area":  "navigation",
+                                   "severity":  "low",
+                                   "response":  "Owner Setup V9 links all review artifacts."
+                               },
+                               {
+                                   "id":  "FB-002",
+                                   "area":  "safety",
+                                   "severity":  "high",
+                                   "response":  "Safety locks remain visible and validator-enforced."
+                               },
+                               {
+                                   "id":  "FB-003",
+                                   "area":  "evidence",
+                                   "severity":  "medium",
+                                   "response":  "Traceability matrix maps artifacts to reviewer tasks."
+                               },
+                               {
+                                   "id":  "FB-004",
+                                   "area":  "packaging",
+                                   "severity":  "medium",
+                                   "response":  "Package inspector checks archive integrity and denylist."
+                               }
+                           ],
+    "safety":  {
+                   "writer_ready":  false,
+                   "real_writer_implemented":  "NO",
+                   "keyboard_package_output_generated":  "NO",
+                   "usb_write":  "NO",
+                   "pa3x_load":  "NO",
+                   "deploy":  "NO",
+                   "payment":  "NO",
+                   "brand_device_compat_claims":  "NO"
+               }
+}

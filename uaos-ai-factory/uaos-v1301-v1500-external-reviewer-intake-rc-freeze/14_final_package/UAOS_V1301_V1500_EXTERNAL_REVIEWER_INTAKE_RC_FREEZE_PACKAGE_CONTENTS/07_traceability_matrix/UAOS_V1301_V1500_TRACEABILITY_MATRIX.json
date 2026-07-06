@@ -1,0 +1,63 @@
+﻿{
+    "phase":  "V1301-V1500",
+    "rows":  [
+                 {
+                     "id":  "TR-001",
+                     "requirement":  "Previous checkpoint import",
+                     "artifact":  "01_checkpoint_import",
+                     "gate":  "PREV_CHECKPOINT_IMPORT"
+                 },
+                 {
+                     "id":  "TR-002",
+                     "requirement":  "Reviewer intake",
+                     "artifact":  "02_external_reviewer_intake",
+                     "gate":  "REVIEWER_INTAKE_EXISTS"
+                 },
+                 {
+                     "id":  "TR-003",
+                     "requirement":  "Feedback simulation",
+                     "artifact":  "03_feedback_simulation",
+                     "gate":  "FEEDBACK_SIM_EXISTS"
+                 },
+                 {
+                     "id":  "TR-004",
+                     "requirement":  "RC freeze hardening",
+                     "artifact":  "04_rc_freeze_hardening",
+                     "gate":  "RC_FREEZE_EXISTS"
+                 },
+                 {
+                     "id":  "TR-005",
+                     "requirement":  "Owner UI V9",
+                     "artifact":  "05_owner_setup_v9",
+                     "gate":  "OWNER_UI_V9_EXISTS"
+                 },
+                 {
+                     "id":  "TR-006",
+                     "requirement":  "Dashboard V4",
+                     "artifact":  "06_dashboard_v4",
+                     "gate":  "DASHBOARD_EXISTS"
+                 },
+                 {
+                     "id":  "TR-007",
+                     "requirement":  "Reviewer questionnaire",
+                     "artifact":  "08_reviewer_questionnaire",
+                     "gate":  "QUESTIONNAIRE_EXISTS"
+                 },
+                 {
+                     "id":  "TR-008",
+                     "requirement":  "Final seal",
+                     "artifact":  "16_seal",
+                     "gate":  "FINAL_SEAL_EXISTS"
+                 }
+             ],
+    "safety":  {
+                   "writer_ready":  false,
+                   "real_writer_implemented":  "NO",
+                   "keyboard_package_output_generated":  "NO",
+                   "usb_write":  "NO",
+                   "pa3x_load":  "NO",
+                   "deploy":  "NO",
+                   "payment":  "NO",
+                   "brand_device_compat_claims":  "NO"
+               }
+}

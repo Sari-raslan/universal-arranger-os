@@ -1,0 +1,30 @@
+﻿{
+    "phase":  "V1301-V1500",
+    "purpose":  "external_reviewer_intake",
+    "review_modes":  [
+                         "offline_local_review",
+                         "evidence_review",
+                         "questionnaire_response",
+                         "feedback_simulation"
+                     ],
+    "required_artifacts":  [
+                               "owner_setup_v9",
+                               "external_review_dashboard",
+                               "traceability_matrix",
+                               "reviewer_questionnaire",
+                               "feedback_simulation",
+                               "validator_v4",
+                               "package_inspector",
+                               "final_seal"
+                           ],
+    "safety":  {
+                   "writer_ready":  false,
+                   "real_writer_implemented":  "NO",
+                   "keyboard_package_output_generated":  "NO",
+                   "usb_write":  "NO",
+                   "pa3x_load":  "NO",
+                   "deploy":  "NO",
+                   "payment":  "NO",
+                   "brand_device_compat_claims":  "NO"
+               }
+}
