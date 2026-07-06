@@ -1,0 +1,72 @@
+{
+  "checks": {
+    "agent_integration_exists": {
+      "pass": true,
+      "detail": "E:\\keyboard-manager-clean\\uaos-ai-factory\\dummy-writer-hardening-v301-v320\\agent-outputs\\UAOS_V301_V320_AGENT_INTEGRATION_MAP.json"
+    },
+    "v301_v320_files_exist": {
+      "pass": true,
+      "detail": "all V301-V320 files"
+    },
+    "dummy_output_audit_pass": {
+      "pass": true,
+      "detail": "PASS"
+    },
+    "extension_blocker_stress_pass": {
+      "pass": true,
+      "detail": "PASS"
+    },
+    "false_claim_scanner_pass": {
+      "pass": true,
+      "detail": "PASS"
+    },
+    "no_hardware_runtime_lock_pass": {
+      "pass": true,
+      "detail": "PASS"
+    },
+    "validator_v2_pass": {
+      "pass": true,
+      "detail": {
+        "allowed_extension": true,
+        "marker_exists": true,
+        "forbidden_extensions_absent": true,
+        "no_usb_pa3x": true,
+        "no_false_claims": true,
+        "errors": [],
+        "status": "PASS",
+        "pass": true
+      }
+    },
+    "react_build_pass_if_touched": {
+      "pass": true,
+      "detail": true
+    },
+    "no_real_writer_implementation": {
+      "pass": true,
+      "detail": "no unsafe positive actions"
+    },
+    "no_generated_korg_output": {
+      "pass": true,
+      "detail": "none"
+    },
+    "no_sty_set_generated": {
+      "pass": true,
+      "detail": "none"
+    },
+    "no_prs_prf_kst_generated": {
+      "pass": true,
+      "detail": "none"
+    },
+    "no_usb_pa3x_deploy_payment_positive_action": {
+      "pass": true,
+      "detail": "no unsafe positive actions"
+    },
+    "no_exact_false_claims": {
+      "pass": true,
+      "detail": "absent"
+    }
+  },
+  "errors": [],
+  "status": "PASS",
+  "pass": true
+}

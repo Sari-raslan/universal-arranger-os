@@ -269,3 +269,14 @@ Final seal: E:\keyboard-manager-clean\uaos-ai-factory\writer-sandbox-dummy-imple
 - Integrator queue: E:\keyboard-manager-clean\uaos-ai-factory\night-super-agent-v301-v400\05_integrator_queue\UAOS_V301_V400_INTEGRATOR_QUEUE.md
 - Next executable batch: V301-V320 Dummy Writer Hardening
 
+## V321-V340 External Review Package
+
+- V321-V340 external review dashboard: E:\keyboard-manager-clean\uaos-ai-factory\external-review-package-v321-v340\dashboards\UAOS_EXTERNAL_REVIEW_PACKAGE_V321_V340_DASHBOARD.html
+- Reviewer start here: E:\keyboard-manager-clean\uaos-ai-factory\external-review-package-v321-v340\v322_reviewer_start_here\UAOS_V322_REVIEWER_START_HERE.md
+- External review ZIP: E:\keyboard-manager-clean\uaos-ai-factory\external-review-package-v321-v340\v331_external_review_zip\UAOS_V331_EXTERNAL_REVIEW_PACKAGE.zip
+- Reviewer checklist: E:\keyboard-manager-clean\uaos-ai-factory\external-review-package-v321-v340\v323_technical_review_checklist\UAOS_V323_TECHNICAL_REVIEW_CHECKLIST.md
+- Feedback forms: E:\keyboard-manager-clean\uaos-ai-factory\external-review-package-v321-v340\v328_feedback_forms\UAOS_V328_REVIEWER_FEEDBACK_FORM.md
+- Owner decision gate: E:\keyboard-manager-clean\uaos-ai-factory\external-review-package-v321-v340\v335_owner_decision_gate\UAOS_V335_EXTERNAL_REVIEW_OWNER_DECISION_GATE.md
+- Final seal: E:\keyboard-manager-clean\uaos-ai-factory\external-review-package-v321-v340\seal\UAOS_EXTERNAL_REVIEW_PACKAGE_V321_V340_FINAL_SEAL.md
+- Next executable batch: V341-V360 Style RC Factory
+

@@ -371,21 +371,6 @@ const dummyWriterHardening = {
   nextGate: "V321-V340 External Review Package",
 };
 
-const externalReviewPackage = {
-  dashboardPath: "E:\\keyboard-manager-clean\\uaos-ai-factory\\external-review-package-v321-v340\\dashboards\\UAOS_EXTERNAL_REVIEW_PACKAGE_V321_V340_DASHBOARD.html",
-  zipPath: "E:\\keyboard-manager-clean\\uaos-ai-factory\\external-review-package-v321-v340\\v331_external_review_zip\\UAOS_V331_EXTERNAL_REVIEW_PACKAGE.zip",
-  startPath: "E:\\keyboard-manager-clean\\uaos-ai-factory\\external-review-package-v321-v340\\v322_reviewer_start_here\\UAOS_V322_REVIEWER_START_HERE.md",
-  gatePath: "E:\\keyboard-manager-clean\\uaos-ai-factory\\external-review-package-v321-v340\\v335_owner_decision_gate\\UAOS_V335_EXTERNAL_REVIEW_OWNER_DECISION_GATE.md",
-  status: [
-    { label: "Package", value: "READY" },
-    { label: "Dummy only", value: "YES" },
-    { label: "Real writer", value: "BLOCKED" },
-    { label: ".STY/.SET", value: "BLOCKED" },
-    { label: "USB/PA3X", value: "BLOCKED" },
-  ],
-  nextGate: "V341-V360 Style RC Factory",
-};
-
 function uid() {
   return "uaos-" + Date.now() + "-" + Math.random().toString(16).slice(2);
 }
@@ -1624,50 +1609,6 @@ export default function App() {
                 <h4>Hardening sealed</h4>
                 <p>Open the final V301-V320 hardening seal and next batch gate.</p>
                 <small>{dummyWriterHardening.finalSealPath}</small>
-              </article>
-            </div>
-          </div>
-
-          <div className="uaos-style-rc-deep-panel">
-            <div className="uaos-style-rc-deep-head">
-              <div>
-                <span>External Review Package</span>
-                <h3>V321-V340 Reviewer Handoff Ready</h3>
-                <p>Documentation, evidence indexes, reviewer checklists, feedback forms, owner gate, and a safe ZIP package are ready. Real writer, keyboard output, USB, PA3X, deploy, and payment actions remain blocked.</p>
-              </div>
-              <strong>{externalReviewPackage.nextGate}</strong>
-            </div>
-
-            <div className="uaos-style-rc-status-row">
-              {externalReviewPackage.status.map((item) => (
-                <b key={item.label}>{item.label}: {item.value}</b>
-              ))}
-            </div>
-
-            <div className="uaos-style-rc-link-grid">
-              <article>
-                <span>Review dashboard</span>
-                <h4>Open package status</h4>
-                <p>Review V321-V340 external handoff status and safety gates.</p>
-                <small>{externalReviewPackage.dashboardPath}</small>
-              </article>
-              <article>
-                <span>Review ZIP</span>
-                <h4>Safe handoff package</h4>
-                <p>Open the documentation and marked dummy-output evidence bundle.</p>
-                <small>{externalReviewPackage.zipPath}</small>
-              </article>
-              <article>
-                <span>Reviewer start</span>
-                <h4>Start here</h4>
-                <p>Follow the reviewer order: scope, checklist, evidence, do-not-do, and feedback.</p>
-                <small>{externalReviewPackage.startPath}</small>
-              </article>
-              <article>
-                <span>Owner gate</span>
-                <h4>Manual decision</h4>
-                <p>Choose whether to send, keep private, add hardening, or continue later. No option is automatic.</p>
-                <small>{externalReviewPackage.gatePath}</small>
               </article>
             </div>
           </div>

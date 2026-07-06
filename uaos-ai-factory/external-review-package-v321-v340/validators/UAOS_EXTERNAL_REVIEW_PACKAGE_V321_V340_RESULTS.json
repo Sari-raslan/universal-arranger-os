@@ -1,0 +1,70 @@
+{
+  "checks": {
+    "agent_integration_exists": {
+      "pass": true,
+      "detail": "E:\\keyboard-manager-clean\\uaos-ai-factory\\external-review-package-v321-v340\\agent-outputs\\UAOS_V321_V340_AGENT_INTEGRATION_MAP.json"
+    },
+    "v321_v340_files_exist": {
+      "pass": true,
+      "detail": "all V321-V340 files"
+    },
+    "external_review_zip_exists": {
+      "pass": true,
+      "detail": "E:\\keyboard-manager-clean\\uaos-ai-factory\\external-review-package-v321-v340\\v331_external_review_zip\\UAOS_V331_EXTERNAL_REVIEW_PACKAGE.zip"
+    },
+    "zip_contains_only_allowed_types": {
+      "pass": true,
+      "detail": {
+        "bad": [],
+        "fixtures": []
+      }
+    },
+    "v334_validator_pass": {
+      "pass": true,
+      "detail": {
+        "review_docs_exist": true,
+        "evidence_indexes_exist": true,
+        "feedback_forms_exist": true,
+        "do_not_do_exists": true,
+        "zip_exists": true,
+        "zip_allowed_only": true,
+        "no_owner_fixture_files": true,
+        "no_false_claims": true,
+        "errors": [],
+        "status": "PASS",
+        "pass": true
+      }
+    },
+    "react_build_pass_if_touched": {
+      "pass": true,
+      "detail": true
+    },
+    "no_real_writer_implementation": {
+      "pass": true,
+      "detail": "no unsafe positive actions"
+    },
+    "no_generated_korg_output": {
+      "pass": true,
+      "detail": "none"
+    },
+    "no_sty_set_generated": {
+      "pass": true,
+      "detail": "none"
+    },
+    "no_prs_prf_kst_generated": {
+      "pass": true,
+      "detail": "none"
+    },
+    "no_usb_pa3x_deploy_payment_positive_action": {
+      "pass": true,
+      "detail": "no unsafe positive actions"
+    },
+    "no_exact_false_claims": {
+      "pass": true,
+      "detail": "absent"
+    }
+  },
+  "errors": [],
+  "status": "PASS",
+  "pass": true
+}
