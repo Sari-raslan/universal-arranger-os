@@ -1,0 +1,34 @@
+{
+  "scope": "final_local_owner_setup_v3",
+  "includes": [
+    "app links",
+    "dashboards",
+    "local package",
+    "decision gates",
+    "safety evidence"
+  ],
+  "inputs": {
+    "night_super_agent": "E:\\keyboard-manager-clean\\uaos-ai-factory\\night-super-agent-v301-v400",
+    "owner_test_setup": "E:\\keyboard-manager-clean\\uaos-ai-factory\\owner-test-setup-automation",
+    "owner_test_url_finalize": "E:\\keyboard-manager-clean\\uaos-ai-factory\\owner-test-url-finalize",
+    "style_rc_factory": "E:\\keyboard-manager-clean\\uaos-ai-factory\\style-rc-factory-v341-v360",
+    "parser_research_factory": "E:\\keyboard-manager-clean\\uaos-ai-factory\\parser-research-factory-v361-v380",
+    "dummy_writer_hardening": "E:\\keyboard-manager-clean\\uaos-ai-factory\\dummy-writer-hardening-v301-v320",
+    "external_review_package": "E:\\keyboard-manager-clean\\uaos-ai-factory\\external-review-package-v321-v340",
+    "dummy_writer_sandbox": "E:\\keyboard-manager-clean\\uaos-ai-factory\\writer-sandbox-dummy-implementation-v261-v280",
+    "real_writer_workbench": "E:\\keyboard-manager-clean\\uaos-ai-factory\\real-writer-workbench-v191-v220",
+    "react_app": "E:\\keyboard-manager-clean\\uaos-live-clean"
+  },
+  "safety": {
+    "writer_ready": false,
+    "real_writer_implemented": false,
+    "real_keyboard_output": false,
+    "forbidden_keyboard_package_generation": false,
+    "usb_write": false,
+    "pa3x_load": false,
+    "deploy": false,
+    "payment_activation": false,
+    "device_compatibility_claim": false,
+    "pa3x_readiness_claim": false
+  }
+}

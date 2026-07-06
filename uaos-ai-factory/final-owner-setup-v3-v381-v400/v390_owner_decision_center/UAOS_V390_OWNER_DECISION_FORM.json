@@ -1,0 +1,57 @@
+{
+  "auto_apply": false,
+  "options": [
+    {
+      "id": 1,
+      "label": "Continue local owner testing.",
+      "selected": false
+    },
+    {
+      "id": 2,
+      "label": "Send external review package.",
+      "selected": false
+    },
+    {
+      "id": 3,
+      "label": "Generate more generic Style RCs.",
+      "selected": false
+    },
+    {
+      "id": 4,
+      "label": "Continue parser research.",
+      "selected": false
+    },
+    {
+      "id": 5,
+      "label": "Continue dummy sandbox only.",
+      "selected": false
+    },
+    {
+      "id": 6,
+      "label": "Keep real writer blocked.",
+      "selected": false
+    },
+    {
+      "id": 7,
+      "label": "Keep keyboard package generation blocked.",
+      "selected": false
+    },
+    {
+      "id": 8,
+      "label": "Keep USB/PA3X blocked.",
+      "selected": false
+    }
+  ],
+  "safety": {
+    "writer_ready": false,
+    "real_writer_implemented": false,
+    "real_keyboard_output": false,
+    "forbidden_keyboard_package_generation": false,
+    "usb_write": false,
+    "pa3x_load": false,
+    "deploy": false,
+    "payment_activation": false,
+    "device_compatibility_claim": false,
+    "pa3x_readiness_claim": false
+  }
+}

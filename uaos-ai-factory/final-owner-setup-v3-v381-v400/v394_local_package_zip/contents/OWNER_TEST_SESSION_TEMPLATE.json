@@ -1,0 +1,29 @@
+{
+  "session": "UAOS_V393_OWNER_TEST_SESSION_V3",
+  "steps": [
+    "Open launcher",
+    "Open local app",
+    "Review owner dashboard",
+    "Review decision center",
+    "Confirm safety evidence"
+  ],
+  "result_fields": [
+    "home_loaded",
+    "dashboards_opened",
+    "decision_selected",
+    "confusing_parts",
+    "next_action"
+  ],
+  "safety": {
+    "writer_ready": false,
+    "real_writer_implemented": false,
+    "real_keyboard_output": false,
+    "forbidden_keyboard_package_generation": false,
+    "usb_write": false,
+    "pa3x_load": false,
+    "deploy": false,
+    "payment_activation": false,
+    "device_compatibility_claim": false,
+    "pa3x_readiness_claim": false
+  }
+}

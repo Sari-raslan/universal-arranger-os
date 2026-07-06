@@ -335,3 +335,14 @@ Final seal: E:\keyboard-manager-clean\uaos-ai-factory\writer-sandbox-dummy-imple
 - Final seal: `E:\keyboard-manager-clean\uaos-ai-factory\parser-research-factory-v361-v380\seal\UAOS_PARSER_RESEARCH_FACTORY_V361_V380_FINAL_SEAL.md`
 - Next executable batch: V381-V400 Final Owner Setup V3
 
+## V381-V400 Final Owner Setup V3
+
+- Final owner setup dashboard: `E:\keyboard-manager-clean\uaos-ai-factory\final-owner-setup-v3-v381-v400\dashboards\UAOS_FINAL_OWNER_SETUP_V3_V381_V400_DASHBOARD.html`
+- One launcher V3: `E:\keyboard-manager-clean\uaos-ai-factory\final-owner-setup-v3-v381-v400\v382_one_launcher_v3\START_UAOS_FINAL_OWNER_SETUP_V3.cmd`
+- Owner app index V3: `E:\keyboard-manager-clean\uaos-ai-factory\final-owner-setup-v3-v381-v400\v383_owner_app_index_v3\UAOS_V383_OWNER_APP_INDEX_V3.html`
+- Decision center: `E:\keyboard-manager-clean\uaos-ai-factory\final-owner-setup-v3-v381-v400\v390_owner_decision_center\UAOS_V390_OWNER_DECISION_CENTER.html`
+- Safety evidence center: `E:\keyboard-manager-clean\uaos-ai-factory\final-owner-setup-v3-v381-v400\v391_safety_evidence_center\UAOS_V391_SAFETY_EVIDENCE_CENTER.html`
+- Local package ZIP: `E:\keyboard-manager-clean\uaos-ai-factory\final-owner-setup-v3-v381-v400\v394_local_package_zip\UAOS_V394_FINAL_OWNER_SETUP_V3_PACKAGE.zip`
+- Master executive seal: `E:\keyboard-manager-clean\uaos-ai-factory\final-owner-setup-v3-v381-v400\v400_master_executive_seal\UAOS_V400_MASTER_EXECUTIVE_SEAL.md`
+- Next action: owner runs Final Owner Setup V3 launcher.
+

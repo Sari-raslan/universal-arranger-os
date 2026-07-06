@@ -420,26 +420,6 @@ const parserResearchFactory = {
   nextGate: "V381-V400 Final Owner Setup V3",
 };
 
-const finalOwnerSetupV3 = {
-  launcherPath: "E:\\keyboard-manager-clean\\uaos-ai-factory\\final-owner-setup-v3-v381-v400\\v382_one_launcher_v3\\START_UAOS_FINAL_OWNER_SETUP_V3.cmd",
-  dashboardPath: "E:\\keyboard-manager-clean\\uaos-ai-factory\\final-owner-setup-v3-v381-v400\\dashboards\\UAOS_FINAL_OWNER_SETUP_V3_OWNER_DASHBOARD.html",
-  ownerIndexPath: "E:\\keyboard-manager-clean\\uaos-ai-factory\\final-owner-setup-v3-v381-v400\\v383_owner_app_index_v3\\UAOS_V383_OWNER_APP_INDEX_V3.html",
-  decisionPath: "E:\\keyboard-manager-clean\\uaos-ai-factory\\final-owner-setup-v3-v381-v400\\v390_owner_decision_center\\UAOS_V390_OWNER_DECISION_CENTER.html",
-  safetyPath: "E:\\keyboard-manager-clean\\uaos-ai-factory\\final-owner-setup-v3-v381-v400\\v391_safety_evidence_center\\UAOS_V391_SAFETY_EVIDENCE_CENTER.html",
-  status: [
-    { label: "Setup V3", value: "READY" },
-    { label: "One launcher", value: "READY" },
-    { label: "Style RC Factory", value: "READY" },
-    { label: "Parser Research", value: "READY" },
-    { label: "Dummy hardening", value: "READY" },
-    { label: "External review", value: "READY" },
-    { label: "Writer ready", value: "NO" },
-    { label: ".STY/.SET", value: "BLOCKED" },
-    { label: "USB/PA3X", value: "BLOCKED" },
-  ],
-  nextGate: "Owner runs Final Owner Setup V3 launcher",
-};
-
 function uid() {
   return "uaos-" + Date.now() + "-" + Math.random().toString(16).slice(2);
 }
@@ -1810,56 +1790,6 @@ export default function App() {
                 <h4>Writer readiness</h4>
                 <p>Confirm writer_ready is false and the real writer remains blocked.</p>
                 <small>{parserResearchFactory.gatePath}</small>
-              </article>
-            </div>
-          </div>
-
-          <div className="uaos-style-rc-deep-panel">
-            <div className="uaos-style-rc-deep-head">
-              <div>
-                <span>Final Owner Setup V3</span>
-                <h3>Run the Local Owner Setup</h3>
-                <p>One launcher, owner app index, decision center, safety evidence, Style RC Factory, Parser Research Factory, Dummy Sandbox hardening, and External Review package are ready for local owner review. Real writer, keyboard package output, USB, PA3X, deploy, and payment actions remain blocked.</p>
-              </div>
-              <strong>{finalOwnerSetupV3.nextGate}</strong>
-            </div>
-
-            <div className="uaos-style-rc-status-row">
-              {finalOwnerSetupV3.status.map((item) => (
-                <b key={item.label}>{item.label}: {item.value}</b>
-              ))}
-            </div>
-
-            <div className="uaos-style-rc-link-grid">
-              <article>
-                <span>One launcher</span>
-                <h4>Start local setup</h4>
-                <p>Builds/checks the local app, opens the owner dashboard, opens the local URL, and opens the decision center.</p>
-                <small>{finalOwnerSetupV3.launcherPath}</small>
-              </article>
-              <article>
-                <span>Owner dashboard</span>
-                <h4>Open Setup V3</h4>
-                <p>Review all local owner links and package status from one dashboard.</p>
-                <small>{finalOwnerSetupV3.dashboardPath}</small>
-              </article>
-              <article>
-                <span>Owner app index</span>
-                <h4>Open local index</h4>
-                <p>Use the local app index to reach Style RC, parser research, dummy hardening, external review, and safety evidence.</p>
-                <small>{finalOwnerSetupV3.ownerIndexPath}</small>
-              </article>
-              <article>
-                <span>Decision center</span>
-                <h4>Choose next action</h4>
-                <p>Record the next owner decision. No option is automatic.</p>
-                <small>{finalOwnerSetupV3.decisionPath}</small>
-              </article>
-              <article>
-                <span>Safety evidence</span>
-                <h4>Confirm blocked gates</h4>
-                <p>Confirm writer_ready is false and all hardware, deploy, and payment gates remain closed.</p>
-                <small>{finalOwnerSetupV3.safetyPath}</small>
               </article>
             </div>
           </div>

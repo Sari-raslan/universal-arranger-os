@@ -1,0 +1,63 @@
+{
+  "validator": "uaos_final_owner_setup_v3_v381_v400_validator",
+  "batch": "V381-V400",
+  "result": "PASS",
+  "checks": [
+    {
+      "name": "v381_v400_files_exist",
+      "pass": true,
+      "details": []
+    },
+    {
+      "name": "v382_one_launcher_v3_START_UAOS_FINAL_OWNER_SETUP_V3.cmd_exists",
+      "pass": true
+    },
+    {
+      "name": "v382_one_launcher_v3_START_UAOS_FINAL_OWNER_SETUP_V3.ps1_exists",
+      "pass": true
+    },
+    {
+      "name": "v383_owner_app_index_v3_UAOS_V383_OWNER_APP_INDEX_V3.html_exists",
+      "pass": true
+    },
+    {
+      "name": "v390_owner_decision_center_UAOS_V390_OWNER_DECISION_CENTER.html_exists",
+      "pass": true
+    },
+    {
+      "name": "v391_safety_evidence_center_UAOS_V391_SAFETY_EVIDENCE_CENTER.html_exists",
+      "pass": true
+    },
+    {
+      "name": "v394_local_package_zip_UAOS_V394_FINAL_OWNER_SETUP_V3_PACKAGE.zip_exists",
+      "pass": true
+    },
+    {
+      "name": "no_forbidden_keyboard_or_media_extensions",
+      "pass": true,
+      "details": []
+    },
+    {
+      "name": "zip_contains_only_allowed_types",
+      "pass": true,
+      "details": []
+    },
+    {
+      "name": "no_unsafe_claims_or_executed_actions",
+      "pass": true,
+      "details": []
+    },
+    {
+      "name": "writer_ready_false",
+      "pass": true
+    },
+    {
+      "name": "react_build_pass_if_touched",
+      "pass": true
+    },
+    {
+      "name": "app_jsx_backup_exists_if_touched",
+      "pass": true
+    }
+  ]
+}
