@@ -314,3 +314,13 @@ Final seal: E:\keyboard-manager-clean\uaos-ai-factory\writer-sandbox-dummy-imple
 - Final seal: E:\keyboard-manager-clean\uaos-ai-factory\external-review-package-v321-v340\seal\UAOS_EXTERNAL_REVIEW_PACKAGE_V321_V340_FINAL_SEAL.md
 - Next executable batch: V341-V360 Style RC Factory
 
+## V341-V360 Style RC Factory Execution
+
+- V341-V360 Style RC Factory dashboard: E:\keyboard-manager-clean\uaos-ai-factory\style-rc-factory-v341-v360\dashboards\UAOS_STYLE_RC_FACTORY_V341_V360_DASHBOARD.html
+- Compare tool: E:\keyboard-manager-clean\uaos-ai-factory\style-rc-factory-v341-v360\v349_style_compare_tool\UAOS_V349_STYLE_COMPARE_TOOL.html
+- Owner selector: E:\keyboard-manager-clean\uaos-ai-factory\style-rc-factory-v341-v360\v351_owner_style_selector\UAOS_V351_OWNER_STYLE_SELECTOR.html
+- Style RC package ZIP: E:\keyboard-manager-clean\uaos-ai-factory\style-rc-factory-v341-v360\v352_style_rc_package_zip\UAOS_V352_STYLE_RC_FACTORY_PACKAGE.zip
+- DAW test steps: E:\keyboard-manager-clean\uaos-ai-factory\style-rc-factory-v341-v360\v354_daw_test_pack\UAOS_V354_STYLE_RC_DAW_TEST_STEPS.md
+- Final seal: E:\keyboard-manager-clean\uaos-ai-factory\style-rc-factory-v341-v360\seal\UAOS_STYLE_RC_FACTORY_V341_V360_FINAL_SEAL.md
+- Next executable batch: V361-V380 Parser Research Factory
+

@@ -1,0 +1,73 @@
+{
+  "style_id": "uaos_rc_shaabi",
+  "name": "Shaabi",
+  "format": "UAOS_GENERIC_STYLE_RC",
+  "tempo": 110,
+  "sections": {
+    "intro_1": {
+      "midi_ref": "UAOS_SHAABI_SECTION_PACK.mid",
+      "bars": 2
+    },
+    "intro_2": {
+      "midi_ref": "UAOS_SHAABI_SECTION_PACK.mid",
+      "bars": 2
+    },
+    "variation_a": {
+      "midi_ref": "UAOS_SHAABI_SECTION_PACK.mid",
+      "bars": 4
+    },
+    "variation_b": {
+      "midi_ref": "UAOS_SHAABI_SECTION_PACK.mid",
+      "bars": 4
+    },
+    "variation_c": {
+      "midi_ref": "UAOS_SHAABI_SECTION_PACK.mid",
+      "bars": 4
+    },
+    "variation_d": {
+      "midi_ref": "UAOS_SHAABI_SECTION_PACK.mid",
+      "bars": 4
+    },
+    "fill_a": {
+      "midi_ref": "placeholder",
+      "bars": 2
+    },
+    "fill_b": {
+      "midi_ref": "placeholder",
+      "bars": 2
+    },
+    "break": {
+      "midi_ref": "placeholder",
+      "bars": 2
+    },
+    "ending_1": {
+      "midi_ref": "placeholder",
+      "bars": 2
+    },
+    "ending_2": {
+      "midi_ref": "placeholder",
+      "bars": 2
+    }
+  },
+  "track_roles": [
+    "drums",
+    "percussion",
+    "bass",
+    "chords",
+    "pad",
+    "phrase_1",
+    "phrase_2"
+  ],
+  "priority_library_refs": [
+    "street-pop-priority"
+  ],
+  "section_only": false,
+  "safety": {
+    "korg_output": false,
+    "pa3x_ready": false,
+    "real_writer_used": false,
+    "sty_set_generation_allowed": false,
+    "usb_allowed": false,
+    "pa3x_allowed": false
+  }
+}

@@ -386,23 +386,6 @@ const externalReviewPackage = {
   nextGate: "V341-V360 Style RC Factory",
 };
 
-const styleRcFactory = {
-  dashboardPath: "E:\\keyboard-manager-clean\\uaos-ai-factory\\style-rc-factory-v341-v360\\dashboards\\UAOS_STYLE_RC_FACTORY_V341_V360_DASHBOARD.html",
-  zipPath: "E:\\keyboard-manager-clean\\uaos-ai-factory\\style-rc-factory-v341-v360\\v352_style_rc_package_zip\\UAOS_V352_STYLE_RC_FACTORY_PACKAGE.zip",
-  comparePath: "E:\\keyboard-manager-clean\\uaos-ai-factory\\style-rc-factory-v341-v360\\v349_style_compare_tool\\UAOS_V349_STYLE_COMPARE_TOOL.html",
-  selectorPath: "E:\\keyboard-manager-clean\\uaos-ai-factory\\style-rc-factory-v341-v360\\v351_owner_style_selector\\UAOS_V351_OWNER_STYLE_SELECTOR.html",
-  status: [
-    { label: "Style RCs", value: "5 READY" },
-    { label: "MIDI packs", value: "READY" },
-    { label: "Compare tool", value: "READY" },
-    { label: "Owner selector", value: "READY" },
-    { label: "Real writer", value: "BLOCKED" },
-    { label: ".STY/.SET", value: "BLOCKED" },
-    { label: "USB/PA3X", value: "BLOCKED" },
-  ],
-  nextGate: "V361-V380 Parser Research Factory",
-};
-
 function uid() {
   return "uaos-" + Date.now() + "-" + Math.random().toString(16).slice(2);
 }
@@ -1685,50 +1668,6 @@ export default function App() {
                 <h4>Manual decision</h4>
                 <p>Choose whether to send, keep private, add hardening, or continue later. No option is automatic.</p>
                 <small>{externalReviewPackage.gatePath}</small>
-              </article>
-            </div>
-          </div>
-
-          <div className="uaos-style-rc-deep-panel">
-            <div className="uaos-style-rc-deep-head">
-              <div>
-                <span>Style RC Factory</span>
-                <h3>V341-V360 Generic Style RCs Ready</h3>
-                <p>Five UAOS generic Style RCs, section MIDI packs, a full demo MIDI, compare tool, package ZIP, and owner selector are ready for local review. Real writer, keyboard package output, USB, PA3X, deploy, and payment actions remain blocked.</p>
-              </div>
-              <strong>{styleRcFactory.nextGate}</strong>
-            </div>
-
-            <div className="uaos-style-rc-status-row">
-              {styleRcFactory.status.map((item) => (
-                <b key={item.label}>{item.label}: {item.value}</b>
-              ))}
-            </div>
-
-            <div className="uaos-style-rc-link-grid">
-              <article>
-                <span>Factory dashboard</span>
-                <h4>Open V341-V360 status</h4>
-                <p>Review the factory outputs, MIDI packs, validators, and safety gates.</p>
-                <small>{styleRcFactory.dashboardPath}</small>
-              </article>
-              <article>
-                <span>Package ZIP</span>
-                <h4>Generic RC bundle</h4>
-                <p>Open the UAOS generic style and MIDI package. No keyboard package files are included.</p>
-                <small>{styleRcFactory.zipPath}</small>
-              </article>
-              <article>
-                <span>Compare tool</span>
-                <h4>Compare styles</h4>
-                <p>Compare sections, variations, fills, tempo, track roles, bindings, and MIDI references.</p>
-                <small>{styleRcFactory.comparePath}</small>
-              </article>
-              <article>
-                <span>Owner selector</span>
-                <h4>Choose next focus</h4>
-                <p>Select an RC for deeper MIDI, test all, request more RCs, or keep all gates closed.</p>
-                <small>{styleRcFactory.selectorPath}</small>
               </article>
             </div>
           </div>

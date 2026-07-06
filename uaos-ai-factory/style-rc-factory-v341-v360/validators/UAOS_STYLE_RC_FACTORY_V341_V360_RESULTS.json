@@ -1,0 +1,78 @@
+{
+  "checks": {
+    "agent_integration_exists": {
+      "pass": true,
+      "detail": "E:\\keyboard-manager-clean\\uaos-ai-factory\\style-rc-factory-v341-v360\\agent-outputs\\UAOS_V341_V360_AGENT_INTEGRATION_MAP.json"
+    },
+    "v341_v360_files_exist": {
+      "pass": true,
+      "detail": "all V341-V360 files"
+    },
+    "at_least_5_style_rcs": {
+      "pass": true,
+      "detail": 10
+    },
+    "midi_packs_valid": {
+      "pass": true,
+      "detail": "valid midi"
+    },
+    "compare_tool_exists": {
+      "pass": true,
+      "detail": "E:\\keyboard-manager-clean\\uaos-ai-factory\\style-rc-factory-v341-v360\\v349_style_compare_tool\\UAOS_V349_STYLE_COMPARE_TOOL.html"
+    },
+    "owner_selector_exists": {
+      "pass": true,
+      "detail": "E:\\keyboard-manager-clean\\uaos-ai-factory\\style-rc-factory-v341-v360\\v351_owner_style_selector\\UAOS_V351_OWNER_STYLE_SELECTOR.html"
+    },
+    "zip_exists_allowed_only": {
+      "pass": true,
+      "detail": "allowed"
+    },
+    "v350_validator_pass": {
+      "pass": true,
+      "detail": {
+        "style_files_parse": true,
+        "required_sections_exist": true,
+        "midi_files_valid": true,
+        "forbidden_extensions_absent": true,
+        "no_false_claims": true,
+        "style_count": 10,
+        "midi_count": 12,
+        "errors": [],
+        "status": "PASS",
+        "pass": true
+      }
+    },
+    "react_build_pass_if_touched": {
+      "pass": true,
+      "detail": true
+    },
+    "no_real_writer_implementation": {
+      "pass": true,
+      "detail": "no unsafe positive actions"
+    },
+    "no_generated_korg_output": {
+      "pass": true,
+      "detail": "none"
+    },
+    "no_sty_set_generated": {
+      "pass": true,
+      "detail": "none"
+    },
+    "no_prs_prf_kst_generated": {
+      "pass": true,
+      "detail": "none"
+    },
+    "no_usb_pa3x_deploy_payment_positive_action": {
+      "pass": true,
+      "detail": "no unsafe positive actions"
+    },
+    "no_exact_false_claims": {
+      "pass": true,
+      "detail": "absent"
+    }
+  },
+  "errors": [],
+  "status": "PASS",
+  "pass": true
+}
