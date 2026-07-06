@@ -1,0 +1,19 @@
+{
+  "pipeline": "UAOS_MEGA_FINAL_PIPELINE_V461_V560",
+  "local_only": true,
+  "agents_prewrite_first": true,
+  "code_x_integrates": true,
+  "stop_on_safety_failure": true,
+  "safety": {
+    "writer_ready": false,
+    "real_writer_implemented": false,
+    "real_keyboard_output": false,
+    "forbidden_keyboard_package_generation": false,
+    "usb_write": false,
+    "pa3x_load": false,
+    "fixture_mutation": false,
+    "fixture_redistribution": false,
+    "deploy": false,
+    "payment": false
+  }
+}

@@ -1,0 +1,5 @@
+$ErrorActionPreference = "Stop"
+Write-Host "UAOS Mega Final Pipeline V461-V560"
+Write-Host "Local only. No real writer. No keyboard package output. No USB/PA3X. No deploy."
+python "E:\keyboard-manager-clean\uaos-ai-factory\mega-final-pipeline-v461-v560\05_validators\uaos_mega_final_pipeline_v461_v560_validator.py"
+Start-Process "E:\keyboard-manager-clean\uaos-ai-factory\mega-final-pipeline-v461-v560\06_dashboards\UAOS_MEGA_FINAL_PIPELINE_V461_V560_DASHBOARD.html"
