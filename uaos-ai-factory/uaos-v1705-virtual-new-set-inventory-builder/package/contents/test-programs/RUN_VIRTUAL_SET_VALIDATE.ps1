@@ -1,5 +1,5 @@
 ﻿$ErrorActionPreference = 'Stop'
-$target = 'E:\keyboard-manager-clean\uaos-ai-factory\uaos-v1705-virtual-new-set-inventory-builder\virtual-set-output\UAOS_VIRTUAL_NEW_SET_KORG_PA3X_RECOVERY_BACKUP_20260619-150450_20260706_180513'
+$target = 'E:\keyboard-manager-clean\uaos-ai-factory\uaos-v1705-virtual-new-set-inventory-builder\virtual-set-output\UAOS_VIRTUAL_NEW_SET_KORG_PA3X_RECOVERY_BACKUP_20260619-150450_20260706_181425'
 $forbidden = @('.sty','.set','.prs','.prf','.kst')
 $bad = @()
 
@@ -21,11 +21,11 @@ Get-ChildItem $target -Recurse -File | ForEach-Object {
 }
 
 $required = @(
-    'E:\keyboard-manager-clean\uaos-ai-factory\uaos-v1705-virtual-new-set-inventory-builder\virtual-set-output\UAOS_VIRTUAL_NEW_SET_KORG_PA3X_RECOVERY_BACKUP_20260619-150450_20260706_180513\00_MENU\UAOS_VIRTUAL_NEW_SET_MENU.html',
-    'E:\keyboard-manager-clean\uaos-ai-factory\uaos-v1705-virtual-new-set-inventory-builder\virtual-set-output\UAOS_VIRTUAL_NEW_SET_KORG_PA3X_RECOVERY_BACKUP_20260619-150450_20260706_180513\02_SOURCE_INVENTORY\UAOS_SOURCE_FILE_INVENTORY.json',
-    'E:\keyboard-manager-clean\uaos-ai-factory\uaos-v1705-virtual-new-set-inventory-builder\virtual-set-output\UAOS_VIRTUAL_NEW_SET_KORG_PA3X_RECOVERY_BACKUP_20260619-150450_20260706_180513\03_EXTENSION_SUMMARY\UAOS_EXTENSION_SUMMARY.json',
-    'E:\keyboard-manager-clean\uaos-ai-factory\uaos-v1705-virtual-new-set-inventory-builder\virtual-set-output\UAOS_VIRTUAL_NEW_SET_KORG_PA3X_RECOVERY_BACKUP_20260619-150450_20260706_180513\04_VIRTUAL_SET_STRUCTURE\UAOS_VIRTUAL_SET_STRUCTURE.json',
-    'E:\keyboard-manager-clean\uaos-ai-factory\uaos-v1705-virtual-new-set-inventory-builder\virtual-set-output\UAOS_VIRTUAL_NEW_SET_KORG_PA3X_RECOVERY_BACKUP_20260619-150450_20260706_180513\07_PREVIEW\UAOS_VIRTUAL_SET_PREVIEW.html'
+    'E:\keyboard-manager-clean\uaos-ai-factory\uaos-v1705-virtual-new-set-inventory-builder\virtual-set-output\UAOS_VIRTUAL_NEW_SET_KORG_PA3X_RECOVERY_BACKUP_20260619-150450_20260706_181425\00_MENU\UAOS_VIRTUAL_NEW_SET_MENU.html',
+    'E:\keyboard-manager-clean\uaos-ai-factory\uaos-v1705-virtual-new-set-inventory-builder\virtual-set-output\UAOS_VIRTUAL_NEW_SET_KORG_PA3X_RECOVERY_BACKUP_20260619-150450_20260706_181425\02_SOURCE_INVENTORY\UAOS_SOURCE_FILE_INVENTORY.json',
+    'E:\keyboard-manager-clean\uaos-ai-factory\uaos-v1705-virtual-new-set-inventory-builder\virtual-set-output\UAOS_VIRTUAL_NEW_SET_KORG_PA3X_RECOVERY_BACKUP_20260619-150450_20260706_181425\03_EXTENSION_SUMMARY\UAOS_EXTENSION_SUMMARY.json',
+    'E:\keyboard-manager-clean\uaos-ai-factory\uaos-v1705-virtual-new-set-inventory-builder\virtual-set-output\UAOS_VIRTUAL_NEW_SET_KORG_PA3X_RECOVERY_BACKUP_20260619-150450_20260706_181425\04_VIRTUAL_SET_STRUCTURE\UAOS_VIRTUAL_SET_STRUCTURE.json',
+    'E:\keyboard-manager-clean\uaos-ai-factory\uaos-v1705-virtual-new-set-inventory-builder\virtual-set-output\UAOS_VIRTUAL_NEW_SET_KORG_PA3X_RECOVERY_BACKUP_20260619-150450_20260706_181425\07_PREVIEW\UAOS_VIRTUAL_SET_PREVIEW.html'
 )
 
 foreach ($r in $required) {
