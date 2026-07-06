@@ -1,7 +1,7 @@
 ﻿# UAOS V701-V900 Agent Plan
 
 Goal:
-Stabilization and local QA for research-only UAOS artifacts.
+Stabilization and local QA.
 
 Safety:
 - writer_ready: false
@@ -11,4 +11,4 @@ Safety:
 - PA3X load: NO
 - Deploy: NO
 - Payment: NO
-- Brand/device-ready claims: NO
+- Brand/device compatibility claims: NO

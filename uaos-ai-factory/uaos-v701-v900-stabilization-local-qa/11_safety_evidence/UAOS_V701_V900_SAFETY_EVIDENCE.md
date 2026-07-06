@@ -7,6 +7,6 @@
 - PA3X load: NO
 - Deploy: NO
 - Payment: NO
-- Brand/device-ready claims: NO
+- Brand/device compatibility claims: NO
 
 All artifacts are local research, review, validator, dashboard, QA, package, seal, or generic metadata evidence.

@@ -23,4 +23,4 @@ Validator status: **PASS**
 - PA3X load: NO
 - Deploy: NO
 - Payment: NO
-- Brand/device-ready claims: NO
+- Brand/device compatibility claims: NO

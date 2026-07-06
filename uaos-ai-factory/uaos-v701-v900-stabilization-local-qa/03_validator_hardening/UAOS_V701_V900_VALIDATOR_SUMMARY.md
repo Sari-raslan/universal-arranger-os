@@ -2,9 +2,9 @@
 
 Status: **PASS**
 
-Scanned files: 61
+Scanned files: 59
 
-## Safety State
+## Safety
 
 - writer_ready: false
 - real_writer_implemented: NO
@@ -13,7 +13,7 @@ Scanned files: 61
 - PA3X load: NO
 - Deploy: NO
 - Payment: NO
-- Brand/device-ready claims: NO
+- Brand/device compatibility claims: NO
 
 ## Violations
 

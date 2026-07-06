@@ -1,4 +1,4 @@
-﻿# UAOS V701-V900 Previous Checkpoint Import
+﻿# UAOS Previous Checkpoint Import
 
 Status: **YES**
 

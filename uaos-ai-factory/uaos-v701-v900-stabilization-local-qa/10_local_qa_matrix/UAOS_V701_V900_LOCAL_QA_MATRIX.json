@@ -1,6 +1,6 @@
 ﻿{
     "result":  "PASS",
-    "generatedAt":  "2026-07-06T13:20:33.0854493+02:00",
+    "package_status":  "PASS",
     "gates":  {
                   "PREV_CHECKPOINT_IMPORT":  true,
                   "VALIDATOR_PASS":  true,
@@ -11,7 +11,6 @@
                   "ZIP_INTEGRITY":  true,
                   "SAFETY_LOCKS_HELD":  true
               },
-    "packageStatus":  "PASS",
     "safety":  {
                    "writer_ready":  false,
                    "real_writer_implemented":  "NO",
@@ -20,6 +19,7 @@
                    "pa3x_load":  "NO",
                    "deploy":  "NO",
                    "payment":  "NO",
-                   "branded_ready_claims":  "NO"
-               }
+                   "brand_device_compat_claims":  "NO"
+               },
+    "generated_at":  "2026-07-06T13:28:58.4469708+02:00"
 }

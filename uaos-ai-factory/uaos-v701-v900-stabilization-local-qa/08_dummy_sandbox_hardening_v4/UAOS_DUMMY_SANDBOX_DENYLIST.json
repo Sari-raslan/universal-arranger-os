@@ -1,25 +1,25 @@
 ﻿{
-    "forbiddenExtensions":  [
-                                ".sty",
-                                ".set",
-                                ".prs",
-                                ".prf",
-                                ".kst"
-                            ],
-    "blockedActions":  [
-                           "real_writer_activation",
-                           "keyboard_package_output",
-                           "usb_write",
-                           "pa3x_load",
-                           "deploy",
-                           "payment"
-                       ],
-    "allowedExtensions":  [
-                              ".json",
-                              ".md",
-                              ".html",
-                              ".txt",
-                              ".csv",
-                              ".zip"
-                          ]
+    "forbidden_extensions":  [
+                                 ".sty",
+                                 ".set",
+                                 ".prs",
+                                 ".prf",
+                                 ".kst"
+                             ],
+    "allowed_extensions":  [
+                               ".json",
+                               ".md",
+                               ".html",
+                               ".txt",
+                               ".csv",
+                               ".zip"
+                           ],
+    "blocked_actions":  [
+                            "real_writer_activation",
+                            "keyboard_package_output",
+                            "usb_write",
+                            "pa3x_load",
+                            "deploy",
+                            "payment"
+                        ]
 }

@@ -7,7 +7,7 @@ Focus:
 - No binary implementation.
 - No target-device package generation.
 
-Risk Register:
-- Accidental readiness language: blocked by validator.
+Risk register:
+- Accidental compatibility language: blocked by validator.
 - Forbidden extension creation: blocked by validator.
 - Hardware or deploy activation: blocked by validator and safety gates.
