@@ -1,0 +1,29 @@
+{
+  "writer_ready": false,
+  "real_writer_implemented": false,
+  "nativeOutputAllowed": false,
+  "usbWriteAllowed": false,
+  "keyboardLoadAllowed": false,
+  "risks": [
+    {
+      "id": "schema_ambiguity",
+      "rating": "MEDIUM",
+      "mitigation": "external review and schema v8 planning"
+    },
+    {
+      "id": "unknown_fields",
+      "rating": "HIGH",
+      "mitigation": "targeted read-only fixture metadata"
+    },
+    {
+      "id": "fixture_privacy",
+      "rating": "HIGH",
+      "mitigation": "no content copying and no sample extraction"
+    },
+    {
+      "id": "writer_inference",
+      "rating": "HIGH",
+      "mitigation": "writer_ready false and signoff not writer approval"
+    }
+  ]
+}
