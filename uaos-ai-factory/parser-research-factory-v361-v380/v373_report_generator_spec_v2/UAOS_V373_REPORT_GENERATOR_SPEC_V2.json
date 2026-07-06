@@ -1,0 +1,16 @@
+{
+  "purpose": "Generate future read-only parser research reports from evidence refs.",
+  "outputs": [
+    "md",
+    "json",
+    "html dashboard"
+  ],
+  "forbidden_outputs": [
+    ".sty",
+    ".set",
+    ".prs",
+    ".prf",
+    ".kst"
+  ],
+  "mutation": false
+}

@@ -1,0 +1,42 @@
+{
+  "validator": "uaos_parser_research_factory_v361_v380_validator",
+  "batch": "V361-V380",
+  "result": "PASS",
+  "checks": [
+    {
+      "name": "required_files_exist",
+      "pass": true,
+      "details": []
+    },
+    {
+      "name": "no_forbidden_keyboard_package_extensions",
+      "pass": true,
+      "details": []
+    },
+    {
+      "name": "no_unsafe_claims_or_actions",
+      "pass": true,
+      "details": []
+    },
+    {
+      "name": "writer_ready_false",
+      "pass": true
+    },
+    {
+      "name": "real_writer_allowed_false",
+      "pass": true
+    },
+    {
+      "name": "unproven_mappings_remain_unsolved",
+      "pass": true
+    },
+    {
+      "name": "react_build_pass_if_touched",
+      "pass": true
+    },
+    {
+      "name": "app_jsx_backup_exists_if_touched",
+      "pass": true
+    }
+  ]
+}

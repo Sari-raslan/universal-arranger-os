@@ -1,0 +1,227 @@
+{
+  "schema_id": "UAOS_V368_READONLY_PARSER_SCHEMA_V5",
+  "schema_type": "readonly_parser_observation",
+  "writer_ready": false,
+  "real_writer_allowed": false,
+  "forbidden_capabilities": [
+    "mutation_actions",
+    "writer_fields",
+    "keyboard_output_fields",
+    "usb_actions",
+    "hardware_load_actions"
+  ],
+  "evidence_refs": {
+    "rank1_selection": "E:\\keyboard-manager-clean\\uaos-ai-factory\\fixture-rank1-readonly-scan-v161-v170\\00_rank_selection\\UAOS_RANK_1_SELECTION_RECORD.json",
+    "rank1_header": "E:\\keyboard-manager-clean\\uaos-ai-factory\\fixture-rank1-readonly-scan-v161-v170\\03_header_scan\\UAOS_RANK_1_HEADER_SCAN.json",
+    "rank1_unknown": "E:\\keyboard-manager-clean\\uaos-ai-factory\\fixture-rank1-readonly-scan-v161-v170\\04_unknown_chunk_scan\\UAOS_RANK_1_UNKNOWN_CHUNK_SCAN.json",
+    "rank2_header": "E:\\keyboard-manager-clean\\uaos-ai-factory\\real-writer-workbench-v191-v220\\rank2-scan\\UAOS_RANK2_HEADER_SCAN.json",
+    "rank2_unknown": "E:\\keyboard-manager-clean\\uaos-ai-factory\\real-writer-workbench-v191-v220\\rank2-scan\\UAOS_RANK2_UNKNOWN_CHUNK_SCAN.json",
+    "rank3_header": "E:\\keyboard-manager-clean\\uaos-ai-factory\\real-writer-workbench-v191-v220\\rank3-scan\\UAOS_RANK3_HEADER_SCAN.json",
+    "rank3_unknown": "E:\\keyboard-manager-clean\\uaos-ai-factory\\real-writer-workbench-v191-v220\\rank3-scan\\UAOS_RANK3_UNKNOWN_CHUNK_SCAN.json",
+    "rank_comparison": "E:\\keyboard-manager-clean\\uaos-ai-factory\\real-writer-workbench-v191-v220\\rank-comparison\\UAOS_RANK1_RANK2_RANK3_COMPARISON.json",
+    "schema_v4": "E:\\keyboard-manager-clean\\uaos-ai-factory\\real-writer-workbench-v191-v220\\parser-confidence\\UAOS_READONLY_PARSER_SCHEMA_V4.json",
+    "confidence_v4": "E:\\keyboard-manager-clean\\uaos-ai-factory\\real-writer-workbench-v191-v220\\parser-confidence\\UAOS_PARSER_CONFIDENCE_MATRIX_V4.json",
+    "schema_v2": "E:\\keyboard-manager-clean\\uaos-ai-factory\\parser-refinement-v171-v180\\v176_safe_parser_schema_v2\\UAOS_V176_READONLY_PARSER_SCHEMA_V2.json",
+    "dummy_safety": "E:\\keyboard-manager-clean\\uaos-ai-factory\\writer-sandbox-dummy-implementation-v261-v280\\runtime-safety\\UAOS_RUNTIME_EXTENSION_BLOCKER_REPORT.json"
+  },
+  "fixture_comparison_ids": [
+    "rank1",
+    "rank2",
+    "rank3",
+    "UAOS_V363_RANK_COMPARISON_V2"
+  ],
+  "confidence_levels": [
+    "OBSERVED",
+    "UNKNOWN",
+    "UNCONFIRMED",
+    "HYPOTHESIS",
+    "UNSAFE_TO_INFER"
+  ],
+  "region_catalog": [
+    {
+      "id": "unknown_region_v3_001",
+      "evidence_sources": [
+        "rank1_unknown",
+        "rank2_unknown",
+        "rank3_unknown"
+      ],
+      "confidence": "UNKNOWN",
+      "hypothesis": "possible structural or payload region, not solved",
+      "blocker": "insufficient cross-fixture proof",
+      "additional_fixture_requirement": "owner-approved multiple USERxx style fixtures, read-only scan only"
+    },
+    {
+      "id": "unknown_region_v3_002",
+      "evidence_sources": [
+        "rank1_unknown",
+        "rank2_unknown",
+        "rank3_unknown"
+      ],
+      "confidence": "HYPOTHESIS",
+      "hypothesis": "possible structural or payload region, not solved",
+      "blocker": "insufficient cross-fixture proof",
+      "additional_fixture_requirement": "owner-approved multiple USERxx style fixtures, read-only scan only"
+    },
+    {
+      "id": "unknown_region_v3_003",
+      "evidence_sources": [
+        "rank1_unknown",
+        "rank2_unknown",
+        "rank3_unknown"
+      ],
+      "confidence": "UNKNOWN",
+      "hypothesis": "possible structural or payload region, not solved",
+      "blocker": "insufficient cross-fixture proof",
+      "additional_fixture_requirement": "owner-approved multiple USERxx style fixtures, read-only scan only"
+    },
+    {
+      "id": "unknown_region_v3_004",
+      "evidence_sources": [
+        "rank_comparison"
+      ],
+      "confidence": "HYPOTHESIS",
+      "hypothesis": "possible structural or payload region, not solved",
+      "blocker": "insufficient cross-fixture proof",
+      "additional_fixture_requirement": "owner-approved multiple USERxx style fixtures, read-only scan only"
+    },
+    {
+      "id": "unknown_region_v3_005",
+      "evidence_sources": [
+        "rank_comparison"
+      ],
+      "confidence": "UNKNOWN",
+      "hypothesis": "possible structural or payload region, not solved",
+      "blocker": "insufficient cross-fixture proof",
+      "additional_fixture_requirement": "owner-approved multiple USERxx style fixtures, read-only scan only"
+    },
+    {
+      "id": "unknown_region_v3_006",
+      "evidence_sources": [
+        "rank_comparison"
+      ],
+      "confidence": "HYPOTHESIS",
+      "hypothesis": "possible structural or payload region, not solved",
+      "blocker": "insufficient cross-fixture proof",
+      "additional_fixture_requirement": "owner-approved multiple USERxx style fixtures, read-only scan only"
+    },
+    {
+      "id": "unknown_region_v3_007",
+      "evidence_sources": [
+        "rank_comparison"
+      ],
+      "confidence": "UNKNOWN",
+      "hypothesis": "possible structural or payload region, not solved",
+      "blocker": "insufficient cross-fixture proof",
+      "additional_fixture_requirement": "owner-approved multiple USERxx style fixtures, read-only scan only"
+    }
+  ],
+  "section_mapping": [
+    {
+      "section": "intro",
+      "state": "UNCONFIRMED",
+      "confidence": "LOW",
+      "solved": false,
+      "evidence": "prior reports only"
+    },
+    {
+      "section": "variation_a",
+      "state": "UNCONFIRMED",
+      "confidence": "LOW",
+      "solved": false,
+      "evidence": "prior reports only"
+    },
+    {
+      "section": "variation_b",
+      "state": "UNCONFIRMED",
+      "confidence": "LOW",
+      "solved": false,
+      "evidence": "prior reports only"
+    },
+    {
+      "section": "variation_c",
+      "state": "UNCONFIRMED",
+      "confidence": "LOW",
+      "solved": false,
+      "evidence": "prior reports only"
+    },
+    {
+      "section": "variation_d",
+      "state": "UNCONFIRMED",
+      "confidence": "LOW",
+      "solved": false,
+      "evidence": "prior reports only"
+    },
+    {
+      "section": "fill",
+      "state": "UNCONFIRMED",
+      "confidence": "LOW",
+      "solved": false,
+      "evidence": "prior reports only"
+    },
+    {
+      "section": "break",
+      "state": "UNCONFIRMED",
+      "confidence": "LOW",
+      "solved": false,
+      "evidence": "prior reports only"
+    },
+    {
+      "section": "ending",
+      "state": "UNCONFIRMED",
+      "confidence": "LOW",
+      "solved": false,
+      "evidence": "prior reports only"
+    }
+  ],
+  "track_mapping": [
+    {
+      "track": "drums",
+      "state": "UNCONFIRMED",
+      "confidence": "LOW",
+      "solved": false,
+      "evidence": "prior reports only"
+    },
+    {
+      "track": "percussion",
+      "state": "UNCONFIRMED",
+      "confidence": "LOW",
+      "solved": false,
+      "evidence": "prior reports only"
+    },
+    {
+      "track": "bass",
+      "state": "UNCONFIRMED",
+      "confidence": "LOW",
+      "solved": false,
+      "evidence": "prior reports only"
+    },
+    {
+      "track": "chord",
+      "state": "UNCONFIRMED",
+      "confidence": "LOW",
+      "solved": false,
+      "evidence": "prior reports only"
+    },
+    {
+      "track": "pad",
+      "state": "UNCONFIRMED",
+      "confidence": "LOW",
+      "solved": false,
+      "evidence": "prior reports only"
+    },
+    {
+      "track": "phrase",
+      "state": "UNCONFIRMED",
+      "confidence": "LOW",
+      "solved": false,
+      "evidence": "prior reports only"
+    },
+    {
+      "track": "melody_guide",
+      "state": "UNCONFIRMED",
+      "confidence": "LOW",
+      "solved": false,
+      "evidence": "prior reports only"
+    }
+  ]
+}

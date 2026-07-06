@@ -1,0 +1,83 @@
+{
+  "status": "REFERENCE_IMPORT_ONLY",
+  "fixture_contents_copied": false,
+  "evidence": {
+    "rank1_selection": {
+      "path": "E:\\keyboard-manager-clean\\uaos-ai-factory\\fixture-rank1-readonly-scan-v161-v170\\00_rank_selection\\UAOS_RANK_1_SELECTION_RECORD.json",
+      "exists": true,
+      "bytes": 550,
+      "read_policy": "reference_only_no_fixture_redistribution"
+    },
+    "rank1_header": {
+      "path": "E:\\keyboard-manager-clean\\uaos-ai-factory\\fixture-rank1-readonly-scan-v161-v170\\03_header_scan\\UAOS_RANK_1_HEADER_SCAN.json",
+      "exists": true,
+      "bytes": 16653,
+      "read_policy": "reference_only_no_fixture_redistribution"
+    },
+    "rank1_unknown": {
+      "path": "E:\\keyboard-manager-clean\\uaos-ai-factory\\fixture-rank1-readonly-scan-v161-v170\\04_unknown_chunk_scan\\UAOS_RANK_1_UNKNOWN_CHUNK_SCAN.json",
+      "exists": true,
+      "bytes": 4966,
+      "read_policy": "reference_only_no_fixture_redistribution"
+    },
+    "rank2_header": {
+      "path": "E:\\keyboard-manager-clean\\uaos-ai-factory\\real-writer-workbench-v191-v220\\rank2-scan\\UAOS_RANK2_HEADER_SCAN.json",
+      "exists": true,
+      "bytes": 16678,
+      "read_policy": "reference_only_no_fixture_redistribution"
+    },
+    "rank2_unknown": {
+      "path": "E:\\keyboard-manager-clean\\uaos-ai-factory\\real-writer-workbench-v191-v220\\rank2-scan\\UAOS_RANK2_UNKNOWN_CHUNK_SCAN.json",
+      "exists": true,
+      "bytes": 2027,
+      "read_policy": "reference_only_no_fixture_redistribution"
+    },
+    "rank3_header": {
+      "path": "E:\\keyboard-manager-clean\\uaos-ai-factory\\real-writer-workbench-v191-v220\\rank3-scan\\UAOS_RANK3_HEADER_SCAN.json",
+      "exists": true,
+      "bytes": 16679,
+      "read_policy": "reference_only_no_fixture_redistribution"
+    },
+    "rank3_unknown": {
+      "path": "E:\\keyboard-manager-clean\\uaos-ai-factory\\real-writer-workbench-v191-v220\\rank3-scan\\UAOS_RANK3_UNKNOWN_CHUNK_SCAN.json",
+      "exists": true,
+      "bytes": 2470,
+      "read_policy": "reference_only_no_fixture_redistribution"
+    },
+    "rank_comparison": {
+      "path": "E:\\keyboard-manager-clean\\uaos-ai-factory\\real-writer-workbench-v191-v220\\rank-comparison\\UAOS_RANK1_RANK2_RANK3_COMPARISON.json",
+      "exists": true,
+      "bytes": 2008,
+      "read_policy": "reference_only_no_fixture_redistribution"
+    },
+    "schema_v4": {
+      "path": "E:\\keyboard-manager-clean\\uaos-ai-factory\\real-writer-workbench-v191-v220\\parser-confidence\\UAOS_READONLY_PARSER_SCHEMA_V4.json",
+      "exists": true,
+      "bytes": 368,
+      "read_policy": "reference_only_no_fixture_redistribution"
+    },
+    "confidence_v4": {
+      "path": "E:\\keyboard-manager-clean\\uaos-ai-factory\\real-writer-workbench-v191-v220\\parser-confidence\\UAOS_PARSER_CONFIDENCE_MATRIX_V4.json",
+      "exists": true,
+      "bytes": 388,
+      "read_policy": "reference_only_no_fixture_redistribution"
+    },
+    "schema_v2": {
+      "path": "E:\\keyboard-manager-clean\\uaos-ai-factory\\parser-refinement-v171-v180\\v176_safe_parser_schema_v2\\UAOS_V176_READONLY_PARSER_SCHEMA_V2.json",
+      "exists": true,
+      "bytes": 2827,
+      "read_policy": "reference_only_no_fixture_redistribution"
+    },
+    "dummy_safety": {
+      "path": "E:\\keyboard-manager-clean\\uaos-ai-factory\\writer-sandbox-dummy-implementation-v261-v280\\runtime-safety\\UAOS_RUNTIME_EXTENSION_BLOCKER_REPORT.json",
+      "exists": true,
+      "bytes": 717,
+      "read_policy": "reference_only_no_fixture_redistribution"
+    }
+  },
+  "notes": [
+    "Rank 1 comes from the approved read-only scan.",
+    "Rank 2 and Rank 3 are referenced from the workbench reports only.",
+    "Dummy writer safety evidence is used only to confirm blocked extension behavior."
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "batch": "V361-V380",
+  "scope": "read_only_parser_research_factory",
+  "inputs": {
+    "night_super_agent": "E:\\keyboard-manager-clean\\uaos-ai-factory\\night-super-agent-v301-v400",
+    "rank1_scan": "E:\\keyboard-manager-clean\\uaos-ai-factory\\fixture-rank1-readonly-scan-v161-v170",
+    "parser_refinement": "E:\\keyboard-manager-clean\\uaos-ai-factory\\parser-refinement-v171-v180",
+    "rank1_deep_refinement": "E:\\keyboard-manager-clean\\uaos-ai-factory\\rank1-deep-parser-refinement-v181-v190",
+    "real_writer_workbench": "E:\\keyboard-manager-clean\\uaos-ai-factory\\real-writer-workbench-v191-v220",
+    "fixture_smart_narrowing": "E:\\keyboard-manager-clean\\uaos-ai-factory\\fixture-smart-narrowing-v161-v170",
+    "dummy_writer_sandbox": "E:\\keyboard-manager-clean\\uaos-ai-factory\\writer-sandbox-dummy-implementation-v261-v280",
+    "react_app": "E:\\keyboard-manager-clean\\uaos-live-clean"
+  },
+  "blocked": {
+    "real_writer": true,
+    "binary_writer": true,
+    "keyboard_output": true,
+    "usb": true,
+    "pa3x_load": true,
+    "fixture_mutation": true,
+    "fixture_redistribution": true,
+    "deploy": true,
+    "payment": true
+  },
+  "allowed_outputs": [
+    "json",
+    "md",
+    "html",
+    "reports",
+    "dashboards",
+    "validator"
+  ],
+  "mapping_policy": "unproven mappings remain UNKNOWN, UNCONFIRMED, or HYPOTHESIS",
+  "writer_ready": false
+}

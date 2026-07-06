@@ -1,0 +1,38 @@
+{
+  "model_id": "UAOS_V364_COMMON_HEADER_MODEL_V3",
+  "label_policy": [
+    "OBSERVED",
+    "UNKNOWN",
+    "UNCONFIRMED",
+    "HYPOTHESIS",
+    "UNSAFE_TO_INFER"
+  ],
+  "regions": [
+    {
+      "id": "header_candidate_001",
+      "state": "OBSERVED",
+      "evidence": [
+        "rank1_header",
+        "rank2_header",
+        "rank3_header"
+      ],
+      "meaning": "UNKNOWN"
+    },
+    {
+      "id": "version_or_marker_candidate_001",
+      "state": "HYPOTHESIS",
+      "evidence": [
+        "rank_comparison"
+      ],
+      "meaning": "UNCONFIRMED"
+    },
+    {
+      "id": "payload_offset_candidate_001",
+      "state": "UNSAFE_TO_INFER",
+      "evidence": [
+        "unknown_chunks"
+      ],
+      "meaning": "UNKNOWN"
+    }
+  ]
+}

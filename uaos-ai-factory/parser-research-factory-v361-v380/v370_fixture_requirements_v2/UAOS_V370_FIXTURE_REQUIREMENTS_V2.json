@@ -1,0 +1,16 @@
+{
+  "requirements_id": "UAOS_V370_FIXTURE_REQUIREMENTS_V2",
+  "required_future_inputs": [
+    "Multiple owner-approved USERxx style fixture files for read-only inspection only",
+    "Per-file hashes and size records",
+    "Owner confirmation that fixtures may be scanned without redistribution",
+    "External reviewer notes for parser hypotheses"
+  ],
+  "blocked_actions": [
+    "fixture mutation",
+    "fixture redistribution",
+    "writer implementation",
+    "USB transfer",
+    "hardware load"
+  ]
+}

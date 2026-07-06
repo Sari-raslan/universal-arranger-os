@@ -1,0 +1,16 @@
+{
+  "risks": [
+    {
+      "risk": "over-interpreting unknown bytes",
+      "mitigation": "use UNKNOWN or HYPOTHESIS labels"
+    },
+    {
+      "risk": "accidental writer implication",
+      "mitigation": "writer_ready false and no mutation fields"
+    },
+    {
+      "risk": "fixture redistribution",
+      "mitigation": "reference paths only"
+    }
+  ]
+}

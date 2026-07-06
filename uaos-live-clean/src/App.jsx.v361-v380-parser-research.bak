@@ -403,23 +403,6 @@ const styleRcFactory = {
   nextGate: "V361-V380 Parser Research Factory",
 };
 
-const parserResearchFactory = {
-  dashboardPath: "E:\\keyboard-manager-clean\\uaos-ai-factory\\parser-research-factory-v361-v380\\dashboards\\UAOS_PARSER_RESEARCH_FACTORY_V361_V380_DASHBOARD.html",
-  schemaPath: "E:\\keyboard-manager-clean\\uaos-ai-factory\\parser-research-factory-v361-v380\\v368_parser_schema_v5\\UAOS_V368_READONLY_PARSER_SCHEMA_V5.json",
-  matrixPath: "E:\\keyboard-manager-clean\\uaos-ai-factory\\parser-research-factory-v361-v380\\v369_parser_confidence_matrix_v5\\UAOS_V369_PARSER_CONFIDENCE_MATRIX_V5.md",
-  gatePath: "E:\\keyboard-manager-clean\\uaos-ai-factory\\parser-research-factory-v361-v380\\v371_writer_readiness_gate_v2\\UAOS_V371_WRITER_READINESS_GATE_V2.md",
-  status: [
-    { label: "Rank 1/2/3", value: "COMPARED" },
-    { label: "Schema v5", value: "READY" },
-    { label: "Confidence v5", value: "READY" },
-    { label: "Writer ready", value: "NO" },
-    { label: "Real writer", value: "BLOCKED" },
-    { label: ".STY/.SET", value: "BLOCKED" },
-    { label: "USB/PA3X", value: "BLOCKED" },
-  ],
-  nextGate: "V381-V400 Final Owner Setup V3",
-};
-
 function uid() {
   return "uaos-" + Date.now() + "-" + Math.random().toString(16).slice(2);
 }
@@ -1746,50 +1729,6 @@ export default function App() {
                 <h4>Choose next focus</h4>
                 <p>Select an RC for deeper MIDI, test all, request more RCs, or keep all gates closed.</p>
                 <small>{styleRcFactory.selectorPath}</small>
-              </article>
-            </div>
-          </div>
-
-          <div className="uaos-style-rc-deep-panel">
-            <div className="uaos-style-rc-deep-head">
-              <div>
-                <span>Parser Research Factory</span>
-                <h3>V361-V380 Read-Only Parser Research</h3>
-                <p>Rank evidence, common header hypotheses, unknown region catalog, parser schema v5, and confidence matrix v5 are ready for owner review. Real writer, keyboard package output, USB, PA3X, deploy, and payment actions remain blocked.</p>
-              </div>
-              <strong>{parserResearchFactory.nextGate}</strong>
-            </div>
-
-            <div className="uaos-style-rc-status-row">
-              {parserResearchFactory.status.map((item) => (
-                <b key={item.label}>{item.label}: {item.value}</b>
-              ))}
-            </div>
-
-            <div className="uaos-style-rc-link-grid">
-              <article>
-                <span>Research dashboard</span>
-                <h4>Open V361-V380 status</h4>
-                <p>Review the parser research package, evidence references, validator results, and safety gates.</p>
-                <small>{parserResearchFactory.dashboardPath}</small>
-              </article>
-              <article>
-                <span>Schema v5</span>
-                <h4>Read-only parser schema</h4>
-                <p>Inspect evidence refs, region catalog entries, confidence states, and fixture comparison IDs.</p>
-                <small>{parserResearchFactory.schemaPath}</small>
-              </article>
-              <article>
-                <span>Confidence matrix</span>
-                <h4>Mapping status</h4>
-                <p>Check which areas remain UNKNOWN, UNCONFIRMED, or HYPOTHESIS before any future gate.</p>
-                <small>{parserResearchFactory.matrixPath}</small>
-              </article>
-              <article>
-                <span>Writer gate</span>
-                <h4>Writer readiness</h4>
-                <p>Confirm writer_ready is false and the real writer remains blocked.</p>
-                <small>{parserResearchFactory.gatePath}</small>
               </article>
             </div>
           </div>

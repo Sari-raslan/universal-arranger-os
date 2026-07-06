@@ -324,3 +324,14 @@ Final seal: E:\keyboard-manager-clean\uaos-ai-factory\writer-sandbox-dummy-imple
 - Final seal: E:\keyboard-manager-clean\uaos-ai-factory\style-rc-factory-v341-v360\seal\UAOS_STYLE_RC_FACTORY_V341_V360_FINAL_SEAL.md
 - Next executable batch: V361-V380 Parser Research Factory
 
+## V361-V380 Parser Research Factory
+
+- Dashboard: `E:\keyboard-manager-clean\uaos-ai-factory\parser-research-factory-v361-v380\dashboards\UAOS_PARSER_RESEARCH_FACTORY_V361_V380_DASHBOARD.html`
+- Rank comparison v2: `E:\keyboard-manager-clean\uaos-ai-factory\parser-research-factory-v361-v380\v363_rank_comparison_v2\UAOS_V363_RANK_COMPARISON_V2.md`
+- Parser schema v5: `E:\keyboard-manager-clean\uaos-ai-factory\parser-research-factory-v361-v380\v368_parser_schema_v5\UAOS_V368_READONLY_PARSER_SCHEMA_V5.json`
+- Confidence matrix v5: `E:\keyboard-manager-clean\uaos-ai-factory\parser-research-factory-v361-v380\v369_parser_confidence_matrix_v5\UAOS_V369_PARSER_CONFIDENCE_MATRIX_V5.md`
+- Writer readiness gate v2: `E:\keyboard-manager-clean\uaos-ai-factory\parser-research-factory-v361-v380\v371_writer_readiness_gate_v2\UAOS_V371_WRITER_READINESS_GATE_V2.md`
+- Owner research dashboard: `E:\keyboard-manager-clean\uaos-ai-factory\parser-research-factory-v361-v380\v375_owner_research_dashboard\UAOS_V375_OWNER_RESEARCH_DASHBOARD.html`
+- Final seal: `E:\keyboard-manager-clean\uaos-ai-factory\parser-research-factory-v361-v380\seal\UAOS_PARSER_RESEARCH_FACTORY_V361_V380_FINAL_SEAL.md`
+- Next executable batch: V381-V400 Final Owner Setup V3
+

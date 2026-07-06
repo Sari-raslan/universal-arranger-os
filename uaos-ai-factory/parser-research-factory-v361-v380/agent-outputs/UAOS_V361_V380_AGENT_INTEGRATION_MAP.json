@@ -1,0 +1,31 @@
+{
+  "batch": "V361-V380",
+  "status": "INTEGRATED",
+  "agents": [
+    {
+      "file": "AGENT_06_PARSER_RESEARCH_FACTORY_INTEGRATED.md",
+      "role": "Owns the V361-V380 read-only parser research factory and keeps every mapping evidence-labeled."
+    },
+    {
+      "file": "AGENT_03_VALIDATOR_STRESS_INTEGRATED.md",
+      "role": "Stress-checks forbidden extensions, blocked actions, safety labels, and unproven confidence states."
+    },
+    {
+      "file": "AGENT_07_WRITER_SANDBOX_GATEKEEPER_INTEGRATED.md",
+      "role": "Keeps dummy sandbox activity separated from any real writer implementation."
+    },
+    {
+      "file": "AGENT_10_FINAL_INTEGRATOR_INTEGRATED.md",
+      "role": "Integrates the package, dashboard, validator, master hub references, and final seal."
+    },
+    {
+      "file": "AGENT_11_SAFETY_GOVERNANCE_INTEGRATED.md",
+      "role": "Confirms no keyboard output, USB, PA3X, deploy, payment, or false device readiness language is introduced."
+    }
+  ],
+  "safety": {
+    "writer_ready": false,
+    "real_writer_allowed": false,
+    "fixture_redistribution": false
+  }
+}

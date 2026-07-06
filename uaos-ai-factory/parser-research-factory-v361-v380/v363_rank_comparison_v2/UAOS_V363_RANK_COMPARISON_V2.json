@@ -1,0 +1,43 @@
+{
+  "comparison_id": "UAOS_V363_RANK_COMPARISON_V2",
+  "ranks": [
+    {
+      "rank": 1,
+      "extension": "source_fixture_reference",
+      "size": "observed_in_prior_report",
+      "header_patterns": "OBSERVED_BY_REFERENCE",
+      "unknown_regions": "PRESENT",
+      "useful_fixture_confidence": "HYPOTHESIS"
+    },
+    {
+      "rank": 2,
+      "extension": "source_fixture_reference",
+      "size": "observed_in_prior_report",
+      "header_patterns": "OBSERVED_BY_REFERENCE",
+      "unknown_regions": "PRESENT",
+      "useful_fixture_confidence": "HYPOTHESIS"
+    },
+    {
+      "rank": 3,
+      "extension": "source_fixture_reference",
+      "size": "observed_in_prior_report",
+      "header_patterns": "OBSERVED_BY_REFERENCE",
+      "unknown_regions": "PRESENT",
+      "useful_fixture_confidence": "HYPOTHESIS"
+    }
+  ],
+  "similarities": [
+    "header-like regions exist by prior report",
+    "unknown chunks remain common",
+    "section and track roles are not solved"
+  ],
+  "differences": [
+    "rank-specific unknown-region counts and offsets require owner fixture context",
+    "no cross-fixture write inference is permitted"
+  ],
+  "evidence_gaps": [
+    "more owner-approved USERxx style fixtures",
+    "external parser review",
+    "hardware-free fixture metadata comparison"
+  ]
+}
