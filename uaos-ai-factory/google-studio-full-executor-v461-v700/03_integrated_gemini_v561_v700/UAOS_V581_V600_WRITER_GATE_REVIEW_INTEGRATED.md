@@ -1,0 +1,4 @@
+﻿# V581_V600_WRITER_GATE_REVIEW
+Status: INTEGRATED_BY_FINAL_ONE_SCRIPT
+writer_ready: false
+real_writer_implemented: false

@@ -1,0 +1,4 @@
+﻿# V601_V620_STYLE_RC_FACTORY_V3
+Status: INTEGRATED_BY_FINAL_ONE_SCRIPT
+writer_ready: false
+real_writer_implemented: false

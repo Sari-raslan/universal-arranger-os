@@ -1,0 +1,4 @@
+﻿# V621_V640_PARSER_RESEARCH_V7
+Status: INTEGRATED_BY_FINAL_ONE_SCRIPT
+writer_ready: false
+real_writer_implemented: false
