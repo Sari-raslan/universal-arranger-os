@@ -440,23 +440,6 @@ const finalOwnerSetupV3 = {
   nextGate: "Owner runs Final Owner Setup V3 launcher",
 };
 
-const parserResearchV6 = {
-  dashboardPath: "E:\\keyboard-manager-clean\\uaos-ai-factory\\parser-research-continuation-v401-v420\\dashboards\\UAOS_PARSER_RESEARCH_CONTINUATION_V401_V420_DASHBOARD.html",
-  schemaPath: "E:\\keyboard-manager-clean\\uaos-ai-factory\\parser-research-continuation-v401-v420\\schema-v6\\UAOS_V406_READONLY_PARSER_SCHEMA_V6.json",
-  confidencePath: "E:\\keyboard-manager-clean\\uaos-ai-factory\\parser-research-continuation-v401-v420\\confidence-v6\\UAOS_V409_PARSER_CONFIDENCE_MATRIX_V6.md",
-  fixtureStrategyPath: "E:\\keyboard-manager-clean\\uaos-ai-factory\\parser-research-continuation-v401-v420\\fixture-strategy\\UAOS_V412_NEXT_FIXTURE_STRATEGY.md",
-  readinessPath: "E:\\keyboard-manager-clean\\uaos-ai-factory\\parser-research-continuation-v401-v420\\writer-readiness\\UAOS_V416_WRITER_READINESS_REVIEW.md",
-  status: [
-    { label: "Parser Schema v6", value: "READY" },
-    { label: "Confidence Matrix v6", value: "READY" },
-    { label: "Writer ready", value: "NO" },
-    { label: "Real writer", value: "BLOCKED" },
-    { label: ".STY/.SET", value: "BLOCKED" },
-    { label: "USB/PA3X", value: "BLOCKED" },
-  ],
-  nextGate: "Continue parser research / external review",
-};
-
 function uid() {
   return "uaos-" + Date.now() + "-" + Math.random().toString(16).slice(2);
 }
@@ -1877,56 +1860,6 @@ export default function App() {
                 <h4>Confirm blocked gates</h4>
                 <p>Confirm writer_ready is false and all hardware, deploy, and payment gates remain closed.</p>
                 <small>{finalOwnerSetupV3.safetyPath}</small>
-              </article>
-            </div>
-          </div>
-
-          <div className="uaos-style-rc-deep-panel">
-            <div className="uaos-style-rc-deep-head">
-              <div>
-                <span>Parser Research v6</span>
-                <h3>Research Continued Toward Future Readiness</h3>
-                <p>Schema v6, confidence matrix v6, fixture strategy, and writer readiness review are ready for owner review. Real writer, keyboard package output, USB, PA3X, deploy, and payment actions remain blocked.</p>
-              </div>
-              <strong>{parserResearchV6.nextGate}</strong>
-            </div>
-
-            <div className="uaos-style-rc-status-row">
-              {parserResearchV6.status.map((item) => (
-                <b key={item.label}>{item.label}: {item.value}</b>
-              ))}
-            </div>
-
-            <div className="uaos-style-rc-link-grid">
-              <article>
-                <span>Research dashboard</span>
-                <h4>Open v6 status</h4>
-                <p>Review schema v6, confidence v6, fixture strategy, safety gates, and final seal.</p>
-                <small>{parserResearchV6.dashboardPath}</small>
-              </article>
-              <article>
-                <span>Schema v6</span>
-                <h4>Read-only schema</h4>
-                <p>Inspect region confidence, evidence references, unknown tags, and excluded writer fields.</p>
-                <small>{parserResearchV6.schemaPath}</small>
-              </article>
-              <article>
-                <span>Confidence v6</span>
-                <h4>Readiness matrix</h4>
-                <p>Check header, region, section, track, checksum, compression, encryption, and readiness confidence.</p>
-                <small>{parserResearchV6.confidencePath}</small>
-              </article>
-              <article>
-                <span>Fixture strategy</span>
-                <h4>Next evidence</h4>
-                <p>Review which owner-approved read-only fixtures would help most next.</p>
-                <small>{parserResearchV6.fixtureStrategyPath}</small>
-              </article>
-              <article>
-                <span>Writer readiness</span>
-                <h4>Blocked review</h4>
-                <p>Confirm writer_ready remains false and external review is recommended before any future approval gate.</p>
-                <small>{parserResearchV6.readinessPath}</small>
               </article>
             </div>
           </div>

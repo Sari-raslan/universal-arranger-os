@@ -1,0 +1,101 @@
+{
+  "schema_id": "UAOS_V406_READONLY_PARSER_SCHEMA_V6",
+  "schema_type": "readonly_parser_research",
+  "writer_ready": false,
+  "real_writer_allowed": false,
+  "evidence_references": {
+    "schema_v5": "E:\\keyboard-manager-clean\\uaos-ai-factory\\parser-research-factory-v361-v380\\v368_parser_schema_v5\\UAOS_V368_READONLY_PARSER_SCHEMA_V5.json",
+    "confidence_v5": "E:\\keyboard-manager-clean\\uaos-ai-factory\\parser-research-factory-v361-v380\\v369_parser_confidence_matrix_v5\\UAOS_V369_PARSER_CONFIDENCE_MATRIX_V5.json",
+    "rank_comparison_v2": "E:\\keyboard-manager-clean\\uaos-ai-factory\\parser-research-factory-v361-v380\\v363_rank_comparison_v2\\UAOS_V363_RANK_COMPARISON_V2.json",
+    "unknown_catalog_v3": "E:\\keyboard-manager-clean\\uaos-ai-factory\\parser-research-factory-v361-v380\\v365_unknown_region_catalog_v3\\UAOS_V365_UNKNOWN_REGION_CATALOG_V3.json",
+    "fixture_requirements_v2": "E:\\keyboard-manager-clean\\uaos-ai-factory\\parser-research-factory-v361-v380\\v370_fixture_requirements_v2\\UAOS_V370_FIXTURE_REQUIREMENTS_V2.json",
+    "writer_gate_v2": "E:\\keyboard-manager-clean\\uaos-ai-factory\\parser-research-factory-v361-v380\\v371_writer_readiness_gate_v2\\UAOS_V371_WRITER_READINESS_GATE_V2.json",
+    "workbench_schema_v4": "E:\\keyboard-manager-clean\\uaos-ai-factory\\real-writer-workbench-v191-v220\\parser-confidence\\UAOS_READONLY_PARSER_SCHEMA_V4.json",
+    "workbench_confidence_v4": "E:\\keyboard-manager-clean\\uaos-ai-factory\\real-writer-workbench-v191-v220\\parser-confidence\\UAOS_PARSER_CONFIDENCE_MATRIX_V4.json",
+    "rank1_header": "E:\\keyboard-manager-clean\\uaos-ai-factory\\fixture-rank1-readonly-scan-v161-v170\\03_header_scan\\UAOS_RANK_1_HEADER_SCAN.json",
+    "rank2_header": "E:\\keyboard-manager-clean\\uaos-ai-factory\\real-writer-workbench-v191-v220\\rank2-scan\\UAOS_RANK2_HEADER_SCAN.json",
+    "rank3_header": "E:\\keyboard-manager-clean\\uaos-ai-factory\\real-writer-workbench-v191-v220\\rank3-scan\\UAOS_RANK3_HEADER_SCAN.json",
+    "dummy_safety": "E:\\keyboard-manager-clean\\uaos-ai-factory\\writer-sandbox-dummy-implementation-v261-v280\\runtime-safety\\UAOS_RUNTIME_EXTENSION_BLOCKER_REPORT.json"
+  },
+  "fixture_comparison_references": [
+    "rank1",
+    "rank2",
+    "rank3",
+    "schema_v5",
+    "confidence_v5"
+  ],
+  "unknown_region_tags": [
+    "UNKNOWN",
+    "UNCONFIRMED",
+    "HYPOTHESIS",
+    "OBSERVED_BY_REFERENCE",
+    "UNSAFE_TO_INFER"
+  ],
+  "regions": [
+    {
+      "id": "header_model_v6",
+      "tag": "OBSERVED_BY_REFERENCE",
+      "confidence": "MEDIUM",
+      "evidence": [
+        "rank1_header",
+        "rank2_header",
+        "rank3_header"
+      ],
+      "writer_field": false
+    },
+    {
+      "id": "unknown_region_catalog_v6",
+      "tag": "UNKNOWN",
+      "confidence": "LOW",
+      "evidence": [
+        "unknown_catalog_v3"
+      ],
+      "writer_field": false
+    },
+    {
+      "id": "section_mapping_v6",
+      "tag": "UNCONFIRMED",
+      "confidence": "LOW",
+      "evidence": [
+        "section_mapping_v5"
+      ],
+      "writer_field": false
+    },
+    {
+      "id": "track_mapping_v6",
+      "tag": "UNCONFIRMED",
+      "confidence": "LOW",
+      "evidence": [
+        "track_mapping_v5"
+      ],
+      "writer_field": false
+    },
+    {
+      "id": "checksum_compression_encryption_v6",
+      "tag": "UNKNOWN",
+      "confidence": "LOW",
+      "evidence": [
+        "rank_comparison_v2"
+      ],
+      "writer_field": false
+    }
+  ],
+  "excluded": [
+    "writer fields",
+    "output KORG fields",
+    "mutation actions",
+    "USB actions",
+    "hardware load actions"
+  ],
+  "safety": {
+    "writer_ready": false,
+    "real_writer_allowed": false,
+    "real_writer_implemented": false,
+    "keyboard_output_generated": false,
+    "forbidden_keyboard_package_generation": false,
+    "usb": false,
+    "pa3x": false,
+    "deploy": false,
+    "payment": false
+  }
+}

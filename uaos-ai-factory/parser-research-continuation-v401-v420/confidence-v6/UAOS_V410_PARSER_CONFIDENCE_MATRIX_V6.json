@@ -1,0 +1,43 @@
+{
+  "matrix_id": "UAOS_V410_PARSER_CONFIDENCE_MATRIX_V6",
+  "writer_ready": false,
+  "real_writer_allowed": false,
+  "rows": [
+    {
+      "area": "header confidence",
+      "state": "OBSERVED_BY_REFERENCE",
+      "confidence": "MEDIUM",
+      "blocker": "semantic proof still incomplete"
+    },
+    {
+      "area": "region confidence",
+      "state": "UNKNOWN",
+      "confidence": "LOW",
+      "blocker": "unknown region meaning unresolved"
+    },
+    {
+      "area": "section mapping confidence",
+      "state": "UNCONFIRMED",
+      "confidence": "LOW",
+      "blocker": "section boundaries not proven"
+    },
+    {
+      "area": "track mapping confidence",
+      "state": "UNCONFIRMED",
+      "confidence": "LOW",
+      "blocker": "track roles not proven"
+    },
+    {
+      "area": "checksum/compression/encryption uncertainty",
+      "state": "UNKNOWN",
+      "confidence": "LOW",
+      "blocker": "needs targeted fixture deltas"
+    },
+    {
+      "area": "writer readiness",
+      "state": "BLOCKED",
+      "confidence": "HIGH",
+      "blocker": "proof threshold not met"
+    }
+  ]
+}
