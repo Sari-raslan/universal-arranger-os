@@ -15,12 +15,14 @@
   tests: []
 };
 
-function el(id) { return document.getElementById(id); }
+function el(id) {
+  return document.getElementById(id);
+}
 
 function log(msg) {
   const box = el('console');
   const stamp = new Date().toLocaleTimeString();
-  box.textContent += '[' + stamp + '] ' + msg + '\\n';
+  box.textContent += '[' + stamp + '] ' + msg + '\n';
   box.scrollTop = box.scrollHeight;
 }
 
@@ -30,7 +32,7 @@ function showSection(name) {
   log('Opened section: ' + name);
 }
 
-function setStatus(id, value, ok=true) {
+function setStatus(id, value, ok = true) {
   const node = el(id);
   node.textContent = value;
   node.className = ok ? 'good' : 'bad';
@@ -48,6 +50,7 @@ function runDemo() {
 
 function runSafety() {
   showSection('safety');
+
   const s = state.safety;
   const pass =
     s.writer_ready === false &&
@@ -65,6 +68,7 @@ function runSafety() {
 
 function runTests() {
   showSection('tests');
+
   const tests = [
     ['Website shell exists', true],
     ['Navigation buttons wired', true],
@@ -78,11 +82,13 @@ function runTests() {
   ];
 
   state.tests = tests.map(t => ({ name: t[0], pass: t[1] }));
+
   const body = el('test-table-body');
   body.innerHTML = '';
+
   state.tests.forEach(t => {
     const tr = document.createElement('tr');
-    tr.innerHTML = '<td>' + t.name + '</td><td><b class=\"' + (t.pass ? 'good' : 'bad') + '\">' + (t.pass ? 'PASS' : 'FAIL') + '</b></td>';
+    tr.innerHTML = '<td>' + t.name + '</td><td><b class="' + (t.pass ? 'good' : 'bad') + '">' + (t.pass ? 'PASS' : 'FAIL') + '</b></td>';
     body.appendChild(tr);
   });
 
@@ -112,17 +118,20 @@ function exportJson() {
     state
   }, null, 2);
 
-  const blob = new Blob([payload], {type: 'application/json'});
+  const blob = new Blob([payload], { type: 'application/json' });
   const url = URL.createObjectURL(blob);
   const a = document.createElement('a');
+
   a.href = url;
   a.download = 'uaos-owner-site-session-export.json';
   a.click();
+
   URL.revokeObjectURL(url);
   log('JSON export generated.');
 }
 
 function ownerFlow() {
+  resetConsole();
   log('Owner flow started.');
   runSafety();
   runDemo();
