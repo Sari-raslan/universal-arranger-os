@@ -1,0 +1,30 @@
+﻿{
+    "inspected_at":  "2026-07-06T13:54:53.1808419+02:00",
+    "package":  {
+                    "status":  "PASS",
+                    "exists":  true,
+                    "size_bytes":  16085,
+                    "entries":  32,
+                    "violations":  [
+
+                                   ]
+                },
+    "rules":  {
+                  "forbidden_extensions":  [
+                                               ".sty",
+                                               ".set",
+                                               ".prs",
+                                               ".prf",
+                                               ".kst"
+                                           ],
+                  "nested_zip_blocked":  true,
+                  "allowed_extensions":  [
+                                             ".json",
+                                             ".md",
+                                             ".html",
+                                             ".txt",
+                                             ".csv",
+                                             ".zip"
+                                         ]
+              }
+}

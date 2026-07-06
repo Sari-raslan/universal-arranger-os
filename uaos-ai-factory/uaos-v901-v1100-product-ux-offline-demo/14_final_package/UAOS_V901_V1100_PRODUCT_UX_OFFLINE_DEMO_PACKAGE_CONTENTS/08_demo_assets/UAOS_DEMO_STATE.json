@@ -1,0 +1,37 @@
+﻿{
+    "demo":  "UAOS_OFFLINE_DEMO",
+    "phase":  "V901-V1100",
+    "state":  "LOCAL_ONLY",
+    "safety":  {
+                   "writer_ready":  false,
+                   "real_writer_implemented":  "NO",
+                   "keyboard_package_output_generated":  "NO",
+                   "usb_write":  "NO",
+                   "pa3x_load":  "NO",
+                   "deploy":  "NO",
+                   "payment":  "NO",
+                   "brand_device_compat_claims":  "NO"
+               },
+    "sample_cards":  [
+                         {
+                             "id":  "card_owner_ui",
+                             "label":  "Owner Setup V7",
+                             "status":  "READY"
+                         },
+                         {
+                             "id":  "card_dashboard",
+                             "label":  "Dashboard V2",
+                             "status":  "READY"
+                         },
+                         {
+                             "id":  "card_evidence",
+                             "label":  "Evidence Index",
+                             "status":  "READY"
+                         },
+                         {
+                             "id":  "card_validator",
+                             "label":  "Validator V2",
+                             "status":  "READY"
+                         }
+                     ]
+}
