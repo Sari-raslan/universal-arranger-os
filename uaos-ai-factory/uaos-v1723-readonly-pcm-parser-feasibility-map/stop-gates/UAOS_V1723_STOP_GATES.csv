@@ -1,0 +1,8 @@
+﻿"stop_gate_id","trigger","required_action","reason"
+"STOP_001","Encrypted/protected/compressed unknown payload detected","STOP_IMMEDIATELY","No cracking or bypass."
+"STOP_002","Parser requires password/decryption/protection bypass","STOP_IMMEDIATELY","No protected-content access."
+"STOP_003","Need to write SET/PCM/STY/KMP/KSF binary output","STOP_IMMEDIATELY","Writer phase not approved."
+"STOP_004","Need to load USB or hardware keyboard","STOP_IMMEDIATELY","Hardware phase not approved."
+"STOP_005","Need to claim PA3X-ready compatibility","STOP_IMMEDIATELY","Hardware validation required."
+"STOP_006","PCM group has no Tier 1/Tier 2 parser readiness","HOLD","Outside approved V1723 scope."
+"STOP_007","License or commercial origin unclear","HOLD","Commercial use blocked until review."
