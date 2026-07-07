@@ -32,15 +32,51 @@
         ]
       }
     ],
-    "realOutputEnabled": true,
-    "allowFullRoomOutput": true,
-    "rolloutProfile": "MUSIC_18",
-    "musicSenseConfirmation": "I UNDERSTAND FULL ROOM MUSIC OUTPUT",
     "musicSenseEnabled": true,
     "scheduler": {
       "maxRequestsPerSecondPerBridge": 12,
       "maxLightsPerFramePerBridge": 4,
       "targetFps": 10
+    },
+    "realOutputEnabled": true,
+    "allowFullRoomOutput": true,
+    "rolloutProfile": "MUSIC_18",
+    "musicSenseConfirmation": "I UNDERSTAND FULL ROOM MUSIC OUTPUT",
+    "v3HybridEnabled": true,
+    "primarySyncLights": [
+      "10",
+      "11",
+      "12",
+      "13",
+      "14",
+      "15",
+      "16",
+      "17",
+      "18",
+      "19"
+    ],
+    "ambientLights": [
+      "20",
+      "21",
+      "22",
+      "23",
+      "24",
+      "25",
+      "26",
+      "27"
+    ],
+    "brightnessCapDefault": 0.8,
+    "flashSafety": true,
+    "systemAudioPlaceholder": true,
+    "manualBpmMode": true,
+    "bridge2": {
+      "id": "bridge2",
+      "name": "Second Hue Bridge Future",
+      "ip": "",
+      "username": "",
+      "realOutputEnabled": false,
+      "selectedLights": [],
+      "role": "future_secondary_bridge"
     }
   }
 }
