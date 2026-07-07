@@ -1,0 +1,75 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>UAOS V1716 Golden Set Factory</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body{margin:0;background:#07101d;color:#eef5ff;font-family:Segoe UI,Arial,sans-serif}
+.app{max-width:1180px;margin:0 auto;padding:28px 22px 44px}
+header{text-align:center;padding:24px 8px}
+h1{font-size:40px;margin:0 0 8px}
+.sub{color:#afc0d7;font-size:18px;line-height:1.5;max-width:900px;margin:0 auto}
+.ready{display:inline-block;margin-top:16px;padding:10px 18px;border-radius:999px;background:#12351f;border:1px solid #32a062;font-weight:900}
+.warn{display:inline-block;margin-top:8px;padding:8px 14px;border-radius:999px;background:#3b2910;border:1px solid #c7922f;font-weight:800;color:#ffd18a}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(165px,1fr));gap:14px}
+.card{background:#101d32;border:1px solid #263a59;border-radius:18px;padding:17px}
+.num{font-size:30px;font-weight:900}
+.label{color:#afc0d7;font-size:13px}
+.actions{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px}
+.btn{display:flex;align-items:center;justify-content:center;min-height:58px;text-decoration:none;color:white;background:#173456;border:1px solid #4d78a5;border-radius:16px;font-weight:800;padding:12px;text-align:center}
+.primary{background:#186a40;border-color:#56c98b}
+.arabic{direction:rtl;text-align:center;font-size:20px;line-height:1.65}
+details{background:#0b1729;border:1px solid #223854;border-radius:16px;margin:10px 0}
+summary{cursor:pointer;padding:15px 16px;font-weight:800}
+.body{padding:0 16px 16px;color:#afc0d7;line-height:1.6}
+.path{font-family:Consolas,monospace;word-break:break-all;color:#cfe5ff}
+.footer{text-align:center;color:#afc0d7;font-size:13px;margin-top:24px}
+</style>
+</head>
+<body>
+<main class="app">
+<header>
+<h1>UAOS Golden Set Factory</h1>
+<div class="sub">One control center for owner library reading, Golden Set draft generation, sound-test loop, and commercial library preparation.</div>
+<div class="ready">GOLDEN_SET_FACTORY_READY</div>
+<div class="warn">PA3X binary status: SEPARATE HARDWARE TEST REQUIRED</div>
+</header>
+
+<section class="grid">
+<div class="card"><div class="label">Owner audio files</div><div class="num">24</div></div>
+<div class="card"><div class="label">SET/keyboard metadata</div><div class="num">0</div></div>
+<div class="card"><div class="label">Golden programs</div><div class="num">24</div></div>
+<div class="card"><div class="label">Commercial SKUs</div><div class="num">3</div></div>
+<div class="card"><div class="label">Keyboard binary output</div><div class="num">0</div></div>
+</section>
+
+<section class="card" style="margin-top:18px">
+<h2>Main actions</h2>
+<div class="actions">
+<a class="btn primary" href="file:///E:/keyboard-manager-clean/uaos-ai-factory/uaos-v1716-golden-set-factory/output/UAOS_GOLDEN_SET_001_DRAFT">Open Golden Set Draft</a>
+<a class="btn" href="file:///E:/keyboard-manager-clean/uaos-ai-factory/uaos-v1716-golden-set-factory/sections/01_owner_library_reader/OWNER_AUDIO_MANIFEST.csv">Open Owner Reader Manifest</a>
+<a class="btn" href="file:///E:/keyboard-manager-clean/uaos-ai-factory/uaos-v1716-golden-set-factory/output/UAOS_GOLDEN_SET_001_DRAFT/programs/UAOS_GOLDEN_PROGRAMS_DRAFT.json">Open Golden Programs</a>
+<a class="btn" href="file:///E:/keyboard-manager-clean/uaos-ai-factory/uaos-v1716-golden-set-factory/sections/03_owner_sound_test_loop/UAOS_OWNER_SOUND_TEST_CHECKLIST.json">Open Sound Test Checklist</a>
+<a class="btn" href="file:///E:/keyboard-manager-clean/uaos-ai-factory/uaos-v1716-golden-set-factory/sections/04_commercial_library_factory/UAOS_COMMERCIAL_LIBRARY_SKUS_DRAFT.json">Open Commercial Library Plan</a>
+<a class="btn" href="E:\keyboard-manager-clean\uaos-ai-factory\uaos-v1716-golden-set-factory\validation\UAOS_V1716_GOLDEN_SET_FACTORY_VALIDATION.json">Open Validation</a>
+</div>
+</section>
+
+<section class="card" style="margin-top:18px">
+<div class="arabic">هذه هي مرحلة Golden Set Factory. البرنامج يقرأ مكتباتك المسموحة، ويولد Golden Set Draft داخل UAOS، ويجهز منتجات مكتبات للبيع. ملفات SET/PCM/STY القديمة تبقى metadata فقط، ولا يوجد ادعاء أنها جاهزة PA3X قبل اختبار الجهاز.</div>
+</section>
+
+<section style="margin-top:18px">
+<details><summary>Executive Decision</summary><div class="body">V1716 is the fast product path. It combines the remaining sections into one factory: Owner Reader, Golden Set Generator, Sound Test Loop, Commercial Library Factory, and CodeX task pack.</div></details>
+<details><summary>Reader Rules</summary><div class="body">Allowed audio is copied from owner input. Keyboard formats such as SET/PCM/STY/PCG are metadata only and are not copied into generated packages.</div></details>
+<details><summary>Golden Set Output</summary><div class="body"><span class="path">E:\keyboard-manager-clean\uaos-ai-factory\uaos-v1716-golden-set-factory\output\UAOS_GOLDEN_SET_001_DRAFT</span></div></details>
+<details><summary>Commercial Product Path</summary><div class="body">Marketplace/payment is disabled. V1716 only creates SKU drafts, library product definitions, and licensing placeholders.</div></details>
+<details><summary>Safety Gates</summary><div class="body">No blocked V1713 files used: True<br>No old KORG backup copied: True<br>No forbidden keyboard binary generated: True<br>No deploy/payment: TRUE</div></details>
+</section>
+
+<div class="footer">UAOS V1716 Golden Set Factory. One MegaLauncher. Owner materials only. No keyboard binary claim.</div>
+</main>
+</body>
+</html>
+
