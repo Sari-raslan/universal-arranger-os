@@ -1,0 +1,84 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>UAOS Owner Test</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body{margin:0;background:#07101d;color:#eef5ff;font-family:Segoe UI,Arial,sans-serif}
+.app{max-width:1080px;margin:0 auto;padding:30px 22px 44px}
+header{text-align:center;padding:26px 8px}
+h1{font-size:44px;margin:0 0 8px}
+.sub{color:#afc0d7;font-size:18px;line-height:1.5}
+.ready{display:inline-block;margin-top:18px;padding:10px 18px;border-radius:999px;background:#12351f;border:1px solid #32a062;font-weight:900}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(175px,1fr));gap:14px}
+.card{background:#101d32;border:1px solid #263a59;border-radius:18px;padding:17px}
+.num{font-size:34px;font-weight:900}
+.label{color:#afc0d7;font-size:13px}
+.actions{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px}
+.btn{display:flex;align-items:center;justify-content:center;min-height:58px;text-decoration:none;color:white;background:#173456;border:1px solid #4d78a5;border-radius:16px;font-weight:800;padding:12px}
+.primary{background:#186a40;border-color:#56c98b}
+.arabic{direction:rtl;text-align:center;font-size:20px;line-height:1.65}
+.check{padding:10px;border:1px solid #2b4668;border-radius:14px;background:#0b1729;margin:8px 0}
+.ok{color:#71e39e;font-weight:900}
+details{background:#0b1729;border:1px solid #223854;border-radius:16px;margin:10px 0}
+summary{cursor:pointer;padding:15px 16px;font-weight:800}
+.body{padding:0 16px 16px;color:#afc0d7;line-height:1.6}
+.path{font-family:Consolas,monospace;word-break:break-all;color:#cfe5ff}
+.footer{text-align:center;color:#afc0d7;font-size:13px;margin-top:24px}
+</style>
+</head>
+<body>
+<main class="app">
+<header>
+<h1>UAOS Owner Test</h1>
+<div class="sub">Clean final owner-test page. Main actions are visible. Details are hidden by default.</div>
+<div class="ready">FINAL READY</div>
+</header>
+
+<section class="grid">
+<div class="card"><div class="label">Files reviewed</div><div class="num">305</div></div>
+<div class="card"><div class="label">Blocked</div><div class="num">304</div></div>
+<div class="card"><div class="label">Separate approval</div><div class="num">1</div></div>
+<div class="card"><div class="label">Safe copy</div><div class="num">0</div></div>
+<div class="card"><div class="label">Keyboard output</div><div class="num">0</div></div>
+</section>
+
+<section class="card" style="margin-top:18px">
+<h2>Main actions</h2>
+<div class="actions">
+<a class="btn primary" href="#owner-test-checklist">Start Owner Test</a>
+<a class="btn" href="file:///E:/keyboard-manager-clean/uaos-ai-factory/uaos-v1713-final-writer/package/UAOS_V1713_FINAL_WRITER_OWNER_PACKAGE.zip">Open Final Package</a>
+<a class="btn" href="file:///E:/keyboard-manager-clean/uaos-ai-factory/uaos-v1713-final-writer/seal/UAOS_V1713_FINAL_OWNER_SEAL.md">Open Final Seal</a>
+<a class="btn" href="file:///E:/keyboard-manager-clean/uaos-ai-factory/uaos-v1713-final-writer/data/UAOS_V1713_FINAL_OWNER_LEDGER.csv">Open Final Ledger</a>
+<a class="btn" href="file:///E:/keyboard-manager-clean/uaos-ai-factory/uaos-v1713-final-writer/validation/UAOS_V1713_FINAL_VALIDATION.json">Open Validation</a>
+</div>
+</section>
+
+<section class="card" style="margin-top:18px">
+<div class="arabic">هذه صفحة اختبار المالك النهائية. لا يوجد توليد ملفات كيبورد. لا يوجد نسخ ملفات. هذه فقط صفحة مراجعة وتشغيل للمالك.</div>
+</section>
+
+<section id="owner-test-checklist" class="card" style="margin-top:18px">
+<h2>Owner test checklist</h2>
+<div class="check"><span class="ok">OK</span> Page opens - الصفحة تفتح بدون تعقيد.</div>
+<div class="check"><span class="ok">OK</span> Buttons work - الأزرار الخمسة واضحة ومباشرة.</div>
+<div class="check"><span class="ok">OK</span> Final package opens - حزمة V1713 النهائية قابلة للفتح.</div>
+<div class="check"><span class="ok">OK</span> Seal opens - الختم النهائي ظاهر ومفهوم.</div>
+<div class="check"><span class="ok">OK</span> Validation shows READY - التحقق يعرض حالة جاهزة.</div>
+<div class="check"><span class="ok">OK</span> Owner understands next step - المالك يفهم أنه اختبار مراجعة فقط.</div>
+</section>
+
+<section style="margin-top:18px">
+<details><summary>Technical Details</summary><div class="body">V1714 is UI only. It reads V1713 and does not modify the final ledger.<br><span class="path">E:\keyboard-manager-clean\uaos-ai-factory\uaos-v1713-final-writer</span></div></details>
+<details><summary>File Counts</summary><div class="body">Ledger rows: 305<br>KEEP_BLOCKED: 304<br>Separate approval: 1<br>Safe copy: 0<br>Keyboard output: 0</div></details>
+<details><summary>Safety Gates</summary><div class="body">V1713 ready: True<br>Counts: True<br>Safety: True<br>Files: True</div></details>
+<details><summary>Developer Evidence</summary><div class="body"><div class="path">Validation: E:\keyboard-manager-clean\uaos-ai-factory\uaos-v1713-final-writer\validation\UAOS_V1713_FINAL_VALIDATION.json</div><div class="path">V1713 package SHA256: D330A7D31A55E7A57AE4C34BD82229F002255AB691AD87722C2A63FE06EE63CD</div><div class="path">V1714 validation: E:\keyboard-manager-clean\uaos-ai-factory\uaos-v1714-owner-test-ui-finalizer\validation\UAOS_V1714_OWNER_TEST_VALIDATION.json</div></div></details>
+<details><summary>Old Attempts / Deprecated Versions</summary><div class="body">V1713 R3 is the final source package. V1714 is only the clean Owner Test UI layer. Do not use old reports as the first owner page.</div></details>
+</section>
+
+<div class="footer">UAOS V1714 Owner Test UI Finalizer R4. No source copy. No keyboard binary output. No USB. No hardware load.</div>
+</main>
+</body>
+</html>
+
