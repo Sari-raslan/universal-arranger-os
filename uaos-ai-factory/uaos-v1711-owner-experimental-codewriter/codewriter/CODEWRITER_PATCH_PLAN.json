@@ -1,0 +1,38 @@
+﻿{
+    "phase":  "UAOS V1711",
+    "mission":  "Owner Experimental CodeWriter",
+    "mode":  "OWNER_EXPERIMENTAL_CODEWRITER_METADATA_ONLY",
+    "allowed_role":  "Senior Engineer only, not unattended 24h agent",
+    "allowed_writes":  [
+                           "uaos-ai-factory/RUN_UAOS_V1711_OWNER_EXPERIMENTAL_CODEWRITER_MEGALAUNCHER.ps1",
+                           "uaos-ai-factory/uaos-v1711-owner-experimental-codewriter/**",
+                           "docs/UAOS_OWNER_EXPERIMENTAL_STAGE.md"
+                       ],
+    "forbidden_actions":  [
+                              "Do not copy source keyboard files",
+                              "Do not create .SET/.PCM/.STY/.PRF/.PCG/.PAD/.KMP/.KSF/.SBD/.SBL/.GBL/.VOC/.MXP/.BKP keyboard outputs",
+                              "Do not enable writer_ready true",
+                              "Do not write USB",
+                              "Do not load hardware",
+                              "Do not deploy",
+                              "Do not enable payment",
+                              "Do not claim KORG/PA3X compatibility as production-ready",
+                              "Do not scan whole repo unnecessarily",
+                              "Do not run open-ended loops"
+                          ],
+    "acceptance_gates":  [
+                             "PowerShell completes with exit code 0",
+                             "review rows \u003e 0",
+                             "safe_copy_allowed_count == 0",
+                             "writer_ready == false",
+                             "forbidden_generated_files_count == 0",
+                             "workspace/report/seal/package exist",
+                             "CodeWriter mission exists",
+                             "owner decision CSV template exists"
+                         ],
+    "current_break_fix":  [
+                              "Normalize JSON root and row arrays before counting",
+                              "Never depend on root.Count in JSON inventory objects",
+                              "Use explicit foreach loops for option/summary generation instead of fragile ForEach-Object pipelines"
+                          ]
+}
