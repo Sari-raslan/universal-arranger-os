@@ -1,0 +1,21 @@
+﻿{
+    "status":  "ORDER_WORKFLOW_READY_MANUAL_REVIEW_ONLY",
+    "payment":  "DISABLED",
+    "checkout":  "DISABLED",
+    "delivery":  "MANUAL_OWNER_REVIEW_ONLY",
+    "steps":  [
+                  "customer_submits_buy_request",
+                  "owner_reviews_request",
+                  "owner_confirms_product_fit",
+                  "owner_confirms_legal_tax_payment_status",
+                  "owner_sends_manual_offer_or_waitlist_reply",
+                  "no_payment_collected_in_this_phase"
+              ],
+    "forbidden":  [
+                      "automatic_payment",
+                      "automatic_invoice",
+                      "automatic_customer_delivery",
+                      "keyboard_binary_delivery",
+                      "pa3x_ready_claim"
+                  ]
+}

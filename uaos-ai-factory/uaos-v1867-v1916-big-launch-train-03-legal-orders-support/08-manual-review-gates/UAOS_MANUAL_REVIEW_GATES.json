@@ -1,0 +1,20 @@
+﻿{
+  "status": "MANUAL_REVIEW_GATES_READY",
+  "gates": {
+    "new_order_request": "OWNER_REVIEW_REQUIRED",
+    "payment": "BLOCKED_UNTIL_EXPLICIT_OWNER_APPROVAL",
+    "invoice": "BLOCKED_UNTIL_TAX_DETAILS_CONFIRMED",
+    "delivery": "MANUAL_ONLY",
+    "deploy": "BLOCKED_UNTIL_EXPLICIT_OWNER_APPROVAL",
+    "legal": "PLACEHOLDER_ONLY_UNTIL_FINAL_REVIEW"
+  },
+  "blocked_paths": [
+    "parser",
+    "pcm_payload_parse",
+    "sample_decode",
+    "binary_writer",
+    "usb",
+    "hardware_load",
+    "pa3x_ready_claim"
+  ]
+}
