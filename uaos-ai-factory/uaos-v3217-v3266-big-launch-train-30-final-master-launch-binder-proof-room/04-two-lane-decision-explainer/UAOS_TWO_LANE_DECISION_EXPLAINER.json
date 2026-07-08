@@ -1,0 +1,20 @@
+﻿{
+"status": "TWO_LANE_DECISION_EXPLAINER_READY",
+"lane_a": {
+"name": "LOCAL_OPENING_REHEARSAL",
+"recommended_now": true,
+"risk": "LOW",
+"deploy": "BLOCKED",
+"payment": "DISABLED",
+"real_invoice": "BLOCKED",
+"automatic_delivery": "BLOCKED"
+},
+"lane_b": {
+"name": "PUBLIC_ACTIVATION",
+"recommended_now": false,
+"risk": "HIGH_BEFORE_FINAL_APPROVALS",
+"requires_explicit_owner_approval": true,
+"deploy": "BLOCKED_BY_DEFAULT",
+"payment": "DISABLED_BY_DEFAULT"
+}
+}
