@@ -1,0 +1,21 @@
+﻿{
+  "phase": "V1726",
+  "status": "OWNER_DECISION_SCHEMA_READY",
+  "allowed_decisions": [
+    "approve_catalog_name",
+    "approve_library_tier",
+    "request_more_evidence",
+    "mark_commercial_wording_safe",
+    "block_parser_path",
+    "block_writer_path"
+  ],
+  "forbidden_decisions_without_future_explicit_approval": [
+    "pcm_payload_parse",
+    "sample_decode",
+    "binary_keyboard_output",
+    "set_pcm_sty_kmp_ksf_writer",
+    "hardware_load",
+    "deploy",
+    "payment"
+  ]
+}

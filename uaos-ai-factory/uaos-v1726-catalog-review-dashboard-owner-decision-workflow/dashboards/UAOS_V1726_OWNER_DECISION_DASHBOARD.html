@@ -1,0 +1,45 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>UAOS V1726 Owner Decision Dashboard</title>
+<style>
+body{font-family:Arial,sans-serif;background:#111;color:#eee;margin:24px}
+.card{border:1px solid #444;border-radius:12px;padding:16px;margin:12px 0;background:#1b1b1b}
+.ok{color:#7CFC98}
+.warn{color:#FFD166}
+.bad{color:#FF6B6B}
+</style>
+</head>
+<body>
+<h1>UAOS V1726 Owner Decision Dashboard</h1>
+
+<div class="card">
+<h2 class="ok">Status: CATALOG_REVIEW_DASHBOARD_READY</h2>
+<p>Agents completed: 8 / 8</p>
+<p>Pass count: 8</p>
+<p>Fail/review count: 0</p>
+</div>
+
+<div class="card">
+<h2 class="warn">Parser Path: CLOSED</h2>
+<p>No PCM payload parsing. No sample decode. No parser continuation.</p>
+</div>
+
+<div class="card">
+<h2 class="bad">Writer Path: BLOCKED</h2>
+<p>No SET/PCM/STY/KMP/KSF writer. No binary keyboard output. No USB. No hardware load.</p>
+</div>
+
+<div class="card">
+<h2>Owner Decisions</h2>
+<ul>
+<li>Approve catalog names</li>
+<li>Approve library tiers</li>
+<li>Request more evidence</li>
+<li>Approve customer-safe wording</li>
+<li>Keep blocked items blocked</li>
+</ul>
+</div>
+</body>
+</html>
