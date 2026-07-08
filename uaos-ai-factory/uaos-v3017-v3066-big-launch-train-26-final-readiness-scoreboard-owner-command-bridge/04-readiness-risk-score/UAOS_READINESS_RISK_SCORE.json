@@ -1,0 +1,44 @@
+﻿[
+    {
+        "risk":  "Legal/tax placeholders not finalized",
+        "severity":  "HIGH",
+        "state":  "OPEN",
+        "mitigation":  "public launch blocked"
+    },
+    {
+        "risk":  "Payment not approved",
+        "severity":  "HIGH",
+        "state":  "CONTROLLED",
+        "mitigation":  "payment disabled"
+    },
+    {
+        "risk":  "Deploy not approved",
+        "severity":  "HIGH",
+        "state":  "CONTROLLED",
+        "mitigation":  "deploy blocked"
+    },
+    {
+        "risk":  "Real invoices not approved",
+        "severity":  "HIGH",
+        "state":  "CONTROLLED",
+        "mitigation":  "invoice issuing blocked"
+    },
+    {
+        "risk":  "Automatic delivery unsafe",
+        "severity":  "HIGH",
+        "state":  "CONTROLLED",
+        "mitigation":  "automatic delivery blocked"
+    },
+    {
+        "risk":  "Unsafe technical output",
+        "severity":  "HIGH",
+        "state":  "CONTROLLED",
+        "mitigation":  "parser closed writer blocked"
+    },
+    {
+        "risk":  "Overclaiming PA3X-ready",
+        "severity":  "HIGH",
+        "state":  "CONTROLLED",
+        "mitigation":  "claim blocked"
+    }
+]

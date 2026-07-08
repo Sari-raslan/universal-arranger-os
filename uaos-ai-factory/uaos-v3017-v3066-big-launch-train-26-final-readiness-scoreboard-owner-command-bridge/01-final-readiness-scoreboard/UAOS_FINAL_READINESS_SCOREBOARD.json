@@ -1,0 +1,56 @@
+﻿[
+    {
+        "category":  "Local launch structure",
+        "score":  100,
+        "status":  "READY",
+        "blocker":  "none"
+    },
+    {
+        "category":  "Owner command room",
+        "score":  100,
+        "status":  "READY",
+        "blocker":  "none"
+    },
+    {
+        "category":  "Customer preview",
+        "score":  95,
+        "status":  "READY_LOCKED",
+        "blocker":  "deploy blocked"
+    },
+    {
+        "category":  "Multilingual public copy",
+        "score":  95,
+        "status":  "READY_LOCKED",
+        "blocker":  "public activation blocked"
+    },
+    {
+        "category":  "Manual sales ops",
+        "score":  90,
+        "status":  "READY_DISABLED",
+        "blocker":  "payment disabled invoices blocked"
+    },
+    {
+        "category":  "Germany legal/tax",
+        "score":  60,
+        "status":  "OWNER_REQUIRED",
+        "blocker":  "owner legal tax finalization"
+    },
+    {
+        "category":  "Payment",
+        "score":  0,
+        "status":  "DISABLED",
+        "blocker":  "owner approval required"
+    },
+    {
+        "category":  "Deploy",
+        "score":  0,
+        "status":  "BLOCKED",
+        "blocker":  "owner approval required"
+    },
+    {
+        "category":  "Safety locks",
+        "score":  100,
+        "status":  "ACTIVE",
+        "blocker":  "none"
+    }
+]
