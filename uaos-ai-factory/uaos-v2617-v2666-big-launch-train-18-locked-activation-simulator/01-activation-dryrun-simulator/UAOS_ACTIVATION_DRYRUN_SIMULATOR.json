@@ -1,0 +1,25 @@
+﻿{
+    "status":  "ACTIVATION_DRYRUN_SIMULATOR_READY_LOCKED",
+    "simulation_only":  true,
+    "real_deploy":  false,
+    "real_payment":  false,
+    "public_activation":  false,
+    "real_invoice":  false,
+    "automatic_delivery":  false,
+    "owner_approval_required":  true,
+    "result":  "SIMULATION_READY_NO_REAL_ACTIVATION",
+    "target_launch_date":  "2026-07-15",
+    "required_before_real_activation":  [
+                                            "business_registration_confirmation",
+                                            "business_name",
+                                            "business_address",
+                                            "tax_status",
+                                            "legal_pages_finalized",
+                                            "prices_finalized",
+                                            "payment_provider_selected",
+                                            "deploy_target_selected",
+                                            "final_QA_pass",
+                                            "explicit_owner_deploy_approval",
+                                            "explicit_owner_payment_approval"
+                                        ]
+}

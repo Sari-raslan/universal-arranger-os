@@ -1,0 +1,57 @@
+﻿[
+    {
+        "gate":  "deploy",
+        "state":  "BLOCKED",
+        "can_override":  "owner_explicit_approval_only"
+    },
+    {
+        "gate":  "payment",
+        "state":  "DISABLED",
+        "can_override":  "owner_explicit_approval_only"
+    },
+    {
+        "gate":  "public_activation",
+        "state":  "BLOCKED",
+        "can_override":  "owner_explicit_approval_only"
+    },
+    {
+        "gate":  "real_invoice",
+        "state":  "BLOCKED",
+        "can_override":  "owner_tax_legal_finalization_required"
+    },
+    {
+        "gate":  "automatic_delivery",
+        "state":  "BLOCKED",
+        "can_override":  "not_in_current_phase"
+    },
+    {
+        "gate":  "parser",
+        "state":  "CLOSED",
+        "can_override":  "not_in_current_phase"
+    },
+    {
+        "gate":  "pcm_payload_parse",
+        "state":  "BLOCKED",
+        "can_override":  "not_in_current_phase"
+    },
+    {
+        "gate":  "sample_decode",
+        "state":  "BLOCKED",
+        "can_override":  "not_in_current_phase"
+    },
+    {
+        "gate":  "keyboard_binary_writer",
+        "state":  "BLOCKED",
+        "can_override":  "not_in_current_phase"
+    },
+    {
+        "gate":  "usb_hardware_load",
+        "state":  "BLOCKED",
+        "can_override":  "not_in_current_phase"
+    },
+    {
+        "gate":  "pa3x_ready_claim",
+        "state":  "BLOCKED",
+        "can_override":  "not_in_current_phase"
+    }
+]

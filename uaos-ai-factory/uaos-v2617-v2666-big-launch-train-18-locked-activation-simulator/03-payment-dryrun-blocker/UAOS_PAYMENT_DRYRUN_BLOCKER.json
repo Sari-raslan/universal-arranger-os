@@ -1,0 +1,19 @@
+﻿{
+    "status":  "PAYMENT_DRYRUN_BLOCKER_READY",
+    "payment":  "DISABLED",
+    "payment_activated":  false,
+    "candidate_providers":  [
+                                "PayPal manual request",
+                                "Stripe Checkout",
+                                "Bank transfer manual invoice",
+                                "Waitlist only"
+                            ],
+    "required_for_real_payment":  [
+                                      "explicit_owner_approval",
+                                      "business_registration_confirmed",
+                                      "tax_status_confirmed",
+                                      "legal_pages_finalized",
+                                      "prices_finalized",
+                                      "payment_provider_selected"
+                                  ]
+}

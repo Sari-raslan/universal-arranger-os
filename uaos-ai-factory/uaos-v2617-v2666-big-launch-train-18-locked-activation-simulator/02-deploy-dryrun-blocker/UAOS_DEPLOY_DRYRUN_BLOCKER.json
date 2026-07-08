@@ -1,0 +1,18 @@
+﻿{
+    "status":  "DEPLOY_DRYRUN_BLOCKER_READY",
+    "deploy":  "BLOCKED",
+    "deploy_executed":  false,
+    "candidate_targets":  [
+                              "GitHub Pages",
+                              "Vercel",
+                              "Netlify",
+                              "Local only"
+                          ],
+    "required_for_real_deploy":  [
+                                     "explicit_owner_approval",
+                                     "deploy_target_selected",
+                                     "legal_pages_finalized",
+                                     "final_QA_pass",
+                                     "fresh_backup_confirmed"
+                                 ]
+}

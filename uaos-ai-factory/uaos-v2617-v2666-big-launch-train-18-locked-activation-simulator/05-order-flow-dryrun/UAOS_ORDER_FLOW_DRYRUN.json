@@ -1,0 +1,16 @@
+﻿{
+    "status":  "ORDER_FLOW_DRYRUN_READY_MANUAL_ONLY",
+    "order_form_candidate":  true,
+    "payment_enabled":  false,
+    "automatic_delivery":  false,
+    "real_invoice":  false,
+    "manual_owner_review_required":  true,
+    "simulated_steps":  [
+                            "customer_interest_request",
+                            "manual_owner_review",
+                            "owner_checks_product_fit",
+                            "owner_sends_manual_reply",
+                            "no_payment_collected",
+                            "no_automatic_delivery"
+                        ]
+}
