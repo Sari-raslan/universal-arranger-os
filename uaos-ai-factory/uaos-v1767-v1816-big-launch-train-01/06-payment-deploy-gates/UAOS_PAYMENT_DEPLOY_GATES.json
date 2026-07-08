@@ -1,0 +1,21 @@
+﻿{
+  "status": "PAYMENT_DEPLOY_GATES_READY",
+  "deploy": {
+    "state": "BLOCKED",
+    "requires_explicit_owner_approval": true
+  },
+  "payment": {
+    "state": "BLOCKED",
+    "requires_explicit_owner_approval": true
+  },
+  "public_launch": {
+    "state": "BLOCKED",
+    "requires_company_tax_legal_payment_deploy_approval": true
+  },
+  "safety": {
+    "no_parser": true,
+    "no_writer": true,
+    "no_usb": true,
+    "no_hardware_load": true
+  }
+}
