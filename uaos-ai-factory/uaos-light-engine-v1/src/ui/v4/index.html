@@ -1,0 +1,106 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>UAOS Light Engine V4 PRO</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<header>
+  <div>
+    <h1>UAOS Light Engine V4 PRO</h1>
+    <p>18-Light Hybrid Hue Music Controller — Local • Safe • Expandable</p>
+  </div>
+  <button class="danger" onclick="emergencyStop()">Emergency Stop</button>
+</header>
+
+<nav>
+  <button onclick="showTab('home')">Home</button>
+  <button onclick="showTab('quick')">Quick Modes</button>
+  <button onclick="showTab('studio')">Scene Studio</button>
+  <button onclick="showTab('favorites')">Favorites</button>
+  <button onclick="showTab('calibration')">Light Calibration</button>
+  <button onclick="showTab('zones')">Room Zones</button>
+  <button onclick="showTab('audio')">Audio Input</button>
+  <button onclick="showTab('bridges')">Bridges</button>
+  <button onclick="showTab('wled')">WLED Future</button>
+  <button onclick="showTab('dmx')">DMX Future</button>
+  <button onclick="showTab('logs')">Logs</button>
+  <button onclick="showTab('settings')">Settings</button>
+</nav>
+
+<main>
+  <section id="home" class="tab active">
+    <h2>Home</h2>
+    <div class="cards">
+      <div class="card"><b>Current architecture</b><p>Hybrid Sync Pro: 10 fast sync lights + 8 ambient lights.</p></div>
+      <div class="card"><b>Fallback</b><p>Existing V3.1 launchers remain preserved.</p></div>
+      <div class="card"><b>Safety</b><p>No zero-latency claims. Emergency Stop always available.</p></div>
+    </div>
+  </section>
+
+  <section id="quick" class="tab">
+    <h2>Quick Modes</h2>
+    <div class="mode-grid" id="quickModes"></div>
+  </section>
+
+  <section id="studio" class="tab">
+    <h2>Scene Studio</h2>
+    <pre id="sceneData">Loading scenes...</pre>
+  </section>
+
+  <section id="favorites" class="tab">
+    <h2>Favorites</h2>
+    <pre id="favoritesData">Loading favorites...</pre>
+  </section>
+
+  <section id="calibration" class="tab">
+    <h2>Light Calibration</h2>
+    <p>Use existing calibration wizard / zone-map. V4 keeps it available.</p>
+  </section>
+
+  <section id="zones" class="tab">
+    <h2>Room Zones</h2>
+    <pre id="zoneData">Primary Sync 10: 10–19&#10;Ambient 8: 20–27</pre>
+  </section>
+
+  <section id="audio" class="tab">
+    <h2>Audio Input</h2>
+    <ul>
+      <li>Beat Simulator: READY</li>
+      <li>Manual BPM: READY</li>
+      <li>Microphone: optional</li>
+      <li>System Audio: placeholder</li>
+    </ul>
+  </section>
+
+  <section id="bridges" class="tab">
+    <h2>Bridges</h2>
+    <pre id="bridgeStatus">Bridge 1 active. Bridge 2 placeholder ready.</pre>
+  </section>
+
+  <section id="wled" class="tab">
+    <h2>WLED Future</h2>
+    <p>Placeholder only. Real output disabled.</p>
+  </section>
+
+  <section id="dmx" class="tab">
+    <h2>DMX / Art-Net Future</h2>
+    <p>Placeholder only. Real output disabled.</p>
+  </section>
+
+  <section id="logs" class="tab">
+    <h2>Logs</h2>
+    <pre id="logBox">V4 logs are stored in generated/v4-logs.</pre>
+  </section>
+
+  <section id="settings" class="tab">
+    <h2>Settings</h2>
+    <p>Brightness cap default: 80%. Flash safety: ON. Local only.</p>
+  </section>
+</main>
+
+<script src="./app.js"></script>
+</body>
+</html>

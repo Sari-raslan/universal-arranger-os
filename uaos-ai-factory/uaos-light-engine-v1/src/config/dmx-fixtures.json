@@ -1,0 +1,12 @@
+﻿{
+  "enabled": false,
+  "adapter": "artnet",
+  "universes": [],
+  "fixtures": [
+    {"type":"par_rgb","channels":["r","g","b","dimmer"]},
+    {"type":"led_bar","channels":["r","g","b","segments"]},
+    {"type":"moving_head_basic","channels":["pan","tilt","dimmer","color"]},
+    {"type":"wash","channels":["dimmer","r","g","b","white"]},
+    {"type":"strobe_safe","channels":["dimmer","strobe_safe_rate"]}
+  ]
+}
