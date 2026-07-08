@@ -1,0 +1,14 @@
+﻿{
+  "status": "PAYMENT_DISABLED_CHECKOUT_GATE_READY",
+  "checkout_visible_as_mock": true,
+  "real_payment_enabled": false,
+  "payment_activation_requires": [
+    "explicit_owner_approval",
+    "business_registration_confirmed",
+    "tax_details_confirmed",
+    "legal_pages_finalized",
+    "payment_provider_configured"
+  ],
+  "no_payment": true,
+  "no_deploy": true
+}
