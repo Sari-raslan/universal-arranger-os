@@ -1,0 +1,30 @@
+﻿[
+    {
+        "provider":  "PayPal manual request",
+        "readiness":  "CANDIDATE",
+        "payment_active":  false,
+        "risk":  "manual workflow required",
+        "owner_approval_required":  true
+    },
+    {
+        "provider":  "Stripe Checkout",
+        "readiness":  "CANDIDATE",
+        "payment_active":  false,
+        "risk":  "legal/tax/payment setup required",
+        "owner_approval_required":  true
+    },
+    {
+        "provider":  "Bank transfer manual invoice",
+        "readiness":  "CANDIDATE",
+        "payment_active":  false,
+        "risk":  "invoice/tax rules required",
+        "owner_approval_required":  true
+    },
+    {
+        "provider":  "Waitlist only",
+        "readiness":  "SAFE_DEFAULT",
+        "payment_active":  false,
+        "risk":  "no direct revenue",
+        "owner_approval_required":  true
+    }
+]
