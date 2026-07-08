@@ -1,0 +1,66 @@
+﻿[
+    {
+        "day":  "2026-07-08",
+        "lane":  "current",
+        "action":  "continue local readiness build",
+        "public_activation":  "NO_GO",
+        "payment":  "DISABLED",
+        "deploy":  "BLOCKED"
+    },
+    {
+        "day":  "2026-07-09",
+        "lane":  "documents watch",
+        "action":  "if documents arrive fill owner data dryrun only",
+        "public_activation":  "NO_GO",
+        "payment":  "DISABLED",
+        "deploy":  "BLOCKED"
+    },
+    {
+        "day":  "2026-07-10",
+        "lane":  "legal/tax review",
+        "action":  "prepare legal/tax fill review, not finalization",
+        "public_activation":  "NO_GO",
+        "payment":  "DISABLED",
+        "deploy":  "BLOCKED"
+    },
+    {
+        "day":  "2026-07-11",
+        "lane":  "site rehearsal",
+        "action":  "open one-click room and rehearse customer path",
+        "public_activation":  "NO_GO",
+        "payment":  "DISABLED",
+        "deploy":  "BLOCKED"
+    },
+    {
+        "day":  "2026-07-12",
+        "lane":  "sales rehearsal",
+        "action":  "manual sales desk and waitlist review only",
+        "public_activation":  "NO_GO",
+        "payment":  "DISABLED",
+        "deploy":  "BLOCKED"
+    },
+    {
+        "day":  "2026-07-13",
+        "lane":  "final QA",
+        "action":  "run local QA and confirm no unsafe claims",
+        "public_activation":  "NO_GO",
+        "payment":  "DISABLED",
+        "deploy":  "BLOCKED"
+    },
+    {
+        "day":  "2026-07-14",
+        "lane":  "opening rehearsal",
+        "action":  "final owner rehearsal and approval packet review",
+        "public_activation":  "NO_GO",
+        "payment":  "DISABLED",
+        "deploy":  "BLOCKED"
+    },
+    {
+        "day":  "2026-07-15",
+        "lane":  "opening day",
+        "action":  "local opening/rehearsal unless explicit owner activation approvals exist",
+        "public_activation":  "NO_GO_BY_DEFAULT",
+        "payment":  "DISABLED_BY_DEFAULT",
+        "deploy":  "BLOCKED_BY_DEFAULT"
+    }
+]

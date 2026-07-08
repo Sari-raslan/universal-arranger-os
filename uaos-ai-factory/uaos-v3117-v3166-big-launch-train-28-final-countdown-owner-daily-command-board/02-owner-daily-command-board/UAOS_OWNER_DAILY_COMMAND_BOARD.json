@@ -1,0 +1,50 @@
+﻿[
+    {
+        "priority":  1,
+        "command":  "Open one-click launch room",
+        "mode":  "LOCAL_ONLY",
+        "blocker":  "none"
+    },
+    {
+        "priority":  2,
+        "command":  "Review owner document intake",
+        "mode":  "OWNER_REVIEW",
+        "blocker":  "owner documents missing"
+    },
+    {
+        "priority":  3,
+        "command":  "Review legal/tax readiness room",
+        "mode":  "PLACEHOLDER_REVIEW",
+        "blocker":  "not legal/tax finalization"
+    },
+    {
+        "priority":  4,
+        "command":  "Review final site QA",
+        "mode":  "LOCAL_QA",
+        "blocker":  "public deploy blocked"
+    },
+    {
+        "priority":  5,
+        "command":  "Review manual sales desk",
+        "mode":  "MANUAL_ONLY",
+        "blocker":  "payment disabled"
+    },
+    {
+        "priority":  6,
+        "command":  "Review customer onboarding pack",
+        "mode":  "MANUAL_ONLY",
+        "blocker":  "form submission disabled"
+    },
+    {
+        "priority":  7,
+        "command":  "Run locked activation simulator",
+        "mode":  "SIMULATION_ONLY",
+        "blocker":  "real activation blocked"
+    },
+    {
+        "priority":  8,
+        "command":  "Review final readiness scoreboard",
+        "mode":  "OWNER_COMMAND",
+        "blocker":  "public activation no-go"
+    }
+]
