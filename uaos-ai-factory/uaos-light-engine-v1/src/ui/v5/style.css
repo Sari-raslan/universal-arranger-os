@@ -1,0 +1,22 @@
+*{box-sizing:border-box}
+body{margin:0;background:#0b1220;color:#fff;font-family:Segoe UI,Tahoma,Arial,sans-serif}
+.app{max-width:980px;margin:0 auto;padding:22px}
+header{display:flex;justify-content:space-between;align-items:center;gap:18px;margin-bottom:24px}
+h1{font-size:44px;margin:0;letter-spacing:-1px}
+p{margin:6px 0 0;color:#b9c6d8;font-size:18px}
+.pill{padding:10px 14px;border-radius:999px;background:#23314d;color:#d7e5ff;font-weight:700}
+.hero{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:18px}
+.status-card{background:#121d33;border:1px solid #243655;border-radius:20px;padding:20px}
+.status-card span{display:block;color:#95a3ba;margin-bottom:8px}
+.status-card strong{font-size:28px}
+.buttons{display:grid;grid-template-columns:repeat(2,minmax(160px,1fr));gap:14px}
+button{border:0;border-radius:18px;padding:22px;font-size:20px;font-weight:800;background:#2563eb;color:#fff;cursor:pointer;box-shadow:0 12px 30px rgba(0,0,0,.22)}
+button:hover{filter:brightness(1.12)}
+button.danger{background:#dc2626}
+.panel{margin-top:18px;padding:20px;border-radius:20px;background:#121d33;border:1px solid #243655}
+.hidden{display:none}
+.favgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+input[type=range]{width:100%;margin:10px 0 18px}
+details{margin:16px 0;padding:14px;border-radius:14px;background:#0b1220}
+footer{margin-top:22px;color:#7f8da3;text-align:center}
+@media(max-width:640px){.hero,.buttons{grid-template-columns:1fr}h1{font-size:34px}header{align-items:flex-start;flex-direction:column}}
