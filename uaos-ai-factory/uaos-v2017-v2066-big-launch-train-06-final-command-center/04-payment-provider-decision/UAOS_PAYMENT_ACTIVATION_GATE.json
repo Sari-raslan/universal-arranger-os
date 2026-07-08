@@ -1,0 +1,13 @@
+﻿{
+  "status": "PAYMENT_ACTIVATION_GATE_READY",
+  "payment": "DISABLED",
+  "requires": [
+    "explicit_owner_approval",
+    "business_registration_confirmed",
+    "tax_details_confirmed",
+    "legal_pages_finalized",
+    "pricing_finalized",
+    "payment_provider_selected"
+  ],
+  "no_payment": true
+}

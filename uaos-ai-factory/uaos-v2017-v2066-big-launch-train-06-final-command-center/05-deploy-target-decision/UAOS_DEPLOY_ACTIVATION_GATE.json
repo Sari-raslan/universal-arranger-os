@@ -1,0 +1,12 @@
+﻿{
+  "status": "DEPLOY_ACTIVATION_GATE_READY",
+  "deploy": "BLOCKED",
+  "requires": [
+    "explicit_owner_approval",
+    "deploy_target_selected",
+    "legal_pages_finalized",
+    "final_site_review",
+    "final_QA_pass"
+  ],
+  "no_deploy": true
+}
