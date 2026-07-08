@@ -1,0 +1,39 @@
+﻿
+<!doctype html>
+
+<html>
+<head>
+<meta charset="utf-8">
+<title>UAOS Waitlist Disabled Candidate</title>
+<style>
+body{font-family:Arial,sans-serif;background:#101014;color:#f5f5f5;margin:24px}
+.card{background:#1f1f2a;border:1px solid #444;border-radius:16px;padding:20px;margin:16px 0}
+.warn{color:#FFD166}.bad{color:#FF6B6B}
+input,select,textarea,button{display:block;margin:8px 0;padding:10px;min-width:280px}
+</style>
+</head>
+<body>
+<h1>UAOS Waitlist Candidate</h1>
+<div class="card">
+<h2 class="warn">Disabled Local Form</h2>
+<p>This is a local disabled waitlist candidate. It does not send data, collect payment, or trigger delivery.</p>
+<form>
+<label>Name <input disabled placeholder="disabled local preview"></label>
+<label>Email <input disabled placeholder="disabled local preview"></label>
+<label>Country <input disabled placeholder="disabled local preview"></label>
+<label>Interest <select disabled><option>UAOS Early Access</option><option>Metadata Library Bundle</option><option>Owner Review Pack</option><option>Custom Arrangement Planning</option></select></label>
+<label>Message <textarea disabled placeholder="disabled local preview"></textarea></label>
+<button disabled>Waitlist Disabled</button>
+</form>
+</div>
+<div class="card">
+<h2 class="bad">Locked</h2>
+<ul>
+<li>Payment disabled</li>
+<li>Deploy blocked</li>
+<li>Automatic delivery blocked</li>
+<li>Manual owner review required</li>
+</ul>
+</div>
+</body>
+</html>
