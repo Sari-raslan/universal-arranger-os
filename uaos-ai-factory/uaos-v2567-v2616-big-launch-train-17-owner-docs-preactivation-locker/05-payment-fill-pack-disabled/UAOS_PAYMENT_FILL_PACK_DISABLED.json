@@ -1,0 +1,17 @@
+﻿{
+"status": "PAYMENT_FILL_PACK_READY_DISABLED",
+"payment": "DISABLED",
+"candidate_options": [
+"PayPal manual request",
+"Stripe Checkout",
+"Bank transfer manual invoice",
+"Waitlist only"
+],
+"activation_requires": [
+"explicit_owner_approval",
+"legal_tax_status_finalized",
+"prices_finalized",
+"payment_provider_selected"
+],
+"payment_activated_by_this_script": false
+}
