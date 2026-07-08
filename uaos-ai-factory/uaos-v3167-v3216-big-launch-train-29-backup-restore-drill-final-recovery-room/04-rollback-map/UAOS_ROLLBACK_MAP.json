@@ -1,0 +1,38 @@
+﻿[
+    {
+        "scenario":  "bad generated phase",
+        "rollback_action":  "ignore generated folder or use git revert after owner review",
+        "destructive":  false,
+        "owner_required":  true
+    },
+    {
+        "scenario":  "broken dashboard",
+        "rollback_action":  "reopen previous train dashboard",
+        "destructive":  false,
+        "owner_required":  false
+    },
+    {
+        "scenario":  "git commit mistake",
+        "rollback_action":  "inspect commit then revert only with owner approval",
+        "destructive":  false,
+        "owner_required":  true
+    },
+    {
+        "scenario":  "active project corrupted",
+        "rollback_action":  "restore backup into temp folder first",
+        "destructive":  false,
+        "owner_required":  true
+    },
+    {
+        "scenario":  "public deploy accidentally requested",
+        "rollback_action":  "stop; deploy remains blocked",
+        "destructive":  false,
+        "owner_required":  true
+    },
+    {
+        "scenario":  "payment accidentally requested",
+        "rollback_action":  "stop; payment remains disabled",
+        "destructive":  false,
+        "owner_required":  true
+    }
+]

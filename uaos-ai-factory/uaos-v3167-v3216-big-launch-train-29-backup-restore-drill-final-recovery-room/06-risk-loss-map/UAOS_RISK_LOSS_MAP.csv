@@ -1,0 +1,7 @@
+﻿"risk","severity","mitigation","action"
+"Backup path unavailable","MEDIUM","check alternate backup candidate","dryrun only"
+"Accidental overwrite","HIGH","real restore blocked by default","owner approval required"
+"Restore from stale backup","MEDIUM","compare backup date and metadata","manual review"
+"Git state confusion","MEDIUM","explicit git add only and status logs","review git hygiene folder"
+"Public activation during recovery","HIGH","deploy/payment blocked","stop"
+"Unsafe technical output","HIGH","parser closed writer blocked","stop"

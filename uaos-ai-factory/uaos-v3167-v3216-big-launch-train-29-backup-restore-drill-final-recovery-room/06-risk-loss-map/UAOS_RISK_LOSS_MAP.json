@@ -1,0 +1,38 @@
+﻿[
+    {
+        "risk":  "Backup path unavailable",
+        "severity":  "MEDIUM",
+        "mitigation":  "check alternate backup candidate",
+        "action":  "dryrun only"
+    },
+    {
+        "risk":  "Accidental overwrite",
+        "severity":  "HIGH",
+        "mitigation":  "real restore blocked by default",
+        "action":  "owner approval required"
+    },
+    {
+        "risk":  "Restore from stale backup",
+        "severity":  "MEDIUM",
+        "mitigation":  "compare backup date and metadata",
+        "action":  "manual review"
+    },
+    {
+        "risk":  "Git state confusion",
+        "severity":  "MEDIUM",
+        "mitigation":  "explicit git add only and status logs",
+        "action":  "review git hygiene folder"
+    },
+    {
+        "risk":  "Public activation during recovery",
+        "severity":  "HIGH",
+        "mitigation":  "deploy/payment blocked",
+        "action":  "stop"
+    },
+    {
+        "risk":  "Unsafe technical output",
+        "severity":  "HIGH",
+        "mitigation":  "parser closed writer blocked",
+        "action":  "stop"
+    }
+]

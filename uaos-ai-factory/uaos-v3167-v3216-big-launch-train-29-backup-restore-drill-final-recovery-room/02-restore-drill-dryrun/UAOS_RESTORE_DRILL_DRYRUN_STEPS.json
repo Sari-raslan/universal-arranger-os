@@ -1,0 +1,58 @@
+﻿[
+    {
+        "step":  1,
+        "action":  "Confirm current root exists",
+        "command":  "Test-Path E:\\keyboard-manager-clean",
+        "mode":  "READ_ONLY",
+        "risk":  "LOW"
+    },
+    {
+        "step":  2,
+        "action":  "Confirm factory exists",
+        "command":  "Test-Path E:\\keyboard-manager-clean\\uaos-ai-factory",
+        "mode":  "READ_ONLY",
+        "risk":  "LOW"
+    },
+    {
+        "step":  3,
+        "action":  "Select backup candidate",
+        "command":  "manual owner selection only",
+        "mode":  "DRYRUN",
+        "risk":  "LOW"
+    },
+    {
+        "step":  4,
+        "action":  "Compare folder names",
+        "command":  "metadata only",
+        "mode":  "DRYRUN",
+        "risk":  "LOW"
+    },
+    {
+        "step":  5,
+        "action":  "Prepare restore target temp path",
+        "command":  "do not create overwrite path",
+        "mode":  "PLAN_ONLY",
+        "risk":  "LOW"
+    },
+    {
+        "step":  6,
+        "action":  "Do not overwrite active E project",
+        "command":  "blocked",
+        "mode":  "LOCKED",
+        "risk":  "HIGH_IF_IGNORED"
+    },
+    {
+        "step":  7,
+        "action":  "Do not deploy after restore",
+        "command":  "blocked",
+        "mode":  "LOCKED",
+        "risk":  "HIGH_IF_IGNORED"
+    },
+    {
+        "step":  8,
+        "action":  "Owner approves any future real restore",
+        "command":  "manual approval required",
+        "mode":  "OWNER_REVIEW",
+        "risk":  "CONTROLLED"
+    }
+]
