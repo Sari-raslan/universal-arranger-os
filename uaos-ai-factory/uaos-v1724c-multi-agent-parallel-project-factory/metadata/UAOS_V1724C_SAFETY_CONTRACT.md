@@ -1,0 +1,15 @@
+﻿UAOS V1724C SAFETY CONTRACT
+- no cracking
+- no password bypass
+- no PCM payload parsing
+- no sample decode
+- no binary keyboard output
+- no SET/PCM/STY/KMP/KSF writer
+- no USB
+- no hardware load
+- no deploy
+- no payment
+- no PA3X-ready claim
+- metadata / reports / dashboards / validators / plans only
+- local git commit only
+- explicit git add paths only
