@@ -1,0 +1,3 @@
+﻿@echo off
+echo Opening UAOS Final Owner One-Click Launch Room...
+start "" "E:\keyboard-manager-clean\uaos-ai-factory\uaos-v2517-v2566-big-launch-train-16-final-owner-one-click-launch-room\01-owner-one-click-room\UAOS_FINAL_OWNER_ONE_CLICK_LAUNCH_ROOM.html"
