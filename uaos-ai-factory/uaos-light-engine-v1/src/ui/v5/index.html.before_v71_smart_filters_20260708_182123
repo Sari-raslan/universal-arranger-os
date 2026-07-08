@@ -71,53 +71,8 @@
       <button onclick="openAdvanced()">Open V4 Advanced Dashboard</button>
     </section>
 
-    
-    <section class="smart-card">
-      <div class="section-title">
-        <span>Smart Filters</span>
-        <small>ط¬ط§ظ‡ط²ط© ظ„ظ„ط£ط¬ظˆط§ط، ط§ظ„ظ‡ط§ط¯ط¦ط©</small>
-      </div>
-      <div class="filter-grid">
-        <button class="filter candle" onclick="runFilter('candle')">ًں•¯ Candle</button>
-        <button class="filter fire" onclick="runFilter('fireplace')">ًں”¥ Fireplace</button>
-        <button class="filter sunset" onclick="runFilter('sunset')">ًںŒ… Sunset</button>
-        <button class="filter ocean" onclick="runFilter('ocean')">ًںŒٹ Ocean</button>
-        <button class="filter warm" onclick="runFilter('smart_warm')">ًں’› Smart Warm</button>
-      </div>
-    </section>
-    
-    <section class="smart-card daily-presets">
-      <div class="section-title">
-        <span>Daily Presets</span>
-        <small>استخدام يومي سريع</small>
-      </div>
-      <div class="filter-grid">
-        <button class="preset whiteMode" onclick="runReadyMode('white')">White</button>
-        <button class="preset yellowMode" onclick="runReadyMode('yellow')">Yellow</button>
-        <button class="preset nightMode" onclick="runReadyMode('night')">Night</button>
-        <button class="preset sleepMode" onclick="runReadyMode('sleep')">Sleep</button>
-        <button class="preset off" onclick="turnOffLights()">Turn Off</button>
-      </div>
-    </section>
-
-    <section class="smart-card mood-presets">
-      <div class="section-title">
-        <span>Mood Filters</span>
-        <small>فلاتر جاهزة للأجواء</small>
-      </div>
-      <div class="filter-grid">
-        <button class="filter romantic" onclick="runFilter('romantic')">💗 Romantic</button>
-        <button class="filter cinema" onclick="runFilter('cinema')">🎬 Cinema</button>
-        <button class="filter reading" onclick="runFilter('reading')">📖 Reading</button>
-        <button class="filter focus" onclick="runFilter('focus')">🎯 Focus</button>
-        <button class="filter blueSoft" onclick="runFilter('blue_soft')">🔵 Blue Soft</button>
-        <button class="filter purpleRoom" onclick="runFilter('purple_room')">🟣 Purple</button>
-        <button class="filter sunrise" onclick="runFilter('sunrise')">🌄 Sunrise</button>
-        <button class="filter goldRoom" onclick="runFilter('gold_room')">✨ Gold Room</button>
-      </div>
-    </section>
     <footer>
-      <span>Local only • WLED/DMX gated • V4 PRO preserved</span>
+      <span>Local only â€¢ WLED/DMX gated â€¢ V4 PRO preserved</span>
     </footer>
   </main>
 </div>

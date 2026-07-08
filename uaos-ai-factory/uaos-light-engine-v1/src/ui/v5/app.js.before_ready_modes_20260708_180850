@@ -1,4 +1,4 @@
-const API = "http://localhost:3000";
+﻿const API = "http://localhost:3000";
 
 function setText(id, txt){ const e=document.getElementById(id); if(e) e.textContent=txt; }
 
@@ -89,49 +89,3 @@ async function turnOffLights(){
     alert("Turn Off failed: server not reachable.");
   }
 }
-
-async function runReadyMode(mode){
-  try{
-    await api("/api/v5/lights/mode", {mode});
-    const labels = {
-      white: "White",
-      yellow: "Yellow",
-      night: "Night Mode",
-      sleep: "Sleep Mode"
-    };
-    setText("activeScene", (window.uaosFinalFilterLabels && uaosFinalFilterLabels[mode]) || labels[mode] || mode);
-  }catch{
-    alert("Mode failed: server not reachable.");
-  }
-}
-async function runFilter(mode){
-  try{
-    await api("/api/v5/filter", {mode});
-    const labels = {
-      candle: "Candle",
-      fireplace: "Fireplace",
-      sunset: "Sunset",
-      ocean: "Ocean",
-      smart_warm: "Smart Warm"
-    };
-    setText("activeScene", (window.uaosFinalFilterLabels && uaosFinalFilterLabels[mode]) || labels[mode] || mode);
-  }catch{
-    alert("Filter failed: server not reachable.");
-  }
-}
-// FINAL_UAOS_FILTER_LABELS_V72
-const uaosFinalFilterLabels = {
-  candle: "Candle",
-  fireplace: "Fireplace",
-  sunset: "Sunset",
-  ocean: "Ocean",
-  smart_warm: "Smart Warm",
-  romantic: "Romantic",
-  cinema: "Cinema",
-  reading: "Reading",
-  focus: "Focus",
-  blue_soft: "Blue Soft",
-  purple_room: "Purple Room",
-  sunrise: "Sunrise",
-  gold_room: "Gold Room"
-};

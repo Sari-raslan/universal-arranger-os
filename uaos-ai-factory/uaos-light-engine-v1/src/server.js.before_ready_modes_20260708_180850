@@ -13,7 +13,6 @@ const allLights = [...primary, ...ambient];
 let activeScene = "idle";
 let commandCount = 0;
 let lastHueMode = "UNKNOWN";
-let ambientEffectTimer = null;
 
 function sendJson(res, code, obj) {
   res.writeHead(code, {
@@ -165,7 +164,6 @@ async function setLight(id, state) {
 }
 
 async function runScene(sceneId) {
-  stopAmbientEffect();
   activeScene = sceneId || "calm";
   commandCount++;
 
@@ -202,7 +200,6 @@ async function runScene(sceneId) {
 }
 
 async function emergencyStop() {
-  stopAmbientEffect();
   activeScene = "emergency_stop";
   commandCount++;
 
@@ -222,7 +219,6 @@ async function emergencyStop() {
 
 
 async function allLightsOff() {
-  stopAmbientEffect();
   activeScene = "all_lights_off";
   commandCount++;
 
@@ -239,208 +235,6 @@ async function allLightsOff() {
     successCount: results.filter(r => r.ok).length,
     failCount: results.filter(r => !r.ok).length
   };
-}
-
-async function runReadyLightMode(mode) {
-  activeScene = mode;
-  commandCount++;
-
-  let state = { on:true, bri:140, ct:366, transitiontime:10 };
-
-  if (mode === "white") {
-    state = { on:true, bri:204, ct:250, transitiontime:8 };
-  }
-
-  if (mode === "yellow") {
-    state = { on:true, bri:170, ct:430, transitiontime:10 };
-  }
-
-  if (mode === "night") {
-    state = { on:true, bri:38, ct:454, transitiontime:20 };
-  }
-
-  if (mode === "sleep") {
-    state = { on:true, bri:15, ct:500, transitiontime:40 };
-  }
-
-  const results = [];
-  for (const id of allLights) {
-    results.push(await setLight(id, state));
-  }
-
-  return {
-    ok: true,
-    mode,
-    lightCount: 18,
-    hueMode: lastHueMode,
-    successCount: results.filter(r => r.ok).length,
-    failCount: results.filter(r => !r.ok).length
-  };
-}
-
-function stopAmbientEffect() {
-  if (ambientEffectTimer) {
-    clearInterval(ambientEffectTimer);
-    ambientEffectTimer = null;
-  }
-}
-
-function rand(min, max) {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-}
-
-async function runAmbientFilter(mode) {
-  stopAmbientEffect();
-  activeScene = mode;
-  commandCount++;
-
-  if (mode === "candle") {
-    const tick = async () => {
-      for (const id of allLights) {
-        await setLight(id, {
-          on: true,
-          bri: rand(35, 95),
-          ct: rand(430, 500),
-          transitiontime: rand(8, 18)
-        });
-      }
-    };
-    await tick();
-    ambientEffectTimer = setInterval(tick, 2400);
-    return { ok:true, mode:"CANDLE_FILTER", lightCount:18 };
-  }
-
-  if (mode === "fireplace") {
-    const fireColors = [
-      [0.67, 0.32],
-      [0.60, 0.36],
-      [0.54, 0.40],
-      [0.50, 0.43]
-    ];
-    const tick = async () => {
-      for (const id of allLights) {
-        const xy = fireColors[rand(0, fireColors.length - 1)];
-        await setLight(id, {
-          on: true,
-          bri: rand(55, 140),
-          xy,
-          transitiontime: rand(10, 22)
-        });
-      }
-    };
-    await tick();
-    ambientEffectTimer = setInterval(tick, 2800);
-    return { ok:true, mode:"FIREPLACE_FILTER", lightCount:18 };
-  }
-
-  if (mode === "sunset") {
-    stopAmbientEffect();
-    for (const id of allLights) {
-      await setLight(id, {
-        on: true,
-        bri: 120,
-        xy: [0.58, 0.36],
-        transitiontime: 35
-      });
-    }
-    return { ok:true, mode:"SUNSET_FILTER", lightCount:18 };
-  }
-
-  if (mode === "ocean") {
-    stopAmbientEffect();
-    for (const id of allLights) {
-      await setLight(id, {
-        on: true,
-        bri: 110,
-        xy: [0.17, 0.22],
-        transitiontime: 30
-      });
-    }
-    return { ok:true, mode:"OCEAN_FILTER", lightCount:18 };
-  }
-
-  if (mode === "smart_warm") {
-    stopAmbientEffect();
-    for (const id of allLights) {
-      await setLight(id, {
-        on: true,
-        bri: 145,
-        ct: 400,
-        transitiontime: 20
-      });
-    }
-    return { ok:true, mode:"SMART_WARM_FILTER", lightCount:18 };
-  }
-
-
-  // FINAL_UAOS_SMART_FILTERS_V72
-  if (mode === "romantic") {
-    stopAmbientEffect();
-    for (const id of allLights) {
-      await setLight(id, { on:true, bri:95, xy:[0.50,0.24], transitiontime:28 });
-    }
-    return { ok:true, mode:"ROMANTIC_FILTER", lightCount:18 };
-  }
-
-  if (mode === "cinema") {
-    stopAmbientEffect();
-    for (const id of primary) {
-      await setLight(id, { on:false, transitiontime:10 });
-    }
-    for (const id of ambient) {
-      await setLight(id, { on:true, bri:45, ct:454, transitiontime:25 });
-    }
-    return { ok:true, mode:"CINEMA_FILTER", lightCount:18 };
-  }
-
-  if (mode === "reading") {
-    stopAmbientEffect();
-    for (const id of allLights) {
-      await setLight(id, { on:true, bri:155, ct:330, transitiontime:16 });
-    }
-    return { ok:true, mode:"READING_FILTER", lightCount:18 };
-  }
-
-  if (mode === "focus") {
-    stopAmbientEffect();
-    for (const id of allLights) {
-      await setLight(id, { on:true, bri:175, ct:280, transitiontime:16 });
-    }
-    return { ok:true, mode:"FOCUS_FILTER", lightCount:18 };
-  }
-
-  if (mode === "blue_soft") {
-    stopAmbientEffect();
-    for (const id of allLights) {
-      await setLight(id, { on:true, bri:105, xy:[0.16,0.17], transitiontime:26 });
-    }
-    return { ok:true, mode:"BLUE_SOFT_FILTER", lightCount:18 };
-  }
-
-  if (mode === "purple_room") {
-    stopAmbientEffect();
-    for (const id of allLights) {
-      await setLight(id, { on:true, bri:115, xy:[0.30,0.12], transitiontime:26 });
-    }
-    return { ok:true, mode:"PURPLE_ROOM_FILTER", lightCount:18 };
-  }
-
-  if (mode === "sunrise") {
-    stopAmbientEffect();
-    for (const id of allLights) {
-      await setLight(id, { on:true, bri:135, xy:[0.48,0.41], transitiontime:40 });
-    }
-    return { ok:true, mode:"SUNRISE_FILTER", lightCount:18 };
-  }
-
-  if (mode === "gold_room") {
-    stopAmbientEffect();
-    for (const id of allLights) {
-      await setLight(id, { on:true, bri:160, xy:[0.52,0.42], transitiontime:22 });
-    }
-    return { ok:true, mode:"GOLD_ROOM_FILTER", lightCount:18 };
-  }
-  return { ok:false, error:"UNKNOWN_FILTER", mode };
 }
 function serveFile(req, res) {
   let pathname = decodeURIComponent(url.parse(req.url).pathname || "/");
@@ -508,18 +302,6 @@ const server = http.createServer(async (req, res) => {
 
     if (req.method === "POST" && (route === "/api/v5/lights/off" || route === "/api/v4/lights/off")) {
       const result = await allLightsOff();
-      return sendJson(res, 200, {status:"success", ...result});
-    }
-
-    if (req.method === "POST" && (route === "/api/v5/lights/mode" || route === "/api/v4/lights/mode")) {
-      const body = await readBody(req);
-      const result = await runReadyLightMode(body.mode || "white");
-      return sendJson(res, 200, {status:"success", ...result});
-    }
-
-    if (req.method === "POST" && (route === "/api/v5/filter" || route === "/api/v4/filter")) {
-      const body = await readBody(req);
-      const result = await runAmbientFilter(body.mode || "smart_warm");
       return sendJson(res, 200, {status:"success", ...result});
     }
     if (req.method === "POST" && route === "/api/v4/bpm/tap") {
