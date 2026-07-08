@@ -1,0 +1,21 @@
+﻿{
+"status": "OWNER_DECISION_CONSOLE_READY",
+"local_rehearsal": "GO",
+"fast_finalization_prep": "GO",
+"public_activation": "NO_GO_UNTIL_OWNER_APPROVAL",
+"payment": "DISABLED",
+"deploy": "BLOCKED",
+"real_invoice": "BLOCKED",
+"automatic_delivery": "BLOCKED",
+"required_owner_decisions": [
+"legal_pages_final_approval",
+"business_tax_data_final_approval",
+"final_pricing_approval",
+"product_wording_approval",
+"manual_delivery_approval",
+"payment_provider_selection",
+"deploy_target_selection",
+"explicit_deploy_approval",
+"explicit_payment_approval"
+]
+}
