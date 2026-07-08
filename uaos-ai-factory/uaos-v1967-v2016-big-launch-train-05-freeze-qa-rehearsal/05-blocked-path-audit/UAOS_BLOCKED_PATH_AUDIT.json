@@ -1,0 +1,52 @@
+﻿[
+    {
+        "path":  "parser",
+        "status":  "CLOSED",
+        "reason":  "V1723B all groups Tier4; no Tier1/Tier2/Tier3 route"
+    },
+    {
+        "path":  "pcm_payload_parse",
+        "status":  "BLOCKED",
+        "reason":  "No explicit owner approval and legal/safety risk"
+    },
+    {
+        "path":  "sample_decode",
+        "status":  "BLOCKED",
+        "reason":  "Forbidden by project safety rules"
+    },
+    {
+        "path":  "keyboard_binary_writer",
+        "status":  "BLOCKED",
+        "reason":  "No SET/PCM/STY/KMP/KSF writer allowed"
+    },
+    {
+        "path":  "usb_hardware_load",
+        "status":  "BLOCKED",
+        "reason":  "No USB or hardware load allowed"
+    },
+    {
+        "path":  "pa3x_ready_claim",
+        "status":  "BLOCKED",
+        "reason":  "No lawful proof / no real keyboard output"
+    },
+    {
+        "path":  "payment",
+        "status":  "DISABLED",
+        "reason":  "Requires explicit owner approval and legal/tax/payment readiness"
+    },
+    {
+        "path":  "deploy",
+        "status":  "BLOCKED",
+        "reason":  "Requires explicit owner approval"
+    },
+    {
+        "path":  "real_invoice",
+        "status":  "BLOCKED",
+        "reason":  "Requires confirmed business/tax/invoice rules"
+    },
+    {
+        "path":  "automatic_delivery",
+        "status":  "BLOCKED",
+        "reason":  "Manual owner review required"
+    }
+]
