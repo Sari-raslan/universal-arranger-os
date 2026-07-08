@@ -1,0 +1,20 @@
+﻿{
+  "phase": "V1737",
+  "status": "OWNER_APPROVAL_CENTER_READY",
+  "allowed_approval_types": [
+    "catalog_name",
+    "library_tier",
+    "safe_customer_wording",
+    "more_evidence_required",
+    "blocked_by_safety"
+  ],
+  "blocked_approval_types": [
+    "pcm_payload_parse",
+    "sample_decode",
+    "binary_writer",
+    "usb",
+    "hardware_load",
+    "deploy",
+    "payment"
+  ]
+}
