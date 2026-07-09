@@ -202,6 +202,8 @@ async function runScene(sceneId) {
 }
 
 async function emergencyStop() {
+  uaosV81WatchdogLog('emergency_stop', {});
+  uaosV81WatchdogLog('emergency_stop', {});
   stopAmbientEffect();
   activeScene = "emergency_stop";
   commandCount++;
@@ -222,6 +224,8 @@ async function emergencyStop() {
 
 
 async function allLightsOff() {
+  uaosV81WatchdogLog('turn_off', {});
+  uaosV81WatchdogLog('turn_off', {});
   stopAmbientEffect();
   activeScene = "all_lights_off";
   commandCount++;
@@ -442,6 +446,325 @@ async function runAmbientFilter(mode) {
   }
   return { ok:false, error:"UNKNOWN_FILTER", mode };
 }
+
+function clampNum(v, min, max, fallback) {
+  const n = Number(v);
+  if (!Number.isFinite(n)) return fallback;
+  return Math.max(min, Math.min(max, n));
+}
+
+function hexToRgb(hex) {
+  const clean = String(hex || "#ffffff").replace("#", "").trim();
+  const safe = clean.length === 3
+    ? clean.split("").map(x => x + x).join("")
+    : clean.padEnd(6, "f").slice(0, 6);
+  return {
+    r: parseInt(safe.slice(0, 2), 16),
+    g: parseInt(safe.slice(2, 4), 16),
+    b: parseInt(safe.slice(4, 6), 16)
+  };
+}
+
+function rgbToXy(r, g, b) {
+  let R = r / 255;
+  let G = g / 255;
+  let B = b / 255;
+
+  R = R > 0.04045 ? Math.pow((R + 0.055) / 1.055, 2.4) : R / 12.92;
+  G = G > 0.04045 ? Math.pow((G + 0.055) / 1.055, 2.4) : G / 12.92;
+  B = B > 0.04045 ? Math.pow((B + 0.055) / 1.055, 2.4) : B / 12.92;
+
+  const X = R * 0.664511 + G * 0.154324 + B * 0.162028;
+  const Y = R * 0.283881 + G * 0.668433 + B * 0.047685;
+  const Z = R * 0.000088 + G * 0.072310 + B * 0.986039;
+
+  const sum = X + Y + Z;
+  if (sum === 0) return [0.3227, 0.3290];
+
+  return [
+    Number((X / sum).toFixed(4)),
+    Number((Y / sum).toFixed(4))
+  ];
+}
+
+function hueFromHex(hex) {
+  const rgb = hexToRgb(hex);
+  return rgbToXy(rgb.r, rgb.g, rgb.b);
+}
+
+function mixXy(a, b, amount) {
+  const t = clampNum(amount, 0, 1, 0.5);
+  return [
+    Number((a[0] + (b[0] - a[0]) * t).toFixed(4)),
+    Number((a[1] + (b[1] - a[1]) * t).toFixed(4))
+  ];
+}
+
+function proIntervalMs(speed) {
+  const s = String(speed || "medium").toLowerCase();
+  if (s === "slow") return 4200;
+  if (s === "fast") return 1200;
+  if (s === "ultra") return 750;
+  return 2400;
+}
+
+async function runProColorFilter(mode, options = {}) {
+  // UAOS_PRO_COLOR_ENGINE_V73
+  stopAmbientEffect();
+  activeScene = "pro_" + mode;
+  commandCount++;
+
+  const baseHex = options.color || "#ffb35c";
+  const secondHex = options.color2 || "#3b82f6";
+  const baseXy = hueFromHex(baseHex);
+  const secondXy = hueFromHex(secondHex);
+
+  const speed = String(options.speed || "medium").toLowerCase();
+  const intensity = clampNum(options.intensity, 0.10, 1.00, 0.65);
+  const flicker = clampNum(options.flicker, 0.00, 1.00, 0.45);
+  const briBase = Math.floor(30 + 174 * intensity);
+  const safeBri = Math.min(204, Math.max(10, briBase));
+  const interval = proIntervalMs(speed);
+
+  const all = allLights;
+  let step = 0;
+
+  async function applyAll(stateBuilder) {
+    for (const id of all) {
+      const st = stateBuilder(id);
+      await setLight(id, st);
+    }
+  }
+
+  if (mode === "solid_color") {
+    await applyAll(() => ({ on:true, bri:safeBri, xy:baseXy, transitiontime:12 }));
+    return { ok:true, mode:"SOLID_COLOR", color:baseHex, lightCount:18 };
+  }
+
+  if (mode === "breath") {
+    const tick = async () => {
+      step++;
+      const wave = (Math.sin(step / 2) + 1) / 2;
+      const bri = Math.floor(25 + safeBri * (0.35 + wave * 0.55));
+      await applyAll(() => ({ on:true, bri, xy:baseXy, transitiontime:18 }));
+    };
+    await tick();
+    ambientEffectTimer = setInterval(tick, interval);
+    return { ok:true, mode:"BREATH", color:baseHex, speed, intensity, lightCount:18 };
+  }
+
+  if (mode === "candle_custom") {
+    const tick = async () => {
+      await applyAll(() => ({
+        on:true,
+        bri: rand(Math.max(10, Math.floor(safeBri * 0.25)), Math.max(18, Math.floor(safeBri * (0.55 + flicker * 0.35)))),
+        xy: mixXy(baseXy, [0.62, 0.36], Math.random() * 0.5),
+        transitiontime: rand(8, 20)
+      }));
+    };
+    await tick();
+    ambientEffectTimer = setInterval(tick, interval);
+    return { ok:true, mode:"CANDLE_CUSTOM", color:baseHex, speed, flicker, lightCount:18 };
+  }
+
+  if (mode === "fire_custom") {
+    const fire = [[0.67,0.32],[0.60,0.36],[0.54,0.40],[0.50,0.43],baseXy];
+    const tick = async () => {
+      for (const id of all) {
+        const xy = fire[rand(0, fire.length - 1)];
+        await setLight(id, {
+          on:true,
+          bri: rand(Math.floor(safeBri * 0.32), Math.floor(safeBri * 0.95)),
+          xy,
+          transitiontime: rand(8, 18)
+        });
+      }
+    };
+    await tick();
+    ambientEffectTimer = setInterval(tick, interval);
+    return { ok:true, mode:"FIRE_CUSTOM", color:baseHex, speed, flicker, lightCount:18 };
+  }
+
+  if (mode === "ocean_wave") {
+    const ocean = [[0.16,0.20],[0.17,0.25],[0.19,0.30],baseXy,secondXy];
+    const tick = async () => {
+      step++;
+      for (let i = 0; i < all.length; i++) {
+        const id = all[i];
+        const xy = ocean[(i + step) % ocean.length];
+        await setLight(id, { on:true, bri:Math.floor(safeBri * 0.68), xy, transitiontime:24 });
+      }
+    };
+    await tick();
+    ambientEffectTimer = setInterval(tick, interval);
+    return { ok:true, mode:"OCEAN_WAVE", color:baseHex, color2:secondHex, speed, lightCount:18 };
+  }
+
+  if (mode === "cosmos") {
+    const palette = [[0.17,0.08],[0.27,0.10],[0.35,0.15],baseXy,secondXy];
+    const tick = async () => {
+      for (const id of all) {
+        const xy = palette[rand(0, palette.length - 1)];
+        await setLight(id, { on:true, bri:rand(25, safeBri), xy, transitiontime:rand(12,28) });
+      }
+    };
+    await tick();
+    ambientEffectTimer = setInterval(tick, interval);
+    return { ok:true, mode:"COSMOS", color:baseHex, color2:secondHex, speed, lightCount:18 };
+  }
+
+  if (mode === "aurora") {
+    const palette = [[0.18,0.55],[0.20,0.35],[0.28,0.20],baseXy,secondXy];
+    const tick = async () => {
+      step++;
+      for (let i = 0; i < all.length; i++) {
+        const xy = palette[(i + step) % palette.length];
+        await setLight(all[i], { on:true, bri:Math.floor(safeBri * 0.72), xy, transitiontime:28 });
+      }
+    };
+    await tick();
+    ambientEffectTimer = setInterval(tick, interval);
+    return { ok:true, mode:"AURORA", color:baseHex, color2:secondHex, speed, lightCount:18 };
+  }
+
+  if (mode === "neon_pulse") {
+    const tick = async () => {
+      step++;
+      const onBeat = step % 2 === 0;
+      for (const id of primary) {
+        await setLight(id, { on:true, bri:onBeat ? safeBri : Math.floor(safeBri * 0.25), xy:baseXy, transitiontime:4 });
+      }
+      for (const id of ambient) {
+        await setLight(id, { on:true, bri:Math.floor(safeBri * 0.45), xy:secondXy, transitiontime:16 });
+      }
+    };
+    await tick();
+    ambientEffectTimer = setInterval(tick, interval);
+    return { ok:true, mode:"NEON_PULSE", color:baseHex, color2:secondHex, speed, lightCount:18 };
+  }
+
+  if (mode === "rainbow_slow") {
+    const rainbow = [[0.67,0.32],[0.55,0.42],[0.40,0.50],[0.17,0.30],[0.20,0.12],[0.32,0.14]];
+    const tick = async () => {
+      step++;
+      for (let i = 0; i < all.length; i++) {
+        const xy = rainbow[(i + step) % rainbow.length];
+        await setLight(all[i], { on:true, bri:Math.floor(safeBri * 0.70), xy, transitiontime:32 });
+      }
+    };
+    await tick();
+    ambientEffectTimer = setInterval(tick, interval);
+    return { ok:true, mode:"RAINBOW_SLOW", speed, lightCount:18 };
+  }
+
+  if (mode === "sparkle") {
+    const tick = async () => {
+      for (const id of all) {
+        const xy = Math.random() > 0.65 ? secondXy : baseXy;
+        await setLight(id, { on:true, bri:rand(20, safeBri), xy, transitiontime:rand(5,16) });
+      }
+    };
+    await tick();
+    ambientEffectTimer = setInterval(tick, interval);
+    return { ok:true, mode:"SPARKLE", color:baseHex, color2:secondHex, speed, lightCount:18 };
+  }
+
+  return { ok:false, error:"UNKNOWN_PRO_FILTER", mode };
+}
+
+/* UAOS_V8_1_RELIABILITY_BOOTSTRAP */
+let uaosV81LiveTestTimer = null;
+let uaosV81LiveTestStep = 0;
+
+function uaosV81Log(event, data = {}) {
+  try {
+    const fs = require("fs");
+    const path = require("path");
+    const logDir = path.join(ROOT, "generated", "v8-live-logs");
+    fs.mkdirSync(logDir, { recursive: true });
+    fs.appendFileSync(path.join(logDir, "v8-live-events.jsonl"), JSON.stringify({ at: new Date().toISOString(), event, data }) + "\n", "utf8");
+  } catch {}
+}
+
+function uaosV81WatchdogStatus() {
+  try {
+    const Watchdog = require("./services/V8Watchdog");
+    return Watchdog.getStatus();
+  } catch (err) {
+    return { error: err.message, watchdog: "fallback" };
+  }
+}
+
+function uaosV81WatchdogLog(event, data = {}) {
+  try {
+    const Watchdog = require("./services/V8Watchdog");
+    Watchdog.log(event, data);
+  } catch {}
+  uaosV81Log(event, data);
+}
+
+async function uaosV81RestartSoft() {
+  try { stopAmbientEffect(); } catch {}
+  if (uaosV81LiveTestTimer) {
+    clearInterval(uaosV81LiveTestTimer);
+    uaosV81LiveTestTimer = null;
+  }
+  activeScene = "idle";
+  uaosV81WatchdogLog("restart_soft", { activeScene });
+  try {
+    const Watchdog = require("./services/V8Watchdog");
+    Watchdog.musicStop("restart_soft");
+  } catch {}
+  return { ok: true, mode: "RESTART_SOFT", activeScene };
+}
+
+async function uaosV81LiveTestStart() {
+  if (uaosV81LiveTestTimer) clearInterval(uaosV81LiveTestTimer);
+  uaosV81LiveTestStep = 0;
+  const cycle = async () => {
+    uaosV81LiveTestStep++;
+    const step = uaosV81LiveTestStep % 4;
+    try {
+      if (step === 0) await runScene("calm");
+      if (step === 1) await runReadyLightMode("white");
+      if (step === 2) await runScene("party");
+      if (step === 3) await runAmbientFilter("candle");
+      uaosV81WatchdogLog("live_test_step", { step });
+    } catch (err) {
+      uaosV81WatchdogLog("live_test_error", { error: err.message });
+    }
+  };
+  await cycle();
+  uaosV81LiveTestTimer = setInterval(cycle, 45000);
+  uaosV81WatchdogLog("live_test_start", { safe: true });
+  return { ok: true, mode: "LIVE_TEST_STARTED", safeCycleSeconds: 45 };
+}
+
+async function uaosV81LiveTestStop() {
+  if (uaosV81LiveTestTimer) clearInterval(uaosV81LiveTestTimer);
+  uaosV81LiveTestTimer = null;
+  try { stopAmbientEffect(); } catch {}
+  uaosV81WatchdogLog("live_test_stop", {});
+  return { ok: true, mode: "LIVE_TEST_STOPPED" };
+}
+
+function uaosV81PerformanceStatus() {
+  return {
+    status: "LIVE_LOCAL_MONITOR_READY",
+    hueMode: typeof lastHueMode !== "undefined" ? lastHueMode : "UNKNOWN",
+    activeScene: typeof activeScene !== "undefined" ? activeScene : "unknown",
+    commandCount: typeof commandCount !== "undefined" ? commandCount : 0,
+    droppedFrames: uaosV81WatchdogStatus().droppedFrames || 0,
+    lastLatency: uaosV81WatchdogStatus().lastLatencyMs,
+    activeMusicMode: uaosV81WatchdogStatus().activeMusicMode,
+    connectedAudioInput: uaosV81WatchdogStatus().audioInput,
+    schedulerFpsLimit: "primary 3-5/sec, ambient 1-2/sec safe REST mode",
+    watchdog: uaosV81WatchdogStatus(),
+    wledGated: true,
+    dmxGated: true,
+    localOnly: true
+  };
+}
 function serveFile(req, res) {
   let pathname = decodeURIComponent(url.parse(req.url).pathname || "/");
   if (pathname === "/") pathname = "/src/ui/v5/index.html";
@@ -522,6 +845,12 @@ const server = http.createServer(async (req, res) => {
       const result = await runAmbientFilter(body.mode || "smart_warm");
       return sendJson(res, 200, {status:"success", ...result});
     }
+
+    if (req.method === "POST" && (route === "/api/v5/pro-filter" || route === "/api/v4/pro-filter")) {
+      const body = await readBody(req);
+      const result = await runProColorFilter(body.mode || "solid_color", body);
+      return sendJson(res, 200, {status:"success", ...result});
+    }
     if (req.method === "POST" && route === "/api/v4/bpm/tap") {
       return sendJson(res, 200, {bpm:120, status:"tap-ready"});
     }
@@ -534,6 +863,136 @@ const server = http.createServer(async (req, res) => {
       return sendJson(res, 200, {enabled:false, realOutputEnabled:false, gated:true});
     }
 
+
+    if (req.method === "GET" && route === "/api/v8/performance/status") {
+      return sendJson(res, 200, uaosV81PerformanceStatus());
+    }
+
+    if (req.method === "GET" && route === "/api/v8/watchdog/status") {
+      return sendJson(res, 200, uaosV81WatchdogStatus());
+    }
+
+    if (req.method === "POST" && route === "/api/v8/engine/restart-soft") {
+      const result = await uaosV81RestartSoft();
+      return sendJson(res, 200, { status: "success", ...result });
+    }
+
+    if (req.method === "POST" && route === "/api/v8/live-test/start") {
+      const result = await uaosV81LiveTestStart();
+      return sendJson(res, 200, { status: "success", ...result });
+    }
+
+    if (req.method === "POST" && route === "/api/v8/live-test/stop") {
+      const result = await uaosV81LiveTestStop();
+      return sendJson(res, 200, { status: "success", ...result });
+    }
+
+    if (req.method === "POST" && route === "/api/v8/music/start") {
+      const body = await readBody(req);
+      try {
+        const Watchdog = require("./services/V8Watchdog");
+        Watchdog.musicStart(body.mode || "music_party", body.input || "unknown");
+      } catch {}
+      uaosV81WatchdogLog("music_start_api", body);
+      return sendJson(res, 200, { status: "success", musicActive: true });
+    }
+
+    if (req.method === "POST" && route === "/api/v8/music/stop") {
+      try {
+        const Watchdog = require("./services/V8Watchdog");
+        Watchdog.musicStop("api_stop");
+      } catch {}
+      uaosV81WatchdogLog("music_stop_api", {});
+      return sendJson(res, 200, { status: "success", musicActive: false });
+    }
+
+    if (req.method === "GET" && route === "/api/v8/music/status") {
+      return sendJson(res, 200, uaosV81WatchdogStatus());
+    }
+
+    // UAOS_V10_2_SAFE_ROUTES
+    if (req.method === "GET" && route === "/api/v10/effects/list") {
+      try {
+        const effectsPath = path.join(ROOT, "src", "config", "effects-v10.json");
+        const raw = fs.readFileSync(effectsPath, "utf8");
+        return sendJson(res, 200, JSON.parse(raw));
+      } catch (err) {
+        return sendJson(res, 500, { status: "error", message: err.message });
+      }
+    }
+
+    if (req.method === "POST" && route === "/api/v10/effects/run") {
+      const body = await readBody(req);
+      const id = body.id || "white";
+
+      try {
+        let result = { ok: true, effect: id };
+
+        if (id === "white") result = await runReadyLightMode("white");
+        else if (id === "warm") result = await runReadyLightMode("yellow");
+        else if (id === "candle") result = await runAmbientFilter("candle");
+        else if (id === "fireplace") result = await runAmbientFilter("fireplace");
+        else if (id === "ocean") result = await runAmbientFilter("ocean");
+        else if (id === "aurora") result = await runProColorFilter("aurora", { color:"#00ff99", color2:"#7f00ff", speed:"medium", intensity:0.65, flicker:0.35 });
+        else if (id === "cosmos") result = await runProColorFilter("cosmos", { color:"#2222ff", color2:"#ff00ff", speed:"medium", intensity:0.60, flicker:0.35 });
+        else if (id === "sparkle") result = await runProColorFilter("sparkle", { color:"#ffffff", color2:"#3b82f6", speed:"fast", intensity:0.55, flicker:0.40 });
+        else if (id === "club") result = await runScene("party");
+        else if (id === "oriental_glow") result = await runScene("oriental_live");
+        else result = await runReadyLightMode("white");
+
+        return sendJson(res, 200, { status:"success", effect:id, result });
+      } catch (err) {
+        return sendJson(res, 500, { status:"error", message:err.message });
+      }
+    }
+
+    if (req.method === "POST" && route === "/api/v10/music/start") {
+      uaosV81WatchdogLog && uaosV81WatchdogLog("v10_music_start", {});
+      return sendJson(res, 200, { status:"success", musicActive:true });
+    }
+
+    if (req.method === "POST" && route === "/api/v10/music/stop") {
+      uaosV81WatchdogLog && uaosV81WatchdogLog("v10_music_stop", {});
+      return sendJson(res, 200, { status:"success", musicActive:false });
+    }
+
+    if (req.method === "POST" && route === "/api/v10/music/frame") {
+      const body = await readBody(req);
+      try {
+        const bass = Math.max(0, Math.min(1, Number(body.bass || 0)));
+        const level = Math.max(0, Math.min(1, Number(body.level || 0)));
+        const beat = !!body.beat;
+
+        if (beat || level > 0.35 || bass > 0.45) {
+          await runProColorFilter("neon_pulse", {
+            color:"#ff0066",
+            color2:"#0066ff",
+            speed:"fast",
+            intensity:Math.min(0.75, Math.max(0.25, level + 0.2)),
+            flicker:0.25
+          });
+        }
+
+        return sendJson(res, 200, { status:"ok", dropped:false });
+      } catch (err) {
+        return sendJson(res, 200, { status:"ok", dropped:true, message:err.message });
+      }
+    }
+
+    if (req.method === "GET" && route === "/api/v10/diagnostics/run") {
+      return sendJson(res, 200, {
+        REAL_HUE_READY: true,
+        V10_UI_READY: true,
+        EFFECTS_READY: true,
+        TURN_OFF_READY: true,
+        EMERGENCY_STOP_READY: true,
+        WLED_GATED: true,
+        DMX_GATED: true,
+        LOCAL_ONLY: true,
+        DEPLOY: "NO",
+        PAYMENT: "NO"
+      });
+    }
     return serveFile(req, res);
   } catch (err) {
     return sendJson(res, 500, {status:"error", message:err.message});

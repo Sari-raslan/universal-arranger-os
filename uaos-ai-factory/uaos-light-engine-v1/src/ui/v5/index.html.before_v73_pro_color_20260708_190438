@@ -75,7 +75,7 @@
     <section class="smart-card">
       <div class="section-title">
         <span>Smart Filters</span>
-        <small>Ready controls</small>
+        <small>Ready presets</small>
       </div>
       <div class="filter-grid">
         <button class="filterCandle" onclick="runFilter('candle')">Candle</button>
@@ -85,11 +85,25 @@
         <button class="filter warm" onclick="runFilter('smart_warm')">Smart Warm</button>
       </div>
     </section>
+    
+    <section class="smart-card daily-presets">
+      <div class="section-title">
+        <span>Daily Presets</span>
+        <small>Ready presets</small>
+      </div>
+      <div class="filter-grid">
+        <button class="preset whiteMode" onclick="runReadyMode('white')">White</button>
+        <button class="preset yellowMode" onclick="runReadyMode('yellow')">Yellow</button>
+        <button class="preset nightMode" onclick="runReadyMode('night')">Night</button>
+        <button class="preset sleepMode" onclick="runReadyMode('sleep')">Sleep</button>
+        <button class="preset off" onclick="turnOffLights()">Turn Off</button>
+      </div>
+    </section>
 
     <section class="smart-card mood-presets">
       <div class="section-title">
         <span>Mood Filters</span>
-        <small>Ready controls</small>
+        <small>Ready presets</small>
       </div>
       <div class="filter-grid">
         <button class="filterRomantic" onclick="runFilter('romantic')">Romantic</button>
@@ -100,91 +114,6 @@
         <button class="filterPurpleRoom" onclick="runFilter('purple_room')">Purple</button>
         <button class="filterSunrise" onclick="runFilter('sunrise')">Sunrise</button>
         <button class="filter goldRoom" onclick="runFilter('gold_room')">Gold Room</button>
-      </div>
-    </section>
-    
-    <section class="smart-card pro-color-studio">
-      <div class="section-title">
-        <span>Pro Color Studio</span>
-        <small>Color + speed + motion controls</small>
-      </div>
-
-      <div class="studio-grid">
-        <label class="studio-field">
-          Base Color
-          <input id="proColor1" type="color" value="#ffb35c">
-        </label>
-
-        <label class="studio-field">
-          Second Color
-          <input id="proColor2" type="color" value="#3b82f6">
-        </label>
-
-        <label class="studio-field">
-          Filter
-          <select id="proFilter">
-            <option value="solid_color">Solid Color</option>
-            <option value="breath">Breathing</option>
-            <option value="candle_custom">Custom Candle</option>
-            <option value="fire_custom">Custom Fire</option>
-            <option value="ocean_wave">Ocean Wave</option>
-            <option value="cosmos">Cosmos</option>
-            <option value="aurora">Aurora</option>
-            <option value="neon_pulse">Neon Pulse</option>
-            <option value="rainbow_slow">Slow Rainbow</option>
-            <option value="sparkle">Sparkle</option>
-          </select>
-        </label>
-
-        <label class="studio-field">
-          Speed
-          <select id="proSpeed">
-            <option value="slow">Slow</option>
-            <option value="medium" selected>Medium</option>
-            <option value="fast">Fast</option>
-            <option value="ultra">Ultra</option>
-          </select>
-        </label>
-
-        <label class="studio-field wide">
-          Intensity <span id="proIntensityVal">65%</span>
-          <input id="proIntensity" type="range" min="10" max="100" value="65" oninput="proIntensityVal.textContent=this.value+'%'">
-        </label>
-
-        <label class="studio-field wide">
-          Flicker / Motion <span id="proFlickerVal">45%</span>
-          <input id="proFlicker" type="range" min="0" max="100" value="45" oninput="proFlickerVal.textContent=this.value+'%'">
-        </label>
-      </div>
-
-      <div class="studio-actions">
-        <button class="proRun" onclick="runProFilter()">Run Pro Filter</button>
-        <button class="proColor" onclick="runProSolid()">Apply Color</button>
-        <button class="off" onclick="turnOffLights()">Turn Off</button>
-        <button class="danger miniDanger" onclick="emergencyStop()">Emergency Stop</button>
-      </div>
-    </section>
-    
-    <section class="smart-card live-reliability">
-      <div class="section-title">
-        <span>Live Reliability</span>
-        <small>Watchdog + performance + safe live test</small>
-      </div>
-
-      <div class="reliability-grid">
-        <button class="restartBtn" onclick="restartEngineSoft()">Restart Engine</button>
-        <button class="liveBtn" onclick="startLiveTest()">Start 30 Min Live Test</button>
-        <button class="liveStopBtn" onclick="stopLiveTest()">Stop Live Test</button>
-        <button class="statusBtn" onclick="refreshPerformance()">Refresh Status</button>
-      </div>
-
-      <div class="perf-grid">
-        <div class="perf-card"><span>Hue Mode</span><strong id="perfHue">-</strong></div>
-        <div class="perf-card"><span>Commands</span><strong id="perfCommands">-</strong></div>
-        <div class="perf-card"><span>Dropped Frames</span><strong id="perfDropped">-</strong></div>
-        <div class="perf-card"><span>Music Mode</span><strong id="perfMusic">-</strong></div>
-        <div class="perf-card"><span>Watchdog</span><strong id="perfWatchdog">-</strong></div>
-        <div class="perf-card"><span>FPS Limit</span><strong id="perfFps">Safe</strong></div>
       </div>
     </section>
     <footer>

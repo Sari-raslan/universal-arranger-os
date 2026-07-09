@@ -75,7 +75,7 @@
     <section class="smart-card">
       <div class="section-title">
         <span>Smart Filters</span>
-        <small>Ready controls</small>
+        <small>Ready presets</small>
       </div>
       <div class="filter-grid">
         <button class="filterCandle" onclick="runFilter('candle')">Candle</button>
@@ -85,11 +85,25 @@
         <button class="filter warm" onclick="runFilter('smart_warm')">Smart Warm</button>
       </div>
     </section>
+    
+    <section class="smart-card daily-presets">
+      <div class="section-title">
+        <span>Daily Presets</span>
+        <small>Ready presets</small>
+      </div>
+      <div class="filter-grid">
+        <button class="preset whiteMode" onclick="runReadyMode('white')">White</button>
+        <button class="preset yellowMode" onclick="runReadyMode('yellow')">Yellow</button>
+        <button class="preset nightMode" onclick="runReadyMode('night')">Night</button>
+        <button class="preset sleepMode" onclick="runReadyMode('sleep')">Sleep</button>
+        <button class="preset off" onclick="turnOffLights()">Turn Off</button>
+      </div>
+    </section>
 
     <section class="smart-card mood-presets">
       <div class="section-title">
         <span>Mood Filters</span>
-        <small>Ready controls</small>
+        <small>Ready presets</small>
       </div>
       <div class="filter-grid">
         <button class="filterRomantic" onclick="runFilter('romantic')">Romantic</button>
@@ -188,7 +202,7 @@
       </div>
     </section>
     <footer>
-      <span>Local only • WLED/DMX gated • V4 PRO preserved</span>
+      <span>Local only â€¢ WLED/DMX gated â€¢ V4 PRO preserved</span>
     </footer>
   </main>
 </div>

@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>UAOS Light Engine</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<div class="app">
+  <header>
+    <div>
+      <h1>UAOS Light Engine</h1>
+      <p>18-Light Hybrid Hue Controller</p>
+    </div>
+    <div id="conn" class="pill">Checking...</div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="status-card">
+        <span>Active Scene</span>
+        <strong id="activeScene">Idle</strong>
+      </div>
+      <div class="status-card">
+        <span>Engine</span>
+        <strong id="engineStatus">Unknown</strong>
+      </div>
+    </section>
+
+    <section class="buttons">
+      <button onclick="startEngine()">Start Engine</button>
+      <button onclick="runScene('party')">Party</button>
+      <button onclick="runScene('oriental_live')">Oriental Live</button>
+      <button onclick="runScene('calm')">Calm</button>
+      <button onclick="showPanel('favorites')">Favorites</button>
+      <button onclick="openAdvanced()">Scene Studio</button>
+      <button onclick="showPanel('settings')">Settings</button>
+<button class="whiteMode" onclick="runReadyMode('white')">White</button>
+<button class="yellowMode" onclick="runReadyMode('yellow')">Yellow</button>
+<button class="nightMode" onclick="runReadyMode('night')">Night Mode</button>
+<button class="sleepMode" onclick="runReadyMode('sleep')">Sleep Mode</button>
+      <button class="off" onclick="turnOffLights()">Turn Off</button><button class="danger" onclick="emergencyStop()">Emergency Stop</button>
+    </section>
+
+    <section id="favorites" class="panel hidden">
+      <h2>Favorites</h2>
+      <div class="favgrid">
+        <button onclick="runFavorite(1)">1</button>
+        <button onclick="runFavorite(2)">2</button>
+        <button onclick="runFavorite(3)">3</button>
+        <button onclick="runFavorite(4)">4</button>
+        <button onclick="runFavorite(5)">5</button>
+        <button onclick="runFavorite(6)">6</button>
+        <button onclick="runFavorite(7)">7</button>
+        <button onclick="runFavorite(8)">8</button>
+        <button onclick="runFavorite(9)">9</button>
+      </div>
+    </section>
+
+    <section id="settings" class="panel hidden">
+      <h2>Settings</h2>
+      <label>Brightness <span id="brightnessValue">80%</span></label>
+      <input id="brightness" type="range" min="10" max="80" value="80" oninput="brightnessValue.textContent=this.value+'%'">
+      <details>
+        <summary>Party / Oriental Advanced</summary>
+        <label>BPM <span id="bpmValue">120</span></label>
+        <input id="bpm" type="range" min="60" max="180" value="120" oninput="bpmValue.textContent=this.value">
+        <button onclick="tapTempo()">Tap Tempo</button>
+      </details>
+      <button onclick="openAdvanced()">Open V4 Advanced Dashboard</button>
+    </section>
+
+    
+    <section class="smart-card">
+      <div class="section-title">
+        <span>Smart Filters</span>
+        <small>ط¬ط§ظ‡ط²ط© ظ„ظ„ط£ط¬ظˆط§ط، ط§ظ„ظ‡ط§ط¯ط¦ط©</small>
+      </div>
+      <div class="filter-grid">
+        <button class="filter candle" onclick="runFilter('candle')">ًں•¯ Candle</button>
+        <button class="filter fire" onclick="runFilter('fireplace')">ًں”¥ Fireplace</button>
+        <button class="filter sunset" onclick="runFilter('sunset')">ًںŒ… Sunset</button>
+        <button class="filter ocean" onclick="runFilter('ocean')">ًںŒٹ Ocean</button>
+        <button class="filter warm" onclick="runFilter('smart_warm')">ًں’› Smart Warm</button>
+      </div>
+    </section>
+    
+    <section class="smart-card daily-presets">
+      <div class="section-title">
+        <span>Daily Presets</span>
+        <small>استخدام يومي سريع</small>
+      </div>
+      <div class="filter-grid">
+        <button class="preset whiteMode" onclick="runReadyMode('white')">White</button>
+        <button class="preset yellowMode" onclick="runReadyMode('yellow')">Yellow</button>
+        <button class="preset nightMode" onclick="runReadyMode('night')">Night</button>
+        <button class="preset sleepMode" onclick="runReadyMode('sleep')">Sleep</button>
+        <button class="preset off" onclick="turnOffLights()">Turn Off</button>
+      </div>
+    </section>
+
+    <section class="smart-card mood-presets">
+      <div class="section-title">
+        <span>Mood Filters</span>
+        <small>فلاتر جاهزة للأجواء</small>
+      </div>
+      <div class="filter-grid">
+        <button class="filter romantic" onclick="runFilter('romantic')">💗 Romantic</button>
+        <button class="filter cinema" onclick="runFilter('cinema')">🎬 Cinema</button>
+        <button class="filter reading" onclick="runFilter('reading')">📖 Reading</button>
+        <button class="filter focus" onclick="runFilter('focus')">🎯 Focus</button>
+        <button class="filter blueSoft" onclick="runFilter('blue_soft')">🔵 Blue Soft</button>
+        <button class="filter purpleRoom" onclick="runFilter('purple_room')">🟣 Purple</button>
+        <button class="filter sunrise" onclick="runFilter('sunrise')">🌄 Sunrise</button>
+        <button class="filter goldRoom" onclick="runFilter('gold_room')">✨ Gold Room</button>
+      </div>
+    </section>
+    <footer>
+      <span>Local only • WLED/DMX gated • V4 PRO preserved</span>
+    </footer>
+  </main>
+</div>
+<script src="./app.js"></script>
+</body>
+</html>

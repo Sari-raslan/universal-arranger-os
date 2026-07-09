@@ -1,0 +1,549 @@
+const http = require("http");
+const fs = require("fs");
+const path = require("path");
+const url = require("url");
+
+const ROOT = path.resolve(__dirname, "..");
+const PORT = 3000;
+
+const primary = [10,11,12,13,14,15,16,17,18,19];
+const ambient = [20,21,22,23,24,25,26,27];
+const allLights = [...primary, ...ambient];
+
+let activeScene = "idle";
+let commandCount = 0;
+let lastHueMode = "UNKNOWN";
+let ambientEffectTimer = null;
+
+function sendJson(res, code, obj) {
+  res.writeHead(code, {
+    "Content-Type": "application/json",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Allow-Methods": "GET,POST,OPTIONS",
+    "Access-Control-Allow-Headers": "Content-Type"
+  });
+  res.end(JSON.stringify(obj, null, 2));
+}
+
+function readBody(req) {
+  return new Promise(resolve => {
+    let body = "";
+    req.on("data", chunk => body += chunk);
+    req.on("end", () => {
+      try { resolve(body ? JSON.parse(body) : {}); }
+      catch { resolve({}); }
+    });
+  });
+}
+
+function loadJsonSafe(file) {
+  try {
+    if (!fs.existsSync(file)) return null;
+    return JSON.parse(fs.readFileSync(file, "utf8").replace(/^\uFEFF/, ""));
+  } catch {
+    return null;
+  }
+}
+
+function walkFiles(dir, out = []) {
+  if (!fs.existsSync(dir)) return out;
+  for (const name of fs.readdirSync(dir)) {
+    const p = path.join(dir, name);
+    try {
+      const st = fs.statSync(p);
+      if (st.isDirectory()) walkFiles(p, out);
+      else out.push(p);
+    } catch {}
+  }
+  return out;
+}
+
+function findDeep(obj, keys) {
+  if (!obj || typeof obj !== "object") return null;
+  for (const k of Object.keys(obj)) {
+    if (keys.includes(String(k).toLowerCase()) && obj[k] && typeof obj[k] === "string") {
+      return obj[k];
+    }
+  }
+  for (const k of Object.keys(obj)) {
+    const v = obj[k];
+    if (v && typeof v === "object") {
+      const found = findDeep(v, keys);
+      if (found) return found;
+    }
+  }
+  return null;
+}
+
+function findHueConfig() {
+  const configDir = path.join(ROOT, "src", "config");
+  const files = walkFiles(configDir).filter(f => f.toLowerCase().endsWith(".json"));
+
+  let ip = "192.168.178.20";
+  let username = "";
+
+  for (const f of files) {
+    const j = loadJsonSafe(f);
+    if (!j) continue;
+
+    const maybeIp = findDeep(j, ["ip", "bridgeip", "bridge_ip", "host"]);
+    if (maybeIp && /^(\d{1,3}\.){3}\d{1,3}$/.test(maybeIp)) ip = maybeIp;
+
+    const maybeUser = findDeep(j, [
+      "username",
+      "user",
+      "token",
+      "apikey",
+      "api_key",
+      "bridgeusername",
+      "bridge_username",
+      "hueusername",
+      "hue_username"
+    ]);
+
+    if (
+      maybeUser &&
+      maybeUser.length > 8 &&
+      !maybeUser.toLowerCase().includes("existing") &&
+      !maybeUser.toLowerCase().includes("token") &&
+      !maybeUser.toLowerCase().includes("placeholder")
+    ) {
+      username = maybeUser;
+      break;
+    }
+  }
+
+  return { ip, username };
+}
+
+function huePut(ip, username, lightId, state) {
+  return new Promise(resolve => {
+    if (!username) {
+      lastHueMode = "NO_HUE_TOKEN_FOUND";
+      return resolve({ ok:false, simulated:false, error:"NO_HUE_TOKEN_FOUND", lightId });
+    }
+
+    const data = JSON.stringify(state);
+    const req = http.request({
+      hostname: ip,
+      port: 80,
+      path: `/api/${encodeURIComponent(username)}/lights/${lightId}/state`,
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+        "Content-Length": Buffer.byteLength(data)
+      },
+      timeout: 2500
+    }, res => {
+      let body = "";
+      res.on("data", d => body += d);
+      res.on("end", () => {
+        lastHueMode = "REAL_HUE_API";
+        resolve({ ok:true, lightId, response: body });
+      });
+    });
+
+    req.on("error", err => {
+      lastHueMode = "HUE_API_ERROR";
+      resolve({ ok:false, lightId, error: err.message });
+    });
+
+    req.on("timeout", () => {
+      req.destroy();
+      lastHueMode = "HUE_API_TIMEOUT";
+      resolve({ ok:false, lightId, error:"timeout" });
+    });
+
+    req.write(data);
+    req.end();
+  });
+}
+
+async function setLight(id, state) {
+  const cfg = findHueConfig();
+  return await huePut(cfg.ip, cfg.username, id, state);
+}
+
+async function runScene(sceneId) {
+  stopAmbientEffect();
+  activeScene = sceneId || "calm";
+  commandCount++;
+
+  let statePrimary = { on:true, bri:120, ct:366, transitiontime:10 };
+  let stateAmbient = { on:true, bri:100, ct:400, transitiontime:15 };
+
+  if (sceneId === "party") {
+    statePrimary = { on:true, bri:204, xy:[0.17,0.08], transitiontime:2 };
+    stateAmbient = { on:true, bri:135, xy:[0.31,0.14], transitiontime:12 };
+  }
+
+  if (sceneId === "oriental_live") {
+    statePrimary = { on:true, bri:185, xy:[0.55,0.38], transitiontime:8 };
+    stateAmbient = { on:true, bri:135, xy:[0.62,0.33], transitiontime:18 };
+  }
+
+  if (sceneId === "calm") {
+    statePrimary = { on:true, bri:95, ct:400, transitiontime:20 };
+    stateAmbient = { on:true, bri:95, ct:420, transitiontime:20 };
+  }
+
+  const results = [];
+  for (const id of primary) results.push(await setLight(id, statePrimary));
+  for (const id of ambient) results.push(await setLight(id, stateAmbient));
+
+  return {
+    ok: true,
+    sceneId,
+    hueMode: lastHueMode,
+    successCount: results.filter(r => r.ok).length,
+    failCount: results.filter(r => !r.ok).length,
+    results
+  };
+}
+
+async function emergencyStop() {
+  stopAmbientEffect();
+  activeScene = "emergency_stop";
+  commandCount++;
+
+  const results = [];
+  for (const id of allLights) {
+    results.push(await setLight(id, { on:true, bri:76, ct:366, transitiontime:5 }));
+  }
+
+  return {
+    ok: true,
+    message: "Emergency Stop warm white 30%",
+    hueMode: lastHueMode,
+    successCount: results.filter(r => r.ok).length,
+    failCount: results.filter(r => !r.ok).length
+  };
+}
+
+
+async function allLightsOff() {
+  stopAmbientEffect();
+  activeScene = "all_lights_off";
+  commandCount++;
+
+  const results = [];
+  for (const id of allLights) {
+    results.push(await setLight(id, { on:false }));
+  }
+
+  return {
+    ok: true,
+    mode: "ALL_LIGHTS_OFF",
+    lightCount: 18,
+    hueMode: lastHueMode,
+    successCount: results.filter(r => r.ok).length,
+    failCount: results.filter(r => !r.ok).length
+  };
+}
+
+async function runReadyLightMode(mode) {
+  activeScene = mode;
+  commandCount++;
+
+  let state = { on:true, bri:140, ct:366, transitiontime:10 };
+
+  if (mode === "white") {
+    state = { on:true, bri:204, ct:250, transitiontime:8 };
+  }
+
+  if (mode === "yellow") {
+    state = { on:true, bri:170, ct:430, transitiontime:10 };
+  }
+
+  if (mode === "night") {
+    state = { on:true, bri:38, ct:454, transitiontime:20 };
+  }
+
+  if (mode === "sleep") {
+    state = { on:true, bri:15, ct:500, transitiontime:40 };
+  }
+
+  const results = [];
+  for (const id of allLights) {
+    results.push(await setLight(id, state));
+  }
+
+  return {
+    ok: true,
+    mode,
+    lightCount: 18,
+    hueMode: lastHueMode,
+    successCount: results.filter(r => r.ok).length,
+    failCount: results.filter(r => !r.ok).length
+  };
+}
+
+function stopAmbientEffect() {
+  if (ambientEffectTimer) {
+    clearInterval(ambientEffectTimer);
+    ambientEffectTimer = null;
+  }
+}
+
+function rand(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+async function runAmbientFilter(mode) {
+  stopAmbientEffect();
+  activeScene = mode;
+  commandCount++;
+
+  if (mode === "candle") {
+    const tick = async () => {
+      for (const id of allLights) {
+        await setLight(id, {
+          on: true,
+          bri: rand(35, 95),
+          ct: rand(430, 500),
+          transitiontime: rand(8, 18)
+        });
+      }
+    };
+    await tick();
+    ambientEffectTimer = setInterval(tick, 2400);
+    return { ok:true, mode:"CANDLE_FILTER", lightCount:18 };
+  }
+
+  if (mode === "fireplace") {
+    const fireColors = [
+      [0.67, 0.32],
+      [0.60, 0.36],
+      [0.54, 0.40],
+      [0.50, 0.43]
+    ];
+    const tick = async () => {
+      for (const id of allLights) {
+        const xy = fireColors[rand(0, fireColors.length - 1)];
+        await setLight(id, {
+          on: true,
+          bri: rand(55, 140),
+          xy,
+          transitiontime: rand(10, 22)
+        });
+      }
+    };
+    await tick();
+    ambientEffectTimer = setInterval(tick, 2800);
+    return { ok:true, mode:"FIREPLACE_FILTER", lightCount:18 };
+  }
+
+  if (mode === "sunset") {
+    stopAmbientEffect();
+    for (const id of allLights) {
+      await setLight(id, {
+        on: true,
+        bri: 120,
+        xy: [0.58, 0.36],
+        transitiontime: 35
+      });
+    }
+    return { ok:true, mode:"SUNSET_FILTER", lightCount:18 };
+  }
+
+  if (mode === "ocean") {
+    stopAmbientEffect();
+    for (const id of allLights) {
+      await setLight(id, {
+        on: true,
+        bri: 110,
+        xy: [0.17, 0.22],
+        transitiontime: 30
+      });
+    }
+    return { ok:true, mode:"OCEAN_FILTER", lightCount:18 };
+  }
+
+  if (mode === "smart_warm") {
+    stopAmbientEffect();
+    for (const id of allLights) {
+      await setLight(id, {
+        on: true,
+        bri: 145,
+        ct: 400,
+        transitiontime: 20
+      });
+    }
+    return { ok:true, mode:"SMART_WARM_FILTER", lightCount:18 };
+  }
+
+
+  // FINAL_UAOS_SMART_FILTERS_V72
+  if (mode === "romantic") {
+    stopAmbientEffect();
+    for (const id of allLights) {
+      await setLight(id, { on:true, bri:95, xy:[0.50,0.24], transitiontime:28 });
+    }
+    return { ok:true, mode:"ROMANTIC_FILTER", lightCount:18 };
+  }
+
+  if (mode === "cinema") {
+    stopAmbientEffect();
+    for (const id of primary) {
+      await setLight(id, { on:false, transitiontime:10 });
+    }
+    for (const id of ambient) {
+      await setLight(id, { on:true, bri:45, ct:454, transitiontime:25 });
+    }
+    return { ok:true, mode:"CINEMA_FILTER", lightCount:18 };
+  }
+
+  if (mode === "reading") {
+    stopAmbientEffect();
+    for (const id of allLights) {
+      await setLight(id, { on:true, bri:155, ct:330, transitiontime:16 });
+    }
+    return { ok:true, mode:"READING_FILTER", lightCount:18 };
+  }
+
+  if (mode === "focus") {
+    stopAmbientEffect();
+    for (const id of allLights) {
+      await setLight(id, { on:true, bri:175, ct:280, transitiontime:16 });
+    }
+    return { ok:true, mode:"FOCUS_FILTER", lightCount:18 };
+  }
+
+  if (mode === "blue_soft") {
+    stopAmbientEffect();
+    for (const id of allLights) {
+      await setLight(id, { on:true, bri:105, xy:[0.16,0.17], transitiontime:26 });
+    }
+    return { ok:true, mode:"BLUE_SOFT_FILTER", lightCount:18 };
+  }
+
+  if (mode === "purple_room") {
+    stopAmbientEffect();
+    for (const id of allLights) {
+      await setLight(id, { on:true, bri:115, xy:[0.30,0.12], transitiontime:26 });
+    }
+    return { ok:true, mode:"PURPLE_ROOM_FILTER", lightCount:18 };
+  }
+
+  if (mode === "sunrise") {
+    stopAmbientEffect();
+    for (const id of allLights) {
+      await setLight(id, { on:true, bri:135, xy:[0.48,0.41], transitiontime:40 });
+    }
+    return { ok:true, mode:"SUNRISE_FILTER", lightCount:18 };
+  }
+
+  if (mode === "gold_room") {
+    stopAmbientEffect();
+    for (const id of allLights) {
+      await setLight(id, { on:true, bri:160, xy:[0.52,0.42], transitiontime:22 });
+    }
+    return { ok:true, mode:"GOLD_ROOM_FILTER", lightCount:18 };
+  }
+  return { ok:false, error:"UNKNOWN_FILTER", mode };
+}
+function serveFile(req, res) {
+  let pathname = decodeURIComponent(url.parse(req.url).pathname || "/");
+  if (pathname === "/") pathname = "/src/ui/v5/index.html";
+
+  const filePath = path.join(ROOT, pathname.replace(/^\/+/, ""));
+  if (!filePath.startsWith(ROOT)) {
+    res.writeHead(403);
+    return res.end("Forbidden");
+  }
+
+  fs.readFile(filePath, (err, data) => {
+    if (err) {
+      res.writeHead(404, {"Content-Type":"text/plain"});
+      return res.end("Not found");
+    }
+
+    const ext = path.extname(filePath).toLowerCase();
+    const types = {
+      ".html":"text/html; charset=utf-8",
+      ".js":"application/javascript; charset=utf-8",
+      ".css":"text/css; charset=utf-8",
+      ".json":"application/json; charset=utf-8",
+      ".md":"text/markdown; charset=utf-8"
+    };
+
+    res.writeHead(200, {"Content-Type": types[ext] || "application/octet-stream"});
+    res.end(data);
+  });
+}
+
+const server = http.createServer(async (req, res) => {
+  if (req.method === "OPTIONS") return sendJson(res, 200, {ok:true});
+
+  const route = url.parse(req.url, true).pathname;
+
+  try {
+    if (req.method === "GET" && (route === "/api/v4/status" || route === "/api/v5/status")) {
+      const cfg = findHueConfig();
+      return sendJson(res, 200, {
+        status: "READY",
+        bridge: cfg.username ? "REAL_HUE_READY" : "NO_HUE_TOKEN_FOUND",
+        bridgeIp: cfg.ip,
+        hueTokenFound: !!cfg.username,
+        activeScene,
+        lightCount: 18,
+        primarySyncLights: primary,
+        ambientLights: ambient,
+        commandCount,
+        lastHueMode
+      });
+    }
+
+    if (req.method === "POST" && (route === "/api/v4/scene/run" || route === "/api/v5/scene")) {
+      const body = await readBody(req);
+      const result = await runScene(body.sceneId || body.scene || "calm");
+      return sendJson(res, 200, {status:"success", ...result});
+    }
+
+    if (req.method === "POST" && (route === "/api/v4/emergency-stop" || route === "/api/v5/emergency-stop")) {
+      const result = await emergencyStop();
+      return sendJson(res, 200, {status:"success", ...result});
+    }
+
+
+    if (req.method === "POST" && (route === "/api/v5/lights/off" || route === "/api/v4/lights/off")) {
+      const result = await allLightsOff();
+      return sendJson(res, 200, {status:"success", ...result});
+    }
+
+    if (req.method === "POST" && (route === "/api/v5/lights/mode" || route === "/api/v4/lights/mode")) {
+      const body = await readBody(req);
+      const result = await runReadyLightMode(body.mode || "white");
+      return sendJson(res, 200, {status:"success", ...result});
+    }
+
+    if (req.method === "POST" && (route === "/api/v5/filter" || route === "/api/v4/filter")) {
+      const body = await readBody(req);
+      const result = await runAmbientFilter(body.mode || "smart_warm");
+      return sendJson(res, 200, {status:"success", ...result});
+    }
+    if (req.method === "POST" && route === "/api/v4/bpm/tap") {
+      return sendJson(res, 200, {bpm:120, status:"tap-ready"});
+    }
+
+    if (req.method === "GET" && route === "/api/v4/wled/status") {
+      return sendJson(res, 200, {enabled:false, realOutputEnabled:false, gated:true});
+    }
+
+    if (req.method === "GET" && route === "/api/v4/dmx/status") {
+      return sendJson(res, 200, {enabled:false, realOutputEnabled:false, gated:true});
+    }
+
+    return serveFile(req, res);
+  } catch (err) {
+    return sendJson(res, 500, {status:"error", message:err.message});
+  }
+});
+
+server.listen(PORT, () => {
+  const cfg = findHueConfig();
+  console.log(`UAOS Light Engine server running on http://localhost:${PORT}`);
+  console.log(`Hue Bridge IP: ${cfg.ip}`);
+  console.log(`Hue token found: ${!!cfg.username}`);
+  console.log(`V5 app: http://localhost:${PORT}/src/ui/v5/index.html`);
+});
