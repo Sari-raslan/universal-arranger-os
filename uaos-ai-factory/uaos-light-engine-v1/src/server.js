@@ -2,6 +2,7 @@ const http = require("http");
 const fs = require("fs");
 const path = require("path");
 const url = require("url");
+const AmbientMagicEngine = require("./services/AmbientMagicEngine");
 
 const ROOT = path.resolve(__dirname, "..");
 const PORT = 3000;
@@ -14,6 +15,7 @@ let activeScene = "idle";
 let commandCount = 0;
 let lastHueMode = "UNKNOWN";
 let ambientEffectTimer = null;
+let ambientMagicEngine = null;
 
 function sendJson(res, code, obj) {
   res.writeHead(code, {
@@ -164,6 +166,44 @@ async function setLight(id, state) {
   return await huePut(cfg.ip, cfg.username, id, state);
 }
 
+function getAmbientMagicEngine() {
+  if (!ambientMagicEngine) {
+    ambientMagicEngine = new AmbientMagicEngine({
+      setLight,
+      primary,
+      ambient,
+      onScene: scene => { activeScene = scene; commandCount++; }
+    });
+  }
+  return ambientMagicEngine;
+}
+
+function ambientFavoritesPath() {
+  return path.join(ROOT, "src", "config", "ambient-favorites-v10.json");
+}
+
+function loadAmbientFavorites() {
+  const file = ambientFavoritesPath();
+  const data = loadJsonSafe(file);
+  if (data && Array.isArray(data.slots)) return data;
+  return { slots: [] };
+}
+
+function saveAmbientFavorites(data) {
+  fs.writeFileSync(ambientFavoritesPath(), JSON.stringify(data, null, 2) + "\n", "utf8");
+}
+
+async function runAmbientMagic(body = {}) {
+  stopAmbientEffect();
+  return await getAmbientMagicEngine().run(body);
+}
+
+async function stopAmbientMagic(reason = "ambient_stop") {
+  const result = getAmbientMagicEngine().stop(reason);
+  if (activeScene && String(activeScene).startsWith("ambient_")) activeScene = "idle";
+  return result;
+}
+
 async function runScene(sceneId) {
   stopAmbientEffect();
   activeScene = sceneId || "calm";
@@ -286,6 +326,9 @@ function stopAmbientEffect() {
   if (ambientEffectTimer) {
     clearInterval(ambientEffectTimer);
     ambientEffectTimer = null;
+  }
+  if (ambientMagicEngine) {
+    ambientMagicEngine.stop("legacy_stop");
   }
 }
 
@@ -910,6 +953,70 @@ const server = http.createServer(async (req, res) => {
       return sendJson(res, 200, uaosV81WatchdogStatus());
     }
 
+    if (req.method === "GET" && route === "/api/v10/ambient/list") {
+      return sendJson(res, 200, getAmbientMagicEngine().list());
+    }
+
+    if (req.method === "POST" && route === "/api/v10/ambient/run") {
+      const body = await readBody(req);
+      const result = await runAmbientMagic(body);
+      return sendJson(res, result.ok ? 200 : 400, result);
+    }
+
+    if (req.method === "POST" && route === "/api/v10/ambient/stop") {
+      const result = await stopAmbientMagic("api_stop");
+      return sendJson(res, 200, result);
+    }
+
+    if (req.method === "GET" && route === "/api/v10/ambient/status") {
+      return sendJson(res, 200, {
+        ...getAmbientMagicEngine().status(),
+        activeScene,
+        hueMode: lastHueMode,
+        lightCount: 18,
+        primarySyncLights: primary,
+        ambientLights: ambient,
+        wledGated: true,
+        dmxGated: true,
+        localOnly: true
+      });
+    }
+
+    if (req.method === "GET" && route === "/api/v10/ambient/favorites") {
+      return sendJson(res, 200, { status: "success", ...loadAmbientFavorites(), ownerFavorite: "Oriental Lantern" });
+    }
+
+    if (req.method === "POST" && route === "/api/v10/ambient/favorites/save") {
+      const body = await readBody(req);
+      const slot = clampNum(body.slot, 1, 9, 1);
+      const current = loadAmbientFavorites();
+      const existing = current.slots.filter(item => Number(item.slot) !== slot);
+      const name = body.name || `Favorite ${slot}`;
+      const favorite = {
+        slot,
+        name,
+        effectId: body.effectId || body.id || "candle",
+        speed: body.speed || "slow",
+        intensity: clampNum(body.intensity, 0.1, 1, 0.45),
+        warmth: clampNum(body.warmth, 0.1, 1, 0.85),
+        motion: clampNum(body.motion, 0.1, 1, 0.35),
+        brightnessCap: clampNum(body.brightnessCap || body.brightness, 1, 80, 45),
+        room: ["full", "primary", "ambient"].includes(body.room) ? body.room : "full"
+      };
+      current.slots = [...existing, favorite].sort((a, b) => Number(a.slot) - Number(b.slot));
+      saveAmbientFavorites(current);
+      return sendJson(res, 200, { status: "success", favorite });
+    }
+
+    if (req.method === "POST" && route === "/api/v10/ambient/favorites/run") {
+      const body = await readBody(req);
+      const slot = clampNum(body.slot, 1, 9, 1);
+      const favorite = loadAmbientFavorites().slots.find(item => Number(item.slot) === slot);
+      if (!favorite) return sendJson(res, 404, { status: "error", error: "FAVORITE_NOT_FOUND", slot });
+      const result = await runAmbientMagic(favorite);
+      return sendJson(res, result.ok ? 200 : 400, { status: result.status, favorite, result });
+    }
+
     // UAOS_V10_2_SAFE_ROUTES
     if (req.method === "GET" && route === "/api/v10/effects/list") {
       try {
@@ -928,10 +1035,11 @@ const server = http.createServer(async (req, res) => {
       try {
         let result = { ok: true, effect: id };
 
-        if (id === "white") result = await runReadyLightMode("white");
+        const ambientIds = ["candle", "fireplace", "lantern", "embers", "sunset", "romantic", "night", "sleep", "clouds", "oriental_lantern"];
+
+        if (ambientIds.includes(id)) result = await runAmbientMagic({ ...body, effectId: id });
+        else if (id === "white") result = await runReadyLightMode("white");
         else if (id === "warm") result = await runReadyLightMode("yellow");
-        else if (id === "candle") result = await runAmbientFilter("candle");
-        else if (id === "fireplace") result = await runAmbientFilter("fireplace");
         else if (id === "ocean") result = await runAmbientFilter("ocean");
         else if (id === "aurora") result = await runProColorFilter("aurora", { color:"#00ff99", color2:"#7f00ff", speed:"medium", intensity:0.65, flicker:0.35 });
         else if (id === "cosmos") result = await runProColorFilter("cosmos", { color:"#2222ff", color2:"#ff00ff", speed:"medium", intensity:0.60, flicker:0.35 });

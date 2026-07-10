@@ -1,383 +1,45 @@
-﻿<!doctype html>
-<html lang="ar" dir="rtl">
+<!doctype html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
-<title>UAOS Light Engine V2.3 Dashboard</title>
+<title>UAOS Light Engine V10 Ambient Magic</title>
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <style>
-:root{--bg:#111827;--card:#1f2937;--line:#374151;--text:#fff;--muted:#cbd5e1;--ok:#16a34a;--blue:#2563eb;--red:#dc2626;--warn:#d97706;--black:#020617}
 *{box-sizing:border-box}
-body{font-family:Segoe UI,Tahoma,sans-serif;background:var(--bg);color:var(--text);margin:0;padding:22px}
-h1{margin:0 0 16px;font-size:28px}
-.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;margin-bottom:16px;box-shadow:0 6px 20px rgba(0,0,0,.18)}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
-button,input,select{padding:10px;margin:5px;border-radius:8px;border:1px solid #4b5563}
-input,select{background:#0b1220;color:#fff}
-button{background:var(--blue);color:#fff;font-weight:700;cursor:pointer}
-button.ok{background:var(--ok)}button.danger{background:var(--red)}button.warn{background:var(--warn)}
-button:disabled{opacity:.45;cursor:not-allowed}
-pre{background:var(--black);color:#d1fae5;padding:14px;border-radius:10px;direction:ltr;text-align:left;white-space:pre-wrap;max-height:360px;overflow:auto}
-.meter{height:22px;background:#020617;border-radius:10px;overflow:hidden;margin:8px 0}.bar{height:100%;width:0%;background:#22c55e;transition:width .08s linear}
-.kv{display:grid;grid-template-columns:1fr 1fr;gap:8px}.kv div{background:#111827;padding:8px;border-radius:8px;border:1px solid #374151}
-.good{color:#86efac}.bad{color:#fca5a5}.warntext{color:#fbbf24}.small{font-size:13px;color:var(--muted)}
-.ltr{direction:ltr;text-align:left}
+body{margin:0;background:#17130f;color:#fff7ed;font-family:Segoe UI,Tahoma,Arial,sans-serif;padding:24px}
+.wrap{max-width:960px;margin:0 auto}
+.tile{border:1px solid rgba(251,191,36,.28);border-radius:8px;background:#241b14;padding:22px}
+h1{margin:0;font-size:34px}
+p{color:#d8c4aa;font-size:18px;margin:8px 0 18px}
+.buttons{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px}
+button,a{display:flex;align-items:center;justify-content:center;min-height:58px;border:1px solid rgba(251,191,36,.28);border-radius:8px;background:#8a4b1f;color:#fffaf0;font:inherit;font-weight:800;text-decoration:none;cursor:pointer}
+.off{background:#221f1b}.danger{background:#9f1d1d}
+.note{margin-top:16px;font-size:14px;color:#c7b08f}
 </style>
 </head>
 <body>
-<h1>UAOS Light Engine V2.3 — Dashboard + Microphone Flow Fix</h1>
-
-<div class="card">
-<b>الحالة:</b> Backend Beat Simulator أثبت أن الـ 18 لمبة تتحرك. هذه الواجهة تصلح الأزرار والميكروفون وتضيف Test Beat داخل المتصفح.
-</div>
-
-<div class="grid">
-  <div class="card">
-    <h2>Music Sense Control</h2>
-    <label>Preset</label><br>
-    <select id="preset">
-      <option>Oriental Live</option><option>Calm</option><option>Pop</option><option>Club</option><option>Full Room</option>
-    </select><br>
-    <label>Sensitivity</label><br>
-    <input id="sensitivity" type="range" min="0.3" max="2" step="0.05" value="1"><span id="sensv">1</span><br>
-    <label>Brightness Cap</label><br>
-    <input id="brightnessCap" type="range" min="0.1" max="1" step="0.05" value="0.75"><span id="bcapv">0.75</span><br>
-
-    <button class="ok" onclick="startDryRun()">Start DRY_RUN</button>
-    <button class="warn" onclick="enableFullRoom()">Enable Full Room Music</button>
-    <button class="ok" onclick="startRealMusic()">Start REAL Music Sense</button>
-    <button onclick="stopMusic()">Stop</button>
-    <button class="danger" onclick="emergencyStop()">Emergency Stop</button>
-    <hr>
-    <button class="warn" onclick="testBeat()">Test Beat بدون ميكروفون</button>
-    <button onclick="restartMicrophone()">Restart Microphone</button>
-  </div>
-
-  <div class="card">
-    <h2>Audio Meters</h2>
-    <div>Bass</div><div class="meter"><div id="bass" class="bar"></div></div>
-    <div>Mid</div><div class="meter"><div id="mid" class="bar"></div></div>
-    <div>Treble</div><div class="meter"><div id="treble" class="bar"></div></div>
-    <div>RMS</div><div class="meter"><div id="rms" class="bar"></div></div>
-    <div id="micWarn" class="warntext small"></div>
-  </div>
-
-  <div class="card">
-    <h2>Status Panel</h2>
-    <div class="kv">
-      <div>Server: <b id="serverOk" class="bad">NO</b></div>
-      <div>Mic Permission: <b id="micOk" class="bad">NO</b></div>
-      <div>Frames Sent: <b id="framesSent">0</b></div>
-      <div>Gate Allowed: <b id="gateAllowed" class="bad">NO</b></div>
-      <div>Scheduler Running: <b id="schedRun" class="bad">NO</b></div>
-      <div>Scheduler Sent: <b id="schedSent">0</b></div>
-      <div>Last Error: <b id="lastErr">-</b></div>
-      <div>Mapped Lights: <b id="mapped">-</b></div>
+<main class="wrap">
+  <section class="tile">
+    <h1>UAOS Light Engine V10 Ambient Magic</h1>
+    <p>Candle · Fireplace · Lantern · Warm Moving Lights · Real Hue</p>
+    <div class="buttons">
+      <a href="/src/ui/v10/index.html">Open Ambient Magic</a>
+      <button onclick="runAmbient('candle')">Run Candle</button>
+      <button onclick="runAmbient('fireplace')">Run Fireplace</button>
+      <button onclick="runAmbient('lantern')">Run Lantern</button>
+      <button class="off" onclick="post('/api/v5/lights/off',{})">Turn Off</button>
+      <button class="danger" onclick="post('/api/v4/emergency-stop',{})">Emergency Stop</button>
     </div>
-  </div>
-</div>
-
-<div class="card">
-<h2>Full Room Confirmation</h2>
-<p>للتشغيل الحقيقي على 18 لمبة اكتب بالضبط:</p>
-<pre>I UNDERSTAND FULL ROOM MUSIC OUTPUT</pre>
-<input id="confirmText" class="ltr" style="width:440px;max-width:90%" value="I UNDERSTAND FULL ROOM MUSIC OUTPUT">
-</div>
-
-<div class="card">
-<h2>Last Frame</h2>
-<pre id="lastFrame">No frame yet</pre>
-</div>
-
-<div class="card">
-<h2>Status / Log</h2>
-<button onclick="pollStatus()">Refresh Status</button>
-<button onclick="loadZoneMap()">Load Zone Map</button>
-<pre id="log">Ready...</pre>
-</div>
-
+    <div class="note">Local only · WLED gated · DMX gated · V5 fallback preserved</div>
+  </section>
+</main>
 <script>
-let audioCtx = null;
-let analyser = null;
-let source = null;
-let stream = null;
-let dataArray = null;
-let frameTimer = null;
-let statusTimer = null;
-let running = false;
-let framesSent = 0;
-let zeroFrameCount = 0;
-let lastFrameObj = null;
-
-const out = x => document.getElementById('log').textContent = typeof x === 'string' ? x : JSON.stringify(x,null,2);
-const setText = (id, v) => document.getElementById(id).textContent = String(v);
-const setBool = (id, ok) => { const el=document.getElementById(id); el.textContent=ok?'YES':'NO'; el.className=ok?'good':'bad'; };
-const pct = (id,v)=>document.getElementById(id).style.width = Math.round(Math.max(0,Math.min(1,v))*100)+'%';
-
-sensitivity.oninput=()=>sensv.textContent=sensitivity.value;
-brightnessCap.oninput=()=>bcapv.textContent=brightnessCap.value;
-
-async function api(path, options={}) {
-  const res = await fetch(path, { headers:{'Content-Type':'application/json'}, ...options });
-  let data = null;
-  try { data = await res.json(); } catch { data = { error:'Non JSON response', status:res.status }; }
-  if (!res.ok) data.httpStatus = res.status;
-  return data;
+async function post(path, body){
+  await fetch(path,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body||{})});
 }
-
-async function ensureServer() {
-  try {
-    const s = await api('/api/music/status');
-    setBool('serverOk', !s.error);
-    return s;
-  } catch(e) {
-    setBool('serverOk', false);
-    out({ error:'SERVER_NOT_CONNECTED', detail:e.message });
-    return null;
-  }
+async function runAmbient(effectId){
+  await post('/api/v10/ambient/run',{effectId,speed:'slow',intensity:0.45,warmth:0.85,motion:0.35,room:'full'});
 }
-
-async function ensureAudio() {
-  if (audioCtx && analyser && dataArray) {
-    setBool('micOk', true);
-    return;
-  }
-
-  stream = await navigator.mediaDevices.getUserMedia({
-    audio: {
-      echoCancellation: false,
-      noiseSuppression: false,
-      autoGainControl: false
-    }
-  });
-
-  audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-  if (audioCtx.state === 'suspended') await audioCtx.resume();
-
-  analyser = audioCtx.createAnalyser();
-  analyser.fftSize = 1024;
-  analyser.smoothingTimeConstant = 0.68;
-
-  source = audioCtx.createMediaStreamSource(stream);
-  source.connect(analyser);
-  dataArray = new Uint8Array(analyser.frequencyBinCount);
-
-  setBool('micOk', true);
-  micWarn.textContent = '';
-}
-
-function avg(arr, a, b) {
-  let s=0,c=0;
-  for (let i=a;i<b && i<arr.length;i++){s+=arr[i];c++;}
-  return c ? (s/c)/255 : 0;
-}
-
-let lastBeat = 0;
-function getMicFrame() {
-  analyser.getByteFrequencyData(dataArray);
-
-  const bass = avg(dataArray, 0, 18);
-  const mid = avg(dataArray, 22, 120);
-  const treble = avg(dataArray, 130, 360);
-
-  let sum=0;
-  for (const v of dataArray) sum += v*v;
-  const rms = Math.sqrt(sum/dataArray.length)/255;
-
-  const now = Date.now();
-  const beat = bass > 0.55 && rms > 0.12 && now - lastBeat > 240;
-  if (beat) lastBeat = now;
-
-  const frame = {
-    bass, mid, treble, rms, beat,
-    sensitivity:Number(sensitivity.value),
-    brightnessCap:Number(brightnessCap.value),
-    preset:preset.value
-  };
-
-  pct('bass',bass); pct('mid',mid); pct('treble',treble); pct('rms',rms);
-  lastFrameObj = frame;
-  lastFrame.textContent = JSON.stringify(frame,null,2);
-
-  if (bass < 0.01 && mid < 0.01 && treble < 0.01 && rms < 0.01) zeroFrameCount++;
-  else zeroFrameCount = 0;
-
-  if (zeroFrameCount > 20) micWarn.textContent = 'تحذير: مستوى الميكروفون صفر تقريبًا. جرّب Restart Microphone أو اختر مصدر صوت آخر.';
-  else micWarn.textContent = '';
-
-  return frame;
-}
-
-async function sendFrame(frame) {
-  const r = await api('/api/music/frame', { method:'POST', body:JSON.stringify(frame) });
-  framesSent++;
-  setText('framesSent', framesSent);
-  if (r.gate) updateStatusFields(r);
-  return r;
-}
-
-async function startFrameLoop() {
-  if (frameTimer) clearInterval(frameTimer);
-  frameTimer = setInterval(async ()=>{
-    if (!running) return;
-    try {
-      const frame = getMicFrame();
-      await sendFrame(frame);
-    } catch(e) {
-      out({ error:'FRAME_LOOP_ERROR', detail:e.message });
-    }
-  }, 120);
-}
-
-async function startCommon(dryRun) {
-  await ensureServer();
-  await ensureAudio();
-  running = true;
-  framesSent = 0;
-  zeroFrameCount = 0;
-
-  const start = await api('/api/music/start', {
-    method:'POST',
-    body:JSON.stringify({
-      dryRun,
-      preset:preset.value,
-      sensitivity:Number(sensitivity.value),
-      brightnessCap:Number(brightnessCap.value)
-    })
-  });
-
-  out(start);
-  updateStatusFields(start);
-  await startFrameLoop();
-  startStatusPolling();
-}
-
-async function startDryRun() {
-  await startCommon(true);
-}
-
-async function enableFullRoom() {
-  const r = await api('/api/music/enable-full-room', {
-    method:'POST',
-    body:JSON.stringify({ confirm: confirmText.value })
-  });
-  out(r);
-  updateStatusFields(r);
-  await pollStatus();
-}
-
-async function startRealMusic() {
-  await startCommon(false);
-}
-
-async function stopMusic() {
-  running = false;
-  if (frameTimer) clearInterval(frameTimer);
-  frameTimer = null;
-  const r = await api('/api/music/stop', { method:'POST', body:'{}' });
-  out(r);
-  updateStatusFields(r);
-  await pollStatus();
-}
-
-async function emergencyStop() {
-  running = false;
-  if (frameTimer) clearInterval(frameTimer);
-  frameTimer = null;
-  const r = await api('/api/music/emergency-stop', { method:'POST', body:'{}' });
-  out(r);
-  await pollStatus();
-}
-
-async function restartMicrophone() {
-  try {
-    if (frameTimer) clearInterval(frameTimer);
-    frameTimer = null;
-    if (stream) stream.getTracks().forEach(t => t.stop());
-    if (audioCtx) await audioCtx.close();
-  } catch {}
-  audioCtx=null; analyser=null; source=null; stream=null; dataArray=null;
-  zeroFrameCount=0;
-  setBool('micOk', false);
-  await ensureAudio();
-  out('Microphone restarted.');
-}
-
-function startStatusPolling() {
-  if (statusTimer) clearInterval(statusTimer);
-  statusTimer = setInterval(pollStatus, 1000);
-}
-
-function updateStatusFields(s) {
-  const gate = s.gate || (s.musicState && s.musicState.lastGate) || {};
-  const scheduler = s.scheduler || {};
-  const zoneStatus = s.zoneMapStatus || {};
-
-  setBool('gateAllowed', gate.allowed === true);
-  setBool('schedRun', scheduler.running === true);
-  setText('schedSent', scheduler.sent ?? 0);
-  setText('lastErr', scheduler.lastError || '-');
-  setText('mapped', zoneStatus.mappedLightCount ?? gate.mappedLightCount ?? '-');
-}
-
-async function pollStatus() {
-  const s = await ensureServer();
-  if (!s) return;
-  updateStatusFields(s);
-  out(s);
-}
-
-async function loadZoneMap() {
-  const r = await api('/api/music/zone-map');
-  out(r);
-  if (r.mappedLightCount != null) setText('mapped', `${r.mappedLightCount}/${r.expectedLightCount || 18}`);
-}
-
-async function testBeat() {
-  await ensureServer();
-
-  const enable = await api('/api/music/enable-full-room', {
-    method:'POST',
-    body:JSON.stringify({ confirm: confirmText.value })
-  });
-
-  const start = await api('/api/music/start', {
-    method:'POST',
-    body:JSON.stringify({
-      dryRun:false,
-      preset:'Club',
-      sensitivity:1.4,
-      brightnessCap:0.85
-    })
-  });
-
-  out({ enable, start, info:'Sending synthetic beat frames from browser for 15 seconds...' });
-  updateStatusFields(start);
-
-  for (let i=0; i<60; i++) {
-    const beat = (i % 4 === 0);
-    const frame = {
-      bass: beat ? 0.95 : 0.35,
-      mid: i % 3 === 0 ? 0.75 : 0.30,
-      treble: i % 5 === 0 ? 0.85 : 0.25,
-      rms: beat ? 0.90 : 0.35,
-      beat,
-      sensitivity:1.4,
-      brightnessCap:0.85,
-      preset:'Club'
-    };
-    pct('bass',frame.bass); pct('mid',frame.mid); pct('treble',frame.treble); pct('rms',frame.rms);
-    lastFrame.textContent = JSON.stringify(frame,null,2);
-    await sendFrame(frame);
-    await new Promise(r => setTimeout(r, 250));
-  }
-
-  const status = await api('/api/music/status');
-  out(status);
-  updateStatusFields(status);
-}
-
-pollStatus();
-loadZoneMap();
 </script>
 </body>
 </html>

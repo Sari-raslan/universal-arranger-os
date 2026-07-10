@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>UAOS Light Engine V10 Ambient Magic</title>
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<div class="app">
+  <header class="topbar">
+    <div>
+      <h1>UAOS Light Engine V10 Ambient Magic</h1>
+      <p>Candle · Fireplace · Lantern · Warm Moving Lights · Real Hue</p>
+    </div>
+    <div class="status-pill">
+      <span>Active</span>
+      <strong id="active-scene-name">Idle</strong>
+    </div>
+  </header>
+
+  <main>
+    <section class="quick-row main-row" aria-label="Ambient daily controls">
+      <button onclick="runAmbient('candle')">Candle</button>
+      <button onclick="runAmbient('fireplace')">Fireplace</button>
+      <button onclick="runAmbient('lantern')">Lantern</button>
+      <button onclick="runAmbient('embers')">Embers</button>
+      <button onclick="runAmbient('sunset')">Sunset</button>
+      <button onclick="runAmbient('romantic')">Romantic</button>
+      <button onclick="runAmbient('night')">Night</button>
+      <button onclick="runAmbient('sleep')">Sleep</button>
+      <button class="off" onclick="turnOffLights()">Turn Off</button>
+      <button class="danger" onclick="emergencyStop()">Emergency Stop</button>
+    </section>
+
+    <section class="quick-row secondary-row" aria-label="Secondary controls">
+      <button onclick="runEffect('white')">White</button>
+      <button onclick="runEffect('warm')">Yellow</button>
+      <button onclick="runEffect('ocean')">Ocean</button>
+      <button onclick="runEffect('aurora')">Aurora</button>
+      <button onclick="initAudio('mic')">Music Sense</button>
+      <button onclick="runEffect('club')">Party</button>
+      <button onclick="runEffect('oriental_glow')">Oriental Live</button>
+      <button onclick="runEffect('sparkle')">Pro Color</button>
+    </section>
+
+    <section class="ambient-layout">
+      <div class="ambient-section">
+        <div class="section-heading">
+          <h2>Ambient Magic</h2>
+          <p>Warm daily atmosphere with slow motion and safe Hue brightness caps.</p>
+        </div>
+        <div id="ambient-grid" class="ambient-grid"></div>
+      </div>
+
+      <aside class="controls-panel">
+        <div class="section-heading">
+          <h2>Controls</h2>
+          <p>Apply movement, warmth, and room targeting to the active ambient effect.</p>
+        </div>
+
+        <label>Speed
+          <select id="speed">
+            <option value="slow" selected>Slow</option>
+            <option value="medium">Medium</option>
+            <option value="fast">Fast</option>
+          </select>
+        </label>
+
+        <label>Intensity <span id="intensityValue">45%</span>
+          <input id="intensity" type="range" min="10" max="100" value="45">
+        </label>
+
+        <label>Warmth <span id="warmthValue">85%</span>
+          <input id="warmth" type="range" min="10" max="100" value="85">
+        </label>
+
+        <label>Motion <span id="motionValue">35%</span>
+          <input id="motion" type="range" min="10" max="100" value="35">
+        </label>
+
+        <label>Brightness cap <span id="brightnessCapValue">45%</span>
+          <input id="brightnessCap" type="range" min="1" max="80" value="45">
+        </label>
+
+        <label>Room
+          <select id="room">
+            <option value="full" selected>Full Room</option>
+            <option value="primary">Primary Sync</option>
+            <option value="ambient">Ambient Wash</option>
+          </select>
+        </label>
+
+        <div class="panel-actions">
+          <button onclick="applyActive()">Apply to Active Effect</button>
+          <button onclick="saveFavorite()">Save as Favorite</button>
+          <button class="off" onclick="stopAmbient()">Stop Ambient Motion</button>
+        </div>
+
+        <label>Favorite slot
+          <select id="favoriteSlot">
+            <option value="1">1 Candle</option>
+            <option value="2">2 Fireplace</option>
+            <option value="3">3 Lantern</option>
+            <option value="4">4 Embers</option>
+            <option value="5">5 Sunset</option>
+            <option value="6">6 Romantic</option>
+            <option value="7">7 Night</option>
+            <option value="8">8 Sleep</option>
+            <option value="9" selected>9 Oriental Lantern</option>
+          </select>
+        </label>
+      </aside>
+    </section>
+
+    <section class="favorites-section">
+      <div class="section-heading">
+        <h2>Daily Favorites 1-9</h2>
+        <p>Owner Favorite: Oriental Lantern</p>
+      </div>
+      <div id="favorite-grid" class="favorite-grid"></div>
+    </section>
+
+    <section class="music-section">
+      <div class="section-heading">
+        <h2>Music and Diagnostics</h2>
+        <p>Secondary tools stay available without taking over the daily warm experience.</p>
+      </div>
+      <div class="music-actions">
+        <button onclick="initAudio('mic')">Start Music Sense</button>
+        <button onclick="stopAudio()">Stop Music</button>
+        <button onclick="runDiag()">Run Diagnostics</button>
+      </div>
+      <p id="audio-error" class="note"></p>
+      <pre id="diag-output"></pre>
+    </section>
+  </main>
+</div>
+<script src="./app.js"></script>
+</body>
+</html>
