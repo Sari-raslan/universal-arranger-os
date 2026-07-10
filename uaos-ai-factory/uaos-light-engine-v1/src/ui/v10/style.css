@@ -118,11 +118,51 @@ button.ghost {
 .ambient-section,
 .controls-panel,
 .favorites-section,
+.comfort-section,
 .music-section {
   padding: 18px;
   border: 1px solid rgba(251, 191, 36, 0.24);
   border-radius: 8px;
   background: #241b14;
+}
+
+.comfort-section {
+  margin: 0 0 18px;
+  background: #2a1f16;
+  border-color: rgba(255, 214, 102, 0.38);
+}
+
+.comfort-profile-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.comfort-profile {
+  display: grid;
+  gap: 6px;
+  justify-items: start;
+  min-height: 76px;
+  background: #5e351b;
+}
+
+.comfort-profile.recommended {
+  background: #9a5d20;
+  border-color: rgba(255, 225, 140, 0.8);
+  box-shadow: inset 0 0 0 2px rgba(255, 225, 140, 0.18);
+}
+
+.comfort-profile span {
+  color: #ffdf9c;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.comfort-actions {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 10px;
 }
 
 .section-heading {
@@ -271,6 +311,8 @@ pre {
 @media (max-width: 1100px) {
   .main-row,
   .secondary-row,
+  .comfort-profile-grid,
+  .comfort-actions,
   .favorite-bar,
   .favorite-grid {
     grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -302,6 +344,8 @@ pre {
   .main-row,
   .secondary-row,
   .ambient-grid,
+  .comfort-profile-grid,
+  .comfort-actions,
   .favorite-bar,
   .favorite-grid,
   .music-actions {

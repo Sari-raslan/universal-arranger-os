@@ -21,7 +21,7 @@
 
   <main>
     <section class="quick-row main-row" aria-label="Ambient daily controls">
-      <button onclick="runAmbient('lantern')">Lantern Warm</button>
+      <button onclick="runComfortProfile('Daily Lantern')">Daily Lantern</button>
       <button onclick="runAmbient('candle')">Candle Flicker</button>
       <button onclick="runAmbient('fireplace')">Fireplace</button>
       <button onclick="runAmbient('embers')">Embers Glow</button>
@@ -31,6 +31,22 @@
       <button onclick="runAmbient('sleep')">Sleep Fade</button>
       <button class="off" onclick="turnOffLights()">Turn Off</button>
       <button class="danger" onclick="emergencyStop()">Emergency Stop</button>
+    </section>
+
+    <section class="comfort-section" aria-label="Owner Comfort Tuning">
+      <div class="section-heading">
+        <h2>Owner Comfort Tuning</h2>
+        <p>Final daily-use profile: warm, soft, moving, lantern/candle/fire style. Nothing auto-runs unless the owner starts it.</p>
+      </div>
+      <div id="comfort-profile-grid" class="comfort-profile-grid"></div>
+      <div class="comfort-actions">
+        <button onclick="tuneComfort('softer')">Too bright / softer</button>
+        <button onclick="tuneComfort('moreMovement')">More movement</button>
+        <button onclick="tuneComfort('lessMovement')">Less movement</button>
+        <button onclick="tuneComfort('warmer')">Warmer</button>
+        <button onclick="tuneComfort('cooler')">Cooler</button>
+        <button onclick="saveMyDailyMode()">Save as My Daily Mode</button>
+      </div>
     </section>
 
     <section class="quick-row secondary-row" aria-label="Secondary controls">

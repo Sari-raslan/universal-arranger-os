@@ -193,6 +193,88 @@ function saveAmbientFavorites(data) {
   fs.writeFileSync(ambientFavoritesPath(), JSON.stringify(data, null, 2) + "\n", "utf8");
 }
 
+function comfortProfilesPath() {
+  return path.join(ROOT, "src", "config", "comfort-profiles-v10.json");
+}
+
+function loadComfortProfiles() {
+  const data = loadJsonSafe(comfortProfilesPath());
+  if (data && Array.isArray(data.profiles)) return data;
+  return { version: "10.3", defaultRecommendedOwnerMode: "Daily Lantern", autoRunOnStartup: false, profiles: [] };
+}
+
+function comfortObservationDir() {
+  return path.join(ROOT, "generated", "v10-owner-observation");
+}
+
+function comfortObservationFile() {
+  return path.join(comfortObservationDir(), "comfort-observation.jsonl");
+}
+
+function sanitizeComfortText(value) {
+  return String(value || "").replace(/[<>]/g, "").slice(0, 240);
+}
+
+function comfortPercent(value, fallback) {
+  return Math.round(clampNum(value, 0, 100, fallback));
+}
+
+function comfortSpeed(value) {
+  const speed = String(value || "slow").toLowerCase();
+  return ["slow", "medium", "fast"].includes(speed) ? speed : "slow";
+}
+
+function appendComfortLog(input = {}) {
+  fs.mkdirSync(comfortObservationDir(), { recursive: true });
+  const entry = {
+    timestamp: new Date().toISOString(),
+    selectedEffect: sanitizeComfortText(input.selectedEffect || input.effectId || activeScene || "unknown"),
+    brightness: comfortPercent(input.brightness, 38),
+    speed: comfortSpeed(input.speed),
+    motion: comfortPercent(input.motion, 25),
+    warmth: comfortPercent(input.warmth, 90),
+    room: ["full", "primary", "ambient"].includes(input.room) ? input.room : "full",
+    ownerComfortNote: sanitizeComfortText(input.ownerComfortNote || input.note || ""),
+    emergencyUsage: !!input.emergencyUsage,
+    turnOffUsage: !!input.turnOffUsage
+  };
+  fs.appendFileSync(comfortObservationFile(), JSON.stringify(entry) + "\n", "utf8");
+  fs.writeFileSync(path.join(comfortObservationDir(), "latest-comfort-status.json"), JSON.stringify(entry, null, 2) + "\n", "utf8");
+  return entry;
+}
+
+function comfortStatus() {
+  const profiles = loadComfortProfiles();
+  let latest = null;
+  try {
+    const lines = fs.existsSync(comfortObservationFile())
+      ? fs.readFileSync(comfortObservationFile(), "utf8").trim().split(/\r?\n/).filter(Boolean)
+      : [];
+    latest = lines.length ? JSON.parse(lines[lines.length - 1]) : null;
+    return {
+      status: "OWNER_COMFORT_TUNED",
+      defaultRecommendedOwnerMode: profiles.defaultRecommendedOwnerMode || "Daily Lantern",
+      autoRunOnStartup: !!profiles.autoRunOnStartup,
+      profiles: profiles.profiles,
+      observationLog: comfortObservationFile(),
+      observationCount: lines.length,
+      latest,
+      activeScene,
+      hueMode: lastHueMode,
+      realHue: true,
+      turnOff: true,
+      emergencyStop: true,
+      wledGated: true,
+      dmxGated: true,
+      deploy: "NO",
+      payment: "NO",
+      localOnly: true
+    };
+  } catch (err) {
+    return { status: "OWNER_COMFORT_TUNED", error: err.message, profiles: profiles.profiles, latest };
+  }
+}
+
 async function runAmbientMagic(body = {}) {
   stopAmbientEffect();
   return await getAmbientMagicEngine().run(body);
@@ -244,6 +326,7 @@ async function runScene(sceneId) {
 async function emergencyStop() {
   uaosV81WatchdogLog('emergency_stop', {});
   uaosV81WatchdogLog('emergency_stop', {});
+  appendComfortLog({ selectedEffect: activeScene, emergencyUsage: true, ownerComfortNote: "Emergency Stop used" });
   stopAmbientEffect();
   activeScene = "emergency_stop";
   commandCount++;
@@ -266,6 +349,7 @@ async function emergencyStop() {
 async function allLightsOff() {
   uaosV81WatchdogLog('turn_off', {});
   uaosV81WatchdogLog('turn_off', {});
+  appendComfortLog({ selectedEffect: activeScene, turnOffUsage: true, ownerComfortNote: "Turn Off used" });
   stopAmbientEffect();
   activeScene = "all_lights_off";
   commandCount++;
@@ -980,6 +1064,16 @@ const server = http.createServer(async (req, res) => {
         dmxGated: true,
         localOnly: true
       });
+    }
+
+    if (req.method === "GET" && route === "/api/v10/comfort/status") {
+      return sendJson(res, 200, comfortStatus());
+    }
+
+    if (req.method === "POST" && route === "/api/v10/comfort/log") {
+      const body = await readBody(req);
+      const entry = appendComfortLog(body);
+      return sendJson(res, 200, { status: "success", entry, localOnly: true });
     }
 
     if (req.method === "GET" && route === "/api/v10/ambient/favorites") {

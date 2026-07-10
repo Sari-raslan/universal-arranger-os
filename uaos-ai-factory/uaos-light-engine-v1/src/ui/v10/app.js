@@ -1,5 +1,6 @@
 let ambientEffects = [];
 let favorites = [];
+let comfortProfiles = [];
 let activeEffectId = "lantern";
 let startupApplied = false;
 let audioCtx, analyser, dataArray, source;
@@ -8,11 +9,11 @@ const FRAME_MIN_TIME = 100;
 
 const defaultAmbient = {
   speed: "slow",
-  brightness: 45,
-  intensity: 0.45,
-  warmth: 0.85,
-  motion: 0.35,
-  brightnessCap: 45,
+  brightness: 38,
+  intensity: 0.38,
+  warmth: 0.90,
+  motion: 0.25,
+  brightnessCap: 38,
   room: "full"
 };
 
@@ -30,9 +31,9 @@ const cleanLabels = {
 };
 
 const favoriteBar = [
-  { slot: 1, key: "F1", name: "Candle", effectId: "candle" },
-  { slot: 2, key: "F2", name: "Fireplace", effectId: "fireplace" },
-  { slot: 3, key: "F3", name: "Lantern", effectId: "lantern" },
+  { slot: 1, key: "F1", name: "Daily Lantern", effectId: "lantern" },
+  { slot: 2, key: "F2", name: "Candle", effectId: "candle" },
+  { slot: 3, key: "F3", name: "Fireplace", effectId: "fireplace" },
   { slot: 4, key: "F4", name: "Embers", effectId: "embers" },
   { slot: 5, key: "F5", name: "Sunset", effectId: "sunset" },
   { slot: 6, key: "F6", name: "Night", effectId: "night" },
@@ -88,6 +89,41 @@ function applyCapsForEffect(effectId) {
     setControl("motion", 10);
   }
   updateReadouts();
+}
+
+function applyComfortControls(profile) {
+  if (!profile) return;
+  activeEffectId = profile.effectId || activeEffectId;
+  setControl("speed", profile.speed || "slow");
+  setControl("brightness", profile.brightness ?? 38);
+  setControl("brightnessCap", profile.brightness ?? 38);
+  setControl("warmth", profile.warmth ?? 90);
+  setControl("motion", profile.motion ?? 25);
+  setControl("room", profile.room || "full");
+  applyCapsForEffect(activeEffectId);
+  updateReadouts();
+}
+
+async function loadComfortProfiles() {
+  const data = await api("/src/config/comfort-profiles-v10.json");
+  comfortProfiles = data.profiles || [];
+  const daily = comfortProfiles.find(profile => profile.name === "Daily Lantern");
+  applyComfortControls(daily || { effectId: "lantern", brightness: 38, speed: "slow", warmth: 90, motion: 25, room: "full" });
+  renderComfortProfiles();
+}
+
+function renderComfortProfiles() {
+  const grid = qs("comfort-profile-grid");
+  if (!grid) return;
+  grid.innerHTML = "";
+  comfortProfiles.forEach(profile => {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = profile.name === "Daily Lantern" ? "comfort-profile recommended" : "comfort-profile";
+    button.innerHTML = `<strong>${profile.name}</strong><span>${profile.brightness}% - ${profile.speed} - warmth ${profile.warmth}%</span>`;
+    button.onclick = () => runComfortProfile(profile.name);
+    grid.appendChild(button);
+  });
 }
 
 function controlValues(extra = {}) {
@@ -222,6 +258,65 @@ async function runAmbient(effectId, overrides = {}) {
   applyCapsForEffect(activeEffectId);
   const result = await api("/api/v10/ambient/run", "POST", controlValues({ effectId: activeEffectId, ...overrides }));
   setActiveLabel(result.activeAmbientEffect ? result.activeAmbientEffect.name : (cleanLabels[activeEffectId] || activeEffectId));
+  await logComfort("run", "");
+}
+
+async function runComfortProfile(name) {
+  const profile = comfortProfiles.find(item => item.name === name);
+  if (!profile) return;
+  applyComfortControls(profile);
+  await runAmbient(profile.effectId, {
+    speed: profile.speed,
+    brightness: profile.brightness,
+    brightnessCap: profile.brightness,
+    warmth: profile.warmth / 100,
+    motion: profile.motion / 100,
+    room: profile.room
+  });
+}
+
+function tuneComfort(action) {
+  const brightness = qs("brightness");
+  const cap = qs("brightnessCap");
+  const motion = qs("motion");
+  const warmth = qs("warmth");
+  if (action === "softer" && brightness && cap) {
+    brightness.value = String(Math.max(8, Number(brightness.value) - 6));
+    cap.value = brightness.value;
+  }
+  if (action === "moreMovement" && motion) motion.value = String(Math.min(60, Number(motion.value) + 8));
+  if (action === "lessMovement" && motion) motion.value = String(Math.max(5, Number(motion.value) - 8));
+  if (action === "warmer" && warmth) warmth.value = String(Math.min(100, Number(warmth.value) + 5));
+  if (action === "cooler" && warmth) warmth.value = String(Math.max(60, Number(warmth.value) - 5));
+  updateReadouts();
+  applyActive();
+}
+
+async function logComfort(note = "", ownerComfortNote = "") {
+  await api("/api/v10/comfort/log", "POST", {
+    selectedEffect: activeEffectId,
+    brightness: qs("brightness") ? Number(qs("brightness").value) : 38,
+    speed: qs("speed") ? qs("speed").value : "slow",
+    motion: qs("motion") ? Number(qs("motion").value) : 25,
+    warmth: qs("warmth") ? Number(qs("warmth").value) : 90,
+    room: qs("room") ? qs("room").value : "full",
+    ownerComfortNote: ownerComfortNote || note,
+    emergencyUsage: false,
+    turnOffUsage: false
+  });
+}
+
+async function saveMyDailyMode() {
+  await api("/api/v10/ambient/favorites/save", "POST", controlValues({
+    slot: 1,
+    effectId: activeEffectId,
+    name: "My Daily Mode"
+  }));
+  await logComfort("save_my_daily_mode", "Saved as My Daily Mode");
+  const fav = await api("/api/v10/ambient/favorites");
+  favorites = fav.slots || [];
+  renderFavorites();
+  renderFavoriteBar();
 }
 
 async function applyActive() {
@@ -269,11 +364,13 @@ async function runEffect(id) {
 
 async function turnOffLights() {
   await api("/api/v5/lights/off", "POST", {});
+  await api("/api/v10/comfort/log", "POST", { selectedEffect: activeEffectId, brightness: 0, speed: "slow", motion: 0, ownerComfortNote: "Turn Off from V10 UI", turnOffUsage: true });
   setActiveLabel("All Lights Off");
 }
 
 async function emergencyStop() {
   await api("/api/v4/emergency-stop", "POST", {});
+  await api("/api/v10/comfort/log", "POST", { selectedEffect: activeEffectId, brightness: 30, speed: "slow", motion: 0, ownerComfortNote: "Emergency Stop from V10 UI", emergencyUsage: true });
   setActiveLabel("Emergency Stop");
 }
 
@@ -348,5 +445,6 @@ document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll("input[type=range], select").forEach(input => input.addEventListener("input", updateReadouts));
   updateReadouts();
   applyCapsForEffect("lantern");
+  loadComfortProfiles();
   loadAmbient();
 });
