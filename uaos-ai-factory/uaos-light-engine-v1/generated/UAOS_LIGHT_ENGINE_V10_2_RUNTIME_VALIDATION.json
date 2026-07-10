@@ -1,0 +1,56 @@
+﻿[
+    {
+        "check":  "V10 UI opens",
+        "pass":  true
+    },
+    {
+        "check":  "run lantern",
+        "pass":  true,
+        "successCount":  18,
+        "failCount":  0
+    },
+    {
+        "check":  "run candle",
+        "pass":  true,
+        "successCount":  18,
+        "failCount":  0
+    },
+    {
+        "check":  "run fireplace",
+        "pass":  true,
+        "successCount":  18,
+        "failCount":  0
+    },
+    {
+        "check":  "run night",
+        "pass":  true,
+        "successCount":  18,
+        "failCount":  0
+    },
+    {
+        "check":  "run sleep",
+        "pass":  true,
+        "successCount":  18,
+        "failCount":  0
+    },
+    {
+        "check":  "favorite 1",
+        "pass":  true,
+        "effect":  "candle"
+    },
+    {
+        "check":  "favorite 3",
+        "pass":  true,
+        "effect":  "lantern"
+    },
+    {
+        "check":  "Turn Off",
+        "pass":  true,
+        "response":  "{\"status\":\"success\",\"ok\":true,\"mode\":\"ALL_LIGHTS_OFF\",\"lightCount\":18,\"hueMode\":\"REAL_HUE_API\",\"successCount\":18,\"failCount\":0}"
+    },
+    {
+        "check":  "Emergency Stop",
+        "pass":  true,
+        "response":  "{\"status\":\"success\",\"ok\":true,\"message\":\"Emergency Stop warm white 30%\",\"hueMode\":\"REAL_HUE_API\",\"successCount\":18,\"failCount\":0}"
+    }
+]

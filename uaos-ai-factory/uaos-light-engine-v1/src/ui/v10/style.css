@@ -208,6 +208,17 @@ select {
   margin-top: 18px;
 }
 
+.favorite-bar-section {
+  margin-top: 0;
+  margin-bottom: 18px;
+}
+
+.favorite-bar {
+  display: grid;
+  grid-template-columns: repeat(9, minmax(0, 1fr));
+  gap: 10px;
+}
+
 .favorite-grid {
   display: grid;
   grid-template-columns: repeat(9, minmax(0, 1fr));
@@ -234,6 +245,14 @@ select {
   background: #a16022;
 }
 
+.favorite.off {
+  background: #221f1b;
+}
+
+.favorite.danger {
+  background: #9f1d1d;
+}
+
 .music-actions {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -252,6 +271,7 @@ pre {
 @media (max-width: 1100px) {
   .main-row,
   .secondary-row,
+  .favorite-bar,
   .favorite-grid {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
@@ -282,6 +302,7 @@ pre {
   .main-row,
   .secondary-row,
   .ambient-grid,
+  .favorite-bar,
   .favorite-grid,
   .music-actions {
     grid-template-columns: 1fr 1fr;

@@ -11,7 +11,7 @@
   <header class="topbar">
     <div>
       <h1>UAOS Light Engine V10 Ambient Magic</h1>
-      <p>Candle · Fireplace · Lantern · Warm Moving Lights · Real Hue</p>
+      <p>Lantern - Candle - Fireplace - Warm Moving Hue Lights</p>
     </div>
     <div class="status-pill">
       <span>Active</span>
@@ -21,14 +21,14 @@
 
   <main>
     <section class="quick-row main-row" aria-label="Ambient daily controls">
-      <button onclick="runAmbient('candle')">Candle</button>
+      <button onclick="runAmbient('lantern')">Lantern Warm</button>
+      <button onclick="runAmbient('candle')">Candle Flicker</button>
       <button onclick="runAmbient('fireplace')">Fireplace</button>
-      <button onclick="runAmbient('lantern')">Lantern</button>
-      <button onclick="runAmbient('embers')">Embers</button>
-      <button onclick="runAmbient('sunset')">Sunset</button>
-      <button onclick="runAmbient('romantic')">Romantic</button>
-      <button onclick="runAmbient('night')">Night</button>
-      <button onclick="runAmbient('sleep')">Sleep</button>
+      <button onclick="runAmbient('embers')">Embers Glow</button>
+      <button onclick="runAmbient('sunset')">Sunset Flow</button>
+      <button onclick="runAmbient('romantic')">Romantic Glow</button>
+      <button onclick="runAmbient('night')">Night Warm</button>
+      <button onclick="runAmbient('sleep')">Sleep Fade</button>
       <button class="off" onclick="turnOffLights()">Turn Off</button>
       <button class="danger" onclick="emergencyStop()">Emergency Stop</button>
     </section>
@@ -44,6 +44,14 @@
       <button onclick="runEffect('sparkle')">Pro Color</button>
     </section>
 
+    <section class="favorites-section favorite-bar-section" aria-label="Owner favorite bar">
+      <div class="section-heading">
+        <h2>Owner Favorite Bar</h2>
+        <p>Daily physical Hue shortcuts. Turn Off and Emergency Stop stay visible.</p>
+      </div>
+      <div id="favorite-bar" class="favorite-bar"></div>
+    </section>
+
     <section class="ambient-layout">
       <div class="ambient-section">
         <div class="section-heading">
@@ -55,8 +63,8 @@
 
       <aside class="controls-panel">
         <div class="section-heading">
-          <h2>Controls</h2>
-          <p>Apply movement, warmth, and room targeting to the active ambient effect.</p>
+          <h2>Gentle Controls</h2>
+          <p>Compact defaults: slow speed, 45% brightness, 35% motion, 85% warmth.</p>
         </div>
 
         <label>Speed
@@ -67,16 +75,16 @@
           </select>
         </label>
 
-        <label>Intensity <span id="intensityValue">45%</span>
-          <input id="intensity" type="range" min="10" max="100" value="45">
+        <label>Brightness <span id="brightnessValue">45%</span>
+          <input id="brightness" type="range" min="1" max="55" value="45">
+        </label>
+
+        <label>Motion <span id="motionValue">35%</span>
+          <input id="motion" type="range" min="1" max="100" value="35">
         </label>
 
         <label>Warmth <span id="warmthValue">85%</span>
           <input id="warmth" type="range" min="10" max="100" value="85">
-        </label>
-
-        <label>Motion <span id="motionValue">35%</span>
-          <input id="motion" type="range" min="10" max="100" value="35">
         </label>
 
         <label>Brightness cap <span id="brightnessCapValue">45%</span>
@@ -104,10 +112,10 @@
             <option value="3">3 Lantern</option>
             <option value="4">4 Embers</option>
             <option value="5">5 Sunset</option>
-            <option value="6">6 Romantic</option>
-            <option value="7">7 Night</option>
-            <option value="8">8 Sleep</option>
-            <option value="9" selected>9 Oriental Lantern</option>
+            <option value="6">6 Night</option>
+            <option value="7">7 Sleep</option>
+            <option value="8">8 Turn Off</option>
+            <option value="9" selected>9 Emergency Stop</option>
           </select>
         </label>
       </aside>
@@ -116,7 +124,7 @@
     <section class="favorites-section">
       <div class="section-heading">
         <h2>Daily Favorites 1-9</h2>
-        <p>Owner Favorite: Oriental Lantern</p>
+        <p>F1 Candle, F2 Fireplace, F3 Lantern, F4 Embers, F5 Sunset, F6 Night, F7 Sleep, F8 Turn Off, F9 Emergency Stop.</p>
       </div>
       <div id="favorite-grid" class="favorite-grid"></div>
     </section>
