@@ -149,3 +149,19 @@ UAOS is currently prototype, demo, and staging oriented. The AI Factory exists t
 10. Stop condition: stop at the first serious FAIL, report the cause, and propose the next smallest safe task.
 
 Proprietary arranger formats must be handled with safe readers, metadata extraction, hex/ASCII inspection, and adapter interfaces only. Premium library work is metadata, QA, and provenance first, not copied audio samples or unverified commercial claims.
+
+## Cursor Cloud specific instructions
+
+Scope for local dev/testing is the **Keyboard Manager** product = two services: the Express backend (`backend/`) and the Vite frontend (`frontend/`). Node 22 is used. Dependencies are installed per-directory (`backend/` and `frontend/`); the startup update script already runs `npm install` in both.
+
+Run commands (already documented in the root `AGENTS.md` header and `package.json`):
+- Backend: `cd backend && npm start` (Express `server.js`).
+- Frontend: `cd frontend && npm run dev` (Vite, serves on `5173`, bound to `0.0.0.0`).
+
+Non-obvious gotchas:
+- The backend listens on **port 5199 by default** (`process.env.PORT || 5199`), but every frontend service module in `frontend/src/services/*` and `KeyboardManagerApp.jsx` defaults its API base to **`http://localhost:3001`**. To exercise backend-backed frontend code, start the backend with `PORT=3001 npm start` (its CORS allow-list already permits the `:5173` dev origin), or point the frontend at 5199 via a `frontend/.env` (`VITE_API_BASE` / `VITE_API_URL`). CORS only allows origins on ports 5173/5180/5199.
+- The frontend actually rendered by `frontend/src/main.jsx` is `App.jsx` (a self-contained "UAOS Owner Review Console" that does client-side arranger generation/exports and does **not** call the backend). `KeyboardManagerApp.jsx` is the backend-driven UI but is **not** wired into `main.jsx` and imports `lucide-react`, which is not in `frontend/package.json` — importing it as-is will fail until that dep is added and it is mounted.
+- Do NOT use the root `npm run setup`/`build`/`front`/`dev` scripts: they target a `uaos-live-clean/` directory that does not exist in this repo and will fail. Install and run inside `backend/` and `frontend/` directly.
+- Tests: root uses `node --test` (`npm test`). Install `backend/` deps first (tests resolve `express` from `backend/node_modules`). ~16 tests fail out of ~283; these are pre-existing and assert against the missing `uaos-live-clean` frontend structure (routes/pages that don't exist here), not an environment problem. The backend API/parser/export tests pass.
+- There is no ESLint config or lint script in `backend/`, `frontend/`, or root.
+- A real Korg arranger set lives at `samples/Korg/sar.SET` (~260MB, 147 files) and is used by the library/analysis endpoints and tests; the backend inspects it safely (brand detection + metadata only, no decoding).
