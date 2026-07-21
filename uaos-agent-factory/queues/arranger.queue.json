@@ -1,0 +1,380 @@
+{
+  "lane": "arranger",
+  "updatedAt": "2026-07-21T19:14:44.307Z",
+  "tasks": [
+    {
+      "id": "A-001",
+      "lane": "arranger",
+      "title": "REAL STATE RECOVERY",
+      "priority": 1000,
+      "status": "passed",
+      "dependsOn": [],
+      "repoRoot": "E:/keyboard-manager-clean/uaos-real-product",
+      "integrationBranch": "factory/arranger-integration",
+      "taskBranch": "factory/arranger-a-001",
+      "worktreePath": "D:\\UAOS_AGENT_FACTORY_WORKTREES\\arranger-integration",
+      "writerRole": "cursor",
+      "scoutRoles": [
+        "claude"
+      ],
+      "reviewerRoles": [
+        "claude",
+        "gemini"
+      ],
+      "allowedPaths": [
+        "reports/**",
+        "docs/**",
+        "packages/**"
+      ],
+      "forbiddenPaths": [
+        "node_modules/**"
+      ],
+      "commands": {
+        "preflight": [],
+        "tests": [
+          "npm run test:arranger-foundation --if-present"
+        ],
+        "build": [],
+        "acceptance": []
+      },
+      "artifactsExpected": [
+        "logs/arranger/A-001/A-001-result.json"
+      ],
+      "humanGate": false,
+      "retryLimit": 2,
+      "timeoutMinutes": 90,
+      "evidenceDir": "E:/keyboard-manager-clean/uaos-agent-factory/logs/arranger/A-001",
+      "rollback": "none-read-only",
+      "result": {
+        "taskId": "A-001",
+        "lane": "arranger",
+        "completedAt": "2026-07-21T16:48:46.230Z",
+        "discoveryPath": "E:\\keyboard-manager-clean\\uaos-agent-factory\\reports\\ARRANGER_DISCOVERY.json",
+        "phaseReports": [],
+        "mediaProbe": {
+          "ok": false,
+          "exitCode": 1,
+          "stderrTail": "node:internal/modules/run_main:107\r\n    triggerUncaughtException(\r\n    ^\r\n\r\nAssertionError [ERR_ASSERTION]: selectedRhythmId\r\n+ actual - expected\r\n\r\n+ undefined\r\n- 'slow_ballad'\r\n\r\n    at file:///E:/keyboard-manager-clean/uaos-real-product/apps/desktop/src/uaos-live/arranger/rhythmFoundation.test.js:39:205\r\n    at ModuleJob.run (node:internal/modules/esm/module_job:430:25)\r\n    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:661:26)\r\n    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5) {\r\n  generatedMessage: false,\r\n  code: 'ERR_ASSERTION',\r\n  actual: undefined,\r\n  expected: 'slow_ballad',\r\n  operator: 'deepStrictEqual',\r\n  diff: 'simple'\r\n}\r\n\r\nNode.js v24.14.1\r\n",
+          "stdoutTail": "\n> uaos-real-product@1.0.0 test:arranger-foundation\n> node apps/desktop/src/uaos-live/arranger/arrangerFoundation.test.js && node apps/desktop/src/uaos-live/arranger/rhythmFoundation.test.js && node apps/desktop/src/uaos-live/arranger/styleFoundation.test.js\n\nARRANGER_FOUNDATION_V1_KEY_CONTROLS_PASS\n"
+        },
+        "integrationWorktree": {
+          "ok": true,
+          "alreadyExists": true,
+          "worktreePath": "D:\\UAOS_AGENT_FACTORY_WORKTREES\\arranger-integration",
+          "branch": "factory/arranger-integration",
+          "head": "882f6ca695b4c8df6f0f9968b65b5710d0c55346"
+        },
+        "firstBlocker": "MEDIA_OR_FOUNDATION_TEST_FAIL_OR_MISSING",
+        "note": "No KORG writer in this product lane"
+      },
+      "startedAt": "2026-07-21T16:48:42.994Z",
+      "updatedAt": "2026-07-21T16:48:46.232Z"
+    },
+    {
+      "id": "A-010",
+      "lane": "arranger",
+      "title": "MEDIA GATE",
+      "priority": 950,
+      "status": "integrated",
+      "dependsOn": [
+        "A-001"
+      ],
+      "writerRole": "codex",
+      "scoutRoles": [
+        "claude"
+      ],
+      "reviewerRoles": [
+        "claude"
+      ],
+      "allowedPaths": [
+        "apps/**",
+        "packages/**",
+        "tests/**"
+      ],
+      "forbiddenPaths": [
+        "node_modules/**"
+      ],
+      "commands": {
+        "preflight": [],
+        "tests": [],
+        "build": [],
+        "acceptance": []
+      },
+      "humanGate": false,
+      "retryLimit": 2,
+      "timeoutMinutes": 90,
+      "evidenceDir": "E:/keyboard-manager-clean/uaos-agent-factory/logs/arranger/A-010",
+      "rollback": "git revert task commit",
+      "result": {
+        "status": "PASS",
+        "commit": "a1dc436cdb9627adb64b81b858c406bf915b3c80",
+        "writer": "cursor-local",
+        "integrated": true
+      },
+      "updatedAt": "2026-07-21T18:58:12.360Z"
+    },
+    {
+      "id": "A-020",
+      "lane": "arranger",
+      "title": "CATALOG",
+      "priority": 900,
+      "status": "ready",
+      "dependsOn": [
+        "A-010"
+      ],
+      "humanGate": false,
+      "retryLimit": 2,
+      "timeoutMinutes": 90,
+      "commands": {
+        "preflight": [],
+        "tests": [
+          "npm run test:arranger-catalog --if-present",
+          "npm run test:arranger-foundation",
+          "npm run test:arranger-media"
+        ],
+        "build": [],
+        "acceptance": []
+      },
+      "result": {
+        "clearedFrom": "AWAITING_TASK_RUNNER"
+      },
+      "updatedAt": "2026-07-21T19:14:44.307Z",
+      "objective": "Customer can open/browse Arranger catalog safely: load local legal metadata, search/filter, empty/invalid/missing preview handling, no private paths, no KORG writer, preview uses real media transport from A-010.",
+      "description": "Catalog UI/service + tests; no sale-approved claims for blocked content.",
+      "allowedPaths": [
+        "apps/desktop/**",
+        "packages/**",
+        "tests/**",
+        "package.json"
+      ],
+      "forbiddenPaths": [
+        "node_modules/**",
+        "release/**"
+      ],
+      "artifactsExpected": [
+        "D:/UAOS_AGENT_FACTORY_ARTIFACTS/arranger/A-020/A-020-result.json"
+      ],
+      "writerRole": "codex"
+    },
+    {
+      "id": "A-030",
+      "lane": "arranger",
+      "title": "MAGIC SET CORE",
+      "priority": 890,
+      "status": "pending",
+      "dependsOn": [
+        "A-020"
+      ],
+      "humanGate": false,
+      "retryLimit": 2,
+      "timeoutMinutes": 90,
+      "commands": {
+        "preflight": [],
+        "tests": [],
+        "build": [],
+        "acceptance": []
+      },
+      "result": null
+    },
+    {
+      "id": "A-040",
+      "lane": "arranger",
+      "title": "LIVE PACK EDITOR",
+      "priority": 880,
+      "status": "pending",
+      "dependsOn": [
+        "A-030"
+      ],
+      "humanGate": false,
+      "retryLimit": 2,
+      "timeoutMinutes": 90,
+      "commands": {
+        "preflight": [],
+        "tests": [],
+        "build": [],
+        "acceptance": []
+      },
+      "result": null
+    },
+    {
+      "id": "A-050",
+      "lane": "arranger",
+      "title": "SET DOCTOR",
+      "priority": 870,
+      "status": "pending",
+      "dependsOn": [
+        "A-040"
+      ],
+      "humanGate": false,
+      "retryLimit": 2,
+      "timeoutMinutes": 90,
+      "commands": {
+        "preflight": [],
+        "tests": [],
+        "build": [],
+        "acceptance": []
+      },
+      "result": null
+    },
+    {
+      "id": "A-060",
+      "lane": "arranger",
+      "title": "PROJECT FORMAT",
+      "priority": 860,
+      "status": "pending",
+      "dependsOn": [
+        "A-050"
+      ],
+      "humanGate": false,
+      "retryLimit": 2,
+      "timeoutMinutes": 90,
+      "commands": {
+        "preflight": [],
+        "tests": [],
+        "build": [],
+        "acceptance": []
+      },
+      "result": null
+    },
+    {
+      "id": "A-070",
+      "lane": "arranger",
+      "title": "SAFE EXPORT",
+      "priority": 850,
+      "status": "pending",
+      "dependsOn": [
+        "A-060"
+      ],
+      "humanGate": false,
+      "retryLimit": 2,
+      "timeoutMinutes": 90,
+      "commands": {
+        "preflight": [],
+        "tests": [],
+        "build": [],
+        "acceptance": []
+      },
+      "result": null
+    },
+    {
+      "id": "A-080",
+      "lane": "arranger",
+      "title": "CUSTOMER UX",
+      "priority": 840,
+      "status": "pending",
+      "dependsOn": [
+        "A-070"
+      ],
+      "humanGate": false,
+      "retryLimit": 2,
+      "timeoutMinutes": 90,
+      "commands": {
+        "preflight": [],
+        "tests": [],
+        "build": [],
+        "acceptance": []
+      },
+      "result": null
+    },
+    {
+      "id": "A-090",
+      "lane": "arranger",
+      "title": "PACKAGE CLEANLINESS",
+      "priority": 830,
+      "status": "pending",
+      "dependsOn": [
+        "A-080"
+      ],
+      "humanGate": false,
+      "retryLimit": 2,
+      "timeoutMinutes": 90,
+      "commands": {
+        "preflight": [],
+        "tests": [],
+        "build": [],
+        "acceptance": []
+      },
+      "result": null
+    },
+    {
+      "id": "A-100",
+      "lane": "arranger",
+      "title": "WINDOWS BUILDS",
+      "priority": 820,
+      "status": "pending",
+      "dependsOn": [
+        "A-090"
+      ],
+      "humanGate": false,
+      "retryLimit": 2,
+      "timeoutMinutes": 180,
+      "commands": {
+        "preflight": [],
+        "tests": [],
+        "build": [],
+        "acceptance": []
+      },
+      "result": null
+    },
+    {
+      "id": "A-110",
+      "lane": "arranger",
+      "title": "CLEAN MACHINE ACCEPTANCE",
+      "priority": 810,
+      "status": "pending",
+      "dependsOn": [
+        "A-100"
+      ],
+      "humanGate": false,
+      "retryLimit": 2,
+      "timeoutMinutes": 180,
+      "commands": {
+        "preflight": [],
+        "tests": [],
+        "build": [],
+        "acceptance": []
+      },
+      "result": null
+    },
+    {
+      "id": "A-120",
+      "lane": "arranger",
+      "title": "OWNER GATE",
+      "priority": 800,
+      "status": "pending",
+      "dependsOn": [
+        "A-110"
+      ],
+      "humanGate": true,
+      "retryLimit": 0,
+      "timeoutMinutes": 0,
+      "commands": {
+        "preflight": [],
+        "tests": [],
+        "build": [],
+        "acceptance": []
+      },
+      "result": null
+    },
+    {
+      "id": "A-130",
+      "lane": "arranger",
+      "title": "ARRANGER SELLABLE CANDIDATE",
+      "priority": 790,
+      "status": "pending",
+      "dependsOn": [
+        "A-120"
+      ],
+      "humanGate": false,
+      "retryLimit": 1,
+      "timeoutMinutes": 90,
+      "commands": {
+        "preflight": [],
+        "tests": [],
+        "build": [],
+        "acceptance": []
+      },
+      "result": null
+    }
+  ]
+}

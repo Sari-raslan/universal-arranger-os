@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>UAOS Agent Factory</title>
+  <style>
+    :root {
+      --bg: #0f1419;
+      --panel: #1a222c;
+      --text: #e7eef7;
+      --muted: #8fa3b8;
+      --accent: #3d9bfd;
+      --ok: #3ecf8e;
+      --warn: #f0b429;
+      --bad: #f07178;
+      --line: #2a3542;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", "IBM Plex Sans", sans-serif;
+      background:
+        radial-gradient(1200px 600px at 10% -10%, #1c2b3a 0%, transparent 55%),
+        radial-gradient(900px 500px at 100% 0%, #243447 0%, transparent 50%),
+        var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+    }
+    header {
+      padding: 1.25rem 1.5rem;
+      border-bottom: 1px solid var(--line);
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    h1 { margin: 0; font-size: 1.35rem; letter-spacing: 0.02em; }
+    .sub { color: var(--muted); font-size: 0.9rem; }
+    .actions { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+    button {
+      background: var(--panel);
+      color: var(--text);
+      border: 1px solid var(--line);
+      padding: 0.45rem 0.8rem;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    button:hover { border-color: var(--accent); }
+    main {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1rem;
+      padding: 1rem 1.5rem 2rem;
+    }
+    section {
+      background: color-mix(in srgb, var(--panel) 92%, black);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 1rem;
+    }
+    h2 { margin: 0 0 0.75rem; font-size: 1.05rem; }
+    .meta { color: var(--muted); font-size: 0.85rem; margin-bottom: 0.75rem; }
+    ul { list-style: none; padding: 0; margin: 0; }
+    li {
+      display: flex;
+      justify-content: space-between;
+      gap: 0.5rem;
+      padding: 0.35rem 0;
+      border-bottom: 1px solid color-mix(in srgb, var(--line) 80%, transparent);
+      font-size: 0.86rem;
+    }
+    .status { font-variant-numeric: tabular-nums; }
+    .passed, .integrated { color: var(--ok); }
+    .blocked, .waiting_human { color: var(--warn); }
+    .running, .testing, .reviewing, .scouting { color: var(--accent); }
+    .pending, .ready, .retry { color: var(--muted); }
+    #sys { padding: 0 1.5rem; color: var(--muted); font-size: 0.85rem; }
+  </style>
+</head>
+<body>
+  <header>
+    <div>
+      <h1>UAOS Agent Factory</h1>
+      <div class="sub">Local supervisor · localhost only · no deploy/payment</div>
+    </div>
+    <div class="actions">
+      <button onclick="post('/api/pause')">Pause</button>
+      <button onclick="post('/api/resume')">Resume</button>
+      <button onclick="post('/api/stop')">Safe stop</button>
+      <button onclick="refresh()">Refresh</button>
+    </div>
+  </header>
+  <div id="sys">Loading…</div>
+  <main id="lanes"></main>
+  <script>
+    async function refresh() {
+      const res = await fetch('/api/status');
+      const data = await res.json();
+      const sys = document.getElementById('sys');
+      const ram = data.resources?.ram || {};
+      sys.textContent = `Updated ${data.updatedAt} · supervisor PID ${data.supervisorPid || '-'} alive=${data.supervisorAlive} · RAM free ${ram.freeGb} GB · writers max ${data.resources?.limits?.maxHeavyWriters}`;
+      const root = document.getElementById('lanes');
+      root.innerHTML = '';
+      for (const [lane, info] of Object.entries(data.lanes || {})) {
+        const sec = document.createElement('section');
+        const tasks = (info.tasks || []).map(t => {
+          const cls = (t.status || '').replace(/\s+/g, '_');
+          return `<li><span>${t.id} — ${t.title || ''}</span><span class="status ${cls}">${t.status}</span></li>`;
+        }).join('');
+        sec.innerHTML = `<h2>${lane.toUpperCase()}</h2>
+          <div class="meta">Current: ${info.currentTask || '-'} (${info.currentStatus})</div>
+          <ul>${tasks}</ul>`;
+        root.appendChild(sec);
+      }
+    }
+    async function post(url) {
+      await fetch(url, { method: 'POST' });
+      await refresh();
+    }
+    refresh();
+    setInterval(refresh, 5000);
+  </script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+{
+  "updatedAt": "2026-07-21T19:19:39.823Z",
+  "agents": {
+    "codex": {
+      "smokePass": false,
+      "availableForWriters": false,
+      "lastSmokeExitCode": 1,
+      "lastSmokeNote": "BACKGROUND_CODE_WRITING_BLOCKED_AUTH_OR_CLI — upgrade Codex CLI or fix ~/.codex/config.toml model; ChatGPT auth incompatible with tested model overrides on 0.134.0",
+      "evidence": "D:/UAOS_AGENT_FACTORY_WORKTREES/adapter-smoke/codex-default",
+      "updatedAt": "2026-07-21T19:19:27.250Z",
+      "commandMode": "exec stdin + -c model override attempted; user config model=gpt-5.6-sol requires newer CLI; ChatGPT account rejects gpt-4.1/o4-mini/gpt-5.1-codex etc on CLI 0.134.0"
+    },
+    "claude": {
+      "smokePass": false,
+      "availableForWriters": false,
+      "lastSmokeExitCode": 1,
+      "lastSmokeNote": "Not logged in — use Desktop LOGIN CLAUDE FOR UAOS.cmd",
+      "evidence": null,
+      "updatedAt": "2026-07-21T19:19:27.253Z",
+      "commandMode": null
+    },
+    "gemini": {
+      "smokePass": false,
+      "availableForWriters": false,
+      "lastSmokeExitCode": 41,
+      "lastSmokeNote": "No auth — use Desktop LOGIN GEMINI FOR UAOS.cmd",
+      "evidence": null,
+      "updatedAt": "2026-07-21T19:19:27.256Z",
+      "commandMode": null
+    },
+    "ollama": {
+      "smokePass": true,
+      "availableForWriters": false,
+      "lastSmokeExitCode": 0,
+      "lastSmokeNote": "Local models for scout/review only",
+      "evidence": null,
+      "updatedAt": "2026-07-21T19:19:39.823Z",
+      "commandMode": "ollama run llama3.2:latest",
+      "roles": [
+        "SCOUT",
+        "REVIEWER"
+      ]
+    },
+    "cursor-local": {
+      "smokePass": true,
+      "availableForWriters": true,
+      "lastSmokeExitCode": 0,
+      "lastSmokeNote": "Integrator local task runners",
+      "evidence": null,
+      "updatedAt": "2026-07-21T18:56:09.809Z"
+    }
+  }
+}

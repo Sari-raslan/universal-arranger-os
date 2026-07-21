@@ -1,0 +1,382 @@
+{
+  "lane": "singy",
+  "updatedAt": "2026-07-21T19:19:25.247Z",
+  "tasks": [
+    {
+      "id": "S-001",
+      "lane": "singy",
+      "title": "REAL STATE RECOVERY",
+      "priority": 1000,
+      "status": "passed",
+      "dependsOn": [],
+      "repoRoot": "E:/keyboard-manager-clean/uaos-worktrees/uaos-singy-final-product",
+      "integrationBranch": "factory/singy-integration",
+      "taskBranch": "factory/singy-s-001",
+      "worktreePath": "D:\\UAOS_AGENT_FACTORY_WORKTREES\\singy-integration",
+      "writerRole": "cursor",
+      "scoutRoles": [
+        "claude",
+        "gemini"
+      ],
+      "reviewerRoles": [
+        "claude"
+      ],
+      "allowedPaths": [
+        "reports/**",
+        "docs/**",
+        ".uaos-work/**"
+      ],
+      "forbiddenPaths": [
+        "node_modules/**",
+        "release/**"
+      ],
+      "commands": {
+        "preflight": [],
+        "tests": [],
+        "build": [],
+        "acceptance": []
+      },
+      "artifactsExpected": [
+        "logs/singy/S-001/S-001-result.json"
+      ],
+      "humanGate": false,
+      "retryLimit": 2,
+      "timeoutMinutes": 90,
+      "evidenceDir": "E:/keyboard-manager-clean/uaos-agent-factory/logs/singy/S-001",
+      "rollback": "none-read-only",
+      "result": {
+        "amendedAt": "2026-07-21T16:51:28.916Z",
+        "physicalArtifactsVerified": true,
+        "artifacts": [
+          {
+            "path": "D:\\\\UAOS_SINGY_PHYSICAL_RECOVERY_BUILD\\\\release\\\\UAOS-Singy-Setup.exe",
+            "sha256": "3091BE345CD6F9AE56C808B558CA97081C7CB6C6B6FE66F0C3349B13010AA167",
+            "bytes": 254199632
+          },
+          {
+            "path": "D:\\\\UAOS_SINGY_PHYSICAL_RECOVERY_BUILD\\\\release\\\\UAOS-Singy-Portable.exe",
+            "sha256": "7CB79C967EC1C8909AE0A904FF21ACB475D0B471E4EC9150C8B7FED3BDDBBC69",
+            "bytes": 253969706
+          },
+          {
+            "path": "D:\\\\UAOS_SINGY_PHYSICAL_RECOVERY_BUILD\\\\release\\\\owner-install\\\\UAOS Singy.exe",
+            "sha256": "6FF891F87F8581D9057B748F94DDB12B7D832543BE0F04418EDC651300CCDCE1",
+            "bytes": 225448960
+          }
+        ],
+        "firstBlocker": "OWNER_MUSICAL_LISTENING_AND_APPROVAL_PENDING",
+        "secondaryNotes": [
+          "Owner dirty tree preserved; factory uses D:/UAOS_AGENT_FACTORY_WORKTREES/singy-integration",
+          "Public release still blocked pending signing + owner musical gate",
+          "Seal FinalStatus: UAOS_SINGY_BACKGROUND_INSTRUMENTATION_FIXED_READY_FOR_OWNER_REVIEW"
+        ],
+        "rebuildRequired": false,
+        "taskId": "S-001"
+      },
+      "startedAt": "2026-07-21T16:48:26.118Z",
+      "updatedAt": "2026-07-21T16:51:28.925Z"
+    },
+    {
+      "id": "S-010",
+      "lane": "singy",
+      "title": "CLEAN START AND FIRST-RUN",
+      "priority": 900,
+      "status": "integrated",
+      "dependsOn": [
+        "S-001"
+      ],
+      "repoRoot": "E:/keyboard-manager-clean/uaos-worktrees/uaos-singy-final-product",
+      "integrationBranch": "factory/singy-integration",
+      "taskBranch": "factory/singy-s-010",
+      "writerRole": "codex",
+      "scoutRoles": [
+        "claude"
+      ],
+      "reviewerRoles": [
+        "claude",
+        "gemini"
+      ],
+      "allowedPaths": [
+        "apps/desktop/**",
+        "apps/web/**",
+        "docs/**"
+      ],
+      "forbiddenPaths": [
+        "node_modules/**"
+      ],
+      "commands": {
+        "preflight": [],
+        "tests": [],
+        "build": [],
+        "acceptance": []
+      },
+      "artifactsExpected": [],
+      "humanGate": false,
+      "retryLimit": 2,
+      "timeoutMinutes": 90,
+      "evidenceDir": "E:/keyboard-manager-clean/uaos-agent-factory/logs/singy/S-010",
+      "rollback": "git revert task commit",
+      "result": {
+        "status": "PASS",
+        "commit": "35923ef9d5fd7358e5757eef2dfd8d0ccce6dc0c",
+        "writer": "cursor-local",
+        "integrated": true
+      },
+      "updatedAt": "2026-07-21T19:19:19.576Z"
+    },
+    {
+      "id": "S-020",
+      "lane": "singy",
+      "title": "IMPORT",
+      "priority": 880,
+      "status": "ready",
+      "dependsOn": [
+        "S-010"
+      ],
+      "repoRoot": "E:/keyboard-manager-clean/uaos-worktrees/uaos-singy-final-product",
+      "integrationBranch": "factory/singy-integration",
+      "taskBranch": "factory/singy-s-020",
+      "writerRole": "codex",
+      "scoutRoles": [
+        "claude"
+      ],
+      "reviewerRoles": [
+        "claude"
+      ],
+      "allowedPaths": [
+        "apps/desktop/electron/**",
+        "apps/desktop/src/singy/**",
+        "tests/**",
+        "package.json"
+      ],
+      "forbiddenPaths": [
+        "node_modules/**",
+        "release/**",
+        "dist/**"
+      ],
+      "commands": {
+        "preflight": [],
+        "tests": [
+          "npm run test:singy-s020 --if-present",
+          "node --test tests/singy-s020*.cjs"
+        ],
+        "build": [],
+        "acceptance": []
+      },
+      "artifactsExpected": [
+        "D:/UAOS_AGENT_FACTORY_ARTIFACTS/singy/S-020/S-020-result.json"
+      ],
+      "humanGate": false,
+      "retryLimit": 2,
+      "timeoutMinutes": 90,
+      "evidenceDir": "E:/keyboard-manager-clean/uaos-agent-factory/logs/singy/S-020",
+      "rollback": "git revert task commit",
+      "result": {
+        "clearedAwaiting": true
+      },
+      "updatedAt": "2026-07-21T19:19:25.247Z",
+      "objective": "Customer can import supported vocal/audio into a new Singy project without owner paths. WAV required; MP3/M4A only if proven. Copy into managed media or safe relative ref. Hash media. Duplicate/missing/corrupt handling. Offline only.",
+      "description": "Implement import UX + service; tests for valid/corrupt/unsupported/duplicate/spaces/reopen/missing; no path leaks."
+    },
+    {
+      "id": "S-030",
+      "lane": "singy",
+      "title": "ARRANGEMENT STYLE CHOICE",
+      "priority": 860,
+      "status": "pending",
+      "dependsOn": [
+        "S-020"
+      ],
+      "humanGate": false,
+      "retryLimit": 2,
+      "timeoutMinutes": 90,
+      "commands": {
+        "preflight": [],
+        "tests": [],
+        "build": [],
+        "acceptance": []
+      },
+      "result": null
+    },
+    {
+      "id": "S-040",
+      "lane": "singy",
+      "title": "REAL PLAYBACK",
+      "priority": 850,
+      "status": "pending",
+      "dependsOn": [
+        "S-030"
+      ],
+      "humanGate": false,
+      "retryLimit": 2,
+      "timeoutMinutes": 90,
+      "commands": {
+        "preflight": [],
+        "tests": [],
+        "build": [],
+        "acceptance": []
+      },
+      "result": null
+    },
+    {
+      "id": "S-050",
+      "lane": "singy",
+      "title": "SAVE/REOPEN",
+      "priority": 840,
+      "status": "pending",
+      "dependsOn": [
+        "S-040"
+      ],
+      "humanGate": false,
+      "retryLimit": 2,
+      "timeoutMinutes": 90,
+      "commands": {
+        "preflight": [],
+        "tests": [],
+        "build": [],
+        "acceptance": []
+      },
+      "result": null
+    },
+    {
+      "id": "S-060",
+      "lane": "singy",
+      "title": "EXPORT",
+      "priority": 830,
+      "status": "pending",
+      "dependsOn": [
+        "S-050"
+      ],
+      "humanGate": false,
+      "retryLimit": 2,
+      "timeoutMinutes": 90,
+      "commands": {
+        "preflight": [],
+        "tests": [],
+        "build": [],
+        "acceptance": []
+      },
+      "result": null
+    },
+    {
+      "id": "S-070",
+      "lane": "singy",
+      "title": "CUSTOMER UX",
+      "priority": 820,
+      "status": "pending",
+      "dependsOn": [
+        "S-060"
+      ],
+      "humanGate": false,
+      "retryLimit": 2,
+      "timeoutMinutes": 90,
+      "commands": {
+        "preflight": [],
+        "tests": [],
+        "build": [],
+        "acceptance": []
+      },
+      "result": null
+    },
+    {
+      "id": "S-080",
+      "lane": "singy",
+      "title": "RIGHTS AND PACKAGE CLEANLINESS",
+      "priority": 810,
+      "status": "pending",
+      "dependsOn": [
+        "S-070"
+      ],
+      "humanGate": false,
+      "retryLimit": 2,
+      "timeoutMinutes": 90,
+      "commands": {
+        "preflight": [],
+        "tests": [],
+        "build": [],
+        "acceptance": []
+      },
+      "result": null
+    },
+    {
+      "id": "S-090",
+      "lane": "singy",
+      "title": "WINDOWS BUILDS",
+      "priority": 800,
+      "status": "pending",
+      "dependsOn": [
+        "S-080"
+      ],
+      "humanGate": false,
+      "retryLimit": 2,
+      "timeoutMinutes": 180,
+      "commands": {
+        "preflight": [],
+        "tests": [],
+        "build": [],
+        "acceptance": []
+      },
+      "result": null
+    },
+    {
+      "id": "S-100",
+      "lane": "singy",
+      "title": "CLEAN MACHINE ACCEPTANCE",
+      "priority": 790,
+      "status": "pending",
+      "dependsOn": [
+        "S-090"
+      ],
+      "humanGate": false,
+      "retryLimit": 2,
+      "timeoutMinutes": 180,
+      "commands": {
+        "preflight": [],
+        "tests": [],
+        "build": [],
+        "acceptance": []
+      },
+      "result": null
+    },
+    {
+      "id": "S-110",
+      "lane": "singy",
+      "title": "OWNER HUMAN GATE",
+      "priority": 780,
+      "status": "pending",
+      "dependsOn": [
+        "S-100"
+      ],
+      "humanGate": true,
+      "retryLimit": 0,
+      "timeoutMinutes": 0,
+      "commands": {
+        "preflight": [],
+        "tests": [],
+        "build": [],
+        "acceptance": []
+      },
+      "result": null
+    },
+    {
+      "id": "S-120",
+      "lane": "singy",
+      "title": "SINGY SELLABLE CANDIDATE",
+      "priority": 770,
+      "status": "pending",
+      "dependsOn": [
+        "S-110"
+      ],
+      "humanGate": false,
+      "retryLimit": 1,
+      "timeoutMinutes": 90,
+      "commands": {
+        "preflight": [],
+        "tests": [],
+        "build": [],
+        "acceptance": []
+      },
+      "result": null
+    }
+  ]
+}

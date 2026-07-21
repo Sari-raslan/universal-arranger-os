@@ -1,0 +1,692 @@
+{
+  "lane": "library",
+  "updatedAt": "2026-07-21T19:19:25.244Z",
+  "tasks": [
+    {
+      "id": "L-001",
+      "lane": "library",
+      "title": "REAL STATE RECOVERY",
+      "priority": 1000,
+      "status": "passed",
+      "dependsOn": [],
+      "repoRoot": "E:/keyboard-manager-clean/uaos-real-product",
+      "integrationBranch": "factory/library-integration",
+      "taskBranch": "factory/library-l-001",
+      "worktreePath": "D:\\UAOS_AGENT_FACTORY_WORKTREES\\library-integration",
+      "writerRole": "cursor",
+      "scoutRoles": [
+        "claude",
+        "ollama"
+      ],
+      "reviewerRoles": [
+        "claude"
+      ],
+      "allowedPaths": [
+        "reports/**",
+        "docs/**",
+        "packages/**",
+        "PROJECT_STATE.md",
+        "TASKS.json"
+      ],
+      "forbiddenPaths": [
+        "node_modules/**"
+      ],
+      "commands": {
+        "preflight": [],
+        "tests": [
+          "npm run test:p0-005",
+          "npm run test:p0-006",
+          "npm run test:p0-007"
+        ],
+        "build": [],
+        "acceptance": []
+      },
+      "artifactsExpected": [
+        "logs/library/L-001/L-001-result.json"
+      ],
+      "humanGate": false,
+      "retryLimit": 2,
+      "timeoutMinutes": 90,
+      "evidenceDir": "E:/keyboard-manager-clean/uaos-agent-factory/logs/library/L-001",
+      "rollback": "none-read-only",
+      "result": {
+        "taskId": "L-001",
+        "lane": "library",
+        "completedAt": "2026-07-21T16:48:58.263Z",
+        "discoveryPath": "E:\\keyboard-manager-clean\\uaos-agent-factory\\reports\\LIBRARY_DISCOVERY.json",
+        "projectStateExcerpt": "# PROJECT_STATE\n\nupdatedAt: 2026-07-21T15:30:00+02:00\nmode: LOCAL_ONLY\nstatus: LOCAL_BUILD_READY\nlocalPreviewVerified: true\ncloudDeployment: CLOUD_DEPLOYMENT_NOT_REQUESTED\ncommercialRelease: COMMERCIAL_RELEASE_NOT_CONFIRMED\n\n## Completed\n\n- P0-005, P0-006, P0-007, LOCAL-002, ROADMAP_RECONCILIATION\n- LOCAL-004 COMPLETE — sampler ↔ library-build adapter\n- LOCAL-005 COMPLETE — desktop read-only transactional library status\n- **LOCAL-006 COMPLETE** — local redacted support/diagnostics bundle\n\n## Evidence (LOCAL-006)\n\n- `packages/local-support-bundle/`\n- `docs/LOCAL_SUPPORT_BUNDLE_CONTRACT.md`\n- `docs/LOCAL_SUPPORT_BUNDLE_RUN_GUIDE_AR.md`\n- `reports/local-006-support-bundle.json`\n- `npm run test:local-006`\n\n## Next exact local task\n\n**CONTENT-001** — Owner original sample content + rights evidence (**blocked**: OWNER_RECORDINGS, RIGHTS_APPROVALS)\n\nCLOUD-000 remains blocked/deferred.\nCommercial readiness remains unconfirmed.\nDo not start CONTENT-001 or CLOUD-000 without explicit owner unblock.\n",
+        "p0Results": {
+          "test:p0-005": {
+            "ok": true,
+            "exitCode": 0,
+            "stdoutTail": "\n> uaos-real-product@1.0.0 test:p0-005\n> node packages/sampler/voiceLifecycle.p0005.test.cjs\n\nPASS one-shot: early note-off does not stop\nPASS one-shot: natural end stops voice\nPASS one-shot: panic stops\nPASS one-shot: choke from closed hat\nPASS choke: kick does not choke hi-hat\nPASS choke: independent groups continue\nPASS choke: rapid retrigger leaves no orphans\nPASS sustain: second C4 note-off does not kill both\nPASS sustain: older note-off does not stop newer retrigger\nPASS sustain pedal: deferred releases only sustained voices\nPASS polyphony steal clears indexes\nPASS rapid retrigger: independent voice ids\nPASS round robin advances across retrigger\nPASS fallback: orphaned continuous voice stops at timeout\nPASS fallback: natural end does not double-stop\nPASS dispose cancels timers\nPASS cleanup is idempotent\n{\"status\":\"PASS\",\"suite\":\"P0-005\",\"failures\":0}\n",
+            "stderrTail": ""
+          },
+          "test:p0-006": {
+            "ok": true,
+            "exitCode": 0,
+            "stdoutTail": "\n> uaos-real-product@1.0.0 test:p0-006\n> node packages/library-build/transactionalBuild.p0006.test.cjs\n\nPASS VALID_THEN_CORRUPT_SAMPLE\nPASS INVALID_FILENAME_NOT_SKIPPED\nPASS MISSING_SAMPLE\nPASS HASH_FAILURE_MID_BUILD\nPASS STAGING_WRITE_FAILURE\nPASS MANIFEST_VALIDATION_FAILURE\nPASS COMMIT_RENAME_FAILURE\nPASS CATALOG_WRITE_FAILURE\nPASS PRODUCT_STATUS_NOT_MUTATED_ON_FAILURE\nPASS SUCCESSFUL_ATOMIC_REPLACEMENT\nPASS CONCURRENT_BUILD_BLOCKED\nPASS STALE_LOCK_POLICY\nPASS CRASH_RECOVERY\nPASS DETERMINISTIC_BUILD\nPASS NO_COMMERCIAL_PROMOTION\nPASS CLEANUP_IDEMPOTENT\nPASS WINDOWS_PATHS\n{\"status\":\"PASS\",\"suite\":\"P0-006\",\"failures\":0,\"tests\":17}\n",
+            "stderrTail": ""
+          },
+          "test:p0-007": {
+            "ok": true,
+            "exitCode": 0,
+            "stdoutTail": "\n> uaos-real-product@1.0.0 test:p0-007\n> node packages/local-preview-server/localServer.p0007.test.cjs\n\nPASS MALFORMED_PERCENT_ENCODING\nPASS ENCODED_TRAVERSAL\nPASS WINDOWS_ABSOLUTE_PATH\nPASS NUL_BYTE\nPASS DOUBLE_ENCODING\nPASS SYMLINK_OR_JUNCTION_ESCAPE\nPASS DOTFILE_DENIED\nPASS DIRECTORY_LISTING_DISABLED\nPASS VALID_FILES\nPASS HEAD_PARITY\nPASS METHOD_REJECTION\nPASS HOST_VALIDATION\nPASS URI_TOO_LONG\nPASS MALFORMED_HTTP_CLIENT_ERROR\n{\"level\":\"info\",\"event\":\"request\",\"method\":\"GET\",\"path\":\"/transient.txt\",\"status\":404,\"code\":\"OK\",\"ms\":20,\"ts\":\"2026-07-21T16:48:52.490Z\"}\nPASS FILE_DISAPPEARS_DURING_STREAM\nPASS CLIENT_ABORT\nPASS EADDRINUSE\nPASS MISSING_ROOT\nPASS SECURITY_HEADERS\nPASS NO_CORS_WILDCARD\nPASS RANGE_POLICY\nPASS CONCURRENT_REQUESTS\nPASS QUERY_STRING_ISOLATION\nPASS UNKNOWN_FILE_TYPE\nPASS REPEATED_MALFORMED_REQUESTS\nPASS NO_SECRET_OR_PATH_DISCLOSURE\nPASS LOOPBACK_ONLY_DEFAULT\nPASS GRACEFUL_SHUTDOWN\nPASS EARLY_SERVER_EXIT\n{\"status\":\"PASS\",\"suite\":\"P0-007\",\"failures\":0}\n",
+            "stderrTail": ""
+          }
+        },
+        "commercialLibraryCount": 0,
+        "commercialLibrarySample": [],
+        "openTasks": [
+          {
+            "id": "CONTENT-001",
+            "title": "Owner original sample content + rights evidence (human track)",
+            "priority": "P3",
+            "status": "blocked",
+            "rationale": "Software gates cannot invent rights-ready recordings; content and approvals are owner/legal work.",
+            "dependencies": [
+              "LOCAL-004"
+            ],
+            "scope": [
+              "Owner recordings",
+              "performer/license evidence",
+              "listening approval"
+            ],
+            "outOfScope": [
+              "Cursor generating commercial samples",
+              "Fake READY_FOR_SALE"
+            ],
+            "acceptanceCriteria": [
+              "Owner-provided rights evidence recorded outside code claims"
+            ],
+            "evidenceRequired": [
+              "Owner documents — not fabricated in repo"
+            ],
+            "blockers": [
+              "OWNER_RECORDINGS",
+              "RIGHTS_APPROVALS"
+            ],
+            "suggestedFiles": [
+              "packages/product-truth",
+              "packages/owner-library"
+            ]
+          },
+          {
+            "id": "CLOUD-000",
+            "title": "Future cloud deploy (deferred)",
+            "priority": "P9",
+            "status": "blocked",
+            "notes": "Deferred; not next local product work",
+            "rationale": "Requires tokens/accounts/DNS; explicitly out of local productization path.",
+            "dependencies": [],
+            "scope": [
+              "Future cloud deploy after explicit unblock"
+            ],
+            "outOfScope": [
+              "Any work in current local sessions"
+            ],
+            "acceptanceCriteria": [
+              "Explicit owner unblock + separate prompt"
+            ],
+            "evidenceRequired": [],
+            "blockers": [
+              "TOKENS",
+              "ACCOUNTS",
+              "OWNER_UNBLOCK"
+            ],
+            "suggestedFiles": [
+              "docs/FUTURE_CLOUD_DEPLOYMENT_AR.md"
+            ]
+          }
+        ],
+        "contentBlocked": {
+          "id": "CONTENT-001",
+          "title": "Owner original sample content + rights evidence (human track)",
+          "priority": "P3",
+          "status": "blocked",
+          "rationale": "Software gates cannot invent rights-ready recordings; content and approvals are owner/legal work.",
+          "dependencies": [
+            "LOCAL-004"
+          ],
+          "scope": [
+            "Owner recordings",
+            "performer/license evidence",
+            "listening approval"
+          ],
+          "outOfScope": [
+            "Cursor generating commercial samples",
+            "Fake READY_FOR_SALE"
+          ],
+          "acceptanceCriteria": [
+            "Owner-provided rights evidence recorded outside code claims"
+          ],
+          "evidenceRequired": [
+            "Owner documents — not fabricated in repo"
+          ],
+          "blockers": [
+            "OWNER_RECORDINGS",
+            "RIGHTS_APPROVALS"
+          ],
+          "suggestedFiles": [
+            "packages/product-truth",
+            "packages/owner-library"
+          ]
+        },
+        "integrationWorktree": {
+          "ok": true,
+          "alreadyExists": true,
+          "worktreePath": "D:\\UAOS_AGENT_FACTORY_WORKTREES\\library-integration",
+          "branch": "factory/library-integration",
+          "head": "882f6ca695b4c8df6f0f9968b65b5710d0c55346"
+        },
+        "firstBlocker": "P0_COMPLETE_NEXT_USER_SAMPLE_IMPORT_AND_WINDOWS_APP",
+        "honestClaim": "Factory Studio sells the tool; commercial Oud/Qanun/Darbuka content is a separate future queue"
+      },
+      "startedAt": "2026-07-21T16:48:46.233Z",
+      "updatedAt": "2026-07-21T16:48:58.265Z"
+    },
+    {
+      "id": "L-010",
+      "lane": "library",
+      "title": "P0-005 VOICE SEMANTICS VERIFY",
+      "priority": 950,
+      "status": "integrated",
+      "dependsOn": [
+        "L-001"
+      ],
+      "note": "Marked done in TASKS.json; factory re-verifies before advancing",
+      "humanGate": false,
+      "retryLimit": 2,
+      "timeoutMinutes": 90,
+      "commands": {
+        "preflight": [],
+        "tests": [
+          "npm run test:p0-005"
+        ],
+        "build": [],
+        "acceptance": []
+      },
+      "result": {
+        "ok": true,
+        "status": "PASS",
+        "task": "L-010",
+        "lane": "library",
+        "assignedAgent": "cursor-local",
+        "mode": "physical_verification_no_reimplement",
+        "completedAt": "2026-07-21T18:57:33.624Z",
+        "worktree": "D:\\UAOS_AGENT_FACTORY_WORKTREES\\library-integration",
+        "p0": {
+          "L-010": {
+            "cmd": "npm run test:p0-005",
+            "exitCode": 0,
+            "ok": true,
+            "stdoutTail": "\n> uaos-real-product@1.0.0 test:p0-005\n> node packages/sampler/voiceLifecycle.p0005.test.cjs\n\nPASS one-shot: early note-off does not stop\nPASS one-shot: natural end stops voice\nPASS one-shot: panic stops\nPASS one-shot: choke from closed hat\nPASS choke: kick does not choke hi-hat\nPASS choke: independent groups continue\nPASS choke: rapid retrigger leaves no orphans\nPASS sustain: second C4 note-off does not kill both\nPASS sustain: older note-off does not stop newer retrigger\nPASS sustain pedal: deferred releases only sustained voices\nPASS polyphony steal clears indexes\nPASS rapid retrigger: independent voice ids\nPASS round robin advances across retrigger\nPASS fallback: orphaned continuous voice stops at timeout\nPASS fallback: natural end does not double-stop\nPASS dispose cancels timers\nPASS cleanup is idempotent\n{\"status\":\"PASS\",\"suite\":\"P0-005\",\"failures\":0}\n",
+            "stderrTail": ""
+          },
+          "L-020": {
+            "cmd": "npm run test:p0-006",
+            "exitCode": 0,
+            "ok": true,
+            "stdoutTail": "\n> uaos-real-product@1.0.0 test:p0-006\n> node packages/library-build/transactionalBuild.p0006.test.cjs\n\nPASS VALID_THEN_CORRUPT_SAMPLE\nPASS INVALID_FILENAME_NOT_SKIPPED\nPASS MISSING_SAMPLE\nPASS HASH_FAILURE_MID_BUILD\nPASS STAGING_WRITE_FAILURE\nPASS MANIFEST_VALIDATION_FAILURE\nPASS COMMIT_RENAME_FAILURE\nPASS CATALOG_WRITE_FAILURE\nPASS PRODUCT_STATUS_NOT_MUTATED_ON_FAILURE\nPASS SUCCESSFUL_ATOMIC_REPLACEMENT\nPASS CONCURRENT_BUILD_BLOCKED\nPASS STALE_LOCK_POLICY\nPASS CRASH_RECOVERY\nPASS DETERMINISTIC_BUILD\nPASS NO_COMMERCIAL_PROMOTION\nPASS CLEANUP_IDEMPOTENT\nPASS WINDOWS_PATHS\n{\"status\":\"PASS\",\"suite\":\"P0-006\",\"failures\":0,\"tests\":17}\n",
+            "stderrTail": ""
+          },
+          "L-030": {
+            "cmd": "npm run test:p0-007",
+            "exitCode": 0,
+            "ok": true,
+            "stdoutTail": "\n> uaos-real-product@1.0.0 test:p0-007\n> node packages/local-preview-server/localServer.p0007.test.cjs\n\nPASS MALFORMED_PERCENT_ENCODING\nPASS ENCODED_TRAVERSAL\nPASS WINDOWS_ABSOLUTE_PATH\nPASS NUL_BYTE\nPASS DOUBLE_ENCODING\nPASS SYMLINK_OR_JUNCTION_ESCAPE\nPASS DOTFILE_DENIED\nPASS DIRECTORY_LISTING_DISABLED\nPASS VALID_FILES\nPASS HEAD_PARITY\nPASS METHOD_REJECTION\nPASS HOST_VALIDATION\nPASS URI_TOO_LONG\nPASS MALFORMED_HTTP_CLIENT_ERROR\n{\"level\":\"info\",\"event\":\"request\",\"method\":\"GET\",\"path\":\"/transient.txt\",\"status\":404,\"code\":\"OK\",\"ms\":15,\"ts\":\"2026-07-21T18:56:31.599Z\"}\nPASS FILE_DISAPPEARS_DURING_STREAM\nPASS CLIENT_ABORT\nPASS EADDRINUSE\nPASS MISSING_ROOT\nPASS SECURITY_HEADERS\nPASS NO_CORS_WILDCARD\nPASS RANGE_POLICY\nPASS CONCURRENT_REQUESTS\nPASS QUERY_STRING_ISOLATION\nPASS UNKNOWN_FILE_TYPE\nPASS REPEATED_MALFORMED_REQUESTS\nPASS NO_SECRET_OR_PATH_DISCLOSURE\nPASS LOOPBACK_ONLY_DEFAULT\nPASS GRACEFUL_SHUTDOWN\nPASS EARLY_SERVER_EXIT\n{\"status\":\"PASS\",\"suite\":\"P0-007\",\"failures\":0}\n",
+            "stderrTail": ""
+          }
+        },
+        "check": {
+          "cmd": "npm run check",
+          "exitCode": 0,
+          "ok": true,
+          "stdoutTail": "0}\nPASS END_TO_END_TEMP_PRODUCT\nPASS WINDOWS_PATH_WITH_SPACES\nPASS DRY_RUN_NO_MUTATION\nPASS MANIFEST_DIGEST_TAMPER\nPASS SAMPLE_HASH_TAMPER_BEFORE_OPEN\nPASS SAMPLE_TAMPER_AFTER_OPEN_BEFORE_LOAD\nPASS DECODER_NOT_CALLED_ON_HASH_FAILURE\nPASS MISSING_SAMPLE\nPASS SAMPLE_COUNT_MISMATCH\nPASS PRODUCT_MANIFEST_BINDING\nPASS UNSUPPORTED_SCHEMA\nPASS PATH_TRAVERSAL\nPASS SYMLINK_OR_JUNCTION_ESCAPE\nPASS ACTIVE_LOCK\nPASS INCOMPLETE_JOURNAL\nPASS MAPPING_FIDELITY\nPASS ROUND_ROBIN_FIDELITY\nPASS VOICE_METADATA_FIDELITY\nPASS DETERMINISTIC_DESCRIPTOR\nPASS COMMERCIAL_FLAG_FALSE\nPASS NO_REAL_CATALOG_MUTATION\nPASS REPEATED_OPEN\nPASS ERROR_REPORT_REDACTION\nPASS CLEANUP\nPASS LIBRARY_ROOT_NOT_FOUND\n{\"status\":\"PASS\",\"suite\":\"LOCAL-004\",\"failures\":0}\nPASS NO_PRODUCT_SELECTED\nPASS VALID_TRANSACTIONAL_PRODUCT_STATUS\nPASS WINDOWS_PATH_WITH_SPACES\nPASS ROOT_NOT_FOUND\nPASS MANIFEST_DIGEST_TAMPER\nPASS SAMPLE_HASH_TAMPER\nPASS SAMPLE_MISSING\nPASS PRODUCT_MANIFEST_MISMATCH\nPASS UNSUPPORTED_SCHEMA\nPASS ACTIVE_BUILD_LOCK\nPASS INCOMPLETE_JOURNAL\nPASS PATH_SAFETY_FAILURE\nPASS FIXTURE_ONLY_WARNING\nPASS COMMERCIAL_FLAG_FALSE\nPASS READ_ONLY_NO_MUTATION\nPASS REAL_CATALOG_UNCHANGED\nPASS AUDIO_NOT_STARTED\nPASS REFRESH_SUCCESS\nPASS REFRESH_AFTER_TAMPER\nPASS STALE_RESULT_SUPPRESSED\nPASS DISPOSE_SUPPRESSES_UPDATE\nPASS REPEATED_REFRESH_CLEAN\nPASS ERROR_REDACTION\nPASS ACCESSIBILITY_STATE\nPASS DETERMINISTIC_STATUS_MODEL\nPASS GATES_REMAIN_GREEN\n{\"status\":\"PASS\",\"suite\":\"LOCAL-005\",\"failures\":0}\nPASS CREATE_MINIMAL_SUPPORT_BUNDLE\nPASS OFFLINE_NO_NETWORK\nPASS NO_TOKEN_ENV_REQUIRED\nPASS SECRET_REDACTION\nPASS PATH_REDACTION_WINDOWS\nPASS EMAIL_AND_IP_REDACTION\nPASS ALLOWLIST_ONLY\nPASS AUDIO_EXCLUDED\nPASS ENV_FILES_EXCLUDED\nPASS GIT_DATA_EXCLUDED\nPASS UAOS_WORK_EXCLUDED\nPASS PRODUCT_READ_ONLY\nPASS COMMERCIAL_FALSE\nPASS FIXTURE_WARNING_PRESERVED\nPASS LIBRARY_STATUS_INCLUDED\nPASS LOG_TRUNCATION\nPASS MALFORMED_UTF8_LOG\nPASS BINARY_LOG_REJECTED\nPASS MISSING_OPTIONAL_LOG\nPASS PERMISSION_DENIED_OPTIONAL_SOURCE\nPASS SIZE_LIMIT\nPASS FILE_COUNT_LIMIT\nPASS ZIP_SLIP_DEFENSE\nPASS ABSOLUTE_ARCHIVE_ENTRY\nPASS SYMLINK_ENTRY\nPASS EXTRA_UNMANIFESTED_ENTRY\nPASS MISSING_MANIFESTED_ENTRY\nPASS HASH_TAMPER\nPASS ARCHIVE_TAMPER\nPASS ATOMIC_OUTPUT\nPASS OUTPUT_ALREADY_EXISTS\nPASS CONCURRENT_GENERATION\nPASS CANCELLATION\nPASS DETERMINISTIC_ENTRY_ORDER\nPASS WINDOWS_PATH_WITH_SPACES\nPASS ERROR_REDACTION\nPASS DESKTOP_NO_AUDIO\nPASS CLEANUP_NO_HANDLES\nPASS REPORT_ALWAYS_VALID\nPASS GATES_REMAIN_GREEN\n{\"status\":\"PASS\",\"suite\":\"LOCAL-006\",\"failures\":0}\n",
+          "stderrTail": ""
+        },
+        "commercialLibraries": 0,
+        "note": "P0-005/006/007 physically re-verified PASS; mark L-010/L-020/L-030 integrated without empty commits; advance to L-040",
+        "nextTask": "L-040",
+        "integrated": true
+      },
+      "updatedAt": "2026-07-21T18:58:12.364Z"
+    },
+    {
+      "id": "L-020",
+      "lane": "library",
+      "title": "P0-006 TRANSACTIONAL BUILD VERIFY",
+      "priority": 940,
+      "status": "integrated",
+      "dependsOn": [
+        "L-010"
+      ],
+      "humanGate": false,
+      "retryLimit": 2,
+      "timeoutMinutes": 90,
+      "commands": {
+        "preflight": [],
+        "tests": [
+          "npm run test:p0-006"
+        ],
+        "build": [],
+        "acceptance": []
+      },
+      "result": {
+        "ok": true,
+        "status": "PASS",
+        "task": "L-020",
+        "lane": "library",
+        "assignedAgent": "cursor-local",
+        "mode": "physical_verification_no_reimplement",
+        "completedAt": "2026-07-21T18:57:33.624Z",
+        "worktree": "D:\\UAOS_AGENT_FACTORY_WORKTREES\\library-integration",
+        "p0": {
+          "L-010": {
+            "cmd": "npm run test:p0-005",
+            "exitCode": 0,
+            "ok": true,
+            "stdoutTail": "\n> uaos-real-product@1.0.0 test:p0-005\n> node packages/sampler/voiceLifecycle.p0005.test.cjs\n\nPASS one-shot: early note-off does not stop\nPASS one-shot: natural end stops voice\nPASS one-shot: panic stops\nPASS one-shot: choke from closed hat\nPASS choke: kick does not choke hi-hat\nPASS choke: independent groups continue\nPASS choke: rapid retrigger leaves no orphans\nPASS sustain: second C4 note-off does not kill both\nPASS sustain: older note-off does not stop newer retrigger\nPASS sustain pedal: deferred releases only sustained voices\nPASS polyphony steal clears indexes\nPASS rapid retrigger: independent voice ids\nPASS round robin advances across retrigger\nPASS fallback: orphaned continuous voice stops at timeout\nPASS fallback: natural end does not double-stop\nPASS dispose cancels timers\nPASS cleanup is idempotent\n{\"status\":\"PASS\",\"suite\":\"P0-005\",\"failures\":0}\n",
+            "stderrTail": ""
+          },
+          "L-020": {
+            "cmd": "npm run test:p0-006",
+            "exitCode": 0,
+            "ok": true,
+            "stdoutTail": "\n> uaos-real-product@1.0.0 test:p0-006\n> node packages/library-build/transactionalBuild.p0006.test.cjs\n\nPASS VALID_THEN_CORRUPT_SAMPLE\nPASS INVALID_FILENAME_NOT_SKIPPED\nPASS MISSING_SAMPLE\nPASS HASH_FAILURE_MID_BUILD\nPASS STAGING_WRITE_FAILURE\nPASS MANIFEST_VALIDATION_FAILURE\nPASS COMMIT_RENAME_FAILURE\nPASS CATALOG_WRITE_FAILURE\nPASS PRODUCT_STATUS_NOT_MUTATED_ON_FAILURE\nPASS SUCCESSFUL_ATOMIC_REPLACEMENT\nPASS CONCURRENT_BUILD_BLOCKED\nPASS STALE_LOCK_POLICY\nPASS CRASH_RECOVERY\nPASS DETERMINISTIC_BUILD\nPASS NO_COMMERCIAL_PROMOTION\nPASS CLEANUP_IDEMPOTENT\nPASS WINDOWS_PATHS\n{\"status\":\"PASS\",\"suite\":\"P0-006\",\"failures\":0,\"tests\":17}\n",
+            "stderrTail": ""
+          },
+          "L-030": {
+            "cmd": "npm run test:p0-007",
+            "exitCode": 0,
+            "ok": true,
+            "stdoutTail": "\n> uaos-real-product@1.0.0 test:p0-007\n> node packages/local-preview-server/localServer.p0007.test.cjs\n\nPASS MALFORMED_PERCENT_ENCODING\nPASS ENCODED_TRAVERSAL\nPASS WINDOWS_ABSOLUTE_PATH\nPASS NUL_BYTE\nPASS DOUBLE_ENCODING\nPASS SYMLINK_OR_JUNCTION_ESCAPE\nPASS DOTFILE_DENIED\nPASS DIRECTORY_LISTING_DISABLED\nPASS VALID_FILES\nPASS HEAD_PARITY\nPASS METHOD_REJECTION\nPASS HOST_VALIDATION\nPASS URI_TOO_LONG\nPASS MALFORMED_HTTP_CLIENT_ERROR\n{\"level\":\"info\",\"event\":\"request\",\"method\":\"GET\",\"path\":\"/transient.txt\",\"status\":404,\"code\":\"OK\",\"ms\":15,\"ts\":\"2026-07-21T18:56:31.599Z\"}\nPASS FILE_DISAPPEARS_DURING_STREAM\nPASS CLIENT_ABORT\nPASS EADDRINUSE\nPASS MISSING_ROOT\nPASS SECURITY_HEADERS\nPASS NO_CORS_WILDCARD\nPASS RANGE_POLICY\nPASS CONCURRENT_REQUESTS\nPASS QUERY_STRING_ISOLATION\nPASS UNKNOWN_FILE_TYPE\nPASS REPEATED_MALFORMED_REQUESTS\nPASS NO_SECRET_OR_PATH_DISCLOSURE\nPASS LOOPBACK_ONLY_DEFAULT\nPASS GRACEFUL_SHUTDOWN\nPASS EARLY_SERVER_EXIT\n{\"status\":\"PASS\",\"suite\":\"P0-007\",\"failures\":0}\n",
+            "stderrTail": ""
+          }
+        },
+        "check": {
+          "cmd": "npm run check",
+          "exitCode": 0,
+          "ok": true,
+          "stdoutTail": "0}\nPASS END_TO_END_TEMP_PRODUCT\nPASS WINDOWS_PATH_WITH_SPACES\nPASS DRY_RUN_NO_MUTATION\nPASS MANIFEST_DIGEST_TAMPER\nPASS SAMPLE_HASH_TAMPER_BEFORE_OPEN\nPASS SAMPLE_TAMPER_AFTER_OPEN_BEFORE_LOAD\nPASS DECODER_NOT_CALLED_ON_HASH_FAILURE\nPASS MISSING_SAMPLE\nPASS SAMPLE_COUNT_MISMATCH\nPASS PRODUCT_MANIFEST_BINDING\nPASS UNSUPPORTED_SCHEMA\nPASS PATH_TRAVERSAL\nPASS SYMLINK_OR_JUNCTION_ESCAPE\nPASS ACTIVE_LOCK\nPASS INCOMPLETE_JOURNAL\nPASS MAPPING_FIDELITY\nPASS ROUND_ROBIN_FIDELITY\nPASS VOICE_METADATA_FIDELITY\nPASS DETERMINISTIC_DESCRIPTOR\nPASS COMMERCIAL_FLAG_FALSE\nPASS NO_REAL_CATALOG_MUTATION\nPASS REPEATED_OPEN\nPASS ERROR_REPORT_REDACTION\nPASS CLEANUP\nPASS LIBRARY_ROOT_NOT_FOUND\n{\"status\":\"PASS\",\"suite\":\"LOCAL-004\",\"failures\":0}\nPASS NO_PRODUCT_SELECTED\nPASS VALID_TRANSACTIONAL_PRODUCT_STATUS\nPASS WINDOWS_PATH_WITH_SPACES\nPASS ROOT_NOT_FOUND\nPASS MANIFEST_DIGEST_TAMPER\nPASS SAMPLE_HASH_TAMPER\nPASS SAMPLE_MISSING\nPASS PRODUCT_MANIFEST_MISMATCH\nPASS UNSUPPORTED_SCHEMA\nPASS ACTIVE_BUILD_LOCK\nPASS INCOMPLETE_JOURNAL\nPASS PATH_SAFETY_FAILURE\nPASS FIXTURE_ONLY_WARNING\nPASS COMMERCIAL_FLAG_FALSE\nPASS READ_ONLY_NO_MUTATION\nPASS REAL_CATALOG_UNCHANGED\nPASS AUDIO_NOT_STARTED\nPASS REFRESH_SUCCESS\nPASS REFRESH_AFTER_TAMPER\nPASS STALE_RESULT_SUPPRESSED\nPASS DISPOSE_SUPPRESSES_UPDATE\nPASS REPEATED_REFRESH_CLEAN\nPASS ERROR_REDACTION\nPASS ACCESSIBILITY_STATE\nPASS DETERMINISTIC_STATUS_MODEL\nPASS GATES_REMAIN_GREEN\n{\"status\":\"PASS\",\"suite\":\"LOCAL-005\",\"failures\":0}\nPASS CREATE_MINIMAL_SUPPORT_BUNDLE\nPASS OFFLINE_NO_NETWORK\nPASS NO_TOKEN_ENV_REQUIRED\nPASS SECRET_REDACTION\nPASS PATH_REDACTION_WINDOWS\nPASS EMAIL_AND_IP_REDACTION\nPASS ALLOWLIST_ONLY\nPASS AUDIO_EXCLUDED\nPASS ENV_FILES_EXCLUDED\nPASS GIT_DATA_EXCLUDED\nPASS UAOS_WORK_EXCLUDED\nPASS PRODUCT_READ_ONLY\nPASS COMMERCIAL_FALSE\nPASS FIXTURE_WARNING_PRESERVED\nPASS LIBRARY_STATUS_INCLUDED\nPASS LOG_TRUNCATION\nPASS MALFORMED_UTF8_LOG\nPASS BINARY_LOG_REJECTED\nPASS MISSING_OPTIONAL_LOG\nPASS PERMISSION_DENIED_OPTIONAL_SOURCE\nPASS SIZE_LIMIT\nPASS FILE_COUNT_LIMIT\nPASS ZIP_SLIP_DEFENSE\nPASS ABSOLUTE_ARCHIVE_ENTRY\nPASS SYMLINK_ENTRY\nPASS EXTRA_UNMANIFESTED_ENTRY\nPASS MISSING_MANIFESTED_ENTRY\nPASS HASH_TAMPER\nPASS ARCHIVE_TAMPER\nPASS ATOMIC_OUTPUT\nPASS OUTPUT_ALREADY_EXISTS\nPASS CONCURRENT_GENERATION\nPASS CANCELLATION\nPASS DETERMINISTIC_ENTRY_ORDER\nPASS WINDOWS_PATH_WITH_SPACES\nPASS ERROR_REDACTION\nPASS DESKTOP_NO_AUDIO\nPASS CLEANUP_NO_HANDLES\nPASS REPORT_ALWAYS_VALID\nPASS GATES_REMAIN_GREEN\n{\"status\":\"PASS\",\"suite\":\"LOCAL-006\",\"failures\":0}\n",
+          "stderrTail": ""
+        },
+        "commercialLibraries": 0,
+        "note": "P0-005/006/007 physically re-verified PASS; mark L-010/L-020/L-030 integrated without empty commits; advance to L-040",
+        "nextTask": "L-040",
+        "integrated": true
+      },
+      "updatedAt": "2026-07-21T18:58:12.367Z"
+    },
+    {
+      "id": "L-030",
+      "lane": "library",
+      "title": "P0-007 LOCAL SERVER SECURITY VERIFY",
+      "priority": 930,
+      "status": "integrated",
+      "dependsOn": [
+        "L-020"
+      ],
+      "humanGate": false,
+      "retryLimit": 2,
+      "timeoutMinutes": 90,
+      "commands": {
+        "preflight": [],
+        "tests": [
+          "npm run test:p0-007"
+        ],
+        "build": [],
+        "acceptance": []
+      },
+      "result": {
+        "ok": true,
+        "status": "PASS",
+        "task": "L-030",
+        "lane": "library",
+        "assignedAgent": "cursor-local",
+        "mode": "physical_verification_no_reimplement",
+        "completedAt": "2026-07-21T18:57:33.624Z",
+        "worktree": "D:\\UAOS_AGENT_FACTORY_WORKTREES\\library-integration",
+        "p0": {
+          "L-010": {
+            "cmd": "npm run test:p0-005",
+            "exitCode": 0,
+            "ok": true,
+            "stdoutTail": "\n> uaos-real-product@1.0.0 test:p0-005\n> node packages/sampler/voiceLifecycle.p0005.test.cjs\n\nPASS one-shot: early note-off does not stop\nPASS one-shot: natural end stops voice\nPASS one-shot: panic stops\nPASS one-shot: choke from closed hat\nPASS choke: kick does not choke hi-hat\nPASS choke: independent groups continue\nPASS choke: rapid retrigger leaves no orphans\nPASS sustain: second C4 note-off does not kill both\nPASS sustain: older note-off does not stop newer retrigger\nPASS sustain pedal: deferred releases only sustained voices\nPASS polyphony steal clears indexes\nPASS rapid retrigger: independent voice ids\nPASS round robin advances across retrigger\nPASS fallback: orphaned continuous voice stops at timeout\nPASS fallback: natural end does not double-stop\nPASS dispose cancels timers\nPASS cleanup is idempotent\n{\"status\":\"PASS\",\"suite\":\"P0-005\",\"failures\":0}\n",
+            "stderrTail": ""
+          },
+          "L-020": {
+            "cmd": "npm run test:p0-006",
+            "exitCode": 0,
+            "ok": true,
+            "stdoutTail": "\n> uaos-real-product@1.0.0 test:p0-006\n> node packages/library-build/transactionalBuild.p0006.test.cjs\n\nPASS VALID_THEN_CORRUPT_SAMPLE\nPASS INVALID_FILENAME_NOT_SKIPPED\nPASS MISSING_SAMPLE\nPASS HASH_FAILURE_MID_BUILD\nPASS STAGING_WRITE_FAILURE\nPASS MANIFEST_VALIDATION_FAILURE\nPASS COMMIT_RENAME_FAILURE\nPASS CATALOG_WRITE_FAILURE\nPASS PRODUCT_STATUS_NOT_MUTATED_ON_FAILURE\nPASS SUCCESSFUL_ATOMIC_REPLACEMENT\nPASS CONCURRENT_BUILD_BLOCKED\nPASS STALE_LOCK_POLICY\nPASS CRASH_RECOVERY\nPASS DETERMINISTIC_BUILD\nPASS NO_COMMERCIAL_PROMOTION\nPASS CLEANUP_IDEMPOTENT\nPASS WINDOWS_PATHS\n{\"status\":\"PASS\",\"suite\":\"P0-006\",\"failures\":0,\"tests\":17}\n",
+            "stderrTail": ""
+          },
+          "L-030": {
+            "cmd": "npm run test:p0-007",
+            "exitCode": 0,
+            "ok": true,
+            "stdoutTail": "\n> uaos-real-product@1.0.0 test:p0-007\n> node packages/local-preview-server/localServer.p0007.test.cjs\n\nPASS MALFORMED_PERCENT_ENCODING\nPASS ENCODED_TRAVERSAL\nPASS WINDOWS_ABSOLUTE_PATH\nPASS NUL_BYTE\nPASS DOUBLE_ENCODING\nPASS SYMLINK_OR_JUNCTION_ESCAPE\nPASS DOTFILE_DENIED\nPASS DIRECTORY_LISTING_DISABLED\nPASS VALID_FILES\nPASS HEAD_PARITY\nPASS METHOD_REJECTION\nPASS HOST_VALIDATION\nPASS URI_TOO_LONG\nPASS MALFORMED_HTTP_CLIENT_ERROR\n{\"level\":\"info\",\"event\":\"request\",\"method\":\"GET\",\"path\":\"/transient.txt\",\"status\":404,\"code\":\"OK\",\"ms\":15,\"ts\":\"2026-07-21T18:56:31.599Z\"}\nPASS FILE_DISAPPEARS_DURING_STREAM\nPASS CLIENT_ABORT\nPASS EADDRINUSE\nPASS MISSING_ROOT\nPASS SECURITY_HEADERS\nPASS NO_CORS_WILDCARD\nPASS RANGE_POLICY\nPASS CONCURRENT_REQUESTS\nPASS QUERY_STRING_ISOLATION\nPASS UNKNOWN_FILE_TYPE\nPASS REPEATED_MALFORMED_REQUESTS\nPASS NO_SECRET_OR_PATH_DISCLOSURE\nPASS LOOPBACK_ONLY_DEFAULT\nPASS GRACEFUL_SHUTDOWN\nPASS EARLY_SERVER_EXIT\n{\"status\":\"PASS\",\"suite\":\"P0-007\",\"failures\":0}\n",
+            "stderrTail": ""
+          }
+        },
+        "check": {
+          "cmd": "npm run check",
+          "exitCode": 0,
+          "ok": true,
+          "stdoutTail": "0}\nPASS END_TO_END_TEMP_PRODUCT\nPASS WINDOWS_PATH_WITH_SPACES\nPASS DRY_RUN_NO_MUTATION\nPASS MANIFEST_DIGEST_TAMPER\nPASS SAMPLE_HASH_TAMPER_BEFORE_OPEN\nPASS SAMPLE_TAMPER_AFTER_OPEN_BEFORE_LOAD\nPASS DECODER_NOT_CALLED_ON_HASH_FAILURE\nPASS MISSING_SAMPLE\nPASS SAMPLE_COUNT_MISMATCH\nPASS PRODUCT_MANIFEST_BINDING\nPASS UNSUPPORTED_SCHEMA\nPASS PATH_TRAVERSAL\nPASS SYMLINK_OR_JUNCTION_ESCAPE\nPASS ACTIVE_LOCK\nPASS INCOMPLETE_JOURNAL\nPASS MAPPING_FIDELITY\nPASS ROUND_ROBIN_FIDELITY\nPASS VOICE_METADATA_FIDELITY\nPASS DETERMINISTIC_DESCRIPTOR\nPASS COMMERCIAL_FLAG_FALSE\nPASS NO_REAL_CATALOG_MUTATION\nPASS REPEATED_OPEN\nPASS ERROR_REPORT_REDACTION\nPASS CLEANUP\nPASS LIBRARY_ROOT_NOT_FOUND\n{\"status\":\"PASS\",\"suite\":\"LOCAL-004\",\"failures\":0}\nPASS NO_PRODUCT_SELECTED\nPASS VALID_TRANSACTIONAL_PRODUCT_STATUS\nPASS WINDOWS_PATH_WITH_SPACES\nPASS ROOT_NOT_FOUND\nPASS MANIFEST_DIGEST_TAMPER\nPASS SAMPLE_HASH_TAMPER\nPASS SAMPLE_MISSING\nPASS PRODUCT_MANIFEST_MISMATCH\nPASS UNSUPPORTED_SCHEMA\nPASS ACTIVE_BUILD_LOCK\nPASS INCOMPLETE_JOURNAL\nPASS PATH_SAFETY_FAILURE\nPASS FIXTURE_ONLY_WARNING\nPASS COMMERCIAL_FLAG_FALSE\nPASS READ_ONLY_NO_MUTATION\nPASS REAL_CATALOG_UNCHANGED\nPASS AUDIO_NOT_STARTED\nPASS REFRESH_SUCCESS\nPASS REFRESH_AFTER_TAMPER\nPASS STALE_RESULT_SUPPRESSED\nPASS DISPOSE_SUPPRESSES_UPDATE\nPASS REPEATED_REFRESH_CLEAN\nPASS ERROR_REDACTION\nPASS ACCESSIBILITY_STATE\nPASS DETERMINISTIC_STATUS_MODEL\nPASS GATES_REMAIN_GREEN\n{\"status\":\"PASS\",\"suite\":\"LOCAL-005\",\"failures\":0}\nPASS CREATE_MINIMAL_SUPPORT_BUNDLE\nPASS OFFLINE_NO_NETWORK\nPASS NO_TOKEN_ENV_REQUIRED\nPASS SECRET_REDACTION\nPASS PATH_REDACTION_WINDOWS\nPASS EMAIL_AND_IP_REDACTION\nPASS ALLOWLIST_ONLY\nPASS AUDIO_EXCLUDED\nPASS ENV_FILES_EXCLUDED\nPASS GIT_DATA_EXCLUDED\nPASS UAOS_WORK_EXCLUDED\nPASS PRODUCT_READ_ONLY\nPASS COMMERCIAL_FALSE\nPASS FIXTURE_WARNING_PRESERVED\nPASS LIBRARY_STATUS_INCLUDED\nPASS LOG_TRUNCATION\nPASS MALFORMED_UTF8_LOG\nPASS BINARY_LOG_REJECTED\nPASS MISSING_OPTIONAL_LOG\nPASS PERMISSION_DENIED_OPTIONAL_SOURCE\nPASS SIZE_LIMIT\nPASS FILE_COUNT_LIMIT\nPASS ZIP_SLIP_DEFENSE\nPASS ABSOLUTE_ARCHIVE_ENTRY\nPASS SYMLINK_ENTRY\nPASS EXTRA_UNMANIFESTED_ENTRY\nPASS MISSING_MANIFESTED_ENTRY\nPASS HASH_TAMPER\nPASS ARCHIVE_TAMPER\nPASS ATOMIC_OUTPUT\nPASS OUTPUT_ALREADY_EXISTS\nPASS CONCURRENT_GENERATION\nPASS CANCELLATION\nPASS DETERMINISTIC_ENTRY_ORDER\nPASS WINDOWS_PATH_WITH_SPACES\nPASS ERROR_REDACTION\nPASS DESKTOP_NO_AUDIO\nPASS CLEANUP_NO_HANDLES\nPASS REPORT_ALWAYS_VALID\nPASS GATES_REMAIN_GREEN\n{\"status\":\"PASS\",\"suite\":\"LOCAL-006\",\"failures\":0}\n",
+          "stderrTail": ""
+        },
+        "commercialLibraries": 0,
+        "note": "P0-005/006/007 physically re-verified PASS; mark L-010/L-020/L-030 integrated without empty commits; advance to L-040",
+        "nextTask": "L-040",
+        "integrated": true
+      },
+      "updatedAt": "2026-07-21T18:58:12.368Z"
+    },
+    {
+      "id": "L-040",
+      "lane": "library",
+      "title": "UINST V2",
+      "priority": 900,
+      "status": "ready",
+      "dependsOn": [
+        "L-030"
+      ],
+      "humanGate": false,
+      "retryLimit": 2,
+      "timeoutMinutes": 90,
+      "commands": {
+        "preflight": [],
+        "tests": [
+          "npm run test:uinst-v2 --if-present",
+          "npm run check"
+        ],
+        "build": [],
+        "acceptance": []
+      },
+      "result": {
+        "clearedFrom": "AWAITING_TASK_RUNNER"
+      },
+      "updatedAt": "2026-07-21T19:14:44.309Z",
+      "objective": "UINST V2 schema + migration from v1: ADR, strict validation, deterministic non-destructive migration, synthetic fixture remains loadable, digests explicit. No commercial samples.",
+      "description": "Format/runtime product task; do not wait for Oud/Qanun recordings.",
+      "allowedPaths": [
+        "packages/**",
+        "docs/**",
+        "tests/**",
+        "package.json"
+      ],
+      "forbiddenPaths": [
+        "node_modules/**"
+      ],
+      "artifactsExpected": [
+        "D:/UAOS_AGENT_FACTORY_ARTIFACTS/library/L-040/L-040-result.json"
+      ],
+      "writerRole": "codex"
+    },
+    {
+      "id": "L-050",
+      "lane": "library",
+      "title": "USER SAMPLE IMPORT",
+      "priority": 890,
+      "status": "pending",
+      "dependsOn": [
+        "L-040"
+      ],
+      "humanGate": false,
+      "retryLimit": 2,
+      "timeoutMinutes": 90,
+      "commands": {
+        "preflight": [],
+        "tests": [],
+        "build": [],
+        "acceptance": []
+      },
+      "result": null
+    },
+    {
+      "id": "L-060",
+      "lane": "library",
+      "title": "MAPPING EDITOR",
+      "priority": 880,
+      "status": "pending",
+      "dependsOn": [
+        "L-050"
+      ],
+      "humanGate": false,
+      "retryLimit": 2,
+      "timeoutMinutes": 90,
+      "commands": {
+        "preflight": [],
+        "tests": [],
+        "build": [],
+        "acceptance": []
+      },
+      "result": null
+    },
+    {
+      "id": "L-070",
+      "lane": "library",
+      "title": "PREVIEW PLAYER",
+      "priority": 870,
+      "status": "pending",
+      "dependsOn": [
+        "L-060"
+      ],
+      "humanGate": false,
+      "retryLimit": 2,
+      "timeoutMinutes": 90,
+      "commands": {
+        "preflight": [],
+        "tests": [],
+        "build": [],
+        "acceptance": []
+      },
+      "result": null
+    },
+    {
+      "id": "L-080",
+      "lane": "library",
+      "title": "VALIDATOR",
+      "priority": 860,
+      "status": "pending",
+      "dependsOn": [
+        "L-070"
+      ],
+      "humanGate": false,
+      "retryLimit": 2,
+      "timeoutMinutes": 90,
+      "commands": {
+        "preflight": [],
+        "tests": [],
+        "build": [],
+        "acceptance": []
+      },
+      "result": null
+    },
+    {
+      "id": "L-090",
+      "lane": "library",
+      "title": "BUILD UINST",
+      "priority": 850,
+      "status": "pending",
+      "dependsOn": [
+        "L-080"
+      ],
+      "humanGate": false,
+      "retryLimit": 2,
+      "timeoutMinutes": 90,
+      "commands": {
+        "preflight": [],
+        "tests": [],
+        "build": [],
+        "acceptance": []
+      },
+      "result": null
+    },
+    {
+      "id": "L-100",
+      "lane": "library",
+      "title": "SYNTHETIC DEMO",
+      "priority": 840,
+      "status": "pending",
+      "dependsOn": [
+        "L-090"
+      ],
+      "humanGate": false,
+      "retryLimit": 2,
+      "timeoutMinutes": 90,
+      "commands": {
+        "preflight": [],
+        "tests": [],
+        "build": [],
+        "acceptance": []
+      },
+      "result": null
+    },
+    {
+      "id": "L-110",
+      "lane": "library",
+      "title": "WINDOWS APP",
+      "priority": 830,
+      "status": "pending",
+      "dependsOn": [
+        "L-100"
+      ],
+      "humanGate": false,
+      "retryLimit": 2,
+      "timeoutMinutes": 120,
+      "commands": {
+        "preflight": [],
+        "tests": [],
+        "build": [],
+        "acceptance": []
+      },
+      "result": null
+    },
+    {
+      "id": "L-120",
+      "lane": "library",
+      "title": "WINDOWS BUILDS",
+      "priority": 820,
+      "status": "pending",
+      "dependsOn": [
+        "L-110"
+      ],
+      "humanGate": false,
+      "retryLimit": 2,
+      "timeoutMinutes": 180,
+      "commands": {
+        "preflight": [],
+        "tests": [],
+        "build": [],
+        "acceptance": []
+      },
+      "result": null
+    },
+    {
+      "id": "L-130",
+      "lane": "library",
+      "title": "CLEAN MACHINE ACCEPTANCE",
+      "priority": 810,
+      "status": "pending",
+      "dependsOn": [
+        "L-120"
+      ],
+      "humanGate": false,
+      "retryLimit": 2,
+      "timeoutMinutes": 180,
+      "commands": {
+        "preflight": [],
+        "tests": [],
+        "build": [],
+        "acceptance": []
+      },
+      "result": null
+    },
+    {
+      "id": "L-140",
+      "lane": "library",
+      "title": "OWNER GATE",
+      "priority": 800,
+      "status": "pending",
+      "dependsOn": [
+        "L-130"
+      ],
+      "humanGate": true,
+      "retryLimit": 0,
+      "timeoutMinutes": 0,
+      "commands": {
+        "preflight": [],
+        "tests": [],
+        "build": [],
+        "acceptance": []
+      },
+      "result": null
+    },
+    {
+      "id": "L-150",
+      "lane": "library",
+      "title": "LIBRARY FACTORY SELLABLE CANDIDATE",
+      "priority": 790,
+      "status": "pending",
+      "dependsOn": [
+        "L-140"
+      ],
+      "humanGate": false,
+      "retryLimit": 1,
+      "timeoutMinutes": 90,
+      "commands": {
+        "preflight": [],
+        "tests": [],
+        "build": [],
+        "acceptance": []
+      },
+      "result": null
+    },
+    {
+      "id": "L-SYN-GENERIC",
+      "lane": "library",
+      "title": "Synthetic",
+      "priority": 1,
+      "status": "integrated",
+      "dependsOn": [
+        "L-001"
+      ],
+      "humanGate": false,
+      "retryLimit": 2,
+      "timeoutMinutes": 5,
+      "allowedPaths": [
+        "UAOS_GENERIC_MARKER.txt"
+      ],
+      "forbiddenPaths": [
+        "node_modules/**"
+      ],
+      "commands": {
+        "tests": []
+      },
+      "artifactsExpected": [],
+      "localSyntheticAction": "create_marker_file",
+      "localSyntheticPath": "UAOS_GENERIC_MARKER.txt",
+      "result": null,
+      "updatedAt": "2026-07-21T19:19:25.241Z"
+    },
+    {
+      "id": "L-SYN-DEP",
+      "lane": "library",
+      "title": "Dependent of synthetic",
+      "priority": 1,
+      "status": "ready",
+      "dependsOn": [
+        "L-SYN-GENERIC"
+      ],
+      "humanGate": false,
+      "commands": {
+        "tests": []
+      },
+      "result": null,
+      "updatedAt": "2026-07-21T19:19:25.244Z"
+    }
+  ]
+}

@@ -1,0 +1,96 @@
+{
+  "detectedAt": "2026-07-21T18:40:00+02:00",
+  "agents": [
+    {
+      "id": "cursor",
+      "name": "Cursor Agent (session)",
+      "command": null,
+      "version": "session-primary",
+      "authenticated": true,
+      "available": true,
+      "supportsHeadless": false,
+      "supportsReadOnlyScout": true,
+      "supportsWorkspaceWrite": true,
+      "timeoutPolicyMinutes": 90,
+      "maxParallelInstances": 1,
+      "assignedRoles": ["INTEGRATOR", "SUPERVISOR", "WRITER", "SCOUT", "REVIEWER"],
+      "notes": "Primary executor for this post-restart session; CLI cursor-agent not on PATH"
+    },
+    {
+      "id": "codex",
+      "name": "OpenAI Codex CLI",
+      "command": "codex",
+      "path": "C:\\Users\\ssare\\AppData\\Roaming\\npm\\codex.cmd",
+      "version": "0.134.0",
+      "authenticated": "unknown_noninteractive",
+      "available": true,
+      "supportsHeadless": true,
+      "supportsReadOnlyScout": true,
+      "supportsWorkspaceWrite": true,
+      "timeoutPolicyMinutes": 90,
+      "maxParallelInstances": 1,
+      "assignedRoles": ["WRITER", "SCOUT"]
+    },
+    {
+      "id": "claude",
+      "name": "Claude Code",
+      "command": "claude",
+      "path": "C:\\Users\\ssare\\AppData\\Roaming\\npm\\claude.cmd",
+      "version": "2.1.173",
+      "authenticated": "unknown_noninteractive",
+      "available": true,
+      "supportsHeadless": true,
+      "supportsReadOnlyScout": true,
+      "supportsWorkspaceWrite": true,
+      "timeoutPolicyMinutes": 90,
+      "maxParallelInstances": 1,
+      "assignedRoles": ["REVIEWER", "SCOUT"]
+    },
+    {
+      "id": "gemini",
+      "name": "Gemini CLI",
+      "command": "gemini",
+      "path": "C:\\Users\\ssare\\AppData\\Roaming\\npm\\gemini.cmd",
+      "version": "0.46.0",
+      "authenticated": "unknown_noninteractive",
+      "available": true,
+      "supportsHeadless": true,
+      "supportsReadOnlyScout": true,
+      "supportsWorkspaceWrite": false,
+      "timeoutPolicyMinutes": 60,
+      "maxParallelInstances": 1,
+      "assignedRoles": ["REVIEWER", "SCOUT"]
+    },
+    {
+      "id": "ollama",
+      "name": "Ollama",
+      "command": "ollama",
+      "path": "C:\\Users\\ssare\\AppData\\Local\\Programs\\Ollama\\ollama.exe",
+      "version": "0.32.1",
+      "authenticated": "local",
+      "available": true,
+      "supportsHeadless": true,
+      "supportsReadOnlyScout": true,
+      "supportsWorkspaceWrite": false,
+      "timeoutPolicyMinutes": 30,
+      "maxParallelInstances": 1,
+      "assignedRoles": ["SCOUT"]
+    },
+    {
+      "id": "cursor-agent-cli",
+      "name": "cursor-agent CLI",
+      "command": "cursor-agent",
+      "available": false,
+      "status": "UNAVAILABLE",
+      "assignedRoles": []
+    },
+    {
+      "id": "signtool",
+      "name": "Windows signtool",
+      "command": "signtool",
+      "available": false,
+      "status": "UNAVAILABLE",
+      "notes": "PUBLIC_MASS_RELEASE_SIGNING_PENDING"
+    }
+  ]
+}
