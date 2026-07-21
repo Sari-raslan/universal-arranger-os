@@ -40,7 +40,8 @@ export function pickNextLaneWork(activeWriters = null) {
     if (!task) continue;
     if (task.humanGate) continue;
     if (waitingHuman && task.humanGate) continue;
-    // Eligible ready/retry/pending with deps — generic runner handles all task ids
+    // Do not spin forever when headless writers are blocked
+    if (task.result?.reason === 'BACKGROUND_CODE_WRITING_BLOCKED_AUTH_OR_CLI') continue;
     return { action: 'run', lane, task, resources, maxWriters };
   }
 

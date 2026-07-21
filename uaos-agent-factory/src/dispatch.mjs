@@ -70,6 +70,19 @@ export function dispatchTaskWriter(lane, task, { maxHeavy = 2 } = {}) {
     return { ok: false, reason: 'HUMAN_GATE' };
   }
 
+  // Durable background product writing requires a verified headless writer (Codex).
+  if (!isWriterAvailable('codex') && !task.localSyntheticAction && !task.allowIntegratorDispatch) {
+    updateTask(lane, task.id, {
+      status: 'ready',
+      result: {
+        reason: 'BACKGROUND_CODE_WRITING_BLOCKED_AUTH_OR_CLI',
+        note: 'Generic runner is ready; Codex CLI/auth/model blocked. Upgrade Codex or login Claude/Gemini. Queue remains eligible.',
+        at: nowIso()
+      }
+    });
+    return { ok: false, reason: 'BACKGROUND_CODE_WRITING_BLOCKED_AUTH_OR_CLI' };
+  }
+
   const evidenceDir = ensureEvidenceDir({
     lane,
     id: task.id,

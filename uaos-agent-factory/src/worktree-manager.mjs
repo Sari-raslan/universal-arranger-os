@@ -11,7 +11,7 @@ import {
 
 export function worktreePathFor(lane, taskId) {
   const cfg = loadFactoryConfig();
-  return path.join(cfg.worktreeRoot, `${lane}-${taskId}`);
+  return path.join(cfg.worktreeRoot, `${lane}-${String(taskId).toLowerCase()}`);
 }
 
 export function createIntegrationWorktree(lane) {
