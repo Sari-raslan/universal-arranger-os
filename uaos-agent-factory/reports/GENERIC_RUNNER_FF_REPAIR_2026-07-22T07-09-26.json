@@ -1,0 +1,18 @@
+﻿{
+    "at":  "2026-07-22T07:09:26.3162025Z",
+    "libraryIntegrationHeadPreserved":  "3f8bec32bf16b6924419ed349bc283044e71fc28",
+    "factoryTests":  {
+                         "exitCode":  0,
+                         "before":  "41/42",
+                         "after":  "50/50"
+                     },
+    "schema":  "uaos.generic-runner-ff-repair/v1",
+    "repair":  [
+                   "Disposable synthetic repos under D:\\UAOS_AGENT_FACTORY_BUILD\\synthetic-repos",
+                   "taskBaseCommit recorded on claim/run",
+                   "planIntegration: FAST_FORWARD | INTEGRATION_HEAD_ADVANCED | DIVERGED | TASK_BASE_MISSING | ALREADY_INTEGRATED",
+                   "Never silently mark integrated on divergence; preserve task worktree",
+                   "Real library-integration HEAD unchanged by synthetic tests"
+               ],
+    "rootCause":  "L-SYN-GENERIC reused real factory/library-integration; synthetic commits diverged from product L-100 tip so git merge --ff-only failed"
+}

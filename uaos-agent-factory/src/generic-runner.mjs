@@ -8,7 +8,8 @@ import {
   nowIso,
   runCmd,
   loadFactoryConfig,
-  readJson
+  readJson,
+  isPidAlive
 } from './lib.mjs';
 import { writePromptFiles } from './task-prompt.mjs';
 import { createTaskWorktree } from './worktree-manager.mjs';
@@ -20,6 +21,13 @@ import {
   isWriterAvailable,
   spawnWriterProcess
 } from './writer-adapters.mjs';
+import {
+  createDisposableSyntheticRepos,
+  planIntegration,
+  executeIntegrationPlan,
+  revParse,
+  recordTaskBaseCommit
+} from './integration-planner.mjs';
 
 function parseArgs(argv) {
   const out = {};
@@ -82,7 +90,10 @@ function commitExact(cwd, paths, message) {
   }
   const msgFile = path.join(cwd, '.uaos-commit-msg.txt');
   fs.writeFileSync(msgFile, `${message}\n`, 'utf8');
-  const commit = runCmd(`git commit -F "${msgFile}"`, { cwd });
+  const commit = runCmd(
+    `git -c user.email=uaos-factory@local -c user.name="UAOS Factory" commit -F "${msgFile}"`,
+    { cwd }
+  );
   try {
     fs.unlinkSync(msgFile);
   } catch {
@@ -92,17 +103,56 @@ function commitExact(cwd, paths, message) {
   return { ok: commit.ok, exitCode: commit.exitCode, head: (head.stdout || '').trim(), stderr: commit.stderr };
 }
 
-function integrateFastForward(lane, taskBranch) {
+/**
+ * Integrate with ancestry checks. Never silently PASS on divergence.
+ * @param {{ lane: string, taskBranch: string, taskBaseCommit?: string|null, integrationWorktree?: string|null, integrationBranch?: string|null, disposable?: boolean }} args
+ */
+export function integrateTaskBranch({
+  lane,
+  taskBranch,
+  taskBaseCommit = null,
+  integrationWorktree = null,
+  integrationBranch = null,
+  alreadyIntegrated = false
+} = {}) {
   const cfg = loadFactoryConfig();
-  const integration = path.join(cfg.worktreeRoot, `${lane}-integration`);
-  const branch = cfg.lanes[lane].integrationBranch;
-  if (!fs.existsSync(integration)) {
-    return { ok: false, reason: 'INTEGRATION_WT_MISSING' };
+  const integration = integrationWorktree || path.join(cfg.worktreeRoot, `${lane}-integration`);
+  const branch = integrationBranch || cfg.lanes[lane].integrationBranch;
+
+  const plan = planIntegration({
+    cwd: integration,
+    integrationBranch: branch,
+    taskBranch,
+    taskBaseCommit: taskBaseCommit || revParse(integration, 'HEAD'),
+    alreadyIntegrated
+  });
+
+  if (plan.action === 'INTEGRATION_HEAD_ADVANCED' || plan.action === 'DIVERGED') {
+    return {
+      ok: false,
+      reason: plan.reason || plan.action,
+      plan,
+      preserveTaskWorktree: true,
+      note: 'Task worktree preserved; rebase/replay required before integrate — never reset owner branches'
+    };
   }
-  const co = runCmd(`git checkout ${branch}`, { cwd: integration });
-  if (!co.ok) return { ok: false, reason: 'CHECKOUT_FAIL', stderr: co.stderr };
-  const merge = runCmd(`git merge --ff-only ${taskBranch}`, { cwd: integration });
-  return { ok: merge.ok, stderr: merge.stderr, stdout: merge.stdout };
+
+  const executed = executeIntegrationPlan(integration, plan, {
+    integrationBranch: branch,
+    taskBranch
+  });
+  return { ...executed, plan, integrationWorktree: integration, integrationBranch: branch };
+}
+
+/** @deprecated use integrateTaskBranch — kept for callers expecting old shape */
+function integrateFastForward(lane, taskBranch, extra = {}) {
+  return integrateTaskBranch({
+    lane,
+    taskBranch,
+    taskBaseCommit: extra.taskBaseCommit || null,
+    integrationWorktree: extra.integrationWorktree || null,
+    integrationBranch: extra.integrationBranch || null
+  });
 }
 
 function markDependentsReady(lane, completedId) {
@@ -194,14 +244,57 @@ export async function executeGenericTask(task, opts = {}) {
     return { ok: false, ...eligibility };
   }
 
-  updateTask(lane, task.id, { status: 'running', result: { phase: 'scout', at: nowIso() } });
+  const isSynthetic =
+    opts.forceAgent === 'synthetic-local' ||
+    Boolean(task.localSyntheticAction) ||
+    Boolean(opts.disposableSynthetic);
 
-  const wt = createTaskWorktree(lane, task.id);
-  const worktree = wt.worktreePath || cfg.lanes[lane].repoRoot;
+  let disposable = null;
+  let worktree;
+  let integrationWorktree = null;
+  let integrationBranch = null;
+  let taskBranch = `factory/${lane}-${String(task.id).toLowerCase()}`;
+  let taskBaseCommit = task.taskBaseCommit || task.result?.taskBaseCommit || null;
+
+  if (isSynthetic && !opts.useRealProductWorktree) {
+    // Disposable D: repos — never mutate real library/singy/arranger integration history.
+    disposable = createDisposableSyntheticRepos({ taskId: task.id });
+    worktree = disposable.taskWorktree;
+    integrationWorktree = disposable.integrationWorktree;
+    integrationBranch = disposable.integrationBranch;
+    taskBranch = disposable.taskBranch;
+    taskBaseCommit = disposable.taskBaseCommit;
+  } else {
+    const wt = createTaskWorktree(lane, task.id);
+    worktree = wt.worktreePath || cfg.lanes[lane].repoRoot;
+    if (!taskBaseCommit) {
+      taskBaseCommit = revParse(worktree, 'HEAD');
+    }
+  }
+
+  updateTask(
+    lane,
+    task.id,
+    recordTaskBaseCommit(
+      {
+        status: 'running',
+        taskBranch,
+        worktreePath: worktree,
+        result: {
+          phase: 'scout',
+          taskBaseCommit,
+          disposableSynthetic: Boolean(disposable),
+          at: nowIso()
+        }
+      },
+      taskBaseCommit
+    )
+  );
+
   const lockPath = path.join(worktree, '.uaos-task.lock');
   if (fs.existsSync(lockPath)) {
     const lock = readJson(lockPath, {});
-    if (lock.pid && runCmd(`powershell -NoProfile -Command "Get-Process -Id ${lock.pid}"`, { timeout: 10000 }).ok) {
+    if (lock.pid && isPidAlive(lock.pid)) {
       return { ok: false, reason: 'WORKTREE_LOCKED', lock };
     }
     fs.renameSync(lockPath, `${lockPath}.stale.${Date.now()}`);
@@ -345,7 +438,14 @@ export async function executeGenericTask(task, opts = {}) {
     }
 
     if (commitInfo.ok) {
-      integrateInfo = integrateFastForward(lane, `factory/${lane}-${task.id.toLowerCase()}`);
+      integrateInfo = integrateTaskBranch({
+        lane,
+        taskBranch,
+        taskBaseCommit,
+        integrationWorktree,
+        integrationBranch,
+        alreadyIntegrated: false
+      });
       if (integrateInfo.ok || integrateInfo.reason === 'INTEGRATION_WT_MISSING') {
         finalStatus = 'PASS';
         updateTask(lane, task.id, {
@@ -354,6 +454,8 @@ export async function executeGenericTask(task, opts = {}) {
             status: 'PASS',
             writer: writerAgent,
             commit: commitInfo.head,
+            taskBaseCommit,
+            disposableSynthetic: Boolean(disposable),
             tests: testResults,
             review,
             integrate: integrateInfo,
@@ -366,10 +468,13 @@ export async function executeGenericTask(task, opts = {}) {
       } else {
         updateTask(lane, task.id, {
           status: 'blocked',
+          blockingReason: integrateInfo.reason || 'INTEGRATE_CONFLICT',
           result: {
-            reason: 'INTEGRATE_CONFLICT',
+            reason: integrateInfo.reason || 'INTEGRATE_CONFLICT',
             integrate: integrateInfo,
             commit: commitInfo,
+            taskBaseCommit,
+            preserveTaskWorktree: true,
             at: nowIso()
           }
         });
