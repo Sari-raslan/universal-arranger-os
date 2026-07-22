@@ -2,12 +2,16 @@ import fs from 'node:fs';
 import path from 'node:path';
 import os from 'node:os';
 import { fileURLToPath } from 'node:url';
-import { execSync, spawn } from 'node:child_process';
+import { execSync, execFileSync, spawn } from 'node:child_process';
 import crypto from 'node:crypto';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 export const FACTORY_ROOT = path.resolve(__dirname, '..');
 export const CONFIG_PATH = path.join(FACTORY_ROOT, 'config', 'factory.json');
+
+/** Cache disk free reads so supervisor ticks never spam child processes. */
+const DISK_FREE_CACHE = new Map();
+const DISK_FREE_CACHE_MS = 30_000;
 
 export function loadFactoryConfig() {
   return JSON.parse(fs.readFileSync(CONFIG_PATH, 'utf8'));
@@ -21,9 +25,58 @@ export function ensureDir(p) {
 export function atomicWriteJson(filePath, data) {
   ensureDir(path.dirname(filePath));
   const tmp = `${filePath}.${process.pid}.${Date.now()}.tmp`;
+  const bak = `${filePath}.bak`;
   const payload = `${JSON.stringify(data, null, 2)}\n`;
-  fs.writeFileSync(tmp, payload, 'utf8');
-  fs.renameSync(tmp, filePath);
+  const fd = fs.openSync(tmp, 'w');
+  try {
+    fs.writeFileSync(fd, payload, 'utf8');
+    try {
+      fs.fsyncSync(fd);
+    } catch {
+      /* fsync may be unsupported on some volumes */
+    }
+  } finally {
+    fs.closeSync(fd);
+  }
+  if (fs.existsSync(filePath)) {
+    try {
+      fs.copyFileSync(filePath, bak);
+    } catch {
+      /* best-effort backup */
+    }
+  }
+  let lastErr;
+  for (let i = 0; i < 8; i += 1) {
+    try {
+      fs.renameSync(tmp, filePath);
+      return;
+    } catch (err) {
+      lastErr = err;
+      if (err?.code !== 'EBUSY' && err?.code !== 'EPERM') break;
+      const end = Date.now() + 20 * (i + 1);
+      while (Date.now() < end) {
+        /* brief backoff for Windows file lock */
+      }
+    }
+  }
+  try {
+    fs.writeFileSync(filePath, payload, 'utf8');
+    try {
+      fs.unlinkSync(tmp);
+    } catch {
+      /* ignore */
+    }
+  } catch (err) {
+    throw lastErr || err;
+  }
+}
+
+/** Timing-safe string compare for CSRF / token checks. */
+export function timingSafeEqualString(a, b) {
+  const left = Buffer.from(String(a || ''), 'utf8');
+  const right = Buffer.from(String(b || ''), 'utf8');
+  if (left.length !== right.length) return false;
+  return crypto.timingSafeEqual(left, right);
 }
 
 export function readJson(filePath, fallback = null) {
@@ -50,19 +103,69 @@ export function freeRamGb() {
   return { freeGb: Number(free.toFixed(2)), totalGb: Number(total.toFixed(2)) };
 }
 
-export function freeDiskGb(driveLetter) {
+/**
+ * Free disk space in GB. Prefer Node fs.statfsSync (no child process).
+ * Fallback PowerShell uses execFile + windowsHide + shell:false — never a visible console.
+ */
+export function freeDiskGb(driveLetter, { bypassCache = false } = {}) {
+  const key = String(driveLetter || '')
+    .replace(/:$/, '')
+    .toUpperCase();
+  if (!key) return null;
+  const cached = DISK_FREE_CACHE.get(key);
+  if (!bypassCache && cached && Date.now() - cached.at < DISK_FREE_CACHE_MS) {
+    return cached.value;
+  }
+
+  let value = null;
   try {
-    if (process.platform === 'win32') {
-      const out = execSync(
-        `powershell -NoProfile -Command "(Get-PSDrive ${driveLetter}).Free"`,
-        { encoding: 'utf8', timeout: 15000 }
-      ).trim();
-      return Number((Number(out) / (1024 ** 3)).toFixed(2));
+    if (typeof fs.statfsSync === 'function') {
+      const root = process.platform === 'win32' ? `${key}:\\` : '/';
+      const s = fs.statfsSync(root);
+      value = Number(((Number(s.bavail) * Number(s.bsize)) / 1024 ** 3).toFixed(2));
     }
   } catch {
-    return null;
+    value = null;
   }
-  return null;
+
+  if (value == null && process.platform === 'win32') {
+    try {
+      const out = execFileSync(
+        'powershell.exe',
+        [
+          '-NoLogo',
+          '-NoProfile',
+          '-NonInteractive',
+          '-ExecutionPolicy',
+          'Bypass',
+          '-Command',
+          `(Get-PSDrive ${key}).Free`
+        ],
+        {
+          encoding: 'utf8',
+          timeout: 15000,
+          windowsHide: true,
+          shell: false
+        }
+      ).trim();
+      value = Number((Number(out) / 1024 ** 3).toFixed(2));
+    } catch {
+      value = null;
+    }
+  }
+
+  DISK_FREE_CACHE.set(key, { at: Date.now(), value });
+  return value;
+}
+
+/** Exported for tests — default hidden spawn options for factory children. */
+export function hiddenSpawnOptions(stdio) {
+  return {
+    detached: true,
+    stdio,
+    windowsHide: true,
+    shell: false
+  };
 }
 
 export function runCmd(command, opts = {}) {
@@ -135,9 +238,7 @@ export function spawnDetached(command, args, { cwd, logFile, pidFile } = {}) {
   const out = fs.openSync(logFile, 'a');
   const child = spawn(command, args, {
     cwd,
-    detached: true,
-    stdio: ['ignore', out, out],
-    windowsHide: true
+    ...hiddenSpawnOptions(['ignore', out, out])
   });
   child.unref();
   atomicWriteJson(pidFile, {

@@ -8,10 +8,17 @@ import {
   readJson,
   loadFactoryConfig
 } from './lib.mjs';
-import { updateTask, ensureEvidenceDir } from './queue-manager.mjs';
+import { updateTask, ensureEvidenceDir, getTask, transitionTask } from './queue-manager.mjs';
 import { createTaskWorktree } from './worktree-manager.mjs';
 import { preferredWriterForLane, spawnWriterProcess, isWriterAvailable } from './writer-adapters.mjs';
 import { writeMasterStatus } from './reporter.mjs';
+import {
+  canAttemptTask,
+  buildFailurePatch,
+  buildBlockedOncePatch,
+  runnerCommandHash,
+  isAwaitingRunner
+} from './retry-policy.mjs';
 
 const ACTIVE_PATH = path.join(FACTORY_ROOT, 'state', 'active-writers.json');
 
@@ -57,7 +64,7 @@ function artifactDirFor(lane, taskId) {
 /**
  * Generic dispatch — always uses generic-runner.mjs (no per-task-id handler switch).
  */
-export function dispatchTaskWriter(lane, task, { maxHeavy = 2 } = {}) {
+export function dispatchTaskWriter(lane, task, { maxHeavy = 2, forceResume = false } = {}) {
   const active = loadActiveWriters();
   if (active.writers?.[lane]?.pid && isPidAlive(active.writers[lane].pid)) {
     return { ok: false, reason: 'lane_already_has_writer', writer: active.writers[lane] };
@@ -70,43 +77,61 @@ export function dispatchTaskWriter(lane, task, { maxHeavy = 2 } = {}) {
     return { ok: false, reason: 'HUMAN_GATE' };
   }
 
-  // Durable background product writing requires a verified headless writer (Codex).
-  if (!isWriterAvailable('codex') && !task.localSyntheticAction && !task.allowIntegratorDispatch) {
-    updateTask(lane, task.id, {
-      status: 'ready',
-      result: {
-        reason: 'BACKGROUND_CODE_WRITING_BLOCKED_AUTH_OR_CLI',
-        note: 'Generic runner is ready; Codex CLI/auth/model blocked. Upgrade Codex or login Claude/Gemini. Queue remains eligible.',
-        at: nowIso()
+  // Never mutate completed milestones — even if a caller passes a stale in-memory task.
+  const live = getTask(lane, task.id);
+  if (live && ['passed', 'integrated'].includes(live.status)) {
+    return { ok: false, reason: 'ALREADY_COMPLETE', status: live.status, spawned: false };
+  }
+  const effective = live ? { ...live, ...task, status: live.status } : task;
+
+  const attempt = canAttemptTask(effective, { forceResume });
+  if (!attempt.ok) {
+    if (attempt.reason === 'AWAITING_TASK_RUNNER_NO_SPAWN') {
+      // Persist once; never spawn for missing runner.
+      if (effective.status !== 'blocked' || effective.blockingReason !== 'AWAITING_TASK_RUNNER') {
+        updateTask(lane, effective.id, buildBlockedOncePatch(effective, 'AWAITING_TASK_RUNNER', 'Missing runner — no child spawn'));
       }
-    });
-    return { ok: false, reason: 'BACKGROUND_CODE_WRITING_BLOCKED_AUTH_OR_CLI' };
+      return { ok: false, reason: 'AWAITING_TASK_RUNNER', spawned: false };
+    }
+    return { ok: false, reason: attempt.reason, spawned: false, detail: attempt };
+  }
+
+  // Durable background product writing requires a verified headless writer (Codex),
+  // unless owner resumed with allowIntegratorDispatch / localSyntheticAction.
+  if (!isWriterAvailable('codex') && !effective.localSyntheticAction && !effective.allowIntegratorDispatch) {
+    updateTask(lane, effective.id, buildBlockedOncePatch(
+      effective,
+      'BACKGROUND_CODE_WRITING_BLOCKED_AUTH_OR_CLI',
+      'Generic runner is ready; Codex CLI/auth/model blocked. No automatic relaunch. Resume after CLI fix or owner Resume.'
+    ));
+    return { ok: false, reason: 'BACKGROUND_CODE_WRITING_BLOCKED_AUTH_OR_CLI', spawned: false };
+  }
+
+  // Owner Resume for Cursor integrator: track eligibility but do not spawn a failing headless child.
+  if (!isWriterAvailable('codex') && effective.allowIntegratorDispatch && !effective.localSyntheticAction) {
+    return { ok: false, reason: 'AWAITING_CURSOR_INTEGRATOR', spawned: false };
   }
 
   const evidenceDir = ensureEvidenceDir({
     lane,
-    id: task.id,
-    evidenceDir: path.join(FACTORY_ROOT, 'logs', lane, task.id, nowIso().replace(/[:.]/g, '-'))
+    id: effective.id,
+    evidenceDir: path.join(FACTORY_ROOT, 'logs', lane, effective.id, nowIso().replace(/[:.]/g, '-'))
   });
-  const wt = createTaskWorktree(lane, task.id);
+  const wt = createTaskWorktree(lane, effective.id);
   const agentId = preferredWriterForLane(lane);
   const runner = path.join(FACTORY_ROOT, 'src', 'generic-runner.mjs');
   const logFile = path.join(evidenceDir, `writer-${agentId}.log`);
-  const artifactDir = artifactDirFor(lane, task.id);
+  const artifactDir = artifactDirFor(lane, effective.id);
   ensureDir(artifactDir);
   ensureDir('D:\\UAOS_AGENT_FACTORY_BUILD\\tmp');
 
   const cwd = wt.worktreePath || loadFactoryConfig().lanes[lane].repoRoot;
-  const forceAgent = isWriterAvailable('codex') ? 'codex' : agentId === 'cursor-local' ? 'synthetic-local' : agentId;
 
-  // For real product tasks without headless writer, still dispatch generic runner
-  // which will honestly FAIL with BACKGROUND_CODE_WRITING_BLOCKED unless Codex available
-  // or task has localSyntheticAction.
   const localArgs = [
     '--lane',
     lane,
     '--task',
-    task.id,
+    effective.id,
     '--worktree',
     cwd,
     '--artifact',
@@ -114,9 +139,10 @@ export function dispatchTaskWriter(lane, task, { maxHeavy = 2 } = {}) {
     '--evidence',
     evidenceDir,
     '--force-agent',
-    isWriterAvailable('codex') ? 'codex' : task.localSyntheticAction ? 'synthetic-local' : 'cursor-local'
+    isWriterAvailable('codex') ? 'codex' : effective.localSyntheticAction ? 'synthetic-local' : 'cursor-local'
   ];
 
+  const cmdHash = runnerCommandHash(process.execPath, [runner, ...localArgs]);
   const spawned = spawnWriterProcess({
     agentId: 'cursor-local',
     cwd: FACTORY_ROOT,
@@ -128,7 +154,7 @@ export function dispatchTaskWriter(lane, task, { maxHeavy = 2 } = {}) {
 
   const record = {
     lane,
-    taskId: task.id,
+    taskId: effective.id,
     agentId: isWriterAvailable('codex') ? 'codex' : 'cursor-local',
     runner: 'generic-runner',
     runnerPath: runner,
@@ -139,17 +165,21 @@ export function dispatchTaskWriter(lane, task, { maxHeavy = 2 } = {}) {
     evidenceDir,
     heavy: true,
     status: 'running',
-    startedAt: nowIso()
+    startedAt: nowIso(),
+    runnerCommandHash: cmdHash,
+    timeoutMinutes: effective.timeoutMinutes || 90
   };
 
   active.writers = active.writers || {};
   active.writers[lane] = record;
   saveActiveWriters(active);
 
-  updateTask(lane, task.id, {
+  updateTask(lane, effective.id, {
     status: 'running',
     worktreePath: cwd,
     writerRole: record.agentId,
+    lastAttemptAt: nowIso(),
+    runnerCommandHash: cmdHash,
     result: {
       dispatchedAt: nowIso(),
       writerPid: spawned.pid,
@@ -157,11 +187,116 @@ export function dispatchTaskWriter(lane, task, { maxHeavy = 2 } = {}) {
       runner: 'generic-runner',
       logFile,
       evidenceDir,
-      artifactDir
+      artifactDir,
+      runnerCommandHash: cmdHash
     }
   });
   writeMasterStatus();
-  return { ok: true, record };
+  return { ok: true, record, spawned: true };
+}
+
+/**
+ * Durable reconciliation when a writer child exits with a PASS result file.
+ * Never leave the queue stuck in running/testing/reviewing from memory-only updates.
+ */
+export function reconcileWriterPass(lane, taskId, result, writerMeta = {}) {
+  const live = getTask(lane, taskId);
+  if (!live) {
+    return { ok: false, reason: 'TASK_NOT_FOUND' };
+  }
+
+  // Idempotent: already durably integrated / passed with matching evidence
+  if (live.status === 'integrated' && live.integrationStatus !== 'NOT_INTEGRATED') {
+    return { ok: true, status: 'integrated', idempotent: true, task: live };
+  }
+  if (live.status === 'passed' && result?.integrate?.ok !== true) {
+    return { ok: true, status: 'passed', idempotent: true, task: live };
+  }
+
+  const at = nowIso();
+  const baseResult = {
+    ...(live.result || {}),
+    writerPid: writerMeta.pid,
+    logFile: writerMeta.logFile,
+    finishedAt: at,
+    reconciledPassAt: at,
+    writerResult: result
+  };
+
+  // Full pipeline PASS with proven integration
+  if (result?.integrate?.ok === true || result?.integrationStatus === 'INTEGRATED') {
+    const tr = transitionTask(lane, taskId, {
+      status: 'integrated',
+      integrationStatus: 'INTEGRATED',
+      blockingReason: null,
+      nextAutomaticRetry: null,
+      result: {
+        ...baseResult,
+        status: 'PASS',
+        integrate: result.integrate,
+        commit: result.commit?.head || result.commit || live.result?.commit,
+        at
+      }
+    });
+    return tr.ok
+      ? { ok: true, status: 'integrated', task: tr.task, idempotent: false }
+      : { ok: false, reason: tr.reason || 'STATE_PERSISTENCE_FAILED', code: tr.code };
+  }
+
+  // Integrate attempted but failed — durable blocked
+  if (result?.integrate && result.integrate.ok === false) {
+    const tr = transitionTask(lane, taskId, {
+      status: 'blocked',
+      integrationStatus: 'NOT_INTEGRATED',
+      blockingReason: result.integrate.reason || result.reason || 'INTEGRATE_FAIL',
+      nextAutomaticRetry: null,
+      result: {
+        ...baseResult,
+        reason: result.integrate.reason || result.reason,
+        integrate: result.integrate,
+        at
+      }
+    });
+    return tr.ok
+      ? { ok: true, status: 'blocked', task: tr.task }
+      : { ok: false, reason: tr.reason || 'STATE_PERSISTENCE_FAILED' };
+  }
+
+  // Writer-level PASS but pipeline incomplete (process died mid-flight)
+  if (['running', 'scouting', 'testing', 'reviewing'].includes(live.status)) {
+    // If final summary says PASS without integrate block, mark passed (not integrated)
+    if (result?.status === 'PASS' && (result.tests || result.review)) {
+      const tr = transitionTask(lane, taskId, {
+        status: 'passed',
+        integrationStatus: 'NOT_INTEGRATED',
+        result: {
+          ...baseResult,
+          status: 'PASS',
+          note: 'Writer/pipeline PASS reconciled; integration not proven',
+          at
+        }
+      });
+      return tr.ok
+        ? { ok: true, status: 'passed', task: tr.task }
+        : { ok: false, reason: tr.reason || 'STATE_PERSISTENCE_FAILED' };
+    }
+    // Early writer-only PASS file — durable testing so lane is not stuck in running
+    const tr = transitionTask(lane, taskId, {
+      status: live.status === 'running' || live.status === 'scouting' ? 'testing' : live.status === 'testing' ? 'reviewing' : 'passed',
+      result: {
+        ...baseResult,
+        status: 'PASS',
+        phase: 'reconciled_writer_pass',
+        note: 'Durable PASS reconciliation after writer exit',
+        at
+      }
+    });
+    return tr.ok
+      ? { ok: true, status: tr.task.status, task: tr.task }
+      : { ok: false, reason: tr.reason || 'STATE_PERSISTENCE_FAILED' };
+  }
+
+  return { ok: true, status: live.status, idempotent: true, task: live };
 }
 
 export function reconcileWriterExits() {
@@ -175,26 +310,61 @@ export function reconcileWriterExits() {
     const resultPath = path.join(w.artifactDir || '', `${w.taskId}-result.json`);
     const alt = path.join(w.evidenceDir || '', `${w.taskId}-result.json`);
     const result = readJson(resultPath, null) || readJson(alt, null);
+    const liveTask = getTask(lane, w.taskId) || { id: w.taskId, retryCount: 0, result: {} };
 
     if (result?.status === 'PASS' || result?.ok === true) {
-      // generic-runner already updates queue on success; just clear active record
-      w.status = 'passed';
-      changes.push({ lane, taskId: w.taskId, status: 'passed' });
+      const rec = reconcileWriterPass(lane, w.taskId, result, w);
+      if (!rec.ok && rec.reason === 'STATE_PERSISTENCE_FAILED') {
+        transitionTask(lane, w.taskId, {
+          status: 'blocked',
+          blockingReason: 'STATE_PERSISTENCE_FAILED',
+          integrationStatus: 'NOT_INTEGRATED',
+          nextAutomaticRetry: null,
+          result: {
+            ...(liveTask.result || {}),
+            reason: 'STATE_PERSISTENCE_FAILED',
+            writerResult: result,
+            at: nowIso()
+          }
+        });
+        w.status = 'failed';
+        changes.push({ lane, taskId: w.taskId, status: 'blocked', reason: 'STATE_PERSISTENCE_FAILED' });
+      } else {
+        w.status = 'passed';
+        changes.push({
+          lane,
+          taskId: w.taskId,
+          status: rec.status || 'passed',
+          durable: true,
+          idempotent: Boolean(rec.idempotent)
+        });
+      }
     } else if (result?.status === 'FAIL' || result?.ok === false) {
+      const patch = buildFailurePatch(liveTask, {
+        exitCode: result.exitCode ?? 1,
+        error: result.reason || result.firstBlocker || 'WRITER_FAIL',
+        commandHash: w.runnerCommandHash
+      });
+      updateTask(lane, w.taskId, patch);
       w.status = 'failed';
-      changes.push({ lane, taskId: w.taskId, status: 'failed' });
+      changes.push({ lane, taskId: w.taskId, status: patch.status });
     } else {
+      const patch = buildFailurePatch(liveTask, {
+        exitCode: null,
+        error: 'WRITER_EXITED_WITHOUT_RESULT',
+        commandHash: w.runnerCommandHash
+      });
       updateTask(lane, w.taskId, {
-        status: 'retry',
+        ...patch,
         result: {
-          reason: 'WRITER_EXITED_WITHOUT_RESULT',
+          ...patch.result,
           writerPid: w.pid,
           logFile: w.logFile,
           finishedAt: nowIso()
         }
       });
       w.status = 'failed';
-      changes.push({ lane, taskId: w.taskId, status: 'retry_no_result' });
+      changes.push({ lane, taskId: w.taskId, status: patch.status });
     }
     w.finishedAt = nowIso();
   }
@@ -202,3 +372,34 @@ export function reconcileWriterExits() {
   if (changes.length) writeMasterStatus();
   return changes;
 }
+
+/** Terminate only factory-owned writer child PIDs recorded in active-writers.json. */
+export function terminateOwnedWriters() {
+  const active = loadActiveWriters();
+  const killed = [];
+  for (const [lane, w] of Object.entries(active.writers || {})) {
+    if (w?.pid && isPidAlive(w.pid)) {
+      try {
+        process.kill(w.pid);
+        killed.push({ lane, taskId: w.taskId, pid: w.pid });
+      } catch {
+        /* ignore */
+      }
+    }
+    if (w) w.status = 'stopped';
+  }
+  active.writers = {};
+  saveActiveWriters(active);
+  return killed;
+}
+
+export function countOwnedAliveWriters() {
+  const active = loadActiveWriters();
+  let n = 0;
+  for (const w of Object.values(active.writers || {})) {
+    if (w?.pid && isPidAlive(w.pid)) n += 1;
+  }
+  return n;
+}
+
+export { isAwaitingRunner };

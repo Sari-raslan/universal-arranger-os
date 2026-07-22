@@ -194,4 +194,73 @@ export function recordTaskBaseCommit(patch, baseSha) {
   };
 }
 
+/**
+ * Bounded safe recreation of a missing integration worktree.
+ * Never rewrites owner history. Returns ok:false when unsafe.
+ */
+export function tryRecreateIntegrationWorktree({
+  repoRoot,
+  integrationWorktree,
+  integrationBranch
+} = {}) {
+  if (!repoRoot || !fs.existsSync(repoRoot)) {
+    return { ok: false, reason: 'REPO_MISSING', remediation: `Ensure repo exists at ${repoRoot}` };
+  }
+  if (!integrationWorktree || !integrationBranch) {
+    return { ok: false, reason: 'MISSING_ARGS' };
+  }
+  if (fs.existsSync(integrationWorktree)) {
+    return { ok: false, reason: 'PATH_EXISTS_BUT_INVALID', path: integrationWorktree };
+  }
+
+  const branchOk = git(repoRoot, ['show-ref', '--verify', '--quiet', `refs/heads/${integrationBranch}`]);
+  if (!branchOk.ok) {
+    return {
+      ok: false,
+      reason: 'INTEGRATION_BRANCH_MISSING',
+      remediation: `Create branch ${integrationBranch} in ${repoRoot} without rewriting history`
+    };
+  }
+
+  const list = git(repoRoot, ['worktree', 'list', '--porcelain']);
+  if (list.stdout.includes(integrationWorktree.replace(/\\/g, '/')) || list.stdout.includes(integrationWorktree)) {
+    return { ok: false, reason: 'WORKTREE_ALREADY_REGISTERED', path: integrationWorktree };
+  }
+  // Another worktree already checked out this branch?
+  if (list.stdout.includes(`branch refs/heads/${integrationBranch}`)) {
+    return {
+      ok: false,
+      reason: 'BRANCH_OWNED_BY_OTHER_WORKTREE',
+      remediation: `Detach or remove the conflicting worktree for ${integrationBranch}`
+    };
+  }
+
+  ensureDir(path.dirname(integrationWorktree));
+  const add = git(repoRoot, ['worktree', 'add', integrationWorktree, integrationBranch], 180000);
+  if (!add.ok) {
+    return { ok: false, reason: 'WORKTREE_ADD_FAIL', stderr: add.stderr };
+  }
+
+  const head = revParse(integrationWorktree, 'HEAD');
+  const branchHead = revParse(repoRoot, integrationBranch);
+  if (!head || !branchHead || head !== branchHead) {
+    return {
+      ok: false,
+      reason: 'RECREATED_HEAD_MISMATCH',
+      head,
+      branchHead,
+      remediation: 'Do not force-reset; inspect worktree manually'
+    };
+  }
+
+  return {
+    ok: true,
+    recreated: true,
+    integrationWorktree,
+    integrationBranch,
+    head,
+    at: nowIso()
+  };
+}
+
 export { git as gitIn };

@@ -15,7 +15,7 @@ import { writePromptFiles } from './task-prompt.mjs';
 import { createTaskWorktree } from './worktree-manager.mjs';
 import { assertSafeCommands } from './security-guard.mjs';
 import { reviewDiffSummary } from './review-runner.mjs';
-import { updateTask, loadQueue, saveQueue } from './queue-manager.mjs';
+import { updateTask, loadQueue, saveQueue, isDurablyIntegrated, transitionTask } from './queue-manager.mjs';
 import {
   preferredWriterForLane,
   isWriterAvailable,
@@ -26,7 +26,8 @@ import {
   planIntegration,
   executeIntegrationPlan,
   revParse,
-  recordTaskBaseCommit
+  recordTaskBaseCommit,
+  tryRecreateIntegrationWorktree
 } from './integration-planner.mjs';
 
 function parseArgs(argv) {
@@ -113,19 +114,60 @@ export function integrateTaskBranch({
   taskBaseCommit = null,
   integrationWorktree = null,
   integrationBranch = null,
-  alreadyIntegrated = false
+  alreadyIntegrated = false,
+  allowRecreate = true,
+  disposable = false
 } = {}) {
   const cfg = loadFactoryConfig();
-  const integration = integrationWorktree || path.join(cfg.worktreeRoot, `${lane}-integration`);
+  let integration = integrationWorktree || path.join(cfg.worktreeRoot, `${lane}-integration`);
   const branch = integrationBranch || cfg.lanes[lane].integrationBranch;
+  const repoRoot = cfg.lanes[lane]?.repoRoot;
 
-  const plan = planIntegration({
+  let plan = planIntegration({
     cwd: integration,
     integrationBranch: branch,
     taskBranch,
-    taskBaseCommit: taskBaseCommit || revParse(integration, 'HEAD'),
+    taskBaseCommit: taskBaseCommit || (fs.existsSync(integration) ? revParse(integration, 'HEAD') : null),
     alreadyIntegrated
   });
+
+  // Never silently PASS when the integration worktree is missing.
+  if (plan.action === 'INTEGRATION_WT_MISSING') {
+    let recovery = null;
+    // Only attempt recreate for real lane worktrees (never invent disposable roots).
+    if (allowRecreate && !disposable && repoRoot) {
+      recovery = tryRecreateIntegrationWorktree({
+        repoRoot,
+        integrationWorktree: integration,
+        integrationBranch: branch
+      });
+      if (recovery.ok) {
+        plan = planIntegration({
+          cwd: integration,
+          integrationBranch: branch,
+          taskBranch,
+          taskBaseCommit: taskBaseCommit || revParse(integration, 'HEAD'),
+          alreadyIntegrated
+        });
+      }
+    }
+    if (plan.action === 'INTEGRATION_WT_MISSING') {
+      return {
+        ok: false,
+        reason: 'INTEGRATION_WT_MISSING',
+        plan,
+        integrationWorktree: integration,
+        integrationBranch: branch,
+        recovery,
+        preserveTaskWorktree: true,
+        preserveTaskBranch: true,
+        preserveTaskCommit: true,
+        integrationStatus: 'NOT_INTEGRATED',
+        remediation: recovery?.remediation ||
+          `Recreate integration worktree at ${integration} for branch ${branch} only if repo/branch exist and no conflicting worktree owns the branch`
+      };
+    }
+  }
 
   if (plan.action === 'INTEGRATION_HEAD_ADVANCED' || plan.action === 'DIVERGED') {
     return {
@@ -133,6 +175,7 @@ export function integrateTaskBranch({
       reason: plan.reason || plan.action,
       plan,
       preserveTaskWorktree: true,
+      integrationStatus: 'NOT_INTEGRATED',
       note: 'Task worktree preserved; rebase/replay required before integrate — never reset owner branches'
     };
   }
@@ -141,7 +184,13 @@ export function integrateTaskBranch({
     integrationBranch: branch,
     taskBranch
   });
-  return { ...executed, plan, integrationWorktree: integration, integrationBranch: branch };
+  return {
+    ...executed,
+    plan,
+    integrationWorktree: integration,
+    integrationBranch: branch,
+    integrationStatus: executed.ok ? 'INTEGRATED' : 'NOT_INTEGRATED'
+  };
 }
 
 /** @deprecated use integrateTaskBranch — kept for callers expecting old shape */
@@ -157,13 +206,16 @@ function integrateFastForward(lane, taskBranch, extra = {}) {
 
 function markDependentsReady(lane, completedId) {
   const q = loadQueue(lane);
+  const completed = q.tasks.find((x) => x.id === completedId);
+  // Dependents advance only after proven durable integration — never from passed-only.
+  if (!isDurablyIntegrated(completed)) return;
   for (const t of q.tasks) {
     if (!['pending', 'ready'].includes(t.status)) continue;
     const deps = t.dependsOn || [];
     if (!deps.includes(completedId)) continue;
     const allMet = deps.every((d) => {
       const dep = q.tasks.find((x) => x.id === d);
-      return dep && ['passed', 'integrated'].includes(dep.status);
+      return isDurablyIntegrated(dep);
     });
     if (allMet && t.status === 'pending') {
       t.status = 'ready';
@@ -171,6 +223,18 @@ function markDependentsReady(lane, completedId) {
     }
   }
   saveQueue(lane, q);
+}
+
+/** noop-pass is allowed only for synthetic/test tasks or explicit allowNoOpPass. */
+export function isNoopPassAllowed(task) {
+  if (!task || task.localSyntheticAction !== 'noop-pass') return false;
+  if (task.allowNoOpPass === true) return true;
+  if (task.synthetic === true || task.testOnly === true) return true;
+  const id = String(task.id || '');
+  if (id.includes('-SYN-') || /-SYN$/i.test(id) || id.startsWith('L-SYN') || id.startsWith('S-SYN') || id.startsWith('A-SYN')) {
+    return true;
+  }
+  return false;
 }
 
 /**
@@ -189,12 +253,63 @@ function runDeterministicLocalWriter(task, { worktree, artifactDir, evidenceDir,
       status: 'PASS',
       task: task.id,
       filesChanged: [rel],
+      sourceChanges: 1,
+      noOp: false,
+      commitCreated: false,
       mode: 'synthetic_local',
       completedAt: nowIso()
     };
     atomicWriteJson(path.join(artifactDir, `${task.id}-result.json`), result);
     atomicWriteJson(path.join(evidenceDir, `${task.id}-result.json`), result);
     return result;
+  }
+
+  if (task.localSyntheticAction === 'noop-pass') {
+    if (!isNoopPassAllowed(task)) {
+      const denied = {
+        ok: false,
+        status: 'FAIL',
+        task: task.id,
+        mode: 'synthetic_local',
+        reason: 'NOOP_PASS_NOT_ALLOWED',
+        noOp: true,
+        sourceChanges: 0,
+        commitCreated: false,
+        completedAt: nowIso()
+      };
+      atomicWriteJson(path.join(artifactDir, `${task.id}-result.json`), denied);
+      atomicWriteJson(path.join(evidenceDir, `${task.id}-result.json`), denied);
+      return denied;
+    }
+    const result = {
+      ok: true,
+      status: 'PASS',
+      task: task.id,
+      filesChanged: [],
+      sourceChanges: 0,
+      noOp: true,
+      commitCreated: false,
+      mode: 'synthetic_local_noop',
+      completedAt: nowIso()
+    };
+    atomicWriteJson(path.join(artifactDir, `${task.id}-result.json`), result);
+    atomicWriteJson(path.join(evidenceDir, `${task.id}-result.json`), result);
+    return result;
+  }
+
+  if (task.localSyntheticAction) {
+    const unknown = {
+      ok: false,
+      status: 'FAIL',
+      task: task.id,
+      mode: 'synthetic_local',
+      reason: 'WRITER_FAIL',
+      note: `Unsupported localSyntheticAction: ${task.localSyntheticAction}`,
+      completedAt: nowIso()
+    };
+    atomicWriteJson(path.join(artifactDir, `${task.id}-result.json`), unknown);
+    atomicWriteJson(path.join(evidenceDir, `${task.id}-result.json`), unknown);
+    return unknown;
   }
 
   // Product tasks: attempt to run existing tests if already implemented; else FAIL with honest blocker
@@ -427,14 +542,29 @@ export async function executeGenericTask(task, opts = {}) {
     const changed = listChangedFiles(worktree);
     if (changed.length) {
       commitInfo = commitExact(worktree, changed, `${task.id}: ${task.title}`);
-    } else if (task.localSyntheticAction) {
+    } else if (task.localSyntheticAction === 'noop-pass' && writerResult.noOp) {
+      const head = revParse(worktree, 'HEAD');
+      commitInfo = {
+        ok: true,
+        reason: 'NOOP_NO_COMMIT',
+        head,
+        commitCreated: false,
+        noOp: true,
+        sourceChanges: 0
+      };
+    } else if (task.localSyntheticAction && task.localSyntheticAction !== 'noop-pass') {
       commitInfo = commitExact(
         worktree,
         [task.localSyntheticPath || 'UAOS_GENERIC_MARKER.txt'],
         `${task.id}: ${task.title}`
       );
     } else {
-      commitInfo = { ok: true, reason: 'NO_DIFF_ALREADY_COMMITTED', head: runCmd('git rev-parse HEAD', { cwd: worktree }).stdout?.trim() };
+      commitInfo = {
+        ok: true,
+        reason: 'NO_DIFF_ALREADY_COMMITTED',
+        head: runCmd('git rev-parse HEAD', { cwd: worktree }).stdout?.trim(),
+        commitCreated: false
+      };
     }
 
     if (commitInfo.ok) {
@@ -444,37 +574,72 @@ export async function executeGenericTask(task, opts = {}) {
         taskBaseCommit,
         integrationWorktree,
         integrationBranch,
-        alreadyIntegrated: false
+        alreadyIntegrated: Boolean(writerResult.noOp && task.allowNoOpIntegrateUnchanged),
+        disposable: Boolean(disposable),
+        allowRecreate: !disposable
       });
-      if (integrateInfo.ok || integrateInfo.reason === 'INTEGRATION_WT_MISSING') {
+
+      // INTEGRATION_WT_MISSING and any other integrate failure must NEVER mark PASS/integrated.
+      if (integrateInfo.ok) {
         finalStatus = 'PASS';
-        updateTask(lane, task.id, {
+        const persisted = transitionTask(lane, task.id, {
           status: 'integrated',
+          integrationStatus: 'INTEGRATED',
+          blockingReason: null,
+          nextAutomaticRetry: null,
           result: {
             status: 'PASS',
             writer: writerAgent,
             commit: commitInfo.head,
+            commitCreated: commitInfo.commitCreated !== false && Boolean(commitInfo.head) && commitInfo.reason !== 'NOOP_NO_COMMIT',
+            noOp: Boolean(writerResult.noOp),
+            sourceChanges: writerResult.sourceChanges ?? (changed.length || 0),
             taskBaseCommit,
             disposableSynthetic: Boolean(disposable),
             tests: testResults,
             review,
             integrate: integrateInfo,
+            integrationCommit: integrateInfo.integrationHead || integrateInfo.plan?.integrationHead || null,
             evidenceDir,
             artifactDir,
             at: nowIso()
           }
         });
-        markDependentsReady(lane, task.id);
+        if (!persisted.ok) {
+          finalStatus = 'FAIL';
+          transitionTask(lane, task.id, {
+            status: 'blocked',
+            blockingReason: 'STATE_PERSISTENCE_FAILED',
+            integrationStatus: 'NOT_INTEGRATED',
+            nextAutomaticRetry: null,
+            result: {
+              reason: 'STATE_PERSISTENCE_FAILED',
+              integrate: integrateInfo,
+              commit: commitInfo,
+              at: nowIso()
+            }
+          });
+        } else {
+          markDependentsReady(lane, task.id);
+        }
       } else {
-        updateTask(lane, task.id, {
+        finalStatus = 'FAIL';
+        transitionTask(lane, task.id, {
           status: 'blocked',
           blockingReason: integrateInfo.reason || 'INTEGRATE_CONFLICT',
+          integrationStatus: 'NOT_INTEGRATED',
+          nextAutomaticRetry: null,
           result: {
             reason: integrateInfo.reason || 'INTEGRATE_CONFLICT',
             integrate: integrateInfo,
             commit: commitInfo,
             taskBaseCommit,
+            taskBranch,
+            worktreePath: worktree,
             preserveTaskWorktree: true,
+            preserveTaskBranch: true,
+            missingIntegrationPath: integrateInfo.integrationWorktree || integrationWorktree,
+            remediation: integrateInfo.remediation || null,
             at: nowIso()
           }
         });
@@ -483,6 +648,7 @@ export async function executeGenericTask(task, opts = {}) {
       const retries = (task.result?.retryCount || 0) + 1;
       updateTask(lane, task.id, {
         status: retries > (task.retryLimit ?? 2) ? 'blocked' : 'retry',
+        integrationStatus: 'NOT_INTEGRATED',
         result: {
           reason: 'COMMIT_FAIL',
           retryCount: retries,

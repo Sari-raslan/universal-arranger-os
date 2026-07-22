@@ -1,0 +1,16 @@
+﻿{
+  "timestamp": "2026-07-22T09-54-58",
+  "branch": "factory/agent-factory-generic-runner",
+  "head": "25fa1e2500d4b2561957e57782cf9303d7731701",
+  "factoryPaused": true,
+  "pauseReason": "BUGBOT_5_FACTORY_REPAIR",
+  "supervisorPid": 1236,
+  "dashboardPid": 1664,
+  "findings": [
+    {"id": 1, "severity": "high", "file": "uaos-agent-factory/src/generic-runner.mjs", "line": 449, "summary": "INTEGRATION_WT_MISSING still marks PASS/integrated"},
+    {"id": 2, "severity": "high", "file": "uaos-agent-factory/src/dispatch.mjs", "line": 211, "summary": "Writer PASS reconciliation updates in-memory only"},
+    {"id": 3, "severity": "medium", "file": "uaos-agent-factory/src/generic-runner.mjs", "line": 180, "summary": "noop-pass synthetic action unimplemented"},
+    {"id": 4, "severity": "medium", "file": "uaos-agent-factory/dashboard/server.mjs", "line": 81, "summary": "Loopback POST mutations lack CSRF"},
+    {"id": 5, "severity": "medium", "file": "uaos-agent-factory/dashboard/server.mjs", "line": 114, "summary": "Human gate API throws on unknown task id"}
+  ]
+}

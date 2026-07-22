@@ -95,8 +95,12 @@
   <div id="sys">Loading…</div>
   <main id="lanes"></main>
   <script>
+    function csrfToken() {
+      const meta = document.querySelector('meta[name="csrf-token"]');
+      return meta ? meta.getAttribute('content') : '';
+    }
     async function refresh() {
-      const res = await fetch('/api/status');
+      const res = await fetch('/api/status', { credentials: 'same-origin' });
       const data = await res.json();
       const sys = document.getElementById('sys');
       const ram = data.resources?.ram || {};
@@ -116,7 +120,15 @@
       }
     }
     async function post(url) {
-      await fetch(url, { method: 'POST' });
+      await fetch(url, {
+        method: 'POST',
+        credentials: 'same-origin',
+        headers: {
+          'Content-Type': 'application/json',
+          'X-CSRF-Token': csrfToken()
+        },
+        body: '{}'
+      });
       await refresh();
     }
     refresh();

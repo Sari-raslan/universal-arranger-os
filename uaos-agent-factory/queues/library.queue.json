@@ -1,6 +1,6 @@
 {
   "lane": "library",
-  "updatedAt": "2026-07-21T19:19:25.244Z",
+  "updatedAt": "2026-07-22T08:08:13.726Z",
   "tasks": [
     {
       "id": "L-001",
@@ -250,7 +250,8 @@
         "nextTask": "L-040",
         "integrated": true
       },
-      "updatedAt": "2026-07-21T18:58:12.364Z"
+      "updatedAt": "2026-07-21T18:58:12.364Z",
+      "integrationStatus": "INTEGRATED"
     },
     {
       "id": "L-020",
@@ -316,7 +317,8 @@
         "nextTask": "L-040",
         "integrated": true
       },
-      "updatedAt": "2026-07-21T18:58:12.367Z"
+      "updatedAt": "2026-07-21T18:58:12.367Z",
+      "integrationStatus": "INTEGRATED"
     },
     {
       "id": "L-030",
@@ -382,14 +384,15 @@
         "nextTask": "L-040",
         "integrated": true
       },
-      "updatedAt": "2026-07-21T18:58:12.368Z"
+      "updatedAt": "2026-07-21T18:58:12.368Z",
+      "integrationStatus": "INTEGRATED"
     },
     {
       "id": "L-040",
       "lane": "library",
       "title": "UINST V2",
       "priority": 900,
-      "status": "ready",
+      "status": "integrated",
       "dependsOn": [
         "L-030"
       ],
@@ -406,9 +409,33 @@
         "acceptance": []
       },
       "result": {
-        "clearedFrom": "AWAITING_TASK_RUNNER"
+        "reason": "BACKGROUND_CODE_WRITING_BLOCKED_AUTH_OR_CLI",
+        "note": "Normalized: no automatic relaunch",
+        "blockingReason": "BACKGROUND_CODE_WRITING_BLOCKED_AUTH_OR_CLI",
+        "nextAutomaticRetry": null,
+        "at": "2026-07-22T01:36:41.114Z",
+        "executor": "cursor-local",
+        "writer": "cursor-local",
+        "writerPid": null,
+        "executionMode": "interactive_cursor_agent",
+        "claimId": "e4f65dc7-ae6e-499f-a87b-ae4bbd4ee641",
+        "claimedAt": "2026-07-22T01:33:21.848Z",
+        "taskWorktree": "D:\\UAOS_AGENT_FACTORY_WORKTREES\\library-l-040",
+        "taskBranch": "factory/library-l-040",
+        "logFile": "E:\\keyboard-manager-clean\\uaos-agent-factory\\logs\\library\\L-040\\cursor-local-2026-07-22T01-33-21-848Z\\writer-cursor-local.log",
+        "evidenceDir": "E:\\keyboard-manager-clean\\uaos-agent-factory\\logs\\library\\L-040\\cursor-local-2026-07-22T01-33-21-848Z",
+        "artifactDir": "D:\\UAOS_AGENT_FACTORY_ARTIFACTS\\library\\L-040",
+        "phase": "integrated",
+        "testsPass": true,
+        "status": "PASS",
+        "commit": "23c5ecbb5a4ff68af61dc4c510ea8aa83b490626",
+        "reviews": [
+          "CURSOR_LOCAL_REVIEW_PASS_1",
+          "CURSOR_LOCAL_REVIEW_PASS_2"
+        ],
+        "integratedInto": "factory/library-integration"
       },
-      "updatedAt": "2026-07-21T19:14:44.309Z",
+      "updatedAt": "2026-07-22T01:36:41.115Z",
       "objective": "UINST V2 schema + migration from v1: ADR, strict validation, deterministic non-destructive migration, synthetic fixture remains loadable, digests explicit. No commercial samples.",
       "description": "Format/runtime product task; do not wait for Oud/Qanun recordings.",
       "allowedPaths": [
@@ -423,14 +450,29 @@
       "artifactsExpected": [
         "D:/UAOS_AGENT_FACTORY_ARTIFACTS/library/L-040/L-040-result.json"
       ],
-      "writerRole": "codex"
+      "writerRole": "cursor-local",
+      "retryCount": 0,
+      "lastAttemptAt": "2026-07-21T21:28:04.783Z",
+      "nextRetryAt": null,
+      "lastExitCode": null,
+      "lastError": "BACKGROUND_CODE_WRITING_BLOCKED_AUTH_OR_CLI",
+      "blockingReason": null,
+      "executor": "cursor-local",
+      "writerPid": null,
+      "executionMode": "interactive_cursor_agent",
+      "claimId": "e4f65dc7-ae6e-499f-a87b-ae4bbd4ee641",
+      "claimedAt": "2026-07-22T01:33:21.848Z",
+      "worktreePath": "D:\\UAOS_AGENT_FACTORY_WORKTREES\\library-l-040",
+      "taskBranch": "factory/library-l-040",
+      "allowIntegratorDispatch": true,
+      "integrationStatus": "INTEGRATED"
     },
     {
       "id": "L-050",
       "lane": "library",
       "title": "USER SAMPLE IMPORT",
       "priority": 890,
-      "status": "pending",
+      "status": "integrated",
       "dependsOn": [
         "L-040"
       ],
@@ -443,14 +485,54 @@
         "build": [],
         "acceptance": []
       },
-      "result": null
+      "result": {
+        "advancedBy": "L-040",
+        "reason": "BACKGROUND_CODE_WRITING_BLOCKED_AUTH_OR_CLI",
+        "note": "Queued for cursor-local claim",
+        "at": "2026-07-22T02:02:30.771Z",
+        "blockingReason": "BACKGROUND_CODE_WRITING_BLOCKED_AUTH_OR_CLI",
+        "nextAutomaticRetry": null,
+        "executor": "cursor-local",
+        "writer": "cursor-local",
+        "writerPid": null,
+        "executionMode": "interactive_cursor_agent",
+        "claimId": "b2afe09f-c296-423d-b2fc-95a94d6f448d",
+        "claimedAt": "2026-07-22T02:00:38.395Z",
+        "taskWorktree": "D:\\UAOS_AGENT_FACTORY_WORKTREES\\library-l-050",
+        "taskBranch": "factory/library-l-050",
+        "logFile": "E:\\keyboard-manager-clean\\uaos-agent-factory\\logs\\library\\L-050\\cursor-local-2026-07-22T02-00-38-395Z\\writer-cursor-local.log",
+        "evidenceDir": "E:\\keyboard-manager-clean\\uaos-agent-factory\\logs\\library\\L-050\\cursor-local-2026-07-22T02-00-38-395Z",
+        "artifactDir": "D:\\UAOS_AGENT_FACTORY_ARTIFACTS\\library\\L-050",
+        "phase": "integrated",
+        "testsPass": true,
+        "status": "PASS",
+        "commit": "58f95d6a4f29aeabd4ba6e4fcbd1e9cc52cc77cf",
+        "reviews": [
+          "CURSOR_LOCAL_REVIEW_PASS_1",
+          "CURSOR_LOCAL_REVIEW_PASS_2"
+        ],
+        "integratedInto": "factory/library-integration"
+      },
+      "updatedAt": "2026-07-22T02:02:30.771Z",
+      "executor": "cursor-local",
+      "writerRole": "cursor-local",
+      "writerPid": null,
+      "executionMode": "interactive_cursor_agent",
+      "claimId": "b2afe09f-c296-423d-b2fc-95a94d6f448d",
+      "claimedAt": "2026-07-22T02:00:38.395Z",
+      "worktreePath": "D:\\UAOS_AGENT_FACTORY_WORKTREES\\library-l-050",
+      "taskBranch": "factory/library-l-050",
+      "blockingReason": null,
+      "allowIntegratorDispatch": true,
+      "nextRetryAt": null,
+      "integrationStatus": "INTEGRATED"
     },
     {
       "id": "L-060",
       "lane": "library",
       "title": "MAPPING EDITOR",
       "priority": 880,
-      "status": "pending",
+      "status": "integrated",
       "dependsOn": [
         "L-050"
       ],
@@ -463,14 +545,52 @@
         "build": [],
         "acceptance": []
       },
-      "result": null
+      "result": {
+        "advancedBy": "L-050",
+        "reason": "BACKGROUND_CODE_WRITING_BLOCKED_AUTH_OR_CLI",
+        "note": "Queued for cursor-local claim",
+        "at": "2026-07-22T02:23:50.501Z",
+        "executor": "cursor-local",
+        "writer": "cursor-local",
+        "writerPid": null,
+        "executionMode": "interactive_cursor_agent",
+        "claimId": "f95ef84d-7e1b-46a7-9448-10ef56f558d0",
+        "claimedAt": "2026-07-22T02:21:16.238Z",
+        "taskWorktree": "D:\\UAOS_AGENT_FACTORY_WORKTREES\\library-l-060",
+        "taskBranch": "factory/library-l-060",
+        "logFile": "E:\\keyboard-manager-clean\\uaos-agent-factory\\logs\\library\\L-060\\cursor-local-2026-07-22T02-21-16-238Z\\writer-cursor-local.log",
+        "evidenceDir": "E:\\keyboard-manager-clean\\uaos-agent-factory\\logs\\library\\L-060\\cursor-local-2026-07-22T02-21-16-238Z",
+        "artifactDir": "D:\\UAOS_AGENT_FACTORY_ARTIFACTS\\library\\L-060",
+        "phase": "integrated",
+        "status": "PASS",
+        "commit": "5b990492faac07dd3e7d24d192e64e3a7bc98209",
+        "testsPass": true,
+        "reviews": [
+          "CURSOR_LOCAL_REVIEW_PASS_1",
+          "CURSOR_LOCAL_REVIEW_PASS_2"
+        ],
+        "integratedInto": "factory/library-integration"
+      },
+      "updatedAt": "2026-07-22T02:23:50.502Z",
+      "executor": "cursor-local",
+      "writerRole": "cursor-local",
+      "writerPid": null,
+      "executionMode": "interactive_cursor_agent",
+      "claimId": "f95ef84d-7e1b-46a7-9448-10ef56f558d0",
+      "claimedAt": "2026-07-22T02:21:16.238Z",
+      "worktreePath": "D:\\UAOS_AGENT_FACTORY_WORKTREES\\library-l-060",
+      "taskBranch": "factory/library-l-060",
+      "blockingReason": null,
+      "allowIntegratorDispatch": true,
+      "nextRetryAt": null,
+      "integrationStatus": "INTEGRATED"
     },
     {
       "id": "L-070",
       "lane": "library",
       "title": "PREVIEW PLAYER",
       "priority": 870,
-      "status": "pending",
+      "status": "integrated",
       "dependsOn": [
         "L-060"
       ],
@@ -483,14 +603,56 @@
         "build": [],
         "acceptance": []
       },
-      "result": null
+      "result": {
+        "advancedBy": "L-060",
+        "reason": "BACKGROUND_CODE_WRITING_BLOCKED_AUTH_OR_CLI",
+        "note": "Queued for cursor-local claim",
+        "at": "2026-07-22T05:13:10.735Z",
+        "executor": "cursor-local",
+        "writer": "cursor-local",
+        "writerPid": null,
+        "executionMode": "interactive_cursor_agent",
+        "claimId": "d5bcef4c-463f-47ea-8108-cf492620b2d2",
+        "claimedAt": "2026-07-22T05:09:17.462Z",
+        "taskWorktree": "D:\\UAOS_AGENT_FACTORY_WORKTREES\\library-l-070",
+        "taskBranch": "factory/library-l-070",
+        "logFile": "E:\\keyboard-manager-clean\\uaos-agent-factory\\logs\\library\\L-070\\cursor-local-2026-07-22T05-09-17-462Z\\writer-cursor-local.log",
+        "evidenceDir": "E:\\keyboard-manager-clean\\uaos-agent-factory\\logs\\library\\L-070\\cursor-local-2026-07-22T05-09-17-462Z",
+        "artifactDir": "D:\\UAOS_AGENT_FACTORY_ARTIFACTS\\library\\L-070",
+        "phase": "integrated",
+        "status": "PASS",
+        "commit": "8bdcc09e9e16690c37bfc4ad8fbeec391c29d75f",
+        "testsPass": true,
+        "reviews": [
+          "CURSOR_LOCAL_REVIEW_PASS_1",
+          "CURSOR_LOCAL_REVIEW_PASS_2"
+        ],
+        "integratedInto": "factory/library-integration"
+      },
+      "retryCount": 0,
+      "lastAttemptAt": "2026-07-22T02:23:51.440Z",
+      "nextRetryAt": null,
+      "lastExitCode": null,
+      "lastError": "BACKGROUND_CODE_WRITING_BLOCKED_AUTH_OR_CLI",
+      "blockingReason": null,
+      "updatedAt": "2026-07-22T05:13:10.736Z",
+      "executor": "cursor-local",
+      "writerRole": "cursor-local",
+      "writerPid": null,
+      "executionMode": "interactive_cursor_agent",
+      "claimId": "d5bcef4c-463f-47ea-8108-cf492620b2d2",
+      "claimedAt": "2026-07-22T05:09:17.462Z",
+      "worktreePath": "D:\\UAOS_AGENT_FACTORY_WORKTREES\\library-l-070",
+      "taskBranch": "factory/library-l-070",
+      "allowIntegratorDispatch": true,
+      "integrationStatus": "INTEGRATED"
     },
     {
       "id": "L-080",
       "lane": "library",
       "title": "VALIDATOR",
       "priority": 860,
-      "status": "pending",
+      "status": "integrated",
       "dependsOn": [
         "L-070"
       ],
@@ -503,14 +665,56 @@
         "build": [],
         "acceptance": []
       },
-      "result": null
+      "result": {
+        "advancedBy": "L-070",
+        "reason": "BACKGROUND_CODE_WRITING_BLOCKED_AUTH_OR_CLI",
+        "note": "Queued for cursor-local claim",
+        "at": "2026-07-22T05:52:49.332Z",
+        "executor": "cursor-local",
+        "writer": "cursor-local",
+        "writerPid": null,
+        "executionMode": "interactive_cursor_agent",
+        "claimId": "9fda8976-a188-47ed-b898-98fa0f14d7b3",
+        "claimedAt": "2026-07-22T05:49:42.703Z",
+        "taskWorktree": "D:\\UAOS_AGENT_FACTORY_WORKTREES\\library-l-080",
+        "taskBranch": "factory/library-l-080",
+        "logFile": "E:\\keyboard-manager-clean\\uaos-agent-factory\\logs\\library\\L-080\\cursor-local-2026-07-22T05-49-42-703Z\\writer-cursor-local.log",
+        "evidenceDir": "E:\\keyboard-manager-clean\\uaos-agent-factory\\logs\\library\\L-080\\cursor-local-2026-07-22T05-49-42-703Z",
+        "artifactDir": "D:\\UAOS_AGENT_FACTORY_ARTIFACTS\\library\\L-080",
+        "phase": "integrated",
+        "status": "PASS",
+        "commit": "e453912a7900105ab25f2b4cd11404e2e06e8191",
+        "testsPass": true,
+        "reviews": [
+          "CURSOR_LOCAL_REVIEW_PASS_1",
+          "CURSOR_LOCAL_REVIEW_PASS_2"
+        ],
+        "integratedInto": "factory/library-integration"
+      },
+      "blockingReason": null,
+      "updatedAt": "2026-07-22T05:52:49.334Z",
+      "retryCount": 0,
+      "lastAttemptAt": "2026-07-22T05:13:12.748Z",
+      "nextRetryAt": null,
+      "lastExitCode": null,
+      "lastError": null,
+      "executor": "cursor-local",
+      "writerRole": "cursor-local",
+      "writerPid": null,
+      "executionMode": "interactive_cursor_agent",
+      "claimId": "9fda8976-a188-47ed-b898-98fa0f14d7b3",
+      "claimedAt": "2026-07-22T05:49:42.703Z",
+      "worktreePath": "D:\\UAOS_AGENT_FACTORY_WORKTREES\\library-l-080",
+      "taskBranch": "factory/library-l-080",
+      "allowIntegratorDispatch": true,
+      "integrationStatus": "INTEGRATED"
     },
     {
       "id": "L-090",
       "lane": "library",
       "title": "BUILD UINST",
       "priority": 850,
-      "status": "pending",
+      "status": "integrated",
       "dependsOn": [
         "L-080"
       ],
@@ -523,14 +727,51 @@
         "build": [],
         "acceptance": []
       },
-      "result": null
+      "result": {
+        "advancedBy": "L-080",
+        "note": "Queued for cursor-local claim",
+        "at": "2026-07-22T06:11:18.393Z",
+        "executor": "cursor-local",
+        "writer": "cursor-local",
+        "writerPid": null,
+        "executionMode": "interactive_cursor_agent",
+        "claimId": "4326d82a-99a6-48ca-8afa-c8ebc9d7c6f8",
+        "claimedAt": "2026-07-22T06:08:41.736Z",
+        "taskWorktree": "D:\\UAOS_AGENT_FACTORY_WORKTREES\\library-l-090",
+        "taskBranch": "factory/library-l-090",
+        "logFile": "E:\\keyboard-manager-clean\\uaos-agent-factory\\logs\\library\\L-090\\cursor-local-2026-07-22T06-08-41-736Z\\writer-cursor-local.log",
+        "evidenceDir": "E:\\keyboard-manager-clean\\uaos-agent-factory\\logs\\library\\L-090\\cursor-local-2026-07-22T06-08-41-736Z",
+        "artifactDir": "D:\\UAOS_AGENT_FACTORY_ARTIFACTS\\library\\L-090",
+        "phase": "integrated",
+        "status": "PASS",
+        "commit": "dd715dbc233fac4c61e3e9b3f74237ded9f6b183",
+        "testsPass": true,
+        "reviews": [
+          "CURSOR_LOCAL_REVIEW_PASS_1",
+          "CURSOR_LOCAL_REVIEW_PASS_2"
+        ],
+        "integratedInto": "factory/library-integration"
+      },
+      "blockingReason": null,
+      "updatedAt": "2026-07-22T06:11:18.393Z",
+      "executor": "cursor-local",
+      "writerRole": "cursor-local",
+      "writerPid": null,
+      "executionMode": "interactive_cursor_agent",
+      "claimId": "4326d82a-99a6-48ca-8afa-c8ebc9d7c6f8",
+      "claimedAt": "2026-07-22T06:08:41.736Z",
+      "worktreePath": "D:\\UAOS_AGENT_FACTORY_WORKTREES\\library-l-090",
+      "taskBranch": "factory/library-l-090",
+      "allowIntegratorDispatch": true,
+      "nextRetryAt": null,
+      "integrationStatus": "INTEGRATED"
     },
     {
       "id": "L-100",
       "lane": "library",
       "title": "SYNTHETIC DEMO",
       "priority": 840,
-      "status": "pending",
+      "status": "integrated",
       "dependsOn": [
         "L-090"
       ],
@@ -543,14 +784,61 @@
         "build": [],
         "acceptance": []
       },
-      "result": null
+      "result": {
+        "advancedBy": "L-090",
+        "note": "Generic runner is ready; Codex CLI/auth/model blocked. No automatic relaunch. Resume after CLI fix or owner Resume.",
+        "at": "2026-07-22T06:40:51.557Z",
+        "reason": "BACKGROUND_CODE_WRITING_BLOCKED_AUTH_OR_CLI",
+        "blockingReason": "BACKGROUND_CODE_WRITING_BLOCKED_AUTH_OR_CLI",
+        "nextAutomaticRetry": null,
+        "executor": "cursor-local",
+        "writer": "cursor-local",
+        "writerPid": null,
+        "executionMode": "interactive_cursor_agent",
+        "claimId": "cba6e500-ce38-487e-b382-d3575f7da522",
+        "claimedAt": "2026-07-22T06:38:42.012Z",
+        "taskWorktree": "D:\\UAOS_AGENT_FACTORY_WORKTREES\\library-l-100",
+        "taskBranch": "factory/library-l-100",
+        "logFile": "E:\\keyboard-manager-clean\\uaos-agent-factory\\logs\\library\\L-100\\cursor-local-2026-07-22T06-38-42-012Z\\writer-cursor-local.log",
+        "evidenceDir": "E:\\keyboard-manager-clean\\uaos-agent-factory\\logs\\library\\L-100\\cursor-local-2026-07-22T06-38-42-012Z",
+        "artifactDir": "D:\\UAOS_AGENT_FACTORY_ARTIFACTS\\library\\L-100",
+        "phase": "integrated",
+        "status": "PASS",
+        "commit": "3f8bec32bf16b6924419ed349bc283044e71fc28",
+        "testsPass": true,
+        "reviews": [
+          "CURSOR_LOCAL_REVIEW_PASS_1",
+          "CURSOR_LOCAL_REVIEW_PASS_2"
+        ],
+        "integratedInto": "factory/library-integration",
+        "classification": "DIAGNOSTIC_SYNTHETIC_DEMO_NOT_COMMERCIAL",
+        "packageSha256": "d9bbe0cf56ca0c1cf0930ec585aaf910580971ae922cbf8eef6683ab42e08d9d",
+        "commercialLibrariesReady": 0
+      },
+      "blockingReason": null,
+      "updatedAt": "2026-07-22T06:40:51.559Z",
+      "retryCount": 0,
+      "lastAttemptAt": "2026-07-22T06:12:32.105Z",
+      "nextRetryAt": null,
+      "lastExitCode": null,
+      "lastError": "BACKGROUND_CODE_WRITING_BLOCKED_AUTH_OR_CLI",
+      "executor": "cursor-local",
+      "writerRole": "cursor-local",
+      "writerPid": null,
+      "executionMode": "interactive_cursor_agent",
+      "claimId": "cba6e500-ce38-487e-b382-d3575f7da522",
+      "claimedAt": "2026-07-22T06:38:42.012Z",
+      "worktreePath": "D:\\UAOS_AGENT_FACTORY_WORKTREES\\library-l-100",
+      "taskBranch": "factory/library-l-100",
+      "allowIntegratorDispatch": true,
+      "integrationStatus": "INTEGRATED"
     },
     {
       "id": "L-110",
       "lane": "library",
       "title": "WINDOWS APP",
       "priority": 830,
-      "status": "pending",
+      "status": "integrated",
       "dependsOn": [
         "L-100"
       ],
@@ -563,14 +851,58 @@
         "build": [],
         "acceptance": []
       },
-      "result": null
+      "result": {
+        "advancedBy": "L",
+        "note": "L-100 integrated; L-110 ready",
+        "at": "2026-07-22T07:33:57.508Z",
+        "reason": "BACKGROUND_CODE_WRITING_BLOCKED_AUTH_OR_CLI",
+        "blockingReason": "BACKGROUND_CODE_WRITING_BLOCKED_AUTH_OR_CLI",
+        "nextAutomaticRetry": null,
+        "executor": "cursor-local",
+        "writer": "cursor-local",
+        "writerPid": null,
+        "executionMode": "interactive_cursor_agent",
+        "claimId": "395c9c3c-9749-4f78-b483-e5fd737a992f",
+        "claimedAt": "2026-07-22T07:21:11.615Z",
+        "taskWorktree": "D:\\UAOS_AGENT_FACTORY_WORKTREES\\library-l-110",
+        "taskBranch": "factory/library-l-110",
+        "logFile": "E:\\keyboard-manager-clean\\uaos-agent-factory\\logs\\library\\L-110\\cursor-local-2026-07-22T07-21-11-615Z\\writer-cursor-local.log",
+        "evidenceDir": "E:\\keyboard-manager-clean\\uaos-agent-factory\\logs\\library\\L-110\\cursor-local-2026-07-22T07-21-11-615Z",
+        "artifactDir": "D:\\UAOS_AGENT_FACTORY_ARTIFACTS\\library\\L-110",
+        "phase": "integrated",
+        "testsPass": true,
+        "reviews": {
+          "CURSOR_LOCAL_REVIEW_PASS_1": "PASS",
+          "CURSOR_LOCAL_REVIEW_PASS_2": "PASS"
+        },
+        "commit": "e49440f11026058a3d5b74501f613620108d92d0",
+        "status": "PASS",
+        "integratedInto": "factory/library-integration"
+      },
+      "blockingReason": null,
+      "updatedAt": "2026-07-22T07:33:57.510Z",
+      "retryCount": 0,
+      "lastAttemptAt": "2026-07-22T06:40:55.179Z",
+      "nextRetryAt": null,
+      "lastExitCode": null,
+      "lastError": "BACKGROUND_CODE_WRITING_BLOCKED_AUTH_OR_CLI",
+      "writerPid": null,
+      "executor": "cursor-local",
+      "writerRole": "cursor-local",
+      "executionMode": "interactive_cursor_agent",
+      "claimId": "395c9c3c-9749-4f78-b483-e5fd737a992f",
+      "claimedAt": "2026-07-22T07:21:11.615Z",
+      "worktreePath": "D:\\UAOS_AGENT_FACTORY_WORKTREES\\library-l-110",
+      "taskBranch": "factory/library-l-110",
+      "allowIntegratorDispatch": true,
+      "integrationStatus": "INTEGRATED"
     },
     {
       "id": "L-120",
       "lane": "library",
       "title": "WINDOWS BUILDS",
       "priority": 820,
-      "status": "pending",
+      "status": "ready",
       "dependsOn": [
         "L-110"
       ],
@@ -583,7 +915,22 @@
         "build": [],
         "acceptance": []
       },
-      "result": null
+      "result": {
+        "advancedBy": "L-110",
+        "note": "Cleared BACKGROUND_CODE_WRITING_BLOCKED_AUTH_OR_CLI for cursor-local L-120",
+        "at": "2026-07-22T07:49:44.530Z",
+        "commercialLibrariesReady": 0,
+        "reason": "BACKGROUND_CODE_WRITING_BLOCKED_AUTH_OR_CLI",
+        "blockingReason": "BACKGROUND_CODE_WRITING_BLOCKED_AUTH_OR_CLI",
+        "nextAutomaticRetry": null
+      },
+      "blockingReason": null,
+      "updatedAt": "2026-07-22T07:49:44.531Z",
+      "retryCount": 0,
+      "lastAttemptAt": "2026-07-22T07:38:37.646Z",
+      "nextRetryAt": null,
+      "lastExitCode": null,
+      "lastError": "BACKGROUND_CODE_WRITING_BLOCKED_AUTH_OR_CLI"
     },
     {
       "id": "L-130",
@@ -667,17 +1014,36 @@
         "tests": []
       },
       "artifactsExpected": [],
-      "localSyntheticAction": "create_marker_file",
+      "localSyntheticAction": "noop-pass",
       "localSyntheticPath": "UAOS_GENERIC_MARKER.txt",
-      "result": null,
-      "updatedAt": "2026-07-21T19:19:25.241Z"
+      "result": {
+        "clearedAwaiting": true
+      },
+      "updatedAt": "2026-07-22T08:02:40.491Z",
+      "allowIntegratorDispatch": false,
+      "blockingReason": null,
+      "nextRetryAt": null,
+      "retryCount": 0,
+      "worktreePath": "D:\\UAOS_AGENT_FACTORY_BUILD\\synthetic-repos\\iso-2026-07-22T08-01-24-450Z-l-syn-generic\\task",
+      "writerRole": "cursor-local",
+      "lastAttemptAt": "2026-07-22T06:55:17.617Z",
+      "runnerCommandHash": "2ca25be048bb10e2",
+      "lastExitCode": 1,
+      "lastError": "WRITER_FAIL",
+      "taskBranch": "factory/library-l-syn-generic",
+      "taskBaseCommit": "fe5a9a4b5e5c5e7f3996596582bd73b01f1c2af7",
+      "claimedBaseAt": "2026-07-22T08:02:12.995Z",
+      "integrationStatus": "INTEGRATED",
+      "allowNoOpPass": true,
+      "synthetic": true,
+      "nextAutomaticRetry": null
     },
     {
       "id": "L-SYN-DEP",
       "lane": "library",
       "title": "Dependent of synthetic",
       "priority": 1,
-      "status": "ready",
+      "status": "blocked",
       "dependsOn": [
         "L-SYN-GENERIC"
       ],
@@ -685,8 +1051,30 @@
       "commands": {
         "tests": []
       },
-      "result": null,
-      "updatedAt": "2026-07-21T19:19:25.244Z"
+      "result": {
+        "reason": "AWAITING_TASK_RUNNER",
+        "note": "Missing runner — no child spawn",
+        "blockingReason": "AWAITING_TASK_RUNNER",
+        "nextAutomaticRetry": null,
+        "at": "2026-07-22T08:04:33.529Z"
+      },
+      "updatedAt": "2026-07-22T08:04:33.531Z",
+      "retryCount": 0,
+      "lastAttemptAt": "2026-07-22T08:04:33.529Z",
+      "nextRetryAt": null,
+      "lastExitCode": null,
+      "lastError": "AWAITING_TASK_RUNNER",
+      "blockingReason": "AWAITING_TASK_RUNNER",
+      "claimId": null,
+      "executionMode": null,
+      "writerPid": null,
+      "allowIntegratorDispatch": true,
+      "executor": "cursor-local",
+      "writerRole": "cursor-local",
+      "claimedAt": "2026-07-22T08:00:05.554Z",
+      "worktreePath": "D:\\UAOS_AGENT_FACTORY_WORKTREES\\library-l-syn-dep",
+      "taskBranch": "factory/library-l-syn-dep",
+      "statusKeep": true
     }
   ]
 }
