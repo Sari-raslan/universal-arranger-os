@@ -17,7 +17,9 @@ import {
   dispatchTaskWriter,
   reconcileWriterExits,
   activeWriterMap,
-  loadActiveWriters
+  loadActiveWriters,
+  terminateOwnedWriters,
+  countOwnedAliveWriters
 } from './dispatch.mjs';
 
 const STATE_PATH = path.join(FACTORY_ROOT, 'state', 'factory-state.json');
@@ -149,7 +151,19 @@ export async function runSupervisorLoop({ once = false } = {}) {
 
     while (true) {
       if (fs.existsSync(path.join(FACTORY_ROOT, 'state', 'STOP'))) {
-        setState({ status: 'stopped', stoppedAt: nowIso() });
+        setState({ status: 'stopping', supervisorPid: process.pid, stoppingAt: nowIso() });
+        const killed = terminateOwnedWriters();
+        // brief wait for log flush / child exit
+        const end = Date.now() + 1500;
+        while (Date.now() < end) {
+          /* wait */
+        }
+        const orphans = countOwnedAliveWriters();
+        setState({
+          status: 'stopped',
+          stoppedAt: nowIso(),
+          safeStop: { killedWriters: killed, orphanOwnedWriters: orphans }
+        });
         writeMasterStatus();
         break;
       }

@@ -8,7 +8,8 @@ import {
   readJson,
   nowIso,
   isPidAlive,
-  runCmd
+  runCmd,
+  hiddenSpawnOptions
 } from './lib.mjs';
 import { listAgents } from './agent-adapters.mjs';
 
@@ -101,10 +102,7 @@ export function spawnWriterProcess({
       TEMP: env.TEMP || 'D:\\UAOS_AGENT_FACTORY_BUILD\\tmp',
       TMP: env.TMP || 'D:\\UAOS_AGENT_FACTORY_BUILD\\tmp'
     },
-    detached: true,
-    stdio: agentId === 'codex' && !localRunner ? ['pipe', out, out] : ['ignore', out, out],
-    windowsHide: true,
-    shell: false
+    ...hiddenSpawnOptions(agentId === 'codex' && !localRunner ? ['pipe', out, out] : ['ignore', out, out])
   });
 
   if (agentId === 'codex' && !localRunner && child.stdin) {
