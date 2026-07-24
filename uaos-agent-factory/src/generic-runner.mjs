@@ -29,6 +29,11 @@ import {
   recordTaskBaseCommit,
   tryRecreateIntegrationWorktree
 } from './integration-planner.mjs';
+import { resolveArtifactRoot, resolveBuildRoot, resolveWorktreeRoot } from './paths.mjs';
+
+function factoryTempDir() {
+  return path.join(resolveBuildRoot(), 'tmp');
+}
 
 function parseArgs(argv) {
   const out = {};
@@ -52,8 +57,8 @@ function runTimed(cmd, { cwd, timeoutMs = 300000, env = {} } = {}) {
     env: {
       ...process.env,
       ...env,
-      TEMP: 'D:\\UAOS_AGENT_FACTORY_BUILD\\tmp',
-      TMP: 'D:\\UAOS_AGENT_FACTORY_BUILD\\tmp'
+      TEMP: factoryTempDir(),
+      TMP: factoryTempDir()
     }
   });
   return {
@@ -119,7 +124,7 @@ export function integrateTaskBranch({
   disposable = false
 } = {}) {
   const cfg = loadFactoryConfig();
-  let integration = integrationWorktree || path.join(cfg.worktreeRoot, `${lane}-integration`);
+  let integration = integrationWorktree || path.join(resolveWorktreeRoot(), `${lane}-integration`);
   const branch = integrationBranch || cfg.lanes[lane].integrationBranch;
   const repoRoot = cfg.lanes[lane]?.repoRoot;
 
@@ -343,16 +348,10 @@ export async function executeGenericTask(task, opts = {}) {
   const evidenceDir =
     opts.evidenceDir ||
     path.join(FACTORY_ROOT, 'logs', lane, task.id, nowIso().replace(/[:.]/g, '-'));
-  const artifactDir =
-    opts.artifactDir ||
-    path.join(
-      cfg.artifactRoot,
-      lane === 'library' ? 'library' : lane,
-      task.id
-    );
+  const artifactDir = opts.artifactDir || path.join(resolveArtifactRoot(), lane, task.id);
   ensureDir(evidenceDir);
   ensureDir(artifactDir);
-  ensureDir('D:\\UAOS_AGENT_FACTORY_BUILD\\tmp');
+  ensureDir(factoryTempDir());
 
   const eligibility = isTaskEligible(task, { lanePaused: opts.lanePaused });
   if (!eligibility.ok) {
@@ -479,8 +478,8 @@ export async function executeGenericTask(task, opts = {}) {
       timeout: (task.timeoutMinutes || 90) * 60 * 1000,
       env: {
         ...process.env,
-        TEMP: 'D:\\UAOS_AGENT_FACTORY_BUILD\\tmp',
-        TMP: 'D:\\UAOS_AGENT_FACTORY_BUILD\\tmp'
+        TEMP: factoryTempDir(),
+        TMP: factoryTempDir()
       },
       windowsHide: true
     });

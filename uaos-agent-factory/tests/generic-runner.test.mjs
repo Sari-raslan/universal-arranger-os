@@ -1,4 +1,5 @@
-import test from 'node:test';
+import { cleanupIsolatedFactoryRoot } from './test-env.mjs';
+import test, { after } from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
@@ -15,6 +16,9 @@ import { evaluateResources } from '../src/resource-guard.mjs';
 import { isTaskEligible, executeGenericTask } from '../src/generic-runner.mjs';
 import { buildTaskPrompt } from '../src/task-prompt.mjs';
 import { dispatchTaskWriter, loadActiveWriters, saveActiveWriters, countHeavyWriters } from '../src/dispatch.mjs';
+import { resolveArtifactRoot, resolveWorktreeRoot } from '../src/paths.mjs';
+
+after(cleanupIsolatedFactoryRoot);
 
 const SYN_LANE = 'library';
 const SYN_ID = 'L-SYN-GENERIC';
@@ -95,13 +99,13 @@ test('generic runner executes unknown synthetic task end-to-end', async () => {
   const l001 = loadQueue(SYN_LANE).tasks.find((t) => t.id === 'L-001');
   assert.ok(['passed', 'integrated'].includes(l001.status));
 
-  const artifact = path.join('D:/UAOS_AGENT_FACTORY_ARTIFACTS/library', SYN_ID);
+  const artifact = path.join(resolveArtifactRoot(), 'library', SYN_ID);
   const evidence = path.join(FACTORY_ROOT, 'logs', SYN_LANE, SYN_ID, 'selftest');
   ensureDir(artifact);
   ensureDir(evidence);
 
   // Snapshot real library integration HEAD — must not change due to synthetic run
-  const realInteg = 'D:\\UAOS_AGENT_FACTORY_WORKTREES\\library-integration';
+  const realInteg = path.join(resolveWorktreeRoot(), 'library-integration');
   const before = fs.existsSync(realInteg)
     ? execSync('git rev-parse HEAD', { cwd: realInteg, encoding: 'utf8' }).trim()
     : null;

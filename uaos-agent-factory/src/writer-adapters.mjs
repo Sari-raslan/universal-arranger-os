@@ -12,8 +12,8 @@ import {
   hiddenSpawnOptions
 } from './lib.mjs';
 import { listAgents } from './agent-adapters.mjs';
+import { resolveBuildRoot, resolveWorktreeRoot } from './paths.mjs';
 
-const SMOKE_ROOT = 'D:\\UAOS_AGENT_FACTORY_WORKTREES\\adapter-smoke';
 const REGISTRY = path.join(FACTORY_ROOT, 'config', 'agents.runtime.json');
 
 /** Models known to work with codex-cli 0.134.x when user config forces unsupported gpt-5.6-sol */
@@ -99,8 +99,8 @@ export function spawnWriterProcess({
     env: {
       ...process.env,
       ...env,
-      TEMP: env.TEMP || 'D:\\UAOS_AGENT_FACTORY_BUILD\\tmp',
-      TMP: env.TMP || 'D:\\UAOS_AGENT_FACTORY_BUILD\\tmp'
+      TEMP: env.TEMP || path.join(resolveBuildRoot(), 'tmp'),
+      TMP: env.TMP || path.join(resolveBuildRoot(), 'tmp')
     },
     ...hiddenSpawnOptions(agentId === 'codex' && !localRunner ? ['pipe', out, out] : ['ignore', out, out])
   });
@@ -159,7 +159,7 @@ export function probeVersion(agentId) {
 }
 
 export function smokeRoot() {
-  return SMOKE_ROOT;
+  return path.join(resolveWorktreeRoot(), 'adapter-smoke');
 }
 
 export function summarizeDetectedAgents() {

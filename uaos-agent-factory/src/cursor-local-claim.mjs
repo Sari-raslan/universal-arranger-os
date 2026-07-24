@@ -21,6 +21,7 @@ import {
   AWAITING_RUNNER_REASONS
 } from './retry-policy.mjs';
 import { writeMasterStatus } from './reporter.mjs';
+import { resolveArtifactRoot, resolveWorktreeRoot } from './paths.mjs';
 
 const CLAIMS_PATH = path.join(FACTORY_ROOT, 'state', 'cursor-local-claims.json');
 
@@ -88,8 +89,9 @@ export function ensureTaskWorktreeFromIntegration(lane, taskId) {
   const branch = `factory/${lane}-${String(taskId).toLowerCase()}`;
   const wt = worktreePathFor(lane, taskId);
   const integration = laneCfg.integrationBranch;
-  const integWt = path.join(cfg.worktreeRoot, `${lane}-integration`);
-  ensureDir(cfg.worktreeRoot);
+  const worktreeRoot = resolveWorktreeRoot();
+  const integWt = path.join(worktreeRoot, `${lane}-integration`);
+  ensureDir(worktreeRoot);
 
   const tip = runCmd(`git rev-parse ${integration}`, { cwd: integWt });
   const tipSha = (tip.stdout || '').trim();
@@ -166,10 +168,7 @@ export function claimTaskCursorLocal(lane, taskId, { force = false } = {}) {
     `[claim] ${claimId} lane=${lane} task=${taskId} mode=${CURSOR_LOCAL_MODE} pid=n/a at=${claimedAt}\n`
   );
 
-  const artifactDir =
-    lane === 'library'
-      ? `D:\\UAOS_AGENT_FACTORY_ARTIFACTS\\library\\${taskId}`
-      : `D:\\UAOS_AGENT_FACTORY_ARTIFACTS\\${lane}\\${taskId}`;
+  const artifactDir = path.join(resolveArtifactRoot(), lane, String(taskId));
   ensureDir(artifactDir);
 
   const record = {

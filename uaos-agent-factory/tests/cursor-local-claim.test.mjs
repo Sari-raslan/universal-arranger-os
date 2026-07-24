@@ -1,8 +1,9 @@
-import test from 'node:test';
+import { cleanupIsolatedFactoryRoot } from './test-env.mjs';
+import test, { after } from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
-import { FACTORY_ROOT, atomicWriteJson } from '../src/lib.mjs';
+import { FACTORY_ROOT, atomicWriteJson, loadFactoryConfig } from '../src/lib.mjs';
 import { getTask, updateTask } from '../src/queue-manager.mjs';
 import {
   canClaimWithCursorLocal,
@@ -14,13 +15,26 @@ import {
 } from '../src/cursor-local-claim.mjs';
 import { loadActiveWriters, saveActiveWriters } from '../src/dispatch.mjs';
 
+after(cleanupIsolatedFactoryRoot);
+
 const SYN = 'L-SYN-DEP';
+
+// claimTaskCursorLocal ultimately runs `git worktree add` against the real
+// uaos-real-product repo (config/factory.json's lanes.library.repoRoot) -
+// a separate repository this checkout does not and cannot contain. That
+// makes these tests inherently environment-conditional, not a portability
+// bug in the Agent Factory itself: see AGENT_FACTORY_PATH_DEPENDENCY_MATRIX_LATEST.csv.
+const realProductRepo = loadFactoryConfig().lanes.library.repoRoot;
+const realProductRepoMissing = !fs.existsSync(realProductRepo);
+const skipReason = realProductRepoMissing
+  ? `real product repo not present at ${realProductRepo} - claim tests need an actual git worktree to branch from`
+  : false;
 
 function restoreSyn(patch) {
   updateTask('library', SYN, patch);
 }
 
-test('manual claim ready task (synthetic)', () => {
+test('manual claim ready task (synthetic)', { skip: skipReason }, () => {
   const before = getTask('library', SYN);
   restoreSyn({
     status: 'ready',
@@ -87,7 +101,7 @@ test('cannot claim integrated task', () => {
   assert.equal(res.ok, false);
 });
 
-test('cannot double-claim', () => {
+test('cannot double-claim', { skip: skipReason }, () => {
   restoreSyn({
     status: 'ready',
     blockingReason: 'BACKGROUND_CODE_WRITING_BLOCKED_AUTH_OR_CLI',
@@ -112,7 +126,7 @@ test('cannot double-claim', () => {
   saveActiveWriters(cleaned);
 });
 
-test('null PID accepted only for cursor-local interactive execution', () => {
+test('null PID accepted only for cursor-local interactive execution', { skip: skipReason }, () => {
   restoreSyn({
     status: 'ready',
     result: { reason: 'BACKGROUND_CODE_WRITING_BLOCKED_AUTH_OR_CLI' },
@@ -136,7 +150,7 @@ test('null PID accepted only for cursor-local interactive execution', () => {
   saveActiveWriters(cleaned);
 });
 
-test('interrupted claim recovery', () => {
+test('interrupted claim recovery', { skip: skipReason }, () => {
   restoreSyn({
     status: 'ready',
     result: { reason: 'BACKGROUND_CODE_WRITING_BLOCKED_AUTH_OR_CLI' },

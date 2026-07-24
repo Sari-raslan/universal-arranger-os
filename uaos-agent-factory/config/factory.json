@@ -1,9 +1,11 @@
 {
   "factoryVersion": "1.0.0",
-  "factoryRoot": "E:/keyboard-manager-clean/uaos-agent-factory",
-  "worktreeRoot": "D:/UAOS_AGENT_FACTORY_WORKTREES",
-  "artifactRoot": "D:/UAOS_AGENT_FACTORY_ARTIFACTS",
-  "buildCacheRoot": "C:/UAOS_AGENT_FACTORY_BUILD",
+  "_note_factoryRoot": "unused by code - FACTORY_ROOT is always derived from this module's own location (src/lib.mjs), overridable via UAOS_FACTORY_ROOT",
+  "factoryRoot": ".",
+  "_note_scratchRoots": "worktreeRoot/artifactRoot/buildCacheRoot are portable repo-relative defaults, resolved via src/paths.mjs. Override with UAOS_FACTORY_WORKTREE_ROOT / UAOS_FACTORY_ARTIFACT_ROOT / UAOS_FACTORY_BUILD_ROOT (or set these fields to an absolute D:/E: path locally, uncommitted) to use dedicated drives again.",
+  "worktreeRoot": ".runtime/worktrees",
+  "artifactRoot": ".runtime/artifacts",
+  "buildCacheRoot": ".runtime/build",
   "dashboardHost": "127.0.0.1",
   "dashboardPort": 17321,
   "resourcePolicy": {
@@ -15,6 +17,7 @@
     "diskCriticalGb": 2
   },
   "lanePriority": { "singy": 45, "arranger": 35, "library": 20 },
+  "_note_lanes": "repoRoot values point at real, separate product repos that dispatch actual writer work against - not Agent Factory scratch space, and out of scope for portability here. A clean checkout of this repo alone cannot dispatch real product work to these lanes; only the Agent Factory's own generic/synthetic task paths are expected to be portable.",
   "lanes": {
     "singy": {
       "repoRoot": "E:/keyboard-manager-clean/uaos-worktrees/uaos-singy-final-product",

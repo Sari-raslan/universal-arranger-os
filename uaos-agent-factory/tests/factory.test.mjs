@@ -1,4 +1,5 @@
-import test from 'node:test';
+import { cleanupIsolatedFactoryRoot } from './test-env.mjs';
+import test, { after } from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
@@ -9,6 +10,8 @@ import {
   containsForbiddenCommand,
   sha256File
 } from '../src/lib.mjs';
+
+after(cleanupIsolatedFactoryRoot);
 import { loadQueue, dependenciesSatisfied, nextRunnableTask, saveQueue } from '../src/queue-manager.mjs';
 import { securityScanPayload } from '../src/security-guard.mjs';
 import { evaluateResources } from '../src/resource-guard.mjs';

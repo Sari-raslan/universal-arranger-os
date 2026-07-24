@@ -1,6 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { spawnSync } from 'node:child_process';
+import { resolveBuildRoot } from '../paths.mjs';
 
 function arg(name, fallback = '') {
   const i = process.argv.indexOf(name);
@@ -19,7 +20,7 @@ function run(cmd) {
     shell: true,
     encoding: 'utf8',
     timeout: 300000,
-    env: { ...process.env, TEMP: 'D:\\UAOS_AGENT_FACTORY_BUILD\\tmp', TMP: 'D:\\UAOS_AGENT_FACTORY_BUILD\\tmp' }
+    env: { ...process.env, TEMP: path.join(resolveBuildRoot(), 'tmp'), TMP: path.join(resolveBuildRoot(), 'tmp') }
   });
   return {
     cmd,
@@ -53,7 +54,7 @@ function scanLeaks(root) {
         } catch {
           continue;
         }
-        if (/C:\\Users\\ssare/i.test(text) || /owner-project-musical-fix/i.test(text)) {
+        if (/[A-Za-z]:\\Users\\[^\\]+/i.test(text) || /owner-project-musical-fix/i.test(text)) {
           hits.push(full);
         }
       }

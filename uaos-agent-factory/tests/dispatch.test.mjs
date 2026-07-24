@@ -1,9 +1,12 @@
-import test from 'node:test';
+import { cleanupIsolatedFactoryRoot } from './test-env.mjs';
+import test, { after } from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
 import { spawn } from 'node:child_process';
 import { FACTORY_ROOT, atomicWriteJson, hiddenSpawnOptions, freeDiskGb } from '../src/lib.mjs';
+
+after(cleanupIsolatedFactoryRoot);
 import { pickNextLaneWork, effectiveMaxHeavyWriters } from '../src/scheduler.mjs';
 import { updateTask, loadQueue, getTask } from '../src/queue-manager.mjs';
 import { evaluateResources } from '../src/resource-guard.mjs';
@@ -25,9 +28,18 @@ test('hidden spawn options force windowsHide and shell false', () => {
 });
 
 test('freeDiskGb does not require visible PowerShell (statfs or hidden fallback)', () => {
-  const d = freeDiskGb('D', { bypassCache: true });
+  // Query whichever drive this checkout actually lives on - D:/E: are not
+  // guaranteed to exist on every machine, but the drive running the test
+  // process always does.
+  const driveLetter = process.platform === 'win32' ? path.parse(FACTORY_ROOT).root.replace(/[\\/:]/g, '') : 'C';
+  const d = freeDiskGb(driveLetter, { bypassCache: true });
   assert.equal(typeof d, 'number');
   assert.ok(d > 0);
+});
+
+test('freeDiskGb returns null instead of throwing for a drive that does not exist', () => {
+  const d = freeDiskGb('Q', { bypassCache: true });
+  assert.equal(d, null);
 });
 
 test('retry backoff is 0 / 30s / 120s', () => {

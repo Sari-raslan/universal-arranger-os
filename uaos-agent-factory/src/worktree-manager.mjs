@@ -8,10 +8,10 @@ import {
   nowIso,
   atomicWriteJson
 } from './lib.mjs';
+import { resolveWorktreeRoot } from './paths.mjs';
 
 export function worktreePathFor(lane, taskId) {
-  const cfg = loadFactoryConfig();
-  return path.join(cfg.worktreeRoot, `${lane}-${String(taskId).toLowerCase()}`);
+  return path.join(resolveWorktreeRoot(), `${lane}-${String(taskId).toLowerCase()}`);
 }
 
 export function createIntegrationWorktree(lane) {
@@ -24,8 +24,9 @@ export function createIntegrationWorktree(lane) {
   }
 
   const branch = laneCfg.integrationBranch;
-  const wt = path.join(cfg.worktreeRoot, `${lane}-integration`);
-  ensureDir(cfg.worktreeRoot);
+  const worktreeRoot = resolveWorktreeRoot();
+  const wt = path.join(worktreeRoot, `${lane}-integration`);
+  ensureDir(worktreeRoot);
 
   const existing = runCmd(`git worktree list --porcelain`, { cwd: repo });
   if (existing.stdout.includes(wt.replace(/\\/g, '/')) || existing.stdout.includes(wt)) {
@@ -62,7 +63,7 @@ export function createTaskWorktree(lane, taskId) {
   const info = gitInfo(repo);
   const branch = `factory/${lane}-${taskId.toLowerCase()}`;
   const wt = worktreePathFor(lane, taskId);
-  ensureDir(cfg.worktreeRoot);
+  ensureDir(resolveWorktreeRoot());
 
   if (fs.existsSync(wt)) {
     return { ok: true, alreadyExists: true, worktreePath: wt, branch };
@@ -83,6 +84,6 @@ export function createTaskWorktree(lane, taskId) {
     exitCode: add.exitCode,
     stderr: add.stderr
   };
-  atomicWriteJson(path.join(cfg.worktreeRoot, `${lane}-${taskId}.meta.json`), report);
+  atomicWriteJson(path.join(resolveWorktreeRoot(), `${lane}-${taskId}.meta.json`), report);
   return report;
 }

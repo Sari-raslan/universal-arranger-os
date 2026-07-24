@@ -6,7 +6,14 @@ import { execSync, execFileSync, spawn } from 'node:child_process';
 import crypto from 'node:crypto';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-export const FACTORY_ROOT = path.resolve(__dirname, '..');
+/**
+ * Repo-relative by default. UAOS_FACTORY_ROOT lets tests (and alternate
+ * checkouts) redirect every state/log/queue path derived from this constant
+ * without touching each call site.
+ */
+export const FACTORY_ROOT = process.env.UAOS_FACTORY_ROOT
+  ? path.resolve(process.env.UAOS_FACTORY_ROOT)
+  : path.resolve(__dirname, '..');
 export const CONFIG_PATH = path.join(FACTORY_ROOT, 'config', 'factory.json');
 
 /** Cache disk free reads so supervisor ticks never spam child processes. */
@@ -111,7 +118,9 @@ export function freeDiskGb(driveLetter, { bypassCache = false } = {}) {
   const key = String(driveLetter || '')
     .replace(/:$/, '')
     .toUpperCase();
-  if (!key) return null;
+  // Single letter only - key is interpolated into a PowerShell -Command
+  // string below, so anything else must be rejected rather than passed through.
+  if (!/^[A-Z]$/.test(key)) return null;
   const cached = DISK_FREE_CACHE.get(key);
   if (!bypassCache && cached && Date.now() - cached.at < DISK_FREE_CACHE_MS) {
     return cached.value;
@@ -139,7 +148,7 @@ export function freeDiskGb(driveLetter, { bypassCache = false } = {}) {
           '-ExecutionPolicy',
           'Bypass',
           '-Command',
-          `(Get-PSDrive ${key}).Free`
+          `(Get-PSDrive ${key} -ErrorAction Stop).Free`
         ],
         {
           encoding: 'utf8',
@@ -148,7 +157,11 @@ export function freeDiskGb(driveLetter, { bypassCache = false } = {}) {
           shell: false
         }
       ).trim();
-      value = Number((Number(out) / 1024 ** 3).toFixed(2));
+      // A drive PowerShell can't find prints its error to stderr but may
+      // still exit 0 with empty stdout - Number('') is 0, not NaN, so an
+      // absent drive must be checked explicitly rather than trusted as free space.
+      const parsed = out === '' ? NaN : Number(out);
+      value = Number.isFinite(parsed) ? Number((parsed / 1024 ** 3).toFixed(2)) : null;
     } catch {
       value = null;
     }
@@ -269,7 +282,19 @@ export function containsForbiddenCommand(text) {
 
 export function pathLeakScan(text) {
   const hits = [];
-  const re = /C:\\Users\\ssare/gi;
-  if (re.test(String(text || ''))) hits.push('C:\\Users\\ssare');
+  const re = /[A-Za-z]:\\Users\\[^\\/"'\s]+/gi;
+  const match = String(text || '').match(re);
+  if (match) hits.push(...new Set(match));
   return hits;
+}
+
+/** Walk up from `startDir` looking for a `.git` entry. Returns null if none is found. */
+export function findGitRoot(startDir = FACTORY_ROOT) {
+  let dir = path.resolve(startDir);
+  for (;;) {
+    if (fs.existsSync(path.join(dir, '.git'))) return dir;
+    const parent = path.dirname(dir);
+    if (parent === dir) return null;
+    dir = parent;
+  }
 }

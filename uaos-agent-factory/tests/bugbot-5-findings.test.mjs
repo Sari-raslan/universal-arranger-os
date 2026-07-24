@@ -2,7 +2,8 @@
  * Focused regression tests for the five Bugbot factory findings.
  * Synthetic only — never mutates real product integration branches.
  */
-import test from 'node:test';
+import { cleanupIsolatedFactoryRoot } from './test-env.mjs';
+import test, { after } from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
@@ -28,8 +29,9 @@ import {
   integrateTaskBranch,
   isNoopPassAllowed
 } from '../src/generic-runner.mjs';
-import { createDisposableSyntheticRepos } from '../src/integration-planner.mjs';
+import { createDisposableSyntheticRepos, syntheticRepoRoot } from '../src/integration-planner.mjs';
 import { reconcileWriterPass, reconcileWriterExits, loadActiveWriters, saveActiveWriters } from '../src/dispatch.mjs';
+import { resolveArtifactRoot } from '../src/paths.mjs';
 import {
   createDashboardHandler,
   CSRF_TOKEN,
@@ -37,13 +39,15 @@ import {
   handleHumanGate
 } from '../dashboard/server.mjs';
 
+after(cleanupIsolatedFactoryRoot);
+
 const SYN_LANE = 'library';
 const SYN_ID = 'L-SYN-GENERIC';
 
 // ─── HIGH 1: INTEGRATION_WT_MISSING must not PASS ───────────────────────────
 
 test('HIGH1 missing integration worktree returns blocked not integrated', () => {
-  const missing = path.join('D:\\UAOS_AGENT_FACTORY_BUILD\\synthetic-repos', `missing-wt-${Date.now()}`);
+  const missing = path.join(syntheticRepoRoot(), `missing-wt-${Date.now()}`);
   const r = integrateTaskBranch({
     lane: 'library',
     taskBranch: 'factory/library-l-syn-generic',
@@ -235,7 +239,7 @@ test('MEDIUM3 noop-pass writer produces noOp result without file mutation', asyn
   const { createDisposableSyntheticRepos: make } = await import('../src/integration-planner.mjs');
   const iso = make({ taskId: 'L-SYN-NOOP' });
   const evidence = path.join(FACTORY_ROOT, 'logs', SYN_LANE, 'L-SYN-NOOP', 'noop-test');
-  const artifact = path.join('D:/UAOS_AGENT_FACTORY_ARTIFACTS/library', 'L-SYN-NOOP-test');
+  const artifact = path.join(resolveArtifactRoot(), 'library', 'L-SYN-NOOP-test');
   ensureDir(evidence);
   ensureDir(artifact);
 
@@ -279,7 +283,7 @@ test('MEDIUM3 noop-pass writer produces noOp result without file mutation', asyn
 
 test('MEDIUM3 unauthorized product noop-pass fails', async () => {
   const evidence = path.join(FACTORY_ROOT, 'logs', SYN_LANE, 'noop-deny', 't');
-  const artifact = path.join('D:/UAOS_AGENT_FACTORY_ARTIFACTS/library', 'noop-deny');
+  const artifact = path.join(resolveArtifactRoot(), 'library', 'noop-deny');
   ensureDir(evidence);
   ensureDir(artifact);
   const { executeGenericTask } = await import('../src/generic-runner.mjs');
@@ -298,7 +302,7 @@ test('MEDIUM3 create_marker_file still works', async () => {
     humanGate: false
   });
   const task = getTask(SYN_LANE, SYN_ID);
-  const artifact = path.join('D:/UAOS_AGENT_FACTORY_ARTIFACTS/library', `${SYN_ID}-marker`);
+  const artifact = path.join(resolveArtifactRoot(), 'library', `${SYN_ID}-marker`);
   const evidence = path.join(FACTORY_ROOT, 'logs', SYN_LANE, SYN_ID, 'marker-test');
   ensureDir(artifact);
   ensureDir(evidence);

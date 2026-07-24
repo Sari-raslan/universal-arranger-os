@@ -6,8 +6,14 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { spawnSync } from 'node:child_process';
 import { ensureDir, nowIso } from './lib.mjs';
+import { resolveBuildRoot } from './paths.mjs';
 
-export const SYNTHETIC_REPO_ROOT = 'D:\\UAOS_AGENT_FACTORY_BUILD\\synthetic-repos';
+/** Resolved lazily (not a module-load-time constant) so it respects
+ * UAOS_FACTORY_BUILD_ROOT / UAOS_FACTORY_ROOT set after this module is
+ * first imported, e.g. by a test harness. */
+export function syntheticRepoRoot() {
+  return path.join(resolveBuildRoot(), 'synthetic-repos');
+}
 
 function git(cwd, args, timeout = 60000) {
   const r = spawnSync('git', args, { cwd, encoding: 'utf8', timeout, windowsHide: true });
@@ -37,8 +43,9 @@ export function createDisposableSyntheticRepos({
   stamp = nowIso().replace(/[:.]/g, '-'),
   taskId = 'L-SYN-GENERIC'
 } = {}) {
-  ensureDir(SYNTHETIC_REPO_ROOT);
-  const root = path.join(SYNTHETIC_REPO_ROOT, `iso-${stamp}-${String(taskId).toLowerCase()}`);
+  const syntheticRoot = syntheticRepoRoot();
+  ensureDir(syntheticRoot);
+  const root = path.join(syntheticRoot, `iso-${stamp}-${String(taskId).toLowerCase()}`);
   if (fs.existsSync(root)) {
     fs.rmSync(root, { recursive: true, force: true });
   }

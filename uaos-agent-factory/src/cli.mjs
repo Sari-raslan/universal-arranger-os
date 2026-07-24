@@ -10,7 +10,8 @@ import {
   spawnDetached,
   isPidAlive,
   freeRamGb,
-  freeDiskGb
+  freeDiskGb,
+  findGitRoot
 } from './lib.mjs';
 import { evaluateResources } from './resource-guard.mjs';
 import {
@@ -43,12 +44,15 @@ function writePreflight() {
     resources,
     agentsAvailable: availableAgents().map((a) => a.id),
     agentsUnavailable: unavailableAgents().map((a) => a.id),
-    gitIndexLock: fs.existsSync(path.join('E:/keyboard-manager-clean', '.git', 'index.lock')),
+    gitIndexLock: (() => {
+      const gitRoot = findGitRoot();
+      return gitRoot ? fs.existsSync(path.join(gitRoot, '.git', 'index.lock')) : false;
+    })(),
     factoryExists: true,
     pass:
-      disks.C >= 10 &&
-      disks.D >= 25 &&
-      disks.E >= 10 &&
+      (disks.C == null || disks.C >= 10) &&
+      (disks.D == null || disks.D >= 25) &&
+      (disks.E == null || disks.E >= 10) &&
       ram.freeGb >= 4 &&
       !resources.pauseFactory
   };

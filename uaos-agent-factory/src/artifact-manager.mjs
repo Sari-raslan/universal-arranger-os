@@ -1,17 +1,16 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import {
-  loadFactoryConfig,
   ensureDir,
   atomicWriteJson,
   sha256File,
   nowIso
 } from './lib.mjs';
+import { resolveArtifactRoot } from './paths.mjs';
 
 export function artifactDir(lane, version = 'v1') {
-  const cfg = loadFactoryConfig();
   const folder = lane === 'library' ? 'library-factory' : lane;
-  const dir = path.join(cfg.artifactRoot, folder, version);
+  const dir = path.join(resolveArtifactRoot(), folder, version);
   ensureDir(dir);
   return dir;
 }

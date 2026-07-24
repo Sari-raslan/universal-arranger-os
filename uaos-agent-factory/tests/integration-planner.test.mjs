@@ -1,4 +1,5 @@
-import test from 'node:test';
+import { cleanupIsolatedFactoryRoot } from './test-env.mjs';
+import test, { after } from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
@@ -9,8 +10,10 @@ import {
   revParse,
   isAncestor,
   gitIn,
-  SYNTHETIC_REPO_ROOT
+  syntheticRepoRoot
 } from '../src/integration-planner.mjs';
+
+after(cleanupIsolatedFactoryRoot);
 
 function advanceIntegration(iso) {
   // Simulate product lane advancing integration while task is in progress
@@ -31,7 +34,7 @@ function advanceIntegration(iso) {
 test('disposable synthetic repos never live under product worktree root', () => {
   const iso = createDisposableSyntheticRepos({ taskId: 'L-SYN-ISO-1' });
   assert.equal(iso.disposable, true);
-  assert.ok(iso.root.startsWith(SYNTHETIC_REPO_ROOT));
+  assert.ok(iso.root.startsWith(syntheticRepoRoot()));
   assert.ok(!iso.root.toLowerCase().includes('uaos_agent_factory_worktrees'));
   assert.ok(!iso.root.toLowerCase().includes('uaos-real-product'));
   assert.ok(fs.existsSync(iso.taskWorktree));

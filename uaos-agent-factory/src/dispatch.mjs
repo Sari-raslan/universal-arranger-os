@@ -19,6 +19,7 @@ import {
   runnerCommandHash,
   isAwaitingRunner
 } from './retry-policy.mjs';
+import { resolveArtifactRoot, resolveBuildRoot } from './paths.mjs';
 
 const ACTIVE_PATH = path.join(FACTORY_ROOT, 'state', 'active-writers.json');
 
@@ -57,8 +58,7 @@ export function activeWriterMap() {
 }
 
 function artifactDirFor(lane, taskId) {
-  if (lane === 'library') return `D:\\UAOS_AGENT_FACTORY_ARTIFACTS\\library\\${taskId}`;
-  return `D:\\UAOS_AGENT_FACTORY_ARTIFACTS\\${lane}\\${taskId}`;
+  return path.join(resolveArtifactRoot(), lane, String(taskId));
 }
 
 /**
@@ -123,7 +123,7 @@ export function dispatchTaskWriter(lane, task, { maxHeavy = 2, forceResume = fal
   const logFile = path.join(evidenceDir, `writer-${agentId}.log`);
   const artifactDir = artifactDirFor(lane, effective.id);
   ensureDir(artifactDir);
-  ensureDir('D:\\UAOS_AGENT_FACTORY_BUILD\\tmp');
+  ensureDir(path.join(resolveBuildRoot(), 'tmp'));
 
   const cwd = wt.worktreePath || loadFactoryConfig().lanes[lane].repoRoot;
 
