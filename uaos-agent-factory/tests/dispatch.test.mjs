@@ -37,10 +37,14 @@ test('freeDiskGb does not require visible PowerShell (statfs or hidden fallback)
   assert.ok(d > 0);
 });
 
-test('freeDiskGb returns null instead of throwing for a drive that does not exist', () => {
-  const d = freeDiskGb('Q', { bypassCache: true });
-  assert.equal(d, null);
-});
+test(
+  'freeDiskGb returns null instead of throwing for a drive that does not exist',
+  { skip: process.platform !== 'win32' ? 'drive letters are a Windows-only concept - non-Windows freeDiskGb always checks / regardless of the letter passed' : false },
+  () => {
+    const d = freeDiskGb('Q', { bypassCache: true });
+    assert.equal(d, null);
+  }
+);
 
 test('retry backoff is 0 / 30s / 120s', () => {
   assert.equal(RETRY_BACKOFF_MS[0], 0);
