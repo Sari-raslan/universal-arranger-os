@@ -18,7 +18,7 @@ export function writeMasterStatus() {
     const q = loadQueue(lane);
     const current =
       q.tasks.find((t) =>
-        ['running', 'scouting', 'testing', 'reviewing', 'waiting_human'].includes(t.status)
+        ['running', 'scouting', 'testing', 'reviewing', 'waiting_human', 'interrupted'].includes(t.status)
       ) ||
       q.tasks.find((t) => ['pending', 'ready', 'retry'].includes(t.status)) ||
       null;
@@ -30,9 +30,21 @@ export function writeMasterStatus() {
       currentTask: current ? current.id : null,
       currentTitle: current ? current.title : null,
       currentStatus: current ? current.status : 'idle',
+      executor: current?.executor || current?.result?.executor || null,
+      writer: current?.writerRole || current?.result?.writer || null,
+      writerPid: current?.writerPid ?? current?.result?.writerPid ?? null,
+      executionMode: current?.executionMode || current?.result?.executionMode || null,
+      taskWorktree: current?.worktreePath || current?.result?.taskWorktree || null,
+      taskBranch: current?.taskBranch || current?.result?.taskBranch || null,
+      claimId: current?.claimId || current?.result?.claimId || null,
+      logFile: current?.result?.logFile || null,
       passed,
       total: q.tasks.length,
-      blockers: blocked.map((t) => ({ id: t.id, status: t.status, result: t.result?.firstBlocker || null }))
+      blockers: blocked.map((t) => ({
+        id: t.id,
+        status: t.status,
+        result: t.result?.firstBlocker || t.blockingReason || null
+      }))
     };
   }
 
@@ -59,7 +71,17 @@ export function writeMasterStatus() {
     '',
     ...lanes.map((l) => {
       const s = laneStatus[l];
-      return `## ${l}\n- task: ${s.currentTask || '-'} (${s.currentStatus})\n- progress: ${s.passed}/${s.total}\n`;
+      return [
+        `## ${l}`,
+        `- task: ${s.currentTask || '-'} (${s.currentStatus})`,
+        `- executor: ${s.executor || '-'}`,
+        `- writerPid: ${s.writerPid == null && s.executionMode === 'interactive_cursor_agent' ? 'n/a' : (s.writerPid ?? '-')}`,
+        `- executionMode: ${s.executionMode || '-'}`,
+        `- worktree: ${s.taskWorktree || '-'}`,
+        `- branch: ${s.taskBranch || '-'}`,
+        `- progress: ${s.passed}/${s.total}`,
+        ''
+      ].join('\n');
     })
   ].join('\n');
   fs.writeFileSync(path.join(FACTORY_ROOT, 'reports', 'MASTER_STATUS_LATEST.md'), md, 'utf8');

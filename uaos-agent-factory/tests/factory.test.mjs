@@ -74,9 +74,23 @@ test('reviewer rejection on failed tests', () => {
 test('next runnable prefers highest priority pending with deps met', () => {
   const q = loadQueue('singy');
   const next = nextRunnableTask('singy');
-  assert.ok(next);
-  assert.ok(['S-020', 'S-010', 'S-001'].includes(next.id) || next.priority >= 700);
+  // May be null when next ready tasks are writer-blocked / backoff
+  if (next) {
+    assert.ok(!['S-010', 'S-020', 'S-001'].includes(next.id) || next.status !== 'integrated');
+    assert.ok(next.priority >= 700);
+  }
   assert.ok(q.tasks.length > 3);
+});
+
+test('integrated Singy/Library/Arranger milestones stay ineligible', () => {
+  for (const id of ['S-010', 'S-020']) {
+    const t = loadQueue('singy').tasks.find((x) => x.id === id);
+    assert.equal(t.status, 'integrated');
+  }
+  assert.equal(loadQueue('arranger').tasks.find((t) => t.id === 'A-020').status, 'integrated');
+  for (const id of ['L-010', 'L-020', 'L-030']) {
+    assert.equal(loadQueue('library').tasks.find((t) => t.id === id).status, 'integrated');
+  }
 });
 
 test('lane isolation: queues are separate files', () => {

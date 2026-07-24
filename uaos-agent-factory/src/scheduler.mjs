@@ -2,6 +2,7 @@ import { evaluateResources } from './resource-guard.mjs';
 import { nextRunnableTask, loadQueue } from './queue-manager.mjs';
 import { loadFactoryConfig } from './lib.mjs';
 import { countHeavyWriters, activeWriterMap } from './dispatch.mjs';
+import { canAttemptTask, isTerminalSuccessStatus } from './retry-policy.mjs';
 
 /** Dispatch-order override: max two heavy writers on this laptop. */
 export function effectiveMaxHeavyWriters(resources) {
@@ -38,10 +39,13 @@ export function pickNextLaneWork(activeWriters = null) {
     const waitingHuman = q.tasks.some((t) => t.status === 'waiting_human');
     const task = nextRunnableTask(lane);
     if (!task) continue;
+    if (isTerminalSuccessStatus(task.status)) continue;
     if (task.humanGate) continue;
     if (waitingHuman && task.humanGate) continue;
-    // Do not spin forever when headless writers are blocked
-    if (task.result?.reason === 'BACKGROUND_CODE_WRITING_BLOCKED_AUTH_OR_CLI') continue;
+
+    const attempt = canAttemptTask(task);
+    if (!attempt.ok) continue;
+
     return { action: 'run', lane, task, resources, maxWriters };
   }
 

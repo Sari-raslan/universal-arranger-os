@@ -167,6 +167,12 @@ async function main() {
     }
     case 'stop': {
       atomicWriteJson(path.join(FACTORY_ROOT, 'state', 'STOP'), { at: nowIso() });
+      const { terminateOwnedWriters, countOwnedAliveWriters, loadActiveWriters } = await import('./dispatch.mjs');
+      const killedWriters = terminateOwnedWriters();
+      const end = Date.now() + 1500;
+      while (Date.now() < end) {
+        /* wait for owned children */
+      }
       const sup = readJson(path.join(FACTORY_ROOT, 'state', 'supervisor.pid.json'), null);
       const dash = readJson(path.join(FACTORY_ROOT, 'state', 'dashboard.pid.json'), null);
       for (const p of [sup, dash]) {
@@ -178,12 +184,63 @@ async function main() {
           }
         }
       }
+      const orphanOwned = countOwnedAliveWriters();
+      try {
+        if (fs.existsSync(path.join(FACTORY_ROOT, 'state', 'supervisor.lock'))) {
+          fs.unlinkSync(path.join(FACTORY_ROOT, 'state', 'supervisor.lock'));
+        }
+      } catch {
+        /* ignore */
+      }
       atomicWriteJson(path.join(FACTORY_ROOT, 'state', 'factory-state.json'), {
         status: 'stopped',
-        stoppedAt: nowIso()
+        stoppedAt: nowIso(),
+        safeStop: {
+          killedWriters,
+          orphanOwnedWriters: orphanOwned,
+          activeWritersAfter: loadActiveWriters()
+        }
       });
       writeMasterStatus();
-      console.log(JSON.stringify({ stop: 'requested' }, null, 2));
+      console.log(
+        JSON.stringify(
+          { stop: 'requested', killedWriters, orphanOwnedWriters: orphanOwned },
+          null,
+          2
+        )
+      );
+      break;
+    }
+    case 'resume-task': {
+      const lane = process.argv[3];
+      const taskId = process.argv[4];
+      if (!lane || !taskId) {
+        console.error('Usage: node src/cli.mjs resume-task <lane> <taskId>');
+        process.exit(1);
+      }
+      const { buildResumePatch } = await import('./retry-policy.mjs');
+      const { updateTask, getTask } = await import('./queue-manager.mjs');
+      const task = getTask(lane, taskId);
+      if (!task) {
+        console.error(`Task not found: ${lane}/${taskId}`);
+        process.exit(1);
+      }
+      const updated = updateTask(lane, taskId, buildResumePatch(task));
+      writeMasterStatus();
+      console.log(JSON.stringify({ resumeTask: 'ok', task: { id: updated.id, status: updated.status } }, null, 2));
+      break;
+    }
+    case 'claim-task': {
+      const lane = process.argv[3];
+      const taskId = process.argv[4];
+      if (!lane || !taskId) {
+        console.error('Usage: node src/cli.mjs claim-task <lane> <taskId>');
+        process.exit(1);
+      }
+      const { claimTaskCursorLocal } = await import('./cursor-local-claim.mjs');
+      const res = claimTaskCursorLocal(lane, taskId);
+      console.log(JSON.stringify(res, null, 2));
+      process.exit(res.ok ? 0 : 2);
       break;
     }
     case 'pause': {

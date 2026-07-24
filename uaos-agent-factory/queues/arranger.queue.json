@@ -1,6 +1,6 @@
 {
   "lane": "arranger",
-  "updatedAt": "2026-07-22T08:08:12.217Z",
+  "updatedAt": "2026-07-22T10:56:53.338Z",
   "tasks": [
     {
       "id": "A-001",
@@ -692,10 +692,15 @@
         "openFileForwarding": "POLICY_SUPPORTED_NOT_3_OF_3_EXECUTED",
         "nextAutomaticRetry": null,
         "executor": "cursor-local",
-        "at": "2026-07-22T07:33:58.489Z"
+        "at": "2026-07-22T07:33:58.489Z",
+        "ARRANGER_LOCAL_ACCEPTANCE": "PASS",
+        "ARRANGER_OPEN_FILE_FORWARDING": "PASS_3_OF_3",
+        "ARRANGER_CLEAN_MACHINE": "NOT_PROVEN",
+        "evidence": "D:\\\\UAOS_AGENT_FACTORY_ARTIFACTS\\\\arranger\\\\A-110\\\\local-clean-profile",
+        "note": "Local isolated profile acceptance complete including open-file 3/3; clean-machine still not proven. Do not open A-120."
       },
       "blockingReason": "BLOCKED_CLEAN_MACHINE_NOT_PROVEN",
-      "updatedAt": "2026-07-22T07:33:58.490Z",
+      "updatedAt": "2026-07-22T10:56:53.338Z",
       "retryCount": 0,
       "lastAttemptAt": "2026-07-22T06:12:24.071Z",
       "nextRetryAt": null,
