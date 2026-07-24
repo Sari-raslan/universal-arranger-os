@@ -144,9 +144,21 @@ export function validateLaneRepository(repoPath, { lane, allowSelf = false } = {
     return { ok: false, reason: 'NOT_A_GIT_REPOSITORY', path: resolved };
   }
   // Reject a path that resolves into a repo's tree without itself being
-  // that repo's (or worktree's) own top-level - e.g. a subdirectory, or a
-  // symlink whose target's git top-level lands somewhere unexpected.
-  if (path.resolve(info.gitRoot).toLowerCase() !== lower) {
+  // that repo's (or worktree's) own top-level - e.g. a genuine subdirectory.
+  // Compare via realpath (falling back to the lexical path if realpath
+  // fails) rather than path.resolve() alone: path.resolve() never touches
+  // the filesystem, so it cannot see that an OS temp directory - common on
+  // CI runners - is itself a symlink/junction, which made git's own
+  // (realpath-resolved) --show-toplevel legitimately disagree with the
+  // lexical path here even though both name the same directory.
+  const realpathOrSelf = (p) => {
+    try {
+      return fs.realpathSync(p);
+    } catch {
+      return p;
+    }
+  };
+  if (path.resolve(realpathOrSelf(info.gitRoot)).toLowerCase() !== path.resolve(realpathOrSelf(resolved)).toLowerCase()) {
     return { ok: false, reason: 'PATH_IS_NOT_A_GIT_TOPLEVEL', path: resolved, gitRoot: info.gitRoot };
   }
 
