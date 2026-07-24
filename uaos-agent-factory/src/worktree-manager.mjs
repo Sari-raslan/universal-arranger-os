@@ -19,6 +19,22 @@ export function worktreePathFor(lane, taskId) {
   return path.join(resolveWorktreeRoot(), `${lane}-${String(taskId).toLowerCase()}`);
 }
 
+/** `git worktree add` exiting 0 is not proof the worktree is immediately
+ * usable on every filesystem - retry HEAD resolution briefly before
+ * declaring the worktree broken. */
+function verifyWorktreeReady(wt, { attempts = 3, backoffMs = 100 } = {}) {
+  let last = null;
+  for (let i = 0; i < attempts; i += 1) {
+    last = runCmd('git rev-parse HEAD', { cwd: wt });
+    if (last.ok) return last;
+    const end = Date.now() + backoffMs;
+    while (Date.now() < end) {
+      /* brief backoff for filesystem/worktree-metadata propagation */
+    }
+  }
+  return last;
+}
+
 export function createIntegrationWorktree(lane) {
   const cfg = loadFactoryConfig();
   const resolved = resolveLaneRepository(lane);
@@ -52,15 +68,20 @@ export function createIntegrationWorktree(lane) {
   }
 
   const add = runCmd(`git worktree add "${wt}" ${branch}`, { cwd: repo, timeout: 180000 });
+  // `git worktree add` reporting a clean exit is not proof the worktree is
+  // actually usable yet - verify HEAD resolves in the new location before
+  // declaring success, so a caller never proceeds against a broken worktree.
+  const verify = add.ok ? verifyWorktreeReady(wt) : null;
   return {
-    ok: add.ok,
+    ok: add.ok && !!verify?.ok,
     worktreePath: wt,
     branch,
     head: info.head,
     stdout: add.stdout,
     stderr: add.stderr,
     exitCode: add.exitCode,
-    ownerDirtyPreserved: info.isDirty
+    ownerDirtyPreserved: info.isDirty,
+    verifyStderr: verify && !verify.ok ? verify.stderr : undefined
   };
 }
 
@@ -85,14 +106,16 @@ export function createTaskWorktree(lane, taskId) {
   }
 
   const add = runCmd(`git worktree add "${wt}" ${branch}`, { cwd: repo, timeout: 180000 });
+  const verify = add.ok ? verifyWorktreeReady(wt) : null;
   const report = {
-    ok: add.ok,
+    ok: add.ok && !!verify?.ok,
     worktreePath: wt,
     branch,
     head: info.head,
     createdAt: nowIso(),
     exitCode: add.exitCode,
-    stderr: add.stderr
+    stderr: add.stderr,
+    verifyStderr: verify && !verify.ok ? verify.stderr : undefined
   };
   atomicWriteJson(path.join(resolveWorktreeRoot(), `${lane}-${taskId}.meta.json`), report);
   return report;
