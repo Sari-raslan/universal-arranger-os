@@ -1,0 +1,8 @@
+{
+  "_comment": "Copy this file to config/factory.local.json (already gitignored) to point Agent Factory at real lane repositories on this machine. Every value below is a placeholder - replace with real paths before use. UAOS_ARRANGER_REPO_ROOT / UAOS_LIBRARY_REPO_ROOT / UAOS_SINGY_REPO_ROOT environment variables take precedence over this file if set.",
+  "lanes": {
+    "arranger": { "repoRoot": "REPLACE_ME_WITH_ABSOLUTE_PATH_TO_ARRANGER_REPO" },
+    "library": { "repoRoot": "REPLACE_ME_WITH_ABSOLUTE_PATH_TO_LIBRARY_REPO" },
+    "singy": { "repoRoot": "REPLACE_ME_WITH_ABSOLUTE_PATH_TO_SINGY_REPO" }
+  }
+}

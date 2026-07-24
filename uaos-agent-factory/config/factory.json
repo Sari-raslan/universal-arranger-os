@@ -1,0 +1,58 @@
+{
+  "factoryVersion": "1.0.0",
+  "_note_factoryRoot": "unused by code - FACTORY_ROOT is always derived from this module's own location (src/lib.mjs), overridable via UAOS_FACTORY_ROOT",
+  "factoryRoot": ".",
+  "_note_scratchRoots": "worktreeRoot/artifactRoot/buildCacheRoot are portable repo-relative defaults, resolved via src/paths.mjs. Override with UAOS_FACTORY_WORKTREE_ROOT / UAOS_FACTORY_ARTIFACT_ROOT / UAOS_FACTORY_BUILD_ROOT (or set these fields to an absolute D:/E: path locally, uncommitted) to use dedicated drives again.",
+  "worktreeRoot": ".runtime/worktrees",
+  "artifactRoot": ".runtime/artifacts",
+  "buildCacheRoot": ".runtime/build",
+  "dashboardHost": "127.0.0.1",
+  "dashboardPort": 17321,
+  "resourcePolicy": {
+    "ramFreeGe12": { "maxHeavyWriters": 3, "maxLightReviewers": 3 },
+    "ramFreeGe7": { "maxHeavyWriters": 2, "maxLightReviewers": 2 },
+    "ramFreeGe4": { "maxHeavyWriters": 1, "maxLightReviewers": 2 },
+    "ramFreeLt4": { "maxHeavyWriters": 0, "maxLightReviewers": 1, "pauseHeavy": true },
+    "diskMinGb": { "C": 10, "D": 25, "E": 10 },
+    "diskCriticalGb": 2
+  },
+  "lanePriority": { "singy": 45, "arranger": 35, "library": 20 },
+  "_note_lanes": "repoRoot is intentionally null in committed config - lane repositories point at real, separate product repos this checkout cannot contain. Resolve them via src/lane-repositories.mjs: UAOS_ARRANGER_REPO_ROOT / UAOS_LIBRARY_REPO_ROOT / UAOS_SINGY_REPO_ROOT env vars, an uncommitted config/factory.local.json (see config/factory.local.example.json), or UAOS_PRODUCT_REPO_SEARCH_ROOTS discovery. A lane with no repoRoot resolves to LANE_REPOSITORY_NOT_CONFIGURED and blocks only that lane.",
+  "lanes": {
+    "singy": {
+      "repoRoot": null,
+      "integrationBranch": "factory/singy-integration",
+      "productName": "UAOS Singy"
+    },
+    "arranger": {
+      "repoRoot": null,
+      "integrationBranch": "factory/arranger-integration",
+      "productName": "UAOS Arranger Studio"
+    },
+    "library": {
+      "repoRoot": null,
+      "integrationBranch": "factory/library-integration",
+      "productName": "UAOS Library Factory Studio",
+      "note": "Shares the arranger product's source in real deployments; isolated via factory worktrees and path allowlists"
+    }
+  },
+  "forbiddenCommands": [
+    "git push",
+    "gh release",
+    "npm publish",
+    "vercel deploy",
+    "netlify deploy",
+    "firebase deploy",
+    "git reset --hard",
+    "git clean -fd",
+    "git stash"
+  ],
+  "safety": {
+    "allowDeploy": false,
+    "allowPayment": false,
+    "allowKorgWriter": false,
+    "allowUsb": false,
+    "allowSysEx": false,
+    "localhostOnly": true
+  }
+}

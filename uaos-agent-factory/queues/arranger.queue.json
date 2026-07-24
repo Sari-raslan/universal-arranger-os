@@ -1,0 +1,747 @@
+{
+  "lane": "arranger",
+  "updatedAt": "2026-07-22T08:08:12.217Z",
+  "tasks": [
+    {
+      "id": "A-001",
+      "lane": "arranger",
+      "title": "REAL STATE RECOVERY",
+      "priority": 1000,
+      "status": "passed",
+      "dependsOn": [],
+      "repoRoot": "REDACTED_LOCAL_PATH",
+      "integrationBranch": "factory/arranger-integration",
+      "taskBranch": "factory/arranger-a-001",
+      "worktreePath": "REDACTED_LOCAL_PATH",
+      "writerRole": "cursor",
+      "scoutRoles": [
+        "claude"
+      ],
+      "reviewerRoles": [
+        "claude",
+        "gemini"
+      ],
+      "allowedPaths": [
+        "reports/**",
+        "docs/**",
+        "packages/**"
+      ],
+      "forbiddenPaths": [
+        "node_modules/**"
+      ],
+      "commands": {
+        "preflight": [],
+        "tests": [
+          "npm run test:arranger-foundation --if-present"
+        ],
+        "build": [],
+        "acceptance": []
+      },
+      "artifactsExpected": [
+        "logs/arranger/A-001/A-001-result.json"
+      ],
+      "humanGate": false,
+      "retryLimit": 2,
+      "timeoutMinutes": 90,
+      "evidenceDir": "REDACTED_LOCAL_PATH",
+      "rollback": "none-read-only",
+      "result": {
+        "taskId": "A-001",
+        "lane": "arranger",
+        "completedAt": "2026-07-21T16:48:46.230Z",
+        "discoveryPath": "REDACTED_LOCAL_PATH",
+        "phaseReports": [],
+        "mediaProbe": {
+          "ok": false,
+          "exitCode": 1,
+          "stderrTail": "node:internal/modules/run_main:107\r\n    triggerUncaughtException(\r\n    ^\r\n\r\nAssertionError [ERR_ASSERTION]: selectedRhythmId\r\n+ actual - expected\r\n\r\n+ undefined\r\n- 'slow_ballad'\r\n\r\n    at filREDACTED_LOCAL_PATH'ERR_ASSERTION',\r\n  actual: undefined,\r\n  expected: 'slow_ballad',\r\n  operator: 'deepStrictEqual',\r\n  diff: 'simple'\r\n}\r\n\r\nNode.js v24.14.1\r\n",
+          "stdoutTail": "\n> uaos-real-product@1.0.0 test:arranger-foundation\n> node apps/desktop/src/uaos-live/arranger/arrangerFoundation.test.js && node apps/desktop/src/uaos-live/arranger/rhythmFoundation.test.js && node apps/desktop/src/uaos-live/arranger/styleFoundation.test.js\n\nARRANGER_FOUNDATION_V1_KEY_CONTROLS_PASS\n"
+        },
+        "integrationWorktree": {
+          "ok": true,
+          "alreadyExists": true,
+          "worktreePath": "REDACTED_LOCAL_PATH",
+          "branch": "factory/arranger-integration",
+          "head": "882f6ca695b4c8df6f0f9968b65b5710d0c55346"
+        },
+        "firstBlocker": "MEDIA_OR_FOUNDATION_TEST_FAIL_OR_MISSING",
+        "note": "No KORG writer in this product lane"
+      },
+      "startedAt": "2026-07-21T16:48:42.994Z",
+      "updatedAt": "2026-07-21T16:48:46.232Z"
+    },
+    {
+      "id": "A-010",
+      "lane": "arranger",
+      "title": "MEDIA GATE",
+      "priority": 950,
+      "status": "integrated",
+      "dependsOn": [
+        "A-001"
+      ],
+      "writerRole": "codex",
+      "scoutRoles": [
+        "claude"
+      ],
+      "reviewerRoles": [
+        "claude"
+      ],
+      "allowedPaths": [
+        "apps/**",
+        "packages/**",
+        "tests/**"
+      ],
+      "forbiddenPaths": [
+        "node_modules/**"
+      ],
+      "commands": {
+        "preflight": [],
+        "tests": [],
+        "build": [],
+        "acceptance": []
+      },
+      "humanGate": false,
+      "retryLimit": 2,
+      "timeoutMinutes": 90,
+      "evidenceDir": "REDACTED_LOCAL_PATH",
+      "rollback": "git revert task commit",
+      "result": {
+        "status": "PASS",
+        "commit": "a1dc436cdb9627adb64b81b858c406bf915b3c80",
+        "writer": "cursor-local",
+        "integrated": true
+      },
+      "updatedAt": "2026-07-21T18:58:12.360Z",
+      "integrationStatus": "INTEGRATED"
+    },
+    {
+      "id": "A-020",
+      "lane": "arranger",
+      "title": "CATALOG",
+      "priority": 900,
+      "status": "integrated",
+      "dependsOn": [
+        "A-010"
+      ],
+      "humanGate": false,
+      "retryLimit": 2,
+      "timeoutMinutes": 90,
+      "commands": {
+        "preflight": [],
+        "tests": [
+          "npm run test:arranger-catalog --if-present",
+          "npm run test:arranger-foundation",
+          "npm run test:arranger-media"
+        ],
+        "build": [],
+        "acceptance": []
+      },
+      "result": {
+        "status": "PASS",
+        "commit": "acb7d289bf68ddc3ece77dda2819739c2656d0bb",
+        "writer": "cursor-local",
+        "runner": "cursor-subagent-verify-integrate",
+        "testsPass": true,
+        "integratedInto": "factory/arranger-integration",
+        "at": "2026-07-21T19:29:07.739Z"
+      },
+      "updatedAt": "2026-07-21T19:29:07.745Z",
+      "objective": "Customer can open/browse Arranger catalog safely: load local legal metadata, search/filter, empty/invalid/missing preview handling, no private paths, no KORG writer, preview uses real media transport from A-010.",
+      "description": "Catalog UI/service + tests; no sale-approved claims for blocked content.",
+      "allowedPaths": [
+        "apps/desktop/**",
+        "packages/**",
+        "tests/**",
+        "package.json"
+      ],
+      "forbiddenPaths": [
+        "node_modules/**",
+        "release/**"
+      ],
+      "artifactsExpected": [
+        "REDACTED_LOCAL_PATH"
+      ],
+      "writerRole": "codex",
+      "integrationStatus": "INTEGRATED"
+    },
+    {
+      "id": "A-030",
+      "lane": "arranger",
+      "title": "MAGIC SET CORE",
+      "priority": 890,
+      "status": "integrated",
+      "dependsOn": [
+        "A-020"
+      ],
+      "humanGate": false,
+      "retryLimit": 2,
+      "timeoutMinutes": 90,
+      "commands": {
+        "preflight": [],
+        "tests": [
+          "npm run test:arranger-magic-set --if-present",
+          "npm run test:arranger-catalog",
+          "npm run test:arranger-media"
+        ],
+        "build": [],
+        "acceptance": []
+      },
+      "result": {
+        "status": "PASS",
+        "commit": "9f35e7698e09c2b2880ad025dd9a30c170085318",
+        "writer": "cursor-integrator",
+        "runner": "cursor-subagent-verify-integrate",
+        "testsPass": true,
+        "integratedInto": "factory/arranger-integration",
+        "at": "2026-07-21T21:37:37.638Z"
+      },
+      "updatedAt": "2026-07-21T21:37:37.640Z",
+      "retryCount": 0,
+      "lastAttemptAt": "2026-07-21T21:28:04.781Z",
+      "nextRetryAt": null,
+      "lastExitCode": null,
+      "lastError": "BACKGROUND_CODE_WRITING_BLOCKED_AUTH_OR_CLI",
+      "blockingReason": null,
+      "allowIntegratorDispatch": false,
+      "worktreePath": "REDACTED_LOCAL_PATH",
+      "writerRole": "cursor-integrator",
+      "objective": "Customer can build a virtual Magic Set from legal catalog metadata: deterministic mode selection, memory budget, pin/exclude, no proprietary writer, no private paths, restart-safe project JSON, tests under apps/desktop arranger foundation pattern.",
+      "description": "Wire magicSetFoundation.js on top of A-020 catalog + existing packages/magic-set algorithms; ES module desktop foundation + tests; no KORG writer/hardware.",
+      "allowedPaths": [
+        "apps/desktop/**",
+        "packages/magic-set/**",
+        "tests/**",
+        "package.json"
+      ],
+      "forbiddenPaths": [
+        "node_modules/**",
+        "release/**"
+      ],
+      "artifactsExpected": [
+        "REDACTED_LOCAL_PATH"
+      ],
+      "integrationStatus": "INTEGRATED"
+    },
+    {
+      "id": "A-040",
+      "lane": "arranger",
+      "title": "LIVE PACK EDITOR",
+      "priority": 880,
+      "status": "integrated",
+      "dependsOn": [
+        "A-030"
+      ],
+      "humanGate": false,
+      "retryLimit": 2,
+      "timeoutMinutes": 90,
+      "commands": {
+        "preflight": [],
+        "tests": [],
+        "build": [],
+        "acceptance": []
+      },
+      "result": {
+        "advancedBy": "A-030",
+        "reason": "BACKGROUND_CODE_WRITING_BLOCKED_AUTH_OR_CLI",
+        "note": "Queued after A-030 integrate; Resume when writer available",
+        "at": "2026-07-21T21:50:49.444Z",
+        "blockingReason": "BACKGROUND_CODE_WRITING_BLOCKED_AUTH_OR_CLI",
+        "nextAutomaticRetry": null,
+        "executor": "cursor-local",
+        "writer": "cursor-local",
+        "writerPid": null,
+        "executionMode": "interactive_cursor_agent",
+        "claimId": null,
+        "claimedAt": "2026-07-21T21:47:21.660Z",
+        "taskWorktree": "REDACTED_LOCAL_PATH",
+        "taskBranch": "factory/arranger-a-040",
+        "logFile": "REDACTED_LOCAL_PATH",
+        "evidenceDir": "REDACTED_LOCAL_PATH",
+        "artifactDir": "REDACTED_LOCAL_PATH",
+        "phase": "integrated",
+        "tests": {
+          "livePack": 0,
+          "catalog": 0,
+          "media": 0,
+          "magicSet": 0
+        },
+        "reviews": {
+          "CURSOR_LOCAL_REVIEW_PASS_1": "ACCEPT",
+          "CURSOR_LOCAL_REVIEW_PASS_2": "ACCEPT"
+        },
+        "commit": "1d731f362f7c9d8c7d834218c80f4fa61ddcfc1c",
+        "status": "PASS",
+        "testsPass": true,
+        "integratedInto": "factory/arranger-integration"
+      },
+      "updatedAt": "2026-07-21T21:50:49.445Z",
+      "retryCount": 0,
+      "lastAttemptAt": "2026-07-21T21:37:37.645Z",
+      "nextRetryAt": null,
+      "lastExitCode": null,
+      "lastError": "BACKGROUND_CODE_WRITING_BLOCKED_AUTH_OR_CLI",
+      "blockingReason": null,
+      "executor": "cursor-local",
+      "writerRole": "cursor-local",
+      "writerPid": null,
+      "executionMode": "interactive_cursor_agent",
+      "claimId": null,
+      "claimedAt": "2026-07-21T21:47:21.660Z",
+      "worktreePath": "REDACTED_LOCAL_PATH",
+      "taskBranch": "factory/arranger-a-040",
+      "allowIntegratorDispatch": true,
+      "integrationStatus": "INTEGRATED"
+    },
+    {
+      "id": "A-050",
+      "lane": "arranger",
+      "title": "SET DOCTOR",
+      "priority": 870,
+      "status": "integrated",
+      "dependsOn": [
+        "A-040"
+      ],
+      "humanGate": false,
+      "retryLimit": 2,
+      "timeoutMinutes": 90,
+      "commands": {
+        "preflight": [],
+        "tests": [],
+        "build": [],
+        "acceptance": []
+      },
+      "result": {
+        "advancedBy": "A-040",
+        "reason": "BACKGROUND_CODE_WRITING_BLOCKED_AUTH_OR_CLI",
+        "note": "Ready for cursor-local claim; no automatic headless spawn",
+        "nextAutomaticRetry": null,
+        "at": "2026-07-22T01:32:56.980Z",
+        "executor": "cursor-local",
+        "writer": "cursor-local",
+        "writerPid": null,
+        "executionMode": "interactive_cursor_agent",
+        "claimId": null,
+        "claimedAt": "2026-07-22T01:29:21.040Z",
+        "taskWorktree": "REDACTED_LOCAL_PATH",
+        "taskBranch": "factory/arranger-a-050",
+        "logFile": "REDACTED_LOCAL_PATH",
+        "evidenceDir": "REDACTED_LOCAL_PATH",
+        "artifactDir": "REDACTED_LOCAL_PATH",
+        "phase": "integrated",
+        "testsPass": true,
+        "status": "PASS",
+        "commit": "16e39e8c278d3b4e35bed3d2b58f220b348952ba",
+        "reviews": [
+          "CURSOR_LOCAL_REVIEW_PASS_1",
+          "CURSOR_LOCAL_REVIEW_PASS_2"
+        ],
+        "integratedInto": "factory/arranger-integration"
+      },
+      "updatedAt": "2026-07-22T01:32:56.981Z",
+      "retryCount": 0,
+      "lastAttemptAt": "2026-07-21T21:50:49.458Z",
+      "nextRetryAt": null,
+      "lastExitCode": null,
+      "lastError": "BACKGROUND_CODE_WRITING_BLOCKED_AUTH_OR_CLI",
+      "blockingReason": null,
+      "allowIntegratorDispatch": true,
+      "executor": "cursor-local",
+      "writerRole": "cursor-local",
+      "writerPid": null,
+      "executionMode": "interactive_cursor_agent",
+      "claimId": null,
+      "claimedAt": "2026-07-22T01:29:21.040Z",
+      "worktreePath": "REDACTED_LOCAL_PATH",
+      "taskBranch": "factory/arranger-a-050",
+      "integrationStatus": "INTEGRATED"
+    },
+    {
+      "id": "A-060",
+      "lane": "arranger",
+      "title": "PROJECT FORMAT",
+      "priority": 860,
+      "status": "integrated",
+      "dependsOn": [
+        "A-050"
+      ],
+      "humanGate": false,
+      "retryLimit": 2,
+      "timeoutMinutes": 90,
+      "commands": {
+        "preflight": [],
+        "tests": [],
+        "build": [],
+        "acceptance": []
+      },
+      "result": {
+        "advancedBy": "A-050",
+        "reason": "BACKGROUND_CODE_WRITING_BLOCKED_AUTH_OR_CLI",
+        "note": "Queued for cursor-local claim",
+        "at": "2026-07-22T02:00:23.358Z",
+        "blockingReason": "BACKGROUND_CODE_WRITING_BLOCKED_AUTH_OR_CLI",
+        "nextAutomaticRetry": null,
+        "executor": "cursor-local",
+        "writer": "cursor-local",
+        "writerPid": null,
+        "executionMode": "interactive_cursor_agent",
+        "claimId": null,
+        "claimedAt": "2026-07-22T01:58:15.692Z",
+        "taskWorktree": "REDACTED_LOCAL_PATH",
+        "taskBranch": "factory/arranger-a-060",
+        "logFile": "REDACTED_LOCAL_PATH",
+        "evidenceDir": "REDACTED_LOCAL_PATH",
+        "artifactDir": "REDACTED_LOCAL_PATH",
+        "phase": "integrated",
+        "testsPass": true,
+        "status": "PASS",
+        "commit": "c712146e4e7e78522448199fa2f6d98f6fa9ef58",
+        "reviews": [
+          "CURSOR_LOCAL_REVIEW_PASS_1",
+          "CURSOR_LOCAL_REVIEW_PASS_2"
+        ],
+        "integratedInto": "factory/arranger-integration"
+      },
+      "updatedAt": "2026-07-22T02:00:23.359Z",
+      "executor": "cursor-local",
+      "writerRole": "cursor-local",
+      "writerPid": null,
+      "executionMode": "interactive_cursor_agent",
+      "claimId": null,
+      "claimedAt": "2026-07-22T01:58:15.692Z",
+      "worktreePath": "REDACTED_LOCAL_PATH",
+      "taskBranch": "factory/arranger-a-060",
+      "blockingReason": null,
+      "allowIntegratorDispatch": true,
+      "nextRetryAt": null,
+      "integrationStatus": "INTEGRATED"
+    },
+    {
+      "id": "A-070",
+      "lane": "arranger",
+      "title": "SAFE EXPORT",
+      "priority": 850,
+      "status": "integrated",
+      "dependsOn": [
+        "A-060"
+      ],
+      "humanGate": false,
+      "retryLimit": 2,
+      "timeoutMinutes": 90,
+      "commands": {
+        "preflight": [],
+        "tests": [],
+        "build": [],
+        "acceptance": []
+      },
+      "result": {
+        "advancedBy": "A-060",
+        "reason": "BACKGROUND_CODE_WRITING_BLOCKED_AUTH_OR_CLI",
+        "note": "Queued for cursor-local claim",
+        "at": "2026-07-22T02:21:00.801Z",
+        "executor": "cursor-local",
+        "writer": "cursor-local",
+        "writerPid": null,
+        "executionMode": "interactive_cursor_agent",
+        "claimId": null,
+        "claimedAt": "2026-07-22T02:19:57.089Z",
+        "taskWorktree": "REDACTED_LOCAL_PATH",
+        "taskBranch": "factory/arranger-a-070",
+        "logFile": "REDACTED_LOCAL_PATH",
+        "evidenceDir": "REDACTED_LOCAL_PATH",
+        "artifactDir": "REDACTED_LOCAL_PATH",
+        "phase": "integrated",
+        "testsPass": true,
+        "status": "PASS",
+        "commit": "2fba2cf8868230b4537a5c938edbbe8a637b90cf",
+        "reviews": [
+          "CURSOR_LOCAL_REVIEW_PASS_1",
+          "CURSOR_LOCAL_REVIEW_PASS_2"
+        ],
+        "integratedInto": "factory/arranger-integration"
+      },
+      "updatedAt": "2026-07-22T02:21:00.802Z",
+      "executor": "cursor-local",
+      "writerRole": "cursor-local",
+      "writerPid": null,
+      "executionMode": "interactive_cursor_agent",
+      "claimId": null,
+      "claimedAt": "2026-07-22T02:19:57.089Z",
+      "worktreePath": "REDACTED_LOCAL_PATH",
+      "taskBranch": "factory/arranger-a-070",
+      "blockingReason": null,
+      "allowIntegratorDispatch": true,
+      "nextRetryAt": null,
+      "integrationStatus": "INTEGRATED"
+    },
+    {
+      "id": "A-080",
+      "lane": "arranger",
+      "title": "CUSTOMER UX",
+      "priority": 840,
+      "status": "integrated",
+      "dependsOn": [
+        "A-070"
+      ],
+      "humanGate": false,
+      "retryLimit": 2,
+      "timeoutMinutes": 90,
+      "commands": {
+        "preflight": [],
+        "tests": [],
+        "build": [],
+        "acceptance": []
+      },
+      "result": {
+        "advancedBy": "A-070",
+        "reason": "BACKGROUND_CODE_WRITING_BLOCKED_AUTH_OR_CLI",
+        "note": "Queued for cursor-local claim",
+        "at": "2026-07-22T05:08:58.750Z",
+        "executor": "cursor-local",
+        "writer": "cursor-local",
+        "writerPid": null,
+        "executionMode": "interactive_cursor_agent",
+        "claimId": null,
+        "claimedAt": "2026-07-22T05:06:45.691Z",
+        "taskWorktree": "REDACTED_LOCAL_PATH",
+        "taskBranch": "factory/arranger-a-080",
+        "logFile": "REDACTED_LOCAL_PATH",
+        "evidenceDir": "REDACTED_LOCAL_PATH",
+        "artifactDir": "REDACTED_LOCAL_PATH",
+        "phase": "integrated",
+        "status": "PASS",
+        "commit": "9230d2ab43b2ff06ce5c036cfd9661dc4f8bd985",
+        "testsPass": true,
+        "reviews": [
+          "CURSOR_LOCAL_REVIEW_PASS_1",
+          "CURSOR_LOCAL_REVIEW_PASS_2"
+        ],
+        "integratedInto": "factory/arranger-integration"
+      },
+      "updatedAt": "2026-07-22T05:08:58.750Z",
+      "executor": "cursor-local",
+      "writerRole": "cursor-local",
+      "writerPid": null,
+      "executionMode": "interactive_cursor_agent",
+      "claimId": null,
+      "claimedAt": "2026-07-22T05:06:45.691Z",
+      "worktreePath": "REDACTED_LOCAL_PATH",
+      "taskBranch": "factory/arranger-a-080",
+      "blockingReason": null,
+      "allowIntegratorDispatch": true,
+      "nextRetryAt": null,
+      "integrationStatus": "INTEGRATED"
+    },
+    {
+      "id": "A-090",
+      "lane": "arranger",
+      "title": "PACKAGE CLEANLINESS",
+      "priority": 830,
+      "status": "integrated",
+      "dependsOn": [
+        "A-080"
+      ],
+      "humanGate": false,
+      "retryLimit": 2,
+      "timeoutMinutes": 90,
+      "commands": {
+        "preflight": [],
+        "tests": [],
+        "build": [],
+        "acceptance": []
+      },
+      "result": {
+        "advancedBy": "A-080",
+        "reason": "BACKGROUND_CODE_WRITING_BLOCKED_AUTH_OR_CLI",
+        "note": "Queued for cursor-local claim",
+        "at": "2026-07-22T05:49:27.223Z",
+        "executor": "cursor-local",
+        "writer": "cursor-local",
+        "writerPid": null,
+        "executionMode": "interactive_cursor_agent",
+        "claimId": null,
+        "claimedAt": "2026-07-22T05:47:46.210Z",
+        "taskWorktree": "REDACTED_LOCAL_PATH",
+        "taskBranch": "factory/arranger-a-090",
+        "logFile": "REDACTED_LOCAL_PATH",
+        "evidenceDir": "REDACTED_LOCAL_PATH",
+        "artifactDir": "REDACTED_LOCAL_PATH",
+        "phase": "integrated",
+        "status": "PASS",
+        "commit": "da2fd2b1ee6cf816446b959adc7cb62b835f49ab",
+        "testsPass": true,
+        "reviews": [
+          "CURSOR_LOCAL_REVIEW_PASS_1",
+          "CURSOR_LOCAL_REVIEW_PASS_2"
+        ],
+        "integratedInto": "factory/arranger-integration"
+      },
+      "updatedAt": "2026-07-22T05:49:27.224Z",
+      "retryCount": 0,
+      "lastAttemptAt": "2026-07-22T05:09:02.736Z",
+      "nextRetryAt": null,
+      "lastExitCode": null,
+      "lastError": null,
+      "blockingReason": null,
+      "executor": "cursor-local",
+      "writerRole": "cursor-local",
+      "writerPid": null,
+      "executionMode": "interactive_cursor_agent",
+      "claimId": null,
+      "claimedAt": "2026-07-22T05:47:46.210Z",
+      "worktreePath": "REDACTED_LOCAL_PATH",
+      "taskBranch": "factory/arranger-a-090",
+      "allowIntegratorDispatch": true,
+      "integrationStatus": "INTEGRATED"
+    },
+    {
+      "id": "A-100",
+      "lane": "arranger",
+      "title": "WINDOWS BUILDS",
+      "priority": 820,
+      "status": "integrated",
+      "dependsOn": [
+        "A-090"
+      ],
+      "humanGate": false,
+      "retryLimit": 2,
+      "timeoutMinutes": 180,
+      "commands": {
+        "preflight": [],
+        "tests": [],
+        "build": [],
+        "acceptance": []
+      },
+      "result": {
+        "advancedBy": "A-090",
+        "note": "Stub PE output is not customer build; reopening A-100 for REAL_ELECTRON_BUILDER",
+        "at": "2026-07-22T06:38:08.400Z",
+        "executor": "cursor-local",
+        "writer": "cursor-local",
+        "writerPid": null,
+        "executionMode": "interactive_cursor_agent",
+        "claimId": null,
+        "claimedAt": "2026-07-22T06:18:19.113Z",
+        "taskWorktree": "REDACTED_LOCAL_PATH",
+        "taskBranch": "factory/arranger-a-100",
+        "logFile": "REDACTED_LOCAL_PATH",
+        "evidenceDir": "REDACTED_LOCAL_PATH",
+        "artifactDir": "REDACTED_LOCAL_PATH",
+        "phase": "integrated",
+        "status": "PASS",
+        "commit": "415db5123bf6f1851cca284f92fb8e3478ffd967",
+        "testsPass": true,
+        "reviews": [
+          "CURSOR_LOCAL_REVIEW_PASS_1",
+          "CURSOR_LOCAL_REVIEW_PASS_2"
+        ],
+        "integratedInto": "factory/arranger-integration",
+        "previousClassification": "STUB_TEST_ONLY_NOT_CUSTOMER_BUILD",
+        "previousCommit": "2e2f7662e6e6ac09cd5ba6d0100b37f24c4a07fb",
+        "historicalStubEvidence": "REDACTED_LOCAL_PATH",
+        "arrangerBuildType": "REAL_ELECTRON_BUILDER",
+        "electronVersion": "37.2.0",
+        "electronBuilderVersion": "26.0.12",
+        "stubClassification": "STUB_TEST_ONLY_NOT_CUSTOMER_BUILD",
+        "setupSha256": "c2d384473dc7a24409ff0c0b05911b80bef389c157fc8c5eabe982ad020dba6d",
+        "portableSha256": "379c61dbd83734912a86d033a0b67142cb50b5f9f9c93e2c2ddd73d10025324b"
+      },
+      "blockingReason": null,
+      "updatedAt": "2026-07-22T06:38:08.401Z",
+      "retryCount": 0,
+      "lastAttemptAt": "2026-07-22T05:49:49.963Z",
+      "nextRetryAt": null,
+      "lastExitCode": null,
+      "lastError": "BACKGROUND_CODE_WRITING_BLOCKED_AUTH_OR_CLI",
+      "executor": "cursor-local",
+      "writerRole": "cursor-local",
+      "writerPid": null,
+      "executionMode": "interactive_cursor_agent",
+      "claimId": null,
+      "claimedAt": "2026-07-22T06:18:19.113Z",
+      "worktreePath": "REDACTED_LOCAL_PATH",
+      "taskBranch": "factory/arranger-a-100",
+      "allowIntegratorDispatch": true,
+      "integrationStatus": "INTEGRATED"
+    },
+    {
+      "id": "A-110",
+      "lane": "arranger",
+      "title": "CLEAN MACHINE ACCEPTANCE",
+      "priority": 810,
+      "status": "blocked",
+      "dependsOn": [
+        "A-100"
+      ],
+      "humanGate": false,
+      "retryLimit": 2,
+      "timeoutMinutes": 180,
+      "commands": {
+        "preflight": [],
+        "tests": [],
+        "build": [],
+        "acceptance": []
+      },
+      "result": {
+        "status": "BLOCKED",
+        "phase": "blocked",
+        "blockingReason": "BLOCKED_CLEAN_MACHINE_NOT_PROVEN",
+        "cleanEnvironment": "CLEAN_MACHINE_ENVIRONMENT_UNAVAILABLE",
+        "setupSha256": "c2d384473dc7a24409ff0c0b05911b80bef389c157fc8c5eabe982ad020dba6d",
+        "portableSha256": "379c61dbd83734912a86d033a0b67142cb50b5f9f9c93e2c2ddd73d10025324b",
+        "ownerGateCreated": false,
+        "openFileForwarding": "POLICY_SUPPORTED_NOT_3_OF_3_EXECUTED",
+        "nextAutomaticRetry": null,
+        "executor": "cursor-local",
+        "at": "2026-07-22T07:33:58.489Z"
+      },
+      "blockingReason": "BLOCKED_CLEAN_MACHINE_NOT_PROVEN",
+      "updatedAt": "2026-07-22T07:33:58.490Z",
+      "retryCount": 0,
+      "lastAttemptAt": "2026-07-22T06:12:24.071Z",
+      "nextRetryAt": null,
+      "lastExitCode": null,
+      "lastError": "BACKGROUND_CODE_WRITING_BLOCKED_AUTH_OR_CLI",
+      "writerPid": null
+    },
+    {
+      "id": "A-120",
+      "lane": "arranger",
+      "title": "OWNER GATE",
+      "priority": 800,
+      "status": "pending",
+      "dependsOn": [
+        "A-110"
+      ],
+      "humanGate": true,
+      "retryLimit": 0,
+      "timeoutMinutes": 0,
+      "commands": {
+        "preflight": [],
+        "tests": [],
+        "build": [],
+        "acceptance": []
+      },
+      "result": null
+    },
+    {
+      "id": "A-130",
+      "lane": "arranger",
+      "title": "ARRANGER SELLABLE CANDIDATE",
+      "priority": 790,
+      "status": "pending",
+      "dependsOn": [
+        "A-120"
+      ],
+      "humanGate": false,
+      "retryLimit": 1,
+      "timeoutMinutes": 90,
+      "commands": {
+        "preflight": [],
+        "tests": [],
+        "build": [],
+        "acceptance": []
+      },
+      "result": null
+    }
+  ]
+}

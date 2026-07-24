@@ -1,0 +1,97 @@
+name: Agent Factory CI
+
+# Scoped to the Agent Factory only - does not call
+# scripts/uaos-ai-factory-safety-check.mjs and does not replace or weaken
+# the existing repo-wide UAOS CI / PR Safety Check workflows.
+on:
+  pull_request:
+    paths:
+      - 'uaos-agent-factory/**'
+      - '.github/workflows/agent-factory-ci.yml'
+  push:
+    branches: [master]
+    paths:
+      - 'uaos-agent-factory/**'
+      - '.github/workflows/agent-factory-ci.yml'
+  workflow_dispatch:
+
+concurrency:
+  group: agent-factory-ci-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    strategy:
+      fail-fast: false
+      matrix:
+        # windows-latest runs the full suite (this is where the Agent
+        # Factory actually operates). ubuntu-latest runs the same suite to
+        # prove the portable, platform-independent parts - process
+        # spawn/kill, path resolution, queue/state handling - hold up
+        # outside Windows; tests genuinely tied to a real external product
+        # repo self-skip on both (see tests/cursor-local-claim.test.mjs).
+        os: [windows-latest, ubuntu-latest]
+    runs-on: ${{ matrix.os }}
+    defaults:
+      run:
+        working-directory: uaos-agent-factory
+        shell: bash
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Parser / import check
+        run: |
+          for f in src/*.mjs src/task-runners/*.mjs tests/*.mjs dashboard/*.mjs; do
+            node --check "$f"
+          done
+
+      - name: Run Agent Factory test suite
+        # No UAOS_FACTORY_*_ROOT env vars set here on purpose: setting them
+        # at the job level makes every test file subprocess share the same
+        # physical build/artifact/worktree directories, which two files
+        # both exercising the same lane (library, used by both
+        # cursor-local-claim.test.mjs and three-lane-acceptance.test.mjs)
+        # can collide on when node --test runs files concurrently. Each
+        # test file already gets its own isolated, unique root via
+        # tests/test-env.mjs setting UAOS_FACTORY_ROOT per-process, which
+        # resolveBuildRoot/resolveArtifactRoot/resolveWorktreeRoot
+        # (src/paths.mjs) fall back to correctly with no drive dependency.
+        run: node --test tests/*.test.mjs
+
+      - name: Upload test logs on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: agent-factory-test-logs-${{ matrix.os }}
+          path: |
+            uaos-agent-factory/logs/**
+            uaos-agent-factory/state/**
+          if-no-files-found: ignore
+          retention-days: 7
+
+      - name: Verify git status is clean after tests
+        working-directory: .
+        run: |
+          status="$(git status --porcelain)"
+          if [ -n "$status" ]; then
+            echo "Tests left uncommitted changes in the working tree:"
+            echo "$status"
+            exit 1
+          fi
+
+      - name: Verify no generated Agent Factory files are tracked
+        working-directory: .
+        run: |
+          tracked="$(git ls-files uaos-agent-factory/logs uaos-agent-factory/state uaos-agent-factory/reports uaos-agent-factory/.runtime 2>/dev/null)"
+          if [ -n "$tracked" ]; then
+            echo "Generated Agent Factory files are tracked in git:"
+            echo "$tracked"
+            exit 1
+          fi
