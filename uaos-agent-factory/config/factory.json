@@ -17,23 +17,23 @@
     "diskCriticalGb": 2
   },
   "lanePriority": { "singy": 45, "arranger": 35, "library": 20 },
-  "_note_lanes": "repoRoot values point at real, separate product repos that dispatch actual writer work against - not Agent Factory scratch space, and out of scope for portability here. A clean checkout of this repo alone cannot dispatch real product work to these lanes; only the Agent Factory's own generic/synthetic task paths are expected to be portable.",
+  "_note_lanes": "repoRoot is intentionally null in committed config - lane repositories point at real, separate product repos this checkout cannot contain. Resolve them via src/lane-repositories.mjs: UAOS_ARRANGER_REPO_ROOT / UAOS_LIBRARY_REPO_ROOT / UAOS_SINGY_REPO_ROOT env vars, an uncommitted config/factory.local.json (see config/factory.local.example.json), or UAOS_PRODUCT_REPO_SEARCH_ROOTS discovery. A lane with no repoRoot resolves to LANE_REPOSITORY_NOT_CONFIGURED and blocks only that lane.",
   "lanes": {
     "singy": {
-      "repoRoot": "E:/keyboard-manager-clean/uaos-worktrees/uaos-singy-final-product",
+      "repoRoot": null,
       "integrationBranch": "factory/singy-integration",
       "productName": "UAOS Singy"
     },
     "arranger": {
-      "repoRoot": "E:/keyboard-manager-clean/uaos-real-product",
+      "repoRoot": null,
       "integrationBranch": "factory/arranger-integration",
       "productName": "UAOS Arranger Studio"
     },
     "library": {
-      "repoRoot": "E:/keyboard-manager-clean/uaos-real-product",
+      "repoRoot": null,
       "integrationBranch": "factory/library-integration",
       "productName": "UAOS Library Factory Studio",
-      "note": "Shares uaos-real-product source; isolated via factory worktrees and path allowlists"
+      "note": "Shares the arranger product's source in real deployments; isolated via factory worktrees and path allowlists"
     }
   },
   "forbiddenCommands": [

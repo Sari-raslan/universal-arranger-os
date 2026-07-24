@@ -9,21 +9,29 @@ import {
   atomicWriteJson
 } from './lib.mjs';
 import { resolveWorktreeRoot } from './paths.mjs';
+import { resolveLaneRepository } from './lane-repositories.mjs';
+import { isValidTaskIdFormat } from './queue-manager.mjs';
 
 export function worktreePathFor(lane, taskId) {
+  if (!isValidTaskIdFormat(taskId)) {
+    throw new Error(`Refusing to build a worktree path for a malformed taskId: ${JSON.stringify(taskId)}`);
+  }
   return path.join(resolveWorktreeRoot(), `${lane}-${String(taskId).toLowerCase()}`);
 }
 
 export function createIntegrationWorktree(lane) {
   const cfg = loadFactoryConfig();
-  const laneCfg = cfg.lanes[lane];
-  const repo = laneCfg.repoRoot;
+  const resolved = resolveLaneRepository(lane);
+  if (!resolved.ok) {
+    return { ok: false, reason: resolved.reason, lane };
+  }
+  const repo = resolved.path;
   const info = gitInfo(repo);
   if (!info.exists) {
     return { ok: false, reason: 'repo_missing', repo };
   }
 
-  const branch = laneCfg.integrationBranch;
+  const branch = cfg.lanes[lane].integrationBranch;
   const worktreeRoot = resolveWorktreeRoot();
   const wt = path.join(worktreeRoot, `${lane}-integration`);
   ensureDir(worktreeRoot);
@@ -57,9 +65,11 @@ export function createIntegrationWorktree(lane) {
 }
 
 export function createTaskWorktree(lane, taskId) {
-  const cfg = loadFactoryConfig();
-  const laneCfg = cfg.lanes[lane];
-  const repo = laneCfg.repoRoot;
+  const resolved = resolveLaneRepository(lane);
+  if (!resolved.ok) {
+    return { ok: false, reason: resolved.reason, lane, taskId };
+  }
+  const repo = resolved.path;
   const info = gitInfo(repo);
   const branch = `factory/${lane}-${taskId.toLowerCase()}`;
   const wt = worktreePathFor(lane, taskId);

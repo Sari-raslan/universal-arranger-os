@@ -35,6 +35,10 @@ for (const f of fs.readdirSync(path.join(REAL_FACTORY_ROOT, 'queues'))) {
 }
 
 process.env.UAOS_FACTORY_ROOT = TEST_FACTORY_ROOT;
+// Defensive isolation: a developer's shell setting this for their own
+// local lane-repository discovery must never leak into lane-repository
+// tests that don't explicitly set it themselves.
+delete process.env.UAOS_PRODUCT_REPO_SEARCH_ROOTS;
 
 /** Register with node:test's `after()` so the temp root and every writer
  * process/child it might contain are cleaned up when the file finishes. */

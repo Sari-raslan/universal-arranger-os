@@ -9,6 +9,7 @@ import {
 } from './lib.mjs';
 import { loadQueue } from './queue-manager.mjs';
 import { evaluateResources } from './resource-guard.mjs';
+import { getLaneRepositoryDiagnostics } from './lane-repositories.mjs';
 
 export function writeMasterStatus() {
   const cfg = loadFactoryConfig();
@@ -16,6 +17,7 @@ export function writeMasterStatus() {
   const laneStatus = {};
   for (const lane of lanes) {
     const q = loadQueue(lane);
+    const repoDiagnostics = getLaneRepositoryDiagnostics(lane);
     const current =
       q.tasks.find((t) =>
         ['running', 'scouting', 'testing', 'reviewing', 'waiting_human', 'interrupted'].includes(t.status)
@@ -26,7 +28,8 @@ export function writeMasterStatus() {
     const blocked = q.tasks.filter((t) => t.status === 'blocked' || t.status === 'waiting_human');
     laneStatus[lane] = {
       productName: cfg.lanes[lane].productName,
-      repoRoot: cfg.lanes[lane].repoRoot,
+      repoRoot: repoDiagnostics.path,
+      repoRepositoryStatus: repoDiagnostics.ok ? 'RESOLVED' : repoDiagnostics.reason,
       currentTask: current ? current.id : null,
       currentTitle: current ? current.title : null,
       currentStatus: current ? current.status : 'idle',

@@ -30,6 +30,7 @@ import {
   tryRecreateIntegrationWorktree
 } from './integration-planner.mjs';
 import { resolveArtifactRoot, resolveBuildRoot, resolveWorktreeRoot } from './paths.mjs';
+import { resolveLaneRepository } from './lane-repositories.mjs';
 
 function factoryTempDir() {
   return path.join(resolveBuildRoot(), 'tmp');
@@ -126,7 +127,8 @@ export function integrateTaskBranch({
   const cfg = loadFactoryConfig();
   let integration = integrationWorktree || path.join(resolveWorktreeRoot(), `${lane}-integration`);
   const branch = integrationBranch || cfg.lanes[lane].integrationBranch;
-  const repoRoot = cfg.lanes[lane]?.repoRoot;
+  const laneRepo = resolveLaneRepository(lane);
+  const repoRoot = laneRepo.ok ? laneRepo.path : null;
 
   let plan = planIntegration({
     cwd: integration,
@@ -380,7 +382,10 @@ export async function executeGenericTask(task, opts = {}) {
     taskBaseCommit = disposable.taskBaseCommit;
   } else {
     const wt = createTaskWorktree(lane, task.id);
-    worktree = wt.worktreePath || cfg.lanes[lane].repoRoot;
+    if (!wt.ok && !wt.worktreePath) {
+      return { ok: false, reason: wt.reason || 'LANE_REPOSITORY_UNAVAILABLE', lane, taskId: task.id };
+    }
+    worktree = wt.worktreePath;
     if (!taskBaseCommit) {
       taskBaseCommit = revParse(worktree, 'HEAD');
     }

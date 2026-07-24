@@ -5,10 +5,9 @@ import {
   atomicWriteJson,
   nowIso,
   isPidAlive,
-  readJson,
-  loadFactoryConfig
+  readJson
 } from './lib.mjs';
-import { updateTask, ensureEvidenceDir, getTask, transitionTask } from './queue-manager.mjs';
+import { updateTask, ensureEvidenceDir, getTask, transitionTask, isValidTaskIdFormat } from './queue-manager.mjs';
 import { createTaskWorktree } from './worktree-manager.mjs';
 import { preferredWriterForLane, spawnWriterProcess, isWriterAvailable } from './writer-adapters.mjs';
 import { writeMasterStatus } from './reporter.mjs';
@@ -58,6 +57,9 @@ export function activeWriterMap() {
 }
 
 function artifactDirFor(lane, taskId) {
+  if (!isValidTaskIdFormat(taskId)) {
+    throw new Error(`Refusing to build an artifact path for a malformed taskId: ${JSON.stringify(taskId)}`);
+  }
   return path.join(resolveArtifactRoot(), lane, String(taskId));
 }
 
@@ -118,6 +120,16 @@ export function dispatchTaskWriter(lane, task, { maxHeavy = 2, forceResume = fal
     evidenceDir: path.join(FACTORY_ROOT, 'logs', lane, effective.id, nowIso().replace(/[:.]/g, '-'))
   });
   const wt = createTaskWorktree(lane, effective.id);
+  if (!wt.ok && !wt.worktreePath) {
+    // No fake background process for a lane repository that isn't
+    // configured/valid on this machine - block truthfully, once.
+    updateTask(lane, effective.id, buildBlockedOncePatch(
+      effective,
+      wt.reason || 'LANE_REPOSITORY_UNAVAILABLE',
+      'Lane repository not configured or invalid - no worktree, no spawn.'
+    ));
+    return { ok: false, reason: wt.reason || 'LANE_REPOSITORY_UNAVAILABLE', spawned: false };
+  }
   const agentId = preferredWriterForLane(lane);
   const runner = path.join(FACTORY_ROOT, 'src', 'generic-runner.mjs');
   const logFile = path.join(evidenceDir, `writer-${agentId}.log`);
@@ -125,7 +137,7 @@ export function dispatchTaskWriter(lane, task, { maxHeavy = 2, forceResume = fal
   ensureDir(artifactDir);
   ensureDir(path.join(resolveBuildRoot(), 'tmp'));
 
-  const cwd = wt.worktreePath || loadFactoryConfig().lanes[lane].repoRoot;
+  const cwd = wt.worktreePath;
 
   const localArgs = [
     '--lane',

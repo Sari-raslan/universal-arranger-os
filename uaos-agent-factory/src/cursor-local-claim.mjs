@@ -22,6 +22,7 @@ import {
 } from './retry-policy.mjs';
 import { writeMasterStatus } from './reporter.mjs';
 import { resolveArtifactRoot, resolveWorktreeRoot } from './paths.mjs';
+import { resolveLaneRepository } from './lane-repositories.mjs';
 
 const CLAIMS_PATH = path.join(FACTORY_ROOT, 'state', 'cursor-local-claims.json');
 
@@ -85,7 +86,11 @@ export function canClaimWithCursorLocal(task) {
 export function ensureTaskWorktreeFromIntegration(lane, taskId) {
   const cfg = loadFactoryConfig();
   const laneCfg = cfg.lanes[lane];
-  const repo = laneCfg.repoRoot;
+  const resolved = resolveLaneRepository(lane);
+  if (!resolved.ok) {
+    return { ok: false, reason: resolved.reason, lane, taskId };
+  }
+  const repo = resolved.path;
   const branch = `factory/${lane}-${String(taskId).toLowerCase()}`;
   const wt = worktreePathFor(lane, taskId);
   const integration = laneCfg.integrationBranch;
