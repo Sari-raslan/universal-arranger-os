@@ -145,21 +145,15 @@ export function validateLaneRepository(repoPath, { lane, allowSelf = false } = {
   }
   // Reject a path that resolves into a repo's tree without itself being
   // that repo's (or worktree's) own top-level - e.g. a genuine subdirectory.
-  // Compare via realpath (falling back to the lexical path if realpath
-  // fails) rather than path.resolve() alone: path.resolve() never touches
-  // the filesystem, so it cannot see that an OS temp directory - common on
-  // CI runners - is itself a symlink/junction, which made git's own
-  // (realpath-resolved) --show-toplevel legitimately disagree with the
-  // lexical path here even though both name the same directory.
-  const realpathOrSelf = (p) => {
-    try {
-      return fs.realpathSync(p);
-    } catch {
-      return p;
-    }
-  };
-  if (path.resolve(realpathOrSelf(info.gitRoot)).toLowerCase() !== path.resolve(realpathOrSelf(resolved)).toLowerCase()) {
-    return { ok: false, reason: 'PATH_IS_NOT_A_GIT_TOPLEVEL', path: resolved, gitRoot: info.gitRoot };
+  // Ask git directly via --show-cdup rather than comparing paths in Node:
+  // it prints the relative path from cwd up to the top-level, which is
+  // empty exactly when cwd already IS the top-level. This never requires
+  // Node and git to agree on a resolved path string, so it isn't fooled by
+  // an OS temp directory being a symlink/junction (common on CI runners),
+  // which made a direct path.resolve()/realpath comparison unreliable here.
+  const cdup = runCmd('git rev-parse --show-cdup', { cwd: resolved });
+  if (!cdup.ok || cdup.stdout.trim() !== '') {
+    return { ok: false, reason: 'PATH_IS_NOT_A_GIT_TOPLEVEL', path: resolved, gitRoot: info.gitRoot, cdup: cdup.stdout };
   }
 
   const bareCheck = runCmd('git rev-parse --is-bare-repository', { cwd: resolved });
