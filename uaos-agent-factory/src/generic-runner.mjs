@@ -338,7 +338,9 @@ export function isTaskEligible(task, { lanePaused = false } = {}) {
   if (!task) return { ok: false, reason: 'NO_TASK' };
   if (lanePaused) return { ok: false, reason: 'LANE_PAUSED' };
   if (task.humanGate) return { ok: false, reason: 'HUMAN_GATE' };
-  if (!['ready', 'retry', 'pending'].includes(task.status)) return { ok: false, reason: 'BAD_STATUS' };
+  // dispatch.mjs transitions the queue task to 'running' synchronously before spawning
+  // this process, so the freshly re-read task is expected to already be 'running' here.
+  if (!['ready', 'retry', 'pending', 'running'].includes(task.status)) return { ok: false, reason: 'BAD_STATUS' };
   const retries = task.result?.retryCount || 0;
   if (retries > (task.retryLimit ?? 2)) return { ok: false, reason: 'RETRY_LIMIT' };
   return { ok: true };
@@ -471,8 +473,6 @@ export async function executeGenericTask(task, opts = {}) {
       '--skip-git-repo-check',
       '-C',
       worktree,
-      '-c',
-      'model="gpt-4.1"',
       '-s',
       'workspace-write',
       '-'
@@ -486,7 +486,10 @@ export async function executeGenericTask(task, opts = {}) {
         TEMP: factoryTempDir(),
         TMP: factoryTempDir()
       },
-      windowsHide: true
+      windowsHide: true,
+      // On Windows, 'codex' resolves to codex.cmd; spawnSync without shell:true
+      // fails with ENOENT because CreateProcess can't launch a .cmd directly.
+      shell: process.platform === 'win32'
     });
     fs.writeFileSync(writerLog, `${r.stdout || ''}\n${r.stderr || ''}\nEXIT=${r.status}\n`, 'utf8');
     writerResult = {
