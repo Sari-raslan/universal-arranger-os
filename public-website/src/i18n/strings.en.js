@@ -1,0 +1,73 @@
+export default {
+  meta: {
+    lang: 'en',
+    dir: 'ltr',
+    title: 'Singy — UAOS',
+    description: 'Singy is a smart, friendly musical experience for a new generation. Discover Singy Kids and Singy Teen.',
+  },
+  skipLink: 'Skip to main content',
+  nav: {
+    brand: 'Singy',
+    home: 'Home',
+    kids: 'Singy Kids',
+    teen: 'Singy Teen',
+    comingLater: 'Coming Later',
+    languageLabel: 'Language',
+  },
+  hero: {
+    eyebrow: 'UAOS',
+    title: 'A smart musical experience for a new generation',
+    subtitle: 'Singy brings music discovery and creative play to kids and teens, in a friendly and modern way.',
+    ctaKids: 'Explore Singy Kids',
+    ctaTeen: 'Explore Singy Teen',
+    markAlt: 'The Singy character, shaped like a musical note inside a glass sphere',
+  },
+  kids: {
+    id: 'singy-kids',
+    title: 'Singy Kids',
+    tagline: 'A playful, easy first step into music',
+    status: 'Preparing for launch',
+    points: [
+      'Discovering music in a simple, easy way',
+      'Creative, playful interaction',
+      'A clear and simple interface',
+      'An experience suited to younger ages',
+    ],
+    imgAlt: 'Illustration representing Singy Kids, a playful musical experience for children',
+  },
+  teen: {
+    id: 'singy-teen',
+    title: 'Singy Teen',
+    tagline: 'A more expressive step for growing musicians',
+    status: 'Preparing for launch',
+    points: [
+      'Musical self-expression',
+      'Developing musical ideas',
+      'Exploring rhythm and melody',
+      'A modern experience suited to teens',
+    ],
+    imgAlt: 'Illustration representing Singy Teen, a more expressive musical experience for teenagers',
+  },
+  comparison: {
+    title: 'Two experiences, one friendly foundation',
+    kidsLabel: 'Singy Kids',
+    kidsDesc: 'A simpler, playful experience designed for children.',
+    teenLabel: 'Singy Teen',
+    teenDesc: 'A more developed, expressive experience designed for teens.',
+  },
+  comingLater: {
+    title: 'More on the way',
+    message: 'More products are coming later.',
+  },
+  footer: {
+    platformName: 'UAOS',
+    rights: 'All rights reserved.',
+    impressum: 'Impressum',
+    datenschutz: 'Datenschutz',
+  },
+  legal: {
+    pendingTitle: 'Information pending',
+    pendingBody: 'This page will be completed once the required legal information is provided by the site owner. It is not yet published for production use.',
+    backHome: 'Back to home',
+  },
+}

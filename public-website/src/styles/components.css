@@ -1,0 +1,420 @@
+/* ---------- Nav ---------- */
+.navBar {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  background: var(--color-surface-strong);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.navBar .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+  padding-block: var(--space-2);
+  flex-wrap: wrap;
+}
+
+.navBrand {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-weight: 700;
+  font-size: 1.15rem;
+  text-decoration: none;
+}
+
+.navBrand .brandMark {
+  width: 32px;
+  height: 32px;
+}
+
+.navLinks {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap;
+}
+
+.navLinks a {
+  text-decoration: none;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  padding: 0.4rem 0.2rem;
+  border-bottom: 2px solid transparent;
+}
+
+.navLinks a:hover,
+.navLinks a:focus-visible {
+  color: var(--color-text);
+  border-bottom-color: var(--color-blue);
+}
+
+.langSwitcher {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  padding: 0.3rem;
+}
+
+.langSwitcher button {
+  border: none;
+  background: transparent;
+  color: var(--color-text-muted);
+  padding: 0.35rem 0.7rem;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.langSwitcher button[aria-pressed='true'] {
+  background: var(--gradient-brand);
+  color: #fff;
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding-block: var(--space-6) var(--space-5);
+}
+
+.waveBackground {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: var(--gradient-wave);
+}
+
+.waveBackground svg {
+  position: absolute;
+  bottom: -1px;
+  inset-inline: 0;
+  width: 100%;
+  height: auto;
+  opacity: 0.7;
+}
+
+.waveBackground .waveLayer1 {
+  animation: waveDrift 22s ease-in-out infinite;
+}
+
+.waveBackground .waveLayer2 {
+  animation: waveDrift 30s ease-in-out infinite reverse;
+  opacity: 0.4;
+}
+
+@keyframes waveDrift {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(-3%); }
+}
+
+.heroInner {
+  display: flex;
+  align-items: center;
+  gap: var(--space-5);
+  flex-wrap: wrap;
+}
+
+.heroContent {
+  flex: 1 1 380px;
+  min-width: 0;
+}
+
+.eyebrow {
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--color-violet);
+  margin-bottom: var(--space-2);
+}
+
+.heroTitle {
+  font-size: clamp(2rem, 4.5vw, 3.2rem);
+  line-height: 1.15;
+  margin: 0 0 var(--space-2);
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.heroSubtitle {
+  font-size: clamp(1rem, 1.6vw, 1.2rem);
+  color: var(--color-text-muted);
+  max-width: 46ch;
+  margin: 0 0 var(--space-3);
+}
+
+.heroActions {
+  display: flex;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.85rem 1.6rem;
+  border-radius: var(--radius-pill);
+  font-weight: 700;
+  text-decoration: none;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btnPrimary {
+  background: var(--gradient-brand);
+  color: #fff;
+  box-shadow: var(--shadow-card);
+}
+
+.btnGhost {
+  background: var(--color-surface);
+  color: var(--color-text);
+  border-color: var(--color-border);
+  backdrop-filter: blur(10px);
+}
+
+.heroVisual {
+  flex: 0 1 320px;
+  display: flex;
+  justify-content: center;
+}
+
+.glassOrb {
+  position: relative;
+  width: min(320px, 70vw);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  box-shadow: var(--shadow-soft);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.glassOrb svg {
+  width: 55%;
+  height: 55%;
+}
+
+/* ---------- Sections ---------- */
+.section {
+  padding-block: var(--space-5);
+  scroll-margin-top: 5.5rem;
+}
+
+.sectionHeader {
+  text-align: center;
+  max-width: 62ch;
+  margin-inline: auto;
+  margin-bottom: var(--space-4);
+}
+
+.sectionHeader h2 {
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  margin-bottom: 0.5rem;
+}
+
+.sectionHeader p {
+  color: var(--color-text-muted);
+}
+
+.productCard {
+  display: flex;
+  gap: var(--space-4);
+  align-items: center;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: var(--shadow-card);
+  flex-wrap: wrap;
+}
+
+.productCard .productVisual {
+  flex: 0 0 auto;
+  width: 140px;
+  height: 140px;
+  border-radius: var(--radius-lg);
+  background: var(--gradient-wave);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--color-border);
+}
+
+.productCard .productVisual svg {
+  width: 60%;
+  height: 60%;
+}
+
+.productCard .productBody {
+  flex: 1 1 260px;
+  min-width: 0;
+}
+
+.productCard h3 {
+  font-size: 1.5rem;
+  margin: 0 0 0.25rem;
+}
+
+.productTagline {
+  color: var(--color-text-muted);
+  margin: 0 0 var(--space-2);
+}
+
+.statusPill {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 0.3rem 0.8rem;
+  border-radius: var(--radius-pill);
+  background: var(--gradient-brand);
+  color: #fff;
+  margin-bottom: var(--space-2);
+}
+
+.pointList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.pointList li {
+  position: relative;
+  padding-inline-start: 1.4rem;
+  color: var(--color-text);
+}
+
+.pointList li::before {
+  content: '';
+  position: absolute;
+  inset-inline-start: 0;
+  top: 0.5em;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--gradient-brand);
+}
+
+/* ---------- Comparison ---------- */
+.comparisonGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--space-3);
+}
+
+.comparisonCard {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-3);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  text-align: center;
+}
+
+.comparisonCard h3 {
+  margin: 0 0 0.5rem;
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.comparisonCard p {
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+/* ---------- Coming later ---------- */
+.comingLater {
+  text-align: center;
+}
+
+.comingLaterCard {
+  display: inline-block;
+  background: var(--color-surface);
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-3) var(--space-4);
+  backdrop-filter: blur(10px);
+}
+
+/* ---------- Footer ---------- */
+.siteFooter {
+  border-top: 1px solid var(--color-border);
+  padding-block: var(--space-4);
+  margin-top: var(--space-5);
+}
+
+.siteFooter .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+}
+
+.footerLinks {
+  display: flex;
+  gap: var(--space-3);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footerLinks a {
+  text-decoration: none;
+  color: var(--color-text-muted);
+}
+
+.footerLinks a:hover,
+.footerLinks a:focus-visible {
+  color: var(--color-text);
+}
+
+@media (max-width: 640px) {
+  .productCard {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .productCard .productBody {
+    text-align: start;
+  }
+
+  .siteFooter .container {
+    flex-direction: column;
+    text-align: center;
+  }
+}

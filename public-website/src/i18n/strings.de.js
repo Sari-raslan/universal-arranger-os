@@ -1,0 +1,73 @@
+export default {
+  meta: {
+    lang: 'de',
+    dir: 'ltr',
+    title: 'Singy — UAOS',
+    description: 'Singy ist ein intelligentes, freundliches Musikerlebnis für eine neue Generation. Entdecken Sie Singy Kids und Singy Teen.',
+  },
+  skipLink: 'Zum Hauptinhalt springen',
+  nav: {
+    brand: 'Singy',
+    home: 'Start',
+    kids: 'Singy Kids',
+    teen: 'Singy Teen',
+    comingLater: 'Demnächst',
+    languageLabel: 'Sprache',
+  },
+  hero: {
+    eyebrow: 'UAOS',
+    title: 'Ein intelligentes Musikerlebnis für eine neue Generation',
+    subtitle: 'Singy bringt Kindern und Jugendlichen Musikentdeckung und kreatives Spiel auf eine freundliche, moderne Art näher.',
+    ctaKids: 'Singy Kids entdecken',
+    ctaTeen: 'Singy Teen entdecken',
+    markAlt: 'Die Singy-Figur, geformt wie eine Musiknote in einer gläsernen Kugel',
+  },
+  kids: {
+    id: 'singy-kids',
+    title: 'Singy Kids',
+    tagline: 'Ein spielerischer, einfacher Einstieg in die Musik',
+    status: 'Wird für den Start vorbereitet',
+    points: [
+      'Musik auf einfache, leichte Weise entdecken',
+      'Kreative, spielerische Interaktion',
+      'Eine klare und einfache Oberfläche',
+      'Ein für jüngere Altersgruppen geeignetes Erlebnis',
+    ],
+    imgAlt: 'Illustration von Singy Kids, ein spielerisches Musikerlebnis für Kinder',
+  },
+  teen: {
+    id: 'singy-teen',
+    title: 'Singy Teen',
+    tagline: 'Ein ausdrucksstärkerer Schritt für wachsende Musiker',
+    status: 'Wird für den Start vorbereitet',
+    points: [
+      'Musikalischer Selbstausdruck',
+      'Musikalische Ideen entwickeln',
+      'Rhythmus und Melodie erkunden',
+      'Ein modernes, für Jugendliche geeignetes Erlebnis',
+    ],
+    imgAlt: 'Illustration von Singy Teen, ein ausdrucksstärkeres Musikerlebnis für Jugendliche',
+  },
+  comparison: {
+    title: 'Zwei Erlebnisse, eine freundliche Grundlage',
+    kidsLabel: 'Singy Kids',
+    kidsDesc: 'Ein einfacheres, spielerisches Erlebnis für Kinder.',
+    teenLabel: 'Singy Teen',
+    teenDesc: 'Ein weiterentwickeltes, ausdrucksstärkeres Erlebnis für Jugendliche.',
+  },
+  comingLater: {
+    title: 'Mehr ist unterwegs',
+    message: 'Weitere Produkte folgen später.',
+  },
+  footer: {
+    platformName: 'UAOS',
+    rights: 'Alle Rechte vorbehalten.',
+    impressum: 'Impressum',
+    datenschutz: 'Datenschutz',
+  },
+  legal: {
+    pendingTitle: 'Angaben ausstehend',
+    pendingBody: 'Diese Seite wird vervollständigt, sobald die erforderlichen rechtlichen Angaben vom Eigentümer bereitgestellt werden. Sie ist noch nicht für den produktiven Einsatz veröffentlicht.',
+    backHome: 'Zurück zur Startseite',
+  },
+}
