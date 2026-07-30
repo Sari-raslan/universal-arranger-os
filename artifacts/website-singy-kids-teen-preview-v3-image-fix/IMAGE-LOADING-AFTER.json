@@ -1,0 +1,60 @@
+{
+  "context": "Final verification against the LIVE Vercel preview after the fix (loading=\"eager\" decoding=\"async\"), https://frontend-4fxpehwg9-aeplatform-apps-projects.vercel.app, deployment dpl_6jouZAvjPhqsibPpFDSBx1gj8g2H, source commit 0dafb6a4",
+  "results": [
+    {
+      "file": "01-v3-fixed-ar-desktop.png", "lang": "ar", "httpStatus": 200, "dir": "rtl", "docLang": "ar",
+      "title": "سنجي كيدز وسنجي تين — UAOS", "robots": "noindex,nofollow,noarchive",
+      "scrollWidth": 1440, "clientWidth": 1440, "horizontalOverflow": false,
+      "hasSingyKids": true, "hasSingyTeen": true, "imageCount": 5, "allImagesComplete": true, "brokenImages": [],
+      "identityStrip": { "complete": true, "naturalWidth": 1600 },
+      "conceptMosaic": { "complete": true, "naturalWidth": 1800 },
+      "consoleErrors": [], "requestFailures": []
+    },
+    {
+      "file": "02-v3-fixed-ar-mobile.png", "lang": "ar", "httpStatus": 200, "dir": "rtl", "docLang": "ar",
+      "title": "سنجي كيدز وسنجي تين — UAOS", "robots": "noindex,nofollow,noarchive",
+      "scrollWidth": 390, "clientWidth": 390, "horizontalOverflow": false,
+      "hasSingyKids": true, "hasSingyTeen": true, "imageCount": 5, "allImagesComplete": true, "brokenImages": [],
+      "identityStrip": { "complete": true, "naturalWidth": 1600 },
+      "conceptMosaic": { "complete": true, "naturalWidth": 1800 },
+      "consoleErrors": [], "requestFailures": []
+    },
+    {
+      "file": "03-v3-fixed-en-desktop.png", "lang": "en", "httpStatus": 200, "dir": "ltr", "docLang": "en",
+      "title": "Singy Kids + Singy Teen — UAOS", "robots": "noindex,nofollow,noarchive",
+      "scrollWidth": 1440, "clientWidth": 1440, "horizontalOverflow": false,
+      "hasSingyKids": true, "hasSingyTeen": true, "imageCount": 5, "allImagesComplete": true, "brokenImages": [],
+      "identityStrip": { "complete": true, "naturalWidth": 1600 },
+      "conceptMosaic": { "complete": true, "naturalWidth": 1800 },
+      "consoleErrors": [], "requestFailures": []
+    },
+    {
+      "file": "04-v3-fixed-en-mobile.png", "lang": "en", "httpStatus": 200, "dir": "ltr", "docLang": "en",
+      "title": "Singy Kids + Singy Teen — UAOS", "robots": "noindex,nofollow,noarchive",
+      "scrollWidth": 390, "clientWidth": 390, "horizontalOverflow": false,
+      "hasSingyKids": true, "hasSingyTeen": true, "imageCount": 5, "allImagesComplete": true, "brokenImages": [],
+      "identityStrip": { "complete": true, "naturalWidth": 1600 },
+      "conceptMosaic": { "complete": true, "naturalWidth": 1800 },
+      "consoleErrors": [], "requestFailures": []
+    },
+    {
+      "file": "05-v3-fixed-de-desktop.png", "lang": "de", "httpStatus": 200, "dir": "ltr", "docLang": "de",
+      "title": "Singy Kids + Singy Teen — UAOS", "robots": "noindex,nofollow,noarchive",
+      "scrollWidth": 1440, "clientWidth": 1440, "horizontalOverflow": false,
+      "hasSingyKids": true, "hasSingyTeen": true, "imageCount": 5, "allImagesComplete": true, "brokenImages": [],
+      "identityStrip": { "complete": true, "naturalWidth": 1600 },
+      "conceptMosaic": { "complete": true, "naturalWidth": 1800 },
+      "consoleErrors": [], "requestFailures": []
+    },
+    {
+      "file": "06-v3-fixed-de-mobile.png", "lang": "de", "httpStatus": 200, "dir": "ltr", "docLang": "de",
+      "title": "Singy Kids + Singy Teen — UAOS", "robots": "noindex,nofollow,noarchive",
+      "scrollWidth": 390, "clientWidth": 390, "horizontalOverflow": false,
+      "hasSingyKids": true, "hasSingyTeen": true, "imageCount": 5, "allImagesComplete": true, "brokenImages": [],
+      "identityStrip": { "complete": true, "naturalWidth": 1600 },
+      "conceptMosaic": { "complete": true, "naturalWidth": 1800 },
+      "consoleErrors": [], "requestFailures": []
+    }
+  ],
+  "summary": "6/6 PASS on the live preview URL. All images complete with naturalWidth>0 in every combination, including the previous worst case (German mobile, concept-mosaic). Zero console errors, zero request failures, zero horizontal overflow across all 6."
+}

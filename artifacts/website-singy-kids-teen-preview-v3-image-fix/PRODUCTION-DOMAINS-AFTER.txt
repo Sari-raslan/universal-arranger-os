@@ -1,0 +1,21 @@
+Production domain verification AFTER the fix + new preview deployment + alias restoration.
+All checked independently via Vercel MCP get_deployment(idOrUrl=<hostname>).
+
+aeplatform.app
+  -> dpl_J6sBbM1rwoWmir1RHLBoiGeUvEUf (target: production, readyState: READY) — UNCHANGED
+
+www.aeplatform.app
+  -> dpl_BDC1EXMaqNBHAFGQ6m931Da3B5U4 (target: production, readyState: READY) — UNCHANGED
+
+uaos.app
+  -> dpl_BDC1EXMaqNBHAFGQ6m931Da3B5U4 (target: production, readyState: READY) — UNCHANGED
+
+www.uaos.app
+  -> dpl_BDC1EXMaqNBHAFGQ6m931Da3B5U4 (target: production, readyState: READY) — UNCHANGED
+
+frontend-aeplatform-app-aeplatform-apps-projects.vercel.app (the secondary alias affected by an earlier session incident)
+  -> dpl_J6sBbM1rwoWmir1RHLBoiGeUvEUf (target: production, readyState: READY) — RESTORED, matches aeplatform.app
+
+No DNS changes. No new Vercel project created this round. No production deploy performed —
+the new deployment (dpl_6jouZAvjPhqsibPpFDSBx1gj8g2H) has target: null (Preview), confirmed
+via both `vercel inspect` and Vercel MCP get_deployment.

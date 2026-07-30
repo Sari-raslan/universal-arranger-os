@@ -1,0 +1,64 @@
+{
+  "context": "Diagnostic run against the local build BEFORE the fix (loading=\"lazy\" still present), served at http://127.0.0.1:4177, viewport 1440x900",
+  "caseA_noScroll_wait5s": {
+    "identityStrip": {
+      "found": true,
+      "complete": false,
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "currentSrc": "",
+      "loadingAttr": "lazy"
+    },
+    "conceptMosaic": {
+      "found": true,
+      "complete": true,
+      "naturalWidth": 1800,
+      "naturalHeight": 1000,
+      "currentSrc": "http://127.0.0.1:4177/assets/concept-mosaic.webp",
+      "loadingAttr": "lazy"
+    }
+  },
+  "caseB_scrollIntoView_wait2s": {
+    "identityStrip": {
+      "found": true,
+      "complete": true,
+      "naturalWidth": 1600,
+      "naturalHeight": 430,
+      "currentSrc": "http://127.0.0.1:4177/assets/singy-identity-strip.webp",
+      "loadingAttr": "lazy"
+    },
+    "conceptMosaic": {
+      "found": true,
+      "complete": true,
+      "naturalWidth": 1800,
+      "naturalHeight": 1000,
+      "currentSrc": "http://127.0.0.1:4177/assets/concept-mosaic.webp",
+      "loadingAttr": "lazy"
+    }
+  },
+  "caseC_explicitDecode": {
+    "identityStrip": {
+      "found": true,
+      "decodeOk": true,
+      "complete": true,
+      "naturalWidth": 1600,
+      "naturalHeight": 430,
+      "currentSrc": "http://127.0.0.1:4177/assets/singy-identity-strip.webp"
+    },
+    "conceptMosaic": {
+      "found": true,
+      "decodeOk": true,
+      "complete": true,
+      "naturalWidth": 1800,
+      "naturalHeight": 1000,
+      "currentSrc": "http://127.0.0.1:4177/assets/concept-mosaic.webp"
+    }
+  },
+  "networkLog": [
+    { "url": "http://127.0.0.1:4177/assets/concept-mosaic.webp", "status": 200, "contentType": "image/webp" },
+    { "url": "http://127.0.0.1:4177/assets/singy-identity-strip.webp", "status": 200, "contentType": "image/webp" }
+  ],
+  "consoleErrors": [],
+  "requestFailures": [],
+  "conclusion": "identity-strip fails to load with no scroll (Case A); both load fine once scrolled into view (Case B) or explicitly decoded (Case C). Confirms loading=\"lazy\" + non-scrolling capture as root cause, not file corruption or network failure."
+}
