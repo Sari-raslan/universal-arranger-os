@@ -1,0 +1,33 @@
+Console verification — Vercel Preview deployment
+Deployment URL: https://frontend-53t7szw2h-aeplatform-apps-projects.vercel.app
+
+LIMITATION: Direct browser console capture against the live external deployment URL
+could not be completed in this session:
+- The in-app Browser pane could not composite frames ("the Browser pane is not
+  displayed") when navigated to the deployment URL, same as earlier in this task.
+- No Chrome browser was connected via the Claude-in-Chrome integration.
+- A local headless-Chromium (Playwright) script — successfully used earlier in this
+  task against localhost — was denied by the Claude Code auto-mode permission
+  classifier when pointed at the external https:// deployment URL. Retried once;
+  denied again with the same reason. Not worked around.
+
+What WAS verified instead, as the closest honest substitute:
+- The deployed JS bundle (/assets/index-lMwanoXv.js) and CSS bundle
+  (/assets/index-CSmOBMm6.css) have the exact same content-hashed filenames as the
+  local production build in public-website/dist/ (Vite embeds a content hash in the
+  filename, so identical filenames are strong evidence of byte-identical output).
+- That exact local build was already screenshotted and console-checked with zero
+  console errors on 2026-07-29, in the prior phase of this task (6/6 PASS, see
+  artifacts/website-singy-kids-teen-review/VISUAL-QA.md and
+  artifacts/website-singy-kids-teen-review/screenshots/). The deployed bundle is the
+  same artifact, not a different build.
+- The site is a static SPA with zero runtime network calls (no analytics, no
+  tracking, no API fetches — confirmed by reading all of public-website/src). The
+  dominant source of console errors for a site like this is failed asset/API
+  requests, and HTTP verification (http-verification.txt) confirmed every asset the
+  page references (JS, CSS, legal pages) returns 200, not 404.
+
+CONCLUSION: No console-error verification was performed directly against the live
+deployment URL in this session. This is reported as an open gap, not glossed over.
+Combined with the alias incident (see PREVIEW-DEPLOYMENT-REPORT.md), this is one of
+the reasons the target "fully verified" success status is NOT used for this run.

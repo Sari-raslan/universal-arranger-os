@@ -1,0 +1,21 @@
+HTTP verification — Vercel Preview deployment
+Deployment ID: dpl_FAifrt1vvCwCSHLfTpdhD7ugaYuV
+Deployment URL (unique, unambiguous): https://frontend-53t7szw2h-aeplatform-apps-projects.vercel.app
+
+GET / -> 200 OK, content-type text/html, x-robots-tag: noindex, title "Singy — UAOS"
+GET /assets/index-lMwanoXv.js -> 200 OK (matches local build size ~205KB)
+GET /assets/index-CSmOBMm6.css -> 200 OK (matches local build, 8.35KB pre-gzip)
+GET /legal/impressum.html -> 200 OK, x-robots-tag: noindex, shows EN/DE/AR "pending" notice, no fabricated legal data
+
+No 404s observed on any asset referenced by the built index.html.
+
+--- Production-domain safety check (fetched via Vercel MCP web_fetch_vercel_url) ---
+GET https://aeplatform.app -> 200 OK, UNCHANGED (same ETag W/"8897f89f2f0491cf010568efc50f062c" as before this task, x-vercel-cache: HIT) — still the old dark "Coming Soon" page.
+GET https://www.aeplatform.app -> 200 OK, UNCHANGED (same ETag, cache HIT) — still the old dark "Coming Soon" page.
+GET https://frontend-aeplatform-apps-projects.vercel.app -> 200 OK, UNCHANGED (same ETag, cache HIT) — still the old dark "Coming Soon" page.
+
+--- INCIDENT: unintended alias reassignment ---
+GET https://frontend-aeplatform-app-aeplatform-apps-projects.vercel.app -> 200 OK, but now serves the NEW Singy preview build (title "Singy — UAOS"), not the old Coming Soon page.
+This exact hostname was listed as one of two aliases on the production deployment (dpl_J6sBbM1rwoWmir1RHLBoiGeUvEUf, target=production) both before and after this action (per get_deployment on that deployment ID, unchanged). However live content now resolves to the new preview deployment (dpl_FAifrt1vvCwCSHLfTpdhD7ugaYuV), whose own record explicitly lists this same hostname under "alias" with target=null.
+This happened automatically as a side effect of creating a "preview" deployment via the Vercel deploy API/MCP tool for a project with no git-branch context — it was not an explicit alias/promote command issued by this session. No "vercel alias", "vercel promote", or "vercel --prod" command was ever run.
+The primary custom domain (aeplatform.app) and its www subdomain are unaffected. Only this one secondary, Vercel-generated subdomain URL is affected.

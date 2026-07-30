@@ -1,0 +1,22 @@
+HTTP verification AFTER recovery attempt (no fix was applied — see ALIAS-INCIDENT-RECOVERY.md)
+All checked independently via Vercel MCP web_fetch_vercel_url.
+
+https://aeplatform.app
+  -> 200 OK, old dark "Coming Soon" page, UNCHANGED (still resolves to dpl_J6sBbM1rwoWmir1RHLBoiGeUvEUf per get_deployment)
+
+https://www.aeplatform.app
+  -> 200 OK, old dark "Coming Soon" page, UNCHANGED (still resolves to dpl_J6sBbM1rwoWmir1RHLBoiGeUvEUf per get_deployment)
+
+https://frontend-aeplatform-app-aeplatform-apps-projects.vercel.app
+  -> 200 OK, but still shows the NEW Singy site (title "Singy — UAOS"), STILL resolves to
+     dpl_FAifrt1vvCwCSHLfTpdhD7ugaYuV per get_deployment. NOT YET RESTORED to old production.
+     This is expected: no alias-modifying action was performed this session (no safe tool
+     available — see ALIAS-INCIDENT-RECOVERY.md for exact owner Dashboard steps to fix this).
+
+https://frontend-53t7szw2h-aeplatform-apps-projects.vercel.app (preview unique URL)
+  -> 200 OK, shows the new Singy site, resolves to dpl_FAifrt1vvCwCSHLfTpdhD7ugaYuV. Working
+     independently as expected, unaffected by anything in this task.
+
+Production deployment record (dpl_J6sBbM1rwoWmir1RHLBoiGeUvEUf): readyState READY,
+target production, id unchanged. No new deployment was created. No promote/rollback/DNS
+change was performed. No git push was performed.

@@ -1,0 +1,23 @@
+{
+  "projectId": "prj_LiH0Xa5ygloqKzdtUzVUKnGDDPTI",
+  "oldProductionDeploymentId": "dpl_J6sBbM1rwoWmir1RHLBoiGeUvEUf",
+  "previewUrl": "https://frontend-jmi7w38hs-aeplatform-apps-projects.vercel.app",
+  "previewDeploymentId": "dpl_56sb8fHrLEScE1c4EPkXbgBnVrir",
+  "affectedAlias": "frontend-aeplatform-app-aeplatform-apps-projects.vercel.app",
+  "affectedAliasRestoredToOldProduction": true,
+  "primaryDomainChanged": false,
+  "wwwDomainChanged": false,
+  "uaosDomainChanged": false,
+  "wwwUaosDomainChanged": false,
+  "productionDeploymentChanged": false,
+  "newDeploymentCreated": false,
+  "accidentalProjectCreated": true,
+  "accidentalProjectId": "prj_8l8rN7oWDfqlLYB4pzVgy8l79GT3",
+  "accidentalProjectRemoved": true,
+  "dnsChanged": false,
+  "productionDeployPerformed": false,
+  "recoveryAttempted": true,
+  "recoverySucceeded": true,
+  "evidence": "Verified via Vercel MCP get_deployment on both 'aeplatform.app' and 'frontend-aeplatform-app-aeplatform-apps-projects.vercel.app' resolving to the same deployment id (dpl_J6sBbM1rwoWmir1RHLBoiGeUvEUf) after running `vercel alias set frontend-90wiltv3n-aeplatform-apps-projects.vercel.app frontend-aeplatform-app-aeplatform-apps-projects.vercel.app --scope team_5pDwLd3tPHdmo4oP7au7pclJ`. Byte-level content of the affected alias also re-confirmed identical to aeplatform.app (same ETag).",
+  "historyNote": "An earlier attempt in this session (see PREVIEW-DEPLOYMENT-REPORT.md / ALIAS-INCIDENT-RECOVERY.md) found no safe alias-assignment tool via the Vercel MCP server and stopped without acting. This file now reflects the final, successful outcome reached later via an authenticated `vercel` CLI session, run under explicit owner instruction with exact project/scope pinning at every step."
+}
