@@ -188,8 +188,10 @@ test('completed synthetic task advances dependent', async () => {
   } else {
     updateTask(SYN_LANE, depId, { status: 'pending', dependsOn: [SYN_ID] });
   }
-  // Ensure SYN is integrated
-  updateTask(SYN_LANE, SYN_ID, { status: 'integrated' });
+  // Ensure SYN is integrated — must also clear integrationStatus, since isDurablyIntegrated()
+  // treats a stale NOT_INTEGRATED left over from committed fixture data as still-blocking even
+  // once status flips to 'integrated' (only an absent/INTEGRATED value counts as durable).
+  updateTask(SYN_LANE, SYN_ID, { status: 'integrated', integrationStatus: 'INTEGRATED' });
   // manually invoke mark by re-running execute is heavy; simulate advancement logic
   const q2 = loadQueue(SYN_LANE);
   const dep = q2.tasks.find((t) => t.id === depId);
