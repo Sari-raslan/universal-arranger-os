@@ -7,7 +7,8 @@ import {
   FACTORY_ROOT,
   atomicWriteJson,
   ensureDir,
-  nowIso
+  nowIso,
+  loadFactoryConfig
 } from '../src/lib.mjs';
 import { loadQueue, saveQueue, updateTask, nextRunnableTask, dependenciesSatisfied } from '../src/queue-manager.mjs';
 import { pickNextLaneWork, effectiveMaxHeavyWriters } from '../src/scheduler.mjs';
@@ -95,13 +96,13 @@ test('generic runner executes unknown synthetic task end-to-end', async () => {
   const l001 = loadQueue(SYN_LANE).tasks.find((t) => t.id === 'L-001');
   assert.ok(['passed', 'integrated'].includes(l001.status));
 
-  const artifact = path.join('D:/UAOS_AGENT_FACTORY_ARTIFACTS/library', SYN_ID);
+  const artifact = path.join(loadFactoryConfig().artifactRoot, 'library', SYN_ID);
   const evidence = path.join(FACTORY_ROOT, 'logs', SYN_LANE, SYN_ID, 'selftest');
   ensureDir(artifact);
   ensureDir(evidence);
 
   // Snapshot real library integration HEAD — must not change due to synthetic run
-  const realInteg = 'D:\\UAOS_AGENT_FACTORY_WORKTREES\\library-integration';
+  const realInteg = path.join(loadFactoryConfig().worktreeRoot, 'library-integration');
   const before = fs.existsSync(realInteg)
     ? execSync('git rev-parse HEAD', { cwd: realInteg, encoding: 'utf8' }).trim()
     : null;
