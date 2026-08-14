@@ -21,6 +21,7 @@ import {
   terminateOwnedWriters,
   countOwnedAliveWriters
 } from './dispatch.mjs';
+import { reconcileStaleClaims } from './cursor-local-claim.mjs';
 
 const STATE_PATH = path.join(FACTORY_ROOT, 'state', 'factory-state.json');
 const PID_PATH = path.join(FACTORY_ROOT, 'state', 'supervisor.pid.json');
@@ -106,6 +107,7 @@ export async function runSupervisorLoop({ once = false } = {}) {
     }
 
     reconcileWriterExits();
+    reconcileStaleClaims();
 
     const resources = evaluateResources();
     if (resources.pauseFactory) {

@@ -43,12 +43,10 @@ function writePreflight() {
     resources,
     agentsAvailable: availableAgents().map((a) => a.id),
     agentsUnavailable: unavailableAgents().map((a) => a.id),
-    gitIndexLock: fs.existsSync(path.join('E:/keyboard-manager-clean', '.git', 'index.lock')),
+    gitIndexLock: fs.existsSync(path.join(path.dirname(FACTORY_ROOT), '.git', 'index.lock')),
     factoryExists: true,
     pass:
       disks.C >= 10 &&
-      disks.D >= 25 &&
-      disks.E >= 10 &&
       ram.freeGb >= 4 &&
       !resources.pauseFactory
   };
