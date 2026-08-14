@@ -1,4 +1,4 @@
-import test from 'node:test';
+import test, { before } from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
@@ -23,6 +23,38 @@ function restoreSyn(patch) {
   updateTask('library', SYN, patch);
 }
 
+// Safety net: this fixture has no real isolation of its own (it's a live entry in the
+// production-shaped queue file, per lib.mjs's isSyntheticTaskId), so a prior aborted run —
+// this file's own, or another file's sharing the same fixture — can leave it stranded in a
+// non-baseline state (wrong priority, a future nextRetryAt, a stale lock). Force it back to
+// this file's established baseline before any test runs, rather than trusting every
+// individual test's own cleanup to have run cleanly.
+before(() => {
+  updateTask('library', SYN, {
+    status: 'ready',
+    priority: 1,
+    dependsOn: ['L-SYN-GENERIC'],
+    blockingReason: 'BACKGROUND_CODE_WRITING_BLOCKED_AUTH_OR_CLI',
+    claimId: null,
+    executionMode: null,
+    writerPid: null,
+    nextRetryAt: null,
+    retryCount: 0,
+    lastError: null,
+    lastExitCode: null,
+    result: { reason: 'BACKGROUND_CODE_WRITING_BLOCKED_AUTH_OR_CLI' }
+  });
+  const aw = loadActiveWriters();
+  delete aw.writers?.library;
+  saveActiveWriters(aw);
+  const lockDir = path.join(FACTORY_ROOT, 'state', 'claim-locks');
+  if (fs.existsSync(lockDir)) {
+    for (const name of fs.readdirSync(lockDir)) {
+      if (name.startsWith('library.lock')) fs.unlinkSync(path.join(lockDir, name));
+    }
+  }
+});
+
 test('manual claim ready task (synthetic)', () => {
   const before = getTask('library', SYN);
   restoreSyn({
@@ -41,28 +73,29 @@ test('manual claim ready task (synthetic)', () => {
   delete aw.writers?.library;
   saveActiveWriters(aw);
 
-  const gate = canClaimWithCursorLocal(getTask('library', SYN));
-  assert.equal(gate.ok, true);
-  const claim = claimTaskCursorLocal('library', SYN);
-  assert.equal(claim.ok, true);
-  assert.equal(claim.task.status, 'running');
-  assert.equal(claim.task.writerPid, null);
-  assert.equal(claim.task.executionMode, CURSOR_LOCAL_MODE);
-  assert.equal(claim.claim.writerPid, null);
-
-  // cleanup — mark interrupted then restore prior-ish state
-  interruptClaim('library', SYN, { claimId: claim.claim.claimId });
-  restoreSyn({
-    status: before.status === 'running' ? 'ready' : before.status,
-    claimId: null,
-    executionMode: null,
-    writerPid: null,
-    result: before.result,
-    blockingReason: before.blockingReason || null
-  });
-  const cleaned = loadActiveWriters();
-  delete cleaned.writers?.library;
-  saveActiveWriters(cleaned);
+  try {
+    const gate = canClaimWithCursorLocal(getTask('library', SYN));
+    assert.equal(gate.ok, true);
+    const claim = claimTaskCursorLocal('library', SYN);
+    assert.equal(claim.ok, true);
+    assert.equal(claim.task.status, 'running');
+    assert.equal(claim.task.writerPid, null);
+    assert.equal(claim.task.executionMode, CURSOR_LOCAL_MODE);
+    assert.equal(claim.claim.writerPid, null);
+    interruptClaim('library', SYN, { claimId: claim.claim.claimId });
+  } finally {
+    restoreSyn({
+      status: before.status === 'running' ? 'ready' : before.status,
+      claimId: null,
+      executionMode: null,
+      writerPid: null,
+      result: before.result,
+      blockingReason: before.blockingReason || null
+    });
+    const cleaned = loadActiveWriters();
+    delete cleaned.writers?.library;
+    saveActiveWriters(cleaned);
+  }
 });
 
 test('manual claim writer-blocked task', () => {
@@ -103,16 +136,19 @@ test('cannot double-claim', () => {
   const aw = loadActiveWriters();
   delete aw.writers?.library;
   saveActiveWriters(aw);
-  const first = claimTaskCursorLocal('library', SYN);
-  assert.equal(first.ok, true);
-  const second = claimTaskCursorLocal('library', SYN);
-  assert.equal(second.ok, false);
-  assert.ok(['ALREADY_CLAIMED', 'DOUBLE_CLAIM'].includes(second.reason));
-  interruptClaim('library', SYN, { claimId: first.claim.claimId });
-  restoreSyn({ status: 'ready', claimId: null, executionMode: null, writerPid: null });
-  const cleaned = loadActiveWriters();
-  delete cleaned.writers?.library;
-  saveActiveWriters(cleaned);
+  try {
+    const first = claimTaskCursorLocal('library', SYN);
+    assert.equal(first.ok, true);
+    const second = claimTaskCursorLocal('library', SYN);
+    assert.equal(second.ok, false);
+    assert.ok(['ALREADY_CLAIMED', 'DOUBLE_CLAIM'].includes(second.reason));
+    interruptClaim('library', SYN, { claimId: first.claim.claimId });
+  } finally {
+    restoreSyn({ status: 'ready', claimId: null, executionMode: null, writerPid: null });
+    const cleaned = loadActiveWriters();
+    delete cleaned.writers?.library;
+    saveActiveWriters(cleaned);
+  }
 });
 
 test('null PID accepted only for cursor-local interactive execution', () => {
@@ -127,16 +163,19 @@ test('null PID accepted only for cursor-local interactive execution', () => {
   const aw = loadActiveWriters();
   delete aw.writers?.library;
   saveActiveWriters(aw);
-  const claim = claimTaskCursorLocal('library', SYN);
-  assert.equal(claim.ok, true);
-  assert.equal(claim.claim.writerPid, null);
-  assert.equal(claim.claim.executionMode, CURSOR_LOCAL_MODE);
-  assert.equal(getTask('library', SYN).writerPid, null);
-  interruptClaim('library', SYN, { claimId: claim.claim.claimId });
-  restoreSyn({ status: 'ready', claimId: null, executionMode: null });
-  const cleaned = loadActiveWriters();
-  delete cleaned.writers?.library;
-  saveActiveWriters(cleaned);
+  try {
+    const claim = claimTaskCursorLocal('library', SYN);
+    assert.equal(claim.ok, true);
+    assert.equal(claim.claim.writerPid, null);
+    assert.equal(claim.claim.executionMode, CURSOR_LOCAL_MODE);
+    assert.equal(getTask('library', SYN).writerPid, null);
+    interruptClaim('library', SYN, { claimId: claim.claim.claimId });
+  } finally {
+    restoreSyn({ status: 'ready', claimId: null, executionMode: null });
+    const cleaned = loadActiveWriters();
+    delete cleaned.writers?.library;
+    saveActiveWriters(cleaned);
+  }
 });
 
 test('interrupted claim recovery', () => {
@@ -151,19 +190,21 @@ test('interrupted claim recovery', () => {
   const aw = loadActiveWriters();
   delete aw.writers?.library;
   saveActiveWriters(aw);
-  const initial = claimTaskCursorLocal('library', SYN);
-  assert.equal(initial.ok, true);
-  assert.equal(interruptClaim('library', SYN, { claimId: initial.claim.claimId }).ok, true);
-  assert.equal(getTask('library', SYN).status, 'interrupted');
-  const recovered = recoverInterruptedClaim('library', SYN);
-  assert.equal(recovered.ok, true);
-  assert.equal(recovered.task.status, 'running');
-  interruptClaim('library', SYN, { claimId: recovered.claim.claimId });
-  restoreSyn({ status: 'ready', claimId: null, executionMode: null, statusKeep: true });
-  updateTask('library', SYN, { status: 'ready', claimId: null, executionMode: null, writerPid: null });
-  const cleaned = loadActiveWriters();
-  delete cleaned.writers?.library;
-  saveActiveWriters(cleaned);
+  try {
+    const initial = claimTaskCursorLocal('library', SYN);
+    assert.equal(initial.ok, true);
+    assert.equal(interruptClaim('library', SYN, { claimId: initial.claim.claimId }).ok, true);
+    assert.equal(getTask('library', SYN).status, 'interrupted');
+    const recovered = recoverInterruptedClaim('library', SYN);
+    assert.equal(recovered.ok, true);
+    assert.equal(recovered.task.status, 'running');
+    interruptClaim('library', SYN, { claimId: recovered.claim.claimId });
+  } finally {
+    updateTask('library', SYN, { status: 'ready', claimId: null, executionMode: null, writerPid: null });
+    const cleaned = loadActiveWriters();
+    delete cleaned.writers?.library;
+    saveActiveWriters(cleaned);
+  }
 });
 
 test('atomic lane claim lock blocks a concurrent live owner', () => {
