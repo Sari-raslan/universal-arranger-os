@@ -6,7 +6,14 @@ import { execSync, execFileSync, spawn } from 'node:child_process';
 import crypto from 'node:crypto';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-export const FACTORY_ROOT = path.resolve(__dirname, '..');
+/**
+ * Repo-relative by default. UAOS_FACTORY_ROOT lets tests (and alternate
+ * checkouts) redirect every state/log/queue path derived from this constant
+ * without touching each call site.
+ */
+export const FACTORY_ROOT = process.env.UAOS_FACTORY_ROOT
+  ? path.resolve(process.env.UAOS_FACTORY_ROOT)
+  : path.resolve(__dirname, '..');
 export const CONFIG_PATH = path.join(FACTORY_ROOT, 'config', 'factory.json');
 
 /** No-pid (interactive) writers must heartbeat within this window to count as active. */
