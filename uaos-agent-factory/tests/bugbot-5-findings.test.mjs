@@ -12,7 +12,8 @@ import {
   atomicWriteJson,
   ensureDir,
   nowIso,
-  readJson
+  readJson,
+  loadFactoryConfig
 } from '../src/lib.mjs';
 import {
   loadQueue,
@@ -235,7 +236,7 @@ test('MEDIUM3 noop-pass writer produces noOp result without file mutation', asyn
   const { createDisposableSyntheticRepos: make } = await import('../src/integration-planner.mjs');
   const iso = make({ taskId: 'L-SYN-NOOP' });
   const evidence = path.join(FACTORY_ROOT, 'logs', SYN_LANE, 'L-SYN-NOOP', 'noop-test');
-  const artifact = path.join('D:/UAOS_AGENT_FACTORY_ARTIFACTS/library', 'L-SYN-NOOP-test');
+  const artifact = path.join(loadFactoryConfig().artifactRoot, 'library', 'L-SYN-NOOP-test');
   ensureDir(evidence);
   ensureDir(artifact);
 
@@ -279,7 +280,7 @@ test('MEDIUM3 noop-pass writer produces noOp result without file mutation', asyn
 
 test('MEDIUM3 unauthorized product noop-pass fails', async () => {
   const evidence = path.join(FACTORY_ROOT, 'logs', SYN_LANE, 'noop-deny', 't');
-  const artifact = path.join('D:/UAOS_AGENT_FACTORY_ARTIFACTS/library', 'noop-deny');
+  const artifact = path.join(loadFactoryConfig().artifactRoot, 'library', 'noop-deny');
   ensureDir(evidence);
   ensureDir(artifact);
   const { executeGenericTask } = await import('../src/generic-runner.mjs');
@@ -298,7 +299,7 @@ test('MEDIUM3 create_marker_file still works', async () => {
     humanGate: false
   });
   const task = getTask(SYN_LANE, SYN_ID);
-  const artifact = path.join('D:/UAOS_AGENT_FACTORY_ARTIFACTS/library', `${SYN_ID}-marker`);
+  const artifact = path.join(loadFactoryConfig().artifactRoot, 'library', `${SYN_ID}-marker`);
   const evidence = path.join(FACTORY_ROOT, 'logs', SYN_LANE, SYN_ID, 'marker-test');
   ensureDir(artifact);
   ensureDir(evidence);
