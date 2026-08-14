@@ -6,7 +6,8 @@ import {
   nowIso,
   isPidAlive,
   readJson,
-  loadFactoryConfig
+  loadFactoryConfig,
+  CURSOR_LOCAL_HEARTBEAT_STALE_MS
 } from './lib.mjs';
 import { updateTask, ensureEvidenceDir, getTask, transitionTask } from './queue-manager.mjs';
 import { createTaskWorktree } from './worktree-manager.mjs';
@@ -26,12 +27,34 @@ export function loadActiveWriters() {
   return readJson(ACTIVE_PATH, { updatedAt: null, writers: {} });
 }
 
+function isHeartbeatFresh(w) {
+  if (!w?.heartbeatAt) return false;
+  const age = Date.now() - new Date(w.heartbeatAt).getTime();
+  return Number.isFinite(age) && age >= 0 && age < CURSOR_LOCAL_HEARTBEAT_STALE_MS;
+}
+
+/**
+ * Is this active-writers.json entry a currently active writer?
+ * Process-backed writers (pid set) are active while the pid is alive.
+ * No-pid interactive writers (cursor-local) are active only while their
+ * heartbeat is fresh — otherwise they'd be permanently invisible to the
+ * lane-busy and stale-recovery checks below.
+ */
+export function isWriterEntryActive(w) {
+  if (!w) return false;
+  if (w.pid) return isPidAlive(w.pid);
+  return w.status === 'running' && isHeartbeatFresh(w);
+}
+
 export function saveActiveWriters(data) {
   data.updatedAt = nowIso();
   for (const w of Object.values(data.writers || {})) {
     if (w?.pid && !isPidAlive(w.pid) && w.status === 'running') {
       w.status = 'exited_unconfirmed';
       w.exitedAt = nowIso();
+    } else if (!w?.pid && w?.status === 'running' && !isHeartbeatFresh(w)) {
+      w.status = 'stale_unconfirmed';
+      w.staleAt = nowIso();
     }
   }
   atomicWriteJson(ACTIVE_PATH, data);
@@ -42,7 +65,7 @@ export function countHeavyWriters() {
   const data = loadActiveWriters();
   let n = 0;
   for (const w of Object.values(data.writers || {})) {
-    if (w?.pid && isPidAlive(w.pid) && w.heavy) n += 1;
+    if (w?.heavy && isWriterEntryActive(w)) n += 1;
   }
   return n;
 }
@@ -51,14 +74,17 @@ export function activeWriterMap() {
   const data = loadActiveWriters();
   const map = {};
   for (const [lane, w] of Object.entries(data.writers || {})) {
-    if (w?.pid && isPidAlive(w.pid) && w.taskId) map[lane] = w.taskId;
+    if (w?.taskId && isWriterEntryActive(w)) map[lane] = w.taskId;
   }
   return map;
 }
 
 function artifactDirFor(lane, taskId) {
-  if (lane === 'library') return `D:\\UAOS_AGENT_FACTORY_ARTIFACTS\\library\\${taskId}`;
-  return `D:\\UAOS_AGENT_FACTORY_ARTIFACTS\\${lane}\\${taskId}`;
+  const cfg = loadFactoryConfig();
+  const artifactRoot = cfg?.artifactRoot || path.join(FACTORY_ROOT, 'state', 'artifacts');
+  const base = path.join(artifactRoot, lane === 'library' ? 'library' : lane, taskId);
+  ensureDir(base);
+  return base;
 }
 
 /**
@@ -66,7 +92,7 @@ function artifactDirFor(lane, taskId) {
  */
 export function dispatchTaskWriter(lane, task, { maxHeavy = 2, forceResume = false } = {}) {
   const active = loadActiveWriters();
-  if (active.writers?.[lane]?.pid && isPidAlive(active.writers[lane].pid)) {
+  if (isWriterEntryActive(active.writers?.[lane])) {
     return { ok: false, reason: 'lane_already_has_writer', writer: active.writers[lane] };
   }
   if (countHeavyWriters() >= maxHeavy) {
@@ -122,8 +148,8 @@ export function dispatchTaskWriter(lane, task, { maxHeavy = 2, forceResume = fal
   const runner = path.join(FACTORY_ROOT, 'src', 'generic-runner.mjs');
   const logFile = path.join(evidenceDir, `writer-${agentId}.log`);
   const artifactDir = artifactDirFor(lane, effective.id);
-  ensureDir(artifactDir);
-  ensureDir('D:\\UAOS_AGENT_FACTORY_BUILD\\tmp');
+  ensureDir(path.dirname(artifactDir));
+  ensureDir(path.join(FACTORY_ROOT, 'state', 'tmp'));
 
   const cwd = wt.worktreePath || loadFactoryConfig().lanes[lane].repoRoot;
 
@@ -340,9 +366,12 @@ export function reconcileWriterExits() {
         });
       }
     } else if (result?.status === 'FAIL' || result?.ok === false) {
+      // Prefer the most specific truthful reason (e.g. a real integration-planner verdict like
+      // INTEGRATION_HEAD_ADVANCED) over the generic top-level fields — mirrors the check
+      // reconcileWriterPass already does correctly for its own integrate-failed branch above.
       const patch = buildFailurePatch(liveTask, {
         exitCode: result.exitCode ?? 1,
-        error: result.reason || result.firstBlocker || 'WRITER_FAIL',
+        error: result.integrate?.reason || result.reason || result.firstBlocker || 'WRITER_FAIL',
         commandHash: w.runnerCommandHash
       });
       updateTask(lane, w.taskId, patch);
