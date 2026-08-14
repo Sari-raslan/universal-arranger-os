@@ -6,12 +6,11 @@ import {
   nowIso,
   isPidAlive,
   readJson,
-  loadFactoryConfig,
   CURSOR_LOCAL_HEARTBEAT_STALE_MS
 } from './lib.mjs';
-import { updateTask, ensureEvidenceDir, getTask, transitionTask } from './queue-manager.mjs';
+import { updateTask, ensureEvidenceDir, getTask, transitionTask, isValidTaskIdFormat } from './queue-manager.mjs';
 import { createTaskWorktree } from './worktree-manager.mjs';
-import { preferredWriterForLane, spawnWriterProcess, isWriterAvailable } from './writer-adapters.mjs';
+import { preferredHeadlessWriterForLane, spawnWriterProcess } from './writer-adapters.mjs';
 import { writeMasterStatus } from './reporter.mjs';
 import {
   canAttemptTask,
@@ -20,6 +19,7 @@ import {
   runnerCommandHash,
   isAwaitingRunner
 } from './retry-policy.mjs';
+import { resolveArtifactRoot, resolveBuildRoot } from './paths.mjs';
 
 const ACTIVE_PATH = path.join(FACTORY_ROOT, 'state', 'active-writers.json');
 
@@ -80,11 +80,10 @@ export function activeWriterMap() {
 }
 
 function artifactDirFor(lane, taskId) {
-  const cfg = loadFactoryConfig();
-  const artifactRoot = cfg?.artifactRoot || path.join(FACTORY_ROOT, 'state', 'artifacts');
-  const base = path.join(artifactRoot, lane === 'library' ? 'library' : lane, taskId);
-  ensureDir(base);
-  return base;
+  if (!isValidTaskIdFormat(taskId)) {
+    throw new Error(`Refusing to build an artifact path for a malformed taskId: ${JSON.stringify(taskId)}`);
+  }
+  return path.join(resolveArtifactRoot(), lane, String(taskId));
 }
 
 /**
@@ -122,19 +121,20 @@ export function dispatchTaskWriter(lane, task, { maxHeavy = 2, forceResume = fal
     return { ok: false, reason: attempt.reason, spawned: false, detail: attempt };
   }
 
-  // Durable background product writing requires a verified headless writer (Codex),
-  // unless owner resumed with allowIntegratorDispatch / localSyntheticAction.
-  if (!isWriterAvailable('codex') && !effective.localSyntheticAction && !effective.allowIntegratorDispatch) {
+  // Durable background product writing requires any verified headless writer.
+  // Lane preference remains deterministic: Codex first, then Claude/Gemini.
+  const headlessWriter = effective.localSyntheticAction ? null : preferredHeadlessWriterForLane(lane);
+  if (!headlessWriter && !effective.localSyntheticAction && !effective.allowIntegratorDispatch) {
     updateTask(lane, effective.id, buildBlockedOncePatch(
       effective,
       'BACKGROUND_CODE_WRITING_BLOCKED_AUTH_OR_CLI',
-      'Generic runner is ready; Codex CLI/auth/model blocked. No automatic relaunch. Resume after CLI fix or owner Resume.'
+      'Generic runner is ready; no verified headless writer is currently available. No automatic relaunch.'
     ));
     return { ok: false, reason: 'BACKGROUND_CODE_WRITING_BLOCKED_AUTH_OR_CLI', spawned: false };
   }
 
   // Owner Resume for Cursor integrator: track eligibility but do not spawn a failing headless child.
-  if (!isWriterAvailable('codex') && effective.allowIntegratorDispatch && !effective.localSyntheticAction) {
+  if (!headlessWriter && effective.allowIntegratorDispatch && !effective.localSyntheticAction) {
     return { ok: false, reason: 'AWAITING_CURSOR_INTEGRATOR', spawned: false };
   }
 
@@ -144,14 +144,25 @@ export function dispatchTaskWriter(lane, task, { maxHeavy = 2, forceResume = fal
     evidenceDir: path.join(FACTORY_ROOT, 'logs', lane, effective.id, nowIso().replace(/[:.]/g, '-'))
   });
   const wt = createTaskWorktree(lane, effective.id);
-  const agentId = preferredWriterForLane(lane);
+  if (!wt.ok && !wt.worktreePath) {
+    // No fake background process for a lane repository that isn't
+    // configured/valid on this machine - block truthfully, once.
+    updateTask(lane, effective.id, buildBlockedOncePatch(
+      effective,
+      wt.reason || 'LANE_REPOSITORY_UNAVAILABLE',
+      'Lane repository not configured or invalid - no worktree, no spawn.'
+    ));
+    return { ok: false, reason: wt.reason || 'LANE_REPOSITORY_UNAVAILABLE', spawned: false };
+  }
+  const agentId = effective.localSyntheticAction ? 'cursor-local' : headlessWriter;
+  const forcedAgent = effective.localSyntheticAction ? 'synthetic-local' : headlessWriter;
   const runner = path.join(FACTORY_ROOT, 'src', 'generic-runner.mjs');
   const logFile = path.join(evidenceDir, `writer-${agentId}.log`);
   const artifactDir = artifactDirFor(lane, effective.id);
-  ensureDir(path.dirname(artifactDir));
-  ensureDir(path.join(FACTORY_ROOT, 'state', 'tmp'));
+  ensureDir(artifactDir);
+  ensureDir(path.join(resolveBuildRoot(), 'tmp'));
 
-  const cwd = wt.worktreePath || loadFactoryConfig().lanes[lane].repoRoot;
+  const cwd = wt.worktreePath;
 
   const localArgs = [
     '--lane',
@@ -165,7 +176,7 @@ export function dispatchTaskWriter(lane, task, { maxHeavy = 2, forceResume = fal
     '--evidence',
     evidenceDir,
     '--force-agent',
-    isWriterAvailable('codex') ? 'codex' : effective.localSyntheticAction ? 'synthetic-local' : 'cursor-local'
+    forcedAgent
   ];
 
   const cmdHash = runnerCommandHash(process.execPath, [runner, ...localArgs]);
@@ -181,7 +192,7 @@ export function dispatchTaskWriter(lane, task, { maxHeavy = 2, forceResume = fal
   const record = {
     lane,
     taskId: effective.id,
-    agentId: isWriterAvailable('codex') ? 'codex' : 'cursor-local',
+    agentId,
     runner: 'generic-runner',
     runnerPath: runner,
     pid: spawned.pid,
