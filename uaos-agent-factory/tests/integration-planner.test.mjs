@@ -9,7 +9,8 @@ import {
   revParse,
   isAncestor,
   gitIn,
-  SYNTHETIC_REPO_ROOT
+  SYNTHETIC_REPO_ROOT,
+  attemptSafeRebase
 } from '../src/integration-planner.mjs';
 
 function advanceIntegration(iso) {
@@ -97,6 +98,86 @@ test('integration head advanced blocks silent integrate', () => {
   });
   assert.equal(exec.ok, false);
   assert.equal(exec.reason, 'INTEGRATION_HEAD_ADVANCED');
+});
+
+test('attemptSafeRebase recovers cleanly from a non-conflicting integration head advance', () => {
+  const iso = createDisposableSyntheticRepos({ taskId: 'L-SYN-REBASE-OK' });
+  fs.writeFileSync(path.join(iso.taskWorktree, 'TASK_ONLY.txt'), 'task change\n', 'utf8');
+  gitIn(iso.taskWorktree, ['add', 'TASK_ONLY.txt']);
+  gitIn(iso.taskWorktree, [
+    '-c', 'user.email=uaos-factory@local', '-c', 'user.name=UAOS Factory', 'commit', '-m', 'task'
+  ]);
+  const preRebaseTaskHead = revParse(iso.taskWorktree, 'HEAD');
+
+  const newIntegHead = advanceIntegration(iso); // touches PRODUCT.txt — a different, non-conflicting file
+
+  let plan = planIntegration({
+    cwd: iso.integrationWorktree,
+    integrationBranch: iso.integrationBranch,
+    taskBranch: iso.taskBranch,
+    taskBaseCommit: iso.taskBaseCommit
+  });
+  assert.equal(plan.action, 'INTEGRATION_HEAD_ADVANCED');
+
+  const rebase = attemptSafeRebase(iso.taskWorktree, { taskBranch: iso.taskBranch, newBase: newIntegHead });
+  assert.equal(rebase.ok, true);
+  assert.equal(rebase.reason, 'REBASED_CLEAN');
+  assert.notEqual(rebase.newTaskHead, preRebaseTaskHead);
+  assert.ok(fs.existsSync(path.join(iso.taskWorktree, 'TASK_ONLY.txt')));
+  assert.ok(
+    fs.existsSync(path.join(iso.taskWorktree, 'PRODUCT.txt')),
+    'rebased task branch should now also contain the advanced product change'
+  );
+
+  // Recovery must actually unblock integration afterward, with the product change intact.
+  plan = planIntegration({
+    cwd: iso.integrationWorktree,
+    integrationBranch: iso.integrationBranch,
+    taskBranch: iso.taskBranch,
+    taskBaseCommit: rebase.taskBaseCommit
+  });
+  assert.equal(plan.action, 'FAST_FORWARD');
+  const exec = executeIntegrationPlan(iso.integrationWorktree, plan, {
+    integrationBranch: iso.integrationBranch,
+    taskBranch: iso.taskBranch
+  });
+  assert.equal(exec.ok, true);
+  assert.ok(
+    fs.existsSync(path.join(iso.integrationWorktree, 'TASK_ONLY.txt')),
+    'the task change must survive the recovered integration — no product work lost'
+  );
+});
+
+test('attemptSafeRebase aborts cleanly and preserves everything on a real conflict', () => {
+  const iso = createDisposableSyntheticRepos({ taskId: 'L-SYN-REBASE-CONFLICT' });
+  fs.writeFileSync(path.join(iso.taskWorktree, 'SAME_PATH.txt'), 'task version\n', 'utf8');
+  gitIn(iso.taskWorktree, ['add', 'SAME_PATH.txt']);
+  gitIn(iso.taskWorktree, [
+    '-c', 'user.email=uaos-factory@local', '-c', 'user.name=UAOS Factory', 'commit', '-m', 'task conflicting change'
+  ]);
+  const preRebaseTaskHead = revParse(iso.taskWorktree, 'HEAD');
+
+  fs.writeFileSync(path.join(iso.integrationWorktree, 'SAME_PATH.txt'), 'integration version\n', 'utf8');
+  gitIn(iso.integrationWorktree, ['add', 'SAME_PATH.txt']);
+  gitIn(iso.integrationWorktree, [
+    '-c', 'user.email=uaos-factory@local', '-c', 'user.name=UAOS Factory', 'commit', '-m', 'product conflicting change'
+  ]);
+  const newIntegHead = revParse(iso.integrationWorktree, 'HEAD');
+
+  const rebase = attemptSafeRebase(iso.taskWorktree, { taskBranch: iso.taskBranch, newBase: newIntegHead });
+  assert.equal(rebase.ok, false);
+  assert.equal(rebase.reason, 'REBASE_CONFLICT');
+
+  // Worktree must be back exactly where it was — no half-applied rebase, no lost commit, no force merge.
+  const status = gitIn(iso.taskWorktree, ['status', '--porcelain']);
+  assert.equal(status.stdout.trim(), '');
+  assert.equal(revParse(iso.taskWorktree, 'HEAD'), preRebaseTaskHead);
+  // Compare content ignoring line-ending normalization — Windows git (core.autocrlf) may
+  // rewrite LF to CRLF on checkout; that's a platform detail, not something this test asserts.
+  assert.equal(
+    fs.readFileSync(path.join(iso.taskWorktree, 'SAME_PATH.txt'), 'utf8').replace(/\r\n/g, '\n'),
+    'task version\n'
+  );
 });
 
 test('stale task base detected', () => {

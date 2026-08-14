@@ -5,9 +5,29 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { spawnSync } from 'node:child_process';
-import { ensureDir, nowIso } from './lib.mjs';
+import { ensureDir, nowIso, FACTORY_ROOT } from './lib.mjs';
 
-export const SYNTHETIC_REPO_ROOT = 'D:\\UAOS_AGENT_FACTORY_BUILD\\synthetic-repos';
+function resolveSyntheticRepoRoot() {
+  const envCandidates = [
+    process.env.UAOS_SYNTHETIC_REPO_ROOT,
+    process.env.UAOS_AGENT_FACTORY_BUILD
+  ].filter(Boolean);
+
+  for (const candidate of envCandidates) {
+    if (!candidate) continue;
+    const resolved = path.isAbsolute(candidate) ? candidate : path.resolve(FACTORY_ROOT, candidate);
+    return resolved;
+  }
+
+  const winDefault = 'D:\\UAOS_AGENT_FACTORY_BUILD\\synthetic-repos';
+  if (process.platform === 'win32' && fs.existsSync(winDefault)) {
+    return winDefault;
+  }
+
+  return path.join(FACTORY_ROOT, 'state', 'synthetic-repos');
+}
+
+export const SYNTHETIC_REPO_ROOT = resolveSyntheticRepoRoot();
 
 function git(cwd, args, timeout = 60000) {
   const r = spawnSync('git', args, { cwd, encoding: 'utf8', timeout, windowsHide: true });
@@ -183,6 +203,57 @@ export function executeIntegrationPlan(cwd, plan, { integrationBranch, taskBranc
     preserveTaskWorktree: plan.preserveTaskWorktree !== false,
     integrationHead: plan.integrationHead,
     taskBaseCommit: plan.taskBaseCommit
+  };
+}
+
+/**
+ * When planIntegration reports INTEGRATION_HEAD_ADVANCED, attempt a safe, non-destructive
+ * rebase of the task branch onto the new integration head, from inside the task's own
+ * worktree (where the branch is already checked out — never touched from another worktree,
+ * which git would refuse anyway). Only ever succeeds if the rebase applies with zero
+ * conflicts; any conflict is cleanly aborted and the worktree is left exactly as it was.
+ * Never force-pushes, never rewrites integrationBranch, never discards or reorders the
+ * task's own commits.
+ */
+export function attemptSafeRebase(taskWorktree, { taskBranch, newBase } = {}) {
+  if (!taskWorktree || !fs.existsSync(taskWorktree)) {
+    return { ok: false, reason: 'TASK_WORKTREE_MISSING' };
+  }
+  if (!newBase) {
+    return { ok: false, reason: 'NEW_BASE_MISSING' };
+  }
+  const currentBranch = git(taskWorktree, ['rev-parse', '--abbrev-ref', 'HEAD']);
+  if (!currentBranch.ok || (taskBranch && currentBranch.stdout !== taskBranch)) {
+    // Refuse rather than guess if the worktree isn't sitting on the branch we think it is —
+    // rebasing the wrong branch would silently rewrite the wrong history.
+    return { ok: false, reason: 'TASK_WORKTREE_NOT_ON_TASK_BRANCH', found: currentBranch.stdout };
+  }
+
+  const preRebaseHead = revParse(taskWorktree, 'HEAD');
+  if (preRebaseHead === newBase) {
+    return { ok: false, reason: 'ALREADY_AT_NEW_BASE', taskBaseCommit: newBase };
+  }
+
+  // A clean rebase still creates new commit objects internally (each replayed commit is
+  // re-committed onto the new base), so it needs an identity — same bot identity used for
+  // every other Factory-authored commit — rather than depending on ambient global git config.
+  const rebase = git(
+    taskWorktree,
+    ['-c', 'user.email=uaos-factory@local', '-c', 'user.name=UAOS Factory', 'rebase', newBase],
+    120000
+  );
+  if (!rebase.ok) {
+    git(taskWorktree, ['rebase', '--abort']);
+    return { ok: false, reason: 'REBASE_CONFLICT', stderr: rebase.stderr, preRebaseHead };
+  }
+
+  const newTaskHead = revParse(taskWorktree, 'HEAD');
+  return {
+    ok: true,
+    reason: 'REBASED_CLEAN',
+    preRebaseHead,
+    newTaskHead,
+    taskBaseCommit: newBase
   };
 }
 

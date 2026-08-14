@@ -9,7 +9,8 @@ import {
   runCmd,
   loadFactoryConfig,
   readJson,
-  isPidAlive
+  isPidAlive,
+  isSyntheticTaskId
 } from './lib.mjs';
 import { writePromptFiles } from './task-prompt.mjs';
 import { createTaskWorktree } from './worktree-manager.mjs';
@@ -27,7 +28,8 @@ import {
   executeIntegrationPlan,
   revParse,
   recordTaskBaseCommit,
-  tryRecreateIntegrationWorktree
+  tryRecreateIntegrationWorktree,
+  attemptSafeRebase
 } from './integration-planner.mjs';
 
 function parseArgs(argv) {
@@ -52,8 +54,8 @@ function runTimed(cmd, { cwd, timeoutMs = 300000, env = {} } = {}) {
     env: {
       ...process.env,
       ...env,
-      TEMP: 'D:\\UAOS_AGENT_FACTORY_BUILD\\tmp',
-      TMP: 'D:\\UAOS_AGENT_FACTORY_BUILD\\tmp'
+      TEMP: path.join(FACTORY_ROOT, 'state', 'tmp'),
+      TMP: path.join(FACTORY_ROOT, 'state', 'tmp')
     }
   });
   return {
@@ -116,7 +118,8 @@ export function integrateTaskBranch({
   integrationBranch = null,
   alreadyIntegrated = false,
   allowRecreate = true,
-  disposable = false
+  disposable = false,
+  taskWorktree = null
 } = {}) {
   const cfg = loadFactoryConfig();
   let integration = integrationWorktree || path.join(cfg.worktreeRoot, `${lane}-integration`);
@@ -169,14 +172,40 @@ export function integrateTaskBranch({
     }
   }
 
+  // The base moved out from under this task. Rather than giving up immediately (which — since
+  // taskBaseCommit is otherwise never refreshed — would fail identically on every future retry,
+  // per the documented systemic race), attempt one safe, git-verified rebase onto the new head
+  // in the task's own worktree. Only a zero-conflict rebase counts as safe; any conflict aborts
+  // cleanly and falls through to the unchanged rejection below. Disposable/synthetic runs never
+  // attempt this — they use disposable throwaway repos with their own simpler contract.
+  let rebaseAttempt = null;
+  if (plan.action === 'INTEGRATION_HEAD_ADVANCED' && taskWorktree && !disposable) {
+    rebaseAttempt = attemptSafeRebase(taskWorktree, {
+      taskBranch,
+      newBase: plan.integrationHead
+    });
+    if (rebaseAttempt.ok) {
+      plan = planIntegration({
+        cwd: integration,
+        integrationBranch: branch,
+        taskBranch,
+        taskBaseCommit: rebaseAttempt.taskBaseCommit,
+        alreadyIntegrated
+      });
+    }
+  }
+
   if (plan.action === 'INTEGRATION_HEAD_ADVANCED' || plan.action === 'DIVERGED') {
     return {
       ok: false,
       reason: plan.reason || plan.action,
       plan,
+      rebaseAttempt,
       preserveTaskWorktree: true,
       integrationStatus: 'NOT_INTEGRATED',
-      note: 'Task worktree preserved; rebase/replay required before integrate — never reset owner branches'
+      note: rebaseAttempt && !rebaseAttempt.ok
+        ? 'Safe rebase was attempted and conflicted; task worktree and commits preserved untouched — needs manual resolution, not a blind retry'
+        : 'Task worktree preserved; rebase/replay required before integrate — never reset owner branches'
     };
   }
 
@@ -187,6 +216,7 @@ export function integrateTaskBranch({
   return {
     ...executed,
     plan,
+    rebaseAttempt,
     integrationWorktree: integration,
     integrationBranch: branch,
     integrationStatus: executed.ok ? 'INTEGRATED' : 'NOT_INTEGRATED'
@@ -230,8 +260,7 @@ export function isNoopPassAllowed(task) {
   if (!task || task.localSyntheticAction !== 'noop-pass') return false;
   if (task.allowNoOpPass === true) return true;
   if (task.synthetic === true || task.testOnly === true) return true;
-  const id = String(task.id || '');
-  if (id.includes('-SYN-') || /-SYN$/i.test(id) || id.startsWith('L-SYN') || id.startsWith('S-SYN') || id.startsWith('A-SYN')) {
+  if (isSyntheticTaskId(task.id)) {
     return true;
   }
   return false;
@@ -352,7 +381,7 @@ export async function executeGenericTask(task, opts = {}) {
     );
   ensureDir(evidenceDir);
   ensureDir(artifactDir);
-  ensureDir('D:\\UAOS_AGENT_FACTORY_BUILD\\tmp');
+  ensureDir(path.join(FACTORY_ROOT, 'state', 'tmp'));
 
   const eligibility = isTaskEligible(task, { lanePaused: opts.lanePaused });
   if (!eligibility.ok) {
@@ -479,8 +508,8 @@ export async function executeGenericTask(task, opts = {}) {
       timeout: (task.timeoutMinutes || 90) * 60 * 1000,
       env: {
         ...process.env,
-        TEMP: 'D:\\UAOS_AGENT_FACTORY_BUILD\\tmp',
-        TMP: 'D:\\UAOS_AGENT_FACTORY_BUILD\\tmp'
+        TEMP: path.join(FACTORY_ROOT, 'state', 'tmp'),
+        TMP: path.join(FACTORY_ROOT, 'state', 'tmp')
       },
       windowsHide: true
     });
@@ -576,7 +605,8 @@ export async function executeGenericTask(task, opts = {}) {
         integrationBranch,
         alreadyIntegrated: Boolean(writerResult.noOp && task.allowNoOpIntegrateUnchanged),
         disposable: Boolean(disposable),
-        allowRecreate: !disposable
+        allowRecreate: !disposable,
+        taskWorktree: worktree
       });
 
       // INTEGRATION_WT_MISSING and any other integrate failure must NEVER mark PASS/integrated.
