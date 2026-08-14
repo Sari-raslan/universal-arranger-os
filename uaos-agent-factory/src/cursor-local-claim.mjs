@@ -8,7 +8,9 @@ import {
   atomicWriteJson,
   readJson,
   runCmd,
-  loadFactoryConfig
+  isPidAlive,
+  loadFactoryConfig,
+  CURSOR_LOCAL_HEARTBEAT_STALE_MS
 } from './lib.mjs';
 import { getTask, updateTask } from './queue-manager.mjs';
 import { worktreePathFor } from './worktree-manager.mjs';
@@ -23,6 +25,7 @@ import {
 import { writeMasterStatus } from './reporter.mjs';
 
 const CLAIMS_PATH = path.join(FACTORY_ROOT, 'state', 'cursor-local-claims.json');
+const CLAIM_LOCK_DIR = path.join(FACTORY_ROOT, 'state', 'claim-locks');
 
 export const CURSOR_LOCAL_EXECUTOR = 'cursor-local';
 export const CURSOR_LOCAL_MODE = 'interactive_cursor_agent';
@@ -41,6 +44,13 @@ function saveClaims(data) {
 
 function claimKey(lane, taskId) {
   return `${lane}:${taskId}`;
+}
+
+/**
+ * Every claim mutation must prove ownership with the current claim ID.
+ */
+function ownershipOk(task, claimId) {
+  return claimId != null && task.claimId === claimId;
 }
 
 export function isWriterUnavailabilityBlocker(task) {
@@ -126,7 +136,7 @@ export function ensureTaskWorktreeFromIntegration(lane, taskId) {
  * Atomic claim for interactive Cursor local executor.
  * writerPid is always null — no fake background process.
  */
-export function claimTaskCursorLocal(lane, taskId, { force = false } = {}) {
+function claimTaskCursorLocalUnlocked(lane, taskId, { force = false } = {}) {
   const task = getTask(lane, taskId);
   const gate = canClaimWithCursorLocal(task);
   if (!gate.ok && !(force && (gate.reason === 'ALREADY_CLAIMED' || task?.status === 'interrupted'))) {
@@ -166,10 +176,8 @@ export function claimTaskCursorLocal(lane, taskId, { force = false } = {}) {
     `[claim] ${claimId} lane=${lane} task=${taskId} mode=${CURSOR_LOCAL_MODE} pid=n/a at=${claimedAt}\n`
   );
 
-  const artifactDir =
-    lane === 'library'
-      ? `D:\\UAOS_AGENT_FACTORY_ARTIFACTS\\library\\${taskId}`
-      : `D:\\UAOS_AGENT_FACTORY_ARTIFACTS\\${lane}\\${taskId}`;
+  const artifactRoot = loadFactoryConfig()?.artifactRoot || path.join(FACTORY_ROOT, 'state', 'artifacts');
+  const artifactDir = path.join(artifactRoot, lane === 'library' ? 'library' : lane, taskId);
   ensureDir(artifactDir);
 
   const record = {
@@ -181,6 +189,7 @@ export function claimTaskCursorLocal(lane, taskId, { force = false } = {}) {
     executionMode: CURSOR_LOCAL_MODE,
     claimId,
     claimedAt,
+    heartbeatAt: claimedAt,
     taskWorktree: wtInfo.worktreePath,
     taskBranch: wtInfo.branch,
     logFile,
@@ -209,7 +218,8 @@ export function claimTaskCursorLocal(lane, taskId, { force = false } = {}) {
     evidenceDir,
     heavy: true,
     status: 'running',
-    startedAt: claimedAt
+    startedAt: claimedAt,
+    heartbeatAt: claimedAt
   };
   saveActiveWriters(active);
 
@@ -247,11 +257,87 @@ export function claimTaskCursorLocal(lane, taskId, { force = false } = {}) {
   return { ok: true, task: updated, claim: record };
 }
 
-export function markClaimPhase(lane, taskId, phase, extra = {}) {
+function acquireClaimLock(lane) {
+  ensureDir(CLAIM_LOCK_DIR);
+  const lockPath = path.join(CLAIM_LOCK_DIR, lane + '.lock');
+  for (let attempt = 0; attempt < 2; attempt += 1) {
+    let fd;
+    try {
+      fd = fs.openSync(lockPath, 'wx');
+      fs.writeFileSync(fd, JSON.stringify({ pid: process.pid, lane, acquiredAt: nowIso() }));
+      return {
+        ok: true,
+        release() {
+          try { fs.closeSync(fd); } catch { /* already closed */ }
+          try { fs.unlinkSync(lockPath); } catch { /* best effort */ }
+        }
+      };
+    } catch (err) {
+      if (fd != null) try { fs.closeSync(fd); } catch { /* ignore */ }
+      if (err?.code !== 'EEXIST') return { ok: false, reason: 'CLAIM_LOCK_ERROR', error: err.message };
+      const owner = readJson(lockPath, {});
+      if (owner.pid && isPidAlive(owner.pid)) {
+        return { ok: false, reason: 'ATOMIC_CLAIM_LOCKED', owner };
+      }
+      try {
+        fs.renameSync(lockPath, lockPath + '.stale.' + Date.now());
+      } catch {
+        return { ok: false, reason: 'ATOMIC_CLAIM_LOCKED', owner };
+      }
+    }
+  }
+  return { ok: false, reason: 'ATOMIC_CLAIM_LOCKED' };
+}
+
+export function claimTaskCursorLocal(lane, taskId, options = {}) {
+  const lock = acquireClaimLock(lane);
+  if (!lock.ok) return lock;
+  try {
+    return claimTaskCursorLocalUnlocked(lane, taskId, options);
+  } finally {
+    lock.release();
+  }
+}
+/**
+ * Bump the liveness heartbeat for an active cursor-local claim so dispatch's
+ * lane-busy / stale-recovery checks (dispatch.mjs isWriterEntryActive) keep
+ * seeing this no-pid interactive writer as active.
+ */
+export function heartbeatClaim(lane, taskId, claimId = null) {
   const task = getTask(lane, taskId);
   if (!task || task.claimId == null) {
     return { ok: false, reason: 'NO_ACTIVE_CLAIM' };
   }
+  if (!ownershipOk(task, claimId)) {
+    return { ok: false, reason: 'CLAIM_ID_MISMATCH', currentClaimId: task.claimId };
+  }
+  const at = nowIso();
+  const key = claimKey(lane, taskId);
+  const claims = loadClaims();
+  if (claims.claims[key]) {
+    claims.claims[key].heartbeatAt = at;
+    saveClaims(claims);
+  }
+  const active = loadActiveWriters();
+  if (active.writers?.[lane]?.taskId === taskId) {
+    active.writers[lane].heartbeatAt = at;
+    if (active.writers[lane].status === 'stale_unconfirmed') {
+      active.writers[lane].status = 'running';
+    }
+    saveActiveWriters(active);
+  }
+  return { ok: true, heartbeatAt: at };
+}
+
+export function markClaimPhase(lane, taskId, phase, extra = {}, { claimId = null } = {}) {
+  const task = getTask(lane, taskId);
+  if (!task || task.claimId == null) {
+    return { ok: false, reason: 'NO_ACTIVE_CLAIM' };
+  }
+  if (!ownershipOk(task, claimId)) {
+    return { ok: false, reason: 'CLAIM_ID_MISMATCH', currentClaimId: task.claimId };
+  }
+  heartbeatClaim(lane, taskId, task.claimId);
   const status =
     phase === 'testing' ? 'testing'
       : phase === 'reviewing' ? 'reviewing'
@@ -273,9 +359,18 @@ export function markClaimPhase(lane, taskId, phase, extra = {}) {
   };
 }
 
-export function completeClaimIntegrated(lane, taskId, { commit, testsPass = true, reviews = null } = {}) {
+export function completeClaimIntegrated(lane, taskId, { commit, testsPass = false, reviews = null, claimId = null } = {}) {
   const task = getTask(lane, taskId);
   if (!task) return { ok: false, reason: 'NO_TASK' };
+  if (!ownershipOk(task, claimId)) {
+    return { ok: false, reason: 'CLAIM_ID_MISMATCH', currentClaimId: task.claimId };
+  }
+  // Execution success is a hard prerequisite for integration — never assumed. A caller must
+  // explicitly assert testsPass:true; omitting it (or passing anything falsy) is treated as
+  // failure, not success, so a failed/unproven writer run can never be recorded as PASS/integrated.
+  if (testsPass !== true) {
+    return { ok: false, reason: 'TESTS_NOT_PASSED', hint: 'completeClaimIntegrated requires an explicit testsPass:true from the caller.' };
+  }
   const key = claimKey(lane, taskId);
   const claims = loadClaims();
   if (claims.claims[key]) {
@@ -311,9 +406,12 @@ export function completeClaimIntegrated(lane, taskId, { commit, testsPass = true
   return { ok: true, task: updated };
 }
 
-export function failClaim(lane, taskId, reason, evidence = {}) {
+export function failClaim(lane, taskId, reason, evidence = {}, { claimId = null } = {}) {
   const task = getTask(lane, taskId);
   if (!task) return { ok: false, reason: 'NO_TASK' };
+  if (!ownershipOk(task, claimId)) {
+    return { ok: false, reason: 'CLAIM_ID_MISMATCH', currentClaimId: task.claimId };
+  }
   const key = claimKey(lane, taskId);
   const claims = loadClaims();
   if (claims.claims[key]) {
@@ -346,9 +444,12 @@ export function failClaim(lane, taskId, reason, evidence = {}) {
   return { ok: true, task: updated };
 }
 
-export function interruptClaim(lane, taskId) {
+export function interruptClaim(lane, taskId, { claimId = null } = {}) {
   const task = getTask(lane, taskId);
   if (!task) return { ok: false, reason: 'NO_TASK' };
+  if (!ownershipOk(task, claimId)) {
+    return { ok: false, reason: 'CLAIM_ID_MISMATCH', currentClaimId: task.claimId };
+  }
   const key = claimKey(lane, taskId);
   const claims = loadClaims();
   if (claims.claims[key]) {
@@ -383,4 +484,33 @@ export function recoverInterruptedClaim(lane, taskId) {
     return { ok: false, reason: 'NOT_INTERRUPTED' };
   }
   return claimTaskCursorLocal(lane, taskId, { force: true });
+}
+
+/**
+ * System-level recovery for cursor-local claims whose interactive session
+ * has gone silent (no heartbeat) for longer than CURSOR_LOCAL_HEARTBEAT_STALE_MS.
+ * Mirrors reconcileWriterExits' dead-pid recovery for headless writers, but
+ * for the no-pid interactive lane — otherwise a hung/abandoned claim blocks
+ * its lane forever with nothing to detect it. Intended to run every
+ * supervisor tick alongside reconcileWriterExits().
+ */
+export function reconcileStaleClaims() {
+  const claims = loadClaims();
+  const now = Date.now();
+  const changes = [];
+  for (const claim of Object.values(claims.claims || {})) {
+    if (!claim || claim.status !== 'running') continue;
+    const heartbeatAt = claim.heartbeatAt || claim.claimedAt;
+    const age = heartbeatAt ? now - new Date(heartbeatAt).getTime() : Infinity;
+    if (age >= 0 && age < CURSOR_LOCAL_HEARTBEAT_STALE_MS) continue;
+    const res = failClaim(
+      claim.lane,
+      claim.taskId,
+      'CURSOR_LOCAL_CLAIM_STALE_HEARTBEAT',
+      { lastHeartbeatAt: heartbeatAt || null, ageMs: Number.isFinite(age) ? age : null },
+      { claimId: claim.claimId }
+    );
+    changes.push({ lane: claim.lane, taskId: claim.taskId, ok: res.ok });
+  }
+  return changes;
 }
