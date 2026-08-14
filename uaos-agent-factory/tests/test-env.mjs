@@ -62,3 +62,47 @@ export function cleanupIsolatedFactoryRoot() {
     /* best-effort - a locked handle on Windows should not fail the suite */
   }
 }
+
+const ENV_VAR_BY_LANE = {
+  singy: 'UAOS_SINGY_REPO_ROOT',
+  arranger: 'UAOS_ARRANGER_REPO_ROOT',
+  library: 'UAOS_LIBRARY_REPO_ROOT'
+};
+
+/**
+ * Full disposable lane environment: a real, local-only git repo (never the actual
+ * uaos-real-product/Singy checkout) standing in for the lane, wired up exactly the way
+ * production wires a real one - env-var override (highest precedence in
+ * resolveLaneRepository()) plus a real linked integration worktree, created through the
+ * same createIntegrationWorktree() production code dispatch.mjs/generic-runner.mjs use,
+ * not a hand-rolled substitute. Call this before any test that exercises claim/worktree/
+ * integration code for the given lane, so that code never has a reason to reach past this
+ * disposable repo into the real one - resolveLaneRepository()'s env-var tier wins before
+ * factory.local.json or the committed config are even consulted.
+ */
+export async function isolateLaneRepo(lane, opts = {}) {
+  const envVar = ENV_VAR_BY_LANE[lane];
+  if (!envVar) throw new Error(`isolateLaneRepo: unsupported lane ${JSON.stringify(lane)}`);
+
+  const { createLaneRepoFixture } = await import('./helpers/lane-repo-fixture.mjs');
+  const fixture = createLaneRepoFixture(lane, { dirPrefix: 'iso-', ...opts });
+  process.env[envVar] = fixture.root;
+
+  const { createIntegrationWorktree } = await import('../src/worktree-manager.mjs');
+  const integration = createIntegrationWorktree(lane);
+  if (!integration.ok) {
+    throw new Error(
+      `isolateLaneRepo: failed to create the disposable integration worktree for ${lane}: ${JSON.stringify(integration)}`
+    );
+  }
+
+  return { lane, fixture, integration };
+}
+
+/** Undo isolateLaneRepo()'s env-var override. Not required for correctness (the temp repo
+ * and its worktree get torn down with the rest of TEST_FACTORY_ROOT/cleanupLaneRepoFixtures
+ * regardless), but leaves process.env clean if other code in the same process checks it. */
+export function unisolateLaneRepo(lane) {
+  const envVar = ENV_VAR_BY_LANE[lane];
+  if (envVar) delete process.env[envVar];
+}

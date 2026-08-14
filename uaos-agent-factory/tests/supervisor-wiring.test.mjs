@@ -1,4 +1,5 @@
-import test, { before } from 'node:test';
+import './test-env.mjs';
+import test, { before, after } from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
@@ -10,14 +11,31 @@ import {
   reconcileStaleClaims
 } from '../src/cursor-local-claim.mjs';
 import { loadActiveWriters, saveActiveWriters } from '../src/dispatch.mjs';
+import { isolateLaneRepo, cleanupIsolatedFactoryRoot, REAL_FACTORY_ROOT } from './test-env.mjs';
+import { cleanupLaneRepoFixtures } from './helpers/lane-repo-fixture.mjs';
 
 // Dedicated fixture on the singy lane specifically — every other test file that exercises
 // claimTaskCursorLocal uses the library lane, and acquireClaimLock() is scoped per-lane, not
 // per-task-ID, so a distinct fixture ID alone doesn't avoid contention on the same lane's lock
 // under Node's default parallel test execution. Singy has no other claim-lock traffic at all.
+//
+// This is a disposable local git repo standing in for Singy for this test only (via
+// isolateLaneRepo's env-var override) - nothing here reads, claims, or reasons about the real
+// Singy checkout or its live externally-owned lane status; that's a separate, unrelated
+// concern (the 24x7 controller's own EXTERNAL_OWNERSHIP policy), not something a local unit
+// test touches at all.
 const LANE = 'singy';
 const SYN = 'S-SYN-SUPERVISOR';
 const CLAIMS_PATH = path.join(FACTORY_ROOT, 'state', 'cursor-local-claims.json');
+
+before(async () => {
+  await isolateLaneRepo(LANE);
+});
+
+after(() => {
+  cleanupLaneRepoFixtures();
+  cleanupIsolatedFactoryRoot();
+});
 
 before(() => {
   const q = loadQueue(LANE);
@@ -131,7 +149,10 @@ test('reconcileStaleClaims leaves a freshly-heartbeated claim untouched', () => 
 });
 
 test('supervisor.mjs wires reconcileStaleClaims into the real tick, before any dispatch decision', () => {
-  const src = fs.readFileSync(path.join(FACTORY_ROOT, 'src', 'supervisor.mjs'), 'utf8');
+  // This reads the actual committed source's text for a structural check — not something to
+  // run — so it deliberately uses REAL_FACTORY_ROOT, not the isolated FACTORY_ROOT, which has
+  // no src/ directory at all.
+  const src = fs.readFileSync(path.join(REAL_FACTORY_ROOT, 'src', 'supervisor.mjs'), 'utf8');
 
   assert.match(
     src,

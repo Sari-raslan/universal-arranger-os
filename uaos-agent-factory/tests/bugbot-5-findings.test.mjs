@@ -1,3 +1,4 @@
+import './test-env.mjs';
 /**
  * Focused regression tests for the five Bugbot factory findings.
  * Synthetic only — never mutates real product integration branches.

@@ -1,4 +1,5 @@
-import test, { before } from 'node:test';
+import './test-env.mjs';
+import test, { before, after } from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
@@ -16,12 +17,27 @@ import {
   CURSOR_LOCAL_MODE
 } from '../src/cursor-local-claim.mjs';
 import { loadActiveWriters, saveActiveWriters, reconcileWriterExits } from '../src/dispatch.mjs';
+import { isolateLaneRepo, cleanupIsolatedFactoryRoot } from './test-env.mjs';
+import { cleanupLaneRepoFixtures } from './helpers/lane-repo-fixture.mjs';
 
 const SYN = 'L-SYN-DEP';
 
 function restoreSyn(patch) {
   updateTask('library', SYN, patch);
 }
+
+// Every claim/worktree operation this file exercises must run against a disposable local
+// repo, never the real uaos-real-product checkout - claimTaskCursorLocal() ->
+// ensureTaskWorktreeFromIntegration() reads the real integration worktree's tip and creates
+// a real branch/worktree there unless resolveLaneRepository('library') is redirected first.
+before(async () => {
+  await isolateLaneRepo('library');
+});
+
+after(() => {
+  cleanupLaneRepoFixtures();
+  cleanupIsolatedFactoryRoot();
+});
 
 // Safety net: this fixture has no real isolation of its own (it's a live entry in the
 // production-shaped queue file, per lib.mjs's isSyntheticTaskId), so a prior aborted run —
