@@ -6,7 +6,8 @@ import {
   readJson,
   ensureDir,
   nowIso,
-  containsForbiddenCommand
+  containsForbiddenCommand,
+  isSyntheticTaskId
 } from './lib.mjs';
 import { canAttemptTask, isTerminalSuccessStatus } from './retry-policy.mjs';
 
@@ -157,6 +158,7 @@ export function dependenciesSatisfied(task, queue) {
 export function nextRunnableTask(lane) {
   const q = loadQueue(lane);
   const candidates = q.tasks
+    .filter((t) => !isSyntheticTaskId(t.id))
     .filter((t) => ['pending', 'ready', 'retry'].includes(t.status))
     .filter((t) => !isTerminalSuccessStatus(t.status))
     .filter((t) => dependenciesSatisfied(t, q))

@@ -5,7 +5,8 @@ import {
   atomicWriteJson,
   readJson,
   nowIso,
-  loadFactoryConfig
+  loadFactoryConfig,
+  isSyntheticTaskId
 } from './lib.mjs';
 import { loadQueue } from './queue-manager.mjs';
 import { evaluateResources } from './resource-guard.mjs';
@@ -16,14 +17,17 @@ export function writeMasterStatus() {
   const laneStatus = {};
   for (const lane of lanes) {
     const q = loadQueue(lane);
+    // Synthetic/audit-fixture tasks (e.g. L-SYN-DEP) are test residue, not production work —
+    // they must never be surfaced as "the current task" or counted toward real lane progress.
+    const productionTasks = q.tasks.filter((t) => !isSyntheticTaskId(t.id));
     const current =
-      q.tasks.find((t) =>
+      productionTasks.find((t) =>
         ['running', 'scouting', 'testing', 'reviewing', 'waiting_human', 'interrupted'].includes(t.status)
       ) ||
-      q.tasks.find((t) => ['pending', 'ready', 'retry'].includes(t.status)) ||
+      productionTasks.find((t) => ['pending', 'ready', 'retry'].includes(t.status)) ||
       null;
-    const passed = q.tasks.filter((t) => ['passed', 'integrated'].includes(t.status)).length;
-    const blocked = q.tasks.filter((t) => t.status === 'blocked' || t.status === 'waiting_human');
+    const passed = productionTasks.filter((t) => ['passed', 'integrated'].includes(t.status)).length;
+    const blocked = productionTasks.filter((t) => t.status === 'blocked' || t.status === 'waiting_human');
     laneStatus[lane] = {
       productName: cfg.lanes[lane].productName,
       repoRoot: cfg.lanes[lane].repoRoot,
@@ -39,7 +43,7 @@ export function writeMasterStatus() {
       claimId: current?.claimId || current?.result?.claimId || null,
       logFile: current?.result?.logFile || null,
       passed,
-      total: q.tasks.length,
+      total: productionTasks.length,
       blockers: blocked.map((t) => ({
         id: t.id,
         status: t.status,

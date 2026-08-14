@@ -9,6 +9,27 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 export const FACTORY_ROOT = path.resolve(__dirname, '..');
 export const CONFIG_PATH = path.join(FACTORY_ROOT, 'config', 'factory.json');
 
+/** No-pid (interactive) writers must heartbeat within this window to count as active. */
+export const CURSOR_LOCAL_HEARTBEAT_STALE_MS = 30 * 60 * 1000;
+
+/**
+ * Synthetic/audit-fixture task IDs (e.g. L-SYN-DEP, used by cursor-local-claim.test.mjs as a
+ * live claim/rebase sandbox) must never be treated as real production work — not dispatched
+ * by the scheduler, not surfaced as "current task" in status reporting, not counted in
+ * production task totals. Single source of truth for the ID convention already established by
+ * generic-runner.mjs's synthetic-noop handling.
+ */
+export function isSyntheticTaskId(id) {
+  const s = String(id || '');
+  return (
+    s.includes('-SYN-') ||
+    /-SYN$/i.test(s) ||
+    s.startsWith('L-SYN') ||
+    s.startsWith('S-SYN') ||
+    s.startsWith('A-SYN')
+  );
+}
+
 /** Cache disk free reads so supervisor ticks never spam child processes. */
 const DISK_FREE_CACHE = new Map();
 const DISK_FREE_CACHE_MS = 30_000;
@@ -129,6 +150,30 @@ export function freeDiskGb(driveLetter, { bypassCache = false } = {}) {
   }
 
   if (value == null && process.platform === 'win32') {
+    const fallbackRoots = [
+      `${key}:\\`,
+      process.cwd(),
+      FACTORY_ROOT,
+      path.join(FACTORY_ROOT, 'state')
+    ];
+
+    for (const root of fallbackRoots) {
+      try {
+        const s = fs.statSync(root);
+        if (s && s.isDirectory()) {
+          const directory = fs.statfsSync ? fs.statfsSync(root) : null;
+          if (directory) {
+            value = Number(((Number(directory.bavail) * Number(directory.bsize)) / 1024 ** 3).toFixed(2));
+            break;
+          }
+        }
+      } catch {
+        // ignore and continue to next fallback root
+      }
+    }
+  }
+
+  if (value == null) {
     try {
       const out = execFileSync(
         'powershell.exe',
