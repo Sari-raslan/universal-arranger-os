@@ -10,6 +10,7 @@ import {
 } from './lib.mjs';
 import { loadQueue } from './queue-manager.mjs';
 import { evaluateResources } from './resource-guard.mjs';
+import { getLaneRepositoryDiagnostics } from './lane-repositories.mjs';
 
 export function writeMasterStatus() {
   const cfg = loadFactoryConfig();
@@ -17,6 +18,7 @@ export function writeMasterStatus() {
   const laneStatus = {};
   for (const lane of lanes) {
     const q = loadQueue(lane);
+    const repoDiagnostics = getLaneRepositoryDiagnostics(lane);
     // Synthetic/audit-fixture tasks (e.g. L-SYN-DEP) are test residue, not production work —
     // they must never be surfaced as "the current task" or counted toward real lane progress.
     const productionTasks = q.tasks.filter((t) => !isSyntheticTaskId(t.id));
@@ -30,7 +32,8 @@ export function writeMasterStatus() {
     const blocked = productionTasks.filter((t) => t.status === 'blocked' || t.status === 'waiting_human');
     laneStatus[lane] = {
       productName: cfg.lanes[lane].productName,
-      repoRoot: cfg.lanes[lane].repoRoot,
+      repoRoot: repoDiagnostics.path,
+      repoRepositoryStatus: repoDiagnostics.ok ? 'RESOLVED' : repoDiagnostics.reason,
       currentTask: current ? current.id : null,
       currentTitle: current ? current.title : null,
       currentStatus: current ? current.status : 'idle',

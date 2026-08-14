@@ -132,7 +132,9 @@ export function freeDiskGb(driveLetter, { bypassCache = false } = {}) {
   const key = String(driveLetter || '')
     .replace(/:$/, '')
     .toUpperCase();
-  if (!key) return null;
+  // Single letter only - key is interpolated into a PowerShell -Command
+  // string below, so anything else must be rejected rather than passed through.
+  if (!/^[A-Z]$/.test(key)) return null;
   const cached = DISK_FREE_CACHE.get(key);
   if (!bypassCache && cached && Date.now() - cached.at < DISK_FREE_CACHE_MS) {
     return cached.value;
@@ -184,7 +186,7 @@ export function freeDiskGb(driveLetter, { bypassCache = false } = {}) {
           '-ExecutionPolicy',
           'Bypass',
           '-Command',
-          `(Get-PSDrive ${key}).Free`
+          `(Get-PSDrive ${key} -ErrorAction Stop).Free`
         ],
         {
           encoding: 'utf8',
@@ -193,7 +195,11 @@ export function freeDiskGb(driveLetter, { bypassCache = false } = {}) {
           shell: false
         }
       ).trim();
-      value = Number((Number(out) / 1024 ** 3).toFixed(2));
+      // A drive PowerShell can't find prints its error to stderr but may
+      // still exit 0 with empty stdout - Number('') is 0, not NaN, so an
+      // absent drive must be checked explicitly rather than trusted as free space.
+      const parsed = out === '' ? NaN : Number(out);
+      value = Number.isFinite(parsed) ? Number((parsed / 1024 ** 3).toFixed(2)) : null;
     } catch {
       value = null;
     }
@@ -275,6 +281,19 @@ export function listFilesRecursive(root, { max = 200, filter } = {}) {
     }
   }
   return out;
+}
+
+/** Walk upward from startDir to find the nearest enclosing git repository root
+ * (the first directory containing a .git entry) - portable replacement for
+ * assuming FACTORY_ROOT's parent is always the enclosing repo's own root. */
+export function findGitRoot(startDir = FACTORY_ROOT) {
+  let dir = path.resolve(startDir);
+  for (;;) {
+    if (fs.existsSync(path.join(dir, '.git'))) return dir;
+    const parent = path.dirname(dir);
+    if (parent === dir) return null;
+    dir = parent;
+  }
 }
 
 export function spawnDetached(command, args, { cwd, logFile, pidFile } = {}) {

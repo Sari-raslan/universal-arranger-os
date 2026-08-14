@@ -14,6 +14,7 @@ import {
 } from './lib.mjs';
 import { updateTask, ensureEvidenceDir } from './queue-manager.mjs';
 import { createIntegrationWorktree } from './worktree-manager.mjs';
+import { resolveLaneRepository } from './lane-repositories.mjs';
 
 function findNewest(files) {
   return files
@@ -24,10 +25,31 @@ function findNewest(files) {
 export function discoverLane(lane) {
   const cfg = loadFactoryConfig();
   const laneCfg = cfg.lanes[lane];
-  const info = gitInfo(laneCfg.repoRoot);
-  const pkgPath = path.join(laneCfg.repoRoot, 'package.json');
+  const resolved = resolveLaneRepository(lane);
+
+  if (!resolved.ok) {
+    const discovery = {
+      lane,
+      discoveredAt: nowIso(),
+      productName: laneCfg.productName,
+      repoRoot: null,
+      git: { exists: false },
+      package: null,
+      seals: [],
+      projectState: null,
+      tasksJson: null,
+      firstBlocker: resolved.reason
+    };
+    const out = path.join(FACTORY_ROOT, 'reports', `${lane.toUpperCase()}_DISCOVERY.json`);
+    atomicWriteJson(out, discovery);
+    return discovery;
+  }
+
+  const root = resolved.path;
+  const info = gitInfo(root);
+  const pkgPath = path.join(root, 'package.json');
   const pkg = fs.existsSync(pkgPath) ? readJson(pkgPath) : null;
-  const seals = listFilesRecursive(laneCfg.repoRoot, {
+  const seals = listFilesRecursive(root, {
     max: 50,
     filter: (f) => /FINAL_SEAL\.json$/i.test(f) || /acceptance-report\.json$/i.test(f) || /FINAL_REPORT\.txt$/i.test(f)
   });
@@ -35,17 +57,17 @@ export function discoverLane(lane) {
     lane,
     discoveredAt: nowIso(),
     productName: laneCfg.productName,
-    repoRoot: laneCfg.repoRoot,
+    repoRoot: root,
     git: info,
     package: pkg
       ? { name: pkg.name, version: pkg.version, scripts: Object.keys(pkg.scripts || {}) }
       : null,
     seals: findNewest(seals).slice(0, 15),
-    projectState: fs.existsSync(path.join(laneCfg.repoRoot, 'PROJECT_STATE.md'))
-      ? fs.readFileSync(path.join(laneCfg.repoRoot, 'PROJECT_STATE.md'), 'utf8').slice(0, 4000)
+    projectState: fs.existsSync(path.join(root, 'PROJECT_STATE.md'))
+      ? fs.readFileSync(path.join(root, 'PROJECT_STATE.md'), 'utf8').slice(0, 4000)
       : null,
-    tasksJson: fs.existsSync(path.join(laneCfg.repoRoot, 'TASKS.json'))
-      ? readJson(path.join(laneCfg.repoRoot, 'TASKS.json'))
+    tasksJson: fs.existsSync(path.join(root, 'TASKS.json'))
+      ? readJson(path.join(root, 'TASKS.json'))
       : null,
     firstBlocker: null
   };
@@ -65,8 +87,13 @@ export function recoverSingyS001() {
   updateTask(lane, taskId, { status: 'running', startedAt: nowIso() });
   const evidenceDir = ensureEvidenceDir({ lane, id: taskId, evidenceDir: path.join(FACTORY_ROOT, 'logs', lane, taskId) });
   const discovery = discoverLane(lane);
-  const cfg = loadFactoryConfig();
-  const root = cfg.lanes.singy.repoRoot;
+  if (discovery.firstBlocker && !discovery.repoRoot) {
+    const result = { taskId, lane, completedAt: nowIso(), firstBlocker: discovery.firstBlocker };
+    atomicWriteJson(path.join(evidenceDir, 'S-001-result.json'), result);
+    updateTask(lane, taskId, { status: 'blocked', blockingReason: discovery.firstBlocker, result });
+    return result;
+  }
+  const root = discovery.repoRoot;
 
   const sealFiles = listFilesRecursive(root, {
     max: 80,
@@ -130,8 +157,13 @@ export function recoverArrangerA001() {
   updateTask(lane, taskId, { status: 'running', startedAt: nowIso() });
   const evidenceDir = ensureEvidenceDir({ lane, id: taskId, evidenceDir: path.join(FACTORY_ROOT, 'logs', lane, taskId) });
   const discovery = discoverLane(lane);
-  const cfg = loadFactoryConfig();
-  const root = cfg.lanes.arranger.repoRoot;
+  if (discovery.firstBlocker && !discovery.repoRoot) {
+    const result = { taskId, lane, completedAt: nowIso(), firstBlocker: discovery.firstBlocker };
+    atomicWriteJson(path.join(evidenceDir, 'A-001-result.json'), result);
+    updateTask(lane, taskId, { status: 'blocked', blockingReason: discovery.firstBlocker, result });
+    return result;
+  }
+  const root = discovery.repoRoot;
 
   const phaseReports = listFilesRecursive(path.join(root, 'reports'), {
     max: 80,
@@ -180,8 +212,13 @@ export function recoverLibraryL001() {
   updateTask(lane, taskId, { status: 'running', startedAt: nowIso() });
   const evidenceDir = ensureEvidenceDir({ lane, id: taskId, evidenceDir: path.join(FACTORY_ROOT, 'logs', lane, taskId) });
   const discovery = discoverLane(lane);
-  const cfg = loadFactoryConfig();
-  const root = cfg.lanes.library.repoRoot;
+  if (discovery.firstBlocker && !discovery.repoRoot) {
+    const result = { taskId, lane, completedAt: nowIso(), firstBlocker: discovery.firstBlocker };
+    atomicWriteJson(path.join(evidenceDir, 'L-001-result.json'), result);
+    updateTask(lane, taskId, { status: 'blocked', blockingReason: discovery.firstBlocker, result });
+    return result;
+  }
+  const root = discovery.repoRoot;
 
   const p0Scripts = ['test:p0-005', 'test:p0-006', 'test:p0-007'];
   const p0Results = {};

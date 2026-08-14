@@ -10,7 +10,8 @@ import {
   spawnDetached,
   isPidAlive,
   freeRamGb,
-  freeDiskGb
+  freeDiskGb,
+  findGitRoot
 } from './lib.mjs';
 import { evaluateResources } from './resource-guard.mjs';
 import {
@@ -25,6 +26,7 @@ import { createIntegrationWorktree } from './worktree-manager.mjs';
 import { availableAgents, unavailableAgents } from './agent-adapters.mjs';
 import { runSupervisorLoop } from './supervisor.mjs';
 import { interruptRunningTasks } from './queue-manager.mjs';
+import { getLaneRepositoryDiagnostics } from './lane-repositories.mjs';
 
 const cmd = process.argv[2] || 'status';
 
@@ -34,6 +36,14 @@ function writePreflight() {
   const ram = freeRamGb();
   const disks = { C: freeDiskGb('C'), D: freeDiskGb('D'), E: freeDiskGb('E') };
   const resources = evaluateResources();
+  // A lane repository being unconfigured/invalid blocks only that lane -
+  // it is reported for visibility but never folded into `pass`, which is
+  // strictly about whether Agent Factory infrastructure itself is healthy.
+  const lanes = {
+    singy: getLaneRepositoryDiagnostics('singy'),
+    arranger: getLaneRepositoryDiagnostics('arranger'),
+    library: getLaneRepositoryDiagnostics('library')
+  };
   const payload = {
     timestamp: ts.toISOString(),
     os: process.platform,
@@ -41,12 +51,18 @@ function writePreflight() {
     ram,
     disks,
     resources,
+    lanes,
     agentsAvailable: availableAgents().map((a) => a.id),
     agentsUnavailable: unavailableAgents().map((a) => a.id),
-    gitIndexLock: fs.existsSync(path.join(path.dirname(FACTORY_ROOT), '.git', 'index.lock')),
+    gitIndexLock: (() => {
+      const gitRoot = findGitRoot();
+      return gitRoot ? fs.existsSync(path.join(gitRoot, '.git', 'index.lock')) : false;
+    })(),
     factoryExists: true,
     pass:
-      disks.C >= 10 &&
+      (disks.C == null || disks.C >= 10) &&
+      (disks.D == null || disks.D >= 25) &&
+      (disks.E == null || disks.E >= 10) &&
       ram.freeGb >= 4 &&
       !resources.pauseFactory
   };
@@ -64,6 +80,7 @@ function writePreflight() {
       `Agents available: ${payload.agentsAvailable.join(', ')}`,
       `Agents unavailable: ${payload.agentsUnavailable.join(', ') || 'none'}`,
       `Concurrency: heavy=${resources.limits.maxHeavyWriters} light=${resources.limits.maxLightReviewers}`,
+      `Lanes: singy=${payload.lanes.singy.ok ? 'RESOLVED' : payload.lanes.singy.reason} arranger=${payload.lanes.arranger.ok ? 'RESOLVED' : payload.lanes.arranger.reason} library=${payload.lanes.library.ok ? 'RESOLVED' : payload.lanes.library.reason}`,
       ''
     ].join('\n'),
     'utf8'

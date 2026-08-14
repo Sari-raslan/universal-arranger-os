@@ -12,12 +12,16 @@ import {
   hiddenSpawnOptions
 } from './lib.mjs';
 import { listAgents } from './agent-adapters.mjs';
+import { resolveBuildRoot, resolveWorktreeRoot } from './paths.mjs';
 
-const SMOKE_ROOT = 'D:\\UAOS_AGENT_FACTORY_WORKTREES\\adapter-smoke';
 const REGISTRY = path.join(FACTORY_ROOT, 'config', 'agents.runtime.json');
 
-/** Models known to work with codex-cli 0.134.x when user config forces unsupported gpt-5.6-sol */
-export const CODEX_COMPAT_MODEL = 'gpt-4.1';
+/** Headless writer CLIs supported by the generic runner. */
+export const HEADLESS_WRITER_AGENTS = Object.freeze(['codex', 'claude', 'gemini']);
+
+export function isHeadlessWriterAgent(agentId) {
+  return HEADLESS_WRITER_AGENTS.includes(agentId);
+}
 
 export function loadRuntimeAgents() {
   return readJson(REGISTRY, { updatedAt: null, agents: {} });
@@ -44,8 +48,8 @@ export function isWriterAvailable(agentId) {
 }
 
 /**
- * Build Codex exec argv using installed CLI help semantics.
- * Always override broken user-config model gpt-5.6-sol on CLI 0.134.
+ * Build Codex exec argv without forcing an account-incompatible model.
+ * Prompts stay on stdin so task text never becomes shell syntax.
  */
 export function buildCodexExecArgs({ cwd, promptMode = 'stdin' } = {}) {
   const args = [
@@ -53,13 +57,43 @@ export function buildCodexExecArgs({ cwd, promptMode = 'stdin' } = {}) {
     '--skip-git-repo-check',
     '-C',
     cwd,
-    '-c',
-    `model="${CODEX_COMPAT_MODEL}"`,
     '-s',
     'workspace-write'
   ];
   if (promptMode === 'stdin') args.push('-');
   return args;
+}
+
+export function buildHeadlessWriterExec({ agentId, cwd } = {}) {
+  if (agentId === 'codex') {
+    return {
+      command: 'codex',
+      args: buildCodexExecArgs({ cwd, promptMode: 'stdin' }),
+      inputMode: 'stdin'
+    };
+  }
+  if (agentId === 'claude') {
+    return {
+      command: 'claude',
+      args: ['-p', '--output-format', 'text', '--permission-mode', 'acceptEdits'],
+      inputMode: 'stdin'
+    };
+  }
+  if (agentId === 'gemini') {
+    return {
+      command: 'gemini',
+      args: [
+        '-p',
+        'Follow the UAOS task provided on stdin.',
+        '--approval-mode',
+        'auto_edit',
+        '--output-format',
+        'text'
+      ],
+      inputMode: 'stdin'
+    };
+  }
+  throw new Error(`Unsupported headless writer agent: ${agentId}`);
 }
 
 export function spawnWriterProcess({
@@ -99,8 +133,8 @@ export function spawnWriterProcess({
     env: {
       ...process.env,
       ...env,
-      TEMP: env.TEMP || 'D:\\UAOS_AGENT_FACTORY_BUILD\\tmp',
-      TMP: env.TMP || 'D:\\UAOS_AGENT_FACTORY_BUILD\\tmp'
+      TEMP: env.TEMP || path.join(resolveBuildRoot(), 'tmp'),
+      TMP: env.TMP || path.join(resolveBuildRoot(), 'tmp')
     },
     ...hiddenSpawnOptions(agentId === 'codex' && !localRunner ? ['pipe', out, out] : ['ignore', out, out])
   });
@@ -135,6 +169,11 @@ export function preferredWriterForLane(lane) {
   return 'cursor-local';
 }
 
+export function preferredHeadlessWriterForLane(lane) {
+  const id = preferredWriterForLane(lane);
+  return isHeadlessWriterAgent(id) && isWriterAvailable(id) ? id : null;
+}
+
 export function recordSmokeResult(agentId, { ok, exitCode, note, evidence, commandMode }) {
   return markAgentRuntime(agentId, {
     smokePass: !!ok,
@@ -159,7 +198,7 @@ export function probeVersion(agentId) {
 }
 
 export function smokeRoot() {
-  return SMOKE_ROOT;
+  return path.join(resolveWorktreeRoot(), 'adapter-smoke');
 }
 
 export function summarizeDetectedAgents() {
