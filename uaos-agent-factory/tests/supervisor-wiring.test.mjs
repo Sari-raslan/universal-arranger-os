@@ -1,9 +1,9 @@
-import test from 'node:test';
+import test, { before } from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
 import { FACTORY_ROOT, atomicWriteJson, readJson } from '../src/lib.mjs';
-import { getTask, updateTask } from '../src/queue-manager.mjs';
+import { getTask, updateTask, loadQueue, saveQueue } from '../src/queue-manager.mjs';
 import {
   claimTaskCursorLocal,
   interruptClaim,
@@ -11,11 +11,45 @@ import {
 } from '../src/cursor-local-claim.mjs';
 import { loadActiveWriters, saveActiveWriters } from '../src/dispatch.mjs';
 
-const SYN = 'L-SYN-DEP';
+// Dedicated fixture on the singy lane specifically — every other test file that exercises
+// claimTaskCursorLocal uses the library lane, and acquireClaimLock() is scoped per-lane, not
+// per-task-ID, so a distinct fixture ID alone doesn't avoid contention on the same lane's lock
+// under Node's default parallel test execution. Singy has no other claim-lock traffic at all.
+const LANE = 'singy';
+const SYN = 'S-SYN-SUPERVISOR';
 const CLAIMS_PATH = path.join(FACTORY_ROOT, 'state', 'cursor-local-claims.json');
 
+before(() => {
+  const q = loadQueue(LANE);
+  if (!q.tasks.find((t) => t.id === SYN)) {
+    q.tasks.push({
+      id: SYN,
+      lane: LANE,
+      title: 'Synthetic supervisor-wiring proof',
+      priority: 1,
+      status: 'ready',
+      dependsOn: [],
+      humanGate: false,
+      commands: { tests: [] },
+      result: null,
+      claimId: null,
+      executionMode: null,
+      writerPid: null
+    });
+    saveQueue(LANE, q);
+  } else {
+    updateTask(LANE, SYN, {
+      status: 'ready',
+      claimId: null,
+      executionMode: null,
+      writerPid: null,
+      blockingReason: null
+    });
+  }
+});
+
 function restoreSyn(patch) {
-  updateTask('library', SYN, patch);
+  updateTask(LANE, SYN, patch);
 }
 
 // reconcileStaleClaims() itself is exercised behaviorally here (no dispatch risk — this
@@ -31,12 +65,12 @@ function restoreSyn(patch) {
 test('reconcileStaleClaims recovers a claim whose heartbeat has gone silent past the threshold', () => {
   restoreSyn({ status: 'ready', claimId: null, executionMode: null, writerPid: null, blockingReason: null });
   const aw = loadActiveWriters();
-  delete aw.writers?.library;
+  delete aw.writers?.[LANE];
   saveActiveWriters(aw);
 
   let claimId = null;
   try {
-    const claim = claimTaskCursorLocal('library', SYN);
+    const claim = claimTaskCursorLocal(LANE, SYN);
     assert.equal(claim.ok, true);
     claimId = claim.claim.claimId;
 
@@ -52,19 +86,19 @@ test('reconcileStaleClaims recovers a claim whose heartbeat has gone silent past
 
     const changes = reconcileStaleClaims();
     assert.ok(
-      changes.some((c) => c.lane === 'library' && c.taskId === SYN && c.ok),
-      `expected a recorded recovery for library/${SYN}, got ${JSON.stringify(changes)}`
+      changes.some((c) => c.lane === LANE && c.taskId === SYN && c.ok),
+      `expected a recorded recovery for ${LANE}/${SYN}, got ${JSON.stringify(changes)}`
     );
 
-    const after = getTask('library', SYN);
+    const after = getTask(LANE, SYN);
     assert.equal(after.status, 'blocked');
     assert.equal(after.blockingReason, 'CURSOR_LOCAL_CLAIM_STALE_HEARTBEAT');
     claimId = null; // already resolved by reconcileStaleClaims — nothing left to interrupt
   } finally {
-    if (claimId) interruptClaim('library', SYN, { claimId });
+    if (claimId) interruptClaim(LANE, SYN, { claimId });
     restoreSyn({ status: 'ready', claimId: null, executionMode: null, writerPid: null, blockingReason: null });
     const cleaned = loadActiveWriters();
-    delete cleaned.writers?.library;
+    delete cleaned.writers?.[LANE];
     saveActiveWriters(cleaned);
   }
 });
@@ -72,26 +106,26 @@ test('reconcileStaleClaims recovers a claim whose heartbeat has gone silent past
 test('reconcileStaleClaims leaves a freshly-heartbeated claim untouched', () => {
   restoreSyn({ status: 'ready', claimId: null, executionMode: null, writerPid: null, blockingReason: null });
   const aw = loadActiveWriters();
-  delete aw.writers?.library;
+  delete aw.writers?.[LANE];
   saveActiveWriters(aw);
 
   let claimId = null;
   try {
-    const claim = claimTaskCursorLocal('library', SYN);
+    const claim = claimTaskCursorLocal(LANE, SYN);
     assert.equal(claim.ok, true);
     claimId = claim.claim.claimId;
 
     const changes = reconcileStaleClaims();
     assert.ok(
-      !changes.some((c) => c.lane === 'library' && c.taskId === SYN),
+      !changes.some((c) => c.lane === LANE && c.taskId === SYN),
       'a claim heartbeated moments ago must not be recovered as stale'
     );
-    assert.equal(getTask('library', SYN).status, 'running');
+    assert.equal(getTask(LANE, SYN).status, 'running');
   } finally {
-    if (claimId) interruptClaim('library', SYN, { claimId });
+    if (claimId) interruptClaim(LANE, SYN, { claimId });
     restoreSyn({ status: 'ready', claimId: null, executionMode: null, writerPid: null, blockingReason: null });
     const cleaned = loadActiveWriters();
-    delete cleaned.writers?.library;
+    delete cleaned.writers?.[LANE];
     saveActiveWriters(cleaned);
   }
 });

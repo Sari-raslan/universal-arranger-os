@@ -18,7 +18,12 @@ import { buildTaskPrompt } from '../src/task-prompt.mjs';
 import { dispatchTaskWriter, loadActiveWriters, saveActiveWriters, countHeavyWriters } from '../src/dispatch.mjs';
 
 const SYN_LANE = 'library';
-const SYN_ID = 'L-SYN-GENERIC';
+// Deliberately distinct from bugbot-5-findings.test.mjs's L-SYN-GENERIC fixture —
+// both files used to share that one ID, which raced under Node's default parallel
+// test execution (each file mutates the fixture's queue entry independently, so
+// whichever ran last could stomp the other's in-flight state). ensureSyntheticTask()
+// below auto-creates this task if the committed queue doesn't already have it.
+const SYN_ID = 'L-SYN-RUNNER';
 
 function ensureSyntheticTask() {
   const q = loadQueue(SYN_LANE);
@@ -171,7 +176,9 @@ test('duplicate dispatch blocked when lane writer alive', () => {
 
 test('completed synthetic task advances dependent', async () => {
   const q = loadQueue(SYN_LANE);
-  const depId = 'L-SYN-DEP';
+  // Dedicated to this test — L-SYN-DEP is cursor-local-claim.test.mjs's fixture;
+  // sharing it here would reintroduce the exact cross-file race this ID scheme exists to avoid.
+  const depId = 'L-SYN-RUNNER-DEP';
   if (!q.tasks.find((t) => t.id === depId)) {
     q.tasks.push({
       id: depId,
