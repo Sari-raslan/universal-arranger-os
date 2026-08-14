@@ -7,6 +7,7 @@ import { FACTORY_ROOT, atomicWriteJson, hiddenSpawnOptions, freeDiskGb } from '.
 import { pickNextLaneWork, effectiveMaxHeavyWriters } from '../src/scheduler.mjs';
 import { updateTask, loadQueue, getTask } from '../src/queue-manager.mjs';
 import { evaluateResources } from '../src/resource-guard.mjs';
+import { isWriterEntryActive } from '../src/dispatch.mjs';
 import {
   canAttemptTask,
   buildFailurePatch,
@@ -30,6 +31,13 @@ test('freeDiskGb does not require visible PowerShell (statfs or hidden fallback)
   assert.ok(d > 0);
 });
 
+test('no-pid interactive writers require a fresh heartbeat', () => {
+  const fresh = { pid: null, status: 'running', heartbeatAt: new Date().toISOString() };
+  const stale = { pid: null, status: 'running', heartbeatAt: new Date(Date.now() - 31 * 60 * 1000).toISOString() };
+  assert.equal(isWriterEntryActive(fresh), true);
+  assert.equal(isWriterEntryActive(stale), false);
+  assert.equal(isWriterEntryActive({ pid: null, status: 'running' }), false);
+});
 test('retry backoff is 0 / 30s / 120s', () => {
   assert.equal(RETRY_BACKOFF_MS[0], 0);
   assert.equal(RETRY_BACKOFF_MS[1], 30_000);
