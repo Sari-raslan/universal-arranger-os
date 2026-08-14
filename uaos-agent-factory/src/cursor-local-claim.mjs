@@ -15,6 +15,8 @@ import {
 import { getTask, updateTask } from './queue-manager.mjs';
 import { worktreePathFor } from './worktree-manager.mjs';
 import { loadActiveWriters, saveActiveWriters } from './dispatch.mjs';
+import { resolveArtifactRoot, resolveWorktreeRoot } from './paths.mjs';
+import { resolveLaneRepository } from './lane-repositories.mjs';
 import {
   isTerminalSuccessStatus,
   isWriterAuthBlocked,
@@ -94,12 +96,17 @@ export function canClaimWithCursorLocal(task) {
 export function ensureTaskWorktreeFromIntegration(lane, taskId) {
   const cfg = loadFactoryConfig();
   const laneCfg = cfg.lanes[lane];
-  const repo = laneCfg.repoRoot;
+  const resolved = resolveLaneRepository(lane);
+  if (!resolved.ok) {
+    return { ok: false, reason: resolved.reason, lane, taskId };
+  }
+  const repo = resolved.path;
   const branch = `factory/${lane}-${String(taskId).toLowerCase()}`;
   const wt = worktreePathFor(lane, taskId);
   const integration = laneCfg.integrationBranch;
-  const integWt = path.join(cfg.worktreeRoot, `${lane}-integration`);
-  ensureDir(cfg.worktreeRoot);
+  const worktreeRoot = resolveWorktreeRoot();
+  const integWt = path.join(worktreeRoot, `${lane}-integration`);
+  ensureDir(worktreeRoot);
 
   const tip = runCmd(`git rev-parse ${integration}`, { cwd: integWt });
   const tipSha = (tip.stdout || '').trim();
@@ -176,8 +183,7 @@ function claimTaskCursorLocalUnlocked(lane, taskId, { force = false } = {}) {
     `[claim] ${claimId} lane=${lane} task=${taskId} mode=${CURSOR_LOCAL_MODE} pid=n/a at=${claimedAt}\n`
   );
 
-  const artifactRoot = loadFactoryConfig()?.artifactRoot || path.join(FACTORY_ROOT, 'state', 'artifacts');
-  const artifactDir = path.join(artifactRoot, lane === 'library' ? 'library' : lane, taskId);
+  const artifactDir = path.join(resolveArtifactRoot(), lane, String(taskId));
   ensureDir(artifactDir);
 
   const record = {
