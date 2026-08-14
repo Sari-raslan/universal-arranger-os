@@ -20,6 +20,8 @@ import { updateTask, loadQueue, saveQueue, isDurablyIntegrated, transitionTask }
 import {
   preferredWriterForLane,
   isWriterAvailable,
+  isHeadlessWriterAgent,
+  buildHeadlessWriterExec,
   spawnWriterProcess
 } from './writer-adapters.mjs';
 import {
@@ -31,6 +33,12 @@ import {
   tryRecreateIntegrationWorktree,
   attemptSafeRebase
 } from './integration-planner.mjs';
+import { resolveArtifactRoot, resolveBuildRoot, resolveWorktreeRoot } from './paths.mjs';
+import { resolveLaneRepository } from './lane-repositories.mjs';
+
+function factoryTempDir() {
+  return path.join(resolveBuildRoot(), 'tmp');
+}
 
 function parseArgs(argv) {
   const out = {};
@@ -54,8 +62,8 @@ function runTimed(cmd, { cwd, timeoutMs = 300000, env = {} } = {}) {
     env: {
       ...process.env,
       ...env,
-      TEMP: path.join(FACTORY_ROOT, 'state', 'tmp'),
-      TMP: path.join(FACTORY_ROOT, 'state', 'tmp')
+      TEMP: factoryTempDir(),
+      TMP: factoryTempDir()
     }
   });
   return {
@@ -67,13 +75,130 @@ function runTimed(cmd, { cwd, timeoutMs = 300000, env = {} } = {}) {
   };
 }
 
+function runHeadlessWriterSync(agentId, { worktree, prompt, timeoutMs }) {
+  const spec = buildHeadlessWriterExec({ agentId, cwd: worktree });
+  const r = spawnSync(spec.command, spec.args, {
+    cwd: worktree,
+    input: spec.inputMode === 'stdin' ? prompt : undefined,
+    encoding: 'utf8',
+    timeout: timeoutMs,
+    env: {
+      ...process.env,
+      TEMP: factoryTempDir(),
+      TMP: factoryTempDir()
+    },
+    windowsHide: true,
+    // npm-installed CLIs resolve to .cmd on Windows. Task text is kept on stdin,
+    // so shell parsing never receives untrusted prompt content.
+    shell: process.platform === 'win32'
+  });
+  return {
+    ok: (r.status ?? 1) === 0 && !r.error,
+    exitCode: r.status ?? (r.error ? 1 : 0),
+    stdout: r.stdout || '',
+    stderr: (r.stderr || '') + (r.error ? `\n${r.error.message}` : '')
+  };
+}
+
+export function normalizeTaskPath(value) {
+  return String(value || '')
+    .replace(/\\/g, '/')
+    .replace(/^\.\//, '')
+    .replace(/^\/+/, '');
+}
+
+function matchWildcardSegment(text, pattern) {
+  const n = text.length;
+  const m = pattern.length;
+  const dp = Array.from({ length: n + 1 }, () => Array(m + 1).fill(false));
+  dp[0][0] = true;
+  for (let j = 1; j <= m; j += 1) {
+    if (pattern[j - 1] === '*') dp[0][j] = dp[0][j - 1];
+  }
+  for (let i = 1; i <= n; i += 1) {
+    for (let j = 1; j <= m; j += 1) {
+      const p = pattern[j - 1];
+      if (p === '*') dp[i][j] = dp[i][j - 1] || dp[i - 1][j];
+      else if (p === '?' || p === text[i - 1]) dp[i][j] = dp[i - 1][j - 1];
+    }
+  }
+  return dp[n][m];
+}
+
+export function taskPathMatches(fileValue, patternValue) {
+  const file = normalizeTaskPath(fileValue);
+  const pattern = normalizeTaskPath(patternValue);
+  const fileParts = file.split('/').filter(Boolean);
+  const patternParts = pattern.split('/').filter(Boolean);
+
+  const memo = new Map();
+  function visit(fi, pi) {
+    const key = fi + ':' + pi;
+    if (memo.has(key)) return memo.get(key);
+
+    let ok = false;
+    if (pi === patternParts.length) {
+      ok = fi === fileParts.length;
+    } else if (patternParts[pi] === '**') {
+      ok = visit(fi, pi + 1) || (fi < fileParts.length && visit(fi + 1, pi));
+    } else if (fi < fileParts.length && matchWildcardSegment(fileParts[fi], patternParts[pi])) {
+      ok = visit(fi + 1, pi + 1);
+    }
+
+    memo.set(key, ok);
+    return ok;
+  }
+
+  return visit(0, 0);
+}
+
+export function evaluateTaskPathScope(task, changedFiles = []) {
+  const files = [...new Set((changedFiles || []).map(normalizeTaskPath).filter(Boolean))];
+  const allowed = Array.isArray(task?.allowedPaths) ? task.allowedPaths.filter(Boolean) : [];
+  const forbidden = Array.isArray(task?.forbiddenPaths) ? task.forbiddenPaths.filter(Boolean) : [];
+
+  const violations = [];
+  for (const file of files) {
+    if (forbidden.some((pattern) => taskPathMatches(file, pattern))) {
+      violations.push({ file, reason: 'FORBIDDEN_PATH' });
+      continue;
+    }
+    if (allowed.length > 0 && !allowed.some((pattern) => taskPathMatches(file, pattern))) {
+      violations.push({ file, reason: 'OUTSIDE_ALLOWED_PATHS' });
+    }
+  }
+
+  return {
+    ok: violations.length === 0,
+    changedFiles: files,
+    allowedPaths: allowed,
+    forbiddenPaths: forbidden,
+    violations
+  };
+}
+
+export function isFactoryOwnedWorktreeControlPath(value) {
+  const p = normalizeTaskPath(value);
+  return (
+    p === '.uaos-task.lock' ||
+    p.startsWith('.uaos-task.lock.stale.') ||
+    p === '.uaos-commit-msg.txt'
+  );
+}
+
 function listChangedFiles(cwd) {
   const st = runCmd('git status --porcelain', { cwd });
   return (st.stdout || '')
     .split(/\r?\n/)
     .filter(Boolean)
     .map((line) => line.slice(3).trim().replace(/^"|"$/g, ''))
-    .filter((p) => p && !p.startsWith('node_modules/') && !p.includes('node_modules\\'));
+    .filter(
+      (p) =>
+        p &&
+        !p.startsWith('node_modules/') &&
+        !p.includes('node_modules\\') &&
+        !isFactoryOwnedWorktreeControlPath(p)
+    );
 }
 
 function commitExact(cwd, paths, message) {
@@ -122,9 +247,10 @@ export function integrateTaskBranch({
   taskWorktree = null
 } = {}) {
   const cfg = loadFactoryConfig();
-  let integration = integrationWorktree || path.join(cfg.worktreeRoot, `${lane}-integration`);
+  let integration = integrationWorktree || path.join(resolveWorktreeRoot(), `${lane}-integration`);
   const branch = integrationBranch || cfg.lanes[lane].integrationBranch;
-  const repoRoot = cfg.lanes[lane]?.repoRoot;
+  const laneRepo = resolveLaneRepository(lane);
+  const repoRoot = laneRepo.ok ? laneRepo.path : null;
 
   let plan = planIntegration({
     cwd: integration,
@@ -360,7 +486,9 @@ export function isTaskEligible(task, { lanePaused = false } = {}) {
   if (!task) return { ok: false, reason: 'NO_TASK' };
   if (lanePaused) return { ok: false, reason: 'LANE_PAUSED' };
   if (task.humanGate) return { ok: false, reason: 'HUMAN_GATE' };
-  if (!['ready', 'retry', 'pending'].includes(task.status)) return { ok: false, reason: 'BAD_STATUS' };
+  // dispatch.mjs transitions the queue task to 'running' synchronously before spawning
+  // this process, so the freshly re-read task is expected to already be 'running' here.
+  if (!['ready', 'retry', 'pending', 'running'].includes(task.status)) return { ok: false, reason: 'BAD_STATUS' };
   const retries = task.result?.retryCount || 0;
   if (retries > (task.retryLimit ?? 2)) return { ok: false, reason: 'RETRY_LIMIT' };
   return { ok: true };
@@ -372,16 +500,10 @@ export async function executeGenericTask(task, opts = {}) {
   const evidenceDir =
     opts.evidenceDir ||
     path.join(FACTORY_ROOT, 'logs', lane, task.id, nowIso().replace(/[:.]/g, '-'));
-  const artifactDir =
-    opts.artifactDir ||
-    path.join(
-      cfg.artifactRoot,
-      lane === 'library' ? 'library' : lane,
-      task.id
-    );
+  const artifactDir = opts.artifactDir || path.join(resolveArtifactRoot(), lane, task.id);
   ensureDir(evidenceDir);
   ensureDir(artifactDir);
-  ensureDir(path.join(FACTORY_ROOT, 'state', 'tmp'));
+  ensureDir(factoryTempDir());
 
   const eligibility = isTaskEligible(task, { lanePaused: opts.lanePaused });
   if (!eligibility.ok) {
@@ -410,7 +532,10 @@ export async function executeGenericTask(task, opts = {}) {
     taskBaseCommit = disposable.taskBaseCommit;
   } else {
     const wt = createTaskWorktree(lane, task.id);
-    worktree = wt.worktreePath || cfg.lanes[lane].repoRoot;
+    if (!wt.ok && !wt.worktreePath) {
+      return { ok: false, reason: wt.reason || 'LANE_REPOSITORY_UNAVAILABLE', lane, taskId: task.id };
+    }
+    worktree = wt.worktreePath;
     if (!taskBaseCommit) {
       taskBaseCommit = revParse(worktree, 'HEAD');
     }
@@ -486,39 +611,19 @@ export async function executeGenericTask(task, opts = {}) {
       evidenceDir,
       prompt
     });
-  } else if (writerAgent === 'codex' && isWriterAvailable('codex')) {
-    // Spawn sync for pipeline control (supervisor already detached this process)
-    const promptFile = path.join(evidenceDir, 'PROMPT.md');
-    const cmd = `codex exec --skip-git-repo-check -C "${worktree}" -c model="gpt-4.1" -s workspace-write --dangerously-bypass-approvals-and-sandbox "$(Get-Content -Raw '${promptFile}')"`;
-    // Prefer stdin prompt for Windows quoting safety
-    const r = spawnSync('codex', [
-      'exec',
-      '--skip-git-repo-check',
-      '-C',
+  } else if (isHeadlessWriterAgent(writerAgent) && isWriterAvailable(writerAgent)) {
+    // Pipeline remains synchronous while the outer supervisor owns the detached process.
+    const r = runHeadlessWriterSync(writerAgent, {
       worktree,
-      '-c',
-      'model="gpt-4.1"',
-      '-s',
-      'workspace-write',
-      '-'
-    ], {
-      cwd: worktree,
-      input: prompt,
-      encoding: 'utf8',
-      timeout: (task.timeoutMinutes || 90) * 60 * 1000,
-      env: {
-        ...process.env,
-        TEMP: path.join(FACTORY_ROOT, 'state', 'tmp'),
-        TMP: path.join(FACTORY_ROOT, 'state', 'tmp')
-      },
-      windowsHide: true
+      prompt,
+      timeoutMs: (task.timeoutMinutes || 90) * 60 * 1000
     });
-    fs.writeFileSync(writerLog, `${r.stdout || ''}\n${r.stderr || ''}\nEXIT=${r.status}\n`, 'utf8');
+    fs.writeFileSync(writerLog, `${r.stdout}\n${r.stderr}\nEXIT=${r.exitCode}\n`, 'utf8');
     writerResult = {
-      ok: (r.status ?? 1) === 0,
-      status: (r.status ?? 1) === 0 ? 'PASS' : 'FAIL',
-      exitCode: r.status,
-      mode: 'codex',
+      ok: r.ok,
+      status: r.ok ? 'PASS' : 'FAIL',
+      exitCode: r.exitCode,
+      mode: writerAgent,
       logFile: writerLog
     };
     atomicWriteJson(path.join(evidenceDir, `${task.id}-writer.json`), writerResult);
@@ -556,11 +661,26 @@ export async function executeGenericTask(task, opts = {}) {
   // REVIEW
   updateTask(lane, task.id, { status: 'reviewing', result: { phase: 'reviewing', at: nowIso() } });
   const diff = runCmd('git diff --stat HEAD', { cwd: worktree });
-  const review = reviewDiffSummary({
+  const changedForReview = listChangedFiles(worktree);
+  const pathScope = evaluateTaskPathScope(task, changedForReview);
+  const baseReview = reviewDiffSummary({
     task,
     diffText: diff.stdout || '',
     testResults
   });
+  const review = pathScope.ok
+    ? {
+        ...baseReview,
+        scope: pathScope,
+        checks: { ...baseReview.checks, scope: true }
+      }
+    : {
+        ...baseReview,
+        verdict: 'REJECT',
+        scope: pathScope,
+        checks: { ...baseReview.checks, scope: false },
+        notes: 'Deterministic review REJECT — changed files violate task path scope'
+      };
   atomicWriteJson(path.join(evidenceDir, 'review.json'), review);
 
   let finalStatus = 'FAIL';
@@ -689,20 +809,41 @@ export async function executeGenericTask(task, opts = {}) {
       });
     }
   } else {
-    const retries = (task.result?.retryCount || 0) + 1;
-    const blocked = retries > (task.retryLimit ?? 2);
-    updateTask(lane, task.id, {
-      status: blocked ? 'blocked' : 'retry',
-      result: {
-        reason: blocked ? 'RETRY_LIMIT' : 'TESTS_OR_REVIEW_FAIL',
-        retryCount: retries,
-        tests: testResults,
-        review,
-        writer: writerResult,
-        reviewFeedback: review,
-        at: nowIso()
-      }
-    });
+    if (review?.checks?.scope === false) {
+      transitionTask(lane, task.id, {
+        status: 'blocked',
+        blockingReason: 'OUT_OF_SCOPE_CHANGES',
+        integrationStatus: 'NOT_INTEGRATED',
+        nextAutomaticRetry: null,
+        result: {
+          reason: 'OUT_OF_SCOPE_CHANGES',
+          tests: testResults,
+          review,
+          writer: writerResult,
+          reviewFeedback: review,
+          taskBranch,
+          worktreePath: worktree,
+          preserveTaskWorktree: true,
+          preserveTaskBranch: true,
+          at: nowIso()
+        }
+      });
+    } else {
+      const retries = (task.result?.retryCount || 0) + 1;
+      const blocked = retries > (task.retryLimit ?? 2);
+      updateTask(lane, task.id, {
+        status: blocked ? 'blocked' : 'retry',
+        result: {
+          reason: blocked ? 'RETRY_LIMIT' : 'TESTS_OR_REVIEW_FAIL',
+          retryCount: retries,
+          tests: testResults,
+          review,
+          writer: writerResult,
+          reviewFeedback: review,
+          at: nowIso()
+        }
+      });
+    }
   }
 
   const summary = {
