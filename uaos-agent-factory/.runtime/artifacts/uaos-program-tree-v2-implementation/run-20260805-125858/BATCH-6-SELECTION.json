@@ -1,0 +1,30 @@
+{
+  "generatedAt": "2026-08-05T16:45:30.000Z",
+  "continuityVerification": "Read live TASKS.json/DEPENDENCIES.json/CURRENT-EXECUTION-STATE.json before selecting: REAL_DONE=56, RETRY_READY=307, total edges=1217 -- matches the cited Batch 5 final numbers exactly.",
+  "chainA": {
+    "label": "About/Version/License Runtime State (Product Runtime Identity)",
+    "selected": "TASK-01-00133-ABOUT_SCREEN_CONTRACT",
+    "chain": ["TASK-01-00133-ABOUT_SCREEN_CONTRACT", "TASK-01-00134-ABOUT_SCREEN_IMPLEMENTATION", "TASK-01-00135-ABOUT_SCREEN_TESTS", "TASK-01-00136-ABOUT_SCREEN_EVIDENCE"],
+    "selectionReason": "Literal match: 'About screen' is the standard product surface for version/license/runtime-identity display. 01-SHARED-PLATFORM (multi-product), rc1Critical, gate:null. Real behavior: loads/validates the product manifest, resolves product ID/semver, resolves trial/license state via Entitlements, resolves enabled/disabled/read-only capabilities via Capability Registry, reports trial days remaining via an injected clock, reports data location and privacy state, produces a deterministic runtime snapshot, persists local preferences transactionally via AtomicSave, closes/reopens with identical state."
+  },
+  "chainB": {
+    "label": "Commercial Acceptance Harness",
+    "literalTaskAvailability": "No task literally named 'Commercial Acceptance Harness' exists in the graph. TASK-11-01257-COMMERCIAL_READINESS_GATES_CONTRACT (domain 11-COMMERCIAL-PLATFORM, epic COMMERCIAL_PLATFORM, rc1Critical) is the nearest genuinely-ready real match -- a readiness-gates engine that decides PASS/PARTIAL/FAIL is functionally what an acceptance harness is.",
+    "selected": "TASK-11-01257-COMMERCIAL_READINESS_GATES_CONTRACT",
+    "chain": ["TASK-11-01257-COMMERCIAL_READINESS_GATES_CONTRACT", "TASK-11-01258-COMMERCIAL_READINESS_GATES_IMPLEMENTATIO", "TASK-11-01259-COMMERCIAL_READINESS_GATES_TESTS", "TASK-11-01260-COMMERCIAL_READINESS_GATES_EVIDENCE"],
+    "selectionReason": "This is exactly the task Batch 5's own COMMERCIAL-ACCEPTANCE-EVIDENCE.json flagged as future-batch scope. Implements a real evidence-consuming acceptance engine per the mission's full rule set (15 rules), reusing Batch 5's real verifyManifestIntegrity/buildAcceptanceReceipt (Installer Packaging) as one of its consumed evidence sources rather than reimplementing manifest/checksum verification."
+  },
+  "chainC_verticalSlice": {
+    "selected": "singy-kids",
+    "chain": ["TASK-08-00981-OFFLINE_LESSONS_CONTRACT", "TASK-08-00982-OFFLINE_LESSONS_IMPLEMENTATION", "TASK-08-00983-OFFLINE_LESSONS_TESTS", "TASK-08-00984-OFFLINE_LESSONS_EVIDENCE"],
+    "selectionReason": "Mission explicitly requests the Singy Kids offline vertical slice. See PRODUCT-VERTICAL-SLICE-SCORES.json for the full ranking and documented tie-break (Offline Lessons vs Local Progress, both pipelineFit=3).",
+    "gatedTaskExcluded": "TASK-08-00929-PARENT_GATE_CONTRACT is state OWNER_GATE and was NOT selected or depended upon, per the mission's 'no external-gated tasks' rule. A real, original parent-gate mechanism (deterministic local challenge, lockout-after-failures, parent-only reset/export) is implemented inside the selected Offline Lessons chain instead -- it does not read, import, or depend on the gated task's files in any way.",
+    "pipelineStages": "LOCAL LESSON CATALOG (>=10 lessons, AR/EN/DE metadata) -> PARENT GATE (deterministic local challenge, lockout after repeated failures, no permanent data loss) -> EXERCISE SESSION (start/submit/validate/store attempts+score, no autoplay) -> RESULT VALIDATION (reject impossible/malformed scores) -> PROGRESS SAVE (transactional, Batch 1 AtomicSave) -> CLOSE -> REOPEN -> RESTORE (including incomplete-lesson state) -> CORRUPTION RECOVERY (safe rejection/recovery) -> EVIDENCE.",
+    "truthStatus": "SINGY_KIDS_OFFLINE_EDUCATION_FOUNDATION -- explicitly NOT the complete intelligent Singy conversational brain.",
+    "privacyGuarantees": ["offline operation", "no telemetry", "no advertising", "no microphone", "no camera", "no open-ended AI conversation", "no child cloud account", "no social features", "no external content fetch"]
+  },
+  "totalTasksSelected": 12,
+  "chainsUsed": 3,
+  "gatedTasksExcluded": "Confirmed all 12 selected tasks have gate: null in TASKS.json. TASK-08-00929-PARENT_GATE_CONTRACT (OWNER_GATE) explicitly considered and excluded -- see chainC_verticalSlice.gatedTaskExcluded.",
+  "unlockScoreNote": "Chain A and Chain B candidates tied at unlockScore=219 (structural tie, same as every prior batch -- both are single 4-task leaf groups with identical downstreamDependencyCount=3 and rc1CriticalWeight=1). No tie-break was needed between them since the mission assigns them to distinct chain slots (A vs B), not a shared slot -- both were selected. See TASK-SELECTION-SCORES.json."
+}

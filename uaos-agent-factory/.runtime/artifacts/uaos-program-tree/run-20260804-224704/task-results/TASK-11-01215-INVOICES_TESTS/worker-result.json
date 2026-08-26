@@ -1,0 +1,11 @@
+{
+  "taskId": "TASK-11-01215-INVOICES_TESTS",
+  "agentId": "NODE_LOCAL_WORKER-0177",
+  "pid": 49200,
+  "startedAt": "2026-08-04T20:47:39.004Z",
+  "status": "FAILED",
+  "endedAt": "2026-08-04T20:47:39.206Z",
+  "exitCode": 1,
+  "stdoutTail": "",
+  "stderrTail": "<anonymous_script>:12249\r\n      \"ownerFile\": \"C:\\\\UAOS_AGENT_FACTORY_WORKTREES\\\\uaos-program-execution\\\\task-03-00322-set_doctor_implementation\\\\src\\\\set_doctor_implementation\r\n\r\nSyntaxError: Unterminated string in JSON at position 565248 (line 12249 column 150)\r\n    at JSON.parse (<anonymous>)\r\n    at readJson (file:///C:/keyboard-manager-clean/uaos-agent-factory/src/uaos-program-tree-worker.mjs:17:35)\r\n    at file:///C:/keyboard-manager-clean/uaos-agent-factory/src/uaos-program-tree-worker.mjs:31:18\r\n    at ModuleJob.run (node:internal/modules/esm/module_job:439:25)\r\n    at async node:internal/modules/esm/loader:643:26\r\n    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)\r\n\r\nNode.js v24.18.0\r\n"
+}

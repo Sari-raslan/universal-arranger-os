@@ -1,0 +1,38 @@
+{
+  "id": "TASK-07-00876-SPEECH_OUTPUT_EVIDENCE",
+  "epicId": "EPIC-07-0008-SINGY_CORE_FULL_TREE",
+  "domain": "07-SINGY-CORE",
+  "title": "Speech output evidence",
+  "phase": "EVIDENCE",
+  "releaseTrain": "R2-PRO-HARDWARE-AND-REALTIME",
+  "state": "READY",
+  "priority": 23,
+  "estimateMinutesMin": 30,
+  "estimateMinutesMax": 120,
+  "inputs": [],
+  "acceptanceCriteria": [
+    "Speech output evidence contract file exists",
+    "Unit assertions pass for Speech output evidence",
+    "Evidence JSON written with SHA256"
+  ],
+  "tests": [
+    "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-07-00876-speech_output_evidence\\tests\\main.test.mjs"
+  ],
+  "evidence": [
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-07-00876-speech_output_evidence/evidence/result.json"
+  ],
+  "allowedPaths": [
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-07-00876-speech_output_evidence",
+    "C:\\keyboard-manager-clean\\uaos-agent-factory\\.runtime\\artifacts\\uaos-program-tree\\TASK-07-00876-SPEECH_OUTPUT_EVIDENCE"
+  ],
+  "ownerFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-07-00876-speech_output_evidence\\src\\speech_output_evidence.mjs",
+  "worktree": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-07-00876-speech_output_evidence",
+  "gate": null,
+  "blockedReason": null,
+  "rc1Critical": false,
+  "claims": [],
+  "lease": null,
+  "heartbeats": [],
+  "createdAt": "2026-08-04T20:47:04.333Z",
+  "updatedAt": "2026-08-04T20:49:22.085Z"
+}

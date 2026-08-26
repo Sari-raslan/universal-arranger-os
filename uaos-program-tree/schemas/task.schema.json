@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "id",
+    "epicId",
+    "domain",
+    "title",
+    "state",
+    "acceptanceCriteria",
+    "tests",
+    "evidence",
+    "allowedPaths",
+    "ownerFile",
+    "worktree"
+  ],
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "state": {
+      "enum": [
+        "DISCOVERED",
+        "READY",
+        "CLAIMED",
+        "PREPARING",
+        "IMPLEMENTING",
+        "TESTING",
+        "REVIEWING",
+        "INTEGRATION_READY",
+        "OWNER_GATE",
+        "BLOCKED_BY_DEPENDENCY",
+        "BLOCKED_BY_CONTENT",
+        "BLOCKED_BY_FORMAT",
+        "BLOCKED_BY_HARDWARE",
+        "BLOCKED_BY_LEGAL",
+        "RETRY_READY",
+        "FAILED",
+        "DONE"
+      ]
+    },
+    "estimateMinutesMin": {
+      "type": "number",
+      "minimum": 30,
+      "maximum": 240
+    },
+    "estimateMinutesMax": {
+      "type": "number",
+      "minimum": 30,
+      "maximum": 240
+    }
+  }
+}

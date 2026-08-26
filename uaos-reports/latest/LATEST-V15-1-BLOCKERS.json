@@ -1,0 +1,30 @@
+{
+    "blockers":  [
+                     {
+                         "id":  "KIDS_OWNER_DECISION_REQUIRED",
+                         "severity":  "HIGH"
+                     },
+                     {
+                         "id":  "TEEN_OWNER_DECISION_REQUIRED",
+                         "severity":  "HIGH"
+                     },
+                     {
+                         "id":  "PRICING_12_OWNER_NOT_APPROVED",
+                         "severity":  "MEDIUM"
+                     },
+                     {
+                         "id":  "KEYBOARD_CONVERTERS_MISSING",
+                         "nextWave":  "V16-A",
+                         "severity":  "MEDIUM"
+                     },
+                     {
+                         "id":  "ADOPTION_MERGE_NOT_AUTHORIZED",
+                         "nextWave":  "V16-D",
+                         "severity":  "MEDIUM"
+                     }
+                 ],
+    "resolvedByThisRun":  [
+                              "COMMANDER_EXTERNAL_HEAD_DRIFT"
+                          ],
+    "commanderBaselineUpdatedTo":  "9b23824f1cb14fdb611d4cfdee0b3e09a7442939"
+}

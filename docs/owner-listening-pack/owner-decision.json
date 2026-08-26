@@ -1,0 +1,42 @@
+{
+  "schema": "uaos.owner-listening-decision/v1",
+  "decision": "OWNER_MUSICAL_LISTENING_NEEDS_FIXES",
+  "OWNER_DECISION": "NEEDS_FIXES",
+  "OWNER_DECISION_SOURCE": "EXPLICIT_OWNER_CHAT_DECISION",
+  "EXAMPLE_05_PROVISIONAL_ACCEPTANCE": true,
+  "OWNER_RELISTEN_NOW": false,
+  "FINAL_MUSICAL_ACCEPTANCE_DEFERRED": true,
+  "OWNER_MUSICAL_LISTENING_PASS": false,
+  "DO_NOT_WAIT_FOR_OWNER_TESTING_BETWEEN_STAGES": true,
+  "FINAL_OWNER_TEST_ONCE_PER_PROGRAM": true,
+  "provenance": {
+    "kind": "EXPLICIT_OWNER_CHAT_DECISION",
+    "uiButtonClicked": false,
+    "uiClickSimulated": false,
+    "chat": "aa2ef236-4002-4ca4-b74b-8405de4e22da",
+    "recordedFrom": "owner message 2026-08-25T08:01+02:00",
+    "provisionalAcceptanceAt": "2026-08-25T08:17:00.000Z"
+  },
+  "recordedAt": "2026-08-25T08:01:00.000Z",
+  "explicitOwnerClick": false,
+  "autoFromPlayback": false,
+  "publicRelease": false,
+  "productionDeploy": false,
+  "payment": false,
+  "task": "TASK-05-00605-MUSICAL_BRAIN_CONTRACT",
+  "gate": "OWNER_GATE",
+  "APPROVED_EXAMPLES": ["01", "02", "03", "04", "06"],
+  "REJECTED_EXAMPLE": "05",
+  "FIXED_05": {
+    "path": "docs/owner-listening-pack/musical-examples/05-alternative-in-context.wav",
+    "SHA256": "13be9b796483ae687803223e96197569a5ac0bd60df0dad16a243e15216dbadd",
+    "provisionalAcceptance": true,
+    "finalMusicalAcceptance": false
+  },
+  "REJECTION_REASON": "Example 05 is completely outside the musical and harmonic context of the work",
+  "OWNER_RELISTEN_REQUIRED": "DEFERRED_TO_FINAL_PROGRAM_ACCEPTANCE",
+  "notesByExample": {
+    "05-alternative-b-major-pop": "Example 05 is completely outside the musical and harmonic context of the work"
+  },
+  "overallNotes": "05 fix provisionally accepted for continued development. Final musical acceptance deferred to once-per-program Final Owner Acceptance. No commercial PASS recorded."
+}

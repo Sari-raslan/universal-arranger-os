@@ -1,0 +1,43 @@
+{
+  "status": "LIBRARY_V20_OWNER_REVIEW_BUILD_READY_FIXTURE_ONLY",
+  "assertions": 8,
+  "pass": 8,
+  "fail": 0,
+  "steps": [
+    {
+      "name": "lib_open_close_1",
+      "ok": true
+    },
+    {
+      "name": "lib_open_close_2",
+      "ok": true
+    },
+    {
+      "name": "lib_open_close_3",
+      "ok": true
+    },
+    {
+      "name": "clean_userdata",
+      "ok": true
+    },
+    {
+      "name": "missing_license_reject",
+      "ok": true
+    },
+    {
+      "name": "restart_catalog",
+      "ok": true
+    },
+    {
+      "name": "no_stale_lock",
+      "ok": true
+    },
+    {
+      "name": "no_listening_port",
+      "ok": true
+    }
+  ],
+  "networkRequests": 0,
+  "microphone": "DENIED",
+  "fixtureOnly": true
+}

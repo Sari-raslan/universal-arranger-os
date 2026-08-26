@@ -1,0 +1,953 @@
+{
+    "task":  "UAOS-PLATFORM-AUTOMATION-011-CLEAN-BASELINE-CONTINUATION",
+    "agent":  "WIP_FORENSICS_AGENT",
+    "repository":  "C:\\keyboard-manager-clean",
+    "capturedAt":  "2026-08-04T10:07:42.6339278Z",
+    "dirtyFileCount":  117,
+    "categoryCounts":  {
+                           "INTENTIONAL_WIP":  6,
+                           "SOURCE_WIP":  14,
+                           "GENERATED_ARTIFACT":  1,
+                           "UNKNOWN_OWNER_REVIEW_REQUIRED":  86,
+                           "DOCUMENTATION_WIP":  10
+                       },
+    "files":  [
+                  {
+                      "statusCode":  " M",
+                      "path":  "backend/data/projects.json",
+                      "category":  "UNKNOWN_OWNER_REVIEW_REQUIRED",
+                      "size":  2,
+                      "lastWriteTime":  "2026-07-30T23:03:31.9494968+02:00",
+                      "sha256":  "4F53CDA18C2BAA0C0354BB5F9A3ECBE5ED12AB4D8E11BA873C2F11161202B945"
+                  },
+                  {
+                      "statusCode":  " M",
+                      "path":  "uaos-agent-factory/config/factory.json",
+                      "category":  "UNKNOWN_OWNER_REVIEW_REQUIRED",
+                      "size":  1965,
+                      "lastWriteTime":  "2026-07-27T12:28:00.2413285+02:00",
+                      "sha256":  "05BE699D7239C91833DB2DD2BA13A28FECF8FA4BC2730815E329F4CAC4425A62"
+                  },
+                  {
+                      "statusCode":  " M",
+                      "path":  "uaos-agent-factory/queues/library.queue.json",
+                      "category":  "UNKNOWN_OWNER_REVIEW_REQUIRED",
+                      "size":  60915,
+                      "lastWriteTime":  "2026-07-27T12:58:54.6932574+02:00",
+                      "sha256":  "52F451176A077A77E404F97AD9E7D5A11F6017F3AD3028F0653268EBF87B3ECF"
+                  },
+                  {
+                      "statusCode":  " M",
+                      "path":  "uaos-agent-factory/scripts/PAUSE_UAOS_FACTORY.cmd",
+                      "category":  "UNKNOWN_OWNER_REVIEW_REQUIRED",
+                      "size":  104,
+                      "lastWriteTime":  "2026-07-25T16:46:29.5156601+02:00",
+                      "sha256":  "6B7215138681E44C25FF9D51FBBCF940C109F9C66437DE12B7D242D3C4FACE1D"
+                  },
+                  {
+                      "statusCode":  " M",
+                      "path":  "uaos-agent-factory/scripts/RESUME_UAOS_FACTORY.cmd",
+                      "category":  "UNKNOWN_OWNER_REVIEW_REQUIRED",
+                      "size":  106,
+                      "lastWriteTime":  "2026-07-25T16:46:33.8400697+02:00",
+                      "sha256":  "A4757ECEB6FADD98917BA9E04C749C5D285DA236F1A63F6C2C9BB864240BBA51"
+                  },
+                  {
+                      "statusCode":  " M",
+                      "path":  "uaos-agent-factory/scripts/START_UAOS_FACTORY_AFTER_RESTART.cmd",
+                      "category":  "UNKNOWN_OWNER_REVIEW_REQUIRED",
+                      "size":  348,
+                      "lastWriteTime":  "2026-07-25T16:46:20.4506871+02:00",
+                      "sha256":  "13C45C84B1634FBE3C9B66629892F8189E50403D5571E60E56FFD196847165E4"
+                  },
+                  {
+                      "statusCode":  " M",
+                      "path":  "uaos-agent-factory/scripts/STOP_UAOS_FACTORY_SAFE.cmd",
+                      "category":  "UNKNOWN_OWNER_REVIEW_REQUIRED",
+                      "size":  116,
+                      "lastWriteTime":  "2026-07-25T16:46:25.4319705+02:00",
+                      "sha256":  "767A52B4B8E8E52A7FB0CEE72E77D6488E9373CFF102495C4DE93294C7BEA76A"
+                  },
+                  {
+                      "statusCode":  " M",
+                      "path":  "uaos-agent-factory/src/cli.mjs",
+                      "category":  "SOURCE_WIP",
+                      "size":  9788,
+                      "lastWriteTime":  "2026-07-25T16:42:07.1898330+02:00",
+                      "sha256":  "AA7E6B5C2DA5F57604FA2C09C773ACD3993D335CD100760B7B306A505D4A89C8"
+                  },
+                  {
+                      "statusCode":  " M",
+                      "path":  "uaos-agent-factory/src/cursor-local-claim.mjs",
+                      "category":  "SOURCE_WIP",
+                      "size":  16424,
+                      "lastWriteTime":  "2026-07-27T12:58:17.5445198+02:00",
+                      "sha256":  "634FA9BCB01553E45B086CABA3B47C1F059B9729E47ADD280CD05A05612894E1"
+                  },
+                  {
+                      "statusCode":  " M",
+                      "path":  "uaos-agent-factory/src/dispatch.mjs",
+                      "category":  "SOURCE_WIP",
+                      "size":  15140,
+                      "lastWriteTime":  "2026-07-27T12:28:00.2413285+02:00",
+                      "sha256":  "5C1AB94DE862B41EC4009335D674DC97D972997906A719D1EAF261BA6E1A1F32"
+                  },
+                  {
+                      "statusCode":  " M",
+                      "path":  "uaos-agent-factory/src/generic-runner.mjs",
+                      "category":  "SOURCE_WIP",
+                      "size":  24957,
+                      "lastWriteTime":  "2026-07-27T12:28:00.2413285+02:00",
+                      "sha256":  "8C495A67E5F60C604561ADF28E899FFDECFD6834053B7F45125972BE577FDD65"
+                  },
+                  {
+                      "statusCode":  " M",
+                      "path":  "uaos-agent-factory/src/integration-planner.mjs",
+                      "category":  "SOURCE_WIP",
+                      "size":  8873,
+                      "lastWriteTime":  "2026-07-27T12:28:00.2393758+02:00",
+                      "sha256":  "2CEB26CE87C5D48D9DB068E28713A7232C7263D92A6B38BEAF9C5E2D6FE314F5"
+                  },
+                  {
+                      "statusCode":  " M",
+                      "path":  "uaos-agent-factory/src/lib.mjs",
+                      "category":  "SOURCE_WIP",
+                      "size":  8511,
+                      "lastWriteTime":  "2026-07-27T12:28:00.2413285+02:00",
+                      "sha256":  "BC4858522664B3A50797275B30EF66DC79EDB34EDC0477DB273F48E80E59BAEC"
+                  },
+                  {
+                      "statusCode":  " M",
+                      "path":  "uaos-agent-factory/src/supervisor.mjs",
+                      "category":  "SOURCE_WIP",
+                      "size":  5215,
+                      "lastWriteTime":  "2026-07-27T10:39:07.6559327+02:00",
+                      "sha256":  "91BEDA756D8CFC2F9AB3BAF47DAB52EEDFF41019E450A4BB4943913763B11B3A"
+                  },
+                  {
+                      "statusCode":  " M",
+                      "path":  "uaos-agent-factory/tests/bugbot-5-findings.test.mjs",
+                      "category":  "SOURCE_WIP",
+                      "size":  18808,
+                      "lastWriteTime":  "2026-07-27T12:28:00.2457971+02:00",
+                      "sha256":  "7B1FE9C21CD8FCEDBFF8B1915792EB31FCE501167CED088EF5AE34314D22E17B"
+                  },
+                  {
+                      "statusCode":  " M",
+                      "path":  "uaos-agent-factory/tests/cursor-local-claim.test.mjs",
+                      "category":  "SOURCE_WIP",
+                      "size":  9458,
+                      "lastWriteTime":  "2026-07-27T12:58:36.0872541+02:00",
+                      "sha256":  "7DF901562BCBAD6C9C517404B0D8CDED2CC9E9482A56FAA86DDB9EE3A5B2766A"
+                  },
+                  {
+                      "statusCode":  " M",
+                      "path":  "uaos-agent-factory/tests/dispatch.test.mjs",
+                      "category":  "SOURCE_WIP",
+                      "size":  8442,
+                      "lastWriteTime":  "2026-07-27T12:48:56.8025516+02:00",
+                      "sha256":  "0041A87767BBB848ECDE331AAD485D0A3D9EEB2FF9553D95354D1A384B611A82"
+                  },
+                  {
+                      "statusCode":  " M",
+                      "path":  "uaos-agent-factory/tests/generic-runner.test.mjs",
+                      "category":  "SOURCE_WIP",
+                      "size":  8504,
+                      "lastWriteTime":  "2026-07-27T12:28:00.2457971+02:00",
+                      "sha256":  "CD85E4C30FD1428CEC89E5944B4C2242C42B5F656FEFE25A55217E15A5441D6D"
+                  },
+                  {
+                      "statusCode":  " M",
+                      "path":  "uaos-ai-factory/deploy-only-release/reports/UAOS_DEPLOY_ONLY_OWNER_DASHBOARD.md",
+                      "category":  "DOCUMENTATION_WIP",
+                      "size":  559,
+                      "lastWriteTime":  "2026-07-05T10:33:04.4730180+02:00",
+                      "sha256":  "6699DC2F37B06546CD660862EED7A711039B4454C799E5B6D85D880705A9C6BB"
+                  },
+                  {
+                      "statusCode":  " M",
+                      "path":  "uaos-ai-factory/deploy-only-release/reports/UAOS_DEPLOY_ONLY_QA_REPORT.md",
+                      "category":  "DOCUMENTATION_WIP",
+                      "size":  553,
+                      "lastWriteTime":  "2026-07-05T10:33:04.4720179+02:00",
+                      "sha256":  "A1484C3E06EC1F848165BD65C52B76A3805BCD2603185F7654BF02F68C365F1E"
+                  },
+                  {
+                      "statusCode":  " M",
+                      "path":  "uaos-ai-factory/deploy-only-release/seal/UAOS_DEPLOY_ONLY_FINAL_SEAL.md",
+                      "category":  "UNKNOWN_OWNER_REVIEW_REQUIRED",
+                      "size":  448,
+                      "lastWriteTime":  "2026-07-05T10:33:04.4730180+02:00",
+                      "sha256":  "1DFFABDED320B025BD95785E107FB0E2EDB57B5E915863A411B79D4231D57A74"
+                  },
+                  {
+                      "statusCode":  " M",
+                      "path":  "uaos-ai-factory/deploy-only-release/validators/UAOS_DEPLOY_ONLY_RESULTS.json",
+                      "category":  "UNKNOWN_OWNER_REVIEW_REQUIRED",
+                      "size":  1727,
+                      "lastWriteTime":  "2026-07-05T10:33:04.6850195+02:00",
+                      "sha256":  "8125DDB864B1ED5093AEE260ABA47884224DD4CA76614830AFF0C79C2CA6B482"
+                  },
+                  {
+                      "statusCode":  " M",
+                      "path":  "uaos-ai-factory/dummy-writer-external-review-v281-v300/seal/UAOS_DUMMY_WRITER_EXTERNAL_REVIEW_FINAL_SEAL.md",
+                      "category":  "UNKNOWN_OWNER_REVIEW_REQUIRED",
+                      "size":  574,
+                      "lastWriteTime":  "2026-07-06T01:18:13.3493067+02:00",
+                      "sha256":  "99B7C2576279F034BBD013C8535191585D92DA6B5E3131DF564E7B6C3EFF4A6D"
+                  },
+                  {
+                      "statusCode":  " M",
+                      "path":  "uaos-ai-factory/dummy-writer-hardening-v301-v320/seal/UAOS_DUMMY_WRITER_HARDENING_V301_V320_FINAL_SEAL.md",
+                      "category":  "UNKNOWN_OWNER_REVIEW_REQUIRED",
+                      "size":  545,
+                      "lastWriteTime":  "2026-07-06T06:19:00.8954049+02:00",
+                      "sha256":  "9AF2EE836A9FA6EF2D92D1A385720DB03C2A2F0D7100BE291C618ABBE40EA0E1"
+                  },
+                  {
+                      "statusCode":  " M",
+                      "path":  "uaos-ai-factory/external-review-package-v321-v340/seal/UAOS_EXTERNAL_REVIEW_PACKAGE_V321_V340_FINAL_SEAL.md",
+                      "category":  "UNKNOWN_OWNER_REVIEW_REQUIRED",
+                      "size":  547,
+                      "lastWriteTime":  "2026-07-06T06:37:16.7154092+02:00",
+                      "sha256":  "5089C0C29184DF9B194255CF4547D73185A29D60B298A54C8A87C6F98D626693"
+                  },
+                  {
+                      "statusCode":  " M",
+                      "path":  "uaos-ai-factory/final-owner-setup-v3-v381-v400/seal/UAOS_FINAL_OWNER_SETUP_V3_V381_V400_FINAL_SEAL.md",
+                      "category":  "UNKNOWN_OWNER_REVIEW_REQUIRED",
+                      "size":  519,
+                      "lastWriteTime":  "2026-07-06T07:29:28.9108573+02:00",
+                      "sha256":  "FB952B3FEF450D6EE45BB3A610169BFC82CA3AF9DB109B28C938A8E1E91DCD39"
+                  },
+                  {
+                      "statusCode":  " M",
+                      "path":  "uaos-ai-factory/final-owner-setup-v3-v381-v400/v400_master_executive_seal/UAOS_V400_MASTER_EXECUTIVE_SEAL.md",
+                      "category":  "UNKNOWN_OWNER_REVIEW_REQUIRED",
+                      "size":  519,
+                      "lastWriteTime":  "2026-07-06T07:29:28.9128575+02:00",
+                      "sha256":  "FB952B3FEF450D6EE45BB3A610169BFC82CA3AF9DB109B28C938A8E1E91DCD39"
+                  },
+                  {
+                      "statusCode":  " M",
+                      "path":  "uaos-ai-factory/fixture-auto-discovery-v161-v170/09_seal/UAOS_FIXTURE_AUTO_DISCOVERY_FINAL_SEAL.md",
+                      "category":  "UNKNOWN_OWNER_REVIEW_REQUIRED",
+                      "size":  505,
+                      "lastWriteTime":  "2026-07-05T23:13:55.9625003+02:00",
+                      "sha256":  "C70B1FEFB832B72CAA9B922C2D97664970DDCAB4ECABABBBF39E43E4B6914C43"
+                  },
+                  {
+                      "statusCode":  " M",
+                      "path":  "uaos-ai-factory/fixture-rank1-readonly-scan-v161-v170/11_seal/UAOS_RANK1_FIXTURE_READONLY_SCAN_FINAL_SEAL.md",
+                      "category":  "UNKNOWN_OWNER_REVIEW_REQUIRED",
+                      "size":  603,
+                      "lastWriteTime":  "2026-07-05T23:35:32.5872416+02:00",
+                      "sha256":  "C826A7660C5C98C1C0499BD175164680617C59994E19FD4DAA499D28C925876F"
+                  },
+                  {
+                      "statusCode":  " M",
+                      "path":  "uaos-ai-factory/fixture-smart-narrowing-v161-v170/seal/UAOS_FIXTURE_SMART_NARROWING_FINAL_SEAL.md",
+                      "category":  "UNKNOWN_OWNER_REVIEW_REQUIRED",
+                      "size":  543,
+                      "lastWriteTime":  "2026-07-05T23:19:18.1728535+02:00",
+                      "sha256":  "240D0B3F2DBA064CE4A599BE6794C2E6CF6E41EA94255EBFBD248519909FACF1"
+                  },
+                  {
+                      "statusCode":  " M",
+                      "path":  "uaos-ai-factory/git-push-only-release/push-check/UAOS_GIT_PUSH_RESULT.json",
+                      "category":  "UNKNOWN_OWNER_REVIEW_REQUIRED",
+                      "size":  443,
+                      "lastWriteTime":  "2026-07-05T10:24:23.4784343+02:00",
+                      "sha256":  "AE75306D65E37A61D20E7CCF55EF9FDB581A01DFE4E57B8C408481267CAD9A71"
+                  },
+                  {
+                      "statusCode":  " M",
+                      "path":  "uaos-ai-factory/git-push-only-release/push-check/UAOS_GIT_PUSH_RESULT.md",
+                      "category":  "UNKNOWN_OWNER_REVIEW_REQUIRED",
+                      "size":  362,
+                      "lastWriteTime":  "2026-07-05T10:24:23.4794337+02:00",
+                      "sha256":  "977DD6A01D60DB4045B64FB099F11EB1192682327FE7ECEB1BC87E00F0B83298"
+                  },
+                  {
+                      "statusCode":  " M",
+                      "path":  "uaos-ai-factory/git-push-only-release/reports/UAOS_GIT_PUSH_ONLY_OWNER_DASHBOARD.md",
+                      "category":  "DOCUMENTATION_WIP",
+                      "size":  400,
+                      "lastWriteTime":  "2026-07-05T10:24:23.4794337+02:00",
+                      "sha256":  "541EA50FA82FCD76646865E6E96D655092F7AF9A984A2E8D861ECDA8D81A3027"
+                  },
+                  {
+                      "statusCode":  " M",
+                      "path":  "uaos-ai-factory/git-push-only-release/reports/UAOS_GIT_PUSH_ONLY_QA_REPORT.md",
+                      "category":  "DOCUMENTATION_WIP",
+                      "size":  394,
+                      "lastWriteTime":  "2026-07-05T10:24:23.4794337+02:00",
+                      "sha256":  "6786C989E1F8B14CAF58FA6AB3E3D37C49D690EC9EC138B74474D0F0728586F6"
+                  },
+                  {
+                      "statusCode":  " M",
+                      "path":  "uaos-ai-factory/git-push-only-release/seal/UAOS_GIT_PUSH_ONLY_FINAL_SEAL.md",
+                      "category":  "UNKNOWN_OWNER_REVIEW_REQUIRED",
+                      "size":  387,
+                      "lastWriteTime":  "2026-07-05T10:24:23.4804349+02:00",
+                      "sha256":  "EDD23F6AC73C32A268ED38AA3D06FAD2A8EF7C8855C093503A3C12E41596138E"
+                  },
+                  {
+                      "statusCode":  " M",
+                      "path":  "uaos-ai-factory/git-push-only-release/validators/UAOS_GIT_PUSH_ONLY_RESULTS.json",
+                      "category":  "UNKNOWN_OWNER_REVIEW_REQUIRED",
+                      "size":  1432,
+                      "lastWriteTime":  "2026-07-05T10:24:23.6874318+02:00",
+                      "sha256":  "ED34084951A766D109284BD05D68C022858378ED9FE6A6BF6BEADAEFDA561315"
+                  },
+                  {
+                      "statusCode":  " M",
+                      "path":  "uaos-ai-factory/google-studio-full-executor-v461-v700/13_seal/UAOS_GOOGLE_STUDIO_FULL_EXECUTOR_FINAL_SEAL.md",
+                      "category":  "UNKNOWN_OWNER_REVIEW_REQUIRED",
+                      "size":  420,
+                      "lastWriteTime":  "2026-07-06T12:23:02.4034719+02:00",
+                      "sha256":  "5B2A3CB4B08D142201FFC3A10BA42D6203704F87A7BDFC6A83912E87BBAA7994"
+                  },
+                  {
+                      "statusCode":  " M",
+                      "path":  "uaos-ai-factory/implementation/local-ci-qa-runner-task-010/UAOS_LOCAL_CI_TASK_010_OWNER_SUMMARY.md",
+                      "category":  "UNKNOWN_OWNER_REVIEW_REQUIRED",
+                      "size":  1400,
+                      "lastWriteTime":  "2026-07-02T16:47:10.3529625+02:00",
+                      "sha256":  "58E5295F8FDAF6E64DA3CEB441DC765729599D6960CE49D4ECA51BB3F8EDB96C"
+                  },
+                  {
+                      "statusCode":  " M",
+                      "path":  "uaos-ai-factory/implementation/local-ci-qa-runner-task-010/UAOS_LOCAL_CI_TASK_010_REPORT.md",
+                      "category":  "DOCUMENTATION_WIP",
+                      "size":  1610,
+                      "lastWriteTime":  "2026-07-02T16:47:10.3529625+02:00",
+                      "sha256":  "778223EE9FD1BC27F431666C4B2DC4CDB284506F2E82CC128082752574CD9775"
+                  },
+                  {
+                      "statusCode":  " M",
+                      "path":  "uaos-ai-factory/implementation/local-ci-qa-runner-task-010/UAOS_LOCAL_CI_TASK_010_RESULTS.json",
+                      "category":  "UNKNOWN_OWNER_REVIEW_REQUIRED",
+                      "size":  6860,
+                      "lastWriteTime":  "2026-07-02T16:47:10.3529625+02:00",
+                      "sha256":  "77F5BD1E094A673C1A107F489EF6244075B758382CE062C6BF7AD056321D0923"
+                  },
+                  {
+                      "statusCode":  " M",
+                      "path":  "uaos-ai-factory/implementation/local-qa-entrypoint-task-011/UAOS_LOCAL_QA_ENTRYPOINT_TASK_011_REPORT.md",
+                      "category":  "DOCUMENTATION_WIP",
+                      "size":  476,
+                      "lastWriteTime":  "2026-07-02T16:47:10.3940489+02:00",
+                      "sha256":  "CD6B92EF0AF27C534AD6DBBF2B852BBBB4F6161B7A163B8FC43B29231171B091"
+                  },
+                  {
+                      "statusCode":  " M",
+                      "path":  "uaos-ai-factory/implementation/local-qa-entrypoint-task-011/UAOS_LOCAL_QA_ENTRYPOINT_TASK_011_RESULTS.json",
+                      "category":  "UNKNOWN_OWNER_REVIEW_REQUIRED",
+                      "size":  1170,
+                      "lastWriteTime":  "2026-07-02T16:47:10.3940489+02:00",
+                      "sha256":  "765C43A58C2DF6E9CC432C552BEF1D15AB34486E564A67C976897CBA5BD6AFB5"
+                  },
+                  {
+                      "statusCode":  " M",
+                      "path":  "uaos-ai-factory/mega-final-pipeline-v461-v560/11_seal/UAOS_MEGA_FINAL_PIPELINE_V461_V560_FINAL_SEAL.md",
+                      "category":  "UNKNOWN_OWNER_REVIEW_REQUIRED",
+                      "size":  611,
+                      "lastWriteTime":  "2026-07-06T11:13:12.4213232+02:00",
+                      "sha256":  "9B33F9647C3E4248A6E10201A1E994750FD785F5E5252099EF83AE6CF4AD4F1B"
+                  },
+                  {
+                      "statusCode":  " M",
+                      "path":  "uaos-ai-factory/night-super-agent-v301-v400/15_seal/UAOS_NIGHT_SUPER_AGENT_V301_V400_FINAL_SEAL.md",
+                      "category":  "UNKNOWN_OWNER_REVIEW_REQUIRED",
+                      "size":  538,
+                      "lastWriteTime":  "2026-07-06T01:23:03.8911093+02:00",
+                      "sha256":  "FBCD1D69E3C9CBCAE9080B1B89FF0C5A9106BE905ACBDFC0792B1F87327DD3CD"
+                  },
+                  {
+                      "statusCode":  " M",
+                      "path":  "uaos-ai-factory/owner-hands-on-test-pass/seal/UAOS_OWNER_HANDS_ON_TEST_FINAL_SEAL.md",
+                      "category":  "UNKNOWN_OWNER_REVIEW_REQUIRED",
+                      "size":  365,
+                      "lastWriteTime":  "2026-07-05T09:43:11.1479857+02:00",
+                      "sha256":  "7B77B4126AD1B407ACFC120A56B8BD9F3164170556827C25E20B85F3F42D8B85"
+                  },
+                  {
+                      "statusCode":  " M",
+                      "path":  "uaos-ai-factory/owner-hands-on-test-pass/validators/UAOS_OWNER_HANDS_ON_TEST_RESULTS.json",
+                      "category":  "UNKNOWN_OWNER_REVIEW_REQUIRED",
+                      "size":  1319,
+                      "lastWriteTime":  "2026-07-05T09:43:11.2789846+02:00",
+                      "sha256":  "F14AAD44DD0FCF968140AE5E4337AD75DFD81988AD8EE6437D757BADCB4C401E"
+                  },
+                  {
+                      "statusCode":  " M",
+                      "path":  "uaos-ai-factory/owner-test-launcher-repair/seal/UAOS_OWNER_TEST_LAUNCHER_REPAIR_FINAL_SEAL.md",
+                      "category":  "UNKNOWN_OWNER_REVIEW_REQUIRED",
+                      "size":  479,
+                      "lastWriteTime":  "2026-07-05T18:11:53.8000042+02:00",
+                      "sha256":  "845282F206F4F9865A018FAF8AD0623AC5A233AF57B982E9A2B157CDF4EC4A66"
+                  },
+                  {
+                      "statusCode":  " M",
+                      "path":  "uaos-ai-factory/owner-test-launcher-repair/validators/UAOS_OWNER_TEST_LAUNCHER_REPAIR_RESULTS.json",
+                      "category":  "UNKNOWN_OWNER_REVIEW_REQUIRED",
+                      "size":  3299,
+                      "lastWriteTime":  "2026-07-05T18:11:53.9720001+02:00",
+                      "sha256":  "CBD4F1D8B615C8E03A382A54F899CCD95AC79157DDB38F9E7B2B8FDA8097ECA5"
+                  },
+                  {
+                      "statusCode":  " M",
+                      "path":  "uaos-ai-factory/owner-test-result-capture/seal/UAOS_OWNER_TEST_RESULT_CAPTURE_FINAL_SEAL.md",
+                      "category":  "UNKNOWN_OWNER_REVIEW_REQUIRED",
+                      "size":  317,
+                      "lastWriteTime":  "2026-07-05T09:46:54.6063569+02:00",
+                      "sha256":  "58BF3EB343EBBFCBC8C1E5256E6587D966BF68842679897D570A64C1690A7D0E"
+                  },
+                  {
+                      "statusCode":  " M",
+                      "path":  "uaos-ai-factory/owner-test-result-capture/validators/UAOS_OWNER_TEST_RESULT_CAPTURE_RESULTS.json",
+                      "category":  "UNKNOWN_OWNER_REVIEW_REQUIRED",
+                      "size":  1235,
+                      "lastWriteTime":  "2026-07-05T09:46:54.8193650+02:00",
+                      "sha256":  "7F928B9189B8B94F2338195A297C521DC901C8F5E1F1E69B9B4C77572F6A8FF0"
+                  },
+                  {
+                      "statusCode":  " M",
+                      "path":  "uaos-ai-factory/owner-test-setup-automation/01_setup/UAOS_OWNER_TEST_SETUP_STATUS.json",
+                      "category":  "UNKNOWN_OWNER_REVIEW_REQUIRED",
+                      "size":  3326,
+                      "lastWriteTime":  "2026-07-05T22:44:47.2477026+02:00",
+                      "sha256":  "91270799DA8E1710B4C3DB13D642D8590886D97433DBC6B94B08FD8B2DFDD5B3"
+                  },
+                  {
+                      "statusCode":  " M",
+                      "path":  "uaos-ai-factory/owner-test-ui-cleanup-evidence/seal/UAOS_OWNER_TEST_UI_CLEANUP_FINAL_SEAL.md",
+                      "category":  "UNKNOWN_OWNER_REVIEW_REQUIRED",
+                      "size":  417,
+                      "lastWriteTime":  "2026-07-05T22:49:59.5048309+02:00",
+                      "sha256":  "65C3C8C8DDBEE4E31D327E175D2422F4D671AAC2B362964A35D28722F6076B78"
+                  },
+                  {
+                      "statusCode":  " M",
+                      "path":  "uaos-ai-factory/owner-test-ui-cleanup-evidence/validators/UAOS_OWNER_TEST_UI_CLEANUP_RESULTS.json",
+                      "category":  "UNKNOWN_OWNER_REVIEW_REQUIRED",
+                      "size":  3638,
+                      "lastWriteTime":  "2026-07-05T22:49:59.8423937+02:00",
+                      "sha256":  "14718A6814953AB47A2B77F8142DCE5089031805CABCAED819399CD682B85978"
+                  },
+                  {
+                      "statusCode":  " M",
+                      "path":  "uaos-ai-factory/owner-test-url-finalize/seal/UAOS_OWNER_TEST_URL_FINALIZE_FINAL_SEAL.md",
+                      "category":  "UNKNOWN_OWNER_REVIEW_REQUIRED",
+                      "size":  380,
+                      "lastWriteTime":  "2026-07-05T22:23:10.1224894+02:00",
+                      "sha256":  "DC7A168C197F54B931100BEC82AFFF9D3592644C16A2E2024B8953B685B625E0"
+                  },
+                  {
+                      "statusCode":  " M",
+                      "path":  "uaos-ai-factory/owner-test-url-finalize/validators/UAOS_OWNER_TEST_URL_FINALIZE_RESULTS.json",
+                      "category":  "UNKNOWN_OWNER_REVIEW_REQUIRED",
+                      "size":  3154,
+                      "lastWriteTime":  "2026-07-05T22:23:10.2753762+02:00",
+                      "sha256":  "B9A3FA3AE304E2726E9078FC5785EB40713434983F7A2CDF9E72DC0ABC83B71B"
+                  },
+                  {
+                      "statusCode":  " M",
+                      "path":  "uaos-ai-factory/parser-external-review-v441-v460/final-seal/UAOS_V460_EXTERNAL_PARSER_REVIEW_FINAL_SEAL.md",
+                      "category":  "UNKNOWN_OWNER_REVIEW_REQUIRED",
+                      "size":  322,
+                      "lastWriteTime":  "2026-07-06T10:51:16.3629114+02:00",
+                      "sha256":  "2F1B1A124AAEC3493316F933D8183FA9E1EBBF9475FE4FFC7E2D872013719257"
+                  },
+                  {
+                      "statusCode":  " M",
+                      "path":  "uaos-ai-factory/parser-refinement-v171-v180/batch-v171-v180-parser-refinement/UAOS_BATCH_V171_V180_PARSER_REFINEMENT_FINAL_SEAL.md",
+                      "category":  "UNKNOWN_OWNER_REVIEW_REQUIRED",
+                      "size":  543,
+                      "lastWriteTime":  "2026-07-05T23:42:38.8833526+02:00",
+                      "sha256":  "39D91EE6D5D67E6C2CC54E860D5112E20C01EB935557FD089792E57FD147C50E"
+                  },
+                  {
+                      "statusCode":  " M",
+                      "path":  "uaos-ai-factory/parser-refinement-v171-v180/seal/UAOS_PARSER_REFINEMENT_V171_V180_FINAL_SEAL.md",
+                      "category":  "UNKNOWN_OWNER_REVIEW_REQUIRED",
+                      "size":  543,
+                      "lastWriteTime":  "2026-07-05T23:42:38.8863559+02:00",
+                      "sha256":  "39D91EE6D5D67E6C2CC54E860D5112E20C01EB935557FD089792E57FD147C50E"
+                  },
+                  {
+                      "statusCode":  " M",
+                      "path":  "uaos-ai-factory/parser-refinement-v171-v180/v180_final_parser_refinement_seal/UAOS_V180_FINAL_SEAL.md",
+                      "category":  "UNKNOWN_OWNER_REVIEW_REQUIRED",
+                      "size":  543,
+                      "lastWriteTime":  "2026-07-05T23:42:38.8813509+02:00",
+                      "sha256":  "39D91EE6D5D67E6C2CC54E860D5112E20C01EB935557FD089792E57FD147C50E"
+                  },
+                  {
+                      "statusCode":  " M",
+                      "path":  "uaos-ai-factory/parser-research-continuation-v401-v420/seal/UAOS_V420_PARSER_RESEARCH_CONTINUATION_FINAL_SEAL.md",
+                      "category":  "UNKNOWN_OWNER_REVIEW_REQUIRED",
+                      "size":  517,
+                      "lastWriteTime":  "2026-07-06T10:03:10.0897893+02:00",
+                      "sha256":  "4A075F6683D3AF951962E9086CAAD1168BA957D4EEAAD952F3DAD3C5560D52A2"
+                  },
+                  {
+                      "statusCode":  " M",
+                      "path":  "uaos-ai-factory/parser-research-continuation-v421-v440/final-seal/UAOS_V440_PARSER_RESEARCH_CONTINUATION_FINAL_SEAL.md",
+                      "category":  "UNKNOWN_OWNER_REVIEW_REQUIRED",
+                      "size":  351,
+                      "lastWriteTime":  "2026-07-06T10:41:36.7162417+02:00",
+                      "sha256":  "4D2210998799C5B8DDB0216431C8C71C9E7E5BBCD9DEE3E3B830E9164BAD7CC5"
+                  },
+                  {
+                      "statusCode":  " M",
+                      "path":  "uaos-ai-factory/parser-research-factory-v361-v380/seal/UAOS_PARSER_RESEARCH_FACTORY_V361_V380_FINAL_SEAL.md",
+                      "category":  "UNKNOWN_OWNER_REVIEW_REQUIRED",
+                      "size":  650,
+                      "lastWriteTime":  "2026-07-06T07:20:55.3053014+02:00",
+                      "sha256":  "A43F2AC079FB2BDEE41FF8AAA5FA531FBD3F0B32A65D31AE91DF5DF38023C6A9"
+                  },
+                  {
+                      "statusCode":  " M",
+                      "path":  "uaos-ai-factory/parser-research-factory-v361-v380/v380_final_parser_research_factory_seal/UAOS_V380_FINAL_PARSER_RESEARCH_FACTORY_SEAL.md",
+                      "category":  "UNKNOWN_OWNER_REVIEW_REQUIRED",
+                      "size":  650,
+                      "lastWriteTime":  "2026-07-06T07:20:55.3063001+02:00",
+                      "sha256":  "A43F2AC079FB2BDEE41FF8AAA5FA531FBD3F0B32A65D31AE91DF5DF38023C6A9"
+                  },
+                  {
+                      "statusCode":  " M",
+                      "path":  "uaos-ai-factory/pc-workstation/stable/UAOS_PC_WORKSTATION_APP_V10/dsp_planner/analysis_outputs/DSP_BY_CATEGORY_V31.json",
+                      "category":  "UNKNOWN_OWNER_REVIEW_REQUIRED",
+                      "size":  1706,
+                      "lastWriteTime":  "2026-07-05T07:55:02.4437654+02:00",
+                      "sha256":  "CD5EDA6997F74880E2040C6E115C3EA4D1A4218494F90E98A76F2FF5DB48EE88"
+                  },
+                  {
+                      "statusCode":  " M",
+                      "path":  "uaos-ai-factory/pc-workstation/stable/UAOS_PC_WORKSTATION_APP_V10/dsp_planner/analysis_outputs/DSP_UNIFICATION_PLAN_V31.json",
+                      "category":  "UNKNOWN_OWNER_REVIEW_REQUIRED",
+                      "size":  2693,
+                      "lastWriteTime":  "2026-07-05T07:55:02.4437654+02:00",
+                      "sha256":  "AAC8277DBF05EFDB712F1DC59B6ADAF36ED18BA10E5141C06E5272A28161DA23"
+                  },
+                  {
+                      "statusCode":  " M",
+                      "path":  "uaos-ai-factory/pc-workstation/stable/UAOS_PC_WORKSTATION_APP_V10/set_analyzer/analysis_outputs/OWNER_SET_ANALYSIS_SUMMARY_V31.md",
+                      "category":  "UNKNOWN_OWNER_REVIEW_REQUIRED",
+                      "size":  279,
+                      "lastWriteTime":  "2026-07-05T07:55:02.3247773+02:00",
+                      "sha256":  "7D5896DC78F6838B91BDBABB337A760A20EB6720C4D4638A7F1ED4B92A4696A4"
+                  },
+                  {
+                      "statusCode":  " M",
+                      "path":  "uaos-ai-factory/pc-workstation/stable/UAOS_PC_WORKSTATION_APP_V10/set_analyzer/analysis_outputs/OWNER_SET_INVENTORY_V31.csv",
+                      "category":  "UNKNOWN_OWNER_REVIEW_REQUIRED",
+                      "size":  10537,
+                      "lastWriteTime":  "2026-07-05T07:55:02.3237788+02:00",
+                      "sha256":  "28F889BD043FC5989734CF25CED54AD914E7EF16B5651708DA13944462E02211"
+                  },
+                  {
+                      "statusCode":  " M",
+                      "path":  "uaos-ai-factory/pc-workstation/stable/UAOS_PC_WORKSTATION_APP_V10/set_analyzer/analysis_outputs/OWNER_SET_INVENTORY_V31.json",
+                      "category":  "UNKNOWN_OWNER_REVIEW_REQUIRED",
+                      "size":  19025,
+                      "lastWriteTime":  "2026-07-05T07:55:02.3227755+02:00",
+                      "sha256":  "FE013C099614230D1E91BCC568E2620F1175F9C2869CFC68DD517672324E64CE"
+                  },
+                  {
+                      "statusCode":  " M",
+                      "path":  "uaos-ai-factory/push-deploy-approval-gate/seal/UAOS_PUSH_DEPLOY_APPROVAL_GATE_FINAL_SEAL.md",
+                      "category":  "UNKNOWN_OWNER_REVIEW_REQUIRED",
+                      "size":  322,
+                      "lastWriteTime":  "2026-07-05T10:12:16.2511130+02:00",
+                      "sha256":  "AD74FCD08A1CFCE39004D70BC01D4015F60878B71A0FEC2D78AC2A8AA1C1F11B"
+                  },
+                  {
+                      "statusCode":  " M",
+                      "path":  "uaos-ai-factory/push-deploy-approval-gate/validators/UAOS_PUSH_DEPLOY_APPROVAL_GATE_RESULTS.json",
+                      "category":  "UNKNOWN_OWNER_REVIEW_REQUIRED",
+                      "size":  1619,
+                      "lastWriteTime":  "2026-07-05T10:12:16.4311158+02:00",
+                      "sha256":  "A970733C8D814E489CDCF1CB24A701DEEEC62DD653BFC9349DC68C16F6DA7374"
+                  },
+                  {
+                      "statusCode":  " M",
+                      "path":  "uaos-ai-factory/rank1-deep-parser-refinement-v181-v190/batch-v181-v190-rank1-deep-parser-refinement/UAOS_BATCH_V181_V190_RANK1_DEEP_REFINEMENT_FINAL_SEAL.md",
+                      "category":  "UNKNOWN_OWNER_REVIEW_REQUIRED",
+                      "size":  595,
+                      "lastWriteTime":  "2026-07-05T23:54:13.0041704+02:00",
+                      "sha256":  "1174FEA90B05431142B17AB6FBF8A7C892232646720872D5465F9CD5BD932132"
+                  },
+                  {
+                      "statusCode":  " M",
+                      "path":  "uaos-ai-factory/rank1-deep-parser-refinement-v181-v190/seal/UAOS_RANK1_DEEP_PARSER_REFINEMENT_FINAL_SEAL.md",
+                      "category":  "UNKNOWN_OWNER_REVIEW_REQUIRED",
+                      "size":  595,
+                      "lastWriteTime":  "2026-07-05T23:54:13.0071725+02:00",
+                      "sha256":  "1174FEA90B05431142B17AB6FBF8A7C892232646720872D5465F9CD5BD932132"
+                  },
+                  {
+                      "statusCode":  " M",
+                      "path":  "uaos-ai-factory/rank1-deep-parser-refinement-v181-v190/v190_final_deep_refinement_seal/UAOS_V190_FINAL_SEAL.md",
+                      "category":  "UNKNOWN_OWNER_REVIEW_REQUIRED",
+                      "size":  595,
+                      "lastWriteTime":  "2026-07-05T23:54:13.0021738+02:00",
+                      "sha256":  "1174FEA90B05431142B17AB6FBF8A7C892232646720872D5465F9CD5BD932132"
+                  },
+                  {
+                      "statusCode":  " M",
+                      "path":  "uaos-ai-factory/react-app-integration-relaxed-mode/seal/UAOS_REACT_APP_INTEGRATION_FINAL_SEAL.md",
+                      "category":  "UNKNOWN_OWNER_REVIEW_REQUIRED",
+                      "size":  419,
+                      "lastWriteTime":  "2026-07-05T09:17:08.5499736+02:00",
+                      "sha256":  "5CF455D8CDC4C60D6224E485C0A5CFB02C03836F7030DB11D4FF862E4B7459ED"
+                  },
+                  {
+                      "statusCode":  " M",
+                      "path":  "uaos-ai-factory/react-app-integration-relaxed-mode/validators/UAOS_REACT_APP_INTEGRATION_VALIDATOR_RESULTS.json",
+                      "category":  "UNKNOWN_OWNER_REVIEW_REQUIRED",
+                      "size":  2014,
+                      "lastWriteTime":  "2026-07-05T09:17:08.7179757+02:00",
+                      "sha256":  "742E41262A3A6B669C4634C0FD9362B815C4FB415ED6E5D3C29FE2DA3993ED71"
+                  },
+                  {
+                      "statusCode":  " M",
+                      "path":  "uaos-ai-factory/react-local-browser-walkthrough/seal/UAOS_LOCAL_BROWSER_WALKTHROUGH_FINAL_SEAL.md",
+                      "category":  "UNKNOWN_OWNER_REVIEW_REQUIRED",
+                      "size":  365,
+                      "lastWriteTime":  "2026-07-05T09:35:14.2279823+02:00",
+                      "sha256":  "4E7B3A3E7D804B480139FD06F8389E738FB13050202B623101BB53490B319B8C"
+                  },
+                  {
+                      "statusCode":  " M",
+                      "path":  "uaos-ai-factory/react-local-browser-walkthrough/validators/UAOS_LOCAL_BROWSER_WALKTHROUGH_RESULTS.json",
+                      "category":  "UNKNOWN_OWNER_REVIEW_REQUIRED",
+                      "size":  1457,
+                      "lastWriteTime":  "2026-07-05T09:35:14.4049983+02:00",
+                      "sha256":  "42B435D2D0BC2E1FA798B1A66CDDD9441289E3275348869F6CF72581B321FF71"
+                  },
+                  {
+                      "statusCode":  " M",
+                      "path":  "uaos-ai-factory/react-owner-ui-review-polish/seal/UAOS_OWNER_UI_REVIEW_POLISH_FINAL_SEAL.md",
+                      "category":  "UNKNOWN_OWNER_REVIEW_REQUIRED",
+                      "size":  288,
+                      "lastWriteTime":  "2026-07-05T09:26:29.9842144+02:00",
+                      "sha256":  "98CAA2F2A0FCC14F841B6BC541126E08CB3E2B64E558DD577664BC4CDA717A2E"
+                  },
+                  {
+                      "statusCode":  " M",
+                      "path":  "uaos-ai-factory/react-owner-ui-review-polish/validators/UAOS_OWNER_UI_REVIEW_POLISH_RESULTS.json",
+                      "category":  "UNKNOWN_OWNER_REVIEW_REQUIRED",
+                      "size":  1151,
+                      "lastWriteTime":  "2026-07-05T09:26:30.1121989+02:00",
+                      "sha256":  "9CCA9EA1667D1241B2B7CA2AB89B71874C11D99D4ED4848289F5931450C98AB3"
+                  },
+                  {
+                      "statusCode":  " M",
+                      "path":  "uaos-ai-factory/real-writer-roadmap-owner-gate/seal/UAOS_REAL_WRITER_ROADMAP_FINAL_SEAL.md",
+                      "category":  "UNKNOWN_OWNER_REVIEW_REQUIRED",
+                      "size":  407,
+                      "lastWriteTime":  "2026-07-05T22:52:16.5828166+02:00",
+                      "sha256":  "E22EA332297A3100F1DF3EC06B706BBF21BA85226BF2E93CB01553552811551E"
+                  },
+                  {
+                      "statusCode":  " M",
+                      "path":  "uaos-ai-factory/real-writer-roadmap-owner-gate/validators/UAOS_REAL_WRITER_ROADMAP_RESULTS.json",
+                      "category":  "UNKNOWN_OWNER_REVIEW_REQUIRED",
+                      "size":  2781,
+                      "lastWriteTime":  "2026-07-05T22:52:16.7593007+02:00",
+                      "sha256":  "79750D68BF7B97EB1750021AB6BBFD445CA5BB5741195F36078A05FF64B0D36F"
+                  },
+                  {
+                      "statusCode":  " M",
+                      "path":  "uaos-ai-factory/real-writer-workbench-v191-v220/seal/UAOS_REAL_WRITER_WORKBENCH_FINAL_SEAL.md",
+                      "category":  "UNKNOWN_OWNER_REVIEW_REQUIRED",
+                      "size":  595,
+                      "lastWriteTime":  "2026-07-06T00:15:51.8529132+02:00",
+                      "sha256":  "48A7717A326DE1670B1E3B029737EDC2614583A1A104CFC6736529A2A272B7E0"
+                  },
+                  {
+                      "statusCode":  " M",
+                      "path":  "uaos-ai-factory/sound-library-priority-refinement/validators/UAOS_SOUND_LIBRARY_PRIORITY_REFINEMENT_RESULTS.json",
+                      "category":  "UNKNOWN_OWNER_REVIEW_REQUIRED",
+                      "size":  2946,
+                      "lastWriteTime":  "2026-07-05T07:52:16.2769339+02:00",
+                      "sha256":  "FBD90AE303E44C131B7DDD30A13E5A4C69E3862CED5FEB01A0033D4A202DD77A"
+                  },
+                  {
+                      "statusCode":  " M",
+                      "path":  "uaos-ai-factory/style-rc-deep-ui-integration/seal/UAOS_STYLE_RC_DEEP_UI_INTEGRATION_FINAL_SEAL.md",
+                      "category":  "UNKNOWN_OWNER_REVIEW_REQUIRED",
+                      "size":  342,
+                      "lastWriteTime":  "2026-07-05T09:50:42.7343043+02:00",
+                      "sha256":  "4B4D1E967DA948D282BD9346FA7718993C7E276C5DD46054C3EF9DD8C1BA5663"
+                  },
+                  {
+                      "statusCode":  " M",
+                      "path":  "uaos-ai-factory/style-rc-deep-ui-integration/validators/UAOS_STYLE_RC_DEEP_UI_RESULTS.json",
+                      "category":  "UNKNOWN_OWNER_REVIEW_REQUIRED",
+                      "size":  1106,
+                      "lastWriteTime":  "2026-07-05T09:50:42.8963027+02:00",
+                      "sha256":  "3149AFD64471A5AACD9F3E11BAA193818F9D7E99B68F4B41A7CA664DA8A8494F"
+                  },
+                  {
+                      "statusCode":  " M",
+                      "path":  "uaos-ai-factory/style-rc-factory-v341-v360/seal/UAOS_STYLE_RC_FACTORY_V341_V360_FINAL_SEAL.md",
+                      "category":  "UNKNOWN_OWNER_REVIEW_REQUIRED",
+                      "size":  499,
+                      "lastWriteTime":  "2026-07-06T07:08:04.1164058+02:00",
+                      "sha256":  "75818B16DD6C4C40A0CEA90F063E0E6728954D4F83D8397FDD134BA6CE14E5A8"
+                  },
+                  {
+                      "statusCode":  " M",
+                      "path":  "uaos-ai-factory/style-rc-local-browser-qa/seal/UAOS_STYLE_RC_LOCAL_BROWSER_QA_FINAL_SEAL.md",
+                      "category":  "UNKNOWN_OWNER_REVIEW_REQUIRED",
+                      "size":  359,
+                      "lastWriteTime":  "2026-07-05T10:03:07.6499179+02:00",
+                      "sha256":  "A2E2EDD65ABB21949E78D2FCD113DBD10FEAA948C5AE3652EF5473694C9B473F"
+                  },
+                  {
+                      "statusCode":  " M",
+                      "path":  "uaos-ai-factory/style-rc-local-browser-qa/validators/UAOS_STYLE_RC_LOCAL_BROWSER_QA_RESULTS.json",
+                      "category":  "UNKNOWN_OWNER_REVIEW_REQUIRED",
+                      "size":  1641,
+                      "lastWriteTime":  "2026-07-05T10:03:07.7819364+02:00",
+                      "sha256":  "A988A10C175BE9598DB06D8E0926F737E2FA6E05F7CC5AAFDDD7D6344AE31A84"
+                  },
+                  {
+                      "statusCode":  " M",
+                      "path":  "uaos-ai-factory/uaos-v1501-v1700-final-owner-website-test-programs/logs/RUN_V1703_CONSOLE_DOM_REPAIR_COMPLETE.txt",
+                      "category":  "UNKNOWN_OWNER_REVIEW_REQUIRED",
+                      "size":  414,
+                      "lastWriteTime":  "2026-07-06T16:44:59.2653476+02:00",
+                      "sha256":  "A02B485B330616C92B5EF630DBD33F34A4FE23D7CEC0BE2B70DBB5F0B819192E"
+                  },
+                  {
+                      "statusCode":  " M",
+                      "path":  "uaos-ai-factory/uaos-v2917-v2966-big-launch-train-24-manual-sales-desk-invoice-disabled-ops-pack/14-git-hygiene/UAOS_V2917_V2966_COMMIT_RESULT.txt",
+                      "category":  "UNKNOWN_OWNER_REVIEW_REQUIRED",
+                      "size":  642,
+                      "lastWriteTime":  "2026-07-08T16:08:17.0928472+02:00",
+                      "sha256":  "FF06269D981DD2C9A9E833B8B985C7AFD546ED937DB7F9B972171DBB88649F69"
+                  },
+                  {
+                      "statusCode":  " M",
+                      "path":  "uaos-ai-factory/vercel-deploy-link-repair/reports/UAOS_VERCEL_DEPLOY_LINK_REPAIR_OWNER_DASHBOARD.md",
+                      "category":  "DOCUMENTATION_WIP",
+                      "size":  506,
+                      "lastWriteTime":  "2026-07-05T10:38:10.6540292+02:00",
+                      "sha256":  "DBFF6F3F5DE9E7607786D9B88DC103072FCC98B2EF535229AEFF1D9531BAE387"
+                  },
+                  {
+                      "statusCode":  " M",
+                      "path":  "uaos-ai-factory/vercel-deploy-link-repair/reports/UAOS_VERCEL_DEPLOY_LINK_REPAIR_QA_REPORT.md",
+                      "category":  "DOCUMENTATION_WIP",
+                      "size":  500,
+                      "lastWriteTime":  "2026-07-05T10:38:10.6540292+02:00",
+                      "sha256":  "4B020FBED6F790D5A7BB210C32A168BA09B1DFCA6979D79444056EC7F381ED70"
+                  },
+                  {
+                      "statusCode":  " M",
+                      "path":  "uaos-ai-factory/vercel-deploy-link-repair/seal/UAOS_VERCEL_DEPLOY_LINK_REPAIR_FINAL_SEAL.md",
+                      "category":  "UNKNOWN_OWNER_REVIEW_REQUIRED",
+                      "size":  395,
+                      "lastWriteTime":  "2026-07-05T10:38:10.6550286+02:00",
+                      "sha256":  "D3DF1B60A594B4559E2593078A8B20C6E5569FA6E8EB0862878B7AF153C56495"
+                  },
+                  {
+                      "statusCode":  " M",
+                      "path":  "uaos-ai-factory/vercel-deploy-link-repair/validators/UAOS_VERCEL_DEPLOY_LINK_REPAIR_RESULTS.json",
+                      "category":  "UNKNOWN_OWNER_REVIEW_REQUIRED",
+                      "size":  1030,
+                      "lastWriteTime":  "2026-07-05T10:38:10.8280260+02:00",
+                      "sha256":  "6F448F4899E9E2B1C66B7A2A1B81DFFCF5C0CCB6D9128A9B2B994A0CBA1E264C"
+                  },
+                  {
+                      "statusCode":  " M",
+                      "path":  "uaos-ai-factory/vercel-deploy-retry-linked/reports/UAOS_VERCEL_DEPLOY_RETRY_LINKED_OWNER_DASHBOARD.md",
+                      "category":  "DOCUMENTATION_WIP",
+                      "size":  595,
+                      "lastWriteTime":  "2026-07-05T10:52:23.4759247+02:00",
+                      "sha256":  "D2D22E381D96794D0FEF480224A1DDAA278F08D3B595FB30A80495D7972898E5"
+                  },
+                  {
+                      "statusCode":  " M",
+                      "path":  "uaos-ai-factory/vercel-deploy-retry-linked/reports/UAOS_VERCEL_DEPLOY_RETRY_LINKED_QA_REPORT.md",
+                      "category":  "DOCUMENTATION_WIP",
+                      "size":  589,
+                      "lastWriteTime":  "2026-07-05T10:52:23.4749241+02:00",
+                      "sha256":  "596B4B92AFBF21E976EDAC694D66489DAECB0E53CF5F345FF3480FD37377AD43"
+                  },
+                  {
+                      "statusCode":  " M",
+                      "path":  "uaos-ai-factory/vercel-deploy-retry-linked/seal/UAOS_VERCEL_DEPLOY_RETRY_LINKED_FINAL_SEAL.md",
+                      "category":  "UNKNOWN_OWNER_REVIEW_REQUIRED",
+                      "size":  423,
+                      "lastWriteTime":  "2026-07-05T10:52:23.4769249+02:00",
+                      "sha256":  "3FD364A2842588A17EB853B97236D98AFB6753BDD4855CBF35BDC253EB9A8625"
+                  },
+                  {
+                      "statusCode":  " M",
+                      "path":  "uaos-ai-factory/vercel-deploy-retry-linked/validators/UAOS_VERCEL_DEPLOY_RETRY_LINKED_RESULTS.json",
+                      "category":  "UNKNOWN_OWNER_REVIEW_REQUIRED",
+                      "size":  1701,
+                      "lastWriteTime":  "2026-07-05T10:52:23.7429274+02:00",
+                      "sha256":  "C4732FD3132A5893E24ACCF837688A2C05840004BAFBB2499E09BF8E6D045CF4"
+                  },
+                  {
+                      "statusCode":  " M",
+                      "path":  "uaos-ai-factory/vercel-deploy-retry-slim/seal/UAOS_VERCEL_DEPLOY_RETRY_SLIM_FINAL_SEAL.md",
+                      "category":  "UNKNOWN_OWNER_REVIEW_REQUIRED",
+                      "size":  542,
+                      "lastWriteTime":  "2026-07-05T12:58:40.4080484+02:00",
+                      "sha256":  "860942AF0D050674833145C4151923275533EF14BBC19A3EDFAA7DF409269AF3"
+                  },
+                  {
+                      "statusCode":  " M",
+                      "path":  "uaos-ai-factory/vercel-deploy-retry-slim/validators/UAOS_VERCEL_DEPLOY_RETRY_SLIM_RESULTS.json",
+                      "category":  "UNKNOWN_OWNER_REVIEW_REQUIRED",
+                      "size":  3308,
+                      "lastWriteTime":  "2026-07-05T12:58:40.7070696+02:00",
+                      "sha256":  "79AD50D149CB5F152FB3E683702D13FAFB3937F1AFE52F10CAAD541716DC1763"
+                  },
+                  {
+                      "statusCode":  " M",
+                      "path":  "uaos-ai-factory/vercel-deploy-status-verify/seal/UAOS_VERCEL_DEPLOY_STATUS_VERIFY_FINAL_SEAL.md",
+                      "category":  "UNKNOWN_OWNER_REVIEW_REQUIRED",
+                      "size":  425,
+                      "lastWriteTime":  "2026-07-05T13:34:22.0856965+02:00",
+                      "sha256":  "A68B05F7B402736EE61B3B8771ACA38A5EBE9E8B08A8DFE96C6630D7A8C3B8D7"
+                  },
+                  {
+                      "statusCode":  " M",
+                      "path":  "uaos-ai-factory/vercel-deploy-status-verify/validators/UAOS_VERCEL_DEPLOY_STATUS_VERIFY_RESULTS.json",
+                      "category":  "UNKNOWN_OWNER_REVIEW_REQUIRED",
+                      "size":  2519,
+                      "lastWriteTime":  "2026-07-05T13:34:22.4399257+02:00",
+                      "sha256":  "CC929989B7FD7014FFD0D6C231D10DF2ACD804F672461FCA6DFD9FA76987A81B"
+                  },
+                  {
+                      "statusCode":  " M",
+                      "path":  "uaos-ai-factory/vercel-slim-deploy-prep/seal/UAOS_VERCEL_SLIM_DEPLOY_PREP_FINAL_SEAL.md",
+                      "category":  "UNKNOWN_OWNER_REVIEW_REQUIRED",
+                      "size":  434,
+                      "lastWriteTime":  "2026-07-05T11:27:05.5790970+02:00",
+                      "sha256":  "9AF8A09DD41998D4B7B0D365E1F59BE5757AAB4F8F5BB4E14C51406D9B61745A"
+                  },
+                  {
+                      "statusCode":  " M",
+                      "path":  "uaos-ai-factory/writer-sandbox-design-v221-v240/seal/UAOS_WRITER_SANDBOX_DESIGN_FINAL_SEAL.md",
+                      "category":  "UNKNOWN_OWNER_REVIEW_REQUIRED",
+                      "size":  548,
+                      "lastWriteTime":  "2026-07-06T00:35:11.1720941+02:00",
+                      "sha256":  "BB22A14469A5F6EBB5BD923D88605D38520F0E772930E63E8355BE9D065A657B"
+                  },
+                  {
+                      "statusCode":  " M",
+                      "path":  "uaos-ai-factory/writer-sandbox-dummy-implementation-v261-v280/seal/UAOS_DUMMY_WRITER_SANDBOX_FINAL_SEAL.md",
+                      "category":  "UNKNOWN_OWNER_REVIEW_REQUIRED",
+                      "size":  553,
+                      "lastWriteTime":  "2026-07-06T01:03:27.9149022+02:00",
+                      "sha256":  "4B9A772B3084D0BE1B25BB37A87BCD85C64210653375BB639B72606999801308"
+                  },
+                  {
+                      "statusCode":  " M",
+                      "path":  "uaos-ai-factory/writer-sandbox-planning-v241-v260/seal/UAOS_WRITER_SANDBOX_PLANNING_FINAL_SEAL.md",
+                      "category":  "UNKNOWN_OWNER_REVIEW_REQUIRED",
+                      "size":  559,
+                      "lastWriteTime":  "2026-07-06T00:51:40.4990676+02:00",
+                      "sha256":  "45D6E8203A3CABC90C29563F13A1EB0DC259568C63C264129B1C568FEF2BE737"
+                  },
+                  {
+                      "statusCode":  " M",
+                      "path":  "uaos-live-clean/dist/index.html",
+                      "category":  "GENERATED_ARTIFACT",
+                      "size":  1048,
+                      "lastWriteTime":  "2026-07-27T20:40:44.0646239+02:00",
+                      "sha256":  "D2C0BCA06CB93951A2208866DA3EEC0DC2FE84C03AE86AC4E1444963820CB442"
+                  },
+                  {
+                      "statusCode":  " M",
+                      "path":  "uaos-live-clean/src/App.jsx",
+                      "category":  "SOURCE_WIP",
+                      "size":  7760,
+                      "lastWriteTime":  "2026-07-09T22:16:59.7848984+02:00",
+                      "sha256":  "1233880E55BC353E9B67C81FD41DFFDBF245C1C8B7D1293D889C00453B6FE91D"
+                  },
+                  {
+                      "statusCode":  " M",
+                      "path":  "uaos-live-clean/src/style.css",
+                      "category":  "SOURCE_WIP",
+                      "size":  1856,
+                      "lastWriteTime":  "2026-07-09T22:16:59.9896445+02:00",
+                      "sha256":  "BA118A19C1C641ACD4949D46C8DA432DFBA8EF4503D2A35F1608491082E41275"
+                  },
+                  {
+                      "statusCode":  " D",
+                      "path":  "uaos-public-preview/PUBLIC_PREVIEW_STATUS.md",
+                      "category":  "UNKNOWN_OWNER_REVIEW_REQUIRED",
+                      "size":  null,
+                      "lastWriteTime":  null,
+                      "sha256":  null
+                  },
+                  {
+                      "statusCode":  " M",
+                      "path":  "uaos-public-preview/index.html",
+                      "category":  "SOURCE_WIP",
+                      "size":  712,
+                      "lastWriteTime":  "2026-07-11T06:31:24.2048668+02:00",
+                      "sha256":  "3D8942BB16CCAAA1DC52F7F2B6A2DB5C5868A840266036B1B221430CDC7B24D3"
+                  },
+                  {
+                      "statusCode":  "??",
+                      "path":  "desktop-cleanup-archive/",
+                      "category":  "INTENTIONAL_WIP",
+                      "size":  "DIR",
+                      "lastWriteTime":  "2026-07-15T23:10:36.8080504+02:00",
+                      "sha256":  null
+                  },
+                  {
+                      "statusCode":  "??",
+                      "path":  "uaos-agent-factory/state/",
+                      "category":  "INTENTIONAL_WIP",
+                      "size":  "DIR",
+                      "lastWriteTime":  "2026-08-04T12:05:17.0577109+02:00",
+                      "sha256":  null
+                  },
+                  {
+                      "statusCode":  "??",
+                      "path":  "uaos-ai-factory/vercel-linked-monitor-repo-sync/",
+                      "category":  "INTENTIONAL_WIP",
+                      "size":  "DIR",
+                      "lastWriteTime":  "2026-07-02T12:08:24.4988034+02:00",
+                      "sha256":  null
+                  },
+                  {
+                      "statusCode":  "??",
+                      "path":  "uaos-korg-studio/",
+                      "category":  "INTENTIONAL_WIP",
+                      "size":  "DIR",
+                      "lastWriteTime":  "2026-08-04T12:05:20.7442552+02:00",
+                      "sha256":  null
+                  },
+                  {
+                      "statusCode":  "??",
+                      "path":  "uaos-real-product/",
+                      "category":  "INTENTIONAL_WIP",
+                      "size":  "DIR",
+                      "lastWriteTime":  "2026-07-21T17:32:36.7964673+02:00",
+                      "sha256":  null
+                  },
+                  {
+                      "statusCode":  "??",
+                      "path":  "uaos-worktrees/",
+                      "category":  "INTENTIONAL_WIP",
+                      "size":  "DIR",
+                      "lastWriteTime":  "2026-07-18T07:21:57.4039949+02:00",
+                      "sha256":  null
+                  }
+              ],
+    "mutationPerformed":  false
+}

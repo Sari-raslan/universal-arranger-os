@@ -1,51 +1,55 @@
-{
-  "checks": {
-    "roadmap_exists": {
-      "pass": true,
-      "detail": "roadmap"
-    },
-    "fixture_gate_exists": {
-      "pass": true,
-      "detail": "fixture gate"
-    },
-    "writer_gate_exists": {
-      "pass": true,
-      "detail": "writer gate"
-    },
-    "usb_pa3x_gate_exists": {
-      "pass": true,
-      "detail": "usb/pa3x gate"
-    },
-    "build_pass_if_react_touched": {
-      "pass": true,
-      "detail": "React card not added"
-    },
-    "no_writer_implementation": {
-      "pass": true,
-      "detail": "roadmap only"
-    },
-    "no_blocked_korg_files_generated": {
-      "pass": true,
-      "detail": ""
-    },
-    "no_usb_write": {
-      "pass": true,
-      "detail": "USB blocked"
-    },
-    "no_pa3x_load": {
-      "pass": true,
-      "detail": "PA3X blocked"
-    },
-    "no_false_claim_strings": {
-      "pass": true,
-      "detail": "claim strings absent"
-    },
-    "no_deploy": {
-      "pass": true,
-      "detail": "no deploy commands"
-    }
-  },
-  "errors": [],
-  "pass": true,
-  "validator": "uaos_real_writer_roadmap_validator.py"
+﻿{
+    "checks":  {
+                   "roadmap_exists":  {
+                                          "pass":  true,
+                                          "detail":  "roadmap"
+                                      },
+                   "fixture_gate_exists":  {
+                                               "pass":  true,
+                                               "detail":  "fixture gate"
+                                           },
+                   "writer_gate_exists":  {
+                                              "pass":  true,
+                                              "detail":  "writer gate"
+                                          },
+                   "usb_pa3x_gate_exists":  {
+                                                "pass":  true,
+                                                "detail":  "usb/pa3x gate"
+                                            },
+                   "build_pass_if_react_touched":  {
+                                                       "pass":  true,
+                                                       "detail":  "React card not added"
+                                                   },
+                   "no_writer_implementation":  {
+                                                    "pass":  true,
+                                                    "detail":  "roadmap only"
+                                                },
+                   "no_blocked_korg_files_generated":  {
+                                                           "pass":  true,
+                                                           "detail":  ""
+                                                       },
+                   "no_usb_write":  {
+                                        "pass":  true,
+                                        "detail":  "USB blocked"
+                                    },
+                   "no_pa3x_load":  {
+                                        "pass":  true,
+                                        "detail":  "PA3X blocked"
+                                    },
+                   "no_false_claim_strings":  {
+                                                  "pass":  true,
+                                                  "detail":  "claim strings absent"
+                                              },
+                   "no_deploy":  {
+                                     "pass":  true,
+                                     "detail":  "no deploy commands"
+                                 }
+               },
+    "errors":  [
+
+               ],
+    "pass":  true,
+    "validator":  "uaos_real_writer_roadmap_validator.py",
+    "commit_hash":  "1808c2213ff2681b16b2f8b782b78fbd531feb45",
+    "pushed":  false
 }

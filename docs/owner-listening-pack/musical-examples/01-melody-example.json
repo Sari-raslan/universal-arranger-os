@@ -1,0 +1,42 @@
+{
+  "id": "01-melody-example",
+  "title": "Melody example",
+  "SOURCE_INPUT": "Original UAOS Hijaz-inspired MIDI phrase (C/Db/E/F/G/Ab contour).",
+  "EXPECTED_CAPABILITY": "Render a real short melody, not a single test tone.",
+  "ACTUAL_ACTIONS": [
+    "Load original 16-note phrase",
+    "Render lead voice with envelope"
+  ],
+  "WAV_PATH": "C:\\keyboard-manager-clean\\docs\\owner-listening-pack\\musical-examples\\01-melody-example.wav",
+  "DURATION": 5.1250113378684805,
+  "SAMPLE_RATE": 44100,
+  "SHA256": "e338b8293ae47fefa2c17323e40bd417c8b5a99bc271fd67e0c269cd9f07794b",
+  "SOURCE_COMMIT": "5aeac11779bd678ca3c80d16144e302a5eb5d9f6",
+  "SETTINGS": {
+    "variant": "hijaz",
+    "tempo": 96,
+    "groove": "melody-only",
+    "harmony": "unison",
+    "sections": [
+      {
+        "name": "Melody",
+        "bars": 2
+      }
+    ],
+    "uniqueMidiCount": 6,
+    "uniqueOnsetCount": 16,
+    "voices": [
+      "lead"
+    ]
+  },
+  "WHAT_OWNER_SHOULD_LISTEN_FOR": "A moving melody with several pitches and rhythm. Not a stuck 440 Hz beep.",
+  "KNOWN_LIMITATIONS": [
+    "Offline oscillator sketch, not a sampled library and not real-time DSP.",
+    "Not Musical Brain quality PASS.",
+    "Original UAOS sketch — not product catalog content and not a licensed song."
+  ],
+  "musicalQualityPass": false,
+  "musicalQualityClaim": false,
+  "sineFixture": false,
+  "technicalFixtureUsedAsMusicalProof": false
+}

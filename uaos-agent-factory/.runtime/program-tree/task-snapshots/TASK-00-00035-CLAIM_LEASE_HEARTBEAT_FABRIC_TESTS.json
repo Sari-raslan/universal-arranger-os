@@ -1,0 +1,38 @@
+{
+  "id": "TASK-00-00035-CLAIM_LEASE_HEARTBEAT_FABRIC_TESTS",
+  "epicId": "EPIC-00-0001-PROGRAM_TREE_FABRIC",
+  "domain": "00-ORCHESTRATION",
+  "title": "Claim lease heartbeat fabric tests",
+  "phase": "TEST",
+  "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+  "state": "READY",
+  "priority": 10,
+  "estimateMinutesMin": 45,
+  "estimateMinutesMax": 180,
+  "inputs": [],
+  "acceptanceCriteria": [
+    "Claim lease heartbeat fabric tests contract file exists",
+    "Unit assertions pass for Claim lease heartbeat fabric tests",
+    "Evidence JSON written with SHA256"
+  ],
+  "tests": [
+    "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-00-00035-claim_lease_heartbeat_fabric_tests\\tests\\main.test.mjs"
+  ],
+  "evidence": [
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-00-00035-claim_lease_heartbeat_fabric_tests/evidence/result.json"
+  ],
+  "allowedPaths": [
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-00-00035-claim_lease_heartbeat_fabric_tests",
+    "C:\\keyboard-manager-clean\\uaos-agent-factory\\.runtime\\artifacts\\uaos-program-tree\\TASK-00-00035-CLAIM_LEASE_HEARTBEAT_FABRIC_TESTS"
+  ],
+  "ownerFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-00-00035-claim_lease_heartbeat_fabric_tests\\src\\claim_lease_heartbeat_fabric_tes.mjs",
+  "worktree": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-00-00035-claim_lease_heartbeat_fabric_tests",
+  "gate": null,
+  "blockedReason": null,
+  "rc1Critical": true,
+  "claims": [],
+  "lease": null,
+  "heartbeats": [],
+  "createdAt": "2026-08-04T20:47:04.317Z",
+  "updatedAt": "2026-08-04T20:49:23.419Z"
+}

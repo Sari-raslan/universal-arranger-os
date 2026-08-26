@@ -1,0 +1,29 @@
+{
+    "results":  [
+                    {
+                        "afterRetry":  null,
+                        "exitCode":  0,
+                        "name":  "check"
+                    },
+                    {
+                        "name":  "test:sampler",
+                        "exitCode":  0
+                    },
+                    {
+                        "initialFail":  true,
+                        "exitCode":  0,
+                        "name":  "test:library-validator",
+                        "note":  "retry after D: subst"
+                    },
+                    {
+                        "initialFail":  true,
+                        "exitCode":  0,
+                        "name":  "test:preview-player",
+                        "note":  "retry after D: subst"
+                    },
+                    {
+                        "name":  "build:desktop",
+                        "exitCode":  0
+                    }
+                ]
+}

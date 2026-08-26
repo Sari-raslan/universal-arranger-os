@@ -1,0 +1,112 @@
+{
+  "generatedAt": "2026-08-05T10:45:36.575Z",
+  "scope": "Narrowly scoped per the mission: inspected only tasks whose real source imports (the sole objective evidence criterion previously validated) consume outputs from the 11 named completed capabilities. This extends Batch 4's source-import scan (which covered the 32 tasks done as of Batch 3) to all 44 currently-DONE tasks — catching cross-capability imports written by Batch 4's OWN new capabilities (Entitlements, Export/Import User Data, Inspector) that were never scanned afterward.",
+  "totalDoneTasksScanned": 44,
+  "structuralReconfirmation": {
+    "totalCapabilityGroups": 401,
+    "crossGroupEdgesInCurrentGraph": 8,
+    "note": "Since Batch 4's repair, 8 cross-group edges exist in the graph (the 8 added in Batch 4). newly_unblocked remaining 0 across Batches 1-4 is consistent with those 8 edges all connecting already-DONE tasks (documentation of true architecture, not live unblocking) — re-confirmed here, not re-derived from scratch (no repeat of the full Option A-F audit, per the mission's instruction not to repeat prior audits)."
+  },
+  "candidateEdgeCount": 6,
+  "candidateEdges": [
+    {
+      "from": "TASK-01-00106-SIGNED_LICENSES_IMPLEMENTATION",
+      "to": "TASK-01-00098-ENTITLEMENTS_IMPLEMENTATION",
+      "type": "BLOCKS",
+      "fromExists": true,
+      "toExists": true,
+      "fromState": "DONE",
+      "toState": "DONE",
+      "isSelfDep": false
+    },
+    {
+      "from": "TASK-01-00066-ATOMIC_SAVE_IMPLEMENTATION",
+      "to": "TASK-01-00099-ENTITLEMENTS_TESTS",
+      "type": "BLOCKS",
+      "fromExists": true,
+      "toExists": true,
+      "fromState": "DONE",
+      "toState": "DONE",
+      "isSelfDep": false
+    },
+    {
+      "from": "TASK-01-00066-ATOMIC_SAVE_IMPLEMENTATION",
+      "to": "TASK-01-00166-EXPORT_IMPORT_USER_DATA_IMPLEMENTATION",
+      "type": "BLOCKS",
+      "fromExists": true,
+      "toExists": true,
+      "fromState": "DONE",
+      "toState": "DONE",
+      "isSelfDep": false
+    },
+    {
+      "from": "TASK-01-00066-ATOMIC_SAVE_IMPLEMENTATION",
+      "to": "TASK-03-00338-INSPECTOR_IMPLEMENTATION",
+      "type": "BLOCKS",
+      "fromExists": true,
+      "toExists": true,
+      "fromState": "DONE",
+      "toState": "DONE",
+      "isSelfDep": false
+    },
+    {
+      "from": "TASK-01-00074-RECOVERY_IMPLEMENTATION",
+      "to": "TASK-03-00338-INSPECTOR_IMPLEMENTATION",
+      "type": "BLOCKS",
+      "fromExists": true,
+      "toExists": true,
+      "fromState": "DONE",
+      "toState": "DONE",
+      "isSelfDep": false
+    },
+    {
+      "from": "TASK-03-00337-INSPECTOR_CONTRACT",
+      "to": "TASK-03-00339-INSPECTOR_TESTS",
+      "type": "BLOCKS",
+      "fromExists": true,
+      "toExists": true,
+      "fromState": "DONE",
+      "toState": "DONE",
+      "isSelfDep": false
+    }
+  ],
+  "allEndpointsDone": true,
+  "evidenceLog": [
+    {
+      "from": "TASK-01-00106-SIGNED_LICENSES_IMPLEMENTATION",
+      "to": "TASK-01-00098-ENTITLEMENTS_IMPLEMENTATION",
+      "evidence": "TASK-01-00098-ENTITLEMENTS_IMPLEMENTATION's ownerFile (entitlements_implementation.mjs) contains a static relative import reaching into task-01-00106-signed_licenses_implementation/src/.",
+      "criterion": "#1 source import"
+    },
+    {
+      "from": "TASK-01-00066-ATOMIC_SAVE_IMPLEMENTATION",
+      "to": "TASK-01-00099-ENTITLEMENTS_TESTS",
+      "evidence": "TASK-01-00099-ENTITLEMENTS_TESTS's ownerFile (entitlements_tests.mjs) contains a static relative import reaching into task-01-00066-atomic_save_implementation/src/.",
+      "criterion": "#1 source import"
+    },
+    {
+      "from": "TASK-01-00066-ATOMIC_SAVE_IMPLEMENTATION",
+      "to": "TASK-01-00166-EXPORT_IMPORT_USER_DATA_IMPLEMENTATION",
+      "evidence": "TASK-01-00166-EXPORT_IMPORT_USER_DATA_IMPLEMENTATION's ownerFile (export_import_user_data_implemen.mjs) contains a static relative import reaching into task-01-00066-atomic_save_implementation/src/.",
+      "criterion": "#1 source import"
+    },
+    {
+      "from": "TASK-01-00066-ATOMIC_SAVE_IMPLEMENTATION",
+      "to": "TASK-03-00338-INSPECTOR_IMPLEMENTATION",
+      "evidence": "TASK-03-00338-INSPECTOR_IMPLEMENTATION's ownerFile (inspector_implementation.mjs) contains a static relative import reaching into task-01-00066-atomic_save_implementation/src/.",
+      "criterion": "#1 source import"
+    },
+    {
+      "from": "TASK-01-00074-RECOVERY_IMPLEMENTATION",
+      "to": "TASK-03-00338-INSPECTOR_IMPLEMENTATION",
+      "evidence": "TASK-03-00338-INSPECTOR_IMPLEMENTATION's ownerFile (inspector_implementation.mjs) contains a static relative import reaching into task-01-00074-recovery_implementation/src/.",
+      "criterion": "#1 source import"
+    },
+    {
+      "from": "TASK-03-00337-INSPECTOR_CONTRACT",
+      "to": "TASK-03-00339-INSPECTOR_TESTS",
+      "evidence": "TASK-03-00339-INSPECTOR_TESTS's ownerFile (inspector_tests.mjs) contains a static relative import reaching into task-03-00337-inspector_contract/src/.",
+      "criterion": "#1 source import"
+    }
+  ]
+}

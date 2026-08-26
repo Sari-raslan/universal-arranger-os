@@ -1,0 +1,11 @@
+{
+  "taskId": "TASK-03-00331-GENERATE_MY_SET_TESTS",
+  "agentId": "NODE_LOCAL_WORKER-0067",
+  "pid": 49788,
+  "startedAt": "2026-08-04T20:47:34.421Z",
+  "status": "FAILED",
+  "endedAt": "2026-08-04T20:47:34.616Z",
+  "exitCode": 1,
+  "stdoutTail": "",
+  "stderrTail": "<anonymous_script>:36204\r\n   \r\n\r\nSyntaxError: Expected double-quoted property name in JSON at position 1662976 (line 36204 column 4)\r\n    at JSON.parse (<anonymous>)\r\n    at readJson (file:///C:/keyboard-manager-clean/uaos-agent-factory/src/uaos-program-tree-worker.mjs:17:35)\r\n    at file:///C:/keyboard-manager-clean/uaos-agent-factory/src/uaos-program-tree-worker.mjs:31:18\r\n    at ModuleJob.run (node:internal/modules/esm/module_job:439:25)\r\n    at async node:internal/modules/esm/loader:643:26\r\n    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)\r\n\r\nNode.js v24.18.0\r\n"
+}

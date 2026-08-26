@@ -1,0 +1,134 @@
+{
+    "productsAudited":  6,
+    "sourcesVerified":  0,
+    "sourcesPartial":  2,
+    "multipleCandidates":  3,
+    "sourcesMissing":  1,
+    "licenseRequired":  0,
+    "results":  [
+                    {
+                        "productId":  "PRODUCT-SINGY_CREATOR",
+                        "status":  "SOURCE_FOUND_PARTIAL",
+                        "selectedSource":  null,
+                        "alternatives":  [
+                                             {
+                                                 "path":  "C:\\keyboard-manager-clean\\uaos-worktrees\\uaos-singy-final-product",
+                                                 "score":  62
+                                             },
+                                             {
+                                                 "path":  "C:\\keyboard-manager-clean\\uaos-real-product\\packages\\voice-to-midi",
+                                                 "score":  55
+                                             }
+                                         ],
+                        "selectionReason":  "No Creator Pro product shell; only capability/package fragments",
+                        "ownerDecisionRequired":  true,
+                        "confidence":  "MEDIUM",
+                        "blockers":  [
+                                         "NO_CREATOR_PRO_SHELL"
+                                     ]
+                    },
+                    {
+                        "productId":  "PRODUCT-SINGY_KEYBOARD_PRO",
+                        "status":  "MULTIPLE_CANDIDATES_OWNER_REQUIRED",
+                        "selectedSource":  null,
+                        "alternatives":  [
+                                             {
+                                                 "branch":  "uaos-full-interaction-rebuild-v1",
+                                                 "path":  "C:\\keyboard-manager-clean\\uaos-real-product",
+                                                 "score":  82,
+                                                 "head":  "882f6ca695b4c8df6f0f9968b65b5710d0c55346"
+                                             },
+                                             {
+                                                 "path":  "C:\\UAOS_AGENT_FACTORY_WORKTREES\\arranger-integration",
+                                                 "score":  80
+                                             }
+                                         ],
+                        "selectionReason":  "Two strong real sources; score gap \u003c 15; owner must choose canonical Keyboard Pro root",
+                        "ownerDecisionRequired":  true,
+                        "confidence":  "LOW",
+                        "blockers":  [
+                                         "OWNER_CHOICE_REQUIRED"
+                                     ]
+                    },
+                    {
+                        "productId":  "PRODUCT-SINGY_STUDIO_PRO",
+                        "status":  "SOURCE_MISSING_CONFIRMED",
+                        "selectedSource":  null,
+                        "alternatives":  [
+                                             {
+                                                 "path":  "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-staging-v6\\task-015-cap-multitrack_studio",
+                                                 "score":  28
+                                             }
+                                         ],
+                        "selectionReason":  "Only thin staging stubs and markdown guides; no Studio Pro product tree",
+                        "ownerDecisionRequired":  false,
+                        "confidence":  "LOW",
+                        "blockers":  [
+                                         "NO_PRODUCT_TREE"
+                                     ]
+                    },
+                    {
+                        "productId":  "PRODUCT-SINGY_KIDS",
+                        "status":  "MULTIPLE_CANDIDATES_OWNER_REQUIRED",
+                        "selectedSource":  null,
+                        "alternatives":  [
+                                             {
+                                                 "path":  "C:\\UAOS_AGENT_FACTORY_WORKTREES\\singy-integration",
+                                                 "score":  80
+                                             },
+                                             {
+                                                 "path":  "C:\\UAOS_AGENT_FACTORY_WORKTREES\\singy-kids-teen-commercial-rc2",
+                                                 "score":  78
+                                             }
+                                         ],
+                        "selectionReason":  "Two commercial/app trees; website/STEM artifacts excluded; owner choose RC2 vs integration",
+                        "ownerDecisionRequired":  true,
+                        "confidence":  "LOW",
+                        "blockers":  [
+                                         "OWNER_CHOICE_REQUIRED"
+                                     ]
+                    },
+                    {
+                        "productId":  "PRODUCT-SINGY_TEEN",
+                        "status":  "MULTIPLE_CANDIDATES_OWNER_REQUIRED",
+                        "selectedSource":  null,
+                        "alternatives":  [
+                                             {
+                                                 "path":  "C:\\UAOS_AGENT_FACTORY_WORKTREES\\singy-integration",
+                                                 "score":  80
+                                             },
+                                             {
+                                                 "path":  "C:\\UAOS_AGENT_FACTORY_WORKTREES\\singy-kids-teen-commercial-rc2",
+                                                 "score":  78
+                                             }
+                                         ],
+                        "selectionReason":  "Same primary pair as Kids; no separate Teen Creator tree",
+                        "ownerDecisionRequired":  true,
+                        "confidence":  "LOW",
+                        "blockers":  [
+                                         "OWNER_CHOICE_REQUIRED"
+                                     ]
+                    },
+                    {
+                        "productId":  "PRODUCT-UAOS_LIBRARY_FACTORY",
+                        "status":  "SOURCE_FOUND_PARTIAL",
+                        "selectedSource":  {
+                                               "path":  "C:\\UAOS_AGENT_FACTORY_WORKTREES\\library-l-130",
+                                               "score":  84,
+                                               "recommendation":  "strongest but below auto-verify bar (85+gap15)"
+                                           },
+                        "alternatives":  [
+                                             {
+                                                 "path":  "C:\\keyboard-manager-clean\\uaos-ai-factory\\library-factory",
+                                                 "score":  20
+                                             }
+                                         ],
+                        "selectionReason":  "library-l-130 is strongest real source (84) but auto-select requires \u003e=85 and gap\u003e=15",
+                        "ownerDecisionRequired":  true,
+                        "confidence":  "MEDIUM",
+                        "blockers":  [
+                                         "BELOW_AUTO_VERIFY_THRESHOLD"
+                                     ]
+                    }
+                ]
+}

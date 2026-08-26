@@ -1,0 +1,132 @@
+{
+  "matrix": [
+    {
+      "feature": "New project",
+      "input": "title/tempo",
+      "output": "project JSON",
+      "status": "VERIFIED",
+      "proof": "createNewProject",
+      "limitation": "In-memory unless saved via API"
+    },
+    {
+      "feature": "Open demo project",
+      "input": "demo id",
+      "output": "demo session",
+      "status": "VERIFIED",
+      "proof": "openDemoProject",
+      "limitation": "Bundled in-house demos only"
+    },
+    {
+      "feature": "Chords → arrangement",
+      "input": "chord/style",
+      "output": "sections",
+      "status": "VERIFIED",
+      "proof": "demo-01",
+      "limitation": "Deterministic arranger engine"
+    },
+    {
+      "feature": "Melody → arrangement",
+      "input": "melody notes",
+      "output": "pipeline render",
+      "status": "VERIFIED",
+      "proof": "demo-02",
+      "limitation": "FINAL_MUSICAL_ACCEPTANCE_DEFERRED for taste"
+    },
+    {
+      "feature": "Sequencer transport",
+      "input": "play/pause/stop",
+      "output": "transport state",
+      "status": "VERIFIED",
+      "proof": "goldenSequencerEndToEnd",
+      "limitation": "Backend state machine"
+    },
+    {
+      "feature": "MIDI SMF export",
+      "input": "tempo/bars",
+      "output": "SMF bytes",
+      "status": "VERIFIED",
+      "proof": "exportGoldenSequencerMidi",
+      "limitation": "Standard MIDI File only"
+    },
+    {
+      "feature": "MIDI reopen/parse",
+      "input": "exported SMF",
+      "output": "note count",
+      "status": "VERIFIED",
+      "proof": "workflow-17",
+      "limitation": "Parse via existing MIDI path"
+    },
+    {
+      "feature": "Creator workspace",
+      "input": "title",
+      "output": "tracks + MIDI draft",
+      "status": "VERIFIED",
+      "proof": "createCreatorWorkspace",
+      "limitation": "Offline workspace module"
+    },
+    {
+      "feature": "Studio Pro surface",
+      "input": "title",
+      "output": "panels + bundle",
+      "status": "VERIFIED",
+      "proof": "studioProSurface",
+      "limitation": "Not enterprise cloud"
+    },
+    {
+      "feature": "Musical Brain gates",
+      "input": "variant profile",
+      "output": "gate report",
+      "status": "VERIFIED",
+      "proof": "analyzeArrangementIntelligence",
+      "limitation": "Taste not auto-PASS"
+    },
+    {
+      "feature": "Shared content engine",
+      "input": "cleared metadata",
+      "output": "sampler map",
+      "status": "VERIFIED",
+      "proof": "librarySamplerFinalize",
+      "limitation": "Metadata only; no uncleared audio"
+    },
+    {
+      "feature": "Section transpose",
+      "input": "chord change",
+      "output": "updated sections",
+      "status": "LIMITED_VERIFIED",
+      "proof": "workflow-09",
+      "limitation": "Triad-level only"
+    },
+    {
+      "feature": "Quantize",
+      "input": "step grid",
+      "output": "sequencer steps",
+      "status": "LIMITED_VERIFIED",
+      "proof": "workflow-10",
+      "limitation": "16-step backend grid"
+    },
+    {
+      "feature": "Proprietary keyboard WRITE",
+      "input": ".set/.sty",
+      "output": "n/a",
+      "status": "FORMAT_CONTRACT_REQUIRED",
+      "proof": "not in SKU scope",
+      "limitation": "Use MIDI Toolkit SKU"
+    },
+    {
+      "feature": "V13 Mixer",
+      "input": "mixer contract",
+      "output": "n/a",
+      "status": "READ_ONLY_DEPENDENCY",
+      "proof": "arrangerStudioE2e",
+      "limitation": "TASK-06-00697"
+    },
+    {
+      "feature": "Hardware MIDI out",
+      "input": "device",
+      "output": "n/a",
+      "status": "HARDWARE_REQUIRED",
+      "proof": "browser WebMIDI separate",
+      "limitation": "Not verified in SKU RC"
+    }
+  ]
+}

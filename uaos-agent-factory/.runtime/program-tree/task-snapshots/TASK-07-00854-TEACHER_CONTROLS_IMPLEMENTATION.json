@@ -1,0 +1,38 @@
+{
+  "id": "TASK-07-00854-TEACHER_CONTROLS_IMPLEMENTATION",
+  "epicId": "EPIC-07-0008-SINGY_CORE_FULL_TREE",
+  "domain": "07-SINGY-CORE",
+  "title": "Teacher controls implementation",
+  "phase": "IMPLEMENT",
+  "releaseTrain": "R1-STABLE-COMMERCIAL",
+  "state": "READY",
+  "priority": 21,
+  "estimateMinutesMin": 60,
+  "estimateMinutesMax": 240,
+  "inputs": [],
+  "acceptanceCriteria": [
+    "Teacher controls implementation contract file exists",
+    "Unit assertions pass for Teacher controls implementation",
+    "Evidence JSON written with SHA256"
+  ],
+  "tests": [
+    "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-07-00854-teacher_controls_implementation\\tests\\main.test.mjs"
+  ],
+  "evidence": [
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-07-00854-teacher_controls_implementation/evidence/result.json"
+  ],
+  "allowedPaths": [
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-07-00854-teacher_controls_implementation",
+    "C:\\keyboard-manager-clean\\uaos-agent-factory\\.runtime\\artifacts\\uaos-program-tree\\TASK-07-00854-TEACHER_CONTROLS_IMPLEMENTATION"
+  ],
+  "ownerFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-07-00854-teacher_controls_implementation\\src\\teacher_controls_implementation.mjs",
+  "worktree": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-07-00854-teacher_controls_implementation",
+  "gate": null,
+  "blockedReason": null,
+  "rc1Critical": false,
+  "claims": [],
+  "lease": null,
+  "heartbeats": [],
+  "createdAt": "2026-08-04T20:47:04.332Z",
+  "updatedAt": "2026-08-04T20:49:27.231Z"
+}

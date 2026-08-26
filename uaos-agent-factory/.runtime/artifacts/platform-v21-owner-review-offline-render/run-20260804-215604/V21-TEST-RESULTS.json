@@ -1,0 +1,92 @@
+{
+  "pass": 11,
+  "fail": 1,
+  "results": [
+    {
+      "name": "commander-lint",
+      "pass": true,
+      "exitCode": 0
+    },
+    {
+      "name": "commander-typecheck",
+      "pass": true,
+      "exitCode": 0
+    },
+    {
+      "name": "commander-test-focused",
+      "pass": true,
+      "exitCode": 0
+    },
+    {
+      "name": "commander-build",
+      "pass": true,
+      "exitCode": 0
+    },
+    {
+      "name": "commander-test-full",
+      "pass": false,
+      "exitCode": 1,
+      "nonblockingIfWip": true,
+      "summary": "FAIL — 9 tests / 2 files",
+      "failedFiles": [
+        "tests/acceptance/phase6-conversation-ui-packaged-proof.test.ts",
+        "tests/acceptance/pre-extraction-gate.test.ts"
+      ],
+      "failedTests": [
+        "phase6-conversation-ui-packaged-proof > packaged/built renderer includes copy tools and grouped sidebar",
+        "pre-extraction-gate > embeds the exact same mutex name as preExtractionGateConstants.ts",
+        "pre-extraction-gate > embeds the exact same focus window title as preExtractionGateConstants.ts",
+        "pre-extraction-gate > embeds a focus-request message id that numerically matches preExtractionGateConstants.ts",
+        "pre-extraction-gate > acquires the mutex in .onInit, strictly before InitPluginsDir/.onGUIInit and any extraction instruction",
+        "pre-extraction-gate > is a single bounded acquisition attempt — no retry/poll loop anywhere in the template",
+        "pre-extraction-gate > a detected secondary Quits inside .onInit, before it could ever reach the extraction Section",
+        "pre-extraction-gate > the secondary path only does a best-effort FindWindow+SendMessage — no shell/exec/eval",
+        "pre-extraction-gate > SendMessage to the primary window uses a bounded timeout, never an indefinite wait"
+      ],
+      "suiteTotals": {
+        "testFilesFailed": 2,
+        "testsFailed": 9,
+        "testFilesPassed": 48,
+        "testsPassed": 555
+      }
+    },
+    {
+      "name": "creator-phase5",
+      "pass": true,
+      "exitCode": 0
+    },
+    {
+      "name": "studio-e50",
+      "pass": true,
+      "exitCode": 0
+    },
+    {
+      "name": "owner-intake",
+      "pass": true,
+      "exitCode": 0
+    },
+    {
+      "name": "review-center",
+      "pass": true,
+      "exitCode": 0
+    },
+    {
+      "name": "security-privacy",
+      "pass": true,
+      "exitCode": 0
+    },
+    {
+      "name": "creator-deterministic-preview",
+      "pass": true,
+      "exitCode": 0
+    },
+    {
+      "name": "studio-deterministic-render",
+      "pass": true,
+      "exitCode": 0
+    }
+  ],
+  "commanderFocusedGates": "PASS",
+  "commanderFullSuite": "FAIL — 9 tests / 2 files",
+  "commanderClassification": "COMMANDER_BASELINE_RECONCILED_WITH_NONBLOCKING_WIP"
+}

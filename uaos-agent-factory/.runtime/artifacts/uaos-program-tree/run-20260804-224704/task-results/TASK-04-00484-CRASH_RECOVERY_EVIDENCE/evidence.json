@@ -1,0 +1,35 @@
+{
+  "taskId": "TASK-04-00484-CRASH_RECOVERY_EVIDENCE",
+  "agentId": "NODE_LOCAL_WORKER-0077",
+  "startedAt": "2026-08-04T20:47:46.671Z",
+  "endedAt": "2026-08-04T20:47:46.797Z",
+  "status": "PASS",
+  "tests": [
+    {
+      "command": "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-04-00484-crash_recovery_evidence\\tests\\main.test.mjs",
+      "exitCode": 0,
+      "stdoutTail": "✔ TASK-04-00484-CRASH_RECOVERY_EVIDENCE verify (0.5195ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 70.9458\n"
+    }
+  ],
+  "sha256": "DA452D61BC73678D8C676FF807372CCCA4D14DBF6DB9CCD213EAA356B84A3B54",
+  "allowedPathsUsed": [
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-04-00484-crash_recovery_evidence",
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-04-00484-crash_recovery_evidence\\src\\crash_recovery_evidence.mjs",
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-04-00484-crash_recovery_evidence\\tests\\main.test.mjs"
+  ],
+  "truthStatements": [
+    "Technical WAV success does not prove musical quality",
+    "Fixtures are not product content",
+    "Studio Offline Render is not Real-time DSP",
+    "KORG WRITE_UNSUPPORTED",
+    "No auto adoption of Kids/Teen/Pricing",
+    "Commander not activated"
+  ],
+  "ownerFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-04-00484-crash_recovery_evidence\\src\\crash_recovery_evidence.mjs",
+  "phase": "EVIDENCE",
+  "gate": null,
+  "noPush": true,
+  "noMerge": true,
+  "noDeploy": true,
+  "commanderActivated": false
+}

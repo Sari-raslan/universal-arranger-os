@@ -1,0 +1,38 @@
+{
+  "id": "TASK-15-01557-LISTTASKS_ADAPTER_SURFACE_CONTRACT",
+  "epicId": "EPIC-15-0016-FUTURE_COMMANDER_ADAPTER_CONTRACTS",
+  "domain": "15-COMMANDER-FUTURE-ADAPTER",
+  "title": "listTasks adapter surface contract",
+  "phase": "DEFINE",
+  "releaseTrain": "R1-STABLE-COMMERCIAL",
+  "state": "READY",
+  "priority": 40,
+  "estimateMinutesMin": 30,
+  "estimateMinutesMax": 90,
+  "inputs": [],
+  "acceptanceCriteria": [
+    "Schema for listTasks adapter surface exists",
+    "Allowed paths documented",
+    "No ambiguous human-only steps"
+  ],
+  "tests": [
+    "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-15-01557-listtasks_adapter_surface_contract\\tests\\main.test.mjs"
+  ],
+  "evidence": [
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-15-01557-listtasks_adapter_surface_contract/evidence/result.json"
+  ],
+  "allowedPaths": [
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-15-01557-listtasks_adapter_surface_contract",
+    "C:\\keyboard-manager-clean\\uaos-agent-factory\\.runtime\\artifacts\\uaos-program-tree\\TASK-15-01557-LISTTASKS_ADAPTER_SURFACE_CONTRACT"
+  ],
+  "ownerFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-15-01557-listtasks_adapter_surface_contract\\src\\listtasks_adapter_surface_contra.mjs",
+  "worktree": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-15-01557-listtasks_adapter_surface_contract",
+  "gate": null,
+  "blockedReason": null,
+  "rc1Critical": false,
+  "claims": [],
+  "lease": null,
+  "heartbeats": [],
+  "createdAt": "2026-08-04T20:47:04.343Z",
+  "updatedAt": "2026-08-04T20:49:22.085Z"
+}

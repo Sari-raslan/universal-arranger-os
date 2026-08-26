@@ -1,0 +1,25 @@
+{
+  "ok": true,
+  "nodes": [
+    {
+      "id": "inspect",
+      "type": "inspect"
+    },
+    {
+      "id": "map",
+      "type": "map",
+      "from": "uaos.project/v1",
+      "to": "uaos.project/v1"
+    },
+    {
+      "id": "validate",
+      "type": "validate"
+    },
+    {
+      "id": "write",
+      "type": "write",
+      "outputMode": "new-directory-only"
+    }
+  ],
+  "targetFormat": "uaos.project/v1"
+}

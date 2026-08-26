@@ -11,6 +11,6 @@ KORG Writer: BLOCKED
 .STY/.SET generated: NO
 USB: NO
 PA3X: NO
-Report commit hash if committed: PENDING
+Report commit hash if committed: aff33e53962b9352be3fdcff00e1c2ed494e2bb9
 
 Reason: Vercel CLI returned `Not authorized`. Owner must authenticate/link Vercel before deploy retry.

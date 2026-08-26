@@ -1,0 +1,35 @@
+{
+  "taskId": "TASK-00-00016-DEPENDENCY_DAG_VALIDATION_EVIDENCE",
+  "agentId": "NODE_LOCAL_WORKER-0004",
+  "startedAt": "2026-08-04T20:47:43.148Z",
+  "endedAt": "2026-08-04T20:47:43.272Z",
+  "status": "PASS",
+  "tests": [
+    {
+      "command": "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-00-00016-dependency_dag_validation_evidence\\tests\\main.test.mjs",
+      "exitCode": 0,
+      "stdoutTail": "✔ TASK-00-00016-DEPENDENCY_DAG_VALIDATION_EVIDENCE verify (0.5151ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 68.9785\n"
+    }
+  ],
+  "sha256": "5542B18D5E9D170A3A2062F9662CFE911FF9E6BC52F9DC265E4A80D883364A0B",
+  "allowedPathsUsed": [
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-00-00016-dependency_dag_validation_evidence",
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-00-00016-dependency_dag_validation_evidence\\src\\dependency_dag_validation_eviden.mjs",
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-00-00016-dependency_dag_validation_evidence\\tests\\main.test.mjs"
+  ],
+  "truthStatements": [
+    "Technical WAV success does not prove musical quality",
+    "Fixtures are not product content",
+    "Studio Offline Render is not Real-time DSP",
+    "KORG WRITE_UNSUPPORTED",
+    "No auto adoption of Kids/Teen/Pricing",
+    "Commander not activated"
+  ],
+  "ownerFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-00-00016-dependency_dag_validation_evidence\\src\\dependency_dag_validation_eviden.mjs",
+  "phase": "EVIDENCE",
+  "gate": null,
+  "noPush": true,
+  "noMerge": true,
+  "noDeploy": true,
+  "commanderActivated": false
+}

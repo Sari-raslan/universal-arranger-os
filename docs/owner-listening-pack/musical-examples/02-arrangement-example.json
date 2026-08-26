@@ -1,0 +1,57 @@
+{
+  "id": "02-arrangement-example",
+  "title": "Arrangement example (Intro / Verse / Chorus)",
+  "SOURCE_INPUT": "Same Hijaz phrase plus SongArranger/personalized-arranger section plan.",
+  "EXPECTED_CAPABILITY": "Intro drums/bass, verse melody, chorus melody+chords.",
+  "ACTUAL_ACTIONS": [
+    "Understand pitches/chords",
+    "Decide arabic-khaleeji groove",
+    "Arrange 1+2+2 bars",
+    "Offline render"
+  ],
+  "WAV_PATH": "C:\\keyboard-manager-clean\\docs\\owner-listening-pack\\musical-examples\\02-arrangement-example.wav",
+  "DURATION": 12.62501133786848,
+  "SAMPLE_RATE": 44100,
+  "SHA256": "f521fece833e2d41ec9b540dca5e02c1691701f32e77815c9b721d9a7f2bffcf",
+  "SOURCE_COMMIT": "5aeac11779bd678ca3c80d16144e302a5eb5d9f6",
+  "SETTINGS": {
+    "variant": "hijaz",
+    "tempo": 96,
+    "groove": "arabic-khaleeji",
+    "harmony": "maqam-inspired",
+    "sections": [
+      {
+        "name": "Intro",
+        "bars": 1
+      },
+      {
+        "name": "Verse",
+        "bars": 2
+      },
+      {
+        "name": "Chorus",
+        "bars": 2
+      }
+    ],
+    "uniqueMidiCount": 16,
+    "uniqueOnsetCount": 36,
+    "voices": [
+      "kick",
+      "hat",
+      "snare",
+      "bass",
+      "lead",
+      "chord"
+    ]
+  },
+  "WHAT_OWNER_SHOULD_LISTEN_FOR": "Section change: groove first, then tune, then thicker chorus.",
+  "KNOWN_LIMITATIONS": [
+    "Offline oscillator sketch, not a sampled library and not real-time DSP.",
+    "Not Musical Brain quality PASS.",
+    "Original UAOS sketch — not product catalog content and not a licensed song."
+  ],
+  "musicalQualityPass": false,
+  "musicalQualityClaim": false,
+  "sineFixture": false,
+  "technicalFixtureUsedAsMusicalProof": false
+}

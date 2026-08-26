@@ -1,0 +1,89 @@
+{
+  "generatedAt": "2026-08-04T06:01:31.166Z",
+  "sourceBlockedTasks": [
+    {
+      "id": "PRODUCT-SINGY_CREATOR",
+      "state": "ISOLATED_BLOCKED_NON_ROUTABLE_DEPENDENCY",
+      "unresolvedDependencies": [
+        "CAP-AUDIO_MIDI_EXPORT",
+        "CAP-COMMERCIAL_EXPORT_CANDIDATE",
+        "CAP-VOICE_RECORDING"
+      ]
+    },
+    {
+      "id": "PRODUCT-SINGY_KEYBOARD_PRO",
+      "state": "ISOLATED_BLOCKED_NON_ROUTABLE_DEPENDENCY",
+      "unresolvedDependencies": [
+        "CAP-AUDIO_MIDI_EXPORT",
+        "CAP-PREVIEW_BEFORE_WRITE"
+      ]
+    },
+    {
+      "id": "PRODUCT-SINGY_KIDS",
+      "state": "ISOLATED_BLOCKED_NON_ROUTABLE_DEPENDENCY",
+      "unresolvedDependencies": [
+        "CAP-BASIC_PROJECTS",
+        "CAP-MUSIC_LESSONS"
+      ]
+    },
+    {
+      "id": "PRODUCT-SINGY_STUDIO_PRO",
+      "state": "ISOLATED_BLOCKED_NON_ROUTABLE_DEPENDENCY",
+      "unresolvedDependencies": [
+        "CAP-AUDIO_MIDI_EXPORT",
+        "CAP-COMMERCIAL_EXPORT_CANDIDATE",
+        "CAP-STEM_EXPORT"
+      ]
+    },
+    {
+      "id": "PRODUCT-SINGY_TEEN",
+      "state": "ISOLATED_BLOCKED_NON_ROUTABLE_DEPENDENCY",
+      "unresolvedDependencies": [
+        "CAP-BASIC_MIDI",
+        "CAP-BASIC_MIXER",
+        "CAP-MUSIC_LESSONS",
+        "CAP-PERSONAL_EXPORT",
+        "CAP-VOICE_RECORDING"
+      ]
+    },
+    {
+      "id": "PRODUCT-UAOS_LIBRARY_FACTORY",
+      "state": "ISOLATED_BLOCKED_NON_ROUTABLE_DEPENDENCY",
+      "unresolvedDependencies": [
+        "CAP-LICENSE_LEDGER"
+      ]
+    }
+  ],
+  "noDeclaredSafeGates": [
+    "CAP-ADVANCED_HARMONY",
+    "CAP-ARRANGEMENT_BRAIN",
+    "CAP-CHORD_SUGGESTION",
+    "CAP-CLASSROOM_MANAGEMENT",
+    "CAP-GLOBAL_PLAYER_MIXER",
+    "CAP-GOLDEN_SEQUENCER",
+    "CAP-INSTRUMENT_LEARNING",
+    "CAP-MULTITRACK_STUDIO",
+    "CAP-OPERETTA_BUILDER",
+    "CAP-SAFE_CHAT",
+    "CAP-SONG_STRUCTURE",
+    "CAP-STORY_TO_SONG",
+    "CAP-STUDENT_PROGRESS",
+    "CAP-VOICE_TO_MELODY",
+    "CAP-VOICE_TO_MIDI"
+  ],
+  "dependencyInstallRequired": [
+    "CAP-ARRANGER_STUDIO",
+    "CAP-GENERATE_MY_SET",
+    "CAP-KEYBOARD_CONVERTERS",
+    "CAP-LIBRARY_BUILDER",
+    "CAP-LIBRARY_CATALOG",
+    "CAP-LIBRARY_PLAYER",
+    "CAP-MAGIC_SET_BUILDER",
+    "CAP-SAMPLER_RUNTIME",
+    "CAP-SET_DOCTOR",
+    "PRODUCT-SINGY_SAMPLER_PLAYER"
+  ],
+  "testOrBuildFailures": [],
+  "mutatedTrackedSource": [],
+  "ownerDecisionsPending": 12
+}

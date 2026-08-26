@@ -1,0 +1,35 @@
+{
+  "taskId": "TASK-03-00363-FORMAT_CAPABILITY_REGISTRY_TESTS",
+  "agentId": "NODE_LOCAL_WORKER-0066",
+  "startedAt": "2026-08-04T20:49:25.278Z",
+  "endedAt": "2026-08-04T20:49:25.406Z",
+  "status": "PASS",
+  "tests": [
+    {
+      "command": "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-03-00363-format_capability_registry_tests\\tests\\main.test.mjs",
+      "exitCode": 0,
+      "stdoutTail": "✔ TASK-03-00363-FORMAT_CAPABILITY_REGISTRY_TESTS verify (0.5254ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 67.167\n"
+    }
+  ],
+  "sha256": "E81AC835B73098EF69EB386F40CC0D77DC861AA4BA80AC9C708668AEE0E553F6",
+  "allowedPathsUsed": [
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-03-00363-format_capability_registry_tests",
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-03-00363-format_capability_registry_tests\\src\\format_capability_registry_tests.mjs",
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-03-00363-format_capability_registry_tests\\tests\\main.test.mjs"
+  ],
+  "truthStatements": [
+    "Technical WAV success does not prove musical quality",
+    "Fixtures are not product content",
+    "Studio Offline Render is not Real-time DSP",
+    "KORG WRITE_UNSUPPORTED",
+    "No auto adoption of Kids/Teen/Pricing",
+    "Commander not activated"
+  ],
+  "ownerFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-03-00363-format_capability_registry_tests\\src\\format_capability_registry_tests.mjs",
+  "phase": "TEST",
+  "gate": null,
+  "noPush": true,
+  "noMerge": true,
+  "noDeploy": true,
+  "commanderActivated": false
+}

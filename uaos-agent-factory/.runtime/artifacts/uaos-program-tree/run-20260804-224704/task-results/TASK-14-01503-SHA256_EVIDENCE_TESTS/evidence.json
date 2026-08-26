@@ -1,0 +1,35 @@
+{
+  "taskId": "TASK-14-01503-SHA256_EVIDENCE_TESTS",
+  "agentId": "NODE_LOCAL_WORKER-0216",
+  "startedAt": "2026-08-04T20:47:40.677Z",
+  "endedAt": "2026-08-04T20:47:40.797Z",
+  "status": "PASS",
+  "tests": [
+    {
+      "command": "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-14-01503-sha256_evidence_tests\\tests\\main.test.mjs",
+      "exitCode": 0,
+      "stdoutTail": "✔ TASK-14-01503-SHA256_EVIDENCE_TESTS verify (0.4954ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 63.6012\n"
+    }
+  ],
+  "sha256": "C52A098E8BAFC656801216131D5D2B758C71CED1CEB1F8789E09B660583A2BB9",
+  "allowedPathsUsed": [
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-14-01503-sha256_evidence_tests",
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-14-01503-sha256_evidence_tests\\src\\sha256_evidence_tests.mjs",
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-14-01503-sha256_evidence_tests\\tests\\main.test.mjs"
+  ],
+  "truthStatements": [
+    "Technical WAV success does not prove musical quality",
+    "Fixtures are not product content",
+    "Studio Offline Render is not Real-time DSP",
+    "KORG WRITE_UNSUPPORTED",
+    "No auto adoption of Kids/Teen/Pricing",
+    "Commander not activated"
+  ],
+  "ownerFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-14-01503-sha256_evidence_tests\\src\\sha256_evidence_tests.mjs",
+  "phase": "TEST",
+  "gate": null,
+  "noPush": true,
+  "noMerge": true,
+  "noDeploy": true,
+  "commanderActivated": false
+}

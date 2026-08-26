@@ -1,0 +1,138 @@
+{
+  "generatedAt": "2026-08-05T11:06:58.374Z",
+  "totalTests": 95,
+  "totalFailurePathTests": 47,
+  "results": [
+    {
+      "taskId": "TASK-01-00093-CAPABILITY_REGISTRY_CONTRACT",
+      "totalTestCount": 10,
+      "failurePathTestCount": 5,
+      "failurePathTestTitles": [
+        "rejects a capability with an unknown entitlement state",
+        "rejects a registry with duplicate capability ids",
+        "rejects a registry with a missing productId",
+        "rejects a registry whose knownLimitations is not an array",
+        "schema documents the never-enabled-by-default and wrong-product-rejection guarantees"
+      ]
+    },
+    {
+      "taskId": "TASK-01-00094-CAPABILITY_REGISTRY_IMPLEMENTATION",
+      "totalTestCount": 9,
+      "failurePathTestCount": 3,
+      "failurePathTestTitles": [
+        "rejects resolving an unknown capability id",
+        "rejects a manifest whose productId does not match the registry",
+        "failure-path: reopenState fails cleanly on a corrupted state file"
+      ]
+    },
+    {
+      "taskId": "TASK-01-00095-CAPABILITY_REGISTRY_TESTS",
+      "totalTestCount": 5,
+      "failurePathTestCount": 2,
+      "failurePathTestTitles": [
+        "cross-product isolation: reopening product A\\",
+        "failure-path: a sabotaged state save leaves the prior state untouched (inherits AtomicSave)"
+      ]
+    },
+    {
+      "taskId": "TASK-01-00096-CAPABILITY_REGISTRY_EVIDENCE",
+      "totalTestCount": 4,
+      "failurePathTestCount": 2,
+      "failurePathTestTitles": [
+        "TEST HARNESS GUARD: zero discovered tests is FAIL",
+        "rollback/recovery procedure documents never-enabled-by-default and determinism guarantees"
+      ]
+    },
+    {
+      "taskId": "TASK-01-00121-INSTALLER_PACKAGING_CONTRACT",
+      "totalTestCount": 12,
+      "failurePathTestCount": 8,
+      "failurePathTestTitles": [
+        "rejects a file entry with an unsafe relativePath (reusing Batch 4\\",
+        "rejects a malformed sha256",
+        "rejects an invalid SKU",
+        "rejects an invalid releaseChannel",
+        "rejects duplicate file paths",
+        "rejects a dangling executableRef (points at a file not in the inventory)",
+        "rejects a dangling privacyStatementRef",
+        "schema documents the dangling-reference-rejection and deterministic-receipt guarantees"
+      ]
+    },
+    {
+      "taskId": "TASK-01-00122-INSTALLER_PACKAGING_IMPLEMENTATION",
+      "totalTestCount": 11,
+      "failurePathTestCount": 5,
+      "failurePathTestTitles": [
+        "CHECKSUM MISMATCH: verifyManifestIntegrity rejects a file tampered after the manifest was built",
+        "MISSING FILE: verifyManifestIntegrity rejects a manifest referencing a file no longer on disk",
+        "WRONG PRODUCT/VERSION: assertMatchesExpected rejects a manifest built for a different product",
+        "WRONG PRODUCT/VERSION: assertMatchesExpected rejects a manifest built for a different version",
+        "failure-path: reopenManifest fails cleanly on a corrupted manifest file"
+      ]
+    },
+    {
+      "taskId": "TASK-01-00123-INSTALLER_PACKAGING_TESTS",
+      "totalTestCount": 5,
+      "failurePathTestCount": 2,
+      "failurePathTestTitles": [
+        "failure-path: one product\\",
+        "failure-path: reopening a manifest and checking it against the WRONG build directory correctly detects the mismatch"
+      ]
+    },
+    {
+      "taskId": "TASK-01-00124-INSTALLER_PACKAGING_EVIDENCE",
+      "totalTestCount": 4,
+      "failurePathTestCount": 2,
+      "failurePathTestTitles": [
+        "TEST HARNESS GUARD: zero discovered tests is FAIL",
+        "rollback/recovery procedure documents integrity-detection and determinism guarantees"
+      ]
+    },
+    {
+      "taskId": "TASK-05-00521-PROJECT_WORKSPACE_CONTRACT",
+      "totalTestCount": 12,
+      "failurePathTestCount": 8,
+      "failurePathTestTitles": [
+        "validateMidiNoteEvent rejects out-of-range pitch, velocity, channel",
+        "MALFORMED PROJECT: unknown track role is rejected",
+        "MALFORMED PROJECT: duplicate MIDI channel across tracks is rejected",
+        "MALFORMED PROJECT: section with endTick <= startTick is rejected",
+        "MALFORMED PROJECT: missing required truth labels is rejected — never silently allowed to skip the disclaimers",
+        "MALFORMED PROJECT: arrangementDraft:false is rejected — this feature never claims a finished arrangement",
+        "MALFORMED PROJECT: invalid tempoBpm is rejected",
+        "MALFORMED PROJECT: invalid timeSignature denominator is rejected"
+      ]
+    },
+    {
+      "taskId": "TASK-05-00522-PROJECT_WORKSPACE_IMPLEMENTATION",
+      "totalTestCount": 11,
+      "failurePathTestCount": 5,
+      "failurePathTestTitles": [
+        "FAILURE RECOVERY: previous saved project is preserved on disk after a subsequent invalid save attempt",
+        "INVALID MIDI EVENT: exporting a project with an out-of-range note is rejected at build time, not at export time",
+        "MALFORMED MIDI FILE: parseStandardMidiFile rejects a truncated byte stream",
+        "MALFORMED MIDI FILE: parseStandardMidiFile rejects a buffer missing the MThd header",
+        "MALFORMED MIDI FILE: parseStandardMidiFile rejects an invalid/corrupted status byte"
+      ]
+    },
+    {
+      "taskId": "TASK-05-00523-PROJECT_WORKSPACE_TESTS",
+      "totalTestCount": 8,
+      "failurePathTestCount": 3,
+      "failurePathTestTitles": [
+        "MULTI-PROJECT ISOLATION: two independently-built arrangements never collide on disk, and musically distinct arrangements never export identical bytes",
+        "FAILURE PATH: reopening a genuinely corrupted project file fails cleanly instead of returning a broken project",
+        "FAILURE PATH: adding a note event to a nonexistent track is rejected rather than silently creating one"
+      ]
+    },
+    {
+      "taskId": "TASK-05-00524-PROJECT_WORKSPACE_EVIDENCE",
+      "totalTestCount": 4,
+      "failurePathTestCount": 2,
+      "failurePathTestTitles": [
+        "TEST HARNESS GUARD: zero discovered tests is FAIL",
+        "rollback/recovery procedure documents truth labels and determinism guarantees"
+      ]
+    }
+  ]
+}

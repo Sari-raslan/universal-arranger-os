@@ -1,0 +1,35 @@
+{
+  "taskId": "TASK-06-00676-MARKERS_EVIDENCE",
+  "agentId": "NODE_LOCAL_WORKER-0027",
+  "startedAt": "2026-08-04T20:49:33.449Z",
+  "endedAt": "2026-08-04T20:49:33.569Z",
+  "status": "PASS",
+  "tests": [
+    {
+      "command": "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-06-00676-markers_evidence\\tests\\main.test.mjs",
+      "exitCode": 0,
+      "stdoutTail": "✔ TASK-06-00676-MARKERS_EVIDENCE verify (0.6061ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 68.1877\n"
+    }
+  ],
+  "sha256": "4799960F8DD63D52F64127EA8DC1E2C8B7633E1E5CB210752EFB7236FC867B0A",
+  "allowedPathsUsed": [
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-06-00676-markers_evidence",
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-06-00676-markers_evidence\\src\\markers_evidence.mjs",
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-06-00676-markers_evidence\\tests\\main.test.mjs"
+  ],
+  "truthStatements": [
+    "Technical WAV success does not prove musical quality",
+    "Fixtures are not product content",
+    "Studio Offline Render is not Real-time DSP",
+    "KORG WRITE_UNSUPPORTED",
+    "No auto adoption of Kids/Teen/Pricing",
+    "Commander not activated"
+  ],
+  "ownerFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-06-00676-markers_evidence\\src\\markers_evidence.mjs",
+  "phase": "EVIDENCE",
+  "gate": null,
+  "noPush": true,
+  "noMerge": true,
+  "noDeploy": true,
+  "commanderActivated": false
+}

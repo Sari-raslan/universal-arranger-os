@@ -1,0 +1,14 @@
+{
+  "checkedAt": "2026-08-05T12:59:00.000Z",
+  "method": "Get-CimInstance Win32_Process -Filter \"Name='node.exe'\"",
+  "rawFindings": [
+    { "pid": 23672, "commandLine": "(permission-restricted)" },
+    { "pid": 25632, "commandLine": "(permission-restricted)" },
+    { "pid": 27040, "commandLine": "(permission-restricted)" },
+    { "pid": 27600, "commandLine": "(permission-restricted)" },
+    { "pid": 42556, "commandLine": "(permission-restricted)" },
+    { "pid": 42648, "commandLine": "(permission-restricted)" }
+  ],
+  "dispatcherOrSupervisorProcessFound": false,
+  "note": "6 node.exe processes observed (PIDs differ from Batch 5's pre-check, consistent with normal background process churn between sessions), all permission-restricted command lines. No recognizable dispatcher/supervisor/server process. Will re-check immediately before Transaction 2 write to TASKS.json/DEPENDENCIES.json."
+}

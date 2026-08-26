@@ -1,0 +1,37 @@
+{
+    "status":  "KEYBOARD_ADOPTION_REVIEW_GATE_PASS_WITH_GAPS",
+    "baseCommit":  "415db5123bf6f1851cca284f92fb8e3478ffd967",
+    "worktree":  "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-v16-execution\\keyboard-adoption-review",
+    "tests":  [
+                  {
+                      "name":  "test:arranger-foundation",
+                      "exitCode":  0
+                  },
+                  {
+                      "name":  "check",
+                      "exitCode":  0
+                  },
+                  {
+                      "name":  "test:arranger-magic-set",
+                      "exitCode":  0
+                  },
+                  {
+                      "name":  "test:arranger-set-doctor",
+                      "exitCode":  0
+                  },
+                  {
+                      "name":  "test:arranger-safe-export",
+                      "exitCode":  0
+                  },
+                  {
+                      "name":  "build:desktop",
+                      "exitCode":  0
+                  }
+              ],
+    "gaps":  [
+                 "Keyboard Converters completed in separate lane",
+                 "hardware/KORG/USB/SysEx remain banned",
+                 "not commercial hardware-ready"
+             ],
+    "ownerAdoptionApprovalRequired":  true
+}

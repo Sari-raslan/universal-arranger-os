@@ -1,0 +1,38 @@
+{
+  "id": "TASK-01-00147-LOCALIZATION_ENGLISH_TESTS",
+  "epicId": "EPIC-01-0002-SHARED_PRODUCT_PLATFORM",
+  "domain": "01-SHARED-PLATFORM",
+  "title": "Localization English tests",
+  "phase": "TEST",
+  "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+  "state": "READY",
+  "priority": 10,
+  "estimateMinutesMin": 45,
+  "estimateMinutesMax": 180,
+  "inputs": [],
+  "acceptanceCriteria": [
+    "Localization English tests contract file exists",
+    "Unit assertions pass for Localization English tests",
+    "Evidence JSON written with SHA256"
+  ],
+  "tests": [
+    "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00147-localization_english_tests\\tests\\main.test.mjs"
+  ],
+  "evidence": [
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00147-localization_english_tests/evidence/result.json"
+  ],
+  "allowedPaths": [
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00147-localization_english_tests",
+    "C:\\keyboard-manager-clean\\uaos-agent-factory\\.runtime\\artifacts\\uaos-program-tree\\TASK-01-00147-LOCALIZATION_ENGLISH_TESTS"
+  ],
+  "ownerFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00147-localization_english_tests\\src\\localization_english_tests.mjs",
+  "worktree": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00147-localization_english_tests",
+  "gate": null,
+  "blockedReason": null,
+  "rc1Critical": true,
+  "claims": [],
+  "lease": null,
+  "heartbeats": [],
+  "createdAt": "2026-08-04T20:47:04.320Z",
+  "updatedAt": "2026-08-04T20:49:22.085Z"
+}

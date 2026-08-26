@@ -1,0 +1,35 @@
+{
+  "taskId": "TASK-03-00392-CONVERSION_RECEIPTS_EVIDENCE",
+  "agentId": "NODE_LOCAL_WORKER-0015",
+  "startedAt": "2026-08-04T20:49:32.908Z",
+  "endedAt": "2026-08-04T20:49:33.026Z",
+  "status": "PASS",
+  "tests": [
+    {
+      "command": "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-03-00392-conversion_receipts_evidence\\tests\\main.test.mjs",
+      "exitCode": 0,
+      "stdoutTail": "✔ TASK-03-00392-CONVERSION_RECEIPTS_EVIDENCE verify (0.5062ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 66.6735\n"
+    }
+  ],
+  "sha256": "36408C2180A7E98A03524FB20EFD0C03703121F376E4FE5389BEACF047C295ED",
+  "allowedPathsUsed": [
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-03-00392-conversion_receipts_evidence",
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-03-00392-conversion_receipts_evidence\\src\\conversion_receipts_evidence.mjs",
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-03-00392-conversion_receipts_evidence\\tests\\main.test.mjs"
+  ],
+  "truthStatements": [
+    "Technical WAV success does not prove musical quality",
+    "Fixtures are not product content",
+    "Studio Offline Render is not Real-time DSP",
+    "KORG WRITE_UNSUPPORTED",
+    "No auto adoption of Kids/Teen/Pricing",
+    "Commander not activated"
+  ],
+  "ownerFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-03-00392-conversion_receipts_evidence\\src\\conversion_receipts_evidence.mjs",
+  "phase": "EVIDENCE",
+  "gate": null,
+  "noPush": true,
+  "noMerge": true,
+  "noDeploy": true,
+  "commanderActivated": false
+}

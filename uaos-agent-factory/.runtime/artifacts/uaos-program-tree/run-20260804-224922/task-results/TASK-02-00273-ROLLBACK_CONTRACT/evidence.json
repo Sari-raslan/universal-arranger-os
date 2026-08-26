@@ -1,0 +1,35 @@
+{
+  "taskId": "TASK-02-00273-ROLLBACK_CONTRACT",
+  "agentId": "NODE_LOCAL_WORKER-0001",
+  "startedAt": "2026-08-04T20:49:22.205Z",
+  "endedAt": "2026-08-04T20:49:22.337Z",
+  "status": "PASS",
+  "tests": [
+    {
+      "command": "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-02-00273-rollback_contract\\tests\\main.test.mjs",
+      "exitCode": 0,
+      "stdoutTail": "✔ TASK-02-00273-ROLLBACK_CONTRACT verify (0.5161ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 70.7481\n"
+    }
+  ],
+  "sha256": "D7A102AFA3413E2638F8F4455E6BC71C22408120D045DB7E373D09E8D8D38540",
+  "allowedPathsUsed": [
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-02-00273-rollback_contract",
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-02-00273-rollback_contract\\src\\rollback_contract.mjs",
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-02-00273-rollback_contract\\tests\\main.test.mjs"
+  ],
+  "truthStatements": [
+    "Technical WAV success does not prove musical quality",
+    "Fixtures are not product content",
+    "Studio Offline Render is not Real-time DSP",
+    "KORG WRITE_UNSUPPORTED",
+    "No auto adoption of Kids/Teen/Pricing",
+    "Commander not activated"
+  ],
+  "ownerFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-02-00273-rollback_contract\\src\\rollback_contract.mjs",
+  "phase": "DEFINE",
+  "gate": null,
+  "noPush": true,
+  "noMerge": true,
+  "noDeploy": true,
+  "commanderActivated": false
+}

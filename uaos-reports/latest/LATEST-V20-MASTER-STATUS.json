@@ -1,0 +1,33 @@
+{
+  "task": "UAOS-PLATFORM-AUTOMATION-020-REPRODUCIBLE-INTEGRATION-RUNTIME-HARDENING-AND-OWNER-REVIEW-BUILDS",
+  "coordinatorStatus": "UAOS_V20_CURSOR_REVIEW_BUILDS_AND_REPRODUCIBLE_INTEGRATION_PASS",
+  "overallState": "UAOS_V20_OWNER_REVIEW_BUILDS_READY_DECISIONS_REQUIRED",
+  "run": "C:\\keyboard-manager-clean\\uaos-agent-factory\\.runtime\\artifacts\\platform-v20-review-builds\\run-20260804-213609",
+  "timestamp": "20260804-213609",
+  "commanderReconciliation": "COMMANDER_CONCURRENT_COMMIT_REVIEW_REQUIRED",
+  "commanderBaseline": "be7fbc04f803791d3087a2e7a4e5dadab6880ed2",
+  "products": {
+    "library": "LIBRARY_V20_OWNER_REVIEW_BUILD_READY_FIXTURE_ONLY",
+    "keyboard": "KEYBOARD_V20_OWNER_REVIEW_BUILD_READY_INTERNAL_FORMAT_ONLY",
+    "creator": "CREATOR_V20_OWNER_REVIEW_BUILD_READY",
+    "studio": "STUDIO_V20_OWNER_REVIEW_BUILD_READY_DOMAIN_RUNTIME"
+  },
+  "reproduction": {
+    "library": "REPRODUCIBLE_IDENTICAL_SOURCE_TREE",
+    "keyboard": "REPRODUCIBLE_IDENTICAL_SOURCE_TREE",
+    "creator": "REPRODUCIBLE_IDENTICAL_SOURCE_TREE",
+    "studio": "REPRODUCIBLE_IDENTICAL_SOURCE_TREE"
+  },
+  "runtimeAcceptance": {
+    "pass": 4,
+    "fail": 0
+  },
+  "tests": {
+    "pass": 12,
+    "fail": 0
+  },
+  "originalRepositoryIntegrity": "UAOS_V20_ORIGINAL_REPOSITORY_INTEGRITY_PASS",
+  "priorWorktreeIntegrity": "PRESERVED",
+  "noCommitNoPushNoMerge": true,
+  "priorWorktreeNote": "All prior worktree HEADs unchanged. Six arranger-linked WTs show porcelain dirty-count drift (4->1) not caused by V20 writes; V15-V19 paths were not written by V20."
+}

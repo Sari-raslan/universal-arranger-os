@@ -1,0 +1,55 @@
+{
+  "id": "05-alternative-b-major-pop",
+  "title": "Alternative B — major-pop",
+  "SOURCE_INPUT": "Same phrase contour rewritten to C major (C D E F G A).",
+  "EXPECTED_CAPABILITY": "A/B: different key/groove from the Hijaz arrangement.",
+  "ACTUAL_ACTIONS": [
+    "Decide modern-pop / 110 BPM",
+    "Arrange and render"
+  ],
+  "WAV_PATH": "C:\\keyboard-manager-clean\\docs\\owner-listening-pack\\musical-examples\\05-alternative-b-major-pop.wav",
+  "DURATION": 11.037278911564625,
+  "SAMPLE_RATE": 44100,
+  "SHA256": "5be395e999b82835dc0479208d364225737c8fbed5f6832a4b2a6936d188db58",
+  "SOURCE_COMMIT": "5aeac11779bd678ca3c80d16144e302a5eb5d9f6",
+  "SETTINGS": {
+    "variant": "major-pop",
+    "tempo": 110,
+    "groove": "modern-pop",
+    "harmony": "warm-triads",
+    "sections": [
+      {
+        "name": "Intro",
+        "bars": 1
+      },
+      {
+        "name": "Verse",
+        "bars": 2
+      },
+      {
+        "name": "Chorus",
+        "bars": 2
+      }
+    ],
+    "uniqueMidiCount": 16,
+    "uniqueOnsetCount": 36,
+    "voices": [
+      "kick",
+      "hat",
+      "snare",
+      "bass",
+      "lead",
+      "chord"
+    ]
+  },
+  "WHAT_OWNER_SHOULD_LISTEN_FOR": "Brighter major tune and faster groove versus 02/04.",
+  "KNOWN_LIMITATIONS": [
+    "Offline oscillator sketch, not a sampled library and not real-time DSP.",
+    "Not Musical Brain quality PASS.",
+    "Original UAOS sketch — not product catalog content and not a licensed song."
+  ],
+  "musicalQualityPass": false,
+  "musicalQualityClaim": false,
+  "sineFixture": false,
+  "technicalFixtureUsedAsMusicalProof": false
+}

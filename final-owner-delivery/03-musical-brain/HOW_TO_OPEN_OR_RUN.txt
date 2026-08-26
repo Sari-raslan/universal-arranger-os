@@ -1,0 +1,36 @@
+# How to open or run — Musical Brain / Golden Brain
+
+## Delivery type
+ENGINE / WORKFLOW
+
+## Primary entry point
+```
+From repo root: node final-owner-delivery/03-musical-brain/PRODUCT/RUN_ACCEPTED_DEMO.mjs
+```
+
+## Full acceptance queue (all 11)
+From repo root:
+```
+node scripts/run-final-acceptance-queue.mjs
+```
+
+## Targeted tests
+From repo root:
+```
+npm test
+```
+
+## Product source (canonical, not moved)
+- backend/src/arranger/arrangementIntelligence.js
+- backend/src/arranger/musicalBrainGates.js
+- backend/src/arranger/tonalContext.js
+- backend/src/render/musicalListeningPipeline.js
+
+## Evidence
+- reports/final-acceptance/03-Musical_Brain_Golden_Brain.json
+- evidence SHA256: a65eb702d01f5297c8dd6cc4fb5410d051a58a4e126653b0a4f8112266fb2f2a
+
+## Source commit
+5aeac11779bd678ca3c80d16144e302a5eb5d9f6
+
+PUBLIC_RELEASE=NO · COMMANDER_EXCLUDED=YES

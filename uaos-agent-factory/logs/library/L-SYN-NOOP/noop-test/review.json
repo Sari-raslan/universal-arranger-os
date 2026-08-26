@@ -1,0 +1,34 @@
+{
+  "reviewedAt": "2026-08-14T14:49:10.922Z",
+  "taskId": "L-SYN-GENERIC",
+  "lane": "library",
+  "verdict": "APPROVE",
+  "checks": {
+    "correctness": true,
+    "regression": true,
+    "security": true,
+    "scope": true,
+    "fakeClaims": true,
+    "pathLeaks": true,
+    "licenseContamination": true
+  },
+  "security": {
+    "forbiddenCommands": [],
+    "pathLeaks": [],
+    "secretHits": [],
+    "ok": true
+  },
+  "failedTests": [],
+  "notes": "Deterministic review PASS",
+  "scope": {
+    "ok": true,
+    "changedFiles": [],
+    "allowedPaths": [
+      "UAOS_GENERIC_MARKER.txt"
+    ],
+    "forbiddenPaths": [
+      "node_modules/**"
+    ],
+    "violations": []
+  }
+}

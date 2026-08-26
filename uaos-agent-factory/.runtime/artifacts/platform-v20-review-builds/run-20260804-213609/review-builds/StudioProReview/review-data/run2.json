@@ -1,0 +1,240 @@
+{
+  "schemaVersion": "uaos.studio.project/v1",
+  "projectId": "f16380ea-5704-4889-9304-6391947d0afe",
+  "version": 1,
+  "name": "V20 Studio run2",
+  "createdAt": "2026-08-04T19:22:48.363Z",
+  "updatedAt": "2026-08-04T19:22:48.363Z",
+  "tracks": [
+    {
+      "trackId": "a1",
+      "kind": "audio",
+      "name": "A"
+    },
+    {
+      "trackId": "m1",
+      "kind": "midi",
+      "name": "M"
+    }
+  ],
+  "assets": [],
+  "recovery": {
+    "lastAutosaveAt": null,
+    "interrupted": false,
+    "lastGoodSaveAt": null
+  },
+  "readOnlyCompat": {
+    "minReadableVersion": 1,
+    "writable": true
+  },
+  "undoBoundary": {
+    "transactionId": null,
+    "open": false
+  },
+  "timeline": {
+    "schemaVersion": "uaos.studio.timeline/v1",
+    "timelineId": "t1",
+    "lanes": [
+      {
+        "laneId": "la",
+        "trackId": "a1",
+        "name": "A",
+        "order": 0
+      },
+      {
+        "laneId": "lm",
+        "trackId": "m1",
+        "name": "M",
+        "order": 1
+      }
+    ],
+    "clips": [
+      {
+        "clipId": "c1",
+        "laneId": "la",
+        "kind": "audio",
+        "startBeats": 2,
+        "durationBeats": 3,
+        "endBeats": 5,
+        "name": "c1"
+      },
+      {
+        "clipId": "1fad81ca-1a6c-4f2c-9841-c4ce50c41f30",
+        "laneId": "la",
+        "kind": "audio",
+        "startBeats": 5,
+        "durationBeats": 3,
+        "endBeats": 8,
+        "name": "c1-b"
+      }
+    ],
+    "markers": [
+      {
+        "markerId": "70057782-e699-40d7-844d-8418725a4912",
+        "atBeats": 0,
+        "name": "Start"
+      }
+    ],
+    "regions": [
+      {
+        "regionId": "af343d3b-e8f6-42c1-86ef-233c7597366a",
+        "startBeats": 0,
+        "endBeats": 8,
+        "name": "Intro"
+      }
+    ],
+    "tempoMap": [
+      {
+        "atBeats": 0,
+        "bpm": 120
+      }
+    ],
+    "timeSignatureMap": [
+      {
+        "atBeats": 0,
+        "numerator": 4,
+        "denominator": 4
+      }
+    ],
+    "timebase": {
+      "musical": true,
+      "absoluteSeconds": false
+    },
+    "selection": {
+      "clipIds": [],
+      "markerIds": []
+    },
+    "snap": {
+      "enabled": true,
+      "gridBeats": 0.25
+    },
+    "overlapPolicy": "allow"
+  },
+  "tempoMap": [
+    {
+      "atBeats": 0,
+      "bpm": 120
+    }
+  ],
+  "timeSignature": {
+    "numerator": 4,
+    "denominator": 4
+  },
+  "transport": {
+    "schemaVersion": "uaos.studio.transport/v1",
+    "state": "stopped",
+    "positionBeats": 0,
+    "loop": {
+      "enabled": false,
+      "startBeats": 0,
+      "endBeats": 16
+    },
+    "cursorBeats": 0,
+    "playbackRange": {
+      "startBeats": 0,
+      "endBeats": null
+    },
+    "endOfProject": "stop"
+  },
+  "mixer": {
+    "schemaVersion": "uaos.studio.mixer/v1",
+    "channels": [
+      {
+        "channelId": "ch-a",
+        "kind": "track",
+        "trackId": "a1",
+        "gainDb": -2,
+        "pan": 0.1,
+        "mute": false,
+        "solo": true,
+        "soloSafe": false,
+        "enable": true,
+        "routeTo": "master"
+      }
+    ],
+    "buses": [
+      {
+        "channelId": "master",
+        "kind": "master",
+        "gainDb": 0,
+        "pan": 0,
+        "mute": false,
+        "solo": false,
+        "enable": true
+      }
+    ],
+    "sends": [],
+    "returns": [],
+    "masterSafetyLimitDb": 0
+  },
+  "scheduler": {
+    "lookAheadBeats": 4,
+    "queue": [],
+    "cancelled": false
+  },
+  "edit": {
+    "schemaVersion": "uaos.studio.edit/v40",
+    "audioEdits": [
+      {
+        "editId": "ff4391a4-ba74-449c-a223-a32b28ba7c1a",
+        "sourceAssetId": "fx",
+        "sourceOffset": 0,
+        "startBeats": 0,
+        "endBeats": 4,
+        "trimIn": 0,
+        "trimOut": 0,
+        "fadeIn": null,
+        "fadeOut": null,
+        "fadeCurve": "linear",
+        "gainDb": 0,
+        "mute": false,
+        "reverse": false,
+        "timeStretch": {
+          "ratio": 1,
+          "dspRequired": true,
+          "offlineRequired": true
+        },
+        "pitchShift": {
+          "semitones": 0,
+          "dspRequired": true,
+          "offlineRequired": true
+        },
+        "crossfade": null,
+        "nonDestructive": true
+      }
+    ],
+    "midiEdits": [
+      {
+        "type": "note",
+        "noteId": "c123ae54-1212-49c6-ba2d-47f54f9a98cf",
+        "pitch": 60,
+        "startBeats": 0,
+        "durationBeats": 1,
+        "velocity": 100,
+        "channel": 0
+      }
+    ],
+    "history": [
+      {
+        "op": "addAudioEdit",
+        "editId": "ff4391a4-ba74-449c-a223-a32b28ba7c1a"
+      },
+      {
+        "op": "addNote",
+        "noteId": "c123ae54-1212-49c6-ba2d-47f54f9a98cf"
+      }
+    ],
+    "selection": {
+      "clipIds": [],
+      "noteIds": []
+    },
+    "clipboard": null,
+    "snap": {
+      "enabled": true,
+      "gridBeats": 0.25
+    },
+    "ripple": {
+      "enabled": false
+    }
+  }
+}

@@ -1,0 +1,6023 @@
+{
+  "schema": "uaos.dependencies/v1",
+  "generatedAt": "2026-08-04T20:47:04.362Z",
+  "edges": [
+    {
+      "from": "TASK-00-00001-RECOVER_V15_V21_EVIDENCE_INDEX_CONTRACT",
+      "to": "TASK-00-00002-RECOVER_V15_V21_EVIDENCE_INDEX_IMPLEMENT",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-00-00002-RECOVER_V15_V21_EVIDENCE_INDEX_IMPLEMENT",
+      "to": "TASK-00-00003-RECOVER_V15_V21_EVIDENCE_INDEX_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-00-00003-RECOVER_V15_V21_EVIDENCE_INDEX_TESTS",
+      "to": "TASK-00-00004-RECOVER_V15_V21_EVIDENCE_INDEX_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-00-00005-PORTFOLIO_TREE_MATERIALIZATION_CONTRACT",
+      "to": "TASK-00-00006-PORTFOLIO_TREE_MATERIALIZATION_IMPLEMENT",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-00-00006-PORTFOLIO_TREE_MATERIALIZATION_IMPLEMENT",
+      "to": "TASK-00-00007-PORTFOLIO_TREE_MATERIALIZATION_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-00-00007-PORTFOLIO_TREE_MATERIALIZATION_TESTS",
+      "to": "TASK-00-00008-PORTFOLIO_TREE_MATERIALIZATION_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-00-00009-SCHEMA_VALIDATION_SUITE_CONTRACT",
+      "to": "TASK-00-00010-SCHEMA_VALIDATION_SUITE_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-00-00010-SCHEMA_VALIDATION_SUITE_IMPLEMENTATION",
+      "to": "TASK-00-00011-SCHEMA_VALIDATION_SUITE_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-00-00011-SCHEMA_VALIDATION_SUITE_TESTS",
+      "to": "TASK-00-00012-SCHEMA_VALIDATION_SUITE_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-00-00013-DEPENDENCY_DAG_VALIDATION_CONTRACT",
+      "to": "TASK-00-00014-DEPENDENCY_DAG_VALIDATION_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-00-00014-DEPENDENCY_DAG_VALIDATION_IMPLEMENTATION",
+      "to": "TASK-00-00015-DEPENDENCY_DAG_VALIDATION_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-00-00015-DEPENDENCY_DAG_VALIDATION_TESTS",
+      "to": "TASK-00-00016-DEPENDENCY_DAG_VALIDATION_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-00-00017-CYCLE_DETECTION_CONTRACT",
+      "to": "TASK-00-00018-CYCLE_DETECTION_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-00-00018-CYCLE_DETECTION_IMPLEMENTATION",
+      "to": "TASK-00-00019-CYCLE_DETECTION_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-00-00019-CYCLE_DETECTION_TESTS",
+      "to": "TASK-00-00020-CYCLE_DETECTION_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-00-00021-ALLOWED_PATH_VALIDATION_CONTRACT",
+      "to": "TASK-00-00022-ALLOWED_PATH_VALIDATION_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-00-00022-ALLOWED_PATH_VALIDATION_IMPLEMENTATION",
+      "to": "TASK-00-00023-ALLOWED_PATH_VALIDATION_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-00-00023-ALLOWED_PATH_VALIDATION_TESTS",
+      "to": "TASK-00-00024-ALLOWED_PATH_VALIDATION_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-00-00025-QUEUE_INITIALIZATION_CONTRACT",
+      "to": "TASK-00-00026-QUEUE_INITIALIZATION_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-00-00026-QUEUE_INITIALIZATION_IMPLEMENTATION",
+      "to": "TASK-00-00027-QUEUE_INITIALIZATION_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-00-00027-QUEUE_INITIALIZATION_TESTS",
+      "to": "TASK-00-00028-QUEUE_INITIALIZATION_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-00-00029-PROTECTED_REPOSITORY_VERIFICATION_CONTRA",
+      "to": "TASK-00-00030-PROTECTED_REPOSITORY_VERIFICATION_IMPLEM",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-00-00030-PROTECTED_REPOSITORY_VERIFICATION_IMPLEM",
+      "to": "TASK-00-00031-PROTECTED_REPOSITORY_VERIFICATION_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-00-00031-PROTECTED_REPOSITORY_VERIFICATION_TESTS",
+      "to": "TASK-00-00032-PROTECTED_REPOSITORY_VERIFICATION_EVIDEN",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-00-00033-CLAIM_LEASE_HEARTBEAT_FABRIC_CONTRACT",
+      "to": "TASK-00-00034-CLAIM_LEASE_HEARTBEAT_FABRIC_IMPLEMENTAT",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-00-00034-CLAIM_LEASE_HEARTBEAT_FABRIC_IMPLEMENTAT",
+      "to": "TASK-00-00035-CLAIM_LEASE_HEARTBEAT_FABRIC_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-00-00035-CLAIM_LEASE_HEARTBEAT_FABRIC_TESTS",
+      "to": "TASK-00-00036-CLAIM_LEASE_HEARTBEAT_FABRIC_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-00-00037-AGENT_CLIENT_REGISTRATION_CONTRACT",
+      "to": "TASK-00-00038-AGENT_CLIENT_REGISTRATION_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-00-00038-AGENT_CLIENT_REGISTRATION_IMPLEMENTATION",
+      "to": "TASK-00-00039-AGENT_CLIENT_REGISTRATION_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-00-00039-AGENT_CLIENT_REGISTRATION_TESTS",
+      "to": "TASK-00-00040-AGENT_CLIENT_REGISTRATION_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-00-00041-EVIDENCE_CONTRACT_ENFORCEMENT_CONTRACT",
+      "to": "TASK-00-00042-EVIDENCE_CONTRACT_ENFORCEMENT_IMPLEMENTA",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-00-00042-EVIDENCE_CONTRACT_ENFORCEMENT_IMPLEMENTA",
+      "to": "TASK-00-00043-EVIDENCE_CONTRACT_ENFORCEMENT_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-00-00043-EVIDENCE_CONTRACT_ENFORCEMENT_TESTS",
+      "to": "TASK-00-00044-EVIDENCE_CONTRACT_ENFORCEMENT_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-00-00045-STALE_WORKER_RECLAMATION_CONTRACT",
+      "to": "TASK-00-00046-STALE_WORKER_RECLAMATION_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-00-00046-STALE_WORKER_RECLAMATION_IMPLEMENTATION",
+      "to": "TASK-00-00047-STALE_WORKER_RECLAMATION_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-00-00047-STALE_WORKER_RECLAMATION_TESTS",
+      "to": "TASK-00-00048-STALE_WORKER_RECLAMATION_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-00-00049-DASHBOARD_STATUS_PUBLISHER_CONTRACT",
+      "to": "TASK-00-00050-DASHBOARD_STATUS_PUBLISHER_IMPLEMENTATIO",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-00-00050-DASHBOARD_STATUS_PUBLISHER_IMPLEMENTATIO",
+      "to": "TASK-00-00051-DASHBOARD_STATUS_PUBLISHER_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-00-00051-DASHBOARD_STATUS_PUBLISHER_TESTS",
+      "to": "TASK-00-00052-DASHBOARD_STATUS_PUBLISHER_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-00-00053-AUTOMATIC_READY_PROMOTION_CONTRACT",
+      "to": "TASK-00-00054-AUTOMATIC_READY_PROMOTION_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-00-00054-AUTOMATIC_READY_PROMOTION_IMPLEMENTATION",
+      "to": "TASK-00-00055-AUTOMATIC_READY_PROMOTION_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-00-00055-AUTOMATIC_READY_PROMOTION_TESTS",
+      "to": "TASK-00-00056-AUTOMATIC_READY_PROMOTION_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-01-00057-SHARED_PROJECT_IDENTITY_CONTRACT",
+      "to": "TASK-01-00058-SHARED_PROJECT_IDENTITY_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-01-00058-SHARED_PROJECT_IDENTITY_IMPLEMENTATION",
+      "to": "TASK-01-00059-SHARED_PROJECT_IDENTITY_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-01-00059-SHARED_PROJECT_IDENTITY_TESTS",
+      "to": "TASK-01-00060-SHARED_PROJECT_IDENTITY_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-01-00061-PROJECT_SCHEMAS_CONTRACT",
+      "to": "TASK-01-00062-PROJECT_SCHEMAS_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-01-00062-PROJECT_SCHEMAS_IMPLEMENTATION",
+      "to": "TASK-01-00063-PROJECT_SCHEMAS_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-01-00063-PROJECT_SCHEMAS_TESTS",
+      "to": "TASK-01-00064-PROJECT_SCHEMAS_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-01-00065-ATOMIC_SAVE_CONTRACT",
+      "to": "TASK-01-00066-ATOMIC_SAVE_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-01-00066-ATOMIC_SAVE_IMPLEMENTATION",
+      "to": "TASK-01-00067-ATOMIC_SAVE_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-01-00067-ATOMIC_SAVE_TESTS",
+      "to": "TASK-01-00068-ATOMIC_SAVE_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-01-00069-AUTOSAVE_CONTRACT",
+      "to": "TASK-01-00070-AUTOSAVE_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-01-00070-AUTOSAVE_IMPLEMENTATION",
+      "to": "TASK-01-00071-AUTOSAVE_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-01-00071-AUTOSAVE_TESTS",
+      "to": "TASK-01-00072-AUTOSAVE_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-01-00073-RECOVERY_CONTRACT",
+      "to": "TASK-01-00074-RECOVERY_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-01-00074-RECOVERY_IMPLEMENTATION",
+      "to": "TASK-01-00075-RECOVERY_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-01-00075-RECOVERY_TESTS",
+      "to": "TASK-01-00076-RECOVERY_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-01-00077-MIGRATION_CONTRACT",
+      "to": "TASK-01-00078-MIGRATION_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-01-00078-MIGRATION_IMPLEMENTATION",
+      "to": "TASK-01-00079-MIGRATION_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-01-00079-MIGRATION_TESTS",
+      "to": "TASK-01-00080-MIGRATION_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-01-00081-UNDO_REDO_CONTRACT",
+      "to": "TASK-01-00082-UNDO_REDO_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-01-00082-UNDO_REDO_IMPLEMENTATION",
+      "to": "TASK-01-00083-UNDO_REDO_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-01-00083-UNDO_REDO_TESTS",
+      "to": "TASK-01-00084-UNDO_REDO_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-01-00085-EVIDENCE_RECORDS_CONTRACT",
+      "to": "TASK-01-00086-EVIDENCE_RECORDS_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-01-00086-EVIDENCE_RECORDS_IMPLEMENTATION",
+      "to": "TASK-01-00087-EVIDENCE_RECORDS_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-01-00087-EVIDENCE_RECORDS_TESTS",
+      "to": "TASK-01-00088-EVIDENCE_RECORDS_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-01-00089-ERROR_ENVELOPE_CONTRACT",
+      "to": "TASK-01-00090-ERROR_ENVELOPE_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-01-00090-ERROR_ENVELOPE_IMPLEMENTATION",
+      "to": "TASK-01-00091-ERROR_ENVELOPE_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-01-00091-ERROR_ENVELOPE_TESTS",
+      "to": "TASK-01-00092-ERROR_ENVELOPE_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-01-00093-CAPABILITY_REGISTRY_CONTRACT",
+      "to": "TASK-01-00094-CAPABILITY_REGISTRY_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-01-00094-CAPABILITY_REGISTRY_IMPLEMENTATION",
+      "to": "TASK-01-00095-CAPABILITY_REGISTRY_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-01-00095-CAPABILITY_REGISTRY_TESTS",
+      "to": "TASK-01-00096-CAPABILITY_REGISTRY_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-01-00097-ENTITLEMENTS_CONTRACT",
+      "to": "TASK-01-00098-ENTITLEMENTS_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-01-00098-ENTITLEMENTS_IMPLEMENTATION",
+      "to": "TASK-01-00099-ENTITLEMENTS_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-01-00099-ENTITLEMENTS_TESTS",
+      "to": "TASK-01-00100-ENTITLEMENTS_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-01-00101-OFFLINE_TRIAL_CONTRACT",
+      "to": "TASK-01-00102-OFFLINE_TRIAL_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-01-00102-OFFLINE_TRIAL_IMPLEMENTATION",
+      "to": "TASK-01-00103-OFFLINE_TRIAL_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-01-00103-OFFLINE_TRIAL_TESTS",
+      "to": "TASK-01-00104-OFFLINE_TRIAL_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-01-00105-SIGNED_LICENSES_CONTRACT",
+      "to": "TASK-01-00106-SIGNED_LICENSES_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-01-00106-SIGNED_LICENSES_IMPLEMENTATION",
+      "to": "TASK-01-00107-SIGNED_LICENSES_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-01-00107-SIGNED_LICENSES_TESTS",
+      "to": "TASK-01-00108-SIGNED_LICENSES_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-01-00109-PRODUCT_IDS_CONTRACT",
+      "to": "TASK-01-00110-PRODUCT_IDS_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-01-00110-PRODUCT_IDS_IMPLEMENTATION",
+      "to": "TASK-01-00111-PRODUCT_IDS_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-01-00111-PRODUCT_IDS_TESTS",
+      "to": "TASK-01-00112-PRODUCT_IDS_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-01-00113-CUSTOMER_LICENSE_RECEIPTS_CONTRACT",
+      "to": "TASK-01-00114-CUSTOMER_LICENSE_RECEIPTS_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-01-00114-CUSTOMER_LICENSE_RECEIPTS_IMPLEMENTATION",
+      "to": "TASK-01-00115-CUSTOMER_LICENSE_RECEIPTS_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-01-00115-CUSTOMER_LICENSE_RECEIPTS_TESTS",
+      "to": "TASK-01-00116-CUSTOMER_LICENSE_RECEIPTS_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-01-00117-UPDATE_MANIFESTS_CONTRACT",
+      "to": "TASK-01-00118-UPDATE_MANIFESTS_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-01-00118-UPDATE_MANIFESTS_IMPLEMENTATION",
+      "to": "TASK-01-00119-UPDATE_MANIFESTS_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-01-00119-UPDATE_MANIFESTS_TESTS",
+      "to": "TASK-01-00120-UPDATE_MANIFESTS_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-01-00121-INSTALLER_PACKAGING_CONTRACT",
+      "to": "TASK-01-00122-INSTALLER_PACKAGING_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-01-00122-INSTALLER_PACKAGING_IMPLEMENTATION",
+      "to": "TASK-01-00123-INSTALLER_PACKAGING_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-01-00123-INSTALLER_PACKAGING_TESTS",
+      "to": "TASK-01-00124-INSTALLER_PACKAGING_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-01-00125-PORTABLE_PACKAGING_CONTRACT",
+      "to": "TASK-01-00126-PORTABLE_PACKAGING_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-01-00126-PORTABLE_PACKAGING_IMPLEMENTATION",
+      "to": "TASK-01-00127-PORTABLE_PACKAGING_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-01-00127-PORTABLE_PACKAGING_TESTS",
+      "to": "TASK-01-00128-PORTABLE_PACKAGING_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-01-00129-VERSIONING_CONTRACT",
+      "to": "TASK-01-00130-VERSIONING_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-01-00130-VERSIONING_IMPLEMENTATION",
+      "to": "TASK-01-00131-VERSIONING_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-01-00131-VERSIONING_TESTS",
+      "to": "TASK-01-00132-VERSIONING_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-01-00133-ABOUT_SCREEN_CONTRACT",
+      "to": "TASK-01-00134-ABOUT_SCREEN_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-01-00134-ABOUT_SCREEN_IMPLEMENTATION",
+      "to": "TASK-01-00135-ABOUT_SCREEN_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-01-00135-ABOUT_SCREEN_TESTS",
+      "to": "TASK-01-00136-ABOUT_SCREEN_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-01-00137-PRIVACY_NOTICES_CONTRACT",
+      "to": "TASK-01-00138-PRIVACY_NOTICES_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-01-00138-PRIVACY_NOTICES_IMPLEMENTATION",
+      "to": "TASK-01-00139-PRIVACY_NOTICES_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-01-00139-PRIVACY_NOTICES_TESTS",
+      "to": "TASK-01-00140-PRIVACY_NOTICES_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-01-00141-LOCALIZATION_ARABIC_CONTRACT",
+      "to": "TASK-01-00142-LOCALIZATION_ARABIC_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-01-00142-LOCALIZATION_ARABIC_IMPLEMENTATION",
+      "to": "TASK-01-00143-LOCALIZATION_ARABIC_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-01-00143-LOCALIZATION_ARABIC_TESTS",
+      "to": "TASK-01-00144-LOCALIZATION_ARABIC_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-01-00145-LOCALIZATION_ENGLISH_CONTRACT",
+      "to": "TASK-01-00146-LOCALIZATION_ENGLISH_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-01-00146-LOCALIZATION_ENGLISH_IMPLEMENTATION",
+      "to": "TASK-01-00147-LOCALIZATION_ENGLISH_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-01-00147-LOCALIZATION_ENGLISH_TESTS",
+      "to": "TASK-01-00148-LOCALIZATION_ENGLISH_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-01-00149-LOCALIZATION_GERMAN_CONTRACT",
+      "to": "TASK-01-00150-LOCALIZATION_GERMAN_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-01-00150-LOCALIZATION_GERMAN_IMPLEMENTATION",
+      "to": "TASK-01-00151-LOCALIZATION_GERMAN_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-01-00151-LOCALIZATION_GERMAN_TESTS",
+      "to": "TASK-01-00152-LOCALIZATION_GERMAN_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-01-00153-ACCESSIBILITY_BASELINE_CONTRACT",
+      "to": "TASK-01-00154-ACCESSIBILITY_BASELINE_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-01-00154-ACCESSIBILITY_BASELINE_IMPLEMENTATION",
+      "to": "TASK-01-00155-ACCESSIBILITY_BASELINE_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-01-00155-ACCESSIBILITY_BASELINE_TESTS",
+      "to": "TASK-01-00156-ACCESSIBILITY_BASELINE_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-01-00157-CRASH_LOGGING_LOCAL_ONLY_CONTRACT",
+      "to": "TASK-01-00158-CRASH_LOGGING_LOCAL_ONLY_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-01-00158-CRASH_LOGGING_LOCAL_ONLY_IMPLEMENTATION",
+      "to": "TASK-01-00159-CRASH_LOGGING_LOCAL_ONLY_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-01-00159-CRASH_LOGGING_LOCAL_ONLY_TESTS",
+      "to": "TASK-01-00160-CRASH_LOGGING_LOCAL_ONLY_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-01-00161-SUPPORT_BUNDLE_CONTRACT",
+      "to": "TASK-01-00162-SUPPORT_BUNDLE_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-01-00162-SUPPORT_BUNDLE_IMPLEMENTATION",
+      "to": "TASK-01-00163-SUPPORT_BUNDLE_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-01-00163-SUPPORT_BUNDLE_TESTS",
+      "to": "TASK-01-00164-SUPPORT_BUNDLE_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-01-00165-EXPORT_IMPORT_USER_DATA_CONTRACT",
+      "to": "TASK-01-00166-EXPORT_IMPORT_USER_DATA_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-01-00166-EXPORT_IMPORT_USER_DATA_IMPLEMENTATION",
+      "to": "TASK-01-00167-EXPORT_IMPORT_USER_DATA_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-01-00167-EXPORT_IMPORT_USER_DATA_TESTS",
+      "to": "TASK-01-00168-EXPORT_IMPORT_USER_DATA_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-01-00169-SINGLE_INSTANCE_CONTRACT",
+      "to": "TASK-01-00170-SINGLE_INSTANCE_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-01-00170-SINGLE_INSTANCE_IMPLEMENTATION",
+      "to": "TASK-01-00171-SINGLE_INSTANCE_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-01-00171-SINGLE_INSTANCE_TESTS",
+      "to": "TASK-01-00172-SINGLE_INSTANCE_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-01-00173-GLOBAL_STOP_CONTRACT_CONTRACT",
+      "to": "TASK-01-00174-GLOBAL_STOP_CONTRACT_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-01-00174-GLOBAL_STOP_CONTRACT_IMPLEMENTATION",
+      "to": "TASK-01-00175-GLOBAL_STOP_CONTRACT_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-01-00175-GLOBAL_STOP_CONTRACT_TESTS",
+      "to": "TASK-01-00176-GLOBAL_STOP_CONTRACT_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-01-00177-NO_AUTOPLAY_CONTRACT_CONTRACT",
+      "to": "TASK-01-00178-NO_AUTOPLAY_CONTRACT_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-01-00178-NO_AUTOPLAY_CONTRACT_IMPLEMENTATION",
+      "to": "TASK-01-00179-NO_AUTOPLAY_CONTRACT_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-01-00179-NO_AUTOPLAY_CONTRACT_TESTS",
+      "to": "TASK-01-00180-NO_AUTOPLAY_CONTRACT_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-01-00181-PERMISSION_DENIAL_CONTRACT_CONTRACT",
+      "to": "TASK-01-00182-PERMISSION_DENIAL_CONTRACT_IMPLEMENTATIO",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-01-00182-PERMISSION_DENIAL_CONTRACT_IMPLEMENTATIO",
+      "to": "TASK-01-00183-PERMISSION_DENIAL_CONTRACT_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-01-00183-PERMISSION_DENIAL_CONTRACT_TESTS",
+      "to": "TASK-01-00184-PERMISSION_DENIAL_CONTRACT_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-01-00185-NETWORK_DISABLED_OPERATION_CONTRACT",
+      "to": "TASK-01-00186-NETWORK_DISABLED_OPERATION_IMPLEMENTATIO",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-01-00186-NETWORK_DISABLED_OPERATION_IMPLEMENTATIO",
+      "to": "TASK-01-00187-NETWORK_DISABLED_OPERATION_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-01-00187-NETWORK_DISABLED_OPERATION_TESTS",
+      "to": "TASK-01-00188-NETWORK_DISABLED_OPERATION_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-01-00189-NO_LISTENING_PORT_VERIFICATION_CONTRACT",
+      "to": "TASK-01-00190-NO_LISTENING_PORT_VERIFICATION_IMPLEMENT",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-01-00190-NO_LISTENING_PORT_VERIFICATION_IMPLEMENT",
+      "to": "TASK-01-00191-NO_LISTENING_PORT_VERIFICATION_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-01-00191-NO_LISTENING_PORT_VERIFICATION_TESTS",
+      "to": "TASK-01-00192-NO_LISTENING_PORT_VERIFICATION_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-01-00193-PROCESS_CLEANUP_CONTRACT",
+      "to": "TASK-01-00194-PROCESS_CLEANUP_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-01-00194-PROCESS_CLEANUP_IMPLEMENTATION",
+      "to": "TASK-01-00195-PROCESS_CLEANUP_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-01-00195-PROCESS_CLEANUP_TESTS",
+      "to": "TASK-01-00196-PROCESS_CLEANUP_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-02-00197-USER_SUPPLIED_WAV_INGESTION_CONTRACT",
+      "to": "TASK-02-00198-USER_SUPPLIED_WAV_INGESTION_IMPLEMENTATI",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-02-00198-USER_SUPPLIED_WAV_INGESTION_IMPLEMENTATI",
+      "to": "TASK-02-00199-USER_SUPPLIED_WAV_INGESTION_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-02-00199-USER_SUPPLIED_WAV_INGESTION_TESTS",
+      "to": "TASK-02-00200-USER_SUPPLIED_WAV_INGESTION_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-02-00201-SOURCE_SCANNING_CONTRACT",
+      "to": "TASK-02-00202-SOURCE_SCANNING_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-02-00202-SOURCE_SCANNING_IMPLEMENTATION",
+      "to": "TASK-02-00203-SOURCE_SCANNING_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-02-00203-SOURCE_SCANNING_TESTS",
+      "to": "TASK-02-00204-SOURCE_SCANNING_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-02-00205-SHA256_INVENTORY_CONTRACT",
+      "to": "TASK-02-00206-SHA256_INVENTORY_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-02-00206-SHA256_INVENTORY_IMPLEMENTATION",
+      "to": "TASK-02-00207-SHA256_INVENTORY_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-02-00207-SHA256_INVENTORY_TESTS",
+      "to": "TASK-02-00208-SHA256_INVENTORY_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-02-00209-PROVENANCE_CONTRACT",
+      "to": "TASK-02-00210-PROVENANCE_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-02-00210-PROVENANCE_IMPLEMENTATION",
+      "to": "TASK-02-00211-PROVENANCE_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-02-00211-PROVENANCE_TESTS",
+      "to": "TASK-02-00212-PROVENANCE_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-02-00213-LICENSE_LEDGER_CONTRACT",
+      "to": "TASK-02-00214-LICENSE_LEDGER_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-02-00214-LICENSE_LEDGER_IMPLEMENTATION",
+      "to": "TASK-02-00215-LICENSE_LEDGER_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-02-00215-LICENSE_LEDGER_TESTS",
+      "to": "TASK-02-00216-LICENSE_LEDGER_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-02-00217-SAMPLE_MAPPING_CONTRACT",
+      "to": "TASK-02-00218-SAMPLE_MAPPING_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-02-00218-SAMPLE_MAPPING_IMPLEMENTATION",
+      "to": "TASK-02-00219-SAMPLE_MAPPING_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-02-00219-SAMPLE_MAPPING_TESTS",
+      "to": "TASK-02-00220-SAMPLE_MAPPING_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-02-00221-NOTE_MAPPING_CONTRACT",
+      "to": "TASK-02-00222-NOTE_MAPPING_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-02-00222-NOTE_MAPPING_IMPLEMENTATION",
+      "to": "TASK-02-00223-NOTE_MAPPING_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-02-00223-NOTE_MAPPING_TESTS",
+      "to": "TASK-02-00224-NOTE_MAPPING_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-02-00225-VELOCITY_LAYERS_CONTRACT",
+      "to": "TASK-02-00226-VELOCITY_LAYERS_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-02-00226-VELOCITY_LAYERS_IMPLEMENTATION",
+      "to": "TASK-02-00227-VELOCITY_LAYERS_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-02-00227-VELOCITY_LAYERS_TESTS",
+      "to": "TASK-02-00228-VELOCITY_LAYERS_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-02-00229-ROUND_ROBIN_CONTRACT",
+      "to": "TASK-02-00230-ROUND_ROBIN_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-02-00230-ROUND_ROBIN_IMPLEMENTATION",
+      "to": "TASK-02-00231-ROUND_ROBIN_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-02-00231-ROUND_ROBIN_TESTS",
+      "to": "TASK-02-00232-ROUND_ROBIN_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-02-00233-ARTICULATIONS_CONTRACT",
+      "to": "TASK-02-00234-ARTICULATIONS_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-02-00234-ARTICULATIONS_IMPLEMENTATION",
+      "to": "TASK-02-00235-ARTICULATIONS_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-02-00235-ARTICULATIONS_TESTS",
+      "to": "TASK-02-00236-ARTICULATIONS_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-02-00237-LOOP_METADATA_CONTRACT",
+      "to": "TASK-02-00238-LOOP_METADATA_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-02-00238-LOOP_METADATA_IMPLEMENTATION",
+      "to": "TASK-02-00239-LOOP_METADATA_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-02-00239-LOOP_METADATA_TESTS",
+      "to": "TASK-02-00240-LOOP_METADATA_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-02-00241-CHOKE_GROUPS_CONTRACT",
+      "to": "TASK-02-00242-CHOKE_GROUPS_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-02-00242-CHOKE_GROUPS_IMPLEMENTATION",
+      "to": "TASK-02-00243-CHOKE_GROUPS_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-02-00243-CHOKE_GROUPS_TESTS",
+      "to": "TASK-02-00244-CHOKE_GROUPS_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-02-00245-SUSTAIN_CONTRACT",
+      "to": "TASK-02-00246-SUSTAIN_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-02-00246-SUSTAIN_IMPLEMENTATION",
+      "to": "TASK-02-00247-SUSTAIN_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-02-00247-SUSTAIN_TESTS",
+      "to": "TASK-02-00248-SUSTAIN_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-02-00249-VOICE_LIFECYCLE_CONTRACT",
+      "to": "TASK-02-00250-VOICE_LIFECYCLE_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-02-00250-VOICE_LIFECYCLE_IMPLEMENTATION",
+      "to": "TASK-02-00251-VOICE_LIFECYCLE_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-02-00251-VOICE_LIFECYCLE_TESTS",
+      "to": "TASK-02-00252-VOICE_LIFECYCLE_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-02-00253-SAMPLER_RUNTIME_CONTRACT",
+      "to": "TASK-02-00254-SAMPLER_RUNTIME_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-02-00254-SAMPLER_RUNTIME_IMPLEMENTATION",
+      "to": "TASK-02-00255-SAMPLER_RUNTIME_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-02-00255-SAMPLER_RUNTIME_TESTS",
+      "to": "TASK-02-00256-SAMPLER_RUNTIME_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-02-00257-PREVIEW_PLAYER_CONTRACT",
+      "to": "TASK-02-00258-PREVIEW_PLAYER_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-02-00258-PREVIEW_PLAYER_IMPLEMENTATION",
+      "to": "TASK-02-00259-PREVIEW_PLAYER_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-02-00259-PREVIEW_PLAYER_TESTS",
+      "to": "TASK-02-00260-PREVIEW_PLAYER_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-02-00261-CATALOG_CONTRACT",
+      "to": "TASK-02-00262-CATALOG_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-02-00262-CATALOG_IMPLEMENTATION",
+      "to": "TASK-02-00263-CATALOG_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-02-00263-CATALOG_TESTS",
+      "to": "TASK-02-00264-CATALOG_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-02-00265-TRANSACTIONAL_BUILD_CONTRACT",
+      "to": "TASK-02-00266-TRANSACTIONAL_BUILD_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-02-00266-TRANSACTIONAL_BUILD_IMPLEMENTATION",
+      "to": "TASK-02-00267-TRANSACTIONAL_BUILD_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-02-00267-TRANSACTIONAL_BUILD_TESTS",
+      "to": "TASK-02-00268-TRANSACTIONAL_BUILD_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-02-00269-STAGING_CONTRACT",
+      "to": "TASK-02-00270-STAGING_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-02-00270-STAGING_IMPLEMENTATION",
+      "to": "TASK-02-00271-STAGING_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-02-00271-STAGING_TESTS",
+      "to": "TASK-02-00272-STAGING_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-02-00273-ROLLBACK_CONTRACT",
+      "to": "TASK-02-00274-ROLLBACK_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-02-00274-ROLLBACK_IMPLEMENTATION",
+      "to": "TASK-02-00275-ROLLBACK_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-02-00275-ROLLBACK_TESTS",
+      "to": "TASK-02-00276-ROLLBACK_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-02-00277-JOURNAL_CONTRACT",
+      "to": "TASK-02-00278-JOURNAL_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-02-00278-JOURNAL_IMPLEMENTATION",
+      "to": "TASK-02-00279-JOURNAL_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-02-00279-JOURNAL_TESTS",
+      "to": "TASK-02-00280-JOURNAL_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-02-00281-LOCKS_CONTRACT",
+      "to": "TASK-02-00282-LOCKS_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-02-00282-LOCKS_IMPLEMENTATION",
+      "to": "TASK-02-00283-LOCKS_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-02-00283-LOCKS_TESTS",
+      "to": "TASK-02-00284-LOCKS_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-02-00285-STALE_RECOVERY_CONTRACT",
+      "to": "TASK-02-00286-STALE_RECOVERY_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-02-00286-STALE_RECOVERY_IMPLEMENTATION",
+      "to": "TASK-02-00287-STALE_RECOVERY_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-02-00287-STALE_RECOVERY_TESTS",
+      "to": "TASK-02-00288-STALE_RECOVERY_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-02-00289-PACKAGING_CONTRACT",
+      "to": "TASK-02-00290-PACKAGING_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-02-00290-PACKAGING_IMPLEMENTATION",
+      "to": "TASK-02-00291-PACKAGING_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-02-00291-PACKAGING_TESTS",
+      "to": "TASK-02-00292-PACKAGING_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-02-00293-LIBRARY_VALIDATION_CONTRACT",
+      "to": "TASK-02-00294-LIBRARY_VALIDATION_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-02-00294-LIBRARY_VALIDATION_IMPLEMENTATION",
+      "to": "TASK-02-00295-LIBRARY_VALIDATION_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-02-00295-LIBRARY_VALIDATION_TESTS",
+      "to": "TASK-02-00296-LIBRARY_VALIDATION_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-02-00297-COMMERCIAL_CONTENT_ACQUISITION_CONTRACT",
+      "to": "TASK-02-00298-COMMERCIAL_CONTENT_ACQUISITION_IMPLEMENT",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-02-00298-COMMERCIAL_CONTENT_ACQUISITION_IMPLEMENT",
+      "to": "TASK-02-00299-COMMERCIAL_CONTENT_ACQUISITION_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-02-00299-COMMERCIAL_CONTENT_ACQUISITION_TESTS",
+      "to": "TASK-02-00300-COMMERCIAL_CONTENT_ACQUISITION_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-02-00301-PUBLIC_DOMAIN_CONTENT_PIPELINE_CONTRACT",
+      "to": "TASK-02-00302-PUBLIC_DOMAIN_CONTENT_PIPELINE_IMPLEMENT",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-02-00302-PUBLIC_DOMAIN_CONTENT_PIPELINE_IMPLEMENT",
+      "to": "TASK-02-00303-PUBLIC_DOMAIN_CONTENT_PIPELINE_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-02-00303-PUBLIC_DOMAIN_CONTENT_PIPELINE_TESTS",
+      "to": "TASK-02-00304-PUBLIC_DOMAIN_CONTENT_PIPELINE_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-02-00305-CONTRIBUTOR_PIPELINE_CONTRACT",
+      "to": "TASK-02-00306-CONTRIBUTOR_PIPELINE_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-02-00306-CONTRIBUTOR_PIPELINE_IMPLEMENTATION",
+      "to": "TASK-02-00307-CONTRIBUTOR_PIPELINE_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-02-00307-CONTRIBUTOR_PIPELINE_TESTS",
+      "to": "TASK-02-00308-CONTRIBUTOR_PIPELINE_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-02-00309-MARKETPLACE_READY_PACKAGE_MODEL_CONTRACT",
+      "to": "TASK-02-00310-MARKETPLACE_READY_PACKAGE_MODEL_IMPLEMEN",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-02-00310-MARKETPLACE_READY_PACKAGE_MODEL_IMPLEMEN",
+      "to": "TASK-02-00311-MARKETPLACE_READY_PACKAGE_MODEL_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-02-00311-MARKETPLACE_READY_PACKAGE_MODEL_TESTS",
+      "to": "TASK-02-00312-MARKETPLACE_READY_PACKAGE_MODEL_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-02-00313-OWNER_CONTENT_APPROVAL_CONTRACT",
+      "to": "TASK-02-00314-OWNER_CONTENT_APPROVAL_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-02-00314-OWNER_CONTENT_APPROVAL_IMPLEMENTATION",
+      "to": "TASK-02-00315-OWNER_CONTENT_APPROVAL_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-02-00315-OWNER_CONTENT_APPROVAL_TESTS",
+      "to": "TASK-02-00316-OWNER_CONTENT_APPROVAL_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-03-00317-INTERNAL_PROJECT_FORMAT_CONTRACT",
+      "to": "TASK-03-00318-INTERNAL_PROJECT_FORMAT_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-03-00318-INTERNAL_PROJECT_FORMAT_IMPLEMENTATION",
+      "to": "TASK-03-00319-INTERNAL_PROJECT_FORMAT_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-03-00319-INTERNAL_PROJECT_FORMAT_TESTS",
+      "to": "TASK-03-00320-INTERNAL_PROJECT_FORMAT_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-03-00321-SET_DOCTOR_CONTRACT",
+      "to": "TASK-03-00322-SET_DOCTOR_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-03-00322-SET_DOCTOR_IMPLEMENTATION",
+      "to": "TASK-03-00323-SET_DOCTOR_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-03-00323-SET_DOCTOR_TESTS",
+      "to": "TASK-03-00324-SET_DOCTOR_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-03-00325-MAGIC_SET_CONTRACT",
+      "to": "TASK-03-00326-MAGIC_SET_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-03-00326-MAGIC_SET_IMPLEMENTATION",
+      "to": "TASK-03-00327-MAGIC_SET_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-03-00327-MAGIC_SET_TESTS",
+      "to": "TASK-03-00328-MAGIC_SET_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-03-00329-GENERATE_MY_SET_CONTRACT",
+      "to": "TASK-03-00330-GENERATE_MY_SET_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-03-00330-GENERATE_MY_SET_IMPLEMENTATION",
+      "to": "TASK-03-00331-GENERATE_MY_SET_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-03-00331-GENERATE_MY_SET_TESTS",
+      "to": "TASK-03-00332-GENERATE_MY_SET_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-03-00333-CATALOG_CONTRACT",
+      "to": "TASK-03-00334-CATALOG_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-03-00334-CATALOG_IMPLEMENTATION",
+      "to": "TASK-03-00335-CATALOG_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-03-00335-CATALOG_TESTS",
+      "to": "TASK-03-00336-CATALOG_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-03-00337-INSPECTOR_CONTRACT",
+      "to": "TASK-03-00338-INSPECTOR_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-03-00338-INSPECTOR_IMPLEMENTATION",
+      "to": "TASK-03-00339-INSPECTOR_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-03-00339-INSPECTOR_TESTS",
+      "to": "TASK-03-00340-INSPECTOR_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-03-00341-PREVIEW_CONTRACT",
+      "to": "TASK-03-00342-PREVIEW_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-03-00342-PREVIEW_IMPLEMENTATION",
+      "to": "TASK-03-00343-PREVIEW_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-03-00343-PREVIEW_TESTS",
+      "to": "TASK-03-00344-PREVIEW_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-03-00345-MEDIA_REFERENCES_CONTRACT",
+      "to": "TASK-03-00346-MEDIA_REFERENCES_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-03-00346-MEDIA_REFERENCES_IMPLEMENTATION",
+      "to": "TASK-03-00347-MEDIA_REFERENCES_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-03-00347-MEDIA_REFERENCES_TESTS",
+      "to": "TASK-03-00348-MEDIA_REFERENCES_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-03-00349-MIGRATION_CONTRACT",
+      "to": "TASK-03-00350-MIGRATION_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-03-00350-MIGRATION_IMPLEMENTATION",
+      "to": "TASK-03-00351-MIGRATION_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-03-00351-MIGRATION_TESTS",
+      "to": "TASK-03-00352-MIGRATION_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-03-00353-VALIDATION_CONTRACT",
+      "to": "TASK-03-00354-VALIDATION_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-03-00354-VALIDATION_IMPLEMENTATION",
+      "to": "TASK-03-00355-VALIDATION_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-03-00355-VALIDATION_TESTS",
+      "to": "TASK-03-00356-VALIDATION_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-03-00357-ERROR_RECOVERY_CONTRACT",
+      "to": "TASK-03-00358-ERROR_RECOVERY_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-03-00358-ERROR_RECOVERY_IMPLEMENTATION",
+      "to": "TASK-03-00359-ERROR_RECOVERY_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-03-00359-ERROR_RECOVERY_TESTS",
+      "to": "TASK-03-00360-ERROR_RECOVERY_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-03-00361-FORMAT_CAPABILITY_REGISTRY_CONTRACT",
+      "to": "TASK-03-00362-FORMAT_CAPABILITY_REGISTRY_IMPLEMENTATIO",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-03-00362-FORMAT_CAPABILITY_REGISTRY_IMPLEMENTATIO",
+      "to": "TASK-03-00363-FORMAT_CAPABILITY_REGISTRY_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-03-00363-FORMAT_CAPABILITY_REGISTRY_TESTS",
+      "to": "TASK-03-00364-FORMAT_CAPABILITY_REGISTRY_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-03-00365-KORG_INSPECTION_CONTRACT",
+      "to": "TASK-03-00366-KORG_INSPECTION_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-03-00366-KORG_INSPECTION_IMPLEMENTATION",
+      "to": "TASK-03-00367-KORG_INSPECTION_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-03-00367-KORG_INSPECTION_TESTS",
+      "to": "TASK-03-00368-KORG_INSPECTION_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-03-00369-YAMAHA_INSPECTION_CONTRACT",
+      "to": "TASK-03-00370-YAMAHA_INSPECTION_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-03-00370-YAMAHA_INSPECTION_IMPLEMENTATION",
+      "to": "TASK-03-00371-YAMAHA_INSPECTION_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-03-00371-YAMAHA_INSPECTION_TESTS",
+      "to": "TASK-03-00372-YAMAHA_INSPECTION_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-03-00373-ROLAND_INSPECTION_CONTRACT",
+      "to": "TASK-03-00374-ROLAND_INSPECTION_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-03-00374-ROLAND_INSPECTION_IMPLEMENTATION",
+      "to": "TASK-03-00375-ROLAND_INSPECTION_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-03-00375-ROLAND_INSPECTION_TESTS",
+      "to": "TASK-03-00376-ROLAND_INSPECTION_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-03-00377-KETRON_INSPECTION_CONTRACT",
+      "to": "TASK-03-00378-KETRON_INSPECTION_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-03-00378-KETRON_INSPECTION_IMPLEMENTATION",
+      "to": "TASK-03-00379-KETRON_INSPECTION_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-03-00379-KETRON_INSPECTION_TESTS",
+      "to": "TASK-03-00380-KETRON_INSPECTION_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-03-00381-INTERNAL_CONVERSION_CONTRACT",
+      "to": "TASK-03-00382-INTERNAL_CONVERSION_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-03-00382-INTERNAL_CONVERSION_IMPLEMENTATION",
+      "to": "TASK-03-00383-INTERNAL_CONVERSION_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-03-00383-INTERNAL_CONVERSION_TESTS",
+      "to": "TASK-03-00384-INTERNAL_CONVERSION_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-03-00385-MAPPING_PLANS_CONTRACT",
+      "to": "TASK-03-00386-MAPPING_PLANS_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-03-00386-MAPPING_PLANS_IMPLEMENTATION",
+      "to": "TASK-03-00387-MAPPING_PLANS_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-03-00387-MAPPING_PLANS_TESTS",
+      "to": "TASK-03-00388-MAPPING_PLANS_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-03-00389-CONVERSION_RECEIPTS_CONTRACT",
+      "to": "TASK-03-00390-CONVERSION_RECEIPTS_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-03-00390-CONVERSION_RECEIPTS_IMPLEMENTATION",
+      "to": "TASK-03-00391-CONVERSION_RECEIPTS_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-03-00391-CONVERSION_RECEIPTS_TESTS",
+      "to": "TASK-03-00392-CONVERSION_RECEIPTS_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-03-00393-TRANSACTIONAL_OUTPUT_CONTRACT",
+      "to": "TASK-03-00394-TRANSACTIONAL_OUTPUT_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-03-00394-TRANSACTIONAL_OUTPUT_IMPLEMENTATION",
+      "to": "TASK-03-00395-TRANSACTIONAL_OUTPUT_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-03-00395-TRANSACTIONAL_OUTPUT_TESTS",
+      "to": "TASK-03-00396-TRANSACTIONAL_OUTPUT_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-03-00397-RESUME_RECOVERY_CONTRACT",
+      "to": "TASK-03-00398-RESUME_RECOVERY_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-03-00398-RESUME_RECOVERY_IMPLEMENTATION",
+      "to": "TASK-03-00399-RESUME_RECOVERY_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-03-00399-RESUME_RECOVERY_TESTS",
+      "to": "TASK-03-00400-RESUME_RECOVERY_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-03-00401-PROPRIETARY_FORMAT_CONTRACTS_CONTRACT",
+      "to": "TASK-03-00402-PROPRIETARY_FORMAT_CONTRACTS_IMPLEMENTAT",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-03-00402-PROPRIETARY_FORMAT_CONTRACTS_IMPLEMENTAT",
+      "to": "TASK-03-00403-PROPRIETARY_FORMAT_CONTRACTS_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-03-00403-PROPRIETARY_FORMAT_CONTRACTS_TESTS",
+      "to": "TASK-03-00404-PROPRIETARY_FORMAT_CONTRACTS_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-03-00405-WRITER_RESEARCH_CONTRACT",
+      "to": "TASK-03-00406-WRITER_RESEARCH_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-03-00406-WRITER_RESEARCH_IMPLEMENTATION",
+      "to": "TASK-03-00407-WRITER_RESEARCH_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-03-00407-WRITER_RESEARCH_TESTS",
+      "to": "TASK-03-00408-WRITER_RESEARCH_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-03-00409-KORG_WRITER_CONTRACT",
+      "to": "TASK-03-00410-KORG_WRITER_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-03-00410-KORG_WRITER_IMPLEMENTATION",
+      "to": "TASK-03-00411-KORG_WRITER_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-03-00411-KORG_WRITER_TESTS",
+      "to": "TASK-03-00412-KORG_WRITER_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-03-00413-USB_TRANSPORT_CONTRACT",
+      "to": "TASK-03-00414-USB_TRANSPORT_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-03-00414-USB_TRANSPORT_IMPLEMENTATION",
+      "to": "TASK-03-00415-USB_TRANSPORT_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-03-00415-USB_TRANSPORT_TESTS",
+      "to": "TASK-03-00416-USB_TRANSPORT_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-03-00417-SYSEX_CONTRACT",
+      "to": "TASK-03-00418-SYSEX_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-03-00418-SYSEX_IMPLEMENTATION",
+      "to": "TASK-03-00419-SYSEX_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-03-00419-SYSEX_TESTS",
+      "to": "TASK-03-00420-SYSEX_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-03-00421-HARDWARE_VERIFICATION_CONTRACT",
+      "to": "TASK-03-00422-HARDWARE_VERIFICATION_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-03-00422-HARDWARE_VERIFICATION_IMPLEMENTATION",
+      "to": "TASK-03-00423-HARDWARE_VERIFICATION_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-03-00423-HARDWARE_VERIFICATION_TESTS",
+      "to": "TASK-03-00424-HARDWARE_VERIFICATION_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-03-00425-DEVICE_SPECIFIC_ACCEPTANCE_CONTRACT",
+      "to": "TASK-03-00426-DEVICE_SPECIFIC_ACCEPTANCE_IMPLEMENTATIO",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-03-00426-DEVICE_SPECIFIC_ACCEPTANCE_IMPLEMENTATIO",
+      "to": "TASK-03-00427-DEVICE_SPECIFIC_ACCEPTANCE_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-03-00427-DEVICE_SPECIFIC_ACCEPTANCE_TESTS",
+      "to": "TASK-03-00428-DEVICE_SPECIFIC_ACCEPTANCE_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-04-00429-INPUT_DETECTION_CONTRACT",
+      "to": "TASK-04-00430-INPUT_DETECTION_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-04-00430-INPUT_DETECTION_IMPLEMENTATION",
+      "to": "TASK-04-00431-INPUT_DETECTION_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-04-00431-INPUT_DETECTION_TESTS",
+      "to": "TASK-04-00432-INPUT_DETECTION_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-04-00433-CAPABILITY_REGISTRY_CONTRACT",
+      "to": "TASK-04-00434-CAPABILITY_REGISTRY_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-04-00434-CAPABILITY_REGISTRY_IMPLEMENTATION",
+      "to": "TASK-04-00435-CAPABILITY_REGISTRY_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-04-00435-CAPABILITY_REGISTRY_TESTS",
+      "to": "TASK-04-00436-CAPABILITY_REGISTRY_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-04-00437-IMMUTABLE_SNAPSHOTS_CONTRACT",
+      "to": "TASK-04-00438-IMMUTABLE_SNAPSHOTS_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-04-00438-IMMUTABLE_SNAPSHOTS_IMPLEMENTATION",
+      "to": "TASK-04-00439-IMMUTABLE_SNAPSHOTS_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-04-00439-IMMUTABLE_SNAPSHOTS_TESTS",
+      "to": "TASK-04-00440-IMMUTABLE_SNAPSHOTS_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-04-00441-JOB_QUEUE_CONTRACT",
+      "to": "TASK-04-00442-JOB_QUEUE_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-04-00442-JOB_QUEUE_IMPLEMENTATION",
+      "to": "TASK-04-00443-JOB_QUEUE_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-04-00443-JOB_QUEUE_TESTS",
+      "to": "TASK-04-00444-JOB_QUEUE_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-04-00445-BATCH_CONVERSION_CONTRACT",
+      "to": "TASK-04-00446-BATCH_CONVERSION_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-04-00446-BATCH_CONVERSION_IMPLEMENTATION",
+      "to": "TASK-04-00447-BATCH_CONVERSION_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-04-00447-BATCH_CONVERSION_TESTS",
+      "to": "TASK-04-00448-BATCH_CONVERSION_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-04-00449-MAPPING_ENGINE_CONTRACT",
+      "to": "TASK-04-00450-MAPPING_ENGINE_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-04-00450-MAPPING_ENGINE_IMPLEMENTATION",
+      "to": "TASK-04-00451-MAPPING_ENGINE_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-04-00451-MAPPING_ENGINE_TESTS",
+      "to": "TASK-04-00452-MAPPING_ENGINE_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-04-00453-VALIDATION_CONTRACT",
+      "to": "TASK-04-00454-VALIDATION_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-04-00454-VALIDATION_IMPLEMENTATION",
+      "to": "TASK-04-00455-VALIDATION_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-04-00455-VALIDATION_TESTS",
+      "to": "TASK-04-00456-VALIDATION_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-04-00457-PREVIEW_CONTRACT",
+      "to": "TASK-04-00458-PREVIEW_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-04-00458-PREVIEW_IMPLEMENTATION",
+      "to": "TASK-04-00459-PREVIEW_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-04-00459-PREVIEW_TESTS",
+      "to": "TASK-04-00460-PREVIEW_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-04-00461-DRY_RUN_CONTRACT",
+      "to": "TASK-04-00462-DRY_RUN_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-04-00462-DRY_RUN_IMPLEMENTATION",
+      "to": "TASK-04-00463-DRY_RUN_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-04-00463-DRY_RUN_TESTS",
+      "to": "TASK-04-00464-DRY_RUN_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-04-00465-TRANSACTIONAL_OUTPUT_CONTRACT",
+      "to": "TASK-04-00466-TRANSACTIONAL_OUTPUT_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-04-00466-TRANSACTIONAL_OUTPUT_IMPLEMENTATION",
+      "to": "TASK-04-00467-TRANSACTIONAL_OUTPUT_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-04-00467-TRANSACTIONAL_OUTPUT_TESTS",
+      "to": "TASK-04-00468-TRANSACTIONAL_OUTPUT_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-04-00469-ROLLBACK_CONTRACT",
+      "to": "TASK-04-00470-ROLLBACK_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-04-00470-ROLLBACK_IMPLEMENTATION",
+      "to": "TASK-04-00471-ROLLBACK_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-04-00471-ROLLBACK_TESTS",
+      "to": "TASK-04-00472-ROLLBACK_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-04-00473-CANCEL_CONTRACT",
+      "to": "TASK-04-00474-CANCEL_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-04-00474-CANCEL_IMPLEMENTATION",
+      "to": "TASK-04-00475-CANCEL_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-04-00475-CANCEL_TESTS",
+      "to": "TASK-04-00476-CANCEL_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-04-00477-RESUME_CONTRACT",
+      "to": "TASK-04-00478-RESUME_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-04-00478-RESUME_IMPLEMENTATION",
+      "to": "TASK-04-00479-RESUME_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-04-00479-RESUME_TESTS",
+      "to": "TASK-04-00480-RESUME_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-04-00481-CRASH_RECOVERY_CONTRACT",
+      "to": "TASK-04-00482-CRASH_RECOVERY_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-04-00482-CRASH_RECOVERY_IMPLEMENTATION",
+      "to": "TASK-04-00483-CRASH_RECOVERY_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-04-00483-CRASH_RECOVERY_TESTS",
+      "to": "TASK-04-00484-CRASH_RECOVERY_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-04-00485-RECEIPTS_CONTRACT",
+      "to": "TASK-04-00486-RECEIPTS_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-04-00486-RECEIPTS_IMPLEMENTATION",
+      "to": "TASK-04-00487-RECEIPTS_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-04-00487-RECEIPTS_TESTS",
+      "to": "TASK-04-00488-RECEIPTS_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-04-00489-DETERMINISTIC_MANIFESTS_CONTRACT",
+      "to": "TASK-04-00490-DETERMINISTIC_MANIFESTS_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-04-00490-DETERMINISTIC_MANIFESTS_IMPLEMENTATION",
+      "to": "TASK-04-00491-DETERMINISTIC_MANIFESTS_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-04-00491-DETERMINISTIC_MANIFESTS_TESTS",
+      "to": "TASK-04-00492-DETERMINISTIC_MANIFESTS_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-04-00493-ROUND_TRIP_FIXTURES_CONTRACT",
+      "to": "TASK-04-00494-ROUND_TRIP_FIXTURES_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-04-00494-ROUND_TRIP_FIXTURES_IMPLEMENTATION",
+      "to": "TASK-04-00495-ROUND_TRIP_FIXTURES_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-04-00495-ROUND_TRIP_FIXTURES_TESTS",
+      "to": "TASK-04-00496-ROUND_TRIP_FIXTURES_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-04-00497-CORRUPTION_REJECTION_CONTRACT",
+      "to": "TASK-04-00498-CORRUPTION_REJECTION_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-04-00498-CORRUPTION_REJECTION_IMPLEMENTATION",
+      "to": "TASK-04-00499-CORRUPTION_REJECTION_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-04-00499-CORRUPTION_REJECTION_TESTS",
+      "to": "TASK-04-00500-CORRUPTION_REJECTION_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-04-00501-UNSUPPORTED_FORMAT_REPORTS_CONTRACT",
+      "to": "TASK-04-00502-UNSUPPORTED_FORMAT_REPORTS_IMPLEMENTATIO",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-04-00502-UNSUPPORTED_FORMAT_REPORTS_IMPLEMENTATIO",
+      "to": "TASK-04-00503-UNSUPPORTED_FORMAT_REPORTS_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-04-00503-UNSUPPORTED_FORMAT_REPORTS_TESTS",
+      "to": "TASK-04-00504-UNSUPPORTED_FORMAT_REPORTS_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-04-00505-FORMAT_ADAPTER_SDK_CONTRACT",
+      "to": "TASK-04-00506-FORMAT_ADAPTER_SDK_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-04-00506-FORMAT_ADAPTER_SDK_IMPLEMENTATION",
+      "to": "TASK-04-00507-FORMAT_ADAPTER_SDK_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-04-00507-FORMAT_ADAPTER_SDK_TESTS",
+      "to": "TASK-04-00508-FORMAT_ADAPTER_SDK_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-04-00509-VENDOR_SPECIFIC_ADAPTERS_CONTRACT",
+      "to": "TASK-04-00510-VENDOR_SPECIFIC_ADAPTERS_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-04-00510-VENDOR_SPECIFIC_ADAPTERS_IMPLEMENTATION",
+      "to": "TASK-04-00511-VENDOR_SPECIFIC_ADAPTERS_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-04-00511-VENDOR_SPECIFIC_ADAPTERS_TESTS",
+      "to": "TASK-04-00512-VENDOR_SPECIFIC_ADAPTERS_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-04-00513-WRITER_ADAPTERS_CONTRACT",
+      "to": "TASK-04-00514-WRITER_ADAPTERS_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-04-00514-WRITER_ADAPTERS_IMPLEMENTATION",
+      "to": "TASK-04-00515-WRITER_ADAPTERS_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-04-00515-WRITER_ADAPTERS_TESTS",
+      "to": "TASK-04-00516-WRITER_ADAPTERS_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-04-00517-HARDWARE_DELIVERY_ADAPTERS_CONTRACT",
+      "to": "TASK-04-00518-HARDWARE_DELIVERY_ADAPTERS_IMPLEMENTATIO",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-04-00518-HARDWARE_DELIVERY_ADAPTERS_IMPLEMENTATIO",
+      "to": "TASK-04-00519-HARDWARE_DELIVERY_ADAPTERS_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-04-00519-HARDWARE_DELIVERY_ADAPTERS_TESTS",
+      "to": "TASK-04-00520-HARDWARE_DELIVERY_ADAPTERS_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-05-00521-PROJECT_WORKSPACE_CONTRACT",
+      "to": "TASK-05-00522-PROJECT_WORKSPACE_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-05-00522-PROJECT_WORKSPACE_IMPLEMENTATION",
+      "to": "TASK-05-00523-PROJECT_WORKSPACE_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-05-00523-PROJECT_WORKSPACE_TESTS",
+      "to": "TASK-05-00524-PROJECT_WORKSPACE_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-05-00525-MIDI_TRACKS_CONTRACT",
+      "to": "TASK-05-00526-MIDI_TRACKS_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-05-00526-MIDI_TRACKS_IMPLEMENTATION",
+      "to": "TASK-05-00527-MIDI_TRACKS_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-05-00527-MIDI_TRACKS_TESTS",
+      "to": "TASK-05-00528-MIDI_TRACKS_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-05-00529-AUDIO_REFERENCES_CONTRACT",
+      "to": "TASK-05-00530-AUDIO_REFERENCES_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-05-00530-AUDIO_REFERENCES_IMPLEMENTATION",
+      "to": "TASK-05-00531-AUDIO_REFERENCES_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-05-00531-AUDIO_REFERENCES_TESTS",
+      "to": "TASK-05-00532-AUDIO_REFERENCES_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-05-00533-NOTE_EDITING_CONTRACT",
+      "to": "TASK-05-00534-NOTE_EDITING_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-05-00534-NOTE_EDITING_IMPLEMENTATION",
+      "to": "TASK-05-00535-NOTE_EDITING_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-05-00535-NOTE_EDITING_TESTS",
+      "to": "TASK-05-00536-NOTE_EDITING_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-05-00537-CHORDS_CONTRACT",
+      "to": "TASK-05-00538-CHORDS_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-05-00538-CHORDS_IMPLEMENTATION",
+      "to": "TASK-05-00539-CHORDS_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-05-00539-CHORDS_TESTS",
+      "to": "TASK-05-00540-CHORDS_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-05-00541-SECTIONS_CONTRACT",
+      "to": "TASK-05-00542-SECTIONS_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-05-00542-SECTIONS_IMPLEMENTATION",
+      "to": "TASK-05-00543-SECTIONS_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-05-00543-SECTIONS_TESTS",
+      "to": "TASK-05-00544-SECTIONS_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-05-00545-ARRANGEMENT_GRAPH_CONTRACT",
+      "to": "TASK-05-00546-ARRANGEMENT_GRAPH_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-05-00546-ARRANGEMENT_GRAPH_IMPLEMENTATION",
+      "to": "TASK-05-00547-ARRANGEMENT_GRAPH_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-05-00547-ARRANGEMENT_GRAPH_TESTS",
+      "to": "TASK-05-00548-ARRANGEMENT_GRAPH_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-05-00549-HARMONY_RULES_CONTRACT",
+      "to": "TASK-05-00550-HARMONY_RULES_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-05-00550-HARMONY_RULES_IMPLEMENTATION",
+      "to": "TASK-05-00551-HARMONY_RULES_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-05-00551-HARMONY_RULES_TESTS",
+      "to": "TASK-05-00552-HARMONY_RULES_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-05-00553-ADVANCED_HARMONY_CONTRACT",
+      "to": "TASK-05-00554-ADVANCED_HARMONY_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-05-00554-ADVANCED_HARMONY_IMPLEMENTATION",
+      "to": "TASK-05-00555-ADVANCED_HARMONY_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-05-00555-ADVANCED_HARMONY_TESTS",
+      "to": "TASK-05-00556-ADVANCED_HARMONY_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-05-00557-MELODY_ANALYSIS_CONTRACT",
+      "to": "TASK-05-00558-MELODY_ANALYSIS_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-05-00558-MELODY_ANALYSIS_IMPLEMENTATION",
+      "to": "TASK-05-00559-MELODY_ANALYSIS_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-05-00559-MELODY_ANALYSIS_TESTS",
+      "to": "TASK-05-00560-MELODY_ANALYSIS_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-05-00561-VOICE_TO_MELODY_CONTRACT",
+      "to": "TASK-05-00562-VOICE_TO_MELODY_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-05-00562-VOICE_TO_MELODY_IMPLEMENTATION",
+      "to": "TASK-05-00563-VOICE_TO_MELODY_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-05-00563-VOICE_TO_MELODY_TESTS",
+      "to": "TASK-05-00564-VOICE_TO_MELODY_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-05-00565-VOICE_TO_MIDI_CONTRACT",
+      "to": "TASK-05-00566-VOICE_TO_MIDI_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-05-00566-VOICE_TO_MIDI_IMPLEMENTATION",
+      "to": "TASK-05-00567-VOICE_TO_MIDI_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-05-00567-VOICE_TO_MIDI_TESTS",
+      "to": "TASK-05-00568-VOICE_TO_MIDI_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-05-00569-PITCH_AND_RHYTHM_ANALYSIS_CONTRACT",
+      "to": "TASK-05-00570-PITCH_AND_RHYTHM_ANALYSIS_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-05-00570-PITCH_AND_RHYTHM_ANALYSIS_IMPLEMENTATION",
+      "to": "TASK-05-00571-PITCH_AND_RHYTHM_ANALYSIS_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-05-00571-PITCH_AND_RHYTHM_ANALYSIS_TESTS",
+      "to": "TASK-05-00572-PITCH_AND_RHYTHM_ANALYSIS_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-05-00573-BASS_GENERATION_CONTRACT",
+      "to": "TASK-05-00574-BASS_GENERATION_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-05-00574-BASS_GENERATION_IMPLEMENTATION",
+      "to": "TASK-05-00575-BASS_GENERATION_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-05-00575-BASS_GENERATION_TESTS",
+      "to": "TASK-05-00576-BASS_GENERATION_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-05-00577-DRUM_GENERATION_CONTRACT",
+      "to": "TASK-05-00578-DRUM_GENERATION_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-05-00578-DRUM_GENERATION_IMPLEMENTATION",
+      "to": "TASK-05-00579-DRUM_GENERATION_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-05-00579-DRUM_GENERATION_TESTS",
+      "to": "TASK-05-00580-DRUM_GENERATION_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-05-00581-INSTRUMENT_ROLES_CONTRACT",
+      "to": "TASK-05-00582-INSTRUMENT_ROLES_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-05-00582-INSTRUMENT_ROLES_IMPLEMENTATION",
+      "to": "TASK-05-00583-INSTRUMENT_ROLES_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-05-00583-INSTRUMENT_ROLES_TESTS",
+      "to": "TASK-05-00584-INSTRUMENT_ROLES_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-05-00585-ORCHESTRATION_CONTRACT",
+      "to": "TASK-05-00586-ORCHESTRATION_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-05-00586-ORCHESTRATION_IMPLEMENTATION",
+      "to": "TASK-05-00587-ORCHESTRATION_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-05-00587-ORCHESTRATION_TESTS",
+      "to": "TASK-05-00588-ORCHESTRATION_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-05-00589-GOLDEN_SMART_SEQUENCER_CONTRACT",
+      "to": "TASK-05-00590-GOLDEN_SMART_SEQUENCER_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-05-00590-GOLDEN_SMART_SEQUENCER_IMPLEMENTATION",
+      "to": "TASK-05-00591-GOLDEN_SMART_SEQUENCER_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-05-00591-GOLDEN_SMART_SEQUENCER_TESTS",
+      "to": "TASK-05-00592-GOLDEN_SMART_SEQUENCER_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-05-00593-DETERMINISTIC_SEQUENCING_CONTRACT",
+      "to": "TASK-05-00594-DETERMINISTIC_SEQUENCING_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-05-00594-DETERMINISTIC_SEQUENCING_IMPLEMENTATION",
+      "to": "TASK-05-00595-DETERMINISTIC_SEQUENCING_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-05-00595-DETERMINISTIC_SEQUENCING_TESTS",
+      "to": "TASK-05-00596-DETERMINISTIC_SEQUENCING_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-05-00597-HUMANIZATION_CONTRACT",
+      "to": "TASK-05-00598-HUMANIZATION_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-05-00598-HUMANIZATION_IMPLEMENTATION",
+      "to": "TASK-05-00599-HUMANIZATION_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-05-00599-HUMANIZATION_TESTS",
+      "to": "TASK-05-00600-HUMANIZATION_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-05-00601-ARRANGEMENT_BRAIN_CONTRACT",
+      "to": "TASK-05-00602-ARRANGEMENT_BRAIN_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-05-00602-ARRANGEMENT_BRAIN_IMPLEMENTATION",
+      "to": "TASK-05-00603-ARRANGEMENT_BRAIN_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-05-00603-ARRANGEMENT_BRAIN_TESTS",
+      "to": "TASK-05-00604-ARRANGEMENT_BRAIN_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-05-00605-MUSICAL_BRAIN_CONTRACT",
+      "to": "TASK-05-00606-MUSICAL_BRAIN_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-05-00606-MUSICAL_BRAIN_IMPLEMENTATION",
+      "to": "TASK-05-00607-MUSICAL_BRAIN_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-05-00607-MUSICAL_BRAIN_TESTS",
+      "to": "TASK-05-00608-MUSICAL_BRAIN_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-05-00609-STYLE_AND_EMOTION_INTENT_CONTRACT",
+      "to": "TASK-05-00610-STYLE_AND_EMOTION_INTENT_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-05-00610-STYLE_AND_EMOTION_INTENT_IMPLEMENTATION",
+      "to": "TASK-05-00611-STYLE_AND_EMOTION_INTENT_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-05-00611-STYLE_AND_EMOTION_INTENT_TESTS",
+      "to": "TASK-05-00612-STYLE_AND_EMOTION_INTENT_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-05-00613-MUSICAL_CRITIC_CONTRACT",
+      "to": "TASK-05-00614-MUSICAL_CRITIC_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-05-00614-MUSICAL_CRITIC_IMPLEMENTATION",
+      "to": "TASK-05-00615-MUSICAL_CRITIC_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-05-00615-MUSICAL_CRITIC_TESTS",
+      "to": "TASK-05-00616-MUSICAL_CRITIC_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-05-00617-REFINEMENT_CYCLES_CONTRACT",
+      "to": "TASK-05-00618-REFINEMENT_CYCLES_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-05-00618-REFINEMENT_CYCLES_IMPLEMENTATION",
+      "to": "TASK-05-00619-REFINEMENT_CYCLES_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-05-00619-REFINEMENT_CYCLES_TESTS",
+      "to": "TASK-05-00620-REFINEMENT_CYCLES_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-05-00621-TECHNICAL_PREVIEW_CONTRACT",
+      "to": "TASK-05-00622-TECHNICAL_PREVIEW_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-05-00622-TECHNICAL_PREVIEW_IMPLEMENTATION",
+      "to": "TASK-05-00623-TECHNICAL_PREVIEW_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-05-00623-TECHNICAL_PREVIEW_TESTS",
+      "to": "TASK-05-00624-TECHNICAL_PREVIEW_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-05-00625-PRODUCTION_PREVIEW_CONTRACT",
+      "to": "TASK-05-00626-PRODUCTION_PREVIEW_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-05-00626-PRODUCTION_PREVIEW_IMPLEMENTATION",
+      "to": "TASK-05-00627-PRODUCTION_PREVIEW_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-05-00627-PRODUCTION_PREVIEW_TESTS",
+      "to": "TASK-05-00628-PRODUCTION_PREVIEW_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-05-00629-MIDI_IMPORT_EXPORT_CONTRACT",
+      "to": "TASK-05-00630-MIDI_IMPORT_EXPORT_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-05-00630-MIDI_IMPORT_EXPORT_IMPLEMENTATION",
+      "to": "TASK-05-00631-MIDI_IMPORT_EXPORT_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-05-00631-MIDI_IMPORT_EXPORT_TESTS",
+      "to": "TASK-05-00632-MIDI_IMPORT_EXPORT_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-05-00633-WAV_EXPORT_CONTRACT",
+      "to": "TASK-05-00634-WAV_EXPORT_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-05-00634-WAV_EXPORT_IMPLEMENTATION",
+      "to": "TASK-05-00635-WAV_EXPORT_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-05-00635-WAV_EXPORT_TESTS",
+      "to": "TASK-05-00636-WAV_EXPORT_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-05-00637-STEM_EXPORT_CONTRACT",
+      "to": "TASK-05-00638-STEM_EXPORT_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-05-00638-STEM_EXPORT_IMPLEMENTATION",
+      "to": "TASK-05-00639-STEM_EXPORT_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-05-00639-STEM_EXPORT_TESTS",
+      "to": "TASK-05-00640-STEM_EXPORT_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-05-00641-PROJECT_RECOVERY_CONTRACT",
+      "to": "TASK-05-00642-PROJECT_RECOVERY_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-05-00642-PROJECT_RECOVERY_IMPLEMENTATION",
+      "to": "TASK-05-00643-PROJECT_RECOVERY_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-05-00643-PROJECT_RECOVERY_TESTS",
+      "to": "TASK-05-00644-PROJECT_RECOVERY_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-05-00645-OWNER_MUSICAL_REVIEW_LOOPS_CONTRACT",
+      "to": "TASK-05-00646-OWNER_MUSICAL_REVIEW_LOOPS_IMPLEMENTATIO",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-05-00646-OWNER_MUSICAL_REVIEW_LOOPS_IMPLEMENTATIO",
+      "to": "TASK-05-00647-OWNER_MUSICAL_REVIEW_LOOPS_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-05-00647-OWNER_MUSICAL_REVIEW_LOOPS_TESTS",
+      "to": "TASK-05-00648-OWNER_MUSICAL_REVIEW_LOOPS_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-05-00649-TASTE_DATASETS_AND_REVIEW_RECEIPTS_CONTR",
+      "to": "TASK-05-00650-TASTE_DATASETS_AND_REVIEW_RECEIPTS_IMPLE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-05-00650-TASTE_DATASETS_AND_REVIEW_RECEIPTS_IMPLE",
+      "to": "TASK-05-00651-TASTE_DATASETS_AND_REVIEW_RECEIPTS_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-05-00651-TASTE_DATASETS_AND_REVIEW_RECEIPTS_TESTS",
+      "to": "TASK-05-00652-TASTE_DATASETS_AND_REVIEW_RECEIPTS_EVIDE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-06-00653-PROJECT_SYSTEM_CONTRACT",
+      "to": "TASK-06-00654-PROJECT_SYSTEM_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-06-00654-PROJECT_SYSTEM_IMPLEMENTATION",
+      "to": "TASK-06-00655-PROJECT_SYSTEM_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-06-00655-PROJECT_SYSTEM_TESTS",
+      "to": "TASK-06-00656-PROJECT_SYSTEM_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-06-00657-TIMELINE_CONTRACT",
+      "to": "TASK-06-00658-TIMELINE_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-06-00658-TIMELINE_IMPLEMENTATION",
+      "to": "TASK-06-00659-TIMELINE_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-06-00659-TIMELINE_TESTS",
+      "to": "TASK-06-00660-TIMELINE_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-06-00661-AUDIO_TRACKS_CONTRACT",
+      "to": "TASK-06-00662-AUDIO_TRACKS_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-06-00662-AUDIO_TRACKS_IMPLEMENTATION",
+      "to": "TASK-06-00663-AUDIO_TRACKS_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-06-00663-AUDIO_TRACKS_TESTS",
+      "to": "TASK-06-00664-AUDIO_TRACKS_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-06-00665-MIDI_TRACKS_CONTRACT",
+      "to": "TASK-06-00666-MIDI_TRACKS_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-06-00666-MIDI_TRACKS_IMPLEMENTATION",
+      "to": "TASK-06-00667-MIDI_TRACKS_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-06-00667-MIDI_TRACKS_TESTS",
+      "to": "TASK-06-00668-MIDI_TRACKS_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-06-00669-CLIP_EDITING_CONTRACT",
+      "to": "TASK-06-00670-CLIP_EDITING_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-06-00670-CLIP_EDITING_IMPLEMENTATION",
+      "to": "TASK-06-00671-CLIP_EDITING_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-06-00671-CLIP_EDITING_TESTS",
+      "to": "TASK-06-00672-CLIP_EDITING_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-06-00673-MARKERS_CONTRACT",
+      "to": "TASK-06-00674-MARKERS_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-06-00674-MARKERS_IMPLEMENTATION",
+      "to": "TASK-06-00675-MARKERS_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-06-00675-MARKERS_TESTS",
+      "to": "TASK-06-00676-MARKERS_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-06-00677-REGIONS_CONTRACT",
+      "to": "TASK-06-00678-REGIONS_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-06-00678-REGIONS_IMPLEMENTATION",
+      "to": "TASK-06-00679-REGIONS_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-06-00679-REGIONS_TESTS",
+      "to": "TASK-06-00680-REGIONS_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-06-00681-TEMPO_MAP_CONTRACT",
+      "to": "TASK-06-00682-TEMPO_MAP_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-06-00682-TEMPO_MAP_IMPLEMENTATION",
+      "to": "TASK-06-00683-TEMPO_MAP_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-06-00683-TEMPO_MAP_TESTS",
+      "to": "TASK-06-00684-TEMPO_MAP_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-06-00685-TIME_SIGNATURES_CONTRACT",
+      "to": "TASK-06-00686-TIME_SIGNATURES_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-06-00686-TIME_SIGNATURES_IMPLEMENTATION",
+      "to": "TASK-06-00687-TIME_SIGNATURES_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-06-00687-TIME_SIGNATURES_TESTS",
+      "to": "TASK-06-00688-TIME_SIGNATURES_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-06-00689-TRANSPORT_CONTRACT",
+      "to": "TASK-06-00690-TRANSPORT_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-06-00690-TRANSPORT_IMPLEMENTATION",
+      "to": "TASK-06-00691-TRANSPORT_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-06-00691-TRANSPORT_TESTS",
+      "to": "TASK-06-00692-TRANSPORT_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-06-00693-SCHEDULER_CONTRACT",
+      "to": "TASK-06-00694-SCHEDULER_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-06-00694-SCHEDULER_IMPLEMENTATION",
+      "to": "TASK-06-00695-SCHEDULER_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-06-00695-SCHEDULER_TESTS",
+      "to": "TASK-06-00696-SCHEDULER_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-06-00697-MIXER_CONTRACT",
+      "to": "TASK-06-00698-MIXER_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-06-00698-MIXER_IMPLEMENTATION",
+      "to": "TASK-06-00699-MIXER_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-06-00699-MIXER_TESTS",
+      "to": "TASK-06-00700-MIXER_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-06-00701-MASTER_BUS_CONTRACT",
+      "to": "TASK-06-00702-MASTER_BUS_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-06-00702-MASTER_BUS_IMPLEMENTATION",
+      "to": "TASK-06-00703-MASTER_BUS_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-06-00703-MASTER_BUS_TESTS",
+      "to": "TASK-06-00704-MASTER_BUS_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-06-00705-GAIN_PAN_CONTRACT",
+      "to": "TASK-06-00706-GAIN_PAN_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-06-00706-GAIN_PAN_IMPLEMENTATION",
+      "to": "TASK-06-00707-GAIN_PAN_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-06-00707-GAIN_PAN_TESTS",
+      "to": "TASK-06-00708-GAIN_PAN_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-06-00709-MUTE_SOLO_CONTRACT",
+      "to": "TASK-06-00710-MUTE_SOLO_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-06-00710-MUTE_SOLO_IMPLEMENTATION",
+      "to": "TASK-06-00711-MUTE_SOLO_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-06-00711-MUTE_SOLO_TESTS",
+      "to": "TASK-06-00712-MUTE_SOLO_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-06-00713-SENDS_RETURNS_CONTRACT",
+      "to": "TASK-06-00714-SENDS_RETURNS_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-06-00714-SENDS_RETURNS_IMPLEMENTATION",
+      "to": "TASK-06-00715-SENDS_RETURNS_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-06-00715-SENDS_RETURNS_TESTS",
+      "to": "TASK-06-00716-SENDS_RETURNS_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-06-00717-NON_DESTRUCTIVE_EDITS_CONTRACT",
+      "to": "TASK-06-00718-NON_DESTRUCTIVE_EDITS_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-06-00718-NON_DESTRUCTIVE_EDITS_IMPLEMENTATION",
+      "to": "TASK-06-00719-NON_DESTRUCTIVE_EDITS_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-06-00719-NON_DESTRUCTIVE_EDITS_TESTS",
+      "to": "TASK-06-00720-NON_DESTRUCTIVE_EDITS_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-06-00721-OFFLINE_RENDER_CONTRACT",
+      "to": "TASK-06-00722-OFFLINE_RENDER_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-06-00722-OFFLINE_RENDER_IMPLEMENTATION",
+      "to": "TASK-06-00723-OFFLINE_RENDER_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-06-00723-OFFLINE_RENDER_TESTS",
+      "to": "TASK-06-00724-OFFLINE_RENDER_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-06-00725-REAL_TIME_DSP_CONTRACT",
+      "to": "TASK-06-00726-REAL_TIME_DSP_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-06-00726-REAL_TIME_DSP_IMPLEMENTATION",
+      "to": "TASK-06-00727-REAL_TIME_DSP_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-06-00727-REAL_TIME_DSP_TESTS",
+      "to": "TASK-06-00728-REAL_TIME_DSP_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-06-00729-ASIO_CONTRACT",
+      "to": "TASK-06-00730-ASIO_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-06-00730-ASIO_IMPLEMENTATION",
+      "to": "TASK-06-00731-ASIO_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-06-00731-ASIO_TESTS",
+      "to": "TASK-06-00732-ASIO_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-06-00733-AUDIO_DEVICE_MANAGEMENT_CONTRACT",
+      "to": "TASK-06-00734-AUDIO_DEVICE_MANAGEMENT_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-06-00734-AUDIO_DEVICE_MANAGEMENT_IMPLEMENTATION",
+      "to": "TASK-06-00735-AUDIO_DEVICE_MANAGEMENT_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-06-00735-AUDIO_DEVICE_MANAGEMENT_TESTS",
+      "to": "TASK-06-00736-AUDIO_DEVICE_MANAGEMENT_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-06-00737-RECORDING_CONTRACT",
+      "to": "TASK-06-00738-RECORDING_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-06-00738-RECORDING_IMPLEMENTATION",
+      "to": "TASK-06-00739-RECORDING_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-06-00739-RECORDING_TESTS",
+      "to": "TASK-06-00740-RECORDING_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-06-00741-PUNCH_IN_OUT_CONTRACT",
+      "to": "TASK-06-00742-PUNCH_IN_OUT_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-06-00742-PUNCH_IN_OUT_IMPLEMENTATION",
+      "to": "TASK-06-00743-PUNCH_IN_OUT_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-06-00743-PUNCH_IN_OUT_TESTS",
+      "to": "TASK-06-00744-PUNCH_IN_OUT_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-06-00745-MONITORING_CONTRACT",
+      "to": "TASK-06-00746-MONITORING_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-06-00746-MONITORING_IMPLEMENTATION",
+      "to": "TASK-06-00747-MONITORING_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-06-00747-MONITORING_TESTS",
+      "to": "TASK-06-00748-MONITORING_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-06-00749-MIDI_PIANO_ROLL_CONTRACT",
+      "to": "TASK-06-00750-MIDI_PIANO_ROLL_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-06-00750-MIDI_PIANO_ROLL_IMPLEMENTATION",
+      "to": "TASK-06-00751-MIDI_PIANO_ROLL_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-06-00751-MIDI_PIANO_ROLL_TESTS",
+      "to": "TASK-06-00752-MIDI_PIANO_ROLL_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-06-00753-AUTOMATION_CONTRACT",
+      "to": "TASK-06-00754-AUTOMATION_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-06-00754-AUTOMATION_IMPLEMENTATION",
+      "to": "TASK-06-00755-AUTOMATION_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-06-00755-AUTOMATION_TESTS",
+      "to": "TASK-06-00756-AUTOMATION_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-06-00757-PLUGIN_HOSTING_CONTRACT",
+      "to": "TASK-06-00758-PLUGIN_HOSTING_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-06-00758-PLUGIN_HOSTING_IMPLEMENTATION",
+      "to": "TASK-06-00759-PLUGIN_HOSTING_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-06-00759-PLUGIN_HOSTING_TESTS",
+      "to": "TASK-06-00760-PLUGIN_HOSTING_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-06-00761-SAMPLER_INTEGRATION_CONTRACT",
+      "to": "TASK-06-00762-SAMPLER_INTEGRATION_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-06-00762-SAMPLER_INTEGRATION_IMPLEMENTATION",
+      "to": "TASK-06-00763-SAMPLER_INTEGRATION_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-06-00763-SAMPLER_INTEGRATION_TESTS",
+      "to": "TASK-06-00764-SAMPLER_INTEGRATION_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-06-00765-FREEZE_RENDER_CONTRACT",
+      "to": "TASK-06-00766-FREEZE_RENDER_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-06-00766-FREEZE_RENDER_IMPLEMENTATION",
+      "to": "TASK-06-00767-FREEZE_RENDER_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-06-00767-FREEZE_RENDER_TESTS",
+      "to": "TASK-06-00768-FREEZE_RENDER_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-06-00769-STEM_EXPORT_CONTRACT",
+      "to": "TASK-06-00770-STEM_EXPORT_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-06-00770-STEM_EXPORT_IMPLEMENTATION",
+      "to": "TASK-06-00771-STEM_EXPORT_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-06-00771-STEM_EXPORT_TESTS",
+      "to": "TASK-06-00772-STEM_EXPORT_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-06-00773-MASTERING_CONTRACT",
+      "to": "TASK-06-00774-MASTERING_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-06-00774-MASTERING_IMPLEMENTATION",
+      "to": "TASK-06-00775-MASTERING_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-06-00775-MASTERING_TESTS",
+      "to": "TASK-06-00776-MASTERING_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-06-00777-LOUDNESS_CONTRACT",
+      "to": "TASK-06-00778-LOUDNESS_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-06-00778-LOUDNESS_IMPLEMENTATION",
+      "to": "TASK-06-00779-LOUDNESS_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-06-00779-LOUDNESS_TESTS",
+      "to": "TASK-06-00780-LOUDNESS_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-06-00781-COMMERCIAL_EXPORT_CONTRACT",
+      "to": "TASK-06-00782-COMMERCIAL_EXPORT_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-06-00782-COMMERCIAL_EXPORT_IMPLEMENTATION",
+      "to": "TASK-06-00783-COMMERCIAL_EXPORT_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-06-00783-COMMERCIAL_EXPORT_TESTS",
+      "to": "TASK-06-00784-COMMERCIAL_EXPORT_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-06-00785-RECOVERY_CONTRACT",
+      "to": "TASK-06-00786-RECOVERY_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-06-00786-RECOVERY_IMPLEMENTATION",
+      "to": "TASK-06-00787-RECOVERY_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-06-00787-RECOVERY_TESTS",
+      "to": "TASK-06-00788-RECOVERY_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-06-00789-CRASH_SAFE_SESSIONS_CONTRACT",
+      "to": "TASK-06-00790-CRASH_SAFE_SESSIONS_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-06-00790-CRASH_SAFE_SESSIONS_IMPLEMENTATION",
+      "to": "TASK-06-00791-CRASH_SAFE_SESSIONS_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-06-00791-CRASH_SAFE_SESSIONS_TESTS",
+      "to": "TASK-06-00792-CRASH_SAFE_SESSIONS_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-07-00793-CONVERSATIONAL_MUSICAL_BRAIN_CONTRACT",
+      "to": "TASK-07-00794-CONVERSATIONAL_MUSICAL_BRAIN_IMPLEMENTAT",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-07-00794-CONVERSATIONAL_MUSICAL_BRAIN_IMPLEMENTAT",
+      "to": "TASK-07-00795-CONVERSATIONAL_MUSICAL_BRAIN_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-07-00795-CONVERSATIONAL_MUSICAL_BRAIN_TESTS",
+      "to": "TASK-07-00796-CONVERSATIONAL_MUSICAL_BRAIN_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-07-00797-CHILD_SAFE_CONVERSATION_CONTRACT",
+      "to": "TASK-07-00798-CHILD_SAFE_CONVERSATION_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-07-00798-CHILD_SAFE_CONVERSATION_IMPLEMENTATION",
+      "to": "TASK-07-00799-CHILD_SAFE_CONVERSATION_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-07-00799-CHILD_SAFE_CONVERSATION_TESTS",
+      "to": "TASK-07-00800-CHILD_SAFE_CONVERSATION_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-07-00801-TEEN_SAFE_CONVERSATION_CONTRACT",
+      "to": "TASK-07-00802-TEEN_SAFE_CONVERSATION_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-07-00802-TEEN_SAFE_CONVERSATION_IMPLEMENTATION",
+      "to": "TASK-07-00803-TEEN_SAFE_CONVERSATION_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-07-00803-TEEN_SAFE_CONVERSATION_TESTS",
+      "to": "TASK-07-00804-TEEN_SAFE_CONVERSATION_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-07-00805-PEDAGOGICAL_PLANNER_CONTRACT",
+      "to": "TASK-07-00806-PEDAGOGICAL_PLANNER_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-07-00806-PEDAGOGICAL_PLANNER_IMPLEMENTATION",
+      "to": "TASK-07-00807-PEDAGOGICAL_PLANNER_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-07-00807-PEDAGOGICAL_PLANNER_TESTS",
+      "to": "TASK-07-00808-PEDAGOGICAL_PLANNER_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-07-00809-LESSON_GENERATOR_CONTRACT",
+      "to": "TASK-07-00810-LESSON_GENERATOR_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-07-00810-LESSON_GENERATOR_IMPLEMENTATION",
+      "to": "TASK-07-00811-LESSON_GENERATOR_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-07-00811-LESSON_GENERATOR_TESTS",
+      "to": "TASK-07-00812-LESSON_GENERATOR_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-07-00813-EXERCISE_GENERATOR_CONTRACT",
+      "to": "TASK-07-00814-EXERCISE_GENERATOR_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-07-00814-EXERCISE_GENERATOR_IMPLEMENTATION",
+      "to": "TASK-07-00815-EXERCISE_GENERATOR_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-07-00815-EXERCISE_GENERATOR_TESTS",
+      "to": "TASK-07-00816-EXERCISE_GENERATOR_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-07-00817-FEEDBACK_ENGINE_CONTRACT",
+      "to": "TASK-07-00818-FEEDBACK_ENGINE_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-07-00818-FEEDBACK_ENGINE_IMPLEMENTATION",
+      "to": "TASK-07-00819-FEEDBACK_ENGINE_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-07-00819-FEEDBACK_ENGINE_TESTS",
+      "to": "TASK-07-00820-FEEDBACK_ENGINE_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-07-00821-MUSIC_THEORY_TUTOR_CONTRACT",
+      "to": "TASK-07-00822-MUSIC_THEORY_TUTOR_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-07-00822-MUSIC_THEORY_TUTOR_IMPLEMENTATION",
+      "to": "TASK-07-00823-MUSIC_THEORY_TUTOR_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-07-00823-MUSIC_THEORY_TUTOR_TESTS",
+      "to": "TASK-07-00824-MUSIC_THEORY_TUTOR_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-07-00825-INSTRUMENT_TUTOR_CONTRACT",
+      "to": "TASK-07-00826-INSTRUMENT_TUTOR_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-07-00826-INSTRUMENT_TUTOR_IMPLEMENTATION",
+      "to": "TASK-07-00827-INSTRUMENT_TUTOR_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-07-00827-INSTRUMENT_TUTOR_TESTS",
+      "to": "TASK-07-00828-INSTRUMENT_TUTOR_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-07-00829-SINGING_TUTOR_CONTRACT",
+      "to": "TASK-07-00830-SINGING_TUTOR_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-07-00830-SINGING_TUTOR_IMPLEMENTATION",
+      "to": "TASK-07-00831-SINGING_TUTOR_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-07-00831-SINGING_TUTOR_TESTS",
+      "to": "TASK-07-00832-SINGING_TUTOR_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-07-00833-RHYTHM_TUTOR_CONTRACT",
+      "to": "TASK-07-00834-RHYTHM_TUTOR_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-07-00834-RHYTHM_TUTOR_IMPLEMENTATION",
+      "to": "TASK-07-00835-RHYTHM_TUTOR_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-07-00835-RHYTHM_TUTOR_TESTS",
+      "to": "TASK-07-00836-RHYTHM_TUTOR_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-07-00837-LISTENING_TUTOR_CONTRACT",
+      "to": "TASK-07-00838-LISTENING_TUTOR_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-07-00838-LISTENING_TUTOR_IMPLEMENTATION",
+      "to": "TASK-07-00839-LISTENING_TUTOR_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-07-00839-LISTENING_TUTOR_TESTS",
+      "to": "TASK-07-00840-LISTENING_TUTOR_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-07-00841-COMPOSITION_TUTOR_CONTRACT",
+      "to": "TASK-07-00842-COMPOSITION_TUTOR_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-07-00842-COMPOSITION_TUTOR_IMPLEMENTATION",
+      "to": "TASK-07-00843-COMPOSITION_TUTOR_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-07-00843-COMPOSITION_TUTOR_TESTS",
+      "to": "TASK-07-00844-COMPOSITION_TUTOR_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-07-00845-ARRANGEMENT_TUTOR_CONTRACT",
+      "to": "TASK-07-00846-ARRANGEMENT_TUTOR_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-07-00846-ARRANGEMENT_TUTOR_IMPLEMENTATION",
+      "to": "TASK-07-00847-ARRANGEMENT_TUTOR_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-07-00847-ARRANGEMENT_TUTOR_TESTS",
+      "to": "TASK-07-00848-ARRANGEMENT_TUTOR_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-07-00849-PARENT_CONTROLS_CONTRACT",
+      "to": "TASK-07-00850-PARENT_CONTROLS_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-07-00850-PARENT_CONTROLS_IMPLEMENTATION",
+      "to": "TASK-07-00851-PARENT_CONTROLS_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-07-00851-PARENT_CONTROLS_TESTS",
+      "to": "TASK-07-00852-PARENT_CONTROLS_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-07-00853-TEACHER_CONTROLS_CONTRACT",
+      "to": "TASK-07-00854-TEACHER_CONTROLS_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-07-00854-TEACHER_CONTROLS_IMPLEMENTATION",
+      "to": "TASK-07-00855-TEACHER_CONTROLS_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-07-00855-TEACHER_CONTROLS_TESTS",
+      "to": "TASK-07-00856-TEACHER_CONTROLS_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-07-00857-PROGRESS_MODEL_CONTRACT",
+      "to": "TASK-07-00858-PROGRESS_MODEL_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-07-00858-PROGRESS_MODEL_IMPLEMENTATION",
+      "to": "TASK-07-00859-PROGRESS_MODEL_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-07-00859-PROGRESS_MODEL_TESTS",
+      "to": "TASK-07-00860-PROGRESS_MODEL_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-07-00861-LOCAL_PROFILE_CONTRACT",
+      "to": "TASK-07-00862-LOCAL_PROFILE_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-07-00862-LOCAL_PROFILE_IMPLEMENTATION",
+      "to": "TASK-07-00863-LOCAL_PROFILE_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-07-00863-LOCAL_PROFILE_TESTS",
+      "to": "TASK-07-00864-LOCAL_PROFILE_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-07-00865-MULTILINGUAL_ARABIC_ENGLISH_GERMAN_CONTR",
+      "to": "TASK-07-00866-MULTILINGUAL_ARABIC_ENGLISH_GERMAN_IMPLE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-07-00866-MULTILINGUAL_ARABIC_ENGLISH_GERMAN_IMPLE",
+      "to": "TASK-07-00867-MULTILINGUAL_ARABIC_ENGLISH_GERMAN_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-07-00867-MULTILINGUAL_ARABIC_ENGLISH_GERMAN_TESTS",
+      "to": "TASK-07-00868-MULTILINGUAL_ARABIC_ENGLISH_GERMAN_EVIDE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-07-00869-VOICE_INPUT_CONTRACT",
+      "to": "TASK-07-00870-VOICE_INPUT_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-07-00870-VOICE_INPUT_IMPLEMENTATION",
+      "to": "TASK-07-00871-VOICE_INPUT_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-07-00871-VOICE_INPUT_TESTS",
+      "to": "TASK-07-00872-VOICE_INPUT_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-07-00873-SPEECH_OUTPUT_CONTRACT",
+      "to": "TASK-07-00874-SPEECH_OUTPUT_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-07-00874-SPEECH_OUTPUT_IMPLEMENTATION",
+      "to": "TASK-07-00875-SPEECH_OUTPUT_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-07-00875-SPEECH_OUTPUT_TESTS",
+      "to": "TASK-07-00876-SPEECH_OUTPUT_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-07-00877-SAFETY_FILTERS_CONTRACT",
+      "to": "TASK-07-00878-SAFETY_FILTERS_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-07-00878-SAFETY_FILTERS_IMPLEMENTATION",
+      "to": "TASK-07-00879-SAFETY_FILTERS_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-07-00879-SAFETY_FILTERS_TESTS",
+      "to": "TASK-07-00880-SAFETY_FILTERS_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-07-00881-AGE_ADAPTATION_CONTRACT",
+      "to": "TASK-07-00882-AGE_ADAPTATION_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-07-00882-AGE_ADAPTATION_IMPLEMENTATION",
+      "to": "TASK-07-00883-AGE_ADAPTATION_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-07-00883-AGE_ADAPTATION_TESTS",
+      "to": "TASK-07-00884-AGE_ADAPTATION_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-07-00885-EMOTIONAL_ADAPTATION_CONTRACT",
+      "to": "TASK-07-00886-EMOTIONAL_ADAPTATION_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-07-00886-EMOTIONAL_ADAPTATION_IMPLEMENTATION",
+      "to": "TASK-07-00887-EMOTIONAL_ADAPTATION_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-07-00887-EMOTIONAL_ADAPTATION_TESTS",
+      "to": "TASK-07-00888-EMOTIONAL_ADAPTATION_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-07-00889-MUSICAL_GAMES_CONTRACT",
+      "to": "TASK-07-00890-MUSICAL_GAMES_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-07-00890-MUSICAL_GAMES_IMPLEMENTATION",
+      "to": "TASK-07-00891-MUSICAL_GAMES_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-07-00891-MUSICAL_GAMES_TESTS",
+      "to": "TASK-07-00892-MUSICAL_GAMES_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-07-00893-ENSEMBLE_LEARNING_CONTRACT",
+      "to": "TASK-07-00894-ENSEMBLE_LEARNING_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-07-00894-ENSEMBLE_LEARNING_IMPLEMENTATION",
+      "to": "TASK-07-00895-ENSEMBLE_LEARNING_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-07-00895-ENSEMBLE_LEARNING_TESTS",
+      "to": "TASK-07-00896-ENSEMBLE_LEARNING_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-07-00897-BAND_SIMULATION_CONTRACT",
+      "to": "TASK-07-00898-BAND_SIMULATION_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-07-00898-BAND_SIMULATION_IMPLEMENTATION",
+      "to": "TASK-07-00899-BAND_SIMULATION_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-07-00899-BAND_SIMULATION_TESTS",
+      "to": "TASK-07-00900-BAND_SIMULATION_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-07-00901-OPERETTA_CREATION_CONTRACT",
+      "to": "TASK-07-00902-OPERETTA_CREATION_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-07-00902-OPERETTA_CREATION_IMPLEMENTATION",
+      "to": "TASK-07-00903-OPERETTA_CREATION_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-07-00903-OPERETTA_CREATION_TESTS",
+      "to": "TASK-07-00904-OPERETTA_CREATION_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-07-00905-CHILDREN_LEARNING_INSTRUMENTS_CONTRACT",
+      "to": "TASK-07-00906-CHILDREN_LEARNING_INSTRUMENTS_IMPLEMENTA",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-07-00906-CHILDREN_LEARNING_INSTRUMENTS_IMPLEMENTA",
+      "to": "TASK-07-00907-CHILDREN_LEARNING_INSTRUMENTS_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-07-00907-CHILDREN_LEARNING_INSTRUMENTS_TESTS",
+      "to": "TASK-07-00908-CHILDREN_LEARNING_INSTRUMENTS_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-07-00909-INTERACTIVE_MUSICIAN_CONVERSATIONS_CONTR",
+      "to": "TASK-07-00910-INTERACTIVE_MUSICIAN_CONVERSATIONS_IMPLE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-07-00910-INTERACTIVE_MUSICIAN_CONVERSATIONS_IMPLE",
+      "to": "TASK-07-00911-INTERACTIVE_MUSICIAN_CONVERSATIONS_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-07-00911-INTERACTIVE_MUSICIAN_CONVERSATIONS_TESTS",
+      "to": "TASK-07-00912-INTERACTIVE_MUSICIAN_CONVERSATIONS_EVIDE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-07-00913-OFFLINE_MODEL_ADAPTERS_CONTRACT",
+      "to": "TASK-07-00914-OFFLINE_MODEL_ADAPTERS_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-07-00914-OFFLINE_MODEL_ADAPTERS_IMPLEMENTATION",
+      "to": "TASK-07-00915-OFFLINE_MODEL_ADAPTERS_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-07-00915-OFFLINE_MODEL_ADAPTERS_TESTS",
+      "to": "TASK-07-00916-OFFLINE_MODEL_ADAPTERS_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-07-00917-OPTIONAL_CLOUD_MODEL_ADAPTERS_CONTRACT",
+      "to": "TASK-07-00918-OPTIONAL_CLOUD_MODEL_ADAPTERS_IMPLEMENTA",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-07-00918-OPTIONAL_CLOUD_MODEL_ADAPTERS_IMPLEMENTA",
+      "to": "TASK-07-00919-OPTIONAL_CLOUD_MODEL_ADAPTERS_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-07-00919-OPTIONAL_CLOUD_MODEL_ADAPTERS_TESTS",
+      "to": "TASK-07-00920-OPTIONAL_CLOUD_MODEL_ADAPTERS_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-07-00921-CONTENT_MODERATION_CONTRACT",
+      "to": "TASK-07-00922-CONTENT_MODERATION_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-07-00922-CONTENT_MODERATION_IMPLEMENTATION",
+      "to": "TASK-07-00923-CONTENT_MODERATION_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-07-00923-CONTENT_MODERATION_TESTS",
+      "to": "TASK-07-00924-CONTENT_MODERATION_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-07-00925-CURRICULUM_VERSIONING_CONTRACT",
+      "to": "TASK-07-00926-CURRICULUM_VERSIONING_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-07-00926-CURRICULUM_VERSIONING_IMPLEMENTATION",
+      "to": "TASK-07-00927-CURRICULUM_VERSIONING_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-07-00927-CURRICULUM_VERSIONING_TESTS",
+      "to": "TASK-07-00928-CURRICULUM_VERSIONING_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-08-00929-PARENT_GATE_CONTRACT",
+      "to": "TASK-08-00930-PARENT_GATE_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-08-00930-PARENT_GATE_IMPLEMENTATION",
+      "to": "TASK-08-00931-PARENT_GATE_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-08-00931-PARENT_GATE_TESTS",
+      "to": "TASK-08-00932-PARENT_GATE_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-08-00933-AGE_BANDS_CONTRACT",
+      "to": "TASK-08-00934-AGE_BANDS_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-08-00934-AGE_BANDS_IMPLEMENTATION",
+      "to": "TASK-08-00935-AGE_BANDS_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-08-00935-AGE_BANDS_TESTS",
+      "to": "TASK-08-00936-AGE_BANDS_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-08-00937-BEGINNER_CURRICULUM_CONTRACT",
+      "to": "TASK-08-00938-BEGINNER_CURRICULUM_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-08-00938-BEGINNER_CURRICULUM_IMPLEMENTATION",
+      "to": "TASK-08-00939-BEGINNER_CURRICULUM_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-08-00939-BEGINNER_CURRICULUM_TESTS",
+      "to": "TASK-08-00940-BEGINNER_CURRICULUM_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-08-00941-INSTRUMENT_RECOGNITION_CONTRACT",
+      "to": "TASK-08-00942-INSTRUMENT_RECOGNITION_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-08-00942-INSTRUMENT_RECOGNITION_IMPLEMENTATION",
+      "to": "TASK-08-00943-INSTRUMENT_RECOGNITION_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-08-00943-INSTRUMENT_RECOGNITION_TESTS",
+      "to": "TASK-08-00944-INSTRUMENT_RECOGNITION_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-08-00945-NOTE_RECOGNITION_CONTRACT",
+      "to": "TASK-08-00946-NOTE_RECOGNITION_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-08-00946-NOTE_RECOGNITION_IMPLEMENTATION",
+      "to": "TASK-08-00947-NOTE_RECOGNITION_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-08-00947-NOTE_RECOGNITION_TESTS",
+      "to": "TASK-08-00948-NOTE_RECOGNITION_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-08-00949-RHYTHM_GAMES_CONTRACT",
+      "to": "TASK-08-00950-RHYTHM_GAMES_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-08-00950-RHYTHM_GAMES_IMPLEMENTATION",
+      "to": "TASK-08-00951-RHYTHM_GAMES_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-08-00951-RHYTHM_GAMES_TESTS",
+      "to": "TASK-08-00952-RHYTHM_GAMES_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-08-00953-SINGING_EXERCISES_CONTRACT",
+      "to": "TASK-08-00954-SINGING_EXERCISES_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-08-00954-SINGING_EXERCISES_IMPLEMENTATION",
+      "to": "TASK-08-00955-SINGING_EXERCISES_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-08-00955-SINGING_EXERCISES_TESTS",
+      "to": "TASK-08-00956-SINGING_EXERCISES_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-08-00957-INSTRUMENT_LESSONS_CONTRACT",
+      "to": "TASK-08-00958-INSTRUMENT_LESSONS_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-08-00958-INSTRUMENT_LESSONS_IMPLEMENTATION",
+      "to": "TASK-08-00959-INSTRUMENT_LESSONS_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-08-00959-INSTRUMENT_LESSONS_TESTS",
+      "to": "TASK-08-00960-INSTRUMENT_LESSONS_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-08-00961-STORY_BASED_MUSIC_LESSONS_CONTRACT",
+      "to": "TASK-08-00962-STORY_BASED_MUSIC_LESSONS_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-08-00962-STORY_BASED_MUSIC_LESSONS_IMPLEMENTATION",
+      "to": "TASK-08-00963-STORY_BASED_MUSIC_LESSONS_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-08-00963-STORY_BASED_MUSIC_LESSONS_TESTS",
+      "to": "TASK-08-00964-STORY_BASED_MUSIC_LESSONS_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-08-00965-OPERETTA_PARTICIPATION_CONTRACT",
+      "to": "TASK-08-00966-OPERETTA_PARTICIPATION_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-08-00966-OPERETTA_PARTICIPATION_IMPLEMENTATION",
+      "to": "TASK-08-00967-OPERETTA_PARTICIPATION_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-08-00967-OPERETTA_PARTICIPATION_TESTS",
+      "to": "TASK-08-00968-OPERETTA_PARTICIPATION_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-08-00969-REWARDS_WITHOUT_ADDICTIVE_DARK_PATTERNS_",
+      "to": "TASK-08-00970-REWARDS_WITHOUT_ADDICTIVE_DARK_PATTERNS_",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-08-00970-REWARDS_WITHOUT_ADDICTIVE_DARK_PATTERNS_",
+      "to": "TASK-08-00971-REWARDS_WITHOUT_ADDICTIVE_DARK_PATTERNS_",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-08-00971-REWARDS_WITHOUT_ADDICTIVE_DARK_PATTERNS_",
+      "to": "TASK-08-00972-REWARDS_WITHOUT_ADDICTIVE_DARK_PATTERNS_",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-08-00973-LOCAL_PROGRESS_CONTRACT",
+      "to": "TASK-08-00974-LOCAL_PROGRESS_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-08-00974-LOCAL_PROGRESS_IMPLEMENTATION",
+      "to": "TASK-08-00975-LOCAL_PROGRESS_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-08-00975-LOCAL_PROGRESS_TESTS",
+      "to": "TASK-08-00976-LOCAL_PROGRESS_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-08-00977-ACCESSIBILITY_CONTRACT",
+      "to": "TASK-08-00978-ACCESSIBILITY_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-08-00978-ACCESSIBILITY_IMPLEMENTATION",
+      "to": "TASK-08-00979-ACCESSIBILITY_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-08-00979-ACCESSIBILITY_TESTS",
+      "to": "TASK-08-00980-ACCESSIBILITY_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-08-00981-OFFLINE_LESSONS_CONTRACT",
+      "to": "TASK-08-00982-OFFLINE_LESSONS_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-08-00982-OFFLINE_LESSONS_IMPLEMENTATION",
+      "to": "TASK-08-00983-OFFLINE_LESSONS_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-08-00983-OFFLINE_LESSONS_TESTS",
+      "to": "TASK-08-00984-OFFLINE_LESSONS_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-08-00985-SAFE_AI_CONVERSATION_CONTRACT",
+      "to": "TASK-08-00986-SAFE_AI_CONVERSATION_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-08-00986-SAFE_AI_CONVERSATION_IMPLEMENTATION",
+      "to": "TASK-08-00987-SAFE_AI_CONVERSATION_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-08-00987-SAFE_AI_CONVERSATION_TESTS",
+      "to": "TASK-08-00988-SAFE_AI_CONVERSATION_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-08-00989-PARENT_REPORTS_CONTRACT",
+      "to": "TASK-08-00990-PARENT_REPORTS_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-08-00990-PARENT_REPORTS_IMPLEMENTATION",
+      "to": "TASK-08-00991-PARENT_REPORTS_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-08-00991-PARENT_REPORTS_TESTS",
+      "to": "TASK-08-00992-PARENT_REPORTS_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-08-00993-TEACHER_PACKS_CONTRACT",
+      "to": "TASK-08-00994-TEACHER_PACKS_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-08-00994-TEACHER_PACKS_IMPLEMENTATION",
+      "to": "TASK-08-00995-TEACHER_PACKS_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-08-00995-TEACHER_PACKS_TESTS",
+      "to": "TASK-08-00996-TEACHER_PACKS_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-08-00997-CONTENT_PACKS_CONTRACT",
+      "to": "TASK-08-00998-CONTENT_PACKS_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-08-00998-CONTENT_PACKS_IMPLEMENTATION",
+      "to": "TASK-08-00999-CONTENT_PACKS_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-08-00999-CONTENT_PACKS_TESTS",
+      "to": "TASK-08-01000-CONTENT_PACKS_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-08-01001-SUBSCRIPTION_AND_FAMILY_LICENSING_CONTRA",
+      "to": "TASK-08-01002-SUBSCRIPTION_AND_FAMILY_LICENSING_IMPLEM",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-08-01002-SUBSCRIPTION_AND_FAMILY_LICENSING_IMPLEM",
+      "to": "TASK-08-01003-SUBSCRIPTION_AND_FAMILY_LICENSING_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-08-01003-SUBSCRIPTION_AND_FAMILY_LICENSING_TESTS",
+      "to": "TASK-08-01004-SUBSCRIPTION_AND_FAMILY_LICENSING_EVIDEN",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-08-01005-CHILD_PRIVACY_COMPLIANCE_CONTRACT",
+      "to": "TASK-08-01006-CHILD_PRIVACY_COMPLIANCE_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-08-01006-CHILD_PRIVACY_COMPLIANCE_IMPLEMENTATION",
+      "to": "TASK-08-01007-CHILD_PRIVACY_COMPLIANCE_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-08-01007-CHILD_PRIVACY_COMPLIANCE_TESTS",
+      "to": "TASK-08-01008-CHILD_PRIVACY_COMPLIANCE_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-09-01009-GUIDED_MUSIC_PROJECTS_CONTRACT",
+      "to": "TASK-09-01010-GUIDED_MUSIC_PROJECTS_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-09-01010-GUIDED_MUSIC_PROJECTS_IMPLEMENTATION",
+      "to": "TASK-09-01011-GUIDED_MUSIC_PROJECTS_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-09-01011-GUIDED_MUSIC_PROJECTS_TESTS",
+      "to": "TASK-09-01012-GUIDED_MUSIC_PROJECTS_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-09-01013-BEAT_MAKING_CONTRACT",
+      "to": "TASK-09-01014-BEAT_MAKING_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-09-01014-BEAT_MAKING_IMPLEMENTATION",
+      "to": "TASK-09-01015-BEAT_MAKING_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-09-01015-BEAT_MAKING_TESTS",
+      "to": "TASK-09-01016-BEAT_MAKING_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-09-01017-CHORD_PROGRESSIONS_CONTRACT",
+      "to": "TASK-09-01018-CHORD_PROGRESSIONS_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-09-01018-CHORD_PROGRESSIONS_IMPLEMENTATION",
+      "to": "TASK-09-01019-CHORD_PROGRESSIONS_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-09-01019-CHORD_PROGRESSIONS_TESTS",
+      "to": "TASK-09-01020-CHORD_PROGRESSIONS_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-09-01021-MIDI_COMPOSITION_CONTRACT",
+      "to": "TASK-09-01022-MIDI_COMPOSITION_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-09-01022-MIDI_COMPOSITION_IMPLEMENTATION",
+      "to": "TASK-09-01023-MIDI_COMPOSITION_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-09-01023-MIDI_COMPOSITION_TESTS",
+      "to": "TASK-09-01024-MIDI_COMPOSITION_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-09-01025-ARRANGEMENT_CONTRACT",
+      "to": "TASK-09-01026-ARRANGEMENT_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-09-01026-ARRANGEMENT_IMPLEMENTATION",
+      "to": "TASK-09-01027-ARRANGEMENT_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-09-01027-ARRANGEMENT_TESTS",
+      "to": "TASK-09-01028-ARRANGEMENT_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-09-01029-RECORDING_FUNDAMENTALS_CONTRACT",
+      "to": "TASK-09-01030-RECORDING_FUNDAMENTALS_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-09-01030-RECORDING_FUNDAMENTALS_IMPLEMENTATION",
+      "to": "TASK-09-01031-RECORDING_FUNDAMENTALS_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-09-01031-RECORDING_FUNDAMENTALS_TESTS",
+      "to": "TASK-09-01032-RECORDING_FUNDAMENTALS_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-09-01033-STUDIO_FUNDAMENTALS_CONTRACT",
+      "to": "TASK-09-01034-STUDIO_FUNDAMENTALS_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-09-01034-STUDIO_FUNDAMENTALS_IMPLEMENTATION",
+      "to": "TASK-09-01035-STUDIO_FUNDAMENTALS_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-09-01035-STUDIO_FUNDAMENTALS_TESTS",
+      "to": "TASK-09-01036-STUDIO_FUNDAMENTALS_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-09-01037-SONG_STRUCTURE_CONTRACT",
+      "to": "TASK-09-01038-SONG_STRUCTURE_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-09-01038-SONG_STRUCTURE_IMPLEMENTATION",
+      "to": "TASK-09-01039-SONG_STRUCTURE_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-09-01039-SONG_STRUCTURE_TESTS",
+      "to": "TASK-09-01040-SONG_STRUCTURE_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-09-01041-INSTRUMENT_PRACTICE_CONTRACT",
+      "to": "TASK-09-01042-INSTRUMENT_PRACTICE_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-09-01042-INSTRUMENT_PRACTICE_IMPLEMENTATION",
+      "to": "TASK-09-01043-INSTRUMENT_PRACTICE_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-09-01043-INSTRUMENT_PRACTICE_TESTS",
+      "to": "TASK-09-01044-INSTRUMENT_PRACTICE_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-09-01045-SINGING_PRACTICE_CONTRACT",
+      "to": "TASK-09-01046-SINGING_PRACTICE_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-09-01046-SINGING_PRACTICE_IMPLEMENTATION",
+      "to": "TASK-09-01047-SINGING_PRACTICE_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-09-01047-SINGING_PRACTICE_TESTS",
+      "to": "TASK-09-01048-SINGING_PRACTICE_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-09-01049-PORTFOLIO_PROJECTS_CONTRACT",
+      "to": "TASK-09-01050-PORTFOLIO_PROJECTS_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-09-01050-PORTFOLIO_PROJECTS_IMPLEMENTATION",
+      "to": "TASK-09-01051-PORTFOLIO_PROJECTS_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-09-01051-PORTFOLIO_PROJECTS_TESTS",
+      "to": "TASK-09-01052-PORTFOLIO_PROJECTS_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-09-01053-LOCAL_PROGRESS_CONTRACT",
+      "to": "TASK-09-01054-LOCAL_PROGRESS_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-09-01054-LOCAL_PROGRESS_IMPLEMENTATION",
+      "to": "TASK-09-01055-LOCAL_PROGRESS_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-09-01055-LOCAL_PROGRESS_TESTS",
+      "to": "TASK-09-01056-LOCAL_PROGRESS_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-09-01057-SAFE_TUTOR_CONVERSATION_CONTRACT",
+      "to": "TASK-09-01058-SAFE_TUTOR_CONVERSATION_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-09-01058-SAFE_TUTOR_CONVERSATION_IMPLEMENTATION",
+      "to": "TASK-09-01059-SAFE_TUTOR_CONVERSATION_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-09-01059-SAFE_TUTOR_CONVERSATION_TESTS",
+      "to": "TASK-09-01060-SAFE_TUTOR_CONVERSATION_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-09-01061-TEACHER_REVIEW_CONTRACT",
+      "to": "TASK-09-01062-TEACHER_REVIEW_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-09-01062-TEACHER_REVIEW_IMPLEMENTATION",
+      "to": "TASK-09-01063-TEACHER_REVIEW_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-09-01063-TEACHER_REVIEW_TESTS",
+      "to": "TASK-09-01064-TEACHER_REVIEW_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-09-01065-EXPORTABLE_PROJECTS_CONTRACT",
+      "to": "TASK-09-01066-EXPORTABLE_PROJECTS_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-09-01066-EXPORTABLE_PROJECTS_IMPLEMENTATION",
+      "to": "TASK-09-01067-EXPORTABLE_PROJECTS_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-09-01067-EXPORTABLE_PROJECTS_TESTS",
+      "to": "TASK-09-01068-EXPORTABLE_PROJECTS_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-09-01069-COLLABORATION_ARCHITECTURE_CONTRACT",
+      "to": "TASK-09-01070-COLLABORATION_ARCHITECTURE_IMPLEMENTATIO",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-09-01070-COLLABORATION_ARCHITECTURE_IMPLEMENTATIO",
+      "to": "TASK-09-01071-COLLABORATION_ARCHITECTURE_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-09-01071-COLLABORATION_ARCHITECTURE_TESTS",
+      "to": "TASK-09-01072-COLLABORATION_ARCHITECTURE_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-09-01073-CLOUD_SHARING_ARCHITECTURE_CONTRACT",
+      "to": "TASK-09-01074-CLOUD_SHARING_ARCHITECTURE_IMPLEMENTATIO",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-09-01074-CLOUD_SHARING_ARCHITECTURE_IMPLEMENTATIO",
+      "to": "TASK-09-01075-CLOUD_SHARING_ARCHITECTURE_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-09-01075-CLOUD_SHARING_ARCHITECTURE_TESTS",
+      "to": "TASK-09-01076-CLOUD_SHARING_ARCHITECTURE_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-09-01077-TEEN_PRIVACY_AND_MODERATION_CONTRACT",
+      "to": "TASK-09-01078-TEEN_PRIVACY_AND_MODERATION_IMPLEMENTATI",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-09-01078-TEEN_PRIVACY_AND_MODERATION_IMPLEMENTATI",
+      "to": "TASK-09-01079-TEEN_PRIVACY_AND_MODERATION_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-09-01079-TEEN_PRIVACY_AND_MODERATION_TESTS",
+      "to": "TASK-09-01080-TEEN_PRIVACY_AND_MODERATION_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-09-01081-SUBSCRIPTION_AND_EDUCATION_LICENSING_CON",
+      "to": "TASK-09-01082-SUBSCRIPTION_AND_EDUCATION_LICENSING_IMP",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-09-01082-SUBSCRIPTION_AND_EDUCATION_LICENSING_IMP",
+      "to": "TASK-09-01083-SUBSCRIPTION_AND_EDUCATION_LICENSING_TES",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-09-01083-SUBSCRIPTION_AND_EDUCATION_LICENSING_TES",
+      "to": "TASK-09-01084-SUBSCRIPTION_AND_EDUCATION_LICENSING_EVI",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-10-01085-PUBLIC_DOMAIN_SOURCE_DISCOVERY_CONTRACT",
+      "to": "TASK-10-01086-PUBLIC_DOMAIN_SOURCE_DISCOVERY_IMPLEMENT",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-10-01086-PUBLIC_DOMAIN_SOURCE_DISCOVERY_IMPLEMENT",
+      "to": "TASK-10-01087-PUBLIC_DOMAIN_SOURCE_DISCOVERY_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-10-01087-PUBLIC_DOMAIN_SOURCE_DISCOVERY_TESTS",
+      "to": "TASK-10-01088-PUBLIC_DOMAIN_SOURCE_DISCOVERY_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-10-01089-PERMISSIVE_LICENSE_VERIFICATION_CONTRACT",
+      "to": "TASK-10-01090-PERMISSIVE_LICENSE_VERIFICATION_IMPLEMEN",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-10-01090-PERMISSIVE_LICENSE_VERIFICATION_IMPLEMEN",
+      "to": "TASK-10-01091-PERMISSIVE_LICENSE_VERIFICATION_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-10-01091-PERMISSIVE_LICENSE_VERIFICATION_TESTS",
+      "to": "TASK-10-01092-PERMISSIVE_LICENSE_VERIFICATION_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-10-01093-LICENSE_EVIDENCE_CONTRACT",
+      "to": "TASK-10-01094-LICENSE_EVIDENCE_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-10-01094-LICENSE_EVIDENCE_IMPLEMENTATION",
+      "to": "TASK-10-01095-LICENSE_EVIDENCE_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-10-01095-LICENSE_EVIDENCE_TESTS",
+      "to": "TASK-10-01096-LICENSE_EVIDENCE_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-10-01097-ATTRIBUTION_CONTRACT",
+      "to": "TASK-10-01098-ATTRIBUTION_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-10-01098-ATTRIBUTION_IMPLEMENTATION",
+      "to": "TASK-10-01099-ATTRIBUTION_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-10-01099-ATTRIBUTION_TESTS",
+      "to": "TASK-10-01100-ATTRIBUTION_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-10-01101-AUDIO_RECORDING_SPECIFICATIONS_CONTRACT",
+      "to": "TASK-10-01102-AUDIO_RECORDING_SPECIFICATIONS_IMPLEMENT",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-10-01102-AUDIO_RECORDING_SPECIFICATIONS_IMPLEMENT",
+      "to": "TASK-10-01103-AUDIO_RECORDING_SPECIFICATIONS_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-10-01103-AUDIO_RECORDING_SPECIFICATIONS_TESTS",
+      "to": "TASK-10-01104-AUDIO_RECORDING_SPECIFICATIONS_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-10-01105-INSTRUMENT_RECORDING_CONTRACT",
+      "to": "TASK-10-01106-INSTRUMENT_RECORDING_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-10-01106-INSTRUMENT_RECORDING_IMPLEMENTATION",
+      "to": "TASK-10-01107-INSTRUMENT_RECORDING_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-10-01107-INSTRUMENT_RECORDING_TESTS",
+      "to": "TASK-10-01108-INSTRUMENT_RECORDING_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-10-01109-SAMPLE_EDITING_CONTRACT",
+      "to": "TASK-10-01110-SAMPLE_EDITING_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-10-01110-SAMPLE_EDITING_IMPLEMENTATION",
+      "to": "TASK-10-01111-SAMPLE_EDITING_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-10-01111-SAMPLE_EDITING_TESTS",
+      "to": "TASK-10-01112-SAMPLE_EDITING_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-10-01113-LOOP_EDITING_CONTRACT",
+      "to": "TASK-10-01114-LOOP_EDITING_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-10-01114-LOOP_EDITING_IMPLEMENTATION",
+      "to": "TASK-10-01115-LOOP_EDITING_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-10-01115-LOOP_EDITING_TESTS",
+      "to": "TASK-10-01116-LOOP_EDITING_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-10-01117-QUALITY_REVIEW_CONTRACT",
+      "to": "TASK-10-01118-QUALITY_REVIEW_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-10-01118-QUALITY_REVIEW_IMPLEMENTATION",
+      "to": "TASK-10-01119-QUALITY_REVIEW_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-10-01119-QUALITY_REVIEW_TESTS",
+      "to": "TASK-10-01120-QUALITY_REVIEW_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-10-01121-OUD_ASSET_PIPELINE_CONTRACT",
+      "to": "TASK-10-01122-OUD_ASSET_PIPELINE_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-10-01122-OUD_ASSET_PIPELINE_IMPLEMENTATION",
+      "to": "TASK-10-01123-OUD_ASSET_PIPELINE_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-10-01123-OUD_ASSET_PIPELINE_TESTS",
+      "to": "TASK-10-01124-OUD_ASSET_PIPELINE_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-10-01125-QANUN_ASSET_PIPELINE_CONTRACT",
+      "to": "TASK-10-01126-QANUN_ASSET_PIPELINE_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-10-01126-QANUN_ASSET_PIPELINE_IMPLEMENTATION",
+      "to": "TASK-10-01127-QANUN_ASSET_PIPELINE_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-10-01127-QANUN_ASSET_PIPELINE_TESTS",
+      "to": "TASK-10-01128-QANUN_ASSET_PIPELINE_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-10-01129-NEY_ASSET_PIPELINE_CONTRACT",
+      "to": "TASK-10-01130-NEY_ASSET_PIPELINE_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-10-01130-NEY_ASSET_PIPELINE_IMPLEMENTATION",
+      "to": "TASK-10-01131-NEY_ASSET_PIPELINE_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-10-01131-NEY_ASSET_PIPELINE_TESTS",
+      "to": "TASK-10-01132-NEY_ASSET_PIPELINE_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-10-01133-DARBUKA_ASSET_PIPELINE_CONTRACT",
+      "to": "TASK-10-01134-DARBUKA_ASSET_PIPELINE_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-10-01134-DARBUKA_ASSET_PIPELINE_IMPLEMENTATION",
+      "to": "TASK-10-01135-DARBUKA_ASSET_PIPELINE_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-10-01135-DARBUKA_ASSET_PIPELINE_TESTS",
+      "to": "TASK-10-01136-DARBUKA_ASSET_PIPELINE_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-10-01137-ORIENTAL_PERCUSSION_PIPELINE_CONTRACT",
+      "to": "TASK-10-01138-ORIENTAL_PERCUSSION_PIPELINE_IMPLEMENTAT",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-10-01138-ORIENTAL_PERCUSSION_PIPELINE_IMPLEMENTAT",
+      "to": "TASK-10-01139-ORIENTAL_PERCUSSION_PIPELINE_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-10-01139-ORIENTAL_PERCUSSION_PIPELINE_TESTS",
+      "to": "TASK-10-01140-ORIENTAL_PERCUSSION_PIPELINE_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-10-01141-PIANO_ASSET_PIPELINE_CONTRACT",
+      "to": "TASK-10-01142-PIANO_ASSET_PIPELINE_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-10-01142-PIANO_ASSET_PIPELINE_IMPLEMENTATION",
+      "to": "TASK-10-01143-PIANO_ASSET_PIPELINE_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-10-01143-PIANO_ASSET_PIPELINE_TESTS",
+      "to": "TASK-10-01144-PIANO_ASSET_PIPELINE_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-10-01145-STRINGS_ASSET_PIPELINE_CONTRACT",
+      "to": "TASK-10-01146-STRINGS_ASSET_PIPELINE_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-10-01146-STRINGS_ASSET_PIPELINE_IMPLEMENTATION",
+      "to": "TASK-10-01147-STRINGS_ASSET_PIPELINE_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-10-01147-STRINGS_ASSET_PIPELINE_TESTS",
+      "to": "TASK-10-01148-STRINGS_ASSET_PIPELINE_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-10-01149-DRUMS_ASSET_PIPELINE_CONTRACT",
+      "to": "TASK-10-01150-DRUMS_ASSET_PIPELINE_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-10-01150-DRUMS_ASSET_PIPELINE_IMPLEMENTATION",
+      "to": "TASK-10-01151-DRUMS_ASSET_PIPELINE_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-10-01151-DRUMS_ASSET_PIPELINE_TESTS",
+      "to": "TASK-10-01152-DRUMS_ASSET_PIPELINE_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-10-01153-EDUCATIONAL_LESSON_MEDIA_CONTRACT",
+      "to": "TASK-10-01154-EDUCATIONAL_LESSON_MEDIA_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-10-01154-EDUCATIONAL_LESSON_MEDIA_IMPLEMENTATION",
+      "to": "TASK-10-01155-EDUCATIONAL_LESSON_MEDIA_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-10-01155-EDUCATIONAL_LESSON_MEDIA_TESTS",
+      "to": "TASK-10-01156-EDUCATIONAL_LESSON_MEDIA_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-10-01157-KIDS_CURRICULUM_MEDIA_CONTRACT",
+      "to": "TASK-10-01158-KIDS_CURRICULUM_MEDIA_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-10-01158-KIDS_CURRICULUM_MEDIA_IMPLEMENTATION",
+      "to": "TASK-10-01159-KIDS_CURRICULUM_MEDIA_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-10-01159-KIDS_CURRICULUM_MEDIA_TESTS",
+      "to": "TASK-10-01160-KIDS_CURRICULUM_MEDIA_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-10-01161-TEEN_PROJECTS_MEDIA_CONTRACT",
+      "to": "TASK-10-01162-TEEN_PROJECTS_MEDIA_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-10-01162-TEEN_PROJECTS_MEDIA_IMPLEMENTATION",
+      "to": "TASK-10-01163-TEEN_PROJECTS_MEDIA_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-10-01163-TEEN_PROJECTS_MEDIA_TESTS",
+      "to": "TASK-10-01164-TEEN_PROJECTS_MEDIA_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-10-01165-OPERETTA_CONTENT_CONTRACT",
+      "to": "TASK-10-01166-OPERETTA_CONTENT_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-10-01166-OPERETTA_CONTENT_IMPLEMENTATION",
+      "to": "TASK-10-01167-OPERETTA_CONTENT_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-10-01167-OPERETTA_CONTENT_TESTS",
+      "to": "TASK-10-01168-OPERETTA_CONTENT_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-10-01169-LEGAL_CONTENT_LEDGER_CONTRACT",
+      "to": "TASK-10-01170-LEGAL_CONTENT_LEDGER_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-10-01170-LEGAL_CONTENT_LEDGER_IMPLEMENTATION",
+      "to": "TASK-10-01171-LEGAL_CONTENT_LEDGER_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-10-01171-LEGAL_CONTENT_LEDGER_TESTS",
+      "to": "TASK-10-01172-LEGAL_CONTENT_LEDGER_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-10-01173-COMMERCIAL_PACKAGE_APPROVAL_CONTRACT",
+      "to": "TASK-10-01174-COMMERCIAL_PACKAGE_APPROVAL_IMPLEMENTATI",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-10-01174-COMMERCIAL_PACKAGE_APPROVAL_IMPLEMENTATI",
+      "to": "TASK-10-01175-COMMERCIAL_PACKAGE_APPROVAL_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-10-01175-COMMERCIAL_PACKAGE_APPROVAL_TESTS",
+      "to": "TASK-10-01176-COMMERCIAL_PACKAGE_APPROVAL_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-11-01177-PRODUCT_CATALOG_CONTRACT",
+      "to": "TASK-11-01178-PRODUCT_CATALOG_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-11-01178-PRODUCT_CATALOG_IMPLEMENTATION",
+      "to": "TASK-11-01179-PRODUCT_CATALOG_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-11-01179-PRODUCT_CATALOG_TESTS",
+      "to": "TASK-11-01180-PRODUCT_CATALOG_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-11-01181-SKUS_CONTRACT",
+      "to": "TASK-11-01182-SKUS_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-11-01182-SKUS_IMPLEMENTATION",
+      "to": "TASK-11-01183-SKUS_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-11-01183-SKUS_TESTS",
+      "to": "TASK-11-01184-SKUS_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-11-01185-PRICING_CONTRACT",
+      "to": "TASK-11-01186-PRICING_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-11-01186-PRICING_IMPLEMENTATION",
+      "to": "TASK-11-01187-PRICING_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-11-01187-PRICING_TESTS",
+      "to": "TASK-11-01188-PRICING_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-11-01189-TRIAL_CONTRACT",
+      "to": "TASK-11-01190-TRIAL_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-11-01190-TRIAL_IMPLEMENTATION",
+      "to": "TASK-11-01191-TRIAL_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-11-01191-TRIAL_TESTS",
+      "to": "TASK-11-01192-TRIAL_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-11-01193-LICENSE_GENERATION_CONTRACT",
+      "to": "TASK-11-01194-LICENSE_GENERATION_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-11-01194-LICENSE_GENERATION_IMPLEMENTATION",
+      "to": "TASK-11-01195-LICENSE_GENERATION_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-11-01195-LICENSE_GENERATION_TESTS",
+      "to": "TASK-11-01196-LICENSE_GENERATION_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-11-01197-LICENSE_DELIVERY_CONTRACT",
+      "to": "TASK-11-01198-LICENSE_DELIVERY_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-11-01198-LICENSE_DELIVERY_IMPLEMENTATION",
+      "to": "TASK-11-01199-LICENSE_DELIVERY_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-11-01199-LICENSE_DELIVERY_TESTS",
+      "to": "TASK-11-01200-LICENSE_DELIVERY_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-11-01201-CHECKOUT_PREPARATION_CONTRACT",
+      "to": "TASK-11-01202-CHECKOUT_PREPARATION_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-11-01202-CHECKOUT_PREPARATION_IMPLEMENTATION",
+      "to": "TASK-11-01203-CHECKOUT_PREPARATION_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-11-01203-CHECKOUT_PREPARATION_TESTS",
+      "to": "TASK-11-01204-CHECKOUT_PREPARATION_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-11-01205-PAYMENTS_ACTIVATION_CONTRACT",
+      "to": "TASK-11-01206-PAYMENTS_ACTIVATION_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-11-01206-PAYMENTS_ACTIVATION_IMPLEMENTATION",
+      "to": "TASK-11-01207-PAYMENTS_ACTIVATION_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-11-01207-PAYMENTS_ACTIVATION_TESTS",
+      "to": "TASK-11-01208-PAYMENTS_ACTIVATION_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-11-01209-VAT_HANDLING_CONTRACT",
+      "to": "TASK-11-01210-VAT_HANDLING_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-11-01210-VAT_HANDLING_IMPLEMENTATION",
+      "to": "TASK-11-01211-VAT_HANDLING_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-11-01211-VAT_HANDLING_TESTS",
+      "to": "TASK-11-01212-VAT_HANDLING_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-11-01213-INVOICES_CONTRACT",
+      "to": "TASK-11-01214-INVOICES_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-11-01214-INVOICES_IMPLEMENTATION",
+      "to": "TASK-11-01215-INVOICES_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-11-01215-INVOICES_TESTS",
+      "to": "TASK-11-01216-INVOICES_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-11-01217-REFUND_POLICY_CONTRACT",
+      "to": "TASK-11-01218-REFUND_POLICY_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-11-01218-REFUND_POLICY_IMPLEMENTATION",
+      "to": "TASK-11-01219-REFUND_POLICY_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-11-01219-REFUND_POLICY_TESTS",
+      "to": "TASK-11-01220-REFUND_POLICY_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-11-01221-CUSTOMER_ACCOUNTS_CONTRACT",
+      "to": "TASK-11-01222-CUSTOMER_ACCOUNTS_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-11-01222-CUSTOMER_ACCOUNTS_IMPLEMENTATION",
+      "to": "TASK-11-01223-CUSTOMER_ACCOUNTS_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-11-01223-CUSTOMER_ACCOUNTS_TESTS",
+      "to": "TASK-11-01224-CUSTOMER_ACCOUNTS_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-11-01225-DOWNLOAD_ENTITLEMENT_CONTRACT",
+      "to": "TASK-11-01226-DOWNLOAD_ENTITLEMENT_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-11-01226-DOWNLOAD_ENTITLEMENT_IMPLEMENTATION",
+      "to": "TASK-11-01227-DOWNLOAD_ENTITLEMENT_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-11-01227-DOWNLOAD_ENTITLEMENT_TESTS",
+      "to": "TASK-11-01228-DOWNLOAD_ENTITLEMENT_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-11-01229-UPDATE_ENTITLEMENT_CONTRACT",
+      "to": "TASK-11-01230-UPDATE_ENTITLEMENT_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-11-01230-UPDATE_ENTITLEMENT_IMPLEMENTATION",
+      "to": "TASK-11-01231-UPDATE_ENTITLEMENT_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-11-01231-UPDATE_ENTITLEMENT_TESTS",
+      "to": "TASK-11-01232-UPDATE_ENTITLEMENT_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-11-01233-SUPPORT_TICKETS_CONTRACT",
+      "to": "TASK-11-01234-SUPPORT_TICKETS_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-11-01234-SUPPORT_TICKETS_IMPLEMENTATION",
+      "to": "TASK-11-01235-SUPPORT_TICKETS_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-11-01235-SUPPORT_TICKETS_TESTS",
+      "to": "TASK-11-01236-SUPPORT_TICKETS_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-11-01237-KNOWLEDGE_BASE_CONTRACT",
+      "to": "TASK-11-01238-KNOWLEDGE_BASE_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-11-01238-KNOWLEDGE_BASE_IMPLEMENTATION",
+      "to": "TASK-11-01239-KNOWLEDGE_BASE_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-11-01239-KNOWLEDGE_BASE_TESTS",
+      "to": "TASK-11-01240-KNOWLEDGE_BASE_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-11-01241-RELEASE_NOTES_CONTRACT",
+      "to": "TASK-11-01242-RELEASE_NOTES_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-11-01242-RELEASE_NOTES_IMPLEMENTATION",
+      "to": "TASK-11-01243-RELEASE_NOTES_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-11-01243-RELEASE_NOTES_TESTS",
+      "to": "TASK-11-01244-RELEASE_NOTES_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-11-01245-PRIVACY_COMMERCIAL_CONTRACT",
+      "to": "TASK-11-01246-PRIVACY_COMMERCIAL_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-11-01246-PRIVACY_COMMERCIAL_IMPLEMENTATION",
+      "to": "TASK-11-01247-PRIVACY_COMMERCIAL_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-11-01247-PRIVACY_COMMERCIAL_TESTS",
+      "to": "TASK-11-01248-PRIVACY_COMMERCIAL_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-11-01249-EULA_CONTRACT",
+      "to": "TASK-11-01250-EULA_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-11-01250-EULA_IMPLEMENTATION",
+      "to": "TASK-11-01251-EULA_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-11-01251-EULA_TESTS",
+      "to": "TASK-11-01252-EULA_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-11-01253-TERMS_CONTRACT",
+      "to": "TASK-11-01254-TERMS_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-11-01254-TERMS_IMPLEMENTATION",
+      "to": "TASK-11-01255-TERMS_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-11-01255-TERMS_TESTS",
+      "to": "TASK-11-01256-TERMS_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-11-01257-COMMERCIAL_READINESS_GATES_CONTRACT",
+      "to": "TASK-11-01258-COMMERCIAL_READINESS_GATES_IMPLEMENTATIO",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-11-01258-COMMERCIAL_READINESS_GATES_IMPLEMENTATIO",
+      "to": "TASK-11-01259-COMMERCIAL_READINESS_GATES_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-11-01259-COMMERCIAL_READINESS_GATES_TESTS",
+      "to": "TASK-11-01260-COMMERCIAL_READINESS_GATES_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-11-01261-FOUNDER_LAUNCH_CONTRACT",
+      "to": "TASK-11-01262-FOUNDER_LAUNCH_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-11-01262-FOUNDER_LAUNCH_IMPLEMENTATION",
+      "to": "TASK-11-01263-FOUNDER_LAUNCH_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-11-01263-FOUNDER_LAUNCH_TESTS",
+      "to": "TASK-11-01264-FOUNDER_LAUNCH_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-11-01265-CLOSED_BETA_CONTRACT",
+      "to": "TASK-11-01266-CLOSED_BETA_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-11-01266-CLOSED_BETA_IMPLEMENTATION",
+      "to": "TASK-11-01267-CLOSED_BETA_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-11-01267-CLOSED_BETA_TESTS",
+      "to": "TASK-11-01268-CLOSED_BETA_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-11-01269-EARLY_ACCESS_CONTRACT",
+      "to": "TASK-11-01270-EARLY_ACCESS_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-11-01270-EARLY_ACCESS_IMPLEMENTATION",
+      "to": "TASK-11-01271-EARLY_ACCESS_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-11-01271-EARLY_ACCESS_TESTS",
+      "to": "TASK-11-01272-EARLY_ACCESS_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-11-01273-STABLE_RELEASE_CONTRACT",
+      "to": "TASK-11-01274-STABLE_RELEASE_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-11-01274-STABLE_RELEASE_IMPLEMENTATION",
+      "to": "TASK-11-01275-STABLE_RELEASE_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-11-01275-STABLE_RELEASE_TESTS",
+      "to": "TASK-11-01276-STABLE_RELEASE_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-11-01277-BUNDLES_CONTRACT",
+      "to": "TASK-11-01278-BUNDLES_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-11-01278-BUNDLES_IMPLEMENTATION",
+      "to": "TASK-11-01279-BUNDLES_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-11-01279-BUNDLES_TESTS",
+      "to": "TASK-11-01280-BUNDLES_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-11-01281-EDUCATIONAL_PLANS_CONTRACT",
+      "to": "TASK-11-01282-EDUCATIONAL_PLANS_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-11-01282-EDUCATIONAL_PLANS_IMPLEMENTATION",
+      "to": "TASK-11-01283-EDUCATIONAL_PLANS_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-11-01283-EDUCATIONAL_PLANS_TESTS",
+      "to": "TASK-11-01284-EDUCATIONAL_PLANS_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-11-01285-FAMILY_PLANS_CONTRACT",
+      "to": "TASK-11-01286-FAMILY_PLANS_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-11-01286-FAMILY_PLANS_IMPLEMENTATION",
+      "to": "TASK-11-01287-FAMILY_PLANS_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-11-01287-FAMILY_PLANS_TESTS",
+      "to": "TASK-11-01288-FAMILY_PLANS_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-12-01289-MAIN_SITE_CONTRACT",
+      "to": "TASK-12-01290-MAIN_SITE_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-12-01290-MAIN_SITE_IMPLEMENTATION",
+      "to": "TASK-12-01291-MAIN_SITE_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-12-01291-MAIN_SITE_TESTS",
+      "to": "TASK-12-01292-MAIN_SITE_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-12-01293-PRODUCT_PAGES_CONTRACT",
+      "to": "TASK-12-01294-PRODUCT_PAGES_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-12-01294-PRODUCT_PAGES_IMPLEMENTATION",
+      "to": "TASK-12-01295-PRODUCT_PAGES_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-12-01295-PRODUCT_PAGES_TESTS",
+      "to": "TASK-12-01296-PRODUCT_PAGES_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-12-01297-KIDS_PAGE_CONTRACT",
+      "to": "TASK-12-01298-KIDS_PAGE_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-12-01298-KIDS_PAGE_IMPLEMENTATION",
+      "to": "TASK-12-01299-KIDS_PAGE_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-12-01299-KIDS_PAGE_TESTS",
+      "to": "TASK-12-01300-KIDS_PAGE_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-12-01301-TEEN_PAGE_CONTRACT",
+      "to": "TASK-12-01302-TEEN_PAGE_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-12-01302-TEEN_PAGE_IMPLEMENTATION",
+      "to": "TASK-12-01303-TEEN_PAGE_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-12-01303-TEEN_PAGE_TESTS",
+      "to": "TASK-12-01304-TEEN_PAGE_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-12-01305-LIBRARY_PAGE_CONTRACT",
+      "to": "TASK-12-01306-LIBRARY_PAGE_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-12-01306-LIBRARY_PAGE_IMPLEMENTATION",
+      "to": "TASK-12-01307-LIBRARY_PAGE_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-12-01307-LIBRARY_PAGE_TESTS",
+      "to": "TASK-12-01308-LIBRARY_PAGE_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-12-01309-KEYBOARD_PAGE_CONTRACT",
+      "to": "TASK-12-01310-KEYBOARD_PAGE_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-12-01310-KEYBOARD_PAGE_IMPLEMENTATION",
+      "to": "TASK-12-01311-KEYBOARD_PAGE_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-12-01311-KEYBOARD_PAGE_TESTS",
+      "to": "TASK-12-01312-KEYBOARD_PAGE_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-12-01313-CREATOR_PAGE_CONTRACT",
+      "to": "TASK-12-01314-CREATOR_PAGE_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-12-01314-CREATOR_PAGE_IMPLEMENTATION",
+      "to": "TASK-12-01315-CREATOR_PAGE_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-12-01315-CREATOR_PAGE_TESTS",
+      "to": "TASK-12-01316-CREATOR_PAGE_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-12-01317-STUDIO_PAGE_CONTRACT",
+      "to": "TASK-12-01318-STUDIO_PAGE_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-12-01318-STUDIO_PAGE_IMPLEMENTATION",
+      "to": "TASK-12-01319-STUDIO_PAGE_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-12-01319-STUDIO_PAGE_TESTS",
+      "to": "TASK-12-01320-STUDIO_PAGE_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-12-01321-PRICING_PAGE_CONTRACT",
+      "to": "TASK-12-01322-PRICING_PAGE_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-12-01322-PRICING_PAGE_IMPLEMENTATION",
+      "to": "TASK-12-01323-PRICING_PAGE_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-12-01323-PRICING_PAGE_TESTS",
+      "to": "TASK-12-01324-PRICING_PAGE_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-12-01325-TRIAL_DOWNLOAD_CONTRACT",
+      "to": "TASK-12-01326-TRIAL_DOWNLOAD_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-12-01326-TRIAL_DOWNLOAD_IMPLEMENTATION",
+      "to": "TASK-12-01327-TRIAL_DOWNLOAD_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-12-01327-TRIAL_DOWNLOAD_TESTS",
+      "to": "TASK-12-01328-TRIAL_DOWNLOAD_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-12-01329-CHECKOUT_INTEGRATION_PREP_CONTRACT",
+      "to": "TASK-12-01330-CHECKOUT_INTEGRATION_PREP_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-12-01330-CHECKOUT_INTEGRATION_PREP_IMPLEMENTATION",
+      "to": "TASK-12-01331-CHECKOUT_INTEGRATION_PREP_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-12-01331-CHECKOUT_INTEGRATION_PREP_TESTS",
+      "to": "TASK-12-01332-CHECKOUT_INTEGRATION_PREP_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-12-01333-CUSTOMER_PORTAL_CONTRACT",
+      "to": "TASK-12-01334-CUSTOMER_PORTAL_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-12-01334-CUSTOMER_PORTAL_IMPLEMENTATION",
+      "to": "TASK-12-01335-CUSTOMER_PORTAL_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-12-01335-CUSTOMER_PORTAL_TESTS",
+      "to": "TASK-12-01336-CUSTOMER_PORTAL_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-12-01337-DOCUMENTATION_CONTRACT",
+      "to": "TASK-12-01338-DOCUMENTATION_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-12-01338-DOCUMENTATION_IMPLEMENTATION",
+      "to": "TASK-12-01339-DOCUMENTATION_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-12-01339-DOCUMENTATION_TESTS",
+      "to": "TASK-12-01340-DOCUMENTATION_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-12-01341-SUPPORT_CONTRACT",
+      "to": "TASK-12-01342-SUPPORT_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-12-01342-SUPPORT_IMPLEMENTATION",
+      "to": "TASK-12-01343-SUPPORT_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-12-01343-SUPPORT_TESTS",
+      "to": "TASK-12-01344-SUPPORT_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-12-01345-STATUS_PAGE_CONTRACT",
+      "to": "TASK-12-01346-STATUS_PAGE_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-12-01346-STATUS_PAGE_IMPLEMENTATION",
+      "to": "TASK-12-01347-STATUS_PAGE_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-12-01347-STATUS_PAGE_TESTS",
+      "to": "TASK-12-01348-STATUS_PAGE_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-12-01349-UPDATE_FEED_CONTRACT",
+      "to": "TASK-12-01350-UPDATE_FEED_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-12-01350-UPDATE_FEED_IMPLEMENTATION",
+      "to": "TASK-12-01351-UPDATE_FEED_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-12-01351-UPDATE_FEED_TESTS",
+      "to": "TASK-12-01352-UPDATE_FEED_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-12-01353-DOWNLOAD_HOSTING_PREP_CONTRACT",
+      "to": "TASK-12-01354-DOWNLOAD_HOSTING_PREP_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-12-01354-DOWNLOAD_HOSTING_PREP_IMPLEMENTATION",
+      "to": "TASK-12-01355-DOWNLOAD_HOSTING_PREP_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-12-01355-DOWNLOAD_HOSTING_PREP_TESTS",
+      "to": "TASK-12-01356-DOWNLOAD_HOSTING_PREP_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-12-01357-ANALYTICS_PRIVACY_MODE_CONTRACT",
+      "to": "TASK-12-01358-ANALYTICS_PRIVACY_MODE_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-12-01358-ANALYTICS_PRIVACY_MODE_IMPLEMENTATION",
+      "to": "TASK-12-01359-ANALYTICS_PRIVACY_MODE_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-12-01359-ANALYTICS_PRIVACY_MODE_TESTS",
+      "to": "TASK-12-01360-ANALYTICS_PRIVACY_MODE_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-12-01361-SEO_CONTRACT",
+      "to": "TASK-12-01362-SEO_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-12-01362-SEO_IMPLEMENTATION",
+      "to": "TASK-12-01363-SEO_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-12-01363-SEO_TESTS",
+      "to": "TASK-12-01364-SEO_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-12-01365-WEBSITE_ARABIC_ENGLISH_GERMAN_CONTRACT",
+      "to": "TASK-12-01366-WEBSITE_ARABIC_ENGLISH_GERMAN_IMPLEMENTA",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-12-01366-WEBSITE_ARABIC_ENGLISH_GERMAN_IMPLEMENTA",
+      "to": "TASK-12-01367-WEBSITE_ARABIC_ENGLISH_GERMAN_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-12-01367-WEBSITE_ARABIC_ENGLISH_GERMAN_TESTS",
+      "to": "TASK-12-01368-WEBSITE_ARABIC_ENGLISH_GERMAN_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-12-01369-WEBSITE_ACCESSIBILITY_CONTRACT",
+      "to": "TASK-12-01370-WEBSITE_ACCESSIBILITY_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-12-01370-WEBSITE_ACCESSIBILITY_IMPLEMENTATION",
+      "to": "TASK-12-01371-WEBSITE_ACCESSIBILITY_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-12-01371-WEBSITE_ACCESSIBILITY_TESTS",
+      "to": "TASK-12-01372-WEBSITE_ACCESSIBILITY_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-12-01373-LEGAL_PAGES_CONTRACT",
+      "to": "TASK-12-01374-LEGAL_PAGES_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-12-01374-LEGAL_PAGES_IMPLEMENTATION",
+      "to": "TASK-12-01375-LEGAL_PAGES_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-12-01375-LEGAL_PAGES_TESTS",
+      "to": "TASK-12-01376-LEGAL_PAGES_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-12-01377-RELEASE_ANNOUNCEMENTS_CONTRACT",
+      "to": "TASK-12-01378-RELEASE_ANNOUNCEMENTS_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-12-01378-RELEASE_ANNOUNCEMENTS_IMPLEMENTATION",
+      "to": "TASK-12-01379-RELEASE_ANNOUNCEMENTS_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-12-01379-RELEASE_ANNOUNCEMENTS_TESTS",
+      "to": "TASK-12-01380-RELEASE_ANNOUNCEMENTS_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-13-01381-THREAT_MODEL_BASELINE_CONTRACT",
+      "to": "TASK-13-01382-THREAT_MODEL_BASELINE_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-13-01382-THREAT_MODEL_BASELINE_IMPLEMENTATION",
+      "to": "TASK-13-01383-THREAT_MODEL_BASELINE_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-13-01383-THREAT_MODEL_BASELINE_TESTS",
+      "to": "TASK-13-01384-THREAT_MODEL_BASELINE_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-13-01385-LOCAL_DATA_PROTECTION_CONTRACT",
+      "to": "TASK-13-01386-LOCAL_DATA_PROTECTION_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-13-01386-LOCAL_DATA_PROTECTION_IMPLEMENTATION",
+      "to": "TASK-13-01387-LOCAL_DATA_PROTECTION_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-13-01387-LOCAL_DATA_PROTECTION_TESTS",
+      "to": "TASK-13-01388-LOCAL_DATA_PROTECTION_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-13-01389-NO_LISTENING_PORTS_POLICY_CONTRACT",
+      "to": "TASK-13-01390-NO_LISTENING_PORTS_POLICY_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-13-01390-NO_LISTENING_PORTS_POLICY_IMPLEMENTATION",
+      "to": "TASK-13-01391-NO_LISTENING_PORTS_POLICY_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-13-01391-NO_LISTENING_PORTS_POLICY_TESTS",
+      "to": "TASK-13-01392-NO_LISTENING_PORTS_POLICY_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-13-01393-SECRET_SCANNING_POLICY_CONTRACT",
+      "to": "TASK-13-01394-SECRET_SCANNING_POLICY_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-13-01394-SECRET_SCANNING_POLICY_IMPLEMENTATION",
+      "to": "TASK-13-01395-SECRET_SCANNING_POLICY_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-13-01395-SECRET_SCANNING_POLICY_TESTS",
+      "to": "TASK-13-01396-SECRET_SCANNING_POLICY_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-13-01397-EULA_DRAFTING_CONTRACT",
+      "to": "TASK-13-01398-EULA_DRAFTING_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-13-01398-EULA_DRAFTING_IMPLEMENTATION",
+      "to": "TASK-13-01399-EULA_DRAFTING_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-13-01399-EULA_DRAFTING_TESTS",
+      "to": "TASK-13-01400-EULA_DRAFTING_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-13-01401-PRIVACY_POLICY_DRAFTING_CONTRACT",
+      "to": "TASK-13-01402-PRIVACY_POLICY_DRAFTING_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-13-01402-PRIVACY_POLICY_DRAFTING_IMPLEMENTATION",
+      "to": "TASK-13-01403-PRIVACY_POLICY_DRAFTING_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-13-01403-PRIVACY_POLICY_DRAFTING_TESTS",
+      "to": "TASK-13-01404-PRIVACY_POLICY_DRAFTING_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-13-01405-CHILD_PRIVACY_COMPLIANCE_FRAMEWORK_CONTR",
+      "to": "TASK-13-01406-CHILD_PRIVACY_COMPLIANCE_FRAMEWORK_IMPLE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-13-01406-CHILD_PRIVACY_COMPLIANCE_FRAMEWORK_IMPLE",
+      "to": "TASK-13-01407-CHILD_PRIVACY_COMPLIANCE_FRAMEWORK_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-13-01407-CHILD_PRIVACY_COMPLIANCE_FRAMEWORK_TESTS",
+      "to": "TASK-13-01408-CHILD_PRIVACY_COMPLIANCE_FRAMEWORK_EVIDE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-13-01409-CONTENT_LICENSE_COMPLIANCE_AUDITS_CONTRA",
+      "to": "TASK-13-01410-CONTENT_LICENSE_COMPLIANCE_AUDITS_IMPLEM",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-13-01410-CONTENT_LICENSE_COMPLIANCE_AUDITS_IMPLEM",
+      "to": "TASK-13-01411-CONTENT_LICENSE_COMPLIANCE_AUDITS_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-13-01411-CONTENT_LICENSE_COMPLIANCE_AUDITS_TESTS",
+      "to": "TASK-13-01412-CONTENT_LICENSE_COMPLIANCE_AUDITS_EVIDEN",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-13-01413-EXPORT_CONTROL_REVIEW_CONTRACT",
+      "to": "TASK-13-01414-EXPORT_CONTROL_REVIEW_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-13-01414-EXPORT_CONTROL_REVIEW_IMPLEMENTATION",
+      "to": "TASK-13-01415-EXPORT_CONTROL_REVIEW_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-13-01415-EXPORT_CONTROL_REVIEW_TESTS",
+      "to": "TASK-13-01416-EXPORT_CONTROL_REVIEW_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-13-01417-SIGNED_UPDATE_CHAIN_CONTRACT",
+      "to": "TASK-13-01418-SIGNED_UPDATE_CHAIN_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-13-01418-SIGNED_UPDATE_CHAIN_IMPLEMENTATION",
+      "to": "TASK-13-01419-SIGNED_UPDATE_CHAIN_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-13-01419-SIGNED_UPDATE_CHAIN_TESTS",
+      "to": "TASK-13-01420-SIGNED_UPDATE_CHAIN_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-14-01421-UNIT_TESTS_FABRIC_CONTRACT",
+      "to": "TASK-14-01422-UNIT_TESTS_FABRIC_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-14-01422-UNIT_TESTS_FABRIC_IMPLEMENTATION",
+      "to": "TASK-14-01423-UNIT_TESTS_FABRIC_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-14-01423-UNIT_TESTS_FABRIC_TESTS",
+      "to": "TASK-14-01424-UNIT_TESTS_FABRIC_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-14-01425-INTEGRATION_TESTS_FABRIC_CONTRACT",
+      "to": "TASK-14-01426-INTEGRATION_TESTS_FABRIC_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-14-01426-INTEGRATION_TESTS_FABRIC_IMPLEMENTATION",
+      "to": "TASK-14-01427-INTEGRATION_TESTS_FABRIC_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-14-01427-INTEGRATION_TESTS_FABRIC_TESTS",
+      "to": "TASK-14-01428-INTEGRATION_TESTS_FABRIC_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-14-01429-END_TO_END_TESTS_FABRIC_CONTRACT",
+      "to": "TASK-14-01430-END_TO_END_TESTS_FABRIC_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-14-01430-END_TO_END_TESTS_FABRIC_IMPLEMENTATION",
+      "to": "TASK-14-01431-END_TO_END_TESTS_FABRIC_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-14-01431-END_TO_END_TESTS_FABRIC_TESTS",
+      "to": "TASK-14-01432-END_TO_END_TESTS_FABRIC_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-14-01433-RUNTIME_ACCEPTANCE_CONTRACT",
+      "to": "TASK-14-01434-RUNTIME_ACCEPTANCE_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-14-01434-RUNTIME_ACCEPTANCE_IMPLEMENTATION",
+      "to": "TASK-14-01435-RUNTIME_ACCEPTANCE_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-14-01435-RUNTIME_ACCEPTANCE_TESTS",
+      "to": "TASK-14-01436-RUNTIME_ACCEPTANCE_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-14-01437-CLEAN_MACHINE_CONTRACT",
+      "to": "TASK-14-01438-CLEAN_MACHINE_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-14-01438-CLEAN_MACHINE_IMPLEMENTATION",
+      "to": "TASK-14-01439-CLEAN_MACHINE_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-14-01439-CLEAN_MACHINE_TESTS",
+      "to": "TASK-14-01440-CLEAN_MACHINE_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-14-01441-PORTABLE_VALIDATION_CONTRACT",
+      "to": "TASK-14-01442-PORTABLE_VALIDATION_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-14-01442-PORTABLE_VALIDATION_IMPLEMENTATION",
+      "to": "TASK-14-01443-PORTABLE_VALIDATION_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-14-01443-PORTABLE_VALIDATION_TESTS",
+      "to": "TASK-14-01444-PORTABLE_VALIDATION_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-14-01445-INSTALLER_VALIDATION_CONTRACT",
+      "to": "TASK-14-01446-INSTALLER_VALIDATION_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-14-01446-INSTALLER_VALIDATION_IMPLEMENTATION",
+      "to": "TASK-14-01447-INSTALLER_VALIDATION_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-14-01447-INSTALLER_VALIDATION_TESTS",
+      "to": "TASK-14-01448-INSTALLER_VALIDATION_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-14-01449-RESTART_ACCEPTANCE_CONTRACT",
+      "to": "TASK-14-01450-RESTART_ACCEPTANCE_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-14-01450-RESTART_ACCEPTANCE_IMPLEMENTATION",
+      "to": "TASK-14-01451-RESTART_ACCEPTANCE_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-14-01451-RESTART_ACCEPTANCE_TESTS",
+      "to": "TASK-14-01452-RESTART_ACCEPTANCE_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-14-01453-RECOVERY_ACCEPTANCE_CONTRACT",
+      "to": "TASK-14-01454-RECOVERY_ACCEPTANCE_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-14-01454-RECOVERY_ACCEPTANCE_IMPLEMENTATION",
+      "to": "TASK-14-01455-RECOVERY_ACCEPTANCE_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-14-01455-RECOVERY_ACCEPTANCE_TESTS",
+      "to": "TASK-14-01456-RECOVERY_ACCEPTANCE_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-14-01457-UPGRADE_ACCEPTANCE_CONTRACT",
+      "to": "TASK-14-01458-UPGRADE_ACCEPTANCE_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-14-01458-UPGRADE_ACCEPTANCE_IMPLEMENTATION",
+      "to": "TASK-14-01459-UPGRADE_ACCEPTANCE_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-14-01459-UPGRADE_ACCEPTANCE_TESTS",
+      "to": "TASK-14-01460-UPGRADE_ACCEPTANCE_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-14-01461-UNINSTALL_ACCEPTANCE_CONTRACT",
+      "to": "TASK-14-01462-UNINSTALL_ACCEPTANCE_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-14-01462-UNINSTALL_ACCEPTANCE_IMPLEMENTATION",
+      "to": "TASK-14-01463-UNINSTALL_ACCEPTANCE_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-14-01463-UNINSTALL_ACCEPTANCE_TESTS",
+      "to": "TASK-14-01464-UNINSTALL_ACCEPTANCE_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-14-01465-DATA_PRESERVATION_CONTRACT",
+      "to": "TASK-14-01466-DATA_PRESERVATION_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-14-01466-DATA_PRESERVATION_IMPLEMENTATION",
+      "to": "TASK-14-01467-DATA_PRESERVATION_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-14-01467-DATA_PRESERVATION_TESTS",
+      "to": "TASK-14-01468-DATA_PRESERVATION_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-14-01469-SECURITY_TESTS_CONTRACT",
+      "to": "TASK-14-01470-SECURITY_TESTS_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-14-01470-SECURITY_TESTS_IMPLEMENTATION",
+      "to": "TASK-14-01471-SECURITY_TESTS_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-14-01471-SECURITY_TESTS_TESTS",
+      "to": "TASK-14-01472-SECURITY_TESTS_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-14-01473-PRIVACY_TESTS_CONTRACT",
+      "to": "TASK-14-01474-PRIVACY_TESTS_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-14-01474-PRIVACY_TESTS_IMPLEMENTATION",
+      "to": "TASK-14-01475-PRIVACY_TESTS_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-14-01475-PRIVACY_TESTS_TESTS",
+      "to": "TASK-14-01476-PRIVACY_TESTS_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-14-01477-PERFORMANCE_TESTS_CONTRACT",
+      "to": "TASK-14-01478-PERFORMANCE_TESTS_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-14-01478-PERFORMANCE_TESTS_IMPLEMENTATION",
+      "to": "TASK-14-01479-PERFORMANCE_TESTS_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-14-01479-PERFORMANCE_TESTS_TESTS",
+      "to": "TASK-14-01480-PERFORMANCE_TESTS_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-14-01481-STRESS_TESTS_CONTRACT",
+      "to": "TASK-14-01482-STRESS_TESTS_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-14-01482-STRESS_TESTS_IMPLEMENTATION",
+      "to": "TASK-14-01483-STRESS_TESTS_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-14-01483-STRESS_TESTS_TESTS",
+      "to": "TASK-14-01484-STRESS_TESTS_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-14-01485-ACCESSIBILITY_TESTS_CONTRACT",
+      "to": "TASK-14-01486-ACCESSIBILITY_TESTS_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-14-01486-ACCESSIBILITY_TESTS_IMPLEMENTATION",
+      "to": "TASK-14-01487-ACCESSIBILITY_TESTS_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-14-01487-ACCESSIBILITY_TESTS_TESTS",
+      "to": "TASK-14-01488-ACCESSIBILITY_TESTS_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-14-01489-LOCALIZATION_TESTS_CONTRACT",
+      "to": "TASK-14-01490-LOCALIZATION_TESTS_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-14-01490-LOCALIZATION_TESTS_IMPLEMENTATION",
+      "to": "TASK-14-01491-LOCALIZATION_TESTS_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-14-01491-LOCALIZATION_TESTS_TESTS",
+      "to": "TASK-14-01492-LOCALIZATION_TESTS_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-14-01493-RELEASE_SIGNING_CONTRACT",
+      "to": "TASK-14-01494-RELEASE_SIGNING_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-14-01494-RELEASE_SIGNING_IMPLEMENTATION",
+      "to": "TASK-14-01495-RELEASE_SIGNING_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-14-01495-RELEASE_SIGNING_TESTS",
+      "to": "TASK-14-01496-RELEASE_SIGNING_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-14-01497-ARTIFACT_REGISTRY_CONTRACT",
+      "to": "TASK-14-01498-ARTIFACT_REGISTRY_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-14-01498-ARTIFACT_REGISTRY_IMPLEMENTATION",
+      "to": "TASK-14-01499-ARTIFACT_REGISTRY_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-14-01499-ARTIFACT_REGISTRY_TESTS",
+      "to": "TASK-14-01500-ARTIFACT_REGISTRY_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-14-01501-SHA256_EVIDENCE_CONTRACT",
+      "to": "TASK-14-01502-SHA256_EVIDENCE_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-14-01502-SHA256_EVIDENCE_IMPLEMENTATION",
+      "to": "TASK-14-01503-SHA256_EVIDENCE_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-14-01503-SHA256_EVIDENCE_TESTS",
+      "to": "TASK-14-01504-SHA256_EVIDENCE_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-14-01505-SBOM_CONTRACT",
+      "to": "TASK-14-01506-SBOM_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-14-01506-SBOM_IMPLEMENTATION",
+      "to": "TASK-14-01507-SBOM_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-14-01507-SBOM_TESTS",
+      "to": "TASK-14-01508-SBOM_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-14-01509-DEPENDENCY_AUDIT_CONTRACT",
+      "to": "TASK-14-01510-DEPENDENCY_AUDIT_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-14-01510-DEPENDENCY_AUDIT_IMPLEMENTATION",
+      "to": "TASK-14-01511-DEPENDENCY_AUDIT_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-14-01511-DEPENDENCY_AUDIT_TESTS",
+      "to": "TASK-14-01512-DEPENDENCY_AUDIT_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-14-01513-BACKUP_OPERATIONS_CONTRACT",
+      "to": "TASK-14-01514-BACKUP_OPERATIONS_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-14-01514-BACKUP_OPERATIONS_IMPLEMENTATION",
+      "to": "TASK-14-01515-BACKUP_OPERATIONS_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-14-01515-BACKUP_OPERATIONS_TESTS",
+      "to": "TASK-14-01516-BACKUP_OPERATIONS_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-14-01517-OLD_LAPTOP_SERVER_CONTRACT",
+      "to": "TASK-14-01518-OLD_LAPTOP_SERVER_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-14-01518-OLD_LAPTOP_SERVER_IMPLEMENTATION",
+      "to": "TASK-14-01519-OLD_LAPTOP_SERVER_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-14-01519-OLD_LAPTOP_SERVER_TESTS",
+      "to": "TASK-14-01520-OLD_LAPTOP_SERVER_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-14-01521-MONITORING_CONTRACT",
+      "to": "TASK-14-01522-MONITORING_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-14-01522-MONITORING_IMPLEMENTATION",
+      "to": "TASK-14-01523-MONITORING_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-14-01523-MONITORING_TESTS",
+      "to": "TASK-14-01524-MONITORING_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-14-01525-INCIDENT_RESPONSE_CONTRACT",
+      "to": "TASK-14-01526-INCIDENT_RESPONSE_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-14-01526-INCIDENT_RESPONSE_IMPLEMENTATION",
+      "to": "TASK-14-01527-INCIDENT_RESPONSE_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-14-01527-INCIDENT_RESPONSE_TESTS",
+      "to": "TASK-14-01528-INCIDENT_RESPONSE_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-14-01529-ROLLBACK_OPERATIONS_CONTRACT",
+      "to": "TASK-14-01530-ROLLBACK_OPERATIONS_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-14-01530-ROLLBACK_OPERATIONS_IMPLEMENTATION",
+      "to": "TASK-14-01531-ROLLBACK_OPERATIONS_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-14-01531-ROLLBACK_OPERATIONS_TESTS",
+      "to": "TASK-14-01532-ROLLBACK_OPERATIONS_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-14-01533-CUSTOMER_SUPPORT_EVIDENCE_BUNDLES_CONTRA",
+      "to": "TASK-14-01534-CUSTOMER_SUPPORT_EVIDENCE_BUNDLES_IMPLEM",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-14-01534-CUSTOMER_SUPPORT_EVIDENCE_BUNDLES_IMPLEM",
+      "to": "TASK-14-01535-CUSTOMER_SUPPORT_EVIDENCE_BUNDLES_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-14-01535-CUSTOMER_SUPPORT_EVIDENCE_BUNDLES_TESTS",
+      "to": "TASK-14-01536-CUSTOMER_SUPPORT_EVIDENCE_BUNDLES_EVIDEN",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-15-01537-COMMANDER_ADAPTER_CONTRACT_CONTRACT",
+      "to": "TASK-15-01538-COMMANDER_ADAPTER_CONTRACT_IMPLEMENTATIO",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-15-01538-COMMANDER_ADAPTER_CONTRACT_IMPLEMENTATIO",
+      "to": "TASK-15-01539-COMMANDER_ADAPTER_CONTRACT_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-15-01539-COMMANDER_ADAPTER_CONTRACT_TESTS",
+      "to": "TASK-15-01540-COMMANDER_ADAPTER_CONTRACT_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-15-01541-COMMANDER_READINESS_CHECKLIST_CONTRACT",
+      "to": "TASK-15-01542-COMMANDER_READINESS_CHECKLIST_IMPLEMENTA",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-15-01542-COMMANDER_READINESS_CHECKLIST_IMPLEMENTA",
+      "to": "TASK-15-01543-COMMANDER_READINESS_CHECKLIST_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-15-01543-COMMANDER_READINESS_CHECKLIST_TESTS",
+      "to": "TASK-15-01544-COMMANDER_READINESS_CHECKLIST_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-15-01545-COMMANDER_EVENT_SCHEMA_CONTRACT",
+      "to": "TASK-15-01546-COMMANDER_EVENT_SCHEMA_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-15-01546-COMMANDER_EVENT_SCHEMA_IMPLEMENTATION",
+      "to": "TASK-15-01547-COMMANDER_EVENT_SCHEMA_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-15-01547-COMMANDER_EVENT_SCHEMA_TESTS",
+      "to": "TASK-15-01548-COMMANDER_EVENT_SCHEMA_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-15-01549-COMMANDER_COMMAND_SCHEMA_CONTRACT",
+      "to": "TASK-15-01550-COMMANDER_COMMAND_SCHEMA_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-15-01550-COMMANDER_COMMAND_SCHEMA_IMPLEMENTATION",
+      "to": "TASK-15-01551-COMMANDER_COMMAND_SCHEMA_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-15-01551-COMMANDER_COMMAND_SCHEMA_TESTS",
+      "to": "TASK-15-01552-COMMANDER_COMMAND_SCHEMA_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-15-01553-COMMANDER_RESULT_SCHEMA_CONTRACT",
+      "to": "TASK-15-01554-COMMANDER_RESULT_SCHEMA_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-15-01554-COMMANDER_RESULT_SCHEMA_IMPLEMENTATION",
+      "to": "TASK-15-01555-COMMANDER_RESULT_SCHEMA_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-15-01555-COMMANDER_RESULT_SCHEMA_TESTS",
+      "to": "TASK-15-01556-COMMANDER_RESULT_SCHEMA_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-15-01557-LISTTASKS_ADAPTER_SURFACE_CONTRACT",
+      "to": "TASK-15-01558-LISTTASKS_ADAPTER_SURFACE_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-15-01558-LISTTASKS_ADAPTER_SURFACE_IMPLEMENTATION",
+      "to": "TASK-15-01559-LISTTASKS_ADAPTER_SURFACE_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-15-01559-LISTTASKS_ADAPTER_SURFACE_TESTS",
+      "to": "TASK-15-01560-LISTTASKS_ADAPTER_SURFACE_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-15-01561-CLAIMTASK_ADAPTER_SURFACE_CONTRACT",
+      "to": "TASK-15-01562-CLAIMTASK_ADAPTER_SURFACE_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-15-01562-CLAIMTASK_ADAPTER_SURFACE_IMPLEMENTATION",
+      "to": "TASK-15-01563-CLAIMTASK_ADAPTER_SURFACE_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-15-01563-CLAIMTASK_ADAPTER_SURFACE_TESTS",
+      "to": "TASK-15-01564-CLAIMTASK_ADAPTER_SURFACE_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-15-01565-RENEWLEASE_ADAPTER_SURFACE_CONTRACT",
+      "to": "TASK-15-01566-RENEWLEASE_ADAPTER_SURFACE_IMPLEMENTATIO",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-15-01566-RENEWLEASE_ADAPTER_SURFACE_IMPLEMENTATIO",
+      "to": "TASK-15-01567-RENEWLEASE_ADAPTER_SURFACE_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-15-01567-RENEWLEASE_ADAPTER_SURFACE_TESTS",
+      "to": "TASK-15-01568-RENEWLEASE_ADAPTER_SURFACE_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-15-01569-REPORTHEARTBEAT_ADAPTER_SURFACE_CONTRACT",
+      "to": "TASK-15-01570-REPORTHEARTBEAT_ADAPTER_SURFACE_IMPLEMEN",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-15-01570-REPORTHEARTBEAT_ADAPTER_SURFACE_IMPLEMEN",
+      "to": "TASK-15-01571-REPORTHEARTBEAT_ADAPTER_SURFACE_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-15-01571-REPORTHEARTBEAT_ADAPTER_SURFACE_TESTS",
+      "to": "TASK-15-01572-REPORTHEARTBEAT_ADAPTER_SURFACE_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-15-01573-REPORTPROGRESS_ADAPTER_SURFACE_CONTRACT",
+      "to": "TASK-15-01574-REPORTPROGRESS_ADAPTER_SURFACE_IMPLEMENT",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-15-01574-REPORTPROGRESS_ADAPTER_SURFACE_IMPLEMENT",
+      "to": "TASK-15-01575-REPORTPROGRESS_ADAPTER_SURFACE_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-15-01575-REPORTPROGRESS_ADAPTER_SURFACE_TESTS",
+      "to": "TASK-15-01576-REPORTPROGRESS_ADAPTER_SURFACE_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-15-01577-ATTACHEVIDENCE_ADAPTER_SURFACE_CONTRACT",
+      "to": "TASK-15-01578-ATTACHEVIDENCE_ADAPTER_SURFACE_IMPLEMENT",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-15-01578-ATTACHEVIDENCE_ADAPTER_SURFACE_IMPLEMENT",
+      "to": "TASK-15-01579-ATTACHEVIDENCE_ADAPTER_SURFACE_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-15-01579-ATTACHEVIDENCE_ADAPTER_SURFACE_TESTS",
+      "to": "TASK-15-01580-ATTACHEVIDENCE_ADAPTER_SURFACE_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-15-01581-SUBMITRESULT_ADAPTER_SURFACE_CONTRACT",
+      "to": "TASK-15-01582-SUBMITRESULT_ADAPTER_SURFACE_IMPLEMENTAT",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-15-01582-SUBMITRESULT_ADAPTER_SURFACE_IMPLEMENTAT",
+      "to": "TASK-15-01583-SUBMITRESULT_ADAPTER_SURFACE_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-15-01583-SUBMITRESULT_ADAPTER_SURFACE_TESTS",
+      "to": "TASK-15-01584-SUBMITRESULT_ADAPTER_SURFACE_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-15-01585-REQUESTREVIEW_ADAPTER_SURFACE_CONTRACT",
+      "to": "TASK-15-01586-REQUESTREVIEW_ADAPTER_SURFACE_IMPLEMENTA",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-15-01586-REQUESTREVIEW_ADAPTER_SURFACE_IMPLEMENTA",
+      "to": "TASK-15-01587-REQUESTREVIEW_ADAPTER_SURFACE_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-15-01587-REQUESTREVIEW_ADAPTER_SURFACE_TESTS",
+      "to": "TASK-15-01588-REQUESTREVIEW_ADAPTER_SURFACE_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-15-01589-RELEASECLAIM_ADAPTER_SURFACE_CONTRACT",
+      "to": "TASK-15-01590-RELEASECLAIM_ADAPTER_SURFACE_IMPLEMENTAT",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-15-01590-RELEASECLAIM_ADAPTER_SURFACE_IMPLEMENTAT",
+      "to": "TASK-15-01591-RELEASECLAIM_ADAPTER_SURFACE_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-15-01591-RELEASECLAIM_ADAPTER_SURFACE_TESTS",
+      "to": "TASK-15-01592-RELEASECLAIM_ADAPTER_SURFACE_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-15-01593-PAUSEQUEUE_ADAPTER_SURFACE_CONTRACT",
+      "to": "TASK-15-01594-PAUSEQUEUE_ADAPTER_SURFACE_IMPLEMENTATIO",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-15-01594-PAUSEQUEUE_ADAPTER_SURFACE_IMPLEMENTATIO",
+      "to": "TASK-15-01595-PAUSEQUEUE_ADAPTER_SURFACE_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-15-01595-PAUSEQUEUE_ADAPTER_SURFACE_TESTS",
+      "to": "TASK-15-01596-PAUSEQUEUE_ADAPTER_SURFACE_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-15-01597-RESUMEQUEUE_ADAPTER_SURFACE_CONTRACT",
+      "to": "TASK-15-01598-RESUMEQUEUE_ADAPTER_SURFACE_IMPLEMENTATI",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-15-01598-RESUMEQUEUE_ADAPTER_SURFACE_IMPLEMENTATI",
+      "to": "TASK-15-01599-RESUMEQUEUE_ADAPTER_SURFACE_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-15-01599-RESUMEQUEUE_ADAPTER_SURFACE_TESTS",
+      "to": "TASK-15-01600-RESUMEQUEUE_ADAPTER_SURFACE_EVIDENCE",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-15-01601-COMMANDER_ACTIVATION_CONTRACT",
+      "to": "TASK-15-01602-COMMANDER_ACTIVATION_IMPLEMENTATION",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-15-01602-COMMANDER_ACTIVATION_IMPLEMENTATION",
+      "to": "TASK-15-01603-COMMANDER_ACTIVATION_TESTS",
+      "type": "BLOCKS"
+    },
+    {
+      "from": "TASK-15-01603-COMMANDER_ACTIVATION_TESTS",
+      "to": "TASK-15-01604-COMMANDER_ACTIVATION_EVIDENCE",
+      "type": "BLOCKS"
+    }
+  ],
+  "cycleCount": 0,
+  "cycles": []
+}

@@ -1,0 +1,15 @@
+Implement only the EVIDENCE phase for Export/Import User Data.
+
+The contract, implementation, implementation tests, integration harness and integration tests
+are read-only authoritative inputs.
+
+Replace both editable placeholders with:
+1. a deterministic evidence aggregator that can execute or validate the real test files,
+   capture child exit codes, verify real test declarations exist, hash all relevant source/test files,
+   and write evidence/result.json;
+2. node:test tests for the aggregator, including failure when a child test fails or has zero
+   real test declarations.
+
+Do not claim PASS from constants or from the parent process alone.
+Use Node built-ins only.
+Do not edit any file except the two editable files supplied by Aider.

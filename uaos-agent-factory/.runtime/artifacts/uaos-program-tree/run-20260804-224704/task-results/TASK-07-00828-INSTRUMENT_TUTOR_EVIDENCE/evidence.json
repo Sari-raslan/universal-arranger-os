@@ -1,0 +1,35 @@
+{
+  "taskId": "TASK-07-00828-INSTRUMENT_TUTOR_EVIDENCE",
+  "agentId": "NODE_LOCAL_WORKER-0197",
+  "startedAt": "2026-08-04T20:47:51.783Z",
+  "endedAt": "2026-08-04T20:47:51.900Z",
+  "status": "PASS",
+  "tests": [
+    {
+      "command": "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-07-00828-instrument_tutor_evidence\\tests\\main.test.mjs",
+      "exitCode": 0,
+      "stdoutTail": "✔ TASK-07-00828-INSTRUMENT_TUTOR_EVIDENCE verify (0.6102ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 65.625\n"
+    }
+  ],
+  "sha256": "9D603B8D897575E1589CDB61629D8DDDC5EDE529A2CB4241354D1796AA3DF5EE",
+  "allowedPathsUsed": [
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-07-00828-instrument_tutor_evidence",
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-07-00828-instrument_tutor_evidence\\src\\instrument_tutor_evidence.mjs",
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-07-00828-instrument_tutor_evidence\\tests\\main.test.mjs"
+  ],
+  "truthStatements": [
+    "Technical WAV success does not prove musical quality",
+    "Fixtures are not product content",
+    "Studio Offline Render is not Real-time DSP",
+    "KORG WRITE_UNSUPPORTED",
+    "No auto adoption of Kids/Teen/Pricing",
+    "Commander not activated"
+  ],
+  "ownerFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-07-00828-instrument_tutor_evidence\\src\\instrument_tutor_evidence.mjs",
+  "phase": "EVIDENCE",
+  "gate": null,
+  "noPush": true,
+  "noMerge": true,
+  "noDeploy": true,
+  "commanderActivated": false
+}

@@ -1,0 +1,654 @@
+{
+  "schema": "uaos.owner-gates/v1",
+  "generatedAt": "2026-08-04T20:47:04.364Z",
+  "gates": [
+    {
+      "id": "GATE-COMMERCIAL_CONTENT_ACQUISITION-CONTRACT",
+      "taskId": "TASK-02-00300-COMMERCIAL_CONTENT_ACQUISITION_EVIDENCE",
+      "gateType": "OWNER_GATE",
+      "status": "OPEN",
+      "description": "Commercial content acquisition requires OWNER_GATE before activation beyond preparation",
+      "autoApprove": false
+    },
+    {
+      "id": "GATE-PUBLIC_DOMAIN_CONTENT_PIPELINE-CONTRACT",
+      "taskId": "TASK-02-00304-PUBLIC_DOMAIN_CONTENT_PIPELINE_EVIDENCE",
+      "gateType": "CONTENT_GATE",
+      "status": "OPEN",
+      "description": "Public-domain content pipeline requires CONTENT_GATE before activation beyond preparation",
+      "autoApprove": false
+    },
+    {
+      "id": "GATE-CONTRIBUTOR_PIPELINE-CONTRACT",
+      "taskId": "TASK-02-00308-CONTRIBUTOR_PIPELINE_EVIDENCE",
+      "gateType": "LEGAL_GATE",
+      "status": "OPEN",
+      "description": "Contributor pipeline requires LEGAL_GATE before activation beyond preparation",
+      "autoApprove": false
+    },
+    {
+      "id": "GATE-OWNER_CONTENT_APPROVAL-CONTRACT",
+      "taskId": "TASK-02-00316-OWNER_CONTENT_APPROVAL_EVIDENCE",
+      "gateType": "OWNER_GATE",
+      "status": "OPEN",
+      "description": "Owner content approval requires OWNER_GATE before activation beyond preparation",
+      "autoApprove": false
+    },
+    {
+      "id": "GATE-KORG_INSPECTION-CONTRACT",
+      "taskId": "TASK-03-00368-KORG_INSPECTION_EVIDENCE",
+      "gateType": "FORMAT_GATE",
+      "status": "OPEN",
+      "description": "KORG inspection requires FORMAT_GATE before activation beyond preparation",
+      "autoApprove": false
+    },
+    {
+      "id": "GATE-YAMAHA_INSPECTION-CONTRACT",
+      "taskId": "TASK-03-00372-YAMAHA_INSPECTION_EVIDENCE",
+      "gateType": "FORMAT_GATE",
+      "status": "OPEN",
+      "description": "Yamaha inspection requires FORMAT_GATE before activation beyond preparation",
+      "autoApprove": false
+    },
+    {
+      "id": "GATE-ROLAND_INSPECTION-CONTRACT",
+      "taskId": "TASK-03-00376-ROLAND_INSPECTION_EVIDENCE",
+      "gateType": "FORMAT_GATE",
+      "status": "OPEN",
+      "description": "Roland inspection requires FORMAT_GATE before activation beyond preparation",
+      "autoApprove": false
+    },
+    {
+      "id": "GATE-KETRON_INSPECTION-CONTRACT",
+      "taskId": "TASK-03-00380-KETRON_INSPECTION_EVIDENCE",
+      "gateType": "FORMAT_GATE",
+      "status": "OPEN",
+      "description": "Ketron inspection requires FORMAT_GATE before activation beyond preparation",
+      "autoApprove": false
+    },
+    {
+      "id": "GATE-PROPRIETARY_FORMAT_CONTRACTS-CONTRACT",
+      "taskId": "TASK-03-00404-PROPRIETARY_FORMAT_CONTRACTS_EVIDENCE",
+      "gateType": "OWNER_GATE",
+      "status": "OPEN",
+      "description": "Proprietary format contracts requires OWNER_GATE before activation beyond preparation",
+      "autoApprove": false
+    },
+    {
+      "id": "GATE-WRITER_RESEARCH-CONTRACT",
+      "taskId": "TASK-03-00408-WRITER_RESEARCH_EVIDENCE",
+      "gateType": "FORMAT_GATE",
+      "status": "OPEN",
+      "description": "Writer research requires FORMAT_GATE before activation beyond preparation",
+      "autoApprove": false
+    },
+    {
+      "id": "GATE-KORG_WRITER-CONTRACT",
+      "taskId": "TASK-03-00412-KORG_WRITER_EVIDENCE",
+      "gateType": "FORMAT_GATE",
+      "status": "OPEN",
+      "description": "KORG Writer requires FORMAT_GATE before activation beyond preparation",
+      "autoApprove": false
+    },
+    {
+      "id": "GATE-USB_TRANSPORT-CONTRACT",
+      "taskId": "TASK-03-00416-USB_TRANSPORT_EVIDENCE",
+      "gateType": "HARDWARE_GATE",
+      "status": "OPEN",
+      "description": "USB transport requires HARDWARE_GATE before activation beyond preparation",
+      "autoApprove": false
+    },
+    {
+      "id": "GATE-SYSEX-CONTRACT",
+      "taskId": "TASK-03-00420-SYSEX_EVIDENCE",
+      "gateType": "HARDWARE_GATE",
+      "status": "OPEN",
+      "description": "SysEx requires HARDWARE_GATE before activation beyond preparation",
+      "autoApprove": false
+    },
+    {
+      "id": "GATE-HARDWARE_VERIFICATION-CONTRACT",
+      "taskId": "TASK-03-00424-HARDWARE_VERIFICATION_EVIDENCE",
+      "gateType": "HARDWARE_GATE",
+      "status": "OPEN",
+      "description": "Hardware verification requires HARDWARE_GATE before activation beyond preparation",
+      "autoApprove": false
+    },
+    {
+      "id": "GATE-DEVICE_SPECIFIC_ACCEPTANCE-CONTRACT",
+      "taskId": "TASK-03-00428-DEVICE_SPECIFIC_ACCEPTANCE_EVIDENCE",
+      "gateType": "HARDWARE_GATE",
+      "status": "OPEN",
+      "description": "Device-specific acceptance requires HARDWARE_GATE before activation beyond preparation",
+      "autoApprove": false
+    },
+    {
+      "id": "GATE-VENDOR_SPECIFIC_ADAPTERS-CONTRACT",
+      "taskId": "TASK-04-00512-VENDOR_SPECIFIC_ADAPTERS_EVIDENCE",
+      "gateType": "FORMAT_GATE",
+      "status": "OPEN",
+      "description": "Vendor-specific adapters requires FORMAT_GATE before activation beyond preparation",
+      "autoApprove": false
+    },
+    {
+      "id": "GATE-WRITER_ADAPTERS-CONTRACT",
+      "taskId": "TASK-04-00516-WRITER_ADAPTERS_EVIDENCE",
+      "gateType": "FORMAT_GATE",
+      "status": "OPEN",
+      "description": "Writer adapters requires FORMAT_GATE before activation beyond preparation",
+      "autoApprove": false
+    },
+    {
+      "id": "GATE-HARDWARE_DELIVERY_ADAPTERS-CONTRACT",
+      "taskId": "TASK-04-00520-HARDWARE_DELIVERY_ADAPTERS_EVIDENCE",
+      "gateType": "HARDWARE_GATE",
+      "status": "OPEN",
+      "description": "Hardware delivery adapters requires HARDWARE_GATE before activation beyond preparation",
+      "autoApprove": false
+    },
+    {
+      "id": "GATE-VOICE_TO_MELODY-CONTRACT",
+      "taskId": "TASK-05-00564-VOICE_TO_MELODY_EVIDENCE",
+      "gateType": "OWNER_GATE",
+      "status": "OPEN",
+      "description": "Voice-to-Melody requires OWNER_GATE before activation beyond preparation",
+      "autoApprove": false
+    },
+    {
+      "id": "GATE-MUSICAL_BRAIN-CONTRACT",
+      "taskId": "TASK-05-00608-MUSICAL_BRAIN_EVIDENCE",
+      "gateType": "OWNER_GATE",
+      "status": "OPEN",
+      "description": "Musical Brain requires OWNER_GATE before activation beyond preparation",
+      "autoApprove": false
+    },
+    {
+      "id": "GATE-MUSICAL_CRITIC-CONTRACT",
+      "taskId": "TASK-05-00616-MUSICAL_CRITIC_EVIDENCE",
+      "gateType": "OWNER_GATE",
+      "status": "OPEN",
+      "description": "Musical critic requires OWNER_GATE before activation beyond preparation",
+      "autoApprove": false
+    },
+    {
+      "id": "GATE-PRODUCTION_PREVIEW-CONTRACT",
+      "taskId": "TASK-05-00628-PRODUCTION_PREVIEW_EVIDENCE",
+      "gateType": "OWNER_GATE",
+      "status": "OPEN",
+      "description": "Production preview requires OWNER_GATE before activation beyond preparation",
+      "autoApprove": false
+    },
+    {
+      "id": "GATE-OWNER_MUSICAL_REVIEW_LOOPS-CONTRACT",
+      "taskId": "TASK-05-00648-OWNER_MUSICAL_REVIEW_LOOPS_EVIDENCE",
+      "gateType": "OWNER_GATE",
+      "status": "OPEN",
+      "description": "Owner musical review loops requires OWNER_GATE before activation beyond preparation",
+      "autoApprove": false
+    },
+    {
+      "id": "GATE-TASTE_DATASETS_AND_REVIEW_RECEIPTS-TS_CONTR",
+      "taskId": "TASK-05-00652-TASTE_DATASETS_AND_REVIEW_RECEIPTS_EVIDE",
+      "gateType": "OWNER_GATE",
+      "status": "OPEN",
+      "description": "Taste datasets and review receipts requires OWNER_GATE before activation beyond preparation",
+      "autoApprove": false
+    },
+    {
+      "id": "GATE-REAL_TIME_DSP-CONTRACT",
+      "taskId": "TASK-06-00728-REAL_TIME_DSP_EVIDENCE",
+      "gateType": "FORMAT_GATE",
+      "status": "OPEN",
+      "description": "Real-time DSP requires FORMAT_GATE before activation beyond preparation",
+      "autoApprove": false
+    },
+    {
+      "id": "GATE-ASIO-CONTRACT",
+      "taskId": "TASK-06-00732-ASIO_EVIDENCE",
+      "gateType": "HARDWARE_GATE",
+      "status": "OPEN",
+      "description": "ASIO requires HARDWARE_GATE before activation beyond preparation",
+      "autoApprove": false
+    },
+    {
+      "id": "GATE-AUDIO_DEVICE_MANAGEMENT-CONTRACT",
+      "taskId": "TASK-06-00736-AUDIO_DEVICE_MANAGEMENT_EVIDENCE",
+      "gateType": "HARDWARE_GATE",
+      "status": "OPEN",
+      "description": "Audio device management requires HARDWARE_GATE before activation beyond preparation",
+      "autoApprove": false
+    },
+    {
+      "id": "GATE-RECORDING-CONTRACT",
+      "taskId": "TASK-06-00740-RECORDING_EVIDENCE",
+      "gateType": "HARDWARE_GATE",
+      "status": "OPEN",
+      "description": "Recording requires HARDWARE_GATE before activation beyond preparation",
+      "autoApprove": false
+    },
+    {
+      "id": "GATE-OPTIONAL_CLOUD_MODEL_ADAPTERS-CONTRACT",
+      "taskId": "TASK-07-00920-OPTIONAL_CLOUD_MODEL_ADAPTERS_EVIDENCE",
+      "gateType": "OWNER_GATE",
+      "status": "OPEN",
+      "description": "Optional cloud model adapters requires OWNER_GATE before activation beyond preparation",
+      "autoApprove": false
+    },
+    {
+      "id": "GATE-PARENT_GATE-CONTRACT",
+      "taskId": "TASK-08-00932-PARENT_GATE_EVIDENCE",
+      "gateType": "OWNER_GATE",
+      "status": "OPEN",
+      "description": "Parent gate requires OWNER_GATE before activation beyond preparation",
+      "autoApprove": false
+    },
+    {
+      "id": "GATE-CONTENT_PACKS-CONTRACT",
+      "taskId": "TASK-08-01000-CONTENT_PACKS_EVIDENCE",
+      "gateType": "CONTENT_GATE",
+      "status": "OPEN",
+      "description": "Content packs requires CONTENT_GATE before activation beyond preparation",
+      "autoApprove": false
+    },
+    {
+      "id": "GATE-SUBSCRIPTION_AND_FAMILY_LICENSING-G_CONTRA",
+      "taskId": "TASK-08-01004-SUBSCRIPTION_AND_FAMILY_LICENSING_EVIDEN",
+      "gateType": "OWNER_GATE",
+      "status": "OPEN",
+      "description": "Subscription and family licensing requires OWNER_GATE before activation beyond preparation",
+      "autoApprove": false
+    },
+    {
+      "id": "GATE-CHILD_PRIVACY_COMPLIANCE-CONTRACT",
+      "taskId": "TASK-08-01008-CHILD_PRIVACY_COMPLIANCE_EVIDENCE",
+      "gateType": "LEGAL_GATE",
+      "status": "OPEN",
+      "description": "Child privacy compliance requires LEGAL_GATE before activation beyond preparation",
+      "autoApprove": false
+    },
+    {
+      "id": "GATE-GUIDED_MUSIC_PROJECTS-CONTRACT",
+      "taskId": "TASK-09-01012-GUIDED_MUSIC_PROJECTS_EVIDENCE",
+      "gateType": "OWNER_GATE",
+      "status": "OPEN",
+      "description": "Guided music projects requires OWNER_GATE before activation beyond preparation",
+      "autoApprove": false
+    },
+    {
+      "id": "GATE-RECORDING_FUNDAMENTALS-CONTRACT",
+      "taskId": "TASK-09-01032-RECORDING_FUNDAMENTALS_EVIDENCE",
+      "gateType": "HARDWARE_GATE",
+      "status": "OPEN",
+      "description": "Recording fundamentals requires HARDWARE_GATE before activation beyond preparation",
+      "autoApprove": false
+    },
+    {
+      "id": "GATE-CLOUD_SHARING_ARCHITECTURE-CONTRACT",
+      "taskId": "TASK-09-01076-CLOUD_SHARING_ARCHITECTURE_EVIDENCE",
+      "gateType": "OWNER_GATE",
+      "status": "OPEN",
+      "description": "Cloud sharing architecture requires OWNER_GATE before activation beyond preparation",
+      "autoApprove": false
+    },
+    {
+      "id": "GATE-TEEN_PRIVACY_AND_MODERATION-CONTRACT",
+      "taskId": "TASK-09-01080-TEEN_PRIVACY_AND_MODERATION_EVIDENCE",
+      "gateType": "LEGAL_GATE",
+      "status": "OPEN",
+      "description": "Teen privacy and moderation requires LEGAL_GATE before activation beyond preparation",
+      "autoApprove": false
+    },
+    {
+      "id": "GATE-SUBSCRIPTION_AND_EDUCATION_LICENSING-SING_CON",
+      "taskId": "TASK-09-01084-SUBSCRIPTION_AND_EDUCATION_LICENSING_EVI",
+      "gateType": "OWNER_GATE",
+      "status": "OPEN",
+      "description": "Subscription and education licensing requires OWNER_GATE before activation beyond preparation",
+      "autoApprove": false
+    },
+    {
+      "id": "GATE-PUBLIC_DOMAIN_SOURCE_DISCOVERY-CONTRACT",
+      "taskId": "TASK-10-01088-PUBLIC_DOMAIN_SOURCE_DISCOVERY_EVIDENCE",
+      "gateType": "CONTENT_GATE",
+      "status": "OPEN",
+      "description": "Public-domain source discovery requires CONTENT_GATE before activation beyond preparation",
+      "autoApprove": false
+    },
+    {
+      "id": "GATE-PERMISSIVE_LICENSE_VERIFICATION-CONTRACT",
+      "taskId": "TASK-10-01092-PERMISSIVE_LICENSE_VERIFICATION_EVIDENCE",
+      "gateType": "LEGAL_GATE",
+      "status": "OPEN",
+      "description": "Permissive-license verification requires LEGAL_GATE before activation beyond preparation",
+      "autoApprove": false
+    },
+    {
+      "id": "GATE-LICENSE_EVIDENCE-CONTRACT",
+      "taskId": "TASK-10-01096-LICENSE_EVIDENCE_EVIDENCE",
+      "gateType": "LEGAL_GATE",
+      "status": "OPEN",
+      "description": "License evidence requires LEGAL_GATE before activation beyond preparation",
+      "autoApprove": false
+    },
+    {
+      "id": "GATE-ATTRIBUTION-CONTRACT",
+      "taskId": "TASK-10-01100-ATTRIBUTION_EVIDENCE",
+      "gateType": "LEGAL_GATE",
+      "status": "OPEN",
+      "description": "Attribution requires LEGAL_GATE before activation beyond preparation",
+      "autoApprove": false
+    },
+    {
+      "id": "GATE-INSTRUMENT_RECORDING-CONTRACT",
+      "taskId": "TASK-10-01108-INSTRUMENT_RECORDING_EVIDENCE",
+      "gateType": "HARDWARE_GATE",
+      "status": "OPEN",
+      "description": "Instrument recording requires HARDWARE_GATE before activation beyond preparation",
+      "autoApprove": false
+    },
+    {
+      "id": "GATE-QUALITY_REVIEW-CONTRACT",
+      "taskId": "TASK-10-01120-QUALITY_REVIEW_EVIDENCE",
+      "gateType": "OWNER_GATE",
+      "status": "OPEN",
+      "description": "Quality review requires OWNER_GATE before activation beyond preparation",
+      "autoApprove": false
+    },
+    {
+      "id": "GATE-OUD_ASSET_PIPELINE-CONTRACT",
+      "taskId": "TASK-10-01124-OUD_ASSET_PIPELINE_EVIDENCE",
+      "gateType": "CONTENT_GATE",
+      "status": "OPEN",
+      "description": "Oud asset pipeline requires CONTENT_GATE before activation beyond preparation",
+      "autoApprove": false
+    },
+    {
+      "id": "GATE-QANUN_ASSET_PIPELINE-CONTRACT",
+      "taskId": "TASK-10-01128-QANUN_ASSET_PIPELINE_EVIDENCE",
+      "gateType": "CONTENT_GATE",
+      "status": "OPEN",
+      "description": "Qanun asset pipeline requires CONTENT_GATE before activation beyond preparation",
+      "autoApprove": false
+    },
+    {
+      "id": "GATE-NEY_ASSET_PIPELINE-CONTRACT",
+      "taskId": "TASK-10-01132-NEY_ASSET_PIPELINE_EVIDENCE",
+      "gateType": "CONTENT_GATE",
+      "status": "OPEN",
+      "description": "Ney asset pipeline requires CONTENT_GATE before activation beyond preparation",
+      "autoApprove": false
+    },
+    {
+      "id": "GATE-DARBUKA_ASSET_PIPELINE-CONTRACT",
+      "taskId": "TASK-10-01136-DARBUKA_ASSET_PIPELINE_EVIDENCE",
+      "gateType": "CONTENT_GATE",
+      "status": "OPEN",
+      "description": "Darbuka asset pipeline requires CONTENT_GATE before activation beyond preparation",
+      "autoApprove": false
+    },
+    {
+      "id": "GATE-ORIENTAL_PERCUSSION_PIPELINE-CONTRACT",
+      "taskId": "TASK-10-01140-ORIENTAL_PERCUSSION_PIPELINE_EVIDENCE",
+      "gateType": "CONTENT_GATE",
+      "status": "OPEN",
+      "description": "Oriental percussion pipeline requires CONTENT_GATE before activation beyond preparation",
+      "autoApprove": false
+    },
+    {
+      "id": "GATE-PIANO_ASSET_PIPELINE-CONTRACT",
+      "taskId": "TASK-10-01144-PIANO_ASSET_PIPELINE_EVIDENCE",
+      "gateType": "CONTENT_GATE",
+      "status": "OPEN",
+      "description": "Piano asset pipeline requires CONTENT_GATE before activation beyond preparation",
+      "autoApprove": false
+    },
+    {
+      "id": "GATE-STRINGS_ASSET_PIPELINE-CONTRACT",
+      "taskId": "TASK-10-01148-STRINGS_ASSET_PIPELINE_EVIDENCE",
+      "gateType": "CONTENT_GATE",
+      "status": "OPEN",
+      "description": "Strings asset pipeline requires CONTENT_GATE before activation beyond preparation",
+      "autoApprove": false
+    },
+    {
+      "id": "GATE-DRUMS_ASSET_PIPELINE-CONTRACT",
+      "taskId": "TASK-10-01152-DRUMS_ASSET_PIPELINE_EVIDENCE",
+      "gateType": "CONTENT_GATE",
+      "status": "OPEN",
+      "description": "Drums asset pipeline requires CONTENT_GATE before activation beyond preparation",
+      "autoApprove": false
+    },
+    {
+      "id": "GATE-KIDS_CURRICULUM_MEDIA-CONTRACT",
+      "taskId": "TASK-10-01160-KIDS_CURRICULUM_MEDIA_EVIDENCE",
+      "gateType": "OWNER_GATE",
+      "status": "OPEN",
+      "description": "Kids curriculum media requires OWNER_GATE before activation beyond preparation",
+      "autoApprove": false
+    },
+    {
+      "id": "GATE-TEEN_PROJECTS_MEDIA-CONTRACT",
+      "taskId": "TASK-10-01164-TEEN_PROJECTS_MEDIA_EVIDENCE",
+      "gateType": "OWNER_GATE",
+      "status": "OPEN",
+      "description": "Teen projects media requires OWNER_GATE before activation beyond preparation",
+      "autoApprove": false
+    },
+    {
+      "id": "GATE-OPERETTA_CONTENT-CONTRACT",
+      "taskId": "TASK-10-01168-OPERETTA_CONTENT_EVIDENCE",
+      "gateType": "CONTENT_GATE",
+      "status": "OPEN",
+      "description": "Operetta content requires CONTENT_GATE before activation beyond preparation",
+      "autoApprove": false
+    },
+    {
+      "id": "GATE-LEGAL_CONTENT_LEDGER-CONTRACT",
+      "taskId": "TASK-10-01172-LEGAL_CONTENT_LEDGER_EVIDENCE",
+      "gateType": "LEGAL_GATE",
+      "status": "OPEN",
+      "description": "Legal content ledger requires LEGAL_GATE before activation beyond preparation",
+      "autoApprove": false
+    },
+    {
+      "id": "GATE-COMMERCIAL_PACKAGE_APPROVAL-CONTRACT",
+      "taskId": "TASK-10-01176-COMMERCIAL_PACKAGE_APPROVAL_EVIDENCE",
+      "gateType": "OWNER_GATE",
+      "status": "OPEN",
+      "description": "Commercial package approval requires OWNER_GATE before activation beyond preparation",
+      "autoApprove": false
+    },
+    {
+      "id": "GATE-PRICING-CONTRACT",
+      "taskId": "TASK-11-01188-PRICING_EVIDENCE",
+      "gateType": "OWNER_GATE",
+      "status": "OPEN",
+      "description": "Pricing requires OWNER_GATE before activation beyond preparation",
+      "autoApprove": false
+    },
+    {
+      "id": "GATE-PAYMENTS_ACTIVATION-CONTRACT",
+      "taskId": "TASK-11-01208-PAYMENTS_ACTIVATION_EVIDENCE",
+      "gateType": "OWNER_GATE",
+      "status": "OPEN",
+      "description": "Payments activation requires OWNER_GATE before activation beyond preparation",
+      "autoApprove": false
+    },
+    {
+      "id": "GATE-VAT_HANDLING-CONTRACT",
+      "taskId": "TASK-11-01212-VAT_HANDLING_EVIDENCE",
+      "gateType": "LEGAL_GATE",
+      "status": "OPEN",
+      "description": "VAT handling requires LEGAL_GATE before activation beyond preparation",
+      "autoApprove": false
+    },
+    {
+      "id": "GATE-REFUND_POLICY-CONTRACT",
+      "taskId": "TASK-11-01220-REFUND_POLICY_EVIDENCE",
+      "gateType": "OWNER_GATE",
+      "status": "OPEN",
+      "description": "Refund policy requires OWNER_GATE before activation beyond preparation",
+      "autoApprove": false
+    },
+    {
+      "id": "GATE-EULA-CONTRACT",
+      "taskId": "TASK-11-01252-EULA_EVIDENCE",
+      "gateType": "LEGAL_GATE",
+      "status": "OPEN",
+      "description": "EULA requires LEGAL_GATE before activation beyond preparation",
+      "autoApprove": false
+    },
+    {
+      "id": "GATE-TERMS-CONTRACT",
+      "taskId": "TASK-11-01256-TERMS_EVIDENCE",
+      "gateType": "LEGAL_GATE",
+      "status": "OPEN",
+      "description": "Terms requires LEGAL_GATE before activation beyond preparation",
+      "autoApprove": false
+    },
+    {
+      "id": "GATE-FOUNDER_LAUNCH-CONTRACT",
+      "taskId": "TASK-11-01264-FOUNDER_LAUNCH_EVIDENCE",
+      "gateType": "OWNER_GATE",
+      "status": "OPEN",
+      "description": "Founder launch requires OWNER_GATE before activation beyond preparation",
+      "autoApprove": false
+    },
+    {
+      "id": "GATE-CLOSED_BETA-CONTRACT",
+      "taskId": "TASK-11-01268-CLOSED_BETA_EVIDENCE",
+      "gateType": "OWNER_GATE",
+      "status": "OPEN",
+      "description": "Closed beta requires OWNER_GATE before activation beyond preparation",
+      "autoApprove": false
+    },
+    {
+      "id": "GATE-EARLY_ACCESS-CONTRACT",
+      "taskId": "TASK-11-01272-EARLY_ACCESS_EVIDENCE",
+      "gateType": "OWNER_GATE",
+      "status": "OPEN",
+      "description": "Early access requires OWNER_GATE before activation beyond preparation",
+      "autoApprove": false
+    },
+    {
+      "id": "GATE-STABLE_RELEASE-CONTRACT",
+      "taskId": "TASK-11-01276-STABLE_RELEASE_EVIDENCE",
+      "gateType": "OWNER_GATE",
+      "status": "OPEN",
+      "description": "Stable release requires OWNER_GATE before activation beyond preparation",
+      "autoApprove": false
+    },
+    {
+      "id": "GATE-BUNDLES-CONTRACT",
+      "taskId": "TASK-11-01280-BUNDLES_EVIDENCE",
+      "gateType": "OWNER_GATE",
+      "status": "OPEN",
+      "description": "Bundles requires OWNER_GATE before activation beyond preparation",
+      "autoApprove": false
+    },
+    {
+      "id": "GATE-EDUCATIONAL_PLANS-CONTRACT",
+      "taskId": "TASK-11-01284-EDUCATIONAL_PLANS_EVIDENCE",
+      "gateType": "OWNER_GATE",
+      "status": "OPEN",
+      "description": "Educational plans requires OWNER_GATE before activation beyond preparation",
+      "autoApprove": false
+    },
+    {
+      "id": "GATE-FAMILY_PLANS-CONTRACT",
+      "taskId": "TASK-11-01288-FAMILY_PLANS_EVIDENCE",
+      "gateType": "OWNER_GATE",
+      "status": "OPEN",
+      "description": "Family plans requires OWNER_GATE before activation beyond preparation",
+      "autoApprove": false
+    },
+    {
+      "id": "GATE-KIDS_PAGE-CONTRACT",
+      "taskId": "TASK-12-01300-KIDS_PAGE_EVIDENCE",
+      "gateType": "OWNER_GATE",
+      "status": "OPEN",
+      "description": "Kids page requires OWNER_GATE before activation beyond preparation",
+      "autoApprove": false
+    },
+    {
+      "id": "GATE-TEEN_PAGE-CONTRACT",
+      "taskId": "TASK-12-01304-TEEN_PAGE_EVIDENCE",
+      "gateType": "OWNER_GATE",
+      "status": "OPEN",
+      "description": "Teen page requires OWNER_GATE before activation beyond preparation",
+      "autoApprove": false
+    },
+    {
+      "id": "GATE-PRICING_PAGE-CONTRACT",
+      "taskId": "TASK-12-01324-PRICING_PAGE_EVIDENCE",
+      "gateType": "OWNER_GATE",
+      "status": "OPEN",
+      "description": "Pricing page requires OWNER_GATE before activation beyond preparation",
+      "autoApprove": false
+    },
+    {
+      "id": "GATE-LEGAL_PAGES-CONTRACT",
+      "taskId": "TASK-12-01376-LEGAL_PAGES_EVIDENCE",
+      "gateType": "LEGAL_GATE",
+      "status": "OPEN",
+      "description": "Legal pages requires LEGAL_GATE before activation beyond preparation",
+      "autoApprove": false
+    },
+    {
+      "id": "GATE-EULA_DRAFTING-CONTRACT",
+      "taskId": "TASK-13-01400-EULA_DRAFTING_EVIDENCE",
+      "gateType": "LEGAL_GATE",
+      "status": "OPEN",
+      "description": "EULA drafting requires LEGAL_GATE before activation beyond preparation",
+      "autoApprove": false
+    },
+    {
+      "id": "GATE-PRIVACY_POLICY_DRAFTING-CONTRACT",
+      "taskId": "TASK-13-01404-PRIVACY_POLICY_DRAFTING_EVIDENCE",
+      "gateType": "LEGAL_GATE",
+      "status": "OPEN",
+      "description": "Privacy policy drafting requires LEGAL_GATE before activation beyond preparation",
+      "autoApprove": false
+    },
+    {
+      "id": "GATE-CHILD_PRIVACY_COMPLIANCE_FRAMEWORK-RK_CONTR",
+      "taskId": "TASK-13-01408-CHILD_PRIVACY_COMPLIANCE_FRAMEWORK_EVIDE",
+      "gateType": "LEGAL_GATE",
+      "status": "OPEN",
+      "description": "Child privacy compliance framework requires LEGAL_GATE before activation beyond preparation",
+      "autoApprove": false
+    },
+    {
+      "id": "GATE-CONTENT_LICENSE_COMPLIANCE_AUDITS-S_CONTRA",
+      "taskId": "TASK-13-01412-CONTENT_LICENSE_COMPLIANCE_AUDITS_EVIDEN",
+      "gateType": "LEGAL_GATE",
+      "status": "OPEN",
+      "description": "Content license compliance audits requires LEGAL_GATE before activation beyond preparation",
+      "autoApprove": false
+    },
+    {
+      "id": "GATE-EXPORT_CONTROL_REVIEW-CONTRACT",
+      "taskId": "TASK-13-01416-EXPORT_CONTROL_REVIEW_EVIDENCE",
+      "gateType": "LEGAL_GATE",
+      "status": "OPEN",
+      "description": "Export control review requires LEGAL_GATE before activation beyond preparation",
+      "autoApprove": false
+    },
+    {
+      "id": "GATE-RELEASE_SIGNING-CONTRACT",
+      "taskId": "TASK-14-01496-RELEASE_SIGNING_EVIDENCE",
+      "gateType": "OWNER_GATE",
+      "status": "OPEN",
+      "description": "Release signing requires OWNER_GATE before activation beyond preparation",
+      "autoApprove": false
+    },
+    {
+      "id": "GATE-COMMANDER_ACTIVATION-CONTRACT",
+      "taskId": "TASK-15-01604-COMMANDER_ACTIVATION_EVIDENCE",
+      "gateType": "OWNER_GATE",
+      "status": "OPEN",
+      "description": "Commander activation requires OWNER_GATE before activation beyond preparation",
+      "autoApprove": false
+    }
+  ]
+}

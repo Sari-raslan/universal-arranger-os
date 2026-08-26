@@ -1,0 +1,371 @@
+{
+  "generatedAt": "2026-08-25T16:16:23.330Z",
+  "method": "uaos-gate-reduction-v1",
+  "note": "Promotes only leaves with completed internal prep modules. Does not clear OWNER_IRREDUCIBLE / FORMAT_EXTERNAL / COMMANDER.",
+  "candidates": [
+    {
+      "id": "TASK-02-00301-PUBLIC_DOMAIN_CONTENT_PIPELINE_CONTRACT",
+      "fromState": "BLOCKED_BY_CONTENT",
+      "toState": "READY",
+      "classification": "CONTENT_INTERNAL",
+      "reason": "INTERNAL_PREP_IMPLEMENTED_FAIL_CLOSED"
+    },
+    {
+      "id": "TASK-02-00305-CONTRIBUTOR_PIPELINE_CONTRACT",
+      "fromState": "BLOCKED_BY_LEGAL",
+      "toState": "READY",
+      "classification": "LEGAL_INTERNAL",
+      "reason": "INTERNAL_PREP_IMPLEMENTED_FAIL_CLOSED"
+    },
+    {
+      "id": "TASK-03-00369-YAMAHA_INSPECTION_CONTRACT",
+      "fromState": "BLOCKED_BY_FORMAT",
+      "toState": "READY",
+      "classification": "FORMAT_INTERNAL",
+      "reason": "INTERNAL_PREP_IMPLEMENTED_FAIL_CLOSED"
+    },
+    {
+      "id": "TASK-03-00373-ROLAND_INSPECTION_CONTRACT",
+      "fromState": "BLOCKED_BY_FORMAT",
+      "toState": "READY",
+      "classification": "FORMAT_INTERNAL",
+      "reason": "INTERNAL_PREP_IMPLEMENTED_FAIL_CLOSED"
+    },
+    {
+      "id": "TASK-03-00377-KETRON_INSPECTION_CONTRACT",
+      "fromState": "BLOCKED_BY_FORMAT",
+      "toState": "READY",
+      "classification": "FORMAT_INTERNAL",
+      "reason": "INTERNAL_PREP_IMPLEMENTED_FAIL_CLOSED"
+    },
+    {
+      "id": "TASK-03-00405-WRITER_RESEARCH_CONTRACT",
+      "fromState": "BLOCKED_BY_FORMAT",
+      "toState": "READY",
+      "classification": "FORMAT_INTERNAL",
+      "reason": "INTERNAL_PREP_IMPLEMENTED_FAIL_CLOSED"
+    },
+    {
+      "id": "TASK-03-00409-KORG_WRITER_CONTRACT",
+      "fromState": "BLOCKED_BY_FORMAT",
+      "toState": "READY",
+      "classification": "FORMAT_INTERNAL",
+      "reason": "INTERNAL_PREP_IMPLEMENTED_FAIL_CLOSED"
+    },
+    {
+      "id": "TASK-03-00413-USB_TRANSPORT_CONTRACT",
+      "fromState": "BLOCKED_BY_HARDWARE",
+      "toState": "READY",
+      "classification": "HARDWARE_INTERNAL_PREP",
+      "reason": "INTERNAL_PREP_IMPLEMENTED_FAIL_CLOSED"
+    },
+    {
+      "id": "TASK-03-00417-SYSEX_CONTRACT",
+      "fromState": "BLOCKED_BY_HARDWARE",
+      "toState": "READY",
+      "classification": "HARDWARE_INTERNAL_PREP",
+      "reason": "INTERNAL_PREP_IMPLEMENTED_FAIL_CLOSED"
+    },
+    {
+      "id": "TASK-03-00421-HARDWARE_VERIFICATION_CONTRACT",
+      "fromState": "BLOCKED_BY_HARDWARE",
+      "toState": "READY",
+      "classification": "HARDWARE_INTERNAL_PREP",
+      "reason": "INTERNAL_PREP_IMPLEMENTED_FAIL_CLOSED"
+    },
+    {
+      "id": "TASK-03-00425-DEVICE_SPECIFIC_ACCEPTANCE_CONTRACT",
+      "fromState": "BLOCKED_BY_HARDWARE",
+      "toState": "READY",
+      "classification": "HARDWARE_INTERNAL_PREP",
+      "reason": "INTERNAL_PREP_IMPLEMENTED_FAIL_CLOSED"
+    },
+    {
+      "id": "TASK-04-00509-VENDOR_SPECIFIC_ADAPTERS_CONTRACT",
+      "fromState": "BLOCKED_BY_FORMAT",
+      "toState": "READY",
+      "classification": "FORMAT_INTERNAL",
+      "reason": "INTERNAL_PREP_IMPLEMENTED_FAIL_CLOSED"
+    },
+    {
+      "id": "TASK-04-00513-WRITER_ADAPTERS_CONTRACT",
+      "fromState": "BLOCKED_BY_FORMAT",
+      "toState": "READY",
+      "classification": "FORMAT_INTERNAL",
+      "reason": "INTERNAL_PREP_IMPLEMENTED_FAIL_CLOSED"
+    },
+    {
+      "id": "TASK-04-00517-HARDWARE_DELIVERY_ADAPTERS_CONTRACT",
+      "fromState": "BLOCKED_BY_HARDWARE",
+      "toState": "READY",
+      "classification": "HARDWARE_INTERNAL_PREP",
+      "reason": "INTERNAL_PREP_IMPLEMENTED_FAIL_CLOSED"
+    },
+    {
+      "id": "TASK-05-00561-VOICE_TO_MELODY_CONTRACT",
+      "fromState": "OWNER_GATE",
+      "toState": "READY",
+      "classification": "MISCLASSIFIED_OWNER_GATE",
+      "reason": "INTERNAL_PREP_IMPLEMENTED_FAIL_CLOSED"
+    },
+    {
+      "id": "TASK-06-00725-REAL_TIME_DSP_CONTRACT",
+      "fromState": "BLOCKED_BY_FORMAT",
+      "toState": "READY",
+      "classification": "FORMAT_INTERNAL",
+      "reason": "INTERNAL_PREP_IMPLEMENTED_FAIL_CLOSED"
+    },
+    {
+      "id": "TASK-06-00729-ASIO_CONTRACT",
+      "fromState": "BLOCKED_BY_HARDWARE",
+      "toState": "READY",
+      "classification": "HARDWARE_INTERNAL_PREP",
+      "reason": "INTERNAL_PREP_IMPLEMENTED_FAIL_CLOSED"
+    },
+    {
+      "id": "TASK-06-00733-AUDIO_DEVICE_MANAGEMENT_CONTRACT",
+      "fromState": "BLOCKED_BY_HARDWARE",
+      "toState": "READY",
+      "classification": "HARDWARE_INTERNAL_PREP",
+      "reason": "INTERNAL_PREP_IMPLEMENTED_FAIL_CLOSED"
+    },
+    {
+      "id": "TASK-06-00737-RECORDING_CONTRACT",
+      "fromState": "BLOCKED_BY_HARDWARE",
+      "toState": "READY",
+      "classification": "HARDWARE_INTERNAL_PREP",
+      "reason": "INTERNAL_PREP_IMPLEMENTED_FAIL_CLOSED"
+    },
+    {
+      "id": "TASK-07-00917-OPTIONAL_CLOUD_MODEL_ADAPTERS_CONTRACT",
+      "fromState": "OWNER_GATE",
+      "toState": "READY",
+      "classification": "MISCLASSIFIED_OWNER_GATE",
+      "reason": "INTERNAL_PREP_IMPLEMENTED_FAIL_CLOSED"
+    },
+    {
+      "id": "TASK-08-00929-PARENT_GATE_CONTRACT",
+      "fromState": "OWNER_GATE",
+      "toState": "READY",
+      "classification": "MISCLASSIFIED_OWNER_GATE",
+      "reason": "INTERNAL_PREP_IMPLEMENTED_FAIL_CLOSED"
+    },
+    {
+      "id": "TASK-08-00997-CONTENT_PACKS_CONTRACT",
+      "fromState": "BLOCKED_BY_CONTENT",
+      "toState": "READY",
+      "classification": "CONTENT_INTERNAL",
+      "reason": "INTERNAL_PREP_IMPLEMENTED_FAIL_CLOSED"
+    },
+    {
+      "id": "TASK-08-01005-CHILD_PRIVACY_COMPLIANCE_CONTRACT",
+      "fromState": "BLOCKED_BY_LEGAL",
+      "toState": "READY",
+      "classification": "LEGAL_INTERNAL",
+      "reason": "INTERNAL_PREP_IMPLEMENTED_FAIL_CLOSED"
+    },
+    {
+      "id": "TASK-09-01009-GUIDED_MUSIC_PROJECTS_CONTRACT",
+      "fromState": "OWNER_GATE",
+      "toState": "READY",
+      "classification": "MISCLASSIFIED_OWNER_GATE",
+      "reason": "INTERNAL_PREP_IMPLEMENTED_FAIL_CLOSED"
+    },
+    {
+      "id": "TASK-09-01029-RECORDING_FUNDAMENTALS_CONTRACT",
+      "fromState": "BLOCKED_BY_HARDWARE",
+      "toState": "READY",
+      "classification": "HARDWARE_INTERNAL_PREP",
+      "reason": "INTERNAL_PREP_IMPLEMENTED_FAIL_CLOSED"
+    },
+    {
+      "id": "TASK-09-01077-TEEN_PRIVACY_AND_MODERATION_CONTRACT",
+      "fromState": "BLOCKED_BY_LEGAL",
+      "toState": "READY",
+      "classification": "LEGAL_INTERNAL",
+      "reason": "INTERNAL_PREP_IMPLEMENTED_FAIL_CLOSED"
+    },
+    {
+      "id": "TASK-10-01085-PUBLIC_DOMAIN_SOURCE_DISCOVERY_CONTRACT",
+      "fromState": "BLOCKED_BY_CONTENT",
+      "toState": "READY",
+      "classification": "CONTENT_INTERNAL",
+      "reason": "INTERNAL_PREP_IMPLEMENTED_FAIL_CLOSED"
+    },
+    {
+      "id": "TASK-10-01089-PERMISSIVE_LICENSE_VERIFICATION_CONTRACT",
+      "fromState": "BLOCKED_BY_LEGAL",
+      "toState": "READY",
+      "classification": "LEGAL_INTERNAL",
+      "reason": "INTERNAL_PREP_IMPLEMENTED_FAIL_CLOSED"
+    },
+    {
+      "id": "TASK-10-01093-LICENSE_EVIDENCE_CONTRACT",
+      "fromState": "BLOCKED_BY_LEGAL",
+      "toState": "READY",
+      "classification": "LEGAL_INTERNAL",
+      "reason": "INTERNAL_PREP_IMPLEMENTED_FAIL_CLOSED"
+    },
+    {
+      "id": "TASK-10-01097-ATTRIBUTION_CONTRACT",
+      "fromState": "BLOCKED_BY_LEGAL",
+      "toState": "READY",
+      "classification": "LEGAL_INTERNAL",
+      "reason": "INTERNAL_PREP_IMPLEMENTED_FAIL_CLOSED"
+    },
+    {
+      "id": "TASK-10-01105-INSTRUMENT_RECORDING_CONTRACT",
+      "fromState": "BLOCKED_BY_HARDWARE",
+      "toState": "READY",
+      "classification": "HARDWARE_INTERNAL_PREP",
+      "reason": "INTERNAL_PREP_IMPLEMENTED_FAIL_CLOSED"
+    },
+    {
+      "id": "TASK-10-01121-OUD_ASSET_PIPELINE_CONTRACT",
+      "fromState": "BLOCKED_BY_CONTENT",
+      "toState": "READY",
+      "classification": "CONTENT_INTERNAL",
+      "reason": "INTERNAL_PREP_IMPLEMENTED_FAIL_CLOSED"
+    },
+    {
+      "id": "TASK-10-01125-QANUN_ASSET_PIPELINE_CONTRACT",
+      "fromState": "BLOCKED_BY_CONTENT",
+      "toState": "READY",
+      "classification": "CONTENT_INTERNAL",
+      "reason": "INTERNAL_PREP_IMPLEMENTED_FAIL_CLOSED"
+    },
+    {
+      "id": "TASK-10-01129-NEY_ASSET_PIPELINE_CONTRACT",
+      "fromState": "BLOCKED_BY_CONTENT",
+      "toState": "READY",
+      "classification": "CONTENT_INTERNAL",
+      "reason": "INTERNAL_PREP_IMPLEMENTED_FAIL_CLOSED"
+    },
+    {
+      "id": "TASK-10-01133-DARBUKA_ASSET_PIPELINE_CONTRACT",
+      "fromState": "BLOCKED_BY_CONTENT",
+      "toState": "READY",
+      "classification": "CONTENT_INTERNAL",
+      "reason": "INTERNAL_PREP_IMPLEMENTED_FAIL_CLOSED"
+    },
+    {
+      "id": "TASK-10-01137-ORIENTAL_PERCUSSION_PIPELINE_CONTRACT",
+      "fromState": "BLOCKED_BY_CONTENT",
+      "toState": "READY",
+      "classification": "CONTENT_INTERNAL",
+      "reason": "INTERNAL_PREP_IMPLEMENTED_FAIL_CLOSED"
+    },
+    {
+      "id": "TASK-10-01141-PIANO_ASSET_PIPELINE_CONTRACT",
+      "fromState": "BLOCKED_BY_CONTENT",
+      "toState": "READY",
+      "classification": "CONTENT_INTERNAL",
+      "reason": "INTERNAL_PREP_IMPLEMENTED_FAIL_CLOSED"
+    },
+    {
+      "id": "TASK-10-01145-STRINGS_ASSET_PIPELINE_CONTRACT",
+      "fromState": "BLOCKED_BY_CONTENT",
+      "toState": "READY",
+      "classification": "CONTENT_INTERNAL",
+      "reason": "INTERNAL_PREP_IMPLEMENTED_FAIL_CLOSED"
+    },
+    {
+      "id": "TASK-10-01149-DRUMS_ASSET_PIPELINE_CONTRACT",
+      "fromState": "BLOCKED_BY_CONTENT",
+      "toState": "READY",
+      "classification": "CONTENT_INTERNAL",
+      "reason": "INTERNAL_PREP_IMPLEMENTED_FAIL_CLOSED"
+    },
+    {
+      "id": "TASK-10-01165-OPERETTA_CONTENT_CONTRACT",
+      "fromState": "BLOCKED_BY_CONTENT",
+      "toState": "READY",
+      "classification": "CONTENT_INTERNAL",
+      "reason": "INTERNAL_PREP_IMPLEMENTED_FAIL_CLOSED"
+    },
+    {
+      "id": "TASK-10-01169-LEGAL_CONTENT_LEDGER_CONTRACT",
+      "fromState": "BLOCKED_BY_LEGAL",
+      "toState": "READY",
+      "classification": "LEGAL_INTERNAL",
+      "reason": "INTERNAL_PREP_IMPLEMENTED_FAIL_CLOSED"
+    },
+    {
+      "id": "TASK-11-01209-VAT_HANDLING_CONTRACT",
+      "fromState": "BLOCKED_BY_LEGAL",
+      "toState": "READY",
+      "classification": "LEGAL_INTERNAL",
+      "reason": "INTERNAL_PREP_IMPLEMENTED_FAIL_CLOSED"
+    },
+    {
+      "id": "TASK-11-01249-EULA_CONTRACT",
+      "fromState": "BLOCKED_BY_LEGAL",
+      "toState": "READY",
+      "classification": "LEGAL_INTERNAL",
+      "reason": "INTERNAL_PREP_IMPLEMENTED_FAIL_CLOSED"
+    },
+    {
+      "id": "TASK-11-01253-TERMS_CONTRACT",
+      "fromState": "BLOCKED_BY_LEGAL",
+      "toState": "READY",
+      "classification": "LEGAL_INTERNAL",
+      "reason": "INTERNAL_PREP_IMPLEMENTED_FAIL_CLOSED"
+    },
+    {
+      "id": "TASK-12-01297-KIDS_PAGE_CONTRACT",
+      "fromState": "OWNER_GATE",
+      "toState": "READY",
+      "classification": "MISCLASSIFIED_OWNER_GATE",
+      "reason": "INTERNAL_PREP_IMPLEMENTED_FAIL_CLOSED"
+    },
+    {
+      "id": "TASK-12-01301-TEEN_PAGE_CONTRACT",
+      "fromState": "OWNER_GATE",
+      "toState": "READY",
+      "classification": "MISCLASSIFIED_OWNER_GATE",
+      "reason": "INTERNAL_PREP_IMPLEMENTED_FAIL_CLOSED"
+    },
+    {
+      "id": "TASK-12-01373-LEGAL_PAGES_CONTRACT",
+      "fromState": "BLOCKED_BY_LEGAL",
+      "toState": "READY",
+      "classification": "LEGAL_INTERNAL",
+      "reason": "INTERNAL_PREP_IMPLEMENTED_FAIL_CLOSED"
+    },
+    {
+      "id": "TASK-13-01397-EULA_DRAFTING_CONTRACT",
+      "fromState": "BLOCKED_BY_LEGAL",
+      "toState": "READY",
+      "classification": "LEGAL_INTERNAL",
+      "reason": "INTERNAL_PREP_IMPLEMENTED_FAIL_CLOSED"
+    },
+    {
+      "id": "TASK-13-01401-PRIVACY_POLICY_DRAFTING_CONTRACT",
+      "fromState": "BLOCKED_BY_LEGAL",
+      "toState": "READY",
+      "classification": "LEGAL_INTERNAL",
+      "reason": "INTERNAL_PREP_IMPLEMENTED_FAIL_CLOSED"
+    },
+    {
+      "id": "TASK-13-01405-CHILD_PRIVACY_COMPLIANCE_FRAMEWORK_CONTR",
+      "fromState": "BLOCKED_BY_LEGAL",
+      "toState": "READY",
+      "classification": "LEGAL_INTERNAL",
+      "reason": "INTERNAL_PREP_IMPLEMENTED_FAIL_CLOSED"
+    },
+    {
+      "id": "TASK-13-01409-CONTENT_LICENSE_COMPLIANCE_AUDITS_CONTRA",
+      "fromState": "BLOCKED_BY_LEGAL",
+      "toState": "READY",
+      "classification": "LEGAL_INTERNAL",
+      "reason": "INTERNAL_PREP_IMPLEMENTED_FAIL_CLOSED"
+    },
+    {
+      "id": "TASK-13-01413-EXPORT_CONTROL_REVIEW_CONTRACT",
+      "fromState": "BLOCKED_BY_LEGAL",
+      "toState": "READY",
+      "classification": "LEGAL_INTERNAL",
+      "reason": "INTERNAL_PREP_IMPLEMENTED_FAIL_CLOSED"
+    }
+  ]
+}

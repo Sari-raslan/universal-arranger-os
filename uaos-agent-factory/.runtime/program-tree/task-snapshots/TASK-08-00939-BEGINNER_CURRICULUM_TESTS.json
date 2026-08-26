@@ -1,0 +1,38 @@
+{
+  "id": "TASK-08-00939-BEGINNER_CURRICULUM_TESTS",
+  "epicId": "EPIC-08-0009-SINGY_KIDS_FULL_TREE",
+  "domain": "08-SINGY-KIDS",
+  "title": "Beginner curriculum tests",
+  "phase": "TEST",
+  "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+  "state": "READY",
+  "priority": 10,
+  "estimateMinutesMin": 45,
+  "estimateMinutesMax": 180,
+  "inputs": [],
+  "acceptanceCriteria": [
+    "Beginner curriculum tests contract file exists",
+    "Unit assertions pass for Beginner curriculum tests",
+    "Evidence JSON written with SHA256"
+  ],
+  "tests": [
+    "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-08-00939-beginner_curriculum_tests\\tests\\main.test.mjs"
+  ],
+  "evidence": [
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-08-00939-beginner_curriculum_tests/evidence/result.json"
+  ],
+  "allowedPaths": [
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-08-00939-beginner_curriculum_tests",
+    "C:\\keyboard-manager-clean\\uaos-agent-factory\\.runtime\\artifacts\\uaos-program-tree\\TASK-08-00939-BEGINNER_CURRICULUM_TESTS"
+  ],
+  "ownerFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-08-00939-beginner_curriculum_tests\\src\\beginner_curriculum_tests.mjs",
+  "worktree": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-08-00939-beginner_curriculum_tests",
+  "gate": null,
+  "blockedReason": null,
+  "rc1Critical": true,
+  "claims": [],
+  "lease": null,
+  "heartbeats": [],
+  "createdAt": "2026-08-04T20:47:04.334Z",
+  "updatedAt": "2026-08-04T20:49:22.085Z"
+}

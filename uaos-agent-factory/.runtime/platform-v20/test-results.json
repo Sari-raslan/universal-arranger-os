@@ -1,0 +1,118 @@
+{
+  "results": [
+    {
+      "name": "library-content",
+      "command": "node packages/uaos-v18-library-content/content.test.cjs",
+      "cwd": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-v20-review\\library-review-build",
+      "exitCode": 0,
+      "pass": true,
+      "assertions": 13,
+      "stdout": "PASS license schema validation\nPASS provenance/content validation\nPASS missing license rejection\nPASS redistribution restriction enforcement\nPASS attribution requirement preservation\nPASS duplicate detection\nPASS quarantine + missing diagnostics\nPASS SHA256/deterministic manifest\nPASS dry-run ingest\nPASS transactional staging\nPASS rollback\nPASS license ledger export\nPASS commercial gate blocked without real content\n{\"status\":\"PASS\",\"suite\":\"LIBRARY-V18-CONTENT-READINESS\",\"failures\":0,\"realAudio\":false}",
+      "stderr": ""
+    },
+    {
+      "name": "library-gap",
+      "command": "node packages/uaos-v17-library-gap-closure/gap.test.cjs",
+      "cwd": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-v20-review\\library-review-build",
+      "exitCode": 0,
+      "pass": true,
+      "assertions": 8,
+      "stdout": "PASS gap classification present\nPASS technical gaps identified\nPASS commercial gaps remain owner/policy\nPASS deterministic manifest\nPASS journal validation\nPASS stale lock recovery\nPASS missing sample diagnostics\nPASS rollback verification\n{\"status\":\"PASS\",\"suite\":\"LIBRARY-V17-GAP-CLOSURE\",\"failures\":0,\"technicalClosed\":5,\"remainingOwnerGaps\":3}",
+      "stderr": ""
+    },
+    {
+      "name": "keyboard-phase3",
+      "command": "node packages/keyboard-converters-phase3/phase3.test.cjs",
+      "cwd": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-v20-review\\keyboard-review-build",
+      "exitCode": 0,
+      "pass": true,
+      "assertions": 11,
+      "stdout": "PASS new job\nPASS completed + receipt\nPASS pause\nPASS resume\nPASS cancel\nPASS crash/stale recovery path\nPASS idempotent rerun\nPASS rollback\nPASS corrupted journal rejection\nPASS partial/unsupported failure\nPASS deterministic receipt hash present\n{\"status\":\"PASS\",\"suite\":\"KEYBOARD-CONVERTERS-PHASE3\",\"failures\":0}",
+      "stderr": ""
+    },
+    {
+      "name": "format-contracts",
+      "command": "node packages/uaos-v18-format-contracts/format.test.cjs",
+      "cwd": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-v20-review\\keyboard-review-build",
+      "exitCode": 0,
+      "pass": true,
+      "assertions": 10,
+      "stdout": "PASS known fixture detection\nPASS unknown format\nPASS corrupted input\nPASS truncated input\nPASS oversized rejection\nPASS version mismatch\nPASS nested-depth limit\nPASS deterministic diagnostics id\nPASS capability enforcement proprietary\nPASS uaos write allowed\n{\"status\":\"PASS\",\"suite\":\"KEYBOARD-V18-FORMAT-CONTRACTS\",\"failures\":0}",
+      "stderr": ""
+    },
+    {
+      "name": "creator-phase4",
+      "command": "node uaos-creator-shell/tests/phase4.test.cjs",
+      "cwd": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-v20-review\\creator-review-build",
+      "exitCode": 0,
+      "pass": true,
+      "assertions": 10,
+      "stdout": "PASS key/scale validation\nPASS invalid scale rejection\nPASS invalid chord rejection\nPASS progression + harmonic-function sequence\nPASS density/register plans + section graph + roles\nPASS deterministic event ordering + tempo mapping\nPASS humanization configuration validation\nPASS undo/redo\nPASS transport + global stop\nPASS serialization + save/open + honest claims\n{\"status\":\"PASS\",\"suite\":\"CREATOR-PHASE4-ARRANGEMENT-SEQUENCER\",\"failures\":0}",
+      "stderr": ""
+    },
+    {
+      "name": "creator-phase3",
+      "command": "node uaos-creator-shell/tests/phase3.test.cjs",
+      "cwd": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-v20-review\\creator-review-build",
+      "exitCode": 0,
+      "pass": true,
+      "assertions": 17,
+      "stdout": "PASS track role enforcement setup\nPASS invalid role rejection\nPASS note CRUD/move/resize\nPASS invalid note rejection\nPASS clip operations\nPASS transpose\nPASS quantize dry-run\nPASS section + chord serialization fields\nPASS arrangement graph validation\nPASS undo/redo\nPASS transport compatibility\nPASS save/open round-trip\nPASS migration\nPASS feature flags\nPASS entitlements\nPASS voice-to-midi contract only\nPASS delete note\n{\"status\":\"PASS\",\"suite\":\"CREATOR-PHASE3-COMPOSITION-CORE\",\"failures\":0}",
+      "stderr": ""
+    },
+    {
+      "name": "studio-editing",
+      "command": "node tests/editing.test.cjs",
+      "cwd": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-v20-review\\studio-review-build",
+      "exitCode": 0,
+      "pass": true,
+      "assertions": 11,
+      "stdout": "PASS audio metadata edits + nondestructive + dsp markers\nPASS split/trim/slip\nPASS invalid asset reference\nPASS fade/crossfade validation\nPASS MIDI CRUD + quantize dry-run + transpose\nPASS controller events\nPASS multi-select clipboard nudge\nPASS undo/redo\nPASS timeline/scheduler/mixer compatibility\nPASS save/open\nPASS migration\n{\"status\":\"PASS\",\"suite\":\"STUDIO-E40-AUDIO-MIDI-EDITING\",\"failures\":0}",
+      "stderr": ""
+    },
+    {
+      "name": "studio-playback",
+      "command": "node tests/playback-mixer.test.cjs",
+      "cwd": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-v20-review\\studio-review-build",
+      "exitCode": 0,
+      "pass": true,
+      "assertions": 12,
+      "stdout": "PASS transport transitions + global stop\nPASS invalid transition rejection\nPASS seek + loop\nPASS event ordering\nPASS scheduler cancellation\nPASS seek rescheduling\nPASS mixer routing/gain/pan/mute/solo/master\nPASS invalid route rejection\nPASS clipping detection\nPASS state serialization\nPASS save/open round-trip\nPASS migration\n{\"status\":\"PASS\",\"suite\":\"STUDIO-E30-PLAYBACK-MIXER\",\"failures\":0}",
+      "stderr": ""
+    },
+    {
+      "name": "library-hardening",
+      "pass": true,
+      "exitCode": 0,
+      "assertions": 8,
+      "command": "hardenLibrary",
+      "cwd": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-v20-review\\library-review-build"
+    },
+    {
+      "name": "keyboard-hardening",
+      "pass": true,
+      "exitCode": 0,
+      "assertions": 11,
+      "command": "hardenKeyboard",
+      "cwd": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-v20-review\\keyboard-review-build"
+    },
+    {
+      "name": "creator-hardening",
+      "pass": true,
+      "exitCode": 0,
+      "assertions": 7,
+      "command": "hardenCreator",
+      "cwd": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-v20-review\\creator-review-build"
+    },
+    {
+      "name": "studio-hardening",
+      "pass": true,
+      "exitCode": 0,
+      "assertions": 8,
+      "command": "hardenStudio",
+      "cwd": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-v20-review\\studio-review-build"
+    }
+  ],
+  "pass": 12,
+  "fail": 0
+}

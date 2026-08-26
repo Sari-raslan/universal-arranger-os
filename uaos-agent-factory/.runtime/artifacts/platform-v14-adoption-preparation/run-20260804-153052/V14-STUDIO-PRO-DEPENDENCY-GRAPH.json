@@ -1,0 +1,96 @@
+{
+    "nodes":  [
+                  {
+                      "parallelGroup":  0,
+                      "id":  "STUDIO-E00-CONTRACTS",
+                      "complexity":  "MEDIUM"
+                  },
+                  {
+                      "parallelGroup":  1,
+                      "id":  "STUDIO-E10-PROJECT-SYSTEM",
+                      "complexity":  "MEDIUM"
+                  },
+                  {
+                      "parallelGroup":  1,
+                      "id":  "STUDIO-E20-TIMELINE",
+                      "complexity":  "LARGE"
+                  },
+                  {
+                      "parallelGroup":  2,
+                      "id":  "STUDIO-E30-PLAYBACK-MIXER",
+                      "complexity":  "LARGE"
+                  },
+                  {
+                      "parallelGroup":  2,
+                      "id":  "STUDIO-E40-AUDIO-MIDI-EDITING",
+                      "complexity":  "LARGE"
+                  },
+                  {
+                      "parallelGroup":  3,
+                      "id":  "STUDIO-E50-SAMPLER-INTEGRATION",
+                      "complexity":  "MEDIUM"
+                  },
+                  {
+                      "parallelGroup":  3,
+                      "id":  "STUDIO-E60-MUSICAL-BRAIN",
+                      "complexity":  "MEDIUM"
+                  },
+                  {
+                      "parallelGroup":  4,
+                      "id":  "STUDIO-E70-EXPORT",
+                      "complexity":  "MEDIUM"
+                  },
+                  {
+                      "parallelGroup":  4,
+                      "id":  "STUDIO-E80-PACKAGING",
+                      "complexity":  "MEDIUM"
+                  },
+                  {
+                      "parallelGroup":  5,
+                      "id":  "STUDIO-E90-OWNER-REVIEW",
+                      "complexity":  "SMALL"
+                  }
+              ],
+    "edges":  [
+                  {
+                      "to":  "STUDIO-E10-PROJECT-SYSTEM",
+                      "from":  "STUDIO-E00-CONTRACTS"
+                  },
+                  {
+                      "to":  "STUDIO-E20-TIMELINE",
+                      "from":  "STUDIO-E10-PROJECT-SYSTEM"
+                  },
+                  {
+                      "to":  "STUDIO-E30-PLAYBACK-MIXER",
+                      "from":  "STUDIO-E20-TIMELINE"
+                  },
+                  {
+                      "to":  "STUDIO-E40-AUDIO-MIDI-EDITING",
+                      "from":  "STUDIO-E20-TIMELINE"
+                  },
+                  {
+                      "to":  "STUDIO-E50-SAMPLER-INTEGRATION",
+                      "from":  "STUDIO-E00-CONTRACTS"
+                  },
+                  {
+                      "to":  "STUDIO-E60-MUSICAL-BRAIN",
+                      "from":  "STUDIO-E20-TIMELINE"
+                  },
+                  {
+                      "to":  "STUDIO-E70-EXPORT",
+                      "from":  "STUDIO-E40-AUDIO-MIDI-EDITING"
+                  },
+                  {
+                      "to":  "STUDIO-E80-PACKAGING",
+                      "from":  "STUDIO-E30-PLAYBACK-MIXER"
+                  },
+                  {
+                      "to":  "STUDIO-E80-PACKAGING",
+                      "from":  "STUDIO-E70-EXPORT"
+                  },
+                  {
+                      "to":  "STUDIO-E90-OWNER-REVIEW",
+                      "from":  "STUDIO-E80-PACKAGING"
+                  }
+              ]
+}

@@ -1,0 +1,38 @@
+{
+  "id": "TASK-12-01354-DOWNLOAD_HOSTING_PREP_IMPLEMENTATION",
+  "epicId": "EPIC-12-0013-WEBSITE_AND_DELIVERY",
+  "domain": "12-WEBSITE-DELIVERY",
+  "title": "Download hosting prep implementation",
+  "phase": "IMPLEMENT",
+  "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+  "state": "READY",
+  "priority": 9,
+  "estimateMinutesMin": 60,
+  "estimateMinutesMax": 240,
+  "inputs": [],
+  "acceptanceCriteria": [
+    "Download hosting prep implementation contract file exists",
+    "Unit assertions pass for Download hosting prep implementation",
+    "Evidence JSON written with SHA256"
+  ],
+  "tests": [
+    "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-12-01354-download_hosting_prep_implementation\\tests\\main.test.mjs"
+  ],
+  "evidence": [
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-12-01354-download_hosting_prep_implementation/evidence/result.json"
+  ],
+  "allowedPaths": [
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-12-01354-download_hosting_prep_implementation",
+    "C:\\keyboard-manager-clean\\uaos-agent-factory\\.runtime\\artifacts\\uaos-program-tree\\TASK-12-01354-DOWNLOAD_HOSTING_PREP_IMPLEMENTATION"
+  ],
+  "ownerFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-12-01354-download_hosting_prep_implementation\\src\\download_hosting_prep_implementa.mjs",
+  "worktree": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-12-01354-download_hosting_prep_implementation",
+  "gate": null,
+  "blockedReason": null,
+  "rc1Critical": true,
+  "claims": [],
+  "lease": null,
+  "heartbeats": [],
+  "createdAt": "2026-08-04T20:47:04.340Z",
+  "updatedAt": "2026-08-04T20:49:23.095Z"
+}

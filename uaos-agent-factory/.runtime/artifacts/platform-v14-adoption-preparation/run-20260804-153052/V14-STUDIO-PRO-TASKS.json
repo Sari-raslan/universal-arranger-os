@@ -1,0 +1,228 @@
+{
+    "epics":  [
+                  {
+                      "acceptance":  [
+                                         "AC-SP-01"
+                                     ],
+                      "id":  "STUDIO-E00-CONTRACTS",
+                      "tests":  [
+                                    "contract-roundtrip"
+                                ],
+                      "evidence":  [
+                                       "schema+tests"
+                                   ],
+                      "parallelGroup":  0,
+                      "complexity":  "MEDIUM",
+                      "agent":  "StudioContractsAgent",
+                      "ownership":  "studio-contracts",
+                      "name":  "Contracts",
+                      "worktree":  "studio-e00-contracts",
+                      "deps":  [
+
+                               ],
+                      "risk":  "LOW"
+                  },
+                  {
+                      "acceptance":  [
+                                         "AC-SP-02"
+                                     ],
+                      "id":  "STUDIO-E10-PROJECT-SYSTEM",
+                      "tests":  [
+                                    "project-load-save"
+                                ],
+                      "evidence":  [
+                                       "fixtures"
+                                   ],
+                      "parallelGroup":  1,
+                      "complexity":  "MEDIUM",
+                      "agent":  "StudioProjectAgent",
+                      "ownership":  "studio-project",
+                      "name":  "Project System",
+                      "worktree":  "studio-e10-project",
+                      "deps":  [
+                                   "STUDIO-E00-CONTRACTS"
+                               ],
+                      "risk":  "MEDIUM"
+                  },
+                  {
+                      "acceptance":  [
+                                         "AC-SP-02"
+                                     ],
+                      "id":  "STUDIO-E20-TIMELINE",
+                      "tests":  [
+                                    "timeline-ops"
+                                ],
+                      "evidence":  [
+                                       "screenshots+logs"
+                                   ],
+                      "parallelGroup":  1,
+                      "complexity":  "LARGE",
+                      "agent":  "StudioTimelineAgent",
+                      "ownership":  "studio-timeline",
+                      "name":  "Timeline",
+                      "worktree":  "studio-e20-timeline",
+                      "deps":  [
+                                   "STUDIO-E10-PROJECT-SYSTEM"
+                               ],
+                      "risk":  "HIGH"
+                  },
+                  {
+                      "acceptance":  [
+                                         "AC-SP-03"
+                                     ],
+                      "id":  "STUDIO-E30-PLAYBACK-MIXER",
+                      "tests":  [
+                                    "transport-mixer"
+                                ],
+                      "evidence":  [
+                                       "audio-harness"
+                                   ],
+                      "parallelGroup":  2,
+                      "complexity":  "LARGE",
+                      "agent":  "StudioPlaybackAgent",
+                      "ownership":  "studio-playback",
+                      "name":  "Playback Mixer",
+                      "worktree":  "studio-e30-playback",
+                      "deps":  [
+                                   "STUDIO-E20-TIMELINE"
+                               ],
+                      "risk":  "HIGH"
+                  },
+                  {
+                      "acceptance":  [
+                                         "AC-SP-04"
+                                     ],
+                      "id":  "STUDIO-E40-AUDIO-MIDI-EDITING",
+                      "tests":  [
+                                    "clip-edit-undo"
+                                ],
+                      "evidence":  [
+                                       "edit-logs"
+                                   ],
+                      "parallelGroup":  2,
+                      "complexity":  "LARGE",
+                      "agent":  "StudioEditAgent",
+                      "ownership":  "studio-edit",
+                      "name":  "Audio MIDI Editing",
+                      "worktree":  "studio-e40-edit",
+                      "deps":  [
+                                   "STUDIO-E20-TIMELINE"
+                               ],
+                      "risk":  "HIGH"
+                  },
+                  {
+                      "acceptance":  [
+                                         "AC-SP-05"
+                                     ],
+                      "id":  "STUDIO-E50-SAMPLER-INTEGRATION",
+                      "tests":  [
+                                    "sampler-offline-load"
+                                ],
+                      "evidence":  [
+                                       "library package hash"
+                                   ],
+                      "parallelGroup":  3,
+                      "complexity":  "MEDIUM",
+                      "agent":  "StudioSamplerAgent",
+                      "ownership":  "studio-sampler",
+                      "name":  "Sampler Integration",
+                      "worktree":  "studio-e50-sampler",
+                      "deps":  [
+                                   "STUDIO-E00-CONTRACTS",
+                                   "Library Factory adoption"
+                               ],
+                      "risk":  "MEDIUM"
+                  },
+                  {
+                      "acceptance":  [
+                                         "AC-SP-06"
+                                     ],
+                      "id":  "STUDIO-E60-MUSICAL-BRAIN",
+                      "tests":  [
+                                    "brain-proposal"
+                                ],
+                      "evidence":  [
+                                       "proposal json"
+                                   ],
+                      "parallelGroup":  3,
+                      "complexity":  "MEDIUM",
+                      "agent":  "StudioBrainAgent",
+                      "ownership":  "studio-brain",
+                      "name":  "Musical Brain",
+                      "worktree":  "studio-e60-brain",
+                      "deps":  [
+                                   "STUDIO-E20-TIMELINE",
+                                   "Creator reuse"
+                               ],
+                      "risk":  "MEDIUM"
+                  },
+                  {
+                      "acceptance":  [
+                                         "AC-SP-07"
+                                     ],
+                      "id":  "STUDIO-E70-EXPORT",
+                      "tests":  [
+                                    "stem-midi-export"
+                                ],
+                      "evidence":  [
+                                       "artifact hashes"
+                                   ],
+                      "parallelGroup":  4,
+                      "complexity":  "MEDIUM",
+                      "agent":  "StudioExportAgent",
+                      "ownership":  "studio-export",
+                      "name":  "Export",
+                      "worktree":  "studio-e70-export",
+                      "deps":  [
+                                   "STUDIO-E40-AUDIO-MIDI-EDITING"
+                               ],
+                      "risk":  "MEDIUM"
+                  },
+                  {
+                      "acceptance":  [
+                                         "AC-SP-07"
+                                     ],
+                      "id":  "STUDIO-E80-PACKAGING",
+                      "tests":  [
+                                    "package-build"
+                                ],
+                      "evidence":  [
+                                       "installer hash"
+                                   ],
+                      "parallelGroup":  4,
+                      "complexity":  "MEDIUM",
+                      "agent":  "StudioPackagingAgent",
+                      "ownership":  "studio-packaging",
+                      "name":  "Packaging",
+                      "worktree":  "studio-e80-packaging",
+                      "deps":  [
+                                   "STUDIO-E30-PLAYBACK-MIXER",
+                                   "STUDIO-E70-EXPORT"
+                               ],
+                      "risk":  "MEDIUM"
+                  },
+                  {
+                      "acceptance":  [
+                                         "AC-SP-08"
+                                     ],
+                      "id":  "STUDIO-E90-OWNER-REVIEW",
+                      "tests":  [
+                                    "manual checklist"
+                                ],
+                      "evidence":  [
+                                       "owner pack"
+                                   ],
+                      "parallelGroup":  5,
+                      "complexity":  "SMALL",
+                      "agent":  "OwnerReviewAgent",
+                      "ownership":  "studio-owner",
+                      "name":  "Owner Review",
+                      "worktree":  "studio-e90-owner",
+                      "deps":  [
+                                   "STUDIO-E80-PACKAGING"
+                               ],
+                      "risk":  "LOW"
+                  }
+              ],
+    "note":  "Plan only — no product source created in V14"
+}

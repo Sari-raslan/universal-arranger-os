@@ -1,0 +1,35 @@
+{
+  "taskId": "TASK-02-00269-STAGING_CONTRACT",
+  "agentId": "NODE_LOCAL_WORKER-0068",
+  "startedAt": "2026-08-04T20:47:07.490Z",
+  "endedAt": "2026-08-04T20:47:07.608Z",
+  "status": "PASS",
+  "tests": [
+    {
+      "command": "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-02-00269-staging_contract\\tests\\main.test.mjs",
+      "exitCode": 0,
+      "stdoutTail": "✔ TASK-02-00269-STAGING_CONTRACT verify (0.4704ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 63.7849\n"
+    }
+  ],
+  "sha256": "4C73560C0EBD6D876A9CA45F062A17AC9AFB0D2BF3672075E35FD5717D6D7181",
+  "allowedPathsUsed": [
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-02-00269-staging_contract",
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-02-00269-staging_contract\\src\\staging_contract.mjs",
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-02-00269-staging_contract\\tests\\main.test.mjs"
+  ],
+  "truthStatements": [
+    "Technical WAV success does not prove musical quality",
+    "Fixtures are not product content",
+    "Studio Offline Render is not Real-time DSP",
+    "KORG WRITE_UNSUPPORTED",
+    "No auto adoption of Kids/Teen/Pricing",
+    "Commander not activated"
+  ],
+  "ownerFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-02-00269-staging_contract\\src\\staging_contract.mjs",
+  "phase": "DEFINE",
+  "gate": null,
+  "noPush": true,
+  "noMerge": true,
+  "noDeploy": true,
+  "commanderActivated": false
+}

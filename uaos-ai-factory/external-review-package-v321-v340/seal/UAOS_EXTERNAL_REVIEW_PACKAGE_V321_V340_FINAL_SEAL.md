@@ -1,4 +1,4 @@
-# UAOS External Review Package V321-V340 Final Seal
+﻿# UAOS External Review Package V321-V340 Final Seal
 
 V321-V340 External Review Package PASS/FAIL: PASS
 
@@ -30,4 +30,5 @@ Deploy: NO
 
 Payment activation: NO
 
-Commit hash if committed: PENDING
+Commit hash if committed: 783b4444967d93a82b2529643d5fa8bd689cf3a5
+

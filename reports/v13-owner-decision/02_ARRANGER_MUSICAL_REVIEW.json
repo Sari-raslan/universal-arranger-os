@@ -1,0 +1,49 @@
+{
+  "ARRANGER_FINAL_MUSICAL_ACCEPTANCE": "OWNER_DECISION_REQUIRED",
+  "TECHNICAL_CHECKS": "PASS_SEPARATE",
+  "instruction": "Open frozen Arranger RC only. Extract ZIP → START-UAOS-ARRANGER-STUDIO.bat → run demos below. Do not listen to intermediate/old packs.",
+  "package": "UAOS_ARRANGER_STUDIO_FOUNDING_PILOT_V11.zip",
+  "packageSha256": "c133294dbf7498c6004fcc28ec1afa4e4f1e5df00a24043b60f407e56ffe5388",
+  "examples": [
+    {
+      "id": "A1",
+      "FILE": "RC in-app demo-01-chords-arrangement (Oriental Pop / Nahawand)",
+      "DURATION": "~20–40s listen of generated arrangement sections",
+      "WHAT_TO_LISTEN_FOR": "Chords → arrangement: Intro→Main A→Main B→Break→Ending continuity; Cm/Ab/Bb motion feels intentional",
+      "SHA256": "d5b88f2b9e50f334311f52994e0522b5c8a69cb686276727f3cb2cc37adbf0be",
+      "SOURCE_WORKFLOW": "wf-02-open-demo-01 / chords → arrangement"
+    },
+    {
+      "id": "A2",
+      "FILE": "RC in-app demo-02-melody-arrangement (Hijaz melody 60,61,64,65)",
+      "DURATION": "~15–30s",
+      "WHAT_TO_LISTEN_FOR": "Melody → arrangement: Hijaz tonal context preserved; lead/chord compatibility; no obvious out-of-scale collisions",
+      "SHA256": "459c2f4a4ba6e9ca311ee477f741eeae34257dc3a8e633416bb158df941c75a0",
+      "SOURCE_WORKFLOW": "wf-03-open-demo-02 / melody → arrangement"
+    },
+    {
+      "id": "A3",
+      "FILE": "RC arrangement intelligence path (different tonal/groove context — arabic-khaleeji plan)",
+      "DURATION": "~20–40s",
+      "WHAT_TO_LISTEN_FOR": "Different musical/tonal context still coherent; section names continuous; no random reharmonization feel",
+      "SHA256": "23c2248c5f0a084602978e62e6308b010acaa0043e0b638b667bd982075f7097",
+      "SOURCE_WORKFLOW": "wf-08-arrangement"
+    },
+    {
+      "id": "A4",
+      "FILE": "RC demo-03 MIDI export & reopen",
+      "DURATION": "export then reopen (~10–20s judgment of result integrity)",
+      "WHAT_TO_LISTEN_FOR": "Representative final export: notes survive export→reopen; usable MIDI draft quality",
+      "SHA256": "b7422b10a807864b93c306026b0fcbefdc65320d6d4a357bc9bf5a9aeb353c3d",
+      "SOURCE_WORKFLOW": "wf-04-open-demo-03 / arrangement → MIDI export → reopen"
+    },
+    {
+      "id": "A5",
+      "FILE": "Section continuity spot-check on demo-01 Main A → Main B → Break",
+      "DURATION": "~15s focus on transitions only",
+      "WHAT_TO_LISTEN_FOR": "Section continuity: transitions feel planned, not cut/paste collisions",
+      "SHA256": "d5b88f2b9e50f334311f52994e0522b5c8a69cb686276727f3cb2cc37adbf0be",
+      "SOURCE_WORKFLOW": "wf-02 continuity focus"
+    }
+  ]
+}

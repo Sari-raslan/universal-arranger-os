@@ -1,0 +1,61 @@
+{
+  "id": "CAP-ARRANGER_STUDIO",
+  "lane": "A",
+  "taskStatus": "TEST_FAIL",
+  "hydrationStatus": "DEPENDENCY_READY",
+  "hydration": {
+    "exitCode": 0,
+    "durationMs": 6532,
+    "timedOut": false,
+    "lockChanged": false,
+    "packageJsonChanged": false,
+    "sizeBeforeBytes": 367315898,
+    "sizeAfterBytes": 367315898,
+    "hashesBefore": {
+      "packageJsonSha256": "6e36fd627e8ba44d0d6316d096928301dfddcf64ca0604287e8160a6f72bf906",
+      "lockfileSha256": "24e2ea9a99f63890ff4a82197959829fffe5dc376a076786079e9559828b8574"
+    },
+    "hashesAfter": {
+      "packageJsonSha256": "6e36fd627e8ba44d0d6316d096928301dfddcf64ca0604287e8160a6f72bf906",
+      "lockfileSha256": "24e2ea9a99f63890ff4a82197959829fffe5dc376a076786079e9559828b8574"
+    },
+    "needsLifecycleReview": true
+  },
+  "supply": {
+    "ok": true,
+    "state": "SUPPLY_CHAIN_PREFLIGHT_PASS",
+    "packageManager": "npm",
+    "lockfile": "package-lock.json",
+    "hashes": {
+      "packageJsonSha256": "6e36fd627e8ba44d0d6316d096928301dfddcf64ca0604287e8160a6f72bf906",
+      "lockfileSha256": "24e2ea9a99f63890ff4a82197959829fffe5dc376a076786079e9559828b8574"
+    },
+    "rejected": [],
+    "rcFiles": [],
+    "lifecycleScripts": [],
+    "needsLifecycleReview": true,
+    "findings": [],
+    "checkedAt": "2026-08-04T06:25:11.521Z"
+  },
+  "preflight": {
+    "worktreeExists": true,
+    "expectedHead": "415db5123bf6f1851cca284f92fb8e3478ffd967",
+    "actualHead": "415db5123bf6f1851cca284f92fb8e3478ffd967",
+    "headMatches": true,
+    "sizeBeforeBytes": 367315898,
+    "freeDiskGb": 25.17
+  },
+  "declaredResults": [
+    {
+      "gate": "check",
+      "status": "TEST_FAIL",
+      "command": "npm run check",
+      "script": "node packages/sampler/samplerFoundation.test.cjs && node packages/sampler/voiceLifecycle.p0005.test.cjs && node packages/library-build/transactionalBuild.p0006.test.cjs && node packages/local-preview-server/localServer.p0007.test.cjs && node packages/sampler-library-adapter/samplerLibraryAdapter.local004.test.cjs && node apps/desktop/src/library-status/libraryStatus.local005.test.cjs && node packages/local-support-bundle/localSupportBundle.local006.test.cjs",
+      "exitCode": 1,
+      "durationMs": 773,
+      "timedOut": false
+    }
+  ],
+  "sizeAfterBytes": 367315898,
+  "completedAt": "2026-08-04T06:25:19.453Z"
+}

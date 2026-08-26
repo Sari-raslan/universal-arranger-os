@@ -1,0 +1,79 @@
+{
+    "product":  "PRODUCT-UAOS_LIBRARY_FACTORY",
+    "status":  "ADOPTION_PACK_READY_WITH_GAPS",
+    "sourceRepository":  "C:\\keyboard-manager-clean\\uaos-real-product",
+    "sourceWorktree":  "C:\\UAOS_AGENT_FACTORY_WORKTREES\\library-l-130",
+    "validationWorktree":  "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-v14-adoption\\library-factory-8a149267",
+    "branch":  "factory/library-l-130",
+    "fullCommit":  "8a149267b5ecaae65d7a9a6c79d94bfd60ec64da",
+    "targetRepository":  "C:\\keyboard-manager-clean\\uaos-real-product",
+    "targetBaseline":  "882f6ca695b4c8df6f0f9968b65b5710d0c55346",
+    "modules":  [
+                    "packages/library-build",
+                    "packages/library-factory-studio",
+                    "packages/sampler",
+                    "packages/sampler-library-adapter",
+                    "packages/uinst",
+                    "packages/uinst-build",
+                    "packages/library-validator",
+                    "packages/preview-player",
+                    "packages/owner-library",
+                    "packages/user-sample-import",
+                    "packages/mapping-editor",
+                    "apps/desktop/electron/library-factory-main.cjs"
+                ],
+    "featureCoverage":  {
+                            "TransactionalBuild":  "PASS",
+                            "Staging":  "PASS",
+                            "CommitRollback":  "PASS",
+                            "Journal":  "PASS",
+                            "Locking":  "PASS",
+                            "SamplerAdapter":  "PASS",
+                            "Catalog":  "PASS",
+                            "Preview":  "PASS",
+                            "Packaging":  "PASS",
+                            "SampleValidation":  "PASS",
+                            "Articulations":  "PASS",
+                            "RoundRobin":  "PASS",
+                            "LicenseLedger":  "PARTIAL_ADR040"
+                        },
+    "tests":  {
+                  "npmCi":  0,
+                  "check":  0,
+                  "build:desktop":  0
+              },
+    "missingPieces":  [
+                          "Commercial rights ledger binding (ADR-040)"
+                      ],
+    "risks":  [
+                  "Commercial release still blocked by OWNER_NOT_APPROVED pricing",
+                  "Ledger gap is commercial not technical"
+              ],
+    "integrationPrerequisites":  [
+                                     "Clean worktree at 8a149267 verified",
+                                     "Do not merge into dirty original tree without owner gate"
+                                 ],
+    "candidateCommitMessages":  [
+                                    "Adopt Library Factory L-130 transactional build and sampler adapter",
+                                    "Wire Library Factory Studio packaging scripts"
+                                ],
+    "rollbackPlan":  "Remove worktree platform-v14-adoption/library-factory-8a149267; do not apply patches; originals unchanged",
+    "integrationOrder":  2,
+    "fileMapping":  [
+                        {
+                            "target":  "packages/library-build/**",
+                            "source":  "packages/library-build/**"
+                        },
+                        {
+                            "target":  "packages/library-factory-studio/**",
+                            "source":  "packages/library-factory-studio/**"
+                        },
+                        {
+                            "target":  "packages/sampler*/**",
+                            "source":  "packages/sampler*/**"
+                        }
+                    ],
+    "proposedPatches":  [
+                            "patches/library-factory/001-adopt-l130-modules.patch"
+                        ]
+}

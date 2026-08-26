@@ -1,0 +1,1 @@
+Extract → START → select mode → process → export\n

@@ -1,4 +1,4 @@
-# UAOS Dummy Writer Sandbox Final Seal
+﻿# UAOS Dummy Writer Sandbox Final Seal
 
 Dummy Writer Sandbox: PASS
 
@@ -32,4 +32,5 @@ PA3X readiness claim: NO
 
 Validator result: PASS
 
-Commit hash if committed: PENDING
+Commit hash if committed: d0256105295c3880615245963310d335caf2fd01
+

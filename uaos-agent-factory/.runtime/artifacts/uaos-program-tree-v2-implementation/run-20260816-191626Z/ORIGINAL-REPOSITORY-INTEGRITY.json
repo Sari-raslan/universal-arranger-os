@@ -1,0 +1,61 @@
+{
+  "generatedAt": "2026-08-16T19:30:09.362Z",
+  "status": "PASS",
+  "ownerWipCapturedBefore": true,
+  "ownerWipPreserved": true,
+  "selectedWorktreesOnly": true,
+  "writtenScopes": [
+    "12 exact task worktrees: owner source, native test, evidence/result.json",
+    "uaos-program-tree/TASKS.json",
+    "uaos-program-tree/CURRENT-EXECUTION-STATE.json",
+    "reports/CODEX_MASTER_STATE.json",
+    "reports/CODEX_BLOCKERS.md",
+    "reports/CODEX_CHANGELOG.md",
+    "C:/keyboard-manager-clean/uaos-agent-factory/.runtime/artifacts/uaos-program-tree-v2-implementation/run-20260816-191626Z"
+  ],
+  "dependenciesFileWritten": false,
+  "dependenciesValidated": true,
+  "destructiveActions": {
+    "gitReset": false,
+    "gitClean": false,
+    "gitStash": false,
+    "gitRestore": false,
+    "gitCheckout": false,
+    "gitStage": false,
+    "gitCommit": false,
+    "gitPush": false,
+    "gitMerge": false,
+    "gitRebase": false,
+    "deploy": false,
+    "publicRelease": false,
+    "payment": false,
+    "checkout": false,
+    "authentication": false,
+    "credentials": false,
+    "usb": false,
+    "midiHardware": false,
+    "sysex": false,
+    "proprietaryWriter": false,
+    "commanderAccess": false,
+    "commercialContentCopy": false,
+    "install": false,
+    "download": false
+  },
+  "singleWriter": {
+    "subAgentsSpawned": 0,
+    "writesSerialized": true,
+    "ledgerActiveStateFiles": 0,
+    "processCommandLineInspection": "LIMITED_WMI_ACCESS_DENIED"
+  },
+  "durableReportDiffCheck": {
+    "exitCode": 0,
+    "stdout": "",
+    "stderr": "warning: in the working copy of 'reports/CODEX_BLOCKERS.md', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'reports/CODEX_CHANGELOG.md', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'reports/CODEX_MASTER_STATE.json', LF will be replaced by CRLF the next time Git touches it\n"
+  },
+  "postGitStatusWarnings": [
+    "warning: unable to access 'C:\\Users\\ssare/.config/git/ignore': Permission denied",
+    "warning: unable to access 'C:\\Users\\ssare/.config/git/ignore': Permission denied",
+    "warning: could not open directory 'uaos-ai-factory/uaos-korg-pa3x-native-writer-v2/fixture-copies/owner-selected-slot/run-20260712172136./': No such file or directory"
+  ],
+  "note": "The main working tree was already substantially dirty and untracked before Batch 7. This batch did not clean, stage, commit, or overwrite unrelated owner paths; pre-state is preserved in DIRTY-WIP-BEFORE.json."
+}

@@ -5,7 +5,7 @@ import ar from './strings.ar.js';
 
 const DICTS = { en, de, ar };
 const SUPPORTED = Object.keys(DICTS);
-const STORAGE_KEY = 'uaos-singy-lang';
+const STORAGE_KEY = 'uaos-website-lang';
 
 function detectInitialLanguage() {
   try {

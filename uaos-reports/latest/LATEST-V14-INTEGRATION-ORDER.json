@@ -1,0 +1,74 @@
+{
+    "steps":  [
+                  {
+                      "dependsOn":  [
+
+                                    ],
+                      "id":  "shared-contracts",
+                      "seq":  1
+                  },
+                  {
+                      "dependsOn":  [
+                                        "shared-contracts"
+                                    ],
+                      "pack":  "V14-LIBRARY-FACTORY-ADOPTION-PACK.json",
+                      "id":  "library-factory-adoption",
+                      "seq":  2
+                  },
+                  {
+                      "dependsOn":  [
+                                        "library-factory-adoption"
+                                    ],
+                      "id":  "sampler-runtime-alignment",
+                      "seq":  3
+                  },
+                  {
+                      "dependsOn":  [
+                                        "shared-contracts"
+                                    ],
+                      "pack":  "V14-KEYBOARD-PRO-ADOPTION-PACK.json",
+                      "id":  "keyboard-pro-adoption",
+                      "seq":  4
+                  },
+                  {
+                      "dependsOn":  [
+                                        "shared-contracts",
+                                        "sampler-runtime-alignment"
+                                    ],
+                      "pack":  "V14-CREATOR-REUSE-PACK.json",
+                      "id":  "creator-reusable-modules",
+                      "seq":  5
+                  },
+                  {
+                      "status":  "OWNER_DECISION_REQUIRED",
+                      "dependsOn":  [
+
+                                    ],
+                      "id":  "kids-teen-source-selection",
+                      "seq":  6
+                  },
+                  {
+                      "dependsOn":  [
+                                        "kids-teen-source-selection"
+                                    ],
+                      "id":  "kids-teen-reconciliation",
+                      "optional":  true,
+                      "seq":  7
+                  },
+                  {
+                      "dependsOn":  [
+                                        "shared-contracts",
+                                        "sampler-runtime-alignment"
+                                    ],
+                      "id":  "studio-pro-contracts",
+                      "seq":  8
+                  },
+                  {
+                      "dependsOn":  [
+                                        "studio-pro-contracts"
+                                    ],
+                      "id":  "studio-pro-phased-execution",
+                      "seq":  9
+                  }
+              ]
+}

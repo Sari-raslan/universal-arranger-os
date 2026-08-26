@@ -1,0 +1,8 @@
+# External gates — Keyboard Pro
+
+- FORMAT_CONTRACT_REQUIRED
+- HARDWARE_REQUIRED
+
+
+
+PUBLIC_RELEASE=NO

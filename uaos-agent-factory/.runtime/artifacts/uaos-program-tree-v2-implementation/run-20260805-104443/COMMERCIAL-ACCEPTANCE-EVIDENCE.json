@@ -1,0 +1,9 @@
+{
+  "generatedAt": "2026-08-05T11:10:00.000Z",
+  "taskId": null,
+  "status": "NOT_SELECTED_IN_BATCH_5",
+  "reason": "Chain B mission priority listed two options: 'Package Manifest Validation' (priority #1) and 'Commercial Acceptance Harness' (priority #2). Neither existed as a literally-named, genuinely-READY (RETRY_READY, gate:null) task in the current 1604-task graph, so Batch 5 built the nearest genuinely-ready real chain fulfilling priority #1 (Installer Packaging / Package Manifest Validation, TASK-01-00121..00124 -- see PACKAGE-MANIFEST-EVIDENCE.json). A real Commercial Acceptance Harness that genuinely consumes test-result and package-manifest evidence (rather than a status-string stub) is substantial scope on its own -- comparable in size to a full 4-task chain -- and implementing it alongside Chain A and Chain C would have exceeded this batch's 8-12 task budget.",
+  "decidedDuring": "Batch 5 selection (see BATCH-5-SELECTION.json, chainB.selectionReason)",
+  "recommendedForFutureBatch": true,
+  "futureBatchScopeNote": "A Commercial Acceptance Harness should genuinely re-run each product's test suite and re-verify its package manifest (reusing TASK-01-00122's verifyManifestIntegrity + buildAcceptanceReceipt) before producing an ACCEPT/REJECT decision -- not merely echo the manifest's own status."
+}

@@ -1,0 +1,41 @@
+{
+  "SINGY_FINAL_MUSICAL_ACCEPTANCE": "OWNER_DECISION_REQUIRED",
+  "FINAL_MUSICAL_ACCEPTANCE_DEFERRED": true,
+  "instruction": "Use frozen Singy V12 RC only. START-SINGY.bat → KIDS then TEEN. Built-in synth only; no uncleared samples.",
+  "package": "UAOS_SINGY_FOUNDING_PILOT_V12.zip",
+  "packageSha256": "d1febfa15db50f0b9832b6ec3520825ee5101aecec862975371910d2614ca995",
+  "examples": [
+    {
+      "id": "S1",
+      "FILE": "Singy KIDS lesson kids-melody (hear → tap → copy)",
+      "MODE": "KIDS",
+      "WHAT_TO_LISTEN_FOR": "Age-appropriate clarity; pulse/melody lesson feels friendly; starter playback usable",
+      "SHA256": "kids-melody-session-progress-100 (engine path singy-wf-02)",
+      "SOURCE_WORKFLOW": "singy-wf-02-kids-lesson"
+    },
+    {
+      "id": "S2",
+      "FILE": "Singy TEEN studio fundamentals (tempo 104, section arrange)",
+      "MODE": "TEEN",
+      "WHAT_TO_LISTEN_FOR": "Teen studio result quality; section arrangement coherence; draft export sense",
+      "SHA256": "teen-arrange-studio (engine path singy-wf-03)",
+      "SOURCE_WORKFLOW": "singy-wf-03-teen-studio"
+    },
+    {
+      "id": "S3",
+      "FILE": "Shared Musical Brain context response (technical path shared with Arranger)",
+      "MODE": "SHARED",
+      "WHAT_TO_LISTEN_FOR": "Context/response feels musically aware without claiming final artistic pass",
+      "SHA256": "singy-wf-12-brain-shared",
+      "SOURCE_WORKFLOW": "singy-wf-12-brain-shared"
+    },
+    {
+      "id": "S4",
+      "FILE": "Built-in playback / stop (rights-clean synth only)",
+      "MODE": "KIDS+TEEN",
+      "WHAT_TO_LISTEN_FOR": "Playback/result quality; stop works; no uncleared sample character",
+      "SHA256": "singy-wf-05 + singy-wf-06",
+      "SOURCE_WORKFLOW": "playback/stop"
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "id": "TASK-04-00476-CANCEL_EVIDENCE",
+  "epicId": "EPIC-04-0005-KEYBOARD_CONVERTERS_FULL_TREE",
+  "domain": "04-KEYBOARD-CONVERTERS",
+  "title": "Cancel evidence",
+  "phase": "EVIDENCE",
+  "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+  "state": "READY",
+  "priority": 10,
+  "estimateMinutesMin": 30,
+  "estimateMinutesMax": 120,
+  "inputs": [],
+  "acceptanceCriteria": [
+    "Cancel evidence contract file exists",
+    "Unit assertions pass for Cancel evidence",
+    "Evidence JSON written with SHA256"
+  ],
+  "tests": [
+    "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-04-00476-cancel_evidence\\tests\\main.test.mjs"
+  ],
+  "evidence": [
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-04-00476-cancel_evidence/evidence/result.json"
+  ],
+  "allowedPaths": [
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-04-00476-cancel_evidence",
+    "C:\\keyboard-manager-clean\\uaos-agent-factory\\.runtime\\artifacts\\uaos-program-tree\\TASK-04-00476-CANCEL_EVIDENCE"
+  ],
+  "ownerFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-04-00476-cancel_evidence\\src\\cancel_evidence.mjs",
+  "worktree": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-04-00476-cancel_evidence",
+  "gate": null,
+  "blockedReason": null,
+  "rc1Critical": true,
+  "claims": [],
+  "lease": null,
+  "heartbeats": [],
+  "createdAt": "2026-08-04T20:47:04.326Z",
+  "updatedAt": "2026-08-04T20:49:22.085Z"
+}

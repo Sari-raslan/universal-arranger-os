@@ -1,0 +1,34 @@
+{
+    "reuse":  [
+                  {
+                      "component":  "Global Player/Mixer",
+                      "source":  "singy-integration / commercial-rc2",
+                      "action":  "ADAPT_NOT_COPY"
+                  },
+                  {
+                      "component":  "Sampler Runtime",
+                      "source":  "library-l-130",
+                      "action":  "ADAPT_NOT_COPY"
+                  },
+                  {
+                      "component":  "Project Format",
+                      "source":  "uaos-real-product packages/core",
+                      "action":  "EXTEND"
+                  },
+                  {
+                      "component":  "Export Hub",
+                      "source":  "packages/export-hub",
+                      "action":  "REUSE"
+                  },
+                  {
+                      "component":  "Timeline",
+                      "source":  null,
+                      "action":  "GREENFIELD"
+                  },
+                  {
+                      "component":  "Recording",
+                      "source":  null,
+                      "action":  "GREENFIELD"
+                  }
+              ]
+}

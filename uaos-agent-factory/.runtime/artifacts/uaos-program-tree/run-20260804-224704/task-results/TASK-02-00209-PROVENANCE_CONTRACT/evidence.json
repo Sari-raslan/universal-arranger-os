@@ -1,0 +1,35 @@
+{
+  "taskId": "TASK-02-00209-PROVENANCE_CONTRACT",
+  "agentId": "NODE_LOCAL_WORKER-0053",
+  "startedAt": "2026-08-04T20:47:06.840Z",
+  "endedAt": "2026-08-04T20:47:06.968Z",
+  "status": "PASS",
+  "tests": [
+    {
+      "command": "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-02-00209-provenance_contract\\tests\\main.test.mjs",
+      "exitCode": 0,
+      "stdoutTail": "✔ TASK-02-00209-PROVENANCE_CONTRACT verify (0.488ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 69.8821\n"
+    }
+  ],
+  "sha256": "323ACAC20C1921F14AEF8F0CD4CB17636176B8FC5A122660F9D38CF337157996",
+  "allowedPathsUsed": [
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-02-00209-provenance_contract",
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-02-00209-provenance_contract\\src\\provenance_contract.mjs",
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-02-00209-provenance_contract\\tests\\main.test.mjs"
+  ],
+  "truthStatements": [
+    "Technical WAV success does not prove musical quality",
+    "Fixtures are not product content",
+    "Studio Offline Render is not Real-time DSP",
+    "KORG WRITE_UNSUPPORTED",
+    "No auto adoption of Kids/Teen/Pricing",
+    "Commander not activated"
+  ],
+  "ownerFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-02-00209-provenance_contract\\src\\provenance_contract.mjs",
+  "phase": "DEFINE",
+  "gate": null,
+  "noPush": true,
+  "noMerge": true,
+  "noDeploy": true,
+  "commanderActivated": false
+}

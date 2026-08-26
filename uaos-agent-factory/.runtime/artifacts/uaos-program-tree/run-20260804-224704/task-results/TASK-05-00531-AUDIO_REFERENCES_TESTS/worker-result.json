@@ -1,0 +1,11 @@
+{
+  "taskId": "TASK-05-00531-AUDIO_REFERENCES_TESTS",
+  "agentId": "NODE_LOCAL_WORKER-0097",
+  "pid": 55956,
+  "startedAt": "2026-08-04T20:47:35.668Z",
+  "status": "FAILED",
+  "endedAt": "2026-08-04T20:47:35.824Z",
+  "exitCode": 1,
+  "stdoutTail": "",
+  "stderrTail": "<anonymous_script>:24400\r\n        \"node --test C:\\\\UAOS_AGENT_FACTORY_WORKTREES\\\\uaos-program-execution\\\\task-05-00642-project_recovery_im\r\n\r\nSyntaxError: Unterminated string in JSON at position 1122304 (line 24400 column 113)\r\n    at JSON.parse (<anonymous>)\r\n    at readJson (file:///C:/keyboard-manager-clean/uaos-agent-factory/src/uaos-program-tree-worker.mjs:17:35)\r\n    at file:///C:/keyboard-manager-clean/uaos-agent-factory/src/uaos-program-tree-worker.mjs:31:18\r\n    at ModuleJob.run (node:internal/modules/esm/module_job:439:25)\r\n    at async node:internal/modules/esm/loader:643:26\r\n    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)\r\n\r\nNode.js v24.18.0\r\n"
+}

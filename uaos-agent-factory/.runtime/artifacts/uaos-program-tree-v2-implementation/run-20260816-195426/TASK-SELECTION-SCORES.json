@@ -1,0 +1,59 @@
+{
+  "generatedAt": "2026-08-05T16:43:39.152Z",
+  "formula": "downstreamDependencyCount*18 + rc1CriticalWeight*40 + sharedCapabilityWeight*35 + multiProductImpactWeight*30 + commercialImpactWeight*30 + verticalSliceCompletionWeight*25 + launchReadinessWeight*30 - fileConflictRisk*40 - externalGateRisk*70 - leafOnlyPenalty*25 - alreadyImplementedPenalty*120",
+  "scored": [
+    {
+      "id": "TASK-01-00133-ABOUT_SCREEN_CONTRACT",
+      "label": "About/Version/License Runtime State",
+      "domain": "01-SHARED-PLATFORM",
+      "state": "RETRY_READY",
+      "gate": null,
+      "downstreamDependencyCount": 3,
+      "rc1CriticalWeight": 1,
+      "unlockScore": 219
+    },
+    {
+      "id": "TASK-11-01257-COMMERCIAL_READINESS_GATES_CONTRACT",
+      "label": "Commercial Readiness Gates (Acceptance Harness)",
+      "domain": "11-COMMERCIAL-PLATFORM",
+      "state": "RETRY_READY",
+      "gate": null,
+      "downstreamDependencyCount": 3,
+      "rc1CriticalWeight": 1,
+      "unlockScore": 219
+    },
+    {
+      "id": "TASK-14-01433-RUNTIME_ACCEPTANCE_CONTRACT",
+      "label": "alt: Runtime acceptance (QA domain, not commercial-platform)",
+      "domain": "14-QA-RELEASE-OPERATIONS",
+      "state": "RETRY_READY",
+      "gate": null,
+      "downstreamDependencyCount": 3,
+      "rc1CriticalWeight": 1,
+      "unlockScore": 189
+    },
+    {
+      "id": "TASK-08-00981-OFFLINE_LESSONS_CONTRACT",
+      "label": "Singy Kids Offline Lessons (vertical slice anchor)",
+      "domain": "08-SINGY-KIDS",
+      "state": "RETRY_READY",
+      "gate": null,
+      "downstreamDependencyCount": 3,
+      "rc1CriticalWeight": 1,
+      "unlockScore": 179
+    },
+    {
+      "id": "TASK-08-00937-BEGINNER_CURRICULUM_CONTRACT",
+      "label": "alt: Beginner curriculum",
+      "domain": "08-SINGY-KIDS",
+      "state": "RETRY_READY",
+      "gate": null,
+      "downstreamDependencyCount": 3,
+      "rc1CriticalWeight": 1,
+      "unlockScore": 119
+    }
+  ],
+  "takeoverVerifiedAt": "2026-08-16T17:59:34.847Z",
+  "sourceRun": "C:\\keyboard-manager-clean\\uaos-agent-factory\\.runtime\\artifacts\\uaos-program-tree-v2-implementation\\run-20260805-125858",
+  "sourceArtifactSha256": "ad12eeb309dce55c48a83787723ccd4b9ef5e53f1744ee3413c9e4896bc17442"
+}

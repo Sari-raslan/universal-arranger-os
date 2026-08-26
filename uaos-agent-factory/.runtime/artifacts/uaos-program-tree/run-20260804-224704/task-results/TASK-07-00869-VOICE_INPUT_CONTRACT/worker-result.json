@@ -1,0 +1,11 @@
+{
+  "taskId": "TASK-07-00869-VOICE_INPUT_CONTRACT",
+  "agentId": "NODE_LOCAL_WORKER-0290",
+  "pid": 48616,
+  "startedAt": "2026-08-04T20:47:17.086Z",
+  "status": "FAILED",
+  "endedAt": "2026-08-04T20:47:17.299Z",
+  "exitCode": 1,
+  "stdoutTail": "",
+  "stderrTail": "<anonymous_script>:9074\r\n      \"rel\r\n\r\nSyntaxError: Unterminated string in JSON at position 425984 (line 9074 column 11)\r\n    at JSON.parse (<anonymous>)\r\n    at readJson (file:///C:/keyboard-manager-clean/uaos-agent-factory/src/uaos-program-tree-worker.mjs:17:35)\r\n    at file:///C:/keyboard-manager-clean/uaos-agent-factory/src/uaos-program-tree-worker.mjs:31:18\r\n    at ModuleJob.run (node:internal/modules/esm/module_job:439:25)\r\n    at async node:internal/modules/esm/loader:643:26\r\n    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)\r\n\r\nNode.js v24.18.0\r\n"
+}

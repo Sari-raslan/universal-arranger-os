@@ -1,0 +1,35 @@
+{
+  "taskId": "TASK-11-01200-LICENSE_DELIVERY_EVIDENCE",
+  "agentId": "NODE_LOCAL_WORKER-0148",
+  "startedAt": "2026-08-04T20:47:49.717Z",
+  "endedAt": "2026-08-04T20:47:49.835Z",
+  "status": "PASS",
+  "tests": [
+    {
+      "command": "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-11-01200-license_delivery_evidence\\tests\\main.test.mjs",
+      "exitCode": 0,
+      "stdoutTail": "✔ TASK-11-01200-LICENSE_DELIVERY_EVIDENCE verify (0.5449ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 65.0022\n"
+    }
+  ],
+  "sha256": "26735D17A0F5CB2F88F717708278F52C92953CDD34F4D9515B110A2DBED20529",
+  "allowedPathsUsed": [
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-11-01200-license_delivery_evidence",
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-11-01200-license_delivery_evidence\\src\\license_delivery_evidence.mjs",
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-11-01200-license_delivery_evidence\\tests\\main.test.mjs"
+  ],
+  "truthStatements": [
+    "Technical WAV success does not prove musical quality",
+    "Fixtures are not product content",
+    "Studio Offline Render is not Real-time DSP",
+    "KORG WRITE_UNSUPPORTED",
+    "No auto adoption of Kids/Teen/Pricing",
+    "Commander not activated"
+  ],
+  "ownerFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-11-01200-license_delivery_evidence\\src\\license_delivery_evidence.mjs",
+  "phase": "EVIDENCE",
+  "gate": null,
+  "noPush": true,
+  "noMerge": true,
+  "noDeploy": true,
+  "commanderActivated": false
+}

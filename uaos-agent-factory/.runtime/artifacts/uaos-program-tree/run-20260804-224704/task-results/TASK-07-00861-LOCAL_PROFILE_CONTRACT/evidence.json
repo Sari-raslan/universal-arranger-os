@@ -1,0 +1,35 @@
+{
+  "taskId": "TASK-07-00861-LOCAL_PROFILE_CONTRACT",
+  "agentId": "NODE_LOCAL_WORKER-0175",
+  "startedAt": "2026-08-04T20:47:12.121Z",
+  "endedAt": "2026-08-04T20:47:12.240Z",
+  "status": "PASS",
+  "tests": [
+    {
+      "command": "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-07-00861-local_profile_contract\\tests\\main.test.mjs",
+      "exitCode": 0,
+      "stdoutTail": "✔ TASK-07-00861-LOCAL_PROFILE_CONTRACT verify (0.4819ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 68.3204\n"
+    }
+  ],
+  "sha256": "FD361B5A6203CCB2A39AEFC0F5078D0F6B0373CC0BD5B9720875B1B1278AE940",
+  "allowedPathsUsed": [
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-07-00861-local_profile_contract",
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-07-00861-local_profile_contract\\src\\local_profile_contract.mjs",
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-07-00861-local_profile_contract\\tests\\main.test.mjs"
+  ],
+  "truthStatements": [
+    "Technical WAV success does not prove musical quality",
+    "Fixtures are not product content",
+    "Studio Offline Render is not Real-time DSP",
+    "KORG WRITE_UNSUPPORTED",
+    "No auto adoption of Kids/Teen/Pricing",
+    "Commander not activated"
+  ],
+  "ownerFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-07-00861-local_profile_contract\\src\\local_profile_contract.mjs",
+  "phase": "DEFINE",
+  "gate": null,
+  "noPush": true,
+  "noMerge": true,
+  "noDeploy": true,
+  "commanderActivated": false
+}

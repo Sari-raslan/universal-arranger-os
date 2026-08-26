@@ -1,0 +1,141 @@
+{
+  "schema": "uaos.arranger.qa-b.customer-readiness/v1",
+  "sku": "ARRANGER",
+  "product": "UAOS Arranger Studio",
+  "checkedAt": "2026-08-26T05:05:46.5418411Z",
+  "COMMANDER_TOUCHED": false,
+  "checks": [
+    {
+      "detail": "UAOS_ARRANGER_STUDIO_FINAL_RC.zip",
+      "ok": true,
+      "name": "ZIP_EXISTS"
+    },
+    {
+      "detail": "118080467",
+      "ok": true,
+      "name": "ZIP_SIZE_GT_1MB"
+    },
+    {
+      "detail": "5554ecab00d638aa3a3db1ce1132775ce5a5897ba79982cb67be7a95342abb1e",
+      "ok": true,
+      "name": "ZIP_SHA256"
+    },
+    {
+      "detail": "README_FIRST.txt",
+      "ok": true,
+      "name": "FILE_README_FIRST.txt"
+    },
+    {
+      "detail": "START-UAOS-ARRANGER-STUDIO.bat",
+      "ok": true,
+      "name": "FILE_START-UAOS-ARRANGER-STUDIO.bat"
+    },
+    {
+      "detail": "STOP-UAOS-ARRANGER-STUDIO.bat",
+      "ok": true,
+      "name": "FILE_STOP-UAOS-ARRANGER-STUDIO.bat"
+    },
+    {
+      "detail": "RIGHTS_SEAL.json",
+      "ok": true,
+      "name": "FILE_RIGHTS_SEAL.json"
+    },
+    {
+      "detail": "SHA256SUMS.txt",
+      "ok": true,
+      "name": "FILE_SHA256SUMS.txt"
+    },
+    {
+      "detail": "KNOWN_LIMITATIONS.md",
+      "ok": true,
+      "name": "FILE_KNOWN_LIMITATIONS.md"
+    },
+    {
+      "detail": "RELEASE_NOTES.md",
+      "ok": true,
+      "name": "FILE_RELEASE_NOTES.md"
+    },
+    {
+      "detail": "MANIFEST.json",
+      "ok": true,
+      "name": "FILE_MANIFEST.json"
+    },
+    {
+      "detail": "QUICK_START",
+      "ok": true,
+      "name": "DIR_QUICK_START"
+    },
+    {
+      "detail": "USER_GUIDE",
+      "ok": true,
+      "name": "DIR_USER_GUIDE"
+    },
+    {
+      "detail": "COMPATIBILITY",
+      "ok": true,
+      "name": "DIR_COMPATIBILITY"
+    },
+    {
+      "detail": "DIAGNOSTICS",
+      "ok": true,
+      "name": "DIR_DIAGNOSTICS"
+    },
+    {
+      "detail": "RECOVERY",
+      "ok": true,
+      "name": "DIR_RECOVERY"
+    },
+    {
+      "detail": "SUPPORT",
+      "ok": true,
+      "name": "DIR_SUPPORT"
+    },
+    {
+      "detail": "LICENSES",
+      "ok": true,
+      "name": "DIR_LICENSES"
+    },
+    {
+      "detail": "INSTALL",
+      "ok": true,
+      "name": "DIR_INSTALL"
+    },
+    {
+      "detail": "COMMERCIAL_PREP",
+      "ok": true,
+      "name": "DIR_COMMERCIAL_PREP"
+    },
+    {
+      "detail": "PRODUCT",
+      "ok": true,
+      "name": "DIR_PRODUCT"
+    },
+    {
+      "detail": "RUNTIME",
+      "ok": true,
+      "name": "DIR_RUNTIME"
+    },
+    {
+      "detail": "0",
+      "ok": true,
+      "name": "RIGHTS_UNCLEARED_ZERO"
+    },
+    {
+      "detail": "absent",
+      "ok": true,
+      "name": "NO_COMMANDER_IN_CANDIDATE"
+    },
+    {
+      "detail": "YES",
+      "ok": true,
+      "name": "POST_ZIP_QA_PASS"
+    },
+    {
+      "detail": "extract",
+      "ok": true,
+      "name": "EXTRACT_START_BAT"
+    }
+  ],
+  "QA_PASS": "YES",
+  "failCount": 0
+}

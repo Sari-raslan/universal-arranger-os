@@ -1,0 +1,35 @@
+{
+  "taskId": "TASK-00-00004-RECOVER_V15_V21_EVIDENCE_INDEX_EVIDENCE",
+  "agentId": "NODE_LOCAL_WORKER-0001",
+  "startedAt": "2026-08-04T20:47:43.118Z",
+  "endedAt": "2026-08-04T20:47:43.252Z",
+  "status": "PASS",
+  "tests": [
+    {
+      "command": "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-00-00004-recover_v15_v21_evidence_index_evidence\\tests\\main.test.mjs",
+      "exitCode": 0,
+      "stdoutTail": "✔ TASK-00-00004-RECOVER_V15_V21_EVIDENCE_INDEX_EVIDENCE verify (0.5204ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 75.7334\n"
+    }
+  ],
+  "sha256": "64408CA5F918FB538D80C9E87106B04C58E60D2ECE2FEB018C453FEE44C3ACFB",
+  "allowedPathsUsed": [
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-00-00004-recover_v15_v21_evidence_index_evidence",
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-00-00004-recover_v15_v21_evidence_index_evidence\\src\\recover_v15_v21_evidence_index_e.mjs",
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-00-00004-recover_v15_v21_evidence_index_evidence\\tests\\main.test.mjs"
+  ],
+  "truthStatements": [
+    "Technical WAV success does not prove musical quality",
+    "Fixtures are not product content",
+    "Studio Offline Render is not Real-time DSP",
+    "KORG WRITE_UNSUPPORTED",
+    "No auto adoption of Kids/Teen/Pricing",
+    "Commander not activated"
+  ],
+  "ownerFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-00-00004-recover_v15_v21_evidence_index_evidence\\src\\recover_v15_v21_evidence_index_e.mjs",
+  "phase": "EVIDENCE",
+  "gate": null,
+  "noPush": true,
+  "noMerge": true,
+  "noDeploy": true,
+  "commanderActivated": false
+}

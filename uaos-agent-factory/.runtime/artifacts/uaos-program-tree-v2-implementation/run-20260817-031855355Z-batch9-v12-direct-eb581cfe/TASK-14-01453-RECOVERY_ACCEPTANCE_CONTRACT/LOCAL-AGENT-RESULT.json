@@ -1,0 +1,18 @@
+{
+  "pass": true,
+  "result": {
+    "finished": true,
+    "summary": "The recovery acceptance contract test passed successfully. The test verifies that the schema for the recovery acceptance contract exists, allowed paths are documented, and there are no ambiguous human-only steps.",
+    "writes": 0,
+    "tests": [
+      {
+        "command": "node --test \"tests/main.test.mjs\"",
+        "exit": 0,
+        "durationSec": 0.04,
+        "stdout": "off\\r\\nnode --test \"tests/main.test.mjs\"\\r\\n\n",
+        "stderr": ""
+      }
+    ],
+    "changed": []
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "schema": "uaos.commander-result/v1",
+  "type": "object",
+  "required": [
+    "resultId",
+    "taskId",
+    "status",
+    "evidence"
+  ],
+  "properties": {
+    "status": {
+      "enum": [
+        "PASS",
+        "FAIL",
+        "BLOCKED",
+        "OWNER_GATE"
+      ]
+    }
+  }
+}

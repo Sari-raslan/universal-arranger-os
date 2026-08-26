@@ -1,0 +1,305 @@
+{
+  "generatedAt": "2026-08-04T06:01:31.166Z",
+  "allowedGates": [
+    "lint",
+    "typecheck",
+    "check",
+    "verify",
+    "test",
+    "test:unit",
+    "test:integration",
+    "build"
+  ],
+  "tasks": [
+    {
+      "id": "CAP-ADVANCED_HARMONY",
+      "taskStatus": "NO_DECLARED_SAFE_GATES",
+      "declaredGates": [],
+      "gateResults": []
+    },
+    {
+      "id": "CAP-ARRANGEMENT_BRAIN",
+      "taskStatus": "NO_DECLARED_SAFE_GATES",
+      "declaredGates": [],
+      "gateResults": []
+    },
+    {
+      "id": "CAP-ARRANGER_STUDIO",
+      "taskStatus": "DEPENDENCY_INSTALL_REQUIRED",
+      "declaredGates": [
+        {
+          "gate": "check",
+          "weight": "light",
+          "unsafe": false
+        }
+      ],
+      "gateResults": [
+        {
+          "gate": "check",
+          "status": "DEPENDENCY_INSTALL_REQUIRED",
+          "exitCode": null,
+          "durationMs": 0,
+          "weight": "light"
+        }
+      ]
+    },
+    {
+      "id": "CAP-CHORD_SUGGESTION",
+      "taskStatus": "NO_DECLARED_SAFE_GATES",
+      "declaredGates": [],
+      "gateResults": []
+    },
+    {
+      "id": "CAP-CLASSROOM_MANAGEMENT",
+      "taskStatus": "NO_DECLARED_SAFE_GATES",
+      "declaredGates": [],
+      "gateResults": []
+    },
+    {
+      "id": "CAP-GENERATE_MY_SET",
+      "taskStatus": "DEPENDENCY_INSTALL_REQUIRED",
+      "declaredGates": [
+        {
+          "gate": "check",
+          "weight": "light",
+          "unsafe": false
+        }
+      ],
+      "gateResults": [
+        {
+          "gate": "check",
+          "status": "DEPENDENCY_INSTALL_REQUIRED",
+          "exitCode": null,
+          "durationMs": 0,
+          "weight": "light"
+        }
+      ]
+    },
+    {
+      "id": "CAP-GLOBAL_PLAYER_MIXER",
+      "taskStatus": "NO_DECLARED_SAFE_GATES",
+      "declaredGates": [],
+      "gateResults": []
+    },
+    {
+      "id": "CAP-GOLDEN_SEQUENCER",
+      "taskStatus": "NO_DECLARED_SAFE_GATES",
+      "declaredGates": [],
+      "gateResults": []
+    },
+    {
+      "id": "CAP-INSTRUMENT_LEARNING",
+      "taskStatus": "NO_DECLARED_SAFE_GATES",
+      "declaredGates": [],
+      "gateResults": []
+    },
+    {
+      "id": "CAP-KEYBOARD_CONVERTERS",
+      "taskStatus": "DEPENDENCY_INSTALL_REQUIRED",
+      "declaredGates": [
+        {
+          "gate": "check",
+          "weight": "light",
+          "unsafe": false
+        }
+      ],
+      "gateResults": [
+        {
+          "gate": "check",
+          "status": "DEPENDENCY_INSTALL_REQUIRED",
+          "exitCode": null,
+          "durationMs": 0,
+          "weight": "light"
+        }
+      ]
+    },
+    {
+      "id": "CAP-LIBRARY_BUILDER",
+      "taskStatus": "DEPENDENCY_INSTALL_REQUIRED",
+      "declaredGates": [
+        {
+          "gate": "check",
+          "weight": "light",
+          "unsafe": false
+        }
+      ],
+      "gateResults": [
+        {
+          "gate": "check",
+          "status": "DEPENDENCY_INSTALL_REQUIRED",
+          "exitCode": null,
+          "durationMs": 0,
+          "weight": "light"
+        }
+      ]
+    },
+    {
+      "id": "CAP-LIBRARY_CATALOG",
+      "taskStatus": "DEPENDENCY_INSTALL_REQUIRED",
+      "declaredGates": [
+        {
+          "gate": "check",
+          "weight": "light",
+          "unsafe": false
+        }
+      ],
+      "gateResults": [
+        {
+          "gate": "check",
+          "status": "DEPENDENCY_INSTALL_REQUIRED",
+          "exitCode": null,
+          "durationMs": 0,
+          "weight": "light"
+        }
+      ]
+    },
+    {
+      "id": "CAP-LIBRARY_PLAYER",
+      "taskStatus": "DEPENDENCY_INSTALL_REQUIRED",
+      "declaredGates": [
+        {
+          "gate": "check",
+          "weight": "light",
+          "unsafe": false
+        }
+      ],
+      "gateResults": [
+        {
+          "gate": "check",
+          "status": "DEPENDENCY_INSTALL_REQUIRED",
+          "exitCode": null,
+          "durationMs": 0,
+          "weight": "light"
+        }
+      ]
+    },
+    {
+      "id": "CAP-MAGIC_SET_BUILDER",
+      "taskStatus": "DEPENDENCY_INSTALL_REQUIRED",
+      "declaredGates": [
+        {
+          "gate": "check",
+          "weight": "light",
+          "unsafe": false
+        }
+      ],
+      "gateResults": [
+        {
+          "gate": "check",
+          "status": "DEPENDENCY_INSTALL_REQUIRED",
+          "exitCode": null,
+          "durationMs": 0,
+          "weight": "light"
+        }
+      ]
+    },
+    {
+      "id": "CAP-MULTITRACK_STUDIO",
+      "taskStatus": "NO_DECLARED_SAFE_GATES",
+      "declaredGates": [],
+      "gateResults": []
+    },
+    {
+      "id": "CAP-OPERETTA_BUILDER",
+      "taskStatus": "NO_DECLARED_SAFE_GATES",
+      "declaredGates": [],
+      "gateResults": []
+    },
+    {
+      "id": "CAP-SAFE_CHAT",
+      "taskStatus": "NO_DECLARED_SAFE_GATES",
+      "declaredGates": [],
+      "gateResults": []
+    },
+    {
+      "id": "CAP-SAMPLER_RUNTIME",
+      "taskStatus": "DEPENDENCY_INSTALL_REQUIRED",
+      "declaredGates": [
+        {
+          "gate": "check",
+          "weight": "light",
+          "unsafe": false
+        }
+      ],
+      "gateResults": [
+        {
+          "gate": "check",
+          "status": "DEPENDENCY_INSTALL_REQUIRED",
+          "exitCode": null,
+          "durationMs": 0,
+          "weight": "light"
+        }
+      ]
+    },
+    {
+      "id": "CAP-SET_DOCTOR",
+      "taskStatus": "DEPENDENCY_INSTALL_REQUIRED",
+      "declaredGates": [
+        {
+          "gate": "check",
+          "weight": "light",
+          "unsafe": false
+        }
+      ],
+      "gateResults": [
+        {
+          "gate": "check",
+          "status": "DEPENDENCY_INSTALL_REQUIRED",
+          "exitCode": null,
+          "durationMs": 0,
+          "weight": "light"
+        }
+      ]
+    },
+    {
+      "id": "CAP-SONG_STRUCTURE",
+      "taskStatus": "NO_DECLARED_SAFE_GATES",
+      "declaredGates": [],
+      "gateResults": []
+    },
+    {
+      "id": "CAP-STORY_TO_SONG",
+      "taskStatus": "NO_DECLARED_SAFE_GATES",
+      "declaredGates": [],
+      "gateResults": []
+    },
+    {
+      "id": "CAP-STUDENT_PROGRESS",
+      "taskStatus": "NO_DECLARED_SAFE_GATES",
+      "declaredGates": [],
+      "gateResults": []
+    },
+    {
+      "id": "CAP-VOICE_TO_MELODY",
+      "taskStatus": "NO_DECLARED_SAFE_GATES",
+      "declaredGates": [],
+      "gateResults": []
+    },
+    {
+      "id": "CAP-VOICE_TO_MIDI",
+      "taskStatus": "NO_DECLARED_SAFE_GATES",
+      "declaredGates": [],
+      "gateResults": []
+    },
+    {
+      "id": "PRODUCT-SINGY_SAMPLER_PLAYER",
+      "taskStatus": "DEPENDENCY_INSTALL_REQUIRED",
+      "declaredGates": [
+        {
+          "gate": "check",
+          "weight": "light",
+          "unsafe": false
+        }
+      ],
+      "gateResults": [
+        {
+          "gate": "check",
+          "status": "DEPENDENCY_INSTALL_REQUIRED",
+          "exitCode": null,
+          "durationMs": 0,
+          "weight": "light"
+        }
+      ]
+    }
+  ]
+}

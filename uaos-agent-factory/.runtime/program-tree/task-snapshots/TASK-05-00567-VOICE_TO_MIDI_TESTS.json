@@ -1,0 +1,38 @@
+{
+  "id": "TASK-05-00567-VOICE_TO_MIDI_TESTS",
+  "epicId": "EPIC-05-0006-CREATOR_FULL_TREE",
+  "domain": "05-CREATOR",
+  "title": "Voice-to-MIDI tests",
+  "phase": "TEST",
+  "releaseTrain": "R2-PRO-HARDWARE-AND-REALTIME",
+  "state": "READY",
+  "priority": 10,
+  "estimateMinutesMin": 45,
+  "estimateMinutesMax": 180,
+  "inputs": [],
+  "acceptanceCriteria": [
+    "Voice-to-MIDI tests contract file exists",
+    "Unit assertions pass for Voice-to-MIDI tests",
+    "Evidence JSON written with SHA256"
+  ],
+  "tests": [
+    "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-05-00567-voice_to_midi_tests\\tests\\main.test.mjs"
+  ],
+  "evidence": [
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-05-00567-voice_to_midi_tests/evidence/result.json"
+  ],
+  "allowedPaths": [
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-05-00567-voice_to_midi_tests",
+    "C:\\keyboard-manager-clean\\uaos-agent-factory\\.runtime\\artifacts\\uaos-program-tree\\TASK-05-00567-VOICE_TO_MIDI_TESTS"
+  ],
+  "ownerFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-05-00567-voice_to_midi_tests\\src\\voice_to_midi_tests.mjs",
+  "worktree": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-05-00567-voice_to_midi_tests",
+  "gate": null,
+  "blockedReason": null,
+  "rc1Critical": true,
+  "claims": [],
+  "lease": null,
+  "heartbeats": [],
+  "createdAt": "2026-08-04T20:47:04.327Z",
+  "updatedAt": "2026-08-04T20:49:24.054Z"
+}

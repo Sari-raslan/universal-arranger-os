@@ -1,0 +1,35 @@
+{
+  "taskId": "TASK-01-00101-OFFLINE_TRIAL_CONTRACT",
+  "agentId": "NODE_LOCAL_WORKER-0026",
+  "startedAt": "2026-08-04T20:47:05.597Z",
+  "endedAt": "2026-08-04T20:47:05.722Z",
+  "status": "PASS",
+  "tests": [
+    {
+      "command": "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00101-offline_trial_contract\\tests\\main.test.mjs",
+      "exitCode": 0,
+      "stdoutTail": "✔ TASK-01-00101-OFFLINE_TRIAL_CONTRACT verify (0.5086ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 66.7068\n"
+    }
+  ],
+  "sha256": "84C270EDF930B988344E6BB95E7CDCFE212A67D1C0593626FA03BC3184AF03D1",
+  "allowedPathsUsed": [
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00101-offline_trial_contract",
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00101-offline_trial_contract\\src\\offline_trial_contract.mjs",
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00101-offline_trial_contract\\tests\\main.test.mjs"
+  ],
+  "truthStatements": [
+    "Technical WAV success does not prove musical quality",
+    "Fixtures are not product content",
+    "Studio Offline Render is not Real-time DSP",
+    "KORG WRITE_UNSUPPORTED",
+    "No auto adoption of Kids/Teen/Pricing",
+    "Commander not activated"
+  ],
+  "ownerFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00101-offline_trial_contract\\src\\offline_trial_contract.mjs",
+  "phase": "DEFINE",
+  "gate": null,
+  "noPush": true,
+  "noMerge": true,
+  "noDeploy": true,
+  "commanderActivated": false
+}

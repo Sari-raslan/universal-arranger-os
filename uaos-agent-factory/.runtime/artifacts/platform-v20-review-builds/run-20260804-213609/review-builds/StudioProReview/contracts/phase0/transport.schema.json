@@ -1,0 +1,1 @@
+{"title":"UAOS Studio Transport Contract v0","type":"object","required":["schemaVersion","state","positionBeats"],"properties":{"schemaVersion":{"const":"uaos.studio.transport/v0"},"state":{"enum":["stopped","playing","recording"]},"positionBeats":{"type":"number","minimum":0}}}

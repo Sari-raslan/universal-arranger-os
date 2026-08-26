@@ -1,0 +1,38 @@
+{
+  "id": "TASK-01-00174-GLOBAL_STOP_CONTRACT_IMPLEMENTATION",
+  "epicId": "EPIC-01-0002-SHARED_PRODUCT_PLATFORM",
+  "domain": "01-SHARED-PLATFORM",
+  "title": "Global Stop contract implementation",
+  "phase": "IMPLEMENT",
+  "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+  "state": "READY",
+  "priority": 9,
+  "estimateMinutesMin": 60,
+  "estimateMinutesMax": 240,
+  "inputs": [],
+  "acceptanceCriteria": [
+    "Global Stop contract implementation contract file exists",
+    "Unit assertions pass for Global Stop contract implementation",
+    "Evidence JSON written with SHA256"
+  ],
+  "tests": [
+    "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00174-global_stop_contract_implementation\\tests\\main.test.mjs"
+  ],
+  "evidence": [
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00174-global_stop_contract_implementation/evidence/result.json"
+  ],
+  "allowedPaths": [
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00174-global_stop_contract_implementation",
+    "C:\\keyboard-manager-clean\\uaos-agent-factory\\.runtime\\artifacts\\uaos-program-tree\\TASK-01-00174-GLOBAL_STOP_CONTRACT_IMPLEMENTATION"
+  ],
+  "ownerFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00174-global_stop_contract_implementation\\src\\global_stop_contract_implementat.mjs",
+  "worktree": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00174-global_stop_contract_implementation",
+  "gate": null,
+  "blockedReason": null,
+  "rc1Critical": true,
+  "claims": [],
+  "lease": null,
+  "heartbeats": [],
+  "createdAt": "2026-08-04T20:47:04.320Z",
+  "updatedAt": "2026-08-04T20:49:22.085Z"
+}

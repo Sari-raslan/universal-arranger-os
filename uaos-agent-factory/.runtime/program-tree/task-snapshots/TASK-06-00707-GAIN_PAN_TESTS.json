@@ -1,0 +1,38 @@
+{
+  "id": "TASK-06-00707-GAIN_PAN_TESTS",
+  "epicId": "EPIC-06-0007-STUDIO_PRO_FULL_TREE",
+  "domain": "06-STUDIO-PRO",
+  "title": "Gain pan tests",
+  "phase": "TEST",
+  "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+  "state": "READY",
+  "priority": 10,
+  "estimateMinutesMin": 45,
+  "estimateMinutesMax": 180,
+  "inputs": [],
+  "acceptanceCriteria": [
+    "Gain pan tests contract file exists",
+    "Unit assertions pass for Gain pan tests",
+    "Evidence JSON written with SHA256"
+  ],
+  "tests": [
+    "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-06-00707-gain_pan_tests\\tests\\main.test.mjs"
+  ],
+  "evidence": [
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-06-00707-gain_pan_tests/evidence/result.json"
+  ],
+  "allowedPaths": [
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-06-00707-gain_pan_tests",
+    "C:\\keyboard-manager-clean\\uaos-agent-factory\\.runtime\\artifacts\\uaos-program-tree\\TASK-06-00707-GAIN_PAN_TESTS"
+  ],
+  "ownerFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-06-00707-gain_pan_tests\\src\\gain_pan_tests.mjs",
+  "worktree": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-06-00707-gain_pan_tests",
+  "gate": null,
+  "blockedReason": null,
+  "rc1Critical": true,
+  "claims": [],
+  "lease": null,
+  "heartbeats": [],
+  "createdAt": "2026-08-04T20:47:04.330Z",
+  "updatedAt": "2026-08-04T20:49:22.085Z"
+}

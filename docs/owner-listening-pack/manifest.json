@@ -1,0 +1,32 @@
+{
+  "schema": "uaos.owner-listening-pack/v1",
+  "createdAt": "2026-08-24T22:46:52.215Z",
+  "musicalQualityClaim": false,
+  "musicalQualityPass": false,
+  "autoApprovesMusicalBrain": false,
+  "taskNotApproved": "TASK-05-00605-MUSICAL_BRAIN_CONTRACT",
+  "fixtures": [
+    {
+      "id": "technical-mix",
+      "path": "C:\\keyboard-manager-clean\\docs\\owner-listening-pack\\fixtures\\technical-mix-not-musical-proof.wav",
+      "sha256": "e8c9b183164ce07f006e6a477006ba141ba68b9398cb16ce4a4287a6ace9b47e",
+      "bytes": 61780,
+      "durationSec": 0.34997732426303857,
+      "note": "Offline mix of two synthetic sines. Technical WAV only."
+    },
+    {
+      "id": "a440-sine",
+      "path": "C:\\keyboard-manager-clean\\docs\\owner-listening-pack\\fixtures\\a440-sine-analysis-fixture.wav",
+      "midiDetected": 69,
+      "note": "Pitch-analysis fixture. Not a song."
+    }
+  ],
+  "truth": [
+    "Technical WAV success does not prove musical quality",
+    "Fixtures are not product content",
+    "Studio Offline Render is not Real-time DSP",
+    "KORG WRITE_UNSUPPORTED",
+    "Commander not activated",
+    "TASK-05-00605 remains OWNER_GATE until the owner listens"
+  ]
+}

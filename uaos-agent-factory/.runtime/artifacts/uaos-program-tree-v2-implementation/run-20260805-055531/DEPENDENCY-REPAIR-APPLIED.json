@@ -1,0 +1,46 @@
+{
+  "generatedAt": "2026-08-05T05:58:04.195Z",
+  "status": "REPAIR_APPLIED",
+  "appliedEdgeCount": 8,
+  "appliedEdges": [
+    {
+      "from": "TASK-01-00066-ATOMIC_SAVE_IMPLEMENTATION",
+      "to": "TASK-01-00059-SHARED_PROJECT_IDENTITY_TESTS"
+    },
+    {
+      "from": "TASK-01-00066-ATOMIC_SAVE_IMPLEMENTATION",
+      "to": "TASK-01-00075-RECOVERY_TESTS"
+    },
+    {
+      "from": "TASK-01-00066-ATOMIC_SAVE_IMPLEMENTATION",
+      "to": "TASK-01-00107-SIGNED_LICENSES_TESTS"
+    },
+    {
+      "from": "TASK-01-00066-ATOMIC_SAVE_IMPLEMENTATION",
+      "to": "TASK-01-00130-VERSIONING_IMPLEMENTATION"
+    },
+    {
+      "from": "TASK-01-00066-ATOMIC_SAVE_IMPLEMENTATION",
+      "to": "TASK-02-00198-USER_SUPPLIED_WAV_INGESTION_IMPLEMENTATI"
+    },
+    {
+      "from": "TASK-01-00066-ATOMIC_SAVE_IMPLEMENTATION",
+      "to": "TASK-06-00654-PROJECT_SYSTEM_IMPLEMENTATION"
+    },
+    {
+      "from": "TASK-01-00074-RECOVERY_IMPLEMENTATION",
+      "to": "TASK-06-00654-PROJECT_SYSTEM_IMPLEMENTATION"
+    },
+    {
+      "from": "TASK-01-00058-SHARED_PROJECT_IDENTITY_IMPLEMENTATION",
+      "to": "TASK-06-00655-PROJECT_SYSTEM_TESTS"
+    }
+  ],
+  "postApplyValidation": {
+    "cycles": 0,
+    "danglingEdges": 0,
+    "selfDependencies": 0,
+    "duplicateEdges": 0,
+    "validationPassed": true
+  }
+}

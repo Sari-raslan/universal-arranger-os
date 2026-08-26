@@ -1,0 +1,53 @@
+{
+  "matrix": [
+    {
+      "feature": "Offline notes → SMF",
+      "status": "VERIFIED",
+      "gate": "HARDWARE_REQUIRED:microphone for live audio"
+    },
+    {
+      "feature": "MIDI SMF roundtrip",
+      "status": "VERIFIED",
+      "gate": "none"
+    },
+    {
+      "feature": "SysEx inspect F0/F7",
+      "status": "VERIFIED",
+      "gate": "INSPECT_ONLY"
+    },
+    {
+      "feature": "Keyboard file inspect",
+      "status": "INSPECT_ONLY",
+      "gate": "FORMAT_CONTRACT_REQUIRED for write"
+    },
+    {
+      "feature": "Proprietary family WRITE",
+      "status": "FORMAT_CONTRACT_REQUIRED",
+      "gate": "No invented specs"
+    },
+    {
+      "feature": "midi undefined",
+      "gate": "none"
+    },
+    {
+      "feature": "sysex undefined",
+      "gate": "HARDWARE_REQUIRED"
+    },
+    {
+      "feature": "korg undefined",
+      "gate": "FORMAT_CONTRACT_REQUIRED"
+    },
+    {
+      "feature": "yamaha undefined",
+      "gate": "FORMAT_CONTRACT_REQUIRED"
+    },
+    {
+      "feature": "roland undefined",
+      "gate": "FORMAT_CONTRACT_REQUIRED"
+    },
+    {
+      "feature": "ketron undefined",
+      "gate": "FORMAT_CONTRACT_REQUIRED"
+    }
+  ]
+}

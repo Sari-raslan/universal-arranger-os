@@ -1,0 +1,35 @@
+{
+  "taskId": "TASK-14-01455-RECOVERY_ACCEPTANCE_TESTS",
+  "agentId": "NODE_LOCAL_WORKER-0208",
+  "startedAt": "2026-08-04T20:47:40.340Z",
+  "endedAt": "2026-08-04T20:47:40.463Z",
+  "status": "PASS",
+  "tests": [
+    {
+      "command": "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-14-01455-recovery_acceptance_tests\\tests\\main.test.mjs",
+      "exitCode": 0,
+      "stdoutTail": "✔ TASK-14-01455-RECOVERY_ACCEPTANCE_TESTS verify (0.5817ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 63.6864\n"
+    }
+  ],
+  "sha256": "C174E699457E84A64DD4E8F4E806330968AE6B1E0F86AEE29AA69D621FE6E4BC",
+  "allowedPathsUsed": [
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-14-01455-recovery_acceptance_tests",
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-14-01455-recovery_acceptance_tests\\src\\recovery_acceptance_tests.mjs",
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-14-01455-recovery_acceptance_tests\\tests\\main.test.mjs"
+  ],
+  "truthStatements": [
+    "Technical WAV success does not prove musical quality",
+    "Fixtures are not product content",
+    "Studio Offline Render is not Real-time DSP",
+    "KORG WRITE_UNSUPPORTED",
+    "No auto adoption of Kids/Teen/Pricing",
+    "Commander not activated"
+  ],
+  "ownerFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-14-01455-recovery_acceptance_tests\\src\\recovery_acceptance_tests.mjs",
+  "phase": "TEST",
+  "gate": null,
+  "noPush": true,
+  "noMerge": true,
+  "noDeploy": true,
+  "commanderActivated": false
+}

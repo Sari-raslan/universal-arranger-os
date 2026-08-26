@@ -1,0 +1,38 @@
+{
+  "id": "TASK-09-01047-SINGING_PRACTICE_TESTS",
+  "epicId": "EPIC-09-0010-SINGY_TEEN_FULL_TREE",
+  "domain": "09-SINGY-TEEN",
+  "title": "Singing practice tests",
+  "phase": "TEST",
+  "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+  "state": "READY",
+  "priority": 10,
+  "estimateMinutesMin": 45,
+  "estimateMinutesMax": 180,
+  "inputs": [],
+  "acceptanceCriteria": [
+    "Singing practice tests contract file exists",
+    "Unit assertions pass for Singing practice tests",
+    "Evidence JSON written with SHA256"
+  ],
+  "tests": [
+    "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-09-01047-singing_practice_tests\\tests\\main.test.mjs"
+  ],
+  "evidence": [
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-09-01047-singing_practice_tests/evidence/result.json"
+  ],
+  "allowedPaths": [
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-09-01047-singing_practice_tests",
+    "C:\\keyboard-manager-clean\\uaos-agent-factory\\.runtime\\artifacts\\uaos-program-tree\\TASK-09-01047-SINGING_PRACTICE_TESTS"
+  ],
+  "ownerFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-09-01047-singing_practice_tests\\src\\singing_practice_tests.mjs",
+  "worktree": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-09-01047-singing_practice_tests",
+  "gate": null,
+  "blockedReason": null,
+  "rc1Critical": true,
+  "claims": [],
+  "lease": null,
+  "heartbeats": [],
+  "createdAt": "2026-08-04T20:47:04.336Z",
+  "updatedAt": "2026-08-04T20:49:22.085Z"
+}

@@ -1,0 +1,35 @@
+{
+  "taskId": "TASK-04-00500-CORRUPTION_REJECTION_EVIDENCE",
+  "agentId": "NODE_LOCAL_WORKER-0080",
+  "startedAt": "2026-08-04T20:47:46.797Z",
+  "endedAt": "2026-08-04T20:47:46.918Z",
+  "status": "PASS",
+  "tests": [
+    {
+      "command": "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-04-00500-corruption_rejection_evidence\\tests\\main.test.mjs",
+      "exitCode": 0,
+      "stdoutTail": "✔ TASK-04-00500-CORRUPTION_REJECTION_EVIDENCE verify (0.5141ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 64.7437\n"
+    }
+  ],
+  "sha256": "46BD542AA47A33AB69A2A3C305B1C8232A100FE89EC8EBD5D33101B51BC88392",
+  "allowedPathsUsed": [
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-04-00500-corruption_rejection_evidence",
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-04-00500-corruption_rejection_evidence\\src\\corruption_rejection_evidence.mjs",
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-04-00500-corruption_rejection_evidence\\tests\\main.test.mjs"
+  ],
+  "truthStatements": [
+    "Technical WAV success does not prove musical quality",
+    "Fixtures are not product content",
+    "Studio Offline Render is not Real-time DSP",
+    "KORG WRITE_UNSUPPORTED",
+    "No auto adoption of Kids/Teen/Pricing",
+    "Commander not activated"
+  ],
+  "ownerFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-04-00500-corruption_rejection_evidence\\src\\corruption_rejection_evidence.mjs",
+  "phase": "EVIDENCE",
+  "gate": null,
+  "noPush": true,
+  "noMerge": true,
+  "noDeploy": true,
+  "commanderActivated": false
+}

@@ -1,0 +1,30 @@
+{
+  "id": "L-SYN-RUNNER",
+  "lane": "library",
+  "title": "Synthetic generic runner proof",
+  "priority": 1,
+  "status": "ready",
+  "dependsOn": [
+    "L-001"
+  ],
+  "humanGate": false,
+  "retryLimit": 2,
+  "timeoutMinutes": 5,
+  "allowedPaths": [
+    "UAOS_GENERIC_MARKER.txt"
+  ],
+  "forbiddenPaths": [
+    "node_modules/**"
+  ],
+  "commands": {
+    "preflight": [],
+    "tests": [],
+    "build": [],
+    "acceptance": []
+  },
+  "artifactsExpected": [],
+  "localSyntheticAction": "create_marker_file",
+  "localSyntheticPath": "UAOS_GENERIC_MARKER.txt",
+  "result": null,
+  "generatedAt": "2026-08-14T14:28:12.874Z"
+}

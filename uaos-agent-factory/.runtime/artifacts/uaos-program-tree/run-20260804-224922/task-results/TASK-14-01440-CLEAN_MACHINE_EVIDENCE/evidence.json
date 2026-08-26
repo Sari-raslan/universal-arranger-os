@@ -1,0 +1,35 @@
+{
+  "taskId": "TASK-14-01440-CLEAN_MACHINE_EVIDENCE",
+  "agentId": "NODE_LOCAL_WORKER-0050",
+  "startedAt": "2026-08-04T20:49:34.464Z",
+  "endedAt": "2026-08-04T20:49:34.589Z",
+  "status": "PASS",
+  "tests": [
+    {
+      "command": "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-14-01440-clean_machine_evidence\\tests\\main.test.mjs",
+      "exitCode": 0,
+      "stdoutTail": "✔ TASK-14-01440-CLEAN_MACHINE_EVIDENCE verify (0.5011ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 67.8985\n"
+    }
+  ],
+  "sha256": "C444BD5BAC8ECE2F1A21F2B7AE9C2CFBF73A14D8A82697E30CB906EF1EA6292C",
+  "allowedPathsUsed": [
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-14-01440-clean_machine_evidence",
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-14-01440-clean_machine_evidence\\src\\clean_machine_evidence.mjs",
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-14-01440-clean_machine_evidence\\tests\\main.test.mjs"
+  ],
+  "truthStatements": [
+    "Technical WAV success does not prove musical quality",
+    "Fixtures are not product content",
+    "Studio Offline Render is not Real-time DSP",
+    "KORG WRITE_UNSUPPORTED",
+    "No auto adoption of Kids/Teen/Pricing",
+    "Commander not activated"
+  ],
+  "ownerFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-14-01440-clean_machine_evidence\\src\\clean_machine_evidence.mjs",
+  "phase": "EVIDENCE",
+  "gate": null,
+  "noPush": true,
+  "noMerge": true,
+  "noDeploy": true,
+  "commanderActivated": false
+}

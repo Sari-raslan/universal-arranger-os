@@ -1,0 +1,273 @@
+{
+  "generatedAt": "2026-08-16T19:45:44.168Z",
+  "taskCount": 12,
+  "totalDeclarations": 67,
+  "tasks": [
+    {
+      "taskId": "TASK-02-00209-PROVENANCE_CONTRACT",
+      "testPath": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-02-00209-provenance_contract\\tests\\main.test.mjs",
+      "declarationCount": 6,
+      "declarations": [
+        "success: normalizes a safe generated fixture without claiming a license",
+        "success: accepts a verified open asset only with identifier and evidence",
+        "failure: unknown origin cannot be upgraded to verified by assertion",
+        "failure: malformed hashes and fixture-role mismatches are rejected",
+        "failure: assert helper reports all validation failures",
+        "contract self-verification exposes implemented schema and safety posture"
+      ],
+      "successPathDeclarations": [
+        "success: normalizes a safe generated fixture without claiming a license",
+        "success: accepts a verified open asset only with identifier and evidence"
+      ],
+      "failurePathDeclarations": [
+        "failure: unknown origin cannot be upgraded to verified by assertion",
+        "failure: malformed hashes and fixture-role mismatches are rejected",
+        "failure: assert helper reports all validation failures"
+      ],
+      "sourceSha256": "0ecb9b899d90168160d4a123ede87a6303e6ecdfa8d23e25c1c5baa512983c98"
+    },
+    {
+      "taskId": "TASK-02-00210-PROVENANCE_IMPLEMENTATION",
+      "testPath": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-02-00210-provenance_implementation\\tests\\main.test.mjs",
+      "declarationCount": 6,
+      "declarations": [
+        "success: creates a deterministic, valid registration ledger",
+        "success: appends a chained review without mutating the original ledger",
+        "failure: tampering with event details invalidates the chain",
+        "failure: unknown sources cannot be registered as verified",
+        "failure: invalid append types and timestamps are rejected",
+        "canonical JSON hashes do not depend on object key insertion order"
+      ],
+      "successPathDeclarations": [
+        "success: creates a deterministic, valid registration ledger",
+        "success: appends a chained review without mutating the original ledger"
+      ],
+      "failurePathDeclarations": [
+        "failure: tampering with event details invalidates the chain",
+        "failure: unknown sources cannot be registered as verified",
+        "failure: invalid append types and timestamps are rejected"
+      ],
+      "sourceSha256": "6693604935680c8ff6b8c9b1fcd6f3357a93031d3f921ce13a3d2f078585de34"
+    },
+    {
+      "taskId": "TASK-02-00211-PROVENANCE_TESTS",
+      "testPath": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-02-00211-provenance_tests\\tests\\main.test.mjs",
+      "declarationCount": 5,
+      "declarations": [
+        "success: reports PASS when positive and negative expectations match",
+        "failure: false acceptance is visible and makes the report fail",
+        "failure: thrown validator errors are captured as diagnostics",
+        "failure: duplicate names and one-sided suites are rejected",
+        "self-verification exercises both paths"
+      ],
+      "successPathDeclarations": [
+        "success: reports PASS when positive and negative expectations match"
+      ],
+      "failurePathDeclarations": [
+        "failure: false acceptance is visible and makes the report fail",
+        "failure: thrown validator errors are captured as diagnostics",
+        "failure: duplicate names and one-sided suites are rejected"
+      ],
+      "sourceSha256": "1bd9d3210ce6eadc147a5f857e87116b48e5c8dc6dcf6633f275d4b8b93f65f3"
+    },
+    {
+      "taskId": "TASK-02-00212-PROVENANCE_EVIDENCE",
+      "testPath": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-02-00212-provenance_evidence\\tests\\main.test.mjs",
+      "declarationCount": 5,
+      "declarations": [
+        "success: builds deterministic PASS evidence with normalized paths",
+        "failure: a failing assertion creates non-pass evidence",
+        "failure: tampering after issue is detected",
+        "failure: incomplete path coverage and malformed hashes are rejected",
+        "self-verification produces a verifiable receipt"
+      ],
+      "successPathDeclarations": [
+        "success: builds deterministic PASS evidence with normalized paths"
+      ],
+      "failurePathDeclarations": [
+        "failure: a failing assertion creates non-pass evidence",
+        "failure: tampering after issue is detected",
+        "failure: incomplete path coverage and malformed hashes are rejected"
+      ],
+      "sourceSha256": "b0c8188bb3f18b8d58c5bd4fdaad0e21728b6117dac00a25d705df1feecf412e"
+    },
+    {
+      "taskId": "TASK-08-00977-ACCESSIBILITY_CONTRACT",
+      "testPath": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-08-00977-accessibility_contract\\tests\\main.test.mjs",
+      "declarationCount": 6,
+      "declarations": [
+        "success: validates bilingual, keyboard-operable activity metadata",
+        "success: normalizes Arabic high-contrast reduced-motion profile",
+        "failure: missing Arabic text and text feedback are both reported",
+        "failure: duplicate keyboard shortcuts and incomplete focus order are rejected",
+        "failure: inaccessible profile values are rejected",
+        "contract self-verification proves the executable schema"
+      ],
+      "successPathDeclarations": [
+        "success: validates bilingual, keyboard-operable activity metadata",
+        "success: normalizes Arabic high-contrast reduced-motion profile"
+      ],
+      "failurePathDeclarations": [
+        "failure: missing Arabic text and text feedback are both reported",
+        "failure: duplicate keyboard shortcuts and incomplete focus order are rejected",
+        "failure: inaccessible profile values are rejected"
+      ],
+      "sourceSha256": "a4b38cf4c39d887f84f2357f38f9495170c3f64d981f557a482bceea550147f9"
+    },
+    {
+      "taskId": "TASK-08-00978-ACCESSIBILITY_IMPLEMENTATION",
+      "testPath": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-08-00978-accessibility_implementation\\tests\\main.test.mjs",
+      "declarationCount": 7,
+      "declarations": [
+        "success: creates an Arabic RTL reduced-motion high-contrast view",
+        "success: focus navigation wraps in both directions",
+        "success: feedback is always visible and announced",
+        "failure: missing text feedback and fixed timing are rejected",
+        "failure: incomplete focus order and duplicate shortcuts are rejected",
+        "failure: focus and feedback APIs reject invalid state",
+        "self-verification runs the real Arabic reduced-motion path"
+      ],
+      "successPathDeclarations": [
+        "success: creates an Arabic RTL reduced-motion high-contrast view",
+        "success: focus navigation wraps in both directions",
+        "success: feedback is always visible and announced"
+      ],
+      "failurePathDeclarations": [
+        "failure: missing text feedback and fixed timing are rejected",
+        "failure: incomplete focus order and duplicate shortcuts are rejected",
+        "failure: focus and feedback APIs reject invalid state"
+      ],
+      "sourceSha256": "d4c9c7a38f653b6496d0ca0a2f89ec2e685c47561a461351be7616125d6adf42"
+    },
+    {
+      "taskId": "TASK-08-00979-ACCESSIBILITY_TESTS",
+      "testPath": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-08-00979-accessibility_tests\\tests\\main.test.mjs",
+      "declarationCount": 5,
+      "declarations": [
+        "success: audits every activity/profile combination",
+        "failure: missing names, keys, feedback, and RTL are reported",
+        "failure: planner exceptions become auditable failures",
+        "failure: incomplete locale, motion, or contrast coverage is rejected",
+        "self-verification exercises a complete two-profile matrix"
+      ],
+      "successPathDeclarations": [
+        "success: audits every activity/profile combination"
+      ],
+      "failurePathDeclarations": [
+        "failure: missing names, keys, feedback, and RTL are reported",
+        "failure: planner exceptions become auditable failures",
+        "failure: incomplete locale, motion, or contrast coverage is rejected"
+      ],
+      "sourceSha256": "5f2000808bf90c6c412042a7819a0afd7606ac4e55768dbe858ff38fb7e7e170"
+    },
+    {
+      "taskId": "TASK-08-00980-ACCESSIBILITY_EVIDENCE",
+      "testPath": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-08-00980-accessibility_evidence\\tests\\main.test.mjs",
+      "declarationCount": 5,
+      "declarations": [
+        "success: seals a fully covered passing accessibility audit",
+        "failure: failed combinations cannot produce PASS evidence",
+        "failure: missing Arabic, reduced-motion, or contrast coverage fails closed",
+        "failure: tampered summaries and malformed source hashes are rejected",
+        "self-verification returns a SHA-256 evidence receipt"
+      ],
+      "successPathDeclarations": [
+        "success: seals a fully covered passing accessibility audit"
+      ],
+      "failurePathDeclarations": [
+        "failure: failed combinations cannot produce PASS evidence",
+        "failure: missing Arabic, reduced-motion, or contrast coverage fails closed",
+        "failure: tampered summaries and malformed source hashes are rejected"
+      ],
+      "sourceSha256": "3cb2033d3a0036891ea3cf8b08354e48dce03e6557f47b39b12cf08cae4786d3"
+    },
+    {
+      "taskId": "TASK-14-01433-RUNTIME_ACCEPTANCE_CONTRACT",
+      "testPath": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-14-01433-runtime_acceptance_contract\\tests\\main.test.mjs",
+      "declarationCount": 6,
+      "declarations": [
+        "success: normalizes a bounded local success/failure manifest",
+        "failure: deployment, payment, hardware, and credentials are forbidden",
+        "failure: failure paths must prove safe rejection",
+        "failure: duplicate ids and unbounded durations are rejected",
+        "failure: missing path coverage and malformed manifests are rejected",
+        "contract self-verification proves executable local-only acceptance"
+      ],
+      "successPathDeclarations": [
+        "success: normalizes a bounded local success/failure manifest"
+      ],
+      "failurePathDeclarations": [
+        "failure: deployment, payment, hardware, and credentials are forbidden",
+        "failure: failure paths must prove safe rejection",
+        "failure: duplicate ids and unbounded durations are rejected",
+        "failure: missing path coverage and malformed manifests are rejected"
+      ],
+      "sourceSha256": "e7219fc460cfbbe3df1e80a68cf93742c499918ada1e077c2c999f26c5e14051"
+    },
+    {
+      "taskId": "TASK-14-01434-RUNTIME_ACCEPTANCE_IMPLEMENTATION",
+      "testPath": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-14-01434-runtime_acceptance_implementation\\tests\\main.test.mjs",
+      "declarationCount": 6,
+      "declarations": [
+        "success: expected rejection proves the failure path and optional checks may be absent",
+        "failure: missing required observations fail closed",
+        "failure: wrong outcome, exit code, and timeout are independently reported",
+        "failure: unexpected observations block acceptance",
+        "failure: malformed and duplicate observations are rejected",
+        "self-verification evaluates, but never executes, two local observations"
+      ],
+      "successPathDeclarations": [
+        "success: expected rejection proves the failure path and optional checks may be absent"
+      ],
+      "failurePathDeclarations": [
+        "failure: missing required observations fail closed",
+        "failure: wrong outcome, exit code, and timeout are independently reported",
+        "failure: unexpected observations block acceptance",
+        "failure: malformed and duplicate observations are rejected"
+      ],
+      "sourceSha256": "d8bb1dd8ee2e78e3ebb3f0e1f202d42a5cf474ccf75e2c1ea6fa64c27c222614"
+    },
+    {
+      "taskId": "TASK-14-01435-RUNTIME_ACCEPTANCE_TESTS",
+      "testPath": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-14-01435-runtime_acceptance_tests\\tests\\main.test.mjs",
+      "declarationCount": 5,
+      "declarations": [
+        "success: confirms expected pass and fail outcomes in one matrix",
+        "failure: an unexpected false pass makes the matrix fail",
+        "failure: evaluator exceptions cannot masquerade as expected failures",
+        "failure: duplicate names and one-sided expectations are rejected",
+        "self-verification runs both acceptance outcomes"
+      ],
+      "successPathDeclarations": [
+        "success: confirms expected pass and fail outcomes in one matrix"
+      ],
+      "failurePathDeclarations": [
+        "failure: an unexpected false pass makes the matrix fail",
+        "failure: evaluator exceptions cannot masquerade as expected failures",
+        "failure: duplicate names and one-sided expectations are rejected"
+      ],
+      "sourceSha256": "da7a4b22ed1eaafe126431e7ca5c09c297a488508257763920c94a145f0f5075"
+    },
+    {
+      "taskId": "TASK-14-01436-RUNTIME_ACCEPTANCE_EVIDENCE",
+      "testPath": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-14-01436-runtime_acceptance_evidence\\tests\\main.test.mjs",
+      "declarationCount": 5,
+      "declarations": [
+        "success: seals a fully passing required-check report",
+        "failure: report failures and blocking failures cannot produce PASS evidence",
+        "failure: inconsistent pass counts fail closed",
+        "failure: tampering and malformed source hashes are detected",
+        "self-verification returns a SHA-256 receipt"
+      ],
+      "successPathDeclarations": [
+        "success: seals a fully passing required-check report"
+      ],
+      "failurePathDeclarations": [
+        "failure: report failures and blocking failures cannot produce PASS evidence",
+        "failure: inconsistent pass counts fail closed",
+        "failure: tampering and malformed source hashes are detected"
+      ],
+      "sourceSha256": "e1d9cabac18ae16bba2fa0f9ec254ecf75c60224eb67b94ad822d7348b769f8c"
+    }
+  ]
+}

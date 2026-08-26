@@ -1,0 +1,68 @@
+{
+  "entries": [
+    {
+      "product": "library",
+      "capability": "reproducible_ingest",
+      "implementation_type": "RUNTIME_PROVEN",
+      "fixture_only": true,
+      "content_required": true,
+      "owner_required": true,
+      "production_ready": false
+    },
+    {
+      "product": "library",
+      "capability": "real_licensed_audio",
+      "implementation_type": "CONTENT_BLOCKED",
+      "fixture_only": true,
+      "content_required": true,
+      "owner_required": true,
+      "production_ready": false
+    },
+    {
+      "product": "keyboard",
+      "capability": "internal_convert",
+      "implementation_type": "RUNTIME_PROVEN",
+      "fixture_only": false,
+      "format_required": false,
+      "owner_required": true,
+      "production_ready": false
+    },
+    {
+      "product": "keyboard",
+      "capability": "korg_writer",
+      "implementation_type": "FORMAT_BLOCKED",
+      "format_required": true,
+      "owner_required": true,
+      "production_ready": false
+    },
+    {
+      "product": "creator",
+      "capability": "golden_sequencer",
+      "implementation_type": "RUNTIME_PROVEN",
+      "musical_taste_required": false,
+      "production_ready": false
+    },
+    {
+      "product": "creator",
+      "capability": "human_musical_taste",
+      "implementation_type": "MUSICAL_QUALITY_UNPROVEN",
+      "musical_taste_required": true,
+      "production_ready": false
+    },
+    {
+      "product": "studio",
+      "capability": "timeline_mixer_edit",
+      "implementation_type": "RUNTIME_PROVEN",
+      "dsp_required": false,
+      "production_ready": false
+    },
+    {
+      "product": "studio",
+      "capability": "realtime_dsp",
+      "implementation_type": "DSP_BLOCKED",
+      "dsp_required": true,
+      "production_ready": false
+    }
+  ],
+  "markerOnlyReadyForbidden": true
+}

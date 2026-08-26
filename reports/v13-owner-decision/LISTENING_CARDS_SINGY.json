@@ -1,0 +1,53 @@
+{
+  "SINGY_MUSIC": "OWNER_DECISION_REQUIRED",
+  "launcher": "reports/v13-owner-decision/START-SINGY-FINAL-LISTENING.bat",
+  "frozenZip": "UAOS_SINGY_FOUNDING_PILOT_V12.zip",
+  "frozenZipSha256": "d1febfa15db50f0b9832b6ec3520825ee5101aecec862975371910d2614ca995",
+  "allEvidenceExists": true,
+  "items": [
+    {
+      "NUMBER": 1,
+      "ID": "S1",
+      "FILE": "KIDS lesson kids-melody (hear → tap → copy)",
+      "MODE": "KIDS",
+      "DURATION": "1–2 min lesson pass",
+      "WHAT_TO_LISTEN_FOR": "Age-appropriate clarity; friendly pulse/melody; starter playback usable",
+      "SHA256": "engine-path:singy-wf-02-kids-lesson",
+      "EXACT_OPEN_PLAY_PATH": "release-candidates/UAOS-SINGY-V12 → START-SINGY.bat → choose KIDS → Open Lesson / Hear Result",
+      "EXISTS": true
+    },
+    {
+      "NUMBER": 2,
+      "ID": "S2",
+      "FILE": "TEEN studio fundamentals (tempo 104, section arrange)",
+      "MODE": "TEEN",
+      "DURATION": "1–2 min",
+      "WHAT_TO_LISTEN_FOR": "Teen studio quality; section coherence; draft export sense",
+      "SHA256": "engine-path:singy-wf-03-teen-studio",
+      "EXACT_OPEN_PLAY_PATH": "same START → choose TEEN → Open Lesson/Create → Hear Result",
+      "EXISTS": true
+    },
+    {
+      "NUMBER": 3,
+      "ID": "S3",
+      "FILE": "Shared Musical Brain context (technical shared path)",
+      "MODE": "SHARED",
+      "DURATION": "~30–60s context judgment during TEEN/KIDS session",
+      "WHAT_TO_LISTEN_FOR": "Musically aware context without claiming final artistic PASS",
+      "SHA256": "engine-path:singy-wf-12-brain-shared",
+      "EXACT_OPEN_PLAY_PATH": "same START → either mode; judge Musical Brain / arrangement context feel",
+      "EXISTS": true
+    },
+    {
+      "NUMBER": 4,
+      "ID": "S4",
+      "FILE": "Built-in playback + stop (rights-clean synth)",
+      "MODE": "KIDS+TEEN",
+      "DURATION": "~20–40s",
+      "WHAT_TO_LISTEN_FOR": "Playback/result quality; Stop works; no uncleared sample character",
+      "SHA256": "engine-path:singy-wf-05+06",
+      "EXACT_OPEN_PLAY_PATH": "same START → Hear Result → Stop (both modes if useful)",
+      "EXISTS": true
+    }
+  ]
+}

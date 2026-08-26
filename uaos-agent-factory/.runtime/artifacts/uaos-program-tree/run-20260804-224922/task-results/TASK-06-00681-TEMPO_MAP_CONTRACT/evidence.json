@@ -1,0 +1,35 @@
+{
+  "taskId": "TASK-06-00681-TEMPO_MAP_CONTRACT",
+  "agentId": "NODE_LOCAL_WORKER-0009",
+  "startedAt": "2026-08-04T20:49:22.453Z",
+  "endedAt": "2026-08-04T20:49:22.570Z",
+  "status": "PASS",
+  "tests": [
+    {
+      "command": "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-06-00681-tempo_map_contract\\tests\\main.test.mjs",
+      "exitCode": 0,
+      "stdoutTail": "✔ TASK-06-00681-TEMPO_MAP_CONTRACT verify (0.5054ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 64.8118\n"
+    }
+  ],
+  "sha256": "04CB9D619A372D956A9FE4C64C1F36F398007DF3EF5B9359A5007DF88FAD90A2",
+  "allowedPathsUsed": [
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-06-00681-tempo_map_contract",
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-06-00681-tempo_map_contract\\src\\tempo_map_contract.mjs",
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-06-00681-tempo_map_contract\\tests\\main.test.mjs"
+  ],
+  "truthStatements": [
+    "Technical WAV success does not prove musical quality",
+    "Fixtures are not product content",
+    "Studio Offline Render is not Real-time DSP",
+    "KORG WRITE_UNSUPPORTED",
+    "No auto adoption of Kids/Teen/Pricing",
+    "Commander not activated"
+  ],
+  "ownerFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-06-00681-tempo_map_contract\\src\\tempo_map_contract.mjs",
+  "phase": "DEFINE",
+  "gate": null,
+  "noPush": true,
+  "noMerge": true,
+  "noDeploy": true,
+  "commanderActivated": false
+}

@@ -1,0 +1,195 @@
+## factory/p0-integration-safety-fixes-20260814
+ M backend/data/projects.json
+ M reports/CODEX_BLOCKERS.md
+ M reports/CODEX_CHANGELOG.md
+ M reports/CODEX_MASTER_STATE.json
+ M uaos-ai-factory/deploy-only-release/reports/UAOS_DEPLOY_ONLY_OWNER_DASHBOARD.md
+ M uaos-ai-factory/deploy-only-release/reports/UAOS_DEPLOY_ONLY_QA_REPORT.md
+ M uaos-ai-factory/deploy-only-release/seal/UAOS_DEPLOY_ONLY_FINAL_SEAL.md
+ M uaos-ai-factory/deploy-only-release/validators/UAOS_DEPLOY_ONLY_RESULTS.json
+ M uaos-ai-factory/dummy-writer-external-review-v281-v300/seal/UAOS_DUMMY_WRITER_EXTERNAL_REVIEW_FINAL_SEAL.md
+ M uaos-ai-factory/dummy-writer-hardening-v301-v320/seal/UAOS_DUMMY_WRITER_HARDENING_V301_V320_FINAL_SEAL.md
+ M uaos-ai-factory/external-review-package-v321-v340/seal/UAOS_EXTERNAL_REVIEW_PACKAGE_V321_V340_FINAL_SEAL.md
+ M uaos-ai-factory/final-owner-setup-v3-v381-v400/seal/UAOS_FINAL_OWNER_SETUP_V3_V381_V400_FINAL_SEAL.md
+ M uaos-ai-factory/final-owner-setup-v3-v381-v400/v400_master_executive_seal/UAOS_V400_MASTER_EXECUTIVE_SEAL.md
+ M uaos-ai-factory/fixture-auto-discovery-v161-v170/09_seal/UAOS_FIXTURE_AUTO_DISCOVERY_FINAL_SEAL.md
+ M uaos-ai-factory/fixture-rank1-readonly-scan-v161-v170/11_seal/UAOS_RANK1_FIXTURE_READONLY_SCAN_FINAL_SEAL.md
+ M uaos-ai-factory/fixture-smart-narrowing-v161-v170/seal/UAOS_FIXTURE_SMART_NARROWING_FINAL_SEAL.md
+ M uaos-ai-factory/git-push-only-release/push-check/UAOS_GIT_PUSH_RESULT.json
+ M uaos-ai-factory/git-push-only-release/push-check/UAOS_GIT_PUSH_RESULT.md
+ M uaos-ai-factory/git-push-only-release/reports/UAOS_GIT_PUSH_ONLY_OWNER_DASHBOARD.md
+ M uaos-ai-factory/git-push-only-release/reports/UAOS_GIT_PUSH_ONLY_QA_REPORT.md
+ M uaos-ai-factory/git-push-only-release/seal/UAOS_GIT_PUSH_ONLY_FINAL_SEAL.md
+ M uaos-ai-factory/git-push-only-release/validators/UAOS_GIT_PUSH_ONLY_RESULTS.json
+ M uaos-ai-factory/google-studio-full-executor-v461-v700/13_seal/UAOS_GOOGLE_STUDIO_FULL_EXECUTOR_FINAL_SEAL.md
+ M uaos-ai-factory/implementation/local-ci-qa-runner-task-010/UAOS_LOCAL_CI_TASK_010_OWNER_SUMMARY.md
+ M uaos-ai-factory/implementation/local-ci-qa-runner-task-010/UAOS_LOCAL_CI_TASK_010_REPORT.md
+ M uaos-ai-factory/implementation/local-ci-qa-runner-task-010/UAOS_LOCAL_CI_TASK_010_RESULTS.json
+ M uaos-ai-factory/implementation/local-qa-entrypoint-task-011/UAOS_LOCAL_QA_ENTRYPOINT_TASK_011_REPORT.md
+ M uaos-ai-factory/implementation/local-qa-entrypoint-task-011/UAOS_LOCAL_QA_ENTRYPOINT_TASK_011_RESULTS.json
+ M uaos-ai-factory/mega-final-pipeline-v461-v560/11_seal/UAOS_MEGA_FINAL_PIPELINE_V461_V560_FINAL_SEAL.md
+ M uaos-ai-factory/night-super-agent-v301-v400/15_seal/UAOS_NIGHT_SUPER_AGENT_V301_V400_FINAL_SEAL.md
+ M uaos-ai-factory/owner-hands-on-test-pass/seal/UAOS_OWNER_HANDS_ON_TEST_FINAL_SEAL.md
+ M uaos-ai-factory/owner-hands-on-test-pass/validators/UAOS_OWNER_HANDS_ON_TEST_RESULTS.json
+ M uaos-ai-factory/owner-test-launcher-repair/seal/UAOS_OWNER_TEST_LAUNCHER_REPAIR_FINAL_SEAL.md
+ M uaos-ai-factory/owner-test-launcher-repair/validators/UAOS_OWNER_TEST_LAUNCHER_REPAIR_RESULTS.json
+ M uaos-ai-factory/owner-test-result-capture/seal/UAOS_OWNER_TEST_RESULT_CAPTURE_FINAL_SEAL.md
+ M uaos-ai-factory/owner-test-result-capture/validators/UAOS_OWNER_TEST_RESULT_CAPTURE_RESULTS.json
+ M uaos-ai-factory/owner-test-setup-automation/01_setup/UAOS_OWNER_TEST_SETUP_STATUS.json
+ M uaos-ai-factory/owner-test-ui-cleanup-evidence/seal/UAOS_OWNER_TEST_UI_CLEANUP_FINAL_SEAL.md
+ M uaos-ai-factory/owner-test-ui-cleanup-evidence/validators/UAOS_OWNER_TEST_UI_CLEANUP_RESULTS.json
+ M uaos-ai-factory/owner-test-url-finalize/seal/UAOS_OWNER_TEST_URL_FINALIZE_FINAL_SEAL.md
+ M uaos-ai-factory/owner-test-url-finalize/validators/UAOS_OWNER_TEST_URL_FINALIZE_RESULTS.json
+ M uaos-ai-factory/parser-external-review-v441-v460/final-seal/UAOS_V460_EXTERNAL_PARSER_REVIEW_FINAL_SEAL.md
+ M uaos-ai-factory/parser-refinement-v171-v180/batch-v171-v180-parser-refinement/UAOS_BATCH_V171_V180_PARSER_REFINEMENT_FINAL_SEAL.md
+ M uaos-ai-factory/parser-refinement-v171-v180/seal/UAOS_PARSER_REFINEMENT_V171_V180_FINAL_SEAL.md
+ M uaos-ai-factory/parser-refinement-v171-v180/v180_final_parser_refinement_seal/UAOS_V180_FINAL_SEAL.md
+ M uaos-ai-factory/parser-research-continuation-v401-v420/seal/UAOS_V420_PARSER_RESEARCH_CONTINUATION_FINAL_SEAL.md
+ M uaos-ai-factory/parser-research-continuation-v421-v440/final-seal/UAOS_V440_PARSER_RESEARCH_CONTINUATION_FINAL_SEAL.md
+ M uaos-ai-factory/parser-research-factory-v361-v380/seal/UAOS_PARSER_RESEARCH_FACTORY_V361_V380_FINAL_SEAL.md
+ M uaos-ai-factory/parser-research-factory-v361-v380/v380_final_parser_research_factory_seal/UAOS_V380_FINAL_PARSER_RESEARCH_FACTORY_SEAL.md
+ M uaos-ai-factory/pc-workstation/stable/UAOS_PC_WORKSTATION_APP_V10/dsp_planner/analysis_outputs/DSP_BY_CATEGORY_V31.json
+ M uaos-ai-factory/pc-workstation/stable/UAOS_PC_WORKSTATION_APP_V10/dsp_planner/analysis_outputs/DSP_UNIFICATION_PLAN_V31.json
+ M uaos-ai-factory/pc-workstation/stable/UAOS_PC_WORKSTATION_APP_V10/set_analyzer/analysis_outputs/OWNER_SET_ANALYSIS_SUMMARY_V31.md
+ M uaos-ai-factory/pc-workstation/stable/UAOS_PC_WORKSTATION_APP_V10/set_analyzer/analysis_outputs/OWNER_SET_INVENTORY_V31.csv
+ M uaos-ai-factory/pc-workstation/stable/UAOS_PC_WORKSTATION_APP_V10/set_analyzer/analysis_outputs/OWNER_SET_INVENTORY_V31.json
+ M uaos-ai-factory/push-deploy-approval-gate/seal/UAOS_PUSH_DEPLOY_APPROVAL_GATE_FINAL_SEAL.md
+ M uaos-ai-factory/push-deploy-approval-gate/validators/UAOS_PUSH_DEPLOY_APPROVAL_GATE_RESULTS.json
+ M uaos-ai-factory/rank1-deep-parser-refinement-v181-v190/batch-v181-v190-rank1-deep-parser-refinement/UAOS_BATCH_V181_V190_RANK1_DEEP_REFINEMENT_FINAL_SEAL.md
+ M uaos-ai-factory/rank1-deep-parser-refinement-v181-v190/seal/UAOS_RANK1_DEEP_PARSER_REFINEMENT_FINAL_SEAL.md
+ M uaos-ai-factory/rank1-deep-parser-refinement-v181-v190/v190_final_deep_refinement_seal/UAOS_V190_FINAL_SEAL.md
+ M uaos-ai-factory/react-app-integration-relaxed-mode/seal/UAOS_REACT_APP_INTEGRATION_FINAL_SEAL.md
+ M uaos-ai-factory/react-app-integration-relaxed-mode/validators/UAOS_REACT_APP_INTEGRATION_VALIDATOR_RESULTS.json
+ M uaos-ai-factory/react-local-browser-walkthrough/seal/UAOS_LOCAL_BROWSER_WALKTHROUGH_FINAL_SEAL.md
+ M uaos-ai-factory/react-local-browser-walkthrough/validators/UAOS_LOCAL_BROWSER_WALKTHROUGH_RESULTS.json
+ M uaos-ai-factory/react-owner-ui-review-polish/seal/UAOS_OWNER_UI_REVIEW_POLISH_FINAL_SEAL.md
+ M uaos-ai-factory/react-owner-ui-review-polish/validators/UAOS_OWNER_UI_REVIEW_POLISH_RESULTS.json
+ M uaos-ai-factory/real-writer-roadmap-owner-gate/seal/UAOS_REAL_WRITER_ROADMAP_FINAL_SEAL.md
+ M uaos-ai-factory/real-writer-roadmap-owner-gate/validators/UAOS_REAL_WRITER_ROADMAP_RESULTS.json
+ M uaos-ai-factory/real-writer-workbench-v191-v220/seal/UAOS_REAL_WRITER_WORKBENCH_FINAL_SEAL.md
+ M uaos-ai-factory/sound-library-priority-refinement/validators/UAOS_SOUND_LIBRARY_PRIORITY_REFINEMENT_RESULTS.json
+ M uaos-ai-factory/style-rc-deep-ui-integration/seal/UAOS_STYLE_RC_DEEP_UI_INTEGRATION_FINAL_SEAL.md
+ M uaos-ai-factory/style-rc-deep-ui-integration/validators/UAOS_STYLE_RC_DEEP_UI_RESULTS.json
+ M uaos-ai-factory/style-rc-factory-v341-v360/seal/UAOS_STYLE_RC_FACTORY_V341_V360_FINAL_SEAL.md
+ M uaos-ai-factory/style-rc-local-browser-qa/seal/UAOS_STYLE_RC_LOCAL_BROWSER_QA_FINAL_SEAL.md
+ M uaos-ai-factory/style-rc-local-browser-qa/validators/UAOS_STYLE_RC_LOCAL_BROWSER_QA_RESULTS.json
+ M uaos-ai-factory/uaos-v1501-v1700-final-owner-website-test-programs/logs/RUN_V1703_CONSOLE_DOM_REPAIR_COMPLETE.txt
+ M uaos-ai-factory/uaos-v2917-v2966-big-launch-train-24-manual-sales-desk-invoice-disabled-ops-pack/14-git-hygiene/UAOS_V2917_V2966_COMMIT_RESULT.txt
+ M uaos-ai-factory/vercel-deploy-link-repair/reports/UAOS_VERCEL_DEPLOY_LINK_REPAIR_OWNER_DASHBOARD.md
+ M uaos-ai-factory/vercel-deploy-link-repair/reports/UAOS_VERCEL_DEPLOY_LINK_REPAIR_QA_REPORT.md
+ M uaos-ai-factory/vercel-deploy-link-repair/seal/UAOS_VERCEL_DEPLOY_LINK_REPAIR_FINAL_SEAL.md
+ M uaos-ai-factory/vercel-deploy-link-repair/validators/UAOS_VERCEL_DEPLOY_LINK_REPAIR_RESULTS.json
+ M uaos-ai-factory/vercel-deploy-retry-linked/reports/UAOS_VERCEL_DEPLOY_RETRY_LINKED_OWNER_DASHBOARD.md
+ M uaos-ai-factory/vercel-deploy-retry-linked/reports/UAOS_VERCEL_DEPLOY_RETRY_LINKED_QA_REPORT.md
+ M uaos-ai-factory/vercel-deploy-retry-linked/seal/UAOS_VERCEL_DEPLOY_RETRY_LINKED_FINAL_SEAL.md
+ M uaos-ai-factory/vercel-deploy-retry-linked/validators/UAOS_VERCEL_DEPLOY_RETRY_LINKED_RESULTS.json
+ M uaos-ai-factory/vercel-deploy-retry-slim/seal/UAOS_VERCEL_DEPLOY_RETRY_SLIM_FINAL_SEAL.md
+ M uaos-ai-factory/vercel-deploy-retry-slim/validators/UAOS_VERCEL_DEPLOY_RETRY_SLIM_RESULTS.json
+ M uaos-ai-factory/vercel-deploy-status-verify/seal/UAOS_VERCEL_DEPLOY_STATUS_VERIFY_FINAL_SEAL.md
+ M uaos-ai-factory/vercel-deploy-status-verify/validators/UAOS_VERCEL_DEPLOY_STATUS_VERIFY_RESULTS.json
+ M uaos-ai-factory/vercel-slim-deploy-prep/seal/UAOS_VERCEL_SLIM_DEPLOY_PREP_FINAL_SEAL.md
+ M uaos-ai-factory/writer-sandbox-design-v221-v240/seal/UAOS_WRITER_SANDBOX_DESIGN_FINAL_SEAL.md
+ M uaos-ai-factory/writer-sandbox-dummy-implementation-v261-v280/seal/UAOS_DUMMY_WRITER_SANDBOX_FINAL_SEAL.md
+ M uaos-ai-factory/writer-sandbox-planning-v241-v260/seal/UAOS_WRITER_SANDBOX_PLANNING_FINAL_SEAL.md
+ M uaos-live-clean/dist/index.html
+ M uaos-live-clean/src/App.jsx
+ M uaos-live-clean/src/style.css
+ D uaos-public-preview/PUBLIC_PREVIEW_STATUS.md
+ M uaos-public-preview/index.html
+?? .claude/
+?? RUN-UAOS-PROGRAM-TREE-DASHBOARD.cmd
+?? RUN-UAOS-PROGRAM-TREE-LEADER.cmd
+?? RUN-UAOS-PROGRAM-TREE-VERIFY.cmd
+?? RUN-UAOS-V11-1-CURSOR-LEADER.cmd
+?? RUN-UAOS-V11-CURSOR-LEADER.cmd
+?? RUN-UAOS-V12-CURSOR-LEADER.cmd
+?? RUN-UAOS-V13-CURSOR-LEADER.cmd
+?? RUN-UAOS-V14-1-CURSOR-LEADER.cmd
+?? RUN-UAOS-V14-CURSOR-LEADER.cmd
+?? RUN-UAOS-V15-1-CURSOR-LEADER.cmd
+?? RUN-UAOS-V15-CURSOR-LEADER.cmd
+?? RUN-UAOS-V16-CURSOR-LEADER.cmd
+?? RUN-UAOS-V17-CURSOR-LEADER.cmd
+?? RUN-UAOS-V18-CURSOR-LEADER.cmd
+?? RUN-UAOS-V19-CURSOR-LEADER.cmd
+?? RUN-UAOS-V20-CURSOR-LEADER.cmd
+?? RUN-UAOS-V21-CURSOR-LEADER.cmd
+?? UAOS-ANTIGRAVITY-HANDOFF-BATCH6.md
+?? desktop-cleanup-archive/
+?? uaos-agent-factory/.runtime/
+?? uaos-agent-factory/dashboard/program-tree-server.mjs
+?? uaos-agent-factory/logs/
+?? uaos-agent-factory/reports/MASTER_STATUS_LATEST.json
+?? uaos-agent-factory/reports/MASTER_STATUS_LATEST.md
+?? uaos-agent-factory/scripts/v2-apply-reclassification.mjs
+?? uaos-agent-factory/scripts/v2-done-sample.mjs
+?? uaos-agent-factory/scripts/v2-preflight-audit.mjs
+?? uaos-agent-factory/scripts/v2-rc1-ready-queue.mjs
+?? uaos-agent-factory/scripts/v2-write-integrity-reports.mjs
+?? uaos-agent-factory/scripts/v2-write-preflight-status.mjs
+?? uaos-agent-factory/scripts/v2-write-reclassification-proposal.mjs
+?? uaos-agent-factory/scripts/v3-apply-batch-results.mjs
+?? uaos-agent-factory/scripts/v3-run-and-write-evidence.mjs
+?? uaos-agent-factory/scripts/v3-score-ready-tasks.mjs
+?? uaos-agent-factory/scripts/v3-write-batch-plan.mjs
+?? uaos-agent-factory/scripts/v3-write-dirty-wip-preservation.mjs
+?? uaos-agent-factory/scripts/v3-write-failure-path-evidence.mjs
+?? uaos-agent-factory/scripts/v3-write-repo-integrity.mjs
+?? uaos-agent-factory/scripts/v4-apply-batch2-results.mjs
+?? uaos-agent-factory/scripts/v4-score-batch2.mjs
+?? uaos-agent-factory/scripts/v4-write-dirty-wip-before.mjs
+?? uaos-agent-factory/scripts/v4-write-ownership-plan.mjs
+?? uaos-agent-factory/scripts/v4-write-remaining-artifacts.mjs
+?? uaos-agent-factory/scripts/v5-apply-batch3-results.mjs
+?? uaos-agent-factory/scripts/v5-regenerate-state-and-dag.mjs
+?? uaos-agent-factory/scripts/v5-score-batch3.mjs
+?? uaos-agent-factory/scripts/v5-write-active-writers.mjs
+?? uaos-agent-factory/scripts/v5-write-final-artifacts.mjs
+?? uaos-agent-factory/scripts/v5-write-ownership-plan.mjs
+?? uaos-agent-factory/scripts/v6-apply-batch4-results.mjs
+?? uaos-agent-factory/scripts/v6-apply-dependency-repair.mjs
+?? uaos-agent-factory/scripts/v6-dependency-audit.mjs
+?? uaos-agent-factory/scripts/v6-dependency-repair-proposal.mjs
+?? uaos-agent-factory/scripts/v6-recalc-after-repair.mjs
+?? uaos-agent-factory/scripts/v6-score-and-select.mjs
+?? uaos-agent-factory/scripts/v6-write-active-writers.mjs
+?? uaos-agent-factory/scripts/v6-write-domain-evidence.mjs
+?? uaos-agent-factory/scripts/v6-write-integrity-final.mjs
+?? uaos-agent-factory/scripts/v6-write-ownership-plan.mjs
+?? uaos-agent-factory/scripts/v7-apply-release-bridge-repair.mjs
+?? uaos-agent-factory/scripts/v7-gen-evidence-aggregator.mjs
+?? uaos-agent-factory/scripts/v7-release-bridge-audit.mjs
+?? uaos-agent-factory/scripts/v7-write-ownership.mjs
+?? uaos-agent-factory/scripts/v7-write-selection.mjs
+?? uaos-agent-factory/scripts/v8-apply-batch5-results.mjs
+?? uaos-agent-factory/scripts/v8-regenerate-state-and-dag.mjs
+?? uaos-agent-factory/scripts/v8-write-integrity-final.mjs
+?? uaos-agent-factory/scripts/v9-apply-batch6-results.mjs
+?? uaos-agent-factory/scripts/v9-regenerate-state-and-dag.mjs
+?? uaos-agent-factory/scripts/v9-write-integrity-final.mjs
+?? uaos-agent-factory/src/platform-v11-1-cursor-leader.mjs
+?? uaos-agent-factory/src/platform-v11-cursor-leader.mjs
+?? uaos-agent-factory/src/platform-v12-cursor-leader.mjs
+?? uaos-agent-factory/src/platform-v13-cursor-leader.mjs
+?? uaos-agent-factory/src/platform-v14-1-cursor-leader.mjs
+?? uaos-agent-factory/src/platform-v14-cursor-leader.mjs
+?? uaos-agent-factory/src/platform-v15-1-cursor-leader.mjs
+?? uaos-agent-factory/src/platform-v15-cursor-leader.mjs
+?? uaos-agent-factory/src/platform-v16-cursor-leader.mjs
+?? uaos-agent-factory/src/platform-v17-cursor-leader.mjs
+?? uaos-agent-factory/src/platform-v18-cursor-leader.mjs
+?? uaos-agent-factory/src/platform-v19-cursor-leader.mjs
+?? uaos-agent-factory/src/platform-v20-cursor-leader.mjs
+?? uaos-agent-factory/src/platform-v21-cursor-leader.mjs
+?? uaos-agent-factory/src/uaos-program-tree-leader.mjs
+?? uaos-agent-factory/src/uaos-program-tree-worker.mjs
+?? uaos-agent-factory/state/
+?? uaos-ai-factory/vercel-linked-monitor-repo-sync/
+?? uaos-korg-studio/
+?? uaos-program-tree/
+?? uaos-real-product/
+?? uaos-reports/
+?? uaos-worktrees/
+warning: unable to access 'C:\Users\ssare/.config/git/ignore': Permission denied
+warning: unable to access 'C:\Users\ssare/.config/git/ignore': Permission denied
+warning: could not open directory 'uaos-ai-factory/uaos-korg-pa3x-native-writer-v2/fixture-copies/owner-selected-slot/run-20260712172136./': No such file or directory

@@ -1,0 +1,29 @@
+{
+    "v15Run":  "C:\\keyboard-manager-clean\\uaos-agent-factory\\.runtime\\artifacts\\platform-v15-adoption-foundations\\run-20260804-172830",
+    "v151Run":  "C:\\keyboard-manager-clean\\uaos-agent-factory\\.runtime\\artifacts\\platform-v15-1-drift-reconciliation\\run-20260804-175516",
+    "patches":  {
+                    "library":  {
+                                    "path":  "C:\\keyboard-manager-clean\\uaos-agent-factory\\.runtime\\artifacts\\platform-v15-adoption-foundations\\run-20260804-172830\\LIBRARY-V15-DIFF.patch",
+                                    "note":  "empty — candidate was clean commit verification",
+                                    "bytes":  0,
+                                    "empty":  true
+                                },
+                    "creator":  {
+                                    "path":  "C:\\keyboard-manager-clean\\uaos-agent-factory\\.runtime\\artifacts\\platform-v15-adoption-foundations\\run-20260804-172830\\CREATOR-V15-DIFF.patch",
+                                    "bytes":  557,
+                                    "empty":  false
+                                },
+                    "keyboard":  {
+                                     "path":  "C:\\keyboard-manager-clean\\uaos-agent-factory\\.runtime\\artifacts\\platform-v15-adoption-foundations\\run-20260804-172830\\KEYBOARD-V15-DIFF.patch",
+                                     "bytes":  0,
+                                     "empty":  true
+                                 },
+                    "studio":  {
+                                   "path":  "C:\\keyboard-manager-clean\\uaos-agent-factory\\.runtime\\artifacts\\platform-v15-adoption-foundations\\run-20260804-172830\\STUDIO-V15-PHASE1-DIFF.patch",
+                                   "bytes":  450,
+                                   "empty":  false
+                               }
+                },
+    "worktreesPreservedReadOnly":  true,
+    "applyStrategy":  "library/keyboard: no apply (empty patch); creator/studio: recover sources into new V16 WTs"
+}

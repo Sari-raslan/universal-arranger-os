@@ -1,0 +1,185 @@
+{
+  "generatedAt": "2026-08-04T20:47:04.353Z",
+  "totalTasks": 1604,
+  "totalEdges": 1203,
+  "danglingEdgeCount": 0,
+  "danglingEdges": [],
+  "cycleCount": 0,
+  "cycles": [],
+  "stateCounts": {
+    "DONE": 1284,
+    "OWNER_GATE": 34,
+    "BLOCKED_BY_DEPENDENCY": 241,
+    "BLOCKED_BY_CONTENT": 12,
+    "BLOCKED_BY_LEGAL": 16,
+    "BLOCKED_BY_FORMAT": 7,
+    "BLOCKED_BY_HARDWARE": 10
+  },
+  "rc1CriticalStateCounts": {
+    "DONE": 1108,
+    "OWNER_GATE": 30,
+    "BLOCKED_BY_DEPENDENCY": 184,
+    "BLOCKED_BY_CONTENT": 2,
+    "BLOCKED_BY_LEGAL": 12,
+    "BLOCKED_BY_FORMAT": 7,
+    "BLOCKED_BY_HARDWARE": 9
+  },
+  "domainCounts": {
+    "00-ORCHESTRATION": {
+      "total": 56,
+      "byState": {
+        "DONE": 56
+      }
+    },
+    "01-SHARED-PLATFORM": {
+      "total": 140,
+      "byState": {
+        "DONE": 140
+      }
+    },
+    "02-LIBRARY-FACTORY": {
+      "total": 120,
+      "byState": {
+        "DONE": 104,
+        "OWNER_GATE": 2,
+        "BLOCKED_BY_DEPENDENCY": 12,
+        "BLOCKED_BY_CONTENT": 1,
+        "BLOCKED_BY_LEGAL": 1
+      }
+    },
+    "03-KEYBOARD-PRO": {
+      "total": 112,
+      "byState": {
+        "DONE": 72,
+        "BLOCKED_BY_FORMAT": 5,
+        "BLOCKED_BY_DEPENDENCY": 30,
+        "OWNER_GATE": 1,
+        "BLOCKED_BY_HARDWARE": 4
+      }
+    },
+    "04-KEYBOARD-CONVERTERS": {
+      "total": 92,
+      "byState": {
+        "DONE": 80,
+        "BLOCKED_BY_FORMAT": 2,
+        "BLOCKED_BY_DEPENDENCY": 9,
+        "BLOCKED_BY_HARDWARE": 1
+      }
+    },
+    "05-CREATOR": {
+      "total": 132,
+      "byState": {
+        "DONE": 108,
+        "OWNER_GATE": 6,
+        "BLOCKED_BY_DEPENDENCY": 18
+      }
+    },
+    "06-STUDIO-PRO": {
+      "total": 140,
+      "byState": {
+        "DONE": 124,
+        "BLOCKED_BY_DEPENDENCY": 13,
+        "BLOCKED_BY_HARDWARE": 3
+      }
+    },
+    "07-SINGY-CORE": {
+      "total": 136,
+      "byState": {
+        "DONE": 132,
+        "OWNER_GATE": 1,
+        "BLOCKED_BY_DEPENDENCY": 3
+      }
+    },
+    "08-SINGY-KIDS": {
+      "total": 80,
+      "byState": {
+        "OWNER_GATE": 2,
+        "BLOCKED_BY_DEPENDENCY": 12,
+        "DONE": 64,
+        "BLOCKED_BY_CONTENT": 1,
+        "BLOCKED_BY_LEGAL": 1
+      }
+    },
+    "09-SINGY-TEEN": {
+      "total": 76,
+      "byState": {
+        "OWNER_GATE": 3,
+        "BLOCKED_BY_DEPENDENCY": 15,
+        "DONE": 56,
+        "BLOCKED_BY_HARDWARE": 1,
+        "BLOCKED_BY_LEGAL": 1
+      }
+    },
+    "10-CONTENT-ASSETS": {
+      "total": 92,
+      "byState": {
+        "BLOCKED_BY_CONTENT": 10,
+        "BLOCKED_BY_DEPENDENCY": 57,
+        "BLOCKED_BY_LEGAL": 4,
+        "DONE": 16,
+        "BLOCKED_BY_HARDWARE": 1,
+        "OWNER_GATE": 4
+      }
+    },
+    "11-COMMERCIAL-PLATFORM": {
+      "total": 112,
+      "byState": {
+        "DONE": 60,
+        "OWNER_GATE": 10,
+        "BLOCKED_BY_DEPENDENCY": 39,
+        "BLOCKED_BY_LEGAL": 3
+      }
+    },
+    "12-WEBSITE-DELIVERY": {
+      "total": 92,
+      "byState": {
+        "DONE": 76,
+        "OWNER_GATE": 3,
+        "BLOCKED_BY_DEPENDENCY": 12,
+        "BLOCKED_BY_LEGAL": 1
+      }
+    },
+    "13-SECURITY-LEGAL": {
+      "total": 40,
+      "byState": {
+        "DONE": 20,
+        "BLOCKED_BY_LEGAL": 5,
+        "BLOCKED_BY_DEPENDENCY": 15
+      }
+    },
+    "14-QA-RELEASE-OPERATIONS": {
+      "total": 116,
+      "byState": {
+        "DONE": 112,
+        "OWNER_GATE": 1,
+        "BLOCKED_BY_DEPENDENCY": 3
+      }
+    },
+    "15-COMMANDER-FUTURE-ADAPTER": {
+      "total": 68,
+      "byState": {
+        "DONE": 64,
+        "OWNER_GATE": 1,
+        "BLOCKED_BY_DEPENDENCY": 3
+      }
+    }
+  },
+  "staleDependencyBlockCount": 1,
+  "staleDependencyBlocks": [
+    {
+      "id": "TASK-06-00725-REAL_TIME_DSP_CONTRACT",
+      "domain": "06-STUDIO-PRO",
+      "predecessors": [],
+      "predecessorStates": []
+    }
+  ],
+  "validDependencyBlockCount": 240,
+  "gateBlockCount": 79,
+  "gateBlocksByState": {
+    "OWNER_GATE": 34,
+    "BLOCKED_BY_CONTENT": 12,
+    "BLOCKED_BY_LEGAL": 16,
+    "BLOCKED_BY_FORMAT": 7,
+    "BLOCKED_BY_HARDWARE": 10
+  }
+}

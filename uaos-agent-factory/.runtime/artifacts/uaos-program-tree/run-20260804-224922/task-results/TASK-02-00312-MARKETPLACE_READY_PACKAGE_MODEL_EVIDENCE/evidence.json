@@ -1,0 +1,35 @@
+{
+  "taskId": "TASK-02-00312-MARKETPLACE_READY_PACKAGE_MODEL_EVIDENCE",
+  "agentId": "NODE_LOCAL_WORKER-0003",
+  "startedAt": "2026-08-04T20:49:35.335Z",
+  "endedAt": "2026-08-04T20:49:35.474Z",
+  "status": "PASS",
+  "tests": [
+    {
+      "command": "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-02-00312-marketplace_ready_package_model_evidence\\tests\\main.test.mjs",
+      "exitCode": 0,
+      "stdoutTail": "✔ TASK-02-00312-MARKETPLACE_READY_PACKAGE_MODEL_EVIDENCE verify (0.5461ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 70.6876\n"
+    }
+  ],
+  "sha256": "9773D6A9E1F896D167C2CD41CD5D0D898B4A43288855C588B420203E119940FC",
+  "allowedPathsUsed": [
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-02-00312-marketplace_ready_package_model_evidence",
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-02-00312-marketplace_ready_package_model_evidence\\src\\marketplace_ready_package_model_.mjs",
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-02-00312-marketplace_ready_package_model_evidence\\tests\\main.test.mjs"
+  ],
+  "truthStatements": [
+    "Technical WAV success does not prove musical quality",
+    "Fixtures are not product content",
+    "Studio Offline Render is not Real-time DSP",
+    "KORG WRITE_UNSUPPORTED",
+    "No auto adoption of Kids/Teen/Pricing",
+    "Commander not activated"
+  ],
+  "ownerFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-02-00312-marketplace_ready_package_model_evidence\\src\\marketplace_ready_package_model_.mjs",
+  "phase": "EVIDENCE",
+  "gate": null,
+  "noPush": true,
+  "noMerge": true,
+  "noDeploy": true,
+  "commanderActivated": false
+}

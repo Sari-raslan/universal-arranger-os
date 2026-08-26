@@ -1,0 +1,8 @@
+# PREPARED PATCH — NOT APPLIED
+Source-Commit: 415db5123bf6f1851cca284f92fb8e3478ffd967
+Target-Repository: C:\keyboard-manager-clean\uaos-real-product
+Target-Baseline: 882f6ca695b4c8df6f0f9968b65b5710d0c55346
+Preconditions: exclude KORG Writer/USB/SysEx; owner adoption gate
+Tests-Required: test:arranger-foundation; check; build:desktop
+Rollback: discard patch
+Changed-Files: apps/desktop/src/uaos-live/arranger/** packages/magic-set/** packages/set-doctor/**

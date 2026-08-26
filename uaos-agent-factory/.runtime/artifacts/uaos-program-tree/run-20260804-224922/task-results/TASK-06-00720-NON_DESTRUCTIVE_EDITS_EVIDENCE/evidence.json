@@ -1,0 +1,35 @@
+{
+  "taskId": "TASK-06-00720-NON_DESTRUCTIVE_EDITS_EVIDENCE",
+  "agentId": "NODE_LOCAL_WORKER-0059",
+  "startedAt": "2026-08-04T20:49:30.493Z",
+  "endedAt": "2026-08-04T20:49:30.629Z",
+  "status": "PASS",
+  "tests": [
+    {
+      "command": "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-06-00720-non_destructive_edits_evidence\\tests\\main.test.mjs",
+      "exitCode": 0,
+      "stdoutTail": "✔ TASK-06-00720-NON_DESTRUCTIVE_EDITS_EVIDENCE verify (0.5594ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 76.7321\n"
+    }
+  ],
+  "sha256": "BA59BBCD6A1999281D1A7550AD6790D9E6C2F8267982A6AD7A13FCEAC450E81F",
+  "allowedPathsUsed": [
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-06-00720-non_destructive_edits_evidence",
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-06-00720-non_destructive_edits_evidence\\src\\non_destructive_edits_evidence.mjs",
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-06-00720-non_destructive_edits_evidence\\tests\\main.test.mjs"
+  ],
+  "truthStatements": [
+    "Technical WAV success does not prove musical quality",
+    "Fixtures are not product content",
+    "Studio Offline Render is not Real-time DSP",
+    "KORG WRITE_UNSUPPORTED",
+    "No auto adoption of Kids/Teen/Pricing",
+    "Commander not activated"
+  ],
+  "ownerFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-06-00720-non_destructive_edits_evidence\\src\\non_destructive_edits_evidence.mjs",
+  "phase": "EVIDENCE",
+  "gate": null,
+  "noPush": true,
+  "noMerge": true,
+  "noDeploy": true,
+  "commanderActivated": false
+}

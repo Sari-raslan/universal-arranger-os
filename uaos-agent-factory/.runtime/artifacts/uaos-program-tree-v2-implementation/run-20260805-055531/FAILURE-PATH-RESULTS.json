@@ -1,0 +1,146 @@
+{
+  "generatedAt": "2026-08-05T10:32:06.767Z",
+  "totalTests": 109,
+  "totalFailurePathTests": 55,
+  "results": [
+    {
+      "taskId": "TASK-01-00097-ENTITLEMENTS_CONTRACT",
+      "totalTestCount": 9,
+      "failurePathTestCount": 3,
+      "failurePathTestTitles": [
+        "rejects a missing productId",
+        "rejects a malformed trialStartedAt",
+        "rejects a missing/invalid injected clock — the system clock must never be read internally"
+      ]
+    },
+    {
+      "taskId": "TASK-01-00098-ENTITLEMENTS_IMPLEMENTATION",
+      "totalTestCount": 14,
+      "failurePathTestCount": 8,
+      "failurePathTestTitles": [
+        "PURITY GUARD: no fs/network/hardware access anywhere in this implementation file",
+        "TIME BOUNDARY: one millisecond before the 14-day trial boundary is still active",
+        "TIME BOUNDARY: exactly at the 14-day trial boundary is expired (exclusive of the boundary instant)",
+        "TIME BOUNDARY: one millisecond after the boundary is expired",
+        "LICENSE_INVALID: a tampered/forged license (bad signature)",
+        "LICENSE_WRONG_PRODUCT: a genuinely valid license, but for a different product",
+        "rejects resolving with a license receipt but no publicKey",
+        "rejects invalid input shapes via the shared contract validator"
+      ]
+    },
+    {
+      "taskId": "TASK-01-00099-ENTITLEMENTS_TESTS",
+      "totalTestCount": 6,
+      "failurePathTestCount": 1,
+      "failurePathTestTitles": [
+        "failure-path: a sabotaged snapshot save leaves the prior snapshot untouched"
+      ]
+    },
+    {
+      "taskId": "TASK-01-00100-ENTITLEMENTS_EVIDENCE",
+      "totalTestCount": 4,
+      "failurePathTestCount": 2,
+      "failurePathTestTitles": [
+        "TEST HARNESS GUARD: zero discovered tests is FAIL",
+        "rollback/recovery procedure documents data preservation and license-restores-entitlement guarantees"
+      ]
+    },
+    {
+      "taskId": "TASK-01-00165-EXPORT_IMPORT_USER_DATA_CONTRACT",
+      "totalTestCount": 12,
+      "failurePathTestCount": 8,
+      "failurePathTestTitles": [
+        "SAFETY: validateRelativePath rejects path traversal",
+        "SAFETY: validateRelativePath rejects absolute paths and drive letters",
+        "SAFETY: validateRelativePath rejects empty segments",
+        "validateArchiveEntry rejects an unsafe relativePath",
+        "SAFETY: validateArchive rejects duplicate entry paths (case-insensitive)",
+        "validateArchive rejects a malformed manifestSha256",
+        "validateArchive rejects a non-semver formatVersion",
+        "schema documents the path-safety and no-partial-overwrite guarantees"
+      ]
+    },
+    {
+      "taskId": "TASK-01-00166-EXPORT_IMPORT_USER_DATA_IMPLEMENTATION",
+      "totalTestCount": 21,
+      "failurePathTestCount": 12,
+      "failurePathTestTitles": [
+        "SAFETY: discoverRegularFiles rejects a symbolic link rather than following it",
+        "CORRUPTION: a tampered entry content (checksum mismatch) is rejected on reopen",
+        "CORRUPTION: a tampered entry SET (manifestSha256 mismatch) is rejected",
+        "CORRUPTION: an unparseable archive file fails cleanly",
+        "SAFETY: exportUserData refuses to export a traversal relativePath",
+        "SAFETY: exportUserData refuses an absolute relativePath",
+        "SAFETY: exportUserData refuses a Windows drive-qualified relativePath",
+        "SAFETY: importArchive rejects duplicate normalized paths at the archive-validation boundary",
+        "STRICT MODE: importArchive rejects when a required expected entry is missing from the archive",
+        "STRICT MODE: importArchive rejects an entry not in the expected set when strict is true",
+        "TRANSACTIONAL ROLLBACK: a failure partway through commit rolls back already-committed entries and preserves pre-existing destination data",
+        "failure-path: a sabotaged archive save leaves the prior archive untouched (inherits AtomicSave)"
+      ]
+    },
+    {
+      "taskId": "TASK-01-00167-EXPORT_IMPORT_USER_DATA_TESTS",
+      "totalTestCount": 6,
+      "failurePathTestCount": 2,
+      "failurePathTestTitles": [
+        "failure-path: restoring into an existing installation with an archive missing a required file is rejected before any write",
+        "failure-path: a corrupted archive (tampered after export) is rejected on reopen before any import is attempted"
+      ]
+    },
+    {
+      "taskId": "TASK-01-00168-EXPORT_IMPORT_USER_DATA_EVIDENCE",
+      "totalTestCount": 7,
+      "failurePathTestCount": 3,
+      "failurePathTestTitles": [
+        "TEST HARNESS GUARD: zero discovered tests is FAIL",
+        "GUARD: a legitimately skipped test does not falsely trigger the zero-discovery FAIL path",
+        "rollback/recovery procedure documents transactional commit, rollback, and no-dependency guarantees"
+      ]
+    },
+    {
+      "taskId": "TASK-03-00337-INSPECTOR_CONTRACT",
+      "totalTestCount": 10,
+      "failurePathTestCount": 6,
+      "failurePathTestTitles": [
+        "isSupportedFormat accepts the internal format and rejects anything else",
+        "validatePresetShape rejects a missing id",
+        "validateProjectShape rejects a non-semver formatVersion",
+        "validateProjectShape rejects presets that is not an array",
+        "validateFinding rejects an invalid severity",
+        "schema documents unsupported-format-rejection and repairable-only guarantees"
+      ]
+    },
+    {
+      "taskId": "TASK-03-00338-INSPECTOR_IMPLEMENTATION",
+      "totalTestCount": 11,
+      "failurePathTestCount": 5,
+      "failurePathTestTitles": [
+        "inspectProject finds nothing wrong with a clean project",
+        "UNSUPPORTED-FORMAT REJECTION: a project with a foreign formatId is refused before any inspection",
+        "RECOVERY: a crash-orphaned AtomicSave temp file next to the project does not prevent a clean reopen",
+        "failure-path: reopenProject rejects a corrupted (truncated JSON) project file",
+        "failure-path: generateRepairPlan ignores a non-repairable finding rather than inventing a fix"
+      ]
+    },
+    {
+      "taskId": "TASK-03-00339-INSPECTOR_TESTS",
+      "totalTestCount": 5,
+      "failurePathTestCount": 3,
+      "failurePathTestTitles": [
+        "FULL VERTICAL SLICE: schema validation -> inspection -> findings -> repair-plan -> atomic save -> close/reopen -> deterministic receipt -> unsupported-format rejection -> recovery",
+        "failure-path: a project claiming an unsupported format is rejected end-to-end, never partially inspected",
+        "failure-path: reopening a project whose file was deleted after save fails cleanly, not silently"
+      ]
+    },
+    {
+      "taskId": "TASK-03-00340-INSPECTOR_EVIDENCE",
+      "totalTestCount": 4,
+      "failurePathTestCount": 2,
+      "failurePathTestTitles": [
+        "TEST HARNESS GUARD: zero discovered tests is FAIL",
+        "rollback/recovery procedure documents non-invention, purity, and scope-honesty guarantees"
+      ]
+    }
+  ]
+}

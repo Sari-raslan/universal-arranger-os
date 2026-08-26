@@ -1,0 +1,35 @@
+{
+  "taskId": "TASK-06-00744-PUNCH_IN_OUT_EVIDENCE",
+  "agentId": "NODE_LOCAL_WORKER-0110",
+  "startedAt": "2026-08-04T20:47:48.105Z",
+  "endedAt": "2026-08-04T20:47:48.222Z",
+  "status": "PASS",
+  "tests": [
+    {
+      "command": "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-06-00744-punch_in_out_evidence\\tests\\main.test.mjs",
+      "exitCode": 0,
+      "stdoutTail": "✔ TASK-06-00744-PUNCH_IN_OUT_EVIDENCE verify (0.5015ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 66.7416\n"
+    }
+  ],
+  "sha256": "7A0631F117A9B5F5EF758F49D1F9192C0BB6492AF8E8A0CCD46CF09B084A9E65",
+  "allowedPathsUsed": [
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-06-00744-punch_in_out_evidence",
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-06-00744-punch_in_out_evidence\\src\\punch_in_out_evidence.mjs",
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-06-00744-punch_in_out_evidence\\tests\\main.test.mjs"
+  ],
+  "truthStatements": [
+    "Technical WAV success does not prove musical quality",
+    "Fixtures are not product content",
+    "Studio Offline Render is not Real-time DSP",
+    "KORG WRITE_UNSUPPORTED",
+    "No auto adoption of Kids/Teen/Pricing",
+    "Commander not activated"
+  ],
+  "ownerFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-06-00744-punch_in_out_evidence\\src\\punch_in_out_evidence.mjs",
+  "phase": "EVIDENCE",
+  "gate": null,
+  "noPush": true,
+  "noMerge": true,
+  "noDeploy": true,
+  "commanderActivated": false
+}

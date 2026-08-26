@@ -1,0 +1,44 @@
+{
+  "id": "03-before-raw-melody",
+  "title": "Before — raw melody",
+  "SOURCE_INPUT": "Same Hijaz phrase before drums/chorus harmony (melody + bass roots only).",
+  "EXPECTED_CAPABILITY": "Show the material before full arrangement logic.",
+  "ACTUAL_ACTIONS": [
+    "Understand melody",
+    "Add bass roots only",
+    "Omit drums and chorus stabs"
+  ],
+  "WAV_PATH": "C:\\keyboard-manager-clean\\docs\\owner-listening-pack\\musical-examples\\03-before-raw-melody.wav",
+  "DURATION": 5.1250113378684805,
+  "SAMPLE_RATE": 44100,
+  "SHA256": "0318acc4a51f1c72de52256ef30569a375cd322d1a19e8ad26da99a20421fcd3",
+  "SOURCE_COMMIT": "5aeac11779bd678ca3c80d16144e302a5eb5d9f6",
+  "SETTINGS": {
+    "variant": "hijaz",
+    "tempo": 96,
+    "groove": "melody-plus-bass",
+    "harmony": "roots-only",
+    "sections": [
+      {
+        "name": "Before",
+        "bars": 2
+      }
+    ],
+    "uniqueMidiCount": 8,
+    "uniqueOnsetCount": 16,
+    "voices": [
+      "lead",
+      "bass"
+    ]
+  },
+  "WHAT_OWNER_SHOULD_LISTEN_FOR": "Tune plus bass, no drum groove yet. Compare with 04-after.",
+  "KNOWN_LIMITATIONS": [
+    "Offline oscillator sketch, not a sampled library and not real-time DSP.",
+    "Not Musical Brain quality PASS.",
+    "Original UAOS sketch — not product catalog content and not a licensed song."
+  ],
+  "musicalQualityPass": false,
+  "musicalQualityClaim": false,
+  "sineFixture": false,
+  "technicalFixtureUsedAsMusicalProof": false
+}

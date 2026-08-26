@@ -1,0 +1,89 @@
+{
+  "generatedAt": "2026-08-05T05:46:39.468Z",
+  "results": [
+    {
+      "taskId": "TASK-01-00129-VERSIONING_CONTRACT",
+      "ownerFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00129-versioning_contract\\src\\versioning_contract.mjs",
+      "ownerFileSha256": "2686dbe91bc037f44047adbc697d05d7f3f4613f3f4a27ed9e22d6026681c64b",
+      "ownerFileBytes": 4173,
+      "note": "Real SKU-safe product-id + semver + caret-compatibility schema/validators. 12/12 passing."
+    },
+    {
+      "taskId": "TASK-01-00130-VERSIONING_IMPLEMENTATION",
+      "ownerFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00130-versioning_implementation\\src\\versioning_implementation.mjs",
+      "ownerFileSha256": "e448c709190faa1e7b4cc57953664b749dea91ac3d91894a4068c53299943129",
+      "ownerFileBytes": 2294,
+      "note": "Real deterministic (injected-clock) manifest generation + AtomicSave persistence + compatibility checks. 10/10 passing."
+    },
+    {
+      "taskId": "TASK-01-00131-VERSIONING_TESTS",
+      "ownerFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00131-versioning_tests\\src\\versioning_tests.mjs",
+      "ownerFileSha256": "f88e9b8e98807fe0ae43ca2079ab0f6ea968166232db197a1c1b57751fe9f5c8",
+      "ownerFileBytes": 1389,
+      "note": "Real integration: 6-product manifest persistence, cross-product compatibility matrix, sabotaged-save isolation. 4/4 passing."
+    },
+    {
+      "taskId": "TASK-01-00132-VERSIONING_EVIDENCE",
+      "ownerFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00132-versioning_evidence\\src\\versioning_evidence.mjs",
+      "ownerFileSha256": "6fdb98df4e1992b5f3fdb206ca47b0df8932405c13e57f46504eab5c3236c111",
+      "ownerFileBytes": 5918,
+      "note": "Aggregates+re-verifies end-to-end; refined zero-test-discovery guard (source-level test() counting, not just Node's own tests-1-for-empty-file summary). 5/5 passing."
+    },
+    {
+      "taskId": "TASK-01-00105-SIGNED_LICENSES_CONTRACT",
+      "ownerFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00105-signed_licenses_contract\\src\\signed_licenses_contract.mjs",
+      "ownerFileSha256": "6afd5e95e06c5582ffa01f4d6d37737ec7fcd11e822fc85c55de5e86754e03c1",
+      "ownerFileBytes": 4080,
+      "note": "Real canonical-payload + receipt schema/validators. 10/10 passing."
+    },
+    {
+      "taskId": "TASK-01-00106-SIGNED_LICENSES_IMPLEMENTATION",
+      "ownerFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00106-signed_licenses_implementation\\src\\signed_licenses_implementation.mjs",
+      "ownerFileSha256": "1db274450b284dde223efd29fd42e2372225202fa648b687e641d16463794dd7",
+      "ownerFileBytes": 3127,
+      "note": "Real Ed25519 sign/verify, no key material embedded, no network, injected clock, tamper/wrong-key/wrong-product/time-boundary coverage. 15/15 passing."
+    },
+    {
+      "taskId": "TASK-01-00107-SIGNED_LICENSES_TESTS",
+      "ownerFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00107-signed_licenses_tests\\src\\signed_licenses_tests.mjs",
+      "ownerFileSha256": "879b98734166a24149128c22c311abc3905408c7b050480be5a919a94ba8ce81",
+      "ownerFileBytes": 1776,
+      "note": "Real integration: 6-product offline install flow via AtomicSave, cross-product isolation, rogue-key forgery rejection. 4/4 passing."
+    },
+    {
+      "taskId": "TASK-01-00108-SIGNED_LICENSES_EVIDENCE",
+      "ownerFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00108-signed_licenses_evidence\\src\\signed_licenses_evidence.mjs",
+      "ownerFileSha256": "c4701e2d3f1bd8c1896a2521bf5deed48dd2febcf35cdc065fcb82be1b0e382d",
+      "ownerFileBytes": 5328,
+      "note": "Aggregates+re-verifies end-to-end with source-level zero-test guard. 4/4 passing."
+    },
+    {
+      "taskId": "TASK-02-00197-USER_SUPPLIED_WAV_INGESTION_CONTRACT",
+      "ownerFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-02-00197-user_supplied_wav_ingestion_contract\\src\\user_supplied_wav_ingestion_cont.mjs",
+      "ownerFileSha256": "75f23d6a758a83fcb3abd30828c1dda0ecc261b1fd8fe9a177f9c2d4b9d59600",
+      "ownerFileBytes": 4329,
+      "note": "Real catalog-entry/catalog schema + validators. 11/11 passing."
+    },
+    {
+      "taskId": "TASK-02-00198-USER_SUPPLIED_WAV_INGESTION_IMPLEMENTATI",
+      "ownerFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-02-00198-user_supplied_wav_ingestion_implementati\\src\\user_supplied_wav_ingestion_impl.mjs",
+      "ownerFileSha256": "1b5666a7e508be62321bcdf35c846ebc330d16c1b516c3649eb389820f8d669e",
+      "ownerFileBytes": 6011,
+      "note": "Real WAV validation, SHA256 inventory, catalog+AtomicSave, missing-source recovery, deterministic manifest. Full vertical-slice test included. 9/9 passing."
+    },
+    {
+      "taskId": "TASK-02-00199-USER_SUPPLIED_WAV_INGESTION_TESTS",
+      "ownerFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-02-00199-user_supplied_wav_ingestion_tests\\src\\user_supplied_wav_ingestion_test.mjs",
+      "ownerFileSha256": "b0ab4f86eff615d4c7ed454b372ebd3d8e56dd77b885d171f85ac466c4495147",
+      "ownerFileBytes": 3502,
+      "note": "Real bulk 12-file drop-folder integration: dedup, save/reopen, multi-file missing-source recovery, malformed-file tolerance. 5/5 passing."
+    },
+    {
+      "taskId": "TASK-02-00200-USER_SUPPLIED_WAV_INGESTION_EVIDENCE",
+      "ownerFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-02-00200-user_supplied_wav_ingestion_evidence\\src\\user_supplied_wav_ingestion_evid.mjs",
+      "ownerFileSha256": "0394ba6f0b43861f2004c36b51ac7e6551576b4e52861b07225c381b4fd0c3bb",
+      "ownerFileBytes": 5644,
+      "note": "Aggregates+re-verifies end-to-end with source-level zero-test guard. 4/4 passing."
+    }
+  ]
+}

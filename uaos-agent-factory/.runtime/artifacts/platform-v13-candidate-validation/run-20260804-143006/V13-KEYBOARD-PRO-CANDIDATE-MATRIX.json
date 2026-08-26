@@ -1,0 +1,63 @@
+{
+    "product":  "PRODUCT-SINGY_KEYBOARD_PRO",
+    "decision":  "ADOPTABLE_SOURCE",
+    "autoSelected":  true,
+    "autoSelectPath":  "C:\\UAOS_AGENT_FACTORY_WORKTREES\\arranger-integration",
+    "autoSelectReason":  "Only candidate with full Arranger Studio + Magic Set/Set Doctor foundations and dedicated tests; arranger-foundation tests PASS",
+    "arrangerFoundationTestExit":  0,
+    "candidates":  [
+                       {
+                           "branch":  "factory/arranger-integration",
+                           "repository":  "uaos-real-product worktree",
+                           "head":  "415db5123bf6f1851cca284f92fb8e3478ffd967",
+                           "recommended_role":  "PRIMARY_CANDIDATE",
+                           "feature_coverage":  "Arranger Studio+Magic Set+Set Doctor+Generate My Set dry-run",
+                           "risks":  "Keyboard Converters product missing",
+                           "build":  "build:desktop/web",
+                           "tests":  "arranger foundation PASS",
+                           "missing_parts":  [
+                                                 "Keyboard Converters"
+                                             ],
+                           "candidate":  "arranger-integration",
+                           "path":  "C:\\UAOS_AGENT_FACTORY_WORKTREES\\arranger-integration",
+                           "evidence":  "V13 focused test PASS",
+                           "dirty_count":  1,
+                           "score":  88
+                       },
+                       {
+                           "branch":  "uaos-full-interaction-rebuild-v1",
+                           "repository":  "SOURCE_REPOSITORY",
+                           "head":  "882f6ca695b4c8df6f0f9968b65b5710d0c55346",
+                           "recommended_role":  "SECONDARY",
+                           "feature_coverage":  "PARTIAL Arranger; Magic Set/Set Doctor UI without foundation modules",
+                           "risks":  "very dirty; KORG-focused HEAD",
+                           "build":  "yes",
+                           "tests":  "fewer arranger foundation tests",
+                           "missing_parts":  [
+                                                 "foundation modules",
+                                                 "Keyboard Converters"
+                                             ],
+                           "candidate":  "uaos-real-product",
+                           "path":  "C:\\keyboard-manager-clean\\uaos-real-product",
+                           "evidence":  "V11.1 check PASS on clean 882f6ca worktree",
+                           "dirty_count":  346,
+                           "score":  62
+                       },
+                       {
+                           "dirty_count":  0,
+                           "path":  "C:\\keyboard-manager-clean\\uaos-worktrees\\uaos-magic-set-v1-modular-clean",
+                           "recommended_role":  "SLICE_ONLY",
+                           "head":  "f221109cc45794aa2c65322be171ffbe9d518811",
+                           "score":  45,
+                           "candidate":  "magic-set-slice"
+                       },
+                       {
+                           "dirty_count":  0,
+                           "path":  "C:\\keyboard-manager-clean\\uaos-worktrees\\uaos-set-doctor-phase2-canonical",
+                           "recommended_role":  "SLICE_ONLY",
+                           "head":  "16f70e6db92526fa0e8154074af6337a6a9cb13d",
+                           "score":  55,
+                           "candidate":  "set-doctor-slice"
+                       }
+                   ]
+}

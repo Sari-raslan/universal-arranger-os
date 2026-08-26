@@ -1,0 +1,109 @@
+{
+    "pass":  13,
+    "fail":  0,
+    "results":  [
+                    {
+                        "lane":  "library",
+                        "name":  "gap.test",
+                        "command":  "node packages\\uaos-v17-library-gap-closure\\gap.test.cjs",
+                        "cwd":  "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-v17-execution\\library-gap-closure",
+                        "exitCode":  0,
+                        "startedAt":  "2026-08-04T17:07:54.7540061Z",
+                        "endedAt":  "2026-08-04T17:07:54.8315669Z",
+                        "durationMs":  76
+                    },
+                    {
+                        "exitCode":  0,
+                        "command":  "npm run check",
+                        "name":  "check",
+                        "lane":  "library"
+                    },
+                    {
+                        "exitCode":  0,
+                        "command":  "npm run test:sampler",
+                        "name":  "test:sampler",
+                        "lane":  "library"
+                    },
+                    {
+                        "exitCode":  0,
+                        "command":  "npm run build:desktop",
+                        "name":  "build:desktop",
+                        "lane":  "library"
+                    },
+                    {
+                        "lane":  "keyboard",
+                        "name":  "gap.test",
+                        "command":  "node packages\\uaos-v17-keyboard-gap-closure\\gap.test.cjs",
+                        "cwd":  "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-v17-execution\\keyboard-gap-closure",
+                        "exitCode":  0,
+                        "startedAt":  "2026-08-04T17:07:57.5655356Z",
+                        "endedAt":  "2026-08-04T17:07:57.6237765Z",
+                        "durationMs":  58
+                    },
+                    {
+                        "exitCode":  0,
+                        "name":  "test:arranger-foundation",
+                        "lane":  "keyboard"
+                    },
+                    {
+                        "exitCode":  0,
+                        "name":  "check",
+                        "lane":  "keyboard"
+                    },
+                    {
+                        "exitCode":  0,
+                        "name":  "build:desktop",
+                        "lane":  "keyboard"
+                    },
+                    {
+                        "lane":  "converters",
+                        "name":  "phase2.test",
+                        "command":  "node phase2.test.cjs",
+                        "cwd":  "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-v17-execution\\keyboard-converters-phase2\\packages\\keyboard-converters-phase2",
+                        "exitCode":  0,
+                        "startedAt":  "2026-08-04T17:08:00.3235129Z",
+                        "endedAt":  "2026-08-04T17:08:00.4158393Z",
+                        "durationMs":  92
+                    },
+                    {
+                        "lane":  "creator",
+                        "name":  "phase3.test",
+                        "command":  "node tests\\phase3.test.cjs",
+                        "cwd":  "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-v17-execution\\creator-phase3-composition-core\\uaos-creator-shell",
+                        "exitCode":  0,
+                        "startedAt":  "2026-08-04T17:08:01.3721607Z",
+                        "endedAt":  "2026-08-04T17:08:01.4460632Z",
+                        "durationMs":  72
+                    },
+                    {
+                        "lane":  "creator",
+                        "name":  "build",
+                        "command":  "node scripts\\build-shell.cjs",
+                        "cwd":  "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-v17-execution\\creator-phase3-composition-core\\uaos-creator-shell",
+                        "exitCode":  0,
+                        "startedAt":  "2026-08-04T17:08:01.4460632Z",
+                        "endedAt":  "2026-08-04T17:08:01.5088337Z",
+                        "durationMs":  61
+                    },
+                    {
+                        "lane":  "studio",
+                        "name":  "playback-mixer.test",
+                        "command":  "node tests\\playback-mixer.test.cjs",
+                        "cwd":  "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-v17-execution\\studio-e30-playback-mixer",
+                        "exitCode":  0,
+                        "startedAt":  "2026-08-04T17:08:01.5740024Z",
+                        "endedAt":  "2026-08-04T17:08:01.6440843Z",
+                        "durationMs":  70
+                    },
+                    {
+                        "lane":  "contracts",
+                        "name":  "adapters.test",
+                        "command":  "node tests\\adapters.test.cjs",
+                        "cwd":  "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-v17-execution\\shared-contract-adapters",
+                        "exitCode":  0,
+                        "startedAt":  "2026-08-04T17:08:01.6546498Z",
+                        "endedAt":  "2026-08-04T17:08:01.7148331Z",
+                        "durationMs":  60
+                    }
+                ]
+}

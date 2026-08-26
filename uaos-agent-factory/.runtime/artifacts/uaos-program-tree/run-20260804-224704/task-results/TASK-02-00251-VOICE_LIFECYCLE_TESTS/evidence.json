@@ -1,0 +1,35 @@
+{
+  "taskId": "TASK-02-00251-VOICE_LIFECYCLE_TESTS",
+  "agentId": "NODE_LOCAL_WORKER-0055",
+  "startedAt": "2026-08-04T20:47:33.983Z",
+  "endedAt": "2026-08-04T20:47:34.097Z",
+  "status": "PASS",
+  "tests": [
+    {
+      "command": "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-02-00251-voice_lifecycle_tests\\tests\\main.test.mjs",
+      "exitCode": 0,
+      "stdoutTail": "✔ TASK-02-00251-VOICE_LIFECYCLE_TESTS verify (0.6972ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 63.8884\n"
+    }
+  ],
+  "sha256": "A140484144F9B82681DCD0D4961CAF88FBA2DA37A7EF72D3FEBD0AED8BCFE26F",
+  "allowedPathsUsed": [
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-02-00251-voice_lifecycle_tests",
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-02-00251-voice_lifecycle_tests\\src\\voice_lifecycle_tests.mjs",
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-02-00251-voice_lifecycle_tests\\tests\\main.test.mjs"
+  ],
+  "truthStatements": [
+    "Technical WAV success does not prove musical quality",
+    "Fixtures are not product content",
+    "Studio Offline Render is not Real-time DSP",
+    "KORG WRITE_UNSUPPORTED",
+    "No auto adoption of Kids/Teen/Pricing",
+    "Commander not activated"
+  ],
+  "ownerFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-02-00251-voice_lifecycle_tests\\src\\voice_lifecycle_tests.mjs",
+  "phase": "TEST",
+  "gate": null,
+  "noPush": true,
+  "noMerge": true,
+  "noDeploy": true,
+  "commanderActivated": false
+}

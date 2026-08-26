@@ -1,0 +1,35 @@
+{
+  "taskId": "TASK-04-00496-ROUND_TRIP_FIXTURES_EVIDENCE",
+  "agentId": "NODE_LOCAL_WORKER-0079",
+  "startedAt": "2026-08-04T20:47:46.752Z",
+  "endedAt": "2026-08-04T20:47:46.872Z",
+  "status": "PASS",
+  "tests": [
+    {
+      "command": "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-04-00496-round_trip_fixtures_evidence\\tests\\main.test.mjs",
+      "exitCode": 0,
+      "stdoutTail": "✔ TASK-04-00496-ROUND_TRIP_FIXTURES_EVIDENCE verify (0.515ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 64.7201\n"
+    }
+  ],
+  "sha256": "E82FA334B97F8309AD99A2C592294C635F0AEBF9FD3A65E4AF3C517BDD836916",
+  "allowedPathsUsed": [
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-04-00496-round_trip_fixtures_evidence",
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-04-00496-round_trip_fixtures_evidence\\src\\round_trip_fixtures_evidence.mjs",
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-04-00496-round_trip_fixtures_evidence\\tests\\main.test.mjs"
+  ],
+  "truthStatements": [
+    "Technical WAV success does not prove musical quality",
+    "Fixtures are not product content",
+    "Studio Offline Render is not Real-time DSP",
+    "KORG WRITE_UNSUPPORTED",
+    "No auto adoption of Kids/Teen/Pricing",
+    "Commander not activated"
+  ],
+  "ownerFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-04-00496-round_trip_fixtures_evidence\\src\\round_trip_fixtures_evidence.mjs",
+  "phase": "EVIDENCE",
+  "gate": null,
+  "noPush": true,
+  "noMerge": true,
+  "noDeploy": true,
+  "commanderActivated": false
+}

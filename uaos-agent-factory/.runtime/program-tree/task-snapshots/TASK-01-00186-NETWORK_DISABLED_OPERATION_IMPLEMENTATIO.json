@@ -1,0 +1,38 @@
+{
+  "id": "TASK-01-00186-NETWORK_DISABLED_OPERATION_IMPLEMENTATIO",
+  "epicId": "EPIC-01-0002-SHARED_PRODUCT_PLATFORM",
+  "domain": "01-SHARED-PLATFORM",
+  "title": "Network disabled operation implementation",
+  "phase": "IMPLEMENT",
+  "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+  "state": "READY",
+  "priority": 9,
+  "estimateMinutesMin": 60,
+  "estimateMinutesMax": 240,
+  "inputs": [],
+  "acceptanceCriteria": [
+    "Network disabled operation implementation contract file exists",
+    "Unit assertions pass for Network disabled operation implementation",
+    "Evidence JSON written with SHA256"
+  ],
+  "tests": [
+    "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00186-network_disabled_operation_implementatio\\tests\\main.test.mjs"
+  ],
+  "evidence": [
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00186-network_disabled_operation_implementatio/evidence/result.json"
+  ],
+  "allowedPaths": [
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00186-network_disabled_operation_implementatio",
+    "C:\\keyboard-manager-clean\\uaos-agent-factory\\.runtime\\artifacts\\uaos-program-tree\\TASK-01-00186-NETWORK_DISABLED_OPERATION_IMPLEMENTATIO"
+  ],
+  "ownerFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00186-network_disabled_operation_implementatio\\src\\network_disabled_operation_imple.mjs",
+  "worktree": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00186-network_disabled_operation_implementatio",
+  "gate": null,
+  "blockedReason": null,
+  "rc1Critical": true,
+  "claims": [],
+  "lease": null,
+  "heartbeats": [],
+  "createdAt": "2026-08-04T20:47:04.321Z",
+  "updatedAt": "2026-08-04T20:49:22.085Z"
+}

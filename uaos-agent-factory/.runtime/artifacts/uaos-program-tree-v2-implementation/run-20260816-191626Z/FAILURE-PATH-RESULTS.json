@@ -1,0 +1,127 @@
+{
+  "generatedAt": "2026-08-16T19:26:23.927Z",
+  "totalTests": 75,
+  "totalFailurePathTests": 36,
+  "results": [
+    {
+      "taskId": "TASK-09-01033-STUDIO_FUNDAMENTALS_CONTRACT",
+      "totalTestCount": 8,
+      "failurePathTestCount": 5,
+      "failurePathTestTitles": [
+        "failure path: network, microphone, camera, or autoplay requirements are rejected",
+        "failure path: duplicate step ids and unknown actions are rejected",
+        "failure path: response order and action type must match",
+        "failure path: control values outside safe bounds are rejected",
+        "failure path: session result count and completion state cannot lie"
+      ]
+    },
+    {
+      "taskId": "TASK-09-01034-STUDIO_FUNDAMENTALS_IMPLEMENTATION",
+      "totalTestCount": 10,
+      "failurePathTestCount": 5,
+      "failurePathTestTitles": [
+        "failure path: skipped or wrong-action steps are rejected without mutation",
+        "failure path: malformed control values are rejected",
+        "failure path: completed sessions refuse extra submissions",
+        "failure path: real file tampering is rejected by SHA256",
+        "failure path: unsupported locale and unsafe profile identifiers are rejected"
+      ]
+    },
+    {
+      "taskId": "TASK-09-01035-STUDIO_FUNDAMENTALS_TESTS",
+      "totalTestCount": 4,
+      "failurePathTestCount": 2,
+      "failurePathTestTitles": [
+        "two local teen profiles remain isolated on disk and in memory",
+        "failure path: out-of-order steps cannot silently advance progress"
+      ]
+    },
+    {
+      "taskId": "TASK-09-01036-STUDIO_FUNDAMENTALS_EVIDENCE",
+      "totalTestCount": 3,
+      "failurePathTestCount": 1,
+      "failurePathTestTitles": [
+        "failure path: empty proof and unsafe claims are rejected"
+      ]
+    },
+    {
+      "taskId": "TASK-02-00253-SAMPLER_RUNTIME_CONTRACT",
+      "totalTestCount": 8,
+      "failurePathTestCount": 6,
+      "failurePathTestTitles": [
+        "failure path: embedded audio is rejected",
+        "failure path: missing provenance and malformed digest are rejected",
+        "failure path: reversed note and velocity ranges are rejected",
+        "failure path: invalid round-robin coordinates are rejected",
+        "failure path: duplicate zone identifiers are rejected",
+        "failure path: malformed note and sustain events are rejected"
+      ]
+    },
+    {
+      "taskId": "TASK-02-00254-SAMPLER_RUNTIME_IMPLEMENTATION",
+      "totalTestCount": 10,
+      "failurePathTestCount": 2,
+      "failurePathTestTitles": [
+        "failure path: an unmapped note is explicit and starts no voice",
+        "failure path: malformed instruments and events fail before mutation"
+      ]
+    },
+    {
+      "taskId": "TASK-02-00255-SAMPLER_RUNTIME_TESTS",
+      "totalTestCount": 4,
+      "failurePathTestCount": 2,
+      "failurePathTestTitles": [
+        "two runtime instances isolate cursors, voices, and event logs",
+        "failure path: unsupported input never silently falls back to another zone"
+      ]
+    },
+    {
+      "taskId": "TASK-02-00256-SAMPLER_RUNTIME_EVIDENCE",
+      "totalTestCount": 3,
+      "failurePathTestCount": 1,
+      "failurePathTestTitles": [
+        "failure path: zero assertions and unsafe boundary claims are rejected"
+      ]
+    },
+    {
+      "taskId": "TASK-03-00317-INTERNAL_PROJECT_FORMAT_CONTRACT",
+      "totalTestCount": 8,
+      "failurePathTestCount": 5,
+      "failurePathTestTitles": [
+        "failure path: traversal, drive paths, and absolute paths are rejected",
+        "failure path: malformed hashes and oversized extracted strings are rejected",
+        "failure path: write or hardware capabilities cannot be enabled",
+        "failure path: duplicate ids and dangling entry references are rejected",
+        "failure path: unknown truth claims are rejected"
+      ]
+    },
+    {
+      "taskId": "TASK-03-00318-INTERNAL_PROJECT_FORMAT_IMPLEMENTATION",
+      "totalTestCount": 10,
+      "failurePathTestCount": 5,
+      "failurePathTestTitles": [
+        "failure path: tampered payload is rejected by real SHA256 verification",
+        "failure path: malformed JSON and unsupported envelopes are rejected",
+        "failure path: unsafe target suffix is rejected before touching disk",
+        "failure path: invalid entry leaves the prior project unchanged",
+        "failure path: inspection refuses non-buffer and oversized payloads"
+      ]
+    },
+    {
+      "taskId": "TASK-03-00319-INTERNAL_PROJECT_FORMAT_TESTS",
+      "totalTestCount": 4,
+      "failurePathTestCount": 1,
+      "failurePathTestTitles": [
+        "failure path: an attempted write-support claim is independently refused"
+      ]
+    },
+    {
+      "taskId": "TASK-03-00320-INTERNAL_PROJECT_FORMAT_EVIDENCE",
+      "totalTestCount": 3,
+      "failurePathTestCount": 1,
+      "failurePathTestTitles": [
+        "failure path: empty proof and unsafe capability claims are rejected"
+      ]
+    }
+  ]
+}

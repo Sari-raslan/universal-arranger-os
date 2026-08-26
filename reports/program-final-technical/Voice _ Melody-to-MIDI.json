@@ -1,0 +1,20 @@
+{
+  "PROGRAM": "Voice / Melody-to-MIDI",
+  "at": "2026-08-25T06:31:37.908Z",
+  "FINAL_TECHNICAL_READY": true,
+  "ok": true,
+  "progress": "Offline notes/WAV→MIDI finalize",
+  "done": [
+    "melody-to-midi",
+    "voice-finalize"
+  ],
+  "remaining": [],
+  "gates": [
+    "HARDWARE_REQUIRED:microphone"
+  ],
+  "artifact": {
+    "capabilityId": "uaos.voice.melody-to-midi.finalize/v1",
+    "roundtripOk": true
+  },
+  "evidenceSha256": "86ec1f74b72fc28cc071605ee44968193880d1ed3068a94022825ff49906ac8f"
+}

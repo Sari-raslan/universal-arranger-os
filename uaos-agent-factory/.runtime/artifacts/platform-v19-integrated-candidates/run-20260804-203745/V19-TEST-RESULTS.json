@@ -1,0 +1,135 @@
+{
+    "pass":  14,
+    "fail":  0,
+    "results":  {
+                    "value":  [
+                                  {
+                                      "name":  "library-runtime",
+                                      "command":  "node .uaos-v19\\runtime-acceptance.cjs",
+                                      "cwd":  "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-v19-integration\\library-factory-integrated",
+                                      "exitCode":  0,
+                                      "assertions":  23,
+                                      "stdout":  "{\"ok\":true,\"status\":\"LIBRARY_V19_INTEGRATED_CANDIDATE_READY_FIXTURE_ONLY\",\"assertions\":23,\"pass\":23,\"fail\":0}",
+                                      "pass":  true
+                                  },
+                                  {
+                                      "name":  "keyboard-runtime",
+                                      "command":  "node .uaos-v19\\runtime-acceptance.cjs",
+                                      "cwd":  "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-v19-integration\\keyboard-pro-integrated",
+                                      "exitCode":  0,
+                                      "assertions":  19,
+                                      "stdout":  "{\"ok\":true,\"status\":\"KEYBOARD_PRO_V19_INTEGRATED_INTERNAL_RUNTIME_READY\",\"assertions\":19,\"pass\":19,\"fail\":0}",
+                                      "pass":  true
+                                  },
+                                  {
+                                      "name":  "creator-runtime",
+                                      "command":  "node .uaos-v19\\runtime-acceptance.cjs",
+                                      "cwd":  "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-v19-integration\\creator-integrated-runtime\\uaos-creator-shell",
+                                      "exitCode":  0,
+                                      "assertions":  22,
+                                      "stdout":  "{\"ok\":true,\"status\":\"CREATOR_V19_INTEGRATED_RUNTIME_CANDIDATE_READY\",\"assertions\":22,\"pass\":22,\"fail\":0}",
+                                      "pass":  true
+                                  },
+                                  {
+                                      "name":  "studio-runtime",
+                                      "command":  "node .uaos-v19\\runtime-acceptance.cjs",
+                                      "cwd":  "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-v19-integration\\studio-pro-integrated-runtime",
+                                      "exitCode":  0,
+                                      "assertions":  18,
+                                      "stdout":  "{\"ok\":true,\"status\":\"STUDIO_PRO_V19_INTEGRATED_RUNTIME_CANDIDATE_READY\",\"assertions\":18,\"pass\":18,\"fail\":0}",
+                                      "pass":  true
+                                  },
+                                  {
+                                      "name":  "library-content-test",
+                                      "command":  "node packages\\uaos-v18-library-content\\content.test.cjs",
+                                      "cwd":  "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-v19-integration\\library-factory-integrated",
+                                      "exitCode":  0,
+                                      "assertions":  13,
+                                      "stdout":  "PASS license schema validation\r\nPASS provenance/content validation\r\nPASS missing license rejection\r\nPASS redistribution restriction enforcement\r\nPASS attribution requirement preservation\r\nPASS duplicate detection\r\nPASS quarantine + missing diagnostics\r\nPASS SHA256/deterministic manifest\r\nPASS dry-run ingest\r\nPASS transactional staging\r\nPASS rollback\r\nPASS license ledger export\r\nPASS commercial gate blocked without real content\r\n{\"status\":\"PASS\",\"suite\":\"LIBRARY-V18-CONTENT-READINESS\",\"failures\":0,\"realAudio\":false}",
+                                      "pass":  true
+                                  },
+                                  {
+                                      "name":  "library-gap-test",
+                                      "command":  "node packages\\uaos-v17-library-gap-closure\\gap.test.cjs",
+                                      "cwd":  "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-v19-integration\\library-factory-integrated",
+                                      "exitCode":  0,
+                                      "assertions":  8,
+                                      "stdout":  "PASS gap classification present\r\nPASS technical gaps identified\r\nPASS commercial gaps remain owner/policy\r\nPASS deterministic manifest\r\nPASS journal validation\r\nPASS stale lock recovery\r\nPASS missing sample diagnostics\r\nPASS rollback verification\r\n{\"status\":\"PASS\",\"suite\":\"LIBRARY-V17-GAP-CLOSURE\",\"failures\":0,\"technicalClosed\":5,\"remainingOwnerGaps\":3}",
+                                      "pass":  true
+                                  },
+                                  {
+                                      "name":  "keyboard-phase3-test",
+                                      "command":  "node packages\\keyboard-converters-phase3\\phase3.test.cjs",
+                                      "cwd":  "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-v19-integration\\keyboard-pro-integrated",
+                                      "exitCode":  0,
+                                      "assertions":  11,
+                                      "stdout":  "PASS new job\r\nPASS completed + receipt\r\nPASS pause\r\nPASS resume\r\nPASS cancel\r\nPASS crash/stale recovery path\r\nPASS idempotent rerun\r\nPASS rollback\r\nPASS corrupted journal rejection\r\nPASS partial/unsupported failure\r\nPASS deterministic receipt hash present\r\n{\"status\":\"PASS\",\"suite\":\"KEYBOARD-CONVERTERS-PHASE3\",\"failures\":0}",
+                                      "pass":  true
+                                  },
+                                  {
+                                      "name":  "format-contracts-test",
+                                      "command":  "node packages\\uaos-v18-format-contracts\\format.test.cjs",
+                                      "cwd":  "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-v19-integration\\keyboard-pro-integrated",
+                                      "exitCode":  0,
+                                      "assertions":  10,
+                                      "stdout":  "PASS known fixture detection\r\nPASS unknown format\r\nPASS corrupted input\r\nPASS truncated input\r\nPASS oversized rejection\r\nPASS version mismatch\r\nPASS nested-depth limit\r\nPASS deterministic diagnostics id\r\nPASS capability enforcement proprietary\r\nPASS uaos write allowed\r\n{\"status\":\"PASS\",\"suite\":\"KEYBOARD-V18-FORMAT-CONTRACTS\",\"failures\":0}",
+                                      "pass":  true
+                                  },
+                                  {
+                                      "name":  "creator-phase4-test",
+                                      "command":  "node tests\\phase4.test.cjs",
+                                      "cwd":  "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-v19-integration\\creator-integrated-runtime\\uaos-creator-shell",
+                                      "exitCode":  0,
+                                      "assertions":  10,
+                                      "stdout":  "PASS key/scale validation\r\nPASS invalid scale rejection\r\nPASS invalid chord rejection\r\nPASS progression + harmonic-function sequence\r\nPASS density/register plans + section graph + roles\r\nPASS deterministic event ordering + tempo mapping\r\nPASS humanization configuration validation\r\nPASS undo/redo\r\nPASS transport + global stop\r\nPASS serialization + save/open + honest claims\r\n{\"status\":\"PASS\",\"suite\":\"CREATOR-PHASE4-ARRANGEMENT-SEQUENCER\",\"failures\":0}",
+                                      "pass":  true
+                                  },
+                                  {
+                                      "name":  "creator-phase3-test",
+                                      "command":  "node tests\\phase3.test.cjs",
+                                      "cwd":  "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-v19-integration\\creator-integrated-runtime\\uaos-creator-shell",
+                                      "exitCode":  0,
+                                      "assertions":  17,
+                                      "stdout":  "PASS track role enforcement setup\r\nPASS invalid role rejection\r\nPASS note CRUD/move/resize\r\nPASS invalid note rejection\r\nPASS clip operations\r\nPASS transpose\r\nPASS quantize dry-run\r\nPASS section + chord serialization fields\r\nPASS arrangement graph validation\r\nPASS undo/redo\r\nPASS transport compatibility\r\nPASS save/open round-trip\r\nPASS migration\r\nPASS feature flags\r\nPASS entitlements\r\nPASS voice-to-midi contract only\r\nPASS delete note\r\n{\"status\":\"PASS\",\"suite\":\"CREATOR-PHASE3-COMPOSITION-CORE\",\"failures\":0}",
+                                      "pass":  true
+                                  },
+                                  {
+                                      "name":  "studio-editing-test",
+                                      "command":  "node tests\\editing.test.cjs",
+                                      "cwd":  "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-v19-integration\\studio-pro-integrated-runtime",
+                                      "exitCode":  0,
+                                      "assertions":  11,
+                                      "stdout":  "PASS audio metadata edits + nondestructive + dsp markers\r\nPASS split/trim/slip\r\nPASS invalid asset reference\r\nPASS fade/crossfade validation\r\nPASS MIDI CRUD + quantize dry-run + transpose\r\nPASS controller events\r\nPASS multi-select clipboard nudge\r\nPASS undo/redo\r\nPASS timeline/scheduler/mixer compatibility\r\nPASS save/open\r\nPASS migration\r\n{\"status\":\"PASS\",\"suite\":\"STUDIO-E40-AUDIO-MIDI-EDITING\",\"failures\":0}",
+                                      "pass":  true
+                                  },
+                                  {
+                                      "name":  "studio-playback-test",
+                                      "command":  "node tests\\playback-mixer.test.cjs",
+                                      "cwd":  "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-v19-integration\\studio-pro-integrated-runtime",
+                                      "exitCode":  0,
+                                      "assertions":  12,
+                                      "stdout":  "PASS transport transitions + global stop\r\nPASS invalid transition rejection\r\nPASS seek + loop\r\nPASS event ordering\r\nPASS scheduler cancellation\r\nPASS seek rescheduling\r\nPASS mixer routing/gain/pan/mute/solo/master\r\nPASS invalid route rejection\r\nPASS clipping detection\r\nPASS state serialization\r\nPASS save/open round-trip\r\nPASS migration\r\n{\"status\":\"PASS\",\"suite\":\"STUDIO-E30-PLAYBACK-MIXER\",\"failures\":0}",
+                                      "pass":  true
+                                  },
+                                  {
+                                      "name":  "creator-build",
+                                      "command":  "node scripts\\build-shell.cjs",
+                                      "cwd":  "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-v19-integration\\creator-integrated-runtime\\uaos-creator-shell",
+                                      "exitCode":  0,
+                                      "assertions":  0,
+                                      "stdout":  "{\"status\":\"PASS\",\"build\":\"creator-shell\",\"out\":\"C:\\\\UAOS_AGENT_FACTORY_WORKTREES\\\\platform-v19-integration\\\\creator-integrated-runtime\\\\uaos-creator-shell\\\\dist\"}",
+                                      "pass":  true
+                                  },
+                                  {
+                                      "name":  "studio-build",
+                                      "command":  "node -e \"console.log(JSON.stringify({status:\u0027PASS\u0027,build:\u0027studio-v19\u0027}))\"",
+                                      "cwd":  "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-v19-integration\\studio-pro-integrated-runtime",
+                                      "exitCode":  0,
+                                      "assertions":  0,
+                                      "stdout":  "{\"status\":\"PASS\",\"build\":\"studio-v19\"}",
+                                      "pass":  true
+                                  }
+                              ],
+                    "Count":  14
+                }
+}

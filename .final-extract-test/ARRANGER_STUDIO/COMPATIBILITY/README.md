@@ -1,0 +1,1 @@
+# Compatibility\n\nMIDI SMF export VERIFIED. Proprietary keyboard WRITE = FORMAT_CONTRACT_REQUIRED.\n

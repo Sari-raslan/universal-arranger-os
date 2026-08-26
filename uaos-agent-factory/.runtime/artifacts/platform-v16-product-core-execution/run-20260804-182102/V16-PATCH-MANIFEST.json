@@ -1,0 +1,25 @@
+{
+    "patches":  [
+                    {
+                        "path":  "library/diff.patch",
+                        "lane":  "library"
+                    },
+                    {
+                        "path":  "keyboard/diff.patch",
+                        "lane":  "keyboard"
+                    },
+                    {
+                        "path":  "KEYBOARD-CONVERTERS-V16-DIFF.patch",
+                        "lane":  "converters"
+                    },
+                    {
+                        "path":  "creator/diff.patch",
+                        "lane":  "creator"
+                    },
+                    {
+                        "path":  "studio/diff.patch",
+                        "lane":  "studio"
+                    }
+                ],
+    "appliedToOriginal":  false
+}

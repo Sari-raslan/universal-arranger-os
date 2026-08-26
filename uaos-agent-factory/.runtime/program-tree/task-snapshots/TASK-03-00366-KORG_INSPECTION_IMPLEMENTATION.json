@@ -1,0 +1,38 @@
+{
+  "id": "TASK-03-00366-KORG_INSPECTION_IMPLEMENTATION",
+  "epicId": "EPIC-03-0004-KEYBOARD_PRO_FULL_TREE",
+  "domain": "03-KEYBOARD-PRO",
+  "title": "KORG inspection implementation",
+  "phase": "IMPLEMENT",
+  "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+  "state": "READY",
+  "priority": 9,
+  "estimateMinutesMin": 60,
+  "estimateMinutesMax": 240,
+  "inputs": [],
+  "acceptanceCriteria": [
+    "KORG inspection implementation contract file exists",
+    "Unit assertions pass for KORG inspection implementation",
+    "Evidence JSON written with SHA256"
+  ],
+  "tests": [
+    "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-03-00366-korg_inspection_implementation\\tests\\main.test.mjs"
+  ],
+  "evidence": [
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-03-00366-korg_inspection_implementation/evidence/result.json"
+  ],
+  "allowedPaths": [
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-03-00366-korg_inspection_implementation",
+    "C:\\keyboard-manager-clean\\uaos-agent-factory\\.runtime\\artifacts\\uaos-program-tree\\TASK-03-00366-KORG_INSPECTION_IMPLEMENTATION"
+  ],
+  "ownerFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-03-00366-korg_inspection_implementation\\src\\korg_inspection_implementation.mjs",
+  "worktree": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-03-00366-korg_inspection_implementation",
+  "gate": "FORMAT_GATE",
+  "blockedReason": null,
+  "rc1Critical": true,
+  "claims": [],
+  "lease": null,
+  "heartbeats": [],
+  "createdAt": "2026-08-04T20:47:04.324Z",
+  "updatedAt": "2026-08-04T20:49:22.528Z"
+}

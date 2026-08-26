@@ -1,0 +1,62 @@
+{
+  "generatedAt": "2026-08-05T06:00:29.789Z",
+  "productStats": [
+    {
+      "product": "studio-pro",
+      "domain": "06-STUDIO-PRO",
+      "readyCount": 30,
+      "rc1CriticalReadyCount": 30,
+      "gatedReadyCount": 0,
+      "preferenceRank": 4,
+      "alreadyImplementedInPriorBatch": true
+    },
+    {
+      "product": "creator",
+      "domain": "05-CREATOR",
+      "readyCount": 27,
+      "rc1CriticalReadyCount": 27,
+      "gatedReadyCount": 0,
+      "preferenceRank": 1,
+      "alreadyImplementedInPriorBatch": false
+    },
+    {
+      "product": "library-factory",
+      "domain": "02-LIBRARY-FACTORY",
+      "readyCount": 25,
+      "rc1CriticalReadyCount": 25,
+      "gatedReadyCount": 0,
+      "preferenceRank": 5,
+      "alreadyImplementedInPriorBatch": true
+    },
+    {
+      "product": "keyboard-pro",
+      "domain": "03-KEYBOARD-PRO",
+      "readyCount": 18,
+      "rc1CriticalReadyCount": 18,
+      "gatedReadyCount": 1,
+      "preferenceRank": 0,
+      "alreadyImplementedInPriorBatch": false
+    },
+    {
+      "product": "singy-kids",
+      "domain": "08-SINGY-KIDS",
+      "readyCount": 16,
+      "rc1CriticalReadyCount": 16,
+      "gatedReadyCount": 0,
+      "preferenceRank": 2,
+      "alreadyImplementedInPriorBatch": false
+    },
+    {
+      "product": "singy-teen",
+      "domain": "09-SINGY-TEEN",
+      "readyCount": 14,
+      "rc1CriticalReadyCount": 14,
+      "gatedReadyCount": 0,
+      "preferenceRank": 3,
+      "alreadyImplementedInPriorBatch": false
+    }
+  ],
+  "rawTopScore": "studio-pro",
+  "selected": "keyboard-pro",
+  "selectionReason": "Mission explicit preference order places Keyboard Pro first, and Keyboard Pro has not been touched by any prior batch (Studio Pro and Library Factory both already have a completed vertical slice from Batches 2-3). Keyboard Pro has a real, non-trivial ready count (18 rc1Critical tasks, 0 conflicts on the selected task) sufficient to build a genuine input-to-output slice, satisfying the \"unless significantly higher real unlock value\" exception check: Studio(30)/Creator(27)/Library(25) are higher by raw count but not so dramatically higher as to override the mission's explicit product-diversity preference, and neither offers a materially different pipeline shape than what is already proven."
+}

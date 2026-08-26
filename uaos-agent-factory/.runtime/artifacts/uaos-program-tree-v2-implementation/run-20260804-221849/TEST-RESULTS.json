@@ -1,0 +1,53 @@
+{
+  "generatedAt": "2026-08-04T22:34:17.903Z",
+  "results": [
+    {
+      "taskId": "TASK-01-00065-ATOMIC_SAVE_CONTRACT",
+      "testCommand": "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00065-atomic_save_contract\\tests\\main.test.mjs",
+      "exitCode": 0,
+      "stdoutTail": "✔ verify() smoke check (0.5036ms)\n✔ accepts valid options and applies default encoding (0.3959ms)\n✔ accepts an explicit allowed encoding, case-insensitively (0.4808ms)\n✔ rejects non-object options (0.2633ms)\n✔ rejects a missing or empty targetPath (0.1367ms)\n✔ rejects undefined data (0.0798ms)\n✔ rejects an unsupported encoding (0.0775ms)\n✔ schema documents required fields and guarantees (0.0913ms)\nℹ tests 8\nℹ suites 0\nℹ pass 8\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 56.9039\n"
+    },
+    {
+      "taskId": "TASK-01-00066-ATOMIC_SAVE_IMPLEMENTATION",
+      "testCommand": "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00066-atomic_save_implementation\\tests\\main.test.mjs",
+      "exitCode": 0,
+      "stdoutTail": "✔ verify() smoke check (0.4609ms)\n✔ writes a brand-new file with the given string payload (5.9834ms)\n✔ JSON-serializes object payloads (2.5068ms)\n✔ overwrite replaces prior content completely (no partial merge) (3.4899ms)\n✔ rejects invalid options via the shared contract validator (propagated, not swallowed) (0.2745ms)\n✔ failure-path: if the final rename cannot succeed, the temp file is cleaned up and the original target is left untouched (2.2836ms)\n✔ failure-path: writing into a nonexistent directory fails cleanly with no partial state (0.555ms)\nℹ tests 7\nℹ suites 0\nℹ pass 7\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 79.3491\n"
+    },
+    {
+      "taskId": "TASK-01-00067-ATOMIC_SAVE_TESTS",
+      "testCommand": "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00067-atomic_save_tests\\tests\\main.test.mjs",
+      "exitCode": 0,
+      "stdoutTail": "✔ verify() smoke check (0.4544ms)\n✔ every write in a burst is fully observed, never a mix of two payloads (39.9755ms)\n✔ round-trips a large (~1MB) payload byte-for-byte (4.7696ms)\n✔ concurrent saves to different targets in the same directory do not collide on temp filenames (16.7358ms)\n✔ failure-path: a mid-burst failure does not corrupt the last successfully-saved content (1.967ms)\nℹ tests 5\nℹ suites 0\nℹ pass 5\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 126.1681\n"
+    },
+    {
+      "taskId": "TASK-01-00068-ATOMIC_SAVE_EVIDENCE",
+      "testCommand": "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00068-atomic_save_evidence\\tests\\main.test.mjs",
+      "exitCode": 0,
+      "stdoutTail": "✔ verify() smoke check (393.1085ms)\n✔ re-running the full feature test suite (contract + implementation + integration) genuinely passes end-to-end (399.6732ms)\n✔ a genuinely failing child test file is detected as FAIL, not swallowed as PASS (101.2668ms)\n✔ a passing child test file is detected as PASS with a real non-zero pass count (regression guard for the nesting bug) (105.5882ms)\n✔ rollback/recovery procedure documents detection, guarantee, cleanup, and caller recovery (0.1703ms)\nℹ tests 5\nℹ suites 0\nℹ pass 5\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 1059.4418\n"
+    },
+    {
+      "taskId": "TASK-01-00173-GLOBAL_STOP_CONTRACT_CONTRACT",
+      "testCommand": "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00173-global_stop_contract_contract\\tests\\main.test.mjs",
+      "exitCode": 0,
+      "stdoutTail": "✔ verify() smoke check (0.51ms)\n✔ accepts a valid registration (0.0818ms)\n✔ rejects non-object options (0.2478ms)\n✔ rejects a missing or empty name (0.5286ms)\n✔ rejects a non-function stopFn (0.124ms)\n✔ schema documents idempotency and fault-isolation guarantees (0.1615ms)\nℹ tests 6\nℹ suites 0\nℹ pass 6\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 60.6326\n"
+    },
+    {
+      "taskId": "TASK-01-00174-GLOBAL_STOP_CONTRACT_IMPLEMENTATION",
+      "testCommand": "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00174-global_stop_contract_implementation\\tests\\main.test.mjs",
+      "exitCode": 0,
+      "stdoutTail": "✔ verify() smoke check (1.3237ms)\n✔ registers and reports handler presence (0.0881ms)\n✔ triggerGlobalStop invokes every registered handler with the given reason (0.5135ms)\n✔ supports async stop handlers and awaits them before resolving (13.9842ms)\n✔ a second triggerGlobalStop call is a no-op and does not re-invoke handlers (0.3424ms)\n✔ a throwing handler does not prevent other handlers from running (0.231ms)\n✔ a rejecting async handler is isolated the same way as a throwing sync one (0.159ms)\n✔ registering after stop is rejected, not silently ignored (0.271ms)\n✔ duplicate registration names are rejected (0.0937ms)\n✔ invalid registration shapes are rejected by the shared contract validator (0.1495ms)\nℹ tests 10\nℹ suites 0\nℹ pass 10\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 77.0436\n"
+    },
+    {
+      "taskId": "TASK-01-00175-GLOBAL_STOP_CONTRACT_TESTS",
+      "testCommand": "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00175-global_stop_contract_tests\\tests\\main.test.mjs",
+      "exitCode": 0,
+      "stdoutTail": "✔ verify() smoke check (0.97ms)\n✔ realistic multi-subsystem shutdown: audio engine, MIDI listener, autosave timer all stop (22.8115ms)\n✔ product invariant: no subsystem can \"start\" again after global stop (0.3437ms)\n✔ a slow subsystem does not block a fast one from being marked stopped first, but the overall trigger still awaits both (29.5765ms)\n✔ failure-path: a crashing audio engine does not prevent MIDI and autosave from stopping cleanly (0.6733ms)\nℹ tests 5\nℹ suites 0\nℹ pass 5\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 115.1095\n"
+    },
+    {
+      "taskId": "TASK-01-00176-GLOBAL_STOP_CONTRACT_EVIDENCE",
+      "testCommand": "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00176-global_stop_contract_evidence\\tests\\main.test.mjs",
+      "exitCode": 0,
+      "stdoutTail": "✔ verify() smoke check (378.7429ms)\n✔ re-running the full feature test suite (contract + implementation + integration) genuinely passes end-to-end (355.6953ms)\n✔ rollback/recovery procedure documents detection, fault isolation, idempotency, and no-resume semantics (0.1334ms)\nℹ tests 3\nℹ suites 0\nℹ pass 3\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 795.1338\n"
+    }
+  ]
+}

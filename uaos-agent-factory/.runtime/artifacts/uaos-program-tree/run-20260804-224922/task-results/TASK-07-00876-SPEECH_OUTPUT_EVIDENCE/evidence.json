@@ -1,0 +1,35 @@
+{
+  "taskId": "TASK-07-00876-SPEECH_OUTPUT_EVIDENCE",
+  "agentId": "NODE_LOCAL_WORKER-0110",
+  "startedAt": "2026-08-04T20:49:27.304Z",
+  "endedAt": "2026-08-04T20:49:27.427Z",
+  "status": "PASS",
+  "tests": [
+    {
+      "command": "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-07-00876-speech_output_evidence\\tests\\main.test.mjs",
+      "exitCode": 0,
+      "stdoutTail": "✔ TASK-07-00876-SPEECH_OUTPUT_EVIDENCE verify (0.4692ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 66.2411\n"
+    }
+  ],
+  "sha256": "9D1EA886241C1F3F6C6197D06BA9C3A9F3B2AA0CABCBCC0046FAF624CE909329",
+  "allowedPathsUsed": [
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-07-00876-speech_output_evidence",
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-07-00876-speech_output_evidence\\src\\speech_output_evidence.mjs",
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-07-00876-speech_output_evidence\\tests\\main.test.mjs"
+  ],
+  "truthStatements": [
+    "Technical WAV success does not prove musical quality",
+    "Fixtures are not product content",
+    "Studio Offline Render is not Real-time DSP",
+    "KORG WRITE_UNSUPPORTED",
+    "No auto adoption of Kids/Teen/Pricing",
+    "Commander not activated"
+  ],
+  "ownerFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-07-00876-speech_output_evidence\\src\\speech_output_evidence.mjs",
+  "phase": "EVIDENCE",
+  "gate": null,
+  "noPush": true,
+  "noMerge": true,
+  "noDeploy": true,
+  "commanderActivated": false
+}

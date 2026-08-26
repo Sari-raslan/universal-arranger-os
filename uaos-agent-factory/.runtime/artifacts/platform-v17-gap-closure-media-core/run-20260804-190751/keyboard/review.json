@@ -1,0 +1,45 @@
+{
+    "banned":  [
+                   "KORG Writer",
+                   "USB",
+                   "SysEx"
+               ],
+    "verdict":  "KEYBOARD_V17_READY_WITH_OWNER_OR_FORMAT_GAPS",
+    "gaps":  [
+                 {
+                     "id":  "converters-separate",
+                     "class":  "ALREADY_CLOSED",
+                     "closed":  true
+                 },
+                 {
+                     "id":  "hardware-banned",
+                     "class":  "OUT_OF_SCOPE",
+                     "closed":  false
+                 },
+                 {
+                     "id":  "not-commercial-hw",
+                     "class":  "COMMERCIAL_POLICY_REQUIRED",
+                     "closed":  false
+                 },
+                 {
+                     "id":  "owner-adoption",
+                     "class":  "OWNER_APPROVAL_REQUIRED",
+                     "closed":  false
+                 },
+                 {
+                     "id":  "ban-enforcement",
+                     "class":  "TECHNICAL_SAFE_TO_CLOSE",
+                     "closed":  true
+                 },
+                 {
+                     "id":  "package-boundary",
+                     "class":  "TECHNICAL_SAFE_TO_CLOSE",
+                     "closed":  true
+                 },
+                 {
+                     "id":  "safe-export-guard",
+                     "class":  "TECHNICAL_SAFE_TO_CLOSE",
+                     "closed":  true
+                 }
+             ]
+}

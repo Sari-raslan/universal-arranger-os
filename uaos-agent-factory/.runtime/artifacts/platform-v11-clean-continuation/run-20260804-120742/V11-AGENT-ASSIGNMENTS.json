@@ -1,0 +1,57 @@
+{
+    "mode":  "HALTED_AFTER_FORENSICS",
+    "commander":  "Cursor",
+    "workers":  "OWNED_LOCAL_WORKER_PROCESSES",
+    "assignments":  [
+                        {
+                            "agent":  "BaselineIntegrityAgent",
+                            "result":  "BASELINE_COMMIT_NOT_FOUND",
+                            "status":  "COMPLETE"
+                        },
+                        {
+                            "agent":  "WIPForensicsAgent",
+                            "result":  "117_FILES_CLASSIFIED",
+                            "status":  "COMPLETE"
+                        },
+                        {
+                            "agent":  "TaskTruthAgent",
+                            "result":  "25_AUDITED_FROM_V9",
+                            "status":  "COMPLETE"
+                        },
+                        {
+                            "agent":  "SourceDiscoveryAgent",
+                            "status":  "NOT_STARTED",
+                            "reason":  "HALTED"
+                        },
+                        {
+                            "agent":  "SingyAgents",
+                            "status":  "NOT_STARTED",
+                            "reason":  "HALTED"
+                        },
+                        {
+                            "agent":  "ArrangerAgents",
+                            "status":  "NOT_STARTED",
+                            "reason":  "HALTED"
+                        },
+                        {
+                            "agent":  "LibraryAgents",
+                            "status":  "NOT_STARTED",
+                            "reason":  "HALTED"
+                        },
+                        {
+                            "agent":  "TestAgent",
+                            "status":  "NOT_STARTED",
+                            "reason":  "HALTED"
+                        },
+                        {
+                            "agent":  "ReviewAgent",
+                            "status":  "NOT_STARTED",
+                            "reason":  "HALTED"
+                        },
+                        {
+                            "agent":  "EvidenceAgent",
+                            "result":  "PACK_EMITTED",
+                            "status":  "COMPLETE"
+                        }
+                    ]
+}

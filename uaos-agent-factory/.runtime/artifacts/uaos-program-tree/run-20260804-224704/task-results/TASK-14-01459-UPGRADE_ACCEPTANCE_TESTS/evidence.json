@@ -1,0 +1,35 @@
+{
+  "taskId": "TASK-14-01459-UPGRADE_ACCEPTANCE_TESTS",
+  "agentId": "NODE_LOCAL_WORKER-0209",
+  "startedAt": "2026-08-04T20:47:40.384Z",
+  "endedAt": "2026-08-04T20:47:40.500Z",
+  "status": "PASS",
+  "tests": [
+    {
+      "command": "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-14-01459-upgrade_acceptance_tests\\tests\\main.test.mjs",
+      "exitCode": 0,
+      "stdoutTail": "✔ TASK-14-01459-UPGRADE_ACCEPTANCE_TESTS verify (0.615ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 64.8533\n"
+    }
+  ],
+  "sha256": "74C5C40BD70E87103DF09811E14DF27B26CE0CB7270B055F97C81390761FDCF3",
+  "allowedPathsUsed": [
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-14-01459-upgrade_acceptance_tests",
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-14-01459-upgrade_acceptance_tests\\src\\upgrade_acceptance_tests.mjs",
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-14-01459-upgrade_acceptance_tests\\tests\\main.test.mjs"
+  ],
+  "truthStatements": [
+    "Technical WAV success does not prove musical quality",
+    "Fixtures are not product content",
+    "Studio Offline Render is not Real-time DSP",
+    "KORG WRITE_UNSUPPORTED",
+    "No auto adoption of Kids/Teen/Pricing",
+    "Commander not activated"
+  ],
+  "ownerFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-14-01459-upgrade_acceptance_tests\\src\\upgrade_acceptance_tests.mjs",
+  "phase": "TEST",
+  "gate": null,
+  "noPush": true,
+  "noMerge": true,
+  "noDeploy": true,
+  "commanderActivated": false
+}

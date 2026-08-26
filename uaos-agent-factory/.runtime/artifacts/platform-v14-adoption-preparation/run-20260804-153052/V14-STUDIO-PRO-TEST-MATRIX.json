@@ -1,0 +1,30 @@
+{
+    "matrix":  [
+                   {
+                       "tests":  [
+                                     "schema-roundtrip"
+                                 ],
+                       "epic":  "E00"
+                   },
+                   {
+                       "tests":  [
+                                     "transport",
+                                     "mixer"
+                                 ],
+                       "epic":  "E30",
+                       "note":  "no mock-as-musical-quality"
+                   },
+                   {
+                       "tests":  [
+                                     "offline-library-load"
+                                 ],
+                       "epic":  "E50"
+                   },
+                   {
+                       "tests":  [
+                                     "export-hash"
+                                 ],
+                       "epic":  "E70"
+                   }
+               ]
+}

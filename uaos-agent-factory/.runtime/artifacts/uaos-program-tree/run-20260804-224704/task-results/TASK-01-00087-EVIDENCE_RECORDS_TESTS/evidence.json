@@ -1,0 +1,35 @@
+{
+  "taskId": "TASK-01-00087-EVIDENCE_RECORDS_TESTS",
+  "agentId": "NODE_LOCAL_WORKER-0020",
+  "startedAt": "2026-08-04T20:47:32.491Z",
+  "endedAt": "2026-08-04T20:47:32.604Z",
+  "status": "PASS",
+  "tests": [
+    {
+      "command": "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00087-evidence_records_tests\\tests\\main.test.mjs",
+      "exitCode": 0,
+      "stdoutTail": "✔ TASK-01-00087-EVIDENCE_RECORDS_TESTS verify (0.4759ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 62.8585\n"
+    }
+  ],
+  "sha256": "1D63A86B3F5483881A6F40B0803A60E2BC6E91D9741E8763A1744AFA753877E3",
+  "allowedPathsUsed": [
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00087-evidence_records_tests",
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00087-evidence_records_tests\\src\\evidence_records_tests.mjs",
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00087-evidence_records_tests\\tests\\main.test.mjs"
+  ],
+  "truthStatements": [
+    "Technical WAV success does not prove musical quality",
+    "Fixtures are not product content",
+    "Studio Offline Render is not Real-time DSP",
+    "KORG WRITE_UNSUPPORTED",
+    "No auto adoption of Kids/Teen/Pricing",
+    "Commander not activated"
+  ],
+  "ownerFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00087-evidence_records_tests\\src\\evidence_records_tests.mjs",
+  "phase": "TEST",
+  "gate": null,
+  "noPush": true,
+  "noMerge": true,
+  "noDeploy": true,
+  "commanderActivated": false
+}

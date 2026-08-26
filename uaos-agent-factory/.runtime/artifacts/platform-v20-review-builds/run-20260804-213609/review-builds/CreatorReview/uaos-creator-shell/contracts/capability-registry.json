@@ -1,0 +1,19 @@
+{
+  "title": "UAOS Creator Capability Registry",
+  "schemaVersion": "uaos.creator.capabilities/v1",
+  "capabilities": {
+    "project.save": { "status": "IMPLEMENTED_SHELL", "requiresEntitlement": null },
+    "project.open": { "status": "IMPLEMENTED_SHELL", "requiresEntitlement": null },
+    "command.bus": { "status": "IMPLEMENTED_SHELL", "requiresEntitlement": null },
+    "evidence.hooks": { "status": "IMPLEMENTED_SHELL", "requiresEntitlement": null },
+    "audio.midi.interfaces": { "status": "INTERFACE_ONLY", "requiresEntitlement": null },
+    "sampler.adapter.interface": { "status": "INTERFACE_ONLY", "requiresEntitlement": null },
+    "player.mixer.interface": { "status": "INTERFACE_ONLY", "requiresEntitlement": null },
+    "voice.to.midi": { "status": "NOT_IMPLEMENTED", "requiresEntitlement": "creator.pro" },
+    "advanced.harmony": { "status": "NOT_IMPLEMENTED", "requiresEntitlement": "creator.pro" },
+    "arrangement.brain": { "status": "NOT_IMPLEMENTED", "requiresEntitlement": "creator.pro" },
+    "golden.sequencer": { "status": "NOT_IMPLEMENTED", "requiresEntitlement": "creator.studio" },
+    "full.multitrack": { "status": "NOT_IMPLEMENTED", "requiresEntitlement": "creator.studio" },
+    "musical.brain.production": { "status": "NOT_IMPLEMENTED", "requiresEntitlement": "creator.studio" }
+  }
+}

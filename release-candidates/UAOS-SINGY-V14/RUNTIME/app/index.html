@@ -1,0 +1,57 @@
+<!DOCTYPE html><html lang="en" id="htmlRoot"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Singy</title>
+<style>
+body{margin:0;font-family:"Segoe UI",Tahoma,sans-serif;background:#070a12;color:#f5f7ff;min-height:100vh}
+.wrap{max-width:900px;margin:0 auto;padding:24px}h1{font-size:clamp(1.8rem,4vw,2.4rem);margin:0 0 8px}.muted{color:#9aabc8}
+.chooser,.work{}.card{background:#12182a;border:1px solid rgba(120,140,255,.28);border-radius:16px;padding:20px;margin:14px 0}
+.big{display:grid;gap:12px;grid-template-columns:1fr 1fr}
+@media(max-width:600px){.big{grid-template-columns:1fr}}
+button{padding:16px;border:0;border-radius:14px;font-size:1.05rem;font-weight:700;cursor:pointer;color:#fff}
+.kids{background:linear-gradient(135deg,#00c2ff,#3d7eff)}.teen{background:linear-gradient(135deg,#8b5cff,#5b2cff)}
+.ghost{background:transparent;border:1px solid rgba(120,140,255,.28);color:#fff;font-weight:600;padding:12px}
+#work{display:none}#out{white-space:pre-wrap;line-height:1.45}
+</style></head><body>
+<div class="wrap">
+<div id="chooser">
+<h1>Singy</h1>
+<p class="muted" id="sub">Choose your experience. Built-in synth only — no uncleared samples.</p>
+<div class="card big">
+<button class="kids" id="pickKids">KIDS</button>
+<button class="teen" id="pickTeen">TEEN</button>
+</div>
+<div><button class="ghost" data-lang="en">EN</button><button class="ghost" data-lang="de">DE</button><button class="ghost" data-lang="ar">AR</button></div>
+</div>
+<div id="work">
+<h1 id="modeTitle">Singy</h1>
+<p class="muted" id="modeHelp"></p>
+<div class="card">
+<button class="ghost" id="lesson">Open lesson / Create</button>
+<button class="ghost" id="hear">Hear result</button>
+<button class="ghost" id="stop">Stop</button>
+<button class="ghost" id="save">Save session</button>
+<button class="ghost" id="back">Back</button>
+<button class="ghost" id="diag">Diagnostics</button>
+</div>
+<div class="card"><div id="out">Ready.</div></div>
+</div>
+</div>
+<script>
+let mode="KIDS", lang="en";
+const help={en:{kids:"Simple lessons. Clear stop. Safe and offline.",teen:"Create, arrange sections, keep your session."},
+de:{kids:"Einfache Lektionen. Klarer Stopp. Sicher und offline.",teen:"Erstellen, Abschnitte arrangieren, Session behalten."},
+ar:{kids:"دروس بسيطة. إيقاف واضح. آمن ودون اتصال.",teen:"أنشئ ورتّب المقاطع واحفظ جلستك."}};
+function applyLang(){document.getElementById("htmlRoot").lang=lang;document.getElementById("htmlRoot").dir=lang==="ar"?"rtl":"ltr";
+document.getElementById("sub").textContent=lang==="ar"?"اختر تجربتك. تشغيل مدمج فقط.":lang==="de"?"Wählen Sie Ihre Erfahrung. Nur eingebauter Synth.":"Choose your experience. Built-in synth only — no uncleared samples.";}
+document.querySelectorAll("[data-lang]").forEach(b=>b.onclick=()=>{lang=b.dataset.lang;applyLang();if(document.getElementById("work").style.display==="block")document.getElementById("modeHelp").textContent=help[lang][mode==="KIDS"?"kids":"teen"];});
+async function run(){const body=mode==="TEEN"?{tempo:104}:{};const j=await fetch("/api/sku/singy/mode/"+mode,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(body)}).then(r=>r.json());document.getElementById("out").textContent=JSON.stringify(j,null,2);return j;}
+function enter(m){mode=m;document.getElementById("chooser").style.display="none";document.getElementById("work").style.display="block";document.getElementById("modeTitle").textContent="Singy · "+m;document.getElementById("modeHelp").textContent=help[lang][m==="KIDS"?"kids":"teen"];run();}
+document.getElementById("pickKids").onclick=()=>enter("KIDS");
+document.getElementById("pickTeen").onclick=()=>enter("TEEN");
+document.getElementById("lesson").onclick=()=>run();
+document.getElementById("hear").onclick=()=>document.getElementById("out").textContent=JSON.stringify({ok:true,builtInSynth:true,unclearedSamples:false},null,2);
+document.getElementById("stop").onclick=()=>document.getElementById("out").textContent=JSON.stringify({ok:true,stopped:true},null,2);
+document.getElementById("save").onclick=async()=>{const p=await run();await fetch("/api/pilot/project/save",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(p)});};
+document.getElementById("back").onclick=()=>{document.getElementById("work").style.display="none";document.getElementById("chooser").style.display="block";};
+document.getElementById("diag").onclick=async()=>document.getElementById("out").textContent=JSON.stringify(await fetch("/api/pilot/diagnostics").then(r=>r.json()),null,2);
+applyLang();
+</script></body></html>

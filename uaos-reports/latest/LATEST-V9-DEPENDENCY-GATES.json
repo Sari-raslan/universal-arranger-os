@@ -1,0 +1,41 @@
+{
+  "status": "UAOS_V9_CURSOR_DEPENDENCY_AND_DERIVED_GATE_ORCHESTRATION_PASS",
+  "overallState": "UAOS_V9_TEST_OR_BUILD_FAILURES_PRESENT",
+  "executionMode": "OWNED_LOCAL_WORKER_PROCESSES",
+  "generatedAt": "2026-08-04T06:25:45.250Z",
+  "startedAt": "2026-08-04T06:25:09.571Z",
+  "runId": "run-20260804-082509-v9",
+  "runDir": "C:\\keyboard-manager-clean\\uaos-agent-factory\\.runtime\\artifacts\\platform-v9-dependency-gates\\run-20260804-082509-v9",
+  "v8Baseline": {
+    "run": "C:\\keyboard-manager-clean\\uaos-agent-factory\\.runtime\\artifacts\\platform-v8-execution-gates\\run-20260804-080122-v8",
+    "status": "UAOS_V8_CURSOR_MULTI_AGENT_GATE_ORCHESTRATION_PASS",
+    "overallState": "UAOS_V8_DEPENDENCY_INSTALL_REQUIRED",
+    "tasksAudited": 25,
+    "dependencyRequired": 10
+  },
+  "concurrency": {
+    "dependencyInstalls": 2,
+    "heavyGates": 2,
+    "derivedStatic": 6,
+    "freeDiskGb": 25.17,
+    "freeRamGb": 13.22
+  },
+  "counts": {
+    "tasksAudited": 25,
+    "dependenciesAttempted": 10,
+    "dependenciesReady": 10,
+    "dependenciesReviewRequired": 0,
+    "dependenciesFailed": 0,
+    "declaredPass": 0,
+    "declaredFail": 10,
+    "derivedPass": 15,
+    "derivedNoSafe": 0,
+    "testFail": 10,
+    "buildFail": 0,
+    "typecheckFail": 0,
+    "lintFail": 0,
+    "sourceBlocked": 6,
+    "ownerDecisions": 12
+  },
+  "cacheRoot": "C:\\UAOS_AGENT_FACTORY_CACHE\\v9"
+}

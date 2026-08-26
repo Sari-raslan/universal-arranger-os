@@ -1,0 +1,26 @@
+{
+  "schema": "uaos.security-policy/v1",
+  "forbidden": [
+    "git reset",
+    "git clean",
+    "git stash",
+    "git restore",
+    "delete WIP",
+    "modify V15-V21 worktrees",
+    "parallel write same file",
+    "push",
+    "merge",
+    "public deploy",
+    "payment activation",
+    "USB",
+    "hardware write",
+    "SysEx",
+    "KORG Writer before gates",
+    "copy Kontakt or Native Instruments content",
+    "fabricate content licenses"
+  ],
+  "protectedWorktreesGlob": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-v1[5-9]*;C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-v2[0-1]*",
+  "noListeningPorts": true,
+  "noAutoplay": true,
+  "networkDisabledAcceptanceRequired": true
+}

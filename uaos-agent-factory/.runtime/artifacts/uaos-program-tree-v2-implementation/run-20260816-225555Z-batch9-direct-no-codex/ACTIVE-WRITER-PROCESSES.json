@@ -1,0 +1,7 @@
+[
+  {
+    "ProcessId": 20688,
+    "Name": "powershell.exe",
+    "CommandLine": "powershell.exe -NoProfile -Command \"Get-CimInstance Win32_Process | Where-Object { $_.CommandLine -and $_.CommandLine -match '(?i)\\b(codex|aider|claude)\\b' -and $_.CommandLine -match '(?i)keyboard-manager-clean|uaos-program-execution|uaos-program-tree' } | Select-Object ProcessId,Name,CommandLine | ConvertTo-Json -Depth 4\""
+  }
+]

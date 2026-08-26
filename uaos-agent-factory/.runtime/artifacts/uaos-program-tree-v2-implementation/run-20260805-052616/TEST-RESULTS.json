@@ -1,0 +1,77 @@
+{
+  "generatedAt": "2026-08-05T05:46:39.468Z",
+  "results": [
+    {
+      "taskId": "TASK-01-00129-VERSIONING_CONTRACT",
+      "testCommand": "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00129-versioning_contract\\tests\\main.test.mjs",
+      "exitCode": 0,
+      "stdoutTail": "✔ validateManifest accepts a manifest with no buildMetadata (optional field) (0.1067ms)\n✔ rejects an invalid productId (0.263ms)\n✔ rejects an invalid version (0.0968ms)\n✔ rejects a non-positive buildNumber (0.144ms)\n✔ rejects buildMetadata with disallowed characters (e.g. injection-style content) (0.1586ms)\n✔ rejects an unparseable generatedAt (0.0966ms)\n✔ compareVersions/isCompatible reject malformed version strings rather than guessing (0.1044ms)\nℹ tests 12\nℹ suites 0\nℹ pass 12\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 65.9275"
+    },
+    {
+      "taskId": "TASK-01-00130-VERSIONING_IMPLEMENTATION",
+      "testCommand": "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00130-versioning_implementation\\tests\\main.test.mjs",
+      "exitCode": 0,
+      "stdoutTail": "✔ SAVE + REOPEN round-trip via the real AtomicSave primitive preserves the manifest exactly (4.0353ms)\n✔ isManifestCompatible: same product, caret-compatible version -> true (0.2238ms)\n✔ isManifestCompatible: wrong product -> false, even if version would otherwise match (0.0791ms)\n✔ isManifestCompatible: major-version mismatch -> false (0.0738ms)\n✔ generateManifest rejects an invalid productId (0.2637ms)\n✔ failure-path: reopenManifest fails cleanly on a corrupted file rather than returning partial data (2.9012ms)\n✔ failure-path: saveProject-equivalent save failure leaves a prior manifest untouched (2.2028ms)\nℹ tests 10\nℹ suites 0\nℹ pass 10\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 76.0765"
+    },
+    {
+      "taskId": "TASK-01-00131-VERSIONING_TESTS",
+      "testCommand": "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00131-versioning_tests\\tests\\main.test.mjs",
+      "exitCode": 0,
+      "stdoutTail": "✔ verify() smoke check (0.4472ms)\n✔ persists and reopens a distinct, valid manifest for all six products (11.5988ms)\n✔ compatibility matrix: each product manifest is only compatible with ITS OWN required-version checks (9.8978ms)\n✔ failure-path: a sabotaged save for one product does not affect the other five (10.445ms)\nℹ tests 4\nℹ suites 0\nℹ pass 4\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 95.9507"
+    },
+    {
+      "taskId": "TASK-01-00132-VERSIONING_EVIDENCE",
+      "testCommand": "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00132-versioning_evidence\\tests\\main.test.mjs",
+      "exitCode": 0,
+      "stdoutTail": "✔ verify() smoke check (385.616ms)\n✔ re-running the full feature test suite genuinely passes end-to-end (372.0497ms)\n✔ TEST HARNESS GUARD: zero discovered tests is treated as FAIL, not PASS (1.3643ms)\n✔ a genuinely failing child test file is detected as FAIL (106.2841ms)\n✔ rollback/recovery procedure documents determinism and no-cross-product-bleed guarantees (0.1153ms)\nℹ tests 5\nℹ suites 0\nℹ pass 5\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 927.4757"
+    },
+    {
+      "taskId": "TASK-01-00105-SIGNED_LICENSES_CONTRACT",
+      "testCommand": "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00105-signed_licenses_contract\\tests\\main.test.mjs",
+      "exitCode": 0,
+      "stdoutTail": "✔ validatePayloadShape accepts a well-formed payload with a perpetual (null) expiry (0.408ms)\n✔ validateReceiptShape accepts a well-formed receipt (0.1077ms)\n✔ rejects an invalid productId or sku (0.2668ms)\n✔ rejects an unparseable issuedAt (0.0828ms)\n✔ rejects a non-null, unparseable expiresAt (0.0748ms)\n✔ rejects a receipt with a missing signatureBase64 (0.1031ms)\n✔ schema documents the offline and tamper-rejection guarantees (0.2103ms)\nℹ tests 10\nℹ suites 0\nℹ pass 10\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 63.4931"
+    },
+    {
+      "taskId": "TASK-01-00106-SIGNED_LICENSES_IMPLEMENTATION",
+      "testCommand": "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00106-signed_licenses_implementation\\tests\\main.test.mjs",
+      "exitCode": 0,
+      "stdoutTail": "✔ TIME GUARD: verifying an expiring license without an injected now throws rather than silently reading the system clock (0.4747ms)\n✔ CRYPTO GUARD: a tampered payload (one field changed after signing) fails verification (0.3219ms)\n✔ CRYPTO GUARD: a tampered signature (bit-flipped) fails verification (0.302ms)\n✔ CRYPTO GUARD: verifying with the WRONG public key fails, even for an otherwise-valid receipt (0.3218ms)\n✔ a receipt correctly signed for a DIFFERENT product is rejected (WRONG_PRODUCT), signature itself is genuinely valid (0.2394ms)\n✔ a receipt correctly signed for a DIFFERENT sku is rejected (WRONG_SKU) (0.2362ms)\n✔ malformed base64 signature bytes are rejected cleanly, not a crash (0.1559ms)\nℹ tests 15\nℹ suites 0\nℹ pass 15\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 71.8884"
+    },
+    {
+      "taskId": "TASK-01-00107-SIGNED_LICENSES_TESTS",
+      "testCommand": "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00107-signed_licenses_tests\\tests\\main.test.mjs",
+      "exitCode": 0,
+      "stdoutTail": "✔ verify() smoke check (0.4259ms)\n✔ full offline install flow: issue -> AtomicSave persist -> fresh reopen -> verify, for all six products (17.1756ms)\n✔ cross-product isolation: a receipt reopened for product A never verifies for product B, even with the correct vendor key (9.9692ms)\n✔ failure-path: receipts issued by an untrusted/rogue keypair never verify against the real vendor public key (10.01ms)\nℹ tests 4\nℹ suites 0\nℹ pass 4\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 101.7508"
+    },
+    {
+      "taskId": "TASK-01-00108-SIGNED_LICENSES_EVIDENCE",
+      "testCommand": "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00108-signed_licenses_evidence\\tests\\main.test.mjs",
+      "exitCode": 0,
+      "stdoutTail": "✔ verify() smoke check (373.5273ms)\n✔ re-running the full feature test suite genuinely passes end-to-end (370.733ms)\n✔ TEST HARNESS GUARD: zero discovered tests is FAIL (0.8322ms)\n✔ rollback/recovery procedure documents no-network, no-clock, and key-rotation guidance (0.1037ms)\nℹ tests 4\nℹ suites 0\nℹ pass 4\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 806.9816"
+    },
+    {
+      "taskId": "TASK-02-00197-USER_SUPPLIED_WAV_INGESTION_CONTRACT",
+      "testCommand": "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-02-00197-user_supplied_wav_ingestion_contract\\tests\\main.test.mjs",
+      "exitCode": 0,
+      "stdoutTail": "✔ rejects a non-UUID entryId (0.2716ms)\n✔ rejects a malformed sha256 (0.0967ms)\n✔ rejects an unsupported channel count (0.49ms)\n✔ rejects a negative durationSeconds (0.0943ms)\n✔ rejects a catalog with the wrong productId (0.1319ms)\n✔ rejects a catalog whose entries is not an array (0.1399ms)\n✔ schema documents dedup-by-hash and no-raw-audio-embedding guarantees (0.1551ms)\nℹ tests 11\nℹ suites 0\nℹ pass 11\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 66.6561"
+    },
+    {
+      "taskId": "TASK-02-00198-USER_SUPPLIED_WAV_INGESTION_IMPLEMENTATI",
+      "testCommand": "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-02-00198-user_supplied_wav_ingestion_implementati\\tests\\main.test.mjs",
+      "exitCode": 0,
+      "stdoutTail": "✔ sha256OfBuffer is content-addressed: identical bytes -> identical hash, different bytes -> different hash (3.2184ms)\n✔ FULL VERTICAL SLICE: ingest -> catalog -> atomic save -> close -> reopen -> missing-source recovery -> manifest (11.3998ms)\n✔ manifest generation is deterministic regardless of entry insertion order (1.4597ms)\n✔ failure-path: ingestWavFile rejects a structurally invalid WAV file, no entry is produced (1.3809ms)\n✔ failure-path: addEntryToCatalog rejects duplicate content (same sha256) even under a different filename (1.3304ms)\n✔ failure-path: reopenCatalog fails cleanly on a corrupted catalog file (2.8298ms)\n✔ failure-path: a sabotaged catalog save leaves any prior catalog untouched (inherits AtomicSave guarantee) (4.1915ms)\nℹ tests 9\nℹ suites 0\nℹ pass 9\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 98.7004"
+    },
+    {
+      "taskId": "TASK-02-00199-USER_SUPPLIED_WAV_INGESTION_TESTS",
+      "testCommand": "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-02-00199-user_supplied_wav_ingestion_tests\\tests\\main.test.mjs",
+      "exitCode": 0,
+      "stdoutTail": "✔ verify() smoke check (0.9711ms)\n✔ bulk drop-folder ingestion: 10 unique sounds ingested, 2 exact duplicates correctly skipped (10.1152ms)\n✔ full bulk pipeline: save -> reopen -> manifest reflects exactly the deduplicated catalog (15.1679ms)\n✔ missing-source recovery across a bulk catalog: several sources deleted after ingestion are all correctly flagged (6.6557ms)\n✔ failure-path: one malformed file in a batch is rejected without losing the other real ingestions (6.1255ms)\nℹ tests 5\nℹ suites 0\nℹ pass 5\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 105.1112"
+    },
+    {
+      "taskId": "TASK-02-00200-USER_SUPPLIED_WAV_INGESTION_EVIDENCE",
+      "testCommand": "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-02-00200-user_supplied_wav_ingestion_evidence\\tests\\main.test.mjs",
+      "exitCode": 0,
+      "stdoutTail": "✔ verify() smoke check (413.4193ms)\n✔ re-running the full vertical-slice test suite genuinely passes end-to-end (404.9055ms)\n✔ TEST HARNESS GUARD: zero discovered tests is FAIL (1.3193ms)\n✔ rollback/recovery procedure documents dedup, missing-source, and manifest-determinism guarantees (0.0886ms)\nℹ tests 4\nℹ suites 0\nℹ pass 4\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 883.5627"
+    }
+  ]
+}

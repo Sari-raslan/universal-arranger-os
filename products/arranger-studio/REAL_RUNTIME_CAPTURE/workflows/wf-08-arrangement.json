@@ -1,0 +1,93 @@
+{
+  "workflowId": "wf-08-arrangement",
+  "ok": true,
+  "result": {
+    "ok": true,
+    "engine": {
+      "ok": true,
+      "section": "Intro",
+      "tempo": 96
+    },
+    "song": [
+      {
+        "section": "Intro",
+        "bars": 4,
+        "chord": "Cm",
+        "style": "Oriental Pop"
+      },
+      {
+        "section": "Main A",
+        "bars": 8,
+        "chord": "Cm",
+        "style": "Oriental Pop"
+      },
+      {
+        "section": "Main B",
+        "bars": 8,
+        "chord": "Ab",
+        "style": "Oriental Pop"
+      },
+      {
+        "section": "Break",
+        "bars": 2,
+        "chord": "Bb",
+        "style": "Oriental Pop"
+      },
+      {
+        "section": "Ending",
+        "bars": 4,
+        "chord": "Cm",
+        "style": "Oriental Pop"
+      }
+    ],
+    "plan": {
+      "groove": "arabic-khaleeji",
+      "harmony": "maqam-inspired",
+      "tempo": 92,
+      "instrumentation": [
+        "oud",
+        "qanun",
+        "arabic-percussion",
+        "strings"
+      ],
+      "emotion": "expressive",
+      "sections": [
+        {
+          "name": "Intro",
+          "bars": 4
+        },
+        {
+          "name": "Verse",
+          "bars": 8
+        },
+        {
+          "name": "Chorus",
+          "bars": 8
+        },
+        {
+          "name": "Bridge",
+          "bars": 4
+        },
+        {
+          "name": "Final Chorus",
+          "bars": 8
+        }
+      ],
+      "exportTargets": [
+        "MIDI",
+        "STYLE",
+        "STY",
+        "SET",
+        "MusicXML"
+      ]
+    },
+    "intelligenceOk": true,
+    "pipelineOk": true,
+    "v13Mixer": "READ_ONLY_DEPENDENCY",
+    "musicalQualityPass": false,
+    "capabilityId": "uaos.arranger-studio.e2e/v1"
+  },
+  "outputArtifact": "23c2248c5f0a084602978e62e6308b010acaa0043e0b638b667bd982075f7097",
+  "sha256": "23c2248c5f0a084602978e62e6308b010acaa0043e0b638b667bd982075f7097",
+  "durationMs": 165
+}

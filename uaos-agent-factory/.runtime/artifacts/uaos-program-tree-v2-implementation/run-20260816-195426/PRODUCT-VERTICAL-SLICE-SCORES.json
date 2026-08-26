@@ -1,0 +1,107 @@
+{
+  "generatedAt": "2026-08-05T16:44:01.727Z",
+  "method": "Ranked all 16 genuinely-READY Singy Kids DEFINE-phase tasks by literal fit to the mission Chain C pipeline (LOCAL LESSON CATALOG -> PARENT GATE -> EXERCISE SESSION -> RESULT VALIDATION -> PROGRESS SAVE -> CLOSE -> REOPEN -> RESTORE -> CORRUPTION RECOVERY -> EVIDENCE). PARENT_GATE_CONTRACT itself is OWNER_GATE (gated) and was excluded per the no-external-gated-tasks rule; a real, original parent-gate mechanism is instead implemented inside the selected chain, not by depending on the gated task.",
+  "selected": "TASK-08-00981-OFFLINE_LESSONS_CONTRACT",
+  "selectionReason": "Highest pipeline-fit score, TIED with TASK-08-00973-LOCAL_PROGRESS_CONTRACT at pipelineFit=3. TIE-BREAK: the mission's own pipeline ordering lists LOCAL LESSON CATALOG as stage 1 (of 10) and PROGRESS SAVE as stage 5 -- Offline Lessons corresponds to the earlier, broader stage that the rest of the pipeline (parent gate, exercise session, progress) is built around, whereas Local Progress covers only the narrower SAVE/CLOSE/REOPEN/RESTORE/CORRUPTION-RECOVERY portion. Offline Lessons' title also literally names the mandatory offline/no-network requirement that spans the ENTIRE required slice (not just the progress-save portion), matching the mission's explicit 'no external network requirement' criterion. The full pipeline (catalog, parent gate, exercise session, progress save/restore, corruption recovery) is implemented inside this single 4-task chain, following the same pattern as Batch 5's Creator Project Workspace chain (one chain internally implementing a full multi-stage vertical behavior, consistent with the program's proven disconnected leaf-group graph structure).",
+  "scored": [
+    {
+      "id": "TASK-08-00973-LOCAL_PROGRESS_CONTRACT",
+      "title": "Local progress contract",
+      "pipelineFit": 3,
+      "note": "directly names a required pipeline stage (LOCAL LESSON CATALOG / offline + progress)"
+    },
+    {
+      "id": "TASK-08-00981-OFFLINE_LESSONS_CONTRACT",
+      "title": "Offline lessons contract",
+      "pipelineFit": 3,
+      "note": "directly names a required pipeline stage (LOCAL LESSON CATALOG / offline + progress)"
+    },
+    {
+      "id": "TASK-08-00937-BEGINNER_CURRICULUM_CONTRACT",
+      "title": "Beginner curriculum contract",
+      "pipelineFit": 2,
+      "note": "a lesson/content category, not the pipeline backbone"
+    },
+    {
+      "id": "TASK-08-00941-INSTRUMENT_RECOGNITION_CONTRACT",
+      "title": "Instrument recognition contract",
+      "pipelineFit": 2,
+      "note": "a lesson/content category, not the pipeline backbone"
+    },
+    {
+      "id": "TASK-08-00945-NOTE_RECOGNITION_CONTRACT",
+      "title": "Note recognition contract",
+      "pipelineFit": 2,
+      "note": "a lesson/content category, not the pipeline backbone"
+    },
+    {
+      "id": "TASK-08-00949-RHYTHM_GAMES_CONTRACT",
+      "title": "Rhythm games contract",
+      "pipelineFit": 2,
+      "note": "a lesson/content category, not the pipeline backbone"
+    },
+    {
+      "id": "TASK-08-00953-SINGING_EXERCISES_CONTRACT",
+      "title": "Singing exercises contract",
+      "pipelineFit": 2,
+      "note": "a lesson/content category, not the pipeline backbone"
+    },
+    {
+      "id": "TASK-08-00957-INSTRUMENT_LESSONS_CONTRACT",
+      "title": "Instrument lessons contract",
+      "pipelineFit": 2,
+      "note": "a lesson/content category, not the pipeline backbone"
+    },
+    {
+      "id": "TASK-08-00961-STORY_BASED_MUSIC_LESSONS_CONTRACT",
+      "title": "Story-based music lessons contract",
+      "pipelineFit": 2,
+      "note": "a lesson/content category, not the pipeline backbone"
+    },
+    {
+      "id": "TASK-08-00969-REWARDS_WITHOUT_ADDICTIVE_DARK_PATTERNS_",
+      "title": "Rewards without addictive dark patterns contract",
+      "pipelineFit": 2,
+      "note": "a lesson/content category, not the pipeline backbone"
+    },
+    {
+      "id": "TASK-08-00989-PARENT_REPORTS_CONTRACT",
+      "title": "Parent reports contract",
+      "pipelineFit": 2,
+      "note": "a lesson/content category, not the pipeline backbone"
+    },
+    {
+      "id": "TASK-08-00933-AGE_BANDS_CONTRACT",
+      "title": "Age bands contract",
+      "pipelineFit": 1,
+      "note": "peripheral to the required minimal vertical slice"
+    },
+    {
+      "id": "TASK-08-00965-OPERETTA_PARTICIPATION_CONTRACT",
+      "title": "Operetta participation contract",
+      "pipelineFit": 1,
+      "note": "peripheral to the required minimal vertical slice"
+    },
+    {
+      "id": "TASK-08-00977-ACCESSIBILITY_CONTRACT",
+      "title": "Accessibility contract",
+      "pipelineFit": 1,
+      "note": "peripheral to the required minimal vertical slice"
+    },
+    {
+      "id": "TASK-08-00985-SAFE_AI_CONVERSATION_CONTRACT",
+      "title": "Safe AI conversation contract",
+      "pipelineFit": 1,
+      "note": "peripheral to the required minimal vertical slice"
+    },
+    {
+      "id": "TASK-08-00993-TEACHER_PACKS_CONTRACT",
+      "title": "Teacher packs contract",
+      "pipelineFit": 1,
+      "note": "peripheral to the required minimal vertical slice"
+    }
+  ],
+  "takeoverVerifiedAt": "2026-08-16T17:59:34.847Z",
+  "sourceRun": "C:\\keyboard-manager-clean\\uaos-agent-factory\\.runtime\\artifacts\\uaos-program-tree-v2-implementation\\run-20260805-125858",
+  "sourceArtifactSha256": "7c1bd5ed27aa509c691af6fd1b52d3bd7647615940322f5f44362fd662dc1b2b"
+}

@@ -1,0 +1,18 @@
+{
+  "generatedAt": "2026-08-16T19:48:30.794Z",
+  "status": "NO_NEW_BATCH_BLOCKER",
+  "blockers": [
+    "Manual microphone permission cleanup validation requires a real browser permission flow.",
+    "Manual MIDI thru and panic validation requires real MIDI hardware.",
+    "Automatic updater network checks require a packaged signed build with the intended update provider configured.",
+    "Post-merge validation is blocked at npm ci --prefix uaos-live-clean because Windows refuses to unlink uaos-live-clean/node_modules/@rolldown/.binding-win32-x64-msvc-XggE4oWY/rolldown-binding.win32-x64-msvc.node."
+  ],
+  "batchSafetyGates": [
+    "No deploy/public release",
+    "No payment/checkout",
+    "No auth/credentials",
+    "No hardware/USB/SysEx/proprietary writer",
+    "No Commander access",
+    "No copied commercial content"
+  ]
+}

@@ -1,0 +1,22 @@
+{
+    "dependencies":  {
+                         "T-LIB":  [
+
+                                   ],
+                         "T-KBD":  [
+
+                                   ],
+                         "T-CRE":  [
+
+                                   ],
+                         "T-STU":  [
+                                       "phase0-contracts"
+                                   ],
+                         "T-EVID":  [
+                                        "T-LIB",
+                                        "T-KBD",
+                                        "T-CRE",
+                                        "T-STU"
+                                    ]
+                     }
+}

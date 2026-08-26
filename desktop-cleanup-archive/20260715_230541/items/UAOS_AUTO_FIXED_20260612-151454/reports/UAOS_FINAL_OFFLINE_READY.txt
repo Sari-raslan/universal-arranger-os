@@ -1,0 +1,20 @@
+﻿UAOS FINAL OFFLINE READY
+========================
+
+STATUS:
+V3 Offline Candidate Ready
+
+LOCAL:
+Frontend PASS
+Backend PASS
+Desktop Shortcut Created
+Release Gate PASS
+
+RUN OFFLINE:
+powershell -ExecutionPolicy Bypass -File ".\scripts\UAOS_DESKTOP_OFFLINE_FULL_RUN.ps1"
+
+DEPLOY TOMORROW:
+powershell -ExecutionPolicy Bypass -File ".\scripts\UAOS_TOMORROW_PUBLIC_DEPLOY.ps1"
+
+URL LOCAL:
+http://127.0.0.1:5180

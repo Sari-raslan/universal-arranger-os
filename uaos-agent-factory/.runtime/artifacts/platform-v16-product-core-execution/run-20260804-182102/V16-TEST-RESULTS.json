@@ -1,0 +1,92 @@
+{
+    "pass":  17,
+    "fail":  0,
+    "results":  [
+                    {
+                        "stdout":  "lib-check-stdout.log",
+                        "exitCode":  0,
+                        "name":  "check",
+                        "lane":  "library"
+                    },
+                    {
+                        "name":  "test:sampler",
+                        "exitCode":  0,
+                        "lane":  "library"
+                    },
+                    {
+                        "name":  "test:library-validator",
+                        "exitCode":  0,
+                        "lane":  "library"
+                    },
+                    {
+                        "name":  "test:preview-player",
+                        "exitCode":  0,
+                        "lane":  "library"
+                    },
+                    {
+                        "name":  "build:desktop",
+                        "exitCode":  0,
+                        "lane":  "library"
+                    },
+                    {
+                        "name":  "test:arranger-foundation",
+                        "exitCode":  0,
+                        "lane":  "keyboard"
+                    },
+                    {
+                        "name":  "check",
+                        "exitCode":  0,
+                        "lane":  "keyboard"
+                    },
+                    {
+                        "name":  "test:arranger-magic-set",
+                        "exitCode":  0,
+                        "lane":  "keyboard"
+                    },
+                    {
+                        "name":  "test:arranger-set-doctor",
+                        "exitCode":  0,
+                        "lane":  "keyboard"
+                    },
+                    {
+                        "name":  "test:arranger-safe-export",
+                        "exitCode":  0,
+                        "lane":  "keyboard"
+                    },
+                    {
+                        "name":  "build:desktop",
+                        "exitCode":  0,
+                        "lane":  "keyboard"
+                    },
+                    {
+                        "exitCode":  0,
+                        "name":  "converters.safe.test",
+                        "lane":  "converters"
+                    },
+                    {
+                        "exitCode":  0,
+                        "name":  "phase2.test",
+                        "lane":  "creator"
+                    },
+                    {
+                        "exitCode":  0,
+                        "name":  "build",
+                        "lane":  "creator"
+                    },
+                    {
+                        "exitCode":  0,
+                        "name":  "timeline.test",
+                        "lane":  "studio"
+                    },
+                    {
+                        "exitCode":  0,
+                        "name":  "project-system.test",
+                        "lane":  "studio"
+                    },
+                    {
+                        "exitCode":  0,
+                        "name":  "build",
+                        "lane":  "studio"
+                    }
+                ]
+}

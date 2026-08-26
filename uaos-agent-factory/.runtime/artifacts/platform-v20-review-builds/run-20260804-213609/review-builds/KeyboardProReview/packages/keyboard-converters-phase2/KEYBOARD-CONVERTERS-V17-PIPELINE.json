@@ -1,0 +1,15 @@
+{
+  "stages": [
+    "createJob",
+    "stageConvert",
+    "preview",
+    "commitStaged",
+    "receipt",
+    "rollback"
+  ],
+  "banned": [
+    "korg-write",
+    "usb",
+    "sysex"
+  ]
+}

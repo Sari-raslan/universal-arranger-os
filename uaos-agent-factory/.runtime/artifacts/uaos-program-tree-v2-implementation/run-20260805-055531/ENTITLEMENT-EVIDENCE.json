@@ -1,0 +1,76 @@
+{
+  "generatedAt": "2026-08-05T10:33:32.157Z",
+  "feature": "Entitlements (Trial + License state)",
+  "statesModeled": [
+    "TRIAL_NOT_STARTED",
+    "TRIAL_ACTIVE",
+    "TRIAL_EXPIRED_READ_ONLY",
+    "LICENSED",
+    "LICENSE_EXPIRED_READ_ONLY",
+    "LICENSE_INVALID",
+    "LICENSE_WRONG_PRODUCT"
+  ],
+  "allStatesCoveredByRealTests": true,
+  "keyGuarantees": [
+    "canOpenProjects is true in every one of the 7 states — an expired/invalid entitlement never blocks opening or deletes/encrypts/locks existing user projects.",
+    "A valid, correctly-signed, unexpired, correct-product license always resolves to LICENSED, restoring full entitlement even after a trial has expired — verified directly with a trial-expired-then-activated test.",
+    "The system clock is never read internally; every time-dependent check requires an injected `now: Date`.",
+    "No hardware fingerprint and no network call anywhere in entitlement resolution — verified by a static source grep in the IMPLEMENT task's own test suite."
+  ],
+  "timeBoundaryTests": [
+    "1ms before 14-day trial expiry -> TRIAL_ACTIVE",
+    "exactly at 14-day trial expiry -> TRIAL_EXPIRED_READ_ONLY (exclusive boundary)",
+    "1ms after -> TRIAL_EXPIRED_READ_ONLY"
+  ],
+  "cryptoIntegration": "Uses Batch 3's real Ed25519 Signed License Verification (verifyReceipt) — LICENSE_INVALID/LICENSE_WRONG_PRODUCT/LICENSE_EXPIRED_READ_ONLY states are all driven by genuine signature/expiry verification, not simulated.",
+  "perTaskEvidence": [
+    {
+      "taskId": "TASK-01-00097-ENTITLEMENTS_CONTRACT",
+      "runAt": "2026-08-05T06:06:16.166Z",
+      "status": "PASS",
+      "exitCode": 0,
+      "testCommand": "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00097-entitlements_contract\\tests\\main.test.mjs",
+      "stdoutTail": "✔ verify() smoke check (0.5073ms)\n✔ ENTITLEMENT_STATES contains exactly the 7 required states (0.9199ms)\n✔ validateTrialStartedAt accepts null and a valid ISO string (0.2185ms)\n✔ validateEntitlementInput accepts a well-formed trial-not-started input (0.2767ms)\n✔ rejects a missing productId (0.2861ms)\n✔ rejects a malformed trialStartedAt (0.1047ms)\n✔ rejects a missing/invalid injected clock — the system clock must never be read internally (0.1006ms)\n✔ schema documents the license-restores-entitlement and data-preservation guarantees (0.1568ms)\n✔ TRIAL_DURATION_DAYS is a real positive number of days (0.104ms)\nℹ tests 9\nℹ suites 0\nℹ pass 9\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 64.9329\n",
+      "ownerFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00097-entitlements_contract\\src\\entitlements_contract.mjs",
+      "ownerFileSha256": "da0e6c3a2f7e2ac5d661f366ee7398a1a55361f988ebe8a3e7172c6b80fbfa7c",
+      "ownerFileBytes": 3725,
+      "note": "Real 7-state entitlement schema + validators. 9/9 passing."
+    },
+    {
+      "taskId": "TASK-01-00098-ENTITLEMENTS_IMPLEMENTATION",
+      "runAt": "2026-08-05T06:06:16.354Z",
+      "status": "PASS",
+      "exitCode": 0,
+      "testCommand": "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00098-entitlements_implementation\\tests\\main.test.mjs",
+      "stdoutTail": "✔ verify() smoke check (1.6825ms)\n✔ PURITY GUARD: no fs/network/hardware access anywhere in this implementation file (0.3158ms)\n✔ TRIAL_NOT_STARTED: no trial history, no license (0.0943ms)\n✔ TRIAL_ACTIVE: within the 14-day window (0.0824ms)\n✔ TIME BOUNDARY: one millisecond before the 14-day trial boundary is still active (0.1299ms)\n✔ TIME BOUNDARY: exactly at the 14-day trial boundary is expired (exclusive of the boundary instant) (0.0927ms)\n✔ TIME BOUNDARY: one millisecond after the boundary is expired (0.0838ms)\n✔ LICENSED: a genuinely valid, unexpired, correct-product license (1.4282ms)\n✔ LICENSE_EXPIRED_READ_ONLY: an expired license (0.3326ms)\n✔ LICENSE_INVALID: a tampered/forged license (bad signature) (0.8356ms)\n✔ LICENSE_WRONG_PRODUCT: a genuinely valid license, but for a different product (0.3349ms)\n✔ license activation restores full entitlement even after the trial has expired (0.3469ms)\n✔ rejects resolving with a license receipt but no publicKey (0.356ms)\n✔ rejects invalid input shapes via the shared contract validator (0.0868ms)\nℹ tests 14\nℹ suites 0\nℹ pass 14\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 74.7289\n",
+      "ownerFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00098-entitlements_implementation\\src\\entitlements_implementation.mjs",
+      "ownerFileSha256": "fbd37a5a4118416e10f66e8c37af3fec2cbb2a31c59aaff5cd35f0ac8c9d12f2",
+      "ownerFileBytes": 2920,
+      "note": "Real trial+license resolver using Batch 3 Signed Licenses; all 7 states covered incl. license-restores-entitlement, time boundaries, purity guard. 14/14 passing."
+    },
+    {
+      "taskId": "TASK-01-00099-ENTITLEMENTS_TESTS",
+      "runAt": "2026-08-05T06:06:16.545Z",
+      "status": "PASS",
+      "exitCode": 0,
+      "testCommand": "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00099-entitlements_tests\\tests\\main.test.mjs",
+      "stdoutTail": "✔ verify() smoke check (0.5051ms)\n✔ day-by-day trial lifecycle transitions from TRIAL_ACTIVE to TRIAL_EXPIRED_READ_ONLY exactly once, at day 14 (0.6708ms)\n✔ canExport flips false exactly when the state becomes expired, never before (0.109ms)\n✔ the same lifecycle simulation, run for all six products, is independent per product (0.1275ms)\n✔ an entitlement resolution snapshot persists via the real AtomicSave primitive and reopens exactly (2.3214ms)\n✔ failure-path: a sabotaged snapshot save leaves the prior snapshot untouched (3.8139ms)\nℹ tests 6\nℹ suites 0\nℹ pass 6\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 77.9634\n",
+      "ownerFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00099-entitlements_tests\\src\\entitlements_tests.mjs",
+      "ownerFileSha256": "d744814cb42103527ad9b30555189db486c5dd11527706fcca20025f5f25a4bc",
+      "ownerFileBytes": 1718,
+      "note": "Real day-by-day trial lifecycle simulation across 6 products + AtomicSave snapshot persistence. 6/6 passing."
+    },
+    {
+      "taskId": "TASK-01-00100-ENTITLEMENTS_EVIDENCE",
+      "runAt": "2026-08-05T06:06:17.452Z",
+      "status": "PASS",
+      "exitCode": 0,
+      "testCommand": "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00100-entitlements_evidence\\tests\\main.test.mjs",
+      "stdoutTail": "✔ verify() smoke check (369.1491ms)\n✔ re-running the full feature test suite genuinely passes end-to-end (357.7085ms)\n✔ TEST HARNESS GUARD: zero discovered tests is FAIL (1.189ms)\n✔ rollback/recovery procedure documents data preservation and license-restores-entitlement guarantees (0.1006ms)\nℹ tests 4\nℹ suites 0\nℹ pass 4\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 793.1581\n",
+      "ownerFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00100-entitlements_evidence\\src\\entitlements_evidence.mjs",
+      "ownerFileSha256": "b737e849f66d61bc1f3b07394ad188b916f0354cb8b697f5e091e7405c7ffe19",
+      "ownerFileBytes": 5314,
+      "note": "Aggregates+re-verifies end-to-end. 4/4 passing."
+    }
+  ]
+}

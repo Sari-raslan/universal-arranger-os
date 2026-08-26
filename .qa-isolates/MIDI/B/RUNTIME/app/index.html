@@ -1,0 +1,37 @@
+<!DOCTYPE html><html lang="en" id="htmlRoot"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>UAOS MIDI Toolkit</title>
+<style>
+body{margin:0;font-family:"Segoe UI",Tahoma,sans-serif;background:#070a12;color:#f5f7ff}
+.wrap{max-width:980px;margin:0 auto;padding:22px}h1{margin:0 0 6px}.muted{color:#9aabc8}
+.card{background:#12182a;border:1px solid rgba(120,140,255,.28);border-radius:14px;padding:16px;margin:12px 0}
+.grid{display:grid;gap:8px;grid-template-columns:repeat(auto-fit,minmax(150px,1fr))}
+button{padding:11px 12px;border-radius:10px;border:1px solid rgba(120,140,255,.28);background:#1a2340;color:#fff;cursor:pointer}
+button.primary{background:linear-gradient(135deg,#3d7eff,#0088ff);border:0}
+#drop{border:2px dashed rgba(120,140,255,.35);padding:22px;text-align:center;border-radius:12px;color:#9aabc8}
+#out{white-space:pre-wrap;line-height:1.45}.err{color:#ff8f8f}.lang button{padding:6px 10px;font-size:.8rem}
+</style></head><body>
+<div class="wrap">
+<div class="lang"><button data-lang="en">EN</button><button data-lang="de">DE</button><button data-lang="ar">AR</button></div>
+<h1 id="title">UAOS MIDI Toolkit</h1>
+<p class="muted" id="sub">Inspect, clean, normalize, and convert where verified — format truth preserved.</p>
+<div class="card"><div id="drop" data-i18n-drop>Drop a MIDI file here or use a mode below (browser file pick where supported).</div>
+<input type="file" id="file" accept=".mid,.midi,.syx,.set,.sty,.prs,.pcg,.kst,.pad,.all,.bkp,.pkg,audio/*,*/*"/></div>
+<div class="card"><div class="grid" id="modes"></div></div>
+<div class="card"><div id="out" class="muted">Select a mode to begin.</div>
+<button id="diag">Export diagnostics</button></div>
+</div>
+<script>
+const MODES=["AUDIO_TO_MIDI","MIDI_INSPECT","MIDI_CLEAN","MIDI_NORMALIZE","FORMAT_INSPECT","CONVERT_WHERE_VERIFIED"];
+const I18N={en:{title:"UAOS MIDI Toolkit",sub:"Inspect, clean, normalize, and convert where verified — format truth preserved.",drop:"Drop a MIDI file here or choose a mode below."},
+de:{title:"UAOS MIDI Toolkit",sub:"Prüfen, bereinigen, normalisieren und konvertieren — wo verifiziert.",drop:"MIDI-Datei hier ablegen oder Modus wählen."},
+ar:{title:"مجموعة أدوات MIDI",sub:"فحص وتنظيف وتطبيع وتحويل حيث تم التحقق — مع صدق التنسيق.",drop:"أسقط ملف MIDI هنا أو اختر وضعاً."}};
+let lang="en";
+function apply(){const t=I18N[lang];document.getElementById("htmlRoot").lang=lang;document.getElementById("htmlRoot").dir=lang==="ar"?"rtl":"ltr";document.getElementById("title").textContent=t.title;document.getElementById("sub").textContent=t.sub;document.getElementById("drop").textContent=t.drop;}
+document.querySelectorAll("[data-lang]").forEach(b=>b.onclick=()=>{lang=b.dataset.lang;apply()});
+const out=document.getElementById("out");
+const modes=document.getElementById("modes");
+MODES.forEach(m=>{const b=document.createElement("button");b.className="primary";b.textContent=m.replaceAll("_"," ");b.onclick=async()=>{try{const j=await fetch("/api/sku/midi-toolkit/mode/"+m,{method:"POST"}).then(r=>r.json());out.className="";out.textContent=m+"\n"+JSON.stringify(j,null,2);}catch(e){out.className="err";out.textContent=e.message}};modes.appendChild(b);});
+document.getElementById("file").onchange=()=>{const f=document.getElementById("file").files?.[0];if(f)out.textContent="Selected: "+f.name+" ("+f.size+" bytes). Use a mode to process. Proprietary WRITE remains blocked."};
+document.getElementById("diag").onclick=async()=>{out.textContent=JSON.stringify(await fetch("/api/pilot/diagnostics").then(r=>r.json()),null,2)};
+apply();
+</script></body></html>

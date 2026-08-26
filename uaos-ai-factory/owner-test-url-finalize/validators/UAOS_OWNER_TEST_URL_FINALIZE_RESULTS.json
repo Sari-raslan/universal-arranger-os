@@ -1,55 +1,59 @@
-{
-  "checks": {
-    "build_pass": {
-      "pass": true,
-      "detail": "npm run build"
-    },
-    "working_url_recorded": {
-      "pass": true,
-      "detail": "http://127.0.0.1:5180/"
-    },
-    "fallback_recorded": {
-      "pass": true,
-      "detail": "http://127.0.0.1:5180/universal-arranger-os/"
-    },
-    "old_4173_not_primary": {
-      "pass": true,
-      "detail": "http://127.0.0.1:5180/"
-    },
-    "title_mojibake_repaired_or_not_found": {
-      "pass": true,
-      "detail": "UAOS \u2014 Universal Arranger OS | AE Platform"
-    },
-    "appjsx_unchanged": {
-      "pass": true,
-      "detail": ""
-    },
-    "no_deploy": {
-      "pass": true,
-      "detail": "no deploy commands"
-    },
-    "no_push_command": {
-      "pass": true,
-      "detail": "no push commands"
-    },
-    "korg_writer_blocked": {
-      "pass": true,
-      "detail": "blocked state recorded"
-    },
-    "no_blocked_korg_files_in_run_folder": {
-      "pass": true,
-      "detail": ""
-    },
-    "no_usb_pa3x_payment": {
-      "pass": true,
-      "detail": "blocked actions absent"
-    },
-    "no_false_claim_strings": {
-      "pass": true,
-      "detail": "claim strings absent"
-    }
-  },
-  "errors": [],
-  "pass": true,
-  "validator": "uaos_owner_test_url_finalize_validator.py"
+﻿{
+    "checks":  {
+                   "build_pass":  {
+                                      "pass":  true,
+                                      "detail":  "npm run build"
+                                  },
+                   "working_url_recorded":  {
+                                                "pass":  true,
+                                                "detail":  "http://127.0.0.1:5180/"
+                                            },
+                   "fallback_recorded":  {
+                                             "pass":  true,
+                                             "detail":  "http://127.0.0.1:5180/universal-arranger-os/"
+                                         },
+                   "old_4173_not_primary":  {
+                                                "pass":  true,
+                                                "detail":  "http://127.0.0.1:5180/"
+                                            },
+                   "title_mojibake_repaired_or_not_found":  {
+                                                                "pass":  true,
+                                                                "detail":  "UAOS — Universal Arranger OS | AE Platform"
+                                                            },
+                   "appjsx_unchanged":  {
+                                            "pass":  true,
+                                            "detail":  ""
+                                        },
+                   "no_deploy":  {
+                                     "pass":  true,
+                                     "detail":  "no deploy commands"
+                                 },
+                   "no_push_command":  {
+                                           "pass":  true,
+                                           "detail":  "no push commands"
+                                       },
+                   "korg_writer_blocked":  {
+                                               "pass":  true,
+                                               "detail":  "blocked state recorded"
+                                           },
+                   "no_blocked_korg_files_in_run_folder":  {
+                                                               "pass":  true,
+                                                               "detail":  ""
+                                                           },
+                   "no_usb_pa3x_payment":  {
+                                               "pass":  true,
+                                               "detail":  "blocked actions absent"
+                                           },
+                   "no_false_claim_strings":  {
+                                                  "pass":  true,
+                                                  "detail":  "claim strings absent"
+                                              }
+               },
+    "errors":  [
+
+               ],
+    "pass":  true,
+    "validator":  "uaos_owner_test_url_finalize_validator.py",
+    "commit_hash":  "9def6ae5e5bab4e52bd316c6060804c026bb6913",
+    "pushed":  false
 }

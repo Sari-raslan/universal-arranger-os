@@ -1,0 +1,59 @@
+{
+  "batch": 21,
+  "writer": "LOCAL_OLLAMA_TOOL_LOOP_V12",
+  "model": "qwen2.5-coder:7b",
+  "selected": [
+    {
+      "id": "TASK-14-01449-RESTART_ACCEPTANCE_CONTRACT",
+      "title": "Restart acceptance contract | DEFINE",
+      "worktree": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-14-01449-restart_acceptance_contract",
+      "dependencies": []
+    },
+    {
+      "id": "TASK-14-01463-UNINSTALL_ACCEPTANCE_TESTS",
+      "title": "Uninstall acceptance tests | TEST",
+      "worktree": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-14-01463-uninstall_acceptance_tests",
+      "dependencies": [
+        "TASK-14-01462-UNINSTALL_ACCEPTANCE_IMPLEMENTATION"
+      ]
+    },
+    {
+      "id": "TASK-12-01317-STUDIO_PAGE_CONTRACT",
+      "title": "Studio page contract | DEFINE",
+      "worktree": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-12-01317-studio_page_contract",
+      "dependencies": []
+    },
+    {
+      "id": "TASK-12-01313-CREATOR_PAGE_CONTRACT",
+      "title": "Creator page contract | DEFINE",
+      "worktree": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-12-01313-creator_page_contract",
+      "dependencies": []
+    },
+    {
+      "id": "TASK-02-00293-LIBRARY_VALIDATION_CONTRACT",
+      "title": "Library validation contract | DEFINE",
+      "worktree": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-02-00293-library_validation_contract",
+      "dependencies": []
+    },
+    {
+      "id": "TASK-12-01306-LIBRARY_PAGE_IMPLEMENTATION",
+      "title": "Library page implementation | IMPLEMENT",
+      "worktree": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-12-01306-library_page_implementation",
+      "dependencies": [
+        "TASK-12-01305-LIBRARY_PAGE_CONTRACT"
+      ]
+    },
+    {
+      "id": "TASK-12-01309-KEYBOARD_PAGE_CONTRACT",
+      "title": "Keyboard page contract | DEFINE",
+      "worktree": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-12-01309-keyboard_page_contract",
+      "dependencies": []
+    },
+    {
+      "id": "TASK-06-00761-SAMPLER_INTEGRATION_CONTRACT",
+      "title": "Sampler integration contract | DEFINE",
+      "worktree": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-06-00761-sampler_integration_contract",
+      "dependencies": []
+    }
+  ]
+}

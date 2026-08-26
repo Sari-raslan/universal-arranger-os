@@ -1,0 +1,35 @@
+{
+  "taskId": "TASK-07-00807-PEDAGOGICAL_PLANNER_TESTS",
+  "agentId": "NODE_LOCAL_WORKER-0225",
+  "startedAt": "2026-08-04T20:47:41.043Z",
+  "endedAt": "2026-08-04T20:47:41.173Z",
+  "status": "PASS",
+  "tests": [
+    {
+      "command": "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-07-00807-pedagogical_planner_tests\\tests\\main.test.mjs",
+      "exitCode": 0,
+      "stdoutTail": "✔ TASK-07-00807-PEDAGOGICAL_PLANNER_TESTS verify (0.4968ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 69.4192\n"
+    }
+  ],
+  "sha256": "18C1D93ADB5F01D2F0AA87CCAB772A70018365468DDE6083B38B2D4E17456D0C",
+  "allowedPathsUsed": [
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-07-00807-pedagogical_planner_tests",
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-07-00807-pedagogical_planner_tests\\src\\pedagogical_planner_tests.mjs",
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-07-00807-pedagogical_planner_tests\\tests\\main.test.mjs"
+  ],
+  "truthStatements": [
+    "Technical WAV success does not prove musical quality",
+    "Fixtures are not product content",
+    "Studio Offline Render is not Real-time DSP",
+    "KORG WRITE_UNSUPPORTED",
+    "No auto adoption of Kids/Teen/Pricing",
+    "Commander not activated"
+  ],
+  "ownerFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-07-00807-pedagogical_planner_tests\\src\\pedagogical_planner_tests.mjs",
+  "phase": "TEST",
+  "gate": null,
+  "noPush": true,
+  "noMerge": true,
+  "noDeploy": true,
+  "commanderActivated": false
+}

@@ -1,0 +1,38 @@
+{
+  "generatedAt": "2026-08-05T10:46:14.268Z",
+  "status": "REPAIR_APPLIED",
+  "appliedEdgeCount": 6,
+  "appliedEdges": [
+    {
+      "from": "TASK-01-00106-SIGNED_LICENSES_IMPLEMENTATION",
+      "to": "TASK-01-00098-ENTITLEMENTS_IMPLEMENTATION"
+    },
+    {
+      "from": "TASK-01-00066-ATOMIC_SAVE_IMPLEMENTATION",
+      "to": "TASK-01-00099-ENTITLEMENTS_TESTS"
+    },
+    {
+      "from": "TASK-01-00066-ATOMIC_SAVE_IMPLEMENTATION",
+      "to": "TASK-01-00166-EXPORT_IMPORT_USER_DATA_IMPLEMENTATION"
+    },
+    {
+      "from": "TASK-01-00066-ATOMIC_SAVE_IMPLEMENTATION",
+      "to": "TASK-03-00338-INSPECTOR_IMPLEMENTATION"
+    },
+    {
+      "from": "TASK-01-00074-RECOVERY_IMPLEMENTATION",
+      "to": "TASK-03-00338-INSPECTOR_IMPLEMENTATION"
+    },
+    {
+      "from": "TASK-03-00337-INSPECTOR_CONTRACT",
+      "to": "TASK-03-00339-INSPECTOR_TESTS"
+    }
+  ],
+  "postApplyValidation": {
+    "cycles": 0,
+    "danglingEdges": 0,
+    "selfDependencies": 0,
+    "duplicateEdges": 0,
+    "validationPassed": true
+  }
+}

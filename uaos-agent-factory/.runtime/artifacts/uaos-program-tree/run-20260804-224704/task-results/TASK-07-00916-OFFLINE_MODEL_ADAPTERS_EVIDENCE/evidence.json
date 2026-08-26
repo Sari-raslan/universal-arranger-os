@@ -1,0 +1,35 @@
+{
+  "taskId": "TASK-07-00916-OFFLINE_MODEL_ADAPTERS_EVIDENCE",
+  "agentId": "NODE_LOCAL_WORKER-0210",
+  "startedAt": "2026-08-04T20:47:52.330Z",
+  "endedAt": "2026-08-04T20:47:52.451Z",
+  "status": "PASS",
+  "tests": [
+    {
+      "command": "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-07-00916-offline_model_adapters_evidence\\tests\\main.test.mjs",
+      "exitCode": 0,
+      "stdoutTail": "✔ TASK-07-00916-OFFLINE_MODEL_ADAPTERS_EVIDENCE verify (0.5074ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 63.8074\n"
+    }
+  ],
+  "sha256": "262956A7F9545B1E3CC854EC1F3BF0BAC13A9D34B98473CFD6D392B897CB3B17",
+  "allowedPathsUsed": [
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-07-00916-offline_model_adapters_evidence",
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-07-00916-offline_model_adapters_evidence\\src\\offline_model_adapters_evidence.mjs",
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-07-00916-offline_model_adapters_evidence\\tests\\main.test.mjs"
+  ],
+  "truthStatements": [
+    "Technical WAV success does not prove musical quality",
+    "Fixtures are not product content",
+    "Studio Offline Render is not Real-time DSP",
+    "KORG WRITE_UNSUPPORTED",
+    "No auto adoption of Kids/Teen/Pricing",
+    "Commander not activated"
+  ],
+  "ownerFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-07-00916-offline_model_adapters_evidence\\src\\offline_model_adapters_evidence.mjs",
+  "phase": "EVIDENCE",
+  "gate": null,
+  "noPush": true,
+  "noMerge": true,
+  "noDeploy": true,
+  "commanderActivated": false
+}

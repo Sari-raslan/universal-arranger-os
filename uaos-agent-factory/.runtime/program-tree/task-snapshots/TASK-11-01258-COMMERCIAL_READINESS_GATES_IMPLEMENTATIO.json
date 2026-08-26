@@ -1,0 +1,38 @@
+{
+  "id": "TASK-11-01258-COMMERCIAL_READINESS_GATES_IMPLEMENTATIO",
+  "epicId": "EPIC-11-0012-COMMERCIAL_PLATFORM",
+  "domain": "11-COMMERCIAL-PLATFORM",
+  "title": "Commercial readiness gates implementation",
+  "phase": "IMPLEMENT",
+  "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+  "state": "READY",
+  "priority": 9,
+  "estimateMinutesMin": 60,
+  "estimateMinutesMax": 240,
+  "inputs": [],
+  "acceptanceCriteria": [
+    "Commercial readiness gates implementation contract file exists",
+    "Unit assertions pass for Commercial readiness gates implementation",
+    "Evidence JSON written with SHA256"
+  ],
+  "tests": [
+    "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-11-01258-commercial_readiness_gates_implementatio\\tests\\main.test.mjs"
+  ],
+  "evidence": [
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-11-01258-commercial_readiness_gates_implementatio/evidence/result.json"
+  ],
+  "allowedPaths": [
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-11-01258-commercial_readiness_gates_implementatio",
+    "C:\\keyboard-manager-clean\\uaos-agent-factory\\.runtime\\artifacts\\uaos-program-tree\\TASK-11-01258-COMMERCIAL_READINESS_GATES_IMPLEMENTATIO"
+  ],
+  "ownerFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-11-01258-commercial_readiness_gates_implementatio\\src\\commercial_readiness_gates_imple.mjs",
+  "worktree": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-11-01258-commercial_readiness_gates_implementatio",
+  "gate": null,
+  "blockedReason": null,
+  "rc1Critical": true,
+  "claims": [],
+  "lease": null,
+  "heartbeats": [],
+  "createdAt": "2026-08-04T20:47:04.339Z",
+  "updatedAt": "2026-08-04T20:49:23.002Z"
+}

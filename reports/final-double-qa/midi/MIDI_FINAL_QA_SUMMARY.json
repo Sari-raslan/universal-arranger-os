@@ -1,0 +1,30 @@
+{
+  "schema": "uaos.midi-toolkit.final-double-qa/v1",
+  "product": "UAOS MIDI Toolkit",
+  "updatedAt": "2026-08-26T05:10:00.000Z",
+  "QA_A": "YES",
+  "QA_B": "YES",
+  "POST_ZIP": "YES",
+  "DOUBLE_ACCEPTANCE": "2/2",
+  "PARALLEL_QA_OVERLAP": "YES",
+  "CANDIDATE_HASH": "8351c73d96c5058eb3ebb7c639694689ba635ac974c22aa2c24d2dae7106164a",
+  "HASH_MATCH": true,
+  "workflowsA": { "pass": 20, "total": 20 },
+  "workflowsB": { "pass": 20, "total": 20 },
+  "P0": 0,
+  "P1": 0,
+  "CLEAN_MACHINE_EQUIVALENT": true,
+  "COMMANDER_TOUCHED": false,
+  "lintTypecheck": "N/A_NO_SCRIPTS_DEFINED",
+  "buildPackaging": "YES",
+  "zipPath": "FINAL_RELEASE_CANDIDATES/UAOS_MIDI_TOOLKIT_FINAL_RC.zip",
+  "zipSha256": "d587dd15a166dba90ceb2cdce1991c67be436737e2d2611a9208db6de6000ba4",
+  "evidence": {
+    "QA_A": "reports/final-double-qa/midi/QA_A.json",
+    "QA_B": "reports/final-double-qa/midi/QA_B.json",
+    "POST_ZIP": "reports/final-double-qa/midi/POST_ZIP.json",
+    "summary": "reports/final-double-qa/midi/SUMMARY.json",
+    "candidate": "FINAL_RELEASE_CANDIDATES/MIDI_TOOLKIT"
+  },
+  "fails": []
+}

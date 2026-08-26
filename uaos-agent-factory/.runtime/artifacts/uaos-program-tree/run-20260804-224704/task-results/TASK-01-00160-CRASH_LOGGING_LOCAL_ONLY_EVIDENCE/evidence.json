@@ -1,0 +1,35 @@
+{
+  "taskId": "TASK-01-00160-CRASH_LOGGING_LOCAL_ONLY_EVIDENCE",
+  "agentId": "NODE_LOCAL_WORKER-0031",
+  "startedAt": "2026-08-04T20:47:44.441Z",
+  "endedAt": "2026-08-04T20:47:44.574Z",
+  "status": "PASS",
+  "tests": [
+    {
+      "command": "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00160-crash_logging_local_only_evidence\\tests\\main.test.mjs",
+      "exitCode": 0,
+      "stdoutTail": "✔ TASK-01-00160-CRASH_LOGGING_LOCAL_ONLY_EVIDENCE verify (0.553ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 71.5543\n"
+    }
+  ],
+  "sha256": "376EFC50B3D4B7C503E79594DC3B684BC513939DC7B252FCCC2513B53626447A",
+  "allowedPathsUsed": [
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00160-crash_logging_local_only_evidence",
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00160-crash_logging_local_only_evidence\\src\\crash_logging_local_only_evidenc.mjs",
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00160-crash_logging_local_only_evidence\\tests\\main.test.mjs"
+  ],
+  "truthStatements": [
+    "Technical WAV success does not prove musical quality",
+    "Fixtures are not product content",
+    "Studio Offline Render is not Real-time DSP",
+    "KORG WRITE_UNSUPPORTED",
+    "No auto adoption of Kids/Teen/Pricing",
+    "Commander not activated"
+  ],
+  "ownerFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00160-crash_logging_local_only_evidence\\src\\crash_logging_local_only_evidenc.mjs",
+  "phase": "EVIDENCE",
+  "gate": null,
+  "noPush": true,
+  "noMerge": true,
+  "noDeploy": true,
+  "commanderActivated": false
+}

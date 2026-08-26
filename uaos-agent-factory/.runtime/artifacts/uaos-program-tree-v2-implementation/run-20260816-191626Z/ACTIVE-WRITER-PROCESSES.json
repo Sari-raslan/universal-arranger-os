@@ -1,0 +1,12 @@
+{
+  "checkedAt": "2026-08-16T19:16:26.863Z",
+  "ledgerMatches": [],
+  "activeStateFiles": [],
+  "processInspection": {
+    "status": "LIMITED",
+    "reason": "Win32_Process CIM query denied by host; no process command line was available.",
+    "stdout": "",
+    "stderr": "Get-CimInstance : Zugriff verweigert. \r\nIn Zeile:1 Zeichen:10\r\n+ $items = Get-CimInstance Win32_Process | Where-Object { $_.CommandLin ...\r\n+          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\r\n    + CategoryInfo          : PermissionDenied: (root\\cimv2:Win32_Process:String) [Get-CimInstance], CimException\r\n    + FullyQualifiedErrorId : HRESULT 0x80041003,Microsoft.Management.Infrastructure.CimCmdlets.GetCimInstanceCommand\r\n \r\n"
+  },
+  "singleWriterDeclaration": "This Codex root agent is the sole batch writer; no sub-agents were spawned and all writes are serial."
+}

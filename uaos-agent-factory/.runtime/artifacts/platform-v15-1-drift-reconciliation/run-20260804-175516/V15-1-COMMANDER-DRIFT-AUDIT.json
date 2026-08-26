@@ -1,0 +1,69 @@
+{
+    "repository":  "C:\\Users\\ssare\\Desktop\\UAOS Commander",
+    "branch":  "master",
+    "headBeforeV15":  "540faede7efa899d756d005fbb7fb9022f604362",
+    "currentHead":  "9b23824f1cb14fdb611d4cfdee0b3e09a7442939",
+    "headEqualsExpectedDriftTarget":  true,
+    "ancestorOfBefore":  true,
+    "dirtyCount":  14,
+    "statusPorcelain":  [
+                            " M reports/UAOS_COMMANDER_CONVERSATION_UI_AND_COPY_TOOLS_READY.json",
+                            "?? .uaos-backups/",
+                            "?? release-phase6-portable/",
+                            "?? release-phase7-portable/",
+                            "?? release-phase8-portable/",
+                            "?? reports/UAOS_COMMANDER_CHAT_ONLY_REAL_CHAT_PACKAGED_PROOF.json",
+                            "?? reports/UAOS_COMMANDER_PHASE5_IDENTITY_INVESTIGATION.json",
+                            "?? reports/UAOS_COMMANDER_PHASE5_OWNER_VISIBLE_SEND.json",
+                            "?? reports/UAOS_COMMANDER_PHASE5_SHORTCUT_LAUNCH_IDENTITY.json",
+                            "?? reports/UAOS_COMMANDER_PHASE6_FINAL_VERIFICATION.json",
+                            "?? reports/UAOS_COMMANDER_PHASE6_PACKAGED_VERIFY_LOG.txt",
+                            "?? reports/UAOS_COMMANDER_PHASE7_TEST_LOG.txt",
+                            "?? reports/UAOS_COMMANDER_PHASE8_PACKAGE_LOG.txt",
+                            "?? reports/UAOS_COMMANDER_PHASE8_TEST_LOG.txt"
+                        ],
+    "commits":  [
+
+                ],
+    "commitCount":  0,
+    "validLocalCommitObject":  true,
+    "testBuildEvidence":  {
+                              "readyReportPath":  "C:\\Users\\ssare\\Desktop\\UAOS Commander\\reports\\UAOS_COMMANDER_GROUNDED_FALLBACK_FAIL_CLOSED_READY.json",
+                              "acceptanceTestPath":  "tests/acceptance/grounded-fallback-fail-closed.test.ts",
+                              "headBeforeInReport":  "540faede7efa899d756d005fbb7fb9022f604362",
+                              "acceptanceTestExists":  true,
+                              "readyReportStatus":  "UAOS_COMMANDER_GROUNDED_FALLBACK_FAIL_CLOSED_READY",
+                              "pipeline":  {
+                                               "lint":  "passed",
+                                               "typecheck":  "passed",
+                                               "focusedTests":  "grounded-fallback-fail-closed + project-grounding + chat-only-real-chat-dispatch (22 passed)",
+                                               "fullTests":  "538 passed / 4 skipped",
+                                               "build":  "passed",
+                                               "packageWin":  "portable-alt OK (release-phase8-portable)"
+                                           }
+                          },
+    "classification":  "LEGITIMATE_CONCURRENT_COMMIT_BASELINE_UPDATED",
+    "classificationReasons":  [
+                                  "Single descendant commit of 540faede…",
+                                  "HEAD equals audited 9b23824…",
+                                  "CHAT_ONLY grounded fallback fix concurrent with V15 window",
+                                  "Acceptance test + READY report with lint/typecheck/tests/build evidence present",
+                                  "Not performed by V15 product lanes"
+                              ],
+    "v15PerformedChange":  false,
+    "commanderRemainsChatOnly":  true,
+    "actionsTaken":  [
+                         "read-only audit"
+                     ],
+    "forbiddenActionsAvoided":  [
+                                    "reset",
+                                    "checkout",
+                                    "restore",
+                                    "clean",
+                                    "stash",
+                                    "commit",
+                                    "push",
+                                    "merge",
+                                    "modify"
+                                ]
+}

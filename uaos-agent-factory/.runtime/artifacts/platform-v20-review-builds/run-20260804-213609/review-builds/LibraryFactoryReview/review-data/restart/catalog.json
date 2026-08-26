@@ -1,0 +1,49 @@
+{
+  "items": [
+    {
+      "schemaVersion": "uaos.library.content/v18",
+      "contentId": "ab653741-d555-4aa4-9d5d-990e88930af7",
+      "sampleSetId": "fixture-set-1",
+      "instrumentId": "piano",
+      "articulationId": "sustain",
+      "note": 60,
+      "velocity": 100,
+      "roundRobin": {
+        "index": 0,
+        "count": 2
+      },
+      "loop": {
+        "start": 0,
+        "end": 1000
+      },
+      "sampleRate": 48000,
+      "channels": 2,
+      "provenance": {
+        "schemaVersion": "uaos.library.provenance/v18",
+        "sourceId": "e1ddd1c1-620f-47bb-9350-aad21a6a0c42",
+        "sourceUrl": "fixture://synthetic",
+        "contributor": null,
+        "acquisitionDate": "2026-08-04",
+        "originalFilename": "fixture-C4.wav",
+        "normalizedFilename": "fixture_c4.wav",
+        "fileSha256": "3b65a8dd8ae89c33b540bcb20a3ee39ca820e29846cc9b8967d9410b053893cb"
+      },
+      "license": {
+        "schemaVersion": "uaos.library.license/v18",
+        "licenseId": "c3f8af56-dba3-4083-833e-8168d099da00",
+        "class": "permissive",
+        "commercialUse": true,
+        "redistribution": true,
+        "modification": true,
+        "attributionRequired": true,
+        "attributionText": "Fixture Attribution (synthetic, no audio)",
+        "evidenceRefs": [
+          "fixture://license/cc0-like"
+        ]
+      },
+      "quarantine": false,
+      "approvalState": "approved-fixture-only",
+      "commercialReleaseGate": "BLOCKED_NO_REAL_CONTENT"
+    }
+  ]
+}

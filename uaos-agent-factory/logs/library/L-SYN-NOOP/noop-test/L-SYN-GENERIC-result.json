@@ -1,0 +1,67 @@
+{
+  "ok": true,
+  "status": "PASS",
+  "task": "L-SYN-GENERIC",
+  "lane": "library",
+  "writerAgent": "synthetic-local",
+  "tests": [],
+  "review": {
+    "reviewedAt": "2026-08-14T14:49:10.922Z",
+    "taskId": "L-SYN-GENERIC",
+    "lane": "library",
+    "verdict": "APPROVE",
+    "checks": {
+      "correctness": true,
+      "regression": true,
+      "security": true,
+      "scope": true,
+      "fakeClaims": true,
+      "pathLeaks": true,
+      "licenseContamination": true
+    },
+    "security": {
+      "forbiddenCommands": [],
+      "pathLeaks": [],
+      "secretHits": [],
+      "ok": true
+    },
+    "failedTests": [],
+    "notes": "Deterministic review PASS",
+    "scope": {
+      "ok": true,
+      "changedFiles": [],
+      "allowedPaths": [
+        "UAOS_GENERIC_MARKER.txt"
+      ],
+      "forbiddenPaths": [
+        "node_modules/**"
+      ],
+      "violations": []
+    }
+  },
+  "commit": {
+    "ok": true,
+    "reason": "NOOP_NO_COMMIT",
+    "head": "d53fb6c306667fb217bb284dfef875863b96d7db",
+    "commitCreated": false,
+    "noOp": true,
+    "sourceChanges": 0
+  },
+  "integrate": {
+    "ok": true,
+    "action": "ALREADY_INTEGRATED",
+    "skipped": true,
+    "plan": {
+      "action": "ALREADY_INTEGRATED",
+      "ok": true,
+      "integrationHead": "d53fb6c306667fb217bb284dfef875863b96d7db"
+    },
+    "rebaseAttempt": null,
+    "integrationWorktree": "C:\\keyboard-manager-clean\\uaos-agent-factory\\state\\build-cache\\synthetic-repos\\iso-2026-08-14T14-49-09-473Z-l-syn-generic\\integration",
+    "integrationBranch": "factory/library-integration",
+    "integrationStatus": "INTEGRATED"
+  },
+  "evidenceDir": "C:\\keyboard-manager-clean\\uaos-agent-factory\\logs\\library\\L-SYN-NOOP\\noop-test",
+  "artifactDir": "C:\\keyboard-manager-clean\\uaos-agent-factory\\state\\artifacts\\library\\L-SYN-NOOP-test",
+  "completedAt": "2026-08-14T14:49:12.746Z"
+}

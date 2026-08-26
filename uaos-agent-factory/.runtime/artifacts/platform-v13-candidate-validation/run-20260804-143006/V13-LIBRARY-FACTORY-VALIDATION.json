@@ -1,0 +1,99 @@
+{
+    "product":  "PRODUCT-UAOS_LIBRARY_FACTORY",
+    "analyzedPath":  "C:\\UAOS_AGENT_FACTORY_WORKTREES\\library-l-130",
+    "git":  {
+                "branch":  "factory/library-l-130",
+                "head":  "8a149267b5ecaae65d7a9a6c79d94bfd60ec64da"
+            },
+    "classification":  "ADOPTABLE_SOURCE",
+    "scoreNote":  "V12 score 84 superseded by deep validation + npm run check PASS",
+    "npmCiExit":  0,
+    "checkExit":  0,
+    "checkPass":  true,
+    "matrix":  [
+                   {
+                       "status":  "FOUND",
+                       "production_readiness":  "HIGH",
+                       "file":  "packages/library-build/transactionalBuild.cjs",
+                       "feature":  "Library Build"
+                   },
+                   {
+                       "status":  "FOUND",
+                       "production_readiness":  "HIGH",
+                       "file":  "packages/sampler-library-adapter/adapter.cjs",
+                       "feature":  "Sampler Adapter"
+                   },
+                   {
+                       "status":  "FOUND",
+                       "production_readiness":  "HIGH",
+                       "file":  "packages/library-build/transactionalBuild.cjs",
+                       "feature":  "Transactional Staging"
+                   },
+                   {
+                       "status":  "FOUND",
+                       "production_readiness":  "HIGH",
+                       "file":  "packages/uinst-build/index.cjs",
+                       "feature":  "Commit/Rollback"
+                   },
+                   {
+                       "status":  "FOUND",
+                       "production_readiness":  "HIGH",
+                       "file":  "packages/library-build/journal.cjs",
+                       "feature":  "Journal"
+                   },
+                   {
+                       "status":  "FOUND",
+                       "production_readiness":  "HIGH",
+                       "file":  "packages/library-build/buildLock.cjs",
+                       "feature":  "Locking"
+                   },
+                   {
+                       "status":  "FOUND",
+                       "production_readiness":  "HIGH",
+                       "file":  "packages/owner-library/index.cjs",
+                       "feature":  "Catalog"
+                   },
+                   {
+                       "status":  "FOUND",
+                       "production_readiness":  "HIGH",
+                       "file":  "packages/preview-player/index.cjs",
+                       "feature":  "Preview"
+                   },
+                   {
+                       "status":  "FOUND",
+                       "production_readiness":  "HIGH",
+                       "file":  "packages/uinst-build/index.cjs",
+                       "feature":  "Packaging"
+                   },
+                   {
+                       "missing_dependencies":  [
+                                                    "Commercial rights ledger binding"
+                                                ],
+                       "status":  "PARTIAL",
+                       "production_readiness":  "MEDIUM",
+                       "file":  "rights.json via uinst-build; ADR defers commercial ledger",
+                       "feature":  "License Ledger"
+                   },
+                   {
+                       "status":  "FOUND",
+                       "production_readiness":  "HIGH",
+                       "file":  "packages/library-validator/index.cjs",
+                       "feature":  "Sample Validation"
+                   },
+                   {
+                       "status":  "FOUND",
+                       "production_readiness":  "HIGH",
+                       "file":  "packages/uinst/v2.cjs",
+                       "feature":  "Articulations"
+                   },
+                   {
+                       "status":  "FOUND",
+                       "production_readiness":  "HIGH",
+                       "file":  "packages/sampler/voiceEngine.cjs",
+                       "feature":  "Round Robin"
+                   }
+               ],
+    "gaps":  [
+                 "Commercial rights ledger binding deferred by ADR-040"
+             ]
+}

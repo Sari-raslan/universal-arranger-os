@@ -1,0 +1,1588 @@
+{
+  "at": "2026-08-04T20:47:43.054Z",
+  "count": 226,
+  "tasks": [
+    {
+      "id": "TASK-00-00004-RECOVER_V15_V21_EVIDENCE_INDEX_EVIDENCE",
+      "title": "Recover V15-V21 evidence index evidence",
+      "domain": "00-ORCHESTRATION",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-00-00008-PORTFOLIO_TREE_MATERIALIZATION_EVIDENCE",
+      "title": "Portfolio tree materialization evidence",
+      "domain": "00-ORCHESTRATION",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-00-00012-SCHEMA_VALIDATION_SUITE_EVIDENCE",
+      "title": "Schema validation suite evidence",
+      "domain": "00-ORCHESTRATION",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-00-00016-DEPENDENCY_DAG_VALIDATION_EVIDENCE",
+      "title": "Dependency DAG validation evidence",
+      "domain": "00-ORCHESTRATION",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-00-00020-CYCLE_DETECTION_EVIDENCE",
+      "title": "Cycle detection evidence",
+      "domain": "00-ORCHESTRATION",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-00-00024-ALLOWED_PATH_VALIDATION_EVIDENCE",
+      "title": "Allowed path validation evidence",
+      "domain": "00-ORCHESTRATION",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-00-00028-QUEUE_INITIALIZATION_EVIDENCE",
+      "title": "Queue initialization evidence",
+      "domain": "00-ORCHESTRATION",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-00-00032-PROTECTED_REPOSITORY_VERIFICATION_EVIDEN",
+      "title": "Protected repository verification evidence",
+      "domain": "00-ORCHESTRATION",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-00-00040-AGENT_CLIENT_REGISTRATION_EVIDENCE",
+      "title": "Agent client registration evidence",
+      "domain": "00-ORCHESTRATION",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-00-00044-EVIDENCE_CONTRACT_ENFORCEMENT_EVIDENCE",
+      "title": "Evidence contract enforcement evidence",
+      "domain": "00-ORCHESTRATION",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-00-00052-DASHBOARD_STATUS_PUBLISHER_EVIDENCE",
+      "title": "Dashboard status publisher evidence",
+      "domain": "00-ORCHESTRATION",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-00-00056-AUTOMATIC_READY_PROMOTION_EVIDENCE",
+      "title": "Automatic READY promotion evidence",
+      "domain": "00-ORCHESTRATION",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-01-00060-SHARED_PROJECT_IDENTITY_EVIDENCE",
+      "title": "Shared project identity evidence",
+      "domain": "01-SHARED-PLATFORM",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-01-00064-PROJECT_SCHEMAS_EVIDENCE",
+      "title": "Project schemas evidence",
+      "domain": "01-SHARED-PLATFORM",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-01-00068-ATOMIC_SAVE_EVIDENCE",
+      "title": "Atomic save evidence",
+      "domain": "01-SHARED-PLATFORM",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-01-00072-AUTOSAVE_EVIDENCE",
+      "title": "Autosave evidence",
+      "domain": "01-SHARED-PLATFORM",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-01-00076-RECOVERY_EVIDENCE",
+      "title": "Recovery evidence",
+      "domain": "01-SHARED-PLATFORM",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-01-00080-MIGRATION_EVIDENCE",
+      "title": "Migration evidence",
+      "domain": "01-SHARED-PLATFORM",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-01-00084-UNDO_REDO_EVIDENCE",
+      "title": "Undo redo evidence",
+      "domain": "01-SHARED-PLATFORM",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-01-00088-EVIDENCE_RECORDS_EVIDENCE",
+      "title": "Evidence records evidence",
+      "domain": "01-SHARED-PLATFORM",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-01-00092-ERROR_ENVELOPE_EVIDENCE",
+      "title": "Error envelope evidence",
+      "domain": "01-SHARED-PLATFORM",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-01-00104-OFFLINE_TRIAL_EVIDENCE",
+      "title": "Offline trial evidence",
+      "domain": "01-SHARED-PLATFORM",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-01-00108-SIGNED_LICENSES_EVIDENCE",
+      "title": "Signed licenses evidence",
+      "domain": "01-SHARED-PLATFORM",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-01-00116-CUSTOMER_LICENSE_RECEIPTS_EVIDENCE",
+      "title": "Customer license receipts evidence",
+      "domain": "01-SHARED-PLATFORM",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-01-00120-UPDATE_MANIFESTS_EVIDENCE",
+      "title": "Update manifests evidence",
+      "domain": "01-SHARED-PLATFORM",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-01-00132-VERSIONING_EVIDENCE",
+      "title": "Versioning evidence",
+      "domain": "01-SHARED-PLATFORM",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-01-00136-ABOUT_SCREEN_EVIDENCE",
+      "title": "About screen evidence",
+      "domain": "01-SHARED-PLATFORM",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-01-00140-PRIVACY_NOTICES_EVIDENCE",
+      "title": "Privacy notices evidence",
+      "domain": "01-SHARED-PLATFORM",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-01-00144-LOCALIZATION_ARABIC_EVIDENCE",
+      "title": "Localization Arabic evidence",
+      "domain": "01-SHARED-PLATFORM",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-01-00156-ACCESSIBILITY_BASELINE_EVIDENCE",
+      "title": "Accessibility baseline evidence",
+      "domain": "01-SHARED-PLATFORM",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-01-00160-CRASH_LOGGING_LOCAL_ONLY_EVIDENCE",
+      "title": "Crash logging local only evidence",
+      "domain": "01-SHARED-PLATFORM",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-01-00164-SUPPORT_BUNDLE_EVIDENCE",
+      "title": "Support bundle evidence",
+      "domain": "01-SHARED-PLATFORM",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-01-00168-EXPORT_IMPORT_USER_DATA_EVIDENCE",
+      "title": "Export import user data evidence",
+      "domain": "01-SHARED-PLATFORM",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-01-00180-NO_AUTOPLAY_CONTRACT_EVIDENCE",
+      "title": "No autoplay contract evidence",
+      "domain": "01-SHARED-PLATFORM",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-01-00184-PERMISSION_DENIAL_CONTRACT_EVIDENCE",
+      "title": "Permission denial contract evidence",
+      "domain": "01-SHARED-PLATFORM",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-01-00192-NO_LISTENING_PORT_VERIFICATION_EVIDENCE",
+      "title": "No listening port verification evidence",
+      "domain": "01-SHARED-PLATFORM",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-01-00196-PROCESS_CLEANUP_EVIDENCE",
+      "title": "Process cleanup evidence",
+      "domain": "01-SHARED-PLATFORM",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-02-00200-USER_SUPPLIED_WAV_INGESTION_EVIDENCE",
+      "title": "User-supplied WAV ingestion evidence",
+      "domain": "02-LIBRARY-FACTORY",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-02-00204-SOURCE_SCANNING_EVIDENCE",
+      "title": "Source scanning evidence",
+      "domain": "02-LIBRARY-FACTORY",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-02-00208-SHA256_INVENTORY_EVIDENCE",
+      "title": "SHA256 inventory evidence",
+      "domain": "02-LIBRARY-FACTORY",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-02-00212-PROVENANCE_EVIDENCE",
+      "title": "Provenance evidence",
+      "domain": "02-LIBRARY-FACTORY",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-02-00220-SAMPLE_MAPPING_EVIDENCE",
+      "title": "Sample mapping evidence",
+      "domain": "02-LIBRARY-FACTORY",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-02-00224-NOTE_MAPPING_EVIDENCE",
+      "title": "Note mapping evidence",
+      "domain": "02-LIBRARY-FACTORY",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-02-00228-VELOCITY_LAYERS_EVIDENCE",
+      "title": "Velocity layers evidence",
+      "domain": "02-LIBRARY-FACTORY",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-02-00232-ROUND_ROBIN_EVIDENCE",
+      "title": "Round robin evidence",
+      "domain": "02-LIBRARY-FACTORY",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-02-00236-ARTICULATIONS_EVIDENCE",
+      "title": "Articulations evidence",
+      "domain": "02-LIBRARY-FACTORY",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-02-00240-LOOP_METADATA_EVIDENCE",
+      "title": "Loop metadata evidence",
+      "domain": "02-LIBRARY-FACTORY",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-02-00244-CHOKE_GROUPS_EVIDENCE",
+      "title": "Choke groups evidence",
+      "domain": "02-LIBRARY-FACTORY",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-02-00248-SUSTAIN_EVIDENCE",
+      "title": "Sustain evidence",
+      "domain": "02-LIBRARY-FACTORY",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-02-00252-VOICE_LIFECYCLE_EVIDENCE",
+      "title": "Voice lifecycle evidence",
+      "domain": "02-LIBRARY-FACTORY",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-02-00260-PREVIEW_PLAYER_EVIDENCE",
+      "title": "Preview player evidence",
+      "domain": "02-LIBRARY-FACTORY",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-02-00264-CATALOG_EVIDENCE",
+      "title": "Catalog evidence",
+      "domain": "02-LIBRARY-FACTORY",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-02-00268-TRANSACTIONAL_BUILD_EVIDENCE",
+      "title": "Transactional build evidence",
+      "domain": "02-LIBRARY-FACTORY",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-02-00272-STAGING_EVIDENCE",
+      "title": "Staging evidence",
+      "domain": "02-LIBRARY-FACTORY",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-02-00284-LOCKS_EVIDENCE",
+      "title": "Locks evidence",
+      "domain": "02-LIBRARY-FACTORY",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-02-00292-PACKAGING_EVIDENCE",
+      "title": "Packaging evidence",
+      "domain": "02-LIBRARY-FACTORY",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-02-00296-LIBRARY_VALIDATION_EVIDENCE",
+      "title": "Library validation evidence",
+      "domain": "02-LIBRARY-FACTORY",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-03-00320-INTERNAL_PROJECT_FORMAT_EVIDENCE",
+      "title": "Internal project format evidence",
+      "domain": "03-KEYBOARD-PRO",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-03-00324-SET_DOCTOR_EVIDENCE",
+      "title": "Set Doctor evidence",
+      "domain": "03-KEYBOARD-PRO",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-03-00328-MAGIC_SET_EVIDENCE",
+      "title": "Magic Set evidence",
+      "domain": "03-KEYBOARD-PRO",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-03-00340-INSPECTOR_EVIDENCE",
+      "title": "Inspector evidence",
+      "domain": "03-KEYBOARD-PRO",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-03-00352-MIGRATION_EVIDENCE",
+      "title": "Migration evidence",
+      "domain": "03-KEYBOARD-PRO",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-03-00356-VALIDATION_EVIDENCE",
+      "title": "Validation evidence",
+      "domain": "03-KEYBOARD-PRO",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-03-00360-ERROR_RECOVERY_EVIDENCE",
+      "title": "Error recovery evidence",
+      "domain": "03-KEYBOARD-PRO",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-03-00384-INTERNAL_CONVERSION_EVIDENCE",
+      "title": "Internal conversion evidence",
+      "domain": "03-KEYBOARD-PRO",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-03-00388-MAPPING_PLANS_EVIDENCE",
+      "title": "Mapping plans evidence",
+      "domain": "03-KEYBOARD-PRO",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-03-00400-RESUME_RECOVERY_EVIDENCE",
+      "title": "Resume recovery evidence",
+      "domain": "03-KEYBOARD-PRO",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-04-00432-INPUT_DETECTION_EVIDENCE",
+      "title": "Input detection evidence",
+      "domain": "04-KEYBOARD-CONVERTERS",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-04-00436-CAPABILITY_REGISTRY_EVIDENCE",
+      "title": "Capability registry evidence",
+      "domain": "04-KEYBOARD-CONVERTERS",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-04-00440-IMMUTABLE_SNAPSHOTS_EVIDENCE",
+      "title": "Immutable snapshots evidence",
+      "domain": "04-KEYBOARD-CONVERTERS",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-04-00444-JOB_QUEUE_EVIDENCE",
+      "title": "Job queue evidence",
+      "domain": "04-KEYBOARD-CONVERTERS",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-04-00448-BATCH_CONVERSION_EVIDENCE",
+      "title": "Batch conversion evidence",
+      "domain": "04-KEYBOARD-CONVERTERS",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-04-00452-MAPPING_ENGINE_EVIDENCE",
+      "title": "Mapping engine evidence",
+      "domain": "04-KEYBOARD-CONVERTERS",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-04-00456-VALIDATION_EVIDENCE",
+      "title": "Validation evidence",
+      "domain": "04-KEYBOARD-CONVERTERS",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-04-00464-DRY_RUN_EVIDENCE",
+      "title": "Dry-run evidence",
+      "domain": "04-KEYBOARD-CONVERTERS",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-04-00476-CANCEL_EVIDENCE",
+      "title": "Cancel evidence",
+      "domain": "04-KEYBOARD-CONVERTERS",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-04-00484-CRASH_RECOVERY_EVIDENCE",
+      "title": "Crash recovery evidence",
+      "domain": "04-KEYBOARD-CONVERTERS",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-04-00492-DETERMINISTIC_MANIFESTS_EVIDENCE",
+      "title": "Deterministic manifests evidence",
+      "domain": "04-KEYBOARD-CONVERTERS",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-04-00496-ROUND_TRIP_FIXTURES_EVIDENCE",
+      "title": "Round-trip fixtures evidence",
+      "domain": "04-KEYBOARD-CONVERTERS",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-04-00500-CORRUPTION_REJECTION_EVIDENCE",
+      "title": "Corruption rejection evidence",
+      "domain": "04-KEYBOARD-CONVERTERS",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-04-00504-UNSUPPORTED_FORMAT_REPORTS_EVIDENCE",
+      "title": "Unsupported-format reports evidence",
+      "domain": "04-KEYBOARD-CONVERTERS",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-04-00508-FORMAT_ADAPTER_SDK_EVIDENCE",
+      "title": "Format adapter SDK evidence",
+      "domain": "04-KEYBOARD-CONVERTERS",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-05-00524-PROJECT_WORKSPACE_EVIDENCE",
+      "title": "Project workspace evidence",
+      "domain": "05-CREATOR",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-05-00536-NOTE_EDITING_EVIDENCE",
+      "title": "Note editing evidence",
+      "domain": "05-CREATOR",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-05-00540-CHORDS_EVIDENCE",
+      "title": "Chords evidence",
+      "domain": "05-CREATOR",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-05-00544-SECTIONS_EVIDENCE",
+      "title": "Sections evidence",
+      "domain": "05-CREATOR",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-05-00556-ADVANCED_HARMONY_EVIDENCE",
+      "title": "Advanced Harmony evidence",
+      "domain": "05-CREATOR",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-05-00560-MELODY_ANALYSIS_EVIDENCE",
+      "title": "Melody analysis evidence",
+      "domain": "05-CREATOR",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-05-00572-PITCH_AND_RHYTHM_ANALYSIS_EVIDENCE",
+      "title": "Pitch and rhythm analysis evidence",
+      "domain": "05-CREATOR",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-05-00588-ORCHESTRATION_EVIDENCE",
+      "title": "Orchestration evidence",
+      "domain": "05-CREATOR",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-05-00600-HUMANIZATION_EVIDENCE",
+      "title": "Humanization evidence",
+      "domain": "05-CREATOR",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-05-00612-STYLE_AND_EMOTION_INTENT_EVIDENCE",
+      "title": "Style and emotion intent evidence",
+      "domain": "05-CREATOR",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-05-00620-REFINEMENT_CYCLES_EVIDENCE",
+      "title": "Refinement cycles evidence",
+      "domain": "05-CREATOR",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-05-00624-TECHNICAL_PREVIEW_EVIDENCE",
+      "title": "Technical preview evidence",
+      "domain": "05-CREATOR",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-05-00632-MIDI_IMPORT_EXPORT_EVIDENCE",
+      "title": "MIDI import export evidence",
+      "domain": "05-CREATOR",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-05-00636-WAV_EXPORT_EVIDENCE",
+      "title": "WAV export evidence",
+      "domain": "05-CREATOR",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-05-00640-STEM_EXPORT_EVIDENCE",
+      "title": "Stem export evidence",
+      "domain": "05-CREATOR",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-05-00644-PROJECT_RECOVERY_EVIDENCE",
+      "title": "Project recovery evidence",
+      "domain": "05-CREATOR",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-06-00656-PROJECT_SYSTEM_EVIDENCE",
+      "title": "Project system evidence",
+      "domain": "06-STUDIO-PRO",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-06-00660-TIMELINE_EVIDENCE",
+      "title": "Timeline evidence",
+      "domain": "06-STUDIO-PRO",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-06-00664-AUDIO_TRACKS_EVIDENCE",
+      "title": "Audio tracks evidence",
+      "domain": "06-STUDIO-PRO",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-06-00672-CLIP_EDITING_EVIDENCE",
+      "title": "Clip editing evidence",
+      "domain": "06-STUDIO-PRO",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-06-00680-REGIONS_EVIDENCE",
+      "title": "Regions evidence",
+      "domain": "06-STUDIO-PRO",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-06-00688-TIME_SIGNATURES_EVIDENCE",
+      "title": "Time signatures evidence",
+      "domain": "06-STUDIO-PRO",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-06-00696-SCHEDULER_EVIDENCE",
+      "title": "Scheduler evidence",
+      "domain": "06-STUDIO-PRO",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-06-00700-MIXER_EVIDENCE",
+      "title": "Mixer evidence",
+      "domain": "06-STUDIO-PRO",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-06-00704-MASTER_BUS_EVIDENCE",
+      "title": "Master bus evidence",
+      "domain": "06-STUDIO-PRO",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-06-00712-MUTE_SOLO_EVIDENCE",
+      "title": "Mute solo evidence",
+      "domain": "06-STUDIO-PRO",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-06-00716-SENDS_RETURNS_EVIDENCE",
+      "title": "Sends returns evidence",
+      "domain": "06-STUDIO-PRO",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-06-00744-PUNCH_IN_OUT_EVIDENCE",
+      "title": "Punch in out evidence",
+      "domain": "06-STUDIO-PRO",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-06-00752-MIDI_PIANO_ROLL_EVIDENCE",
+      "title": "MIDI piano roll evidence",
+      "domain": "06-STUDIO-PRO",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-06-00764-SAMPLER_INTEGRATION_EVIDENCE",
+      "title": "Sampler integration evidence",
+      "domain": "06-STUDIO-PRO",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-06-00772-STEM_EXPORT_EVIDENCE",
+      "title": "Stem export evidence",
+      "domain": "06-STUDIO-PRO",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-06-00776-MASTERING_EVIDENCE",
+      "title": "Mastering evidence",
+      "domain": "06-STUDIO-PRO",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-06-00780-LOUDNESS_EVIDENCE",
+      "title": "Loudness evidence",
+      "domain": "06-STUDIO-PRO",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-06-00784-COMMERCIAL_EXPORT_EVIDENCE",
+      "title": "Commercial export evidence",
+      "domain": "06-STUDIO-PRO",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-06-00792-CRASH_SAFE_SESSIONS_EVIDENCE",
+      "title": "Crash-safe sessions evidence",
+      "domain": "06-STUDIO-PRO",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-07-00800-CHILD_SAFE_CONVERSATION_EVIDENCE",
+      "title": "Child-safe conversation evidence",
+      "domain": "07-SINGY-CORE",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-07-00852-PARENT_CONTROLS_EVIDENCE",
+      "title": "Parent controls evidence",
+      "domain": "07-SINGY-CORE",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-07-00860-PROGRESS_MODEL_EVIDENCE",
+      "title": "Progress model evidence",
+      "domain": "07-SINGY-CORE",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-07-00864-LOCAL_PROFILE_EVIDENCE",
+      "title": "Local profile evidence",
+      "domain": "07-SINGY-CORE",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-07-00868-MULTILINGUAL_ARABIC_ENGLISH_GERMAN_EVIDE",
+      "title": "Multilingual Arabic English German evidence",
+      "domain": "07-SINGY-CORE",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-07-00880-SAFETY_FILTERS_EVIDENCE",
+      "title": "Safety filters evidence",
+      "domain": "07-SINGY-CORE",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-07-00884-AGE_ADAPTATION_EVIDENCE",
+      "title": "Age adaptation evidence",
+      "domain": "07-SINGY-CORE",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-08-00936-AGE_BANDS_EVIDENCE",
+      "title": "Age bands evidence",
+      "domain": "08-SINGY-KIDS",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-08-00944-INSTRUMENT_RECOGNITION_EVIDENCE",
+      "title": "Instrument recognition evidence",
+      "domain": "08-SINGY-KIDS",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-08-00948-NOTE_RECOGNITION_EVIDENCE",
+      "title": "Note recognition evidence",
+      "domain": "08-SINGY-KIDS",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-08-00952-RHYTHM_GAMES_EVIDENCE",
+      "title": "Rhythm games evidence",
+      "domain": "08-SINGY-KIDS",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-08-00956-SINGING_EXERCISES_EVIDENCE",
+      "title": "Singing exercises evidence",
+      "domain": "08-SINGY-KIDS",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-08-00960-INSTRUMENT_LESSONS_EVIDENCE",
+      "title": "Instrument lessons evidence",
+      "domain": "08-SINGY-KIDS",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-08-00964-STORY_BASED_MUSIC_LESSONS_EVIDENCE",
+      "title": "Story-based music lessons evidence",
+      "domain": "08-SINGY-KIDS",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-08-00972-REWARDS_WITHOUT_ADDICTIVE_DARK_PATTERNS_",
+      "title": "Rewards without addictive dark patterns evidence",
+      "domain": "08-SINGY-KIDS",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-08-00976-LOCAL_PROGRESS_EVIDENCE",
+      "title": "Local progress evidence",
+      "domain": "08-SINGY-KIDS",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-08-00980-ACCESSIBILITY_EVIDENCE",
+      "title": "Accessibility evidence",
+      "domain": "08-SINGY-KIDS",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-08-00984-OFFLINE_LESSONS_EVIDENCE",
+      "title": "Offline lessons evidence",
+      "domain": "08-SINGY-KIDS",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-08-00992-PARENT_REPORTS_EVIDENCE",
+      "title": "Parent reports evidence",
+      "domain": "08-SINGY-KIDS",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-08-00996-TEACHER_PACKS_EVIDENCE",
+      "title": "Teacher packs evidence",
+      "domain": "08-SINGY-KIDS",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-09-01016-BEAT_MAKING_EVIDENCE",
+      "title": "Beat making evidence",
+      "domain": "09-SINGY-TEEN",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-09-01020-CHORD_PROGRESSIONS_EVIDENCE",
+      "title": "Chord progressions evidence",
+      "domain": "09-SINGY-TEEN",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-09-01024-MIDI_COMPOSITION_EVIDENCE",
+      "title": "MIDI composition evidence",
+      "domain": "09-SINGY-TEEN",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-09-01028-ARRANGEMENT_EVIDENCE",
+      "title": "Arrangement evidence",
+      "domain": "09-SINGY-TEEN",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-09-01036-STUDIO_FUNDAMENTALS_EVIDENCE",
+      "title": "Studio fundamentals evidence",
+      "domain": "09-SINGY-TEEN",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-09-01052-PORTFOLIO_PROJECTS_EVIDENCE",
+      "title": "Portfolio projects evidence",
+      "domain": "09-SINGY-TEEN",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-09-01068-EXPORTABLE_PROJECTS_EVIDENCE",
+      "title": "Exportable projects evidence",
+      "domain": "09-SINGY-TEEN",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-09-01072-COLLABORATION_ARCHITECTURE_EVIDENCE",
+      "title": "Collaboration architecture evidence",
+      "domain": "09-SINGY-TEEN",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-11-01180-PRODUCT_CATALOG_EVIDENCE",
+      "title": "Product catalog evidence",
+      "domain": "11-COMMERCIAL-PLATFORM",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-11-01184-SKUS_EVIDENCE",
+      "title": "SKUs evidence",
+      "domain": "11-COMMERCIAL-PLATFORM",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-11-01200-LICENSE_DELIVERY_EVIDENCE",
+      "title": "License delivery evidence",
+      "domain": "11-COMMERCIAL-PLATFORM",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-11-01204-CHECKOUT_PREPARATION_EVIDENCE",
+      "title": "Checkout preparation evidence",
+      "domain": "11-COMMERCIAL-PLATFORM",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-11-01224-CUSTOMER_ACCOUNTS_EVIDENCE",
+      "title": "Customer accounts evidence",
+      "domain": "11-COMMERCIAL-PLATFORM",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-11-01228-DOWNLOAD_ENTITLEMENT_EVIDENCE",
+      "title": "Download entitlement evidence",
+      "domain": "11-COMMERCIAL-PLATFORM",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-11-01232-UPDATE_ENTITLEMENT_EVIDENCE",
+      "title": "Update entitlement evidence",
+      "domain": "11-COMMERCIAL-PLATFORM",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-11-01236-SUPPORT_TICKETS_EVIDENCE",
+      "title": "Support tickets evidence",
+      "domain": "11-COMMERCIAL-PLATFORM",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-11-01240-KNOWLEDGE_BASE_EVIDENCE",
+      "title": "Knowledge base evidence",
+      "domain": "11-COMMERCIAL-PLATFORM",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-12-01292-MAIN_SITE_EVIDENCE",
+      "title": "Main site evidence",
+      "domain": "12-WEBSITE-DELIVERY",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-12-01312-KEYBOARD_PAGE_EVIDENCE",
+      "title": "Keyboard page evidence",
+      "domain": "12-WEBSITE-DELIVERY",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-12-01316-CREATOR_PAGE_EVIDENCE",
+      "title": "Creator page evidence",
+      "domain": "12-WEBSITE-DELIVERY",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-12-01320-STUDIO_PAGE_EVIDENCE",
+      "title": "Studio page evidence",
+      "domain": "12-WEBSITE-DELIVERY",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-12-01328-TRIAL_DOWNLOAD_EVIDENCE",
+      "title": "Trial download evidence",
+      "domain": "12-WEBSITE-DELIVERY",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-12-01332-CHECKOUT_INTEGRATION_PREP_EVIDENCE",
+      "title": "Checkout integration prep evidence",
+      "domain": "12-WEBSITE-DELIVERY",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-12-01336-CUSTOMER_PORTAL_EVIDENCE",
+      "title": "Customer portal evidence",
+      "domain": "12-WEBSITE-DELIVERY",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-12-01344-SUPPORT_EVIDENCE",
+      "title": "Support evidence",
+      "domain": "12-WEBSITE-DELIVERY",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-12-01348-STATUS_PAGE_EVIDENCE",
+      "title": "Status page evidence",
+      "domain": "12-WEBSITE-DELIVERY",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-12-01352-UPDATE_FEED_EVIDENCE",
+      "title": "Update feed evidence",
+      "domain": "12-WEBSITE-DELIVERY",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-12-01364-SEO_EVIDENCE",
+      "title": "SEO evidence",
+      "domain": "12-WEBSITE-DELIVERY",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-12-01372-WEBSITE_ACCESSIBILITY_EVIDENCE",
+      "title": "Website accessibility evidence",
+      "domain": "12-WEBSITE-DELIVERY",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-12-01380-RELEASE_ANNOUNCEMENTS_EVIDENCE",
+      "title": "Release announcements evidence",
+      "domain": "12-WEBSITE-DELIVERY",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-13-01384-THREAT_MODEL_BASELINE_EVIDENCE",
+      "title": "Threat model baseline evidence",
+      "domain": "13-SECURITY-LEGAL",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-13-01388-LOCAL_DATA_PROTECTION_EVIDENCE",
+      "title": "Local data protection evidence",
+      "domain": "13-SECURITY-LEGAL",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-13-01420-SIGNED_UPDATE_CHAIN_EVIDENCE",
+      "title": "Signed update chain evidence",
+      "domain": "13-SECURITY-LEGAL",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-14-01424-UNIT_TESTS_FABRIC_EVIDENCE",
+      "title": "Unit tests fabric evidence",
+      "domain": "14-QA-RELEASE-OPERATIONS",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-14-01436-RUNTIME_ACCEPTANCE_EVIDENCE",
+      "title": "Runtime acceptance evidence",
+      "domain": "14-QA-RELEASE-OPERATIONS",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-14-01444-PORTABLE_VALIDATION_EVIDENCE",
+      "title": "Portable validation evidence",
+      "domain": "14-QA-RELEASE-OPERATIONS",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-14-01448-INSTALLER_VALIDATION_EVIDENCE",
+      "title": "Installer validation evidence",
+      "domain": "14-QA-RELEASE-OPERATIONS",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-14-01452-RESTART_ACCEPTANCE_EVIDENCE",
+      "title": "Restart acceptance evidence",
+      "domain": "14-QA-RELEASE-OPERATIONS",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-14-01456-RECOVERY_ACCEPTANCE_EVIDENCE",
+      "title": "Recovery acceptance evidence",
+      "domain": "14-QA-RELEASE-OPERATIONS",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-14-01460-UPGRADE_ACCEPTANCE_EVIDENCE",
+      "title": "Upgrade acceptance evidence",
+      "domain": "14-QA-RELEASE-OPERATIONS",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-14-01468-DATA_PRESERVATION_EVIDENCE",
+      "title": "Data preservation evidence",
+      "domain": "14-QA-RELEASE-OPERATIONS",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-14-01476-PRIVACY_TESTS_EVIDENCE",
+      "title": "Privacy tests evidence",
+      "domain": "14-QA-RELEASE-OPERATIONS",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-14-01480-PERFORMANCE_TESTS_EVIDENCE",
+      "title": "Performance tests evidence",
+      "domain": "14-QA-RELEASE-OPERATIONS",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-14-01484-STRESS_TESTS_EVIDENCE",
+      "title": "Stress tests evidence",
+      "domain": "14-QA-RELEASE-OPERATIONS",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-14-01492-LOCALIZATION_TESTS_EVIDENCE",
+      "title": "Localization tests evidence",
+      "domain": "14-QA-RELEASE-OPERATIONS",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-14-01500-ARTIFACT_REGISTRY_EVIDENCE",
+      "title": "Artifact registry evidence",
+      "domain": "14-QA-RELEASE-OPERATIONS",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-14-01504-SHA256_EVIDENCE_EVIDENCE",
+      "title": "SHA256 evidence evidence",
+      "domain": "14-QA-RELEASE-OPERATIONS",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-14-01508-SBOM_EVIDENCE",
+      "title": "SBOM evidence",
+      "domain": "14-QA-RELEASE-OPERATIONS",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-14-01512-DEPENDENCY_AUDIT_EVIDENCE",
+      "title": "Dependency audit evidence",
+      "domain": "14-QA-RELEASE-OPERATIONS",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-14-01524-MONITORING_EVIDENCE",
+      "title": "Monitoring evidence",
+      "domain": "14-QA-RELEASE-OPERATIONS",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-14-01528-INCIDENT_RESPONSE_EVIDENCE",
+      "title": "Incident response evidence",
+      "domain": "14-QA-RELEASE-OPERATIONS",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-14-01532-ROLLBACK_OPERATIONS_EVIDENCE",
+      "title": "Rollback operations evidence",
+      "domain": "14-QA-RELEASE-OPERATIONS",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-14-01536-CUSTOMER_SUPPORT_EVIDENCE_BUNDLES_EVIDEN",
+      "title": "Customer support evidence bundles evidence",
+      "domain": "14-QA-RELEASE-OPERATIONS",
+      "priority": 10,
+      "rc1Critical": true
+    },
+    {
+      "id": "TASK-07-00796-CONVERSATIONAL_MUSICAL_BRAIN_EVIDENCE",
+      "title": "Conversational musical brain evidence",
+      "domain": "07-SINGY-CORE",
+      "priority": 23,
+      "rc1Critical": false
+    },
+    {
+      "id": "TASK-07-00808-PEDAGOGICAL_PLANNER_EVIDENCE",
+      "title": "Pedagogical planner evidence",
+      "domain": "07-SINGY-CORE",
+      "priority": 23,
+      "rc1Critical": false
+    },
+    {
+      "id": "TASK-07-00812-LESSON_GENERATOR_EVIDENCE",
+      "title": "Lesson generator evidence",
+      "domain": "07-SINGY-CORE",
+      "priority": 23,
+      "rc1Critical": false
+    },
+    {
+      "id": "TASK-07-00816-EXERCISE_GENERATOR_EVIDENCE",
+      "title": "Exercise generator evidence",
+      "domain": "07-SINGY-CORE",
+      "priority": 23,
+      "rc1Critical": false
+    },
+    {
+      "id": "TASK-07-00820-FEEDBACK_ENGINE_EVIDENCE",
+      "title": "Feedback engine evidence",
+      "domain": "07-SINGY-CORE",
+      "priority": 23,
+      "rc1Critical": false
+    },
+    {
+      "id": "TASK-07-00824-MUSIC_THEORY_TUTOR_EVIDENCE",
+      "title": "Music theory tutor evidence",
+      "domain": "07-SINGY-CORE",
+      "priority": 23,
+      "rc1Critical": false
+    },
+    {
+      "id": "TASK-07-00828-INSTRUMENT_TUTOR_EVIDENCE",
+      "title": "Instrument tutor evidence",
+      "domain": "07-SINGY-CORE",
+      "priority": 23,
+      "rc1Critical": false
+    },
+    {
+      "id": "TASK-07-00832-SINGING_TUTOR_EVIDENCE",
+      "title": "Singing tutor evidence",
+      "domain": "07-SINGY-CORE",
+      "priority": 23,
+      "rc1Critical": false
+    },
+    {
+      "id": "TASK-07-00836-RHYTHM_TUTOR_EVIDENCE",
+      "title": "Rhythm tutor evidence",
+      "domain": "07-SINGY-CORE",
+      "priority": 23,
+      "rc1Critical": false
+    },
+    {
+      "id": "TASK-07-00840-LISTENING_TUTOR_EVIDENCE",
+      "title": "Listening tutor evidence",
+      "domain": "07-SINGY-CORE",
+      "priority": 23,
+      "rc1Critical": false
+    },
+    {
+      "id": "TASK-07-00844-COMPOSITION_TUTOR_EVIDENCE",
+      "title": "Composition tutor evidence",
+      "domain": "07-SINGY-CORE",
+      "priority": 23,
+      "rc1Critical": false
+    },
+    {
+      "id": "TASK-07-00848-ARRANGEMENT_TUTOR_EVIDENCE",
+      "title": "Arrangement tutor evidence",
+      "domain": "07-SINGY-CORE",
+      "priority": 23,
+      "rc1Critical": false
+    },
+    {
+      "id": "TASK-07-00876-SPEECH_OUTPUT_EVIDENCE",
+      "title": "Speech output evidence",
+      "domain": "07-SINGY-CORE",
+      "priority": 23,
+      "rc1Critical": false
+    },
+    {
+      "id": "TASK-07-00892-MUSICAL_GAMES_EVIDENCE",
+      "title": "Musical games evidence",
+      "domain": "07-SINGY-CORE",
+      "priority": 23,
+      "rc1Critical": false
+    },
+    {
+      "id": "TASK-07-00896-ENSEMBLE_LEARNING_EVIDENCE",
+      "title": "Ensemble learning evidence",
+      "domain": "07-SINGY-CORE",
+      "priority": 23,
+      "rc1Critical": false
+    },
+    {
+      "id": "TASK-07-00900-BAND_SIMULATION_EVIDENCE",
+      "title": "Band simulation evidence",
+      "domain": "07-SINGY-CORE",
+      "priority": 23,
+      "rc1Critical": false
+    },
+    {
+      "id": "TASK-07-00904-OPERETTA_CREATION_EVIDENCE",
+      "title": "Operetta creation evidence",
+      "domain": "07-SINGY-CORE",
+      "priority": 23,
+      "rc1Critical": false
+    },
+    {
+      "id": "TASK-07-00908-CHILDREN_LEARNING_INSTRUMENTS_EVIDENCE",
+      "title": "Children learning instruments evidence",
+      "domain": "07-SINGY-CORE",
+      "priority": 23,
+      "rc1Critical": false
+    },
+    {
+      "id": "TASK-07-00912-INTERACTIVE_MUSICIAN_CONVERSATIONS_EVIDE",
+      "title": "Interactive musician conversations evidence",
+      "domain": "07-SINGY-CORE",
+      "priority": 23,
+      "rc1Critical": false
+    },
+    {
+      "id": "TASK-07-00916-OFFLINE_MODEL_ADAPTERS_EVIDENCE",
+      "title": "Offline model adapters evidence",
+      "domain": "07-SINGY-CORE",
+      "priority": 23,
+      "rc1Critical": false
+    },
+    {
+      "id": "TASK-10-01104-AUDIO_RECORDING_SPECIFICATIONS_EVIDENCE",
+      "title": "Audio recording specifications evidence",
+      "domain": "10-CONTENT-ASSETS",
+      "priority": 33,
+      "rc1Critical": false
+    },
+    {
+      "id": "TASK-10-01112-SAMPLE_EDITING_EVIDENCE",
+      "title": "Sample editing evidence",
+      "domain": "10-CONTENT-ASSETS",
+      "priority": 33,
+      "rc1Critical": false
+    },
+    {
+      "id": "TASK-10-01116-LOOP_EDITING_EVIDENCE",
+      "title": "Loop editing evidence",
+      "domain": "10-CONTENT-ASSETS",
+      "priority": 33,
+      "rc1Critical": false
+    },
+    {
+      "id": "TASK-10-01156-EDUCATIONAL_LESSON_MEDIA_EVIDENCE",
+      "title": "Educational lesson media evidence",
+      "domain": "10-CONTENT-ASSETS",
+      "priority": 33,
+      "rc1Critical": false
+    },
+    {
+      "id": "TASK-15-01540-COMMANDER_ADAPTER_CONTRACT_EVIDENCE",
+      "title": "Commander adapter contract evidence",
+      "domain": "15-COMMANDER-FUTURE-ADAPTER",
+      "priority": 43,
+      "rc1Critical": false
+    },
+    {
+      "id": "TASK-15-01544-COMMANDER_READINESS_CHECKLIST_EVIDENCE",
+      "title": "Commander readiness checklist evidence",
+      "domain": "15-COMMANDER-FUTURE-ADAPTER",
+      "priority": 43,
+      "rc1Critical": false
+    },
+    {
+      "id": "TASK-15-01548-COMMANDER_EVENT_SCHEMA_EVIDENCE",
+      "title": "Commander event schema evidence",
+      "domain": "15-COMMANDER-FUTURE-ADAPTER",
+      "priority": 43,
+      "rc1Critical": false
+    },
+    {
+      "id": "TASK-15-01552-COMMANDER_COMMAND_SCHEMA_EVIDENCE",
+      "title": "Commander command schema evidence",
+      "domain": "15-COMMANDER-FUTURE-ADAPTER",
+      "priority": 43,
+      "rc1Critical": false
+    },
+    {
+      "id": "TASK-15-01556-COMMANDER_RESULT_SCHEMA_EVIDENCE",
+      "title": "Commander result schema evidence",
+      "domain": "15-COMMANDER-FUTURE-ADAPTER",
+      "priority": 43,
+      "rc1Critical": false
+    },
+    {
+      "id": "TASK-15-01564-CLAIMTASK_ADAPTER_SURFACE_EVIDENCE",
+      "title": "claimTask adapter surface evidence",
+      "domain": "15-COMMANDER-FUTURE-ADAPTER",
+      "priority": 43,
+      "rc1Critical": false
+    },
+    {
+      "id": "TASK-15-01568-RENEWLEASE_ADAPTER_SURFACE_EVIDENCE",
+      "title": "renewLease adapter surface evidence",
+      "domain": "15-COMMANDER-FUTURE-ADAPTER",
+      "priority": 43,
+      "rc1Critical": false
+    },
+    {
+      "id": "TASK-15-01572-REPORTHEARTBEAT_ADAPTER_SURFACE_EVIDENCE",
+      "title": "reportHeartbeat adapter surface evidence",
+      "domain": "15-COMMANDER-FUTURE-ADAPTER",
+      "priority": 43,
+      "rc1Critical": false
+    },
+    {
+      "id": "TASK-15-01576-REPORTPROGRESS_ADAPTER_SURFACE_EVIDENCE",
+      "title": "reportProgress adapter surface evidence",
+      "domain": "15-COMMANDER-FUTURE-ADAPTER",
+      "priority": 43,
+      "rc1Critical": false
+    },
+    {
+      "id": "TASK-15-01580-ATTACHEVIDENCE_ADAPTER_SURFACE_EVIDENCE",
+      "title": "attachEvidence adapter surface evidence",
+      "domain": "15-COMMANDER-FUTURE-ADAPTER",
+      "priority": 43,
+      "rc1Critical": false
+    },
+    {
+      "id": "TASK-15-01584-SUBMITRESULT_ADAPTER_SURFACE_EVIDENCE",
+      "title": "submitResult adapter surface evidence",
+      "domain": "15-COMMANDER-FUTURE-ADAPTER",
+      "priority": 43,
+      "rc1Critical": false
+    },
+    {
+      "id": "TASK-15-01592-RELEASECLAIM_ADAPTER_SURFACE_EVIDENCE",
+      "title": "releaseClaim adapter surface evidence",
+      "domain": "15-COMMANDER-FUTURE-ADAPTER",
+      "priority": 43,
+      "rc1Critical": false
+    }
+  ]
+}

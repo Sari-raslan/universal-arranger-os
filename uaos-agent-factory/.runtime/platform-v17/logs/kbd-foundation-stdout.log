@@ -1,0 +1,7 @@
+
+> uaos-real-product@1.0.0 test:arranger-foundation
+> node apps/desktop/src/uaos-live/arranger/arrangerFoundation.test.js && node apps/desktop/src/uaos-live/arranger/rhythmFoundation.test.js && node apps/desktop/src/uaos-live/arranger/styleFoundation.test.js
+
+ARRANGER_FOUNDATION_V1_KEY_CONTROLS_PASS
+{"status":"PASS","rhythms":["maqsum","malfuf","slow_ballad"],"eventCounts":{"maqsum":166,"malfuf":121,"slow_ballad":107},"fingerprintsUnique":true,"keyRegressionCount":0,"saveRestartReadback":true,"undoRedo":true,"rhythmSelection":{"freshState":true,"missingDefault":true,"invalidReset":true,"validRetained":true}}
+{"status":"PASS","styles":["oriental","pop","cinematic"],"counts":{"oriental":{"tracks":13,"events":505},"pop":{"tracks":12,"events":503},"cinematic":{"tracks":15,"events":495}},"styleFingerprints":3,"matrix":9,"keyStyleRhythmCombinations":27,"saveRestart":true,"undoRedo":true,"noHangingNotes":true,"emptySectionPlans":0,"regression":0}

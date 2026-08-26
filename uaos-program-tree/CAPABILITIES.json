@@ -1,0 +1,3615 @@
+{
+  "schema": "uaos.capabilities/v1",
+  "generatedAt": "2026-08-04T20:47:04.345Z",
+  "capabilities": [
+    {
+      "id": "CAP-TASK-00-00001-RECOVER_V15_V21_EVIDENCE_INDEX_CONTRACT",
+      "taskId": "TASK-00-00001-RECOVER_V15_V21_EVIDENCE_INDEX_CONTRACT",
+      "domain": "00-ORCHESTRATION",
+      "title": "Recover V15-V21 evidence index",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-00-00005-PORTFOLIO_TREE_MATERIALIZATION_CONTRACT",
+      "taskId": "TASK-00-00005-PORTFOLIO_TREE_MATERIALIZATION_CONTRACT",
+      "domain": "00-ORCHESTRATION",
+      "title": "Portfolio tree materialization",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-00-00009-SCHEMA_VALIDATION_SUITE_CONTRACT",
+      "taskId": "TASK-00-00009-SCHEMA_VALIDATION_SUITE_CONTRACT",
+      "domain": "00-ORCHESTRATION",
+      "title": "Schema validation suite",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-00-00013-DEPENDENCY_DAG_VALIDATION_CONTRACT",
+      "taskId": "TASK-00-00013-DEPENDENCY_DAG_VALIDATION_CONTRACT",
+      "domain": "00-ORCHESTRATION",
+      "title": "Dependency DAG validation",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-00-00017-CYCLE_DETECTION_CONTRACT",
+      "taskId": "TASK-00-00017-CYCLE_DETECTION_CONTRACT",
+      "domain": "00-ORCHESTRATION",
+      "title": "Cycle detection",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-00-00021-ALLOWED_PATH_VALIDATION_CONTRACT",
+      "taskId": "TASK-00-00021-ALLOWED_PATH_VALIDATION_CONTRACT",
+      "domain": "00-ORCHESTRATION",
+      "title": "Allowed path validation",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-00-00025-QUEUE_INITIALIZATION_CONTRACT",
+      "taskId": "TASK-00-00025-QUEUE_INITIALIZATION_CONTRACT",
+      "domain": "00-ORCHESTRATION",
+      "title": "Queue initialization",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-00-00029-PROTECTED_REPOSITORY_VERIFICATION_CONTRA",
+      "taskId": "TASK-00-00029-PROTECTED_REPOSITORY_VERIFICATION_CONTRA",
+      "domain": "00-ORCHESTRATION",
+      "title": "Protected repository verification",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-00-00033-CLAIM_LEASE_HEARTBEAT_FABRIC_CONTRACT",
+      "taskId": "TASK-00-00033-CLAIM_LEASE_HEARTBEAT_FABRIC_CONTRACT",
+      "domain": "00-ORCHESTRATION",
+      "title": "Claim lease heartbeat fabric",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-00-00037-AGENT_CLIENT_REGISTRATION_CONTRACT",
+      "taskId": "TASK-00-00037-AGENT_CLIENT_REGISTRATION_CONTRACT",
+      "domain": "00-ORCHESTRATION",
+      "title": "Agent client registration",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-00-00041-EVIDENCE_CONTRACT_ENFORCEMENT_CONTRACT",
+      "taskId": "TASK-00-00041-EVIDENCE_CONTRACT_ENFORCEMENT_CONTRACT",
+      "domain": "00-ORCHESTRATION",
+      "title": "Evidence contract enforcement",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-00-00045-STALE_WORKER_RECLAMATION_CONTRACT",
+      "taskId": "TASK-00-00045-STALE_WORKER_RECLAMATION_CONTRACT",
+      "domain": "00-ORCHESTRATION",
+      "title": "Stale worker reclamation",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-00-00049-DASHBOARD_STATUS_PUBLISHER_CONTRACT",
+      "taskId": "TASK-00-00049-DASHBOARD_STATUS_PUBLISHER_CONTRACT",
+      "domain": "00-ORCHESTRATION",
+      "title": "Dashboard status publisher",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-00-00053-AUTOMATIC_READY_PROMOTION_CONTRACT",
+      "taskId": "TASK-00-00053-AUTOMATIC_READY_PROMOTION_CONTRACT",
+      "domain": "00-ORCHESTRATION",
+      "title": "Automatic READY promotion",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-01-00057-SHARED_PROJECT_IDENTITY_CONTRACT",
+      "taskId": "TASK-01-00057-SHARED_PROJECT_IDENTITY_CONTRACT",
+      "domain": "01-SHARED-PLATFORM",
+      "title": "Shared project identity",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-01-00061-PROJECT_SCHEMAS_CONTRACT",
+      "taskId": "TASK-01-00061-PROJECT_SCHEMAS_CONTRACT",
+      "domain": "01-SHARED-PLATFORM",
+      "title": "Project schemas",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-01-00065-ATOMIC_SAVE_CONTRACT",
+      "taskId": "TASK-01-00065-ATOMIC_SAVE_CONTRACT",
+      "domain": "01-SHARED-PLATFORM",
+      "title": "Atomic save",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-01-00069-AUTOSAVE_CONTRACT",
+      "taskId": "TASK-01-00069-AUTOSAVE_CONTRACT",
+      "domain": "01-SHARED-PLATFORM",
+      "title": "Autosave",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-01-00073-RECOVERY_CONTRACT",
+      "taskId": "TASK-01-00073-RECOVERY_CONTRACT",
+      "domain": "01-SHARED-PLATFORM",
+      "title": "Recovery",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-01-00077-MIGRATION_CONTRACT",
+      "taskId": "TASK-01-00077-MIGRATION_CONTRACT",
+      "domain": "01-SHARED-PLATFORM",
+      "title": "Migration",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-01-00081-UNDO_REDO_CONTRACT",
+      "taskId": "TASK-01-00081-UNDO_REDO_CONTRACT",
+      "domain": "01-SHARED-PLATFORM",
+      "title": "Undo redo",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-01-00085-EVIDENCE_RECORDS_CONTRACT",
+      "taskId": "TASK-01-00085-EVIDENCE_RECORDS_CONTRACT",
+      "domain": "01-SHARED-PLATFORM",
+      "title": "Evidence records",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-01-00089-ERROR_ENVELOPE_CONTRACT",
+      "taskId": "TASK-01-00089-ERROR_ENVELOPE_CONTRACT",
+      "domain": "01-SHARED-PLATFORM",
+      "title": "Error envelope",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-01-00093-CAPABILITY_REGISTRY_CONTRACT",
+      "taskId": "TASK-01-00093-CAPABILITY_REGISTRY_CONTRACT",
+      "domain": "01-SHARED-PLATFORM",
+      "title": "Capability registry",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-01-00097-ENTITLEMENTS_CONTRACT",
+      "taskId": "TASK-01-00097-ENTITLEMENTS_CONTRACT",
+      "domain": "01-SHARED-PLATFORM",
+      "title": "Entitlements",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-01-00101-OFFLINE_TRIAL_CONTRACT",
+      "taskId": "TASK-01-00101-OFFLINE_TRIAL_CONTRACT",
+      "domain": "01-SHARED-PLATFORM",
+      "title": "Offline trial",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-01-00105-SIGNED_LICENSES_CONTRACT",
+      "taskId": "TASK-01-00105-SIGNED_LICENSES_CONTRACT",
+      "domain": "01-SHARED-PLATFORM",
+      "title": "Signed licenses",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-01-00109-PRODUCT_IDS_CONTRACT",
+      "taskId": "TASK-01-00109-PRODUCT_IDS_CONTRACT",
+      "domain": "01-SHARED-PLATFORM",
+      "title": "Product IDs",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-01-00113-CUSTOMER_LICENSE_RECEIPTS_CONTRACT",
+      "taskId": "TASK-01-00113-CUSTOMER_LICENSE_RECEIPTS_CONTRACT",
+      "domain": "01-SHARED-PLATFORM",
+      "title": "Customer license receipts",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-01-00117-UPDATE_MANIFESTS_CONTRACT",
+      "taskId": "TASK-01-00117-UPDATE_MANIFESTS_CONTRACT",
+      "domain": "01-SHARED-PLATFORM",
+      "title": "Update manifests",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-01-00121-INSTALLER_PACKAGING_CONTRACT",
+      "taskId": "TASK-01-00121-INSTALLER_PACKAGING_CONTRACT",
+      "domain": "01-SHARED-PLATFORM",
+      "title": "Installer packaging",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-01-00125-PORTABLE_PACKAGING_CONTRACT",
+      "taskId": "TASK-01-00125-PORTABLE_PACKAGING_CONTRACT",
+      "domain": "01-SHARED-PLATFORM",
+      "title": "Portable packaging",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-01-00129-VERSIONING_CONTRACT",
+      "taskId": "TASK-01-00129-VERSIONING_CONTRACT",
+      "domain": "01-SHARED-PLATFORM",
+      "title": "Versioning",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-01-00133-ABOUT_SCREEN_CONTRACT",
+      "taskId": "TASK-01-00133-ABOUT_SCREEN_CONTRACT",
+      "domain": "01-SHARED-PLATFORM",
+      "title": "About screen",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-01-00137-PRIVACY_NOTICES_CONTRACT",
+      "taskId": "TASK-01-00137-PRIVACY_NOTICES_CONTRACT",
+      "domain": "01-SHARED-PLATFORM",
+      "title": "Privacy notices",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-01-00141-LOCALIZATION_ARABIC_CONTRACT",
+      "taskId": "TASK-01-00141-LOCALIZATION_ARABIC_CONTRACT",
+      "domain": "01-SHARED-PLATFORM",
+      "title": "Localization Arabic",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-01-00145-LOCALIZATION_ENGLISH_CONTRACT",
+      "taskId": "TASK-01-00145-LOCALIZATION_ENGLISH_CONTRACT",
+      "domain": "01-SHARED-PLATFORM",
+      "title": "Localization English",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-01-00149-LOCALIZATION_GERMAN_CONTRACT",
+      "taskId": "TASK-01-00149-LOCALIZATION_GERMAN_CONTRACT",
+      "domain": "01-SHARED-PLATFORM",
+      "title": "Localization German",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-01-00153-ACCESSIBILITY_BASELINE_CONTRACT",
+      "taskId": "TASK-01-00153-ACCESSIBILITY_BASELINE_CONTRACT",
+      "domain": "01-SHARED-PLATFORM",
+      "title": "Accessibility baseline",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-01-00157-CRASH_LOGGING_LOCAL_ONLY_CONTRACT",
+      "taskId": "TASK-01-00157-CRASH_LOGGING_LOCAL_ONLY_CONTRACT",
+      "domain": "01-SHARED-PLATFORM",
+      "title": "Crash logging local only",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-01-00161-SUPPORT_BUNDLE_CONTRACT",
+      "taskId": "TASK-01-00161-SUPPORT_BUNDLE_CONTRACT",
+      "domain": "01-SHARED-PLATFORM",
+      "title": "Support bundle",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-01-00165-EXPORT_IMPORT_USER_DATA_CONTRACT",
+      "taskId": "TASK-01-00165-EXPORT_IMPORT_USER_DATA_CONTRACT",
+      "domain": "01-SHARED-PLATFORM",
+      "title": "Export import user data",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-01-00169-SINGLE_INSTANCE_CONTRACT",
+      "taskId": "TASK-01-00169-SINGLE_INSTANCE_CONTRACT",
+      "domain": "01-SHARED-PLATFORM",
+      "title": "Single instance",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-01-00173-GLOBAL_STOP_CONTRACT_CONTRACT",
+      "taskId": "TASK-01-00173-GLOBAL_STOP_CONTRACT_CONTRACT",
+      "domain": "01-SHARED-PLATFORM",
+      "title": "Global Stop contract",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-01-00177-NO_AUTOPLAY_CONTRACT_CONTRACT",
+      "taskId": "TASK-01-00177-NO_AUTOPLAY_CONTRACT_CONTRACT",
+      "domain": "01-SHARED-PLATFORM",
+      "title": "No autoplay contract",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-01-00181-PERMISSION_DENIAL_CONTRACT_CONTRACT",
+      "taskId": "TASK-01-00181-PERMISSION_DENIAL_CONTRACT_CONTRACT",
+      "domain": "01-SHARED-PLATFORM",
+      "title": "Permission denial contract",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-01-00185-NETWORK_DISABLED_OPERATION_CONTRACT",
+      "taskId": "TASK-01-00185-NETWORK_DISABLED_OPERATION_CONTRACT",
+      "domain": "01-SHARED-PLATFORM",
+      "title": "Network disabled operation",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-01-00189-NO_LISTENING_PORT_VERIFICATION_CONTRACT",
+      "taskId": "TASK-01-00189-NO_LISTENING_PORT_VERIFICATION_CONTRACT",
+      "domain": "01-SHARED-PLATFORM",
+      "title": "No listening port verification",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-01-00193-PROCESS_CLEANUP_CONTRACT",
+      "taskId": "TASK-01-00193-PROCESS_CLEANUP_CONTRACT",
+      "domain": "01-SHARED-PLATFORM",
+      "title": "Process cleanup",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-02-00197-USER_SUPPLIED_WAV_INGESTION_CONTRACT",
+      "taskId": "TASK-02-00197-USER_SUPPLIED_WAV_INGESTION_CONTRACT",
+      "domain": "02-LIBRARY-FACTORY",
+      "title": "User-supplied WAV ingestion",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-02-00201-SOURCE_SCANNING_CONTRACT",
+      "taskId": "TASK-02-00201-SOURCE_SCANNING_CONTRACT",
+      "domain": "02-LIBRARY-FACTORY",
+      "title": "Source scanning",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-02-00205-SHA256_INVENTORY_CONTRACT",
+      "taskId": "TASK-02-00205-SHA256_INVENTORY_CONTRACT",
+      "domain": "02-LIBRARY-FACTORY",
+      "title": "SHA256 inventory",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-02-00209-PROVENANCE_CONTRACT",
+      "taskId": "TASK-02-00209-PROVENANCE_CONTRACT",
+      "domain": "02-LIBRARY-FACTORY",
+      "title": "Provenance",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-02-00213-LICENSE_LEDGER_CONTRACT",
+      "taskId": "TASK-02-00213-LICENSE_LEDGER_CONTRACT",
+      "domain": "02-LIBRARY-FACTORY",
+      "title": "License ledger",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-02-00217-SAMPLE_MAPPING_CONTRACT",
+      "taskId": "TASK-02-00217-SAMPLE_MAPPING_CONTRACT",
+      "domain": "02-LIBRARY-FACTORY",
+      "title": "Sample mapping",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-02-00221-NOTE_MAPPING_CONTRACT",
+      "taskId": "TASK-02-00221-NOTE_MAPPING_CONTRACT",
+      "domain": "02-LIBRARY-FACTORY",
+      "title": "Note mapping",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-02-00225-VELOCITY_LAYERS_CONTRACT",
+      "taskId": "TASK-02-00225-VELOCITY_LAYERS_CONTRACT",
+      "domain": "02-LIBRARY-FACTORY",
+      "title": "Velocity layers",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-02-00229-ROUND_ROBIN_CONTRACT",
+      "taskId": "TASK-02-00229-ROUND_ROBIN_CONTRACT",
+      "domain": "02-LIBRARY-FACTORY",
+      "title": "Round robin",
+      "releaseTrain": "R1-STABLE-COMMERCIAL",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-02-00233-ARTICULATIONS_CONTRACT",
+      "taskId": "TASK-02-00233-ARTICULATIONS_CONTRACT",
+      "domain": "02-LIBRARY-FACTORY",
+      "title": "Articulations",
+      "releaseTrain": "R1-STABLE-COMMERCIAL",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-02-00237-LOOP_METADATA_CONTRACT",
+      "taskId": "TASK-02-00237-LOOP_METADATA_CONTRACT",
+      "domain": "02-LIBRARY-FACTORY",
+      "title": "Loop metadata",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-02-00241-CHOKE_GROUPS_CONTRACT",
+      "taskId": "TASK-02-00241-CHOKE_GROUPS_CONTRACT",
+      "domain": "02-LIBRARY-FACTORY",
+      "title": "Choke groups",
+      "releaseTrain": "R1-STABLE-COMMERCIAL",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-02-00245-SUSTAIN_CONTRACT",
+      "taskId": "TASK-02-00245-SUSTAIN_CONTRACT",
+      "domain": "02-LIBRARY-FACTORY",
+      "title": "Sustain",
+      "releaseTrain": "R1-STABLE-COMMERCIAL",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-02-00249-VOICE_LIFECYCLE_CONTRACT",
+      "taskId": "TASK-02-00249-VOICE_LIFECYCLE_CONTRACT",
+      "domain": "02-LIBRARY-FACTORY",
+      "title": "Voice lifecycle",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-02-00253-SAMPLER_RUNTIME_CONTRACT",
+      "taskId": "TASK-02-00253-SAMPLER_RUNTIME_CONTRACT",
+      "domain": "02-LIBRARY-FACTORY",
+      "title": "Sampler runtime",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-02-00257-PREVIEW_PLAYER_CONTRACT",
+      "taskId": "TASK-02-00257-PREVIEW_PLAYER_CONTRACT",
+      "domain": "02-LIBRARY-FACTORY",
+      "title": "Preview player",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-02-00261-CATALOG_CONTRACT",
+      "taskId": "TASK-02-00261-CATALOG_CONTRACT",
+      "domain": "02-LIBRARY-FACTORY",
+      "title": "Catalog",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-02-00265-TRANSACTIONAL_BUILD_CONTRACT",
+      "taskId": "TASK-02-00265-TRANSACTIONAL_BUILD_CONTRACT",
+      "domain": "02-LIBRARY-FACTORY",
+      "title": "Transactional build",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-02-00269-STAGING_CONTRACT",
+      "taskId": "TASK-02-00269-STAGING_CONTRACT",
+      "domain": "02-LIBRARY-FACTORY",
+      "title": "Staging",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-02-00273-ROLLBACK_CONTRACT",
+      "taskId": "TASK-02-00273-ROLLBACK_CONTRACT",
+      "domain": "02-LIBRARY-FACTORY",
+      "title": "Rollback",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-02-00277-JOURNAL_CONTRACT",
+      "taskId": "TASK-02-00277-JOURNAL_CONTRACT",
+      "domain": "02-LIBRARY-FACTORY",
+      "title": "Journal",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-02-00281-LOCKS_CONTRACT",
+      "taskId": "TASK-02-00281-LOCKS_CONTRACT",
+      "domain": "02-LIBRARY-FACTORY",
+      "title": "Locks",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-02-00285-STALE_RECOVERY_CONTRACT",
+      "taskId": "TASK-02-00285-STALE_RECOVERY_CONTRACT",
+      "domain": "02-LIBRARY-FACTORY",
+      "title": "Stale recovery",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-02-00289-PACKAGING_CONTRACT",
+      "taskId": "TASK-02-00289-PACKAGING_CONTRACT",
+      "domain": "02-LIBRARY-FACTORY",
+      "title": "Packaging",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-02-00293-LIBRARY_VALIDATION_CONTRACT",
+      "taskId": "TASK-02-00293-LIBRARY_VALIDATION_CONTRACT",
+      "domain": "02-LIBRARY-FACTORY",
+      "title": "Library validation",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-02-00297-COMMERCIAL_CONTENT_ACQUISITION_CONTRACT",
+      "taskId": "TASK-02-00297-COMMERCIAL_CONTENT_ACQUISITION_CONTRACT",
+      "domain": "02-LIBRARY-FACTORY",
+      "title": "Commercial content acquisition",
+      "releaseTrain": "R1-STABLE-COMMERCIAL",
+      "state": "OWNER_GATE",
+      "gate": "OWNER_GATE"
+    },
+    {
+      "id": "CAP-TASK-02-00301-PUBLIC_DOMAIN_CONTENT_PIPELINE_CONTRACT",
+      "taskId": "TASK-02-00301-PUBLIC_DOMAIN_CONTENT_PIPELINE_CONTRACT",
+      "domain": "02-LIBRARY-FACTORY",
+      "title": "Public-domain content pipeline",
+      "releaseTrain": "R1-STABLE-COMMERCIAL",
+      "state": "BLOCKED_BY_CONTENT",
+      "gate": "CONTENT_GATE"
+    },
+    {
+      "id": "CAP-TASK-02-00305-CONTRIBUTOR_PIPELINE_CONTRACT",
+      "taskId": "TASK-02-00305-CONTRIBUTOR_PIPELINE_CONTRACT",
+      "domain": "02-LIBRARY-FACTORY",
+      "title": "Contributor pipeline",
+      "releaseTrain": "R3-AI-CLOUD-MARKETPLACE",
+      "state": "BLOCKED_BY_LEGAL",
+      "gate": "LEGAL_GATE"
+    },
+    {
+      "id": "CAP-TASK-02-00309-MARKETPLACE_READY_PACKAGE_MODEL_CONTRACT",
+      "taskId": "TASK-02-00309-MARKETPLACE_READY_PACKAGE_MODEL_CONTRACT",
+      "domain": "02-LIBRARY-FACTORY",
+      "title": "Marketplace-ready package model",
+      "releaseTrain": "R3-AI-CLOUD-MARKETPLACE",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-02-00313-OWNER_CONTENT_APPROVAL_CONTRACT",
+      "taskId": "TASK-02-00313-OWNER_CONTENT_APPROVAL_CONTRACT",
+      "domain": "02-LIBRARY-FACTORY",
+      "title": "Owner content approval",
+      "releaseTrain": "R1-STABLE-COMMERCIAL",
+      "state": "OWNER_GATE",
+      "gate": "OWNER_GATE"
+    },
+    {
+      "id": "CAP-TASK-03-00317-INTERNAL_PROJECT_FORMAT_CONTRACT",
+      "taskId": "TASK-03-00317-INTERNAL_PROJECT_FORMAT_CONTRACT",
+      "domain": "03-KEYBOARD-PRO",
+      "title": "Internal project format",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-03-00321-SET_DOCTOR_CONTRACT",
+      "taskId": "TASK-03-00321-SET_DOCTOR_CONTRACT",
+      "domain": "03-KEYBOARD-PRO",
+      "title": "Set Doctor",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-03-00325-MAGIC_SET_CONTRACT",
+      "taskId": "TASK-03-00325-MAGIC_SET_CONTRACT",
+      "domain": "03-KEYBOARD-PRO",
+      "title": "Magic Set",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-03-00329-GENERATE_MY_SET_CONTRACT",
+      "taskId": "TASK-03-00329-GENERATE_MY_SET_CONTRACT",
+      "domain": "03-KEYBOARD-PRO",
+      "title": "Generate My Set",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-03-00333-CATALOG_CONTRACT",
+      "taskId": "TASK-03-00333-CATALOG_CONTRACT",
+      "domain": "03-KEYBOARD-PRO",
+      "title": "Catalog",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-03-00337-INSPECTOR_CONTRACT",
+      "taskId": "TASK-03-00337-INSPECTOR_CONTRACT",
+      "domain": "03-KEYBOARD-PRO",
+      "title": "Inspector",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-03-00341-PREVIEW_CONTRACT",
+      "taskId": "TASK-03-00341-PREVIEW_CONTRACT",
+      "domain": "03-KEYBOARD-PRO",
+      "title": "Preview",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-03-00345-MEDIA_REFERENCES_CONTRACT",
+      "taskId": "TASK-03-00345-MEDIA_REFERENCES_CONTRACT",
+      "domain": "03-KEYBOARD-PRO",
+      "title": "Media references",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-03-00349-MIGRATION_CONTRACT",
+      "taskId": "TASK-03-00349-MIGRATION_CONTRACT",
+      "domain": "03-KEYBOARD-PRO",
+      "title": "Migration",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-03-00353-VALIDATION_CONTRACT",
+      "taskId": "TASK-03-00353-VALIDATION_CONTRACT",
+      "domain": "03-KEYBOARD-PRO",
+      "title": "Validation",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-03-00357-ERROR_RECOVERY_CONTRACT",
+      "taskId": "TASK-03-00357-ERROR_RECOVERY_CONTRACT",
+      "domain": "03-KEYBOARD-PRO",
+      "title": "Error recovery",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-03-00361-FORMAT_CAPABILITY_REGISTRY_CONTRACT",
+      "taskId": "TASK-03-00361-FORMAT_CAPABILITY_REGISTRY_CONTRACT",
+      "domain": "03-KEYBOARD-PRO",
+      "title": "Format capability registry",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-03-00365-KORG_INSPECTION_CONTRACT",
+      "taskId": "TASK-03-00365-KORG_INSPECTION_CONTRACT",
+      "domain": "03-KEYBOARD-PRO",
+      "title": "KORG inspection",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": null,
+      "gate": "FORMAT_GATE"
+    },
+    {
+      "id": "CAP-TASK-03-00369-YAMAHA_INSPECTION_CONTRACT",
+      "taskId": "TASK-03-00369-YAMAHA_INSPECTION_CONTRACT",
+      "domain": "03-KEYBOARD-PRO",
+      "title": "Yamaha inspection",
+      "releaseTrain": "R1-STABLE-COMMERCIAL",
+      "state": "BLOCKED_BY_FORMAT",
+      "gate": "FORMAT_GATE"
+    },
+    {
+      "id": "CAP-TASK-03-00373-ROLAND_INSPECTION_CONTRACT",
+      "taskId": "TASK-03-00373-ROLAND_INSPECTION_CONTRACT",
+      "domain": "03-KEYBOARD-PRO",
+      "title": "Roland inspection",
+      "releaseTrain": "R1-STABLE-COMMERCIAL",
+      "state": "BLOCKED_BY_FORMAT",
+      "gate": "FORMAT_GATE"
+    },
+    {
+      "id": "CAP-TASK-03-00377-KETRON_INSPECTION_CONTRACT",
+      "taskId": "TASK-03-00377-KETRON_INSPECTION_CONTRACT",
+      "domain": "03-KEYBOARD-PRO",
+      "title": "Ketron inspection",
+      "releaseTrain": "R1-STABLE-COMMERCIAL",
+      "state": "BLOCKED_BY_FORMAT",
+      "gate": "FORMAT_GATE"
+    },
+    {
+      "id": "CAP-TASK-03-00381-INTERNAL_CONVERSION_CONTRACT",
+      "taskId": "TASK-03-00381-INTERNAL_CONVERSION_CONTRACT",
+      "domain": "03-KEYBOARD-PRO",
+      "title": "Internal conversion",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-03-00385-MAPPING_PLANS_CONTRACT",
+      "taskId": "TASK-03-00385-MAPPING_PLANS_CONTRACT",
+      "domain": "03-KEYBOARD-PRO",
+      "title": "Mapping plans",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-03-00389-CONVERSION_RECEIPTS_CONTRACT",
+      "taskId": "TASK-03-00389-CONVERSION_RECEIPTS_CONTRACT",
+      "domain": "03-KEYBOARD-PRO",
+      "title": "Conversion receipts",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-03-00393-TRANSACTIONAL_OUTPUT_CONTRACT",
+      "taskId": "TASK-03-00393-TRANSACTIONAL_OUTPUT_CONTRACT",
+      "domain": "03-KEYBOARD-PRO",
+      "title": "Transactional output",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-03-00397-RESUME_RECOVERY_CONTRACT",
+      "taskId": "TASK-03-00397-RESUME_RECOVERY_CONTRACT",
+      "domain": "03-KEYBOARD-PRO",
+      "title": "Resume recovery",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-03-00401-PROPRIETARY_FORMAT_CONTRACTS_CONTRACT",
+      "taskId": "TASK-03-00401-PROPRIETARY_FORMAT_CONTRACTS_CONTRACT",
+      "domain": "03-KEYBOARD-PRO",
+      "title": "Proprietary format contracts",
+      "releaseTrain": "R2-PRO-HARDWARE-AND-REALTIME",
+      "state": "OWNER_GATE",
+      "gate": "OWNER_GATE"
+    },
+    {
+      "id": "CAP-TASK-03-00405-WRITER_RESEARCH_CONTRACT",
+      "taskId": "TASK-03-00405-WRITER_RESEARCH_CONTRACT",
+      "domain": "03-KEYBOARD-PRO",
+      "title": "Writer research",
+      "releaseTrain": "R2-PRO-HARDWARE-AND-REALTIME",
+      "state": "BLOCKED_BY_FORMAT",
+      "gate": "FORMAT_GATE"
+    },
+    {
+      "id": "CAP-TASK-03-00409-KORG_WRITER_CONTRACT",
+      "taskId": "TASK-03-00409-KORG_WRITER_CONTRACT",
+      "domain": "03-KEYBOARD-PRO",
+      "title": "KORG Writer",
+      "releaseTrain": "R2-PRO-HARDWARE-AND-REALTIME",
+      "state": "BLOCKED_BY_FORMAT",
+      "gate": "FORMAT_GATE"
+    },
+    {
+      "id": "CAP-TASK-03-00413-USB_TRANSPORT_CONTRACT",
+      "taskId": "TASK-03-00413-USB_TRANSPORT_CONTRACT",
+      "domain": "03-KEYBOARD-PRO",
+      "title": "USB transport",
+      "releaseTrain": "R2-PRO-HARDWARE-AND-REALTIME",
+      "state": "BLOCKED_BY_HARDWARE",
+      "gate": "HARDWARE_GATE"
+    },
+    {
+      "id": "CAP-TASK-03-00417-SYSEX_CONTRACT",
+      "taskId": "TASK-03-00417-SYSEX_CONTRACT",
+      "domain": "03-KEYBOARD-PRO",
+      "title": "SysEx",
+      "releaseTrain": "R2-PRO-HARDWARE-AND-REALTIME",
+      "state": "BLOCKED_BY_HARDWARE",
+      "gate": "HARDWARE_GATE"
+    },
+    {
+      "id": "CAP-TASK-03-00421-HARDWARE_VERIFICATION_CONTRACT",
+      "taskId": "TASK-03-00421-HARDWARE_VERIFICATION_CONTRACT",
+      "domain": "03-KEYBOARD-PRO",
+      "title": "Hardware verification",
+      "releaseTrain": "R2-PRO-HARDWARE-AND-REALTIME",
+      "state": "BLOCKED_BY_HARDWARE",
+      "gate": "HARDWARE_GATE"
+    },
+    {
+      "id": "CAP-TASK-03-00425-DEVICE_SPECIFIC_ACCEPTANCE_CONTRACT",
+      "taskId": "TASK-03-00425-DEVICE_SPECIFIC_ACCEPTANCE_CONTRACT",
+      "domain": "03-KEYBOARD-PRO",
+      "title": "Device-specific acceptance",
+      "releaseTrain": "R2-PRO-HARDWARE-AND-REALTIME",
+      "state": "BLOCKED_BY_HARDWARE",
+      "gate": "HARDWARE_GATE"
+    },
+    {
+      "id": "CAP-TASK-04-00429-INPUT_DETECTION_CONTRACT",
+      "taskId": "TASK-04-00429-INPUT_DETECTION_CONTRACT",
+      "domain": "04-KEYBOARD-CONVERTERS",
+      "title": "Input detection",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-04-00433-CAPABILITY_REGISTRY_CONTRACT",
+      "taskId": "TASK-04-00433-CAPABILITY_REGISTRY_CONTRACT",
+      "domain": "04-KEYBOARD-CONVERTERS",
+      "title": "Capability registry",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-04-00437-IMMUTABLE_SNAPSHOTS_CONTRACT",
+      "taskId": "TASK-04-00437-IMMUTABLE_SNAPSHOTS_CONTRACT",
+      "domain": "04-KEYBOARD-CONVERTERS",
+      "title": "Immutable snapshots",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-04-00441-JOB_QUEUE_CONTRACT",
+      "taskId": "TASK-04-00441-JOB_QUEUE_CONTRACT",
+      "domain": "04-KEYBOARD-CONVERTERS",
+      "title": "Job queue",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-04-00445-BATCH_CONVERSION_CONTRACT",
+      "taskId": "TASK-04-00445-BATCH_CONVERSION_CONTRACT",
+      "domain": "04-KEYBOARD-CONVERTERS",
+      "title": "Batch conversion",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-04-00449-MAPPING_ENGINE_CONTRACT",
+      "taskId": "TASK-04-00449-MAPPING_ENGINE_CONTRACT",
+      "domain": "04-KEYBOARD-CONVERTERS",
+      "title": "Mapping engine",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-04-00453-VALIDATION_CONTRACT",
+      "taskId": "TASK-04-00453-VALIDATION_CONTRACT",
+      "domain": "04-KEYBOARD-CONVERTERS",
+      "title": "Validation",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-04-00457-PREVIEW_CONTRACT",
+      "taskId": "TASK-04-00457-PREVIEW_CONTRACT",
+      "domain": "04-KEYBOARD-CONVERTERS",
+      "title": "Preview",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-04-00461-DRY_RUN_CONTRACT",
+      "taskId": "TASK-04-00461-DRY_RUN_CONTRACT",
+      "domain": "04-KEYBOARD-CONVERTERS",
+      "title": "Dry-run",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-04-00465-TRANSACTIONAL_OUTPUT_CONTRACT",
+      "taskId": "TASK-04-00465-TRANSACTIONAL_OUTPUT_CONTRACT",
+      "domain": "04-KEYBOARD-CONVERTERS",
+      "title": "Transactional output",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-04-00469-ROLLBACK_CONTRACT",
+      "taskId": "TASK-04-00469-ROLLBACK_CONTRACT",
+      "domain": "04-KEYBOARD-CONVERTERS",
+      "title": "Rollback",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-04-00473-CANCEL_CONTRACT",
+      "taskId": "TASK-04-00473-CANCEL_CONTRACT",
+      "domain": "04-KEYBOARD-CONVERTERS",
+      "title": "Cancel",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-04-00477-RESUME_CONTRACT",
+      "taskId": "TASK-04-00477-RESUME_CONTRACT",
+      "domain": "04-KEYBOARD-CONVERTERS",
+      "title": "Resume",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-04-00481-CRASH_RECOVERY_CONTRACT",
+      "taskId": "TASK-04-00481-CRASH_RECOVERY_CONTRACT",
+      "domain": "04-KEYBOARD-CONVERTERS",
+      "title": "Crash recovery",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-04-00485-RECEIPTS_CONTRACT",
+      "taskId": "TASK-04-00485-RECEIPTS_CONTRACT",
+      "domain": "04-KEYBOARD-CONVERTERS",
+      "title": "Receipts",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-04-00489-DETERMINISTIC_MANIFESTS_CONTRACT",
+      "taskId": "TASK-04-00489-DETERMINISTIC_MANIFESTS_CONTRACT",
+      "domain": "04-KEYBOARD-CONVERTERS",
+      "title": "Deterministic manifests",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-04-00493-ROUND_TRIP_FIXTURES_CONTRACT",
+      "taskId": "TASK-04-00493-ROUND_TRIP_FIXTURES_CONTRACT",
+      "domain": "04-KEYBOARD-CONVERTERS",
+      "title": "Round-trip fixtures",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-04-00497-CORRUPTION_REJECTION_CONTRACT",
+      "taskId": "TASK-04-00497-CORRUPTION_REJECTION_CONTRACT",
+      "domain": "04-KEYBOARD-CONVERTERS",
+      "title": "Corruption rejection",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-04-00501-UNSUPPORTED_FORMAT_REPORTS_CONTRACT",
+      "taskId": "TASK-04-00501-UNSUPPORTED_FORMAT_REPORTS_CONTRACT",
+      "domain": "04-KEYBOARD-CONVERTERS",
+      "title": "Unsupported-format reports",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-04-00505-FORMAT_ADAPTER_SDK_CONTRACT",
+      "taskId": "TASK-04-00505-FORMAT_ADAPTER_SDK_CONTRACT",
+      "domain": "04-KEYBOARD-CONVERTERS",
+      "title": "Format adapter SDK",
+      "releaseTrain": "R1-STABLE-COMMERCIAL",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-04-00509-VENDOR_SPECIFIC_ADAPTERS_CONTRACT",
+      "taskId": "TASK-04-00509-VENDOR_SPECIFIC_ADAPTERS_CONTRACT",
+      "domain": "04-KEYBOARD-CONVERTERS",
+      "title": "Vendor-specific adapters",
+      "releaseTrain": "R1-STABLE-COMMERCIAL",
+      "state": "BLOCKED_BY_FORMAT",
+      "gate": "FORMAT_GATE"
+    },
+    {
+      "id": "CAP-TASK-04-00513-WRITER_ADAPTERS_CONTRACT",
+      "taskId": "TASK-04-00513-WRITER_ADAPTERS_CONTRACT",
+      "domain": "04-KEYBOARD-CONVERTERS",
+      "title": "Writer adapters",
+      "releaseTrain": "R2-PRO-HARDWARE-AND-REALTIME",
+      "state": "BLOCKED_BY_FORMAT",
+      "gate": "FORMAT_GATE"
+    },
+    {
+      "id": "CAP-TASK-04-00517-HARDWARE_DELIVERY_ADAPTERS_CONTRACT",
+      "taskId": "TASK-04-00517-HARDWARE_DELIVERY_ADAPTERS_CONTRACT",
+      "domain": "04-KEYBOARD-CONVERTERS",
+      "title": "Hardware delivery adapters",
+      "releaseTrain": "R2-PRO-HARDWARE-AND-REALTIME",
+      "state": "BLOCKED_BY_HARDWARE",
+      "gate": "HARDWARE_GATE"
+    },
+    {
+      "id": "CAP-TASK-05-00521-PROJECT_WORKSPACE_CONTRACT",
+      "taskId": "TASK-05-00521-PROJECT_WORKSPACE_CONTRACT",
+      "domain": "05-CREATOR",
+      "title": "Project workspace",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-05-00525-MIDI_TRACKS_CONTRACT",
+      "taskId": "TASK-05-00525-MIDI_TRACKS_CONTRACT",
+      "domain": "05-CREATOR",
+      "title": "MIDI tracks",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-05-00529-AUDIO_REFERENCES_CONTRACT",
+      "taskId": "TASK-05-00529-AUDIO_REFERENCES_CONTRACT",
+      "domain": "05-CREATOR",
+      "title": "Audio references",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-05-00533-NOTE_EDITING_CONTRACT",
+      "taskId": "TASK-05-00533-NOTE_EDITING_CONTRACT",
+      "domain": "05-CREATOR",
+      "title": "Note editing",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-05-00537-CHORDS_CONTRACT",
+      "taskId": "TASK-05-00537-CHORDS_CONTRACT",
+      "domain": "05-CREATOR",
+      "title": "Chords",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-05-00541-SECTIONS_CONTRACT",
+      "taskId": "TASK-05-00541-SECTIONS_CONTRACT",
+      "domain": "05-CREATOR",
+      "title": "Sections",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-05-00545-ARRANGEMENT_GRAPH_CONTRACT",
+      "taskId": "TASK-05-00545-ARRANGEMENT_GRAPH_CONTRACT",
+      "domain": "05-CREATOR",
+      "title": "Arrangement graph",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-05-00549-HARMONY_RULES_CONTRACT",
+      "taskId": "TASK-05-00549-HARMONY_RULES_CONTRACT",
+      "domain": "05-CREATOR",
+      "title": "Harmony rules",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-05-00553-ADVANCED_HARMONY_CONTRACT",
+      "taskId": "TASK-05-00553-ADVANCED_HARMONY_CONTRACT",
+      "domain": "05-CREATOR",
+      "title": "Advanced Harmony",
+      "releaseTrain": "R1-STABLE-COMMERCIAL",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-05-00557-MELODY_ANALYSIS_CONTRACT",
+      "taskId": "TASK-05-00557-MELODY_ANALYSIS_CONTRACT",
+      "domain": "05-CREATOR",
+      "title": "Melody analysis",
+      "releaseTrain": "R1-STABLE-COMMERCIAL",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-05-00561-VOICE_TO_MELODY_CONTRACT",
+      "taskId": "TASK-05-00561-VOICE_TO_MELODY_CONTRACT",
+      "domain": "05-CREATOR",
+      "title": "Voice-to-Melody",
+      "releaseTrain": "R2-PRO-HARDWARE-AND-REALTIME",
+      "state": "OWNER_GATE",
+      "gate": "OWNER_GATE"
+    },
+    {
+      "id": "CAP-TASK-05-00565-VOICE_TO_MIDI_CONTRACT",
+      "taskId": "TASK-05-00565-VOICE_TO_MIDI_CONTRACT",
+      "domain": "05-CREATOR",
+      "title": "Voice-to-MIDI",
+      "releaseTrain": "R2-PRO-HARDWARE-AND-REALTIME",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-05-00569-PITCH_AND_RHYTHM_ANALYSIS_CONTRACT",
+      "taskId": "TASK-05-00569-PITCH_AND_RHYTHM_ANALYSIS_CONTRACT",
+      "domain": "05-CREATOR",
+      "title": "Pitch and rhythm analysis",
+      "releaseTrain": "R1-STABLE-COMMERCIAL",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-05-00573-BASS_GENERATION_CONTRACT",
+      "taskId": "TASK-05-00573-BASS_GENERATION_CONTRACT",
+      "domain": "05-CREATOR",
+      "title": "Bass generation",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-05-00577-DRUM_GENERATION_CONTRACT",
+      "taskId": "TASK-05-00577-DRUM_GENERATION_CONTRACT",
+      "domain": "05-CREATOR",
+      "title": "Drum generation",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-05-00581-INSTRUMENT_ROLES_CONTRACT",
+      "taskId": "TASK-05-00581-INSTRUMENT_ROLES_CONTRACT",
+      "domain": "05-CREATOR",
+      "title": "Instrument roles",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-05-00585-ORCHESTRATION_CONTRACT",
+      "taskId": "TASK-05-00585-ORCHESTRATION_CONTRACT",
+      "domain": "05-CREATOR",
+      "title": "Orchestration",
+      "releaseTrain": "R1-STABLE-COMMERCIAL",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-05-00589-GOLDEN_SMART_SEQUENCER_CONTRACT",
+      "taskId": "TASK-05-00589-GOLDEN_SMART_SEQUENCER_CONTRACT",
+      "domain": "05-CREATOR",
+      "title": "Golden Smart Sequencer",
+      "releaseTrain": "R1-STABLE-COMMERCIAL",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-05-00593-DETERMINISTIC_SEQUENCING_CONTRACT",
+      "taskId": "TASK-05-00593-DETERMINISTIC_SEQUENCING_CONTRACT",
+      "domain": "05-CREATOR",
+      "title": "Deterministic sequencing",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-05-00597-HUMANIZATION_CONTRACT",
+      "taskId": "TASK-05-00597-HUMANIZATION_CONTRACT",
+      "domain": "05-CREATOR",
+      "title": "Humanization",
+      "releaseTrain": "R1-STABLE-COMMERCIAL",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-05-00601-ARRANGEMENT_BRAIN_CONTRACT",
+      "taskId": "TASK-05-00601-ARRANGEMENT_BRAIN_CONTRACT",
+      "domain": "05-CREATOR",
+      "title": "Arrangement Brain",
+      "releaseTrain": "R2-PRO-HARDWARE-AND-REALTIME",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-05-00605-MUSICAL_BRAIN_CONTRACT",
+      "taskId": "TASK-05-00605-MUSICAL_BRAIN_CONTRACT",
+      "domain": "05-CREATOR",
+      "title": "Musical Brain",
+      "releaseTrain": "R3-AI-CLOUD-MARKETPLACE",
+      "state": "OWNER_GATE",
+      "gate": "OWNER_GATE"
+    },
+    {
+      "id": "CAP-TASK-05-00609-STYLE_AND_EMOTION_INTENT_CONTRACT",
+      "taskId": "TASK-05-00609-STYLE_AND_EMOTION_INTENT_CONTRACT",
+      "domain": "05-CREATOR",
+      "title": "Style and emotion intent",
+      "releaseTrain": "R2-PRO-HARDWARE-AND-REALTIME",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-05-00613-MUSICAL_CRITIC_CONTRACT",
+      "taskId": "TASK-05-00613-MUSICAL_CRITIC_CONTRACT",
+      "domain": "05-CREATOR",
+      "title": "Musical critic",
+      "releaseTrain": "R2-PRO-HARDWARE-AND-REALTIME",
+      "state": "OWNER_GATE",
+      "gate": "OWNER_GATE"
+    },
+    {
+      "id": "CAP-TASK-05-00617-REFINEMENT_CYCLES_CONTRACT",
+      "taskId": "TASK-05-00617-REFINEMENT_CYCLES_CONTRACT",
+      "domain": "05-CREATOR",
+      "title": "Refinement cycles",
+      "releaseTrain": "R1-STABLE-COMMERCIAL",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-05-00621-TECHNICAL_PREVIEW_CONTRACT",
+      "taskId": "TASK-05-00621-TECHNICAL_PREVIEW_CONTRACT",
+      "domain": "05-CREATOR",
+      "title": "Technical preview",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-05-00625-PRODUCTION_PREVIEW_CONTRACT",
+      "taskId": "TASK-05-00625-PRODUCTION_PREVIEW_CONTRACT",
+      "domain": "05-CREATOR",
+      "title": "Production preview",
+      "releaseTrain": "R1-STABLE-COMMERCIAL",
+      "state": "OWNER_GATE",
+      "gate": "OWNER_GATE"
+    },
+    {
+      "id": "CAP-TASK-05-00629-MIDI_IMPORT_EXPORT_CONTRACT",
+      "taskId": "TASK-05-00629-MIDI_IMPORT_EXPORT_CONTRACT",
+      "domain": "05-CREATOR",
+      "title": "MIDI import export",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-05-00633-WAV_EXPORT_CONTRACT",
+      "taskId": "TASK-05-00633-WAV_EXPORT_CONTRACT",
+      "domain": "05-CREATOR",
+      "title": "WAV export",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-05-00637-STEM_EXPORT_CONTRACT",
+      "taskId": "TASK-05-00637-STEM_EXPORT_CONTRACT",
+      "domain": "05-CREATOR",
+      "title": "Stem export",
+      "releaseTrain": "R1-STABLE-COMMERCIAL",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-05-00641-PROJECT_RECOVERY_CONTRACT",
+      "taskId": "TASK-05-00641-PROJECT_RECOVERY_CONTRACT",
+      "domain": "05-CREATOR",
+      "title": "Project recovery",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-05-00645-OWNER_MUSICAL_REVIEW_LOOPS_CONTRACT",
+      "taskId": "TASK-05-00645-OWNER_MUSICAL_REVIEW_LOOPS_CONTRACT",
+      "domain": "05-CREATOR",
+      "title": "Owner musical review loops",
+      "releaseTrain": "R1-STABLE-COMMERCIAL",
+      "state": "OWNER_GATE",
+      "gate": "OWNER_GATE"
+    },
+    {
+      "id": "CAP-TASK-05-00649-TASTE_DATASETS_AND_REVIEW_RECEIPTS_CONTR",
+      "taskId": "TASK-05-00649-TASTE_DATASETS_AND_REVIEW_RECEIPTS_CONTR",
+      "domain": "05-CREATOR",
+      "title": "Taste datasets and review receipts",
+      "releaseTrain": "R1-STABLE-COMMERCIAL",
+      "state": "OWNER_GATE",
+      "gate": "OWNER_GATE"
+    },
+    {
+      "id": "CAP-TASK-06-00653-PROJECT_SYSTEM_CONTRACT",
+      "taskId": "TASK-06-00653-PROJECT_SYSTEM_CONTRACT",
+      "domain": "06-STUDIO-PRO",
+      "title": "Project system",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-06-00657-TIMELINE_CONTRACT",
+      "taskId": "TASK-06-00657-TIMELINE_CONTRACT",
+      "domain": "06-STUDIO-PRO",
+      "title": "Timeline",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-06-00661-AUDIO_TRACKS_CONTRACT",
+      "taskId": "TASK-06-00661-AUDIO_TRACKS_CONTRACT",
+      "domain": "06-STUDIO-PRO",
+      "title": "Audio tracks",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-06-00665-MIDI_TRACKS_CONTRACT",
+      "taskId": "TASK-06-00665-MIDI_TRACKS_CONTRACT",
+      "domain": "06-STUDIO-PRO",
+      "title": "MIDI tracks",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-06-00669-CLIP_EDITING_CONTRACT",
+      "taskId": "TASK-06-00669-CLIP_EDITING_CONTRACT",
+      "domain": "06-STUDIO-PRO",
+      "title": "Clip editing",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-06-00673-MARKERS_CONTRACT",
+      "taskId": "TASK-06-00673-MARKERS_CONTRACT",
+      "domain": "06-STUDIO-PRO",
+      "title": "Markers",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-06-00677-REGIONS_CONTRACT",
+      "taskId": "TASK-06-00677-REGIONS_CONTRACT",
+      "domain": "06-STUDIO-PRO",
+      "title": "Regions",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-06-00681-TEMPO_MAP_CONTRACT",
+      "taskId": "TASK-06-00681-TEMPO_MAP_CONTRACT",
+      "domain": "06-STUDIO-PRO",
+      "title": "Tempo map",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-06-00685-TIME_SIGNATURES_CONTRACT",
+      "taskId": "TASK-06-00685-TIME_SIGNATURES_CONTRACT",
+      "domain": "06-STUDIO-PRO",
+      "title": "Time signatures",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-06-00689-TRANSPORT_CONTRACT",
+      "taskId": "TASK-06-00689-TRANSPORT_CONTRACT",
+      "domain": "06-STUDIO-PRO",
+      "title": "Transport",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-06-00693-SCHEDULER_CONTRACT",
+      "taskId": "TASK-06-00693-SCHEDULER_CONTRACT",
+      "domain": "06-STUDIO-PRO",
+      "title": "Scheduler",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-06-00697-MIXER_CONTRACT",
+      "taskId": "TASK-06-00697-MIXER_CONTRACT",
+      "domain": "06-STUDIO-PRO",
+      "title": "Mixer",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-06-00701-MASTER_BUS_CONTRACT",
+      "taskId": "TASK-06-00701-MASTER_BUS_CONTRACT",
+      "domain": "06-STUDIO-PRO",
+      "title": "Master bus",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-06-00705-GAIN_PAN_CONTRACT",
+      "taskId": "TASK-06-00705-GAIN_PAN_CONTRACT",
+      "domain": "06-STUDIO-PRO",
+      "title": "Gain pan",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-06-00709-MUTE_SOLO_CONTRACT",
+      "taskId": "TASK-06-00709-MUTE_SOLO_CONTRACT",
+      "domain": "06-STUDIO-PRO",
+      "title": "Mute solo",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-06-00713-SENDS_RETURNS_CONTRACT",
+      "taskId": "TASK-06-00713-SENDS_RETURNS_CONTRACT",
+      "domain": "06-STUDIO-PRO",
+      "title": "Sends returns",
+      "releaseTrain": "R1-STABLE-COMMERCIAL",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-06-00717-NON_DESTRUCTIVE_EDITS_CONTRACT",
+      "taskId": "TASK-06-00717-NON_DESTRUCTIVE_EDITS_CONTRACT",
+      "domain": "06-STUDIO-PRO",
+      "title": "Non-destructive edits",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-06-00721-OFFLINE_RENDER_CONTRACT",
+      "taskId": "TASK-06-00721-OFFLINE_RENDER_CONTRACT",
+      "domain": "06-STUDIO-PRO",
+      "title": "Offline render",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-06-00725-REAL_TIME_DSP_CONTRACT",
+      "taskId": "TASK-06-00725-REAL_TIME_DSP_CONTRACT",
+      "domain": "06-STUDIO-PRO",
+      "title": "Real-time DSP",
+      "releaseTrain": "R2-PRO-HARDWARE-AND-REALTIME",
+      "state": "BLOCKED_BY_DEPENDENCY",
+      "gate": "FORMAT_GATE"
+    },
+    {
+      "id": "CAP-TASK-06-00729-ASIO_CONTRACT",
+      "taskId": "TASK-06-00729-ASIO_CONTRACT",
+      "domain": "06-STUDIO-PRO",
+      "title": "ASIO",
+      "releaseTrain": "R2-PRO-HARDWARE-AND-REALTIME",
+      "state": "BLOCKED_BY_HARDWARE",
+      "gate": "HARDWARE_GATE"
+    },
+    {
+      "id": "CAP-TASK-06-00733-AUDIO_DEVICE_MANAGEMENT_CONTRACT",
+      "taskId": "TASK-06-00733-AUDIO_DEVICE_MANAGEMENT_CONTRACT",
+      "domain": "06-STUDIO-PRO",
+      "title": "Audio device management",
+      "releaseTrain": "R2-PRO-HARDWARE-AND-REALTIME",
+      "state": "BLOCKED_BY_HARDWARE",
+      "gate": "HARDWARE_GATE"
+    },
+    {
+      "id": "CAP-TASK-06-00737-RECORDING_CONTRACT",
+      "taskId": "TASK-06-00737-RECORDING_CONTRACT",
+      "domain": "06-STUDIO-PRO",
+      "title": "Recording",
+      "releaseTrain": "R2-PRO-HARDWARE-AND-REALTIME",
+      "state": "BLOCKED_BY_HARDWARE",
+      "gate": "HARDWARE_GATE"
+    },
+    {
+      "id": "CAP-TASK-06-00741-PUNCH_IN_OUT_CONTRACT",
+      "taskId": "TASK-06-00741-PUNCH_IN_OUT_CONTRACT",
+      "domain": "06-STUDIO-PRO",
+      "title": "Punch in out",
+      "releaseTrain": "R2-PRO-HARDWARE-AND-REALTIME",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-06-00745-MONITORING_CONTRACT",
+      "taskId": "TASK-06-00745-MONITORING_CONTRACT",
+      "domain": "06-STUDIO-PRO",
+      "title": "Monitoring",
+      "releaseTrain": "R2-PRO-HARDWARE-AND-REALTIME",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-06-00749-MIDI_PIANO_ROLL_CONTRACT",
+      "taskId": "TASK-06-00749-MIDI_PIANO_ROLL_CONTRACT",
+      "domain": "06-STUDIO-PRO",
+      "title": "MIDI piano roll",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-06-00753-AUTOMATION_CONTRACT",
+      "taskId": "TASK-06-00753-AUTOMATION_CONTRACT",
+      "domain": "06-STUDIO-PRO",
+      "title": "Automation",
+      "releaseTrain": "R1-STABLE-COMMERCIAL",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-06-00757-PLUGIN_HOSTING_CONTRACT",
+      "taskId": "TASK-06-00757-PLUGIN_HOSTING_CONTRACT",
+      "domain": "06-STUDIO-PRO",
+      "title": "Plugin hosting",
+      "releaseTrain": "R2-PRO-HARDWARE-AND-REALTIME",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-06-00761-SAMPLER_INTEGRATION_CONTRACT",
+      "taskId": "TASK-06-00761-SAMPLER_INTEGRATION_CONTRACT",
+      "domain": "06-STUDIO-PRO",
+      "title": "Sampler integration",
+      "releaseTrain": "R1-STABLE-COMMERCIAL",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-06-00765-FREEZE_RENDER_CONTRACT",
+      "taskId": "TASK-06-00765-FREEZE_RENDER_CONTRACT",
+      "domain": "06-STUDIO-PRO",
+      "title": "Freeze render",
+      "releaseTrain": "R1-STABLE-COMMERCIAL",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-06-00769-STEM_EXPORT_CONTRACT",
+      "taskId": "TASK-06-00769-STEM_EXPORT_CONTRACT",
+      "domain": "06-STUDIO-PRO",
+      "title": "Stem export",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-06-00773-MASTERING_CONTRACT",
+      "taskId": "TASK-06-00773-MASTERING_CONTRACT",
+      "domain": "06-STUDIO-PRO",
+      "title": "Mastering",
+      "releaseTrain": "R1-STABLE-COMMERCIAL",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-06-00777-LOUDNESS_CONTRACT",
+      "taskId": "TASK-06-00777-LOUDNESS_CONTRACT",
+      "domain": "06-STUDIO-PRO",
+      "title": "Loudness",
+      "releaseTrain": "R1-STABLE-COMMERCIAL",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-06-00781-COMMERCIAL_EXPORT_CONTRACT",
+      "taskId": "TASK-06-00781-COMMERCIAL_EXPORT_CONTRACT",
+      "domain": "06-STUDIO-PRO",
+      "title": "Commercial export",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-06-00785-RECOVERY_CONTRACT",
+      "taskId": "TASK-06-00785-RECOVERY_CONTRACT",
+      "domain": "06-STUDIO-PRO",
+      "title": "Recovery",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-06-00789-CRASH_SAFE_SESSIONS_CONTRACT",
+      "taskId": "TASK-06-00789-CRASH_SAFE_SESSIONS_CONTRACT",
+      "domain": "06-STUDIO-PRO",
+      "title": "Crash-safe sessions",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-07-00793-CONVERSATIONAL_MUSICAL_BRAIN_CONTRACT",
+      "taskId": "TASK-07-00793-CONVERSATIONAL_MUSICAL_BRAIN_CONTRACT",
+      "domain": "07-SINGY-CORE",
+      "title": "Conversational musical brain",
+      "releaseTrain": "R3-AI-CLOUD-MARKETPLACE",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-07-00797-CHILD_SAFE_CONVERSATION_CONTRACT",
+      "taskId": "TASK-07-00797-CHILD_SAFE_CONVERSATION_CONTRACT",
+      "domain": "07-SINGY-CORE",
+      "title": "Child-safe conversation",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-07-00801-TEEN_SAFE_CONVERSATION_CONTRACT",
+      "taskId": "TASK-07-00801-TEEN_SAFE_CONVERSATION_CONTRACT",
+      "domain": "07-SINGY-CORE",
+      "title": "Teen-safe conversation",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-07-00805-PEDAGOGICAL_PLANNER_CONTRACT",
+      "taskId": "TASK-07-00805-PEDAGOGICAL_PLANNER_CONTRACT",
+      "domain": "07-SINGY-CORE",
+      "title": "Pedagogical planner",
+      "releaseTrain": "R1-STABLE-COMMERCIAL",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-07-00809-LESSON_GENERATOR_CONTRACT",
+      "taskId": "TASK-07-00809-LESSON_GENERATOR_CONTRACT",
+      "domain": "07-SINGY-CORE",
+      "title": "Lesson generator",
+      "releaseTrain": "R1-STABLE-COMMERCIAL",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-07-00813-EXERCISE_GENERATOR_CONTRACT",
+      "taskId": "TASK-07-00813-EXERCISE_GENERATOR_CONTRACT",
+      "domain": "07-SINGY-CORE",
+      "title": "Exercise generator",
+      "releaseTrain": "R1-STABLE-COMMERCIAL",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-07-00817-FEEDBACK_ENGINE_CONTRACT",
+      "taskId": "TASK-07-00817-FEEDBACK_ENGINE_CONTRACT",
+      "domain": "07-SINGY-CORE",
+      "title": "Feedback engine",
+      "releaseTrain": "R1-STABLE-COMMERCIAL",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-07-00821-MUSIC_THEORY_TUTOR_CONTRACT",
+      "taskId": "TASK-07-00821-MUSIC_THEORY_TUTOR_CONTRACT",
+      "domain": "07-SINGY-CORE",
+      "title": "Music theory tutor",
+      "releaseTrain": "R1-STABLE-COMMERCIAL",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-07-00825-INSTRUMENT_TUTOR_CONTRACT",
+      "taskId": "TASK-07-00825-INSTRUMENT_TUTOR_CONTRACT",
+      "domain": "07-SINGY-CORE",
+      "title": "Instrument tutor",
+      "releaseTrain": "R1-STABLE-COMMERCIAL",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-07-00829-SINGING_TUTOR_CONTRACT",
+      "taskId": "TASK-07-00829-SINGING_TUTOR_CONTRACT",
+      "domain": "07-SINGY-CORE",
+      "title": "Singing tutor",
+      "releaseTrain": "R1-STABLE-COMMERCIAL",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-07-00833-RHYTHM_TUTOR_CONTRACT",
+      "taskId": "TASK-07-00833-RHYTHM_TUTOR_CONTRACT",
+      "domain": "07-SINGY-CORE",
+      "title": "Rhythm tutor",
+      "releaseTrain": "R1-STABLE-COMMERCIAL",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-07-00837-LISTENING_TUTOR_CONTRACT",
+      "taskId": "TASK-07-00837-LISTENING_TUTOR_CONTRACT",
+      "domain": "07-SINGY-CORE",
+      "title": "Listening tutor",
+      "releaseTrain": "R1-STABLE-COMMERCIAL",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-07-00841-COMPOSITION_TUTOR_CONTRACT",
+      "taskId": "TASK-07-00841-COMPOSITION_TUTOR_CONTRACT",
+      "domain": "07-SINGY-CORE",
+      "title": "Composition tutor",
+      "releaseTrain": "R1-STABLE-COMMERCIAL",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-07-00845-ARRANGEMENT_TUTOR_CONTRACT",
+      "taskId": "TASK-07-00845-ARRANGEMENT_TUTOR_CONTRACT",
+      "domain": "07-SINGY-CORE",
+      "title": "Arrangement tutor",
+      "releaseTrain": "R1-STABLE-COMMERCIAL",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-07-00849-PARENT_CONTROLS_CONTRACT",
+      "taskId": "TASK-07-00849-PARENT_CONTROLS_CONTRACT",
+      "domain": "07-SINGY-CORE",
+      "title": "Parent controls",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-07-00853-TEACHER_CONTROLS_CONTRACT",
+      "taskId": "TASK-07-00853-TEACHER_CONTROLS_CONTRACT",
+      "domain": "07-SINGY-CORE",
+      "title": "Teacher controls",
+      "releaseTrain": "R1-STABLE-COMMERCIAL",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-07-00857-PROGRESS_MODEL_CONTRACT",
+      "taskId": "TASK-07-00857-PROGRESS_MODEL_CONTRACT",
+      "domain": "07-SINGY-CORE",
+      "title": "Progress model",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-07-00861-LOCAL_PROFILE_CONTRACT",
+      "taskId": "TASK-07-00861-LOCAL_PROFILE_CONTRACT",
+      "domain": "07-SINGY-CORE",
+      "title": "Local profile",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-07-00865-MULTILINGUAL_ARABIC_ENGLISH_GERMAN_CONTR",
+      "taskId": "TASK-07-00865-MULTILINGUAL_ARABIC_ENGLISH_GERMAN_CONTR",
+      "domain": "07-SINGY-CORE",
+      "title": "Multilingual Arabic English German",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-07-00869-VOICE_INPUT_CONTRACT",
+      "taskId": "TASK-07-00869-VOICE_INPUT_CONTRACT",
+      "domain": "07-SINGY-CORE",
+      "title": "Voice input",
+      "releaseTrain": "R2-PRO-HARDWARE-AND-REALTIME",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-07-00873-SPEECH_OUTPUT_CONTRACT",
+      "taskId": "TASK-07-00873-SPEECH_OUTPUT_CONTRACT",
+      "domain": "07-SINGY-CORE",
+      "title": "Speech output",
+      "releaseTrain": "R2-PRO-HARDWARE-AND-REALTIME",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-07-00877-SAFETY_FILTERS_CONTRACT",
+      "taskId": "TASK-07-00877-SAFETY_FILTERS_CONTRACT",
+      "domain": "07-SINGY-CORE",
+      "title": "Safety filters",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-07-00881-AGE_ADAPTATION_CONTRACT",
+      "taskId": "TASK-07-00881-AGE_ADAPTATION_CONTRACT",
+      "domain": "07-SINGY-CORE",
+      "title": "Age adaptation",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-07-00885-EMOTIONAL_ADAPTATION_CONTRACT",
+      "taskId": "TASK-07-00885-EMOTIONAL_ADAPTATION_CONTRACT",
+      "domain": "07-SINGY-CORE",
+      "title": "Emotional adaptation",
+      "releaseTrain": "R1-STABLE-COMMERCIAL",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-07-00889-MUSICAL_GAMES_CONTRACT",
+      "taskId": "TASK-07-00889-MUSICAL_GAMES_CONTRACT",
+      "domain": "07-SINGY-CORE",
+      "title": "Musical games",
+      "releaseTrain": "R1-STABLE-COMMERCIAL",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-07-00893-ENSEMBLE_LEARNING_CONTRACT",
+      "taskId": "TASK-07-00893-ENSEMBLE_LEARNING_CONTRACT",
+      "domain": "07-SINGY-CORE",
+      "title": "Ensemble learning",
+      "releaseTrain": "R1-STABLE-COMMERCIAL",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-07-00897-BAND_SIMULATION_CONTRACT",
+      "taskId": "TASK-07-00897-BAND_SIMULATION_CONTRACT",
+      "domain": "07-SINGY-CORE",
+      "title": "Band simulation",
+      "releaseTrain": "R2-PRO-HARDWARE-AND-REALTIME",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-07-00901-OPERETTA_CREATION_CONTRACT",
+      "taskId": "TASK-07-00901-OPERETTA_CREATION_CONTRACT",
+      "domain": "07-SINGY-CORE",
+      "title": "Operetta creation",
+      "releaseTrain": "R1-STABLE-COMMERCIAL",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-07-00905-CHILDREN_LEARNING_INSTRUMENTS_CONTRACT",
+      "taskId": "TASK-07-00905-CHILDREN_LEARNING_INSTRUMENTS_CONTRACT",
+      "domain": "07-SINGY-CORE",
+      "title": "Children learning instruments",
+      "releaseTrain": "R1-STABLE-COMMERCIAL",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-07-00909-INTERACTIVE_MUSICIAN_CONVERSATIONS_CONTR",
+      "taskId": "TASK-07-00909-INTERACTIVE_MUSICIAN_CONVERSATIONS_CONTR",
+      "domain": "07-SINGY-CORE",
+      "title": "Interactive musician conversations",
+      "releaseTrain": "R2-PRO-HARDWARE-AND-REALTIME",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-07-00913-OFFLINE_MODEL_ADAPTERS_CONTRACT",
+      "taskId": "TASK-07-00913-OFFLINE_MODEL_ADAPTERS_CONTRACT",
+      "domain": "07-SINGY-CORE",
+      "title": "Offline model adapters",
+      "releaseTrain": "R2-PRO-HARDWARE-AND-REALTIME",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-07-00917-OPTIONAL_CLOUD_MODEL_ADAPTERS_CONTRACT",
+      "taskId": "TASK-07-00917-OPTIONAL_CLOUD_MODEL_ADAPTERS_CONTRACT",
+      "domain": "07-SINGY-CORE",
+      "title": "Optional cloud model adapters",
+      "releaseTrain": "R3-AI-CLOUD-MARKETPLACE",
+      "state": "OWNER_GATE",
+      "gate": "OWNER_GATE"
+    },
+    {
+      "id": "CAP-TASK-07-00921-CONTENT_MODERATION_CONTRACT",
+      "taskId": "TASK-07-00921-CONTENT_MODERATION_CONTRACT",
+      "domain": "07-SINGY-CORE",
+      "title": "Content moderation",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-07-00925-CURRICULUM_VERSIONING_CONTRACT",
+      "taskId": "TASK-07-00925-CURRICULUM_VERSIONING_CONTRACT",
+      "domain": "07-SINGY-CORE",
+      "title": "Curriculum versioning",
+      "releaseTrain": "R1-STABLE-COMMERCIAL",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-08-00929-PARENT_GATE_CONTRACT",
+      "taskId": "TASK-08-00929-PARENT_GATE_CONTRACT",
+      "domain": "08-SINGY-KIDS",
+      "title": "Parent gate",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "OWNER_GATE",
+      "gate": "OWNER_GATE"
+    },
+    {
+      "id": "CAP-TASK-08-00933-AGE_BANDS_CONTRACT",
+      "taskId": "TASK-08-00933-AGE_BANDS_CONTRACT",
+      "domain": "08-SINGY-KIDS",
+      "title": "Age bands",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-08-00937-BEGINNER_CURRICULUM_CONTRACT",
+      "taskId": "TASK-08-00937-BEGINNER_CURRICULUM_CONTRACT",
+      "domain": "08-SINGY-KIDS",
+      "title": "Beginner curriculum",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-08-00941-INSTRUMENT_RECOGNITION_CONTRACT",
+      "taskId": "TASK-08-00941-INSTRUMENT_RECOGNITION_CONTRACT",
+      "domain": "08-SINGY-KIDS",
+      "title": "Instrument recognition",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-08-00945-NOTE_RECOGNITION_CONTRACT",
+      "taskId": "TASK-08-00945-NOTE_RECOGNITION_CONTRACT",
+      "domain": "08-SINGY-KIDS",
+      "title": "Note recognition",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-08-00949-RHYTHM_GAMES_CONTRACT",
+      "taskId": "TASK-08-00949-RHYTHM_GAMES_CONTRACT",
+      "domain": "08-SINGY-KIDS",
+      "title": "Rhythm games",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-08-00953-SINGING_EXERCISES_CONTRACT",
+      "taskId": "TASK-08-00953-SINGING_EXERCISES_CONTRACT",
+      "domain": "08-SINGY-KIDS",
+      "title": "Singing exercises",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-08-00957-INSTRUMENT_LESSONS_CONTRACT",
+      "taskId": "TASK-08-00957-INSTRUMENT_LESSONS_CONTRACT",
+      "domain": "08-SINGY-KIDS",
+      "title": "Instrument lessons",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-08-00961-STORY_BASED_MUSIC_LESSONS_CONTRACT",
+      "taskId": "TASK-08-00961-STORY_BASED_MUSIC_LESSONS_CONTRACT",
+      "domain": "08-SINGY-KIDS",
+      "title": "Story-based music lessons",
+      "releaseTrain": "R1-STABLE-COMMERCIAL",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-08-00965-OPERETTA_PARTICIPATION_CONTRACT",
+      "taskId": "TASK-08-00965-OPERETTA_PARTICIPATION_CONTRACT",
+      "domain": "08-SINGY-KIDS",
+      "title": "Operetta participation",
+      "releaseTrain": "R1-STABLE-COMMERCIAL",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-08-00969-REWARDS_WITHOUT_ADDICTIVE_DARK_PATTERNS_",
+      "taskId": "TASK-08-00969-REWARDS_WITHOUT_ADDICTIVE_DARK_PATTERNS_",
+      "domain": "08-SINGY-KIDS",
+      "title": "Rewards without addictive dark patterns",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-08-00973-LOCAL_PROGRESS_CONTRACT",
+      "taskId": "TASK-08-00973-LOCAL_PROGRESS_CONTRACT",
+      "domain": "08-SINGY-KIDS",
+      "title": "Local progress",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-08-00977-ACCESSIBILITY_CONTRACT",
+      "taskId": "TASK-08-00977-ACCESSIBILITY_CONTRACT",
+      "domain": "08-SINGY-KIDS",
+      "title": "Accessibility",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-08-00981-OFFLINE_LESSONS_CONTRACT",
+      "taskId": "TASK-08-00981-OFFLINE_LESSONS_CONTRACT",
+      "domain": "08-SINGY-KIDS",
+      "title": "Offline lessons",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-08-00985-SAFE_AI_CONVERSATION_CONTRACT",
+      "taskId": "TASK-08-00985-SAFE_AI_CONVERSATION_CONTRACT",
+      "domain": "08-SINGY-KIDS",
+      "title": "Safe AI conversation",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-08-00989-PARENT_REPORTS_CONTRACT",
+      "taskId": "TASK-08-00989-PARENT_REPORTS_CONTRACT",
+      "domain": "08-SINGY-KIDS",
+      "title": "Parent reports",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-08-00993-TEACHER_PACKS_CONTRACT",
+      "taskId": "TASK-08-00993-TEACHER_PACKS_CONTRACT",
+      "domain": "08-SINGY-KIDS",
+      "title": "Teacher packs",
+      "releaseTrain": "R1-STABLE-COMMERCIAL",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-08-00997-CONTENT_PACKS_CONTRACT",
+      "taskId": "TASK-08-00997-CONTENT_PACKS_CONTRACT",
+      "domain": "08-SINGY-KIDS",
+      "title": "Content packs",
+      "releaseTrain": "R1-STABLE-COMMERCIAL",
+      "state": "BLOCKED_BY_CONTENT",
+      "gate": "CONTENT_GATE"
+    },
+    {
+      "id": "CAP-TASK-08-01001-SUBSCRIPTION_AND_FAMILY_LICENSING_CONTRA",
+      "taskId": "TASK-08-01001-SUBSCRIPTION_AND_FAMILY_LICENSING_CONTRA",
+      "domain": "08-SINGY-KIDS",
+      "title": "Subscription and family licensing",
+      "releaseTrain": "R1-STABLE-COMMERCIAL",
+      "state": "OWNER_GATE",
+      "gate": "OWNER_GATE"
+    },
+    {
+      "id": "CAP-TASK-08-01005-CHILD_PRIVACY_COMPLIANCE_CONTRACT",
+      "taskId": "TASK-08-01005-CHILD_PRIVACY_COMPLIANCE_CONTRACT",
+      "domain": "08-SINGY-KIDS",
+      "title": "Child privacy compliance",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "BLOCKED_BY_LEGAL",
+      "gate": "LEGAL_GATE"
+    },
+    {
+      "id": "CAP-TASK-09-01009-GUIDED_MUSIC_PROJECTS_CONTRACT",
+      "taskId": "TASK-09-01009-GUIDED_MUSIC_PROJECTS_CONTRACT",
+      "domain": "09-SINGY-TEEN",
+      "title": "Guided music projects",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "OWNER_GATE",
+      "gate": "OWNER_GATE"
+    },
+    {
+      "id": "CAP-TASK-09-01013-BEAT_MAKING_CONTRACT",
+      "taskId": "TASK-09-01013-BEAT_MAKING_CONTRACT",
+      "domain": "09-SINGY-TEEN",
+      "title": "Beat making",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-09-01017-CHORD_PROGRESSIONS_CONTRACT",
+      "taskId": "TASK-09-01017-CHORD_PROGRESSIONS_CONTRACT",
+      "domain": "09-SINGY-TEEN",
+      "title": "Chord progressions",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-09-01021-MIDI_COMPOSITION_CONTRACT",
+      "taskId": "TASK-09-01021-MIDI_COMPOSITION_CONTRACT",
+      "domain": "09-SINGY-TEEN",
+      "title": "MIDI composition",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-09-01025-ARRANGEMENT_CONTRACT",
+      "taskId": "TASK-09-01025-ARRANGEMENT_CONTRACT",
+      "domain": "09-SINGY-TEEN",
+      "title": "Arrangement",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-09-01029-RECORDING_FUNDAMENTALS_CONTRACT",
+      "taskId": "TASK-09-01029-RECORDING_FUNDAMENTALS_CONTRACT",
+      "domain": "09-SINGY-TEEN",
+      "title": "Recording fundamentals",
+      "releaseTrain": "R2-PRO-HARDWARE-AND-REALTIME",
+      "state": "BLOCKED_BY_HARDWARE",
+      "gate": "HARDWARE_GATE"
+    },
+    {
+      "id": "CAP-TASK-09-01033-STUDIO_FUNDAMENTALS_CONTRACT",
+      "taskId": "TASK-09-01033-STUDIO_FUNDAMENTALS_CONTRACT",
+      "domain": "09-SINGY-TEEN",
+      "title": "Studio fundamentals",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-09-01037-SONG_STRUCTURE_CONTRACT",
+      "taskId": "TASK-09-01037-SONG_STRUCTURE_CONTRACT",
+      "domain": "09-SINGY-TEEN",
+      "title": "Song structure",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-09-01041-INSTRUMENT_PRACTICE_CONTRACT",
+      "taskId": "TASK-09-01041-INSTRUMENT_PRACTICE_CONTRACT",
+      "domain": "09-SINGY-TEEN",
+      "title": "Instrument practice",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-09-01045-SINGING_PRACTICE_CONTRACT",
+      "taskId": "TASK-09-01045-SINGING_PRACTICE_CONTRACT",
+      "domain": "09-SINGY-TEEN",
+      "title": "Singing practice",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-09-01049-PORTFOLIO_PROJECTS_CONTRACT",
+      "taskId": "TASK-09-01049-PORTFOLIO_PROJECTS_CONTRACT",
+      "domain": "09-SINGY-TEEN",
+      "title": "Portfolio projects",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-09-01053-LOCAL_PROGRESS_CONTRACT",
+      "taskId": "TASK-09-01053-LOCAL_PROGRESS_CONTRACT",
+      "domain": "09-SINGY-TEEN",
+      "title": "Local progress",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-09-01057-SAFE_TUTOR_CONVERSATION_CONTRACT",
+      "taskId": "TASK-09-01057-SAFE_TUTOR_CONVERSATION_CONTRACT",
+      "domain": "09-SINGY-TEEN",
+      "title": "Safe tutor conversation",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-09-01061-TEACHER_REVIEW_CONTRACT",
+      "taskId": "TASK-09-01061-TEACHER_REVIEW_CONTRACT",
+      "domain": "09-SINGY-TEEN",
+      "title": "Teacher review",
+      "releaseTrain": "R1-STABLE-COMMERCIAL",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-09-01065-EXPORTABLE_PROJECTS_CONTRACT",
+      "taskId": "TASK-09-01065-EXPORTABLE_PROJECTS_CONTRACT",
+      "domain": "09-SINGY-TEEN",
+      "title": "Exportable projects",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-09-01069-COLLABORATION_ARCHITECTURE_CONTRACT",
+      "taskId": "TASK-09-01069-COLLABORATION_ARCHITECTURE_CONTRACT",
+      "domain": "09-SINGY-TEEN",
+      "title": "Collaboration architecture",
+      "releaseTrain": "R3-AI-CLOUD-MARKETPLACE",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-09-01073-CLOUD_SHARING_ARCHITECTURE_CONTRACT",
+      "taskId": "TASK-09-01073-CLOUD_SHARING_ARCHITECTURE_CONTRACT",
+      "domain": "09-SINGY-TEEN",
+      "title": "Cloud sharing architecture",
+      "releaseTrain": "R3-AI-CLOUD-MARKETPLACE",
+      "state": "OWNER_GATE",
+      "gate": "OWNER_GATE"
+    },
+    {
+      "id": "CAP-TASK-09-01077-TEEN_PRIVACY_AND_MODERATION_CONTRACT",
+      "taskId": "TASK-09-01077-TEEN_PRIVACY_AND_MODERATION_CONTRACT",
+      "domain": "09-SINGY-TEEN",
+      "title": "Teen privacy and moderation",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "BLOCKED_BY_LEGAL",
+      "gate": "LEGAL_GATE"
+    },
+    {
+      "id": "CAP-TASK-09-01081-SUBSCRIPTION_AND_EDUCATION_LICENSING_CON",
+      "taskId": "TASK-09-01081-SUBSCRIPTION_AND_EDUCATION_LICENSING_CON",
+      "domain": "09-SINGY-TEEN",
+      "title": "Subscription and education licensing",
+      "releaseTrain": "R1-STABLE-COMMERCIAL",
+      "state": "OWNER_GATE",
+      "gate": "OWNER_GATE"
+    },
+    {
+      "id": "CAP-TASK-10-01085-PUBLIC_DOMAIN_SOURCE_DISCOVERY_CONTRACT",
+      "taskId": "TASK-10-01085-PUBLIC_DOMAIN_SOURCE_DISCOVERY_CONTRACT",
+      "domain": "10-CONTENT-ASSETS",
+      "title": "Public-domain source discovery",
+      "releaseTrain": "R1-STABLE-COMMERCIAL",
+      "state": "BLOCKED_BY_CONTENT",
+      "gate": "CONTENT_GATE"
+    },
+    {
+      "id": "CAP-TASK-10-01089-PERMISSIVE_LICENSE_VERIFICATION_CONTRACT",
+      "taskId": "TASK-10-01089-PERMISSIVE_LICENSE_VERIFICATION_CONTRACT",
+      "domain": "10-CONTENT-ASSETS",
+      "title": "Permissive-license verification",
+      "releaseTrain": "R1-STABLE-COMMERCIAL",
+      "state": "BLOCKED_BY_LEGAL",
+      "gate": "LEGAL_GATE"
+    },
+    {
+      "id": "CAP-TASK-10-01093-LICENSE_EVIDENCE_CONTRACT",
+      "taskId": "TASK-10-01093-LICENSE_EVIDENCE_CONTRACT",
+      "domain": "10-CONTENT-ASSETS",
+      "title": "License evidence",
+      "releaseTrain": "R1-STABLE-COMMERCIAL",
+      "state": "BLOCKED_BY_LEGAL",
+      "gate": "LEGAL_GATE"
+    },
+    {
+      "id": "CAP-TASK-10-01097-ATTRIBUTION_CONTRACT",
+      "taskId": "TASK-10-01097-ATTRIBUTION_CONTRACT",
+      "domain": "10-CONTENT-ASSETS",
+      "title": "Attribution",
+      "releaseTrain": "R1-STABLE-COMMERCIAL",
+      "state": "BLOCKED_BY_LEGAL",
+      "gate": "LEGAL_GATE"
+    },
+    {
+      "id": "CAP-TASK-10-01101-AUDIO_RECORDING_SPECIFICATIONS_CONTRACT",
+      "taskId": "TASK-10-01101-AUDIO_RECORDING_SPECIFICATIONS_CONTRACT",
+      "domain": "10-CONTENT-ASSETS",
+      "title": "Audio recording specifications",
+      "releaseTrain": "R1-STABLE-COMMERCIAL",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-10-01105-INSTRUMENT_RECORDING_CONTRACT",
+      "taskId": "TASK-10-01105-INSTRUMENT_RECORDING_CONTRACT",
+      "domain": "10-CONTENT-ASSETS",
+      "title": "Instrument recording",
+      "releaseTrain": "R2-PRO-HARDWARE-AND-REALTIME",
+      "state": "BLOCKED_BY_HARDWARE",
+      "gate": "HARDWARE_GATE"
+    },
+    {
+      "id": "CAP-TASK-10-01109-SAMPLE_EDITING_CONTRACT",
+      "taskId": "TASK-10-01109-SAMPLE_EDITING_CONTRACT",
+      "domain": "10-CONTENT-ASSETS",
+      "title": "Sample editing",
+      "releaseTrain": "R1-STABLE-COMMERCIAL",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-10-01113-LOOP_EDITING_CONTRACT",
+      "taskId": "TASK-10-01113-LOOP_EDITING_CONTRACT",
+      "domain": "10-CONTENT-ASSETS",
+      "title": "Loop editing",
+      "releaseTrain": "R1-STABLE-COMMERCIAL",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-10-01117-QUALITY_REVIEW_CONTRACT",
+      "taskId": "TASK-10-01117-QUALITY_REVIEW_CONTRACT",
+      "domain": "10-CONTENT-ASSETS",
+      "title": "Quality review",
+      "releaseTrain": "R1-STABLE-COMMERCIAL",
+      "state": "OWNER_GATE",
+      "gate": "OWNER_GATE"
+    },
+    {
+      "id": "CAP-TASK-10-01121-OUD_ASSET_PIPELINE_CONTRACT",
+      "taskId": "TASK-10-01121-OUD_ASSET_PIPELINE_CONTRACT",
+      "domain": "10-CONTENT-ASSETS",
+      "title": "Oud asset pipeline",
+      "releaseTrain": "R1-STABLE-COMMERCIAL",
+      "state": "BLOCKED_BY_CONTENT",
+      "gate": "CONTENT_GATE"
+    },
+    {
+      "id": "CAP-TASK-10-01125-QANUN_ASSET_PIPELINE_CONTRACT",
+      "taskId": "TASK-10-01125-QANUN_ASSET_PIPELINE_CONTRACT",
+      "domain": "10-CONTENT-ASSETS",
+      "title": "Qanun asset pipeline",
+      "releaseTrain": "R1-STABLE-COMMERCIAL",
+      "state": "BLOCKED_BY_CONTENT",
+      "gate": "CONTENT_GATE"
+    },
+    {
+      "id": "CAP-TASK-10-01129-NEY_ASSET_PIPELINE_CONTRACT",
+      "taskId": "TASK-10-01129-NEY_ASSET_PIPELINE_CONTRACT",
+      "domain": "10-CONTENT-ASSETS",
+      "title": "Ney asset pipeline",
+      "releaseTrain": "R1-STABLE-COMMERCIAL",
+      "state": "BLOCKED_BY_CONTENT",
+      "gate": "CONTENT_GATE"
+    },
+    {
+      "id": "CAP-TASK-10-01133-DARBUKA_ASSET_PIPELINE_CONTRACT",
+      "taskId": "TASK-10-01133-DARBUKA_ASSET_PIPELINE_CONTRACT",
+      "domain": "10-CONTENT-ASSETS",
+      "title": "Darbuka asset pipeline",
+      "releaseTrain": "R1-STABLE-COMMERCIAL",
+      "state": "BLOCKED_BY_CONTENT",
+      "gate": "CONTENT_GATE"
+    },
+    {
+      "id": "CAP-TASK-10-01137-ORIENTAL_PERCUSSION_PIPELINE_CONTRACT",
+      "taskId": "TASK-10-01137-ORIENTAL_PERCUSSION_PIPELINE_CONTRACT",
+      "domain": "10-CONTENT-ASSETS",
+      "title": "Oriental percussion pipeline",
+      "releaseTrain": "R1-STABLE-COMMERCIAL",
+      "state": "BLOCKED_BY_CONTENT",
+      "gate": "CONTENT_GATE"
+    },
+    {
+      "id": "CAP-TASK-10-01141-PIANO_ASSET_PIPELINE_CONTRACT",
+      "taskId": "TASK-10-01141-PIANO_ASSET_PIPELINE_CONTRACT",
+      "domain": "10-CONTENT-ASSETS",
+      "title": "Piano asset pipeline",
+      "releaseTrain": "R1-STABLE-COMMERCIAL",
+      "state": "BLOCKED_BY_CONTENT",
+      "gate": "CONTENT_GATE"
+    },
+    {
+      "id": "CAP-TASK-10-01145-STRINGS_ASSET_PIPELINE_CONTRACT",
+      "taskId": "TASK-10-01145-STRINGS_ASSET_PIPELINE_CONTRACT",
+      "domain": "10-CONTENT-ASSETS",
+      "title": "Strings asset pipeline",
+      "releaseTrain": "R1-STABLE-COMMERCIAL",
+      "state": "BLOCKED_BY_CONTENT",
+      "gate": "CONTENT_GATE"
+    },
+    {
+      "id": "CAP-TASK-10-01149-DRUMS_ASSET_PIPELINE_CONTRACT",
+      "taskId": "TASK-10-01149-DRUMS_ASSET_PIPELINE_CONTRACT",
+      "domain": "10-CONTENT-ASSETS",
+      "title": "Drums asset pipeline",
+      "releaseTrain": "R1-STABLE-COMMERCIAL",
+      "state": "BLOCKED_BY_CONTENT",
+      "gate": "CONTENT_GATE"
+    },
+    {
+      "id": "CAP-TASK-10-01153-EDUCATIONAL_LESSON_MEDIA_CONTRACT",
+      "taskId": "TASK-10-01153-EDUCATIONAL_LESSON_MEDIA_CONTRACT",
+      "domain": "10-CONTENT-ASSETS",
+      "title": "Educational lesson media",
+      "releaseTrain": "R1-STABLE-COMMERCIAL",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-10-01157-KIDS_CURRICULUM_MEDIA_CONTRACT",
+      "taskId": "TASK-10-01157-KIDS_CURRICULUM_MEDIA_CONTRACT",
+      "domain": "10-CONTENT-ASSETS",
+      "title": "Kids curriculum media",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "OWNER_GATE",
+      "gate": "OWNER_GATE"
+    },
+    {
+      "id": "CAP-TASK-10-01161-TEEN_PROJECTS_MEDIA_CONTRACT",
+      "taskId": "TASK-10-01161-TEEN_PROJECTS_MEDIA_CONTRACT",
+      "domain": "10-CONTENT-ASSETS",
+      "title": "Teen projects media",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "OWNER_GATE",
+      "gate": "OWNER_GATE"
+    },
+    {
+      "id": "CAP-TASK-10-01165-OPERETTA_CONTENT_CONTRACT",
+      "taskId": "TASK-10-01165-OPERETTA_CONTENT_CONTRACT",
+      "domain": "10-CONTENT-ASSETS",
+      "title": "Operetta content",
+      "releaseTrain": "R1-STABLE-COMMERCIAL",
+      "state": "BLOCKED_BY_CONTENT",
+      "gate": "CONTENT_GATE"
+    },
+    {
+      "id": "CAP-TASK-10-01169-LEGAL_CONTENT_LEDGER_CONTRACT",
+      "taskId": "TASK-10-01169-LEGAL_CONTENT_LEDGER_CONTRACT",
+      "domain": "10-CONTENT-ASSETS",
+      "title": "Legal content ledger",
+      "releaseTrain": "R1-STABLE-COMMERCIAL",
+      "state": "BLOCKED_BY_LEGAL",
+      "gate": "LEGAL_GATE"
+    },
+    {
+      "id": "CAP-TASK-10-01173-COMMERCIAL_PACKAGE_APPROVAL_CONTRACT",
+      "taskId": "TASK-10-01173-COMMERCIAL_PACKAGE_APPROVAL_CONTRACT",
+      "domain": "10-CONTENT-ASSETS",
+      "title": "Commercial package approval",
+      "releaseTrain": "R1-STABLE-COMMERCIAL",
+      "state": "OWNER_GATE",
+      "gate": "OWNER_GATE"
+    },
+    {
+      "id": "CAP-TASK-11-01177-PRODUCT_CATALOG_CONTRACT",
+      "taskId": "TASK-11-01177-PRODUCT_CATALOG_CONTRACT",
+      "domain": "11-COMMERCIAL-PLATFORM",
+      "title": "Product catalog",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-11-01181-SKUS_CONTRACT",
+      "taskId": "TASK-11-01181-SKUS_CONTRACT",
+      "domain": "11-COMMERCIAL-PLATFORM",
+      "title": "SKUs",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-11-01185-PRICING_CONTRACT",
+      "taskId": "TASK-11-01185-PRICING_CONTRACT",
+      "domain": "11-COMMERCIAL-PLATFORM",
+      "title": "Pricing",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "OWNER_GATE",
+      "gate": "OWNER_GATE"
+    },
+    {
+      "id": "CAP-TASK-11-01189-TRIAL_CONTRACT",
+      "taskId": "TASK-11-01189-TRIAL_CONTRACT",
+      "domain": "11-COMMERCIAL-PLATFORM",
+      "title": "Trial",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-11-01193-LICENSE_GENERATION_CONTRACT",
+      "taskId": "TASK-11-01193-LICENSE_GENERATION_CONTRACT",
+      "domain": "11-COMMERCIAL-PLATFORM",
+      "title": "License generation",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-11-01197-LICENSE_DELIVERY_CONTRACT",
+      "taskId": "TASK-11-01197-LICENSE_DELIVERY_CONTRACT",
+      "domain": "11-COMMERCIAL-PLATFORM",
+      "title": "License delivery",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-11-01201-CHECKOUT_PREPARATION_CONTRACT",
+      "taskId": "TASK-11-01201-CHECKOUT_PREPARATION_CONTRACT",
+      "domain": "11-COMMERCIAL-PLATFORM",
+      "title": "Checkout preparation",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-11-01205-PAYMENTS_ACTIVATION_CONTRACT",
+      "taskId": "TASK-11-01205-PAYMENTS_ACTIVATION_CONTRACT",
+      "domain": "11-COMMERCIAL-PLATFORM",
+      "title": "Payments activation",
+      "releaseTrain": "R1-STABLE-COMMERCIAL",
+      "state": "OWNER_GATE",
+      "gate": "OWNER_GATE"
+    },
+    {
+      "id": "CAP-TASK-11-01209-VAT_HANDLING_CONTRACT",
+      "taskId": "TASK-11-01209-VAT_HANDLING_CONTRACT",
+      "domain": "11-COMMERCIAL-PLATFORM",
+      "title": "VAT handling",
+      "releaseTrain": "R1-STABLE-COMMERCIAL",
+      "state": "BLOCKED_BY_LEGAL",
+      "gate": "LEGAL_GATE"
+    },
+    {
+      "id": "CAP-TASK-11-01213-INVOICES_CONTRACT",
+      "taskId": "TASK-11-01213-INVOICES_CONTRACT",
+      "domain": "11-COMMERCIAL-PLATFORM",
+      "title": "Invoices",
+      "releaseTrain": "R1-STABLE-COMMERCIAL",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-11-01217-REFUND_POLICY_CONTRACT",
+      "taskId": "TASK-11-01217-REFUND_POLICY_CONTRACT",
+      "domain": "11-COMMERCIAL-PLATFORM",
+      "title": "Refund policy",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "OWNER_GATE",
+      "gate": "OWNER_GATE"
+    },
+    {
+      "id": "CAP-TASK-11-01221-CUSTOMER_ACCOUNTS_CONTRACT",
+      "taskId": "TASK-11-01221-CUSTOMER_ACCOUNTS_CONTRACT",
+      "domain": "11-COMMERCIAL-PLATFORM",
+      "title": "Customer accounts",
+      "releaseTrain": "R1-STABLE-COMMERCIAL",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-11-01225-DOWNLOAD_ENTITLEMENT_CONTRACT",
+      "taskId": "TASK-11-01225-DOWNLOAD_ENTITLEMENT_CONTRACT",
+      "domain": "11-COMMERCIAL-PLATFORM",
+      "title": "Download entitlement",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-11-01229-UPDATE_ENTITLEMENT_CONTRACT",
+      "taskId": "TASK-11-01229-UPDATE_ENTITLEMENT_CONTRACT",
+      "domain": "11-COMMERCIAL-PLATFORM",
+      "title": "Update entitlement",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-11-01233-SUPPORT_TICKETS_CONTRACT",
+      "taskId": "TASK-11-01233-SUPPORT_TICKETS_CONTRACT",
+      "domain": "11-COMMERCIAL-PLATFORM",
+      "title": "Support tickets",
+      "releaseTrain": "R1-STABLE-COMMERCIAL",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-11-01237-KNOWLEDGE_BASE_CONTRACT",
+      "taskId": "TASK-11-01237-KNOWLEDGE_BASE_CONTRACT",
+      "domain": "11-COMMERCIAL-PLATFORM",
+      "title": "Knowledge base",
+      "releaseTrain": "R1-STABLE-COMMERCIAL",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-11-01241-RELEASE_NOTES_CONTRACT",
+      "taskId": "TASK-11-01241-RELEASE_NOTES_CONTRACT",
+      "domain": "11-COMMERCIAL-PLATFORM",
+      "title": "Release notes",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-11-01245-PRIVACY_COMMERCIAL_CONTRACT",
+      "taskId": "TASK-11-01245-PRIVACY_COMMERCIAL_CONTRACT",
+      "domain": "11-COMMERCIAL-PLATFORM",
+      "title": "Privacy commercial",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-11-01249-EULA_CONTRACT",
+      "taskId": "TASK-11-01249-EULA_CONTRACT",
+      "domain": "11-COMMERCIAL-PLATFORM",
+      "title": "EULA",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "BLOCKED_BY_LEGAL",
+      "gate": "LEGAL_GATE"
+    },
+    {
+      "id": "CAP-TASK-11-01253-TERMS_CONTRACT",
+      "taskId": "TASK-11-01253-TERMS_CONTRACT",
+      "domain": "11-COMMERCIAL-PLATFORM",
+      "title": "Terms",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "BLOCKED_BY_LEGAL",
+      "gate": "LEGAL_GATE"
+    },
+    {
+      "id": "CAP-TASK-11-01257-COMMERCIAL_READINESS_GATES_CONTRACT",
+      "taskId": "TASK-11-01257-COMMERCIAL_READINESS_GATES_CONTRACT",
+      "domain": "11-COMMERCIAL-PLATFORM",
+      "title": "Commercial readiness gates",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-11-01261-FOUNDER_LAUNCH_CONTRACT",
+      "taskId": "TASK-11-01261-FOUNDER_LAUNCH_CONTRACT",
+      "domain": "11-COMMERCIAL-PLATFORM",
+      "title": "Founder launch",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "OWNER_GATE",
+      "gate": "OWNER_GATE"
+    },
+    {
+      "id": "CAP-TASK-11-01265-CLOSED_BETA_CONTRACT",
+      "taskId": "TASK-11-01265-CLOSED_BETA_CONTRACT",
+      "domain": "11-COMMERCIAL-PLATFORM",
+      "title": "Closed beta",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "OWNER_GATE",
+      "gate": "OWNER_GATE"
+    },
+    {
+      "id": "CAP-TASK-11-01269-EARLY_ACCESS_CONTRACT",
+      "taskId": "TASK-11-01269-EARLY_ACCESS_CONTRACT",
+      "domain": "11-COMMERCIAL-PLATFORM",
+      "title": "Early access",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "OWNER_GATE",
+      "gate": "OWNER_GATE"
+    },
+    {
+      "id": "CAP-TASK-11-01273-STABLE_RELEASE_CONTRACT",
+      "taskId": "TASK-11-01273-STABLE_RELEASE_CONTRACT",
+      "domain": "11-COMMERCIAL-PLATFORM",
+      "title": "Stable release",
+      "releaseTrain": "R1-STABLE-COMMERCIAL",
+      "state": "OWNER_GATE",
+      "gate": "OWNER_GATE"
+    },
+    {
+      "id": "CAP-TASK-11-01277-BUNDLES_CONTRACT",
+      "taskId": "TASK-11-01277-BUNDLES_CONTRACT",
+      "domain": "11-COMMERCIAL-PLATFORM",
+      "title": "Bundles",
+      "releaseTrain": "R1-STABLE-COMMERCIAL",
+      "state": "OWNER_GATE",
+      "gate": "OWNER_GATE"
+    },
+    {
+      "id": "CAP-TASK-11-01281-EDUCATIONAL_PLANS_CONTRACT",
+      "taskId": "TASK-11-01281-EDUCATIONAL_PLANS_CONTRACT",
+      "domain": "11-COMMERCIAL-PLATFORM",
+      "title": "Educational plans",
+      "releaseTrain": "R1-STABLE-COMMERCIAL",
+      "state": "OWNER_GATE",
+      "gate": "OWNER_GATE"
+    },
+    {
+      "id": "CAP-TASK-11-01285-FAMILY_PLANS_CONTRACT",
+      "taskId": "TASK-11-01285-FAMILY_PLANS_CONTRACT",
+      "domain": "11-COMMERCIAL-PLATFORM",
+      "title": "Family plans",
+      "releaseTrain": "R1-STABLE-COMMERCIAL",
+      "state": "OWNER_GATE",
+      "gate": "OWNER_GATE"
+    },
+    {
+      "id": "CAP-TASK-12-01289-MAIN_SITE_CONTRACT",
+      "taskId": "TASK-12-01289-MAIN_SITE_CONTRACT",
+      "domain": "12-WEBSITE-DELIVERY",
+      "title": "Main site",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-12-01293-PRODUCT_PAGES_CONTRACT",
+      "taskId": "TASK-12-01293-PRODUCT_PAGES_CONTRACT",
+      "domain": "12-WEBSITE-DELIVERY",
+      "title": "Product pages",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-12-01297-KIDS_PAGE_CONTRACT",
+      "taskId": "TASK-12-01297-KIDS_PAGE_CONTRACT",
+      "domain": "12-WEBSITE-DELIVERY",
+      "title": "Kids page",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "OWNER_GATE",
+      "gate": "OWNER_GATE"
+    },
+    {
+      "id": "CAP-TASK-12-01301-TEEN_PAGE_CONTRACT",
+      "taskId": "TASK-12-01301-TEEN_PAGE_CONTRACT",
+      "domain": "12-WEBSITE-DELIVERY",
+      "title": "Teen page",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "OWNER_GATE",
+      "gate": "OWNER_GATE"
+    },
+    {
+      "id": "CAP-TASK-12-01305-LIBRARY_PAGE_CONTRACT",
+      "taskId": "TASK-12-01305-LIBRARY_PAGE_CONTRACT",
+      "domain": "12-WEBSITE-DELIVERY",
+      "title": "Library page",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-12-01309-KEYBOARD_PAGE_CONTRACT",
+      "taskId": "TASK-12-01309-KEYBOARD_PAGE_CONTRACT",
+      "domain": "12-WEBSITE-DELIVERY",
+      "title": "Keyboard page",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-12-01313-CREATOR_PAGE_CONTRACT",
+      "taskId": "TASK-12-01313-CREATOR_PAGE_CONTRACT",
+      "domain": "12-WEBSITE-DELIVERY",
+      "title": "Creator page",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-12-01317-STUDIO_PAGE_CONTRACT",
+      "taskId": "TASK-12-01317-STUDIO_PAGE_CONTRACT",
+      "domain": "12-WEBSITE-DELIVERY",
+      "title": "Studio page",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-12-01321-PRICING_PAGE_CONTRACT",
+      "taskId": "TASK-12-01321-PRICING_PAGE_CONTRACT",
+      "domain": "12-WEBSITE-DELIVERY",
+      "title": "Pricing page",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "OWNER_GATE",
+      "gate": "OWNER_GATE"
+    },
+    {
+      "id": "CAP-TASK-12-01325-TRIAL_DOWNLOAD_CONTRACT",
+      "taskId": "TASK-12-01325-TRIAL_DOWNLOAD_CONTRACT",
+      "domain": "12-WEBSITE-DELIVERY",
+      "title": "Trial download",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-12-01329-CHECKOUT_INTEGRATION_PREP_CONTRACT",
+      "taskId": "TASK-12-01329-CHECKOUT_INTEGRATION_PREP_CONTRACT",
+      "domain": "12-WEBSITE-DELIVERY",
+      "title": "Checkout integration prep",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-12-01333-CUSTOMER_PORTAL_CONTRACT",
+      "taskId": "TASK-12-01333-CUSTOMER_PORTAL_CONTRACT",
+      "domain": "12-WEBSITE-DELIVERY",
+      "title": "Customer portal",
+      "releaseTrain": "R1-STABLE-COMMERCIAL",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-12-01337-DOCUMENTATION_CONTRACT",
+      "taskId": "TASK-12-01337-DOCUMENTATION_CONTRACT",
+      "domain": "12-WEBSITE-DELIVERY",
+      "title": "Documentation",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-12-01341-SUPPORT_CONTRACT",
+      "taskId": "TASK-12-01341-SUPPORT_CONTRACT",
+      "domain": "12-WEBSITE-DELIVERY",
+      "title": "Support",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-12-01345-STATUS_PAGE_CONTRACT",
+      "taskId": "TASK-12-01345-STATUS_PAGE_CONTRACT",
+      "domain": "12-WEBSITE-DELIVERY",
+      "title": "Status page",
+      "releaseTrain": "R1-STABLE-COMMERCIAL",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-12-01349-UPDATE_FEED_CONTRACT",
+      "taskId": "TASK-12-01349-UPDATE_FEED_CONTRACT",
+      "domain": "12-WEBSITE-DELIVERY",
+      "title": "Update feed",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-12-01353-DOWNLOAD_HOSTING_PREP_CONTRACT",
+      "taskId": "TASK-12-01353-DOWNLOAD_HOSTING_PREP_CONTRACT",
+      "domain": "12-WEBSITE-DELIVERY",
+      "title": "Download hosting prep",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-12-01357-ANALYTICS_PRIVACY_MODE_CONTRACT",
+      "taskId": "TASK-12-01357-ANALYTICS_PRIVACY_MODE_CONTRACT",
+      "domain": "12-WEBSITE-DELIVERY",
+      "title": "Analytics privacy mode",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-12-01361-SEO_CONTRACT",
+      "taskId": "TASK-12-01361-SEO_CONTRACT",
+      "domain": "12-WEBSITE-DELIVERY",
+      "title": "SEO",
+      "releaseTrain": "R1-STABLE-COMMERCIAL",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-12-01365-WEBSITE_ARABIC_ENGLISH_GERMAN_CONTRACT",
+      "taskId": "TASK-12-01365-WEBSITE_ARABIC_ENGLISH_GERMAN_CONTRACT",
+      "domain": "12-WEBSITE-DELIVERY",
+      "title": "Website Arabic English German",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-12-01369-WEBSITE_ACCESSIBILITY_CONTRACT",
+      "taskId": "TASK-12-01369-WEBSITE_ACCESSIBILITY_CONTRACT",
+      "domain": "12-WEBSITE-DELIVERY",
+      "title": "Website accessibility",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-12-01373-LEGAL_PAGES_CONTRACT",
+      "taskId": "TASK-12-01373-LEGAL_PAGES_CONTRACT",
+      "domain": "12-WEBSITE-DELIVERY",
+      "title": "Legal pages",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "BLOCKED_BY_LEGAL",
+      "gate": "LEGAL_GATE"
+    },
+    {
+      "id": "CAP-TASK-12-01377-RELEASE_ANNOUNCEMENTS_CONTRACT",
+      "taskId": "TASK-12-01377-RELEASE_ANNOUNCEMENTS_CONTRACT",
+      "domain": "12-WEBSITE-DELIVERY",
+      "title": "Release announcements",
+      "releaseTrain": "R1-STABLE-COMMERCIAL",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-13-01381-THREAT_MODEL_BASELINE_CONTRACT",
+      "taskId": "TASK-13-01381-THREAT_MODEL_BASELINE_CONTRACT",
+      "domain": "13-SECURITY-LEGAL",
+      "title": "Threat model baseline",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-13-01385-LOCAL_DATA_PROTECTION_CONTRACT",
+      "taskId": "TASK-13-01385-LOCAL_DATA_PROTECTION_CONTRACT",
+      "domain": "13-SECURITY-LEGAL",
+      "title": "Local data protection",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-13-01389-NO_LISTENING_PORTS_POLICY_CONTRACT",
+      "taskId": "TASK-13-01389-NO_LISTENING_PORTS_POLICY_CONTRACT",
+      "domain": "13-SECURITY-LEGAL",
+      "title": "No listening ports policy",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-13-01393-SECRET_SCANNING_POLICY_CONTRACT",
+      "taskId": "TASK-13-01393-SECRET_SCANNING_POLICY_CONTRACT",
+      "domain": "13-SECURITY-LEGAL",
+      "title": "Secret scanning policy",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-13-01397-EULA_DRAFTING_CONTRACT",
+      "taskId": "TASK-13-01397-EULA_DRAFTING_CONTRACT",
+      "domain": "13-SECURITY-LEGAL",
+      "title": "EULA drafting",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "BLOCKED_BY_LEGAL",
+      "gate": "LEGAL_GATE"
+    },
+    {
+      "id": "CAP-TASK-13-01401-PRIVACY_POLICY_DRAFTING_CONTRACT",
+      "taskId": "TASK-13-01401-PRIVACY_POLICY_DRAFTING_CONTRACT",
+      "domain": "13-SECURITY-LEGAL",
+      "title": "Privacy policy drafting",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "BLOCKED_BY_LEGAL",
+      "gate": "LEGAL_GATE"
+    },
+    {
+      "id": "CAP-TASK-13-01405-CHILD_PRIVACY_COMPLIANCE_FRAMEWORK_CONTR",
+      "taskId": "TASK-13-01405-CHILD_PRIVACY_COMPLIANCE_FRAMEWORK_CONTR",
+      "domain": "13-SECURITY-LEGAL",
+      "title": "Child privacy compliance framework",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "BLOCKED_BY_LEGAL",
+      "gate": "LEGAL_GATE"
+    },
+    {
+      "id": "CAP-TASK-13-01409-CONTENT_LICENSE_COMPLIANCE_AUDITS_CONTRA",
+      "taskId": "TASK-13-01409-CONTENT_LICENSE_COMPLIANCE_AUDITS_CONTRA",
+      "domain": "13-SECURITY-LEGAL",
+      "title": "Content license compliance audits",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "BLOCKED_BY_LEGAL",
+      "gate": "LEGAL_GATE"
+    },
+    {
+      "id": "CAP-TASK-13-01413-EXPORT_CONTROL_REVIEW_CONTRACT",
+      "taskId": "TASK-13-01413-EXPORT_CONTROL_REVIEW_CONTRACT",
+      "domain": "13-SECURITY-LEGAL",
+      "title": "Export control review",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "BLOCKED_BY_LEGAL",
+      "gate": "LEGAL_GATE"
+    },
+    {
+      "id": "CAP-TASK-13-01417-SIGNED_UPDATE_CHAIN_CONTRACT",
+      "taskId": "TASK-13-01417-SIGNED_UPDATE_CHAIN_CONTRACT",
+      "domain": "13-SECURITY-LEGAL",
+      "title": "Signed update chain",
+      "releaseTrain": "R1-STABLE-COMMERCIAL",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-14-01421-UNIT_TESTS_FABRIC_CONTRACT",
+      "taskId": "TASK-14-01421-UNIT_TESTS_FABRIC_CONTRACT",
+      "domain": "14-QA-RELEASE-OPERATIONS",
+      "title": "Unit tests fabric",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-14-01425-INTEGRATION_TESTS_FABRIC_CONTRACT",
+      "taskId": "TASK-14-01425-INTEGRATION_TESTS_FABRIC_CONTRACT",
+      "domain": "14-QA-RELEASE-OPERATIONS",
+      "title": "Integration tests fabric",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-14-01429-END_TO_END_TESTS_FABRIC_CONTRACT",
+      "taskId": "TASK-14-01429-END_TO_END_TESTS_FABRIC_CONTRACT",
+      "domain": "14-QA-RELEASE-OPERATIONS",
+      "title": "End-to-end tests fabric",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-14-01433-RUNTIME_ACCEPTANCE_CONTRACT",
+      "taskId": "TASK-14-01433-RUNTIME_ACCEPTANCE_CONTRACT",
+      "domain": "14-QA-RELEASE-OPERATIONS",
+      "title": "Runtime acceptance",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-14-01437-CLEAN_MACHINE_CONTRACT",
+      "taskId": "TASK-14-01437-CLEAN_MACHINE_CONTRACT",
+      "domain": "14-QA-RELEASE-OPERATIONS",
+      "title": "Clean machine",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-14-01441-PORTABLE_VALIDATION_CONTRACT",
+      "taskId": "TASK-14-01441-PORTABLE_VALIDATION_CONTRACT",
+      "domain": "14-QA-RELEASE-OPERATIONS",
+      "title": "Portable validation",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-14-01445-INSTALLER_VALIDATION_CONTRACT",
+      "taskId": "TASK-14-01445-INSTALLER_VALIDATION_CONTRACT",
+      "domain": "14-QA-RELEASE-OPERATIONS",
+      "title": "Installer validation",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-14-01449-RESTART_ACCEPTANCE_CONTRACT",
+      "taskId": "TASK-14-01449-RESTART_ACCEPTANCE_CONTRACT",
+      "domain": "14-QA-RELEASE-OPERATIONS",
+      "title": "Restart acceptance",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-14-01453-RECOVERY_ACCEPTANCE_CONTRACT",
+      "taskId": "TASK-14-01453-RECOVERY_ACCEPTANCE_CONTRACT",
+      "domain": "14-QA-RELEASE-OPERATIONS",
+      "title": "Recovery acceptance",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-14-01457-UPGRADE_ACCEPTANCE_CONTRACT",
+      "taskId": "TASK-14-01457-UPGRADE_ACCEPTANCE_CONTRACT",
+      "domain": "14-QA-RELEASE-OPERATIONS",
+      "title": "Upgrade acceptance",
+      "releaseTrain": "R1-STABLE-COMMERCIAL",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-14-01461-UNINSTALL_ACCEPTANCE_CONTRACT",
+      "taskId": "TASK-14-01461-UNINSTALL_ACCEPTANCE_CONTRACT",
+      "domain": "14-QA-RELEASE-OPERATIONS",
+      "title": "Uninstall acceptance",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-14-01465-DATA_PRESERVATION_CONTRACT",
+      "taskId": "TASK-14-01465-DATA_PRESERVATION_CONTRACT",
+      "domain": "14-QA-RELEASE-OPERATIONS",
+      "title": "Data preservation",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-14-01469-SECURITY_TESTS_CONTRACT",
+      "taskId": "TASK-14-01469-SECURITY_TESTS_CONTRACT",
+      "domain": "14-QA-RELEASE-OPERATIONS",
+      "title": "Security tests",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-14-01473-PRIVACY_TESTS_CONTRACT",
+      "taskId": "TASK-14-01473-PRIVACY_TESTS_CONTRACT",
+      "domain": "14-QA-RELEASE-OPERATIONS",
+      "title": "Privacy tests",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-14-01477-PERFORMANCE_TESTS_CONTRACT",
+      "taskId": "TASK-14-01477-PERFORMANCE_TESTS_CONTRACT",
+      "domain": "14-QA-RELEASE-OPERATIONS",
+      "title": "Performance tests",
+      "releaseTrain": "R1-STABLE-COMMERCIAL",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-14-01481-STRESS_TESTS_CONTRACT",
+      "taskId": "TASK-14-01481-STRESS_TESTS_CONTRACT",
+      "domain": "14-QA-RELEASE-OPERATIONS",
+      "title": "Stress tests",
+      "releaseTrain": "R1-STABLE-COMMERCIAL",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-14-01485-ACCESSIBILITY_TESTS_CONTRACT",
+      "taskId": "TASK-14-01485-ACCESSIBILITY_TESTS_CONTRACT",
+      "domain": "14-QA-RELEASE-OPERATIONS",
+      "title": "Accessibility tests",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-14-01489-LOCALIZATION_TESTS_CONTRACT",
+      "taskId": "TASK-14-01489-LOCALIZATION_TESTS_CONTRACT",
+      "domain": "14-QA-RELEASE-OPERATIONS",
+      "title": "Localization tests",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-14-01493-RELEASE_SIGNING_CONTRACT",
+      "taskId": "TASK-14-01493-RELEASE_SIGNING_CONTRACT",
+      "domain": "14-QA-RELEASE-OPERATIONS",
+      "title": "Release signing",
+      "releaseTrain": "R1-STABLE-COMMERCIAL",
+      "state": "OWNER_GATE",
+      "gate": "OWNER_GATE"
+    },
+    {
+      "id": "CAP-TASK-14-01497-ARTIFACT_REGISTRY_CONTRACT",
+      "taskId": "TASK-14-01497-ARTIFACT_REGISTRY_CONTRACT",
+      "domain": "14-QA-RELEASE-OPERATIONS",
+      "title": "Artifact registry",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-14-01501-SHA256_EVIDENCE_CONTRACT",
+      "taskId": "TASK-14-01501-SHA256_EVIDENCE_CONTRACT",
+      "domain": "14-QA-RELEASE-OPERATIONS",
+      "title": "SHA256 evidence",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-14-01505-SBOM_CONTRACT",
+      "taskId": "TASK-14-01505-SBOM_CONTRACT",
+      "domain": "14-QA-RELEASE-OPERATIONS",
+      "title": "SBOM",
+      "releaseTrain": "R1-STABLE-COMMERCIAL",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-14-01509-DEPENDENCY_AUDIT_CONTRACT",
+      "taskId": "TASK-14-01509-DEPENDENCY_AUDIT_CONTRACT",
+      "domain": "14-QA-RELEASE-OPERATIONS",
+      "title": "Dependency audit",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-14-01513-BACKUP_OPERATIONS_CONTRACT",
+      "taskId": "TASK-14-01513-BACKUP_OPERATIONS_CONTRACT",
+      "domain": "14-QA-RELEASE-OPERATIONS",
+      "title": "Backup operations",
+      "releaseTrain": "R1-STABLE-COMMERCIAL",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-14-01517-OLD_LAPTOP_SERVER_CONTRACT",
+      "taskId": "TASK-14-01517-OLD_LAPTOP_SERVER_CONTRACT",
+      "domain": "14-QA-RELEASE-OPERATIONS",
+      "title": "Old-laptop server",
+      "releaseTrain": "R1-STABLE-COMMERCIAL",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-14-01521-MONITORING_CONTRACT",
+      "taskId": "TASK-14-01521-MONITORING_CONTRACT",
+      "domain": "14-QA-RELEASE-OPERATIONS",
+      "title": "Monitoring",
+      "releaseTrain": "R1-STABLE-COMMERCIAL",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-14-01525-INCIDENT_RESPONSE_CONTRACT",
+      "taskId": "TASK-14-01525-INCIDENT_RESPONSE_CONTRACT",
+      "domain": "14-QA-RELEASE-OPERATIONS",
+      "title": "Incident response",
+      "releaseTrain": "R1-STABLE-COMMERCIAL",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-14-01529-ROLLBACK_OPERATIONS_CONTRACT",
+      "taskId": "TASK-14-01529-ROLLBACK_OPERATIONS_CONTRACT",
+      "domain": "14-QA-RELEASE-OPERATIONS",
+      "title": "Rollback operations",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-14-01533-CUSTOMER_SUPPORT_EVIDENCE_BUNDLES_CONTRA",
+      "taskId": "TASK-14-01533-CUSTOMER_SUPPORT_EVIDENCE_BUNDLES_CONTRA",
+      "domain": "14-QA-RELEASE-OPERATIONS",
+      "title": "Customer support evidence bundles",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-15-01537-COMMANDER_ADAPTER_CONTRACT_CONTRACT",
+      "taskId": "TASK-15-01537-COMMANDER_ADAPTER_CONTRACT_CONTRACT",
+      "domain": "15-COMMANDER-FUTURE-ADAPTER",
+      "title": "Commander adapter contract",
+      "releaseTrain": "R1-STABLE-COMMERCIAL",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-15-01541-COMMANDER_READINESS_CHECKLIST_CONTRACT",
+      "taskId": "TASK-15-01541-COMMANDER_READINESS_CHECKLIST_CONTRACT",
+      "domain": "15-COMMANDER-FUTURE-ADAPTER",
+      "title": "Commander readiness checklist",
+      "releaseTrain": "R1-STABLE-COMMERCIAL",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-15-01545-COMMANDER_EVENT_SCHEMA_CONTRACT",
+      "taskId": "TASK-15-01545-COMMANDER_EVENT_SCHEMA_CONTRACT",
+      "domain": "15-COMMANDER-FUTURE-ADAPTER",
+      "title": "Commander event schema",
+      "releaseTrain": "R1-STABLE-COMMERCIAL",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-15-01549-COMMANDER_COMMAND_SCHEMA_CONTRACT",
+      "taskId": "TASK-15-01549-COMMANDER_COMMAND_SCHEMA_CONTRACT",
+      "domain": "15-COMMANDER-FUTURE-ADAPTER",
+      "title": "Commander command schema",
+      "releaseTrain": "R1-STABLE-COMMERCIAL",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-15-01553-COMMANDER_RESULT_SCHEMA_CONTRACT",
+      "taskId": "TASK-15-01553-COMMANDER_RESULT_SCHEMA_CONTRACT",
+      "domain": "15-COMMANDER-FUTURE-ADAPTER",
+      "title": "Commander result schema",
+      "releaseTrain": "R1-STABLE-COMMERCIAL",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-15-01557-LISTTASKS_ADAPTER_SURFACE_CONTRACT",
+      "taskId": "TASK-15-01557-LISTTASKS_ADAPTER_SURFACE_CONTRACT",
+      "domain": "15-COMMANDER-FUTURE-ADAPTER",
+      "title": "listTasks adapter surface",
+      "releaseTrain": "R1-STABLE-COMMERCIAL",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-15-01561-CLAIMTASK_ADAPTER_SURFACE_CONTRACT",
+      "taskId": "TASK-15-01561-CLAIMTASK_ADAPTER_SURFACE_CONTRACT",
+      "domain": "15-COMMANDER-FUTURE-ADAPTER",
+      "title": "claimTask adapter surface",
+      "releaseTrain": "R1-STABLE-COMMERCIAL",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-15-01565-RENEWLEASE_ADAPTER_SURFACE_CONTRACT",
+      "taskId": "TASK-15-01565-RENEWLEASE_ADAPTER_SURFACE_CONTRACT",
+      "domain": "15-COMMANDER-FUTURE-ADAPTER",
+      "title": "renewLease adapter surface",
+      "releaseTrain": "R1-STABLE-COMMERCIAL",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-15-01569-REPORTHEARTBEAT_ADAPTER_SURFACE_CONTRACT",
+      "taskId": "TASK-15-01569-REPORTHEARTBEAT_ADAPTER_SURFACE_CONTRACT",
+      "domain": "15-COMMANDER-FUTURE-ADAPTER",
+      "title": "reportHeartbeat adapter surface",
+      "releaseTrain": "R1-STABLE-COMMERCIAL",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-15-01573-REPORTPROGRESS_ADAPTER_SURFACE_CONTRACT",
+      "taskId": "TASK-15-01573-REPORTPROGRESS_ADAPTER_SURFACE_CONTRACT",
+      "domain": "15-COMMANDER-FUTURE-ADAPTER",
+      "title": "reportProgress adapter surface",
+      "releaseTrain": "R1-STABLE-COMMERCIAL",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-15-01577-ATTACHEVIDENCE_ADAPTER_SURFACE_CONTRACT",
+      "taskId": "TASK-15-01577-ATTACHEVIDENCE_ADAPTER_SURFACE_CONTRACT",
+      "domain": "15-COMMANDER-FUTURE-ADAPTER",
+      "title": "attachEvidence adapter surface",
+      "releaseTrain": "R1-STABLE-COMMERCIAL",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-15-01581-SUBMITRESULT_ADAPTER_SURFACE_CONTRACT",
+      "taskId": "TASK-15-01581-SUBMITRESULT_ADAPTER_SURFACE_CONTRACT",
+      "domain": "15-COMMANDER-FUTURE-ADAPTER",
+      "title": "submitResult adapter surface",
+      "releaseTrain": "R1-STABLE-COMMERCIAL",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-15-01585-REQUESTREVIEW_ADAPTER_SURFACE_CONTRACT",
+      "taskId": "TASK-15-01585-REQUESTREVIEW_ADAPTER_SURFACE_CONTRACT",
+      "domain": "15-COMMANDER-FUTURE-ADAPTER",
+      "title": "requestReview adapter surface",
+      "releaseTrain": "R1-STABLE-COMMERCIAL",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-15-01589-RELEASECLAIM_ADAPTER_SURFACE_CONTRACT",
+      "taskId": "TASK-15-01589-RELEASECLAIM_ADAPTER_SURFACE_CONTRACT",
+      "domain": "15-COMMANDER-FUTURE-ADAPTER",
+      "title": "releaseClaim adapter surface",
+      "releaseTrain": "R1-STABLE-COMMERCIAL",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-15-01593-PAUSEQUEUE_ADAPTER_SURFACE_CONTRACT",
+      "taskId": "TASK-15-01593-PAUSEQUEUE_ADAPTER_SURFACE_CONTRACT",
+      "domain": "15-COMMANDER-FUTURE-ADAPTER",
+      "title": "pauseQueue adapter surface",
+      "releaseTrain": "R1-STABLE-COMMERCIAL",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-15-01597-RESUMEQUEUE_ADAPTER_SURFACE_CONTRACT",
+      "taskId": "TASK-15-01597-RESUMEQUEUE_ADAPTER_SURFACE_CONTRACT",
+      "domain": "15-COMMANDER-FUTURE-ADAPTER",
+      "title": "resumeQueue adapter surface",
+      "releaseTrain": "R1-STABLE-COMMERCIAL",
+      "state": "READY",
+      "gate": null
+    },
+    {
+      "id": "CAP-TASK-15-01601-COMMANDER_ACTIVATION_CONTRACT",
+      "taskId": "TASK-15-01601-COMMANDER_ACTIVATION_CONTRACT",
+      "domain": "15-COMMANDER-FUTURE-ADAPTER",
+      "title": "Commander activation",
+      "releaseTrain": "R1-STABLE-COMMERCIAL",
+      "state": "OWNER_GATE",
+      "gate": "OWNER_GATE"
+    }
+  ]
+}

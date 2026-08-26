@@ -1,0 +1,170 @@
+{
+    "status":  "STUDIO_PRO_V19_INTEGRATED_RUNTIME_CANDIDATE_READY",
+    "secondary":  [
+                      "STUDIO_PRO_V19_DSP_NOT_IMPLEMENTED"
+                  ],
+    "assertions":  18,
+    "pass":  18,
+    "fail":  0,
+    "steps":  [
+                  {
+                      "name":  "valid",
+                      "ok":  true
+                  },
+                  {
+                      "name":  "1.new_project",
+                      "ok":  true,
+                      "phase":  "step"
+                  },
+                  {
+                      "name":  "tracks",
+                      "ok":  true
+                  },
+                  {
+                      "name":  "2.add_audio_midi_tracks",
+                      "ok":  true,
+                      "phase":  "step"
+                  },
+                  {
+                      "name":  "clips",
+                      "ok":  true
+                  },
+                  {
+                      "name":  "3.add_clips",
+                      "ok":  true,
+                      "phase":  "step"
+                  },
+                  {
+                      "name":  "split",
+                      "ok":  true
+                  },
+                  {
+                      "name":  "4.move_split_trim",
+                      "ok":  true,
+                      "phase":  "step"
+                  },
+                  {
+                      "name":  "tempo",
+                      "ok":  true
+                  },
+                  {
+                      "name":  "5.tempo_time_signature",
+                      "ok":  true,
+                      "phase":  "step"
+                  },
+                  {
+                      "name":  "channels",
+                      "ok":  true
+                  },
+                  {
+                      "name":  "6.mixer_routing",
+                      "ok":  true,
+                      "phase":  "step"
+                  },
+                  {
+                      "name":  "gain_solo",
+                      "ok":  true
+                  },
+                  {
+                      "name":  "7.mute_solo_gain_pan",
+                      "ok":  true,
+                      "phase":  "step"
+                  },
+                  {
+                      "name":  "scheduled",
+                      "ok":  true
+                  },
+                  {
+                      "name":  "8.deterministic_scheduler_fixture",
+                      "ok":  true,
+                      "phase":  "step"
+                  },
+                  {
+                      "name":  "saved",
+                      "ok":  true
+                  },
+                  {
+                      "name":  "9.save",
+                      "ok":  true,
+                      "phase":  "step"
+                  },
+                  {
+                      "name":  "closed",
+                      "ok":  true
+                  },
+                  {
+                      "name":  "10.close_runtime",
+                      "ok":  true,
+                      "phase":  "step"
+                  },
+                  {
+                      "name":  "reopen",
+                      "ok":  true
+                  },
+                  {
+                      "name":  "11.reopen",
+                      "ok":  true,
+                      "phase":  "step"
+                  },
+                  {
+                      "name":  "timeline",
+                      "ok":  true
+                  },
+                  {
+                      "name":  "mixer",
+                      "ok":  true
+                  },
+                  {
+                      "name":  "midi_edit",
+                      "ok":  true
+                  },
+                  {
+                      "name":  "12.verify_timeline_mixer_edit",
+                      "ok":  true,
+                      "phase":  "step"
+                  },
+                  {
+                      "name":  "recovery_status",
+                      "ok":  true
+                  },
+                  {
+                      "name":  "13.autosave_recovery",
+                      "ok":  true,
+                      "phase":  "step"
+                  },
+                  {
+                      "name":  "invalid_route_handled",
+                      "ok":  true
+                  },
+                  {
+                      "name":  "14.invalid_route_rejection",
+                      "ok":  true,
+                      "phase":  "step"
+                  },
+                  {
+                      "name":  "migrated",
+                      "ok":  true
+                  },
+                  {
+                      "name":  "15.migration_fixture",
+                      "ok":  true,
+                      "phase":  "step"
+                  },
+                  {
+                      "name":  "stopped",
+                      "ok":  true
+                  },
+                  {
+                      "name":  "16.global_stop",
+                      "ok":  true,
+                      "phase":  "step"
+                  }
+              ],
+    "claims":  {
+                   "realTimeDsp":  false,
+                   "asio":  false,
+                   "recording":  false,
+                   "kontakt":  false,
+                   "commercialDaw":  false
+               }
+}

@@ -1,0 +1,38 @@
+{
+    "product":  "PRODUCT-SINGY_TEEN",
+    "decision":  "MULTIPLE_CANDIDATES_OWNER_REQUIRED",
+    "autoSelected":  false,
+    "sharedGaps":  [
+                       "Music Learning"
+                   ],
+    "candidates":  [
+                       {
+                           "risks":  "shared with Kids; experimental dirt",
+                           "branch":  "factory/singy-rc1-r7-3-auto-load-local-kontakt-piano-tonal-core",
+                           "path":  "C:\\UAOS_AGENT_FACTORY_WORKTREES\\singy-integration",
+                           "head":  "c0f1c58",
+                           "missing_parts":  [
+                                                 "Music Learning"
+                                             ],
+                           "feature_coverage":  "Voice melody/MIDI partial-yes, Song Structure, Chord Suggestion, Multitrack teen tracks, Global Player/Mixer",
+                           "recommended_role":  "ENGINE_INTEGRATION_LEAD",
+                           "score":  80,
+                           "dirty_count":  17,
+                           "candidate":  "singy-integration"
+                       },
+                       {
+                           "risks":  "may lag R7 engine",
+                           "branch":  "factory/singy-kids-teen-commercial-rc2",
+                           "path":  "C:\\UAOS_AGENT_FACTORY_WORKTREES\\singy-kids-teen-commercial-rc2",
+                           "head":  "57d70df",
+                           "missing_parts":  [
+                                                 "Music Learning"
+                                             ],
+                           "feature_coverage":  "same app features + commercial Teen packaging",
+                           "recommended_role":  "COMMERCIAL_PACKAGING_LEAD",
+                           "score":  78,
+                           "dirty_count":  16,
+                           "candidate":  "singy-kids-teen-commercial-rc2"
+                       }
+                   ]
+}

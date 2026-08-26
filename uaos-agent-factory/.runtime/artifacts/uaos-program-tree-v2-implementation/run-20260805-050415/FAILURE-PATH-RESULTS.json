@@ -1,0 +1,142 @@
+{
+  "generatedAt": "2026-08-05T05:20:52.414Z",
+  "method": "Parsed each task's real tests/main.test.mjs for test() titles, flagged titles explicitly exercising a failure/rejection/rollback/fault-isolation/regression scenario.",
+  "totalTests": 83,
+  "totalFailurePathTests": 38,
+  "results": [
+    {
+      "taskId": "TASK-01-00057-SHARED_PROJECT_IDENTITY_CONTRACT",
+      "testFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00057-shared_project_identity_contract\\tests\\main.test.mjs",
+      "totalTestCount": 10,
+      "failurePathTestCount": 6,
+      "failurePathTestTitles": [
+        "isValidProjectId accepts real crypto.randomUUID() output and rejects garbage",
+        "rejects a non-UUID id",
+        "rejects an unknown productId",
+        "rejects a non-semver formatVersion",
+        "rejects an unparseable createdAt",
+        "compareFormatVersions rejects invalid input rather than returning a misleading result"
+      ]
+    },
+    {
+      "taskId": "TASK-01-00058-SHARED_PROJECT_IDENTITY_IMPLEMENTATION",
+      "testFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00058-shared_project_identity_implementation\\tests\\main.test.mjs",
+      "totalTestCount": 7,
+      "failurePathTestCount": 3,
+      "failurePathTestTitles": [
+        "createProjectIdentity rejects an unknown productId",
+        "migrateFormatVersion refuses a downgrade",
+        "migrateFormatVersion rejects a malformed target version"
+      ]
+    },
+    {
+      "taskId": "TASK-01-00059-SHARED_PROJECT_IDENTITY_TESTS",
+      "testFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00059-shared_project_identity_tests\\tests\\main.test.mjs",
+      "totalTestCount": 4,
+      "failurePathTestCount": 1,
+      "failurePathTestTitles": [
+        "failure-path: if the manifest save fails, no partial manifest is left on disk"
+      ]
+    },
+    {
+      "taskId": "TASK-01-00060-SHARED_PROJECT_IDENTITY_EVIDENCE",
+      "testFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00060-shared_project_identity_evidence\\tests\\main.test.mjs",
+      "totalTestCount": 5,
+      "failurePathTestCount": 2,
+      "failurePathTestTitles": [
+        "a genuinely failing child test file is detected as FAIL, not swallowed as PASS",
+        "rollback/recovery procedure documents immutability, no-downgrade, and recovery fallback"
+      ]
+    },
+    {
+      "taskId": "TASK-01-00073-RECOVERY_CONTRACT",
+      "testFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00073-recovery_contract\\tests\\main.test.mjs",
+      "totalTestCount": 7,
+      "failurePathTestCount": 2,
+      "failurePathTestTitles": [
+        "rejects non-object options",
+        "rejects a missing or empty dir"
+      ]
+    },
+    {
+      "taskId": "TASK-01-00074-RECOVERY_IMPLEMENTATION",
+      "testFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00074-recovery_implementation\\tests\\main.test.mjs",
+      "totalTestCount": 7,
+      "failurePathTestCount": 4,
+      "failurePathTestTitles": [
+        "a directory with no orphans is a safe no-op",
+        "an orphan whose real target already exists (crash happened AFTER a successful rename by a retried attempt) is discarded",
+        "an orphan whose real target is MISSING (crash happened BEFORE the rename ever completed) is quarantined, never promoted",
+        "rejects an invalid options shape"
+      ]
+    },
+    {
+      "taskId": "TASK-01-00075-RECOVERY_TESTS",
+      "testFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00075-recovery_tests\\tests\\main.test.mjs",
+      "totalTestCount": 4,
+      "failurePathTestCount": 2,
+      "failurePathTestTitles": [
+        "recovery is idempotent: running it a second time on an already-recovered directory is a no-op",
+        "failure-path scale test: 50 orphans, all target-missing, are all quarantined without any data loss or crash"
+      ]
+    },
+    {
+      "taskId": "TASK-01-00076-RECOVERY_EVIDENCE",
+      "testFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00076-recovery_evidence\\tests\\main.test.mjs",
+      "totalTestCount": 5,
+      "failurePathTestCount": 2,
+      "failurePathTestTitles": [
+        "a genuinely failing child test file is detected as FAIL, not swallowed as PASS",
+        "rollback/recovery procedure documents safe-default quarantine and idempotency"
+      ]
+    },
+    {
+      "taskId": "TASK-06-00653-PROJECT_SYSTEM_CONTRACT",
+      "testFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-06-00653-project_system_contract\\tests\\main.test.mjs",
+      "totalTestCount": 10,
+      "failurePathTestCount": 5,
+      "failurePathTestTitles": [
+        "validateClip rejects a negative startSample",
+        "validateClip rejects a missing samplesBase64",
+        "validateProject rejects an unsupported sampleRate",
+        "validateProject rejects a track with a bad id",
+        "validateProject rejects a project whose tracks is not an array"
+      ]
+    },
+    {
+      "taskId": "TASK-06-00654-PROJECT_SYSTEM_IMPLEMENTATION",
+      "testFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-06-00654-project_system_implementation\\tests\\main.test.mjs",
+      "totalTestCount": 15,
+      "failurePathTestCount": 8,
+      "failurePathTestTitles": [
+        "regression: base64ToInt16Array is safe against Node Buffer pool aliasing (small buffers share one underlying ArrayBuffer)",
+        "failure-path: decodeWav rejects a truncated/corrupt WAV rather than returning garbage",
+        "failure-path: decodeWav rejects a non-WAV buffer",
+        "failure-path: decodeWav rejects a buffer shorter than a minimal header",
+        "failure-path: reopenProject rejects a corrupted (truncated JSON) project file with a clear error, not silent garbage",
+        "failure recovery: a crash-orphaned AtomicSave temp file next to the project does not prevent a clean reopen",
+        "addTrack rejects a duplicate track id",
+        "addClip rejects a clip on a nonexistent track"
+      ]
+    },
+    {
+      "taskId": "TASK-06-00655-PROJECT_SYSTEM_TESTS",
+      "testFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-06-00655-project_system_tests\\tests\\main.test.mjs",
+      "totalTestCount": 4,
+      "failurePathTestCount": 1,
+      "failurePathTestTitles": [
+        "failure-path: a project file corrupted AFTER a successful save is rejected on reopen, never silently rendered"
+      ]
+    },
+    {
+      "taskId": "TASK-06-00656-PROJECT_SYSTEM_EVIDENCE",
+      "testFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-06-00656-project_system_evidence\\tests\\main.test.mjs",
+      "totalTestCount": 5,
+      "failurePathTestCount": 2,
+      "failurePathTestTitles": [
+        "a genuinely failing child test file is detected as FAIL, not swallowed as PASS",
+        "rollback/recovery procedure documents crash recovery integration and the truth-statement scope boundaries"
+      ]
+    }
+  ]
+}

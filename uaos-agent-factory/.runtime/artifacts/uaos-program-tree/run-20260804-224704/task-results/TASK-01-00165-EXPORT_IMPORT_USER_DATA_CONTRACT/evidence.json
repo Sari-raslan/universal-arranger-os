@@ -1,0 +1,35 @@
+{
+  "taskId": "TASK-01-00165-EXPORT_IMPORT_USER_DATA_CONTRACT",
+  "agentId": "NODE_LOCAL_WORKER-0042",
+  "startedAt": "2026-08-04T20:47:06.327Z",
+  "endedAt": "2026-08-04T20:47:06.456Z",
+  "status": "PASS",
+  "tests": [
+    {
+      "command": "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00165-export_import_user_data_contract\\tests\\main.test.mjs",
+      "exitCode": 0,
+      "stdoutTail": "✔ TASK-01-00165-EXPORT_IMPORT_USER_DATA_CONTRACT verify (0.5729ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 69.312\n"
+    }
+  ],
+  "sha256": "DA068A1D4E1F1C68F82DDFE8340505BDE538BFBC8C0CCFE61399BE05C4C60683",
+  "allowedPathsUsed": [
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00165-export_import_user_data_contract",
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00165-export_import_user_data_contract\\src\\export_import_user_data_contract.mjs",
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00165-export_import_user_data_contract\\tests\\main.test.mjs"
+  ],
+  "truthStatements": [
+    "Technical WAV success does not prove musical quality",
+    "Fixtures are not product content",
+    "Studio Offline Render is not Real-time DSP",
+    "KORG WRITE_UNSUPPORTED",
+    "No auto adoption of Kids/Teen/Pricing",
+    "Commander not activated"
+  ],
+  "ownerFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00165-export_import_user_data_contract\\src\\export_import_user_data_contract.mjs",
+  "phase": "DEFINE",
+  "gate": null,
+  "noPush": true,
+  "noMerge": true,
+  "noDeploy": true,
+  "commanderActivated": false
+}

@@ -1,19 +1,14 @@
 {
   "project": "UAOS",
-  "roadmapVersion": "V1-V2-V3",
-  "currentPhase": "HARDENING",
-  "phaseStatus": "COMPLETE",
-  "lastCompletedTask": "BACKEND_RUNTIME_SAFETY_HARDENING",
-  "nextTask": "COMPLETE",
-  "lastSuccessfulCommand": "cmd /c npm run build --prefix uaos-live-clean",
-  "lastSuccessfulCommit": "b3e71ff",
-  "buildStatus": "PASS",
-  "testStatus": "PASS",
-  "blockers": [
-    "Manual microphone permission cleanup validation requires a real browser permission flow.",
-    "Manual MIDI thru and panic validation requires real MIDI hardware.",
-    "Automatic updater network checks require a packaged signed build with the intended update provider configured.",
-    "Post-merge validation is blocked at npm ci --prefix uaos-live-clean because Windows refuses to unlink uaos-live-clean/node_modules/@rolldown/.binding-win32-x64-msvc-XggE4oWY/rolldown-binding.win32-x64-msvc.node."
-  ],
-  "updatedAt": "2026-06-16T11:00:00.0000000+02:00"
-}
+  "STATUS": "UAOS_PROGRAMS_INTERNAL_CLOSURE_COMPLETE",
+  "ARRANGER_FROZEN": true,
+  "MIDI_TOOLKIT_INTERNAL_RELEASE_READY": true,
+  "SINGY_INTERNAL_RELEASE_READY": true,
+  "ARRANGER_STUDIO_INTERNAL_RELEASE_READY": true,
+  "PORTFOLIO_DOUBLE_ACCEPTANCE": "2/2",
+  "PROGRAMS_FINAL_HANDOFF": "READY",
+  "COMMANDER_TOUCHED": false,
+  "PUBLIC_RELEASE": false,
+  "PAYMENT_CHANGED": false,
+  "FINAL_MUSICAL_ACCEPTANCE_DEFERRED": true,
+  "commercialLane": "SEPARATE — do not execute website/ads/o

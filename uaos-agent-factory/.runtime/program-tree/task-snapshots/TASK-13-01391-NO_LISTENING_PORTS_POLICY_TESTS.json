@@ -1,0 +1,38 @@
+{
+  "id": "TASK-13-01391-NO_LISTENING_PORTS_POLICY_TESTS",
+  "epicId": "EPIC-13-0014-SECURITY_AND_LEGAL",
+  "domain": "13-SECURITY-LEGAL",
+  "title": "No listening ports policy tests",
+  "phase": "TEST",
+  "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+  "state": "READY",
+  "priority": 10,
+  "estimateMinutesMin": 45,
+  "estimateMinutesMax": 180,
+  "inputs": [],
+  "acceptanceCriteria": [
+    "No listening ports policy tests contract file exists",
+    "Unit assertions pass for No listening ports policy tests",
+    "Evidence JSON written with SHA256"
+  ],
+  "tests": [
+    "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-13-01391-no_listening_ports_policy_tests\\tests\\main.test.mjs"
+  ],
+  "evidence": [
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-13-01391-no_listening_ports_policy_tests/evidence/result.json"
+  ],
+  "allowedPaths": [
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-13-01391-no_listening_ports_policy_tests",
+    "C:\\keyboard-manager-clean\\uaos-agent-factory\\.runtime\\artifacts\\uaos-program-tree\\TASK-13-01391-NO_LISTENING_PORTS_POLICY_TESTS"
+  ],
+  "ownerFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-13-01391-no_listening_ports_policy_tests\\src\\no_listening_ports_policy_tests.mjs",
+  "worktree": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-13-01391-no_listening_ports_policy_tests",
+  "gate": null,
+  "blockedReason": null,
+  "rc1Critical": true,
+  "claims": [],
+  "lease": null,
+  "heartbeats": [],
+  "createdAt": "2026-08-04T20:47:04.340Z",
+  "updatedAt": "2026-08-04T20:49:22.085Z"
+}

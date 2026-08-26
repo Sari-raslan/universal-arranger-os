@@ -1,0 +1,48 @@
+{
+  "schemaVersion": "uaos.converter.job/v17",
+  "jobId": "ce39d3b2-92c1-410c-82f2-1f7215a5cba8",
+  "status": "cancelled",
+  "mode": "convert",
+  "inputSnapshot": {
+    "schemaVersion": "uaos.project/v1",
+    "formatId": "uaos.project/v1",
+    "kind": "uaos.project",
+    "projectId": "343d8eef-cebe-4667-98d4-d1516d55b77b",
+    "name": "V20 Fixture",
+    "tracks": [
+      {
+        "trackId": "t1",
+        "kind": "midi",
+        "name": "Piano"
+      }
+    ]
+  },
+  "inputHash": "adb52425a04a3c591e8dcd299676e1fff0134957a85cf61f6a661d0677acf011",
+  "outputDir": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-v20-review\\keyboard-review-build\\review-data\\cancel\\out",
+  "stagingDir": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-v20-review\\keyboard-review-build\\review-data\\cancel\\out\\.staging",
+  "createdAt": "2026-08-04T19:22:48.330Z",
+  "warnings": [],
+  "errors": [],
+  "receipt": null,
+  "resumeToken": "dd50826b-b0cc-4eca-acf9-69a178326723",
+  "sourceSnapshotHash": "adb52425a04a3c591e8dcd299676e1fff0134957a85cf61f6a661d0677acf011",
+  "targetStagingHash": null,
+  "progress": {
+    "percent": 0,
+    "checkpoint": "prepared"
+  },
+  "audit": [
+    {
+      "at": "2026-08-04T19:22:48.330Z",
+      "event": "created"
+    },
+    {
+      "at": "2026-08-04T19:22:48.330Z",
+      "event": "cancelled"
+    }
+  ],
+  "locks": {
+    "job": false,
+    "outputs": []
+  }
+}

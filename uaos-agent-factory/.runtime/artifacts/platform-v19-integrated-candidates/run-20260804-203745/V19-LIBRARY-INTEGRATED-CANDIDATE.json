@@ -1,0 +1,167 @@
+{
+    "status":  "LIBRARY_V19_INTEGRATED_CANDIDATE_READY_FIXTURE_ONLY",
+    "secondary":  [
+                      "LIBRARY_V19_REAL_LICENSED_CONTENT_REQUIRED"
+                  ],
+    "assertions":  23,
+    "pass":  23,
+    "fail":  0,
+    "steps":  [
+                  {
+                      "name":  "fixture_has_id",
+                      "ok":  true
+                  },
+                  {
+                      "name":  "commercial_blocked",
+                      "ok":  true
+                  },
+                  {
+                      "name":  "no_audio_dir",
+                      "ok":  true
+                  },
+                  {
+                      "name":  "1.create_legal_fixture_metadata_no_audio",
+                      "ok":  true,
+                      "phase":  "step"
+                  },
+                  {
+                      "name":  "dry_ok",
+                      "ok":  true
+                  },
+                  {
+                      "name":  "dry_accepted",
+                      "ok":  true
+                  },
+                  {
+                      "name":  "dry_manifest",
+                      "ok":  true
+                  },
+                  {
+                      "name":  "2.dry_run_ingest",
+                      "ok":  true,
+                      "phase":  "step"
+                  },
+                  {
+                      "name":  "stage_file",
+                      "ok":  true
+                  },
+                  {
+                      "name":  "3.transactional_staging",
+                      "ok":  true,
+                      "phase":  "step"
+                  },
+                  {
+                      "name":  "validate_ok",
+                      "ok":  true
+                  },
+                  {
+                      "name":  "license_ok",
+                      "ok":  true
+                  },
+                  {
+                      "name":  "4.validation",
+                      "ok":  true,
+                      "phase":  "step"
+                  },
+                  {
+                      "name":  "bad_rejected",
+                      "ok":  true
+                  },
+                  {
+                      "name":  "has_reject",
+                      "ok":  true
+                  },
+                  {
+                      "name":  "5.simulated_failure",
+                      "ok":  true,
+                      "phase":  "step"
+                  },
+                  {
+                      "name":  "rolled_back",
+                      "ok":  true
+                  },
+                  {
+                      "name":  "staging_gone",
+                      "ok":  true
+                  },
+                  {
+                      "name":  "6.rollback",
+                      "ok":  true,
+                      "phase":  "step"
+                  },
+                  {
+                      "name":  "ingest_ok",
+                      "ok":  true
+                  },
+                  {
+                      "name":  "7.successful_fixture_ingest",
+                      "ok":  true,
+                      "phase":  "step"
+                  },
+                  {
+                      "name":  "catalog_count",
+                      "ok":  true
+                  },
+                  {
+                      "name":  "catalog_id",
+                      "ok":  true
+                  },
+                  {
+                      "name":  "8.catalog_reopen",
+                      "ok":  true,
+                      "phase":  "step"
+                  },
+                  {
+                      "name":  "preview_meta",
+                      "ok":  true
+                  },
+                  {
+                      "name":  "preview_not_playable",
+                      "ok":  true
+                  },
+                  {
+                      "name":  "9.preview_player_fixture_check",
+                      "ok":  true,
+                      "phase":  "step"
+                  },
+                  {
+                      "name":  "pkg_sha",
+                      "ok":  true
+                  },
+                  {
+                      "name":  "10.package_manifest_verification",
+                      "ok":  true,
+                      "phase":  "step"
+                  },
+                  {
+                      "name":  "stale_recovered",
+                      "ok":  true
+                  },
+                  {
+                      "name":  "11.restart_process_lock_recovery",
+                      "ok":  true,
+                      "phase":  "step"
+                  },
+                  {
+                      "name":  "journal_ok",
+                      "ok":  true
+                  },
+                  {
+                      "name":  "missing_diag",
+                      "ok":  true
+                  },
+                  {
+                      "name":  "ledger",
+                      "ok":  true
+                  },
+                  {
+                      "name":  "12.reopen_resulting_library",
+                      "ok":  true,
+                      "phase":  "step"
+                  }
+              ],
+    "packageManifestSha256":  "5ea667f9ec5666429e3b45acf75182c7859c4c45f1dd34a4fe42e31ee741cae1",
+    "lockOwner":  "pid-24644",
+    "fixtureOnly":  true,
+    "realContentClaimed":  false
+}

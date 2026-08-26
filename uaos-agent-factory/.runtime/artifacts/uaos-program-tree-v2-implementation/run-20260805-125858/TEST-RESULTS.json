@@ -1,0 +1,77 @@
+{
+  "generatedAt": "2026-08-05T17:03:30.125Z",
+  "results": [
+    {
+      "taskId": "TASK-01-00133-ABOUT_SCREEN_CONTRACT",
+      "testCommand": "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00133-about_screen_contract\\tests\\main.test.mjs",
+      "exitCode": 0,
+      "stdoutTail": "✔ MALFORMED: invalid licenseState (unknown entitlement state) is rejected (0.158ms)\n✔ MALFORMED: negative trialDaysRemaining is rejected (0.1462ms)\n✔ MALFORMED: a capability id present in more than one bucket is rejected (0.1866ms)\n✔ MALFORMED: licenseExpiry that is not null and not parseable is rejected (0.1156ms)\n✔ MALFORMED: missing privacy fields is rejected (0.2005ms)\n✔ MALFORMED: knownLimitations entries must be structured, not bare strings (0.2368ms)\n✔ validatePreferences accepts a valid locale/theme pair and rejects an invalid one (0.213ms)\nℹ tests 11\nℹ suites 0\nℹ pass 11\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 99.8417"
+    },
+    {
+      "taskId": "TASK-01-00134-ABOUT_SCREEN_IMPLEMENTATION",
+      "testCommand": "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00134-about_screen_implementation\\tests\\main.test.mjs",
+      "exitCode": 0,
+      "stdoutTail": "✔ FAILURE PATH: malformed product manifest is rejected (0.3733ms)\n✔ FAILURE PATH: unsupported semantic version (major 0) is rejected (0.2293ms)\n✔ FAILURE PATH: unknown capability lookup is rejected, never silently ignored (0.262ms)\n✔ CLOSE/REOPEN: runtime state round-trips exactly via the real AtomicSave primitive (6.8047ms)\n✔ FAILURE PATH: reopening a corrupted runtime state file fails cleanly (3.8787ms)\n✔ LOCAL PREFERENCES: transactional save/reopen round-trips exactly, and a corrupted preference file fails cleanly (4.0183ms)\n✔ DETERMINISM: two runtime-state builds from identical inputs and identical injected `now` are byte-identical (0.493ms)\nℹ tests 12\nℹ suites 0\nℹ pass 12\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 120.5499"
+    },
+    {
+      "taskId": "TASK-01-00135-ABOUT_SCREEN_TESTS",
+      "testCommand": "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00135-about_screen_tests\\tests\\main.test.mjs",
+      "exitCode": 0,
+      "stdoutTail": "✔ verify() smoke check (0.7755ms)\n✔ six-product lifecycle: each product resolves an independent, correctly-scoped trial runtime state (1.9721ms)\n✔ ENTITLEMENT UPGRADE: capability widening — trial-active export-project stays enabled, and a licensed state reports an expiry-free perpetual license (4.0862ms)\n✔ CROSS-PRODUCT ISOLATION: two products never share a data location or a runtime state on disk (6.7363ms)\n✔ FULL LIFECYCLE: build -> save -> close -> reopen preserves the entire structured snapshot exactly, for a licensed product (3.1341ms)\n✔ PRIVACY: every product runtime state reports telemetry disabled and network activation not required (0.2609ms)\nℹ tests 6\nℹ suites 0\nℹ pass 6\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 107.1451"
+    },
+    {
+      "taskId": "TASK-01-00136-ABOUT_SCREEN_EVIDENCE",
+      "testCommand": "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00136-about_screen_evidence\\tests\\main.test.mjs",
+      "exitCode": 0,
+      "stdoutTail": "✔ verify() smoke check (489.8901ms)\n✔ re-running the full feature test suite genuinely passes end-to-end (520.211ms)\n✔ TEST HARNESS GUARD: zero discovered tests is FAIL (1.1429ms)\n✔ rollback/recovery procedure documents the never-broken open-project guarantee and determinism (0.261ms)\nℹ tests 4\nℹ suites 0\nℹ pass 4\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 1096.7765"
+    },
+    {
+      "taskId": "TASK-11-01257-COMMERCIAL_READINESS_GATES_CONTRACT",
+      "testCommand": "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-11-01257-commercial_readiness_gates_contract\\tests\\main.test.mjs",
+      "exitCode": 0,
+      "stdoutTail": "✔ validateEvidenceBundle accepts a genuinely complete bundle (2.644ms)\n✔ VERDICTS is the fixed 3-value enum (0.1721ms)\n✔ MALFORMED: missing manifestValidation is rejected (0.4532ms)\n✔ MALFORMED: runtimeTestResult where passed+failed exceeds total is rejected (0.1483ms)\n✔ MALFORMED: skipped test entry missing severity is rejected (0.1583ms)\n✔ MALFORMED: missing truthClaims field is rejected (0.1144ms)\n✔ validateAcceptanceReceipt rejects an invalid verdict and a malformed SHA256 (0.2642ms)\nℹ tests 8\nℹ suites 0\nℹ pass 8\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 86.4779"
+    },
+    {
+      "taskId": "TASK-11-01258-COMMERCIAL_READINESS_GATES_IMPLEMENTATIO",
+      "testCommand": "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-11-01258-commercial_readiness_gates_implementatio\\tests\\main.test.mjs",
+      "exitCode": 0,
+      "stdoutTail": "✔ CORRUPTED LICENSE INCORRECTLY ACCEPTED -> FAIL (0.1068ms)\n✔ MISSING EXECUTABLE/LAUNCHER -> FAIL (0.0884ms)\n✔ BLOCKING SKIPPED TEST -> PARTIAL; NONBLOCKING SKIPPED TEST does not force a gap (0.1669ms)\n✔ KNOWN LIMITATIONS are always carried into the receipt (0.678ms)\n✔ DETERMINISTIC RECEIPT: identical bundles produce an identical receiptSha256 (0.1329ms)\n✔ EVIDENCE PATH NORMALIZATION: rejects traversal, absolute paths, and drive letters (0.3411ms)\n✔ FAILURE PATH: decideAcceptance rejects a structurally malformed bundle rather than guessing (0.0715ms)\nℹ tests 19\nℹ suites 0\nℹ pass 19\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 91.3367"
+    },
+    {
+      "taskId": "TASK-11-01259-COMMERCIAL_READINESS_GATES_TESTS",
+      "testCommand": "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-11-01259-commercial_readiness_gates_tests\\tests\\main.test.mjs",
+      "exitCode": 0,
+      "stdoutTail": "✔ verify() smoke check (0.9512ms)\n✔ six-product real-package lifecycle: each product builds a real release tree and independently resolves PASS (20.2976ms)\n✔ REAL TAMPER DETECTION: a genuinely tampered release package resolves FAIL with a real checksum-derived reason, not a hand-typed one (7.2136ms)\n✔ MULTIPLE SIMULTANEOUS CRITICAL FAILURES are all reported, not just the first one found (3.7741ms)\n✔ DETERMINISTIC RECEIPT across two independently-built real packages for the same product (6.7701ms)\n✔ a real un-tampered package never collides with a real tampered package on receiptSha256 (6.6195ms)\nℹ tests 6\nℹ suites 0\nℹ pass 6\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 133.7616"
+    },
+    {
+      "taskId": "TASK-11-01260-COMMERCIAL_READINESS_GATES_EVIDENCE",
+      "testCommand": "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-11-01260-commercial_readiness_gates_evidence\\tests\\main.test.mjs",
+      "exitCode": 0,
+      "stdoutTail": "✔ verify() smoke check (483.5564ms)\n✔ re-running the full feature test suite genuinely passes end-to-end (505.6854ms)\n✔ TEST HARNESS GUARD: zero discovered tests is FAIL (1.1338ms)\n✔ rollback/recovery procedure documents the no-shortcut-status and fabricated-proof-rejection guarantees (0.1408ms)\nℹ tests 4\nℹ suites 0\nℹ pass 4\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 1070.0782"
+    },
+    {
+      "taskId": "TASK-08-00981-OFFLINE_LESSONS_CONTRACT",
+      "testCommand": "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-08-00981-offline_lessons_contract\\tests\\main.test.mjs",
+      "exitCode": 0,
+      "stdoutTail": "✔ CATALOG: duplicate lesson ids rejected (0.14ms)\n✔ CATALOG: too narrow a topic mix is rejected (0.214ms)\n✔ validateParentGateState accepts a valid state and rejects a negative failedAttempts (0.2444ms)\n✔ validateExerciseAttempt rejects an out-of-bounds or malformed score (0.9249ms)\n✔ validateProgress rejects an invalid parent-gate state nested inside progress (0.1715ms)\n✔ TRUTH STATUS is the narrow foundation label, and privacy guarantees are all declared (0.1294ms)\n✔ AGE_BANDS and LESSON_TOPICS are the fixed enums (0.0862ms)\nℹ tests 14\nℹ suites 0\nℹ pass 14\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 90.7005"
+    },
+    {
+      "taskId": "TASK-08-00982-OFFLINE_LESSONS_IMPLEMENTATION",
+      "testCommand": "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-08-00982-offline_lessons_implementation\\tests\\main.test.mjs",
+      "exitCode": 0,
+      "stdoutTail": "✔ INCOMPLETE SESSION RESTORE: an in-progress (not-yet-passed) lesson survives close/reopen with its attempts intact (3.2153ms)\n✔ CORRUPTION RECOVERY: a genuinely corrupted progress file is safely recovered to a fresh progress, never crashing or trusting broken data (3.3768ms)\n✔ EXPORT/IMPORT ROUND TRIP: progress exported via the real Export/Import capability restores exactly (8.4785ms)\n✔ NO-NETWORK RUNTIME: this module never imports a networking module (0.4ms)\n✔ PRIVACY: manifest reports offline, no telemetry, no microphone, no camera, and the narrow truth status (0.1431ms)\n✔ NO AUTOPLAY: an audio cue never starts playing except via an explicit playCue() call (0.2083ms)\n✔ GLOBAL STOP: triggering global stop halts an active audio cue (0.199ms)\nℹ tests 22\nℹ suites 0\nℹ pass 22\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 113.823"
+    },
+    {
+      "taskId": "TASK-08-00983-OFFLINE_LESSONS_TESTS",
+      "testCommand": "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-08-00983-offline_lessons_tests\\tests\\main.test.mjs",
+      "exitCode": 0,
+      "stdoutTail": "✔ verify() smoke check (0.4998ms)\n✔ FULL PIPELINE: catalog -> parent gate -> exercise session -> result validation -> save -> close -> reopen -> restore -> corruption recovery (6.2071ms)\n✔ TWO INDEPENDENT FAMILY SESSIONS never share progress state on disk (4.7436ms)\nℹ tests 3\nℹ suites 0\nℹ pass 3\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 88.1483"
+    },
+    {
+      "taskId": "TASK-08-00984-OFFLINE_LESSONS_EVIDENCE",
+      "testCommand": "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-08-00984-offline_lessons_evidence\\tests\\main.test.mjs",
+      "exitCode": 0,
+      "stdoutTail": "✔ verify() smoke check (475.3213ms)\n✔ re-running the full feature test suite genuinely passes end-to-end (480.8349ms)\n✔ TEST HARNESS GUARD: zero discovered tests is FAIL (0.8272ms)\n✔ rollback/recovery procedure documents the no-bypass parent-gate guarantee and the narrow truth status (0.1853ms)\nℹ tests 4\nℹ suites 0\nℹ pass 4\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 1036.3549"
+    }
+  ]
+}

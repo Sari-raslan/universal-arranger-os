@@ -1,0 +1,110 @@
+{
+    "product":  "PRODUCT-SINGY_CREATOR",
+    "sourceNote":  "library-l-130 is NOT a full Creator source",
+    "status":  "REUSE_PACK_READY",
+    "modules":  [
+                    {
+                        "reuse_method":  "DIRECT_REUSE_CANDIDATE",
+                        "required_refactor":  "none",
+                        "purpose":  "uaosproject/v2",
+                        "license":  "repo-local",
+                        "dependencies":  [
+
+                                         ],
+                        "module":  "Project Contracts",
+                        "source_path":  "packages/core/index.js",
+                        "coupling_level":  "LOW",
+                        "creator_relevance":  "HIGH",
+                        "tests":  "present",
+                        "risk":  "LOW"
+                    },
+                    {
+                        "reuse_method":  "REFACTOR_BEFORE_REUSE",
+                        "required_refactor":  "decouple from Library Factory Studio entry",
+                        "purpose":  "load verified libraries",
+                        "license":  "repo-local",
+                        "module":  "Sampler Adapter",
+                        "source_path":  "packages/sampler-library-adapter",
+                        "coupling_level":  "MEDIUM",
+                        "creator_relevance":  "MEDIUM",
+                        "risk":  "MEDIUM"
+                    },
+                    {
+                        "reuse_method":  "CONTRACT_ONLY_REUSE",
+                        "required_refactor":  "API contract extract",
+                        "purpose":  "catalog scan",
+                        "license":  "repo-local",
+                        "module":  "Library Catalog",
+                        "source_path":  "packages/owner-library",
+                        "coupling_level":  "MEDIUM",
+                        "creator_relevance":  "LOW",
+                        "risk":  "LOW"
+                    },
+                    {
+                        "reuse_method":  "REFACTOR_BEFORE_REUSE",
+                        "required_refactor":  "UI shell separation",
+                        "purpose":  "audition samples",
+                        "license":  "repo-local",
+                        "module":  "Preview Player",
+                        "source_path":  "packages/preview-player",
+                        "coupling_level":  "MEDIUM",
+                        "creator_relevance":  "MEDIUM",
+                        "risk":  "MEDIUM"
+                    },
+                    {
+                        "reuse_method":  "CONTRACT_ONLY_REUSE",
+                        "required_refactor":  "genericize product names",
+                        "purpose":  "staging/journal/lock",
+                        "license":  "repo-local",
+                        "module":  "Transactional Build Helpers",
+                        "source_path":  "packages/library-build",
+                        "coupling_level":  "HIGH",
+                        "creator_relevance":  "LOW",
+                        "risk":  "MEDIUM"
+                    },
+                    {
+                        "reuse_method":  "REFACTOR_BEFORE_REUSE",
+                        "required_refactor":  "expand beyond thin helper",
+                        "purpose":  "quantize/mic gate",
+                        "license":  "repo-local",
+                        "module":  "Voice to MIDI thin",
+                        "source_path":  "packages/voice-to-midi",
+                        "coupling_level":  "LOW",
+                        "creator_relevance":  "MEDIUM",
+                        "risk":  "HIGH"
+                    },
+                    {
+                        "reuse_method":  "REFACTOR_BEFORE_REUSE",
+                        "required_refactor":  "extract from Arranger shell",
+                        "purpose":  "song structure helpers",
+                        "license":  "repo-local",
+                        "module":  "Golden Core",
+                        "source_path":  "apps/desktop/src/golden-core",
+                        "coupling_level":  "MEDIUM",
+                        "creator_relevance":  "MEDIUM",
+                        "risk":  "MEDIUM"
+                    },
+                    {
+                        "reuse_method":  "DIRECT_REUSE_CANDIDATE",
+                        "required_refactor":  "none",
+                        "purpose":  "audio/midi export",
+                        "license":  "repo-local",
+                        "module":  "Export Hub",
+                        "source_path":  "packages/export-hub",
+                        "coupling_level":  "LOW",
+                        "creator_relevance":  "HIGH",
+                        "risk":  "LOW"
+                    },
+                    {
+                        "reuse_method":  "NOT_REUSABLE",
+                        "required_refactor":  "n/a",
+                        "purpose":  "arranger product UI",
+                        "license":  "repo-local",
+                        "module":  "Arranger Studio UI",
+                        "source_path":  "apps/desktop/src/uaos-live/arranger",
+                        "coupling_level":  "HIGH",
+                        "creator_relevance":  "NONE",
+                        "risk":  "HIGH"
+                    }
+                ]
+}

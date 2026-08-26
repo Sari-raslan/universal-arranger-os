@@ -1,0 +1,38 @@
+{
+  "id": "TASK-08-00967-OPERETTA_PARTICIPATION_TESTS",
+  "epicId": "EPIC-08-0009-SINGY_KIDS_FULL_TREE",
+  "domain": "08-SINGY-KIDS",
+  "title": "Operetta participation tests",
+  "phase": "TEST",
+  "releaseTrain": "R1-STABLE-COMMERCIAL",
+  "state": "READY",
+  "priority": 10,
+  "estimateMinutesMin": 45,
+  "estimateMinutesMax": 180,
+  "inputs": [],
+  "acceptanceCriteria": [
+    "Operetta participation tests contract file exists",
+    "Unit assertions pass for Operetta participation tests",
+    "Evidence JSON written with SHA256"
+  ],
+  "tests": [
+    "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-08-00967-operetta_participation_tests\\tests\\main.test.mjs"
+  ],
+  "evidence": [
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-08-00967-operetta_participation_tests/evidence/result.json"
+  ],
+  "allowedPaths": [
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-08-00967-operetta_participation_tests",
+    "C:\\keyboard-manager-clean\\uaos-agent-factory\\.runtime\\artifacts\\uaos-program-tree\\TASK-08-00967-OPERETTA_PARTICIPATION_TESTS"
+  ],
+  "ownerFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-08-00967-operetta_participation_tests\\src\\operetta_participation_tests.mjs",
+  "worktree": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-08-00967-operetta_participation_tests",
+  "gate": null,
+  "blockedReason": null,
+  "rc1Critical": true,
+  "claims": [],
+  "lease": null,
+  "heartbeats": [],
+  "createdAt": "2026-08-04T20:47:04.335Z",
+  "updatedAt": "2026-08-04T20:49:28.650Z"
+}

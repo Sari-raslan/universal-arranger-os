@@ -1,0 +1,70 @@
+{
+  "ok": true,
+  "status": "PASS",
+  "task": "L-SYN-GENERIC",
+  "lane": "library",
+  "writerAgent": "synthetic-local",
+  "tests": [],
+  "review": {
+    "reviewedAt": "2026-08-14T14:49:13.810Z",
+    "taskId": "L-SYN-GENERIC",
+    "lane": "library",
+    "verdict": "APPROVE",
+    "checks": {
+      "correctness": true,
+      "regression": true,
+      "security": true,
+      "scope": true,
+      "fakeClaims": true,
+      "pathLeaks": true,
+      "licenseContamination": true
+    },
+    "security": {
+      "forbiddenCommands": [],
+      "pathLeaks": [],
+      "secretHits": [],
+      "ok": true
+    },
+    "failedTests": [],
+    "notes": "Deterministic review PASS",
+    "scope": {
+      "ok": true,
+      "changedFiles": [
+        "UAOS_GENERIC_MARKER.txt"
+      ],
+      "allowedPaths": [
+        "UAOS_GENERIC_MARKER.txt"
+      ],
+      "forbiddenPaths": [
+        "node_modules/**"
+      ],
+      "violations": []
+    }
+  },
+  "commit": {
+    "ok": true,
+    "exitCode": 0,
+    "head": "8c2210d114b8c536c0a42ceebae20b91d805d3e5",
+    "stderr": ""
+  },
+  "integrate": {
+    "ok": true,
+    "action": "FAST_FORWARD",
+    "integrationHead": "8c2210d114b8c536c0a42ceebae20b91d805d3e5",
+    "stdout": "Updating 51ce9e3..8c2210d\nFast-forward\n UAOS_GENERIC_MARKER.txt | 1 +\n 1 file changed, 1 insertion(+)\n create mode 100644 UAOS_GENERIC_MARKER.txt",
+    "plan": {
+      "action": "FAST_FORWARD",
+      "ok": true,
+      "integrationHead": "51ce9e379b931a9bd5866fa1dd622baaf4ae1bd0",
+      "taskHead": "8c2210d114b8c536c0a42ceebae20b91d805d3e5",
+      "taskBaseCommit": "51ce9e379b931a9bd5866fa1dd622baaf4ae1bd0"
+    },
+    "rebaseAttempt": null,
+    "integrationWorktree": "C:\\keyboard-manager-clean\\uaos-agent-factory\\state\\build-cache\\synthetic-repos\\iso-2026-08-14T14-49-12-766Z-l-syn-generic\\integration",
+    "integrationBranch": "factory/library-integration",
+    "integrationStatus": "INTEGRATED"
+  },
+  "evidenceDir": "C:\\keyboard-manager-clean\\uaos-agent-factory\\logs\\library\\L-SYN-GENERIC\\marker-test",
+  "artifactDir": "C:\\keyboard-manager-clean\\uaos-agent-factory\\state\\artifacts\\library\\L-SYN-GENERIC-marker",
+  "completedAt": "2026-08-14T14:49:16.398Z"
+}

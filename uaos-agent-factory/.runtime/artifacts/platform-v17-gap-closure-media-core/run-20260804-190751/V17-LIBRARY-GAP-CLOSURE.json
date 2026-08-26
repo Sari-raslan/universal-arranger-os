@@ -1,0 +1,52 @@
+{
+    "ownerAdoptionApprovalRequired":  true,
+    "status":  "LIBRARY_V17_READY_WITH_OWNER_OR_CONTENT_GAPS",
+    "technicalGapsClosed":  5,
+    "gaps":  [
+                 {
+                     "id":  "commercial-rights-review",
+                     "class":  "COMMERCIAL_POLICY_REQUIRED",
+                     "closed":  false
+                 },
+                 {
+                     "id":  "not-commercial-ready",
+                     "class":  "COMMERCIAL_POLICY_REQUIRED",
+                     "closed":  false
+                 },
+                 {
+                     "id":  "empty-v15-patch",
+                     "class":  "ALREADY_CLOSED",
+                     "closed":  true
+                 },
+                 {
+                     "id":  "owner-adoption",
+                     "class":  "OWNER_APPROVAL_REQUIRED",
+                     "closed":  false
+                 },
+                 {
+                     "id":  "stale-lock-recovery",
+                     "class":  "TECHNICAL_SAFE_TO_CLOSE",
+                     "closed":  true
+                 },
+                 {
+                     "id":  "journal-validation",
+                     "class":  "TECHNICAL_SAFE_TO_CLOSE",
+                     "closed":  true
+                 },
+                 {
+                     "id":  "deterministic-manifest",
+                     "class":  "TECHNICAL_SAFE_TO_CLOSE",
+                     "closed":  true
+                 },
+                 {
+                     "id":  "missing-sample-diagnostics",
+                     "class":  "TECHNICAL_SAFE_TO_CLOSE",
+                     "closed":  true
+                 },
+                 {
+                     "id":  "rollback-verification",
+                     "class":  "TECHNICAL_SAFE_TO_CLOSE",
+                     "closed":  true
+                 }
+             ]
+}

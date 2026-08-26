@@ -5,7 +5,7 @@ const { createUmsRouter } = require("./umsRoutes.cjs");
 const { createSetHardwareApiRouter } = require("./routes/setHardwareApi");
 const { createAudioArrangementApiRouter } = require("./routes/audioArrangementApi");
 const { createAudioArrangementMidiApiRouter } = require("./routes/audioArrangementMidiApi");
-const app = express();
+const { createSkuApiRouter } = require("./routes/skuApi.cjs");
 const port = Number(process.env.PORT || 5199);
 const version = "11.2.0-local";
 const productName = "Keyboard Manager";
@@ -1401,9 +1401,7 @@ app.delete("/api/project/:id", (req, res) => {
   return res.json({ ok: true, project: removed });
 });
 
-app.use((req, res) => {
-  res.status(404).json({ ok: false, error: `Unknown endpoint: ${req.method} ${req.path}` });
-});
+app.use("/api/sku", createSkuApiRouter());
 
 app.use((err, _req, res, _next) => {
   console.error(err);

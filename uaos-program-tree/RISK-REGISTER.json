@@ -1,0 +1,41 @@
+{
+  "schema": "uaos.risk-register/v1",
+  "risks": [
+    {
+      "id": "RISK-001",
+      "severity": "HIGH",
+      "title": "Owner decisions block Kids/Teen/Pricing",
+      "mitigation": "Keep OWNER_GATE tasks visible; never auto-approve"
+    },
+    {
+      "id": "RISK-002",
+      "severity": "HIGH",
+      "title": "KORG write unsupported",
+      "mitigation": "Keep WRITE_UNSUPPORTED tasks gated; inspection only in RC1"
+    },
+    {
+      "id": "RISK-003",
+      "severity": "HIGH",
+      "title": "Musical quality unproven",
+      "mitigation": "Technical WAV success != musical quality; keep taste gates"
+    },
+    {
+      "id": "RISK-004",
+      "severity": "MEDIUM",
+      "title": "Realtime DSP not implemented",
+      "mitigation": "Offline render core only until R2"
+    },
+    {
+      "id": "RISK-005",
+      "severity": "CRITICAL",
+      "title": "No fictional content licenses",
+      "mitigation": "Content tasks blocked until real evidence"
+    },
+    {
+      "id": "RISK-006",
+      "severity": "HIGH",
+      "title": "Protected V15-V21 worktrees",
+      "mitigation": "Read-only enforcement in leader"
+    }
+  ]
+}

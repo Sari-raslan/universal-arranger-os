@@ -1,0 +1,35 @@
+{
+  "taskId": "TASK-01-00176-GLOBAL_STOP_CONTRACT_EVIDENCE",
+  "agentId": "NODE_LOCAL_WORKER-0006",
+  "startedAt": "2026-08-04T20:49:32.468Z",
+  "endedAt": "2026-08-04T20:49:32.606Z",
+  "status": "PASS",
+  "tests": [
+    {
+      "command": "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00176-global_stop_contract_evidence\\tests\\main.test.mjs",
+      "exitCode": 0,
+      "stdoutTail": "✔ TASK-01-00176-GLOBAL_STOP_CONTRACT_EVIDENCE verify (0.4872ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 76.4569\n"
+    }
+  ],
+  "sha256": "C65EBED891D28DEEAA9AE91A7044ED6FCD1D382D20B9E63370798B1D4D36A018",
+  "allowedPathsUsed": [
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00176-global_stop_contract_evidence",
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00176-global_stop_contract_evidence\\src\\global_stop_contract_evidence.mjs",
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00176-global_stop_contract_evidence\\tests\\main.test.mjs"
+  ],
+  "truthStatements": [
+    "Technical WAV success does not prove musical quality",
+    "Fixtures are not product content",
+    "Studio Offline Render is not Real-time DSP",
+    "KORG WRITE_UNSUPPORTED",
+    "No auto adoption of Kids/Teen/Pricing",
+    "Commander not activated"
+  ],
+  "ownerFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00176-global_stop_contract_evidence\\src\\global_stop_contract_evidence.mjs",
+  "phase": "EVIDENCE",
+  "gate": null,
+  "noPush": true,
+  "noMerge": true,
+  "noDeploy": true,
+  "commanderActivated": false
+}

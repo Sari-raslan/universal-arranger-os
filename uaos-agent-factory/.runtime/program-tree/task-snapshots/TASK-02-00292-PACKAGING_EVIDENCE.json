@@ -1,0 +1,38 @@
+{
+  "id": "TASK-02-00292-PACKAGING_EVIDENCE",
+  "epicId": "EPIC-02-0003-LIBRARY_FACTORY_FULL_TREE",
+  "domain": "02-LIBRARY-FACTORY",
+  "title": "Packaging evidence",
+  "phase": "EVIDENCE",
+  "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+  "state": "READY",
+  "priority": 10,
+  "estimateMinutesMin": 30,
+  "estimateMinutesMax": 120,
+  "inputs": [],
+  "acceptanceCriteria": [
+    "Packaging evidence contract file exists",
+    "Unit assertions pass for Packaging evidence",
+    "Evidence JSON written with SHA256"
+  ],
+  "tests": [
+    "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-02-00292-packaging_evidence\\tests\\main.test.mjs"
+  ],
+  "evidence": [
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-02-00292-packaging_evidence/evidence/result.json"
+  ],
+  "allowedPaths": [
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-02-00292-packaging_evidence",
+    "C:\\keyboard-manager-clean\\uaos-agent-factory\\.runtime\\artifacts\\uaos-program-tree\\TASK-02-00292-PACKAGING_EVIDENCE"
+  ],
+  "ownerFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-02-00292-packaging_evidence\\src\\packaging_evidence.mjs",
+  "worktree": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-02-00292-packaging_evidence",
+  "gate": null,
+  "blockedReason": null,
+  "rc1Critical": true,
+  "claims": [],
+  "lease": null,
+  "heartbeats": [],
+  "createdAt": "2026-08-04T20:47:04.323Z",
+  "updatedAt": "2026-08-04T20:49:22.085Z"
+}

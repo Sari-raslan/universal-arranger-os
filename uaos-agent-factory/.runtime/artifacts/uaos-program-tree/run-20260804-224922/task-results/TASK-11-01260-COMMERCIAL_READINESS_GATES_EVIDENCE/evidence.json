@@ -1,0 +1,35 @@
+{
+  "taskId": "TASK-11-01260-COMMERCIAL_READINESS_GATES_EVIDENCE",
+  "agentId": "NODE_LOCAL_WORKER-0013",
+  "startedAt": "2026-08-04T20:49:35.724Z",
+  "endedAt": "2026-08-04T20:49:35.847Z",
+  "status": "PASS",
+  "tests": [
+    {
+      "command": "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-11-01260-commercial_readiness_gates_evidence\\tests\\main.test.mjs",
+      "exitCode": 0,
+      "stdoutTail": "✔ TASK-11-01260-COMMERCIAL_READINESS_GATES_EVIDENCE verify (0.5189ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 67.7552\n"
+    }
+  ],
+  "sha256": "6CD616C466837B87AC2F38C6480AE25C586E1C038C9183CCB4C84D5E09413D12",
+  "allowedPathsUsed": [
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-11-01260-commercial_readiness_gates_evidence",
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-11-01260-commercial_readiness_gates_evidence\\src\\commercial_readiness_gates_evide.mjs",
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-11-01260-commercial_readiness_gates_evidence\\tests\\main.test.mjs"
+  ],
+  "truthStatements": [
+    "Technical WAV success does not prove musical quality",
+    "Fixtures are not product content",
+    "Studio Offline Render is not Real-time DSP",
+    "KORG WRITE_UNSUPPORTED",
+    "No auto adoption of Kids/Teen/Pricing",
+    "Commander not activated"
+  ],
+  "ownerFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-11-01260-commercial_readiness_gates_evidence\\src\\commercial_readiness_gates_evide.mjs",
+  "phase": "EVIDENCE",
+  "gate": null,
+  "noPush": true,
+  "noMerge": true,
+  "noDeploy": true,
+  "commanderActivated": false
+}

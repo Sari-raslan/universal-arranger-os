@@ -1,0 +1,35 @@
+{
+    "status":  "LIBRARY_ADOPTION_REVIEW_GATE_PASS_WITH_GAPS",
+    "baseCommit":  "8a149267b5ecaae65d7a9a6c79d94bfd60ec64da",
+    "worktree":  "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-v16-execution\\library-adoption-review",
+    "tests":  [
+                  {
+                      "stdout":  "lib-check-stdout.log",
+                      "exitCode":  0,
+                      "name":  "check"
+                  },
+                  {
+                      "name":  "test:sampler",
+                      "exitCode":  0
+                  },
+                  {
+                      "name":  "test:library-validator",
+                      "exitCode":  0
+                  },
+                  {
+                      "name":  "test:preview-player",
+                      "exitCode":  0
+                  },
+                  {
+                      "name":  "build:desktop",
+                      "exitCode":  0
+                  }
+              ],
+    "gaps":  [
+                 "commercial/rights review still required per validator",
+                 "not commercial ready",
+                 "empty V15 patch — verified clean base commit"
+             ],
+    "ownerAdoptionApprovalRequired":  true,
+    "commercialReady":  false
+}

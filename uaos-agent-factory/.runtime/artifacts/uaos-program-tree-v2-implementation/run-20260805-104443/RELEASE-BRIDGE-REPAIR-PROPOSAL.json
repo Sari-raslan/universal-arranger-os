@@ -1,0 +1,104 @@
+{
+  "generatedAt": "2026-08-05T10:46:14.267Z",
+  "candidateEdgeCount": 6,
+  "candidateEdges": [
+    {
+      "from": "TASK-01-00106-SIGNED_LICENSES_IMPLEMENTATION",
+      "to": "TASK-01-00098-ENTITLEMENTS_IMPLEMENTATION",
+      "type": "BLOCKS",
+      "fromExists": true,
+      "toExists": true,
+      "fromState": "DONE",
+      "toState": "DONE",
+      "isSelfDep": false
+    },
+    {
+      "from": "TASK-01-00066-ATOMIC_SAVE_IMPLEMENTATION",
+      "to": "TASK-01-00099-ENTITLEMENTS_TESTS",
+      "type": "BLOCKS",
+      "fromExists": true,
+      "toExists": true,
+      "fromState": "DONE",
+      "toState": "DONE",
+      "isSelfDep": false
+    },
+    {
+      "from": "TASK-01-00066-ATOMIC_SAVE_IMPLEMENTATION",
+      "to": "TASK-01-00166-EXPORT_IMPORT_USER_DATA_IMPLEMENTATION",
+      "type": "BLOCKS",
+      "fromExists": true,
+      "toExists": true,
+      "fromState": "DONE",
+      "toState": "DONE",
+      "isSelfDep": false
+    },
+    {
+      "from": "TASK-01-00066-ATOMIC_SAVE_IMPLEMENTATION",
+      "to": "TASK-03-00338-INSPECTOR_IMPLEMENTATION",
+      "type": "BLOCKS",
+      "fromExists": true,
+      "toExists": true,
+      "fromState": "DONE",
+      "toState": "DONE",
+      "isSelfDep": false
+    },
+    {
+      "from": "TASK-01-00074-RECOVERY_IMPLEMENTATION",
+      "to": "TASK-03-00338-INSPECTOR_IMPLEMENTATION",
+      "type": "BLOCKS",
+      "fromExists": true,
+      "toExists": true,
+      "fromState": "DONE",
+      "toState": "DONE",
+      "isSelfDep": false
+    },
+    {
+      "from": "TASK-03-00337-INSPECTOR_CONTRACT",
+      "to": "TASK-03-00339-INSPECTOR_TESTS",
+      "type": "BLOCKS",
+      "fromExists": true,
+      "toExists": true,
+      "fromState": "DONE",
+      "toState": "DONE",
+      "isSelfDep": false
+    }
+  ],
+  "evidenceLog": [
+    {
+      "from": "TASK-01-00106-SIGNED_LICENSES_IMPLEMENTATION",
+      "to": "TASK-01-00098-ENTITLEMENTS_IMPLEMENTATION",
+      "evidence": "TASK-01-00098-ENTITLEMENTS_IMPLEMENTATION's ownerFile (entitlements_implementation.mjs) contains a static relative import reaching into task-01-00106-signed_licenses_implementation/src/.",
+      "criterion": "#1 source import"
+    },
+    {
+      "from": "TASK-01-00066-ATOMIC_SAVE_IMPLEMENTATION",
+      "to": "TASK-01-00099-ENTITLEMENTS_TESTS",
+      "evidence": "TASK-01-00099-ENTITLEMENTS_TESTS's ownerFile (entitlements_tests.mjs) contains a static relative import reaching into task-01-00066-atomic_save_implementation/src/.",
+      "criterion": "#1 source import"
+    },
+    {
+      "from": "TASK-01-00066-ATOMIC_SAVE_IMPLEMENTATION",
+      "to": "TASK-01-00166-EXPORT_IMPORT_USER_DATA_IMPLEMENTATION",
+      "evidence": "TASK-01-00166-EXPORT_IMPORT_USER_DATA_IMPLEMENTATION's ownerFile (export_import_user_data_implemen.mjs) contains a static relative import reaching into task-01-00066-atomic_save_implementation/src/.",
+      "criterion": "#1 source import"
+    },
+    {
+      "from": "TASK-01-00066-ATOMIC_SAVE_IMPLEMENTATION",
+      "to": "TASK-03-00338-INSPECTOR_IMPLEMENTATION",
+      "evidence": "TASK-03-00338-INSPECTOR_IMPLEMENTATION's ownerFile (inspector_implementation.mjs) contains a static relative import reaching into task-01-00066-atomic_save_implementation/src/.",
+      "criterion": "#1 source import"
+    },
+    {
+      "from": "TASK-01-00074-RECOVERY_IMPLEMENTATION",
+      "to": "TASK-03-00338-INSPECTOR_IMPLEMENTATION",
+      "evidence": "TASK-03-00338-INSPECTOR_IMPLEMENTATION's ownerFile (inspector_implementation.mjs) contains a static relative import reaching into task-01-00074-recovery_implementation/src/.",
+      "criterion": "#1 source import"
+    },
+    {
+      "from": "TASK-03-00337-INSPECTOR_CONTRACT",
+      "to": "TASK-03-00339-INSPECTOR_TESTS",
+      "evidence": "TASK-03-00339-INSPECTOR_TESTS's ownerFile (inspector_tests.mjs) contains a static relative import reaching into task-03-00337-inspector_contract/src/.",
+      "criterion": "#1 source import"
+    }
+  ]
+}

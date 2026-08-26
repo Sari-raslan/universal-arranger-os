@@ -1,4 +1,4 @@
-# UAOS Style RC Factory V341-V360 Final Seal
+﻿# UAOS Style RC Factory V341-V360 Final Seal
 
 V341-V360 Style RC Factory PASS/FAIL: PASS
 
@@ -30,4 +30,5 @@ Deploy: NO
 
 Payment activation: NO
 
-Commit hash if committed: PENDING
+Commit hash if committed: f532c01f0a69ea848b6c39241021f07ec7d02c0a
+

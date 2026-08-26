@@ -1,0 +1,35 @@
+{
+  "taskId": "TASK-07-00836-RHYTHM_TUTOR_EVIDENCE",
+  "agentId": "NODE_LOCAL_WORKER-0199",
+  "startedAt": "2026-08-04T20:47:51.861Z",
+  "endedAt": "2026-08-04T20:47:51.988Z",
+  "status": "PASS",
+  "tests": [
+    {
+      "command": "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-07-00836-rhythm_tutor_evidence\\tests\\main.test.mjs",
+      "exitCode": 0,
+      "stdoutTail": "✔ TASK-07-00836-RHYTHM_TUTOR_EVIDENCE verify (0.5062ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 71.3591\n"
+    }
+  ],
+  "sha256": "A1B9BB4F43017CB844FCCA0E89FE94B93BFAFA615BFE742C6993288C03B7FD9D",
+  "allowedPathsUsed": [
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-07-00836-rhythm_tutor_evidence",
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-07-00836-rhythm_tutor_evidence\\src\\rhythm_tutor_evidence.mjs",
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-07-00836-rhythm_tutor_evidence\\tests\\main.test.mjs"
+  ],
+  "truthStatements": [
+    "Technical WAV success does not prove musical quality",
+    "Fixtures are not product content",
+    "Studio Offline Render is not Real-time DSP",
+    "KORG WRITE_UNSUPPORTED",
+    "No auto adoption of Kids/Teen/Pricing",
+    "Commander not activated"
+  ],
+  "ownerFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-07-00836-rhythm_tutor_evidence\\src\\rhythm_tutor_evidence.mjs",
+  "phase": "EVIDENCE",
+  "gate": null,
+  "noPush": true,
+  "noMerge": true,
+  "noDeploy": true,
+  "commanderActivated": false
+}

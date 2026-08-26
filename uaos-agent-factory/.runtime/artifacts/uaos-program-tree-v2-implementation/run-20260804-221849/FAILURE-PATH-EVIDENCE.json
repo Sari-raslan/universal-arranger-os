@@ -1,0 +1,94 @@
+{
+  "generatedAt": "2026-08-04T22:35:06.630Z",
+  "method": "Parsed each task's real tests/main.test.mjs for test() titles, then flagged titles that explicitly exercise a failure/rejection/rollback/fault-isolation scenario rather than the happy path.",
+  "totalTests": 51,
+  "totalFailurePathTests": 22,
+  "results": [
+    {
+      "taskId": "TASK-01-00065-ATOMIC_SAVE_CONTRACT",
+      "testFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00065-atomic_save_contract\\tests\\main.test.mjs",
+      "totalTestCount": 8,
+      "failurePathTestCount": 5,
+      "failurePathTestTitles": [
+        "accepts valid options and applies default encoding",
+        "rejects non-object options",
+        "rejects a missing or empty targetPath",
+        "rejects undefined data",
+        "rejects an unsupported encoding"
+      ]
+    },
+    {
+      "taskId": "TASK-01-00066-ATOMIC_SAVE_IMPLEMENTATION",
+      "testFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00066-atomic_save_implementation\\tests\\main.test.mjs",
+      "totalTestCount": 7,
+      "failurePathTestCount": 3,
+      "failurePathTestTitles": [
+        "rejects invalid options via the shared contract validator (propagated, not swallowed)",
+        "failure-path: if the final rename cannot succeed, the temp file is cleaned up and the original target is left untouched",
+        "failure-path: writing into a nonexistent directory fails cleanly with no partial state"
+      ]
+    },
+    {
+      "taskId": "TASK-01-00067-ATOMIC_SAVE_TESTS",
+      "testFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00067-atomic_save_tests\\tests\\main.test.mjs",
+      "totalTestCount": 5,
+      "failurePathTestCount": 1,
+      "failurePathTestTitles": [
+        "failure-path: a mid-burst failure does not corrupt the last successfully-saved content"
+      ]
+    },
+    {
+      "taskId": "TASK-01-00068-ATOMIC_SAVE_EVIDENCE",
+      "testFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00068-atomic_save_evidence\\tests\\main.test.mjs",
+      "totalTestCount": 7,
+      "failurePathTestCount": 1,
+      "failurePathTestTitles": [
+        "a genuinely failing child test file is detected as FAIL, not swallowed as PASS"
+      ]
+    },
+    {
+      "taskId": "TASK-01-00173-GLOBAL_STOP_CONTRACT_CONTRACT",
+      "testFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00173-global_stop_contract_contract\\tests\\main.test.mjs",
+      "totalTestCount": 6,
+      "failurePathTestCount": 4,
+      "failurePathTestTitles": [
+        "rejects non-object options",
+        "rejects a missing or empty name",
+        "rejects a non-function stopFn",
+        "schema documents idempotency and fault-isolation guarantees"
+      ]
+    },
+    {
+      "taskId": "TASK-01-00174-GLOBAL_STOP_CONTRACT_IMPLEMENTATION",
+      "testFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00174-global_stop_contract_implementation\\tests\\main.test.mjs",
+      "totalTestCount": 10,
+      "failurePathTestCount": 6,
+      "failurePathTestTitles": [
+        "a second triggerGlobalStop call is a no-op and does not re-invoke handlers",
+        "a throwing handler does not prevent other handlers from running",
+        "a rejecting async handler is isolated the same way as a throwing sync one",
+        "registering after stop is rejected, not silently ignored",
+        "duplicate registration names are rejected",
+        "invalid registration shapes are rejected by the shared contract validator"
+      ]
+    },
+    {
+      "taskId": "TASK-01-00175-GLOBAL_STOP_CONTRACT_TESTS",
+      "testFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00175-global_stop_contract_tests\\tests\\main.test.mjs",
+      "totalTestCount": 5,
+      "failurePathTestCount": 1,
+      "failurePathTestTitles": [
+        "failure-path: a crashing audio engine does not prevent MIDI and autosave from stopping cleanly"
+      ]
+    },
+    {
+      "taskId": "TASK-01-00176-GLOBAL_STOP_CONTRACT_EVIDENCE",
+      "testFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00176-global_stop_contract_evidence\\tests\\main.test.mjs",
+      "totalTestCount": 3,
+      "failurePathTestCount": 1,
+      "failurePathTestTitles": [
+        "rollback/recovery procedure documents detection, fault isolation, idempotency, and no-resume semantics"
+      ]
+    }
+  ]
+}

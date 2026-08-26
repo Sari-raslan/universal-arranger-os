@@ -1,0 +1,153 @@
+{
+  "generatedAt": "2026-08-16T17:59:34.847Z",
+  "totalFailurePathTests": 63,
+  "results": [
+    {
+      "taskId": "TASK-01-00133-ABOUT_SCREEN_CONTRACT",
+      "totalTestDeclarations": 11,
+      "failurePathTestCount": 8,
+      "failurePathTestTitles": [
+        "MALFORMED: invalid releaseChannel is rejected",
+        "MALFORMED: invalid licenseState (unknown entitlement state) is rejected",
+        "MALFORMED: negative trialDaysRemaining is rejected",
+        "MALFORMED: a capability id present in more than one bucket is rejected",
+        "MALFORMED: licenseExpiry that is not null and not parseable is rejected",
+        "MALFORMED: missing privacy fields is rejected",
+        "MALFORMED: knownLimitations entries must be structured, not bare strings",
+        "validatePreferences accepts a valid locale/theme pair and rejects an invalid one"
+      ]
+    },
+    {
+      "taskId": "TASK-01-00134-ABOUT_SCREEN_IMPLEMENTATION",
+      "totalTestDeclarations": 12,
+      "failurePathTestCount": 6,
+      "failurePathTestTitles": [
+        "FAILURE PATH: wrong-product license (manifest/registry productId mismatch) is rejected",
+        "FAILURE PATH: malformed product manifest is rejected",
+        "FAILURE PATH: unsupported semantic version (major 0) is rejected",
+        "FAILURE PATH: unknown capability lookup is rejected, never silently ignored",
+        "FAILURE PATH: reopening a corrupted runtime state file fails cleanly",
+        "LOCAL PREFERENCES: transactional save/reopen round-trips exactly, and a corrupted preference file fails cleanly"
+      ]
+    },
+    {
+      "taskId": "TASK-01-00135-ABOUT_SCREEN_TESTS",
+      "totalTestDeclarations": 6,
+      "failurePathTestCount": 1,
+      "failurePathTestTitles": [
+        "CROSS-PRODUCT ISOLATION: two products never share a data location or a runtime state on disk"
+      ]
+    },
+    {
+      "taskId": "TASK-01-00136-ABOUT_SCREEN_EVIDENCE",
+      "totalTestDeclarations": 4,
+      "failurePathTestCount": 1,
+      "failurePathTestTitles": [
+        "TEST HARNESS GUARD: zero discovered tests is FAIL"
+      ]
+    },
+    {
+      "taskId": "TASK-11-01257-COMMERCIAL_READINESS_GATES_CONTRACT",
+      "totalTestDeclarations": 8,
+      "failurePathTestCount": 5,
+      "failurePathTestTitles": [
+        "MALFORMED: missing manifestValidation is rejected",
+        "MALFORMED: runtimeTestResult where passed+failed exceeds total is rejected",
+        "MALFORMED: skipped test entry missing severity is rejected",
+        "MALFORMED: missing truthClaims field is rejected",
+        "validateAcceptanceReceipt rejects an invalid verdict and a malformed SHA256"
+      ]
+    },
+    {
+      "taskId": "TASK-11-01258-COMMERCIAL_READINESS_GATES_IMPLEMENTATIO",
+      "totalTestDeclarations": 19,
+      "failurePathTestCount": 15,
+      "failurePathTestTitles": [
+        "a fully valid product bundle resolves PASS with no failures or gaps",
+        "CHECKSUM MISMATCH -> FAIL",
+        "ZERO TESTS -> FAIL",
+        "CRITICAL DATA LOSS -> FAIL",
+        "FIXTURE-ONLY CONTENT -> recorded as a truthful limitation, does not by itself force FAIL",
+        "TECHNICAL WAV CLAIM -> rejected (cannot prove musical quality)",
+        "OFFLINE RENDER / REALTIME DSP CLAIM MISMATCH -> rejected",
+        "KORG WRITE CLAIM -> rejected (KORG WRITE_UNSUPPORTED)",
+        "MISSING NONCRITICAL EVIDENCE -> PARTIAL (missing failure-path evidence with otherwise-passing tests)",
+        "MISSING FAILURE-PATH EVIDENCE ESCALATES TO FAIL when runtime tests are already failing",
+        "DOCUMENTATION CLAIMS PASS DESPITE RUNTIME FAILURE -> FAIL",
+        "CORRUPTED LICENSE INCORRECTLY ACCEPTED -> FAIL",
+        "MISSING EXECUTABLE/LAUNCHER -> FAIL",
+        "EVIDENCE PATH NORMALIZATION: rejects traversal, absolute paths, and drive letters",
+        "FAILURE PATH: decideAcceptance rejects a structurally malformed bundle rather than guessing"
+      ]
+    },
+    {
+      "taskId": "TASK-11-01259-COMMERCIAL_READINESS_GATES_TESTS",
+      "totalTestDeclarations": 6,
+      "failurePathTestCount": 3,
+      "failurePathTestTitles": [
+        "REAL TAMPER DETECTION: a genuinely tampered release package resolves FAIL with a real checksum-derived reason, not a hand-typed one",
+        "MULTIPLE SIMULTANEOUS CRITICAL FAILURES are all reported, not just the first one found",
+        "a real un-tampered package never collides with a real tampered package on receiptSha256"
+      ]
+    },
+    {
+      "taskId": "TASK-11-01260-COMMERCIAL_READINESS_GATES_EVIDENCE",
+      "totalTestDeclarations": 4,
+      "failurePathTestCount": 2,
+      "failurePathTestTitles": [
+        "TEST HARNESS GUARD: zero discovered tests is FAIL",
+        "rollback/recovery procedure documents the no-shortcut-status and fabricated-proof-rejection guarantees"
+      ]
+    },
+    {
+      "taskId": "TASK-08-00981-OFFLINE_LESSONS_CONTRACT",
+      "totalTestDeclarations": 14,
+      "failurePathTestCount": 9,
+      "failurePathTestTitles": [
+        "INVALID LESSON: missing Arabic/German title metadata is rejected",
+        "INVALID LESSON: unsupported age band is rejected",
+        "INVALID LESSON: unknown topic is rejected",
+        "CATALOG: fewer than 10 lessons is rejected",
+        "CATALOG: duplicate lesson ids rejected",
+        "CATALOG: too narrow a topic mix is rejected",
+        "validateParentGateState accepts a valid state and rejects a negative failedAttempts",
+        "validateExerciseAttempt rejects an out-of-bounds or malformed score",
+        "validateProgress rejects an invalid parent-gate state nested inside progress"
+      ]
+    },
+    {
+      "taskId": "TASK-08-00982-OFFLINE_LESSONS_IMPLEMENTATION",
+      "totalTestDeclarations": 23,
+      "failurePathTestCount": 11,
+      "failurePathTestTitles": [
+        "INVALID LESSON LOOKUP: an unknown lesson id is rejected, never silently returning undefined",
+        "PARENT GATE: incorrect answer is rejected and increments failedAttempts",
+        "PARENT GATE: repeated failure locks out for the configured duration without any permanent data loss",
+        "CHILD CANNOT RESET PROGRESS without parent authorization",
+        "EXERCISE SESSION: unsupported age band for a lesson is rejected",
+        "FAILED EXERCISE: a failing score preserves the in-progress session with the attempt recorded, allowing retry",
+        "MALFORMED RESULT REJECTION: an impossible score (out of 0-100 bounds) is rejected before it is ever recorded",
+        "SUBMIT REJECTED for a lesson with no active session",
+        "CORRUPTION RECOVERY: a genuinely corrupted progress file is safely recovered to a fresh progress, never crashing or trusting broken data",
+        "NO AUTOPLAY: an audio cue never starts playing except via an explicit playCue() call",
+        "GLOBAL STOP: triggering global stop halts an active audio cue"
+      ]
+    },
+    {
+      "taskId": "TASK-08-00983-OFFLINE_LESSONS_TESTS",
+      "totalTestDeclarations": 3,
+      "failurePathTestCount": 1,
+      "failurePathTestTitles": [
+        "FULL PIPELINE: catalog -> parent gate -> exercise session -> result validation -> save -> close -> reopen -> restore -> corruption recovery"
+      ]
+    },
+    {
+      "taskId": "TASK-08-00984-OFFLINE_LESSONS_EVIDENCE",
+      "totalTestDeclarations": 4,
+      "failurePathTestCount": 1,
+      "failurePathTestTitles": [
+        "TEST HARNESS GUARD: zero discovered tests is FAIL"
+      ]
+    }
+  ]
+}

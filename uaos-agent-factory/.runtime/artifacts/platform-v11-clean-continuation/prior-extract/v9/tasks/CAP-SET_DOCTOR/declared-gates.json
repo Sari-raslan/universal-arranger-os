@@ -1,0 +1,13 @@
+{
+  "gates": [
+    {
+      "gate": "check",
+      "status": "TEST_FAIL",
+      "command": "npm run check",
+      "script": "node packages/sampler/samplerFoundation.test.cjs && node packages/sampler/voiceLifecycle.p0005.test.cjs && node packages/library-build/transactionalBuild.p0006.test.cjs && node packages/local-preview-server/localServer.p0007.test.cjs && node packages/sampler-library-adapter/samplerLibraryAdapter.local004.test.cjs && node apps/desktop/src/library-status/libraryStatus.local005.test.cjs && node packages/local-support-bundle/localSupportBundle.local006.test.cjs",
+      "exitCode": 1,
+      "durationMs": 463,
+      "timedOut": false
+    }
+  ]
+}

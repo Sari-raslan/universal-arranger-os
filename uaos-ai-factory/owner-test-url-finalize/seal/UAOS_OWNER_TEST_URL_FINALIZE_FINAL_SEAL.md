@@ -1,4 +1,4 @@
-# UAOS Owner Test URL Finalize Final Seal
+﻿# UAOS Owner Test URL Finalize Final Seal
 
 Owner Test URL Finalize: PASS
 
@@ -22,4 +22,5 @@ USB: NO
 
 PA3X: NO
 
-Commit hash if committed: PENDING
+Commit hash if committed: 9def6ae5e5bab4e52bd316c6060804c026bb6913
+

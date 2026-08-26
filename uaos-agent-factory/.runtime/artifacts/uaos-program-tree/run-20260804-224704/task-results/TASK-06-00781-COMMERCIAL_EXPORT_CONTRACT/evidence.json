@@ -1,0 +1,35 @@
+{
+  "taskId": "TASK-06-00781-COMMERCIAL_EXPORT_CONTRACT",
+  "agentId": "NODE_LOCAL_WORKER-0168",
+  "startedAt": "2026-08-04T20:47:11.820Z",
+  "endedAt": "2026-08-04T20:47:11.937Z",
+  "status": "PASS",
+  "tests": [
+    {
+      "command": "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-06-00781-commercial_export_contract\\tests\\main.test.mjs",
+      "exitCode": 0,
+      "stdoutTail": "✔ TASK-06-00781-COMMERCIAL_EXPORT_CONTRACT verify (0.5272ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 63.9952\n"
+    }
+  ],
+  "sha256": "05A9398A250A203A5BB22528168E673869CE2388F152AACECC145D98B4A10852",
+  "allowedPathsUsed": [
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-06-00781-commercial_export_contract",
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-06-00781-commercial_export_contract\\src\\commercial_export_contract.mjs",
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-06-00781-commercial_export_contract\\tests\\main.test.mjs"
+  ],
+  "truthStatements": [
+    "Technical WAV success does not prove musical quality",
+    "Fixtures are not product content",
+    "Studio Offline Render is not Real-time DSP",
+    "KORG WRITE_UNSUPPORTED",
+    "No auto adoption of Kids/Teen/Pricing",
+    "Commander not activated"
+  ],
+  "ownerFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-06-00781-commercial_export_contract\\src\\commercial_export_contract.mjs",
+  "phase": "DEFINE",
+  "gate": null,
+  "noPush": true,
+  "noMerge": true,
+  "noDeploy": true,
+  "commanderActivated": false
+}

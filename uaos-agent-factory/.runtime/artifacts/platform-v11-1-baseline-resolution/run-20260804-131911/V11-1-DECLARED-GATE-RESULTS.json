@@ -1,0 +1,110 @@
+{
+    "worktree":  "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-v11-1-clean\\arranger-library-baseline",
+    "baseline":  "882f6ca695b4c8df6f0f9968b65b5710d0c55346",
+    "missingLocalPackages":  [
+
+                             ],
+    "npmCi":  {
+                  "command":  "npm ci --ignore-scripts --no-audit --no-fund --prefer-offline",
+                  "exitCode":  0
+              },
+    "check":  {
+                  "status":  "DECLARED_GATES_PASS",
+                  "command":  "npm run check",
+                  "exitCode":  0,
+                  "stdoutLog":  "C:\\keyboard-manager-clean\\uaos-agent-factory\\.runtime\\artifacts\\platform-v11-1-baseline-resolution\\run-20260804-131911\\arranger-check.stdout.log",
+                  "stderrLog":  "C:\\keyboard-manager-clean\\uaos-agent-factory\\.runtime\\artifacts\\platform-v11-1-baseline-resolution\\run-20260804-131911\\arranger-check.stderr.log"
+              },
+    "perTask":  [
+                    {
+                        "id":  "CAP-ARRANGER_STUDIO",
+                        "status":  "DECLARED_GATES_PASS",
+                        "repositoryKey":  "ARRANGER_LIBRARY",
+                        "worktree":  "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-v11-1-clean\\arranger-library-baseline",
+                        "baseline":  "882f6ca695b4c8df6f0f9968b65b5710d0c55346",
+                        "sharedMonorepoCheck":  true,
+                        "note":  "Full clean worktree recheck of shared npm run check"
+                    },
+                    {
+                        "id":  "CAP-GENERATE_MY_SET",
+                        "status":  "DECLARED_GATES_PASS",
+                        "repositoryKey":  "ARRANGER_LIBRARY",
+                        "worktree":  "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-v11-1-clean\\arranger-library-baseline",
+                        "baseline":  "882f6ca695b4c8df6f0f9968b65b5710d0c55346",
+                        "sharedMonorepoCheck":  true,
+                        "note":  "Full clean worktree recheck of shared npm run check"
+                    },
+                    {
+                        "id":  "CAP-KEYBOARD_CONVERTERS",
+                        "status":  "DECLARED_GATES_PASS",
+                        "repositoryKey":  "ARRANGER_LIBRARY",
+                        "worktree":  "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-v11-1-clean\\arranger-library-baseline",
+                        "baseline":  "882f6ca695b4c8df6f0f9968b65b5710d0c55346",
+                        "sharedMonorepoCheck":  true,
+                        "note":  "Full clean worktree recheck of shared npm run check"
+                    },
+                    {
+                        "id":  "CAP-MAGIC_SET_BUILDER",
+                        "status":  "DECLARED_GATES_PASS",
+                        "repositoryKey":  "ARRANGER_LIBRARY",
+                        "worktree":  "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-v11-1-clean\\arranger-library-baseline",
+                        "baseline":  "882f6ca695b4c8df6f0f9968b65b5710d0c55346",
+                        "sharedMonorepoCheck":  true,
+                        "note":  "Full clean worktree recheck of shared npm run check"
+                    },
+                    {
+                        "id":  "CAP-SET_DOCTOR",
+                        "status":  "DECLARED_GATES_PASS",
+                        "repositoryKey":  "ARRANGER_LIBRARY",
+                        "worktree":  "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-v11-1-clean\\arranger-library-baseline",
+                        "baseline":  "882f6ca695b4c8df6f0f9968b65b5710d0c55346",
+                        "sharedMonorepoCheck":  true,
+                        "note":  "Full clean worktree recheck of shared npm run check"
+                    },
+                    {
+                        "id":  "CAP-LIBRARY_BUILDER",
+                        "status":  "DECLARED_GATES_PASS",
+                        "repositoryKey":  "ARRANGER_LIBRARY",
+                        "worktree":  "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-v11-1-clean\\arranger-library-baseline",
+                        "baseline":  "882f6ca695b4c8df6f0f9968b65b5710d0c55346",
+                        "sharedMonorepoCheck":  true,
+                        "note":  "Full clean worktree recheck of shared npm run check"
+                    },
+                    {
+                        "id":  "CAP-LIBRARY_CATALOG",
+                        "status":  "DECLARED_GATES_PASS",
+                        "repositoryKey":  "ARRANGER_LIBRARY",
+                        "worktree":  "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-v11-1-clean\\arranger-library-baseline",
+                        "baseline":  "882f6ca695b4c8df6f0f9968b65b5710d0c55346",
+                        "sharedMonorepoCheck":  true,
+                        "note":  "Full clean worktree recheck of shared npm run check"
+                    },
+                    {
+                        "id":  "CAP-LIBRARY_PLAYER",
+                        "status":  "DECLARED_GATES_PASS",
+                        "repositoryKey":  "ARRANGER_LIBRARY",
+                        "worktree":  "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-v11-1-clean\\arranger-library-baseline",
+                        "baseline":  "882f6ca695b4c8df6f0f9968b65b5710d0c55346",
+                        "sharedMonorepoCheck":  true,
+                        "note":  "Full clean worktree recheck of shared npm run check"
+                    },
+                    {
+                        "id":  "CAP-SAMPLER_RUNTIME",
+                        "status":  "DECLARED_GATES_PASS",
+                        "repositoryKey":  "ARRANGER_LIBRARY",
+                        "worktree":  "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-v11-1-clean\\arranger-library-baseline",
+                        "baseline":  "882f6ca695b4c8df6f0f9968b65b5710d0c55346",
+                        "sharedMonorepoCheck":  true,
+                        "note":  "Full clean worktree recheck of shared npm run check"
+                    },
+                    {
+                        "id":  "PRODUCT-SINGY_SAMPLER_PLAYER",
+                        "status":  "DECLARED_GATES_PASS",
+                        "repositoryKey":  "ARRANGER_LIBRARY",
+                        "worktree":  "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-v11-1-clean\\arranger-library-baseline",
+                        "baseline":  "882f6ca695b4c8df6f0f9968b65b5710d0c55346",
+                        "sharedMonorepoCheck":  true,
+                        "note":  "Full clean worktree recheck of shared npm run check"
+                    }
+                ]
+}

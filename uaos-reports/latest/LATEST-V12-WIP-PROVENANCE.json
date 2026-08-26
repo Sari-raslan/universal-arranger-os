@@ -1,0 +1,365 @@
+{
+    "audited":  43,
+    "categoryCounts":  {
+                           "PLATFORM_WEBSITE_SOURCE":  0,
+                           "SINGY_KIDS_SOURCE":  0,
+                           "SINGY_TEEN_SOURCE":  0,
+                           "SHARED_PLATFORM_CONFIG":  6,
+                           "REPORT_OR_EVIDENCE":  30,
+                           "GENERATED_BUILD_ARTIFACT":  0,
+                           "LOCAL_RUNTIME_STATE":  3,
+                           "DOCUMENTATION":  0,
+                           "DEAD_OR_DUPLICATE_CANDIDATE":  2,
+                           "OWNER_WIP_UNKNOWN":  2
+                       },
+    "resolved":  41,
+    "ownerReviewRemaining":  2,
+    "kidsTeenProductProvenInUnknownWip":  false,
+    "websiteEvidencePresent":  true,
+    "items":  [
+                  {
+                      "path":  "backend/data/projects.json",
+                      "category":  "LOCAL_RUNTIME_STATE",
+                      "confidence":  "HIGH",
+                      "likelyProduct":  "runtime",
+                      "recommendedNextAction":  "exclude from product ownership",
+                      "riskIfDiscarded":  "MEDIUM"
+                  },
+                  {
+                      "path":  "uaos-agent-factory/config/factory.json",
+                      "category":  "SHARED_PLATFORM_CONFIG",
+                      "confidence":  "HIGH",
+                      "likelyProduct":  "platform-orchestration",
+                      "recommendedNextAction":  "keep as platform config",
+                      "riskIfDiscarded":  "MEDIUM"
+                  },
+                  {
+                      "path":  "uaos-agent-factory/queues/library.queue.json",
+                      "category":  "LOCAL_RUNTIME_STATE",
+                      "confidence":  "HIGH",
+                      "likelyProduct":  "runtime",
+                      "recommendedNextAction":  "exclude from product ownership",
+                      "riskIfDiscarded":  "MEDIUM"
+                  },
+                  {
+                      "path":  "uaos-agent-factory/scripts/PAUSE_UAOS_FACTORY.cmd",
+                      "category":  "SHARED_PLATFORM_CONFIG",
+                      "confidence":  "HIGH",
+                      "likelyProduct":  "platform-orchestration",
+                      "recommendedNextAction":  "keep as platform config",
+                      "riskIfDiscarded":  "MEDIUM"
+                  },
+                  {
+                      "path":  "uaos-agent-factory/scripts/RESUME_UAOS_FACTORY.cmd",
+                      "category":  "SHARED_PLATFORM_CONFIG",
+                      "confidence":  "HIGH",
+                      "likelyProduct":  "platform-orchestration",
+                      "recommendedNextAction":  "keep as platform config",
+                      "riskIfDiscarded":  "MEDIUM"
+                  },
+                  {
+                      "path":  "uaos-agent-factory/scripts/START_UAOS_FACTORY_AFTER_RESTART.cmd",
+                      "category":  "SHARED_PLATFORM_CONFIG",
+                      "confidence":  "HIGH",
+                      "likelyProduct":  "platform-orchestration",
+                      "recommendedNextAction":  "keep as platform config",
+                      "riskIfDiscarded":  "MEDIUM"
+                  },
+                  {
+                      "path":  "uaos-agent-factory/scripts/STOP_UAOS_FACTORY_SAFE.cmd",
+                      "category":  "SHARED_PLATFORM_CONFIG",
+                      "confidence":  "HIGH",
+                      "likelyProduct":  "platform-orchestration",
+                      "recommendedNextAction":  "keep as platform config",
+                      "riskIfDiscarded":  "MEDIUM"
+                  },
+                  {
+                      "path":  "uaos-ai-factory/deploy-only-release/validators/UAOS_DEPLOY_ONLY_RESULTS.json",
+                      "category":  "REPORT_OR_EVIDENCE",
+                      "confidence":  "HIGH",
+                      "likelyProduct":  "ops/website-evidence",
+                      "recommendedNextAction":  "archive as evidence; not product source",
+                      "riskIfDiscarded":  "LOW"
+                  },
+                  {
+                      "path":  "uaos-ai-factory/git-push-only-release/push-check/UAOS_GIT_PUSH_RESULT.json",
+                      "category":  "REPORT_OR_EVIDENCE",
+                      "confidence":  "HIGH",
+                      "likelyProduct":  "ops/website-evidence",
+                      "recommendedNextAction":  "archive as evidence; not product source",
+                      "riskIfDiscarded":  "LOW"
+                  },
+                  {
+                      "path":  "uaos-ai-factory/git-push-only-release/validators/UAOS_GIT_PUSH_ONLY_RESULTS.json",
+                      "category":  "REPORT_OR_EVIDENCE",
+                      "confidence":  "HIGH",
+                      "likelyProduct":  "ops/website-evidence",
+                      "recommendedNextAction":  "archive as evidence; not product source",
+                      "riskIfDiscarded":  "LOW"
+                  },
+                  {
+                      "path":  "uaos-ai-factory/implementation/local-ci-qa-runner-task-010/UAOS_LOCAL_CI_TASK_010_RESULTS.json",
+                      "category":  "REPORT_OR_EVIDENCE",
+                      "confidence":  "HIGH",
+                      "likelyProduct":  "ops/website-evidence",
+                      "recommendedNextAction":  "archive as evidence; not product source",
+                      "riskIfDiscarded":  "LOW"
+                  },
+                  {
+                      "path":  "uaos-ai-factory/implementation/local-qa-entrypoint-task-011/UAOS_LOCAL_QA_ENTRYPOINT_TASK_011_RESULTS.json",
+                      "category":  "REPORT_OR_EVIDENCE",
+                      "confidence":  "HIGH",
+                      "likelyProduct":  "ops/website-evidence",
+                      "recommendedNextAction":  "archive as evidence; not product source",
+                      "riskIfDiscarded":  "LOW"
+                  },
+                  {
+                      "path":  "uaos-ai-factory/owner-hands-on-test-pass/validators/UAOS_OWNER_HANDS_ON_TEST_RESULTS.json",
+                      "category":  "REPORT_OR_EVIDENCE",
+                      "confidence":  "HIGH",
+                      "likelyProduct":  "ops/website-evidence",
+                      "recommendedNextAction":  "archive as evidence; not product source",
+                      "riskIfDiscarded":  "LOW"
+                  },
+                  {
+                      "path":  "uaos-ai-factory/owner-test-launcher-repair/validators/UAOS_OWNER_TEST_LAUNCHER_REPAIR_RESULTS.json",
+                      "category":  "REPORT_OR_EVIDENCE",
+                      "confidence":  "HIGH",
+                      "likelyProduct":  "ops/website-evidence",
+                      "recommendedNextAction":  "archive as evidence; not product source",
+                      "riskIfDiscarded":  "LOW"
+                  },
+                  {
+                      "path":  "uaos-ai-factory/owner-test-result-capture/validators/UAOS_OWNER_TEST_RESULT_CAPTURE_RESULTS.json",
+                      "category":  "REPORT_OR_EVIDENCE",
+                      "confidence":  "HIGH",
+                      "likelyProduct":  "ops/website-evidence",
+                      "recommendedNextAction":  "archive as evidence; not product source",
+                      "riskIfDiscarded":  "LOW"
+                  },
+                  {
+                      "path":  "uaos-ai-factory/owner-test-setup-automation/01_setup/UAOS_OWNER_TEST_SETUP_STATUS.json",
+                      "category":  "REPORT_OR_EVIDENCE",
+                      "confidence":  "HIGH",
+                      "likelyProduct":  "ops/website-evidence",
+                      "recommendedNextAction":  "archive as evidence; not product source",
+                      "riskIfDiscarded":  "LOW"
+                  },
+                  {
+                      "path":  "uaos-ai-factory/owner-test-ui-cleanup-evidence/validators/UAOS_OWNER_TEST_UI_CLEANUP_RESULTS.json",
+                      "category":  "REPORT_OR_EVIDENCE",
+                      "confidence":  "HIGH",
+                      "likelyProduct":  "ops/website-evidence",
+                      "recommendedNextAction":  "archive as evidence; not product source",
+                      "riskIfDiscarded":  "LOW"
+                  },
+                  {
+                      "path":  "uaos-ai-factory/owner-test-url-finalize/validators/UAOS_OWNER_TEST_URL_FINALIZE_RESULTS.json",
+                      "category":  "REPORT_OR_EVIDENCE",
+                      "confidence":  "HIGH",
+                      "likelyProduct":  "ops/website-evidence",
+                      "recommendedNextAction":  "archive as evidence; not product source",
+                      "riskIfDiscarded":  "LOW"
+                  },
+                  {
+                      "path":  "uaos-ai-factory/pc-workstation/stable/UAOS_PC_WORKSTATION_APP_V10/dsp_planner/analysis_outputs/DSP_BY_CATEGORY_V31.json",
+                      "category":  "REPORT_OR_EVIDENCE",
+                      "confidence":  "HIGH",
+                      "likelyProduct":  "ops/website-evidence",
+                      "recommendedNextAction":  "archive as evidence; not product source",
+                      "riskIfDiscarded":  "LOW"
+                  },
+                  {
+                      "path":  "uaos-ai-factory/pc-workstation/stable/UAOS_PC_WORKSTATION_APP_V10/dsp_planner/analysis_outputs/DSP_UNIFICATION_PLAN_V31.json",
+                      "category":  "REPORT_OR_EVIDENCE",
+                      "confidence":  "HIGH",
+                      "likelyProduct":  "ops/website-evidence",
+                      "recommendedNextAction":  "archive as evidence; not product source",
+                      "riskIfDiscarded":  "LOW"
+                  },
+                  {
+                      "path":  "uaos-ai-factory/pc-workstation/stable/UAOS_PC_WORKSTATION_APP_V10/set_analyzer/analysis_outputs/OWNER_SET_INVENTORY_V31.csv",
+                      "category":  "REPORT_OR_EVIDENCE",
+                      "confidence":  "HIGH",
+                      "likelyProduct":  "ops/website-evidence",
+                      "recommendedNextAction":  "archive as evidence; not product source",
+                      "riskIfDiscarded":  "LOW"
+                  },
+                  {
+                      "path":  "uaos-ai-factory/pc-workstation/stable/UAOS_PC_WORKSTATION_APP_V10/set_analyzer/analysis_outputs/OWNER_SET_INVENTORY_V31.json",
+                      "category":  "REPORT_OR_EVIDENCE",
+                      "confidence":  "HIGH",
+                      "likelyProduct":  "ops/website-evidence",
+                      "recommendedNextAction":  "archive as evidence; not product source",
+                      "riskIfDiscarded":  "LOW"
+                  },
+                  {
+                      "path":  "uaos-ai-factory/push-deploy-approval-gate/validators/UAOS_PUSH_DEPLOY_APPROVAL_GATE_RESULTS.json",
+                      "category":  "REPORT_OR_EVIDENCE",
+                      "confidence":  "HIGH",
+                      "likelyProduct":  "ops/website-evidence",
+                      "recommendedNextAction":  "archive as evidence; not product source",
+                      "riskIfDiscarded":  "LOW"
+                  },
+                  {
+                      "path":  "uaos-ai-factory/react-app-integration-relaxed-mode/validators/UAOS_REACT_APP_INTEGRATION_VALIDATOR_RESULTS.json",
+                      "category":  "REPORT_OR_EVIDENCE",
+                      "confidence":  "HIGH",
+                      "likelyProduct":  "ops/website-evidence",
+                      "recommendedNextAction":  "archive as evidence; not product source",
+                      "riskIfDiscarded":  "LOW"
+                  },
+                  {
+                      "path":  "uaos-ai-factory/react-local-browser-walkthrough/validators/UAOS_LOCAL_BROWSER_WALKTHROUGH_RESULTS.json",
+                      "category":  "REPORT_OR_EVIDENCE",
+                      "confidence":  "HIGH",
+                      "likelyProduct":  "ops/website-evidence",
+                      "recommendedNextAction":  "archive as evidence; not product source",
+                      "riskIfDiscarded":  "LOW"
+                  },
+                  {
+                      "path":  "uaos-ai-factory/react-owner-ui-review-polish/validators/UAOS_OWNER_UI_REVIEW_POLISH_RESULTS.json",
+                      "category":  "REPORT_OR_EVIDENCE",
+                      "confidence":  "HIGH",
+                      "likelyProduct":  "ops/website-evidence",
+                      "recommendedNextAction":  "archive as evidence; not product source",
+                      "riskIfDiscarded":  "LOW"
+                  },
+                  {
+                      "path":  "uaos-ai-factory/real-writer-roadmap-owner-gate/validators/UAOS_REAL_WRITER_ROADMAP_RESULTS.json",
+                      "category":  "REPORT_OR_EVIDENCE",
+                      "confidence":  "HIGH",
+                      "likelyProduct":  "ops/website-evidence",
+                      "recommendedNextAction":  "archive as evidence; not product source",
+                      "riskIfDiscarded":  "LOW"
+                  },
+                  {
+                      "path":  "uaos-ai-factory/sound-library-priority-refinement/validators/UAOS_SOUND_LIBRARY_PRIORITY_REFINEMENT_RESULTS.json",
+                      "category":  "REPORT_OR_EVIDENCE",
+                      "confidence":  "HIGH",
+                      "likelyProduct":  "ops/website-evidence",
+                      "recommendedNextAction":  "archive as evidence; not product source",
+                      "riskIfDiscarded":  "LOW"
+                  },
+                  {
+                      "path":  "uaos-ai-factory/style-rc-deep-ui-integration/validators/UAOS_STYLE_RC_DEEP_UI_RESULTS.json",
+                      "category":  "REPORT_OR_EVIDENCE",
+                      "confidence":  "HIGH",
+                      "likelyProduct":  "ops/website-evidence",
+                      "recommendedNextAction":  "archive as evidence; not product source",
+                      "riskIfDiscarded":  "LOW"
+                  },
+                  {
+                      "path":  "uaos-ai-factory/style-rc-local-browser-qa/validators/UAOS_STYLE_RC_LOCAL_BROWSER_QA_RESULTS.json",
+                      "category":  "REPORT_OR_EVIDENCE",
+                      "confidence":  "HIGH",
+                      "likelyProduct":  "ops/website-evidence",
+                      "recommendedNextAction":  "archive as evidence; not product source",
+                      "riskIfDiscarded":  "LOW"
+                  },
+                  {
+                      "path":  "uaos-ai-factory/uaos-v1501-v1700-final-owner-website-test-programs/logs/RUN_V1703_CONSOLE_DOM_REPAIR_COMPLETE.txt",
+                      "category":  "REPORT_OR_EVIDENCE",
+                      "confidence":  "HIGH",
+                      "likelyProduct":  "ops/website-evidence",
+                      "recommendedNextAction":  "archive as evidence; not product source",
+                      "riskIfDiscarded":  "LOW"
+                  },
+                  {
+                      "path":  "uaos-ai-factory/uaos-v2917-v2966-big-launch-train-24-manual-sales-desk-invoice-disabled-ops-pack/14-git-hygiene/UAOS_V2917_V2966_COMMIT_RESULT.txt",
+                      "category":  "REPORT_OR_EVIDENCE",
+                      "confidence":  "HIGH",
+                      "likelyProduct":  "ops/website-evidence",
+                      "recommendedNextAction":  "archive as evidence; not product source",
+                      "riskIfDiscarded":  "LOW"
+                  },
+                  {
+                      "path":  "uaos-ai-factory/vercel-deploy-link-repair/validators/UAOS_VERCEL_DEPLOY_LINK_REPAIR_RESULTS.json",
+                      "category":  "REPORT_OR_EVIDENCE",
+                      "confidence":  "HIGH",
+                      "likelyProduct":  "ops/website-evidence",
+                      "recommendedNextAction":  "archive as evidence; not product source",
+                      "riskIfDiscarded":  "LOW"
+                  },
+                  {
+                      "path":  "uaos-ai-factory/vercel-deploy-retry-linked/validators/UAOS_VERCEL_DEPLOY_RETRY_LINKED_RESULTS.json",
+                      "category":  "REPORT_OR_EVIDENCE",
+                      "confidence":  "HIGH",
+                      "likelyProduct":  "ops/website-evidence",
+                      "recommendedNextAction":  "archive as evidence; not product source",
+                      "riskIfDiscarded":  "LOW"
+                  },
+                  {
+                      "path":  "uaos-ai-factory/vercel-deploy-retry-slim/validators/UAOS_VERCEL_DEPLOY_RETRY_SLIM_RESULTS.json",
+                      "category":  "REPORT_OR_EVIDENCE",
+                      "confidence":  "HIGH",
+                      "likelyProduct":  "ops/website-evidence",
+                      "recommendedNextAction":  "archive as evidence; not product source",
+                      "riskIfDiscarded":  "LOW"
+                  },
+                  {
+                      "path":  "uaos-ai-factory/vercel-deploy-status-verify/validators/UAOS_VERCEL_DEPLOY_STATUS_VERIFY_RESULTS.json",
+                      "category":  "REPORT_OR_EVIDENCE",
+                      "confidence":  "HIGH",
+                      "likelyProduct":  "ops/website-evidence",
+                      "recommendedNextAction":  "archive as evidence; not product source",
+                      "riskIfDiscarded":  "LOW"
+                  },
+                  {
+                      "path":  "RUN-UAOS-V11-CURSOR-LEADER.cmd",
+                      "category":  "SHARED_PLATFORM_CONFIG",
+                      "confidence":  "HIGH",
+                      "likelyProduct":  "platform-orchestration",
+                      "recommendedNextAction":  "keep as platform config",
+                      "riskIfDiscarded":  "MEDIUM"
+                  },
+                  {
+                      "path":  "desktop-cleanup-archive/",
+                      "category":  "DEAD_OR_DUPLICATE_CANDIDATE",
+                      "confidence":  "HIGH",
+                      "likelyProduct":  "orphan",
+                      "recommendedNextAction":  "quarantine; not Kids/Teen",
+                      "riskIfDiscarded":  "MEDIUM"
+                  },
+                  {
+                      "path":  "uaos-agent-factory/state/",
+                      "category":  "LOCAL_RUNTIME_STATE",
+                      "confidence":  "HIGH",
+                      "likelyProduct":  "runtime",
+                      "recommendedNextAction":  "exclude from product ownership",
+                      "riskIfDiscarded":  "MEDIUM"
+                  },
+                  {
+                      "path":  "uaos-ai-factory/vercel-linked-monitor-repo-sync/",
+                      "category":  "REPORT_OR_EVIDENCE",
+                      "confidence":  "HIGH",
+                      "likelyProduct":  "ops/website-evidence",
+                      "recommendedNextAction":  "archive as evidence; not product source",
+                      "riskIfDiscarded":  "LOW"
+                  },
+                  {
+                      "path":  "uaos-korg-studio/",
+                      "category":  "DEAD_OR_DUPLICATE_CANDIDATE",
+                      "confidence":  "HIGH",
+                      "likelyProduct":  "orphan",
+                      "recommendedNextAction":  "quarantine; not Kids/Teen",
+                      "riskIfDiscarded":  "MEDIUM"
+                  },
+                  {
+                      "path":  "uaos-real-product/",
+                      "category":  "OWNER_WIP_UNKNOWN",
+                      "confidence":  "MEDIUM",
+                      "likelyProduct":  "Arranger/Library",
+                      "recommendedNextAction":  "bucket as Arranger/Library owner WIP (no Kids/Teen label)",
+                      "riskIfDiscarded":  "HIGH"
+                  },
+                  {
+                      "path":  "uaos-worktrees/",
+                      "category":  "OWNER_WIP_UNKNOWN",
+                      "confidence":  "MEDIUM",
+                      "likelyProduct":  "mixed Singy+Arranger worktrees",
+                      "recommendedNextAction":  "split by subtree; Kids vs Teen unproven",
+                      "riskIfDiscarded":  "HIGH"
+                  }
+              ]
+}

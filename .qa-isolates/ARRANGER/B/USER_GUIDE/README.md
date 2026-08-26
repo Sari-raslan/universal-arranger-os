@@ -1,0 +1,1 @@
+# Arranger Studio V14\n\nJourney: Idea → Understand → Arrange → Sequence → Play → Export\nEN/DE/AR with Arabic RTL.\n

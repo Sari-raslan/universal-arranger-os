@@ -1,0 +1,61 @@
+{
+  "schema": "uaos.current-execution-state/v1",
+  "STATUS": "UAOS_PROGRAM_TREE_V2_REAL_IMPLEMENTATION_IN_PROGRESS",
+  "OVERALL": "UAOS_REAL_DONE_32_OF_1604_REAL_READY_313",
+  "at": "2026-08-05T05:47:11.843Z",
+  "domains": 16,
+  "epics": 16,
+  "tasks": 1604,
+  "byState": {
+    "RETRY_READY": 313,
+    "BLOCKED_BY_DEPENDENCY": 1179,
+    "DONE": 32,
+    "OWNER_GATE": 34,
+    "BLOCKED_BY_CONTENT": 12,
+    "BLOCKED_BY_LEGAL": 16,
+    "BLOCKED_BY_FORMAT": 8,
+    "BLOCKED_BY_HARDWARE": 10
+  },
+  "done": 32,
+  "ready": 313,
+  "failed": 0,
+  "blockedPreserved": 1259,
+  "v2TruthAudit": {
+    "priorReportedDone": 1284,
+    "confirmedMarkerOnlyStubs": 1284,
+    "confirmedGenuineImplementations": 0,
+    "method": "full census, not sampling",
+    "evidenceRun": "C:/keyboard-manager-clean/uaos-agent-factory/.runtime/artifacts/uaos-program-tree-v2-claude/run-20260804-213043"
+  },
+  "v2RealImplementation": {
+    "batch1": {
+      "run": "run-20260804-221849",
+      "tasksImplemented": 8,
+      "realAssertions": 49
+    },
+    "batch2": {
+      "run": "run-20260805-050415",
+      "tasksImplemented": 12,
+      "realAssertions": 80
+    },
+    "batch3": {
+      "run": "run-20260805-052616",
+      "tasksImplemented": 12,
+      "realAssertions": 93
+    },
+    "cumulativeRealDone": 32,
+    "cumulativeRealAssertions": 222
+  },
+  "commander": "COMMANDER_INTEGRATION_CONTRACT_READY_NOT_ACTIVATED",
+  "dashboard": "http://127.0.0.1:8787/",
+  "evidenceZip": "C:/keyboard-manager-clean/uaos-agent-factory/.runtime/artifacts/uaos-program-tree/run-20260804-224922/UAOS-PROGRAM-TREE-EVIDENCE-20260804-224936.zip",
+  "evidenceSha256": "4BEB6462B728D44F1804090756630028096AF6A66F6EE5671E32A3C2700727EC",
+  "priorRun": "C:/keyboard-manager-clean/uaos-agent-factory/.runtime/artifacts/uaos-program-tree/run-20260804-224704",
+  "safety": {
+    "push": false,
+    "merge": false,
+    "deploy": false,
+    "priorWorktreesReadOnly": true
+  },
+  "wave": "ACTIVE"
+}

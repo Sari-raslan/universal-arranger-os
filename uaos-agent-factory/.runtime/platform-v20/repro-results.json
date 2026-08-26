@@ -1,0 +1,134 @@
+{
+  "library": {
+    "run1": {
+      "dir": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-v20-review\\integration-reproducibility\\_runs\\library-r1",
+      "fileCount": 5,
+      "treeSha256": "5881BF18268A67725489F0996755794ECC977F3D29AAAEB6C3171D9C006DFB67",
+      "ok": true
+    },
+    "run2": {
+      "dir": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-v20-review\\integration-reproducibility\\_runs\\library-r2",
+      "fileCount": 5,
+      "treeSha256": "98A020B917167FCAF81D6FAFE5C7213E7A9651B5B4BF15678825D12FC6BB8782",
+      "ok": true
+    },
+    "comparison": {
+      "classification": "REPRODUCIBLE_IDENTICAL_SOURCE_TREE",
+      "fileCountA": 5,
+      "fileCountB": 5,
+      "treeShaA": "5881BF18268A67725489F0996755794ECC977F3D29AAAEB6C3171D9C006DFB67",
+      "treeShaB": "98A020B917167FCAF81D6FAFE5C7213E7A9651B5B4BF15678825D12FC6BB8782",
+      "onlyA": [],
+      "onlyB": [],
+      "hashDiff": [],
+      "metaDiff": [
+        {
+          "path": ".uaos-v20/reproduction-receipt.json",
+          "reason": "ALLOWED_RUNTIME_METADATA"
+        }
+      ],
+      "identicalTrees": false
+    },
+    "reviewDir": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-v20-review\\library-review-build",
+    "reviewTreeSha256": "E320A7A5063F33D7F783DD31D2FF9036495D3E56AC2C26D72D97D97441ED7DF2"
+  },
+  "keyboard": {
+    "run1": {
+      "dir": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-v20-review\\integration-reproducibility\\_runs\\keyboard-r1",
+      "fileCount": 17,
+      "treeSha256": "F8503AC72FB8B9083B7B27E11827192EEC9BBAF0E98F9B1C07368BB259F6A51F",
+      "ok": true
+    },
+    "run2": {
+      "dir": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-v20-review\\integration-reproducibility\\_runs\\keyboard-r2",
+      "fileCount": 17,
+      "treeSha256": "B82FA56FCFF56C3CD391892BCD215A75446B45B56C0DDD54CB356CD4A56FD9C6",
+      "ok": true
+    },
+    "comparison": {
+      "classification": "REPRODUCIBLE_IDENTICAL_SOURCE_TREE",
+      "fileCountA": 17,
+      "fileCountB": 17,
+      "treeShaA": "F8503AC72FB8B9083B7B27E11827192EEC9BBAF0E98F9B1C07368BB259F6A51F",
+      "treeShaB": "B82FA56FCFF56C3CD391892BCD215A75446B45B56C0DDD54CB356CD4A56FD9C6",
+      "onlyA": [],
+      "onlyB": [],
+      "hashDiff": [],
+      "metaDiff": [
+        {
+          "path": ".uaos-v20/reproduction-receipt.json",
+          "reason": "ALLOWED_RUNTIME_METADATA"
+        }
+      ],
+      "identicalTrees": false
+    },
+    "reviewDir": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-v20-review\\keyboard-review-build",
+    "reviewTreeSha256": "67F0B844F4B3B844EF07FA43BA1E0C28281E8DC3CEAE36E1046B10BFF272837D"
+  },
+  "creator": {
+    "run1": {
+      "dir": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-v20-review\\integration-reproducibility\\_runs\\creator-r1",
+      "fileCount": 17,
+      "treeSha256": "13F481B4D6B353F430B7DE4089CFA22B2FE01BC75B955698583FA67145E165E2",
+      "ok": true
+    },
+    "run2": {
+      "dir": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-v20-review\\integration-reproducibility\\_runs\\creator-r2",
+      "fileCount": 17,
+      "treeSha256": "814D8CDE4560FD3F5E7F78213478D11C30C3E1220D74FD1B036110D7570126DE",
+      "ok": true
+    },
+    "comparison": {
+      "classification": "REPRODUCIBLE_IDENTICAL_SOURCE_TREE",
+      "fileCountA": 17,
+      "fileCountB": 17,
+      "treeShaA": "13F481B4D6B353F430B7DE4089CFA22B2FE01BC75B955698583FA67145E165E2",
+      "treeShaB": "814D8CDE4560FD3F5E7F78213478D11C30C3E1220D74FD1B036110D7570126DE",
+      "onlyA": [],
+      "onlyB": [],
+      "hashDiff": [],
+      "metaDiff": [
+        {
+          "path": ".uaos-v20/reproduction-receipt.json",
+          "reason": "ALLOWED_RUNTIME_METADATA"
+        }
+      ],
+      "identicalTrees": false
+    },
+    "reviewDir": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-v20-review\\creator-review-build",
+    "reviewTreeSha256": "01C5BF3C8528E35D4CEC7C13BEE642782FDFD45CAE386FED0B62213BE0CE4AB3"
+  },
+  "studio": {
+    "run1": {
+      "dir": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-v20-review\\integration-reproducibility\\_runs\\studio-r1",
+      "fileCount": 19,
+      "treeSha256": "CA83212E9F35345108835A42EC0B461D7D01DC740164A48D7A7213FC7B9A46B2",
+      "ok": true
+    },
+    "run2": {
+      "dir": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-v20-review\\integration-reproducibility\\_runs\\studio-r2",
+      "fileCount": 19,
+      "treeSha256": "8D99BFE3063606B596098854A425CF1CE95E4032F03DF62754241283559962B6",
+      "ok": true
+    },
+    "comparison": {
+      "classification": "REPRODUCIBLE_IDENTICAL_SOURCE_TREE",
+      "fileCountA": 19,
+      "fileCountB": 19,
+      "treeShaA": "CA83212E9F35345108835A42EC0B461D7D01DC740164A48D7A7213FC7B9A46B2",
+      "treeShaB": "8D99BFE3063606B596098854A425CF1CE95E4032F03DF62754241283559962B6",
+      "onlyA": [],
+      "onlyB": [],
+      "hashDiff": [],
+      "metaDiff": [
+        {
+          "path": ".uaos-v20/reproduction-receipt.json",
+          "reason": "ALLOWED_RUNTIME_METADATA"
+        }
+      ],
+      "identicalTrees": false
+    },
+    "reviewDir": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-v20-review\\studio-review-build",
+    "reviewTreeSha256": "3FFC52C4C6B0834A89DF7CEFAC30B0B961E28273A63A281C3B2994CC1A36F541"
+  }
+}

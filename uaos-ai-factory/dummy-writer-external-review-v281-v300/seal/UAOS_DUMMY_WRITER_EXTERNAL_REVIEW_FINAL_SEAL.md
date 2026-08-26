@@ -1,4 +1,4 @@
-# UAOS Dummy Writer External Review Final Seal
+﻿# UAOS Dummy Writer External Review Final Seal
 
 Dummy Writer External Review PASS/FAIL: PASS
 
@@ -32,4 +32,5 @@ PA3X-ready claim: NO
 
 Validator result: PASS
 
-Commit hash if committed: PENDING
+Commit hash if committed: 27dd40971b8d7bb08c3e4e379aadfd4ac808e615
+

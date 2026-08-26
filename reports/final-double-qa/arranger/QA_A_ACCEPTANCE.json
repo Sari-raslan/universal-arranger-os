@@ -1,0 +1,27 @@
+{
+  "schema": "uaos.arranger.qa-a.acceptance/v1",
+  "sku": "ARRANGER",
+  "product": "UAOS Arranger Studio",
+  "checkedAt": "2026-08-26T05:06:47.135Z",
+  "lint": "N/A_NO_ARRANGER_LINT_SCRIPT",
+  "typecheck": "N/A_NO_ARRANGER_TYPECHECK_SCRIPT",
+  "build": "N/A_PORTABLE_CANDIDATE_NO_BUILD_SCRIPT",
+  "targetedAcceptance": {
+    "command": "node --test tests/arranger-studio-sku.test.mjs",
+    "tests": 7,
+    "pass": 7,
+    "fail": 0,
+    "ok": true,
+    "workflows": "20/20",
+    "cleanInstall": true
+  },
+  "laneQa": {
+    "QA_PASS": "YES",
+    "P0": 0,
+    "P1": 0,
+    "checks": 12
+  },
+  "QA_PASS": "YES",
+  "COMMANDER_TOUCHED": false,
+  "PAID_AGENT_SPEND": 0
+}

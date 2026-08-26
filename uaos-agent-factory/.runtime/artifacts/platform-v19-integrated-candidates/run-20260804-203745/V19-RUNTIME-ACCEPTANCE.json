@@ -1,0 +1,673 @@
+{
+    "pass":  4,
+    "fail":  0,
+    "library":  {
+                    "status":  "LIBRARY_V19_INTEGRATED_CANDIDATE_READY_FIXTURE_ONLY",
+                    "secondary":  [
+                                      "LIBRARY_V19_REAL_LICENSED_CONTENT_REQUIRED"
+                                  ],
+                    "assertions":  23,
+                    "pass":  23,
+                    "fail":  0,
+                    "steps":  [
+                                  {
+                                      "name":  "fixture_has_id",
+                                      "ok":  true
+                                  },
+                                  {
+                                      "name":  "commercial_blocked",
+                                      "ok":  true
+                                  },
+                                  {
+                                      "name":  "no_audio_dir",
+                                      "ok":  true
+                                  },
+                                  {
+                                      "name":  "1.create_legal_fixture_metadata_no_audio",
+                                      "ok":  true,
+                                      "phase":  "step"
+                                  },
+                                  {
+                                      "name":  "dry_ok",
+                                      "ok":  true
+                                  },
+                                  {
+                                      "name":  "dry_accepted",
+                                      "ok":  true
+                                  },
+                                  {
+                                      "name":  "dry_manifest",
+                                      "ok":  true
+                                  },
+                                  {
+                                      "name":  "2.dry_run_ingest",
+                                      "ok":  true,
+                                      "phase":  "step"
+                                  },
+                                  {
+                                      "name":  "stage_file",
+                                      "ok":  true
+                                  },
+                                  {
+                                      "name":  "3.transactional_staging",
+                                      "ok":  true,
+                                      "phase":  "step"
+                                  },
+                                  {
+                                      "name":  "validate_ok",
+                                      "ok":  true
+                                  },
+                                  {
+                                      "name":  "license_ok",
+                                      "ok":  true
+                                  },
+                                  {
+                                      "name":  "4.validation",
+                                      "ok":  true,
+                                      "phase":  "step"
+                                  },
+                                  {
+                                      "name":  "bad_rejected",
+                                      "ok":  true
+                                  },
+                                  {
+                                      "name":  "has_reject",
+                                      "ok":  true
+                                  },
+                                  {
+                                      "name":  "5.simulated_failure",
+                                      "ok":  true,
+                                      "phase":  "step"
+                                  },
+                                  {
+                                      "name":  "rolled_back",
+                                      "ok":  true
+                                  },
+                                  {
+                                      "name":  "staging_gone",
+                                      "ok":  true
+                                  },
+                                  {
+                                      "name":  "6.rollback",
+                                      "ok":  true,
+                                      "phase":  "step"
+                                  },
+                                  {
+                                      "name":  "ingest_ok",
+                                      "ok":  true
+                                  },
+                                  {
+                                      "name":  "7.successful_fixture_ingest",
+                                      "ok":  true,
+                                      "phase":  "step"
+                                  },
+                                  {
+                                      "name":  "catalog_count",
+                                      "ok":  true
+                                  },
+                                  {
+                                      "name":  "catalog_id",
+                                      "ok":  true
+                                  },
+                                  {
+                                      "name":  "8.catalog_reopen",
+                                      "ok":  true,
+                                      "phase":  "step"
+                                  },
+                                  {
+                                      "name":  "preview_meta",
+                                      "ok":  true
+                                  },
+                                  {
+                                      "name":  "preview_not_playable",
+                                      "ok":  true
+                                  },
+                                  {
+                                      "name":  "9.preview_player_fixture_check",
+                                      "ok":  true,
+                                      "phase":  "step"
+                                  },
+                                  {
+                                      "name":  "pkg_sha",
+                                      "ok":  true
+                                  },
+                                  {
+                                      "name":  "10.package_manifest_verification",
+                                      "ok":  true,
+                                      "phase":  "step"
+                                  },
+                                  {
+                                      "name":  "stale_recovered",
+                                      "ok":  true
+                                  },
+                                  {
+                                      "name":  "11.restart_process_lock_recovery",
+                                      "ok":  true,
+                                      "phase":  "step"
+                                  },
+                                  {
+                                      "name":  "journal_ok",
+                                      "ok":  true
+                                  },
+                                  {
+                                      "name":  "missing_diag",
+                                      "ok":  true
+                                  },
+                                  {
+                                      "name":  "ledger",
+                                      "ok":  true
+                                  },
+                                  {
+                                      "name":  "12.reopen_resulting_library",
+                                      "ok":  true,
+                                      "phase":  "step"
+                                  }
+                              ],
+                    "packageManifestSha256":  "5ea667f9ec5666429e3b45acf75182c7859c4c45f1dd34a4fe42e31ee741cae1",
+                    "lockOwner":  "pid-24644",
+                    "fixtureOnly":  true,
+                    "realContentClaimed":  false
+                },
+    "keyboard":  {
+                     "status":  "KEYBOARD_PRO_V19_INTEGRATED_INTERNAL_RUNTIME_READY",
+                     "secondary":  [
+                                       "KEYBOARD_PRO_V19_OWNER_FORMAT_CONTRACT_REQUIRED"
+                                   ],
+                     "assertions":  19,
+                     "pass":  19,
+                     "fail":  0,
+                     "steps":  [
+                                   {
+                                       "name":  "opened",
+                                       "ok":  true
+                                   },
+                                   {
+                                       "name":  "has_tracks",
+                                       "ok":  true
+                                   },
+                                   {
+                                       "name":  "1.open_internal_uaos_fixture",
+                                       "ok":  true,
+                                       "phase":  "step"
+                                   },
+                                   {
+                                       "name":  "set_doctor_ok",
+                                       "ok":  true
+                                   },
+                                   {
+                                       "name":  "2.set_doctor",
+                                       "ok":  true,
+                                       "phase":  "step"
+                                   },
+                                   {
+                                       "name":  "magic_draft",
+                                       "ok":  true
+                                   },
+                                   {
+                                       "name":  "3.magic_set_draft",
+                                       "ok":  true,
+                                       "phase":  "step"
+                                   },
+                                   {
+                                       "name":  "inspect",
+                                       "ok":  true
+                                   },
+                                   {
+                                       "name":  "korg_write_blocked",
+                                       "ok":  true
+                                   },
+                                   {
+                                       "name":  "4.converter_inspection",
+                                       "ok":  true,
+                                       "phase":  "step"
+                                   },
+                                   {
+                                       "name":  "dry_prepared",
+                                       "ok":  true
+                                   },
+                                   {
+                                       "name":  "dry_terminal",
+                                       "ok":  true
+                                   },
+                                   {
+                                       "name":  "5.internal_format_dry_run",
+                                       "ok":  true,
+                                       "phase":  "step"
+                                   },
+                                   {
+                                       "name":  "conv_prepared",
+                                       "ok":  true
+                                   },
+                                   {
+                                       "name":  "conv_completed",
+                                       "ok":  true
+                                   },
+                                   {
+                                       "name":  "receipt",
+                                       "ok":  true
+                                   },
+                                   {
+                                       "name":  "6.conversion_to_new_output_dir",
+                                       "ok":  true,
+                                       "phase":  "step"
+                                   },
+                                   {
+                                       "name":  "manifest_sha",
+                                       "ok":  true
+                                   },
+                                   {
+                                       "name":  "7.sha256_manifest",
+                                       "ok":  true,
+                                       "phase":  "step"
+                                   },
+                                   {
+                                       "name":  "reopen_manifest",
+                                       "ok":  true
+                                   },
+                                   {
+                                       "name":  "8.reopen_output",
+                                       "ok":  true,
+                                       "phase":  "step"
+                                   },
+                                   {
+                                       "name":  "cancelled",
+                                       "ok":  true
+                                   },
+                                   {
+                                       "name":  "rollback",
+                                       "ok":  true
+                                   },
+                                   {
+                                       "name":  "9.cancel_rollback",
+                                       "ok":  true,
+                                       "phase":  "step"
+                                   },
+                                   {
+                                       "name":  "crash_point",
+                                       "ok":  true
+                                   },
+                                   {
+                                       "name":  "stale",
+                                       "ok":  true
+                                   },
+                                   {
+                                       "name":  "resumed",
+                                       "ok":  true
+                                   },
+                                   {
+                                       "name":  "10.crash_resume",
+                                       "ok":  true,
+                                       "phase":  "step"
+                                   },
+                                   {
+                                       "name":  "source_immutable",
+                                       "ok":  true
+                                   },
+                                   {
+                                       "name":  "11.source_fixture_unchanged",
+                                       "ok":  true,
+                                       "phase":  "step"
+                                   }
+                               ],
+                     "korgPolicy":  {
+                                        "mode":  "INSPECT_ONLY",
+                                        "write":  "WRITE_UNSUPPORTED",
+                                        "gate":  "OWNER_FORMAT_CONTRACT_REQUIRED"
+                                    },
+                     "sourceHash":  "3e3490ca6bcc9187d80bc1c89385a3014ef65421a227267e1fc1e9fa0459b7f1",
+                     "manifestSha256":  "50b05ff9f887ce1a24a2e121103e35da1ca6d17107e978dbf672cb29babe9c36"
+                 },
+    "creator":  {
+                    "status":  "CREATOR_V19_INTEGRATED_RUNTIME_CANDIDATE_READY",
+                    "secondary":  [
+                                      "CREATOR_V19_MUSICAL_QUALITY_UNPROVEN"
+                                  ],
+                    "claims":  {
+                                   "professionalAutomaticArrangement":  false,
+                                   "humanMusicalTasteProven":  false,
+                                   "advancedHarmonyComplete":  false,
+                                   "musicalBrainComplete":  false,
+                                   "voiceToMidiProductionAccuracy":  false,
+                                   "goldenSequencerCommercialReady":  false
+                               },
+                    "assertions":  22,
+                    "pass":  22,
+                    "fail":  0,
+                    "steps":  [
+                                  {
+                                      "name":  "valid_v2",
+                                      "ok":  true
+                                  },
+                                  {
+                                      "name":  "1.create_project",
+                                      "ok":  true,
+                                      "phase":  "step"
+                                  },
+                                  {
+                                      "name":  "four_roles",
+                                      "ok":  true
+                                  },
+                                  {
+                                      "name":  "2.add_roles",
+                                      "ok":  true,
+                                      "phase":  "step"
+                                  },
+                                  {
+                                      "name":  "note_added",
+                                      "ok":  true
+                                  },
+                                  {
+                                      "name":  "3.add_midi_notes",
+                                      "ok":  true,
+                                      "phase":  "step"
+                                  },
+                                  {
+                                      "name":  "sections",
+                                      "ok":  true
+                                  },
+                                  {
+                                      "name":  "4.add_sections",
+                                      "ok":  true,
+                                      "phase":  "step"
+                                  },
+                                  {
+                                      "name":  "prog_ok",
+                                      "ok":  true
+                                  },
+                                  {
+                                      "name":  "5.chord_progression",
+                                      "ok":  true,
+                                      "phase":  "step"
+                                  },
+                                  {
+                                      "name":  "draft",
+                                      "ok":  true
+                                  },
+                                  {
+                                      "name":  "6.arrangement_draft",
+                                      "ok":  true,
+                                      "phase":  "step"
+                                  },
+                                  {
+                                      "name":  "ordered",
+                                      "ok":  true
+                                  },
+                                  {
+                                      "name":  "foundation_only",
+                                      "ok":  true
+                                  },
+                                  {
+                                      "name":  "7.deterministic_sequence",
+                                      "ok":  true,
+                                      "phase":  "step"
+                                  },
+                                  {
+                                      "name":  "saved",
+                                      "ok":  true
+                                  },
+                                  {
+                                      "name":  "8.save",
+                                      "ok":  true,
+                                      "phase":  "step"
+                                  },
+                                  {
+                                      "name":  "closed",
+                                      "ok":  true
+                                  },
+                                  {
+                                      "name":  "9.close_runtime",
+                                      "ok":  true,
+                                      "phase":  "step"
+                                  },
+                                  {
+                                      "name":  "reopen_valid",
+                                      "ok":  true
+                                  },
+                                  {
+                                      "name":  "10.reopen",
+                                      "ok":  true,
+                                      "phase":  "step"
+                                  },
+                                  {
+                                      "name":  "rt_tracks",
+                                      "ok":  true
+                                  },
+                                  {
+                                      "name":  "rt_notes",
+                                      "ok":  true
+                                  },
+                                  {
+                                      "name":  "rt_seq",
+                                      "ok":  true
+                                  },
+                                  {
+                                      "name":  "11.round_trip",
+                                      "ok":  true,
+                                      "phase":  "step"
+                                  },
+                                  {
+                                      "name":  "edited",
+                                      "ok":  true
+                                  },
+                                  {
+                                      "name":  "undo",
+                                      "ok":  true
+                                  },
+                                  {
+                                      "name":  "redo",
+                                      "ok":  true
+                                  },
+                                  {
+                                      "name":  "12.edit_undo_redo",
+                                      "ok":  true,
+                                      "phase":  "step"
+                                  },
+                                  {
+                                      "name":  "playing",
+                                      "ok":  true
+                                  },
+                                  {
+                                      "name":  "paused",
+                                      "ok":  true
+                                  },
+                                  {
+                                      "name":  "13.transport_transitions",
+                                      "ok":  true,
+                                      "phase":  "step"
+                                  },
+                                  {
+                                      "name":  "stopped",
+                                      "ok":  true
+                                  },
+                                  {
+                                      "name":  "14.global_stop",
+                                      "ok":  true,
+                                      "phase":  "step"
+                                  },
+                                  {
+                                      "name":  "migrated",
+                                      "ok":  true
+                                  },
+                                  {
+                                      "name":  "mig_valid",
+                                      "ok":  true
+                                  },
+                                  {
+                                      "name":  "15.migration_fixture",
+                                      "ok":  true,
+                                      "phase":  "step"
+                                  }
+                              ],
+                    "globalStopVisible":  true
+                },
+    "studio":  {
+                   "status":  "STUDIO_PRO_V19_INTEGRATED_RUNTIME_CANDIDATE_READY",
+                   "secondary":  [
+                                     "STUDIO_PRO_V19_DSP_NOT_IMPLEMENTED"
+                                 ],
+                   "assertions":  18,
+                   "pass":  18,
+                   "fail":  0,
+                   "steps":  [
+                                 {
+                                     "name":  "valid",
+                                     "ok":  true
+                                 },
+                                 {
+                                     "name":  "1.new_project",
+                                     "ok":  true,
+                                     "phase":  "step"
+                                 },
+                                 {
+                                     "name":  "tracks",
+                                     "ok":  true
+                                 },
+                                 {
+                                     "name":  "2.add_audio_midi_tracks",
+                                     "ok":  true,
+                                     "phase":  "step"
+                                 },
+                                 {
+                                     "name":  "clips",
+                                     "ok":  true
+                                 },
+                                 {
+                                     "name":  "3.add_clips",
+                                     "ok":  true,
+                                     "phase":  "step"
+                                 },
+                                 {
+                                     "name":  "split",
+                                     "ok":  true
+                                 },
+                                 {
+                                     "name":  "4.move_split_trim",
+                                     "ok":  true,
+                                     "phase":  "step"
+                                 },
+                                 {
+                                     "name":  "tempo",
+                                     "ok":  true
+                                 },
+                                 {
+                                     "name":  "5.tempo_time_signature",
+                                     "ok":  true,
+                                     "phase":  "step"
+                                 },
+                                 {
+                                     "name":  "channels",
+                                     "ok":  true
+                                 },
+                                 {
+                                     "name":  "6.mixer_routing",
+                                     "ok":  true,
+                                     "phase":  "step"
+                                 },
+                                 {
+                                     "name":  "gain_solo",
+                                     "ok":  true
+                                 },
+                                 {
+                                     "name":  "7.mute_solo_gain_pan",
+                                     "ok":  true,
+                                     "phase":  "step"
+                                 },
+                                 {
+                                     "name":  "scheduled",
+                                     "ok":  true
+                                 },
+                                 {
+                                     "name":  "8.deterministic_scheduler_fixture",
+                                     "ok":  true,
+                                     "phase":  "step"
+                                 },
+                                 {
+                                     "name":  "saved",
+                                     "ok":  true
+                                 },
+                                 {
+                                     "name":  "9.save",
+                                     "ok":  true,
+                                     "phase":  "step"
+                                 },
+                                 {
+                                     "name":  "closed",
+                                     "ok":  true
+                                 },
+                                 {
+                                     "name":  "10.close_runtime",
+                                     "ok":  true,
+                                     "phase":  "step"
+                                 },
+                                 {
+                                     "name":  "reopen",
+                                     "ok":  true
+                                 },
+                                 {
+                                     "name":  "11.reopen",
+                                     "ok":  true,
+                                     "phase":  "step"
+                                 },
+                                 {
+                                     "name":  "timeline",
+                                     "ok":  true
+                                 },
+                                 {
+                                     "name":  "mixer",
+                                     "ok":  true
+                                 },
+                                 {
+                                     "name":  "midi_edit",
+                                     "ok":  true
+                                 },
+                                 {
+                                     "name":  "12.verify_timeline_mixer_edit",
+                                     "ok":  true,
+                                     "phase":  "step"
+                                 },
+                                 {
+                                     "name":  "recovery_status",
+                                     "ok":  true
+                                 },
+                                 {
+                                     "name":  "13.autosave_recovery",
+                                     "ok":  true,
+                                     "phase":  "step"
+                                 },
+                                 {
+                                     "name":  "invalid_route_handled",
+                                     "ok":  true
+                                 },
+                                 {
+                                     "name":  "14.invalid_route_rejection",
+                                     "ok":  true,
+                                     "phase":  "step"
+                                 },
+                                 {
+                                     "name":  "migrated",
+                                     "ok":  true
+                                 },
+                                 {
+                                     "name":  "15.migration_fixture",
+                                     "ok":  true,
+                                     "phase":  "step"
+                                 },
+                                 {
+                                     "name":  "stopped",
+                                     "ok":  true
+                                 },
+                                 {
+                                     "name":  "16.global_stop",
+                                     "ok":  true,
+                                     "phase":  "step"
+                                 }
+                             ],
+                   "claims":  {
+                                  "realTimeDsp":  false,
+                                  "asio":  false,
+                                  "recording":  false,
+                                  "kontakt":  false,
+                                  "commercialDaw":  false
+                              }
+               }
+}

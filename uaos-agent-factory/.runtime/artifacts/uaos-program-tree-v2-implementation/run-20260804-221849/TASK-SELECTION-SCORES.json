@@ -1,0 +1,767 @@
+{
+  "generatedAt": "2026-08-04T22:19:28.846Z",
+  "formula": "unlockScore = transitiveDownstreamCount + rc1CriticalWeight(10 if rc1Critical else 0) + sharedProductWeight(0/1/2 scaled by 5) + commercialImpactWeight(RC1 train +5, shared/orchestration domain +3)",
+  "totalReadyScored": 321,
+  "top40": [
+    {
+      "id": "TASK-02-00197-USER_SUPPLIED_WAV_INGESTION_CONTRACT",
+      "domain": "02-LIBRARY-FACTORY",
+      "epicId": "EPIC-02-0003-LIBRARY_FACTORY_FULL_TREE",
+      "title": "User-supplied WAV ingestion contract",
+      "phase": "DEFINE",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "rc1Critical": true,
+      "directDownstream": 1,
+      "transitiveDownstream": 3,
+      "downstreamDomains": [
+        "02-LIBRARY-FACTORY"
+      ],
+      "sharedProductWeight": 1,
+      "rc1CriticalWeight": 10,
+      "commercialImpactWeight": 5,
+      "unlockScore": 23,
+      "worktree": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-02-00197-user_supplied_wav_ingestion_contract"
+    },
+    {
+      "id": "TASK-02-00201-SOURCE_SCANNING_CONTRACT",
+      "domain": "02-LIBRARY-FACTORY",
+      "epicId": "EPIC-02-0003-LIBRARY_FACTORY_FULL_TREE",
+      "title": "Source scanning contract",
+      "phase": "DEFINE",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "rc1Critical": true,
+      "directDownstream": 1,
+      "transitiveDownstream": 3,
+      "downstreamDomains": [
+        "02-LIBRARY-FACTORY"
+      ],
+      "sharedProductWeight": 1,
+      "rc1CriticalWeight": 10,
+      "commercialImpactWeight": 5,
+      "unlockScore": 23,
+      "worktree": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-02-00201-source_scanning_contract"
+    },
+    {
+      "id": "TASK-02-00205-SHA256_INVENTORY_CONTRACT",
+      "domain": "02-LIBRARY-FACTORY",
+      "epicId": "EPIC-02-0003-LIBRARY_FACTORY_FULL_TREE",
+      "title": "SHA256 inventory contract",
+      "phase": "DEFINE",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "rc1Critical": true,
+      "directDownstream": 1,
+      "transitiveDownstream": 3,
+      "downstreamDomains": [
+        "02-LIBRARY-FACTORY"
+      ],
+      "sharedProductWeight": 1,
+      "rc1CriticalWeight": 10,
+      "commercialImpactWeight": 5,
+      "unlockScore": 23,
+      "worktree": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-02-00205-sha256_inventory_contract"
+    },
+    {
+      "id": "TASK-02-00209-PROVENANCE_CONTRACT",
+      "domain": "02-LIBRARY-FACTORY",
+      "epicId": "EPIC-02-0003-LIBRARY_FACTORY_FULL_TREE",
+      "title": "Provenance contract",
+      "phase": "DEFINE",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "rc1Critical": true,
+      "directDownstream": 1,
+      "transitiveDownstream": 3,
+      "downstreamDomains": [
+        "02-LIBRARY-FACTORY"
+      ],
+      "sharedProductWeight": 1,
+      "rc1CriticalWeight": 10,
+      "commercialImpactWeight": 5,
+      "unlockScore": 23,
+      "worktree": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-02-00209-provenance_contract"
+    },
+    {
+      "id": "TASK-02-00213-LICENSE_LEDGER_CONTRACT",
+      "domain": "02-LIBRARY-FACTORY",
+      "epicId": "EPIC-02-0003-LIBRARY_FACTORY_FULL_TREE",
+      "title": "License ledger contract",
+      "phase": "DEFINE",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "rc1Critical": true,
+      "directDownstream": 1,
+      "transitiveDownstream": 3,
+      "downstreamDomains": [
+        "02-LIBRARY-FACTORY"
+      ],
+      "sharedProductWeight": 1,
+      "rc1CriticalWeight": 10,
+      "commercialImpactWeight": 5,
+      "unlockScore": 23,
+      "worktree": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-02-00213-license_ledger_contract"
+    },
+    {
+      "id": "TASK-02-00217-SAMPLE_MAPPING_CONTRACT",
+      "domain": "02-LIBRARY-FACTORY",
+      "epicId": "EPIC-02-0003-LIBRARY_FACTORY_FULL_TREE",
+      "title": "Sample mapping contract",
+      "phase": "DEFINE",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "rc1Critical": true,
+      "directDownstream": 1,
+      "transitiveDownstream": 3,
+      "downstreamDomains": [
+        "02-LIBRARY-FACTORY"
+      ],
+      "sharedProductWeight": 1,
+      "rc1CriticalWeight": 10,
+      "commercialImpactWeight": 5,
+      "unlockScore": 23,
+      "worktree": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-02-00217-sample_mapping_contract"
+    },
+    {
+      "id": "TASK-02-00221-NOTE_MAPPING_CONTRACT",
+      "domain": "02-LIBRARY-FACTORY",
+      "epicId": "EPIC-02-0003-LIBRARY_FACTORY_FULL_TREE",
+      "title": "Note mapping contract",
+      "phase": "DEFINE",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "rc1Critical": true,
+      "directDownstream": 1,
+      "transitiveDownstream": 3,
+      "downstreamDomains": [
+        "02-LIBRARY-FACTORY"
+      ],
+      "sharedProductWeight": 1,
+      "rc1CriticalWeight": 10,
+      "commercialImpactWeight": 5,
+      "unlockScore": 23,
+      "worktree": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-02-00221-note_mapping_contract"
+    },
+    {
+      "id": "TASK-02-00225-VELOCITY_LAYERS_CONTRACT",
+      "domain": "02-LIBRARY-FACTORY",
+      "epicId": "EPIC-02-0003-LIBRARY_FACTORY_FULL_TREE",
+      "title": "Velocity layers contract",
+      "phase": "DEFINE",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "rc1Critical": true,
+      "directDownstream": 1,
+      "transitiveDownstream": 3,
+      "downstreamDomains": [
+        "02-LIBRARY-FACTORY"
+      ],
+      "sharedProductWeight": 1,
+      "rc1CriticalWeight": 10,
+      "commercialImpactWeight": 5,
+      "unlockScore": 23,
+      "worktree": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-02-00225-velocity_layers_contract"
+    },
+    {
+      "id": "TASK-02-00237-LOOP_METADATA_CONTRACT",
+      "domain": "02-LIBRARY-FACTORY",
+      "epicId": "EPIC-02-0003-LIBRARY_FACTORY_FULL_TREE",
+      "title": "Loop metadata contract",
+      "phase": "DEFINE",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "rc1Critical": true,
+      "directDownstream": 1,
+      "transitiveDownstream": 3,
+      "downstreamDomains": [
+        "02-LIBRARY-FACTORY"
+      ],
+      "sharedProductWeight": 1,
+      "rc1CriticalWeight": 10,
+      "commercialImpactWeight": 5,
+      "unlockScore": 23,
+      "worktree": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-02-00237-loop_metadata_contract"
+    },
+    {
+      "id": "TASK-02-00249-VOICE_LIFECYCLE_CONTRACT",
+      "domain": "02-LIBRARY-FACTORY",
+      "epicId": "EPIC-02-0003-LIBRARY_FACTORY_FULL_TREE",
+      "title": "Voice lifecycle contract",
+      "phase": "DEFINE",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "rc1Critical": true,
+      "directDownstream": 1,
+      "transitiveDownstream": 3,
+      "downstreamDomains": [
+        "02-LIBRARY-FACTORY"
+      ],
+      "sharedProductWeight": 1,
+      "rc1CriticalWeight": 10,
+      "commercialImpactWeight": 5,
+      "unlockScore": 23,
+      "worktree": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-02-00249-voice_lifecycle_contract"
+    },
+    {
+      "id": "TASK-02-00253-SAMPLER_RUNTIME_CONTRACT",
+      "domain": "02-LIBRARY-FACTORY",
+      "epicId": "EPIC-02-0003-LIBRARY_FACTORY_FULL_TREE",
+      "title": "Sampler runtime contract",
+      "phase": "DEFINE",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "rc1Critical": true,
+      "directDownstream": 1,
+      "transitiveDownstream": 3,
+      "downstreamDomains": [
+        "02-LIBRARY-FACTORY"
+      ],
+      "sharedProductWeight": 1,
+      "rc1CriticalWeight": 10,
+      "commercialImpactWeight": 5,
+      "unlockScore": 23,
+      "worktree": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-02-00253-sampler_runtime_contract"
+    },
+    {
+      "id": "TASK-02-00257-PREVIEW_PLAYER_CONTRACT",
+      "domain": "02-LIBRARY-FACTORY",
+      "epicId": "EPIC-02-0003-LIBRARY_FACTORY_FULL_TREE",
+      "title": "Preview player contract",
+      "phase": "DEFINE",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "rc1Critical": true,
+      "directDownstream": 1,
+      "transitiveDownstream": 3,
+      "downstreamDomains": [
+        "02-LIBRARY-FACTORY"
+      ],
+      "sharedProductWeight": 1,
+      "rc1CriticalWeight": 10,
+      "commercialImpactWeight": 5,
+      "unlockScore": 23,
+      "worktree": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-02-00257-preview_player_contract"
+    },
+    {
+      "id": "TASK-02-00261-CATALOG_CONTRACT",
+      "domain": "02-LIBRARY-FACTORY",
+      "epicId": "EPIC-02-0003-LIBRARY_FACTORY_FULL_TREE",
+      "title": "Catalog contract",
+      "phase": "DEFINE",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "rc1Critical": true,
+      "directDownstream": 1,
+      "transitiveDownstream": 3,
+      "downstreamDomains": [
+        "02-LIBRARY-FACTORY"
+      ],
+      "sharedProductWeight": 1,
+      "rc1CriticalWeight": 10,
+      "commercialImpactWeight": 5,
+      "unlockScore": 23,
+      "worktree": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-02-00261-catalog_contract"
+    },
+    {
+      "id": "TASK-02-00265-TRANSACTIONAL_BUILD_CONTRACT",
+      "domain": "02-LIBRARY-FACTORY",
+      "epicId": "EPIC-02-0003-LIBRARY_FACTORY_FULL_TREE",
+      "title": "Transactional build contract",
+      "phase": "DEFINE",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "rc1Critical": true,
+      "directDownstream": 1,
+      "transitiveDownstream": 3,
+      "downstreamDomains": [
+        "02-LIBRARY-FACTORY"
+      ],
+      "sharedProductWeight": 1,
+      "rc1CriticalWeight": 10,
+      "commercialImpactWeight": 5,
+      "unlockScore": 23,
+      "worktree": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-02-00265-transactional_build_contract"
+    },
+    {
+      "id": "TASK-02-00269-STAGING_CONTRACT",
+      "domain": "02-LIBRARY-FACTORY",
+      "epicId": "EPIC-02-0003-LIBRARY_FACTORY_FULL_TREE",
+      "title": "Staging contract",
+      "phase": "DEFINE",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "rc1Critical": true,
+      "directDownstream": 1,
+      "transitiveDownstream": 3,
+      "downstreamDomains": [
+        "02-LIBRARY-FACTORY"
+      ],
+      "sharedProductWeight": 1,
+      "rc1CriticalWeight": 10,
+      "commercialImpactWeight": 5,
+      "unlockScore": 23,
+      "worktree": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-02-00269-staging_contract"
+    },
+    {
+      "id": "TASK-02-00273-ROLLBACK_CONTRACT",
+      "domain": "02-LIBRARY-FACTORY",
+      "epicId": "EPIC-02-0003-LIBRARY_FACTORY_FULL_TREE",
+      "title": "Rollback contract",
+      "phase": "DEFINE",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "rc1Critical": true,
+      "directDownstream": 1,
+      "transitiveDownstream": 3,
+      "downstreamDomains": [
+        "02-LIBRARY-FACTORY"
+      ],
+      "sharedProductWeight": 1,
+      "rc1CriticalWeight": 10,
+      "commercialImpactWeight": 5,
+      "unlockScore": 23,
+      "worktree": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-02-00273-rollback_contract"
+    },
+    {
+      "id": "TASK-02-00277-JOURNAL_CONTRACT",
+      "domain": "02-LIBRARY-FACTORY",
+      "epicId": "EPIC-02-0003-LIBRARY_FACTORY_FULL_TREE",
+      "title": "Journal contract",
+      "phase": "DEFINE",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "rc1Critical": true,
+      "directDownstream": 1,
+      "transitiveDownstream": 3,
+      "downstreamDomains": [
+        "02-LIBRARY-FACTORY"
+      ],
+      "sharedProductWeight": 1,
+      "rc1CriticalWeight": 10,
+      "commercialImpactWeight": 5,
+      "unlockScore": 23,
+      "worktree": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-02-00277-journal_contract"
+    },
+    {
+      "id": "TASK-02-00281-LOCKS_CONTRACT",
+      "domain": "02-LIBRARY-FACTORY",
+      "epicId": "EPIC-02-0003-LIBRARY_FACTORY_FULL_TREE",
+      "title": "Locks contract",
+      "phase": "DEFINE",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "rc1Critical": true,
+      "directDownstream": 1,
+      "transitiveDownstream": 3,
+      "downstreamDomains": [
+        "02-LIBRARY-FACTORY"
+      ],
+      "sharedProductWeight": 1,
+      "rc1CriticalWeight": 10,
+      "commercialImpactWeight": 5,
+      "unlockScore": 23,
+      "worktree": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-02-00281-locks_contract"
+    },
+    {
+      "id": "TASK-02-00285-STALE_RECOVERY_CONTRACT",
+      "domain": "02-LIBRARY-FACTORY",
+      "epicId": "EPIC-02-0003-LIBRARY_FACTORY_FULL_TREE",
+      "title": "Stale recovery contract",
+      "phase": "DEFINE",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "rc1Critical": true,
+      "directDownstream": 1,
+      "transitiveDownstream": 3,
+      "downstreamDomains": [
+        "02-LIBRARY-FACTORY"
+      ],
+      "sharedProductWeight": 1,
+      "rc1CriticalWeight": 10,
+      "commercialImpactWeight": 5,
+      "unlockScore": 23,
+      "worktree": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-02-00285-stale_recovery_contract"
+    },
+    {
+      "id": "TASK-02-00289-PACKAGING_CONTRACT",
+      "domain": "02-LIBRARY-FACTORY",
+      "epicId": "EPIC-02-0003-LIBRARY_FACTORY_FULL_TREE",
+      "title": "Packaging contract",
+      "phase": "DEFINE",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "rc1Critical": true,
+      "directDownstream": 1,
+      "transitiveDownstream": 3,
+      "downstreamDomains": [
+        "02-LIBRARY-FACTORY"
+      ],
+      "sharedProductWeight": 1,
+      "rc1CriticalWeight": 10,
+      "commercialImpactWeight": 5,
+      "unlockScore": 23,
+      "worktree": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-02-00289-packaging_contract"
+    },
+    {
+      "id": "TASK-02-00293-LIBRARY_VALIDATION_CONTRACT",
+      "domain": "02-LIBRARY-FACTORY",
+      "epicId": "EPIC-02-0003-LIBRARY_FACTORY_FULL_TREE",
+      "title": "Library validation contract",
+      "phase": "DEFINE",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "rc1Critical": true,
+      "directDownstream": 1,
+      "transitiveDownstream": 3,
+      "downstreamDomains": [
+        "02-LIBRARY-FACTORY"
+      ],
+      "sharedProductWeight": 1,
+      "rc1CriticalWeight": 10,
+      "commercialImpactWeight": 5,
+      "unlockScore": 23,
+      "worktree": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-02-00293-library_validation_contract"
+    },
+    {
+      "id": "TASK-03-00317-INTERNAL_PROJECT_FORMAT_CONTRACT",
+      "domain": "03-KEYBOARD-PRO",
+      "epicId": "EPIC-03-0004-KEYBOARD_PRO_FULL_TREE",
+      "title": "Internal project format contract",
+      "phase": "DEFINE",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "rc1Critical": true,
+      "directDownstream": 1,
+      "transitiveDownstream": 3,
+      "downstreamDomains": [
+        "03-KEYBOARD-PRO"
+      ],
+      "sharedProductWeight": 1,
+      "rc1CriticalWeight": 10,
+      "commercialImpactWeight": 5,
+      "unlockScore": 23,
+      "worktree": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-03-00317-internal_project_format_contract"
+    },
+    {
+      "id": "TASK-03-00321-SET_DOCTOR_CONTRACT",
+      "domain": "03-KEYBOARD-PRO",
+      "epicId": "EPIC-03-0004-KEYBOARD_PRO_FULL_TREE",
+      "title": "Set Doctor contract",
+      "phase": "DEFINE",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "rc1Critical": true,
+      "directDownstream": 1,
+      "transitiveDownstream": 3,
+      "downstreamDomains": [
+        "03-KEYBOARD-PRO"
+      ],
+      "sharedProductWeight": 1,
+      "rc1CriticalWeight": 10,
+      "commercialImpactWeight": 5,
+      "unlockScore": 23,
+      "worktree": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-03-00321-set_doctor_contract"
+    },
+    {
+      "id": "TASK-03-00325-MAGIC_SET_CONTRACT",
+      "domain": "03-KEYBOARD-PRO",
+      "epicId": "EPIC-03-0004-KEYBOARD_PRO_FULL_TREE",
+      "title": "Magic Set contract",
+      "phase": "DEFINE",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "rc1Critical": true,
+      "directDownstream": 1,
+      "transitiveDownstream": 3,
+      "downstreamDomains": [
+        "03-KEYBOARD-PRO"
+      ],
+      "sharedProductWeight": 1,
+      "rc1CriticalWeight": 10,
+      "commercialImpactWeight": 5,
+      "unlockScore": 23,
+      "worktree": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-03-00325-magic_set_contract"
+    },
+    {
+      "id": "TASK-03-00329-GENERATE_MY_SET_CONTRACT",
+      "domain": "03-KEYBOARD-PRO",
+      "epicId": "EPIC-03-0004-KEYBOARD_PRO_FULL_TREE",
+      "title": "Generate My Set contract",
+      "phase": "DEFINE",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "rc1Critical": true,
+      "directDownstream": 1,
+      "transitiveDownstream": 3,
+      "downstreamDomains": [
+        "03-KEYBOARD-PRO"
+      ],
+      "sharedProductWeight": 1,
+      "rc1CriticalWeight": 10,
+      "commercialImpactWeight": 5,
+      "unlockScore": 23,
+      "worktree": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-03-00329-generate_my_set_contract"
+    },
+    {
+      "id": "TASK-03-00333-CATALOG_CONTRACT",
+      "domain": "03-KEYBOARD-PRO",
+      "epicId": "EPIC-03-0004-KEYBOARD_PRO_FULL_TREE",
+      "title": "Catalog contract",
+      "phase": "DEFINE",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "rc1Critical": true,
+      "directDownstream": 1,
+      "transitiveDownstream": 3,
+      "downstreamDomains": [
+        "03-KEYBOARD-PRO"
+      ],
+      "sharedProductWeight": 1,
+      "rc1CriticalWeight": 10,
+      "commercialImpactWeight": 5,
+      "unlockScore": 23,
+      "worktree": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-03-00333-catalog_contract"
+    },
+    {
+      "id": "TASK-03-00337-INSPECTOR_CONTRACT",
+      "domain": "03-KEYBOARD-PRO",
+      "epicId": "EPIC-03-0004-KEYBOARD_PRO_FULL_TREE",
+      "title": "Inspector contract",
+      "phase": "DEFINE",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "rc1Critical": true,
+      "directDownstream": 1,
+      "transitiveDownstream": 3,
+      "downstreamDomains": [
+        "03-KEYBOARD-PRO"
+      ],
+      "sharedProductWeight": 1,
+      "rc1CriticalWeight": 10,
+      "commercialImpactWeight": 5,
+      "unlockScore": 23,
+      "worktree": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-03-00337-inspector_contract"
+    },
+    {
+      "id": "TASK-03-00341-PREVIEW_CONTRACT",
+      "domain": "03-KEYBOARD-PRO",
+      "epicId": "EPIC-03-0004-KEYBOARD_PRO_FULL_TREE",
+      "title": "Preview contract",
+      "phase": "DEFINE",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "rc1Critical": true,
+      "directDownstream": 1,
+      "transitiveDownstream": 3,
+      "downstreamDomains": [
+        "03-KEYBOARD-PRO"
+      ],
+      "sharedProductWeight": 1,
+      "rc1CriticalWeight": 10,
+      "commercialImpactWeight": 5,
+      "unlockScore": 23,
+      "worktree": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-03-00341-preview_contract"
+    },
+    {
+      "id": "TASK-03-00345-MEDIA_REFERENCES_CONTRACT",
+      "domain": "03-KEYBOARD-PRO",
+      "epicId": "EPIC-03-0004-KEYBOARD_PRO_FULL_TREE",
+      "title": "Media references contract",
+      "phase": "DEFINE",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "rc1Critical": true,
+      "directDownstream": 1,
+      "transitiveDownstream": 3,
+      "downstreamDomains": [
+        "03-KEYBOARD-PRO"
+      ],
+      "sharedProductWeight": 1,
+      "rc1CriticalWeight": 10,
+      "commercialImpactWeight": 5,
+      "unlockScore": 23,
+      "worktree": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-03-00345-media_references_contract"
+    },
+    {
+      "id": "TASK-03-00349-MIGRATION_CONTRACT",
+      "domain": "03-KEYBOARD-PRO",
+      "epicId": "EPIC-03-0004-KEYBOARD_PRO_FULL_TREE",
+      "title": "Migration contract",
+      "phase": "DEFINE",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "rc1Critical": true,
+      "directDownstream": 1,
+      "transitiveDownstream": 3,
+      "downstreamDomains": [
+        "03-KEYBOARD-PRO"
+      ],
+      "sharedProductWeight": 1,
+      "rc1CriticalWeight": 10,
+      "commercialImpactWeight": 5,
+      "unlockScore": 23,
+      "worktree": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-03-00349-migration_contract"
+    },
+    {
+      "id": "TASK-03-00353-VALIDATION_CONTRACT",
+      "domain": "03-KEYBOARD-PRO",
+      "epicId": "EPIC-03-0004-KEYBOARD_PRO_FULL_TREE",
+      "title": "Validation contract",
+      "phase": "DEFINE",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "rc1Critical": true,
+      "directDownstream": 1,
+      "transitiveDownstream": 3,
+      "downstreamDomains": [
+        "03-KEYBOARD-PRO"
+      ],
+      "sharedProductWeight": 1,
+      "rc1CriticalWeight": 10,
+      "commercialImpactWeight": 5,
+      "unlockScore": 23,
+      "worktree": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-03-00353-validation_contract"
+    },
+    {
+      "id": "TASK-03-00357-ERROR_RECOVERY_CONTRACT",
+      "domain": "03-KEYBOARD-PRO",
+      "epicId": "EPIC-03-0004-KEYBOARD_PRO_FULL_TREE",
+      "title": "Error recovery contract",
+      "phase": "DEFINE",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "rc1Critical": true,
+      "directDownstream": 1,
+      "transitiveDownstream": 3,
+      "downstreamDomains": [
+        "03-KEYBOARD-PRO"
+      ],
+      "sharedProductWeight": 1,
+      "rc1CriticalWeight": 10,
+      "commercialImpactWeight": 5,
+      "unlockScore": 23,
+      "worktree": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-03-00357-error_recovery_contract"
+    },
+    {
+      "id": "TASK-03-00361-FORMAT_CAPABILITY_REGISTRY_CONTRACT",
+      "domain": "03-KEYBOARD-PRO",
+      "epicId": "EPIC-03-0004-KEYBOARD_PRO_FULL_TREE",
+      "title": "Format capability registry contract",
+      "phase": "DEFINE",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "rc1Critical": true,
+      "directDownstream": 1,
+      "transitiveDownstream": 3,
+      "downstreamDomains": [
+        "03-KEYBOARD-PRO"
+      ],
+      "sharedProductWeight": 1,
+      "rc1CriticalWeight": 10,
+      "commercialImpactWeight": 5,
+      "unlockScore": 23,
+      "worktree": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-03-00361-format_capability_registry_contract"
+    },
+    {
+      "id": "TASK-03-00365-KORG_INSPECTION_CONTRACT",
+      "domain": "03-KEYBOARD-PRO",
+      "epicId": "EPIC-03-0004-KEYBOARD_PRO_FULL_TREE",
+      "title": "KORG inspection contract",
+      "phase": "DEFINE",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "rc1Critical": true,
+      "directDownstream": 1,
+      "transitiveDownstream": 3,
+      "downstreamDomains": [
+        "03-KEYBOARD-PRO"
+      ],
+      "sharedProductWeight": 1,
+      "rc1CriticalWeight": 10,
+      "commercialImpactWeight": 5,
+      "unlockScore": 23,
+      "worktree": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-03-00365-korg_inspection_contract"
+    },
+    {
+      "id": "TASK-03-00381-INTERNAL_CONVERSION_CONTRACT",
+      "domain": "03-KEYBOARD-PRO",
+      "epicId": "EPIC-03-0004-KEYBOARD_PRO_FULL_TREE",
+      "title": "Internal conversion contract",
+      "phase": "DEFINE",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "rc1Critical": true,
+      "directDownstream": 1,
+      "transitiveDownstream": 3,
+      "downstreamDomains": [
+        "03-KEYBOARD-PRO"
+      ],
+      "sharedProductWeight": 1,
+      "rc1CriticalWeight": 10,
+      "commercialImpactWeight": 5,
+      "unlockScore": 23,
+      "worktree": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-03-00381-internal_conversion_contract"
+    },
+    {
+      "id": "TASK-03-00385-MAPPING_PLANS_CONTRACT",
+      "domain": "03-KEYBOARD-PRO",
+      "epicId": "EPIC-03-0004-KEYBOARD_PRO_FULL_TREE",
+      "title": "Mapping plans contract",
+      "phase": "DEFINE",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "rc1Critical": true,
+      "directDownstream": 1,
+      "transitiveDownstream": 3,
+      "downstreamDomains": [
+        "03-KEYBOARD-PRO"
+      ],
+      "sharedProductWeight": 1,
+      "rc1CriticalWeight": 10,
+      "commercialImpactWeight": 5,
+      "unlockScore": 23,
+      "worktree": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-03-00385-mapping_plans_contract"
+    },
+    {
+      "id": "TASK-03-00389-CONVERSION_RECEIPTS_CONTRACT",
+      "domain": "03-KEYBOARD-PRO",
+      "epicId": "EPIC-03-0004-KEYBOARD_PRO_FULL_TREE",
+      "title": "Conversion receipts contract",
+      "phase": "DEFINE",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "rc1Critical": true,
+      "directDownstream": 1,
+      "transitiveDownstream": 3,
+      "downstreamDomains": [
+        "03-KEYBOARD-PRO"
+      ],
+      "sharedProductWeight": 1,
+      "rc1CriticalWeight": 10,
+      "commercialImpactWeight": 5,
+      "unlockScore": 23,
+      "worktree": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-03-00389-conversion_receipts_contract"
+    },
+    {
+      "id": "TASK-03-00393-TRANSACTIONAL_OUTPUT_CONTRACT",
+      "domain": "03-KEYBOARD-PRO",
+      "epicId": "EPIC-03-0004-KEYBOARD_PRO_FULL_TREE",
+      "title": "Transactional output contract",
+      "phase": "DEFINE",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "rc1Critical": true,
+      "directDownstream": 1,
+      "transitiveDownstream": 3,
+      "downstreamDomains": [
+        "03-KEYBOARD-PRO"
+      ],
+      "sharedProductWeight": 1,
+      "rc1CriticalWeight": 10,
+      "commercialImpactWeight": 5,
+      "unlockScore": 23,
+      "worktree": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-03-00393-transactional_output_contract"
+    },
+    {
+      "id": "TASK-03-00397-RESUME_RECOVERY_CONTRACT",
+      "domain": "03-KEYBOARD-PRO",
+      "epicId": "EPIC-03-0004-KEYBOARD_PRO_FULL_TREE",
+      "title": "Resume recovery contract",
+      "phase": "DEFINE",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "rc1Critical": true,
+      "directDownstream": 1,
+      "transitiveDownstream": 3,
+      "downstreamDomains": [
+        "03-KEYBOARD-PRO"
+      ],
+      "sharedProductWeight": 1,
+      "rc1CriticalWeight": 10,
+      "commercialImpactWeight": 5,
+      "unlockScore": 23,
+      "worktree": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-03-00397-resume_recovery_contract"
+    },
+    {
+      "id": "TASK-04-00429-INPUT_DETECTION_CONTRACT",
+      "domain": "04-KEYBOARD-CONVERTERS",
+      "epicId": "EPIC-04-0005-KEYBOARD_CONVERTERS_FULL_TREE",
+      "title": "Input detection contract",
+      "phase": "DEFINE",
+      "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+      "rc1Critical": true,
+      "directDownstream": 1,
+      "transitiveDownstream": 3,
+      "downstreamDomains": [
+        "04-KEYBOARD-CONVERTERS"
+      ],
+      "sharedProductWeight": 1,
+      "rc1CriticalWeight": 10,
+      "commercialImpactWeight": 5,
+      "unlockScore": 23,
+      "worktree": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-04-00429-input_detection_contract"
+    }
+  ]
+}

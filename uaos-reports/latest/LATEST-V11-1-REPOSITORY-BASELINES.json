@@ -1,0 +1,78 @@
+{
+    "PLATFORM":  {
+                     "path":  "C:\\keyboard-manager-clean",
+                     "branch":  "website/singy-kids-teen-launch-prep",
+                     "head":  "2c5ef5219e44b8066d1d42e9109107d6971c87b5",
+                     "baselineSelected":  "2c5ef5219e44b8066d1d42e9109107d6971c87b5",
+                     "baselineState":  "VERIFIED_CURRENT_COMMITTED_HEAD",
+                     "selectionReason":  "PLATFORM_BASELINE_CURRENT_COMMITTED_HEAD; 6cde73d not applicable",
+                     "evidenceSource":  "local git HEAD + cat-file",
+                     "dirtyCount":  121,
+                     "statusSha256":  "2fb60c29e8be4f2d91d1a3d2bf3aa8bfcec584a514475076a70b4c1cc8303c12",
+                     "workingTreePolicy":  "READ_ONLY_DIRTY_ALLOWED",
+                     "allowedTaskFamilies":  [
+                                                 "WEBSITE",
+                                                 "PLATFORM_CONFIG",
+                                                 "REPORTING",
+                                                 "ORCHESTRATION"
+                                             ],
+                     "sixCde73dUsed":  false
+                 },
+    "SINGY":  {
+                  "path":  "C:\\keyboard-manager-clean\\uaos-worktrees\\uaos-singy-final-product",
+                  "branch":  "uaos-singy-final-product",
+                  "head":  "01f792417da3b782abb0b2394e8eebda0472bde2",
+                  "baselineSelected":  "01f792417da3b782abb0b2394e8eebda0472bde2",
+                  "baselineState":  "VERIFIED_EVIDENCE_BASELINE",
+                  "selectionReason":  "preferredEvidenceHead 01f7924 verified present",
+                  "evidenceSource":  "owner preferredEvidenceHead",
+                  "dirtyCount":  25,
+                  "statusSha256":  "c47accb04c6f1e925d5d6fd7a36073189956c1e17488a50a0b64b21d8ee4454c",
+                  "workingTreePolicy":  "READ_ONLY",
+                  "allowedTaskFamilies":  [
+                                              "SINGY_CAPABILITIES"
+                                          ],
+                  "sixCde73dUsed":  false
+              },
+    "ARRANGER_LIBRARY":  {
+                             "path":  "C:\\keyboard-manager-clean\\uaos-real-product",
+                             "branch":  "uaos-full-interaction-rebuild-v1",
+                             "head":  "882f6ca695b4c8df6f0f9968b65b5710d0c55346",
+                             "baselineSelected":  "882f6ca695b4c8df6f0f9968b65b5710d0c55346",
+                             "baselineState":  "VERIFIED_EVIDENCE_BASELINE",
+                             "selectionReason":  "preferredEvidenceHead 882f6ca verified for clean full worktrees",
+                             "evidenceSource":  "owner preferredEvidenceHead + local cat-file",
+                             "dirtyCount":  346,
+                             "statusSha256":  "327122ccdc4c3e4daf410d381ac987a307222aec3208bae217db02048c509c63",
+                             "workingTreePolicy":  "READ_ONLY",
+                             "allowedTaskFamilies":  [
+                                                         "ARRANGER",
+                                                         "KEYBOARD",
+                                                         "LIBRARY",
+                                                         "SAMPLER"
+                                                     ],
+                             "priorSparseArrangerHead":  "415db5123bf6f1851cca284f92fb8e3478ffd967",
+                             "priorSparseArrangerPresent":  true,
+                             "priorSparseLibraryHead":  "7f845c4a5d1483317161ea1e00a64b36ea739c69",
+                             "priorSparseLibraryPresent":  true,
+                             "sixCde73dUsed":  false
+                         },
+    "COMMANDER":  {
+                      "path":  "C:\\Users\\ssare\\Desktop\\UAOS Commander",
+                      "branch":  "master",
+                      "head":  "6c525e68675b1ad0bb5b31a0bbe5ad99dac3b75e",
+                      "baselineSelected":  "6cde73d1fcdcf90bd86d76768dd96614d985f642",
+                      "baselineState":  "VERIFIED_EVIDENCE_BASELINE",
+                      "selectionReason":  "preferredEvidenceHead 6cde73d verified in Commander ONLY",
+                      "evidenceSource":  "Commander chat-only hard-gate closure",
+                      "dirtyCount":  5,
+                      "statusSha256":  "362d5ee781c433481a1fb88565c8cfe0636499ffec20e81651f9720da9c3d8ae",
+                      "workingTreePolicy":  "READ_ONLY_DIRTY_ALLOWED",
+                      "allowedTaskFamilies":  [
+                                                  "COMMANDER_ONLY"
+                                              ],
+                      "scope":  "COMMANDER_ONLY",
+                      "currentHeadDiffersFromBaseline":  true,
+                      "sixCde73dUsedForOtherRepos":  false
+                  }
+}

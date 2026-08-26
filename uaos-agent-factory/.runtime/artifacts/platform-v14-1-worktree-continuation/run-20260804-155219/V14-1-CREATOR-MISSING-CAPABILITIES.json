@@ -1,0 +1,37 @@
+{
+    "product":  "Creator",
+    "status":  "PARTIAL_REUSE_ONLY",
+    "doNotTreatLibraryAsFullCreator":  true,
+    "reusable":  [
+                     "project contracts",
+                     "audio/MIDI contracts",
+                     "sampler adapter",
+                     "evidence helpers",
+                     "locking/journal helpers",
+                     "preview components"
+                 ],
+    "missingCapabilities":  [
+                                {
+                                    "status":  "MISSING",
+                                    "id":  "CREATOR_SHELL",
+                                    "note":  "No dedicated Creator product shell"
+                                },
+                                {
+                                    "id":  "CREATOR_PROJECT_UX",
+                                    "status":  "MISSING"
+                                },
+                                {
+                                    "id":  "CREATOR_EXPORT_PIPELINE",
+                                    "status":  "PARTIAL"
+                                },
+                                {
+                                    "id":  "CREATOR_MARKETPLACE_PUBLISH",
+                                    "status":  "MISSING"
+                                },
+                                {
+                                    "id":  "CREATOR_FULL_AUTHORING_SURFACE",
+                                    "status":  "MISSING"
+                                }
+                            ],
+    "nextSafeAction":  "Extract reuse units only; do not greenfield-claim Creator complete"
+}

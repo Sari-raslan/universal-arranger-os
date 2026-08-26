@@ -1,0 +1,35 @@
+{
+  "taskId": "TASK-11-01204-CHECKOUT_PREPARATION_EVIDENCE",
+  "agentId": "NODE_LOCAL_WORKER-0149",
+  "startedAt": "2026-08-04T20:47:49.759Z",
+  "endedAt": "2026-08-04T20:47:49.874Z",
+  "status": "PASS",
+  "tests": [
+    {
+      "command": "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-11-01204-checkout_preparation_evidence\\tests\\main.test.mjs",
+      "exitCode": 0,
+      "stdoutTail": "✔ TASK-11-01204-CHECKOUT_PREPARATION_EVIDENCE verify (0.5414ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 62.5632\n"
+    }
+  ],
+  "sha256": "DDE600BECA9EB1FA40A744BA3380B1CBEB6AA348DCBDB513566ECA8D99AAB18B",
+  "allowedPathsUsed": [
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-11-01204-checkout_preparation_evidence",
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-11-01204-checkout_preparation_evidence\\src\\checkout_preparation_evidence.mjs",
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-11-01204-checkout_preparation_evidence\\tests\\main.test.mjs"
+  ],
+  "truthStatements": [
+    "Technical WAV success does not prove musical quality",
+    "Fixtures are not product content",
+    "Studio Offline Render is not Real-time DSP",
+    "KORG WRITE_UNSUPPORTED",
+    "No auto adoption of Kids/Teen/Pricing",
+    "Commander not activated"
+  ],
+  "ownerFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-11-01204-checkout_preparation_evidence\\src\\checkout_preparation_evidence.mjs",
+  "phase": "EVIDENCE",
+  "gate": null,
+  "noPush": true,
+  "noMerge": true,
+  "noDeploy": true,
+  "commanderActivated": false
+}

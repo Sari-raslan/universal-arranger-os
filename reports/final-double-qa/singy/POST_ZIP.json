@@ -1,0 +1,1296 @@
+{
+  "schema": "uaos.final-double-qa.lane/v1",
+  "sku": "SINGY",
+  "lane": "POST_ZIP",
+  "QA_PASS": "YES",
+  "startedAt": "2026-08-26T05:26:30.219Z",
+  "endedAt": "2026-08-26T05:26:32.375Z",
+  "durationMs": 2156,
+  "candidateDir": "C:\\keyboard-manager-clean\\.final-extract-program-lane\\SINGY",
+  "candidateHash": "9cb1b57d8d71cae6bfc85c934bd6fa7e76df1f4d0087f49489da4ed2194b709a",
+  "product": "Singy",
+  "checks": [
+    {
+      "name": "CANDIDATE_EXISTS",
+      "ok": true,
+      "path": "C:\\keyboard-manager-clean\\.final-extract-program-lane\\SINGY"
+    },
+    {
+      "name": "CANDIDATE_HASH",
+      "ok": true,
+      "hash": "9cb1b57d8d71cae6bfc85c934bd6fa7e76df1f4d0087f49489da4ed2194b709a"
+    },
+    {
+      "name": "FILE_README_FIRST.txt",
+      "ok": true,
+      "path": "README_FIRST.txt"
+    },
+    {
+      "name": "FILE_RIGHTS_SEAL.json",
+      "ok": true,
+      "path": "RIGHTS_SEAL.json"
+    },
+    {
+      "name": "FILE_START-SINGY.bat",
+      "ok": true,
+      "path": "START-SINGY.bat"
+    },
+    {
+      "name": "FILE_SHA256SUMS.txt",
+      "ok": true,
+      "path": "SHA256SUMS.txt"
+    },
+    {
+      "name": "RIGHTS_SEAL",
+      "ok": true
+    },
+    {
+      "name": "MANIFEST_INTEGRITY",
+      "ok": true,
+      "checked": 4343
+    },
+    {
+      "name": "NO_COMMANDER",
+      "ok": true
+    },
+    {
+      "name": "DIAGNOSTICS_SECRET_SCAN",
+      "ok": true
+    },
+    {
+      "name": "CORE_WORKFLOWS",
+      "ok": true,
+      "pass": 12,
+      "total": 12,
+      "p0": 0
+    },
+    {
+      "name": "CLEAN_INSTALL",
+      "ok": true,
+      "KIDS_FIRST_RUN": "PASS",
+      "TEEN_FIRST_RUN": "PASS",
+      "NO_DEV_ENV_REQUIRED": true,
+      "PRIVACY_CONTENT": "PASS",
+      "steps": [
+        {
+          "mode": "KIDS",
+          "ok": true,
+          "offline": true,
+          "builtInOnly": true,
+          "KIDS_FIRST_RUN": true,
+          "result": {
+            "mode": "KIDS",
+            "ok": true,
+            "lesson": {
+              "ok": true,
+              "started": {
+                "ok": true,
+                "catalog": {
+                  "ok": true,
+                  "program": "kids",
+                  "offline": true,
+                  "lessons": [
+                    {
+                      "id": "kids-pulse",
+                      "title": "Feel the pulse",
+                      "minutes": 5
+                    },
+                    {
+                      "id": "kids-melody",
+                      "title": "Sing a short melody",
+                      "minutes": 6
+                    },
+                    {
+                      "id": "kids-listen",
+                      "title": "Listen and copy",
+                      "minutes": 5
+                    }
+                  ],
+                  "musicalQualityClaim": false
+                },
+                "lesson": {
+                  "id": "kids-melody",
+                  "title": "Sing a short melody",
+                  "minutes": 6
+                },
+                "project": {
+                  "schema": "uaos.musical-session-memory/v1",
+                  "projectId": "singy-kids-kids-melody",
+                  "title": "Sing a short melody",
+                  "tempo": 90,
+                  "meter": "4/4",
+                  "keyCenter": "C",
+                  "arrangement": {
+                    "sections": [
+                      {
+                        "name": "Lesson",
+                        "bars": 4
+                      }
+                    ]
+                  },
+                  "mixerSnapshot": {
+                    "channels": []
+                  },
+                  "updatedAt": "2026-08-26T05:26:32.342Z"
+                },
+                "session": {
+                  "schema": "uaos.musical-session-memory/v1",
+                  "playheadMs": 0,
+                  "transport": "stopped",
+                  "program": "kids",
+                  "lessonId": "kids-melody",
+                  "progress": 0,
+                  "offline": true,
+                  "updatedAt": "2026-08-26T05:26:32.344Z"
+                },
+                "capabilityId": "uaos.singy.offline-lesson/v1"
+              },
+              "exercise": {
+                "ok": true,
+                "lesson": {
+                  "id": "kids-melody",
+                  "title": "Sing a short melody",
+                  "minutes": 6
+                },
+                "program": "kids",
+                "steps": [
+                  {
+                    "id": "hear",
+                    "prompt": "Listen to the pulse",
+                    "expectedAction": "listen"
+                  },
+                  {
+                    "id": "tap",
+                    "prompt": "Tap along",
+                    "expectedAction": "tap"
+                  },
+                  {
+                    "id": "copy",
+                    "prompt": "Copy the short phrase",
+                    "expectedAction": "copy"
+                  }
+                ],
+                "musicalQualityClaim": false
+              },
+              "results": [
+                {
+                  "ok": true,
+                  "stepId": "hear",
+                  "completed": true,
+                  "musicalQualityClaim": false
+                },
+                {
+                  "ok": true,
+                  "stepId": "tap",
+                  "completed": true,
+                  "musicalQualityClaim": false
+                },
+                {
+                  "ok": true,
+                  "stepId": "copy",
+                  "completed": true,
+                  "musicalQualityClaim": false
+                }
+              ],
+              "session": {
+                "schema": "uaos.musical-session-memory/v1",
+                "playheadMs": 0,
+                "transport": "stopped",
+                "program": "kids",
+                "lessonId": "kids-melody",
+                "progress": 100,
+                "offline": true,
+                "updatedAt": "2026-08-26T05:26:32.345Z"
+              },
+              "capabilityId": "uaos.singy.kids-exercise/v1"
+            },
+            "a11y": {
+              "ok": true,
+              "count": 3,
+              "liveBrowserProof": false,
+              "recordedMatrixOnly": true
+            },
+            "offline": true,
+            "builtInOnly": true
+          }
+        },
+        {
+          "mode": "TEEN",
+          "ok": true,
+          "offline": true,
+          "builtInOnly": true,
+          "TEEN_FIRST_RUN": true,
+          "result": {
+            "mode": "TEEN",
+            "ok": true,
+            "studio": {
+              "ok": true,
+              "started": {
+                "ok": true,
+                "catalog": {
+                  "ok": true,
+                  "program": "teen",
+                  "offline": true,
+                  "lessons": [
+                    {
+                      "id": "teen-tempo",
+                      "title": "Tempo control",
+                      "minutes": 8
+                    },
+                    {
+                      "id": "teen-arrange",
+                      "title": "Section arrange",
+                      "minutes": 12
+                    },
+                    {
+                      "id": "teen-export",
+                      "title": "MIDI draft export",
+                      "minutes": 10
+                    }
+                  ],
+                  "musicalQualityClaim": false
+                },
+                "lesson": {
+                  "id": "teen-arrange",
+                  "title": "Section arrange",
+                  "minutes": 12
+                },
+                "project": {
+                  "schema": "uaos.musical-session-memory/v1",
+                  "projectId": "singy-teen-teen-arrange",
+                  "title": "Section arrange",
+                  "tempo": 100,
+                  "meter": "4/4",
+                  "keyCenter": "C",
+                  "arrangement": {
+                    "sections": [
+                      {
+                        "name": "Lesson",
+                        "bars": 4
+                      }
+                    ]
+                  },
+                  "mixerSnapshot": {
+                    "channels": []
+                  },
+                  "updatedAt": "2026-08-26T05:26:32.346Z"
+                },
+                "session": {
+                  "schema": "uaos.musical-session-memory/v1",
+                  "playheadMs": 0,
+                  "transport": "stopped",
+                  "program": "teen",
+                  "lessonId": "teen-arrange",
+                  "progress": 0,
+                  "offline": true,
+                  "updatedAt": "2026-08-26T05:26:32.346Z"
+                },
+                "capabilityId": "uaos.singy.offline-lesson/v1"
+              },
+              "song": [
+                {
+                  "section": "Intro",
+                  "bars": 4,
+                  "chord": "Cm"
+                },
+                {
+                  "section": "Main A",
+                  "bars": 8,
+                  "chord": "Cm"
+                },
+                {
+                  "section": "Main B",
+                  "bars": 8,
+                  "chord": "Ab"
+                },
+                {
+                  "section": "Break",
+                  "bars": 2,
+                  "chord": "Bb"
+                },
+                {
+                  "section": "Ending",
+                  "bars": 4,
+                  "chord": "Cm"
+                }
+              ],
+              "goldenBrainCapabilityId": "uaos.golden-brain.core/v1",
+              "draft": {
+                "ok": true,
+                "format": "uaos-midi-draft-json",
+                "ppq": 480,
+                "tempo": 104,
+                "events": [
+                  {
+                    "time": 0,
+                    "type": "section",
+                    "section": "Intro",
+                    "chord": "Cm",
+                    "bars": 4
+                  },
+                  {
+                    "time": 16,
+                    "type": "section",
+                    "section": "Main A",
+                    "chord": "Cm",
+                    "bars": 8
+                  },
+                  {
+                    "time": 48,
+                    "type": "section",
+                    "section": "Main B",
+                    "chord": "Ab",
+                    "bars": 8
+                  },
+                  {
+                    "time": 80,
+                    "type": "section",
+                    "section": "Break",
+                    "chord": "Bb",
+                    "bars": 2
+                  },
+                  {
+                    "time": 88,
+                    "type": "section",
+                    "section": "Ending",
+                    "chord": "Cm",
+                    "bars": 4
+                  }
+                ]
+              },
+              "steps": [
+                {
+                  "ok": true,
+                  "stepId": "set-tempo",
+                  "completed": true,
+                  "musicalQualityClaim": false
+                },
+                {
+                  "ok": true,
+                  "stepId": "arrange",
+                  "completed": true,
+                  "musicalQualityClaim": false
+                },
+                {
+                  "ok": true,
+                  "stepId": "export",
+                  "completed": true,
+                  "musicalQualityClaim": false
+                }
+              ],
+              "musicalQualityClaim": false,
+              "capabilityId": "uaos.singy.teen-studio-fundamentals/v1"
+            },
+            "offline": true,
+            "builtInOnly": true
+          }
+        }
+      ],
+      "sha256": "315cf44c05a9ce917a7da909e17688d9a01a8b020fb87d053973d54f2b4eb0ef"
+    }
+  ],
+  "P0": 0,
+  "P1": 0,
+  "workflows": {
+    "ok": true,
+    "pass": 12,
+    "total": 12,
+    "p0": 0,
+    "p1": 0,
+    "results": [
+      {
+        "workflowId": "singy-wf-01-launcher",
+        "ok": true,
+        "result": {
+          "ok": true,
+          "modes": [
+            "KIDS",
+            "TEEN"
+          ]
+        },
+        "sha256": "d74ce8cb2074d33e397f7fcc22a819a6a79bfcdce0a89c8ed493fe77d699f4b4"
+      },
+      {
+        "workflowId": "singy-wf-02-kids-lesson",
+        "ok": true,
+        "result": {
+          "mode": "KIDS",
+          "ok": true,
+          "lesson": {
+            "ok": true,
+            "started": {
+              "ok": true,
+              "catalog": {
+                "ok": true,
+                "program": "kids",
+                "offline": true,
+                "lessons": [
+                  {
+                    "id": "kids-pulse",
+                    "title": "Feel the pulse",
+                    "minutes": 5
+                  },
+                  {
+                    "id": "kids-melody",
+                    "title": "Sing a short melody",
+                    "minutes": 6
+                  },
+                  {
+                    "id": "kids-listen",
+                    "title": "Listen and copy",
+                    "minutes": 5
+                  }
+                ],
+                "musicalQualityClaim": false
+              },
+              "lesson": {
+                "id": "kids-melody",
+                "title": "Sing a short melody",
+                "minutes": 6
+              },
+              "project": {
+                "schema": "uaos.musical-session-memory/v1",
+                "projectId": "singy-kids-kids-melody",
+                "title": "Sing a short melody",
+                "tempo": 90,
+                "meter": "4/4",
+                "keyCenter": "C",
+                "arrangement": {
+                  "sections": [
+                    {
+                      "name": "Lesson",
+                      "bars": 4
+                    }
+                  ]
+                },
+                "mixerSnapshot": {
+                  "channels": []
+                },
+                "updatedAt": "2026-08-26T05:26:31.961Z"
+              },
+              "session": {
+                "schema": "uaos.musical-session-memory/v1",
+                "playheadMs": 0,
+                "transport": "stopped",
+                "program": "kids",
+                "lessonId": "kids-melody",
+                "progress": 0,
+                "offline": true,
+                "updatedAt": "2026-08-26T05:26:31.962Z"
+              },
+              "capabilityId": "uaos.singy.offline-lesson/v1"
+            },
+            "exercise": {
+              "ok": true,
+              "lesson": {
+                "id": "kids-melody",
+                "title": "Sing a short melody",
+                "minutes": 6
+              },
+              "program": "kids",
+              "steps": [
+                {
+                  "id": "hear",
+                  "prompt": "Listen to the pulse",
+                  "expectedAction": "listen"
+                },
+                {
+                  "id": "tap",
+                  "prompt": "Tap along",
+                  "expectedAction": "tap"
+                },
+                {
+                  "id": "copy",
+                  "prompt": "Copy the short phrase",
+                  "expectedAction": "copy"
+                }
+              ],
+              "musicalQualityClaim": false
+            },
+            "results": [
+              {
+                "ok": true,
+                "stepId": "hear",
+                "completed": true,
+                "musicalQualityClaim": false
+              },
+              {
+                "ok": true,
+                "stepId": "tap",
+                "completed": true,
+                "musicalQualityClaim": false
+              },
+              {
+                "ok": true,
+                "stepId": "copy",
+                "completed": true,
+                "musicalQualityClaim": false
+              }
+            ],
+            "session": {
+              "schema": "uaos.musical-session-memory/v1",
+              "playheadMs": 0,
+              "transport": "stopped",
+              "program": "kids",
+              "lessonId": "kids-melody",
+              "progress": 100,
+              "offline": true,
+              "updatedAt": "2026-08-26T05:26:31.963Z"
+            },
+            "capabilityId": "uaos.singy.kids-exercise/v1"
+          },
+          "a11y": {
+            "ok": true,
+            "count": 3,
+            "liveBrowserProof": false,
+            "recordedMatrixOnly": true
+          },
+          "offline": true,
+          "builtInOnly": true
+        },
+        "sha256": "37020c9852000e2183c96287e3b9392aedeecfd66689b62123d30539f32ebb5e"
+      },
+      {
+        "workflowId": "singy-wf-03-teen-studio",
+        "ok": true,
+        "result": {
+          "mode": "TEEN",
+          "ok": true,
+          "studio": {
+            "ok": true,
+            "started": {
+              "ok": true,
+              "catalog": {
+                "ok": true,
+                "program": "teen",
+                "offline": true,
+                "lessons": [
+                  {
+                    "id": "teen-tempo",
+                    "title": "Tempo control",
+                    "minutes": 8
+                  },
+                  {
+                    "id": "teen-arrange",
+                    "title": "Section arrange",
+                    "minutes": 12
+                  },
+                  {
+                    "id": "teen-export",
+                    "title": "MIDI draft export",
+                    "minutes": 10
+                  }
+                ],
+                "musicalQualityClaim": false
+              },
+              "lesson": {
+                "id": "teen-arrange",
+                "title": "Section arrange",
+                "minutes": 12
+              },
+              "project": {
+                "schema": "uaos.musical-session-memory/v1",
+                "projectId": "singy-teen-teen-arrange",
+                "title": "Section arrange",
+                "tempo": 100,
+                "meter": "4/4",
+                "keyCenter": "C",
+                "arrangement": {
+                  "sections": [
+                    {
+                      "name": "Lesson",
+                      "bars": 4
+                    }
+                  ]
+                },
+                "mixerSnapshot": {
+                  "channels": []
+                },
+                "updatedAt": "2026-08-26T05:26:31.963Z"
+              },
+              "session": {
+                "schema": "uaos.musical-session-memory/v1",
+                "playheadMs": 0,
+                "transport": "stopped",
+                "program": "teen",
+                "lessonId": "teen-arrange",
+                "progress": 0,
+                "offline": true,
+                "updatedAt": "2026-08-26T05:26:31.963Z"
+              },
+              "capabilityId": "uaos.singy.offline-lesson/v1"
+            },
+            "song": [
+              {
+                "section": "Intro",
+                "bars": 4,
+                "chord": "Cm"
+              },
+              {
+                "section": "Main A",
+                "bars": 8,
+                "chord": "Cm"
+              },
+              {
+                "section": "Main B",
+                "bars": 8,
+                "chord": "Ab"
+              },
+              {
+                "section": "Break",
+                "bars": 2,
+                "chord": "Bb"
+              },
+              {
+                "section": "Ending",
+                "bars": 4,
+                "chord": "Cm"
+              }
+            ],
+            "goldenBrainCapabilityId": "uaos.golden-brain.core/v1",
+            "draft": {
+              "ok": true,
+              "format": "uaos-midi-draft-json",
+              "ppq": 480,
+              "tempo": 104,
+              "events": [
+                {
+                  "time": 0,
+                  "type": "section",
+                  "section": "Intro",
+                  "chord": "Cm",
+                  "bars": 4
+                },
+                {
+                  "time": 16,
+                  "type": "section",
+                  "section": "Main A",
+                  "chord": "Cm",
+                  "bars": 8
+                },
+                {
+                  "time": 48,
+                  "type": "section",
+                  "section": "Main B",
+                  "chord": "Ab",
+                  "bars": 8
+                },
+                {
+                  "time": 80,
+                  "type": "section",
+                  "section": "Break",
+                  "chord": "Bb",
+                  "bars": 2
+                },
+                {
+                  "time": 88,
+                  "type": "section",
+                  "section": "Ending",
+                  "chord": "Cm",
+                  "bars": 4
+                }
+              ]
+            },
+            "steps": [
+              {
+                "ok": true,
+                "stepId": "set-tempo",
+                "completed": true,
+                "musicalQualityClaim": false
+              },
+              {
+                "ok": true,
+                "stepId": "arrange",
+                "completed": true,
+                "musicalQualityClaim": false
+              },
+              {
+                "ok": true,
+                "stepId": "export",
+                "completed": true,
+                "musicalQualityClaim": false
+              }
+            ],
+            "musicalQualityClaim": false,
+            "capabilityId": "uaos.singy.teen-studio-fundamentals/v1"
+          },
+          "offline": true,
+          "builtInOnly": true
+        },
+        "sha256": "fe661e7ca1fcb9dd3169759e06874ae5fee8a959e1c6920af76847679edb3dd7"
+      },
+      {
+        "workflowId": "singy-wf-04-memory",
+        "ok": true,
+        "result": {
+          "ok": true,
+          "progress": 100
+        },
+        "sha256": "13504917a4f8309814d6ae1d753801e995ead846236cf54bf0d268606d2e972d"
+      },
+      {
+        "workflowId": "singy-wf-05-playback",
+        "ok": true,
+        "result": {
+          "ok": true,
+          "builtInSynth": true,
+          "unclearedSamples": false
+        },
+        "sha256": "384caf9ea6302659bfc7659b7676e8859498149779295001f04316b772c1b55c"
+      },
+      {
+        "workflowId": "singy-wf-06-stop",
+        "ok": true,
+        "result": {
+          "ok": true,
+          "stopped": true
+        },
+        "sha256": "70468a1d6fe1d80e53e228e73cf3d513de507436109a37d1d436498eb38923d3"
+      },
+      {
+        "workflowId": "singy-wf-07-save-session",
+        "ok": true,
+        "result": {
+          "ok": true,
+          "saved": true
+        },
+        "sha256": "0b8962d8208cedc5d4e013e17e8cbe3d08913d9cc774b0f84d423474985229e9"
+      },
+      {
+        "workflowId": "singy-wf-08-reopen",
+        "ok": true,
+        "result": {
+          "mode": "TEEN",
+          "ok": true,
+          "studio": {
+            "ok": true,
+            "started": {
+              "ok": true,
+              "catalog": {
+                "ok": true,
+                "program": "teen",
+                "offline": true,
+                "lessons": [
+                  {
+                    "id": "teen-tempo",
+                    "title": "Tempo control",
+                    "minutes": 8
+                  },
+                  {
+                    "id": "teen-arrange",
+                    "title": "Section arrange",
+                    "minutes": 12
+                  },
+                  {
+                    "id": "teen-export",
+                    "title": "MIDI draft export",
+                    "minutes": 10
+                  }
+                ],
+                "musicalQualityClaim": false
+              },
+              "lesson": {
+                "id": "teen-arrange",
+                "title": "Section arrange",
+                "minutes": 12
+              },
+              "project": {
+                "schema": "uaos.musical-session-memory/v1",
+                "projectId": "singy-teen-teen-arrange",
+                "title": "Section arrange",
+                "tempo": 100,
+                "meter": "4/4",
+                "keyCenter": "C",
+                "arrangement": {
+                  "sections": [
+                    {
+                      "name": "Lesson",
+                      "bars": 4
+                    }
+                  ]
+                },
+                "mixerSnapshot": {
+                  "channels": []
+                },
+                "updatedAt": "2026-08-26T05:26:31.966Z"
+              },
+              "session": {
+                "schema": "uaos.musical-session-memory/v1",
+                "playheadMs": 0,
+                "transport": "stopped",
+                "program": "teen",
+                "lessonId": "teen-arrange",
+                "progress": 0,
+                "offline": true,
+                "updatedAt": "2026-08-26T05:26:31.966Z"
+              },
+              "capabilityId": "uaos.singy.offline-lesson/v1"
+            },
+            "song": [
+              {
+                "section": "Intro",
+                "bars": 4,
+                "chord": "Cm"
+              },
+              {
+                "section": "Main A",
+                "bars": 8,
+                "chord": "Cm"
+              },
+              {
+                "section": "Main B",
+                "bars": 8,
+                "chord": "Ab"
+              },
+              {
+                "section": "Break",
+                "bars": 2,
+                "chord": "Bb"
+              },
+              {
+                "section": "Ending",
+                "bars": 4,
+                "chord": "Cm"
+              }
+            ],
+            "goldenBrainCapabilityId": "uaos.golden-brain.core/v1",
+            "draft": {
+              "ok": true,
+              "format": "uaos-midi-draft-json",
+              "ppq": 480,
+              "tempo": 104,
+              "events": [
+                {
+                  "time": 0,
+                  "type": "section",
+                  "section": "Intro",
+                  "chord": "Cm",
+                  "bars": 4
+                },
+                {
+                  "time": 16,
+                  "type": "section",
+                  "section": "Main A",
+                  "chord": "Cm",
+                  "bars": 8
+                },
+                {
+                  "time": 48,
+                  "type": "section",
+                  "section": "Main B",
+                  "chord": "Ab",
+                  "bars": 8
+                },
+                {
+                  "time": 80,
+                  "type": "section",
+                  "section": "Break",
+                  "chord": "Bb",
+                  "bars": 2
+                },
+                {
+                  "time": 88,
+                  "type": "section",
+                  "section": "Ending",
+                  "chord": "Cm",
+                  "bars": 4
+                }
+              ]
+            },
+            "steps": [
+              {
+                "ok": true,
+                "stepId": "set-tempo",
+                "completed": true,
+                "musicalQualityClaim": false
+              },
+              {
+                "ok": true,
+                "stepId": "arrange",
+                "completed": true,
+                "musicalQualityClaim": false
+              },
+              {
+                "ok": true,
+                "stepId": "export",
+                "completed": true,
+                "musicalQualityClaim": false
+              }
+            ],
+            "musicalQualityClaim": false,
+            "capabilityId": "uaos.singy.teen-studio-fundamentals/v1"
+          },
+          "offline": true,
+          "builtInOnly": true
+        },
+        "sha256": "22db843c72f3f4d74741d721152cecf2f4eb18462a208c614c276266dea77f65"
+      },
+      {
+        "workflowId": "singy-wf-09-error-recovery",
+        "ok": true,
+        "result": {
+          "ok": true,
+          "recovered": true
+        },
+        "sha256": "8e40b1805ace5279823415e54a363c558bb0242f59bb997640009afbead73953"
+      },
+      {
+        "workflowId": "singy-wf-10-diagnostics",
+        "ok": true,
+        "result": {
+          "ok": true,
+          "diagnosticsReady": true
+        },
+        "sha256": "b9f7d439a2d7804b5f09e53f938c7a7ad66ccd352efe8bad68a1152acafeca7d"
+      },
+      {
+        "workflowId": "singy-wf-11-offline",
+        "ok": true,
+        "result": {
+          "ok": true,
+          "networkRequired": false
+        },
+        "sha256": "dc643c6870a01e5df673448edf06249e3cae63e6715a9d741b0353847d21f68f"
+      },
+      {
+        "workflowId": "singy-wf-12-brain-shared",
+        "ok": true,
+        "result": {
+          "sharedMusicalIntelligence": true,
+          "canonicalGoldenBrain": true,
+          "capabilityId": "uaos.golden-brain.core/v1",
+          "technicalPass": true,
+          "musicalQualityClaim": false,
+          "musicalAcceptanceDeferred": true,
+          "ownerMusicalQualityPass": false
+        },
+        "sha256": "5a8cb69e975968c1321ff4eb8f3ef8b11d7bc72a498c73a9167d7ffc39774319"
+      }
+    ],
+    "summarySha256": "b76d73d1b47fe6dd37b0d92a9b489c3e2db800ff8f8b235a3b6e8cb8dd9c8cd5"
+  },
+  "clean": {
+    "ok": true,
+    "KIDS_FIRST_RUN": "PASS",
+    "TEEN_FIRST_RUN": "PASS",
+    "NO_DEV_ENV_REQUIRED": true,
+    "PRIVACY_CONTENT": "PASS",
+    "steps": [
+      {
+        "mode": "KIDS",
+        "ok": true,
+        "offline": true,
+        "builtInOnly": true,
+        "KIDS_FIRST_RUN": true,
+        "result": {
+          "mode": "KIDS",
+          "ok": true,
+          "lesson": {
+            "ok": true,
+            "started": {
+              "ok": true,
+              "catalog": {
+                "ok": true,
+                "program": "kids",
+                "offline": true,
+                "lessons": [
+                  {
+                    "id": "kids-pulse",
+                    "title": "Feel the pulse",
+                    "minutes": 5
+                  },
+                  {
+                    "id": "kids-melody",
+                    "title": "Sing a short melody",
+                    "minutes": 6
+                  },
+                  {
+                    "id": "kids-listen",
+                    "title": "Listen and copy",
+                    "minutes": 5
+                  }
+                ],
+                "musicalQualityClaim": false
+              },
+              "lesson": {
+                "id": "kids-melody",
+                "title": "Sing a short melody",
+                "minutes": 6
+              },
+              "project": {
+                "schema": "uaos.musical-session-memory/v1",
+                "projectId": "singy-kids-kids-melody",
+                "title": "Sing a short melody",
+                "tempo": 90,
+                "meter": "4/4",
+                "keyCenter": "C",
+                "arrangement": {
+                  "sections": [
+                    {
+                      "name": "Lesson",
+                      "bars": 4
+                    }
+                  ]
+                },
+                "mixerSnapshot": {
+                  "channels": []
+                },
+                "updatedAt": "2026-08-26T05:26:32.342Z"
+              },
+              "session": {
+                "schema": "uaos.musical-session-memory/v1",
+                "playheadMs": 0,
+                "transport": "stopped",
+                "program": "kids",
+                "lessonId": "kids-melody",
+                "progress": 0,
+                "offline": true,
+                "updatedAt": "2026-08-26T05:26:32.344Z"
+              },
+              "capabilityId": "uaos.singy.offline-lesson/v1"
+            },
+            "exercise": {
+              "ok": true,
+              "lesson": {
+                "id": "kids-melody",
+                "title": "Sing a short melody",
+                "minutes": 6
+              },
+              "program": "kids",
+              "steps": [
+                {
+                  "id": "hear",
+                  "prompt": "Listen to the pulse",
+                  "expectedAction": "listen"
+                },
+                {
+                  "id": "tap",
+                  "prompt": "Tap along",
+                  "expectedAction": "tap"
+                },
+                {
+                  "id": "copy",
+                  "prompt": "Copy the short phrase",
+                  "expectedAction": "copy"
+                }
+              ],
+              "musicalQualityClaim": false
+            },
+            "results": [
+              {
+                "ok": true,
+                "stepId": "hear",
+                "completed": true,
+                "musicalQualityClaim": false
+              },
+              {
+                "ok": true,
+                "stepId": "tap",
+                "completed": true,
+                "musicalQualityClaim": false
+              },
+              {
+                "ok": true,
+                "stepId": "copy",
+                "completed": true,
+                "musicalQualityClaim": false
+              }
+            ],
+            "session": {
+              "schema": "uaos.musical-session-memory/v1",
+              "playheadMs": 0,
+              "transport": "stopped",
+              "program": "kids",
+              "lessonId": "kids-melody",
+              "progress": 100,
+              "offline": true,
+              "updatedAt": "2026-08-26T05:26:32.345Z"
+            },
+            "capabilityId": "uaos.singy.kids-exercise/v1"
+          },
+          "a11y": {
+            "ok": true,
+            "count": 3,
+            "liveBrowserProof": false,
+            "recordedMatrixOnly": true
+          },
+          "offline": true,
+          "builtInOnly": true
+        }
+      },
+      {
+        "mode": "TEEN",
+        "ok": true,
+        "offline": true,
+        "builtInOnly": true,
+        "TEEN_FIRST_RUN": true,
+        "result": {
+          "mode": "TEEN",
+          "ok": true,
+          "studio": {
+            "ok": true,
+            "started": {
+              "ok": true,
+              "catalog": {
+                "ok": true,
+                "program": "teen",
+                "offline": true,
+                "lessons": [
+                  {
+                    "id": "teen-tempo",
+                    "title": "Tempo control",
+                    "minutes": 8
+                  },
+                  {
+                    "id": "teen-arrange",
+                    "title": "Section arrange",
+                    "minutes": 12
+                  },
+                  {
+                    "id": "teen-export",
+                    "title": "MIDI draft export",
+                    "minutes": 10
+                  }
+                ],
+                "musicalQualityClaim": false
+              },
+              "lesson": {
+                "id": "teen-arrange",
+                "title": "Section arrange",
+                "minutes": 12
+              },
+              "project": {
+                "schema": "uaos.musical-session-memory/v1",
+                "projectId": "singy-teen-teen-arrange",
+                "title": "Section arrange",
+                "tempo": 100,
+                "meter": "4/4",
+                "keyCenter": "C",
+                "arrangement": {
+                  "sections": [
+                    {
+                      "name": "Lesson",
+                      "bars": 4
+                    }
+                  ]
+                },
+                "mixerSnapshot": {
+                  "channels": []
+                },
+                "updatedAt": "2026-08-26T05:26:32.346Z"
+              },
+              "session": {
+                "schema": "uaos.musical-session-memory/v1",
+                "playheadMs": 0,
+                "transport": "stopped",
+                "program": "teen",
+                "lessonId": "teen-arrange",
+                "progress": 0,
+                "offline": true,
+                "updatedAt": "2026-08-26T05:26:32.346Z"
+              },
+              "capabilityId": "uaos.singy.offline-lesson/v1"
+            },
+            "song": [
+              {
+                "section": "Intro",
+                "bars": 4,
+                "chord": "Cm"
+              },
+              {
+                "section": "Main A",
+                "bars": 8,
+                "chord": "Cm"
+              },
+              {
+                "section": "Main B",
+                "bars": 8,
+                "chord": "Ab"
+              },
+              {
+                "section": "Break",
+                "bars": 2,
+                "chord": "Bb"
+              },
+              {
+                "section": "Ending",
+                "bars": 4,
+                "chord": "Cm"
+              }
+            ],
+            "goldenBrainCapabilityId": "uaos.golden-brain.core/v1",
+            "draft": {
+              "ok": true,
+              "format": "uaos-midi-draft-json",
+              "ppq": 480,
+              "tempo": 104,
+              "events": [
+                {
+                  "time": 0,
+                  "type": "section",
+                  "section": "Intro",
+                  "chord": "Cm",
+                  "bars": 4
+                },
+                {
+                  "time": 16,
+                  "type": "section",
+                  "section": "Main A",
+                  "chord": "Cm",
+                  "bars": 8
+                },
+                {
+                  "time": 48,
+                  "type": "section",
+                  "section": "Main B",
+                  "chord": "Ab",
+                  "bars": 8
+                },
+                {
+                  "time": 80,
+                  "type": "section",
+                  "section": "Break",
+                  "chord": "Bb",
+                  "bars": 2
+                },
+                {
+                  "time": 88,
+                  "type": "section",
+                  "section": "Ending",
+                  "chord": "Cm",
+                  "bars": 4
+                }
+              ]
+            },
+            "steps": [
+              {
+                "ok": true,
+                "stepId": "set-tempo",
+                "completed": true,
+                "musicalQualityClaim": false
+              },
+              {
+                "ok": true,
+                "stepId": "arrange",
+                "completed": true,
+                "musicalQualityClaim": false
+              },
+              {
+                "ok": true,
+                "stepId": "export",
+                "completed": true,
+                "musicalQualityClaim": false
+              }
+            ],
+            "musicalQualityClaim": false,
+            "capabilityId": "uaos.singy.teen-studio-fundamentals/v1"
+          },
+          "offline": true,
+          "builtInOnly": true
+        }
+      }
+    ],
+    "sha256": "315cf44c05a9ce917a7da909e17688d9a01a8b020fb87d053973d54f2b4eb0ef"
+  },
+  "COMMANDER_TOUCHED": false
+}

@@ -1,0 +1,384 @@
+{
+  "schema": "uaos.owner-listening-pack.real-musical/v1",
+  "createdAt": "2026-08-25T04:29:42.225Z",
+  "STATUS": "OWNER_LISTENING_PACK_REAL_MUSICAL_CONTENT_READY",
+  "REAL_MUSICAL_WAV_COUNT": 6,
+  "REAL_MUSICAL_UNIQUE_SHA256_COUNT": 5,
+  "TECHNICAL_FIXTURE_USED_AS_MUSICAL_PROOF": "NO",
+  "COMMANDER_CHANGED": "NO",
+  "V13_OWNED_FILES_CHANGED": "NO",
+  "PUBLIC_RELEASE": "NO",
+  "PAYMENT": "NO",
+  "KORG_WRITE": "UNSUPPORTED",
+  "TASK_05_00605": "OWNER_GATE",
+  "musicalQualityPass": false,
+  "SOURCE_COMMIT": "5aeac11779bd678ca3c80d16144e302a5eb5d9f6",
+  "examples": [
+    {
+      "id": "01-melody-example",
+      "title": "Melody example",
+      "SOURCE_INPUT": "Original UAOS Hijaz-inspired MIDI phrase (C/Db/E/F/G/Ab contour).",
+      "EXPECTED_CAPABILITY": "Render a real short melody, not a single test tone.",
+      "ACTUAL_ACTIONS": [
+        "Load original 16-note phrase",
+        "Render lead voice with envelope"
+      ],
+      "WAV_PATH": "C:\\keyboard-manager-clean\\docs\\owner-listening-pack\\musical-examples\\01-melody-example.wav",
+      "DURATION": 5.1250113378684805,
+      "SAMPLE_RATE": 44100,
+      "SHA256": "e338b8293ae47fefa2c17323e40bd417c8b5a99bc271fd67e0c269cd9f07794b",
+      "SOURCE_COMMIT": "5aeac11779bd678ca3c80d16144e302a5eb5d9f6",
+      "SETTINGS": {
+        "variant": "hijaz",
+        "tempo": 96,
+        "groove": "melody-only",
+        "harmony": "unison",
+        "sections": [
+          {
+            "name": "Melody",
+            "bars": 2
+          }
+        ],
+        "uniqueMidiCount": 6,
+        "uniqueOnsetCount": 16,
+        "voices": [
+          "lead"
+        ]
+      },
+      "WHAT_OWNER_SHOULD_LISTEN_FOR": "A moving melody with several pitches and rhythm. Not a stuck 440 Hz beep.",
+      "KNOWN_LIMITATIONS": [
+        "Offline oscillator sketch, not a sampled library and not real-time DSP.",
+        "Not Musical Brain quality PASS.",
+        "Original UAOS sketch — not product catalog content and not a licensed song."
+      ],
+      "musicalQualityPass": false,
+      "musicalQualityClaim": false,
+      "sineFixture": false,
+      "technicalFixtureUsedAsMusicalProof": false
+    },
+    {
+      "id": "02-arrangement-example",
+      "title": "Arrangement example (Intro / Verse / Chorus)",
+      "SOURCE_INPUT": "Same Hijaz phrase plus SongArranger/personalized-arranger section plan.",
+      "EXPECTED_CAPABILITY": "Intro drums/bass, verse melody, chorus melody+chords.",
+      "ACTUAL_ACTIONS": [
+        "Understand pitches/chords",
+        "Decide arabic-khaleeji groove",
+        "Arrange 1+2+2 bars",
+        "Offline render"
+      ],
+      "WAV_PATH": "C:\\keyboard-manager-clean\\docs\\owner-listening-pack\\musical-examples\\02-arrangement-example.wav",
+      "DURATION": 12.62501133786848,
+      "SAMPLE_RATE": 44100,
+      "SHA256": "f521fece833e2d41ec9b540dca5e02c1691701f32e77815c9b721d9a7f2bffcf",
+      "SOURCE_COMMIT": "5aeac11779bd678ca3c80d16144e302a5eb5d9f6",
+      "SETTINGS": {
+        "variant": "hijaz",
+        "tempo": 96,
+        "groove": "arabic-khaleeji",
+        "harmony": "maqam-inspired",
+        "sections": [
+          {
+            "name": "Intro",
+            "bars": 1
+          },
+          {
+            "name": "Verse",
+            "bars": 2
+          },
+          {
+            "name": "Chorus",
+            "bars": 2
+          }
+        ],
+        "uniqueMidiCount": 16,
+        "uniqueOnsetCount": 36,
+        "voices": [
+          "kick",
+          "hat",
+          "snare",
+          "bass",
+          "lead",
+          "chord"
+        ]
+      },
+      "WHAT_OWNER_SHOULD_LISTEN_FOR": "Section change: groove first, then tune, then thicker chorus.",
+      "KNOWN_LIMITATIONS": [
+        "Offline oscillator sketch, not a sampled library and not real-time DSP.",
+        "Not Musical Brain quality PASS.",
+        "Original UAOS sketch — not product catalog content and not a licensed song."
+      ],
+      "musicalQualityPass": false,
+      "musicalQualityClaim": false,
+      "sineFixture": false,
+      "technicalFixtureUsedAsMusicalProof": false
+    },
+    {
+      "id": "03-before-raw-melody",
+      "title": "Before — raw melody",
+      "SOURCE_INPUT": "Same Hijaz phrase before drums/chorus harmony (melody + bass roots only).",
+      "EXPECTED_CAPABILITY": "Show the material before full arrangement logic.",
+      "ACTUAL_ACTIONS": [
+        "Understand melody",
+        "Add bass roots only",
+        "Omit drums and chorus stabs"
+      ],
+      "WAV_PATH": "C:\\keyboard-manager-clean\\docs\\owner-listening-pack\\musical-examples\\03-before-raw-melody.wav",
+      "DURATION": 5.1250113378684805,
+      "SAMPLE_RATE": 44100,
+      "SHA256": "0318acc4a51f1c72de52256ef30569a375cd322d1a19e8ad26da99a20421fcd3",
+      "SOURCE_COMMIT": "5aeac11779bd678ca3c80d16144e302a5eb5d9f6",
+      "SETTINGS": {
+        "variant": "hijaz",
+        "tempo": 96,
+        "groove": "melody-plus-bass",
+        "harmony": "roots-only",
+        "sections": [
+          {
+            "name": "Before",
+            "bars": 2
+          }
+        ],
+        "uniqueMidiCount": 8,
+        "uniqueOnsetCount": 16,
+        "voices": [
+          "lead",
+          "bass"
+        ]
+      },
+      "WHAT_OWNER_SHOULD_LISTEN_FOR": "Tune plus bass, no drum groove yet. Compare with 04-after.",
+      "KNOWN_LIMITATIONS": [
+        "Offline oscillator sketch, not a sampled library and not real-time DSP.",
+        "Not Musical Brain quality PASS.",
+        "Original UAOS sketch — not product catalog content and not a licensed song."
+      ],
+      "musicalQualityPass": false,
+      "musicalQualityClaim": false,
+      "sineFixture": false,
+      "technicalFixtureUsedAsMusicalProof": false
+    },
+    {
+      "id": "04-after-arranged",
+      "title": "After — arranged",
+      "SOURCE_INPUT": "Same Hijaz phrase after arrangement decision.",
+      "EXPECTED_CAPABILITY": "Same material with bass, drums, and chorus harmony.",
+      "ACTUAL_ACTIONS": [
+        "Reuse Understand",
+        "Apply arrangement",
+        "Render mixed sketch"
+      ],
+      "WAV_PATH": "C:\\keyboard-manager-clean\\docs\\owner-listening-pack\\musical-examples\\04-after-arranged.wav",
+      "DURATION": 12.62501133786848,
+      "SAMPLE_RATE": 44100,
+      "SHA256": "f521fece833e2d41ec9b540dca5e02c1691701f32e77815c9b721d9a7f2bffcf",
+      "SOURCE_COMMIT": "5aeac11779bd678ca3c80d16144e302a5eb5d9f6",
+      "SETTINGS": {
+        "variant": "hijaz",
+        "tempo": 96,
+        "groove": "arabic-khaleeji",
+        "harmony": "maqam-inspired",
+        "sections": [
+          {
+            "name": "Intro",
+            "bars": 1
+          },
+          {
+            "name": "Verse",
+            "bars": 2
+          },
+          {
+            "name": "Chorus",
+            "bars": 2
+          }
+        ],
+        "uniqueMidiCount": 16,
+        "uniqueOnsetCount": 36,
+        "voices": [
+          "kick",
+          "hat",
+          "snare",
+          "bass",
+          "lead",
+          "chord"
+        ]
+      },
+      "WHAT_OWNER_SHOULD_LISTEN_FOR": "Bass/drums/chords added under the same tune. Still not a quality PASS.",
+      "KNOWN_LIMITATIONS": [
+        "Offline oscillator sketch, not a sampled library and not real-time DSP.",
+        "Not Musical Brain quality PASS.",
+        "Original UAOS sketch — not product catalog content and not a licensed song."
+      ],
+      "musicalQualityPass": false,
+      "musicalQualityClaim": false,
+      "sineFixture": false,
+      "technicalFixtureUsedAsMusicalProof": false
+    },
+    {
+      "id": "05-alternative-in-context",
+      "title": "Alternative B — in-context Hijaz fill",
+      "SOURCE_INPUT": "Same Hijaz melody and maqam-compatible harmony as 01-04/06. Style/fill change only.",
+      "EXPECTED_CAPABILITY": "A style alternative that preserves tonal context. No unrequested reharmonization to major.",
+      "ACTUAL_ACTIONS": [
+        "Score alternative against Hijaz pitch set",
+        "Reject major-pop rewrite",
+        "Arrange arabic-khaleeji-fill at 92 BPM with Hijaz color voicings",
+        "Render independent sketch"
+      ],
+      "WAV_PATH": "C:\\keyboard-manager-clean\\docs\\owner-listening-pack\\musical-examples\\05-alternative-in-context.wav",
+      "DURATION": 13.167392290249433,
+      "SAMPLE_RATE": 44100,
+      "SHA256": "13be9b796483ae687803223e96197569a5ac0bd60df0dad16a243e15216dbadd",
+      "SOURCE_COMMIT": "5aeac11779bd678ca3c80d16144e302a5eb5d9f6",
+      "SETTINGS": {
+        "variant": "alternative-in-context",
+        "tempo": 92,
+        "groove": "arabic-khaleeji-fill",
+        "harmony": "maqam-inspired",
+        "sections": [
+          {
+            "name": "Intro",
+            "bars": 1
+          },
+          {
+            "name": "Verse",
+            "bars": 2
+          },
+          {
+            "name": "Chorus",
+            "bars": 2
+          }
+        ],
+        "uniqueMidiCount": 16,
+        "uniqueOnsetCount": 40,
+        "voices": [
+          "kick",
+          "hat",
+          "snare",
+          "bass",
+          "lead",
+          "chord"
+        ],
+        "scoring": {
+          "ok": true,
+          "score": 100,
+          "sourceFamily": "maqam-hijaz",
+          "candidateFamily": "maqam-hijaz",
+          "preserved": [
+            0,
+            1,
+            4,
+            5,
+            7,
+            8
+          ],
+          "missing": [],
+          "foreign": [],
+          "melodyChordCompatibility": 1,
+          "unrequestedReharmonization": false,
+          "tonalContextPreserved": true,
+          "harmonicCompatibility": true,
+          "styleChangeWithoutUnrequestedReharmonization": true
+        }
+      },
+      "WHAT_OWNER_SHOULD_LISTEN_FOR": "Same Hijaz tune as 04, denser fill/voicing, not a C-major rewrite. Compare OLD 05 vs this file.",
+      "KNOWN_LIMITATIONS": [
+        "Offline oscillator sketch, not a sampled library and not real-time DSP.",
+        "Not Musical Brain quality PASS.",
+        "Original UAOS sketch — not product catalog content and not a licensed song."
+      ],
+      "musicalQualityPass": false,
+      "musicalQualityClaim": false,
+      "sineFixture": false,
+      "technicalFixtureUsedAsMusicalProof": false,
+      "OWNER_RELISTEN_REQUIRED": "EXAMPLE_05_ONLY"
+    },
+    {
+      "id": "06-full-short-demo",
+      "title": "Full short demo — Understand → Decide → Arrange → Render",
+      "SOURCE_INPUT": "Original Hijaz sketch through the full local pipeline.",
+      "EXPECTED_CAPABILITY": "One short clip that concatenates proven chain steps.",
+      "ACTUAL_ACTIONS": [
+        "Understand: pitch set + chord-engine detect",
+        "Decide: personalized-arranger arabic-khaleeji",
+        "Arrange: Intro/Verse/Chorus events",
+        "Render: independent stereo WAV (not V13 mixer)"
+      ],
+      "WAV_PATH": "C:\\keyboard-manager-clean\\docs\\owner-listening-pack\\musical-examples\\06-full-short-demo.wav",
+      "DURATION": 13.97501133786848,
+      "SAMPLE_RATE": 44100,
+      "SHA256": "679c11adeef75ce619a2d549681c84be0bee0d8185070e4203c9cddc8ee3d322",
+      "SOURCE_COMMIT": "5aeac11779bd678ca3c80d16144e302a5eb5d9f6",
+      "SETTINGS": {
+        "variant": "hijaz",
+        "tempo": 96,
+        "groove": "arabic-khaleeji",
+        "harmony": "maqam-inspired",
+        "sections": [
+          {
+            "name": "Intro",
+            "bars": 1
+          },
+          {
+            "name": "Verse",
+            "bars": 2
+          },
+          {
+            "name": "Chorus",
+            "bars": 2
+          }
+        ],
+        "uniqueMidiCount": 16,
+        "uniqueOnsetCount": 37,
+        "voices": [
+          "kick",
+          "hat",
+          "snare",
+          "bass",
+          "lead",
+          "chord"
+        ]
+      },
+      "WHAT_OWNER_SHOULD_LISTEN_FOR": "The whole sketch as a tiny demo. Judge musical usefulness, not a rubber stamp.",
+      "KNOWN_LIMITATIONS": [
+        "Offline oscillator sketch, not a sampled library and not real-time DSP.",
+        "Not Musical Brain quality PASS.",
+        "Original UAOS sketch — not product catalog content and not a licensed song."
+      ],
+      "musicalQualityPass": false,
+      "musicalQualityClaim": false,
+      "sineFixture": false,
+      "technicalFixtureUsedAsMusicalProof": false
+    }
+  ],
+  "technicalFixturesNotProof": [
+    "C:\\keyboard-manager-clean\\docs\\owner-listening-pack\\technical-fixtures\\technical-mix-not-musical-proof.wav",
+    "C:\\keyboard-manager-clean\\docs\\owner-listening-pack\\technical-fixtures\\a440-sine-analysis-fixture.wav"
+  ],
+  "OWNER_DECISION": "NEEDS_FIXES",
+  "OWNER_DECISION_SOURCE": "EXPLICIT_OWNER_CHAT_DECISION",
+  "OWNER_RELISTEN_REQUIRED": "DEFERRED_TO_FINAL_PROGRAM_ACCEPTANCE",
+  "relisten": {
+    "mode": "EXAMPLE_05_ONLY",
+    "old": {
+      "id": "old-05-rejected-major-pop",
+      "file": "old-05-rejected-major-pop.wav",
+      "SHA256": "5be395e999b82835dc0479208d364225737c8fbed5f6832a4b2a6936d188db58",
+      "title": "OLD 05 — rejected major-pop rewrite"
+    },
+    "fixed": {
+      "id": "05-alternative-in-context",
+      "file": "05-alternative-in-context.wav",
+      "SHA256": "13be9b796483ae687803223e96197569a5ac0bd60df0dad16a243e15216dbadd",
+      "title": "Alternative B — in-context Hijaz fill"
+    },
+    "reference": {
+      "id": "04-after-arranged",
+      "file": "04-after-arranged.wav",
+      "title": "Reference 04 — approved arranged Hijaz"
+    }
+  },
+  "EXAMPLE_05_PROVISIONAL_ACCEPTANCE": true,
+  "OWNER_RELISTEN_NOW": false,
+  "FINAL_MUSICAL_ACCEPTANCE_DEFERRED": true,
+  "OWNER_MUSICAL_LISTENING_PASS": false
+}

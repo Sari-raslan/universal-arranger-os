@@ -1,0 +1,38 @@
+{
+  "id": "TASK-15-01598-RESUMEQUEUE_ADAPTER_SURFACE_IMPLEMENTATI",
+  "epicId": "EPIC-15-0016-FUTURE_COMMANDER_ADAPTER_CONTRACTS",
+  "domain": "15-COMMANDER-FUTURE-ADAPTER",
+  "title": "resumeQueue adapter surface implementation",
+  "phase": "IMPLEMENT",
+  "releaseTrain": "R1-STABLE-COMMERCIAL",
+  "state": "READY",
+  "priority": 41,
+  "estimateMinutesMin": 60,
+  "estimateMinutesMax": 240,
+  "inputs": [],
+  "acceptanceCriteria": [
+    "resumeQueue adapter surface implementation contract file exists",
+    "Unit assertions pass for resumeQueue adapter surface implementation",
+    "Evidence JSON written with SHA256"
+  ],
+  "tests": [
+    "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-15-01598-resumequeue_adapter_surface_implementati\\tests\\main.test.mjs"
+  ],
+  "evidence": [
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-15-01598-resumequeue_adapter_surface_implementati/evidence/result.json"
+  ],
+  "allowedPaths": [
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-15-01598-resumequeue_adapter_surface_implementati",
+    "C:\\keyboard-manager-clean\\uaos-agent-factory\\.runtime\\artifacts\\uaos-program-tree\\TASK-15-01598-RESUMEQUEUE_ADAPTER_SURFACE_IMPLEMENTATI"
+  ],
+  "ownerFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-15-01598-resumequeue_adapter_surface_implementati\\src\\resumequeue_adapter_surface_impl.mjs",
+  "worktree": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-15-01598-resumequeue_adapter_surface_implementati",
+  "gate": null,
+  "blockedReason": null,
+  "rc1Critical": false,
+  "claims": [],
+  "lease": null,
+  "heartbeats": [],
+  "createdAt": "2026-08-04T20:47:04.343Z",
+  "updatedAt": "2026-08-04T20:49:27.739Z"
+}

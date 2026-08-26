@@ -1,0 +1,84 @@
+{
+    "v14Executed":  true,
+    "v14Status":  "UAOS_V14_CURSOR_SOURCE_ADOPTION_PREPARATION_ORCHESTRATION_PASS",
+    "products":  [
+                     {
+                         "blocker":  "commercial ledger ADR-040",
+                         "ownerDecision":  "AWAITING_ADOPTION_GATE",
+                         "nextSafeAction":  "Keep L130; prepare patches only",
+                         "implementationStatus":  "ADOPTION_READY",
+                         "baseline":  "8a149267…",
+                         "worktree":  "library-l-130 / platform-v14-adoption/library-factory-8a149267",
+                         "sourceStatus":  "ADOPTABLE_SOURCE",
+                         "testStatus":  "PASS",
+                         "task":  "adoption",
+                         "repository":  "uaos-real-product",
+                         "product":  "Library Factory"
+                     },
+                     {
+                         "blocker":  "Keyboard Converters missing",
+                         "ownerDecision":  "AWAITING_ADOPTION_GATE",
+                         "nextSafeAction":  "Adopt foundations; exclude hardware writer",
+                         "implementationStatus":  "ADOPTION_READY",
+                         "baseline":  "415db512…",
+                         "worktree":  "arranger-integration / keyboard-pro-415db512",
+                         "sourceStatus":  "ADOPTABLE_SOURCE",
+                         "testStatus":  "PASS",
+                         "task":  "adoption",
+                         "repository":  "uaos-real-product",
+                         "product":  "Keyboard Pro"
+                     },
+                     {
+                         "blocker":  "no Creator shell",
+                         "ownerDecision":  "N/A",
+                         "nextSafeAction":  "Extract contracts/export only",
+                         "implementationStatus":  "REUSE_READY",
+                         "baseline":  "n/a",
+                         "worktree":  "reuse matrix only",
+                         "sourceStatus":  "PARTIAL_REUSE_ONLY",
+                         "testStatus":  "N/A",
+                         "task":  "reuse",
+                         "repository":  "n/a",
+                         "product":  "Creator"
+                     },
+                     {
+                         "blocker":  "no legacy source",
+                         "ownerDecision":  "N/A",
+                         "nextSafeAction":  "Continue Phase1 after contracts",
+                         "implementationStatus":  "PARTIAL_IMPLEMENTATION",
+                         "baseline":  "new",
+                         "worktree":  "platform-v14-1-continuation/studio-phase0-contracts",
+                         "sourceStatus":  "GREENFIELD_REQUIRED",
+                         "testStatus":  "PASS",
+                         "task":  "phase0-contracts",
+                         "repository":  "greenfield",
+                         "product":  "Studio Pro"
+                     },
+                     {
+                         "blocker":  "owner choice",
+                         "ownerDecision":  "OWNER_DECISION_REQUIRED",
+                         "nextSafeAction":  "Do not auto-select",
+                         "implementationStatus":  "OWNER_DECISION_REQUIRED",
+                         "baseline":  "c0f1c58… / 57d70df…",
+                         "worktree":  "singy-integration vs commercial-rc2",
+                         "sourceStatus":  "MULTIPLE_CANDIDATES",
+                         "testStatus":  "PRIOR",
+                         "task":  "source-selection",
+                         "repository":  "uaos-real-product",
+                         "product":  "Kids"
+                     },
+                     {
+                         "blocker":  "owner choice",
+                         "ownerDecision":  "OWNER_DECISION_REQUIRED",
+                         "nextSafeAction":  "Do not auto-select",
+                         "implementationStatus":  "OWNER_DECISION_REQUIRED",
+                         "baseline":  "c0f1c58… / 57d70df…",
+                         "worktree":  "singy-integration vs commercial-rc2",
+                         "sourceStatus":  "MULTIPLE_CANDIDATES",
+                         "testStatus":  "PRIOR",
+                         "task":  "source-selection",
+                         "repository":  "uaos-real-product",
+                         "product":  "Teen"
+                     }
+                 ]
+}

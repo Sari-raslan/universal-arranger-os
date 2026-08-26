@@ -1,0 +1,1 @@
+UAOS Arranger Studio V14\nDouble-click START-UAOS-ARRANGER-STUDIO.bat\nUse STOP-*.bat for clean shutdown.\nFrozen V11 ZIP preserved separately.\n

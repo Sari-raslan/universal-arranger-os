@@ -1,0 +1,35 @@
+{
+  "taskId": "TASK-05-00581-INSTRUMENT_ROLES_CONTRACT",
+  "agentId": "NODE_LOCAL_WORKER-0008",
+  "startedAt": "2026-08-04T20:49:22.265Z",
+  "endedAt": "2026-08-04T20:49:22.403Z",
+  "status": "PASS",
+  "tests": [
+    {
+      "command": "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-05-00581-instrument_roles_contract\\tests\\main.test.mjs",
+      "exitCode": 0,
+      "stdoutTail": "✔ TASK-05-00581-INSTRUMENT_ROLES_CONTRACT verify (0.6943ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 80.3672\n"
+    }
+  ],
+  "sha256": "75F669726F552085A77D8ADDD41B1CD261662ADE191D1FD4C172CCE7F297F01B",
+  "allowedPathsUsed": [
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-05-00581-instrument_roles_contract",
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-05-00581-instrument_roles_contract\\src\\instrument_roles_contract.mjs",
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-05-00581-instrument_roles_contract\\tests\\main.test.mjs"
+  ],
+  "truthStatements": [
+    "Technical WAV success does not prove musical quality",
+    "Fixtures are not product content",
+    "Studio Offline Render is not Real-time DSP",
+    "KORG WRITE_UNSUPPORTED",
+    "No auto adoption of Kids/Teen/Pricing",
+    "Commander not activated"
+  ],
+  "ownerFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-05-00581-instrument_roles_contract\\src\\instrument_roles_contract.mjs",
+  "phase": "DEFINE",
+  "gate": null,
+  "noPush": true,
+  "noMerge": true,
+  "noDeploy": true,
+  "commanderActivated": false
+}

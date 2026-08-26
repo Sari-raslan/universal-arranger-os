@@ -1,0 +1,9 @@
+{
+    "name":  "build",
+    "command":  "npm run build",
+    "start":  "2026-08-04T21:53:33.6440006+02:00",
+    "end":  "2026-08-04T21:53:35.1324223+02:00",
+    "exitCode":  0,
+    "stdout":  "npm warn Unknown env config \"devdir\". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.\r\n\r\n\u003e uaos-commander@1.0.0 build\r\n\u003e node scripts/generate-build-info.mjs \u0026\u0026 electron-vite build\r\n\r\n[generate-build-info] {\"sourceHash\":\"9d6e8880d7153cde\",\"builtAt\":\"2026-08-04T19:53:33.943Z\",\"appVersion\":\"1.0.0\",\"sourceFileCount\":80,\"testFileCount\":52,\"testCaseCount\":537}\r\nvite v5.4.21 building SSR bundle for production...\r\ntransforming...\r\n✓ 46 modules transformed.\r\nrendering chunks...\r\nout/main/index.js  328.86 kB\r\n✓ built in 326ms\r\nvite v5.4.21 building SSR bundle for production...\r\ntransforming...\r\n✓ 1 modules transformed.\r\nrendering chunks...\r\nout/preload/index.js  1.89 kB\r\n✓ built in 8ms\r\nvite v5.4.21 building for production...\r\ntransforming...\r\n✓ 48 modules transformed.\r\nrendering chunks...\r\n../../out/renderer/index.html                   0.40 kB\r\n../../out/renderer/assets/index-CDxCVaCt.css   14.19 kB\r\n../../out/renderer/assets/index-ATWg74PA.js   288.47 kB\r\n✓ built in 374ms",
+    "pass":  true
+}

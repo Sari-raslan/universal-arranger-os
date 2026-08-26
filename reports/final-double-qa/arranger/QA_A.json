@@ -1,0 +1,4522 @@
+{
+  "schema": "uaos.final-double-qa.lane/v1",
+  "sku": "ARRANGER",
+  "lane": "A",
+  "QA_PASS": "YES",
+  "startedAt": "2026-08-26T05:03:47.955Z",
+  "endedAt": "2026-08-26T05:04:05.028Z",
+  "durationMs": 17073,
+  "candidateDir": "C:\\keyboard-manager-clean\\FINAL_RELEASE_CANDIDATES\\ARRANGER_STUDIO",
+  "candidateHash": "63c19d445a075e220a3cef595704a228531cd6bb5c72e5a6ad6e08021bf013ba",
+  "product": "UAOS Arranger Studio",
+  "checks": [
+    {
+      "name": "CANDIDATE_EXISTS",
+      "ok": true,
+      "path": "C:\\keyboard-manager-clean\\FINAL_RELEASE_CANDIDATES\\ARRANGER_STUDIO"
+    },
+    {
+      "name": "CANDIDATE_HASH",
+      "ok": true,
+      "hash": "63c19d445a075e220a3cef595704a228531cd6bb5c72e5a6ad6e08021bf013ba"
+    },
+    {
+      "name": "FILE_README_FIRST.txt",
+      "ok": true,
+      "path": "README_FIRST.txt"
+    },
+    {
+      "name": "FILE_RIGHTS_SEAL.json",
+      "ok": true,
+      "path": "RIGHTS_SEAL.json"
+    },
+    {
+      "name": "FILE_START-UAOS-ARRANGER-STUDIO.bat",
+      "ok": true,
+      "path": "START-UAOS-ARRANGER-STUDIO.bat"
+    },
+    {
+      "name": "FILE_SHA256SUMS.txt",
+      "ok": true,
+      "path": "SHA256SUMS.txt"
+    },
+    {
+      "name": "RIGHTS_SEAL",
+      "ok": true
+    },
+    {
+      "name": "MANIFEST_INTEGRITY",
+      "ok": true,
+      "checked": 4345
+    },
+    {
+      "name": "NO_COMMANDER",
+      "ok": true
+    },
+    {
+      "name": "DIAGNOSTICS_SECRET_SCAN",
+      "ok": true
+    },
+    {
+      "name": "CORE_WORKFLOWS",
+      "ok": true,
+      "pass": 20,
+      "total": 20,
+      "p0": 0
+    },
+    {
+      "name": "CLEAN_INSTALL",
+      "ok": true,
+      "CLEAN_INSTALL_PASS": true,
+      "CLEAN_FIRST_RUN_PASS": true,
+      "SELF_CONTAINED_CORE_PASS": true,
+      "steps": [
+        {
+          "step": "INSTALL_OR_OPEN",
+          "ok": true,
+          "project": {
+            "schema": "uaos.musical-session-memory/v1",
+            "projectId": "arranger-1787720639265",
+            "title": "Clean Install",
+            "tempo": 96,
+            "meter": "4/4",
+            "keyCenter": "C",
+            "arrangement": {
+              "sections": [
+                {
+                  "name": "Intro",
+                  "bars": 4,
+                  "chord": "Cm"
+                },
+                {
+                  "name": "Main A",
+                  "bars": 8,
+                  "chord": "Cm"
+                },
+                {
+                  "name": "Main B",
+                  "bars": 8,
+                  "chord": "Ab"
+                },
+                {
+                  "name": "Break",
+                  "bars": 2,
+                  "chord": "Bb"
+                },
+                {
+                  "name": "Ending",
+                  "bars": 4,
+                  "chord": "Cm"
+                }
+              ]
+            },
+            "mixerSnapshot": {
+              "channels": []
+            },
+            "updatedAt": "2026-08-26T05:03:59.265Z"
+          },
+          "sections": [
+            {
+              "section": "Intro",
+              "bars": 4,
+              "chord": "Cm"
+            },
+            {
+              "section": "Main A",
+              "bars": 8,
+              "chord": "Cm"
+            },
+            {
+              "section": "Main B",
+              "bars": 8,
+              "chord": "Ab"
+            },
+            {
+              "section": "Break",
+              "bars": 2,
+              "chord": "Bb"
+            },
+            {
+              "section": "Ending",
+              "bars": 4,
+              "chord": "Cm"
+            }
+          ],
+          "goldenBrainCapabilityId": "uaos.golden-brain.core/v1",
+          "sku": "uaos-arranger-studio-early-access",
+          "capabilityId": "uaos.sku.arranger-studio/v1",
+          "sha256": "663ffba53af9c3ad5cc1ecf917db8f97947883333291875980529423a92a3073"
+        },
+        {
+          "step": "FIRST_RUN",
+          "ok": true,
+          "demos": 3
+        },
+        {
+          "step": "OPEN_DEMO",
+          "ok": true,
+          "demo": {
+            "id": "demo-01-chords-arrangement",
+            "title": "Chords to Arrangement",
+            "rights": "UAOS_IN_HOUSE_ORIGINAL",
+            "chord": "Cm",
+            "style": "Oriental Pop",
+            "maqam": "Nahawand",
+            "tempo": 96,
+            "workflow": "chords → arrangement"
+          },
+          "project": {
+            "schema": "uaos.musical-session-memory/v1",
+            "projectId": "demo-01-chords-arrangement",
+            "title": "Chords to Arrangement",
+            "tempo": 96,
+            "meter": "4/4",
+            "keyCenter": "Cm",
+            "arrangement": {
+              "sections": [
+                {
+                  "section": "Intro",
+                  "bars": 4,
+                  "chord": "Cm"
+                },
+                {
+                  "section": "Main A",
+                  "bars": 8,
+                  "chord": "Cm"
+                },
+                {
+                  "section": "Main B",
+                  "bars": 8,
+                  "chord": "Ab"
+                },
+                {
+                  "section": "Break",
+                  "bars": 2,
+                  "chord": "Bb"
+                },
+                {
+                  "section": "Ending",
+                  "bars": 4,
+                  "chord": "Cm"
+                }
+              ]
+            },
+            "mixerSnapshot": {
+              "channels": []
+            },
+            "updatedAt": "2026-08-26T05:04:02.634Z"
+          },
+          "song": [
+            {
+              "section": "Intro",
+              "bars": 4,
+              "chord": "Cm"
+            },
+            {
+              "section": "Main A",
+              "bars": 8,
+              "chord": "Cm"
+            },
+            {
+              "section": "Main B",
+              "bars": 8,
+              "chord": "Ab"
+            },
+            {
+              "section": "Break",
+              "bars": 2,
+              "chord": "Bb"
+            },
+            {
+              "section": "Ending",
+              "bars": 4,
+              "chord": "Cm"
+            }
+          ],
+          "intelligenceOk": true,
+          "pipelineOk": true,
+          "sha256": "8eeee15eeb54700449e915d2ac7ac81843626b289e53ae08a290b19ee411d9e5"
+        },
+        {
+          "step": "PLAY",
+          "workflowId": "wf-14-play",
+          "ok": true,
+          "result": {
+            "ok": true,
+            "transport": {
+              "state": "playing",
+              "tempo": 96,
+              "position": 0,
+              "loop": true,
+              "musicalQualityPass": false
+            }
+          },
+          "outputArtifact": "c28d50a28e6665c4191d5885d5de3b349d40a59fd31c5f9c7891a596528a8ba3",
+          "sha256": "c28d50a28e6665c4191d5885d5de3b349d40a59fd31c5f9c7891a596528a8ba3",
+          "durationMs": 0
+        },
+        {
+          "step": "EDIT",
+          "workflowId": "wf-13-edit",
+          "ok": true,
+          "result": {
+            "ok": true,
+            "workspace": {
+              "schema": "uaos.creator.workspace/v1",
+              "project": {
+                "schema": "uaos.musical-session-memory/v1",
+                "projectId": "creator-1787720642636",
+                "title": "WF13 Edit",
+                "tempo": 100,
+                "meter": "4/4",
+                "keyCenter": "C",
+                "arrangement": {
+                  "sections": [
+                    {
+                      "name": "Intro",
+                      "bars": 4,
+                      "chord": "Cm"
+                    },
+                    {
+                      "name": "Main A",
+                      "bars": 8,
+                      "chord": "Cm"
+                    },
+                    {
+                      "name": "Main B",
+                      "bars": 8,
+                      "chord": "Ab"
+                    },
+                    {
+                      "name": "Break",
+                      "bars": 2,
+                      "chord": "Bb"
+                    },
+                    {
+                      "name": "Ending",
+                      "bars": 4,
+                      "chord": "Cm"
+                    }
+                  ]
+                },
+                "mixerSnapshot": {
+                  "channels": []
+                },
+                "updatedAt": "2026-08-26T05:04:02.636Z"
+              },
+              "goldenBrainCapabilityId": "uaos.golden-brain.core/v1",
+              "tracks": [
+                {
+                  "id": "drums",
+                  "kind": "sequencer"
+                },
+                {
+                  "id": "bass",
+                  "kind": "harmony"
+                },
+                {
+                  "id": "chords",
+                  "kind": "harmony"
+                },
+                {
+                  "id": "export",
+                  "kind": "midi-smf"
+                }
+              ],
+              "midi": {
+                "ok": true,
+                "noteCount": 8,
+                "bytesSha256": "b7422b10a807864b93c306026b0fcbefdc65320d6d4a357bc9bf5a9aeb353c3d"
+              },
+              "commercialReady": false,
+              "musicalQualityPass": false
+            },
+            "sha256": "90d5e805e7184654311abf0b71fb90301263123ea186de96797131e5eafce26c",
+            "capabilityId": "uaos.creator.workspace/v1"
+          },
+          "outputArtifact": "90d5e805e7184654311abf0b71fb90301263123ea186de96797131e5eafce26c",
+          "sha256": "90d5e805e7184654311abf0b71fb90301263123ea186de96797131e5eafce26c",
+          "durationMs": 835
+        },
+        {
+          "step": "SAVE",
+          "workflowId": "wf-16-save",
+          "ok": true,
+          "result": {
+            "ok": true,
+            "project": {
+              "schema": "uaos.musical-session-memory/v1",
+              "projectId": "untitled",
+              "title": "WF16",
+              "tempo": 96,
+              "meter": "4/4",
+              "keyCenter": "C",
+              "arrangement": {
+                "sections": []
+              },
+              "mixerSnapshot": {
+                "channels": []
+              },
+              "updatedAt": "2026-08-26T05:04:03.470Z"
+            },
+            "sha256": "1452fc9db94e44a7f4bc95b274d9002a186e1ceaf76c49307a303c9fe18375ea"
+          },
+          "outputArtifact": "1452fc9db94e44a7f4bc95b274d9002a186e1ceaf76c49307a303c9fe18375ea",
+          "sha256": "1452fc9db94e44a7f4bc95b274d9002a186e1ceaf76c49307a303c9fe18375ea",
+          "durationMs": 1
+        },
+        {
+          "step": "EXPORT",
+          "workflowId": "wf-17-midi-export",
+          "ok": true,
+          "result": {
+            "ok": true,
+            "draft": {
+              "ok": true,
+              "format": "uaos-midi-draft-json",
+              "ppq": 480,
+              "tempo": 100,
+              "events": [
+                {
+                  "time": 0,
+                  "type": "section",
+                  "section": "Intro",
+                  "chord": "Cm",
+                  "bars": 4
+                },
+                {
+                  "time": 16,
+                  "type": "section",
+                  "section": "Main A",
+                  "chord": "Cm",
+                  "bars": 8
+                },
+                {
+                  "time": 48,
+                  "type": "section",
+                  "section": "Main B",
+                  "chord": "Ab",
+                  "bars": 8
+                },
+                {
+                  "time": 80,
+                  "type": "section",
+                  "section": "Break",
+                  "chord": "Bb",
+                  "bars": 2
+                },
+                {
+                  "time": 88,
+                  "type": "section",
+                  "section": "Ending",
+                  "chord": "Cm",
+                  "bars": 4
+                }
+              ]
+            },
+            "noteEvents": [
+              {
+                "midi": 24,
+                "startTick": 0,
+                "durationTicks": 1680,
+                "velocity": 74,
+                "channel": 1
+              },
+              {
+                "midi": 36,
+                "startTick": 0,
+                "durationTicks": 1536,
+                "velocity": 55,
+                "channel": 2
+              },
+              {
+                "midi": 39,
+                "startTick": 16,
+                "durationTicks": 1536,
+                "velocity": 55,
+                "channel": 2
+              },
+              {
+                "midi": 43,
+                "startTick": 32,
+                "durationTicks": 1536,
+                "velocity": 55,
+                "channel": 2
+              },
+              {
+                "midi": 24,
+                "startTick": 1920,
+                "durationTicks": 1680,
+                "velocity": 74,
+                "channel": 1
+              },
+              {
+                "midi": 36,
+                "startTick": 1920,
+                "durationTicks": 1536,
+                "velocity": 55,
+                "channel": 2
+              },
+              {
+                "midi": 39,
+                "startTick": 1936,
+                "durationTicks": 1536,
+                "velocity": 55,
+                "channel": 2
+              },
+              {
+                "midi": 43,
+                "startTick": 1952,
+                "durationTicks": 1536,
+                "velocity": 55,
+                "channel": 2
+              }
+            ],
+            "bytes": {
+              "type": "Buffer",
+              "data": [
+                77,
+                84,
+                104,
+                100,
+                0,
+                0,
+                0,
+                6,
+                0,
+                0,
+                0,
+                1,
+                1,
+                224,
+                77,
+                84,
+                114,
+                107,
+                0,
+                0,
+                0,
+                78,
+                0,
+                255,
+                81,
+                3,
+                9,
+                39,
+                192,
+                0,
+                145,
+                24,
+                74,
+                0,
+                146,
+                36,
+                55,
+                16,
+                146,
+                39,
+                55,
+                16,
+                146,
+                43,
+                55,
+                139,
+                96,
+                130,
+                36,
+                64,
+                16,
+                130,
+                39,
+                64,
+                16,
+                130,
+                43,
+                64,
+                112,
+                129,
+                24,
+                64,
+                129,
+                112,
+                145,
+                24,
+                74,
+                0,
+                146,
+                36,
+                55,
+                16,
+                146,
+                39,
+                55,
+                16,
+                146,
+                43,
+                55,
+                139,
+                96,
+                130,
+                36,
+                64,
+                16,
+                130,
+                39,
+                64,
+                16,
+                130,
+                43,
+                64,
+                112,
+                129,
+                24,
+                64,
+                0,
+                255,
+                47,
+                0
+              ]
+            },
+            "parsed": {
+              "ok": true,
+              "validHeader": true,
+              "headerLength": 6,
+              "format": 0,
+              "trackCount": 1,
+              "division": 480,
+              "ppq": 480,
+              "notes": 8,
+              "noteEvents": [
+                {
+                  "midi": 36,
+                  "startTick": 0,
+                  "durationTicks": 1536,
+                  "velocity": 55,
+                  "channel": 2
+                },
+                {
+                  "midi": 39,
+                  "startTick": 16,
+                  "durationTicks": 1536,
+                  "velocity": 55,
+                  "channel": 2
+                },
+                {
+                  "midi": 43,
+                  "startTick": 32,
+                  "durationTicks": 1536,
+                  "velocity": 55,
+                  "channel": 2
+                },
+                {
+                  "midi": 24,
+                  "startTick": 0,
+                  "durationTicks": 1680,
+                  "velocity": 74,
+                  "channel": 1
+                },
+                {
+                  "midi": 36,
+                  "startTick": 1920,
+                  "durationTicks": 1536,
+                  "velocity": 55,
+                  "channel": 2
+                },
+                {
+                  "midi": 39,
+                  "startTick": 1936,
+                  "durationTicks": 1536,
+                  "velocity": 55,
+                  "channel": 2
+                },
+                {
+                  "midi": 43,
+                  "startTick": 1952,
+                  "durationTicks": 1536,
+                  "velocity": 55,
+                  "channel": 2
+                },
+                {
+                  "midi": 24,
+                  "startTick": 1920,
+                  "durationTicks": 1680,
+                  "velocity": 74,
+                  "channel": 1
+                }
+              ],
+              "controllers": 0,
+              "programChanges": 0,
+              "tempoEvents": 1,
+              "sysexEvents": 0,
+              "level": "READ"
+            },
+            "ir": {
+              "ok": true,
+              "ir": {
+                "schema": "uaos.neutral-ir/v2",
+                "neutralIrVersion": "uaos.neutral-ir/v2",
+                "family": "midi",
+                "ppq": 480,
+                "noteEvents": [
+                  {
+                    "midi": 36,
+                    "startTick": 0,
+                    "durationTicks": 1536,
+                    "velocity": 55,
+                    "channel": 2
+                  },
+                  {
+                    "midi": 39,
+                    "startTick": 16,
+                    "durationTicks": 1536,
+                    "velocity": 55,
+                    "channel": 2
+                  },
+                  {
+                    "midi": 43,
+                    "startTick": 32,
+                    "durationTicks": 1536,
+                    "velocity": 55,
+                    "channel": 2
+                  },
+                  {
+                    "midi": 24,
+                    "startTick": 0,
+                    "durationTicks": 1680,
+                    "velocity": 74,
+                    "channel": 1
+                  },
+                  {
+                    "midi": 36,
+                    "startTick": 1920,
+                    "durationTicks": 1536,
+                    "velocity": 55,
+                    "channel": 2
+                  },
+                  {
+                    "midi": 39,
+                    "startTick": 1936,
+                    "durationTicks": 1536,
+                    "velocity": 55,
+                    "channel": 2
+                  },
+                  {
+                    "midi": 43,
+                    "startTick": 1952,
+                    "durationTicks": 1536,
+                    "velocity": 55,
+                    "channel": 2
+                  },
+                  {
+                    "midi": 24,
+                    "startTick": 1920,
+                    "durationTicks": 1680,
+                    "velocity": 74,
+                    "channel": 1
+                  }
+                ],
+                "tempoEvents": 1,
+                "controllers": 0,
+                "programChanges": 0,
+                "arrangerSemantics": {
+                  "schema": "uaos.neutral-ir.arranger-semantics/v2",
+                  "tempo": null,
+                  "timeSignatures": [],
+                  "tracks": [
+                    {
+                      "channel": 2,
+                      "role": "UNKNOWN_VENDOR_ROLE"
+                    },
+                    {
+                      "channel": 1,
+                      "role": "UNKNOWN_VENDOR_ROLE"
+                    }
+                  ],
+                  "channels": [
+                    2,
+                    1
+                  ],
+                  "events": {
+                    "notes": [
+                      {
+                        "midi": 36,
+                        "startTick": 0,
+                        "durationTicks": 1536,
+                        "velocity": 55,
+                        "channel": 2
+                      },
+                      {
+                        "midi": 39,
+                        "startTick": 16,
+                        "durationTicks": 1536,
+                        "velocity": 55,
+                        "channel": 2
+                      },
+                      {
+                        "midi": 43,
+                        "startTick": 32,
+                        "durationTicks": 1536,
+                        "velocity": 55,
+                        "channel": 2
+                      },
+                      {
+                        "midi": 24,
+                        "startTick": 0,
+                        "durationTicks": 1680,
+                        "velocity": 74,
+                        "channel": 1
+                      },
+                      {
+                        "midi": 36,
+                        "startTick": 1920,
+                        "durationTicks": 1536,
+                        "velocity": 55,
+                        "channel": 2
+                      },
+                      {
+                        "midi": 39,
+                        "startTick": 1936,
+                        "durationTicks": 1536,
+                        "velocity": 55,
+                        "channel": 2
+                      },
+                      {
+                        "midi": 43,
+                        "startTick": 1952,
+                        "durationTicks": 1536,
+                        "velocity": 55,
+                        "channel": 2
+                      },
+                      {
+                        "midi": 24,
+                        "startTick": 1920,
+                        "durationTicks": 1680,
+                        "velocity": 74,
+                        "channel": 1
+                      }
+                    ],
+                    "velocity": true,
+                    "controllers": [],
+                    "programChanges": [],
+                    "bankSelect": [],
+                    "pitchBend": [],
+                    "aftertouch": [],
+                    "tempoEvents": 1,
+                    "timeSignatures": [],
+                    "markers": [],
+                    "lyrics": []
+                  },
+                  "sysexPreserved": [],
+                  "markers": [],
+                  "sections": [
+                    {
+                      "role": "INTRO",
+                      "name": "Intro",
+                      "lengthBars": 2,
+                      "bars": 2,
+                      "timeSignature": null,
+                      "tempo": null,
+                      "tracks": [],
+                      "events": [],
+                      "chordBehavior": null,
+                      "variationRelationship": null,
+                      "transitionIntent": null,
+                      "vendorName": null,
+                      "vendorCode": null,
+                      "opaqueSourceMetadata": null
+                    },
+                    {
+                      "role": "MAIN",
+                      "name": "Main",
+                      "lengthBars": 4,
+                      "bars": 4,
+                      "timeSignature": null,
+                      "tempo": null,
+                      "tracks": [],
+                      "events": [],
+                      "chordBehavior": null,
+                      "variationRelationship": null,
+                      "transitionIntent": null,
+                      "vendorName": null,
+                      "vendorCode": null,
+                      "opaqueSourceMetadata": null
+                    },
+                    {
+                      "role": "VARIATION_1",
+                      "name": "Variation 1",
+                      "lengthBars": 4,
+                      "bars": 4,
+                      "timeSignature": null,
+                      "tempo": null,
+                      "tracks": [],
+                      "events": [],
+                      "chordBehavior": null,
+                      "variationRelationship": null,
+                      "transitionIntent": null,
+                      "vendorName": null,
+                      "vendorCode": null,
+                      "opaqueSourceMetadata": null
+                    },
+                    {
+                      "role": "FILL",
+                      "name": "Fill",
+                      "lengthBars": 1,
+                      "bars": 1,
+                      "timeSignature": null,
+                      "tempo": null,
+                      "tracks": [],
+                      "events": [],
+                      "chordBehavior": null,
+                      "variationRelationship": null,
+                      "transitionIntent": null,
+                      "vendorName": null,
+                      "vendorCode": null,
+                      "opaqueSourceMetadata": null
+                    },
+                    {
+                      "role": "BREAK",
+                      "name": "Break",
+                      "lengthBars": 2,
+                      "bars": 2,
+                      "timeSignature": null,
+                      "tempo": null,
+                      "tracks": [],
+                      "events": [],
+                      "chordBehavior": null,
+                      "variationRelationship": null,
+                      "transitionIntent": null,
+                      "vendorName": null,
+                      "vendorCode": null,
+                      "opaqueSourceMetadata": null
+                    },
+                    {
+                      "role": "ENDING",
+                      "name": "Ending",
+                      "lengthBars": 2,
+                      "bars": 2,
+                      "timeSignature": null,
+                      "tempo": null,
+                      "tracks": [],
+                      "events": [],
+                      "chordBehavior": null,
+                      "variationRelationship": null,
+                      "transitionIntent": null,
+                      "vendorName": null,
+                      "vendorCode": null,
+                      "opaqueSourceMetadata": null
+                    }
+                  ],
+                  "sectionOrdering": [
+                    "INTRO",
+                    "MAIN",
+                    "VARIATION_1",
+                    "FILL",
+                    "BREAK",
+                    "ENDING"
+                  ],
+                  "introMainFillBreakEnding": {
+                    "intro": {
+                      "role": "INTRO",
+                      "name": "Intro",
+                      "lengthBars": 2,
+                      "bars": 2,
+                      "timeSignature": null,
+                      "tempo": null,
+                      "tracks": [],
+                      "events": [],
+                      "chordBehavior": null,
+                      "variationRelationship": null,
+                      "transitionIntent": null,
+                      "vendorName": null,
+                      "vendorCode": null,
+                      "opaqueSourceMetadata": null
+                    },
+                    "introVariants": [],
+                    "main": {
+                      "role": "MAIN",
+                      "name": "Main",
+                      "lengthBars": 4,
+                      "bars": 4,
+                      "timeSignature": null,
+                      "tempo": null,
+                      "tracks": [],
+                      "events": [],
+                      "chordBehavior": null,
+                      "variationRelationship": null,
+                      "transitionIntent": null,
+                      "vendorName": null,
+                      "vendorCode": null,
+                      "opaqueSourceMetadata": null
+                    },
+                    "variations": [
+                      {
+                        "role": "VARIATION_1",
+                        "name": "Variation 1",
+                        "lengthBars": 4,
+                        "bars": 4,
+                        "timeSignature": null,
+                        "tempo": null,
+                        "tracks": [],
+                        "events": [],
+                        "chordBehavior": null,
+                        "variationRelationship": null,
+                        "transitionIntent": null,
+                        "vendorName": null,
+                        "vendorCode": null,
+                        "opaqueSourceMetadata": null
+                      }
+                    ],
+                    "fills": [
+                      {
+                        "role": "FILL",
+                        "name": "Fill",
+                        "lengthBars": 1,
+                        "bars": 1,
+                        "timeSignature": null,
+                        "tempo": null,
+                        "tracks": [],
+                        "events": [],
+                        "chordBehavior": null,
+                        "variationRelationship": null,
+                        "transitionIntent": null,
+                        "vendorName": null,
+                        "vendorCode": null,
+                        "opaqueSourceMetadata": null
+                      }
+                    ],
+                    "fillTransitions": [],
+                    "break": {
+                      "role": "BREAK",
+                      "name": "Break",
+                      "lengthBars": 2,
+                      "bars": 2,
+                      "timeSignature": null,
+                      "tempo": null,
+                      "tracks": [],
+                      "events": [],
+                      "chordBehavior": null,
+                      "variationRelationship": null,
+                      "transitionIntent": null,
+                      "vendorName": null,
+                      "vendorCode": null,
+                      "opaqueSourceMetadata": null
+                    },
+                    "ending": {
+                      "role": "ENDING",
+                      "name": "Ending",
+                      "lengthBars": 2,
+                      "bars": 2,
+                      "timeSignature": null,
+                      "tempo": null,
+                      "tracks": [],
+                      "events": [],
+                      "chordBehavior": null,
+                      "variationRelationship": null,
+                      "transitionIntent": null,
+                      "vendorName": null,
+                      "vendorCode": null,
+                      "opaqueSourceMetadata": null
+                    },
+                    "endingVariants": []
+                  },
+                  "trackRoles": [
+                    {
+                      "sourceChannel": 2,
+                      "sourceTrack": 2,
+                      "canonicalRole": "BASS",
+                      "program": null,
+                      "bank": null,
+                      "drumKit": null,
+                      "volume": null,
+                      "pan": null,
+                      "transpose": 0,
+                      "octave": 0,
+                      "mute": false,
+                      "vendorAttributes": {}
+                    },
+                    {
+                      "sourceChannel": 1,
+                      "sourceTrack": 1,
+                      "canonicalRole": "BASS",
+                      "program": null,
+                      "bank": null,
+                      "drumKit": null,
+                      "volume": null,
+                      "pan": null,
+                      "transpose": 0,
+                      "octave": 0,
+                      "mute": false,
+                      "vendorAttributes": {}
+                    }
+                  ],
+                  "drumMapping": {
+                    "schema": "uaos.neutral-ir.drum-mapping/v1",
+                    "mapped": [],
+                    "unmappedEvents": [],
+                    "lossy": false,
+                    "lossReasons": [],
+                    "preserveUnknown": true
+                  },
+                  "chordStyle": {
+                    "schema": "uaos.neutral-ir.chord-style/v1",
+                    "chordRecognitionMode": "UNKNOWN",
+                    "chordRoot": null,
+                    "quality": null,
+                    "extensions": [],
+                    "inversion": null,
+                    "bassNote": null,
+                    "ntrNttIntent": null,
+                    "scaleKey": null,
+                    "maqamContext": null,
+                    "styleFamily": null,
+                    "groove": null,
+                    "swing": null,
+                    "density": null,
+                    "energy": null,
+                    "phraseBehavior": null,
+                    "fabricatedVendorParameters": false,
+                    "noteEventsAnalyzed": 8
+                  },
+                  "styleParts": [],
+                  "bassRoles": [
+                    {
+                      "sourceChannel": 2,
+                      "sourceTrack": 2,
+                      "canonicalRole": "BASS",
+                      "program": null,
+                      "bank": null,
+                      "drumKit": null,
+                      "volume": null,
+                      "pan": null,
+                      "transpose": 0,
+                      "octave": 0,
+                      "mute": false,
+                      "vendorAttributes": {}
+                    },
+                    {
+                      "sourceChannel": 1,
+                      "sourceTrack": 1,
+                      "canonicalRole": "BASS",
+                      "program": null,
+                      "bank": null,
+                      "drumKit": null,
+                      "volume": null,
+                      "pan": null,
+                      "transpose": 0,
+                      "octave": 0,
+                      "mute": false,
+                      "vendorAttributes": {}
+                    }
+                  ],
+                  "accompanimentRoles": [],
+                  "instrumentProgramMapping": [],
+                  "effectsMetadata": [],
+                  "transposition": 0,
+                  "scaleKeyMaqam": null,
+                  "performanceSettings": {},
+                  "resourceReferences": [],
+                  "vendorExtensions": null,
+                  "preserveUnknownWhenSafe": true,
+                  "musicalQualityClaim": false,
+                  "chords": []
+                },
+                "goldenBrain": null,
+                "musicalQualityClaim": false
+              },
+              "level": "NORMALIZE_TO_UAOS_IR"
+            },
+            "musicalQualityPass": false,
+            "commercialReady": false,
+            "hardwareVerified": false,
+            "capabilityId": "uaos.creator.golden-sequencer-midi/v1"
+          },
+          "outputArtifact": "669fa3f41dd27266815681864b9793eb5b62be1c31fbdc4e85a302917ffb4b92",
+          "sha256": "669fa3f41dd27266815681864b9793eb5b62be1c31fbdc4e85a302917ffb4b92",
+          "durationMs": 265
+        },
+        {
+          "step": "CLOSE",
+          "ok": true,
+          "orphans": 0
+        },
+        {
+          "step": "REOPEN",
+          "ok": true,
+          "demo": {
+            "id": "demo-03-export-reopen",
+            "title": "Arrangement MIDI Export & Reopen",
+            "rights": "UAOS_IN_HOUSE_ORIGINAL",
+            "tempo": 100,
+            "bars": 2,
+            "workflow": "arrangement → MIDI export → reopen"
+          },
+          "export": {
+            "ok": true,
+            "sha256": "b7422b10a807864b93c306026b0fcbefdc65320d6d4a357bc9bf5a9aeb353c3d",
+            "noteCount": 8
+          },
+          "reopen": {
+            "bytesLength": 100,
+            "noteCount": 8,
+            "ok": true
+          },
+          "sha256": "2e586d70e2a6445fda19d5ff36c3c7150a8032ca0ae301bff3e95c7923dfdcd0"
+        }
+      ],
+      "sha256": "a63b440c583fe53bb9e63091ef04bc64b5cbe40352f50260135ee7e4c23a44b2"
+    }
+  ],
+  "P0": 0,
+  "P1": 0,
+  "workflows": {
+    "ok": true,
+    "total": 20,
+    "pass": 20,
+    "fail": 0,
+    "p0": 0,
+    "p1": 0,
+    "results": [
+      {
+        "workflowId": "wf-01-new-project",
+        "ok": true,
+        "result": {
+          "ok": true,
+          "project": {
+            "schema": "uaos.musical-session-memory/v1",
+            "projectId": "arranger-1787720635010",
+            "title": "WF01",
+            "tempo": 96,
+            "meter": "4/4",
+            "keyCenter": "C",
+            "arrangement": {
+              "sections": [
+                {
+                  "name": "Intro",
+                  "bars": 4,
+                  "chord": "Cm"
+                },
+                {
+                  "name": "Main A",
+                  "bars": 8,
+                  "chord": "Cm"
+                },
+                {
+                  "name": "Main B",
+                  "bars": 8,
+                  "chord": "Ab"
+                },
+                {
+                  "name": "Break",
+                  "bars": 2,
+                  "chord": "Bb"
+                },
+                {
+                  "name": "Ending",
+                  "bars": 4,
+                  "chord": "Cm"
+                }
+              ]
+            },
+            "mixerSnapshot": {
+              "channels": []
+            },
+            "updatedAt": "2026-08-26T05:03:55.010Z"
+          },
+          "sections": [
+            {
+              "section": "Intro",
+              "bars": 4,
+              "chord": "Cm"
+            },
+            {
+              "section": "Main A",
+              "bars": 8,
+              "chord": "Cm"
+            },
+            {
+              "section": "Main B",
+              "bars": 8,
+              "chord": "Ab"
+            },
+            {
+              "section": "Break",
+              "bars": 2,
+              "chord": "Bb"
+            },
+            {
+              "section": "Ending",
+              "bars": 4,
+              "chord": "Cm"
+            }
+          ],
+          "goldenBrainCapabilityId": "uaos.golden-brain.core/v1",
+          "sku": "uaos-arranger-studio-early-access",
+          "capabilityId": "uaos.sku.arranger-studio/v1",
+          "sha256": "499d0a55546f4e8cba75139463b76fdbc8c2243767bc97a14954d23560a0e81f"
+        },
+        "outputArtifact": "499d0a55546f4e8cba75139463b76fdbc8c2243767bc97a14954d23560a0e81f",
+        "sha256": "499d0a55546f4e8cba75139463b76fdbc8c2243767bc97a14954d23560a0e81f",
+        "durationMs": 2
+      },
+      {
+        "workflowId": "wf-02-open-demo-01",
+        "ok": true,
+        "result": {
+          "ok": true,
+          "demo": {
+            "id": "demo-01-chords-arrangement",
+            "title": "Chords to Arrangement",
+            "rights": "UAOS_IN_HOUSE_ORIGINAL",
+            "chord": "Cm",
+            "style": "Oriental Pop",
+            "maqam": "Nahawand",
+            "tempo": 96,
+            "workflow": "chords → arrangement"
+          },
+          "project": {
+            "schema": "uaos.musical-session-memory/v1",
+            "projectId": "demo-01-chords-arrangement",
+            "title": "Chords to Arrangement",
+            "tempo": 96,
+            "meter": "4/4",
+            "keyCenter": "Cm",
+            "arrangement": {
+              "sections": [
+                {
+                  "section": "Intro",
+                  "bars": 4,
+                  "chord": "Cm"
+                },
+                {
+                  "section": "Main A",
+                  "bars": 8,
+                  "chord": "Cm"
+                },
+                {
+                  "section": "Main B",
+                  "bars": 8,
+                  "chord": "Ab"
+                },
+                {
+                  "section": "Break",
+                  "bars": 2,
+                  "chord": "Bb"
+                },
+                {
+                  "section": "Ending",
+                  "bars": 4,
+                  "chord": "Cm"
+                }
+              ]
+            },
+            "mixerSnapshot": {
+              "channels": []
+            },
+            "updatedAt": "2026-08-26T05:03:55.667Z"
+          },
+          "song": [
+            {
+              "section": "Intro",
+              "bars": 4,
+              "chord": "Cm"
+            },
+            {
+              "section": "Main A",
+              "bars": 8,
+              "chord": "Cm"
+            },
+            {
+              "section": "Main B",
+              "bars": 8,
+              "chord": "Ab"
+            },
+            {
+              "section": "Break",
+              "bars": 2,
+              "chord": "Bb"
+            },
+            {
+              "section": "Ending",
+              "bars": 4,
+              "chord": "Cm"
+            }
+          ],
+          "intelligenceOk": true,
+          "pipelineOk": true,
+          "sha256": "83c785b883a1d9c67cea37070819c4a64c60eb31395d0cd4602c50abc96ddbcf"
+        },
+        "outputArtifact": "83c785b883a1d9c67cea37070819c4a64c60eb31395d0cd4602c50abc96ddbcf",
+        "sha256": "83c785b883a1d9c67cea37070819c4a64c60eb31395d0cd4602c50abc96ddbcf",
+        "durationMs": 657
+      },
+      {
+        "workflowId": "wf-03-open-demo-02",
+        "ok": true,
+        "result": {
+          "ok": true,
+          "demo": {
+            "id": "demo-02-melody-arrangement",
+            "title": "Melody to Arrangement Edit",
+            "rights": "UAOS_IN_HOUSE_ORIGINAL",
+            "melody": "60,61,64,65",
+            "variant": "hijaz",
+            "tempo": 96,
+            "workflow": "melody → arrangement/edit"
+          },
+          "project": {
+            "schema": "uaos.musical-session-memory/v1",
+            "projectId": "demo-02-melody-arrangement",
+            "title": "Melody to Arrangement Edit",
+            "tempo": 96,
+            "meter": "4/4",
+            "keyCenter": "C",
+            "arrangement": {
+              "sections": [
+                {
+                  "name": "Intro",
+                  "bars": 1
+                },
+                {
+                  "name": "Verse",
+                  "bars": 2
+                },
+                {
+                  "name": "Chorus",
+                  "bars": 2
+                }
+              ]
+            },
+            "mixerSnapshot": {
+              "channels": []
+            },
+            "melody": "60,61,64,65",
+            "updatedAt": "2026-08-26T05:03:55.814Z"
+          },
+          "pipeline": {
+            "ok": true,
+            "voices": [
+              "kick",
+              "hat",
+              "snare",
+              "bass",
+              "lead",
+              "chord"
+            ]
+          },
+          "goldenBrain": "uaos.golden-brain.core/v1",
+          "gates": {
+            "ok": true,
+            "tonalContextPreservation": true,
+            "melodyChordCompatibility": 1,
+            "harmonicCompatibility": true,
+            "sectionContinuity": true,
+            "styleChangeWithoutUnrequestedReharmonization": true,
+            "arrangementContextPreservation": true,
+            "noObviousOutOfScaleCollisions": true,
+            "details": {
+              "tonal": {
+                "ok": true,
+                "score": 100,
+                "sourceFamily": "maqam-hijaz",
+                "candidateFamily": "maqam-hijaz",
+                "preserved": [
+                  0,
+                  1,
+                  4,
+                  5,
+                  7,
+                  8
+                ],
+                "missing": [],
+                "foreign": [],
+                "melodyChordCompatibility": 1,
+                "unrequestedReharmonization": false,
+                "tonalContextPreserved": true,
+                "harmonicCompatibility": true,
+                "styleChangeWithoutUnrequestedReharmonization": true
+              },
+              "continuity": {
+                "ok": true,
+                "sectionCount": 3,
+                "uniqueNames": 3,
+                "zeroBarSections": 0,
+                "musicalQualityClaim": false
+              },
+              "context": {
+                "ok": true,
+                "missing": [],
+                "orderOk": true,
+                "musicalQualityClaim": false
+              },
+              "scale": {
+                "ok": true,
+                "collisions": [],
+                "collisionCount": 0,
+                "musicalQualityClaim": false
+              }
+            },
+            "musicalQualityClaim": false,
+            "ownerMusicalQualityPass": false
+          },
+          "musicalQualityPass": false,
+          "sha256": "9f462adbe80b926b3a612b7d9bd495e27d64672c1498138995ae835bc8058aee"
+        },
+        "outputArtifact": "9f462adbe80b926b3a612b7d9bd495e27d64672c1498138995ae835bc8058aee",
+        "sha256": "9f462adbe80b926b3a612b7d9bd495e27d64672c1498138995ae835bc8058aee",
+        "durationMs": 146
+      },
+      {
+        "workflowId": "wf-04-open-demo-03",
+        "ok": true,
+        "result": {
+          "ok": true,
+          "demo": {
+            "id": "demo-03-export-reopen",
+            "title": "Arrangement MIDI Export & Reopen",
+            "rights": "UAOS_IN_HOUSE_ORIGINAL",
+            "tempo": 100,
+            "bars": 2,
+            "workflow": "arrangement → MIDI export → reopen"
+          },
+          "export": {
+            "ok": true,
+            "sha256": "b7422b10a807864b93c306026b0fcbefdc65320d6d4a357bc9bf5a9aeb353c3d",
+            "noteCount": 8
+          },
+          "reopen": {
+            "bytesLength": 100,
+            "noteCount": 8,
+            "ok": true
+          },
+          "sha256": "2e586d70e2a6445fda19d5ff36c3c7150a8032ca0ae301bff3e95c7923dfdcd0"
+        },
+        "outputArtifact": "2e586d70e2a6445fda19d5ff36c3c7150a8032ca0ae301bff3e95c7923dfdcd0",
+        "sha256": "2e586d70e2a6445fda19d5ff36c3c7150a8032ca0ae301bff3e95c7923dfdcd0",
+        "durationMs": 87
+      },
+      {
+        "workflowId": "wf-05-chords",
+        "ok": true,
+        "result": {
+          "ok": true,
+          "output": [
+            {
+              "section": "Intro",
+              "bars": 4,
+              "chord": "Cm"
+            },
+            {
+              "section": "Main A",
+              "bars": 8,
+              "chord": "Cm"
+            },
+            {
+              "section": "Main B",
+              "bars": 8,
+              "chord": "Ab"
+            },
+            {
+              "section": "Break",
+              "bars": 2,
+              "chord": "Bb"
+            },
+            {
+              "section": "Ending",
+              "bars": 4,
+              "chord": "Cm"
+            }
+          ],
+          "sha256": "5b795704d601018afe8ed66ba714d249c304091df8dc271ccd001a0ea9f3b908"
+        },
+        "outputArtifact": "5b795704d601018afe8ed66ba714d249c304091df8dc271ccd001a0ea9f3b908",
+        "sha256": "5b795704d601018afe8ed66ba714d249c304091df8dc271ccd001a0ea9f3b908",
+        "durationMs": 0
+      },
+      {
+        "workflowId": "wf-06-melody",
+        "ok": true,
+        "result": {
+          "ok": true,
+          "output": {
+            "peakNormalized": 0.86,
+            "uniqueMidiCount": 16,
+            "uniqueOnsetCount": 36,
+            "voices": [
+              "kick",
+              "hat",
+              "snare",
+              "bass",
+              "lead",
+              "chord"
+            ],
+            "musicalQualityPass": false,
+            "musicalQualityClaim": false,
+            "testTone": false,
+            "sineFixture": false
+          },
+          "sha256": "5a111fd7261d002200c64b513dd79f348a7a4145a0e5c1227eaaee1dfd929a0c"
+        },
+        "outputArtifact": "5a111fd7261d002200c64b513dd79f348a7a4145a0e5c1227eaaee1dfd929a0c",
+        "sha256": "5a111fd7261d002200c64b513dd79f348a7a4145a0e5c1227eaaee1dfd929a0c",
+        "durationMs": 236
+      },
+      {
+        "workflowId": "wf-07-drums",
+        "ok": true,
+        "result": {
+          "ok": true,
+          "sequencer": {
+            "ok": true,
+            "running": true,
+            "position": 1,
+            "steps": [
+              {
+                "step": 1,
+                "kick": true,
+                "snare": false,
+                "hat": true,
+                "bass": true
+              },
+              {
+                "step": 2,
+                "kick": false,
+                "snare": false,
+                "hat": false,
+                "bass": false
+              },
+              {
+                "step": 3,
+                "kick": false,
+                "snare": false,
+                "hat": true,
+                "bass": false
+              },
+              {
+                "step": 4,
+                "kick": false,
+                "snare": false,
+                "hat": false,
+                "bass": false
+              },
+              {
+                "step": 5,
+                "kick": true,
+                "snare": true,
+                "hat": true,
+                "bass": true
+              },
+              {
+                "step": 6,
+                "kick": false,
+                "snare": false,
+                "hat": false,
+                "bass": false
+              },
+              {
+                "step": 7,
+                "kick": false,
+                "snare": false,
+                "hat": true,
+                "bass": false
+              },
+              {
+                "step": 8,
+                "kick": false,
+                "snare": false,
+                "hat": false,
+                "bass": false
+              },
+              {
+                "step": 9,
+                "kick": true,
+                "snare": false,
+                "hat": true,
+                "bass": true
+              },
+              {
+                "step": 10,
+                "kick": false,
+                "snare": false,
+                "hat": false,
+                "bass": false
+              },
+              {
+                "step": 11,
+                "kick": false,
+                "snare": false,
+                "hat": true,
+                "bass": false
+              },
+              {
+                "step": 12,
+                "kick": false,
+                "snare": false,
+                "hat": false,
+                "bass": false
+              },
+              {
+                "step": 13,
+                "kick": true,
+                "snare": true,
+                "hat": true,
+                "bass": true
+              },
+              {
+                "step": 14,
+                "kick": false,
+                "snare": false,
+                "hat": false,
+                "bass": false
+              },
+              {
+                "step": 15,
+                "kick": false,
+                "snare": false,
+                "hat": true,
+                "bass": false
+              },
+              {
+                "step": 16,
+                "kick": false,
+                "snare": false,
+                "hat": false,
+                "bass": false
+              }
+            ]
+          },
+          "transport": {
+            "state": "stopped",
+            "tempo": 100,
+            "position": 0,
+            "loop": true,
+            "musicalQualityPass": false
+          },
+          "sketchOk": true,
+          "midiOk": true,
+          "commercialReady": false,
+          "musicalQualityPass": false,
+          "capabilityId": "uaos.golden-sequencer.e2e/v1"
+        },
+        "outputArtifact": "1385f4fbda485b567775ca936ccb381d49766048df38fe4147b7b5dde43ee446",
+        "sha256": "1385f4fbda485b567775ca936ccb381d49766048df38fe4147b7b5dde43ee446",
+        "durationMs": 141
+      },
+      {
+        "workflowId": "wf-08-arrangement",
+        "ok": true,
+        "result": {
+          "schema": "uaos.golden-brain.arranger-chain/v1",
+          "ok": true,
+          "capabilityId": "uaos.golden-brain.core/v1",
+          "analyzed": {
+            "schema": "uaos.golden-brain.analyze-input/v1",
+            "ok": true,
+            "melody": [
+              60,
+              61,
+              64,
+              65,
+              67,
+              68,
+              67,
+              65,
+              64,
+              61,
+              60,
+              64,
+              65,
+              64,
+              61,
+              60
+            ],
+            "detectedChord": "C",
+            "harmonyFamily": "maqam-hijaz",
+            "melodyAnalysis": {
+              "ok": true,
+              "noteCount": 16,
+              "pitchClasses": [
+                0,
+                1,
+                4,
+                5,
+                7,
+                8
+              ]
+            },
+            "musicalQualityClaim": false
+          },
+          "arrangement": {
+            "ok": true,
+            "arrangement": {
+              "groove": "arabic-khaleeji",
+              "harmony": "maqam-inspired",
+              "tempo": 92,
+              "instrumentation": [
+                "oud",
+                "qanun",
+                "arabic-percussion",
+                "strings"
+              ],
+              "emotion": "expressive",
+              "sections": [
+                {
+                  "name": "Intro",
+                  "bars": 4
+                },
+                {
+                  "name": "Verse",
+                  "bars": 8
+                },
+                {
+                  "name": "Chorus",
+                  "bars": 8
+                },
+                {
+                  "name": "Bridge",
+                  "bars": 4
+                },
+                {
+                  "name": "Final Chorus",
+                  "bars": 8
+                }
+              ],
+              "exportTargets": [
+                "MIDI",
+                "STYLE",
+                "STY",
+                "SET",
+                "MusicXML"
+              ]
+            },
+            "sections": [
+              {
+                "name": "Intro",
+                "bars": 4,
+                "chord": "Cm"
+              },
+              {
+                "name": "Main A",
+                "bars": 8,
+                "chord": "Cm"
+              },
+              {
+                "name": "Main B",
+                "bars": 8,
+                "chord": "Ab"
+              },
+              {
+                "name": "Break",
+                "bars": 2,
+                "chord": "Bb"
+              },
+              {
+                "name": "Ending",
+                "bars": 4,
+                "chord": "Cm"
+              }
+            ],
+            "detectedChord": "C",
+            "scoring": {
+              "ok": true,
+              "score": 100,
+              "sourceFamily": "maqam-hijaz",
+              "candidateFamily": "maqam-hijaz",
+              "preserved": [
+                0,
+                1,
+                4,
+                5,
+                7,
+                8
+              ],
+              "missing": [],
+              "foreign": [],
+              "melodyChordCompatibility": 1,
+              "unrequestedReharmonization": false,
+              "tonalContextPreserved": true,
+              "harmonicCompatibility": true,
+              "styleChangeWithoutUnrequestedReharmonization": true
+            },
+            "gates": {
+              "ok": true,
+              "tonalContextPreservation": true,
+              "melodyChordCompatibility": 1,
+              "harmonicCompatibility": true,
+              "sectionContinuity": true,
+              "styleChangeWithoutUnrequestedReharmonization": true,
+              "arrangementContextPreservation": true,
+              "noObviousOutOfScaleCollisions": true,
+              "details": {
+                "tonal": {
+                  "ok": true,
+                  "score": 100,
+                  "sourceFamily": "maqam-hijaz",
+                  "candidateFamily": "maqam-hijaz",
+                  "preserved": [
+                    0,
+                    1,
+                    4,
+                    5,
+                    7,
+                    8
+                  ],
+                  "missing": [],
+                  "foreign": [],
+                  "melodyChordCompatibility": 1,
+                  "unrequestedReharmonization": false,
+                  "tonalContextPreserved": true,
+                  "harmonicCompatibility": true,
+                  "styleChangeWithoutUnrequestedReharmonization": true
+                },
+                "continuity": {
+                  "ok": true,
+                  "sectionCount": 3,
+                  "uniqueNames": 3,
+                  "zeroBarSections": 0,
+                  "musicalQualityClaim": false
+                },
+                "context": {
+                  "ok": true,
+                  "missing": [],
+                  "orderOk": true,
+                  "musicalQualityClaim": false
+                },
+                "scale": {
+                  "ok": true,
+                  "collisions": [],
+                  "collisionCount": 0,
+                  "musicalQualityClaim": false
+                }
+              },
+              "musicalQualityClaim": false,
+              "ownerMusicalQualityPass": false
+            },
+            "musicalQualityClaim": false,
+            "ownerMusicalQualityPass": false,
+            "capabilityId": "uaos.golden-brain.core/v1"
+          },
+          "structure": {
+            "ok": true,
+            "sections": [
+              {
+                "name": "Intro",
+                "role": "intro",
+                "bars": 4,
+                "chord": "Cm"
+              },
+              {
+                "name": "Main A",
+                "role": "main a",
+                "bars": 8,
+                "chord": "Cm"
+              },
+              {
+                "name": "Main B",
+                "role": "main b",
+                "bars": 8,
+                "chord": "Ab"
+              },
+              {
+                "name": "Break",
+                "role": "break",
+                "bars": 2,
+                "chord": "Bb"
+              },
+              {
+                "name": "Ending",
+                "role": "ending",
+                "bars": 4,
+                "chord": "Cm"
+              }
+            ],
+            "musicalQualityClaim": false
+          },
+          "roles": {
+            "ok": true,
+            "roles": [
+              {
+                "role": "melody",
+                "channel": 0,
+                "programHint": 0
+              },
+              {
+                "role": "chords",
+                "channel": 1,
+                "programHint": 48
+              },
+              {
+                "role": "bass",
+                "channel": 2,
+                "programHint": 32
+              },
+              {
+                "role": "drums",
+                "channel": 9,
+                "programHint": 0
+              }
+            ],
+            "musicalQualityClaim": false
+          },
+          "humanized": {
+            "ok": true,
+            "noteEvents": [
+              {
+                "midi": 60,
+                "startTick": 0,
+                "durationTicks": 480,
+                "velocity": 86,
+                "channel": 0
+              },
+              {
+                "midi": 61,
+                "startTick": 480,
+                "durationTicks": 480,
+                "velocity": 90,
+                "channel": 0
+              },
+              {
+                "midi": 64,
+                "startTick": 960,
+                "durationTicks": 480,
+                "velocity": 94,
+                "channel": 0
+              },
+              {
+                "midi": 65,
+                "startTick": 1440,
+                "durationTicks": 480,
+                "velocity": 86,
+                "channel": 0
+              },
+              {
+                "midi": 67,
+                "startTick": 1920,
+                "durationTicks": 480,
+                "velocity": 90,
+                "channel": 0
+              },
+              {
+                "midi": 68,
+                "startTick": 2400,
+                "durationTicks": 480,
+                "velocity": 94,
+                "channel": 0
+              },
+              {
+                "midi": 67,
+                "startTick": 2880,
+                "durationTicks": 480,
+                "velocity": 86,
+                "channel": 0
+              },
+              {
+                "midi": 65,
+                "startTick": 3360,
+                "durationTicks": 480,
+                "velocity": 90,
+                "channel": 0
+              },
+              {
+                "midi": 64,
+                "startTick": 3840,
+                "durationTicks": 480,
+                "velocity": 94,
+                "channel": 0
+              },
+              {
+                "midi": 61,
+                "startTick": 4320,
+                "durationTicks": 480,
+                "velocity": 86,
+                "channel": 0
+              },
+              {
+                "midi": 60,
+                "startTick": 4800,
+                "durationTicks": 480,
+                "velocity": 90,
+                "channel": 0
+              },
+              {
+                "midi": 64,
+                "startTick": 5280,
+                "durationTicks": 480,
+                "velocity": 94,
+                "channel": 0
+              },
+              {
+                "midi": 65,
+                "startTick": 5760,
+                "durationTicks": 480,
+                "velocity": 86,
+                "channel": 0
+              },
+              {
+                "midi": 64,
+                "startTick": 6240,
+                "durationTicks": 480,
+                "velocity": 90,
+                "channel": 0
+              },
+              {
+                "midi": 61,
+                "startTick": 6720,
+                "durationTicks": 480,
+                "velocity": 94,
+                "channel": 0
+              },
+              {
+                "midi": 60,
+                "startTick": 7200,
+                "durationTicks": 480,
+                "velocity": 86,
+                "channel": 0
+              }
+            ],
+            "deterministic": true,
+            "musicalQualityClaim": false
+          },
+          "sequencer": {
+            "sections": [
+              {
+                "section": "Intro",
+                "bars": 4,
+                "chord": "Cm"
+              },
+              {
+                "section": "Main A",
+                "bars": 8,
+                "chord": "Cm"
+              },
+              {
+                "section": "Main B",
+                "bars": 8,
+                "chord": "Ab"
+              },
+              {
+                "section": "Break",
+                "bars": 2,
+                "chord": "Bb"
+              },
+              {
+                "section": "Ending",
+                "bars": 4,
+                "chord": "Cm"
+              }
+            ],
+            "tempo": 96
+          },
+          "sketch": {
+            "ok": true,
+            "voices": [
+              "kick",
+              "hat",
+              "snare",
+              "bass",
+              "chord"
+            ]
+          },
+          "export": {
+            "ok": true,
+            "noteCount": 16
+          },
+          "save": {
+            "schema": "uaos.musical-session-memory/v1",
+            "projectId": "arranger-chain-1787720636553",
+            "title": "Golden Brain Arranger Chain",
+            "tempo": 96,
+            "meter": "4/4",
+            "keyCenter": "C",
+            "arrangement": {
+              "groove": "arabic-khaleeji",
+              "harmony": "maqam-inspired",
+              "tempo": 92,
+              "instrumentation": [
+                "oud",
+                "qanun",
+                "arabic-percussion",
+                "strings"
+              ],
+              "emotion": "expressive",
+              "sections": [
+                {
+                  "name": "Intro",
+                  "bars": 4
+                },
+                {
+                  "name": "Verse",
+                  "bars": 8
+                },
+                {
+                  "name": "Chorus",
+                  "bars": 8
+                },
+                {
+                  "name": "Bridge",
+                  "bars": 4
+                },
+                {
+                  "name": "Final Chorus",
+                  "bars": 8
+                }
+              ],
+              "exportTargets": [
+                "MIDI",
+                "STYLE",
+                "STY",
+                "SET",
+                "MusicXML"
+              ]
+            },
+            "mixerSnapshot": {
+              "channels": []
+            },
+            "melody": [
+              60,
+              61,
+              64,
+              65,
+              67,
+              68,
+              67,
+              65,
+              64,
+              61,
+              60,
+              64,
+              65,
+              64,
+              61,
+              60
+            ],
+            "sections": [
+              {
+                "name": "Intro",
+                "bars": 4,
+                "chord": "Cm"
+              },
+              {
+                "name": "Main A",
+                "bars": 8,
+                "chord": "Cm"
+              },
+              {
+                "name": "Main B",
+                "bars": 8,
+                "chord": "Ab"
+              },
+              {
+                "name": "Break",
+                "bars": 2,
+                "chord": "Bb"
+              },
+              {
+                "name": "Ending",
+                "bars": 4,
+                "chord": "Cm"
+              }
+            ],
+            "updatedAt": "2026-08-26T05:03:56.553Z"
+          },
+          "library": {
+            "ok": true,
+            "metadataOnly": true
+          },
+          "conversion": {
+            "ok": true,
+            "lossy": true,
+            "writeBlocked": true,
+            "errorCode": "FORMAT_CONTRACT_REQUIRED"
+          },
+          "musicalQualityClaim": false,
+          "ownerMusicalQualityPass": false
+        },
+        "outputArtifact": "1954902929bad28e2893949501f2bf8b5a50ccda943c46f9fc4d8679f243b6e9",
+        "sha256": "1954902929bad28e2893949501f2bf8b5a50ccda943c46f9fc4d8679f243b6e9",
+        "durationMs": 276
+      },
+      {
+        "workflowId": "wf-09-section-change",
+        "ok": true,
+        "result": {
+          "ok": true,
+          "output": [
+            {
+              "name": "Intro",
+              "bars": 4,
+              "chord": "Cm"
+            },
+            {
+              "name": "Main A",
+              "bars": 8,
+              "chord": "Dm"
+            },
+            {
+              "name": "Main B",
+              "bars": 8,
+              "chord": "Ab"
+            },
+            {
+              "name": "Break",
+              "bars": 2,
+              "chord": "Bb"
+            },
+            {
+              "name": "Ending",
+              "bars": 4,
+              "chord": "Cm"
+            }
+          ],
+          "sha256": "bc3258ab56096907da2a7de665f55a7d308c5e1202cff39ea4f1a655678b7820"
+        },
+        "outputArtifact": "bc3258ab56096907da2a7de665f55a7d308c5e1202cff39ea4f1a655678b7820",
+        "sha256": "bc3258ab56096907da2a7de665f55a7d308c5e1202cff39ea4f1a655678b7820",
+        "durationMs": 0
+      },
+      {
+        "workflowId": "wf-10-sequencing",
+        "ok": true,
+        "result": {
+          "ok": true,
+          "transport": {
+            "state": "stopped",
+            "tempo": 104,
+            "position": 0,
+            "loop": true,
+            "musicalQualityPass": false
+          }
+        },
+        "outputArtifact": "e85a5d47c7f77f97e3dafc973c3982616208eea25a112f0e0ea49f2c47e0a397",
+        "sha256": "e85a5d47c7f77f97e3dafc973c3982616208eea25a112f0e0ea49f2c47e0a397",
+        "durationMs": 0
+      },
+      {
+        "workflowId": "wf-11-transpose",
+        "ok": true,
+        "result": {
+          "ok": true,
+          "output": [
+            {
+              "name": "Intro",
+              "bars": 4,
+              "chord": "Dm"
+            },
+            {
+              "name": "Main A",
+              "bars": 8,
+              "chord": "Dm"
+            },
+            {
+              "name": "Main B",
+              "bars": 8,
+              "chord": "Ab"
+            },
+            {
+              "name": "Break",
+              "bars": 2,
+              "chord": "Bb"
+            },
+            {
+              "name": "Ending",
+              "bars": 4,
+              "chord": "Dm"
+            }
+          ]
+        },
+        "outputArtifact": "3148dede653aee914b7af288a7c7d6a559b3c8e36f6f2bcce11446c2e3306dfc",
+        "sha256": "3148dede653aee914b7af288a7c7d6a559b3c8e36f6f2bcce11446c2e3306dfc",
+        "durationMs": 0
+      },
+      {
+        "workflowId": "wf-12-quantize",
+        "ok": true,
+        "result": {
+          "ok": true,
+          "sequencer": {
+            "ok": true,
+            "running": true,
+            "position": 1,
+            "steps": [
+              {
+                "step": 1,
+                "kick": true,
+                "snare": false,
+                "hat": true,
+                "bass": true
+              },
+              {
+                "step": 2,
+                "kick": false,
+                "snare": false,
+                "hat": false,
+                "bass": false
+              },
+              {
+                "step": 3,
+                "kick": false,
+                "snare": false,
+                "hat": true,
+                "bass": false
+              },
+              {
+                "step": 4,
+                "kick": false,
+                "snare": false,
+                "hat": false,
+                "bass": false
+              },
+              {
+                "step": 5,
+                "kick": true,
+                "snare": true,
+                "hat": true,
+                "bass": true
+              },
+              {
+                "step": 6,
+                "kick": false,
+                "snare": false,
+                "hat": false,
+                "bass": false
+              },
+              {
+                "step": 7,
+                "kick": false,
+                "snare": false,
+                "hat": true,
+                "bass": false
+              },
+              {
+                "step": 8,
+                "kick": false,
+                "snare": false,
+                "hat": false,
+                "bass": false
+              },
+              {
+                "step": 9,
+                "kick": true,
+                "snare": false,
+                "hat": true,
+                "bass": true
+              },
+              {
+                "step": 10,
+                "kick": false,
+                "snare": false,
+                "hat": false,
+                "bass": false
+              },
+              {
+                "step": 11,
+                "kick": false,
+                "snare": false,
+                "hat": true,
+                "bass": false
+              },
+              {
+                "step": 12,
+                "kick": false,
+                "snare": false,
+                "hat": false,
+                "bass": false
+              },
+              {
+                "step": 13,
+                "kick": true,
+                "snare": true,
+                "hat": true,
+                "bass": true
+              },
+              {
+                "step": 14,
+                "kick": false,
+                "snare": false,
+                "hat": false,
+                "bass": false
+              },
+              {
+                "step": 15,
+                "kick": false,
+                "snare": false,
+                "hat": true,
+                "bass": false
+              },
+              {
+                "step": 16,
+                "kick": false,
+                "snare": false,
+                "hat": false,
+                "bass": false
+              }
+            ]
+          },
+          "transport": {
+            "state": "stopped",
+            "tempo": 100,
+            "position": 0,
+            "loop": true,
+            "musicalQualityPass": false
+          },
+          "sketchOk": true,
+          "midiOk": true,
+          "commercialReady": false,
+          "musicalQualityPass": false,
+          "capabilityId": "uaos.golden-sequencer.e2e/v1"
+        },
+        "outputArtifact": "097815111b4717ea83aa7f7dd02f2a1a7c1cbdfa747970bf24033eb449607f28",
+        "sha256": "097815111b4717ea83aa7f7dd02f2a1a7c1cbdfa747970bf24033eb449607f28",
+        "durationMs": 399
+      },
+      {
+        "workflowId": "wf-13-edit",
+        "ok": true,
+        "result": {
+          "ok": true,
+          "workspace": {
+            "schema": "uaos.creator.workspace/v1",
+            "project": {
+              "schema": "uaos.musical-session-memory/v1",
+              "projectId": "creator-1787720636954",
+              "title": "WF13 Edit",
+              "tempo": 100,
+              "meter": "4/4",
+              "keyCenter": "C",
+              "arrangement": {
+                "sections": [
+                  {
+                    "name": "Intro",
+                    "bars": 4,
+                    "chord": "Cm"
+                  },
+                  {
+                    "name": "Main A",
+                    "bars": 8,
+                    "chord": "Cm"
+                  },
+                  {
+                    "name": "Main B",
+                    "bars": 8,
+                    "chord": "Ab"
+                  },
+                  {
+                    "name": "Break",
+                    "bars": 2,
+                    "chord": "Bb"
+                  },
+                  {
+                    "name": "Ending",
+                    "bars": 4,
+                    "chord": "Cm"
+                  }
+                ]
+              },
+              "mixerSnapshot": {
+                "channels": []
+              },
+              "updatedAt": "2026-08-26T05:03:56.954Z"
+            },
+            "goldenBrainCapabilityId": "uaos.golden-brain.core/v1",
+            "tracks": [
+              {
+                "id": "drums",
+                "kind": "sequencer"
+              },
+              {
+                "id": "bass",
+                "kind": "harmony"
+              },
+              {
+                "id": "chords",
+                "kind": "harmony"
+              },
+              {
+                "id": "export",
+                "kind": "midi-smf"
+              }
+            ],
+            "midi": {
+              "ok": true,
+              "noteCount": 8,
+              "bytesSha256": "b7422b10a807864b93c306026b0fcbefdc65320d6d4a357bc9bf5a9aeb353c3d"
+            },
+            "commercialReady": false,
+            "musicalQualityPass": false
+          },
+          "sha256": "48af0451a89787a45301702a23433be0ce33dd6ec7536d5d47bc92eb0fcbb899",
+          "capabilityId": "uaos.creator.workspace/v1"
+        },
+        "outputArtifact": "48af0451a89787a45301702a23433be0ce33dd6ec7536d5d47bc92eb0fcbb899",
+        "sha256": "48af0451a89787a45301702a23433be0ce33dd6ec7536d5d47bc92eb0fcbb899",
+        "durationMs": 201
+      },
+      {
+        "workflowId": "wf-14-play",
+        "ok": true,
+        "result": {
+          "ok": true,
+          "transport": {
+            "state": "playing",
+            "tempo": 96,
+            "position": 0,
+            "loop": true,
+            "musicalQualityPass": false
+          }
+        },
+        "outputArtifact": "c28d50a28e6665c4191d5885d5de3b349d40a59fd31c5f9c7891a596528a8ba3",
+        "sha256": "c28d50a28e6665c4191d5885d5de3b349d40a59fd31c5f9c7891a596528a8ba3",
+        "durationMs": 0
+      },
+      {
+        "workflowId": "wf-15-stop",
+        "ok": true,
+        "result": {
+          "ok": true,
+          "transport": {
+            "state": "stopped",
+            "tempo": 96,
+            "position": 0,
+            "loop": true,
+            "musicalQualityPass": false
+          }
+        },
+        "outputArtifact": "fce7128009160048d70bdba99861ba2e36392fb8b8d3a10919c65a13c064d0b5",
+        "sha256": "fce7128009160048d70bdba99861ba2e36392fb8b8d3a10919c65a13c064d0b5",
+        "durationMs": 0
+      },
+      {
+        "workflowId": "wf-16-save",
+        "ok": true,
+        "result": {
+          "ok": true,
+          "project": {
+            "schema": "uaos.musical-session-memory/v1",
+            "projectId": "untitled",
+            "title": "WF16",
+            "tempo": 96,
+            "meter": "4/4",
+            "keyCenter": "C",
+            "arrangement": {
+              "sections": []
+            },
+            "mixerSnapshot": {
+              "channels": []
+            },
+            "updatedAt": "2026-08-26T05:03:57.154Z"
+          },
+          "sha256": "5b22e624e9d30fe6fa864b7688225d8a8244e8cc1821c0f954cf5564203e1a5c"
+        },
+        "outputArtifact": "5b22e624e9d30fe6fa864b7688225d8a8244e8cc1821c0f954cf5564203e1a5c",
+        "sha256": "5b22e624e9d30fe6fa864b7688225d8a8244e8cc1821c0f954cf5564203e1a5c",
+        "durationMs": 0
+      },
+      {
+        "workflowId": "wf-17-midi-export",
+        "ok": true,
+        "result": {
+          "ok": true,
+          "draft": {
+            "ok": true,
+            "format": "uaos-midi-draft-json",
+            "ppq": 480,
+            "tempo": 100,
+            "events": [
+              {
+                "time": 0,
+                "type": "section",
+                "section": "Intro",
+                "chord": "Cm",
+                "bars": 4
+              },
+              {
+                "time": 16,
+                "type": "section",
+                "section": "Main A",
+                "chord": "Cm",
+                "bars": 8
+              },
+              {
+                "time": 48,
+                "type": "section",
+                "section": "Main B",
+                "chord": "Ab",
+                "bars": 8
+              },
+              {
+                "time": 80,
+                "type": "section",
+                "section": "Break",
+                "chord": "Bb",
+                "bars": 2
+              },
+              {
+                "time": 88,
+                "type": "section",
+                "section": "Ending",
+                "chord": "Cm",
+                "bars": 4
+              }
+            ]
+          },
+          "noteEvents": [
+            {
+              "midi": 24,
+              "startTick": 0,
+              "durationTicks": 1680,
+              "velocity": 74,
+              "channel": 1
+            },
+            {
+              "midi": 36,
+              "startTick": 0,
+              "durationTicks": 1536,
+              "velocity": 55,
+              "channel": 2
+            },
+            {
+              "midi": 39,
+              "startTick": 16,
+              "durationTicks": 1536,
+              "velocity": 55,
+              "channel": 2
+            },
+            {
+              "midi": 43,
+              "startTick": 32,
+              "durationTicks": 1536,
+              "velocity": 55,
+              "channel": 2
+            },
+            {
+              "midi": 24,
+              "startTick": 1920,
+              "durationTicks": 1680,
+              "velocity": 74,
+              "channel": 1
+            },
+            {
+              "midi": 36,
+              "startTick": 1920,
+              "durationTicks": 1536,
+              "velocity": 55,
+              "channel": 2
+            },
+            {
+              "midi": 39,
+              "startTick": 1936,
+              "durationTicks": 1536,
+              "velocity": 55,
+              "channel": 2
+            },
+            {
+              "midi": 43,
+              "startTick": 1952,
+              "durationTicks": 1536,
+              "velocity": 55,
+              "channel": 2
+            }
+          ],
+          "bytes": {
+            "type": "Buffer",
+            "data": [
+              77,
+              84,
+              104,
+              100,
+              0,
+              0,
+              0,
+              6,
+              0,
+              0,
+              0,
+              1,
+              1,
+              224,
+              77,
+              84,
+              114,
+              107,
+              0,
+              0,
+              0,
+              78,
+              0,
+              255,
+              81,
+              3,
+              9,
+              39,
+              192,
+              0,
+              145,
+              24,
+              74,
+              0,
+              146,
+              36,
+              55,
+              16,
+              146,
+              39,
+              55,
+              16,
+              146,
+              43,
+              55,
+              139,
+              96,
+              130,
+              36,
+              64,
+              16,
+              130,
+              39,
+              64,
+              16,
+              130,
+              43,
+              64,
+              112,
+              129,
+              24,
+              64,
+              129,
+              112,
+              145,
+              24,
+              74,
+              0,
+              146,
+              36,
+              55,
+              16,
+              146,
+              39,
+              55,
+              16,
+              146,
+              43,
+              55,
+              139,
+              96,
+              130,
+              36,
+              64,
+              16,
+              130,
+              39,
+              64,
+              16,
+              130,
+              43,
+              64,
+              112,
+              129,
+              24,
+              64,
+              0,
+              255,
+              47,
+              0
+            ]
+          },
+          "parsed": {
+            "ok": true,
+            "validHeader": true,
+            "headerLength": 6,
+            "format": 0,
+            "trackCount": 1,
+            "division": 480,
+            "ppq": 480,
+            "notes": 8,
+            "noteEvents": [
+              {
+                "midi": 36,
+                "startTick": 0,
+                "durationTicks": 1536,
+                "velocity": 55,
+                "channel": 2
+              },
+              {
+                "midi": 39,
+                "startTick": 16,
+                "durationTicks": 1536,
+                "velocity": 55,
+                "channel": 2
+              },
+              {
+                "midi": 43,
+                "startTick": 32,
+                "durationTicks": 1536,
+                "velocity": 55,
+                "channel": 2
+              },
+              {
+                "midi": 24,
+                "startTick": 0,
+                "durationTicks": 1680,
+                "velocity": 74,
+                "channel": 1
+              },
+              {
+                "midi": 36,
+                "startTick": 1920,
+                "durationTicks": 1536,
+                "velocity": 55,
+                "channel": 2
+              },
+              {
+                "midi": 39,
+                "startTick": 1936,
+                "durationTicks": 1536,
+                "velocity": 55,
+                "channel": 2
+              },
+              {
+                "midi": 43,
+                "startTick": 1952,
+                "durationTicks": 1536,
+                "velocity": 55,
+                "channel": 2
+              },
+              {
+                "midi": 24,
+                "startTick": 1920,
+                "durationTicks": 1680,
+                "velocity": 74,
+                "channel": 1
+              }
+            ],
+            "controllers": 0,
+            "programChanges": 0,
+            "tempoEvents": 1,
+            "sysexEvents": 0,
+            "level": "READ"
+          },
+          "ir": {
+            "ok": true,
+            "ir": {
+              "schema": "uaos.neutral-ir/v2",
+              "neutralIrVersion": "uaos.neutral-ir/v2",
+              "family": "midi",
+              "ppq": 480,
+              "noteEvents": [
+                {
+                  "midi": 36,
+                  "startTick": 0,
+                  "durationTicks": 1536,
+                  "velocity": 55,
+                  "channel": 2
+                },
+                {
+                  "midi": 39,
+                  "startTick": 16,
+                  "durationTicks": 1536,
+                  "velocity": 55,
+                  "channel": 2
+                },
+                {
+                  "midi": 43,
+                  "startTick": 32,
+                  "durationTicks": 1536,
+                  "velocity": 55,
+                  "channel": 2
+                },
+                {
+                  "midi": 24,
+                  "startTick": 0,
+                  "durationTicks": 1680,
+                  "velocity": 74,
+                  "channel": 1
+                },
+                {
+                  "midi": 36,
+                  "startTick": 1920,
+                  "durationTicks": 1536,
+                  "velocity": 55,
+                  "channel": 2
+                },
+                {
+                  "midi": 39,
+                  "startTick": 1936,
+                  "durationTicks": 1536,
+                  "velocity": 55,
+                  "channel": 2
+                },
+                {
+                  "midi": 43,
+                  "startTick": 1952,
+                  "durationTicks": 1536,
+                  "velocity": 55,
+                  "channel": 2
+                },
+                {
+                  "midi": 24,
+                  "startTick": 1920,
+                  "durationTicks": 1680,
+                  "velocity": 74,
+                  "channel": 1
+                }
+              ],
+              "tempoEvents": 1,
+              "controllers": 0,
+              "programChanges": 0,
+              "arrangerSemantics": {
+                "schema": "uaos.neutral-ir.arranger-semantics/v2",
+                "tempo": null,
+                "timeSignatures": [],
+                "tracks": [
+                  {
+                    "channel": 2,
+                    "role": "UNKNOWN_VENDOR_ROLE"
+                  },
+                  {
+                    "channel": 1,
+                    "role": "UNKNOWN_VENDOR_ROLE"
+                  }
+                ],
+                "channels": [
+                  2,
+                  1
+                ],
+                "events": {
+                  "notes": [
+                    {
+                      "midi": 36,
+                      "startTick": 0,
+                      "durationTicks": 1536,
+                      "velocity": 55,
+                      "channel": 2
+                    },
+                    {
+                      "midi": 39,
+                      "startTick": 16,
+                      "durationTicks": 1536,
+                      "velocity": 55,
+                      "channel": 2
+                    },
+                    {
+                      "midi": 43,
+                      "startTick": 32,
+                      "durationTicks": 1536,
+                      "velocity": 55,
+                      "channel": 2
+                    },
+                    {
+                      "midi": 24,
+                      "startTick": 0,
+                      "durationTicks": 1680,
+                      "velocity": 74,
+                      "channel": 1
+                    },
+                    {
+                      "midi": 36,
+                      "startTick": 1920,
+                      "durationTicks": 1536,
+                      "velocity": 55,
+                      "channel": 2
+                    },
+                    {
+                      "midi": 39,
+                      "startTick": 1936,
+                      "durationTicks": 1536,
+                      "velocity": 55,
+                      "channel": 2
+                    },
+                    {
+                      "midi": 43,
+                      "startTick": 1952,
+                      "durationTicks": 1536,
+                      "velocity": 55,
+                      "channel": 2
+                    },
+                    {
+                      "midi": 24,
+                      "startTick": 1920,
+                      "durationTicks": 1680,
+                      "velocity": 74,
+                      "channel": 1
+                    }
+                  ],
+                  "velocity": true,
+                  "controllers": [],
+                  "programChanges": [],
+                  "bankSelect": [],
+                  "pitchBend": [],
+                  "aftertouch": [],
+                  "tempoEvents": 1,
+                  "timeSignatures": [],
+                  "markers": [],
+                  "lyrics": []
+                },
+                "sysexPreserved": [],
+                "markers": [],
+                "sections": [
+                  {
+                    "role": "INTRO",
+                    "name": "Intro",
+                    "lengthBars": 2,
+                    "bars": 2,
+                    "timeSignature": null,
+                    "tempo": null,
+                    "tracks": [],
+                    "events": [],
+                    "chordBehavior": null,
+                    "variationRelationship": null,
+                    "transitionIntent": null,
+                    "vendorName": null,
+                    "vendorCode": null,
+                    "opaqueSourceMetadata": null
+                  },
+                  {
+                    "role": "MAIN",
+                    "name": "Main",
+                    "lengthBars": 4,
+                    "bars": 4,
+                    "timeSignature": null,
+                    "tempo": null,
+                    "tracks": [],
+                    "events": [],
+                    "chordBehavior": null,
+                    "variationRelationship": null,
+                    "transitionIntent": null,
+                    "vendorName": null,
+                    "vendorCode": null,
+                    "opaqueSourceMetadata": null
+                  },
+                  {
+                    "role": "VARIATION_1",
+                    "name": "Variation 1",
+                    "lengthBars": 4,
+                    "bars": 4,
+                    "timeSignature": null,
+                    "tempo": null,
+                    "tracks": [],
+                    "events": [],
+                    "chordBehavior": null,
+                    "variationRelationship": null,
+                    "transitionIntent": null,
+                    "vendorName": null,
+                    "vendorCode": null,
+                    "opaqueSourceMetadata": null
+                  },
+                  {
+                    "role": "FILL",
+                    "name": "Fill",
+                    "lengthBars": 1,
+                    "bars": 1,
+                    "timeSignature": null,
+                    "tempo": null,
+                    "tracks": [],
+                    "events": [],
+                    "chordBehavior": null,
+                    "variationRelationship": null,
+                    "transitionIntent": null,
+                    "vendorName": null,
+                    "vendorCode": null,
+                    "opaqueSourceMetadata": null
+                  },
+                  {
+                    "role": "BREAK",
+                    "name": "Break",
+                    "lengthBars": 2,
+                    "bars": 2,
+                    "timeSignature": null,
+                    "tempo": null,
+                    "tracks": [],
+                    "events": [],
+                    "chordBehavior": null,
+                    "variationRelationship": null,
+                    "transitionIntent": null,
+                    "vendorName": null,
+                    "vendorCode": null,
+                    "opaqueSourceMetadata": null
+                  },
+                  {
+                    "role": "ENDING",
+                    "name": "Ending",
+                    "lengthBars": 2,
+                    "bars": 2,
+                    "timeSignature": null,
+                    "tempo": null,
+                    "tracks": [],
+                    "events": [],
+                    "chordBehavior": null,
+                    "variationRelationship": null,
+                    "transitionIntent": null,
+                    "vendorName": null,
+                    "vendorCode": null,
+                    "opaqueSourceMetadata": null
+                  }
+                ],
+                "sectionOrdering": [
+                  "INTRO",
+                  "MAIN",
+                  "VARIATION_1",
+                  "FILL",
+                  "BREAK",
+                  "ENDING"
+                ],
+                "introMainFillBreakEnding": {
+                  "intro": {
+                    "role": "INTRO",
+                    "name": "Intro",
+                    "lengthBars": 2,
+                    "bars": 2,
+                    "timeSignature": null,
+                    "tempo": null,
+                    "tracks": [],
+                    "events": [],
+                    "chordBehavior": null,
+                    "variationRelationship": null,
+                    "transitionIntent": null,
+                    "vendorName": null,
+                    "vendorCode": null,
+                    "opaqueSourceMetadata": null
+                  },
+                  "introVariants": [],
+                  "main": {
+                    "role": "MAIN",
+                    "name": "Main",
+                    "lengthBars": 4,
+                    "bars": 4,
+                    "timeSignature": null,
+                    "tempo": null,
+                    "tracks": [],
+                    "events": [],
+                    "chordBehavior": null,
+                    "variationRelationship": null,
+                    "transitionIntent": null,
+                    "vendorName": null,
+                    "vendorCode": null,
+                    "opaqueSourceMetadata": null
+                  },
+                  "variations": [
+                    {
+                      "role": "VARIATION_1",
+                      "name": "Variation 1",
+                      "lengthBars": 4,
+                      "bars": 4,
+                      "timeSignature": null,
+                      "tempo": null,
+                      "tracks": [],
+                      "events": [],
+                      "chordBehavior": null,
+                      "variationRelationship": null,
+                      "transitionIntent": null,
+                      "vendorName": null,
+                      "vendorCode": null,
+                      "opaqueSourceMetadata": null
+                    }
+                  ],
+                  "fills": [
+                    {
+                      "role": "FILL",
+                      "name": "Fill",
+                      "lengthBars": 1,
+                      "bars": 1,
+                      "timeSignature": null,
+                      "tempo": null,
+                      "tracks": [],
+                      "events": [],
+                      "chordBehavior": null,
+                      "variationRelationship": null,
+                      "transitionIntent": null,
+                      "vendorName": null,
+                      "vendorCode": null,
+                      "opaqueSourceMetadata": null
+                    }
+                  ],
+                  "fillTransitions": [],
+                  "break": {
+                    "role": "BREAK",
+                    "name": "Break",
+                    "lengthBars": 2,
+                    "bars": 2,
+                    "timeSignature": null,
+                    "tempo": null,
+                    "tracks": [],
+                    "events": [],
+                    "chordBehavior": null,
+                    "variationRelationship": null,
+                    "transitionIntent": null,
+                    "vendorName": null,
+                    "vendorCode": null,
+                    "opaqueSourceMetadata": null
+                  },
+                  "ending": {
+                    "role": "ENDING",
+                    "name": "Ending",
+                    "lengthBars": 2,
+                    "bars": 2,
+                    "timeSignature": null,
+                    "tempo": null,
+                    "tracks": [],
+                    "events": [],
+                    "chordBehavior": null,
+                    "variationRelationship": null,
+                    "transitionIntent": null,
+                    "vendorName": null,
+                    "vendorCode": null,
+                    "opaqueSourceMetadata": null
+                  },
+                  "endingVariants": []
+                },
+                "trackRoles": [
+                  {
+                    "sourceChannel": 2,
+                    "sourceTrack": 2,
+                    "canonicalRole": "BASS",
+                    "program": null,
+                    "bank": null,
+                    "drumKit": null,
+                    "volume": null,
+                    "pan": null,
+                    "transpose": 0,
+                    "octave": 0,
+                    "mute": false,
+                    "vendorAttributes": {}
+                  },
+                  {
+                    "sourceChannel": 1,
+                    "sourceTrack": 1,
+                    "canonicalRole": "BASS",
+                    "program": null,
+                    "bank": null,
+                    "drumKit": null,
+                    "volume": null,
+                    "pan": null,
+                    "transpose": 0,
+                    "octave": 0,
+                    "mute": false,
+                    "vendorAttributes": {}
+                  }
+                ],
+                "drumMapping": {
+                  "schema": "uaos.neutral-ir.drum-mapping/v1",
+                  "mapped": [],
+                  "unmappedEvents": [],
+                  "lossy": false,
+                  "lossReasons": [],
+                  "preserveUnknown": true
+                },
+                "chordStyle": {
+                  "schema": "uaos.neutral-ir.chord-style/v1",
+                  "chordRecognitionMode": "UNKNOWN",
+                  "chordRoot": null,
+                  "quality": null,
+                  "extensions": [],
+                  "inversion": null,
+                  "bassNote": null,
+                  "ntrNttIntent": null,
+                  "scaleKey": null,
+                  "maqamContext": null,
+                  "styleFamily": null,
+                  "groove": null,
+                  "swing": null,
+                  "density": null,
+                  "energy": null,
+                  "phraseBehavior": null,
+                  "fabricatedVendorParameters": false,
+                  "noteEventsAnalyzed": 8
+                },
+                "styleParts": [],
+                "bassRoles": [
+                  {
+                    "sourceChannel": 2,
+                    "sourceTrack": 2,
+                    "canonicalRole": "BASS",
+                    "program": null,
+                    "bank": null,
+                    "drumKit": null,
+                    "volume": null,
+                    "pan": null,
+                    "transpose": 0,
+                    "octave": 0,
+                    "mute": false,
+                    "vendorAttributes": {}
+                  },
+                  {
+                    "sourceChannel": 1,
+                    "sourceTrack": 1,
+                    "canonicalRole": "BASS",
+                    "program": null,
+                    "bank": null,
+                    "drumKit": null,
+                    "volume": null,
+                    "pan": null,
+                    "transpose": 0,
+                    "octave": 0,
+                    "mute": false,
+                    "vendorAttributes": {}
+                  }
+                ],
+                "accompanimentRoles": [],
+                "instrumentProgramMapping": [],
+                "effectsMetadata": [],
+                "transposition": 0,
+                "scaleKeyMaqam": null,
+                "performanceSettings": {},
+                "resourceReferences": [],
+                "vendorExtensions": null,
+                "preserveUnknownWhenSafe": true,
+                "musicalQualityClaim": false,
+                "chords": []
+              },
+              "goldenBrain": null,
+              "musicalQualityClaim": false
+            },
+            "level": "NORMALIZE_TO_UAOS_IR"
+          },
+          "musicalQualityPass": false,
+          "commercialReady": false,
+          "hardwareVerified": false,
+          "capabilityId": "uaos.creator.golden-sequencer-midi/v1"
+        },
+        "outputArtifact": "669fa3f41dd27266815681864b9793eb5b62be1c31fbdc4e85a302917ffb4b92",
+        "sha256": "669fa3f41dd27266815681864b9793eb5b62be1c31fbdc4e85a302917ffb4b92",
+        "durationMs": 273
+      },
+      {
+        "workflowId": "wf-18-midi-reopen",
+        "ok": true,
+        "result": {
+          "ok": true,
+          "noteCount": 8,
+          "bytes": 100
+        },
+        "outputArtifact": "418b65e37daef841bf57e8955e0b04a0daf61e1093a52c56d0e4049405f3dfc3",
+        "sha256": "418b65e37daef841bf57e8955e0b04a0daf61e1093a52c56d0e4049405f3dfc3",
+        "durationMs": 184
+      },
+      {
+        "workflowId": "wf-19-malformed-input",
+        "ok": true,
+        "result": {
+          "ok": true,
+          "recovered": true,
+          "errorCode": "DEMO_NOT_FOUND"
+        },
+        "outputArtifact": "65bc2c80ed1142c913e6f248db4048c06456e52e37879105880b97c97f6588cf",
+        "sha256": "65bc2c80ed1142c913e6f248db4048c06456e52e37879105880b97c97f6588cf",
+        "durationMs": 0
+      },
+      {
+        "workflowId": "wf-20-recovery-close",
+        "ok": true,
+        "result": {
+          "ok": true,
+          "surface": 4,
+          "bundleSha256": "d154c3b45fc081e24e2ed85a51fe4cc6972b468784eaf5bcca88328f5b8362e4",
+          "contentEngine": "af831c8f676696ac9c8f1e3e5eceb2ed6163f5425662f4f840712a3f40cc4281"
+        },
+        "outputArtifact": "d154c3b45fc081e24e2ed85a51fe4cc6972b468784eaf5bcca88328f5b8362e4",
+        "sha256": "d154c3b45fc081e24e2ed85a51fe4cc6972b468784eaf5bcca88328f5b8362e4",
+        "durationMs": 455
+      }
+    ],
+    "summarySha256": "6f311904e8c68a539db0de12584ef0111f7860caeab9c99c7451d5e1f6f29800"
+  },
+  "clean": {
+    "ok": true,
+    "CLEAN_INSTALL_PASS": true,
+    "CLEAN_FIRST_RUN_PASS": true,
+    "SELF_CONTAINED_CORE_PASS": true,
+    "steps": [
+      {
+        "step": "INSTALL_OR_OPEN",
+        "ok": true,
+        "project": {
+          "schema": "uaos.musical-session-memory/v1",
+          "projectId": "arranger-1787720639265",
+          "title": "Clean Install",
+          "tempo": 96,
+          "meter": "4/4",
+          "keyCenter": "C",
+          "arrangement": {
+            "sections": [
+              {
+                "name": "Intro",
+                "bars": 4,
+                "chord": "Cm"
+              },
+              {
+                "name": "Main A",
+                "bars": 8,
+                "chord": "Cm"
+              },
+              {
+                "name": "Main B",
+                "bars": 8,
+                "chord": "Ab"
+              },
+              {
+                "name": "Break",
+                "bars": 2,
+                "chord": "Bb"
+              },
+              {
+                "name": "Ending",
+                "bars": 4,
+                "chord": "Cm"
+              }
+            ]
+          },
+          "mixerSnapshot": {
+            "channels": []
+          },
+          "updatedAt": "2026-08-26T05:03:59.265Z"
+        },
+        "sections": [
+          {
+            "section": "Intro",
+            "bars": 4,
+            "chord": "Cm"
+          },
+          {
+            "section": "Main A",
+            "bars": 8,
+            "chord": "Cm"
+          },
+          {
+            "section": "Main B",
+            "bars": 8,
+            "chord": "Ab"
+          },
+          {
+            "section": "Break",
+            "bars": 2,
+            "chord": "Bb"
+          },
+          {
+            "section": "Ending",
+            "bars": 4,
+            "chord": "Cm"
+          }
+        ],
+        "goldenBrainCapabilityId": "uaos.golden-brain.core/v1",
+        "sku": "uaos-arranger-studio-early-access",
+        "capabilityId": "uaos.sku.arranger-studio/v1",
+        "sha256": "663ffba53af9c3ad5cc1ecf917db8f97947883333291875980529423a92a3073"
+      },
+      {
+        "step": "FIRST_RUN",
+        "ok": true,
+        "demos": 3
+      },
+      {
+        "step": "OPEN_DEMO",
+        "ok": true,
+        "demo": {
+          "id": "demo-01-chords-arrangement",
+          "title": "Chords to Arrangement",
+          "rights": "UAOS_IN_HOUSE_ORIGINAL",
+          "chord": "Cm",
+          "style": "Oriental Pop",
+          "maqam": "Nahawand",
+          "tempo": 96,
+          "workflow": "chords → arrangement"
+        },
+        "project": {
+          "schema": "uaos.musical-session-memory/v1",
+          "projectId": "demo-01-chords-arrangement",
+          "title": "Chords to Arrangement",
+          "tempo": 96,
+          "meter": "4/4",
+          "keyCenter": "Cm",
+          "arrangement": {
+            "sections": [
+              {
+                "section": "Intro",
+                "bars": 4,
+                "chord": "Cm"
+              },
+              {
+                "section": "Main A",
+                "bars": 8,
+                "chord": "Cm"
+              },
+              {
+                "section": "Main B",
+                "bars": 8,
+                "chord": "Ab"
+              },
+              {
+                "section": "Break",
+                "bars": 2,
+                "chord": "Bb"
+              },
+              {
+                "section": "Ending",
+                "bars": 4,
+                "chord": "Cm"
+              }
+            ]
+          },
+          "mixerSnapshot": {
+            "channels": []
+          },
+          "updatedAt": "2026-08-26T05:04:02.634Z"
+        },
+        "song": [
+          {
+            "section": "Intro",
+            "bars": 4,
+            "chord": "Cm"
+          },
+          {
+            "section": "Main A",
+            "bars": 8,
+            "chord": "Cm"
+          },
+          {
+            "section": "Main B",
+            "bars": 8,
+            "chord": "Ab"
+          },
+          {
+            "section": "Break",
+            "bars": 2,
+            "chord": "Bb"
+          },
+          {
+            "section": "Ending",
+            "bars": 4,
+            "chord": "Cm"
+          }
+        ],
+        "intelligenceOk": true,
+        "pipelineOk": true,
+        "sha256": "8eeee15eeb54700449e915d2ac7ac81843626b289e53ae08a290b19ee411d9e5"
+      },
+      {
+        "step": "PLAY",
+        "workflowId": "wf-14-play",
+        "ok": true,
+        "result": {
+          "ok": true,
+          "transport": {
+            "state": "playing",
+            "tempo": 96,
+            "position": 0,
+            "loop": true,
+            "musicalQualityPass": false
+          }
+        },
+        "outputArtifact": "c28d50a28e6665c4191d5885d5de3b349d40a59fd31c5f9c7891a596528a8ba3",
+        "sha256": "c28d50a28e6665c4191d5885d5de3b349d40a59fd31c5f9c7891a596528a8ba3",
+        "durationMs": 0
+      },
+      {
+        "step": "EDIT",
+        "workflowId": "wf-13-edit",
+        "ok": true,
+        "result": {
+          "ok": true,
+          "workspace": {
+            "schema": "uaos.creator.workspace/v1",
+            "project": {
+              "schema": "uaos.musical-session-memory/v1",
+              "projectId": "creator-1787720642636",
+              "title": "WF13 Edit",
+              "tempo": 100,
+              "meter": "4/4",
+              "keyCenter": "C",
+              "arrangement": {
+                "sections": [
+                  {
+                    "name": "Intro",
+                    "bars": 4,
+                    "chord": "Cm"
+                  },
+                  {
+                    "name": "Main A",
+                    "bars": 8,
+                    "chord": "Cm"
+                  },
+                  {
+                    "name": "Main B",
+                    "bars": 8,
+                    "chord": "Ab"
+                  },
+                  {
+                    "name": "Break",
+                    "bars": 2,
+                    "chord": "Bb"
+                  },
+                  {
+                    "name": "Ending",
+                    "bars": 4,
+                    "chord": "Cm"
+                  }
+                ]
+              },
+              "mixerSnapshot": {
+                "channels": []
+              },
+              "updatedAt": "2026-08-26T05:04:02.636Z"
+            },
+            "goldenBrainCapabilityId": "uaos.golden-brain.core/v1",
+            "tracks": [
+              {
+                "id": "drums",
+                "kind": "sequencer"
+              },
+              {
+                "id": "bass",
+                "kind": "harmony"
+              },
+              {
+                "id": "chords",
+                "kind": "harmony"
+              },
+              {
+                "id": "export",
+                "kind": "midi-smf"
+              }
+            ],
+            "midi": {
+              "ok": true,
+              "noteCount": 8,
+              "bytesSha256": "b7422b10a807864b93c306026b0fcbefdc65320d6d4a357bc9bf5a9aeb353c3d"
+            },
+            "commercialReady": false,
+            "musicalQualityPass": false
+          },
+          "sha256": "90d5e805e7184654311abf0b71fb90301263123ea186de96797131e5eafce26c",
+          "capabilityId": "uaos.creator.workspace/v1"
+        },
+        "outputArtifact": "90d5e805e7184654311abf0b71fb90301263123ea186de96797131e5eafce26c",
+        "sha256": "90d5e805e7184654311abf0b71fb90301263123ea186de96797131e5eafce26c",
+        "durationMs": 835
+      },
+      {
+        "step": "SAVE",
+        "workflowId": "wf-16-save",
+        "ok": true,
+        "result": {
+          "ok": true,
+          "project": {
+            "schema": "uaos.musical-session-memory/v1",
+            "projectId": "untitled",
+            "title": "WF16",
+            "tempo": 96,
+            "meter": "4/4",
+            "keyCenter": "C",
+            "arrangement": {
+              "sections": []
+            },
+            "mixerSnapshot": {
+              "channels": []
+            },
+            "updatedAt": "2026-08-26T05:04:03.470Z"
+          },
+          "sha256": "1452fc9db94e44a7f4bc95b274d9002a186e1ceaf76c49307a303c9fe18375ea"
+        },
+        "outputArtifact": "1452fc9db94e44a7f4bc95b274d9002a186e1ceaf76c49307a303c9fe18375ea",
+        "sha256": "1452fc9db94e44a7f4bc95b274d9002a186e1ceaf76c49307a303c9fe18375ea",
+        "durationMs": 1
+      },
+      {
+        "step": "EXPORT",
+        "workflowId": "wf-17-midi-export",
+        "ok": true,
+        "result": {
+          "ok": true,
+          "draft": {
+            "ok": true,
+            "format": "uaos-midi-draft-json",
+            "ppq": 480,
+            "tempo": 100,
+            "events": [
+              {
+                "time": 0,
+                "type": "section",
+                "section": "Intro",
+                "chord": "Cm",
+                "bars": 4
+              },
+              {
+                "time": 16,
+                "type": "section",
+                "section": "Main A",
+                "chord": "Cm",
+                "bars": 8
+              },
+              {
+                "time": 48,
+                "type": "section",
+                "section": "Main B",
+                "chord": "Ab",
+                "bars": 8
+              },
+              {
+                "time": 80,
+                "type": "section",
+                "section": "Break",
+                "chord": "Bb",
+                "bars": 2
+              },
+              {
+                "time": 88,
+                "type": "section",
+                "section": "Ending",
+                "chord": "Cm",
+                "bars": 4
+              }
+            ]
+          },
+          "noteEvents": [
+            {
+              "midi": 24,
+              "startTick": 0,
+              "durationTicks": 1680,
+              "velocity": 74,
+              "channel": 1
+            },
+            {
+              "midi": 36,
+              "startTick": 0,
+              "durationTicks": 1536,
+              "velocity": 55,
+              "channel": 2
+            },
+            {
+              "midi": 39,
+              "startTick": 16,
+              "durationTicks": 1536,
+              "velocity": 55,
+              "channel": 2
+            },
+            {
+              "midi": 43,
+              "startTick": 32,
+              "durationTicks": 1536,
+              "velocity": 55,
+              "channel": 2
+            },
+            {
+              "midi": 24,
+              "startTick": 1920,
+              "durationTicks": 1680,
+              "velocity": 74,
+              "channel": 1
+            },
+            {
+              "midi": 36,
+              "startTick": 1920,
+              "durationTicks": 1536,
+              "velocity": 55,
+              "channel": 2
+            },
+            {
+              "midi": 39,
+              "startTick": 1936,
+              "durationTicks": 1536,
+              "velocity": 55,
+              "channel": 2
+            },
+            {
+              "midi": 43,
+              "startTick": 1952,
+              "durationTicks": 1536,
+              "velocity": 55,
+              "channel": 2
+            }
+          ],
+          "bytes": {
+            "type": "Buffer",
+            "data": [
+              77,
+              84,
+              104,
+              100,
+              0,
+              0,
+              0,
+              6,
+              0,
+              0,
+              0,
+              1,
+              1,
+              224,
+              77,
+              84,
+              114,
+              107,
+              0,
+              0,
+              0,
+              78,
+              0,
+              255,
+              81,
+              3,
+              9,
+              39,
+              192,
+              0,
+              145,
+              24,
+              74,
+              0,
+              146,
+              36,
+              55,
+              16,
+              146,
+              39,
+              55,
+              16,
+              146,
+              43,
+              55,
+              139,
+              96,
+              130,
+              36,
+              64,
+              16,
+              130,
+              39,
+              64,
+              16,
+              130,
+              43,
+              64,
+              112,
+              129,
+              24,
+              64,
+              129,
+              112,
+              145,
+              24,
+              74,
+              0,
+              146,
+              36,
+              55,
+              16,
+              146,
+              39,
+              55,
+              16,
+              146,
+              43,
+              55,
+              139,
+              96,
+              130,
+              36,
+              64,
+              16,
+              130,
+              39,
+              64,
+              16,
+              130,
+              43,
+              64,
+              112,
+              129,
+              24,
+              64,
+              0,
+              255,
+              47,
+              0
+            ]
+          },
+          "parsed": {
+            "ok": true,
+            "validHeader": true,
+            "headerLength": 6,
+            "format": 0,
+            "trackCount": 1,
+            "division": 480,
+            "ppq": 480,
+            "notes": 8,
+            "noteEvents": [
+              {
+                "midi": 36,
+                "startTick": 0,
+                "durationTicks": 1536,
+                "velocity": 55,
+                "channel": 2
+              },
+              {
+                "midi": 39,
+                "startTick": 16,
+                "durationTicks": 1536,
+                "velocity": 55,
+                "channel": 2
+              },
+              {
+                "midi": 43,
+                "startTick": 32,
+                "durationTicks": 1536,
+                "velocity": 55,
+                "channel": 2
+              },
+              {
+                "midi": 24,
+                "startTick": 0,
+                "durationTicks": 1680,
+                "velocity": 74,
+                "channel": 1
+              },
+              {
+                "midi": 36,
+                "startTick": 1920,
+                "durationTicks": 1536,
+                "velocity": 55,
+                "channel": 2
+              },
+              {
+                "midi": 39,
+                "startTick": 1936,
+                "durationTicks": 1536,
+                "velocity": 55,
+                "channel": 2
+              },
+              {
+                "midi": 43,
+                "startTick": 1952,
+                "durationTicks": 1536,
+                "velocity": 55,
+                "channel": 2
+              },
+              {
+                "midi": 24,
+                "startTick": 1920,
+                "durationTicks": 1680,
+                "velocity": 74,
+                "channel": 1
+              }
+            ],
+            "controllers": 0,
+            "programChanges": 0,
+            "tempoEvents": 1,
+            "sysexEvents": 0,
+            "level": "READ"
+          },
+          "ir": {
+            "ok": true,
+            "ir": {
+              "schema": "uaos.neutral-ir/v2",
+              "neutralIrVersion": "uaos.neutral-ir/v2",
+              "family": "midi",
+              "ppq": 480,
+              "noteEvents": [
+                {
+                  "midi": 36,
+                  "startTick": 0,
+                  "durationTicks": 1536,
+                  "velocity": 55,
+                  "channel": 2
+                },
+                {
+                  "midi": 39,
+                  "startTick": 16,
+                  "durationTicks": 1536,
+                  "velocity": 55,
+                  "channel": 2
+                },
+                {
+                  "midi": 43,
+                  "startTick": 32,
+                  "durationTicks": 1536,
+                  "velocity": 55,
+                  "channel": 2
+                },
+                {
+                  "midi": 24,
+                  "startTick": 0,
+                  "durationTicks": 1680,
+                  "velocity": 74,
+                  "channel": 1
+                },
+                {
+                  "midi": 36,
+                  "startTick": 1920,
+                  "durationTicks": 1536,
+                  "velocity": 55,
+                  "channel": 2
+                },
+                {
+                  "midi": 39,
+                  "startTick": 1936,
+                  "durationTicks": 1536,
+                  "velocity": 55,
+                  "channel": 2
+                },
+                {
+                  "midi": 43,
+                  "startTick": 1952,
+                  "durationTicks": 1536,
+                  "velocity": 55,
+                  "channel": 2
+                },
+                {
+                  "midi": 24,
+                  "startTick": 1920,
+                  "durationTicks": 1680,
+                  "velocity": 74,
+                  "channel": 1
+                }
+              ],
+              "tempoEvents": 1,
+              "controllers": 0,
+              "programChanges": 0,
+              "arrangerSemantics": {
+                "schema": "uaos.neutral-ir.arranger-semantics/v2",
+                "tempo": null,
+                "timeSignatures": [],
+                "tracks": [
+                  {
+                    "channel": 2,
+                    "role": "UNKNOWN_VENDOR_ROLE"
+                  },
+                  {
+                    "channel": 1,
+                    "role": "UNKNOWN_VENDOR_ROLE"
+                  }
+                ],
+                "channels": [
+                  2,
+                  1
+                ],
+                "events": {
+                  "notes": [
+                    {
+                      "midi": 36,
+                      "startTick": 0,
+                      "durationTicks": 1536,
+                      "velocity": 55,
+                      "channel": 2
+                    },
+                    {
+                      "midi": 39,
+                      "startTick": 16,
+                      "durationTicks": 1536,
+                      "velocity": 55,
+                      "channel": 2
+                    },
+                    {
+                      "midi": 43,
+                      "startTick": 32,
+                      "durationTicks": 1536,
+                      "velocity": 55,
+                      "channel": 2
+                    },
+                    {
+                      "midi": 24,
+                      "startTick": 0,
+                      "durationTicks": 1680,
+                      "velocity": 74,
+                      "channel": 1
+                    },
+                    {
+                      "midi": 36,
+                      "startTick": 1920,
+                      "durationTicks": 1536,
+                      "velocity": 55,
+                      "channel": 2
+                    },
+                    {
+                      "midi": 39,
+                      "startTick": 1936,
+                      "durationTicks": 1536,
+                      "velocity": 55,
+                      "channel": 2
+                    },
+                    {
+                      "midi": 43,
+                      "startTick": 1952,
+                      "durationTicks": 1536,
+                      "velocity": 55,
+                      "channel": 2
+                    },
+                    {
+                      "midi": 24,
+                      "startTick": 1920,
+                      "durationTicks": 1680,
+                      "velocity": 74,
+                      "channel": 1
+                    }
+                  ],
+                  "velocity": true,
+                  "controllers": [],
+                  "programChanges": [],
+                  "bankSelect": [],
+                  "pitchBend": [],
+                  "aftertouch": [],
+                  "tempoEvents": 1,
+                  "timeSignatures": [],
+                  "markers": [],
+                  "lyrics": []
+                },
+                "sysexPreserved": [],
+                "markers": [],
+                "sections": [
+                  {
+                    "role": "INTRO",
+                    "name": "Intro",
+                    "lengthBars": 2,
+                    "bars": 2,
+                    "timeSignature": null,
+                    "tempo": null,
+                    "tracks": [],
+                    "events": [],
+                    "chordBehavior": null,
+                    "variationRelationship": null,
+                    "transitionIntent": null,
+                    "vendorName": null,
+                    "vendorCode": null,
+                    "opaqueSourceMetadata": null
+                  },
+                  {
+                    "role": "MAIN",
+                    "name": "Main",
+                    "lengthBars": 4,
+                    "bars": 4,
+                    "timeSignature": null,
+                    "tempo": null,
+                    "tracks": [],
+                    "events": [],
+                    "chordBehavior": null,
+                    "variationRelationship": null,
+                    "transitionIntent": null,
+                    "vendorName": null,
+                    "vendorCode": null,
+                    "opaqueSourceMetadata": null
+                  },
+                  {
+                    "role": "VARIATION_1",
+                    "name": "Variation 1",
+                    "lengthBars": 4,
+                    "bars": 4,
+                    "timeSignature": null,
+                    "tempo": null,
+                    "tracks": [],
+                    "events": [],
+                    "chordBehavior": null,
+                    "variationRelationship": null,
+                    "transitionIntent": null,
+                    "vendorName": null,
+                    "vendorCode": null,
+                    "opaqueSourceMetadata": null
+                  },
+                  {
+                    "role": "FILL",
+                    "name": "Fill",
+                    "lengthBars": 1,
+                    "bars": 1,
+                    "timeSignature": null,
+                    "tempo": null,
+                    "tracks": [],
+                    "events": [],
+                    "chordBehavior": null,
+                    "variationRelationship": null,
+                    "transitionIntent": null,
+                    "vendorName": null,
+                    "vendorCode": null,
+                    "opaqueSourceMetadata": null
+                  },
+                  {
+                    "role": "BREAK",
+                    "name": "Break",
+                    "lengthBars": 2,
+                    "bars": 2,
+                    "timeSignature": null,
+                    "tempo": null,
+                    "tracks": [],
+                    "events": [],
+                    "chordBehavior": null,
+                    "variationRelationship": null,
+                    "transitionIntent": null,
+                    "vendorName": null,
+                    "vendorCode": null,
+                    "opaqueSourceMetadata": null
+                  },
+                  {
+                    "role": "ENDING",
+                    "name": "Ending",
+                    "lengthBars": 2,
+                    "bars": 2,
+                    "timeSignature": null,
+                    "tempo": null,
+                    "tracks": [],
+                    "events": [],
+                    "chordBehavior": null,
+                    "variationRelationship": null,
+                    "transitionIntent": null,
+                    "vendorName": null,
+                    "vendorCode": null,
+                    "opaqueSourceMetadata": null
+                  }
+                ],
+                "sectionOrdering": [
+                  "INTRO",
+                  "MAIN",
+                  "VARIATION_1",
+                  "FILL",
+                  "BREAK",
+                  "ENDING"
+                ],
+                "introMainFillBreakEnding": {
+                  "intro": {
+                    "role": "INTRO",
+                    "name": "Intro",
+                    "lengthBars": 2,
+                    "bars": 2,
+                    "timeSignature": null,
+                    "tempo": null,
+                    "tracks": [],
+                    "events": [],
+                    "chordBehavior": null,
+                    "variationRelationship": null,
+                    "transitionIntent": null,
+                    "vendorName": null,
+                    "vendorCode": null,
+                    "opaqueSourceMetadata": null
+                  },
+                  "introVariants": [],
+                  "main": {
+                    "role": "MAIN",
+                    "name": "Main",
+                    "lengthBars": 4,
+                    "bars": 4,
+                    "timeSignature": null,
+                    "tempo": null,
+                    "tracks": [],
+                    "events": [],
+                    "chordBehavior": null,
+                    "variationRelationship": null,
+                    "transitionIntent": null,
+                    "vendorName": null,
+                    "vendorCode": null,
+                    "opaqueSourceMetadata": null
+                  },
+                  "variations": [
+                    {
+                      "role": "VARIATION_1",
+                      "name": "Variation 1",
+                      "lengthBars": 4,
+                      "bars": 4,
+                      "timeSignature": null,
+                      "tempo": null,
+                      "tracks": [],
+                      "events": [],
+                      "chordBehavior": null,
+                      "variationRelationship": null,
+                      "transitionIntent": null,
+                      "vendorName": null,
+                      "vendorCode": null,
+                      "opaqueSourceMetadata": null
+                    }
+                  ],
+                  "fills": [
+                    {
+                      "role": "FILL",
+                      "name": "Fill",
+                      "lengthBars": 1,
+                      "bars": 1,
+                      "timeSignature": null,
+                      "tempo": null,
+                      "tracks": [],
+                      "events": [],
+                      "chordBehavior": null,
+                      "variationRelationship": null,
+                      "transitionIntent": null,
+                      "vendorName": null,
+                      "vendorCode": null,
+                      "opaqueSourceMetadata": null
+                    }
+                  ],
+                  "fillTransitions": [],
+                  "break": {
+                    "role": "BREAK",
+                    "name": "Break",
+                    "lengthBars": 2,
+                    "bars": 2,
+                    "timeSignature": null,
+                    "tempo": null,
+                    "tracks": [],
+                    "events": [],
+                    "chordBehavior": null,
+                    "variationRelationship": null,
+                    "transitionIntent": null,
+                    "vendorName": null,
+                    "vendorCode": null,
+                    "opaqueSourceMetadata": null
+                  },
+                  "ending": {
+                    "role": "ENDING",
+                    "name": "Ending",
+                    "lengthBars": 2,
+                    "bars": 2,
+                    "timeSignature": null,
+                    "tempo": null,
+                    "tracks": [],
+                    "events": [],
+                    "chordBehavior": null,
+                    "variationRelationship": null,
+                    "transitionIntent": null,
+                    "vendorName": null,
+                    "vendorCode": null,
+                    "opaqueSourceMetadata": null
+                  },
+                  "endingVariants": []
+                },
+                "trackRoles": [
+                  {
+                    "sourceChannel": 2,
+                    "sourceTrack": 2,
+                    "canonicalRole": "BASS",
+                    "program": null,
+                    "bank": null,
+                    "drumKit": null,
+                    "volume": null,
+                    "pan": null,
+                    "transpose": 0,
+                    "octave": 0,
+                    "mute": false,
+                    "vendorAttributes": {}
+                  },
+                  {
+                    "sourceChannel": 1,
+                    "sourceTrack": 1,
+                    "canonicalRole": "BASS",
+                    "program": null,
+                    "bank": null,
+                    "drumKit": null,
+                    "volume": null,
+                    "pan": null,
+                    "transpose": 0,
+                    "octave": 0,
+                    "mute": false,
+                    "vendorAttributes": {}
+                  }
+                ],
+                "drumMapping": {
+                  "schema": "uaos.neutral-ir.drum-mapping/v1",
+                  "mapped": [],
+                  "unmappedEvents": [],
+                  "lossy": false,
+                  "lossReasons": [],
+                  "preserveUnknown": true
+                },
+                "chordStyle": {
+                  "schema": "uaos.neutral-ir.chord-style/v1",
+                  "chordRecognitionMode": "UNKNOWN",
+                  "chordRoot": null,
+                  "quality": null,
+                  "extensions": [],
+                  "inversion": null,
+                  "bassNote": null,
+                  "ntrNttIntent": null,
+                  "scaleKey": null,
+                  "maqamContext": null,
+                  "styleFamily": null,
+                  "groove": null,
+                  "swing": null,
+                  "density": null,
+                  "energy": null,
+                  "phraseBehavior": null,
+                  "fabricatedVendorParameters": false,
+                  "noteEventsAnalyzed": 8
+                },
+                "styleParts": [],
+                "bassRoles": [
+                  {
+                    "sourceChannel": 2,
+                    "sourceTrack": 2,
+                    "canonicalRole": "BASS",
+                    "program": null,
+                    "bank": null,
+                    "drumKit": null,
+                    "volume": null,
+                    "pan": null,
+                    "transpose": 0,
+                    "octave": 0,
+                    "mute": false,
+                    "vendorAttributes": {}
+                  },
+                  {
+                    "sourceChannel": 1,
+                    "sourceTrack": 1,
+                    "canonicalRole": "BASS",
+                    "program": null,
+                    "bank": null,
+                    "drumKit": null,
+                    "volume": null,
+                    "pan": null,
+                    "transpose": 0,
+                    "octave": 0,
+                    "mute": false,
+                    "vendorAttributes": {}
+                  }
+                ],
+                "accompanimentRoles": [],
+                "instrumentProgramMapping": [],
+                "effectsMetadata": [],
+                "transposition": 0,
+                "scaleKeyMaqam": null,
+                "performanceSettings": {},
+                "resourceReferences": [],
+                "vendorExtensions": null,
+                "preserveUnknownWhenSafe": true,
+                "musicalQualityClaim": false,
+                "chords": []
+              },
+              "goldenBrain": null,
+              "musicalQualityClaim": false
+            },
+            "level": "NORMALIZE_TO_UAOS_IR"
+          },
+          "musicalQualityPass": false,
+          "commercialReady": false,
+          "hardwareVerified": false,
+          "capabilityId": "uaos.creator.golden-sequencer-midi/v1"
+        },
+        "outputArtifact": "669fa3f41dd27266815681864b9793eb5b62be1c31fbdc4e85a302917ffb4b92",
+        "sha256": "669fa3f41dd27266815681864b9793eb5b62be1c31fbdc4e85a302917ffb4b92",
+        "durationMs": 265
+      },
+      {
+        "step": "CLOSE",
+        "ok": true,
+        "orphans": 0
+      },
+      {
+        "step": "REOPEN",
+        "ok": true,
+        "demo": {
+          "id": "demo-03-export-reopen",
+          "title": "Arrangement MIDI Export & Reopen",
+          "rights": "UAOS_IN_HOUSE_ORIGINAL",
+          "tempo": 100,
+          "bars": 2,
+          "workflow": "arrangement → MIDI export → reopen"
+        },
+        "export": {
+          "ok": true,
+          "sha256": "b7422b10a807864b93c306026b0fcbefdc65320d6d4a357bc9bf5a9aeb353c3d",
+          "noteCount": 8
+        },
+        "reopen": {
+          "bytesLength": 100,
+          "noteCount": 8,
+          "ok": true
+        },
+        "sha256": "2e586d70e2a6445fda19d5ff36c3c7150a8032ca0ae301bff3e95c7923dfdcd0"
+      }
+    ],
+    "sha256": "a63b440c583fe53bb9e63091ef04bc64b5cbe40352f50260135ee7e4c23a44b2"
+  },
+  "COMMANDER_TOUCHED": false
+}

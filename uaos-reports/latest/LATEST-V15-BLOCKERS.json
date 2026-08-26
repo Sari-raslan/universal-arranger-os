@@ -1,0 +1,34 @@
+{
+    "blockers":  [
+                     {
+                         "id":  "KIDS_OWNER_REQUIRED",
+                         "severity":  "HIGH"
+                     },
+                     {
+                         "id":  "TEEN_OWNER_REQUIRED",
+                         "severity":  "HIGH"
+                     },
+                     {
+                         "id":  "PRICING_OWNER_NOT_APPROVED_x12",
+                         "severity":  "MEDIUM"
+                     },
+                     {
+                         "id":  "KEYBOARD_CONVERTERS_MISSING",
+                         "severity":  "MEDIUM"
+                     },
+                     {
+                         "id":  "ADOPTION_NOT_MERGED_BY_POLICY",
+                         "severity":  "MEDIUM"
+                     },
+                     {
+                         "detail":  "Focused tests needed subst D: -\u003e C:\\UAOS_AGENT_FACTORY_BUILD",
+                         "id":  "D_DRIVE_ABSENT_WITHOUT_SUBST",
+                         "severity":  "LOW"
+                     },
+                     {
+                         "detail":  "Commander HEAD moved during V15 window; halt per integrity gate",
+                         "id":  "COMMANDER_EXTERNAL_HEAD_DRIFT",
+                         "severity":  "CRITICAL"
+                     }
+                 ]
+}

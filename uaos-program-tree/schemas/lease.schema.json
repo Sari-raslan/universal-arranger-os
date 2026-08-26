@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "leaseId",
+    "taskId",
+    "agentId",
+    "expiresAt"
+  ],
+  "properties": {
+    "leaseMs": {
+      "type": "number",
+      "minimum": 60000
+    }
+  }
+}

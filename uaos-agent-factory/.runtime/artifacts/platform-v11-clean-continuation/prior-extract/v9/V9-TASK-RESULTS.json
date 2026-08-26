@@ -1,0 +1,1770 @@
+{
+  "generatedAt": "2026-08-04T06:25:45.251Z",
+  "results": [
+    {
+      "id": "CAP-ARRANGER_STUDIO",
+      "lane": "A",
+      "taskStatus": "TEST_FAIL",
+      "hydrationStatus": "DEPENDENCY_READY",
+      "hydration": {
+        "exitCode": 0,
+        "durationMs": 6532,
+        "timedOut": false,
+        "lockChanged": false,
+        "packageJsonChanged": false,
+        "sizeBeforeBytes": 367315898,
+        "sizeAfterBytes": 367315898,
+        "hashesBefore": {
+          "packageJsonSha256": "6e36fd627e8ba44d0d6316d096928301dfddcf64ca0604287e8160a6f72bf906",
+          "lockfileSha256": "24e2ea9a99f63890ff4a82197959829fffe5dc376a076786079e9559828b8574"
+        },
+        "hashesAfter": {
+          "packageJsonSha256": "6e36fd627e8ba44d0d6316d096928301dfddcf64ca0604287e8160a6f72bf906",
+          "lockfileSha256": "24e2ea9a99f63890ff4a82197959829fffe5dc376a076786079e9559828b8574"
+        },
+        "needsLifecycleReview": true
+      },
+      "supply": {
+        "ok": true,
+        "state": "SUPPLY_CHAIN_PREFLIGHT_PASS",
+        "packageManager": "npm",
+        "lockfile": "package-lock.json",
+        "hashes": {
+          "packageJsonSha256": "6e36fd627e8ba44d0d6316d096928301dfddcf64ca0604287e8160a6f72bf906",
+          "lockfileSha256": "24e2ea9a99f63890ff4a82197959829fffe5dc376a076786079e9559828b8574"
+        },
+        "rejected": [],
+        "rcFiles": [],
+        "lifecycleScripts": [],
+        "needsLifecycleReview": true,
+        "findings": [],
+        "checkedAt": "2026-08-04T06:25:11.521Z"
+      },
+      "preflight": {
+        "worktreeExists": true,
+        "expectedHead": "415db5123bf6f1851cca284f92fb8e3478ffd967",
+        "actualHead": "415db5123bf6f1851cca284f92fb8e3478ffd967",
+        "headMatches": true,
+        "sizeBeforeBytes": 367315898,
+        "freeDiskGb": 25.17
+      },
+      "declaredResults": [
+        {
+          "gate": "check",
+          "status": "TEST_FAIL",
+          "command": "npm run check",
+          "script": "node packages/sampler/samplerFoundation.test.cjs && node packages/sampler/voiceLifecycle.p0005.test.cjs && node packages/library-build/transactionalBuild.p0006.test.cjs && node packages/local-preview-server/localServer.p0007.test.cjs && node packages/sampler-library-adapter/samplerLibraryAdapter.local004.test.cjs && node apps/desktop/src/library-status/libraryStatus.local005.test.cjs && node packages/local-support-bundle/localSupportBundle.local006.test.cjs",
+          "exitCode": 1,
+          "durationMs": 773,
+          "timedOut": false
+        }
+      ],
+      "sizeAfterBytes": 367315898,
+      "completedAt": "2026-08-04T06:25:19.453Z"
+    },
+    {
+      "id": "CAP-GENERATE_MY_SET",
+      "lane": "A",
+      "taskStatus": "TEST_FAIL",
+      "hydrationStatus": "DEPENDENCY_READY",
+      "hydration": {
+        "exitCode": 0,
+        "durationMs": 6056,
+        "timedOut": false,
+        "lockChanged": false,
+        "packageJsonChanged": false,
+        "sizeBeforeBytes": 313020,
+        "sizeAfterBytes": 367315898,
+        "hashesBefore": {
+          "packageJsonSha256": "6e36fd627e8ba44d0d6316d096928301dfddcf64ca0604287e8160a6f72bf906",
+          "lockfileSha256": "24e2ea9a99f63890ff4a82197959829fffe5dc376a076786079e9559828b8574"
+        },
+        "hashesAfter": {
+          "packageJsonSha256": "6e36fd627e8ba44d0d6316d096928301dfddcf64ca0604287e8160a6f72bf906",
+          "lockfileSha256": "24e2ea9a99f63890ff4a82197959829fffe5dc376a076786079e9559828b8574"
+        },
+        "needsLifecycleReview": true
+      },
+      "supply": {
+        "ok": true,
+        "state": "SUPPLY_CHAIN_PREFLIGHT_PASS",
+        "packageManager": "npm",
+        "lockfile": "package-lock.json",
+        "hashes": {
+          "packageJsonSha256": "6e36fd627e8ba44d0d6316d096928301dfddcf64ca0604287e8160a6f72bf906",
+          "lockfileSha256": "24e2ea9a99f63890ff4a82197959829fffe5dc376a076786079e9559828b8574"
+        },
+        "rejected": [],
+        "rcFiles": [],
+        "lifecycleScripts": [],
+        "needsLifecycleReview": true,
+        "findings": [],
+        "checkedAt": "2026-08-04T06:25:11.690Z"
+      },
+      "preflight": {
+        "worktreeExists": true,
+        "expectedHead": "415db5123bf6f1851cca284f92fb8e3478ffd967",
+        "actualHead": "415db5123bf6f1851cca284f92fb8e3478ffd967",
+        "headMatches": true,
+        "sizeBeforeBytes": 313020,
+        "freeDiskGb": 25.17
+      },
+      "declaredResults": [
+        {
+          "gate": "check",
+          "status": "TEST_FAIL",
+          "command": "npm run check",
+          "script": "node packages/sampler/samplerFoundation.test.cjs && node packages/sampler/voiceLifecycle.p0005.test.cjs && node packages/library-build/transactionalBuild.p0006.test.cjs && node packages/local-preview-server/localServer.p0007.test.cjs && node packages/sampler-library-adapter/samplerLibraryAdapter.local004.test.cjs && node apps/desktop/src/library-status/libraryStatus.local005.test.cjs && node packages/local-support-bundle/localSupportBundle.local006.test.cjs",
+          "exitCode": 1,
+          "durationMs": 528,
+          "timedOut": false
+        }
+      ],
+      "sizeAfterBytes": 367315898,
+      "completedAt": "2026-08-04T06:25:18.878Z"
+    },
+    {
+      "id": "CAP-KEYBOARD_CONVERTERS",
+      "lane": "A",
+      "taskStatus": "TEST_FAIL",
+      "hydrationStatus": "DEPENDENCY_READY",
+      "hydration": {
+        "exitCode": 0,
+        "durationMs": 5612,
+        "timedOut": false,
+        "lockChanged": false,
+        "packageJsonChanged": false,
+        "sizeBeforeBytes": 313024,
+        "sizeAfterBytes": 367315902,
+        "hashesBefore": {
+          "packageJsonSha256": "6e36fd627e8ba44d0d6316d096928301dfddcf64ca0604287e8160a6f72bf906",
+          "lockfileSha256": "24e2ea9a99f63890ff4a82197959829fffe5dc376a076786079e9559828b8574"
+        },
+        "hashesAfter": {
+          "packageJsonSha256": "6e36fd627e8ba44d0d6316d096928301dfddcf64ca0604287e8160a6f72bf906",
+          "lockfileSha256": "24e2ea9a99f63890ff4a82197959829fffe5dc376a076786079e9559828b8574"
+        },
+        "needsLifecycleReview": true
+      },
+      "supply": {
+        "ok": true,
+        "state": "SUPPLY_CHAIN_PREFLIGHT_PASS",
+        "packageManager": "npm",
+        "lockfile": "package-lock.json",
+        "hashes": {
+          "packageJsonSha256": "6e36fd627e8ba44d0d6316d096928301dfddcf64ca0604287e8160a6f72bf906",
+          "lockfileSha256": "24e2ea9a99f63890ff4a82197959829fffe5dc376a076786079e9559828b8574"
+        },
+        "rejected": [],
+        "rcFiles": [],
+        "lifecycleScripts": [],
+        "needsLifecycleReview": true,
+        "findings": [],
+        "checkedAt": "2026-08-04T06:25:19.018Z"
+      },
+      "preflight": {
+        "worktreeExists": true,
+        "expectedHead": "415db5123bf6f1851cca284f92fb8e3478ffd967",
+        "actualHead": "415db5123bf6f1851cca284f92fb8e3478ffd967",
+        "headMatches": true,
+        "sizeBeforeBytes": 313024,
+        "freeDiskGb": 25.17
+      },
+      "declaredResults": [
+        {
+          "gate": "check",
+          "status": "TEST_FAIL",
+          "command": "npm run check",
+          "script": "node packages/sampler/samplerFoundation.test.cjs && node packages/sampler/voiceLifecycle.p0005.test.cjs && node packages/library-build/transactionalBuild.p0006.test.cjs && node packages/local-preview-server/localServer.p0007.test.cjs && node packages/sampler-library-adapter/samplerLibraryAdapter.local004.test.cjs && node apps/desktop/src/library-status/libraryStatus.local005.test.cjs && node packages/local-support-bundle/localSupportBundle.local006.test.cjs",
+          "exitCode": 1,
+          "durationMs": 676,
+          "timedOut": false
+        }
+      ],
+      "sizeAfterBytes": 367315902,
+      "completedAt": "2026-08-04T06:25:25.910Z"
+    },
+    {
+      "id": "CAP-LIBRARY_BUILDER",
+      "lane": "A",
+      "taskStatus": "TEST_FAIL",
+      "hydrationStatus": "DEPENDENCY_READY",
+      "hydration": {
+        "exitCode": 0,
+        "durationMs": 4823,
+        "timedOut": false,
+        "lockChanged": false,
+        "packageJsonChanged": false,
+        "sizeBeforeBytes": 256401,
+        "sizeAfterBytes": 125704644,
+        "hashesBefore": {
+          "packageJsonSha256": "c417dd184bc45cf46c52115548d430851a69a40d2ff20bb093da365d8067ad52",
+          "lockfileSha256": "467c4b7e3af198fc93ce0d8e53902579c36b031b530cfd482dcdda2c22f8e163"
+        },
+        "hashesAfter": {
+          "packageJsonSha256": "c417dd184bc45cf46c52115548d430851a69a40d2ff20bb093da365d8067ad52",
+          "lockfileSha256": "467c4b7e3af198fc93ce0d8e53902579c36b031b530cfd482dcdda2c22f8e163"
+        },
+        "needsLifecycleReview": true
+      },
+      "supply": {
+        "ok": true,
+        "state": "SUPPLY_CHAIN_PREFLIGHT_PASS",
+        "packageManager": "npm",
+        "lockfile": "package-lock.json",
+        "hashes": {
+          "packageJsonSha256": "c417dd184bc45cf46c52115548d430851a69a40d2ff20bb093da365d8067ad52",
+          "lockfileSha256": "467c4b7e3af198fc93ce0d8e53902579c36b031b530cfd482dcdda2c22f8e163"
+        },
+        "rejected": [],
+        "rcFiles": [],
+        "lifecycleScripts": [],
+        "needsLifecycleReview": true,
+        "findings": [],
+        "checkedAt": "2026-08-04T06:25:19.613Z"
+      },
+      "preflight": {
+        "worktreeExists": true,
+        "expectedHead": "7f845c4a5d1483317161ea1e00a64b36ea739c69",
+        "actualHead": "7f845c4a5d1483317161ea1e00a64b36ea739c69",
+        "headMatches": true,
+        "sizeBeforeBytes": 256401,
+        "freeDiskGb": 25.17
+      },
+      "declaredResults": [
+        {
+          "gate": "check",
+          "status": "TEST_FAIL",
+          "command": "npm run check",
+          "script": "node packages/sampler/samplerFoundation.test.cjs && node packages/sampler/voiceLifecycle.p0005.test.cjs && node packages/library-build/transactionalBuild.p0006.test.cjs && node packages/local-preview-server/localServer.p0007.test.cjs && node packages/sampler-library-adapter/samplerLibraryAdapter.local004.test.cjs && node apps/desktop/src/library-status/libraryStatus.local005.test.cjs && node packages/local-support-bundle/localSupportBundle.local006.test.cjs",
+          "exitCode": 1,
+          "durationMs": 299,
+          "timedOut": false
+        }
+      ],
+      "sizeAfterBytes": 125704644,
+      "completedAt": "2026-08-04T06:25:25.344Z"
+    },
+    {
+      "id": "CAP-LIBRARY_CATALOG",
+      "lane": "A",
+      "taskStatus": "TEST_FAIL",
+      "hydrationStatus": "DEPENDENCY_READY",
+      "hydration": {
+        "exitCode": 0,
+        "durationMs": 4358,
+        "timedOut": false,
+        "lockChanged": false,
+        "packageJsonChanged": false,
+        "sizeBeforeBytes": 256401,
+        "sizeAfterBytes": 125704644,
+        "hashesBefore": {
+          "packageJsonSha256": "c417dd184bc45cf46c52115548d430851a69a40d2ff20bb093da365d8067ad52",
+          "lockfileSha256": "467c4b7e3af198fc93ce0d8e53902579c36b031b530cfd482dcdda2c22f8e163"
+        },
+        "hashesAfter": {
+          "packageJsonSha256": "c417dd184bc45cf46c52115548d430851a69a40d2ff20bb093da365d8067ad52",
+          "lockfileSha256": "467c4b7e3af198fc93ce0d8e53902579c36b031b530cfd482dcdda2c22f8e163"
+        },
+        "needsLifecycleReview": true
+      },
+      "supply": {
+        "ok": true,
+        "state": "SUPPLY_CHAIN_PREFLIGHT_PASS",
+        "packageManager": "npm",
+        "lockfile": "package-lock.json",
+        "hashes": {
+          "packageJsonSha256": "c417dd184bc45cf46c52115548d430851a69a40d2ff20bb093da365d8067ad52",
+          "lockfileSha256": "467c4b7e3af198fc93ce0d8e53902579c36b031b530cfd482dcdda2c22f8e163"
+        },
+        "rejected": [],
+        "rcFiles": [],
+        "lifecycleScripts": [],
+        "needsLifecycleReview": true,
+        "findings": [],
+        "checkedAt": "2026-08-04T06:25:25.480Z"
+      },
+      "preflight": {
+        "worktreeExists": true,
+        "expectedHead": "7f845c4a5d1483317161ea1e00a64b36ea739c69",
+        "actualHead": "7f845c4a5d1483317161ea1e00a64b36ea739c69",
+        "headMatches": true,
+        "sizeBeforeBytes": 256401,
+        "freeDiskGb": 25.17
+      },
+      "declaredResults": [
+        {
+          "gate": "check",
+          "status": "TEST_FAIL",
+          "command": "npm run check",
+          "script": "node packages/sampler/samplerFoundation.test.cjs && node packages/sampler/voiceLifecycle.p0005.test.cjs && node packages/library-build/transactionalBuild.p0006.test.cjs && node packages/local-preview-server/localServer.p0007.test.cjs && node packages/sampler-library-adapter/samplerLibraryAdapter.local004.test.cjs && node apps/desktop/src/library-status/libraryStatus.local005.test.cjs && node packages/local-support-bundle/localSupportBundle.local006.test.cjs",
+          "exitCode": 1,
+          "durationMs": 1015,
+          "timedOut": false
+        }
+      ],
+      "sizeAfterBytes": 125704644,
+      "completedAt": "2026-08-04T06:25:31.468Z"
+    },
+    {
+      "id": "CAP-LIBRARY_PLAYER",
+      "lane": "A",
+      "taskStatus": "TEST_FAIL",
+      "hydrationStatus": "DEPENDENCY_READY",
+      "hydration": {
+        "exitCode": 0,
+        "durationMs": 4824,
+        "timedOut": false,
+        "lockChanged": false,
+        "packageJsonChanged": false,
+        "sizeBeforeBytes": 256400,
+        "sizeAfterBytes": 125704643,
+        "hashesBefore": {
+          "packageJsonSha256": "c417dd184bc45cf46c52115548d430851a69a40d2ff20bb093da365d8067ad52",
+          "lockfileSha256": "467c4b7e3af198fc93ce0d8e53902579c36b031b530cfd482dcdda2c22f8e163"
+        },
+        "hashesAfter": {
+          "packageJsonSha256": "c417dd184bc45cf46c52115548d430851a69a40d2ff20bb093da365d8067ad52",
+          "lockfileSha256": "467c4b7e3af198fc93ce0d8e53902579c36b031b530cfd482dcdda2c22f8e163"
+        },
+        "needsLifecycleReview": true
+      },
+      "supply": {
+        "ok": true,
+        "state": "SUPPLY_CHAIN_PREFLIGHT_PASS",
+        "packageManager": "npm",
+        "lockfile": "package-lock.json",
+        "hashes": {
+          "packageJsonSha256": "c417dd184bc45cf46c52115548d430851a69a40d2ff20bb093da365d8067ad52",
+          "lockfileSha256": "467c4b7e3af198fc93ce0d8e53902579c36b031b530cfd482dcdda2c22f8e163"
+        },
+        "rejected": [],
+        "rcFiles": [],
+        "lifecycleScripts": [],
+        "needsLifecycleReview": true,
+        "findings": [],
+        "checkedAt": "2026-08-04T06:25:26.060Z"
+      },
+      "preflight": {
+        "worktreeExists": true,
+        "expectedHead": "7f845c4a5d1483317161ea1e00a64b36ea739c69",
+        "actualHead": "7f845c4a5d1483317161ea1e00a64b36ea739c69",
+        "headMatches": true,
+        "sizeBeforeBytes": 256400,
+        "freeDiskGb": 25.17
+      },
+      "declaredResults": [
+        {
+          "gate": "check",
+          "status": "TEST_FAIL",
+          "command": "npm run check",
+          "script": "node packages/sampler/samplerFoundation.test.cjs && node packages/sampler/voiceLifecycle.p0005.test.cjs && node packages/library-build/transactionalBuild.p0006.test.cjs && node packages/local-preview-server/localServer.p0007.test.cjs && node packages/sampler-library-adapter/samplerLibraryAdapter.local004.test.cjs && node apps/desktop/src/library-status/libraryStatus.local005.test.cjs && node packages/local-support-bundle/localSupportBundle.local006.test.cjs",
+          "exitCode": 1,
+          "durationMs": 570,
+          "timedOut": false
+        }
+      ],
+      "sizeAfterBytes": 125704643,
+      "completedAt": "2026-08-04T06:25:32.048Z"
+    },
+    {
+      "id": "CAP-MAGIC_SET_BUILDER",
+      "lane": "A",
+      "taskStatus": "TEST_FAIL",
+      "hydrationStatus": "DEPENDENCY_READY",
+      "hydration": {
+        "exitCode": 0,
+        "durationMs": 5535,
+        "timedOut": false,
+        "lockChanged": false,
+        "packageJsonChanged": false,
+        "sizeBeforeBytes": 313022,
+        "sizeAfterBytes": 367315900,
+        "hashesBefore": {
+          "packageJsonSha256": "6e36fd627e8ba44d0d6316d096928301dfddcf64ca0604287e8160a6f72bf906",
+          "lockfileSha256": "24e2ea9a99f63890ff4a82197959829fffe5dc376a076786079e9559828b8574"
+        },
+        "hashesAfter": {
+          "packageJsonSha256": "6e36fd627e8ba44d0d6316d096928301dfddcf64ca0604287e8160a6f72bf906",
+          "lockfileSha256": "24e2ea9a99f63890ff4a82197959829fffe5dc376a076786079e9559828b8574"
+        },
+        "needsLifecycleReview": true
+      },
+      "supply": {
+        "ok": true,
+        "state": "SUPPLY_CHAIN_PREFLIGHT_PASS",
+        "packageManager": "npm",
+        "lockfile": "package-lock.json",
+        "hashes": {
+          "packageJsonSha256": "6e36fd627e8ba44d0d6316d096928301dfddcf64ca0604287e8160a6f72bf906",
+          "lockfileSha256": "24e2ea9a99f63890ff4a82197959829fffe5dc376a076786079e9559828b8574"
+        },
+        "rejected": [],
+        "rcFiles": [],
+        "lifecycleScripts": [],
+        "needsLifecycleReview": true,
+        "findings": [],
+        "checkedAt": "2026-08-04T06:25:31.611Z"
+      },
+      "preflight": {
+        "worktreeExists": true,
+        "expectedHead": "415db5123bf6f1851cca284f92fb8e3478ffd967",
+        "actualHead": "415db5123bf6f1851cca284f92fb8e3478ffd967",
+        "headMatches": true,
+        "sizeBeforeBytes": 313022,
+        "freeDiskGb": 25.17
+      },
+      "declaredResults": [
+        {
+          "gate": "check",
+          "status": "TEST_FAIL",
+          "command": "npm run check",
+          "script": "node packages/sampler/samplerFoundation.test.cjs && node packages/sampler/voiceLifecycle.p0005.test.cjs && node packages/library-build/transactionalBuild.p0006.test.cjs && node packages/local-preview-server/localServer.p0007.test.cjs && node packages/sampler-library-adapter/samplerLibraryAdapter.local004.test.cjs && node apps/desktop/src/library-status/libraryStatus.local005.test.cjs && node packages/local-support-bundle/localSupportBundle.local006.test.cjs",
+          "exitCode": 1,
+          "durationMs": 594,
+          "timedOut": false
+        }
+      ],
+      "sizeAfterBytes": 367315900,
+      "completedAt": "2026-08-04T06:25:38.365Z"
+    },
+    {
+      "id": "CAP-SAMPLER_RUNTIME",
+      "lane": "A",
+      "taskStatus": "TEST_FAIL",
+      "hydrationStatus": "DEPENDENCY_READY",
+      "hydration": {
+        "exitCode": 0,
+        "durationMs": 4680,
+        "timedOut": false,
+        "lockChanged": false,
+        "packageJsonChanged": false,
+        "sizeBeforeBytes": 256401,
+        "sizeAfterBytes": 125704644,
+        "hashesBefore": {
+          "packageJsonSha256": "c417dd184bc45cf46c52115548d430851a69a40d2ff20bb093da365d8067ad52",
+          "lockfileSha256": "467c4b7e3af198fc93ce0d8e53902579c36b031b530cfd482dcdda2c22f8e163"
+        },
+        "hashesAfter": {
+          "packageJsonSha256": "c417dd184bc45cf46c52115548d430851a69a40d2ff20bb093da365d8067ad52",
+          "lockfileSha256": "467c4b7e3af198fc93ce0d8e53902579c36b031b530cfd482dcdda2c22f8e163"
+        },
+        "needsLifecycleReview": true
+      },
+      "supply": {
+        "ok": true,
+        "state": "SUPPLY_CHAIN_PREFLIGHT_PASS",
+        "packageManager": "npm",
+        "lockfile": "package-lock.json",
+        "hashes": {
+          "packageJsonSha256": "c417dd184bc45cf46c52115548d430851a69a40d2ff20bb093da365d8067ad52",
+          "lockfileSha256": "467c4b7e3af198fc93ce0d8e53902579c36b031b530cfd482dcdda2c22f8e163"
+        },
+        "rejected": [],
+        "rcFiles": [],
+        "lifecycleScripts": [],
+        "needsLifecycleReview": true,
+        "findings": [],
+        "checkedAt": "2026-08-04T06:25:32.201Z"
+      },
+      "preflight": {
+        "worktreeExists": true,
+        "expectedHead": "7f845c4a5d1483317161ea1e00a64b36ea739c69",
+        "actualHead": "7f845c4a5d1483317161ea1e00a64b36ea739c69",
+        "headMatches": true,
+        "sizeBeforeBytes": 256401,
+        "freeDiskGb": 25.17
+      },
+      "declaredResults": [
+        {
+          "gate": "check",
+          "status": "TEST_FAIL",
+          "command": "npm run check",
+          "script": "node packages/sampler/samplerFoundation.test.cjs && node packages/sampler/voiceLifecycle.p0005.test.cjs && node packages/library-build/transactionalBuild.p0006.test.cjs && node packages/local-preview-server/localServer.p0007.test.cjs && node packages/sampler-library-adapter/samplerLibraryAdapter.local004.test.cjs && node apps/desktop/src/library-status/libraryStatus.local005.test.cjs && node packages/local-support-bundle/localSupportBundle.local006.test.cjs",
+          "exitCode": 1,
+          "durationMs": 291,
+          "timedOut": false
+        }
+      ],
+      "sizeAfterBytes": 125704644,
+      "completedAt": "2026-08-04T06:25:37.773Z"
+    },
+    {
+      "id": "CAP-SET_DOCTOR",
+      "lane": "A",
+      "taskStatus": "TEST_FAIL",
+      "hydrationStatus": "DEPENDENCY_READY",
+      "hydration": {
+        "exitCode": 0,
+        "durationMs": 5701,
+        "timedOut": false,
+        "lockChanged": false,
+        "packageJsonChanged": false,
+        "sizeBeforeBytes": 313015,
+        "sizeAfterBytes": 367315893,
+        "hashesBefore": {
+          "packageJsonSha256": "6e36fd627e8ba44d0d6316d096928301dfddcf64ca0604287e8160a6f72bf906",
+          "lockfileSha256": "24e2ea9a99f63890ff4a82197959829fffe5dc376a076786079e9559828b8574"
+        },
+        "hashesAfter": {
+          "packageJsonSha256": "6e36fd627e8ba44d0d6316d096928301dfddcf64ca0604287e8160a6f72bf906",
+          "lockfileSha256": "24e2ea9a99f63890ff4a82197959829fffe5dc376a076786079e9559828b8574"
+        },
+        "needsLifecycleReview": true
+      },
+      "supply": {
+        "ok": true,
+        "state": "SUPPLY_CHAIN_PREFLIGHT_PASS",
+        "packageManager": "npm",
+        "lockfile": "package-lock.json",
+        "hashes": {
+          "packageJsonSha256": "6e36fd627e8ba44d0d6316d096928301dfddcf64ca0604287e8160a6f72bf906",
+          "lockfileSha256": "24e2ea9a99f63890ff4a82197959829fffe5dc376a076786079e9559828b8574"
+        },
+        "rejected": [],
+        "rcFiles": [],
+        "lifecycleScripts": [],
+        "needsLifecycleReview": true,
+        "findings": [],
+        "checkedAt": "2026-08-04T06:25:37.915Z"
+      },
+      "preflight": {
+        "worktreeExists": true,
+        "expectedHead": "415db5123bf6f1851cca284f92fb8e3478ffd967",
+        "actualHead": "415db5123bf6f1851cca284f92fb8e3478ffd967",
+        "headMatches": true,
+        "sizeBeforeBytes": 313015,
+        "freeDiskGb": 25.17
+      },
+      "declaredResults": [
+        {
+          "gate": "check",
+          "status": "TEST_FAIL",
+          "command": "npm run check",
+          "script": "node packages/sampler/samplerFoundation.test.cjs && node packages/sampler/voiceLifecycle.p0005.test.cjs && node packages/library-build/transactionalBuild.p0006.test.cjs && node packages/local-preview-server/localServer.p0007.test.cjs && node packages/sampler-library-adapter/samplerLibraryAdapter.local004.test.cjs && node apps/desktop/src/library-status/libraryStatus.local005.test.cjs && node packages/local-support-bundle/localSupportBundle.local006.test.cjs",
+          "exitCode": 1,
+          "durationMs": 463,
+          "timedOut": false
+        }
+      ],
+      "sizeAfterBytes": 367315893,
+      "completedAt": "2026-08-04T06:25:44.698Z"
+    },
+    {
+      "id": "PRODUCT-SINGY_SAMPLER_PLAYER",
+      "lane": "A",
+      "taskStatus": "TEST_FAIL",
+      "hydrationStatus": "DEPENDENCY_READY",
+      "hydration": {
+        "exitCode": 0,
+        "durationMs": 4800,
+        "timedOut": false,
+        "lockChanged": false,
+        "packageJsonChanged": false,
+        "sizeBeforeBytes": 256410,
+        "sizeAfterBytes": 125704653,
+        "hashesBefore": {
+          "packageJsonSha256": "c417dd184bc45cf46c52115548d430851a69a40d2ff20bb093da365d8067ad52",
+          "lockfileSha256": "467c4b7e3af198fc93ce0d8e53902579c36b031b530cfd482dcdda2c22f8e163"
+        },
+        "hashesAfter": {
+          "packageJsonSha256": "c417dd184bc45cf46c52115548d430851a69a40d2ff20bb093da365d8067ad52",
+          "lockfileSha256": "467c4b7e3af198fc93ce0d8e53902579c36b031b530cfd482dcdda2c22f8e163"
+        },
+        "needsLifecycleReview": true
+      },
+      "supply": {
+        "ok": true,
+        "state": "SUPPLY_CHAIN_PREFLIGHT_PASS",
+        "packageManager": "npm",
+        "lockfile": "package-lock.json",
+        "hashes": {
+          "packageJsonSha256": "c417dd184bc45cf46c52115548d430851a69a40d2ff20bb093da365d8067ad52",
+          "lockfileSha256": "467c4b7e3af198fc93ce0d8e53902579c36b031b530cfd482dcdda2c22f8e163"
+        },
+        "rejected": [],
+        "rcFiles": [],
+        "lifecycleScripts": [],
+        "needsLifecycleReview": true,
+        "findings": [],
+        "checkedAt": "2026-08-04T06:25:38.516Z"
+      },
+      "preflight": {
+        "worktreeExists": true,
+        "expectedHead": "7f845c4a5d1483317161ea1e00a64b36ea739c69",
+        "actualHead": "7f845c4a5d1483317161ea1e00a64b36ea739c69",
+        "headMatches": true,
+        "sizeBeforeBytes": 256410,
+        "freeDiskGb": 25.17
+      },
+      "declaredResults": [
+        {
+          "gate": "check",
+          "status": "TEST_FAIL",
+          "command": "npm run check",
+          "script": "node packages/sampler/samplerFoundation.test.cjs && node packages/sampler/voiceLifecycle.p0005.test.cjs && node packages/library-build/transactionalBuild.p0006.test.cjs && node packages/local-preview-server/localServer.p0007.test.cjs && node packages/sampler-library-adapter/samplerLibraryAdapter.local004.test.cjs && node apps/desktop/src/library-status/libraryStatus.local005.test.cjs && node packages/local-support-bundle/localSupportBundle.local006.test.cjs",
+          "exitCode": 1,
+          "durationMs": 311,
+          "timedOut": false
+        }
+      ],
+      "sizeAfterBytes": 125704653,
+      "completedAt": "2026-08-04T06:25:44.276Z"
+    },
+    {
+      "id": "CAP-ADVANCED_HARMONY",
+      "lane": "B",
+      "taskStatus": "GATES_PASS",
+      "derived": [
+        {
+          "gate": "D1_MANIFEST_PARSE",
+          "status": "PASS",
+          "details": [
+            {
+              "file": "electron-builder.json",
+              "status": "PASS"
+            },
+            {
+              "file": "package-lock.json",
+              "status": "PASS"
+            },
+            {
+              "file": "package.json",
+              "status": "PASS"
+            }
+          ]
+        },
+        {
+          "gate": "D2_JAVASCRIPT_SYNTAX",
+          "status": "PASS",
+          "details": [
+            {
+              "file": "scripts\\s090r1-capture-failing-baseline.cjs",
+              "status": "PASS",
+              "exitCode": 0,
+              "stderr": ""
+            },
+            {
+              "file": "scripts\\uaos-commercial-readiness-v1.cjs",
+              "status": "PASS",
+              "exitCode": 0,
+              "stderr": ""
+            },
+            {
+              "file": "scripts\\uaos-final-owner-release-v1.cjs",
+              "status": "PASS",
+              "exitCode": 0,
+              "stderr": ""
+            },
+            {
+              "file": "scripts\\uaos-owner-acceptance-session-v1.cjs",
+              "status": "PASS",
+              "exitCode": 0,
+              "stderr": ""
+            }
+          ]
+        },
+        {
+          "gate": "D3_TYPESCRIPT_NO_EMIT",
+          "status": "SKIPPED_PREREQ_MISSING",
+          "reason": "NO_TSCONFIG"
+        },
+        {
+          "gate": "D4_ESLINT_EXISTING_CONFIG",
+          "status": "SKIPPED_PREREQ_MISSING",
+          "reason": "NO_ESLINT_CONFIG"
+        },
+        {
+          "gate": "D5_NODE_TEST_DISCOVERY",
+          "status": "PROPOSAL_ONLY",
+          "proposals": []
+        },
+        {
+          "gate": "D6_IMPORT_SMOKE",
+          "status": "SKIPPED_DEFAULT_FORBIDDEN",
+          "reason": "Import may execute side effects; not proven pure."
+        }
+      ],
+      "fileCount": 7,
+      "completedAt": "2026-08-04T06:25:13.177Z"
+    },
+    {
+      "id": "CAP-ARRANGEMENT_BRAIN",
+      "lane": "B",
+      "taskStatus": "GATES_PASS",
+      "derived": [
+        {
+          "gate": "D1_MANIFEST_PARSE",
+          "status": "PASS",
+          "details": [
+            {
+              "file": "electron-builder.json",
+              "status": "PASS"
+            },
+            {
+              "file": "package-lock.json",
+              "status": "PASS"
+            },
+            {
+              "file": "package.json",
+              "status": "PASS"
+            }
+          ]
+        },
+        {
+          "gate": "D2_JAVASCRIPT_SYNTAX",
+          "status": "PASS",
+          "details": [
+            {
+              "file": "scripts\\s090r1-capture-failing-baseline.cjs",
+              "status": "PASS",
+              "exitCode": 0,
+              "stderr": ""
+            },
+            {
+              "file": "scripts\\uaos-commercial-readiness-v1.cjs",
+              "status": "PASS",
+              "exitCode": 0,
+              "stderr": ""
+            },
+            {
+              "file": "scripts\\uaos-final-owner-release-v1.cjs",
+              "status": "PASS",
+              "exitCode": 0,
+              "stderr": ""
+            },
+            {
+              "file": "scripts\\uaos-owner-acceptance-session-v1.cjs",
+              "status": "PASS",
+              "exitCode": 0,
+              "stderr": ""
+            }
+          ]
+        },
+        {
+          "gate": "D3_TYPESCRIPT_NO_EMIT",
+          "status": "SKIPPED_PREREQ_MISSING",
+          "reason": "NO_TSCONFIG"
+        },
+        {
+          "gate": "D4_ESLINT_EXISTING_CONFIG",
+          "status": "SKIPPED_PREREQ_MISSING",
+          "reason": "NO_ESLINT_CONFIG"
+        },
+        {
+          "gate": "D5_NODE_TEST_DISCOVERY",
+          "status": "PROPOSAL_ONLY",
+          "proposals": []
+        },
+        {
+          "gate": "D6_IMPORT_SMOKE",
+          "status": "SKIPPED_DEFAULT_FORBIDDEN",
+          "reason": "Import may execute side effects; not proven pure."
+        }
+      ],
+      "fileCount": 7,
+      "completedAt": "2026-08-04T06:25:12.831Z"
+    },
+    {
+      "id": "CAP-CHORD_SUGGESTION",
+      "lane": "B",
+      "taskStatus": "GATES_PASS",
+      "derived": [
+        {
+          "gate": "D1_MANIFEST_PARSE",
+          "status": "PASS",
+          "details": [
+            {
+              "file": "electron-builder.json",
+              "status": "PASS"
+            },
+            {
+              "file": "package-lock.json",
+              "status": "PASS"
+            },
+            {
+              "file": "package.json",
+              "status": "PASS"
+            }
+          ]
+        },
+        {
+          "gate": "D2_JAVASCRIPT_SYNTAX",
+          "status": "PASS",
+          "details": [
+            {
+              "file": "scripts\\s090r1-capture-failing-baseline.cjs",
+              "status": "PASS",
+              "exitCode": 0,
+              "stderr": ""
+            },
+            {
+              "file": "scripts\\uaos-commercial-readiness-v1.cjs",
+              "status": "PASS",
+              "exitCode": 0,
+              "stderr": ""
+            },
+            {
+              "file": "scripts\\uaos-final-owner-release-v1.cjs",
+              "status": "PASS",
+              "exitCode": 0,
+              "stderr": ""
+            },
+            {
+              "file": "scripts\\uaos-owner-acceptance-session-v1.cjs",
+              "status": "PASS",
+              "exitCode": 0,
+              "stderr": ""
+            }
+          ]
+        },
+        {
+          "gate": "D3_TYPESCRIPT_NO_EMIT",
+          "status": "SKIPPED_PREREQ_MISSING",
+          "reason": "NO_TSCONFIG"
+        },
+        {
+          "gate": "D4_ESLINT_EXISTING_CONFIG",
+          "status": "SKIPPED_PREREQ_MISSING",
+          "reason": "NO_ESLINT_CONFIG"
+        },
+        {
+          "gate": "D5_NODE_TEST_DISCOVERY",
+          "status": "PROPOSAL_ONLY",
+          "proposals": []
+        },
+        {
+          "gate": "D6_IMPORT_SMOKE",
+          "status": "SKIPPED_DEFAULT_FORBIDDEN",
+          "reason": "Import may execute side effects; not proven pure."
+        }
+      ],
+      "fileCount": 7,
+      "completedAt": "2026-08-04T06:25:13.558Z"
+    },
+    {
+      "id": "CAP-CLASSROOM_MANAGEMENT",
+      "lane": "B",
+      "taskStatus": "GATES_PASS",
+      "derived": [
+        {
+          "gate": "D1_MANIFEST_PARSE",
+          "status": "PASS",
+          "details": [
+            {
+              "file": "electron-builder.json",
+              "status": "PASS"
+            },
+            {
+              "file": "package-lock.json",
+              "status": "PASS"
+            },
+            {
+              "file": "package.json",
+              "status": "PASS"
+            }
+          ]
+        },
+        {
+          "gate": "D2_JAVASCRIPT_SYNTAX",
+          "status": "PASS",
+          "details": [
+            {
+              "file": "scripts\\s090r1-capture-failing-baseline.cjs",
+              "status": "PASS",
+              "exitCode": 0,
+              "stderr": ""
+            },
+            {
+              "file": "scripts\\uaos-commercial-readiness-v1.cjs",
+              "status": "PASS",
+              "exitCode": 0,
+              "stderr": ""
+            },
+            {
+              "file": "scripts\\uaos-final-owner-release-v1.cjs",
+              "status": "PASS",
+              "exitCode": 0,
+              "stderr": ""
+            },
+            {
+              "file": "scripts\\uaos-owner-acceptance-session-v1.cjs",
+              "status": "PASS",
+              "exitCode": 0,
+              "stderr": ""
+            }
+          ]
+        },
+        {
+          "gate": "D3_TYPESCRIPT_NO_EMIT",
+          "status": "SKIPPED_PREREQ_MISSING",
+          "reason": "NO_TSCONFIG"
+        },
+        {
+          "gate": "D4_ESLINT_EXISTING_CONFIG",
+          "status": "SKIPPED_PREREQ_MISSING",
+          "reason": "NO_ESLINT_CONFIG"
+        },
+        {
+          "gate": "D5_NODE_TEST_DISCOVERY",
+          "status": "PROPOSAL_ONLY",
+          "proposals": []
+        },
+        {
+          "gate": "D6_IMPORT_SMOKE",
+          "status": "SKIPPED_DEFAULT_FORBIDDEN",
+          "reason": "Import may execute side effects; not proven pure."
+        }
+      ],
+      "fileCount": 7,
+      "completedAt": "2026-08-04T06:25:13.976Z"
+    },
+    {
+      "id": "CAP-GLOBAL_PLAYER_MIXER",
+      "lane": "B",
+      "taskStatus": "GATES_PASS",
+      "derived": [
+        {
+          "gate": "D1_MANIFEST_PARSE",
+          "status": "PASS",
+          "details": [
+            {
+              "file": "electron-builder.json",
+              "status": "PASS"
+            },
+            {
+              "file": "package-lock.json",
+              "status": "PASS"
+            },
+            {
+              "file": "package.json",
+              "status": "PASS"
+            }
+          ]
+        },
+        {
+          "gate": "D2_JAVASCRIPT_SYNTAX",
+          "status": "PASS",
+          "details": [
+            {
+              "file": "scripts\\s090r1-capture-failing-baseline.cjs",
+              "status": "PASS",
+              "exitCode": 0,
+              "stderr": ""
+            },
+            {
+              "file": "scripts\\uaos-commercial-readiness-v1.cjs",
+              "status": "PASS",
+              "exitCode": 0,
+              "stderr": ""
+            },
+            {
+              "file": "scripts\\uaos-final-owner-release-v1.cjs",
+              "status": "PASS",
+              "exitCode": 0,
+              "stderr": ""
+            },
+            {
+              "file": "scripts\\uaos-owner-acceptance-session-v1.cjs",
+              "status": "PASS",
+              "exitCode": 0,
+              "stderr": ""
+            }
+          ]
+        },
+        {
+          "gate": "D3_TYPESCRIPT_NO_EMIT",
+          "status": "SKIPPED_PREREQ_MISSING",
+          "reason": "NO_TSCONFIG"
+        },
+        {
+          "gate": "D4_ESLINT_EXISTING_CONFIG",
+          "status": "SKIPPED_PREREQ_MISSING",
+          "reason": "NO_ESLINT_CONFIG"
+        },
+        {
+          "gate": "D5_NODE_TEST_DISCOVERY",
+          "status": "PROPOSAL_ONLY",
+          "proposals": []
+        },
+        {
+          "gate": "D6_IMPORT_SMOKE",
+          "status": "SKIPPED_DEFAULT_FORBIDDEN",
+          "reason": "Import may execute side effects; not proven pure."
+        }
+      ],
+      "fileCount": 7,
+      "completedAt": "2026-08-04T06:25:12.025Z"
+    },
+    {
+      "id": "CAP-GOLDEN_SEQUENCER",
+      "lane": "B",
+      "taskStatus": "GATES_PASS",
+      "derived": [
+        {
+          "gate": "D1_MANIFEST_PARSE",
+          "status": "PASS",
+          "details": [
+            {
+              "file": "electron-builder.json",
+              "status": "PASS"
+            },
+            {
+              "file": "package-lock.json",
+              "status": "PASS"
+            },
+            {
+              "file": "package.json",
+              "status": "PASS"
+            }
+          ]
+        },
+        {
+          "gate": "D2_JAVASCRIPT_SYNTAX",
+          "status": "PASS",
+          "details": [
+            {
+              "file": "scripts\\s090r1-capture-failing-baseline.cjs",
+              "status": "PASS",
+              "exitCode": 0,
+              "stderr": ""
+            },
+            {
+              "file": "scripts\\uaos-commercial-readiness-v1.cjs",
+              "status": "PASS",
+              "exitCode": 0,
+              "stderr": ""
+            },
+            {
+              "file": "scripts\\uaos-final-owner-release-v1.cjs",
+              "status": "PASS",
+              "exitCode": 0,
+              "stderr": ""
+            },
+            {
+              "file": "scripts\\uaos-owner-acceptance-session-v1.cjs",
+              "status": "PASS",
+              "exitCode": 0,
+              "stderr": ""
+            }
+          ]
+        },
+        {
+          "gate": "D3_TYPESCRIPT_NO_EMIT",
+          "status": "SKIPPED_PREREQ_MISSING",
+          "reason": "NO_TSCONFIG"
+        },
+        {
+          "gate": "D4_ESLINT_EXISTING_CONFIG",
+          "status": "SKIPPED_PREREQ_MISSING",
+          "reason": "NO_ESLINT_CONFIG"
+        },
+        {
+          "gate": "D5_NODE_TEST_DISCOVERY",
+          "status": "PROPOSAL_ONLY",
+          "proposals": []
+        },
+        {
+          "gate": "D6_IMPORT_SMOKE",
+          "status": "SKIPPED_DEFAULT_FORBIDDEN",
+          "reason": "Import may execute side effects; not proven pure."
+        }
+      ],
+      "fileCount": 7,
+      "completedAt": "2026-08-04T06:25:12.391Z"
+    },
+    {
+      "id": "CAP-INSTRUMENT_LEARNING",
+      "lane": "B",
+      "taskStatus": "GATES_PASS",
+      "derived": [
+        {
+          "gate": "D1_MANIFEST_PARSE",
+          "status": "PASS",
+          "details": [
+            {
+              "file": "electron-builder.json",
+              "status": "PASS"
+            },
+            {
+              "file": "package-lock.json",
+              "status": "PASS"
+            },
+            {
+              "file": "package.json",
+              "status": "PASS"
+            }
+          ]
+        },
+        {
+          "gate": "D2_JAVASCRIPT_SYNTAX",
+          "status": "PASS",
+          "details": [
+            {
+              "file": "scripts\\s090r1-capture-failing-baseline.cjs",
+              "status": "PASS",
+              "exitCode": 0,
+              "stderr": ""
+            },
+            {
+              "file": "scripts\\uaos-commercial-readiness-v1.cjs",
+              "status": "PASS",
+              "exitCode": 0,
+              "stderr": ""
+            },
+            {
+              "file": "scripts\\uaos-final-owner-release-v1.cjs",
+              "status": "PASS",
+              "exitCode": 0,
+              "stderr": ""
+            },
+            {
+              "file": "scripts\\uaos-owner-acceptance-session-v1.cjs",
+              "status": "PASS",
+              "exitCode": 0,
+              "stderr": ""
+            }
+          ]
+        },
+        {
+          "gate": "D3_TYPESCRIPT_NO_EMIT",
+          "status": "SKIPPED_PREREQ_MISSING",
+          "reason": "NO_TSCONFIG"
+        },
+        {
+          "gate": "D4_ESLINT_EXISTING_CONFIG",
+          "status": "SKIPPED_PREREQ_MISSING",
+          "reason": "NO_ESLINT_CONFIG"
+        },
+        {
+          "gate": "D5_NODE_TEST_DISCOVERY",
+          "status": "PROPOSAL_ONLY",
+          "proposals": []
+        },
+        {
+          "gate": "D6_IMPORT_SMOKE",
+          "status": "SKIPPED_DEFAULT_FORBIDDEN",
+          "reason": "Import may execute side effects; not proven pure."
+        }
+      ],
+      "fileCount": 7,
+      "completedAt": "2026-08-04T06:25:14.503Z"
+    },
+    {
+      "id": "CAP-MULTITRACK_STUDIO",
+      "lane": "B",
+      "taskStatus": "GATES_PASS",
+      "derived": [
+        {
+          "gate": "D1_MANIFEST_PARSE",
+          "status": "PASS",
+          "details": [
+            {
+              "file": "electron-builder.json",
+              "status": "PASS"
+            },
+            {
+              "file": "package-lock.json",
+              "status": "PASS"
+            },
+            {
+              "file": "package.json",
+              "status": "PASS"
+            }
+          ]
+        },
+        {
+          "gate": "D2_JAVASCRIPT_SYNTAX",
+          "status": "PASS",
+          "details": [
+            {
+              "file": "scripts\\s090r1-capture-failing-baseline.cjs",
+              "status": "PASS",
+              "exitCode": 0,
+              "stderr": ""
+            },
+            {
+              "file": "scripts\\uaos-commercial-readiness-v1.cjs",
+              "status": "PASS",
+              "exitCode": 0,
+              "stderr": ""
+            },
+            {
+              "file": "scripts\\uaos-final-owner-release-v1.cjs",
+              "status": "PASS",
+              "exitCode": 0,
+              "stderr": ""
+            },
+            {
+              "file": "scripts\\uaos-owner-acceptance-session-v1.cjs",
+              "status": "PASS",
+              "exitCode": 0,
+              "stderr": ""
+            }
+          ]
+        },
+        {
+          "gate": "D3_TYPESCRIPT_NO_EMIT",
+          "status": "SKIPPED_PREREQ_MISSING",
+          "reason": "NO_TSCONFIG"
+        },
+        {
+          "gate": "D4_ESLINT_EXISTING_CONFIG",
+          "status": "SKIPPED_PREREQ_MISSING",
+          "reason": "NO_ESLINT_CONFIG"
+        },
+        {
+          "gate": "D5_NODE_TEST_DISCOVERY",
+          "status": "PROPOSAL_ONLY",
+          "proposals": []
+        },
+        {
+          "gate": "D6_IMPORT_SMOKE",
+          "status": "SKIPPED_DEFAULT_FORBIDDEN",
+          "reason": "Import may execute side effects; not proven pure."
+        }
+      ],
+      "fileCount": 7,
+      "completedAt": "2026-08-04T06:25:16.329Z"
+    },
+    {
+      "id": "CAP-OPERETTA_BUILDER",
+      "lane": "B",
+      "taskStatus": "GATES_PASS",
+      "derived": [
+        {
+          "gate": "D1_MANIFEST_PARSE",
+          "status": "PASS",
+          "details": [
+            {
+              "file": "electron-builder.json",
+              "status": "PASS"
+            },
+            {
+              "file": "package-lock.json",
+              "status": "PASS"
+            },
+            {
+              "file": "package.json",
+              "status": "PASS"
+            }
+          ]
+        },
+        {
+          "gate": "D2_JAVASCRIPT_SYNTAX",
+          "status": "PASS",
+          "details": [
+            {
+              "file": "scripts\\s090r1-capture-failing-baseline.cjs",
+              "status": "PASS",
+              "exitCode": 0,
+              "stderr": ""
+            },
+            {
+              "file": "scripts\\uaos-commercial-readiness-v1.cjs",
+              "status": "PASS",
+              "exitCode": 0,
+              "stderr": ""
+            },
+            {
+              "file": "scripts\\uaos-final-owner-release-v1.cjs",
+              "status": "PASS",
+              "exitCode": 0,
+              "stderr": ""
+            },
+            {
+              "file": "scripts\\uaos-owner-acceptance-session-v1.cjs",
+              "status": "PASS",
+              "exitCode": 0,
+              "stderr": ""
+            }
+          ]
+        },
+        {
+          "gate": "D3_TYPESCRIPT_NO_EMIT",
+          "status": "SKIPPED_PREREQ_MISSING",
+          "reason": "NO_TSCONFIG"
+        },
+        {
+          "gate": "D4_ESLINT_EXISTING_CONFIG",
+          "status": "SKIPPED_PREREQ_MISSING",
+          "reason": "NO_ESLINT_CONFIG"
+        },
+        {
+          "gate": "D5_NODE_TEST_DISCOVERY",
+          "status": "PROPOSAL_ONLY",
+          "proposals": []
+        },
+        {
+          "gate": "D6_IMPORT_SMOKE",
+          "status": "SKIPPED_DEFAULT_FORBIDDEN",
+          "reason": "Import may execute side effects; not proven pure."
+        }
+      ],
+      "fileCount": 7,
+      "completedAt": "2026-08-04T06:25:14.954Z"
+    },
+    {
+      "id": "CAP-SAFE_CHAT",
+      "lane": "B",
+      "taskStatus": "GATES_PASS",
+      "derived": [
+        {
+          "gate": "D1_MANIFEST_PARSE",
+          "status": "PASS",
+          "details": [
+            {
+              "file": "electron-builder.json",
+              "status": "PASS"
+            },
+            {
+              "file": "package-lock.json",
+              "status": "PASS"
+            },
+            {
+              "file": "package.json",
+              "status": "PASS"
+            }
+          ]
+        },
+        {
+          "gate": "D2_JAVASCRIPT_SYNTAX",
+          "status": "PASS",
+          "details": [
+            {
+              "file": "scripts\\s090r1-capture-failing-baseline.cjs",
+              "status": "PASS",
+              "exitCode": 0,
+              "stderr": ""
+            },
+            {
+              "file": "scripts\\uaos-commercial-readiness-v1.cjs",
+              "status": "PASS",
+              "exitCode": 0,
+              "stderr": ""
+            },
+            {
+              "file": "scripts\\uaos-final-owner-release-v1.cjs",
+              "status": "PASS",
+              "exitCode": 0,
+              "stderr": ""
+            },
+            {
+              "file": "scripts\\uaos-owner-acceptance-session-v1.cjs",
+              "status": "PASS",
+              "exitCode": 0,
+              "stderr": ""
+            }
+          ]
+        },
+        {
+          "gate": "D3_TYPESCRIPT_NO_EMIT",
+          "status": "SKIPPED_PREREQ_MISSING",
+          "reason": "NO_TSCONFIG"
+        },
+        {
+          "gate": "D4_ESLINT_EXISTING_CONFIG",
+          "status": "SKIPPED_PREREQ_MISSING",
+          "reason": "NO_ESLINT_CONFIG"
+        },
+        {
+          "gate": "D5_NODE_TEST_DISCOVERY",
+          "status": "PROPOSAL_ONLY",
+          "proposals": []
+        },
+        {
+          "gate": "D6_IMPORT_SMOKE",
+          "status": "SKIPPED_DEFAULT_FORBIDDEN",
+          "reason": "Import may execute side effects; not proven pure."
+        }
+      ],
+      "fileCount": 7,
+      "completedAt": "2026-08-04T06:25:15.370Z"
+    },
+    {
+      "id": "CAP-SONG_STRUCTURE",
+      "lane": "B",
+      "taskStatus": "GATES_PASS",
+      "derived": [
+        {
+          "gate": "D1_MANIFEST_PARSE",
+          "status": "PASS",
+          "details": [
+            {
+              "file": "electron-builder.json",
+              "status": "PASS"
+            },
+            {
+              "file": "package-lock.json",
+              "status": "PASS"
+            },
+            {
+              "file": "package.json",
+              "status": "PASS"
+            }
+          ]
+        },
+        {
+          "gate": "D2_JAVASCRIPT_SYNTAX",
+          "status": "PASS",
+          "details": [
+            {
+              "file": "scripts\\s090r1-capture-failing-baseline.cjs",
+              "status": "PASS",
+              "exitCode": 0,
+              "stderr": ""
+            },
+            {
+              "file": "scripts\\uaos-commercial-readiness-v1.cjs",
+              "status": "PASS",
+              "exitCode": 0,
+              "stderr": ""
+            },
+            {
+              "file": "scripts\\uaos-final-owner-release-v1.cjs",
+              "status": "PASS",
+              "exitCode": 0,
+              "stderr": ""
+            },
+            {
+              "file": "scripts\\uaos-owner-acceptance-session-v1.cjs",
+              "status": "PASS",
+              "exitCode": 0,
+              "stderr": ""
+            }
+          ]
+        },
+        {
+          "gate": "D3_TYPESCRIPT_NO_EMIT",
+          "status": "SKIPPED_PREREQ_MISSING",
+          "reason": "NO_TSCONFIG"
+        },
+        {
+          "gate": "D4_ESLINT_EXISTING_CONFIG",
+          "status": "SKIPPED_PREREQ_MISSING",
+          "reason": "NO_ESLINT_CONFIG"
+        },
+        {
+          "gate": "D5_NODE_TEST_DISCOVERY",
+          "status": "PROPOSAL_ONLY",
+          "proposals": []
+        },
+        {
+          "gate": "D6_IMPORT_SMOKE",
+          "status": "SKIPPED_DEFAULT_FORBIDDEN",
+          "reason": "Import may execute side effects; not proven pure."
+        }
+      ],
+      "fileCount": 7,
+      "completedAt": "2026-08-04T06:25:15.746Z"
+    },
+    {
+      "id": "CAP-STORY_TO_SONG",
+      "lane": "B",
+      "taskStatus": "GATES_PASS",
+      "derived": [
+        {
+          "gate": "D1_MANIFEST_PARSE",
+          "status": "PASS",
+          "details": [
+            {
+              "file": "electron-builder.json",
+              "status": "PASS"
+            },
+            {
+              "file": "package-lock.json",
+              "status": "PASS"
+            },
+            {
+              "file": "package.json",
+              "status": "PASS"
+            }
+          ]
+        },
+        {
+          "gate": "D2_JAVASCRIPT_SYNTAX",
+          "status": "PASS",
+          "details": [
+            {
+              "file": "scripts\\s090r1-capture-failing-baseline.cjs",
+              "status": "PASS",
+              "exitCode": 0,
+              "stderr": ""
+            },
+            {
+              "file": "scripts\\uaos-commercial-readiness-v1.cjs",
+              "status": "PASS",
+              "exitCode": 0,
+              "stderr": ""
+            },
+            {
+              "file": "scripts\\uaos-final-owner-release-v1.cjs",
+              "status": "PASS",
+              "exitCode": 0,
+              "stderr": ""
+            },
+            {
+              "file": "scripts\\uaos-owner-acceptance-session-v1.cjs",
+              "status": "PASS",
+              "exitCode": 0,
+              "stderr": ""
+            }
+          ]
+        },
+        {
+          "gate": "D3_TYPESCRIPT_NO_EMIT",
+          "status": "SKIPPED_PREREQ_MISSING",
+          "reason": "NO_TSCONFIG"
+        },
+        {
+          "gate": "D4_ESLINT_EXISTING_CONFIG",
+          "status": "SKIPPED_PREREQ_MISSING",
+          "reason": "NO_ESLINT_CONFIG"
+        },
+        {
+          "gate": "D5_NODE_TEST_DISCOVERY",
+          "status": "PROPOSAL_ONLY",
+          "proposals": []
+        },
+        {
+          "gate": "D6_IMPORT_SMOKE",
+          "status": "SKIPPED_DEFAULT_FORBIDDEN",
+          "reason": "Import may execute side effects; not proven pure."
+        }
+      ],
+      "fileCount": 7,
+      "completedAt": "2026-08-04T06:25:15.992Z"
+    },
+    {
+      "id": "CAP-STUDENT_PROGRESS",
+      "lane": "B",
+      "taskStatus": "GATES_PASS",
+      "derived": [
+        {
+          "gate": "D1_MANIFEST_PARSE",
+          "status": "PASS",
+          "details": [
+            {
+              "file": "electron-builder.json",
+              "status": "PASS"
+            },
+            {
+              "file": "package-lock.json",
+              "status": "PASS"
+            },
+            {
+              "file": "package.json",
+              "status": "PASS"
+            }
+          ]
+        },
+        {
+          "gate": "D2_JAVASCRIPT_SYNTAX",
+          "status": "PASS",
+          "details": [
+            {
+              "file": "scripts\\s090r1-capture-failing-baseline.cjs",
+              "status": "PASS",
+              "exitCode": 0,
+              "stderr": ""
+            },
+            {
+              "file": "scripts\\uaos-commercial-readiness-v1.cjs",
+              "status": "PASS",
+              "exitCode": 0,
+              "stderr": ""
+            },
+            {
+              "file": "scripts\\uaos-final-owner-release-v1.cjs",
+              "status": "PASS",
+              "exitCode": 0,
+              "stderr": ""
+            },
+            {
+              "file": "scripts\\uaos-owner-acceptance-session-v1.cjs",
+              "status": "PASS",
+              "exitCode": 0,
+              "stderr": ""
+            }
+          ]
+        },
+        {
+          "gate": "D3_TYPESCRIPT_NO_EMIT",
+          "status": "SKIPPED_PREREQ_MISSING",
+          "reason": "NO_TSCONFIG"
+        },
+        {
+          "gate": "D4_ESLINT_EXISTING_CONFIG",
+          "status": "SKIPPED_PREREQ_MISSING",
+          "reason": "NO_ESLINT_CONFIG"
+        },
+        {
+          "gate": "D5_NODE_TEST_DISCOVERY",
+          "status": "PROPOSAL_ONLY",
+          "proposals": []
+        },
+        {
+          "gate": "D6_IMPORT_SMOKE",
+          "status": "SKIPPED_DEFAULT_FORBIDDEN",
+          "reason": "Import may execute side effects; not proven pure."
+        }
+      ],
+      "fileCount": 7,
+      "completedAt": "2026-08-04T06:25:16.666Z"
+    },
+    {
+      "id": "CAP-VOICE_TO_MELODY",
+      "lane": "B",
+      "taskStatus": "GATES_PASS",
+      "derived": [
+        {
+          "gate": "D1_MANIFEST_PARSE",
+          "status": "PASS",
+          "details": [
+            {
+              "file": "electron-builder.json",
+              "status": "PASS"
+            },
+            {
+              "file": "package-lock.json",
+              "status": "PASS"
+            },
+            {
+              "file": "package.json",
+              "status": "PASS"
+            }
+          ]
+        },
+        {
+          "gate": "D2_JAVASCRIPT_SYNTAX",
+          "status": "PASS",
+          "details": [
+            {
+              "file": "scripts\\s090r1-capture-failing-baseline.cjs",
+              "status": "PASS",
+              "exitCode": 0,
+              "stderr": ""
+            },
+            {
+              "file": "scripts\\uaos-commercial-readiness-v1.cjs",
+              "status": "PASS",
+              "exitCode": 0,
+              "stderr": ""
+            },
+            {
+              "file": "scripts\\uaos-final-owner-release-v1.cjs",
+              "status": "PASS",
+              "exitCode": 0,
+              "stderr": ""
+            },
+            {
+              "file": "scripts\\uaos-owner-acceptance-session-v1.cjs",
+              "status": "PASS",
+              "exitCode": 0,
+              "stderr": ""
+            }
+          ]
+        },
+        {
+          "gate": "D3_TYPESCRIPT_NO_EMIT",
+          "status": "SKIPPED_PREREQ_MISSING",
+          "reason": "NO_TSCONFIG"
+        },
+        {
+          "gate": "D4_ESLINT_EXISTING_CONFIG",
+          "status": "SKIPPED_PREREQ_MISSING",
+          "reason": "NO_ESLINT_CONFIG"
+        },
+        {
+          "gate": "D5_NODE_TEST_DISCOVERY",
+          "status": "PROPOSAL_ONLY",
+          "proposals": []
+        },
+        {
+          "gate": "D6_IMPORT_SMOKE",
+          "status": "SKIPPED_DEFAULT_FORBIDDEN",
+          "reason": "Import may execute side effects; not proven pure."
+        }
+      ],
+      "fileCount": 7,
+      "completedAt": "2026-08-04T06:25:17.033Z"
+    },
+    {
+      "id": "CAP-VOICE_TO_MIDI",
+      "lane": "B",
+      "taskStatus": "GATES_PASS",
+      "derived": [
+        {
+          "gate": "D1_MANIFEST_PARSE",
+          "status": "PASS",
+          "details": [
+            {
+              "file": "electron-builder.json",
+              "status": "PASS"
+            },
+            {
+              "file": "package-lock.json",
+              "status": "PASS"
+            },
+            {
+              "file": "package.json",
+              "status": "PASS"
+            }
+          ]
+        },
+        {
+          "gate": "D2_JAVASCRIPT_SYNTAX",
+          "status": "PASS",
+          "details": [
+            {
+              "file": "scripts\\s090r1-capture-failing-baseline.cjs",
+              "status": "PASS",
+              "exitCode": 0,
+              "stderr": ""
+            },
+            {
+              "file": "scripts\\uaos-commercial-readiness-v1.cjs",
+              "status": "PASS",
+              "exitCode": 0,
+              "stderr": ""
+            },
+            {
+              "file": "scripts\\uaos-final-owner-release-v1.cjs",
+              "status": "PASS",
+              "exitCode": 0,
+              "stderr": ""
+            },
+            {
+              "file": "scripts\\uaos-owner-acceptance-session-v1.cjs",
+              "status": "PASS",
+              "exitCode": 0,
+              "stderr": ""
+            }
+          ]
+        },
+        {
+          "gate": "D3_TYPESCRIPT_NO_EMIT",
+          "status": "SKIPPED_PREREQ_MISSING",
+          "reason": "NO_TSCONFIG"
+        },
+        {
+          "gate": "D4_ESLINT_EXISTING_CONFIG",
+          "status": "SKIPPED_PREREQ_MISSING",
+          "reason": "NO_ESLINT_CONFIG"
+        },
+        {
+          "gate": "D5_NODE_TEST_DISCOVERY",
+          "status": "PROPOSAL_ONLY",
+          "proposals": []
+        },
+        {
+          "gate": "D6_IMPORT_SMOKE",
+          "status": "SKIPPED_DEFAULT_FORBIDDEN",
+          "reason": "Import may execute side effects; not proven pure."
+        }
+      ],
+      "fileCount": 7,
+      "completedAt": "2026-08-04T06:25:16.861Z"
+    }
+  ]
+}

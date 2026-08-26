@@ -1,0 +1,55 @@
+{
+  "PROGRAM": "Creator",
+  "RESULT": "FINAL_ACCEPTANCE_PASS",
+  "steps": [
+    {
+      "ok": true,
+      "step": "ARTIFACT",
+      "capabilityId": "uaos.creator.workspace/v1"
+    },
+    {
+      "ok": true,
+      "step": "LAUNCH"
+    },
+    {
+      "ok": true,
+      "step": "CORE WORKFLOW",
+      "tracks": 4
+    },
+    {
+      "ok": true,
+      "step": "OUTPUT"
+    },
+    {
+      "ok": true,
+      "step": "SAVE/EXPORT",
+      "sha256": "17ce23c69d06b7d229f12b4225870d7c3a69b15b1693bf02ab10fd7742ecc3e0"
+    },
+    {
+      "ok": true,
+      "step": "ERROR/RECOVERY",
+      "note": "workspace path exercised"
+    },
+    {
+      "ok": true,
+      "step": "CLOSE"
+    },
+    {
+      "ok": true,
+      "step": "ORPHANS",
+      "keyCount": 0
+    },
+    {
+      "ok": true,
+      "step": "FINAL EVIDENCE"
+    }
+  ],
+  "failed": [],
+  "at": "2026-08-25T06:50:04.514Z",
+  "PUBLIC_RELEASE": false,
+  "PAYMENT_CHANGED": false,
+  "COMMANDER_TOUCHED": false,
+  "TASKS_JSON_WRITTEN": false,
+  "CURRENT_ACCEPTANCE_INDEX": "6/11",
+  "evidenceSha256": "b61b46660fd8f3ba7681a7f3e0dd3470576f253c60f0a232225093e8a3cba154"
+}

@@ -1,0 +1,9 @@
+# Limitations
+
+- FORMAT_CONTRACT_REQUIRED
+- HARDWARE_REQUIRED
+- No invented proprietary specs
+
+Gates:
+- FORMAT_CONTRACT_REQUIRED
+- HARDWARE_REQUIRED

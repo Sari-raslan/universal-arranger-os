@@ -1,0 +1,35 @@
+{
+  "taskId": "TASK-14-01484-STRESS_TESTS_EVIDENCE",
+  "agentId": "NODE_LOCAL_WORKER-0181",
+  "startedAt": "2026-08-04T20:47:51.101Z",
+  "endedAt": "2026-08-04T20:47:51.219Z",
+  "status": "PASS",
+  "tests": [
+    {
+      "command": "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-14-01484-stress_tests_evidence\\tests\\main.test.mjs",
+      "exitCode": 0,
+      "stdoutTail": "✔ TASK-14-01484-STRESS_TESTS_EVIDENCE verify (0.5035ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 66.5062\n"
+    }
+  ],
+  "sha256": "8A87A7C5B19971F1EFB1BB23EE1EC558C6F51F50FA774768B4D1E18871AFF7F7",
+  "allowedPathsUsed": [
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-14-01484-stress_tests_evidence",
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-14-01484-stress_tests_evidence\\src\\stress_tests_evidence.mjs",
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-14-01484-stress_tests_evidence\\tests\\main.test.mjs"
+  ],
+  "truthStatements": [
+    "Technical WAV success does not prove musical quality",
+    "Fixtures are not product content",
+    "Studio Offline Render is not Real-time DSP",
+    "KORG WRITE_UNSUPPORTED",
+    "No auto adoption of Kids/Teen/Pricing",
+    "Commander not activated"
+  ],
+  "ownerFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-14-01484-stress_tests_evidence\\src\\stress_tests_evidence.mjs",
+  "phase": "EVIDENCE",
+  "gate": null,
+  "noPush": true,
+  "noMerge": true,
+  "noDeploy": true,
+  "commanderActivated": false
+}

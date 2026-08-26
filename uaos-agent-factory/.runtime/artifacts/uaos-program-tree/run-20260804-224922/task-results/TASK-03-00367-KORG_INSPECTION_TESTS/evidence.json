@@ -1,0 +1,35 @@
+{
+  "taskId": "TASK-03-00367-KORG_INSPECTION_TESTS",
+  "agentId": "NODE_LOCAL_WORKER-0014",
+  "startedAt": "2026-08-04T20:49:32.869Z",
+  "endedAt": "2026-08-04T20:49:32.993Z",
+  "status": "PASS",
+  "tests": [
+    {
+      "command": "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-03-00367-korg_inspection_tests\\tests\\main.test.mjs",
+      "exitCode": 0,
+      "stdoutTail": "✔ TASK-03-00367-KORG_INSPECTION_TESTS verify (0.5079ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 70.5677\n"
+    }
+  ],
+  "sha256": "00E242FF7D0CEAB13487DE29278F6DCB92F8ACCE9323B7676DDACD7ED1F84383",
+  "allowedPathsUsed": [
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-03-00367-korg_inspection_tests",
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-03-00367-korg_inspection_tests\\src\\korg_inspection_tests.mjs",
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-03-00367-korg_inspection_tests\\tests\\main.test.mjs"
+  ],
+  "truthStatements": [
+    "Technical WAV success does not prove musical quality",
+    "Fixtures are not product content",
+    "Studio Offline Render is not Real-time DSP",
+    "KORG WRITE_UNSUPPORTED",
+    "No auto adoption of Kids/Teen/Pricing",
+    "Commander not activated"
+  ],
+  "ownerFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-03-00367-korg_inspection_tests\\src\\korg_inspection_tests.mjs",
+  "phase": "TEST",
+  "gate": "FORMAT_GATE",
+  "noPush": true,
+  "noMerge": true,
+  "noDeploy": true,
+  "commanderActivated": false
+}

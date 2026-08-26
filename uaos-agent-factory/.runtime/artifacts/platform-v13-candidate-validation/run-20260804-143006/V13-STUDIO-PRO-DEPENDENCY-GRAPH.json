@@ -1,0 +1,123 @@
+{
+    "nodes":  [
+                  {
+                      "status":  "REUSE_CANDIDATE",
+                      "id":  "project-format",
+                      "reuseFrom":  [
+                                        "packages/core",
+                                        "packages/projects"
+                                    ]
+                  },
+                  {
+                      "status":  "REUSE_CANDIDATE",
+                      "id":  "global-player-mixer",
+                      "reuseFrom":  [
+                                        "singy PersistentPlayerTransport",
+                                        "PersistentMixerDock"
+                                    ]
+                  },
+                  {
+                      "status":  "PARTIAL_REUSE",
+                      "id":  "multitrack",
+                      "reuseFrom":  [
+                                        "teen track model",
+                                        "DAWStudioPanel"
+                                    ]
+                  },
+                  {
+                      "status":  "REUSE_CANDIDATE",
+                      "id":  "sampler-runtime",
+                      "reuseFrom":  [
+                                        "packages/sampler",
+                                        "library-l-130"
+                                    ]
+                  },
+                  {
+                      "status":  "REUSE_CANDIDATE",
+                      "id":  "library-player",
+                      "reuseFrom":  [
+                                        "preview-player",
+                                        "owner-library"
+                                    ]
+                  },
+                  {
+                      "status":  "REUSE_CANDIDATE",
+                      "id":  "export-hub",
+                      "reuseFrom":  [
+                                        "packages/export-hub",
+                                        "packages/midi",
+                                        "packages/audio"
+                                    ]
+                  },
+                  {
+                      "status":  "PARTIAL_REUSE",
+                      "id":  "musical-brain",
+                      "reuseFrom":  [
+                                        "golden-core",
+                                        "songStructureAnalyzer",
+                                        "voiceMelodyEngine"
+                                    ]
+                  },
+                  {
+                      "status":  "REUSE_CANDIDATE",
+                      "id":  "design-system",
+                      "reuseFrom":  [
+                                        "apps/desktop UI"
+                                    ]
+                  },
+                  {
+                      "status":  "REUSE_CANDIDATE",
+                      "id":  "entitlements",
+                      "reuseFrom":  [
+                                        "cashflow/edition gates"
+                                    ]
+                  },
+                  {
+                      "status":  "GREENFIELD",
+                      "id":  "timeline-core",
+                      "reuseFrom":  [
+
+                                    ]
+                  },
+                  {
+                      "status":  "GREENFIELD",
+                      "id":  "recording-engine",
+                      "reuseFrom":  [
+
+                                    ]
+                  },
+                  {
+                      "status":  "GREENFIELD",
+                      "id":  "crash-recovery",
+                      "reuseFrom":  [
+
+                                    ]
+                  }
+              ],
+    "edges":  [
+                  {
+                      "to":  "timeline-core",
+                      "from":  "project-format"
+                  },
+                  {
+                      "to":  "global-player-mixer",
+                      "from":  "timeline-core"
+                  },
+                  {
+                      "to":  "multitrack",
+                      "from":  "global-player-mixer"
+                  },
+                  {
+                      "to":  "library-player",
+                      "from":  "sampler-runtime"
+                  },
+                  {
+                      "to":  "export-hub",
+                      "from":  "multitrack"
+                  },
+                  {
+                      "to":  "timeline-core",
+                      "from":  "musical-brain"
+                  }
+              ]
+}

@@ -1,0 +1,87 @@
+{
+    "product":  "PRODUCT-SINGY_CREATOR",
+    "analyzedPath":  "C:\\UAOS_AGENT_FACTORY_WORKTREES\\library-l-130",
+    "classification":  "PARTIAL_REUSE_ONLY",
+    "notAdoptableAsCreator":  true,
+    "reason":  "library-l-130 is Library Factory (+ Arranger cohabitation). Creator Pro shell absent. Some reusable fragments only.",
+    "matrix":  [
+                   {
+                       "status":  "PRESENT_ADJACENT",
+                       "creator_relevance":  "MEDIUM",
+                       "file":  "apps/desktop/src/uaos-live/ai/voiceMelodyEngine.js",
+                       "library_factory_relevance":  "LOW",
+                       "feature":  "Voice to Melody"
+                   },
+                   {
+                       "status":  "PRESENT_THIN",
+                       "creator_relevance":  "MEDIUM",
+                       "file":  "packages/voice-to-midi/index.js",
+                       "library_factory_relevance":  "LOW",
+                       "feature":  "Voice to MIDI"
+                   },
+                   {
+                       "status":  "ABSENT",
+                       "creator_relevance":  "NONE",
+                       "file":  null,
+                       "library_factory_relevance":  "NONE",
+                       "feature":  "Advanced Harmony"
+                   },
+                   {
+                       "status":  "ABSENT_NAMED",
+                       "creator_relevance":  "LOW",
+                       "file":  "arrangementPlanner.js (related only)",
+                       "library_factory_relevance":  "NONE",
+                       "feature":  "Arrangement Brain"
+                   },
+                   {
+                       "status":  "PRESENT_NAMED",
+                       "creator_relevance":  "MEDIUM",
+                       "file":  "apps/desktop/src/golden-core/goldenCore.js",
+                       "library_factory_relevance":  "LOW",
+                       "feature":  "Golden Sequencer"
+                   },
+                   {
+                       "status":  "PRESENT",
+                       "creator_relevance":  "MEDIUM",
+                       "file":  "apps/desktop/src/uaos-live/ai/songStructureAnalyzer.js",
+                       "library_factory_relevance":  "LOW",
+                       "feature":  "Song Structure"
+                   },
+                   {
+                       "status":  "ABSENT_NAMED",
+                       "creator_relevance":  "LOW",
+                       "file":  "mixer stores only",
+                       "library_factory_relevance":  "LOW",
+                       "feature":  "Global Player/Mixer"
+                   },
+                   {
+                       "status":  "ABSENT_NAMED",
+                       "creator_relevance":  "LOW",
+                       "file":  "DAWStudioPanel.jsx (closest)",
+                       "library_factory_relevance":  "LOW",
+                       "feature":  "Multitrack Studio"
+                   },
+                   {
+                       "status":  "PRESENT",
+                       "creator_relevance":  "MEDIUM",
+                       "file":  "packages/export-hub/index.js",
+                       "library_factory_relevance":  "MEDIUM",
+                       "feature":  "Audio Export"
+                   },
+                   {
+                       "status":  "PRESENT",
+                       "creator_relevance":  "MEDIUM",
+                       "file":  "packages/midi/index.js",
+                       "library_factory_relevance":  "LOW",
+                       "feature":  "MIDI Export"
+                   },
+                   {
+                       "status":  "PRESENT",
+                       "creator_relevance":  "HIGH",
+                       "file":  "packages/core/index.js",
+                       "library_factory_relevance":  "MEDIUM",
+                       "feature":  "Project Format"
+                   }
+               ],
+    "production_readiness":  "NOT_A_CREATOR_PRODUCT_SOURCE"
+}

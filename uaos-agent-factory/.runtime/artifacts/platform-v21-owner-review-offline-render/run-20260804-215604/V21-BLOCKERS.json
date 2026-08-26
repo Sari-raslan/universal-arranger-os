@@ -1,0 +1,34 @@
+{
+  "content": [
+    "OWNER_CONTENT_SELECTION_AND_LICENSE_EVIDENCE_REQUIRED"
+  ],
+  "format": [
+    "OWNER_FORMAT_CONTRACT_REQUIRED"
+  ],
+  "musical": [
+    "OWNER_LISTENING_AND_TASTE_REVIEW_REQUIRED"
+  ],
+  "dsp": [
+    "FUTURE_TECHNICAL_PHASE_REQUIRED"
+  ],
+  "owner": [
+    "Kids",
+    "Teen",
+    "Adoption",
+    "Pricing"
+  ],
+  "commanderNonblockingWip": {
+    "classification": "COMMANDER_BASELINE_RECONCILED_WITH_NONBLOCKING_WIP",
+    "focusedGates": "PASS",
+    "fullSuite": "FAIL — 9 tests / 2 files",
+    "failedFiles": [
+      "tests/acceptance/phase6-conversation-ui-packaged-proof.test.ts",
+      "tests/acceptance/pre-extraction-gate.test.ts"
+    ],
+    "notes": [
+      "portable.nsi pre-extraction-gate packaging mismatches",
+      "one packaged conversation UI proof failure",
+      "Does not change V21 coordinator status while CHAT_ONLY intact and other lanes PASS"
+    ]
+  }
+}

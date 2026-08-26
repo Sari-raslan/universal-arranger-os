@@ -1,0 +1,35 @@
+{
+  "taskId": "TASK-05-00632-MIDI_IMPORT_EXPORT_EVIDENCE",
+  "agentId": "NODE_LOCAL_WORKER-0074",
+  "startedAt": "2026-08-04T20:49:25.653Z",
+  "endedAt": "2026-08-04T20:49:25.773Z",
+  "status": "PASS",
+  "tests": [
+    {
+      "command": "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-05-00632-midi_import_export_evidence\\tests\\main.test.mjs",
+      "exitCode": 0,
+      "stdoutTail": "✔ TASK-05-00632-MIDI_IMPORT_EXPORT_EVIDENCE verify (0.6698ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 67.2792\n"
+    }
+  ],
+  "sha256": "0E6592E51631D0AB615D655A777216CEC36A354A64BA7D6E4C002E5CC25BD49C",
+  "allowedPathsUsed": [
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-05-00632-midi_import_export_evidence",
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-05-00632-midi_import_export_evidence\\src\\midi_import_export_evidence.mjs",
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-05-00632-midi_import_export_evidence\\tests\\main.test.mjs"
+  ],
+  "truthStatements": [
+    "Technical WAV success does not prove musical quality",
+    "Fixtures are not product content",
+    "Studio Offline Render is not Real-time DSP",
+    "KORG WRITE_UNSUPPORTED",
+    "No auto adoption of Kids/Teen/Pricing",
+    "Commander not activated"
+  ],
+  "ownerFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-05-00632-midi_import_export_evidence\\src\\midi_import_export_evidence.mjs",
+  "phase": "EVIDENCE",
+  "gate": null,
+  "noPush": true,
+  "noMerge": true,
+  "noDeploy": true,
+  "commanderActivated": false
+}

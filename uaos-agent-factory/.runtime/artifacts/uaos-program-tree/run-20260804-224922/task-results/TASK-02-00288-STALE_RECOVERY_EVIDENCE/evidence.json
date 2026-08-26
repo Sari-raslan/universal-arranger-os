@@ -1,0 +1,35 @@
+{
+  "taskId": "TASK-02-00288-STALE_RECOVERY_EVIDENCE",
+  "agentId": "NODE_LOCAL_WORKER-0011",
+  "startedAt": "2026-08-04T20:49:32.738Z",
+  "endedAt": "2026-08-04T20:49:32.856Z",
+  "status": "PASS",
+  "tests": [
+    {
+      "command": "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-02-00288-stale_recovery_evidence\\tests\\main.test.mjs",
+      "exitCode": 0,
+      "stdoutTail": "✔ TASK-02-00288-STALE_RECOVERY_EVIDENCE verify (0.5179ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 68.6262\n"
+    }
+  ],
+  "sha256": "8C1030F1A3E44765DB88754E7156FD51011827B55AB1FB2B7D5BAC05D0FC649C",
+  "allowedPathsUsed": [
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-02-00288-stale_recovery_evidence",
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-02-00288-stale_recovery_evidence\\src\\stale_recovery_evidence.mjs",
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-02-00288-stale_recovery_evidence\\tests\\main.test.mjs"
+  ],
+  "truthStatements": [
+    "Technical WAV success does not prove musical quality",
+    "Fixtures are not product content",
+    "Studio Offline Render is not Real-time DSP",
+    "KORG WRITE_UNSUPPORTED",
+    "No auto adoption of Kids/Teen/Pricing",
+    "Commander not activated"
+  ],
+  "ownerFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-02-00288-stale_recovery_evidence\\src\\stale_recovery_evidence.mjs",
+  "phase": "EVIDENCE",
+  "gate": null,
+  "noPush": true,
+  "noMerge": true,
+  "noDeploy": true,
+  "commanderActivated": false
+}

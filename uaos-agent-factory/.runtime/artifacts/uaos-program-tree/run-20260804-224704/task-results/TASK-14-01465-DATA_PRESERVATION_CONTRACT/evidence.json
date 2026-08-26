@@ -1,0 +1,35 @@
+{
+  "taskId": "TASK-14-01465-DATA_PRESERVATION_CONTRACT",
+  "agentId": "NODE_LOCAL_WORKER-0260",
+  "startedAt": "2026-08-04T20:47:15.821Z",
+  "endedAt": "2026-08-04T20:47:15.952Z",
+  "status": "PASS",
+  "tests": [
+    {
+      "command": "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-14-01465-data_preservation_contract\\tests\\main.test.mjs",
+      "exitCode": 0,
+      "stdoutTail": "✔ TASK-14-01465-DATA_PRESERVATION_CONTRACT verify (0.5345ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 74.8744\n"
+    }
+  ],
+  "sha256": "DAB919EBDE948B8FBAAD5B7BBD332051BC50735D81B0EC8AC90B1B41A5D9A85F",
+  "allowedPathsUsed": [
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-14-01465-data_preservation_contract",
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-14-01465-data_preservation_contract\\src\\data_preservation_contract.mjs",
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-14-01465-data_preservation_contract\\tests\\main.test.mjs"
+  ],
+  "truthStatements": [
+    "Technical WAV success does not prove musical quality",
+    "Fixtures are not product content",
+    "Studio Offline Render is not Real-time DSP",
+    "KORG WRITE_UNSUPPORTED",
+    "No auto adoption of Kids/Teen/Pricing",
+    "Commander not activated"
+  ],
+  "ownerFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-14-01465-data_preservation_contract\\src\\data_preservation_contract.mjs",
+  "phase": "DEFINE",
+  "gate": null,
+  "noPush": true,
+  "noMerge": true,
+  "noDeploy": true,
+  "commanderActivated": false
+}

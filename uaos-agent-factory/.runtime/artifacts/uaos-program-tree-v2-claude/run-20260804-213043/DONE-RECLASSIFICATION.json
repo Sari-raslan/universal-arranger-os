@@ -1,0 +1,34 @@
+{
+  "status": "PROPOSED_PENDING_OWNER_CONFIRMATION",
+  "summary": "Reclassify all 1284 DONE tasks to RETRY_READY (marker-only stubs, zero real implementation, confirmed by full census). Relabel 1 mislabeled BLOCKED_BY_DEPENDENCY task to BLOCKED_BY_FORMAT (real gate, wrong enum value). No other state changes proposed.",
+  "doneToRetryReadyCount": 1284,
+  "doneToRetryReadyByDomain": {
+    "00-ORCHESTRATION": 56,
+    "01-SHARED-PLATFORM": 140,
+    "02-LIBRARY-FACTORY": 104,
+    "03-KEYBOARD-PRO": 72,
+    "04-KEYBOARD-CONVERTERS": 80,
+    "05-CREATOR": 108,
+    "06-STUDIO-PRO": 124,
+    "07-SINGY-CORE": 132,
+    "08-SINGY-KIDS": 64,
+    "09-SINGY-TEEN": 56,
+    "10-CONTENT-ASSETS": 16,
+    "11-COMMERCIAL-PLATFORM": 60,
+    "12-WEBSITE-DELIVERY": 76,
+    "13-SECURITY-LEGAL": 20,
+    "14-QA-RELEASE-OPERATIONS": 112,
+    "15-COMMANDER-FUTURE-ADAPTER": 64
+  },
+  "rc1CriticalTasksAffected": 1108,
+  "mislabeledStateCorrections": [
+    {
+      "id": "TASK-06-00725-REAL_TIME_DSP_CONTRACT",
+      "currentState": "BLOCKED_BY_DEPENDENCY",
+      "proposedState": "BLOCKED_BY_FORMAT",
+      "reason": "Zero dependency edges reference this task; its gate field is already FORMAT_GATE with blockedReason FUTURE_TECHNICAL_PHASE_REQUIRED REAL_TIME_DSP_NOT_IMPLEMENTED. This is a real technical/format gate mislabeled under the wrong state enum value, not a stale dependency block. Per truth rule \"Studio offline render is not real-time DSP\", this must stay blocked, just correctly labeled."
+    }
+  ],
+  "notApplied": true,
+  "applyInstructions": "Run v2-apply-reclassification.mjs <rundir> only after explicit owner confirmation."
+}

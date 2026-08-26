@@ -1,0 +1,56 @@
+{
+  "id": "04-after-arranged",
+  "title": "After — arranged",
+  "SOURCE_INPUT": "Same Hijaz phrase after arrangement decision.",
+  "EXPECTED_CAPABILITY": "Same material with bass, drums, and chorus harmony.",
+  "ACTUAL_ACTIONS": [
+    "Reuse Understand",
+    "Apply arrangement",
+    "Render mixed sketch"
+  ],
+  "WAV_PATH": "C:\\keyboard-manager-clean\\docs\\owner-listening-pack\\musical-examples\\04-after-arranged.wav",
+  "DURATION": 12.62501133786848,
+  "SAMPLE_RATE": 44100,
+  "SHA256": "f521fece833e2d41ec9b540dca5e02c1691701f32e77815c9b721d9a7f2bffcf",
+  "SOURCE_COMMIT": "5aeac11779bd678ca3c80d16144e302a5eb5d9f6",
+  "SETTINGS": {
+    "variant": "hijaz",
+    "tempo": 96,
+    "groove": "arabic-khaleeji",
+    "harmony": "maqam-inspired",
+    "sections": [
+      {
+        "name": "Intro",
+        "bars": 1
+      },
+      {
+        "name": "Verse",
+        "bars": 2
+      },
+      {
+        "name": "Chorus",
+        "bars": 2
+      }
+    ],
+    "uniqueMidiCount": 16,
+    "uniqueOnsetCount": 36,
+    "voices": [
+      "kick",
+      "hat",
+      "snare",
+      "bass",
+      "lead",
+      "chord"
+    ]
+  },
+  "WHAT_OWNER_SHOULD_LISTEN_FOR": "Bass/drums/chords added under the same tune. Still not a quality PASS.",
+  "KNOWN_LIMITATIONS": [
+    "Offline oscillator sketch, not a sampled library and not real-time DSP.",
+    "Not Musical Brain quality PASS.",
+    "Original UAOS sketch — not product catalog content and not a licensed song."
+  ],
+  "musicalQualityPass": false,
+  "musicalQualityClaim": false,
+  "sineFixture": false,
+  "technicalFixtureUsedAsMusicalProof": false
+}

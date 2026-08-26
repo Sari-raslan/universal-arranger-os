@@ -1,0 +1,38 @@
+{
+  "id": "TASK-02-00311-MARKETPLACE_READY_PACKAGE_MODEL_TESTS",
+  "epicId": "EPIC-02-0003-LIBRARY_FACTORY_FULL_TREE",
+  "domain": "02-LIBRARY-FACTORY",
+  "title": "Marketplace-ready package model tests",
+  "phase": "TEST",
+  "releaseTrain": "R3-AI-CLOUD-MARKETPLACE",
+  "state": "READY",
+  "priority": 10,
+  "estimateMinutesMin": 45,
+  "estimateMinutesMax": 180,
+  "inputs": [],
+  "acceptanceCriteria": [
+    "Marketplace-ready package model tests contract file exists",
+    "Unit assertions pass for Marketplace-ready package model tests",
+    "Evidence JSON written with SHA256"
+  ],
+  "tests": [
+    "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-02-00311-marketplace_ready_package_model_tests\\tests\\main.test.mjs"
+  ],
+  "evidence": [
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-02-00311-marketplace_ready_package_model_tests/evidence/result.json"
+  ],
+  "allowedPaths": [
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-02-00311-marketplace_ready_package_model_tests",
+    "C:\\keyboard-manager-clean\\uaos-agent-factory\\.runtime\\artifacts\\uaos-program-tree\\TASK-02-00311-MARKETPLACE_READY_PACKAGE_MODEL_TESTS"
+  ],
+  "ownerFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-02-00311-marketplace_ready_package_model_tests\\src\\marketplace_ready_package_model_.mjs",
+  "worktree": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-02-00311-marketplace_ready_package_model_tests",
+  "gate": null,
+  "blockedReason": null,
+  "rc1Critical": true,
+  "claims": [],
+  "lease": null,
+  "heartbeats": [],
+  "createdAt": "2026-08-04T20:47:04.323Z",
+  "updatedAt": "2026-08-04T20:49:28.466Z"
+}

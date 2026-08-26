@@ -1,0 +1,130 @@
+{
+  "generatedAt": "2026-08-16T19:45:44.169Z",
+  "taskCount": 12,
+  "totalFailurePathDeclarations": 38,
+  "status": "PASS",
+  "tasks": [
+    {
+      "taskId": "TASK-02-00209-PROVENANCE_CONTRACT",
+      "count": 3,
+      "declarations": [
+        "failure: unknown origin cannot be upgraded to verified by assertion",
+        "failure: malformed hashes and fixture-role mismatches are rejected",
+        "failure: assert helper reports all validation failures"
+      ],
+      "status": "PASS"
+    },
+    {
+      "taskId": "TASK-02-00210-PROVENANCE_IMPLEMENTATION",
+      "count": 3,
+      "declarations": [
+        "failure: tampering with event details invalidates the chain",
+        "failure: unknown sources cannot be registered as verified",
+        "failure: invalid append types and timestamps are rejected"
+      ],
+      "status": "PASS"
+    },
+    {
+      "taskId": "TASK-02-00211-PROVENANCE_TESTS",
+      "count": 3,
+      "declarations": [
+        "failure: false acceptance is visible and makes the report fail",
+        "failure: thrown validator errors are captured as diagnostics",
+        "failure: duplicate names and one-sided suites are rejected"
+      ],
+      "status": "PASS"
+    },
+    {
+      "taskId": "TASK-02-00212-PROVENANCE_EVIDENCE",
+      "count": 3,
+      "declarations": [
+        "failure: a failing assertion creates non-pass evidence",
+        "failure: tampering after issue is detected",
+        "failure: incomplete path coverage and malformed hashes are rejected"
+      ],
+      "status": "PASS"
+    },
+    {
+      "taskId": "TASK-08-00977-ACCESSIBILITY_CONTRACT",
+      "count": 3,
+      "declarations": [
+        "failure: missing Arabic text and text feedback are both reported",
+        "failure: duplicate keyboard shortcuts and incomplete focus order are rejected",
+        "failure: inaccessible profile values are rejected"
+      ],
+      "status": "PASS"
+    },
+    {
+      "taskId": "TASK-08-00978-ACCESSIBILITY_IMPLEMENTATION",
+      "count": 3,
+      "declarations": [
+        "failure: missing text feedback and fixed timing are rejected",
+        "failure: incomplete focus order and duplicate shortcuts are rejected",
+        "failure: focus and feedback APIs reject invalid state"
+      ],
+      "status": "PASS"
+    },
+    {
+      "taskId": "TASK-08-00979-ACCESSIBILITY_TESTS",
+      "count": 3,
+      "declarations": [
+        "failure: missing names, keys, feedback, and RTL are reported",
+        "failure: planner exceptions become auditable failures",
+        "failure: incomplete locale, motion, or contrast coverage is rejected"
+      ],
+      "status": "PASS"
+    },
+    {
+      "taskId": "TASK-08-00980-ACCESSIBILITY_EVIDENCE",
+      "count": 3,
+      "declarations": [
+        "failure: failed combinations cannot produce PASS evidence",
+        "failure: missing Arabic, reduced-motion, or contrast coverage fails closed",
+        "failure: tampered summaries and malformed source hashes are rejected"
+      ],
+      "status": "PASS"
+    },
+    {
+      "taskId": "TASK-14-01433-RUNTIME_ACCEPTANCE_CONTRACT",
+      "count": 4,
+      "declarations": [
+        "failure: deployment, payment, hardware, and credentials are forbidden",
+        "failure: failure paths must prove safe rejection",
+        "failure: duplicate ids and unbounded durations are rejected",
+        "failure: missing path coverage and malformed manifests are rejected"
+      ],
+      "status": "PASS"
+    },
+    {
+      "taskId": "TASK-14-01434-RUNTIME_ACCEPTANCE_IMPLEMENTATION",
+      "count": 4,
+      "declarations": [
+        "failure: missing required observations fail closed",
+        "failure: wrong outcome, exit code, and timeout are independently reported",
+        "failure: unexpected observations block acceptance",
+        "failure: malformed and duplicate observations are rejected"
+      ],
+      "status": "PASS"
+    },
+    {
+      "taskId": "TASK-14-01435-RUNTIME_ACCEPTANCE_TESTS",
+      "count": 3,
+      "declarations": [
+        "failure: an unexpected false pass makes the matrix fail",
+        "failure: evaluator exceptions cannot masquerade as expected failures",
+        "failure: duplicate names and one-sided expectations are rejected"
+      ],
+      "status": "PASS"
+    },
+    {
+      "taskId": "TASK-14-01436-RUNTIME_ACCEPTANCE_EVIDENCE",
+      "count": 3,
+      "declarations": [
+        "failure: report failures and blocking failures cannot produce PASS evidence",
+        "failure: inconsistent pass counts fail closed",
+        "failure: tampering and malformed source hashes are detected"
+      ],
+      "status": "PASS"
+    }
+  ]
+}

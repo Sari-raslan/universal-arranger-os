@@ -1,0 +1,35 @@
+{
+  "taskId": "TASK-12-01353-DOWNLOAD_HOSTING_PREP_CONTRACT",
+  "agentId": "NODE_LOCAL_WORKER-0015",
+  "startedAt": "2026-08-04T20:49:22.760Z",
+  "endedAt": "2026-08-04T20:49:22.885Z",
+  "status": "PASS",
+  "tests": [
+    {
+      "command": "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-12-01353-download_hosting_prep_contract\\tests\\main.test.mjs",
+      "exitCode": 0,
+      "stdoutTail": "✔ TASK-12-01353-DOWNLOAD_HOSTING_PREP_CONTRACT verify (0.5447ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 70.9443\n"
+    }
+  ],
+  "sha256": "8D04C9917673F0D67FFC668650DCE67079448EAB4154F5D62CC4713EC8B67A52",
+  "allowedPathsUsed": [
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-12-01353-download_hosting_prep_contract",
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-12-01353-download_hosting_prep_contract\\src\\download_hosting_prep_contract.mjs",
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-12-01353-download_hosting_prep_contract\\tests\\main.test.mjs"
+  ],
+  "truthStatements": [
+    "Technical WAV success does not prove musical quality",
+    "Fixtures are not product content",
+    "Studio Offline Render is not Real-time DSP",
+    "KORG WRITE_UNSUPPORTED",
+    "No auto adoption of Kids/Teen/Pricing",
+    "Commander not activated"
+  ],
+  "ownerFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-12-01353-download_hosting_prep_contract\\src\\download_hosting_prep_contract.mjs",
+  "phase": "DEFINE",
+  "gate": null,
+  "noPush": true,
+  "noMerge": true,
+  "noDeploy": true,
+  "commanderActivated": false
+}

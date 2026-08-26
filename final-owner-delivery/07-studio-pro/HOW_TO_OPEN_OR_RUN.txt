@@ -1,0 +1,34 @@
+# How to open or run — Studio Pro
+
+## Delivery type
+HYBRID / MODULE
+
+## Primary entry point
+```
+From repo root: node final-owner-delivery/07-studio-pro/PRODUCT/RUN_ACCEPTED_DEMO.mjs
+```
+
+## Full acceptance queue (all 11)
+From repo root:
+```
+node scripts/run-final-acceptance-queue.mjs
+```
+
+## Targeted tests
+From repo root:
+```
+npm test
+```
+
+## Product source (canonical, not moved)
+- backend/src/studio/studioProSurface.js
+- backend/src/studio/studioProBundle.js
+
+## Evidence
+- reports/final-acceptance/07-Studio_Pro.json
+- evidence SHA256: 39bcb888e8068beb213a59803d2454b5f3a3eab26c7e68c2ead80a9b90d3414c
+
+## Source commit
+5aeac11779bd678ca3c80d16144e302a5eb5d9f6
+
+PUBLIC_RELEASE=NO · COMMANDER_EXCLUDED=YES

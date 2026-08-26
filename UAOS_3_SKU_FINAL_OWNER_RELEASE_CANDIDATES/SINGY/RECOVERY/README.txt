@@ -1,0 +1,1 @@
+Use STOP-*.bat or close window and Start again. Port conflicts auto-recover to alternate ports.\nUser projects in DATA\projects are preserved.\n

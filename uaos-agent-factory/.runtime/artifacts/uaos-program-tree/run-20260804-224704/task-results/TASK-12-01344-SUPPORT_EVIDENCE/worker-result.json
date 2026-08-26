@@ -1,0 +1,11 @@
+{
+  "taskId": "TASK-12-01344-SUPPORT_EVIDENCE",
+  "agentId": "NODE_LOCAL_WORKER-0162",
+  "pid": 8004,
+  "startedAt": "2026-08-04T20:47:50.241Z",
+  "status": "FAILED",
+  "endedAt": "2026-08-04T20:47:50.456Z",
+  "exitCode": 1,
+  "stdoutTail": "",
+  "stderrTail": "<anonymous_script>:57255\r\n      \"domain\": \"14-QA-RELEASE-\r\n\r\nSyntaxError: Unterminated string in JSON at position 2637824 (line 57255 column 32)\r\n    at JSON.parse (<anonymous>)\r\n    at readJson (file:///C:/keyboard-manager-clean/uaos-agent-factory/src/uaos-program-tree-worker.mjs:17:35)\r\n    at file:///C:/keyboard-manager-clean/uaos-agent-factory/src/uaos-program-tree-worker.mjs:31:18\r\n    at ModuleJob.run (node:internal/modules/esm/module_job:439:25)\r\n    at async node:internal/modules/esm/loader:643:26\r\n    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)\r\n\r\nNode.js v24.18.0\r\n"
+}

@@ -1,0 +1,2124 @@
+{
+  "updatedAt": "2026-08-14T07:35:19.621Z",
+  "factoryStatus": "unknown",
+  "supervisorPid": null,
+  "dashboardUrl": "http://127.0.0.1:17321",
+  "resources": {
+    "checkedAt": "2026-08-14T07:35:19.620Z",
+    "ram": {
+      "freeGb": 9.82,
+      "totalGb": 31.21
+    },
+    "disks": {
+      "C": 80.43,
+      "D": 80.43,
+      "E": 80.43
+    },
+    "limits": {
+      "maxHeavyWriters": 2,
+      "maxLightReviewers": 2
+    },
+    "diskWarnings": [],
+    "pauseFactory": false,
+    "pausePackagingDrives": []
+  },
+  "lanes": {
+    "singy": {
+      "productName": "UAOS Singy",
+      "repoRoot": "C:/keyboard-manager-clean/uaos-worktrees/uaos-singy-final-product",
+      "currentTask": "S-110",
+      "currentTitle": "OWNER HUMAN GATE",
+      "currentStatus": "pending",
+      "executor": null,
+      "writer": null,
+      "writerPid": null,
+      "executionMode": null,
+      "taskWorktree": null,
+      "taskBranch": null,
+      "claimId": null,
+      "logFile": null,
+      "passed": 12,
+      "total": 15,
+      "blockers": [
+        {
+          "id": "S-100",
+          "status": "blocked",
+          "result": "BLOCKED_CLEAN_MACHINE_NOT_PROVEN"
+        }
+      ]
+    },
+    "arranger": {
+      "productName": "UAOS Arranger Studio",
+      "repoRoot": "C:/keyboard-manager-clean/uaos-real-product",
+      "currentTask": "A-120",
+      "currentTitle": "OWNER GATE",
+      "currentStatus": "pending",
+      "executor": null,
+      "writer": null,
+      "writerPid": null,
+      "executionMode": null,
+      "taskWorktree": null,
+      "taskBranch": null,
+      "claimId": null,
+      "logFile": null,
+      "passed": 11,
+      "total": 14,
+      "blockers": [
+        {
+          "id": "A-110",
+          "status": "blocked",
+          "result": "BLOCKED_CLEAN_MACHINE_NOT_PROVEN"
+        }
+      ]
+    },
+    "library": {
+      "productName": "UAOS Library Factory Studio",
+      "repoRoot": "C:/keyboard-manager-clean/uaos-real-product",
+      "currentTask": "L-140",
+      "currentTitle": "OWNER GATE",
+      "currentStatus": "pending",
+      "executor": null,
+      "writer": null,
+      "writerPid": null,
+      "executionMode": null,
+      "taskWorktree": null,
+      "taskBranch": null,
+      "claimId": null,
+      "logFile": null,
+      "passed": 13,
+      "total": 16,
+      "blockers": [
+        {
+          "id": "L-130",
+          "status": "blocked",
+          "result": "BLOCKED_CLEAN_MACHINE_NOT_PROVEN"
+        }
+      ]
+    }
+  }
+}
+{
+  "updatedAt": "2026-08-14T07:39:50.336Z",
+  "factoryStatus": "unknown",
+  "supervisorPid": null,
+  "dashboardUrl": "http://127.0.0.1:17321",
+  "resources": {
+    "checkedAt": "2026-08-14T07:39:50.335Z",
+    "ram": {
+      "freeGb": 9.97,
+      "totalGb": 31.21
+    },
+    "disks": {
+      "C": 80.57,
+      "D": 80.57,
+      "E": 80.57
+    },
+    "limits": {
+      "maxHeavyWriters": 2,
+      "maxLightReviewers": 2
+    },
+    "diskWarnings": [],
+    "pauseFactory": false,
+    "pausePackagingDrives": []
+  },
+  "lanes": {
+    "singy": {
+      "productName": "UAOS Singy",
+      "repoRoot": "C:/keyboard-manager-clean/uaos-worktrees/uaos-singy-final-product",
+      "currentTask": "S-110",
+      "currentTitle": "OWNER HUMAN GATE",
+      "currentStatus": "pending",
+      "executor": null,
+      "writer": null,
+      "writerPid": null,
+      "executionMode": null,
+      "taskWorktree": null,
+      "taskBranch": null,
+      "claimId": null,
+      "logFile": null,
+      "passed": 12,
+      "total": 15,
+      "blockers": [
+        {
+          "id": "S-100",
+          "status": "blocked",
+          "result": "BLOCKED_CLEAN_MACHINE_NOT_PROVEN"
+        }
+      ]
+    },
+    "arranger": {
+      "productName": "UAOS Arranger Studio",
+      "repoRoot": "C:/keyboard-manager-clean/uaos-real-product",
+      "currentTask": "A-120",
+      "currentTitle": "OWNER GATE",
+      "currentStatus": "pending",
+      "executor": null,
+      "writer": null,
+      "writerPid": null,
+      "executionMode": null,
+      "taskWorktree": null,
+      "taskBranch": null,
+      "claimId": null,
+      "logFile": null,
+      "passed": 11,
+      "total": 14,
+      "blockers": [
+        {
+          "id": "A-110",
+          "status": "blocked",
+          "result": "BLOCKED_CLEAN_MACHINE_NOT_PROVEN"
+        }
+      ]
+    },
+    "library": {
+      "productName": "UAOS Library Factory Studio",
+      "repoRoot": "C:/keyboard-manager-clean/uaos-real-product",
+      "currentTask": "L-140",
+      "currentTitle": "OWNER GATE",
+      "currentStatus": "pending",
+      "executor": null,
+      "writer": null,
+      "writerPid": null,
+      "executionMode": null,
+      "taskWorktree": null,
+      "taskBranch": null,
+      "claimId": null,
+      "logFile": null,
+      "passed": 13,
+      "total": 16,
+      "blockers": [
+        {
+          "id": "L-130",
+          "status": "blocked",
+          "result": "BLOCKED_CLEAN_MACHINE_NOT_PROVEN"
+        }
+      ]
+    }
+  }
+}
+{
+  "updatedAt": "2026-08-14T07:49:12.289Z",
+  "factoryStatus": "unknown",
+  "supervisorPid": null,
+  "dashboardUrl": "http://127.0.0.1:17321",
+  "resources": {
+    "checkedAt": "2026-08-14T07:49:12.289Z",
+    "ram": {
+      "freeGb": 10.46,
+      "totalGb": 31.21
+    },
+    "disks": {
+      "C": 79.64,
+      "D": 79.64,
+      "E": 79.64
+    },
+    "limits": {
+      "maxHeavyWriters": 2,
+      "maxLightReviewers": 2
+    },
+    "diskWarnings": [],
+    "pauseFactory": false,
+    "pausePackagingDrives": []
+  },
+  "lanes": {
+    "singy": {
+      "productName": "UAOS Singy",
+      "repoRoot": "C:/keyboard-manager-clean/uaos-worktrees/uaos-singy-final-product",
+      "currentTask": "S-110",
+      "currentTitle": "OWNER HUMAN GATE",
+      "currentStatus": "pending",
+      "executor": null,
+      "writer": null,
+      "writerPid": null,
+      "executionMode": null,
+      "taskWorktree": null,
+      "taskBranch": null,
+      "claimId": null,
+      "logFile": null,
+      "passed": 12,
+      "total": 15,
+      "blockers": [
+        {
+          "id": "S-100",
+          "status": "blocked",
+          "result": "BLOCKED_CLEAN_MACHINE_NOT_PROVEN"
+        }
+      ]
+    },
+    "arranger": {
+      "productName": "UAOS Arranger Studio",
+      "repoRoot": "C:/keyboard-manager-clean/uaos-real-product",
+      "currentTask": "A-120",
+      "currentTitle": "OWNER GATE",
+      "currentStatus": "pending",
+      "executor": null,
+      "writer": null,
+      "writerPid": null,
+      "executionMode": null,
+      "taskWorktree": null,
+      "taskBranch": null,
+      "claimId": null,
+      "logFile": null,
+      "passed": 11,
+      "total": 14,
+      "blockers": [
+        {
+          "id": "A-110",
+          "status": "blocked",
+          "result": "BLOCKED_CLEAN_MACHINE_NOT_PROVEN"
+        }
+      ]
+    },
+    "library": {
+      "productName": "UAOS Library Factory Studio",
+      "repoRoot": "C:/keyboard-manager-clean/uaos-real-product",
+      "currentTask": "L-140",
+      "currentTitle": "OWNER GATE",
+      "currentStatus": "pending",
+      "executor": null,
+      "writer": null,
+      "writerPid": null,
+      "executionMode": null,
+      "taskWorktree": null,
+      "taskBranch": null,
+      "claimId": null,
+      "logFile": null,
+      "passed": 13,
+      "total": 16,
+      "blockers": [
+        {
+          "id": "L-130",
+          "status": "blocked",
+          "result": "BLOCKED_CLEAN_MACHINE_NOT_PROVEN"
+        }
+      ]
+    }
+  }
+}
+{
+  "updatedAt": "2026-08-14T07:56:16.347Z",
+  "factoryStatus": "unknown",
+  "supervisorPid": null,
+  "dashboardUrl": "http://127.0.0.1:17321",
+  "resources": {
+    "checkedAt": "2026-08-14T07:56:16.347Z",
+    "ram": {
+      "freeGb": 10.76,
+      "totalGb": 31.21
+    },
+    "disks": {
+      "C": 79.4,
+      "D": 79.4,
+      "E": 79.4
+    },
+    "limits": {
+      "maxHeavyWriters": 2,
+      "maxLightReviewers": 2
+    },
+    "diskWarnings": [],
+    "pauseFactory": false,
+    "pausePackagingDrives": []
+  },
+  "lanes": {
+    "singy": {
+      "productName": "UAOS Singy",
+      "repoRoot": "C:/keyboard-manager-clean/uaos-worktrees/uaos-singy-final-product",
+      "currentTask": "S-110",
+      "currentTitle": "OWNER HUMAN GATE",
+      "currentStatus": "pending",
+      "executor": null,
+      "writer": null,
+      "writerPid": null,
+      "executionMode": null,
+      "taskWorktree": null,
+      "taskBranch": null,
+      "claimId": null,
+      "logFile": null,
+      "passed": 12,
+      "total": 15,
+      "blockers": [
+        {
+          "id": "S-100",
+          "status": "blocked",
+          "result": "BLOCKED_CLEAN_MACHINE_NOT_PROVEN"
+        }
+      ]
+    },
+    "arranger": {
+      "productName": "UAOS Arranger Studio",
+      "repoRoot": "C:/keyboard-manager-clean/uaos-real-product",
+      "currentTask": "A-120",
+      "currentTitle": "OWNER GATE",
+      "currentStatus": "pending",
+      "executor": null,
+      "writer": null,
+      "writerPid": null,
+      "executionMode": null,
+      "taskWorktree": null,
+      "taskBranch": null,
+      "claimId": null,
+      "logFile": null,
+      "passed": 11,
+      "total": 14,
+      "blockers": [
+        {
+          "id": "A-110",
+          "status": "blocked",
+          "result": "BLOCKED_CLEAN_MACHINE_NOT_PROVEN"
+        }
+      ]
+    },
+    "library": {
+      "productName": "UAOS Library Factory Studio",
+      "repoRoot": "C:/keyboard-manager-clean/uaos-real-product",
+      "currentTask": "L-140",
+      "currentTitle": "OWNER GATE",
+      "currentStatus": "pending",
+      "executor": null,
+      "writer": null,
+      "writerPid": null,
+      "executionMode": null,
+      "taskWorktree": null,
+      "taskBranch": null,
+      "claimId": null,
+      "logFile": null,
+      "passed": 13,
+      "total": 16,
+      "blockers": [
+        {
+          "id": "L-130",
+          "status": "blocked",
+          "result": "BLOCKED_CLEAN_MACHINE_NOT_PROVEN"
+        }
+      ]
+    }
+  }
+}
+{
+  "updatedAt": "2026-08-14T11:21:54.370Z",
+  "factoryStatus": "unknown",
+  "supervisorPid": null,
+  "dashboardUrl": "http://127.0.0.1:17321",
+  "resources": {
+    "checkedAt": "2026-08-14T11:21:54.370Z",
+    "ram": {
+      "freeGb": 10.67,
+      "totalGb": 31.21
+    },
+    "disks": {
+      "C": 72.32,
+      "D": 72.32,
+      "E": 72.32
+    },
+    "limits": {
+      "maxHeavyWriters": 2,
+      "maxLightReviewers": 2
+    },
+    "diskWarnings": [],
+    "pauseFactory": false,
+    "pausePackagingDrives": []
+  },
+  "lanes": {
+    "singy": {
+      "productName": "UAOS Singy",
+      "repoRoot": "C:/keyboard-manager-clean/uaos-worktrees/uaos-singy-final-product",
+      "currentTask": "S-110",
+      "currentTitle": "OWNER HUMAN GATE",
+      "currentStatus": "pending",
+      "executor": null,
+      "writer": null,
+      "writerPid": null,
+      "executionMode": null,
+      "taskWorktree": null,
+      "taskBranch": null,
+      "claimId": null,
+      "logFile": null,
+      "passed": 12,
+      "total": 15,
+      "blockers": [
+        {
+          "id": "S-100",
+          "status": "blocked",
+          "result": "BLOCKED_CLEAN_MACHINE_NOT_PROVEN"
+        }
+      ]
+    },
+    "arranger": {
+      "productName": "UAOS Arranger Studio",
+      "repoRoot": "C:/keyboard-manager-clean/uaos-real-product",
+      "currentTask": "A-120",
+      "currentTitle": "OWNER GATE",
+      "currentStatus": "pending",
+      "executor": null,
+      "writer": null,
+      "writerPid": null,
+      "executionMode": null,
+      "taskWorktree": null,
+      "taskBranch": null,
+      "claimId": null,
+      "logFile": null,
+      "passed": 11,
+      "total": 14,
+      "blockers": [
+        {
+          "id": "A-110",
+          "status": "blocked",
+          "result": "BLOCKED_CLEAN_MACHINE_NOT_PROVEN"
+        }
+      ]
+    },
+    "library": {
+      "productName": "UAOS Library Factory Studio",
+      "repoRoot": "C:/keyboard-manager-clean/uaos-real-product",
+      "currentTask": "L-140",
+      "currentTitle": "OWNER GATE",
+      "currentStatus": "pending",
+      "executor": null,
+      "writer": null,
+      "writerPid": null,
+      "executionMode": null,
+      "taskWorktree": null,
+      "taskBranch": null,
+      "claimId": null,
+      "logFile": null,
+      "passed": 13,
+      "total": 16,
+      "blockers": [
+        {
+          "id": "L-130",
+          "status": "blocked",
+          "result": "BLOCKED_CLEAN_MACHINE_NOT_PROVEN"
+        }
+      ]
+    }
+  }
+}
+{
+  "updatedAt": "2026-08-14T12:26:46.730Z",
+  "factoryStatus": "unknown",
+  "supervisorPid": null,
+  "dashboardUrl": "http://127.0.0.1:17321",
+  "resources": {
+    "checkedAt": "2026-08-14T12:26:46.730Z",
+    "ram": {
+      "freeGb": 8.46,
+      "totalGb": 31.21
+    },
+    "disks": {
+      "C": 71.15,
+      "D": 71.15,
+      "E": 71.15
+    },
+    "limits": {
+      "maxHeavyWriters": 2,
+      "maxLightReviewers": 2
+    },
+    "diskWarnings": [],
+    "pauseFactory": false,
+    "pausePackagingDrives": []
+  },
+  "lanes": {
+    "singy": {
+      "productName": "UAOS Singy",
+      "repoRoot": "C:/keyboard-manager-clean/uaos-worktrees/uaos-singy-final-product",
+      "currentTask": "S-110",
+      "currentTitle": "OWNER HUMAN GATE",
+      "currentStatus": "pending",
+      "executor": null,
+      "writer": null,
+      "writerPid": null,
+      "executionMode": null,
+      "taskWorktree": null,
+      "taskBranch": null,
+      "claimId": null,
+      "logFile": null,
+      "passed": 12,
+      "total": 15,
+      "blockers": [
+        {
+          "id": "S-100",
+          "status": "blocked",
+          "result": "BLOCKED_CLEAN_MACHINE_NOT_PROVEN"
+        }
+      ]
+    },
+    "arranger": {
+      "productName": "UAOS Arranger Studio",
+      "repoRoot": "C:/keyboard-manager-clean/uaos-real-product",
+      "currentTask": "A-120",
+      "currentTitle": "OWNER GATE",
+      "currentStatus": "pending",
+      "executor": null,
+      "writer": null,
+      "writerPid": null,
+      "executionMode": null,
+      "taskWorktree": null,
+      "taskBranch": null,
+      "claimId": null,
+      "logFile": null,
+      "passed": 11,
+      "total": 14,
+      "blockers": [
+        {
+          "id": "A-110",
+          "status": "blocked",
+          "result": "BLOCKED_CLEAN_MACHINE_NOT_PROVEN"
+        }
+      ]
+    },
+    "library": {
+      "productName": "UAOS Library Factory Studio",
+      "repoRoot": "C:/keyboard-manager-clean/uaos-real-product",
+      "currentTask": "L-140",
+      "currentTitle": "OWNER GATE",
+      "currentStatus": "pending",
+      "executor": null,
+      "writer": null,
+      "writerPid": null,
+      "executionMode": null,
+      "taskWorktree": null,
+      "taskBranch": null,
+      "claimId": null,
+      "logFile": null,
+      "passed": 13,
+      "total": 16,
+      "blockers": [
+        {
+          "id": "L-130",
+          "status": "blocked",
+          "result": "BLOCKED_CLEAN_MACHINE_NOT_PROVEN"
+        }
+      ]
+    }
+  }
+}
+{
+  "updatedAt": "2026-08-14T13:24:16.080Z",
+  "factoryStatus": "unknown",
+  "supervisorPid": null,
+  "dashboardUrl": "http://127.0.0.1:17321",
+  "resources": {
+    "checkedAt": "2026-08-14T13:24:16.079Z",
+    "ram": {
+      "freeGb": 9.09,
+      "totalGb": 31.21
+    },
+    "disks": {
+      "C": 70.09,
+      "D": 70.09,
+      "E": 70.09
+    },
+    "limits": {
+      "maxHeavyWriters": 2,
+      "maxLightReviewers": 2
+    },
+    "diskWarnings": [],
+    "pauseFactory": false,
+    "pausePackagingDrives": []
+  },
+  "lanes": {
+    "singy": {
+      "productName": "UAOS Singy",
+      "repoRoot": "C:\\keyboard-manager-clean\\uaos-worktrees\\uaos-singy-final-product",
+      "repoRepositoryStatus": "RESOLVED",
+      "currentTask": "S-110",
+      "currentTitle": "OWNER HUMAN GATE",
+      "currentStatus": "pending",
+      "executor": null,
+      "writer": null,
+      "writerPid": null,
+      "executionMode": null,
+      "taskWorktree": null,
+      "taskBranch": null,
+      "claimId": null,
+      "logFile": null,
+      "passed": 12,
+      "total": 15,
+      "blockers": [
+        {
+          "id": "S-100",
+          "status": "blocked",
+          "result": "BLOCKED_CLEAN_MACHINE_NOT_PROVEN"
+        }
+      ]
+    },
+    "arranger": {
+      "productName": "UAOS Arranger Studio",
+      "repoRoot": "C:\\keyboard-manager-clean\\uaos-real-product",
+      "repoRepositoryStatus": "RESOLVED",
+      "currentTask": "A-120",
+      "currentTitle": "OWNER GATE",
+      "currentStatus": "pending",
+      "executor": null,
+      "writer": null,
+      "writerPid": null,
+      "executionMode": null,
+      "taskWorktree": null,
+      "taskBranch": null,
+      "claimId": null,
+      "logFile": null,
+      "passed": 11,
+      "total": 14,
+      "blockers": [
+        {
+          "id": "A-110",
+          "status": "blocked",
+          "result": "BLOCKED_CLEAN_MACHINE_NOT_PROVEN"
+        }
+      ]
+    },
+    "library": {
+      "productName": "UAOS Library Factory Studio",
+      "repoRoot": "C:\\keyboard-manager-clean\\uaos-real-product",
+      "repoRepositoryStatus": "RESOLVED",
+      "currentTask": "L-140",
+      "currentTitle": "OWNER GATE",
+      "currentStatus": "pending",
+      "executor": null,
+      "writer": null,
+      "writerPid": null,
+      "executionMode": null,
+      "taskWorktree": null,
+      "taskBranch": null,
+      "claimId": null,
+      "logFile": null,
+      "passed": 13,
+      "total": 16,
+      "blockers": [
+        {
+          "id": "L-130",
+          "status": "blocked",
+          "result": "BLOCKED_CLEAN_MACHINE_NOT_PROVEN"
+        }
+      ]
+    }
+  }
+}
+{
+  "updatedAt": "2026-08-14T13:29:13.648Z",
+  "factoryStatus": "unknown",
+  "supervisorPid": null,
+  "dashboardUrl": "http://127.0.0.1:17321",
+  "resources": {
+    "checkedAt": "2026-08-14T13:29:13.647Z",
+    "ram": {
+      "freeGb": 9.58,
+      "totalGb": 31.21
+    },
+    "disks": {
+      "C": 70.1,
+      "D": 70.1,
+      "E": 70.1
+    },
+    "limits": {
+      "maxHeavyWriters": 2,
+      "maxLightReviewers": 2
+    },
+    "diskWarnings": [],
+    "pauseFactory": false,
+    "pausePackagingDrives": []
+  },
+  "lanes": {
+    "singy": {
+      "productName": "UAOS Singy",
+      "repoRoot": "C:\\keyboard-manager-clean\\uaos-worktrees\\uaos-singy-final-product",
+      "repoRepositoryStatus": "RESOLVED",
+      "currentTask": "S-110",
+      "currentTitle": "OWNER HUMAN GATE",
+      "currentStatus": "pending",
+      "executor": null,
+      "writer": null,
+      "writerPid": null,
+      "executionMode": null,
+      "taskWorktree": null,
+      "taskBranch": null,
+      "claimId": null,
+      "logFile": null,
+      "passed": 12,
+      "total": 15,
+      "blockers": [
+        {
+          "id": "S-100",
+          "status": "blocked",
+          "result": "BLOCKED_CLEAN_MACHINE_NOT_PROVEN"
+        }
+      ]
+    },
+    "arranger": {
+      "productName": "UAOS Arranger Studio",
+      "repoRoot": "C:\\keyboard-manager-clean\\uaos-real-product",
+      "repoRepositoryStatus": "RESOLVED",
+      "currentTask": "A-120",
+      "currentTitle": "OWNER GATE",
+      "currentStatus": "pending",
+      "executor": null,
+      "writer": null,
+      "writerPid": null,
+      "executionMode": null,
+      "taskWorktree": null,
+      "taskBranch": null,
+      "claimId": null,
+      "logFile": null,
+      "passed": 11,
+      "total": 14,
+      "blockers": [
+        {
+          "id": "A-110",
+          "status": "blocked",
+          "result": "BLOCKED_CLEAN_MACHINE_NOT_PROVEN"
+        }
+      ]
+    },
+    "library": {
+      "productName": "UAOS Library Factory Studio",
+      "repoRoot": "C:\\keyboard-manager-clean\\uaos-real-product",
+      "repoRepositoryStatus": "RESOLVED",
+      "currentTask": "L-140",
+      "currentTitle": "OWNER GATE",
+      "currentStatus": "pending",
+      "executor": null,
+      "writer": null,
+      "writerPid": null,
+      "executionMode": null,
+      "taskWorktree": null,
+      "taskBranch": null,
+      "claimId": null,
+      "logFile": null,
+      "passed": 13,
+      "total": 16,
+      "blockers": [
+        {
+          "id": "L-130",
+          "status": "blocked",
+          "result": "BLOCKED_CLEAN_MACHINE_NOT_PROVEN"
+        }
+      ]
+    }
+  }
+}
+{
+  "updatedAt": "2026-08-14T13:33:31.433Z",
+  "factoryStatus": "unknown",
+  "supervisorPid": null,
+  "dashboardUrl": "http://127.0.0.1:17321",
+  "resources": {
+    "checkedAt": "2026-08-14T13:33:31.432Z",
+    "ram": {
+      "freeGb": 8.7,
+      "totalGb": 31.21
+    },
+    "disks": {
+      "C": 70.09,
+      "D": 70.09,
+      "E": 70.09
+    },
+    "limits": {
+      "maxHeavyWriters": 2,
+      "maxLightReviewers": 2
+    },
+    "diskWarnings": [],
+    "pauseFactory": false,
+    "pausePackagingDrives": []
+  },
+  "lanes": {
+    "singy": {
+      "productName": "UAOS Singy",
+      "repoRoot": "C:\\keyboard-manager-clean\\uaos-worktrees\\uaos-singy-final-product",
+      "repoRepositoryStatus": "RESOLVED",
+      "currentTask": "S-110",
+      "currentTitle": "OWNER HUMAN GATE",
+      "currentStatus": "pending",
+      "executor": null,
+      "writer": null,
+      "writerPid": null,
+      "executionMode": null,
+      "taskWorktree": null,
+      "taskBranch": null,
+      "claimId": null,
+      "logFile": null,
+      "passed": 12,
+      "total": 15,
+      "blockers": [
+        {
+          "id": "S-100",
+          "status": "blocked",
+          "result": "BLOCKED_CLEAN_MACHINE_NOT_PROVEN"
+        }
+      ]
+    },
+    "arranger": {
+      "productName": "UAOS Arranger Studio",
+      "repoRoot": "C:\\keyboard-manager-clean\\uaos-real-product",
+      "repoRepositoryStatus": "RESOLVED",
+      "currentTask": "A-120",
+      "currentTitle": "OWNER GATE",
+      "currentStatus": "pending",
+      "executor": null,
+      "writer": null,
+      "writerPid": null,
+      "executionMode": null,
+      "taskWorktree": null,
+      "taskBranch": null,
+      "claimId": null,
+      "logFile": null,
+      "passed": 11,
+      "total": 14,
+      "blockers": [
+        {
+          "id": "A-110",
+          "status": "blocked",
+          "result": "BLOCKED_CLEAN_MACHINE_NOT_PROVEN"
+        }
+      ]
+    },
+    "library": {
+      "productName": "UAOS Library Factory Studio",
+      "repoRoot": "C:\\keyboard-manager-clean\\uaos-real-product",
+      "repoRepositoryStatus": "RESOLVED",
+      "currentTask": "L-140",
+      "currentTitle": "OWNER GATE",
+      "currentStatus": "pending",
+      "executor": null,
+      "writer": null,
+      "writerPid": null,
+      "executionMode": null,
+      "taskWorktree": null,
+      "taskBranch": null,
+      "claimId": null,
+      "logFile": null,
+      "passed": 13,
+      "total": 16,
+      "blockers": [
+        {
+          "id": "L-130",
+          "status": "blocked",
+          "result": "BLOCKED_CLEAN_MACHINE_NOT_PROVEN"
+        }
+      ]
+    }
+  }
+}
+{
+  "updatedAt": "2026-08-14T13:38:08.524Z",
+  "factoryStatus": "unknown",
+  "supervisorPid": null,
+  "dashboardUrl": "http://127.0.0.1:17321",
+  "resources": {
+    "checkedAt": "2026-08-14T13:38:08.523Z",
+    "ram": {
+      "freeGb": 8.86,
+      "totalGb": 31.21
+    },
+    "disks": {
+      "C": 70.09,
+      "D": 70.09,
+      "E": 70.09
+    },
+    "limits": {
+      "maxHeavyWriters": 2,
+      "maxLightReviewers": 2
+    },
+    "diskWarnings": [],
+    "pauseFactory": false,
+    "pausePackagingDrives": []
+  },
+  "lanes": {
+    "singy": {
+      "productName": "UAOS Singy",
+      "repoRoot": "C:\\keyboard-manager-clean\\uaos-worktrees\\uaos-singy-final-product",
+      "repoRepositoryStatus": "RESOLVED",
+      "currentTask": "S-110",
+      "currentTitle": "OWNER HUMAN GATE",
+      "currentStatus": "pending",
+      "executor": null,
+      "writer": null,
+      "writerPid": null,
+      "executionMode": null,
+      "taskWorktree": null,
+      "taskBranch": null,
+      "claimId": null,
+      "logFile": null,
+      "passed": 12,
+      "total": 15,
+      "blockers": [
+        {
+          "id": "S-100",
+          "status": "blocked",
+          "result": "BLOCKED_CLEAN_MACHINE_NOT_PROVEN"
+        }
+      ]
+    },
+    "arranger": {
+      "productName": "UAOS Arranger Studio",
+      "repoRoot": "C:\\keyboard-manager-clean\\uaos-real-product",
+      "repoRepositoryStatus": "RESOLVED",
+      "currentTask": "A-120",
+      "currentTitle": "OWNER GATE",
+      "currentStatus": "pending",
+      "executor": null,
+      "writer": null,
+      "writerPid": null,
+      "executionMode": null,
+      "taskWorktree": null,
+      "taskBranch": null,
+      "claimId": null,
+      "logFile": null,
+      "passed": 11,
+      "total": 14,
+      "blockers": [
+        {
+          "id": "A-110",
+          "status": "blocked",
+          "result": "BLOCKED_CLEAN_MACHINE_NOT_PROVEN"
+        }
+      ]
+    },
+    "library": {
+      "productName": "UAOS Library Factory Studio",
+      "repoRoot": "C:\\keyboard-manager-clean\\uaos-real-product",
+      "repoRepositoryStatus": "RESOLVED",
+      "currentTask": "L-140",
+      "currentTitle": "OWNER GATE",
+      "currentStatus": "pending",
+      "executor": null,
+      "writer": null,
+      "writerPid": null,
+      "executionMode": null,
+      "taskWorktree": null,
+      "taskBranch": null,
+      "claimId": null,
+      "logFile": null,
+      "passed": 13,
+      "total": 16,
+      "blockers": [
+        {
+          "id": "L-130",
+          "status": "blocked",
+          "result": "BLOCKED_CLEAN_MACHINE_NOT_PROVEN"
+        }
+      ]
+    }
+  }
+}
+{
+  "updatedAt": "2026-08-14T13:45:12.044Z",
+  "factoryStatus": "unknown",
+  "supervisorPid": null,
+  "dashboardUrl": "http://127.0.0.1:17321",
+  "resources": {
+    "checkedAt": "2026-08-14T13:45:12.043Z",
+    "ram": {
+      "freeGb": 7.89,
+      "totalGb": 31.21
+    },
+    "disks": {
+      "C": 69.81,
+      "D": 69.81,
+      "E": 69.81
+    },
+    "limits": {
+      "maxHeavyWriters": 2,
+      "maxLightReviewers": 2
+    },
+    "diskWarnings": [],
+    "pauseFactory": false,
+    "pausePackagingDrives": []
+  },
+  "lanes": {
+    "singy": {
+      "productName": "UAOS Singy",
+      "repoRoot": "C:\\keyboard-manager-clean\\uaos-worktrees\\uaos-singy-final-product",
+      "repoRepositoryStatus": "RESOLVED",
+      "currentTask": "S-110",
+      "currentTitle": "OWNER HUMAN GATE",
+      "currentStatus": "pending",
+      "executor": null,
+      "writer": null,
+      "writerPid": null,
+      "executionMode": null,
+      "taskWorktree": null,
+      "taskBranch": null,
+      "claimId": null,
+      "logFile": null,
+      "passed": 12,
+      "total": 15,
+      "blockers": [
+        {
+          "id": "S-100",
+          "status": "blocked",
+          "result": "BLOCKED_CLEAN_MACHINE_NOT_PROVEN"
+        }
+      ]
+    },
+    "arranger": {
+      "productName": "UAOS Arranger Studio",
+      "repoRoot": "C:\\keyboard-manager-clean\\uaos-real-product",
+      "repoRepositoryStatus": "RESOLVED",
+      "currentTask": "A-120",
+      "currentTitle": "OWNER GATE",
+      "currentStatus": "pending",
+      "executor": null,
+      "writer": null,
+      "writerPid": null,
+      "executionMode": null,
+      "taskWorktree": null,
+      "taskBranch": null,
+      "claimId": null,
+      "logFile": null,
+      "passed": 11,
+      "total": 14,
+      "blockers": [
+        {
+          "id": "A-110",
+          "status": "blocked",
+          "result": "BLOCKED_CLEAN_MACHINE_NOT_PROVEN"
+        }
+      ]
+    },
+    "library": {
+      "productName": "UAOS Library Factory Studio",
+      "repoRoot": "C:\\keyboard-manager-clean\\uaos-real-product",
+      "repoRepositoryStatus": "RESOLVED",
+      "currentTask": "L-140",
+      "currentTitle": "OWNER GATE",
+      "currentStatus": "pending",
+      "executor": null,
+      "writer": null,
+      "writerPid": null,
+      "executionMode": null,
+      "taskWorktree": null,
+      "taskBranch": null,
+      "claimId": null,
+      "logFile": null,
+      "passed": 13,
+      "total": 16,
+      "blockers": [
+        {
+          "id": "L-130",
+          "status": "blocked",
+          "result": "BLOCKED_CLEAN_MACHINE_NOT_PROVEN"
+        }
+      ]
+    }
+  }
+}
+{
+  "updatedAt": "2026-08-14T13:51:27.176Z",
+  "factoryStatus": "unknown",
+  "supervisorPid": null,
+  "dashboardUrl": "http://127.0.0.1:17321",
+  "resources": {
+    "checkedAt": "2026-08-14T13:51:27.175Z",
+    "ram": {
+      "freeGb": 7.85,
+      "totalGb": 31.21
+    },
+    "disks": {
+      "C": 69.23,
+      "D": 69.23,
+      "E": 69.23
+    },
+    "limits": {
+      "maxHeavyWriters": 2,
+      "maxLightReviewers": 2
+    },
+    "diskWarnings": [],
+    "pauseFactory": false,
+    "pausePackagingDrives": []
+  },
+  "lanes": {
+    "singy": {
+      "productName": "UAOS Singy",
+      "repoRoot": "C:\\keyboard-manager-clean\\uaos-worktrees\\uaos-singy-final-product",
+      "repoRepositoryStatus": "RESOLVED",
+      "currentTask": "S-110",
+      "currentTitle": "OWNER HUMAN GATE",
+      "currentStatus": "pending",
+      "executor": null,
+      "writer": null,
+      "writerPid": null,
+      "executionMode": null,
+      "taskWorktree": null,
+      "taskBranch": null,
+      "claimId": null,
+      "logFile": null,
+      "passed": 12,
+      "total": 15,
+      "blockers": [
+        {
+          "id": "S-100",
+          "status": "blocked",
+          "result": "BLOCKED_CLEAN_MACHINE_NOT_PROVEN"
+        }
+      ]
+    },
+    "arranger": {
+      "productName": "UAOS Arranger Studio",
+      "repoRoot": "C:\\keyboard-manager-clean\\uaos-real-product",
+      "repoRepositoryStatus": "RESOLVED",
+      "currentTask": "A-120",
+      "currentTitle": "OWNER GATE",
+      "currentStatus": "pending",
+      "executor": null,
+      "writer": null,
+      "writerPid": null,
+      "executionMode": null,
+      "taskWorktree": null,
+      "taskBranch": null,
+      "claimId": null,
+      "logFile": null,
+      "passed": 11,
+      "total": 14,
+      "blockers": [
+        {
+          "id": "A-110",
+          "status": "blocked",
+          "result": "BLOCKED_CLEAN_MACHINE_NOT_PROVEN"
+        }
+      ]
+    },
+    "library": {
+      "productName": "UAOS Library Factory Studio",
+      "repoRoot": "C:\\keyboard-manager-clean\\uaos-real-product",
+      "repoRepositoryStatus": "RESOLVED",
+      "currentTask": "L-140",
+      "currentTitle": "OWNER GATE",
+      "currentStatus": "pending",
+      "executor": null,
+      "writer": null,
+      "writerPid": null,
+      "executionMode": null,
+      "taskWorktree": null,
+      "taskBranch": null,
+      "claimId": null,
+      "logFile": null,
+      "passed": 13,
+      "total": 16,
+      "blockers": [
+        {
+          "id": "L-130",
+          "status": "blocked",
+          "result": "BLOCKED_CLEAN_MACHINE_NOT_PROVEN"
+        }
+      ]
+    }
+  }
+}
+{
+  "updatedAt": "2026-08-14T13:54:01.934Z",
+  "factoryStatus": "unknown",
+  "supervisorPid": null,
+  "dashboardUrl": "http://127.0.0.1:17321",
+  "resources": {
+    "checkedAt": "2026-08-14T13:54:01.933Z",
+    "ram": {
+      "freeGb": 5.86,
+      "totalGb": 31.21
+    },
+    "disks": {
+      "C": 63.69,
+      "D": 63.69,
+      "E": 63.69
+    },
+    "limits": {
+      "maxHeavyWriters": 1,
+      "maxLightReviewers": 2
+    },
+    "diskWarnings": [],
+    "pauseFactory": false,
+    "pausePackagingDrives": []
+  },
+  "lanes": {
+    "singy": {
+      "productName": "UAOS Singy",
+      "repoRoot": "C:\\keyboard-manager-clean\\uaos-worktrees\\uaos-singy-final-product",
+      "repoRepositoryStatus": "RESOLVED",
+      "currentTask": "S-110",
+      "currentTitle": "OWNER HUMAN GATE",
+      "currentStatus": "pending",
+      "executor": null,
+      "writer": null,
+      "writerPid": null,
+      "executionMode": null,
+      "taskWorktree": null,
+      "taskBranch": null,
+      "claimId": null,
+      "logFile": null,
+      "passed": 12,
+      "total": 15,
+      "blockers": [
+        {
+          "id": "S-100",
+          "status": "blocked",
+          "result": "BLOCKED_CLEAN_MACHINE_NOT_PROVEN"
+        }
+      ]
+    },
+    "arranger": {
+      "productName": "UAOS Arranger Studio",
+      "repoRoot": "C:\\keyboard-manager-clean\\uaos-real-product",
+      "repoRepositoryStatus": "RESOLVED",
+      "currentTask": "A-120",
+      "currentTitle": "OWNER GATE",
+      "currentStatus": "pending",
+      "executor": null,
+      "writer": null,
+      "writerPid": null,
+      "executionMode": null,
+      "taskWorktree": null,
+      "taskBranch": null,
+      "claimId": null,
+      "logFile": null,
+      "passed": 11,
+      "total": 14,
+      "blockers": [
+        {
+          "id": "A-110",
+          "status": "blocked",
+          "result": "BLOCKED_CLEAN_MACHINE_NOT_PROVEN"
+        }
+      ]
+    },
+    "library": {
+      "productName": "UAOS Library Factory Studio",
+      "repoRoot": "C:\\keyboard-manager-clean\\uaos-real-product",
+      "repoRepositoryStatus": "RESOLVED",
+      "currentTask": "L-140",
+      "currentTitle": "OWNER GATE",
+      "currentStatus": "pending",
+      "executor": null,
+      "writer": null,
+      "writerPid": null,
+      "executionMode": null,
+      "taskWorktree": null,
+      "taskBranch": null,
+      "claimId": null,
+      "logFile": null,
+      "passed": 13,
+      "total": 16,
+      "blockers": [
+        {
+          "id": "L-130",
+          "status": "blocked",
+          "result": "BLOCKED_CLEAN_MACHINE_NOT_PROVEN"
+        }
+      ]
+    }
+  }
+}
+{
+  "updatedAt": "2026-08-14T13:57:35.649Z",
+  "factoryStatus": "unknown",
+  "supervisorPid": null,
+  "dashboardUrl": "http://127.0.0.1:17321",
+  "resources": {
+    "checkedAt": "2026-08-14T13:57:35.648Z",
+    "ram": {
+      "freeGb": 5.7,
+      "totalGb": 31.21
+    },
+    "disks": {
+      "C": 63.64,
+      "D": 63.64,
+      "E": 63.64
+    },
+    "limits": {
+      "maxHeavyWriters": 1,
+      "maxLightReviewers": 2
+    },
+    "diskWarnings": [],
+    "pauseFactory": false,
+    "pausePackagingDrives": []
+  },
+  "lanes": {
+    "singy": {
+      "productName": "UAOS Singy",
+      "repoRoot": "C:\\keyboard-manager-clean\\uaos-worktrees\\uaos-singy-final-product",
+      "repoRepositoryStatus": "RESOLVED",
+      "currentTask": "S-110",
+      "currentTitle": "OWNER HUMAN GATE",
+      "currentStatus": "pending",
+      "executor": null,
+      "writer": null,
+      "writerPid": null,
+      "executionMode": null,
+      "taskWorktree": null,
+      "taskBranch": null,
+      "claimId": null,
+      "logFile": null,
+      "passed": 12,
+      "total": 15,
+      "blockers": [
+        {
+          "id": "S-100",
+          "status": "blocked",
+          "result": "BLOCKED_CLEAN_MACHINE_NOT_PROVEN"
+        }
+      ]
+    },
+    "arranger": {
+      "productName": "UAOS Arranger Studio",
+      "repoRoot": "C:\\keyboard-manager-clean\\uaos-real-product",
+      "repoRepositoryStatus": "RESOLVED",
+      "currentTask": "A-120",
+      "currentTitle": "OWNER GATE",
+      "currentStatus": "pending",
+      "executor": null,
+      "writer": null,
+      "writerPid": null,
+      "executionMode": null,
+      "taskWorktree": null,
+      "taskBranch": null,
+      "claimId": null,
+      "logFile": null,
+      "passed": 11,
+      "total": 14,
+      "blockers": [
+        {
+          "id": "A-110",
+          "status": "blocked",
+          "result": "BLOCKED_CLEAN_MACHINE_NOT_PROVEN"
+        }
+      ]
+    },
+    "library": {
+      "productName": "UAOS Library Factory Studio",
+      "repoRoot": "C:\\keyboard-manager-clean\\uaos-real-product",
+      "repoRepositoryStatus": "RESOLVED",
+      "currentTask": "L-140",
+      "currentTitle": "OWNER GATE",
+      "currentStatus": "pending",
+      "executor": null,
+      "writer": null,
+      "writerPid": null,
+      "executionMode": null,
+      "taskWorktree": null,
+      "taskBranch": null,
+      "claimId": null,
+      "logFile": null,
+      "passed": 13,
+      "total": 16,
+      "blockers": [
+        {
+          "id": "L-130",
+          "status": "blocked",
+          "result": "BLOCKED_CLEAN_MACHINE_NOT_PROVEN"
+        }
+      ]
+    }
+  }
+}
+{
+  "updatedAt": "2026-08-14T13:59:53.016Z",
+  "factoryStatus": "unknown",
+  "supervisorPid": null,
+  "dashboardUrl": "http://127.0.0.1:17321",
+  "resources": {
+    "checkedAt": "2026-08-14T13:59:53.015Z",
+    "ram": {
+      "freeGb": 7.87,
+      "totalGb": 31.21
+    },
+    "disks": {
+      "C": 63.22,
+      "D": 63.22,
+      "E": 63.22
+    },
+    "limits": {
+      "maxHeavyWriters": 2,
+      "maxLightReviewers": 2
+    },
+    "diskWarnings": [],
+    "pauseFactory": false,
+    "pausePackagingDrives": []
+  },
+  "lanes": {
+    "singy": {
+      "productName": "UAOS Singy",
+      "repoRoot": "C:\\keyboard-manager-clean\\uaos-worktrees\\uaos-singy-final-product",
+      "repoRepositoryStatus": "RESOLVED",
+      "currentTask": "S-110",
+      "currentTitle": "OWNER HUMAN GATE",
+      "currentStatus": "pending",
+      "executor": null,
+      "writer": null,
+      "writerPid": null,
+      "executionMode": null,
+      "taskWorktree": null,
+      "taskBranch": null,
+      "claimId": null,
+      "logFile": null,
+      "passed": 12,
+      "total": 15,
+      "blockers": [
+        {
+          "id": "S-100",
+          "status": "blocked",
+          "result": "BLOCKED_CLEAN_MACHINE_NOT_PROVEN"
+        }
+      ]
+    },
+    "arranger": {
+      "productName": "UAOS Arranger Studio",
+      "repoRoot": null,
+      "repoRepositoryStatus": "INDEX_LOCKED",
+      "currentTask": "A-120",
+      "currentTitle": "OWNER GATE",
+      "currentStatus": "pending",
+      "executor": null,
+      "writer": null,
+      "writerPid": null,
+      "executionMode": null,
+      "taskWorktree": null,
+      "taskBranch": null,
+      "claimId": null,
+      "logFile": null,
+      "passed": 11,
+      "total": 14,
+      "blockers": [
+        {
+          "id": "A-110",
+          "status": "blocked",
+          "result": "BLOCKED_CLEAN_MACHINE_NOT_PROVEN"
+        }
+      ]
+    },
+    "library": {
+      "productName": "UAOS Library Factory Studio",
+      "repoRoot": "C:\\keyboard-manager-clean\\uaos-real-product",
+      "repoRepositoryStatus": "RESOLVED",
+      "currentTask": "L-140",
+      "currentTitle": "OWNER GATE",
+      "currentStatus": "pending",
+      "executor": null,
+      "writer": null,
+      "writerPid": null,
+      "executionMode": null,
+      "taskWorktree": null,
+      "taskBranch": null,
+      "claimId": null,
+      "logFile": null,
+      "passed": 13,
+      "total": 16,
+      "blockers": [
+        {
+          "id": "L-130",
+          "status": "blocked",
+          "result": "BLOCKED_CLEAN_MACHINE_NOT_PROVEN"
+        }
+      ]
+    }
+  }
+}
+{
+  "updatedAt": "2026-08-14T14:03:30.467Z",
+  "factoryStatus": "unknown",
+  "supervisorPid": null,
+  "dashboardUrl": "http://127.0.0.1:17321",
+  "resources": {
+    "checkedAt": "2026-08-14T14:03:30.466Z",
+    "ram": {
+      "freeGb": 7.32,
+      "totalGb": 31.21
+    },
+    "disks": {
+      "C": 62.97,
+      "D": 62.97,
+      "E": 62.97
+    },
+    "limits": {
+      "maxHeavyWriters": 2,
+      "maxLightReviewers": 2
+    },
+    "diskWarnings": [],
+    "pauseFactory": false,
+    "pausePackagingDrives": []
+  },
+  "lanes": {
+    "singy": {
+      "productName": "UAOS Singy",
+      "repoRoot": "C:\\keyboard-manager-clean\\uaos-worktrees\\uaos-singy-final-product",
+      "repoRepositoryStatus": "RESOLVED",
+      "currentTask": "S-110",
+      "currentTitle": "OWNER HUMAN GATE",
+      "currentStatus": "pending",
+      "executor": null,
+      "writer": null,
+      "writerPid": null,
+      "executionMode": null,
+      "taskWorktree": null,
+      "taskBranch": null,
+      "claimId": null,
+      "logFile": null,
+      "passed": 12,
+      "total": 15,
+      "blockers": [
+        {
+          "id": "S-100",
+          "status": "blocked",
+          "result": "BLOCKED_CLEAN_MACHINE_NOT_PROVEN"
+        }
+      ]
+    },
+    "arranger": {
+      "productName": "UAOS Arranger Studio",
+      "repoRoot": "C:\\keyboard-manager-clean\\uaos-real-product",
+      "repoRepositoryStatus": "RESOLVED",
+      "currentTask": "A-120",
+      "currentTitle": "OWNER GATE",
+      "currentStatus": "pending",
+      "executor": null,
+      "writer": null,
+      "writerPid": null,
+      "executionMode": null,
+      "taskWorktree": null,
+      "taskBranch": null,
+      "claimId": null,
+      "logFile": null,
+      "passed": 11,
+      "total": 14,
+      "blockers": [
+        {
+          "id": "A-110",
+          "status": "blocked",
+          "result": "BLOCKED_CLEAN_MACHINE_NOT_PROVEN"
+        }
+      ]
+    },
+    "library": {
+      "productName": "UAOS Library Factory Studio",
+      "repoRoot": "C:\\keyboard-manager-clean\\uaos-real-product",
+      "repoRepositoryStatus": "RESOLVED",
+      "currentTask": "L-140",
+      "currentTitle": "OWNER GATE",
+      "currentStatus": "pending",
+      "executor": null,
+      "writer": null,
+      "writerPid": null,
+      "executionMode": null,
+      "taskWorktree": null,
+      "taskBranch": null,
+      "claimId": null,
+      "logFile": null,
+      "passed": 13,
+      "total": 16,
+      "blockers": [
+        {
+          "id": "L-130",
+          "status": "blocked",
+          "result": "BLOCKED_CLEAN_MACHINE_NOT_PROVEN"
+        }
+      ]
+    }
+  }
+}
+{
+  "updatedAt": "2026-08-14T14:04:40.313Z",
+  "factoryStatus": "unknown",
+  "supervisorPid": null,
+  "dashboardUrl": "http://127.0.0.1:17321",
+  "resources": {
+    "checkedAt": "2026-08-14T14:04:40.312Z",
+    "ram": {
+      "freeGb": 7.1,
+      "totalGb": 31.21
+    },
+    "disks": {
+      "C": 62.98,
+      "D": 62.98,
+      "E": 62.98
+    },
+    "limits": {
+      "maxHeavyWriters": 2,
+      "maxLightReviewers": 2
+    },
+    "diskWarnings": [],
+    "pauseFactory": false,
+    "pausePackagingDrives": []
+  },
+  "lanes": {
+    "singy": {
+      "productName": "UAOS Singy",
+      "repoRoot": "C:\\keyboard-manager-clean\\uaos-worktrees\\uaos-singy-final-product",
+      "repoRepositoryStatus": "RESOLVED",
+      "currentTask": "S-110",
+      "currentTitle": "OWNER HUMAN GATE",
+      "currentStatus": "pending",
+      "executor": null,
+      "writer": null,
+      "writerPid": null,
+      "executionMode": null,
+      "taskWorktree": null,
+      "taskBranch": null,
+      "claimId": null,
+      "logFile": null,
+      "passed": 12,
+      "total": 15,
+      "blockers": [
+        {
+          "id": "S-100",
+          "status": "blocked",
+          "result": "BLOCKED_CLEAN_MACHINE_NOT_PROVEN"
+        }
+      ]
+    },
+    "arranger": {
+      "productName": "UAOS Arranger Studio",
+      "repoRoot": "C:\\keyboard-manager-clean\\uaos-real-product",
+      "repoRepositoryStatus": "RESOLVED",
+      "currentTask": "A-120",
+      "currentTitle": "OWNER GATE",
+      "currentStatus": "pending",
+      "executor": null,
+      "writer": null,
+      "writerPid": null,
+      "executionMode": null,
+      "taskWorktree": null,
+      "taskBranch": null,
+      "claimId": null,
+      "logFile": null,
+      "passed": 11,
+      "total": 14,
+      "blockers": [
+        {
+          "id": "A-110",
+          "status": "blocked",
+          "result": "BLOCKED_CLEAN_MACHINE_NOT_PROVEN"
+        }
+      ]
+    },
+    "library": {
+      "productName": "UAOS Library Factory Studio",
+      "repoRoot": "C:\\keyboard-manager-clean\\uaos-real-product",
+      "repoRepositoryStatus": "RESOLVED",
+      "currentTask": "L-140",
+      "currentTitle": "OWNER GATE",
+      "currentStatus": "pending",
+      "executor": null,
+      "writer": null,
+      "writerPid": null,
+      "executionMode": null,
+      "taskWorktree": null,
+      "taskBranch": null,
+      "claimId": null,
+      "logFile": null,
+      "passed": 13,
+      "total": 16,
+      "blockers": [
+        {
+          "id": "L-130",
+          "status": "blocked",
+          "result": "BLOCKED_CLEAN_MACHINE_NOT_PROVEN"
+        }
+      ]
+    }
+  }
+}
+{
+  "updatedAt": "2026-08-14T14:06:15.513Z",
+  "factoryStatus": "unknown",
+  "supervisorPid": null,
+  "dashboardUrl": "http://127.0.0.1:17321",
+  "resources": {
+    "checkedAt": "2026-08-14T14:06:15.512Z",
+    "ram": {
+      "freeGb": 7.47,
+      "totalGb": 31.21
+    },
+    "disks": {
+      "C": 62.98,
+      "D": 62.98,
+      "E": 62.98
+    },
+    "limits": {
+      "maxHeavyWriters": 2,
+      "maxLightReviewers": 2
+    },
+    "diskWarnings": [],
+    "pauseFactory": false,
+    "pausePackagingDrives": []
+  },
+  "lanes": {
+    "singy": {
+      "productName": "UAOS Singy",
+      "repoRoot": "C:\\keyboard-manager-clean\\uaos-worktrees\\uaos-singy-final-product",
+      "repoRepositoryStatus": "RESOLVED",
+      "currentTask": "S-110",
+      "currentTitle": "OWNER HUMAN GATE",
+      "currentStatus": "pending",
+      "executor": null,
+      "writer": null,
+      "writerPid": null,
+      "executionMode": null,
+      "taskWorktree": null,
+      "taskBranch": null,
+      "claimId": null,
+      "logFile": null,
+      "passed": 12,
+      "total": 15,
+      "blockers": [
+        {
+          "id": "S-100",
+          "status": "blocked",
+          "result": "BLOCKED_CLEAN_MACHINE_NOT_PROVEN"
+        }
+      ]
+    },
+    "arranger": {
+      "productName": "UAOS Arranger Studio",
+      "repoRoot": "C:\\keyboard-manager-clean\\uaos-real-product",
+      "repoRepositoryStatus": "RESOLVED",
+      "currentTask": "A-120",
+      "currentTitle": "OWNER GATE",
+      "currentStatus": "pending",
+      "executor": null,
+      "writer": null,
+      "writerPid": null,
+      "executionMode": null,
+      "taskWorktree": null,
+      "taskBranch": null,
+      "claimId": null,
+      "logFile": null,
+      "passed": 11,
+      "total": 14,
+      "blockers": [
+        {
+          "id": "A-110",
+          "status": "blocked",
+          "result": "BLOCKED_CLEAN_MACHINE_NOT_PROVEN"
+        }
+      ]
+    },
+    "library": {
+      "productName": "UAOS Library Factory Studio",
+      "repoRoot": "C:\\keyboard-manager-clean\\uaos-real-product",
+      "repoRepositoryStatus": "RESOLVED",
+      "currentTask": "L-140",
+      "currentTitle": "OWNER GATE",
+      "currentStatus": "pending",
+      "executor": null,
+      "writer": null,
+      "writerPid": null,
+      "executionMode": null,
+      "taskWorktree": null,
+      "taskBranch": null,
+      "claimId": null,
+      "logFile": null,
+      "passed": 13,
+      "total": 16,
+      "blockers": [
+        {
+          "id": "L-130",
+          "status": "blocked",
+          "result": "BLOCKED_CLEAN_MACHINE_NOT_PROVEN"
+        }
+      ]
+    }
+  }
+}
+{
+  "updatedAt": "2026-08-14T14:10:09.223Z",
+  "factoryStatus": "unknown",
+  "supervisorPid": null,
+  "dashboardUrl": "http://127.0.0.1:17321",
+  "resources": {
+    "checkedAt": "2026-08-14T14:10:09.222Z",
+    "ram": {
+      "freeGb": 7.48,
+      "totalGb": 31.21
+    },
+    "disks": {
+      "C": 62.96,
+      "D": 62.96,
+      "E": 62.96
+    },
+    "limits": {
+      "maxHeavyWriters": 2,
+      "maxLightReviewers": 2
+    },
+    "diskWarnings": [],
+    "pauseFactory": false,
+    "pausePackagingDrives": []
+  },
+  "lanes": {
+    "singy": {
+      "productName": "UAOS Singy",
+      "repoRoot": "C:\\keyboard-manager-clean\\uaos-worktrees\\uaos-singy-final-product",
+      "repoRepositoryStatus": "RESOLVED",
+      "currentTask": "S-110",
+      "currentTitle": "OWNER HUMAN GATE",
+      "currentStatus": "pending",
+      "executor": null,
+      "writer": null,
+      "writerPid": null,
+      "executionMode": null,
+      "taskWorktree": null,
+      "taskBranch": null,
+      "claimId": null,
+      "logFile": null,
+      "passed": 12,
+      "total": 15,
+      "blockers": [
+        {
+          "id": "S-100",
+          "status": "blocked",
+          "result": "BLOCKED_CLEAN_MACHINE_NOT_PROVEN"
+        }
+      ]
+    },
+    "arranger": {
+      "productName": "UAOS Arranger Studio",
+      "repoRoot": "C:\\keyboard-manager-clean\\uaos-real-product",
+      "repoRepositoryStatus": "RESOLVED",
+      "currentTask": "A-120",
+      "currentTitle": "OWNER GATE",
+      "currentStatus": "pending",
+      "executor": null,
+      "writer": null,
+      "writerPid": null,
+      "executionMode": null,
+      "taskWorktree": null,
+      "taskBranch": null,
+      "claimId": null,
+      "logFile": null,
+      "passed": 11,
+      "total": 14,
+      "blockers": [
+        {
+          "id": "A-110",
+          "status": "blocked",
+          "result": "BLOCKED_CLEAN_MACHINE_NOT_PROVEN"
+        }
+      ]
+    },
+    "library": {
+      "productName": "UAOS Library Factory Studio",
+      "repoRoot": "C:\\keyboard-manager-clean\\uaos-real-product",
+      "repoRepositoryStatus": "RESOLVED",
+      "currentTask": "L-140",
+      "currentTitle": "OWNER GATE",
+      "currentStatus": "pending",
+      "executor": null,
+      "writer": null,
+      "writerPid": null,
+      "executionMode": null,
+      "taskWorktree": null,
+      "taskBranch": null,
+      "claimId": null,
+      "logFile": null,
+      "passed": 13,
+      "total": 16,
+      "blockers": [
+        {
+          "id": "L-130",
+          "status": "blocked",
+          "result": "BLOCKED_CLEAN_MACHINE_NOT_PROVEN"
+        }
+      ]
+    }
+  }
+}
+{
+  "updatedAt": "2026-08-14T14:28:11.989Z",
+  "factoryStatus": "unknown",
+  "supervisorPid": null,
+  "dashboardUrl": "http://127.0.0.1:17321",
+  "resources": {
+    "checkedAt": "2026-08-14T14:28:11.988Z",
+    "ram": {
+      "freeGb": 7.91,
+      "totalGb": 31.21
+    },
+    "disks": {
+      "C": 62.97,
+      "D": 62.97,
+      "E": 62.97
+    },
+    "limits": {
+      "maxHeavyWriters": 2,
+      "maxLightReviewers": 2
+    },
+    "diskWarnings": [],
+    "pauseFactory": false,
+    "pausePackagingDrives": []
+  },
+  "lanes": {
+    "singy": {
+      "productName": "UAOS Singy",
+      "repoRoot": "C:\\keyboard-manager-clean\\uaos-worktrees\\uaos-singy-final-product",
+      "repoRepositoryStatus": "RESOLVED",
+      "currentTask": "S-110",
+      "currentTitle": "OWNER HUMAN GATE",
+      "currentStatus": "pending",
+      "executor": null,
+      "writer": null,
+      "writerPid": null,
+      "executionMode": null,
+      "taskWorktree": null,
+      "taskBranch": null,
+      "claimId": null,
+      "logFile": null,
+      "passed": 12,
+      "total": 15,
+      "blockers": [
+        {
+          "id": "S-100",
+          "status": "blocked",
+          "result": "BLOCKED_CLEAN_MACHINE_NOT_PROVEN"
+        }
+      ]
+    },
+    "arranger": {
+      "productName": "UAOS Arranger Studio",
+      "repoRoot": "C:\\keyboard-manager-clean\\uaos-real-product",
+      "repoRepositoryStatus": "RESOLVED",
+      "currentTask": "A-120",
+      "currentTitle": "OWNER GATE",
+      "currentStatus": "pending",
+      "executor": null,
+      "writer": null,
+      "writerPid": null,
+      "executionMode": null,
+      "taskWorktree": null,
+      "taskBranch": null,
+      "claimId": null,
+      "logFile": null,
+      "passed": 11,
+      "total": 14,
+      "blockers": [
+        {
+          "id": "A-110",
+          "status": "blocked",
+          "result": "BLOCKED_CLEAN_MACHINE_NOT_PROVEN"
+        }
+      ]
+    },
+    "library": {
+      "productName": "UAOS Library Factory Studio",
+      "repoRoot": "C:\\keyboard-manager-clean\\uaos-real-product",
+      "repoRepositoryStatus": "RESOLVED",
+      "currentTask": "L-140",
+      "currentTitle": "OWNER GATE",
+      "currentStatus": "pending",
+      "executor": null,
+      "writer": null,
+      "writerPid": null,
+      "executionMode": null,
+      "taskWorktree": null,
+      "taskBranch": null,
+      "claimId": null,
+      "logFile": null,
+      "passed": 13,
+      "total": 16,
+      "blockers": [
+        {
+          "id": "L-130",
+          "status": "blocked",
+          "result": "BLOCKED_CLEAN_MACHINE_NOT_PROVEN"
+        }
+      ]
+    }
+  }
+}
+{
+  "updatedAt": "2026-08-14T14:49:05.106Z",
+  "factoryStatus": "unknown",
+  "supervisorPid": null,
+  "dashboardUrl": "http://127.0.0.1:17321",
+  "resources": {
+    "checkedAt": "2026-08-14T14:49:05.105Z",
+    "ram": {
+      "freeGb": 8.36,
+      "totalGb": 31.21
+    },
+    "disks": {
+      "C": 62.75,
+      "D": 62.75,
+      "E": 62.75
+    },
+    "limits": {
+      "maxHeavyWriters": 2,
+      "maxLightReviewers": 2
+    },
+    "diskWarnings": [],
+    "pauseFactory": false,
+    "pausePackagingDrives": []
+  },
+  "lanes": {
+    "singy": {
+      "productName": "UAOS Singy",
+      "repoRoot": "C:\\keyboard-manager-clean\\uaos-worktrees\\uaos-singy-final-product",
+      "repoRepositoryStatus": "RESOLVED",
+      "currentTask": "S-110",
+      "currentTitle": "OWNER HUMAN GATE",
+      "currentStatus": "pending",
+      "executor": null,
+      "writer": null,
+      "writerPid": null,
+      "executionMode": null,
+      "taskWorktree": null,
+      "taskBranch": null,
+      "claimId": null,
+      "logFile": null,
+      "passed": 12,
+      "total": 15,
+      "blockers": [
+        {
+          "id": "S-100",
+          "status": "blocked",
+          "result": "BLOCKED_CLEAN_MACHINE_NOT_PROVEN"
+        }
+      ]
+    },
+    "arranger": {
+      "productName": "UAOS Arranger Studio",
+      "repoRoot": "C:\\keyboard-manager-clean\\uaos-real-product",
+      "repoRepositoryStatus": "RESOLVED",
+      "currentTask": "A-120",
+      "currentTitle": "OWNER GATE",
+      "currentStatus": "pending",
+      "executor": null,
+      "writer": null,
+      "writerPid": null,
+      "executionMode": null,
+      "taskWorktree": null,
+      "taskBranch": null,
+      "claimId": null,
+      "logFile": null,
+      "passed": 11,
+      "total": 14,
+      "blockers": [
+        {
+          "id": "A-110",
+          "status": "blocked",
+          "result": "BLOCKED_CLEAN_MACHINE_NOT_PROVEN"
+        }
+      ]
+    },
+    "library": {
+      "productName": "UAOS Library Factory Studio",
+      "repoRoot": "C:\\keyboard-manager-clean\\uaos-real-product",
+      "repoRepositoryStatus": "RESOLVED",
+      "currentTask": "L-140",
+      "currentTitle": "OWNER GATE",
+      "currentStatus": "pending",
+      "executor": null,
+      "writer": null,
+      "writerPid": null,
+      "executionMode": null,
+      "taskWorktree": null,
+      "taskBranch": null,
+      "claimId": null,
+      "logFile": null,
+      "passed": 13,
+      "total": 16,
+      "blockers": [
+        {
+          "id": "L-130",
+          "status": "blocked",
+          "result": "BLOCKED_CLEAN_MACHINE_NOT_PROVEN"
+        }
+      ]
+    }
+  }
+}

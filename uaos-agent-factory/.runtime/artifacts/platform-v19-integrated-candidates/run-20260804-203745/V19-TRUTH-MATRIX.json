@@ -1,0 +1,109 @@
+{
+    "entries":  [
+                    {
+                        "product":  "library",
+                        "capability":  "transactional_ingest",
+                        "source_file":  "packages/uaos-v18-library-content/index.cjs",
+                        "implementation_type":  "REAL_IMPLEMENTATION_RUNTIME_PROVEN",
+                        "runtime_reachable":  true,
+                        "test":  "library-runtime",
+                        "fixture_only":  true,
+                        "real_content_required":  true,
+                        "owner_required":  true,
+                        "production_ready":  false,
+                        "evidence":  "RUNTIME-ACCEPTANCE.json"
+                    },
+                    {
+                        "product":  "library",
+                        "capability":  "real_licensed_audio",
+                        "source_file":  null,
+                        "implementation_type":  "CONTENT_BLOCKED",
+                        "runtime_reachable":  false,
+                        "test":  null,
+                        "fixture_only":  true,
+                        "real_content_required":  true,
+                        "owner_required":  true,
+                        "production_ready":  false,
+                        "evidence":  "commercialReleaseGate"
+                    },
+                    {
+                        "product":  "keyboard",
+                        "capability":  "internal_convert_resume",
+                        "source_file":  "packages/keyboard-converters-phase3/index.cjs",
+                        "implementation_type":  "REAL_IMPLEMENTATION_RUNTIME_PROVEN",
+                        "runtime_reachable":  true,
+                        "test":  "keyboard-runtime",
+                        "fixture_only":  false,
+                        "real_content_required":  false,
+                        "owner_required":  true,
+                        "production_ready":  false,
+                        "evidence":  "RUNTIME-ACCEPTANCE.json"
+                    },
+                    {
+                        "product":  "keyboard",
+                        "capability":  "korg_writer",
+                        "source_file":  "packages/uaos-v18-format-contracts/index.cjs",
+                        "implementation_type":  "FORMAT_BLOCKED",
+                        "runtime_reachable":  false,
+                        "test":  "format-contracts-test",
+                        "fixture_only":  false,
+                        "real_content_required":  false,
+                        "owner_required":  true,
+                        "production_ready":  false,
+                        "evidence":  "INSPECT_ONLY/WRITE_UNSUPPORTED"
+                    },
+                    {
+                        "product":  "creator",
+                        "capability":  "arrangement_golden_sequence",
+                        "source_file":  "uaos-creator-shell/src/phase4.cjs",
+                        "implementation_type":  "REAL_IMPLEMENTATION_RUNTIME_PROVEN",
+                        "runtime_reachable":  true,
+                        "test":  "creator-runtime",
+                        "fixture_only":  false,
+                        "real_content_required":  false,
+                        "owner_required":  false,
+                        "production_ready":  false,
+                        "evidence":  "FOUNDATION_ONLY claims"
+                    },
+                    {
+                        "product":  "creator",
+                        "capability":  "musical_taste",
+                        "source_file":  null,
+                        "implementation_type":  "NOT_IMPLEMENTED",
+                        "runtime_reachable":  false,
+                        "test":  null,
+                        "fixture_only":  true,
+                        "real_content_required":  false,
+                        "owner_required":  false,
+                        "production_ready":  false,
+                        "evidence":  "CREATOR_V19_MUSICAL_QUALITY_UNPROVEN"
+                    },
+                    {
+                        "product":  "studio",
+                        "capability":  "timeline_mixer_edit",
+                        "source_file":  "src/editing.cjs",
+                        "implementation_type":  "REAL_IMPLEMENTATION_RUNTIME_PROVEN",
+                        "runtime_reachable":  true,
+                        "test":  "studio-runtime",
+                        "fixture_only":  false,
+                        "real_content_required":  false,
+                        "owner_required":  false,
+                        "production_ready":  false,
+                        "evidence":  "RUNTIME-ACCEPTANCE.json"
+                    },
+                    {
+                        "product":  "studio",
+                        "capability":  "realtime_dsp",
+                        "source_file":  null,
+                        "implementation_type":  "NOT_IMPLEMENTED",
+                        "runtime_reachable":  false,
+                        "test":  null,
+                        "fixture_only":  false,
+                        "real_content_required":  false,
+                        "owner_required":  false,
+                        "production_ready":  false,
+                        "evidence":  "STUDIO_PRO_V19_DSP_NOT_IMPLEMENTED"
+                    }
+                ],
+    "markerOnlyReadyForbidden":  true
+}

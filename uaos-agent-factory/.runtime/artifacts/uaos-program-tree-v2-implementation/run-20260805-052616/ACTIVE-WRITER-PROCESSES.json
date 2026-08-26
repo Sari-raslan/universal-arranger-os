@@ -1,0 +1,7 @@
+{
+  "checkedAt": "2026-08-05T05:26:53.092Z",
+  "method": "Get-CimInstance Win32_Process -Filter \"Name='node.exe'\" | Select ProcessId, CommandLine",
+  "rawFindings": "4 node.exe processes, PIDs 21928/27280/28360/28456, all empty CommandLine (permission-restricted); none identifiable as a factory dispatcher/supervisor/server.",
+  "dispatcherOrSupervisorProcessFound": false,
+  "note": "4 node.exe processes observed, all with empty/permission-restricted CommandLine. None resolved to a recognizable uaos-agent-factory dispatch.mjs/supervisor.mjs/program-tree-server.mjs command line (unlike Batch 1, where the dashboard server was visible). Treated as: no confirmed live writer against TASKS.json, but proceeding with the same care as if one might exist (small write, verify-then-write pattern, no long-held file locks)."
+}

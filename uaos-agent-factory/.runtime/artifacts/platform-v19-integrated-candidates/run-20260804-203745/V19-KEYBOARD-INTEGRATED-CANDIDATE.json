@@ -1,0 +1,149 @@
+{
+    "status":  "KEYBOARD_PRO_V19_INTEGRATED_INTERNAL_RUNTIME_READY",
+    "secondary":  [
+                      "KEYBOARD_PRO_V19_OWNER_FORMAT_CONTRACT_REQUIRED"
+                  ],
+    "assertions":  19,
+    "pass":  19,
+    "fail":  0,
+    "steps":  [
+                  {
+                      "name":  "opened",
+                      "ok":  true
+                  },
+                  {
+                      "name":  "has_tracks",
+                      "ok":  true
+                  },
+                  {
+                      "name":  "1.open_internal_uaos_fixture",
+                      "ok":  true,
+                      "phase":  "step"
+                  },
+                  {
+                      "name":  "set_doctor_ok",
+                      "ok":  true
+                  },
+                  {
+                      "name":  "2.set_doctor",
+                      "ok":  true,
+                      "phase":  "step"
+                  },
+                  {
+                      "name":  "magic_draft",
+                      "ok":  true
+                  },
+                  {
+                      "name":  "3.magic_set_draft",
+                      "ok":  true,
+                      "phase":  "step"
+                  },
+                  {
+                      "name":  "inspect",
+                      "ok":  true
+                  },
+                  {
+                      "name":  "korg_write_blocked",
+                      "ok":  true
+                  },
+                  {
+                      "name":  "4.converter_inspection",
+                      "ok":  true,
+                      "phase":  "step"
+                  },
+                  {
+                      "name":  "dry_prepared",
+                      "ok":  true
+                  },
+                  {
+                      "name":  "dry_terminal",
+                      "ok":  true
+                  },
+                  {
+                      "name":  "5.internal_format_dry_run",
+                      "ok":  true,
+                      "phase":  "step"
+                  },
+                  {
+                      "name":  "conv_prepared",
+                      "ok":  true
+                  },
+                  {
+                      "name":  "conv_completed",
+                      "ok":  true
+                  },
+                  {
+                      "name":  "receipt",
+                      "ok":  true
+                  },
+                  {
+                      "name":  "6.conversion_to_new_output_dir",
+                      "ok":  true,
+                      "phase":  "step"
+                  },
+                  {
+                      "name":  "manifest_sha",
+                      "ok":  true
+                  },
+                  {
+                      "name":  "7.sha256_manifest",
+                      "ok":  true,
+                      "phase":  "step"
+                  },
+                  {
+                      "name":  "reopen_manifest",
+                      "ok":  true
+                  },
+                  {
+                      "name":  "8.reopen_output",
+                      "ok":  true,
+                      "phase":  "step"
+                  },
+                  {
+                      "name":  "cancelled",
+                      "ok":  true
+                  },
+                  {
+                      "name":  "rollback",
+                      "ok":  true
+                  },
+                  {
+                      "name":  "9.cancel_rollback",
+                      "ok":  true,
+                      "phase":  "step"
+                  },
+                  {
+                      "name":  "crash_point",
+                      "ok":  true
+                  },
+                  {
+                      "name":  "stale",
+                      "ok":  true
+                  },
+                  {
+                      "name":  "resumed",
+                      "ok":  true
+                  },
+                  {
+                      "name":  "10.crash_resume",
+                      "ok":  true,
+                      "phase":  "step"
+                  },
+                  {
+                      "name":  "source_immutable",
+                      "ok":  true
+                  },
+                  {
+                      "name":  "11.source_fixture_unchanged",
+                      "ok":  true,
+                      "phase":  "step"
+                  }
+              ],
+    "korgPolicy":  {
+                       "mode":  "INSPECT_ONLY",
+                       "write":  "WRITE_UNSUPPORTED",
+                       "gate":  "OWNER_FORMAT_CONTRACT_REQUIRED"
+                   },
+    "sourceHash":  "3e3490ca6bcc9187d80bc1c89385a3014ef65421a227267e1fc1e9fa0459b7f1",
+    "manifestSha256":  "50b05ff9f887ce1a24a2e121103e35da1ca6d17107e978dbf672cb29babe9c36"
+}

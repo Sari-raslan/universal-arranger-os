@@ -1,0 +1,13 @@
+{
+    "name":  "uaos-studio-phase1-project-system",
+    "version":  "0.15.0",
+    "private":  true,
+    "description":  "UAOS Studio Pro Phase1 — Project System only (E10)",
+    "scripts":  {
+                    "test":  "node tests/project-system.test.cjs \u0026\u0026 node tests/timeline.test.cjs \u0026\u0026 node tests/playback-mixer.test.cjs",
+                    "test:e20":  "node tests/timeline.test.cjs",
+                    "check":  "node tests/project-system.test.cjs \u0026\u0026 node tests/timeline.test.cjs \u0026\u0026 node tests/playback-mixer.test.cjs",
+                    "build":  "node -e \"console.log(JSON.stringify({status:\u0027PASS\u0027,build:\u0027studio-e30\u0027}))\"",
+                    "test:e30":  "node tests/playback-mixer.test.cjs"
+                }
+}

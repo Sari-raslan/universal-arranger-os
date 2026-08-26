@@ -1,0 +1,83 @@
+{
+    "matrix":  [
+                   {
+                       "migration_required":  true,
+                       "keyboard_path":  "arranger project format",
+                       "risk":  "MEDIUM",
+                       "contract":  "project.schema",
+                       "compatible":  false,
+                       "creator_path":  "uaos-creator-shell/contracts/project.schema.json + phase2 v2",
+                       "library_path":  "n/a",
+                       "classification":  "PRODUCT_SPECIFIC_KEEP_SEPARATE",
+                       "conflict":  "different schemaVersion namespaces",
+                       "studio_path":  "studio contracts/project.schema.json",
+                       "recommended_shared_contract":  "uaos.shared.project/v1 (future)"
+                   },
+                   {
+                       "migration_required":  true,
+                       "keyboard_path":  "n/a",
+                       "risk":  "MEDIUM",
+                       "contract":  "timeline",
+                       "compatible":  false,
+                       "creator_path":  "clips metadata only",
+                       "library_path":  "n/a",
+                       "classification":  "SHARED_CONTRACT_REFACTOR_REQUIRED",
+                       "conflict":  "creator has no full timeline",
+                       "studio_path":  "src/timeline.cjs E20",
+                       "recommended_shared_contract":  "uaos.shared.timeline/v1"
+                   },
+                   {
+                       "migration_required":  false,
+                       "keyboard_path":  "arranger tracks",
+                       "risk":  "LOW",
+                       "contract":  "audio/midi tracks",
+                       "compatible":  true,
+                       "creator_path":  "phase2 registerTrack",
+                       "library_path":  "sampler catalog",
+                       "classification":  "SHARED_CONTRACT_READY",
+                       "conflict":  "none critical",
+                       "studio_path":  "project-system registerTrack",
+                       "recommended_shared_contract":  "uaos.shared.track/v1"
+                   },
+                   {
+                       "migration_required":  false,
+                       "keyboard_path":  "preview",
+                       "risk":  "LOW",
+                       "contract":  "sampler adapter",
+                       "compatible":  true,
+                       "creator_path":  "interface only",
+                       "library_path":  "implemented adapter",
+                       "classification":  "PRODUCT_SPECIFIC_KEEP_SEPARATE",
+                       "conflict":  "impl only in library",
+                       "studio_path":  "phase0 interface",
+                       "recommended_shared_contract":  "keep library as source of impl"
+                   },
+                   {
+                       "migration_required":  false,
+                       "keyboard_path":  "arranger evidence",
+                       "risk":  "LOW",
+                       "contract":  "evidence",
+                       "compatible":  true,
+                       "creator_path":  "EvidenceHooks",
+                       "library_path":  "support bundles",
+                       "classification":  "SHARED_CONTRACT_READY",
+                       "conflict":  "none",
+                       "studio_path":  "phase0 evidence schema",
+                       "recommended_shared_contract":  "uaos.shared.evidence/v1"
+                   },
+                   {
+                       "migration_required":  false,
+                       "keyboard_path":  "n/a",
+                       "risk":  "LOW",
+                       "contract":  "entitlements",
+                       "compatible":  true,
+                       "creator_path":  "contracts/entitlements.json",
+                       "library_path":  "n/a",
+                       "classification":  "PRODUCT_SPECIFIC_KEEP_SEPARATE",
+                       "conflict":  "studio lacks entitlements",
+                       "studio_path":  "n/a",
+                       "recommended_shared_contract":  "optional adopt creator model"
+                   }
+               ],
+    "refactorApplied":  false
+}

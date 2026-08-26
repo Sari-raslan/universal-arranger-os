@@ -1,0 +1,89 @@
+{
+  "generatedAt": "2026-08-05T05:20:02.692Z",
+  "results": [
+    {
+      "taskId": "TASK-01-00057-SHARED_PROJECT_IDENTITY_CONTRACT",
+      "ownerFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00057-shared_project_identity_contract\\src\\shared_project_identity_contract.mjs",
+      "ownerFileSha256": "5860d0e2dc3978aa7c9fcfe833ca383675fb0faea5ab3d4bb03db1fd1a4a4666",
+      "ownerFileBytes": 3899,
+      "note": "Real UUIDv4 project id + semver formatVersion schema/validator. 10/10 passing."
+    },
+    {
+      "taskId": "TASK-01-00058-SHARED_PROJECT_IDENTITY_IMPLEMENTATION",
+      "ownerFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00058-shared_project_identity_implementation\\src\\shared_project_identity_implemen.mjs",
+      "ownerFileSha256": "35860e8c0110fee59fecfd70ac3d5bb3ac4df7a39e43d77a7bb280db58946e0a",
+      "ownerFileBytes": 1832,
+      "note": "Real identity factory + no-downgrade migration. 1000-id collision test. 7/7 passing."
+    },
+    {
+      "taskId": "TASK-01-00059-SHARED_PROJECT_IDENTITY_TESTS",
+      "ownerFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00059-shared_project_identity_tests\\src\\shared_project_identity_tests.mjs",
+      "ownerFileSha256": "aede3e76b6059b711851593cf62e7fad5c20dff3bb5efcf658c775eecee1983f",
+      "ownerFileBytes": 1459,
+      "note": "Real integration with Batch 1's AtomicSave: 6-product identity manifest persisted + read back + failure-path. 4/4 passing."
+    },
+    {
+      "taskId": "TASK-01-00060-SHARED_PROJECT_IDENTITY_EVIDENCE",
+      "ownerFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00060-shared_project_identity_evidence\\src\\shared_project_identity_evidence.mjs",
+      "ownerFileSha256": "b7d6e8a8eb06065d6f8b770fd6ae8c6481a3ab4405702d273f9100599dbeb10c",
+      "ownerFileBytes": 4650,
+      "note": "Aggregates + re-verifies the full feature end-to-end. 4/4 passing."
+    },
+    {
+      "taskId": "TASK-01-00073-RECOVERY_CONTRACT",
+      "ownerFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00073-recovery_contract\\src\\recovery_contract.mjs",
+      "ownerFileSha256": "f61fe9b5868843b1267f0f372ede3c35cde3e1f284f614ae6943ccc25d19d140",
+      "ownerFileBytes": 2558,
+      "note": "Real orphan temp-file classification schema/validator. 7/7 passing."
+    },
+    {
+      "taskId": "TASK-01-00074-RECOVERY_IMPLEMENTATION",
+      "ownerFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00074-recovery_implementation\\src\\recovery_implementation.mjs",
+      "ownerFileSha256": "90c752ee7785dc379f7b4a6e795c157eecdc0e608578dc472ed63d43a083fa85",
+      "ownerFileBytes": 2373,
+      "note": "Real crash-recovery scan: discard-if-target-intact / quarantine-if-target-missing, never promotes an orphan. 7/7 passing incl. failure-paths."
+    },
+    {
+      "taskId": "TASK-01-00075-RECOVERY_TESTS",
+      "ownerFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00075-recovery_tests\\src\\recovery_tests.mjs",
+      "ownerFileSha256": "102b6ead6ffbd468bbd63db6868646f56b108d425898b5e1290bfd3012391601",
+      "ownerFileBytes": 1731,
+      "note": "Real integration: 10-project mixed directory, idempotency, 50-orphan scale failure-path test. 4/4 passing."
+    },
+    {
+      "taskId": "TASK-01-00076-RECOVERY_EVIDENCE",
+      "ownerFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00076-recovery_evidence\\src\\recovery_evidence.mjs",
+      "ownerFileSha256": "7cbf80619ff88f9aaa494f000a81de296ca5588ccbeb7b50d07f8e3d796acf52",
+      "ownerFileBytes": 4466,
+      "note": "Aggregates + re-verifies the full feature end-to-end. 4/4 passing."
+    },
+    {
+      "taskId": "TASK-06-00653-PROJECT_SYSTEM_CONTRACT",
+      "ownerFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-06-00653-project_system_contract\\src\\project_system_contract.mjs",
+      "ownerFileSha256": "545db57730d474bd3fb6d49dc700d7d52842482382a329fa21823baf8356fd61",
+      "ownerFileBytes": 3411,
+      "note": "Real project/track/clip schema + validators. 10/10 passing."
+    },
+    {
+      "taskId": "TASK-06-00654-PROJECT_SYSTEM_IMPLEMENTATION",
+      "ownerFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-06-00654-project_system_implementation\\src\\project_system_implementation.mjs",
+      "ownerFileSha256": "35815acee6d5fa12c0b8161a56b5105798a9d1479f71376edcf1e8f0a6b74992",
+      "ownerFileBytes": 8002,
+      "note": "Real WAV encode/decode, timeline/save/reopen/offline-render pipeline. Found+fixed a real Node Buffer-pool aliasing bug during implementation (regression test added). 15/15 passing."
+    },
+    {
+      "taskId": "TASK-06-00655-PROJECT_SYSTEM_TESTS",
+      "ownerFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-06-00655-project_system_tests\\src\\project_system_tests.mjs",
+      "ownerFileSha256": "e5042dc65ac7ffd9de4fe5fb43ab9a7c192ba5471af54672211eb618f00dbd6e",
+      "ownerFileBytes": 1762,
+      "note": "Full vertical-slice acceptance test: input->validation->processing->save->close->reopen->output->failure-recovery->evidence, end-to-end. 4/4 passing."
+    },
+    {
+      "taskId": "TASK-06-00656-PROJECT_SYSTEM_EVIDENCE",
+      "ownerFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-06-00656-project_system_evidence\\src\\project_system_evidence.mjs",
+      "ownerFileSha256": "8306194d13f3b37135ebd4fc2fa4c1635d3242e24908152d251babea7111a201",
+      "ownerFileBytes": 4889,
+      "note": "Aggregates + re-verifies the full vertical slice end-to-end; documents recovery + truth-statement scope. 4/4 passing."
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "title": "UAOS Creator Entitlement Contracts",
+  "schemaVersion": "uaos.creator.entitlements/v1",
+  "entitlements": {
+    "creator.free": { "features": ["shell.enabled", "placeholder.ui", "project.save", "project.open"] },
+    "creator.pro": { "features": ["creator.free", "voice.to.midi", "advanced.harmony", "arrangement.brain"] },
+    "creator.studio": { "features": ["creator.pro", "golden.sequencer", "full.multitrack", "musical.brain.production"] }
+  },
+  "note": "Entitlement contracts only — pricing/payment NOT approved in V15"
+}

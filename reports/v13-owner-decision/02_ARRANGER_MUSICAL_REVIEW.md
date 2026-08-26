@@ -1,0 +1,17 @@
+# Arranger Final Musical Owner Review
+
+**ARRANGER_FINAL_MUSICAL_ACCEPTANCE=OWNER_DECISION_REQUIRED**
+
+## Easy start
+
+Double-click: `START-ARRANGER-FINAL-LISTENING.bat`  
+Cards: `LISTENING_CARDS_ARRANGER.md`
+
+Frozen ZIP only (do not rebuild): `UAOS_ARRANGER_STUDIO_FOUNDING_PILOT_V11.zip`  
+SHA256: `c133294dbf7498c6004fcc28ec1afa4e4f1e5df00a24043b60f407e56ffe5388`
+
+## Items A1–A5
+
+See `LISTENING_CARDS_ARRANGER.md` for NUMBER / FILE / DURATION / WHAT_TO_LISTEN_FOR / SHA256 / EXACT_OPEN_PLAY_PATH.
+
+Decision after one session only: **PASS** | **NEEDS_FIXES**

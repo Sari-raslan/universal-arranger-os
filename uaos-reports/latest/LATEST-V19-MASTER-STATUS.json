@@ -1,0 +1,44 @@
+{
+    "task":  "UAOS-PLATFORM-AUTOMATION-019-CONSOLIDATED-CANDIDATE-INTEGRATION-AND-RUNTIME-ACCEPTANCE",
+    "coordinatorStatus":  "UAOS_V19_CURSOR_INTEGRATED_CANDIDATES_AND_RUNTIME_ACCEPTANCE_PASS",
+    "overallState":  "UAOS_V19_READY_WITH_CONTENT_FORMAT_AND_OWNER_BLOCKERS",
+    "run":  "C:\\keyboard-manager-clean\\uaos-agent-factory\\.runtime\\artifacts\\platform-v19-integrated-candidates\\run-20260804-203745",
+    "timestamp":  "20260804-203745",
+    "worktrees":  {
+                      "library":  "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-v19-integration\\library-factory-integrated",
+                      "creator":  "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-v19-integration\\creator-integrated-runtime",
+                      "keyboard":  "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-v19-integration\\keyboard-pro-integrated",
+                      "studio":  "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-v19-integration\\studio-pro-integrated-runtime"
+                  },
+    "patchChains":  {
+                        "applicableGitPatches":  0,
+                        "sourceSnapshotRequired":  17,
+                        "recovered":  true,
+                        "evidenceOnly":  0,
+                        "invalidOrMissing":  10
+                    },
+    "products":  {
+                     "library":  "LIBRARY_V19_INTEGRATED_CANDIDATE_READY_FIXTURE_ONLY",
+                     "creator":  "CREATOR_V19_INTEGRATED_RUNTIME_CANDIDATE_READY",
+                     "keyboard":  "KEYBOARD_PRO_V19_INTEGRATED_INTERNAL_RUNTIME_READY",
+                     "studio":  "STUDIO_PRO_V19_INTEGRATED_RUNTIME_CANDIDATE_READY"
+                 },
+    "runtimeAcceptance":  {
+                              "fail":  0,
+                              "pass":  4
+                          },
+    "tests":  {
+                  "fail":  0,
+                  "pass":  14
+              },
+    "commanderBaseline":  {
+                              "expected":  "9b23824f1cb14fdb611d4cfdee0b3e09a7442939",
+                              "actual":  "3fa65b47f0f328ab43b23467fc838eedc1eafd75",
+                              "v19Caused":  false,
+                              "classification":  "LEGITIMATE_CONCURRENT_COMMIT"
+                          },
+    "originalRepositoryIntegrity":  "UAOS_V19_ORIGINAL_REPOSITORY_INTEGRITY_PASS",
+    "priorWorktreeIntegrity":  "PRESERVED",
+    "ownerDecisionsUnchanged":  true,
+    "noCommitNoPushNoMerge":  true
+}

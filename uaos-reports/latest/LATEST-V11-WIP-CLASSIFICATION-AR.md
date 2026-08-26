@@ -1,0 +1,11 @@
+# تصنيف WIP — V11
+الوكيل: WIP_FORENSICS_AGENT
+المستودع: C:\keyboard-manager-clean
+العدد: 117
+تعديل: لا
+
+- DOCUMENTATION_WIP: 10
+- GENERATED_ARTIFACT: 1
+- INTENTIONAL_WIP: 6
+- SOURCE_WIP: 14
+- UNKNOWN_OWNER_REVIEW_REQUIRED: 86

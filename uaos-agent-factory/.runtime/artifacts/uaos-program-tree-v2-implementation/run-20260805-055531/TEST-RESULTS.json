@@ -1,0 +1,77 @@
+{
+  "generatedAt": "2026-08-05T10:32:06.767Z",
+  "results": [
+    {
+      "taskId": "TASK-01-00097-ENTITLEMENTS_CONTRACT",
+      "testCommand": "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00097-entitlements_contract\\tests\\main.test.mjs",
+      "exitCode": 0,
+      "stdoutTail": "✔ validateTrialStartedAt accepts null and a valid ISO string (0.1038ms)\n✔ validateEntitlementInput accepts a well-formed trial-not-started input (0.1336ms)\n✔ rejects a missing productId (0.2728ms)\n✔ rejects a malformed trialStartedAt (0.0855ms)\n✔ rejects a missing/invalid injected clock — the system clock must never be read internally (0.1056ms)\n✔ schema documents the license-restores-entitlement and data-preservation guarantees (0.175ms)\n✔ TRIAL_DURATION_DAYS is a real positive number of days (0.1002ms)\nℹ tests 9\nℹ suites 0\nℹ pass 9\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 65.6488"
+    },
+    {
+      "taskId": "TASK-01-00098-ENTITLEMENTS_IMPLEMENTATION",
+      "testCommand": "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00098-entitlements_implementation\\tests\\main.test.mjs",
+      "exitCode": 0,
+      "stdoutTail": "✔ LICENSED: a genuinely valid, unexpired, correct-product license (1.4473ms)\n✔ LICENSE_EXPIRED_READ_ONLY: an expired license (0.3226ms)\n✔ LICENSE_INVALID: a tampered/forged license (bad signature) (0.3867ms)\n✔ LICENSE_WRONG_PRODUCT: a genuinely valid license, but for a different product (0.2911ms)\n✔ license activation restores full entitlement even after the trial has expired (0.3055ms)\n✔ rejects resolving with a license receipt but no publicKey (0.3112ms)\n✔ rejects invalid input shapes via the shared contract validator (0.0893ms)\nℹ tests 14\nℹ suites 0\nℹ pass 14\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 72.6708"
+    },
+    {
+      "taskId": "TASK-01-00099-ENTITLEMENTS_TESTS",
+      "testCommand": "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00099-entitlements_tests\\tests\\main.test.mjs",
+      "exitCode": 0,
+      "stdoutTail": "✔ verify() smoke check (0.4897ms)\n✔ day-by-day trial lifecycle transitions from TRIAL_ACTIVE to TRIAL_EXPIRED_READ_ONLY exactly once, at day 14 (0.6852ms)\n✔ canExport flips false exactly when the state becomes expired, never before (0.1058ms)\n✔ the same lifecycle simulation, run for all six products, is independent per product (0.1306ms)\n✔ an entitlement resolution snapshot persists via the real AtomicSave primitive and reopens exactly (3.1898ms)\n✔ failure-path: a sabotaged snapshot save leaves the prior snapshot untouched (5.0163ms)\nℹ tests 6\nℹ suites 0\nℹ pass 6\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 83.4552"
+    },
+    {
+      "taskId": "TASK-01-00100-ENTITLEMENTS_EVIDENCE",
+      "testCommand": "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00100-entitlements_evidence\\tests\\main.test.mjs",
+      "exitCode": 0,
+      "stdoutTail": "✔ verify() smoke check (373.629ms)\n✔ re-running the full feature test suite genuinely passes end-to-end (355.0496ms)\n✔ TEST HARNESS GUARD: zero discovered tests is FAIL (0.907ms)\n✔ rollback/recovery procedure documents data preservation and license-restores-entitlement guarantees (0.096ms)\nℹ tests 4\nℹ suites 0\nℹ pass 4\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 796.6621"
+    },
+    {
+      "taskId": "TASK-01-00165-EXPORT_IMPORT_USER_DATA_CONTRACT",
+      "testCommand": "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00165-export_import_user_data_contract\\tests\\main.test.mjs",
+      "exitCode": 0,
+      "stdoutTail": "✔ validateArchiveEntry accepts a well-formed entry (0.4885ms)\n✔ validateArchiveEntry rejects an unsafe relativePath (0.2664ms)\n✔ validateArchive accepts a well-formed archive (0.7947ms)\n✔ SAFETY: validateArchive rejects duplicate entry paths (case-insensitive) (0.1583ms)\n✔ validateArchive rejects a malformed manifestSha256 (0.1512ms)\n✔ validateArchive rejects a non-semver formatVersion (0.103ms)\n✔ schema documents the path-safety and no-partial-overwrite guarantees (0.1689ms)\nℹ tests 12\nℹ suites 0\nℹ pass 12\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 66.5274"
+    },
+    {
+      "taskId": "TASK-01-00166-EXPORT_IMPORT_USER_DATA_IMPLEMENTATION",
+      "testCommand": "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00166-export_import_user_data_implementation\\tests\\main.test.mjs",
+      "exitCode": 0,
+      "stdoutTail": "✔ SAFETY: importArchive rejects duplicate normalized paths at the archive-validation boundary (0.3554ms)\n✔ STRICT MODE: importArchive rejects when a required expected entry is missing from the archive (1.4644ms)\n✔ STRICT MODE: importArchive rejects an entry not in the expected set when strict is true (1.8126ms)\n✔ non-strict mode allows extra entries beyond the expected set (3.4368ms)\n✔ TRANSACTIONAL ROLLBACK: a failure partway through commit rolls back already-committed entries and preserves pre-existing destination data (6.6782ms)\n✔ failure-path: a sabotaged archive save leaves the prior archive untouched (inherits AtomicSave) (4.3357ms)\n✔ cleanDestination removes prior contents but the directory itself remains usable afterward (1.3904ms)\nℹ tests 21\nℹ suites 0\nℹ pass 20\nℹ fail 0\nℹ cancelled 0\nℹ skipped 1\nℹ todo 0\nℹ duration_ms 124.7968"
+    },
+    {
+      "taskId": "TASK-01-00167-EXPORT_IMPORT_USER_DATA_TESTS",
+      "testCommand": "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00167-export_import_user_data_tests\\tests\\main.test.mjs",
+      "exitCode": 0,
+      "stdoutTail": "✔ verify() smoke check (0.4751ms)\n✔ FULL LIFECYCLE: discover -> export -> save -> reopen -> clean-destination import -> every file byte-identical (19.8662ms)\n✔ MIGRATE TO FRESH MACHINE: export from one root, import into a completely unrelated, previously-empty directory tree (7.1578ms)\n✔ RESTORE INTO EXISTING INSTALLATION: strict-mode import enforces the exact expected file set (7.2181ms)\n✔ failure-path: restoring into an existing installation with an archive missing a required file is rejected before any write (3.3123ms)\n✔ failure-path: a corrupted archive (tampered after export) is rejected on reopen before any import is attempted (4.1644ms)\nℹ tests 6\nℹ suites 0\nℹ pass 6\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 110.5385"
+    },
+    {
+      "taskId": "TASK-01-00168-EXPORT_IMPORT_USER_DATA_EVIDENCE",
+      "testCommand": "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00168-export_import_user_data_evidence\\tests\\main.test.mjs",
+      "exitCode": 0,
+      "stdoutTail": "✔ verify() smoke check (473.3151ms)\n✔ re-running the full feature test suite genuinely passes end-to-end (accounting for legitimate environment skips) (441.1221ms)\n✔ TEST HARNESS GUARD: zero discovered tests is FAIL (1.4205ms)\n✔ GUARD: a legitimately skipped test does not falsely trigger the zero-discovery FAIL path (110.4006ms)\n✔ rollback/recovery procedure documents transactional commit, rollback, and no-dependency guarantees (0.135ms)\nℹ tests 5\nℹ suites 0\nℹ pass 5\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 1094.8412"
+    },
+    {
+      "taskId": "TASK-03-00337-INSPECTOR_CONTRACT",
+      "testCommand": "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-03-00337-inspector_contract\\tests\\main.test.mjs",
+      "exitCode": 0,
+      "stdoutTail": "✔ validateProjectShape accepts a well-formed project (0.1312ms)\n✔ validateFinding accepts a well-formed finding (0.1013ms)\n✔ validatePresetShape rejects a missing id (0.2491ms)\n✔ validateProjectShape rejects a non-semver formatVersion (0.1157ms)\n✔ validateProjectShape rejects presets that is not an array (0.0796ms)\n✔ validateFinding rejects an invalid severity (0.1127ms)\n✔ schema documents unsupported-format-rejection and repairable-only guarantees (0.2166ms)\nℹ tests 10\nℹ suites 0\nℹ pass 10\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 65.4191"
+    },
+    {
+      "taskId": "TASK-03-00338-INSPECTOR_IMPLEMENTATION",
+      "testCommand": "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-03-00338-inspector_implementation\\tests\\main.test.mjs",
+      "exitCode": 0,
+      "stdoutTail": "✔ applyRepairPlan never mutates the input project object (0.1256ms)\n✔ SAVE + REOPEN round-trip via the real AtomicSave primitive preserves the project exactly (6.0133ms)\n✔ DETERMINISM: buildInspectionReceipt is a pure function of (project, findings, repairPlan) (0.1491ms)\n✔ UNSUPPORTED-FORMAT REJECTION: a project with a foreign formatId is refused before any inspection (0.2894ms)\n✔ RECOVERY: a crash-orphaned AtomicSave temp file next to the project does not prevent a clean reopen (2.7448ms)\n✔ failure-path: reopenProject rejects a corrupted (truncated JSON) project file (2.1878ms)\n✔ failure-path: generateRepairPlan ignores a non-repairable finding rather than inventing a fix (0.0917ms)\nℹ tests 11\nℹ suites 0\nℹ pass 11\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 80.3924"
+    },
+    {
+      "taskId": "TASK-03-00339-INSPECTOR_TESTS",
+      "testCommand": "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-03-00339-inspector_tests\\tests\\main.test.mjs",
+      "exitCode": 0,
+      "stdoutTail": "✔ verify() smoke check (0.4526ms)\n✔ FULL VERTICAL SLICE: schema validation -> inspection -> findings -> repair-plan -> atomic save -> close/reopen -> deterministic receipt -> unsupported-format rejection -> recovery (4.5333ms)\n✔ a genuinely clean project produces a receipt with zero errors and zero repair actions (0.1097ms)\n✔ failure-path: a project claiming an unsupported format is rejected end-to-end, never partially inspected (0.0969ms)\n✔ failure-path: reopening a project whose file was deleted after save fails cleanly, not silently (1.6618ms)\nℹ tests 5\nℹ suites 0\nℹ pass 5\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 76.1978"
+    },
+    {
+      "taskId": "TASK-03-00340-INSPECTOR_EVIDENCE",
+      "testCommand": "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-03-00340-inspector_evidence\\tests\\main.test.mjs",
+      "exitCode": 0,
+      "stdoutTail": "✔ verify() smoke check (383.0703ms)\n✔ re-running the full vertical-slice test suite genuinely passes end-to-end (363.0035ms)\n✔ TEST HARNESS GUARD: zero discovered tests is FAIL (1.0355ms)\n✔ rollback/recovery procedure documents non-invention, purity, and scope-honesty guarantees (0.0943ms)\nℹ tests 4\nℹ suites 0\nℹ pass 4\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 812.1085"
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+    "status":  "KEYBOARD_PRO_ADOPTION_CANDIDATE_READY",
+    "candidate":  "arranger-integration",
+    "fullCommit":  "415db5123bf6f1851cca284f92fb8e3478ffd967",
+    "worktree":  "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-v15-execution\\keyboard-pro-415db512",
+    "modules":  [
+                    "Arranger Studio",
+                    "Generate My Set",
+                    "Magic Set Builder",
+                    "Set Doctor",
+                    "Catalog",
+                    "Preview",
+                    "Project format",
+                    "Safe export preparation"
+                ],
+    "missing":  [
+                    "Keyboard Converters"
+                ],
+    "banned":  [
+                   "Real KORG Writer",
+                   "USB",
+                   "Hardware Load",
+                   "SysEx"
+               ],
+    "tests":  [
+                  {
+                      "name":  "test:arranger-foundation",
+                      "exitCode":  0
+                  },
+                  {
+                      "name":  "check",
+                      "exitCode":  0
+                  },
+                  {
+                      "name":  "test:arranger-magic-set",
+                      "exitCode":  0
+                  },
+                  {
+                      "initialFail":  true,
+                      "exitCode":  0,
+                      "name":  "test:arranger-set-doctor",
+                      "note":  "retry after D: subst"
+                  },
+                  {
+                      "initialFail":  true,
+                      "exitCode":  0,
+                      "name":  "test:arranger-safe-export",
+                      "note":  "retry after D: subst"
+                  },
+                  {
+                      "name":  "build:desktop",
+                      "exitCode":  0
+                  }
+              ],
+    "appliedToOriginal":  false
+}

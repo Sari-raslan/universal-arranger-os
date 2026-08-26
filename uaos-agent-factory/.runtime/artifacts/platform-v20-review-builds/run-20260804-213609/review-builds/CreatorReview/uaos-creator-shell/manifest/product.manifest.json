@@ -1,0 +1,30 @@
+{
+  "title": "UAOS Creator Product Manifest",
+  "productId": "uaos.creator",
+  "schemaVersion": "uaos.creator.manifest/v1",
+  "displayName": "UAOS Creator",
+  "foundationVersion": "0.15.0",
+  "status": "SHELL_FOUNDATION",
+  "claims": {
+    "voiceToMidi": false,
+    "advancedHarmony": false,
+    "arrangementBrain": false,
+    "goldenSequencer": false,
+    "fullMultitrack": false,
+    "musicalBrainProductionQuality": false
+  },
+  "shellCapabilities": [
+    "product-manifest",
+    "project-contracts",
+    "capability-registry",
+    "feature-flags",
+    "entitlement-contracts",
+    "project-save-open-shell",
+    "command-bus",
+    "evidence-hooks",
+    "audio-midi-service-interfaces",
+    "sampler-adapter-interface",
+    "global-player-mixer-interface",
+    "placeholder-ui-shell"
+  ]
+}

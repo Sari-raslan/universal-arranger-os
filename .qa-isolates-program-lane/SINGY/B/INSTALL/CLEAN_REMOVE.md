@@ -1,0 +1,1 @@
+# Clean remove\n\n1. Run STOP bat\n2. Optionally copy DATA\\projects elsewhere\n3. Delete product folder\n4. User projects are never auto-deleted by Start\n

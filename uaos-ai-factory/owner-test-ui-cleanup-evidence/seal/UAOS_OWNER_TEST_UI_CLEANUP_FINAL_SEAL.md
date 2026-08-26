@@ -1,4 +1,4 @@
-# UAOS Owner Test UI Cleanup Final Seal
+﻿# UAOS Owner Test UI Cleanup Final Seal
 
 Owner Test UI Cleanup: PASS
 
@@ -24,4 +24,5 @@ USB: NO
 
 PA3X: NO
 
-Commit hash if committed: PENDING
+Commit hash if committed: fd895a4d3224390f9f8f05008fdbfc99fbd14a67
+

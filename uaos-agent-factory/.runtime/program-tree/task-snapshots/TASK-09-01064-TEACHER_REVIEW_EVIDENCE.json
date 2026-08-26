@@ -1,0 +1,38 @@
+{
+  "id": "TASK-09-01064-TEACHER_REVIEW_EVIDENCE",
+  "epicId": "EPIC-09-0010-SINGY_TEEN_FULL_TREE",
+  "domain": "09-SINGY-TEEN",
+  "title": "Teacher review evidence",
+  "phase": "EVIDENCE",
+  "releaseTrain": "R1-STABLE-COMMERCIAL",
+  "state": "READY",
+  "priority": 10,
+  "estimateMinutesMin": 30,
+  "estimateMinutesMax": 120,
+  "inputs": [],
+  "acceptanceCriteria": [
+    "Teacher review evidence contract file exists",
+    "Unit assertions pass for Teacher review evidence",
+    "Evidence JSON written with SHA256"
+  ],
+  "tests": [
+    "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-09-01064-teacher_review_evidence\\tests\\main.test.mjs"
+  ],
+  "evidence": [
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-09-01064-teacher_review_evidence/evidence/result.json"
+  ],
+  "allowedPaths": [
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-09-01064-teacher_review_evidence",
+    "C:\\keyboard-manager-clean\\uaos-agent-factory\\.runtime\\artifacts\\uaos-program-tree\\TASK-09-01064-TEACHER_REVIEW_EVIDENCE"
+  ],
+  "ownerFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-09-01064-teacher_review_evidence\\src\\teacher_review_evidence.mjs",
+  "worktree": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-09-01064-teacher_review_evidence",
+  "gate": null,
+  "blockedReason": null,
+  "rc1Critical": true,
+  "claims": [],
+  "lease": null,
+  "heartbeats": [],
+  "createdAt": "2026-08-04T20:47:04.336Z",
+  "updatedAt": "2026-08-04T20:49:34.267Z"
+}

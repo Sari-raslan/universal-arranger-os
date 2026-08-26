@@ -1,0 +1,24 @@
+{
+  "checkedAt": "2026-08-05T10:45:06.172Z",
+  "method": "Get-CimInstance Win32_Process -Filter \"Name='node.exe'\"",
+  "rawFindings": [
+    {
+      "pid": 21928,
+      "commandLine": "(permission-restricted)"
+    },
+    {
+      "pid": 27280,
+      "commandLine": "(permission-restricted)"
+    },
+    {
+      "pid": 28360,
+      "commandLine": "(permission-restricted)"
+    },
+    {
+      "pid": 28456,
+      "commandLine": "(permission-restricted)"
+    }
+  ],
+  "dispatcherOrSupervisorProcessFound": false,
+  "note": "4 node.exe processes observed, all permission-restricted command lines (consistent with every prior batch check). No recognizable dispatcher/supervisor/server process."
+}

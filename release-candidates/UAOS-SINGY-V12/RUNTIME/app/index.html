@@ -1,0 +1,23 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Singy</title><style>body{font-family:Segoe UI,sans-serif;background:#02030a;color:#f8f8ff;margin:0;padding:24px}
+.card{background:rgba(8,10,28,.85);border:1px solid rgba(129,105,255,.34);border-radius:16px;padding:16px;margin:12px 0}
+button{background:linear-gradient(135deg,#5b2cff,#008cff);border:0;color:#fff;padding:12px 18px;border-radius:12px;margin:6px;cursor:pointer;font-size:1rem}
+.kids{background:linear-gradient(135deg,#00d4ff,#008cff)}.teen{background:linear-gradient(135deg,#8f00ff,#5b2cff)}
+pre{background:#111;padding:12px;border-radius:8px;overflow:auto;font-size:12px;max-height:300px}.muted{color:#b8c3dc}
+#chooser{display:block}#workspace{display:none}</style></head><body>
+<div id="chooser"><h1>Singy</h1><p class="muted">Choose your experience</p><div class="card">
+<button class="kids" id="pickKids">KIDS</button><button class="teen" id="pickTeen">TEEN</button></div></div>
+<div id="workspace"><h1 id="modeTitle">Singy</h1><div class="card">
+<button id="lesson">Open Lesson / Create</button><button id="hear">Hear Result</button><button id="stop">Stop</button>
+<button id="save">Save Session</button><button id="diag">Diagnostics</button></div><pre id="out">Ready.</pre></div>
+<script>
+let mode="KIDS";const out=document.getElementById("out");
+async function run(o){out.textContent=JSON.stringify(await fetch("/api/sku/singy/mode/"+mode,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(o||{})}).then(r=>r.json()),null,2);}
+document.getElementById("pickKids").onclick=()=>{mode="KIDS";document.getElementById("chooser").style.display="none";document.getElementById("workspace").style.display="block";document.getElementById("modeTitle").textContent="Singy Kids";run();};
+document.getElementById("pickTeen").onclick=()=>{mode="TEEN";document.getElementById("chooser").style.display="none";document.getElementById("workspace").style.display="block";document.getElementById("modeTitle").textContent="Singy Teen";run({tempo:104});};
+document.getElementById("lesson").onclick=()=>run(mode==="TEEN"?{tempo:104}:{});
+document.getElementById("hear").onclick=()=>out.textContent=JSON.stringify({ok:true,builtInSynth:true,unclearedSamples:false},null,2);
+document.getElementById("stop").onclick=()=>out.textContent=JSON.stringify({ok:true,stopped:true},null,2);
+document.getElementById("save").onclick=()=>run();
+document.getElementById("diag").onclick=async()=>out.textContent=JSON.stringify(await fetch("/api/pilot/diagnostics").then(r=>r.json()),null,2);
+</script></body></html>

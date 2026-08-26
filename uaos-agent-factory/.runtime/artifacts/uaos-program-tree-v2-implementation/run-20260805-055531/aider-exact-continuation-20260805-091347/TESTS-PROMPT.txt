@@ -1,0 +1,16 @@
+Implement only the independent TEST phase for Export/Import User Data.
+
+The contract and implementation files are read-only authoritative inputs.
+Replace both editable placeholders with:
+1. a real independent test harness/helper module;
+2. comprehensive node:test integration coverage.
+
+Cover at least:
+successful export/import; UTF-8 and binary round trip; deterministic ordering/receipts;
+corrupted content; corrupted manifest; missing entry; unexpected strict-mode entry;
+duplicate normalized path; ../ traversal; absolute path; Windows drive path;
+checksum mismatch; transactional rollback; destination preservation after failure.
+
+The tests must import and exercise the real implementation, not reimplement it.
+Use temp directories and Node built-ins only.
+Do not edit any file except the two editable files supplied by Aider.

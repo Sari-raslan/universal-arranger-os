@@ -1,0 +1,33 @@
+{
+  "generatedAt": "2026-08-05T06:00:00.000Z",
+  "continuityVerification": "Read live TASKS.json/CURRENT-EXECUTION-STATE.json before selecting: REAL_DONE=32, RETRY_READY=316 before recalc / 313 after dependency repair recalc (0 change) - matches cited Batch 3 numbers exactly.",
+  "dependencyRepairSummary": "See DEPENDENCY-SEMANTICS-AUDIT.json and DEPENDENCY-REPAIR-APPLIED.json. Root cause = Option F (disconnected capability chains), proven by exact arithmetic (401 groups x 3 edges = 1203 = total edge count, 0 cross-group edges). 8 narrowly-scoped, evidence-based edges applied (static-import analysis of this session's own real production code), all between already-DONE tasks, 0 task-state changes resulted (as predicted).",
+  "chainA": {
+    "label": "Trial and Entitlement State",
+    "candidatesConsidered": ["TASK-01-00097-ENTITLEMENTS_CONTRACT", "TASK-01-00101-OFFLINE_TRIAL_CONTRACT"],
+    "tieScore": 91,
+    "selected": "TASK-01-00097-ENTITLEMENTS_CONTRACT",
+    "chain": ["TASK-01-00097-ENTITLEMENTS_CONTRACT", "TASK-01-00098-ENTITLEMENTS_IMPLEMENTATION", "TASK-01-00099-ENTITLEMENTS_TESTS", "TASK-01-00100-ENTITLEMENTS_EVIDENCE"],
+    "selectionReason": "Tied on unlockScore with Offline Trial. 'Entitlements' is the umbrella state machine matching the mission's own explicit required state model (TRIAL_NOT_STARTED/TRIAL_ACTIVE/TRIAL_EXPIRED_READ_ONLY/LICENSED/LICENSE_EXPIRED_READ_ONLY/LICENSE_INVALID/LICENSE_WRONG_PRODUCT), which combines trial AND license concepts rather than trial alone. It builds directly on Batch 3's Signed Licenses primitive."
+  },
+  "chainB": {
+    "label": "Commercial acceptance / user-data foundation",
+    "candidatesConsidered": ["TASK-01-00165-EXPORT_IMPORT_USER_DATA_CONTRACT", "TASK-01-00093-CAPABILITY_REGISTRY_CONTRACT"],
+    "tieScore": 91,
+    "selected": "TASK-01-00165-EXPORT_IMPORT_USER_DATA_CONTRACT",
+    "chain": ["TASK-01-00165-EXPORT_IMPORT_USER_DATA_CONTRACT", "TASK-01-00166-EXPORT_IMPORT_USER_DATA_IMPLEMENTATION", "TASK-01-00167-EXPORT_IMPORT_USER_DATA_TESTS", "TASK-01-00168-EXPORT_IMPORT_USER_DATA_EVIDENCE"],
+    "selectionReason": "Tied on unlockScore with Capability Registry. The mission gives a fully-specified example pipeline for exactly this capability (user data -> export archive -> checksum -> clean destination -> import -> validation -> corrupted archive rejection) plus a dedicated ARCHIVE/USER-DATA SAFETY test-harness-guard section (path traversal, absolute paths, duplicate entries, checksums, transactional overwrite) - the mission's own detail level signals this is the intended choice."
+  },
+  "chainC_verticalSlice": {
+    "productScoresSummary": "See PRODUCT-VERTICAL-SLICE-SCORES.json. Ranked by raw ready-rc1Critical count: studio-pro(30) > creator(27) > library-factory(25) > keyboard-pro(18) > singy-kids(16) > singy-teen(14).",
+    "rawTopScore": "studio-pro",
+    "selected": "keyboard-pro",
+    "selectionReason": "The mission's explicit preferred order places Keyboard Pro first and explicitly instructs avoiding a repeat of Studio/Library 'unless their current tasks have significantly higher real unlock value'. Studio Pro's lead (30 vs 18) is real but not so dramatic as to override the mission's own stated product-diversity preference, especially since Studio Pro and Library Factory both already have a complete, proven vertical slice from Batches 2-3 and neither's remaining ready tasks offer a materially different pipeline shape. Keyboard Pro has never been touched and has a genuine, sufficient ready set (18 tasks, only 1 gated elsewhere in the domain, the selected chain itself gate:null) to build a real input-to-output slice.",
+    "chain": ["TASK-03-00337-INSPECTOR_CONTRACT", "TASK-03-00338-INSPECTOR_IMPLEMENTATION", "TASK-03-00339-INSPECTOR_TESTS", "TASK-03-00340-INSPECTOR_EVIDENCE"],
+    "pipelineStages": "INPUT (an internal UAOS keyboard project file, procedurally built in-test) -> SCHEMA VALIDATION (structural checks) -> INSPECTION (scan for real issues: missing required fields, out-of-range values, unsupported format markers) -> FINDINGS (a structured list of concrete problems found) -> REPAIR-PLAN GENERATION (a deterministic, ordered list of proposed fixes for each finding) -> ATOMIC SAVE (Batch 1's AtomicSave, saving the repair plan / repaired project) -> CLOSE/REOPEN -> DETERMINISTIC RECEIPT (a reproducible summary of what was inspected/repaired) -> UNSUPPORTED-FORMAT REJECTION (a project claiming an unrecognized/unsupported internal format is rejected, never silently 'repaired' into something invented) -> RECOVERY (a corrupted project file is detected and handled via Batch 2's Recovery primitive, not silently accepted)."
+  },
+  "totalTasksSelected": 12,
+  "chainsUsed": 3,
+  "fileConflictCheck": "Every selected task has its own dedicated worktree directory - verified 0 conflicts in FILE-OWNERSHIP-PLAN.json.",
+  "gatedTasksExcluded": "Confirmed all 12 selected tasks have gate: null in TASKS.json."
+}

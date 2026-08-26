@@ -1,0 +1,36 @@
+{
+  "schemaVersion": "uaos.converter.dryrun/v1",
+  "ok": true,
+  "steps": [
+    {
+      "order": 1,
+      "id": "inspect",
+      "type": "inspect",
+      "status": "WOULD_RUN"
+    },
+    {
+      "order": 2,
+      "id": "map",
+      "type": "map",
+      "from": "uaos.project/v1",
+      "to": "uaos.project/v1",
+      "status": "WOULD_RUN"
+    },
+    {
+      "order": 3,
+      "id": "validate",
+      "type": "validate",
+      "status": "WOULD_RUN"
+    },
+    {
+      "order": 4,
+      "id": "write",
+      "type": "write",
+      "outputMode": "new-directory-only",
+      "status": "WOULD_RUN"
+    }
+  ],
+  "proprietaryWriters": false,
+  "usb": false,
+  "sysex": false
+}

@@ -1,0 +1,159 @@
+{
+  "sku": "uaos-midi-toolkit",
+  "version": "v10-rc1",
+  "modes": [
+    "AUDIO_TO_MIDI",
+    "MIDI_INSPECT_AND_CLEAN",
+    "MIDI_NORMALIZE",
+    "FORMAT_INSPECT",
+    "CONVERT_WHERE_VERIFIED"
+  ],
+  "voice": {
+    "ok": true,
+    "fromNotes": {
+      "ok": true,
+      "noteCount": 5,
+      "musicalQualityClaim": false
+    },
+    "fromWavAnalysis": {
+      "ok": true,
+      "note": "Sine fixture is analysis-only; not owner musical proof",
+      "musicalQualityClaim": false
+    },
+    "roundtripOk": true,
+    "BLOCKED_EXTERNAL_GATES": [
+      "HARDWARE_REQUIRED:microphone"
+    ],
+    "ownerMusicalQualityPass": false,
+    "capabilityId": "uaos.voice.melody-to-midi.finalize/v1"
+  },
+  "keyboard": {
+    "ok": true,
+    "inspected": {
+      "ok": true,
+      "level": "INSPECT",
+      "family": "korg",
+      "hexPreview": "4b4f524720534554204d455441204f4e4c59",
+      "strings": [
+        "KORG SET META ONLY"
+      ],
+      "proprietary": true,
+      "deepParserNeeded": true,
+      "write": "FORMAT_CONTRACT_REQUIRED",
+      "musicalQualityClaim": false
+    },
+    "project": {
+      "schema": "uaos.keyboard-pro.inspection/v1",
+      "name": "toolkit-inspect",
+      "createdAt": "2026-08-25T07:39:27.360Z",
+      "entries": [
+        {
+          "path": "sample.set",
+          "size": 18,
+          "sha256": "6e4b3e26328936ec59a124447e05a5578bb03f84d696d3fc6a3b53c9acdbbd22",
+          "family": "korg",
+          "level": "INSPECT"
+        }
+      ],
+      "write": "FORMAT_CONTRACT_REQUIRED",
+      "hardwareWrite": "HARDWARE_REQUIRED",
+      "commercialReady": false,
+      "envelopeSha256": "b6c5f4f8d81da1de671f59f7cc89ada169ef1df77f596dc26aabe33114e07482"
+    },
+    "verified": {
+      "ok": true,
+      "live": "b6c5f4f8d81da1de671f59f7cc89ada169ef1df77f596dc26aabe33114e07482",
+      "expected": "b6c5f4f8d81da1de671f59f7cc89ada169ef1df77f596dc26aabe33114e07482"
+    },
+    "write": {
+      "ok": false,
+      "errorCode": "FORMAT_CONTRACT_REQUIRED"
+    },
+    "convertFromIr": {
+      "ok": false,
+      "errorCode": "FORMAT_CONTRACT_REQUIRED"
+    },
+    "BLOCKED_EXTERNAL_GATES": [
+      "FORMAT_CONTRACT_REQUIRED",
+      "HARDWARE_REQUIRED"
+    ],
+    "commercialReady": false,
+    "capabilityId": "uaos.keyboard-pro.finalize/v1"
+  },
+  "converter": {
+    "ok": true,
+    "midi": {
+      "level": "ROUNDTRIP_VERIFIED",
+      "ok": true
+    },
+    "sysex": {
+      "level": "INSPECT",
+      "ok": true,
+      "write": "HARDWARE_REQUIRED"
+    },
+    "proprietary": {
+      "level": "INSPECT",
+      "write": "FORMAT_CONTRACT_REQUIRED",
+      "families": [
+        "sysex",
+        "korg",
+        "yamaha",
+        "roland",
+        "ketron"
+      ]
+    },
+    "matrix": [
+      {
+        "family": "midi",
+        "maxProven": "ROUNDTRIP_VERIFIED",
+        "write": false,
+        "note": "in-memory SMF only"
+      },
+      {
+        "family": "sysex",
+        "maxProven": "INSPECT",
+        "write": false,
+        "gate": "HARDWARE_REQUIRED"
+      },
+      {
+        "family": "korg",
+        "maxProven": "INSPECT",
+        "write": false,
+        "gate": "FORMAT_CONTRACT_REQUIRED"
+      },
+      {
+        "family": "yamaha",
+        "maxProven": "INSPECT",
+        "write": false,
+        "gate": "FORMAT_CONTRACT_REQUIRED"
+      },
+      {
+        "family": "roland",
+        "maxProven": "INSPECT",
+        "write": false,
+        "gate": "FORMAT_CONTRACT_REQUIRED"
+      },
+      {
+        "family": "ketron",
+        "maxProven": "INSPECT",
+        "write": false,
+        "gate": "FORMAT_CONTRACT_REQUIRED"
+      }
+    ],
+    "BLOCKED_EXTERNAL_GATES": [
+      "FORMAT_CONTRACT_REQUIRED",
+      "HARDWARE_REQUIRED"
+    ],
+    "commercialReady": false,
+    "capabilityId": "uaos.converter.finalize/v1"
+  },
+  "neutralIr": true,
+  "externalGates": [
+    "HARDWARE_REQUIRED:microphone",
+    "FORMAT_CONTRACT_REQUIRED",
+    "HARDWARE_REQUIRED"
+  ],
+  "publicRelease": false,
+  "differentiation": "AUDIO/MIDI → context-aware analysis → Neutral IR → safe conversion → Arranger Studio path",
+  "pilotReady": true
+}

@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>UAOS Owner Listening</title>
+  <style>
+    :root {
+      --bg: #0c1018;
+      --panel: #151b27;
+      --line: #2a3448;
+      --text: #eef3ff;
+      --muted: #93a0b8;
+      --accent: #7cb7ff;
+      --good: #5dcea4;
+      --warn: #e3b341;
+      --stop: #ef7b7b;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Tahoma, sans-serif;
+      background: radial-gradient(1200px 500px at 10% -10%, #1a2740, var(--bg));
+      color: var(--text);
+    }
+    header, main { max-width: 1100px; margin: 0 auto; padding: 20px; }
+    h1 { margin: 0 0 8px; font-size: 1.55rem; }
+    .banner {
+      background: #2a1f12;
+      border: 1px solid #6b4e22;
+      color: #f3d9a2;
+      padding: 12px 14px;
+      border-radius: 12px;
+      margin: 12px 0 18px;
+    }
+    .grid { display: grid; grid-template-columns: 280px 1fr; gap: 16px; }
+    @media (max-width: 860px) { .grid { grid-template-columns: 1fr; } }
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 16px;
+    }
+    button, .chip {
+      border: 0;
+      border-radius: 10px;
+      padding: 10px 12px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+    .row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+    .track {
+      width: 100%;
+      text-align: right;
+      background: #101722;
+      color: var(--text);
+      border: 1px solid var(--line);
+      margin-bottom: 8px;
+    }
+    .track.active { border-color: var(--accent); background: #182235; }
+    .transport button { background: #223049; color: white; min-width: 92px; }
+    .ab button { background: #2b3b2f; color: #d9ffe8; }
+    .fix { background: var(--warn); color: #1a1404; }
+    .pass { background: var(--good); color: #06281c; }
+    .muted { color: var(--muted); font-size: 0.92rem; line-height: 1.45; }
+    .sha { font-family: ui-monospace, Consolas, monospace; font-size: 0.78rem; word-break: break-all; }
+    textarea {
+      width: 100%;
+      min-height: 90px;
+      background: #0f1520;
+      color: var(--text);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 10px;
+    }
+    audio { width: 100%; margin: 10px 0; }
+    dialog { border: 1px solid var(--line); border-radius: 16px; background: #121826; color: var(--text); max-width: 460px; }
+    label { display: block; margin: 8px 0; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>واجهة استماع المالك / Owner Listening</h1>
+    <p class="muted">TASK-05-00605 يبقى OWNER_GATE. تشغيل الملفات ليس موافقة. الصمت ليس موافقة. لا نشر ولا Release من هذه الصفحة.</p>
+    <div class="banner">قرار المالك: <b>NEEDS_FIXES</b> (من المحادثة، ليس من زر الواجهة). الأمثلة 01–04 و06 مقبولة. أعد الاستماع <b>للمثال 05 فقط</b>: OLD 05 ↔ FIXED 05. التشغيل ليس PASS.</div>
+  </header>
+  <main class="grid">
+    <aside class="card">
+      <h2>الأمثلة بالترتيب</h2>
+      <div id="list"></div>
+      <p class="muted" id="hashStatus">التحقق من SHA256…</p>
+    </aside>
+    <section class="card">
+      <div class="row">
+        <strong id="title">—</strong>
+        <span class="chip" id="duration"></span>
+      </div>
+      <p class="muted" id="purpose"></p>
+      <p><b>استمع إلى:</b> <span id="listenFor"></span></p>
+      <p class="sha" id="sha"></p>
+      <audio id="player" controls></audio>
+      <div class="row transport">
+        <button type="button" id="prev">Previous</button>
+        <button type="button" id="play">Play</button>
+        <button type="button" id="pause">Pause</button>
+        <button type="button" id="next">Next</button>
+        <button type="button" id="playAll">تشغيل الكل بالترتيب</button>
+      </div>
+      <div id="ab" class="row ab" style="margin-top:12px"></div>
+      <h3>ملاحظات هذا المثال</h3>
+      <textarea id="note" placeholder="اكتب ما الذي يحتاج إصلاحًا في هذا المثال"></textarea>
+      <h3>ملاحظة عامة</h3>
+      <textarea id="overall" placeholder="ملاحظات عامة للحزمة كلها"></textarea>
+      <div class="row" style="margin-top:12px">
+        <button type="button" class="fix" id="needsFixes">NEEDS_FIXES</button>
+        <button type="button" class="pass" id="pass">PASS (محلي فقط)</button>
+      </div>
+      <p class="muted" id="decisionStatus">OWNER_DECISION=PENDING</p>
+    </section>
+  </main>
+  <dialog id="passDialog">
+    <form method="dialog">
+      <h3>تأكيد PASS المحلي</h3>
+      <p class="muted">هذا لا ينشر المنتج ولا يغيّر السعر ولا يكتب على العتاد. يسجّل فقط قرار استماع محلي.</p>
+      <label><input type="checkbox" id="confirmListen" /> استمعت للأمثلة الموسيقية</label>
+      <label><input type="checkbox" id="confirmNoRelease" /> أؤكد أن هذا ليس Public Release / Deploy</label>
+      <div class="row">
+        <button value="cancel">إلغاء</button>
+        <button id="confirmPass" value="default">تسجيل PASS المحلي</button>
+      </div>
+    </form>
+  </dialog>
+  <script>
+    const KEY = "uaos-owner-listening-notes-v1";
+    const state = { examples: [], index: 0, playAll: false, notes: {}, played: [] };
+    const $ = (id) => document.getElementById(id);
+    const wavSrc = (id) => {
+      if (id === "old-05-rejected-major-pop") return "musical-examples/old-05-rejected-major-pop.wav";
+      return "musical-examples/" + id + ".wav";
+    };
+
+    function loadNotes() {
+      try { state.notes = JSON.parse(localStorage.getItem(KEY) || "{}"); } catch { state.notes = {}; }
+      $("overall").value = state.notes.__overall || "";
+    }
+    function saveNotes() {
+      state.notes[state.examples[state.index]?.id] = $("note").value;
+      state.notes.__overall = $("overall").value;
+      localStorage.setItem(KEY, JSON.stringify(state.notes));
+    }
+
+    function current() { return state.examples[state.index]; }
+
+    function renderList() {
+      $("list").innerHTML = state.examples.map((ex, i) =>
+        `<button type="button" class="track ${i === state.index ? "active" : ""}" data-i="${i}">${String(i + 1).padStart(2, "0")} — ${ex.title}</button>`
+      ).join("");
+      $("list").onclick = (e) => {
+        const i = e.target.dataset.i;
+        if (i != null) select(Number(i));
+      };
+    }
+
+    function renderAb() {
+      const ex = current();
+      const pairs = [];
+      pairs.push(["old-05-rejected-major-pop", "05-alternative-in-context", "A/B OLD 05 ↔ FIXED 05"]);
+      if (ex.id === "03-before-raw-melody" || ex.id === "04-after-arranged") {
+        pairs.push(["03-before-raw-melody", "04-after-arranged", "A/B قبل وبعد التوزيع"]);
+      }
+      pairs.push(["04-after-arranged", "05-alternative-in-context", "مرجع 04 ↔ FIXED 05"]);
+      $("ab").innerHTML = pairs.map((p) =>
+        `<button type="button" data-id="${p[0]}">${p[2]}: A</button>` +
+        `<button type="button" data-id="${p[1]}">${p[2]}: B</button>`
+      ).join("");
+      $("ab").onclick = (e) => {
+        const id = e.target.dataset.id;
+        if (!id) return;
+        if (id === "old-05-rejected-major-pop") {
+          playExternal({
+            id,
+            title: "OLD 05 — rejected major-pop rewrite",
+            DURATION: 11.037,
+            SAMPLE_RATE: 44100,
+            EXPECTED_CAPABILITY: "Rejected: outside Hijaz harmonic context.",
+            SOURCE_INPUT: "C-major rewrite of the Hijaz phrase.",
+            WHAT_OWNER_SHOULD_LISTEN_FOR: "This is the rejected 05. Compare with FIXED 05.",
+            SHA256: "5be395e999b82835dc0479208d364225737c8fbed5f6832a4b2a6936d188db58"
+          });
+          return;
+        }
+        const i = state.examples.findIndex((x) => x.id === id);
+        if (i >= 0) select(i, true);
+      };
+    }
+
+    function playExternal(ex) {
+      $("title").textContent = ex.title;
+      $("duration").textContent = Number(ex.DURATION).toFixed(3) + "s / " + ex.SAMPLE_RATE + " Hz";
+      $("purpose").textContent = ex.EXPECTED_CAPABILITY + " — " + (ex.SOURCE_INPUT || "");
+      $("listenFor").textContent = ex.WHAT_OWNER_SHOULD_LISTEN_FOR;
+      $("sha").textContent = "SHA256 " + ex.SHA256;
+      const player = $("player");
+      player.src = wavSrc(ex.id);
+      player.play();
+    }
+
+    function select(i, keepPlay) {
+      saveNotes();
+      state.index = Math.max(0, Math.min(state.examples.length - 1, i));
+      const ex = current();
+      $("title").textContent = ex.title;
+      $("duration").textContent = Number(ex.DURATION).toFixed(3) + "s / " + ex.SAMPLE_RATE + " Hz";
+      $("purpose").textContent = ex.EXPECTED_CAPABILITY + " — " + (ex.SOURCE_INPUT || "");
+      $("listenFor").textContent = ex.WHAT_OWNER_SHOULD_LISTEN_FOR;
+      $("sha").textContent = "SHA256 " + ex.SHA256;
+      $("note").value = state.notes[ex.id] || "";
+      const player = $("player");
+      const wasPlaying = keepPlay || (!player.paused && !player.ended);
+      player.src = wavSrc(ex.id);
+      if (wasPlaying) player.play();
+      renderList();
+      renderAb();
+    }
+
+    function markPlayed() {
+      const id = current()?.id;
+      if (id && !state.played.includes(id)) state.played.push(id);
+      fetch("/api/played", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ id }) });
+    }
+
+    async function submit(decision, extra = {}) {
+      saveNotes();
+      const notesByExample = {};
+      for (const ex of state.examples) notesByExample[ex.id] = state.notes[ex.id] || "";
+      const body = {
+        decision,
+        explicitOwnerClick: true,
+        autoApprove: false,
+        fromPlayback: false,
+        notesByExample,
+        overallNotes: $("overall").value,
+        examplesPlayed: state.played,
+        ...extra
+      };
+      const res = await fetch("/api/decision", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) });
+      const json = await res.json();
+      $("decisionStatus").textContent = json.ok
+        ? ("OWNER_DECISION=" + json.record.decision + " (محلي، بلا نشر)")
+        : ("فشل التسجيل: " + json.errorCode);
+    }
+
+    $("play").onclick = () => { $("player").play(); markPlayed(); };
+    $("pause").onclick = () => $("player").pause();
+    $("prev").onclick = () => select(state.index - 1);
+    $("next").onclick = () => select(state.index + 1);
+    $("playAll").onclick = () => { state.playAll = true; select(0, true); $("player").play(); markPlayed(); };
+    $("player").addEventListener("play", markPlayed);
+    $("player").addEventListener("ended", () => {
+      if (state.playAll && state.index < state.examples.length - 1) select(state.index + 1, true);
+      else state.playAll = false;
+    });
+    $("note").addEventListener("input", saveNotes);
+    $("overall").addEventListener("input", saveNotes);
+    $("needsFixes").onclick = () => submit("OWNER_MUSICAL_LISTENING_NEEDS_FIXES");
+    $("pass").onclick = () => $("passDialog").showModal();
+    $("confirmPass").onclick = (e) => {
+      e.preventDefault();
+      if (!$("confirmListen").checked || !$("confirmNoRelease").checked) {
+        $("decisionStatus").textContent = "يلزم التأكيدان قبل PASS.";
+        return;
+      }
+      $("passDialog").close();
+      submit("OWNER_MUSICAL_LISTENING_PASS", { confirmPass: true, confirmNoRelease: true });
+    };
+
+    Promise.all([
+      fetch("/real-musical-catalog.json").then((r) => r.json()),
+      fetch("/api/status").then((r) => r.json()),
+      fetch("/api/decision").then((r) => r.json())
+    ]).then(([catalog, status, decision]) => {
+      state.examples = catalog.examples;
+      loadNotes();
+      const relisten = catalog.relisten || {};
+      const idx = state.examples.findIndex((x) => x.id === (relisten.fixed?.id || "05-alternative-in-context"));
+      select(idx >= 0 ? idx : 0);
+      const hv = status.hashVerify || {};
+      $("hashStatus").textContent = "WAV_COUNT=" + hv.wavCount + " UNIQUE_SHA256=" + hv.uniqueSha256 + " HASH_MATCH=" + (hv.hashMatch ? "YES" : "NO");
+      $("decisionStatus").textContent = "OWNER_DECISION=" + (decision.decision || "PENDING");
+    });
+  </script>
+</body>
+</html>

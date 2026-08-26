@@ -1,0 +1,86 @@
+{
+    "pass":  14,
+    "fail":  0,
+    "results":  [
+                    {
+                        "afterRetry":  null,
+                        "exitCode":  0,
+                        "name":  "check",
+                        "lane":  "library"
+                    },
+                    {
+                        "name":  "test:sampler",
+                        "exitCode":  0,
+                        "lane":  "library"
+                    },
+                    {
+                        "initialFail":  true,
+                        "exitCode":  0,
+                        "name":  "test:library-validator",
+                        "note":  "retry after D: subst",
+                        "lane":  "library"
+                    },
+                    {
+                        "initialFail":  true,
+                        "exitCode":  0,
+                        "name":  "test:preview-player",
+                        "note":  "retry after D: subst",
+                        "lane":  "library"
+                    },
+                    {
+                        "name":  "build:desktop",
+                        "exitCode":  0,
+                        "lane":  "library"
+                    },
+                    {
+                        "name":  "test:arranger-foundation",
+                        "exitCode":  0,
+                        "lane":  "keyboard"
+                    },
+                    {
+                        "name":  "check",
+                        "exitCode":  0,
+                        "lane":  "keyboard"
+                    },
+                    {
+                        "name":  "test:arranger-magic-set",
+                        "exitCode":  0,
+                        "lane":  "keyboard"
+                    },
+                    {
+                        "initialFail":  true,
+                        "exitCode":  0,
+                        "name":  "test:arranger-set-doctor",
+                        "note":  "retry after D: subst",
+                        "lane":  "keyboard"
+                    },
+                    {
+                        "initialFail":  true,
+                        "exitCode":  0,
+                        "name":  "test:arranger-safe-export",
+                        "note":  "retry after D: subst",
+                        "lane":  "keyboard"
+                    },
+                    {
+                        "name":  "build:desktop",
+                        "exitCode":  0,
+                        "lane":  "keyboard"
+                    },
+                    {
+                        "name":  "foundation.test",
+                        "exitCode":  0,
+                        "lane":  "creator"
+                    },
+                    {
+                        "name":  "build",
+                        "exitCode":  0,
+                        "lane":  "creator"
+                    },
+                    {
+                        "exitCode":  0,
+                        "name":  "project-system.test",
+                        "suite":  "STUDIO-E10-PROJECT-SYSTEM",
+                        "lane":  "studio"
+                    }
+                ]
+}

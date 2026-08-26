@@ -1,0 +1,28 @@
+{
+    "risks":  [
+                  {
+                      "mitigation":  "Greenfield only",
+                      "id":  "R1",
+                      "text":  "No legacy Studio Pro source",
+                      "severity":  "HIGH"
+                  },
+                  {
+                      "mitigation":  "forbid mock-as-pass",
+                      "id":  "R2",
+                      "text":  "Audio quality claims without real harness",
+                      "severity":  "HIGH"
+                  },
+                  {
+                      "mitigation":  "contract boundary",
+                      "id":  "R3",
+                      "text":  "Sampler coupling to Library Factory",
+                      "severity":  "MEDIUM"
+                  },
+                  {
+                      "mitigation":  "reuse contracts not forks",
+                      "id":  "R4",
+                      "text":  "Kids/Teen undecided may delay shared player reuse",
+                      "severity":  "MEDIUM"
+                  }
+              ]
+}

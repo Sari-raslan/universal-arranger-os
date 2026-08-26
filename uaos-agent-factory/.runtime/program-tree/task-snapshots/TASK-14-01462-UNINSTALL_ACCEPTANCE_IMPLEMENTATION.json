@@ -1,0 +1,38 @@
+{
+  "id": "TASK-14-01462-UNINSTALL_ACCEPTANCE_IMPLEMENTATION",
+  "epicId": "EPIC-14-0015-QA_RELEASE_OPERATIONS",
+  "domain": "14-QA-RELEASE-OPERATIONS",
+  "title": "Uninstall acceptance implementation",
+  "phase": "IMPLEMENT",
+  "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+  "state": "READY",
+  "priority": 9,
+  "estimateMinutesMin": 60,
+  "estimateMinutesMax": 240,
+  "inputs": [],
+  "acceptanceCriteria": [
+    "Uninstall acceptance implementation contract file exists",
+    "Unit assertions pass for Uninstall acceptance implementation",
+    "Evidence JSON written with SHA256"
+  ],
+  "tests": [
+    "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-14-01462-uninstall_acceptance_implementation\\tests\\main.test.mjs"
+  ],
+  "evidence": [
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-14-01462-uninstall_acceptance_implementation/evidence/result.json"
+  ],
+  "allowedPaths": [
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-14-01462-uninstall_acceptance_implementation",
+    "C:\\keyboard-manager-clean\\uaos-agent-factory\\.runtime\\artifacts\\uaos-program-tree\\TASK-14-01462-UNINSTALL_ACCEPTANCE_IMPLEMENTATION"
+  ],
+  "ownerFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-14-01462-uninstall_acceptance_implementation\\src\\uninstall_acceptance_implementat.mjs",
+  "worktree": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-14-01462-uninstall_acceptance_implementation",
+  "gate": null,
+  "blockedReason": null,
+  "rc1Critical": true,
+  "claims": [],
+  "lease": null,
+  "heartbeats": [],
+  "createdAt": "2026-08-04T20:47:04.341Z",
+  "updatedAt": "2026-08-04T20:49:23.266Z"
+}

@@ -17,4 +17,4 @@ USB write: NO
 PA3X load: NO
 Deploy: NO
 Payment activation: NO
-Commit hash if committed: PENDING
+Commit hash if committed: 532b04f522ba007b8d1eafb912960de04f87010d

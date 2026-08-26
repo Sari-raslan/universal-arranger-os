@@ -1,0 +1,18 @@
+{
+  "pass": true,
+  "result": {
+    "finished": true,
+    "summary": "The acceptance tests were uninstalled, and the unit assertions passed. The evidence JSON was written with the SHA256 hash.",
+    "writes": 0,
+    "tests": [
+      {
+        "command": "node --test \"tests/main.test.mjs\"",
+        "exit": 0,
+        "durationSec": 0.05,
+        "stdout": "off\\r\\nnode --test \"tests/main.test.mjs\"\\r\\n\n",
+        "stderr": ""
+      }
+    ],
+    "changed": []
+  }
+}

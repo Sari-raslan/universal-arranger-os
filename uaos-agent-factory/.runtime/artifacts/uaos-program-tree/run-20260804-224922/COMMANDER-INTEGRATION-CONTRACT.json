@@ -1,0 +1,19 @@
+{
+  "schema": "uaos.commander-adapter-contract/v1",
+  "status": "COMMANDER_INTEGRATION_CONTRACT_READY_NOT_ACTIVATED",
+  "note": "Do not open or modify Commander repository. Contract only.",
+  "endpoints": [
+    "listTasks",
+    "claimTask",
+    "renewLease",
+    "reportHeartbeat",
+    "reportProgress",
+    "attachEvidence",
+    "submitResult",
+    "requestReview",
+    "releaseClaim",
+    "pauseQueue",
+    "resumeQueue"
+  ],
+  "activation": false
+}

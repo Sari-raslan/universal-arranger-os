@@ -1,0 +1,64 @@
+{
+    "PRODUCT_SINGY_CREATOR":  {
+                                  "requiredAnyOf":  [
+                                                        "voice-to-midi",
+                                                        "melody",
+                                                        "harmony",
+                                                        "chord",
+                                                        "song structure",
+                                                        "sequencer",
+                                                        "creator UI"
+                                                    ],
+                                  "minHits":  2
+                              },
+    "PRODUCT_SINGY_KEYBOARD_PRO":  {
+                                       "requiredAnyOf":  [
+                                                             "arranger",
+                                                             "set doctor",
+                                                             "magic set",
+                                                             "keyboard converter",
+                                                             "generate my set"
+                                                         ],
+                                       "minHits":  2
+                                   },
+    "PRODUCT_SINGY_STUDIO_PRO":  {
+                                     "requiredAnyOf":  [
+                                                           "multitrack",
+                                                           "mixer",
+                                                           "player",
+                                                           "audio/MIDI project",
+                                                           "stems"
+                                                       ],
+                                     "minHits":  2
+                                 },
+    "PRODUCT_SINGY_KIDS":  {
+                               "requiredAnyOf":  [
+                                                     "kids UI",
+                                                     "age",
+                                                     "safe chat",
+                                                     "story to song",
+                                                     "instrument learning",
+                                                     "student"
+                                                 ],
+                               "minHits":  2
+                           },
+    "PRODUCT_SINGY_TEEN":  {
+                               "requiredAnyOf":  [
+                                                     "teen UI",
+                                                     "teen creator",
+                                                     "age",
+                                                     "safe chat"
+                                                 ],
+                               "minHits":  2
+                           },
+    "PRODUCT_UAOS_LIBRARY_FACTORY":  {
+                                         "requiredAnyOf":  [
+                                                               "builder",
+                                                               "catalog",
+                                                               "sampler",
+                                                               "packaging",
+                                                               "license ledger"
+                                                           ],
+                                         "minHits":  2
+                                     }
+}

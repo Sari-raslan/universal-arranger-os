@@ -1,0 +1,17 @@
+﻿UAOS V1 FINAL RUN REPORT
+Time: 06/10/2026 11:23:28
+Repo: C:\Users\ssare\Desktop\UAOS_ALL_AGENTS_FINAL_RUN\universal-arranger-os
+BuildExitCode: 1
+
+Local commands:
+powershell -ExecutionPolicy Bypass -File "C:\Users\ssare\Desktop\UAOS_ALL_AGENTS_FINAL_RUN\universal-arranger-os\scripts\UAOS_START_LOCAL_MONITOR.ps1"
+
+Manual test:
+http://localhost:5173
+http://localhost:8090/health
+http://localhost:8090/scan
+http://localhost:8090/api/status
+
+Deploy:
+vercel --prod --yes
+

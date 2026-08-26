@@ -1,0 +1,35 @@
+{
+  "taskId": "TASK-14-01424-UNIT_TESTS_FABRIC_EVIDENCE",
+  "agentId": "NODE_LOCAL_WORKER-0171",
+  "startedAt": "2026-08-04T20:47:50.691Z",
+  "endedAt": "2026-08-04T20:47:50.818Z",
+  "status": "PASS",
+  "tests": [
+    {
+      "command": "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-14-01424-unit_tests_fabric_evidence\\tests\\main.test.mjs",
+      "exitCode": 0,
+      "stdoutTail": "✔ TASK-14-01424-UNIT_TESTS_FABRIC_EVIDENCE verify (0.5612ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 68.2783\n"
+    }
+  ],
+  "sha256": "A3492FEB75864DE9040AE3F09FEEE347831F710AB3F7EE88FE672BC570780652",
+  "allowedPathsUsed": [
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-14-01424-unit_tests_fabric_evidence",
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-14-01424-unit_tests_fabric_evidence\\src\\unit_tests_fabric_evidence.mjs",
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-14-01424-unit_tests_fabric_evidence\\tests\\main.test.mjs"
+  ],
+  "truthStatements": [
+    "Technical WAV success does not prove musical quality",
+    "Fixtures are not product content",
+    "Studio Offline Render is not Real-time DSP",
+    "KORG WRITE_UNSUPPORTED",
+    "No auto adoption of Kids/Teen/Pricing",
+    "Commander not activated"
+  ],
+  "ownerFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-14-01424-unit_tests_fabric_evidence\\src\\unit_tests_fabric_evidence.mjs",
+  "phase": "EVIDENCE",
+  "gate": null,
+  "noPush": true,
+  "noMerge": true,
+  "noDeploy": true,
+  "commanderActivated": false
+}

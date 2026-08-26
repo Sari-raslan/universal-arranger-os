@@ -1,0 +1,35 @@
+{
+  "taskId": "TASK-04-00493-ROUND_TRIP_FIXTURES_CONTRACT",
+  "agentId": "NODE_LOCAL_WORKER-0109",
+  "startedAt": "2026-08-04T20:47:09.249Z",
+  "endedAt": "2026-08-04T20:47:09.376Z",
+  "status": "PASS",
+  "tests": [
+    {
+      "command": "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-04-00493-round_trip_fixtures_contract\\tests\\main.test.mjs",
+      "exitCode": 0,
+      "stdoutTail": "✔ TASK-04-00493-ROUND_TRIP_FIXTURES_CONTRACT verify (0.6183ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 70.6678\n"
+    }
+  ],
+  "sha256": "C45E563F570F23CFAA09A061CED77A1DC76DD0564CACBA73029A6E3BEDFFE7D2",
+  "allowedPathsUsed": [
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-04-00493-round_trip_fixtures_contract",
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-04-00493-round_trip_fixtures_contract\\src\\round_trip_fixtures_contract.mjs",
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-04-00493-round_trip_fixtures_contract\\tests\\main.test.mjs"
+  ],
+  "truthStatements": [
+    "Technical WAV success does not prove musical quality",
+    "Fixtures are not product content",
+    "Studio Offline Render is not Real-time DSP",
+    "KORG WRITE_UNSUPPORTED",
+    "No auto adoption of Kids/Teen/Pricing",
+    "Commander not activated"
+  ],
+  "ownerFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-04-00493-round_trip_fixtures_contract\\src\\round_trip_fixtures_contract.mjs",
+  "phase": "DEFINE",
+  "gate": null,
+  "noPush": true,
+  "noMerge": true,
+  "noDeploy": true,
+  "commanderActivated": false
+}

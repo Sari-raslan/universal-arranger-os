@@ -1,0 +1,20 @@
+{
+  "schemaVersion": "uaos.converter.job/v17",
+  "required": [
+    "jobId",
+    "status",
+    "inputSnapshot",
+    "outputDir",
+    "mode"
+  ],
+  "statuses": [
+    "queued",
+    "running",
+    "dry_run",
+    "staged",
+    "committed",
+    "cancelled",
+    "failed",
+    "rolled_back"
+  ]
+}

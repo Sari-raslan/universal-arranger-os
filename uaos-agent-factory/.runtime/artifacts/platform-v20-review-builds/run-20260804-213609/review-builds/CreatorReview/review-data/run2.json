@@ -1,0 +1,190 @@
+{
+  "schemaVersion": "uaos.creator.project/v2",
+  "projectId": "0a2e5b27-4d54-4b69-9820-1fc24a9a5c7d",
+  "version": 1,
+  "name": "V20 Creator run2",
+  "createdAt": "2026-08-04T19:22:48.355Z",
+  "updatedAt": "2026-08-04T19:22:48.355Z",
+  "tracks": [
+    {
+      "trackId": "t-melody",
+      "kind": "midi",
+      "name": "melody",
+      "role": "melody"
+    },
+    {
+      "trackId": "t-chord",
+      "kind": "midi",
+      "name": "chord",
+      "role": "chord"
+    },
+    {
+      "trackId": "t-bass",
+      "kind": "midi",
+      "name": "bass",
+      "role": "bass"
+    },
+    {
+      "trackId": "t-drum",
+      "kind": "midi",
+      "name": "drum",
+      "role": "drum"
+    }
+  ],
+  "clips": [],
+  "assets": [],
+  "transport": {
+    "state": "stopped",
+    "positionBeats": 0,
+    "loop": null
+  },
+  "recovery": {
+    "lastAutosaveAt": null,
+    "interrupted": false,
+    "lastGoodSaveAt": null
+  },
+  "undoBoundary": {
+    "transactionId": null,
+    "open": false
+  },
+  "featureFlags": {},
+  "entitlements": {},
+  "composition": {
+    "schemaVersion": "uaos.creator.composition/v3",
+    "notes": [
+      {
+        "schemaVersion": "uaos.creator.note/v1",
+        "noteId": "2c84f08c-9aaa-41f1-a7b4-a79417d0b7ac",
+        "pitch": 60,
+        "startBeats": 0,
+        "durationBeats": 1,
+        "endBeats": 1,
+        "velocity": 100,
+        "channel": 0
+      }
+    ],
+    "midiClips": [],
+    "sections": [
+      {
+        "sectionId": "verse",
+        "kind": "verse",
+        "startBeats": 0,
+        "endBeats": 16
+      },
+      {
+        "sectionId": "chorus",
+        "kind": "chorus",
+        "startBeats": 16,
+        "endBeats": 32
+      }
+    ],
+    "chords": [],
+    "arrangement": {
+      "nodes": [],
+      "edges": []
+    },
+    "quantize": {
+      "gridBeats": 0.25,
+      "enabled": true
+    },
+    "voiceToMidi": {
+      "status": "CONTRACT_ONLY",
+      "implemented": false
+    },
+    "arrangementDraft": {
+      "schemaVersion": "uaos.creator.arrangement-draft/v4",
+      "intent": "draft",
+      "sectionGraph": {
+        "nodes": [],
+        "edges": []
+      },
+      "trackRoles": {},
+      "densityProfile": {
+        "intro": 0.3,
+        "verse": 0.5,
+        "chorus": 0.8
+      },
+      "registerPlan": {
+        "melody": "mid",
+        "bass": "low",
+        "drum": "full"
+      },
+      "instrumentPlaceholders": [],
+      "entryExit": {
+        "entry": "intro",
+        "exit": "outro"
+      },
+      "repetitionPolicy": {
+        "maxRepeats": 2
+      },
+      "variationPolicy": {
+        "enabled": true
+      },
+      "dynamicProfile": {
+        "verse": "mf",
+        "chorus": "f"
+      },
+      "warnings": []
+    },
+    "musicalContext": {
+      "key": "C",
+      "scale": "major",
+      "mode": "ionian",
+      "tempo": 120,
+      "timeSignature": {
+        "numerator": 4,
+        "denominator": 4
+      }
+    },
+    "progression": {
+      "schemaVersion": "uaos.creator.progression/v4",
+      "chords": [
+        {
+          "symbol": "C",
+          "function": "tonic",
+          "durationBeats": 4
+        },
+        {
+          "symbol": "G",
+          "function": "dominant",
+          "durationBeats": 4
+        },
+        {
+          "symbol": "C",
+          "function": "return",
+          "durationBeats": 4
+        }
+      ]
+    },
+    "goldenSequence": {
+      "schemaVersion": "uaos.creator.golden-sequence/v4",
+      "sequenceId": "10ac61e1-7161-4b5e-a9eb-7d1bd170faa3",
+      "version": 1,
+      "events": [
+        {
+          "tick": 0,
+          "type": "note",
+          "pitch": 60,
+          "priority": 0
+        }
+      ],
+      "quantizationPlan": {
+        "gridBeats": 0.25
+      },
+      "humanization": {
+        "enabled": false,
+        "timingMs": 0,
+        "velocityJitter": 0
+      },
+      "status": "FOUNDATION_ONLY"
+    },
+    "claims": {
+      "professionalAutomaticArrangement": false,
+      "humanMusicalTasteProven": false,
+      "advancedHarmonyComplete": false,
+      "musicalBrainComplete": false,
+      "voiceToMidiProductionAccuracy": false,
+      "goldenSequencerCommercialReady": false
+    }
+  }
+}

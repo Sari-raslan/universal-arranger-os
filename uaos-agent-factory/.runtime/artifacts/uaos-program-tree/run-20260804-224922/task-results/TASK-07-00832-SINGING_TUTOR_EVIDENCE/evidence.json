@@ -1,0 +1,35 @@
+{
+  "taskId": "TASK-07-00832-SINGING_TUTOR_EVIDENCE",
+  "agentId": "NODE_LOCAL_WORKER-0108",
+  "startedAt": "2026-08-04T20:49:27.220Z",
+  "endedAt": "2026-08-04T20:49:27.339Z",
+  "status": "PASS",
+  "tests": [
+    {
+      "command": "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-07-00832-singing_tutor_evidence\\tests\\main.test.mjs",
+      "exitCode": 0,
+      "stdoutTail": "✔ TASK-07-00832-SINGING_TUTOR_EVIDENCE verify (0.5689ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 66.3499\n"
+    }
+  ],
+  "sha256": "03AE75F6258400F0DC4309D6CC11E7E4664B8F7B1838A6756EE799A53755D0EA",
+  "allowedPathsUsed": [
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-07-00832-singing_tutor_evidence",
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-07-00832-singing_tutor_evidence\\src\\singing_tutor_evidence.mjs",
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-07-00832-singing_tutor_evidence\\tests\\main.test.mjs"
+  ],
+  "truthStatements": [
+    "Technical WAV success does not prove musical quality",
+    "Fixtures are not product content",
+    "Studio Offline Render is not Real-time DSP",
+    "KORG WRITE_UNSUPPORTED",
+    "No auto adoption of Kids/Teen/Pricing",
+    "Commander not activated"
+  ],
+  "ownerFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-07-00832-singing_tutor_evidence\\src\\singing_tutor_evidence.mjs",
+  "phase": "EVIDENCE",
+  "gate": null,
+  "noPush": true,
+  "noMerge": true,
+  "noDeploy": true,
+  "commanderActivated": false
+}

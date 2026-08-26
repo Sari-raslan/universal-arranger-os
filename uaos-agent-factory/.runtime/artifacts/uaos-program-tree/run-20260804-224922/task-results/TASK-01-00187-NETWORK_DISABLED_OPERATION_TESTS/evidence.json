@@ -1,0 +1,35 @@
+{
+  "taskId": "TASK-01-00187-NETWORK_DISABLED_OPERATION_TESTS",
+  "agentId": "NODE_LOCAL_WORKER-0032",
+  "startedAt": "2026-08-04T20:49:29.313Z",
+  "endedAt": "2026-08-04T20:49:29.437Z",
+  "status": "PASS",
+  "tests": [
+    {
+      "command": "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00187-network_disabled_operation_tests\\tests\\main.test.mjs",
+      "exitCode": 0,
+      "stdoutTail": "✔ TASK-01-00187-NETWORK_DISABLED_OPERATION_TESTS verify (0.4916ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 64.4208\n"
+    }
+  ],
+  "sha256": "5814FAD030DDE06DAC784AC9434344AB389123F3D746E56B0FA3B92941582B8E",
+  "allowedPathsUsed": [
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00187-network_disabled_operation_tests",
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00187-network_disabled_operation_tests\\src\\network_disabled_operation_tests.mjs",
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00187-network_disabled_operation_tests\\tests\\main.test.mjs"
+  ],
+  "truthStatements": [
+    "Technical WAV success does not prove musical quality",
+    "Fixtures are not product content",
+    "Studio Offline Render is not Real-time DSP",
+    "KORG WRITE_UNSUPPORTED",
+    "No auto adoption of Kids/Teen/Pricing",
+    "Commander not activated"
+  ],
+  "ownerFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00187-network_disabled_operation_tests\\src\\network_disabled_operation_tests.mjs",
+  "phase": "TEST",
+  "gate": null,
+  "noPush": true,
+  "noMerge": true,
+  "noDeploy": true,
+  "commanderActivated": false
+}

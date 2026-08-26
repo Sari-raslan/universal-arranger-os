@@ -1,0 +1,54 @@
+{
+  "status": "STUDIO_PRO_V21_E50_OFFLINE_RENDER_CORE_READY",
+  "secondary": [
+    "FUTURE_TECHNICAL_PHASE_REQUIRED"
+  ],
+  "assertions": 9,
+  "pass": 9,
+  "fail": 0,
+  "steps": [
+    {
+      "name": "silent_project",
+      "ok": true
+    },
+    {
+      "name": "single_note",
+      "ok": true
+    },
+    {
+      "name": "multi",
+      "ok": true
+    },
+    {
+      "name": "mute",
+      "ok": true
+    },
+    {
+      "name": "cancel",
+      "ok": true
+    },
+    {
+      "name": "interrupt_cleanup",
+      "ok": true
+    },
+    {
+      "name": "tmp_gone",
+      "ok": true
+    },
+    {
+      "name": "deterministic_render",
+      "ok": true
+    },
+    {
+      "name": "save_open",
+      "ok": true
+    }
+  ],
+  "deterministicHash": "243168451E825C1F557964033D80EB71F1B29D4B07299AD4AB424E03919D78AB",
+  "claims": {
+    "asio": "NOT_IMPLEMENTED",
+    "realtimeDsp": "NOT_IMPLEMENTED",
+    "recording": "NOT_IMPLEMENTED",
+    "kontakt": "NOT_INTEGRATED"
+  }
+}

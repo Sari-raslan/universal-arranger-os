@@ -1,0 +1,51 @@
+{
+    "status":  "LIBRARY_FACTORY_ADOPTION_CANDIDATE_READY",
+    "candidate":  "L130",
+    "fullCommit":  "8a149267b5ecaae65d7a9a6c79d94bfd60ec64da",
+    "worktree":  "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-v15-execution\\library-factory-8a149267",
+    "modules":  [
+                    "transactional build",
+                    "staging",
+                    "commit/rollback",
+                    "journal",
+                    "locking",
+                    "sampler adapter",
+                    "catalog",
+                    "preview",
+                    "packaging",
+                    "license ledger",
+                    "sample validation",
+                    "articulations",
+                    "round robin"
+                ],
+    "tests":  [
+                  {
+                      "afterRetry":  null,
+                      "exitCode":  0,
+                      "name":  "check"
+                  },
+                  {
+                      "name":  "test:sampler",
+                      "exitCode":  0
+                  },
+                  {
+                      "initialFail":  true,
+                      "exitCode":  0,
+                      "name":  "test:library-validator",
+                      "note":  "retry after D: subst"
+                  },
+                  {
+                      "initialFail":  true,
+                      "exitCode":  0,
+                      "name":  "test:preview-player",
+                      "note":  "retry after D: subst"
+                  },
+                  {
+                      "name":  "build:desktop",
+                      "exitCode":  0
+                  }
+              ],
+    "appliedToOriginal":  false,
+    "merge":  false,
+    "commit":  false
+}

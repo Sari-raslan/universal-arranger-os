@@ -1,0 +1,21 @@
+{
+  "recoveredAt": "2026-08-05T09:30:00.000Z",
+  "priorSessionState": {
+    "chainA_entitlements": "Fully complete and independently passing: CONTRACT 9/9, IMPLEMENTATION 14/14, TESTS 6/6, EVIDENCE 4/4 (re-verified in this session, see TEST-RESULTS.json).",
+    "chainB_exportImportUserData": {
+      "CONTRACT": "Complete and passing 12/12 (re-verified in this session, untouched).",
+      "IMPLEMENTATION": "Left mid-edit when the prior session hit its usage limit. A local Aider continuation then ran and made it WORSE, not better.",
+      "TESTS": "Stub, not started.",
+      "EVIDENCE": "Stub, not started."
+    }
+  },
+  "aiderContinuationFindings": {
+    "logInspected": "aider-exact-continuation-20260805-091347/AIDER-IMPLEMENTATION.log",
+    "testRunInspected": "aider-exact-continuation-20260805-091347/NODE-IMPLEMENTATION-TEST.log",
+    "result": "5 of 6 tests FAILED with ReferenceError: path is not defined — the Aider-written test file (tests/main.test.mjs) never imports node:path, node:fs, or derives __dirname (ESM has no __dirname global), and treats exportUserData/importArchive as async functions when they are synchronous.",
+    "rootCauseInSource": "Aider's diff to src/export_import_user_data_implemen.mjs REMOVED the `import { validateArchive, ... }` import (confirmed via diff at AIDER-IMPLEMENTATION.log lines 48-51) but LEFT multiple validateArchive(...) call sites in the function bodies — the file as left behind throws ReferenceError: validateArchive is not defined at runtime for exportUserData/saveArchive/reopenArchive/verifyArchiveIntegrity/importArchive.",
+    "additionalDefectFound": "The import staging logic (cleanDestination + importArchive) as left behind creates an empty '.temp' subdirectory INSIDE destDir and calls fs.renameSync(tempDir, resolvedDest) at the end — this renames an EMPTY directory onto the (non-empty, just-written-into) destDir, which is not a valid or meaningful atomic-commit operation. The actual per-file writes go directly to destDir, not through the staging directory at all, so this 'staging' was non-functional even before considering the missing-import crash.",
+    "verdict": "Nothing from the Aider continuation was usable. Central task state was correctly never updated by it (confirmed live: TASKS.json still shows all four Chain B tasks in their pre-implementation states). Per the mission's own instruction ('accept nothing without independent behavioral tests'), the IMPLEMENTATION and TESTS source files are being rewritten from a clean, correct baseline in this session rather than patched."
+  },
+  "decision": "CONTRACT (task-01-00165) is untouched — it was already correct and passing. IMPLEMENTATION (task-01-00166) is being rewritten cleanly: fixes the missing import, replaces the non-functional '.temp'-in-place scheme with a real sibling staging directory + tracked atomic commit + rollback-on-failure that backs up any pre-existing file before overwrite, and adds the newly-specified required behaviors (recursive file discovery, symlink-escape rejection, strict-mode expected-entry checking, deterministic export/import receipts) that did not exist in either the original design or the Aider attempt. TESTS and EVIDENCE are implemented fresh."
+}

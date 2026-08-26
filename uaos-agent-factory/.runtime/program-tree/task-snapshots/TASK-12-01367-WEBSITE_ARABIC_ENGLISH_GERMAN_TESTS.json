@@ -1,0 +1,38 @@
+{
+  "id": "TASK-12-01367-WEBSITE_ARABIC_ENGLISH_GERMAN_TESTS",
+  "epicId": "EPIC-12-0013-WEBSITE_AND_DELIVERY",
+  "domain": "12-WEBSITE-DELIVERY",
+  "title": "Website Arabic English German tests",
+  "phase": "TEST",
+  "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+  "state": "READY",
+  "priority": 10,
+  "estimateMinutesMin": 45,
+  "estimateMinutesMax": 180,
+  "inputs": [],
+  "acceptanceCriteria": [
+    "Website Arabic English German tests contract file exists",
+    "Unit assertions pass for Website Arabic English German tests",
+    "Evidence JSON written with SHA256"
+  ],
+  "tests": [
+    "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-12-01367-website_arabic_english_german_tests\\tests\\main.test.mjs"
+  ],
+  "evidence": [
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-12-01367-website_arabic_english_german_tests/evidence/result.json"
+  ],
+  "allowedPaths": [
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-12-01367-website_arabic_english_german_tests",
+    "C:\\keyboard-manager-clean\\uaos-agent-factory\\.runtime\\artifacts\\uaos-program-tree\\TASK-12-01367-WEBSITE_ARABIC_ENGLISH_GERMAN_TESTS"
+  ],
+  "ownerFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-12-01367-website_arabic_english_german_tests\\src\\website_arabic_english_german_te.mjs",
+  "worktree": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-12-01367-website_arabic_english_german_tests",
+  "gate": null,
+  "blockedReason": null,
+  "rc1Critical": true,
+  "claims": [],
+  "lease": null,
+  "heartbeats": [],
+  "createdAt": "2026-08-04T20:47:04.340Z",
+  "updatedAt": "2026-08-04T20:49:28.876Z"
+}

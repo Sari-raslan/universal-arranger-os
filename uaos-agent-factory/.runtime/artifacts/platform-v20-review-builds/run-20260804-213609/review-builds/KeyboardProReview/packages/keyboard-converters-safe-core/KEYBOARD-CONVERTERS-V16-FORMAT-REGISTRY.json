@@ -1,0 +1,69 @@
+{
+  "uaos.project/v1": {
+    "supported": true,
+    "direction": [
+      "in",
+      "out"
+    ],
+    "kind": "internal"
+  },
+  "uaos.arranger.set/v1": {
+    "supported": true,
+    "direction": [
+      "in",
+      "out"
+    ],
+    "kind": "internal"
+  },
+  "uaos.midi.meta/v1": {
+    "supported": true,
+    "direction": [
+      "in"
+    ],
+    "kind": "internal"
+  },
+  "midi.smf": {
+    "supported": true,
+    "direction": [
+      "in"
+    ],
+    "kind": "open",
+    "note": "metadata inspection only"
+  },
+  "korg.sty": {
+    "supported": false,
+    "direction": [],
+    "kind": "proprietary",
+    "reason": "PROPRIETARY_WRITER_BANNED"
+  },
+  "korg.set": {
+    "supported": false,
+    "direction": [],
+    "kind": "proprietary",
+    "reason": "PROPRIETARY_WRITER_BANNED"
+  },
+  "korg.prs": {
+    "supported": false,
+    "direction": [],
+    "kind": "proprietary",
+    "reason": "PROPRIETARY_WRITER_BANNED"
+  },
+  "korg.prf": {
+    "supported": false,
+    "direction": [],
+    "kind": "proprietary",
+    "reason": "PROPRIETARY_WRITER_BANNED"
+  },
+  "korg.kst": {
+    "supported": false,
+    "direction": [],
+    "kind": "proprietary",
+    "reason": "PROPRIETARY_WRITER_BANNED"
+  },
+  "sysex.dump": {
+    "supported": false,
+    "direction": [],
+    "kind": "hardware",
+    "reason": "SYSEX_BANNED"
+  }
+}

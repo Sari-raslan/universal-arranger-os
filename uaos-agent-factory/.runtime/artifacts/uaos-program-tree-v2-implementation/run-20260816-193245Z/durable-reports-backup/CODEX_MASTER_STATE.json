@@ -1,0 +1,32 @@
+{
+  "project": "UAOS",
+  "roadmapVersion": "V1-V2-V3",
+  "currentPhase": "PROGRAM_TREE_V2_REAL_IMPLEMENTATION",
+  "phaseStatus": "IN_PROGRESS",
+  "lastCompletedTask": "UAOS_PROGRAM_TREE_V2_BATCH_7",
+  "nextTask": "UAOS_PROGRAM_TREE_V2_BATCH_8_SELECTION",
+  "lastSuccessfulCommand": "12 independent node --test commands: 75 pass, 0 fail, 0 skipped",
+  "lastSuccessfulCommit": "b3e71ff",
+  "buildStatus": "NOT_RUN_BATCH_SCOPED_NODE_TESTS_ONLY",
+  "testStatus": "PASS",
+  "blockers": [
+    "Manual microphone permission cleanup validation requires a real browser permission flow.",
+    "Manual MIDI thru and panic validation requires real MIDI hardware.",
+    "Automatic updater network checks require a packaged signed build with the intended update provider configured.",
+    "Post-merge validation is blocked at npm ci --prefix uaos-live-clean because Windows refuses to unlink uaos-live-clean/node_modules/@rolldown/.binding-win32-x64-msvc-XggE4oWY/rolldown-binding.win32-x64-msvc.node."
+  ],
+  "updatedAt": "2026-08-16T19:27:12.073Z",
+  "programTree": {
+    "schema": "uaos.program-tree-batch-summary/v1",
+    "run": "run-20260816-191626Z",
+    "totalTasks": 1604,
+    "done": 80,
+    "ready": 301,
+    "failed": 0,
+    "totalEdges": 1217,
+    "dagStatus": "PASS",
+    "tasksImplemented": 12,
+    "assertions": 75,
+    "artifactRun": "C:/keyboard-manager-clean/uaos-agent-factory/.runtime/artifacts/uaos-program-tree-v2-implementation/run-20260816-191626Z"
+  }
+}

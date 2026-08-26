@@ -1,0 +1,35 @@
+{
+  "taskId": "TASK-07-00884-AGE_ADAPTATION_EVIDENCE",
+  "agentId": "NODE_LOCAL_WORKER-0124",
+  "startedAt": "2026-08-04T20:47:48.687Z",
+  "endedAt": "2026-08-04T20:47:48.804Z",
+  "status": "PASS",
+  "tests": [
+    {
+      "command": "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-07-00884-age_adaptation_evidence\\tests\\main.test.mjs",
+      "exitCode": 0,
+      "stdoutTail": "✔ TASK-07-00884-AGE_ADAPTATION_EVIDENCE verify (0.7932ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 64.3681\n"
+    }
+  ],
+  "sha256": "162B1BBE535D7A05BAB0832489B3656C9CEB9418D60697C82D10FDEC726692F4",
+  "allowedPathsUsed": [
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-07-00884-age_adaptation_evidence",
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-07-00884-age_adaptation_evidence\\src\\age_adaptation_evidence.mjs",
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-07-00884-age_adaptation_evidence\\tests\\main.test.mjs"
+  ],
+  "truthStatements": [
+    "Technical WAV success does not prove musical quality",
+    "Fixtures are not product content",
+    "Studio Offline Render is not Real-time DSP",
+    "KORG WRITE_UNSUPPORTED",
+    "No auto adoption of Kids/Teen/Pricing",
+    "Commander not activated"
+  ],
+  "ownerFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-07-00884-age_adaptation_evidence\\src\\age_adaptation_evidence.mjs",
+  "phase": "EVIDENCE",
+  "gate": null,
+  "noPush": true,
+  "noMerge": true,
+  "noDeploy": true,
+  "commanderActivated": false
+}

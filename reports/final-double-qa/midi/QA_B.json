@@ -1,0 +1,1054 @@
+{
+  "schema": "uaos.final-double-qa.lane/v1",
+  "sku": "MIDI",
+  "lane": "B",
+  "QA_PASS": "YES",
+  "startedAt": "2026-08-26T05:24:56.946Z",
+  "endedAt": "2026-08-26T05:25:02.109Z",
+  "durationMs": 5163,
+  "candidateDir": "C:\\keyboard-manager-clean\\.qa-isolates-program-lane\\MIDI\\B",
+  "candidateHash": "d27d267c0e123db438438aa437919b30939055d848ce7c2857c26b8916b65d24",
+  "product": "UAOS MIDI Toolkit",
+  "checks": [
+    {
+      "name": "CANDIDATE_EXISTS",
+      "ok": true,
+      "path": "C:\\keyboard-manager-clean\\.qa-isolates-program-lane\\MIDI\\B"
+    },
+    {
+      "name": "CANDIDATE_HASH",
+      "ok": true,
+      "hash": "d27d267c0e123db438438aa437919b30939055d848ce7c2857c26b8916b65d24"
+    },
+    {
+      "name": "FILE_README_FIRST.txt",
+      "ok": true,
+      "path": "README_FIRST.txt"
+    },
+    {
+      "name": "FILE_RIGHTS_SEAL.json",
+      "ok": true,
+      "path": "RIGHTS_SEAL.json"
+    },
+    {
+      "name": "FILE_START-UAOS-MIDI-TOOLKIT.bat",
+      "ok": true,
+      "path": "START-UAOS-MIDI-TOOLKIT.bat"
+    },
+    {
+      "name": "FILE_SHA256SUMS.txt",
+      "ok": true,
+      "path": "SHA256SUMS.txt"
+    },
+    {
+      "name": "RIGHTS_SEAL",
+      "ok": true
+    },
+    {
+      "name": "MANIFEST_INTEGRITY",
+      "ok": true,
+      "checked": 4343
+    },
+    {
+      "name": "NO_COMMANDER",
+      "ok": true
+    },
+    {
+      "name": "DIAGNOSTICS_SECRET_SCAN",
+      "ok": true
+    },
+    {
+      "name": "CORE_WORKFLOWS",
+      "ok": true,
+      "pass": 20,
+      "total": 20,
+      "p0": 0
+    },
+    {
+      "name": "CLEAN_INSTALL",
+      "ok": true,
+      "CLEAN_MACHINE_EQUIVALENT": true,
+      "NO_DEV_ENV_REQUIRED": true,
+      "steps": [
+        {
+          "step": "OPEN_TOOLKIT",
+          "ok": true
+        },
+        {
+          "step": "MODE_AUDIO_TO_MIDI",
+          "mode": "AUDIO_TO_MIDI",
+          "ok": true,
+          "fromNotes": {
+            "ok": true,
+            "noteCount": 5,
+            "musicalQualityClaim": false
+          },
+          "fromWavAnalysis": {
+            "ok": true,
+            "note": "Sine fixture is analysis-only; not owner musical proof",
+            "musicalQualityClaim": false
+          },
+          "roundtripOk": true,
+          "BLOCKED_EXTERNAL_GATES": [
+            "HARDWARE_REQUIRED:microphone"
+          ],
+          "ownerMusicalQualityPass": false,
+          "capabilityId": "uaos.voice.melody-to-midi.finalize/v1"
+        },
+        {
+          "step": "MODE_MIDI_INSPECT",
+          "mode": "MIDI_INSPECT_AND_CLEAN",
+          "ok": true,
+          "inspected": {
+            "ok": true,
+            "level": "INSPECT",
+            "family": "korg",
+            "detection": {
+              "ok": true,
+              "family": "korg",
+              "extension": ".set",
+              "brand": "Korg",
+              "EXTENSION_MATCH": true,
+              "SIGNATURE_MATCH": false,
+              "STRUCTURE_MATCH": true,
+              "CONFIDENCE": "MEDIUM",
+              "evidence": [
+                {
+                  "kind": "EXTENSION_MATCH",
+                  "extension": ".set"
+                },
+                {
+                  "kind": "STRUCTURE_MATCH",
+                  "family": "korg"
+                }
+              ],
+              "verified": false
+            },
+            "hexPreview": "4b4f524720534554204d455441204f4e4c59",
+            "strings": [
+              "KORG SET META ONLY"
+            ],
+            "proprietary": true,
+            "deepParserNeeded": true,
+            "write": "FORMAT_CONTRACT_REQUIRED",
+            "musicalQualityClaim": false
+          },
+          "project": {
+            "schema": "uaos.keyboard-pro.inspection/v1",
+            "name": "midi-inspect",
+            "createdAt": "2026-08-26T05:25:02.091Z",
+            "entries": [
+              {
+                "path": "sample.set",
+                "size": 18,
+                "sha256": "6e4b3e26328936ec59a124447e05a5578bb03f84d696d3fc6a3b53c9acdbbd22",
+                "family": "korg",
+                "level": "INSPECT"
+              }
+            ],
+            "write": "FORMAT_CONTRACT_REQUIRED",
+            "hardwareWrite": "HARDWARE_REQUIRED",
+            "commercialReady": false,
+            "envelopeSha256": "6dbfb0efa1590d15f162a87f846d85e19e92de8d1feebb227050a449394dfd9b"
+          },
+          "verified": {
+            "ok": true,
+            "live": "6dbfb0efa1590d15f162a87f846d85e19e92de8d1feebb227050a449394dfd9b",
+            "expected": "6dbfb0efa1590d15f162a87f846d85e19e92de8d1feebb227050a449394dfd9b"
+          },
+          "write": {
+            "ok": false,
+            "errorCode": "FORMAT_CONTRACT_REQUIRED"
+          },
+          "convertFromIr": {
+            "ok": false,
+            "errorCode": "FORMAT_CONTRACT_REQUIRED"
+          },
+          "BLOCKED_EXTERNAL_GATES": [
+            "FORMAT_CONTRACT_REQUIRED",
+            "HARDWARE_REQUIRED"
+          ],
+          "commercialReady": false,
+          "capabilityId": "uaos.keyboard-pro.finalize/v1"
+        },
+        {
+          "step": "MODE_NORMALIZE",
+          "mode": "MIDI_NORMALIZE",
+          "ok": true,
+          "level": "ROUNDTRIP_VERIFIED"
+        },
+        {
+          "step": "EXPORT",
+          "workflowId": "midi-wf-16-export",
+          "ok": true,
+          "result": {
+            "ok": true,
+            "exportSha256": "0311dae5bb55a366b2f9548cced3c736688f305e924c58e9678d6978581bffe7"
+          },
+          "sha256": "6a32e7ca48d16ea239a2f9209f99a2390ee7263dbdb191bf6a136fb76683aa3e"
+        },
+        {
+          "step": "REOPEN",
+          "workflowId": "midi-wf-17-reopen",
+          "ok": true,
+          "result": {
+            "ok": true
+          },
+          "sha256": "e2ac54c68b6497f56c4f93d5efc5d4f2c5d9082a229237da23ff26e680c6b142"
+        },
+        {
+          "step": "RECOVERY",
+          "workflowId": "midi-wf-07-malformed",
+          "ok": true,
+          "result": {
+            "ok": true,
+            "recovered": true
+          },
+          "sha256": "5e67f774ddf7031e745b25bcf6f48709afd0a2383779a5f127419a1472c9bdc9"
+        }
+      ],
+      "sha256": "0d62f4229c7b5035e0ba363c376d676f0ef0a4710e7bec652ae04b7eac69affc"
+    }
+  ],
+  "P0": 0,
+  "P1": 0,
+  "workflows": {
+    "ok": true,
+    "total": 20,
+    "pass": 20,
+    "p0": 0,
+    "p1": 0,
+    "SUPPORTED_ROUNDTRIP": "PASS",
+    "results": [
+      {
+        "workflowId": "midi-wf-01-clean-midi",
+        "ok": true,
+        "result": {
+          "ok": true,
+          "bytesLength": 51,
+          "sha256": "0311dae5bb55a366b2f9548cced3c736688f305e924c58e9678d6978581bffe7"
+        },
+        "sha256": "81d5b4da8fa1407f9ff49364f60fb4667a09b2464a0e72f20d7f239960c3586e"
+      },
+      {
+        "workflowId": "midi-wf-02-multi-track",
+        "ok": true,
+        "result": {
+          "ok": true,
+          "noteCount": 3
+        },
+        "sha256": "28115835c36b7a17d94eff7691a1e4ab4170d12eba68779c76152b1d39930c80"
+      },
+      {
+        "workflowId": "midi-wf-03-tempo",
+        "ok": true,
+        "result": {
+          "ok": true,
+          "tempoBpm": 140
+        },
+        "sha256": "0b4c8bb1161464473e76c88f563cb10a7015fc51eb73342200284ea9ea273b15"
+      },
+      {
+        "workflowId": "midi-wf-04-metadata",
+        "ok": true,
+        "result": {
+          "ok": true,
+          "noteCount": 2
+        },
+        "sha256": "1cee044ba3c69667080b01fdcffcd495a9ee33fed7ca2283cbe81485766a4e25"
+      },
+      {
+        "workflowId": "midi-wf-05-overlap",
+        "ok": true,
+        "result": {
+          "ok": true
+        },
+        "sha256": "4a88b9ecebd6704190ed3cd72624b851ce1205bdcf10139e32897c207b77b3b8"
+      },
+      {
+        "workflowId": "midi-wf-06-empty",
+        "ok": true,
+        "result": {
+          "ok": true,
+          "recovered": true
+        },
+        "sha256": "478262edf55a3d9ad0935eb53ed0a5a3b1b87191280bdc257ae2aeb7559ff2cc"
+      },
+      {
+        "workflowId": "midi-wf-07-malformed",
+        "ok": true,
+        "result": {
+          "ok": true,
+          "recovered": true
+        },
+        "sha256": "5e67f774ddf7031e745b25bcf6f48709afd0a2383779a5f127419a1472c9bdc9"
+      },
+      {
+        "workflowId": "midi-wf-08-extreme-notes",
+        "ok": true,
+        "result": {
+          "ok": true
+        },
+        "sha256": "8f3afa0c7e30461c7c048a789c6ece607ec5a74f3b1a6060a6897c9236959541"
+      },
+      {
+        "workflowId": "midi-wf-09-repeated-conversion",
+        "ok": true,
+        "result": {
+          "ok": true
+        },
+        "sha256": "30c8d70bed2614563686ec1f81c0a3bdcfbc2cc64605e87b0b99a9514416e932"
+      },
+      {
+        "workflowId": "midi-wf-10-roundtrip",
+        "ok": true,
+        "result": {
+          "ok": true,
+          "level": "ROUNDTRIP_VERIFIED",
+          "family": "midi",
+          "inputNotes": [
+            60,
+            64
+          ],
+          "outputNotes": [
+            60,
+            64
+          ],
+          "hardwareVerified": false,
+          "musicalQualityClaim": false
+        },
+        "sha256": "06838ea2a3a7baf7ad8423c7aebf6bd493c5ea8d5a2fc238be8f980fe6ac6a3c"
+      },
+      {
+        "workflowId": "midi-wf-11-output-collision",
+        "ok": true,
+        "result": {
+          "ok": true,
+          "collisionHandled": true
+        },
+        "sha256": "fd374d1883379000ce17f3485c102b63384bf3d12e64d499c8930506fd14b196"
+      },
+      {
+        "workflowId": "midi-wf-12-cancel",
+        "ok": true,
+        "result": {
+          "ok": true,
+          "cancelled": true,
+          "note": "deterministic cancel path"
+        },
+        "sha256": "defffdc709733aca18f3c11d9114e831dce8381ac49eb2cf052f400bea7f7248"
+      },
+      {
+        "workflowId": "midi-wf-13-unsupported-family-write",
+        "ok": true,
+        "result": {
+          "ok": true,
+          "writeBlocked": true
+        },
+        "sha256": "2503e04605a6a5ead31d5502a3ee999787fb6446f382633780ee3204ceb86527"
+      },
+      {
+        "workflowId": "midi-wf-14-audio-to-midi",
+        "ok": true,
+        "result": {
+          "mode": "AUDIO_TO_MIDI",
+          "ok": true,
+          "fromNotes": {
+            "ok": true,
+            "noteCount": 5,
+            "musicalQualityClaim": false
+          },
+          "fromWavAnalysis": {
+            "ok": true,
+            "note": "Sine fixture is analysis-only; not owner musical proof",
+            "musicalQualityClaim": false
+          },
+          "roundtripOk": true,
+          "BLOCKED_EXTERNAL_GATES": [
+            "HARDWARE_REQUIRED:microphone"
+          ],
+          "ownerMusicalQualityPass": false,
+          "capabilityId": "uaos.voice.melody-to-midi.finalize/v1"
+        },
+        "sha256": "d2d83116d81bbc2ff48f228a6f9a3368efdc9ddc83313cb76b16ae85afb14723"
+      },
+      {
+        "workflowId": "midi-wf-15-neutral-ir",
+        "ok": true,
+        "result": {
+          "ok": true,
+          "ir": {
+            "schema": "uaos.neutral-ir/v2",
+            "neutralIrVersion": "uaos.neutral-ir/v2",
+            "family": "midi",
+            "ppq": 480,
+            "noteEvents": [
+              {
+                "midi": 60,
+                "startTick": 0,
+                "durationTicks": 480,
+                "velocity": 90,
+                "channel": 0
+              },
+              {
+                "midi": 64,
+                "startTick": 480,
+                "durationTicks": 480,
+                "velocity": 80,
+                "channel": 0
+              }
+            ],
+            "tempoEvents": 1,
+            "controllers": 0,
+            "programChanges": 0,
+            "arrangerSemantics": {
+              "schema": "uaos.neutral-ir.arranger-semantics/v2",
+              "tempo": null,
+              "timeSignatures": [],
+              "tracks": [
+                {
+                  "channel": 0,
+                  "role": "UNKNOWN_VENDOR_ROLE"
+                }
+              ],
+              "channels": [
+                0
+              ],
+              "events": {
+                "notes": [
+                  {
+                    "midi": 60,
+                    "startTick": 0,
+                    "durationTicks": 480,
+                    "velocity": 90,
+                    "channel": 0
+                  },
+                  {
+                    "midi": 64,
+                    "startTick": 480,
+                    "durationTicks": 480,
+                    "velocity": 80,
+                    "channel": 0
+                  }
+                ],
+                "velocity": true,
+                "controllers": [],
+                "programChanges": [],
+                "bankSelect": [],
+                "pitchBend": [],
+                "aftertouch": [],
+                "tempoEvents": 1,
+                "timeSignatures": [],
+                "markers": [],
+                "lyrics": []
+              },
+              "sysexPreserved": [],
+              "markers": [],
+              "sections": [
+                {
+                  "role": "INTRO",
+                  "name": "Intro",
+                  "lengthBars": 2,
+                  "bars": 2,
+                  "timeSignature": null,
+                  "tempo": null,
+                  "tracks": [],
+                  "events": [],
+                  "chordBehavior": null,
+                  "variationRelationship": null,
+                  "transitionIntent": null,
+                  "vendorName": null,
+                  "vendorCode": null,
+                  "opaqueSourceMetadata": null
+                },
+                {
+                  "role": "MAIN",
+                  "name": "Main",
+                  "lengthBars": 4,
+                  "bars": 4,
+                  "timeSignature": null,
+                  "tempo": null,
+                  "tracks": [],
+                  "events": [],
+                  "chordBehavior": null,
+                  "variationRelationship": null,
+                  "transitionIntent": null,
+                  "vendorName": null,
+                  "vendorCode": null,
+                  "opaqueSourceMetadata": null
+                },
+                {
+                  "role": "VARIATION_1",
+                  "name": "Variation 1",
+                  "lengthBars": 4,
+                  "bars": 4,
+                  "timeSignature": null,
+                  "tempo": null,
+                  "tracks": [],
+                  "events": [],
+                  "chordBehavior": null,
+                  "variationRelationship": null,
+                  "transitionIntent": null,
+                  "vendorName": null,
+                  "vendorCode": null,
+                  "opaqueSourceMetadata": null
+                },
+                {
+                  "role": "FILL",
+                  "name": "Fill",
+                  "lengthBars": 1,
+                  "bars": 1,
+                  "timeSignature": null,
+                  "tempo": null,
+                  "tracks": [],
+                  "events": [],
+                  "chordBehavior": null,
+                  "variationRelationship": null,
+                  "transitionIntent": null,
+                  "vendorName": null,
+                  "vendorCode": null,
+                  "opaqueSourceMetadata": null
+                },
+                {
+                  "role": "BREAK",
+                  "name": "Break",
+                  "lengthBars": 2,
+                  "bars": 2,
+                  "timeSignature": null,
+                  "tempo": null,
+                  "tracks": [],
+                  "events": [],
+                  "chordBehavior": null,
+                  "variationRelationship": null,
+                  "transitionIntent": null,
+                  "vendorName": null,
+                  "vendorCode": null,
+                  "opaqueSourceMetadata": null
+                },
+                {
+                  "role": "ENDING",
+                  "name": "Ending",
+                  "lengthBars": 2,
+                  "bars": 2,
+                  "timeSignature": null,
+                  "tempo": null,
+                  "tracks": [],
+                  "events": [],
+                  "chordBehavior": null,
+                  "variationRelationship": null,
+                  "transitionIntent": null,
+                  "vendorName": null,
+                  "vendorCode": null,
+                  "opaqueSourceMetadata": null
+                }
+              ],
+              "sectionOrdering": [
+                "INTRO",
+                "MAIN",
+                "VARIATION_1",
+                "FILL",
+                "BREAK",
+                "ENDING"
+              ],
+              "introMainFillBreakEnding": {
+                "intro": {
+                  "role": "INTRO",
+                  "name": "Intro",
+                  "lengthBars": 2,
+                  "bars": 2,
+                  "timeSignature": null,
+                  "tempo": null,
+                  "tracks": [],
+                  "events": [],
+                  "chordBehavior": null,
+                  "variationRelationship": null,
+                  "transitionIntent": null,
+                  "vendorName": null,
+                  "vendorCode": null,
+                  "opaqueSourceMetadata": null
+                },
+                "introVariants": [],
+                "main": {
+                  "role": "MAIN",
+                  "name": "Main",
+                  "lengthBars": 4,
+                  "bars": 4,
+                  "timeSignature": null,
+                  "tempo": null,
+                  "tracks": [],
+                  "events": [],
+                  "chordBehavior": null,
+                  "variationRelationship": null,
+                  "transitionIntent": null,
+                  "vendorName": null,
+                  "vendorCode": null,
+                  "opaqueSourceMetadata": null
+                },
+                "variations": [
+                  {
+                    "role": "VARIATION_1",
+                    "name": "Variation 1",
+                    "lengthBars": 4,
+                    "bars": 4,
+                    "timeSignature": null,
+                    "tempo": null,
+                    "tracks": [],
+                    "events": [],
+                    "chordBehavior": null,
+                    "variationRelationship": null,
+                    "transitionIntent": null,
+                    "vendorName": null,
+                    "vendorCode": null,
+                    "opaqueSourceMetadata": null
+                  }
+                ],
+                "fills": [
+                  {
+                    "role": "FILL",
+                    "name": "Fill",
+                    "lengthBars": 1,
+                    "bars": 1,
+                    "timeSignature": null,
+                    "tempo": null,
+                    "tracks": [],
+                    "events": [],
+                    "chordBehavior": null,
+                    "variationRelationship": null,
+                    "transitionIntent": null,
+                    "vendorName": null,
+                    "vendorCode": null,
+                    "opaqueSourceMetadata": null
+                  }
+                ],
+                "fillTransitions": [],
+                "break": {
+                  "role": "BREAK",
+                  "name": "Break",
+                  "lengthBars": 2,
+                  "bars": 2,
+                  "timeSignature": null,
+                  "tempo": null,
+                  "tracks": [],
+                  "events": [],
+                  "chordBehavior": null,
+                  "variationRelationship": null,
+                  "transitionIntent": null,
+                  "vendorName": null,
+                  "vendorCode": null,
+                  "opaqueSourceMetadata": null
+                },
+                "ending": {
+                  "role": "ENDING",
+                  "name": "Ending",
+                  "lengthBars": 2,
+                  "bars": 2,
+                  "timeSignature": null,
+                  "tempo": null,
+                  "tracks": [],
+                  "events": [],
+                  "chordBehavior": null,
+                  "variationRelationship": null,
+                  "transitionIntent": null,
+                  "vendorName": null,
+                  "vendorCode": null,
+                  "opaqueSourceMetadata": null
+                },
+                "endingVariants": []
+              },
+              "trackRoles": [
+                {
+                  "sourceChannel": 0,
+                  "sourceTrack": 0,
+                  "canonicalRole": "MELODY",
+                  "program": null,
+                  "bank": null,
+                  "drumKit": null,
+                  "volume": null,
+                  "pan": null,
+                  "transpose": 0,
+                  "octave": 0,
+                  "mute": false,
+                  "vendorAttributes": {}
+                }
+              ],
+              "drumMapping": {
+                "schema": "uaos.neutral-ir.drum-mapping/v1",
+                "mapped": [],
+                "unmappedEvents": [],
+                "lossy": false,
+                "lossReasons": [],
+                "preserveUnknown": true
+              },
+              "chordStyle": {
+                "schema": "uaos.neutral-ir.chord-style/v1",
+                "chordRecognitionMode": "UNKNOWN",
+                "chordRoot": null,
+                "quality": null,
+                "extensions": [],
+                "inversion": null,
+                "bassNote": null,
+                "ntrNttIntent": null,
+                "scaleKey": null,
+                "maqamContext": null,
+                "styleFamily": null,
+                "groove": null,
+                "swing": null,
+                "density": null,
+                "energy": null,
+                "phraseBehavior": null,
+                "fabricatedVendorParameters": false,
+                "noteEventsAnalyzed": 2
+              },
+              "styleParts": [],
+              "bassRoles": [],
+              "accompanimentRoles": [],
+              "instrumentProgramMapping": [],
+              "effectsMetadata": [],
+              "transposition": 0,
+              "scaleKeyMaqam": null,
+              "performanceSettings": {},
+              "resourceReferences": [],
+              "vendorExtensions": null,
+              "preserveUnknownWhenSafe": true,
+              "musicalQualityClaim": false,
+              "chords": []
+            },
+            "goldenBrain": null,
+            "musicalQualityClaim": false
+          },
+          "level": "NORMALIZE_TO_UAOS_IR"
+        },
+        "sha256": "a10bd456b2b04af602b461a04e98383a900c0656bdde71a208b061c1443afd9e"
+      },
+      {
+        "workflowId": "midi-wf-16-export",
+        "ok": true,
+        "result": {
+          "ok": true,
+          "exportSha256": "0311dae5bb55a366b2f9548cced3c736688f305e924c58e9678d6978581bffe7"
+        },
+        "sha256": "6a32e7ca48d16ea239a2f9209f99a2390ee7263dbdb191bf6a136fb76683aa3e"
+      },
+      {
+        "workflowId": "midi-wf-17-reopen",
+        "ok": true,
+        "result": {
+          "ok": true
+        },
+        "sha256": "e2ac54c68b6497f56c4f93d5efc5d4f2c5d9082a229237da23ff26e680c6b142"
+      },
+      {
+        "workflowId": "midi-wf-18-format-inspect",
+        "ok": true,
+        "result": {
+          "mode": "FORMAT_INSPECT",
+          "ok": true,
+          "level": "INSPECT",
+          "write": "FORMAT_CONTRACT_REQUIRED"
+        },
+        "sha256": "d56b797689c0e4221d4d993459a8a89020cf7b8e1c7f3e604e355dff17ef754d"
+      },
+      {
+        "workflowId": "midi-wf-19-convert-verified",
+        "ok": true,
+        "result": {
+          "mode": "CONVERT_WHERE_VERIFIED",
+          "ok": true,
+          "midi": {
+            "level": "ROUNDTRIP_VERIFIED",
+            "ok": true
+          },
+          "sysex": {
+            "level": "INSPECT",
+            "ok": true,
+            "write": "HARDWARE_REQUIRED"
+          },
+          "proprietary": {
+            "level": "INSPECT",
+            "write": "FORMAT_CONTRACT_REQUIRED",
+            "families": [
+              "sysex",
+              "korg",
+              "yamaha",
+              "roland",
+              "ketron"
+            ]
+          },
+          "matrix": [
+            {
+              "family": "midi",
+              "maxProven": "ROUNDTRIP_VERIFIED",
+              "write": false,
+              "note": "in-memory SMF only"
+            },
+            {
+              "family": "sysex",
+              "maxProven": "INSPECT",
+              "write": false,
+              "gate": "HARDWARE_REQUIRED"
+            },
+            {
+              "family": "korg",
+              "maxProven": "INSPECT",
+              "write": false,
+              "gate": "FORMAT_CONTRACT_REQUIRED"
+            },
+            {
+              "family": "yamaha",
+              "maxProven": "INSPECT",
+              "write": false,
+              "gate": "FORMAT_CONTRACT_REQUIRED"
+            },
+            {
+              "family": "roland",
+              "maxProven": "INSPECT",
+              "write": false,
+              "gate": "FORMAT_CONTRACT_REQUIRED"
+            },
+            {
+              "family": "ketron",
+              "maxProven": "INSPECT",
+              "write": false,
+              "gate": "FORMAT_CONTRACT_REQUIRED"
+            }
+          ],
+          "BLOCKED_EXTERNAL_GATES": [
+            "FORMAT_CONTRACT_REQUIRED",
+            "HARDWARE_REQUIRED"
+          ],
+          "commercialReady": false,
+          "capabilityId": "uaos.converter.finalize/v1",
+          "goldenBrainCapabilityId": "uaos.golden-brain.core/v1",
+          "goldenBrainConversionOk": true
+        },
+        "sha256": "479ef20bc45a5f046e59197324a10b0f2631d759c3dae20e84dc78fbf0e9348e"
+      },
+      {
+        "workflowId": "midi-wf-20-recovery",
+        "ok": true,
+        "result": {
+          "mode": "MIDI_INSPECT_AND_CLEAN",
+          "ok": true,
+          "inspected": {
+            "ok": true,
+            "level": "INSPECT",
+            "family": "korg",
+            "detection": {
+              "ok": true,
+              "family": "korg",
+              "extension": ".set",
+              "brand": "Korg",
+              "EXTENSION_MATCH": true,
+              "SIGNATURE_MATCH": false,
+              "STRUCTURE_MATCH": true,
+              "CONFIDENCE": "MEDIUM",
+              "evidence": [
+                {
+                  "kind": "EXTENSION_MATCH",
+                  "extension": ".set"
+                },
+                {
+                  "kind": "STRUCTURE_MATCH",
+                  "family": "korg"
+                }
+              ],
+              "verified": false
+            },
+            "hexPreview": "4b4f524720534554204d455441204f4e4c59",
+            "strings": [
+              "KORG SET META ONLY"
+            ],
+            "proprietary": true,
+            "deepParserNeeded": true,
+            "write": "FORMAT_CONTRACT_REQUIRED",
+            "musicalQualityClaim": false
+          },
+          "project": {
+            "schema": "uaos.keyboard-pro.inspection/v1",
+            "name": "midi-inspect",
+            "createdAt": "2026-08-26T05:25:00.099Z",
+            "entries": [
+              {
+                "path": "sample.set",
+                "size": 18,
+                "sha256": "6e4b3e26328936ec59a124447e05a5578bb03f84d696d3fc6a3b53c9acdbbd22",
+                "family": "korg",
+                "level": "INSPECT"
+              }
+            ],
+            "write": "FORMAT_CONTRACT_REQUIRED",
+            "hardwareWrite": "HARDWARE_REQUIRED",
+            "commercialReady": false,
+            "envelopeSha256": "669021c604765bbd06f5c5c5009a63d74e0ec7e2924934775c64a931836457b6"
+          },
+          "verified": {
+            "ok": true,
+            "live": "669021c604765bbd06f5c5c5009a63d74e0ec7e2924934775c64a931836457b6",
+            "expected": "669021c604765bbd06f5c5c5009a63d74e0ec7e2924934775c64a931836457b6"
+          },
+          "write": {
+            "ok": false,
+            "errorCode": "FORMAT_CONTRACT_REQUIRED"
+          },
+          "convertFromIr": {
+            "ok": false,
+            "errorCode": "FORMAT_CONTRACT_REQUIRED"
+          },
+          "BLOCKED_EXTERNAL_GATES": [
+            "FORMAT_CONTRACT_REQUIRED",
+            "HARDWARE_REQUIRED"
+          ],
+          "commercialReady": false,
+          "capabilityId": "uaos.keyboard-pro.finalize/v1"
+        },
+        "sha256": "d74bf967cf97184dac9cdf07b8ee9ea04820705779a18a09080dc3a31e02e68c"
+      }
+    ],
+    "summarySha256": "7919d5b6eb7848349a6c31a60f86e9ac7ee70e63351fbc0f01950e85576d7b31"
+  },
+  "clean": {
+    "ok": true,
+    "CLEAN_MACHINE_EQUIVALENT": true,
+    "NO_DEV_ENV_REQUIRED": true,
+    "steps": [
+      {
+        "step": "OPEN_TOOLKIT",
+        "ok": true
+      },
+      {
+        "step": "MODE_AUDIO_TO_MIDI",
+        "mode": "AUDIO_TO_MIDI",
+        "ok": true,
+        "fromNotes": {
+          "ok": true,
+          "noteCount": 5,
+          "musicalQualityClaim": false
+        },
+        "fromWavAnalysis": {
+          "ok": true,
+          "note": "Sine fixture is analysis-only; not owner musical proof",
+          "musicalQualityClaim": false
+        },
+        "roundtripOk": true,
+        "BLOCKED_EXTERNAL_GATES": [
+          "HARDWARE_REQUIRED:microphone"
+        ],
+        "ownerMusicalQualityPass": false,
+        "capabilityId": "uaos.voice.melody-to-midi.finalize/v1"
+      },
+      {
+        "step": "MODE_MIDI_INSPECT",
+        "mode": "MIDI_INSPECT_AND_CLEAN",
+        "ok": true,
+        "inspected": {
+          "ok": true,
+          "level": "INSPECT",
+          "family": "korg",
+          "detection": {
+            "ok": true,
+            "family": "korg",
+            "extension": ".set",
+            "brand": "Korg",
+            "EXTENSION_MATCH": true,
+            "SIGNATURE_MATCH": false,
+            "STRUCTURE_MATCH": true,
+            "CONFIDENCE": "MEDIUM",
+            "evidence": [
+              {
+                "kind": "EXTENSION_MATCH",
+                "extension": ".set"
+              },
+              {
+                "kind": "STRUCTURE_MATCH",
+                "family": "korg"
+              }
+            ],
+            "verified": false
+          },
+          "hexPreview": "4b4f524720534554204d455441204f4e4c59",
+          "strings": [
+            "KORG SET META ONLY"
+          ],
+          "proprietary": true,
+          "deepParserNeeded": true,
+          "write": "FORMAT_CONTRACT_REQUIRED",
+          "musicalQualityClaim": false
+        },
+        "project": {
+          "schema": "uaos.keyboard-pro.inspection/v1",
+          "name": "midi-inspect",
+          "createdAt": "2026-08-26T05:25:02.091Z",
+          "entries": [
+            {
+              "path": "sample.set",
+              "size": 18,
+              "sha256": "6e4b3e26328936ec59a124447e05a5578bb03f84d696d3fc6a3b53c9acdbbd22",
+              "family": "korg",
+              "level": "INSPECT"
+            }
+          ],
+          "write": "FORMAT_CONTRACT_REQUIRED",
+          "hardwareWrite": "HARDWARE_REQUIRED",
+          "commercialReady": false,
+          "envelopeSha256": "6dbfb0efa1590d15f162a87f846d85e19e92de8d1feebb227050a449394dfd9b"
+        },
+        "verified": {
+          "ok": true,
+          "live": "6dbfb0efa1590d15f162a87f846d85e19e92de8d1feebb227050a449394dfd9b",
+          "expected": "6dbfb0efa1590d15f162a87f846d85e19e92de8d1feebb227050a449394dfd9b"
+        },
+        "write": {
+          "ok": false,
+          "errorCode": "FORMAT_CONTRACT_REQUIRED"
+        },
+        "convertFromIr": {
+          "ok": false,
+          "errorCode": "FORMAT_CONTRACT_REQUIRED"
+        },
+        "BLOCKED_EXTERNAL_GATES": [
+          "FORMAT_CONTRACT_REQUIRED",
+          "HARDWARE_REQUIRED"
+        ],
+        "commercialReady": false,
+        "capabilityId": "uaos.keyboard-pro.finalize/v1"
+      },
+      {
+        "step": "MODE_NORMALIZE",
+        "mode": "MIDI_NORMALIZE",
+        "ok": true,
+        "level": "ROUNDTRIP_VERIFIED"
+      },
+      {
+        "step": "EXPORT",
+        "workflowId": "midi-wf-16-export",
+        "ok": true,
+        "result": {
+          "ok": true,
+          "exportSha256": "0311dae5bb55a366b2f9548cced3c736688f305e924c58e9678d6978581bffe7"
+        },
+        "sha256": "6a32e7ca48d16ea239a2f9209f99a2390ee7263dbdb191bf6a136fb76683aa3e"
+      },
+      {
+        "step": "REOPEN",
+        "workflowId": "midi-wf-17-reopen",
+        "ok": true,
+        "result": {
+          "ok": true
+        },
+        "sha256": "e2ac54c68b6497f56c4f93d5efc5d4f2c5d9082a229237da23ff26e680c6b142"
+      },
+      {
+        "step": "RECOVERY",
+        "workflowId": "midi-wf-07-malformed",
+        "ok": true,
+        "result": {
+          "ok": true,
+          "recovered": true
+        },
+        "sha256": "5e67f774ddf7031e745b25bcf6f48709afd0a2383779a5f127419a1472c9bdc9"
+      }
+    ],
+    "sha256": "0d62f4229c7b5035e0ba363c376d676f0ef0a4710e7bec652ae04b7eac69affc"
+  },
+  "COMMANDER_TOUCHED": false
+}

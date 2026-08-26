@@ -1,0 +1,26 @@
+{
+  "schema": "uaos.commander-command/v1",
+  "type": "object",
+  "required": [
+    "commandId",
+    "command",
+    "at"
+  ],
+  "properties": {
+    "command": {
+      "enum": [
+        "listTasks",
+        "claimTask",
+        "renewLease",
+        "reportHeartbeat",
+        "reportProgress",
+        "attachEvidence",
+        "submitResult",
+        "requestReview",
+        "releaseClaim",
+        "pauseQueue",
+        "resumeQueue"
+      ]
+    }
+  }
+}

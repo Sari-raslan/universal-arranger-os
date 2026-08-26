@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en" id="htmlRoot">
+<head>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>UAOS Arranger Studio</title>
+<style>
+:root{--bg:#0a0c14;--panel:#12162a;--text:#f4f6ff;--muted:#9aa6c3;--line:rgba(120,140,255,.28);--accent:#3d7eff;--ok:#5dffa8;--warn:#ffd166}
+*{box-sizing:border-box}body{margin:0;font-family:"Segoe UI",Tahoma,sans-serif;background:radial-gradient(ellipse at 20% 0%,#1a2040,var(--bg) 50%);color:var(--text);min-height:100vh}
+[dir=rtl] body{font-family:"Segoe UI",Tahoma,sans-serif}
+.shell{display:grid;grid-template-columns:220px 1fr;min-height:100vh}
+@media(max-width:800px){.shell{grid-template-columns:1fr}.nav{border-bottom:1px solid var(--line)}}
+.nav{background:rgba(10,12,22,.92);border-right:1px solid var(--line);padding:18px 14px}
+.brand{font-size:1.15rem;font-weight:700;margin-bottom:4px}.tag{color:var(--muted);font-size:.75rem;margin-bottom:16px}
+.nav button{display:block;width:100%;text-align:start;margin:4px 0;background:transparent;border:1px solid transparent;color:var(--text);padding:10px 12px;border-radius:10px;cursor:pointer}
+.nav button.active,.nav button:hover{border-color:var(--line);background:rgba(61,126,255,.12)}
+.main{padding:20px 22px 40px}.hero h1{margin:0 0 6px;font-size:clamp(1.5rem,3vw,2rem)}.muted{color:var(--muted);line-height:1.5}
+.journey{display:flex;flex-wrap:wrap;gap:6px;margin:14px 0 18px}.chip{padding:6px 10px;border-radius:999px;border:1px solid var(--line);font-size:.78rem;color:var(--muted)}.chip.on{color:var(--text);border-color:var(--accent);background:rgba(61,126,255,.15)}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px;margin:12px 0}
+.grid{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(160px,1fr))}
+button.primary{background:linear-gradient(135deg,#3d7eff,#6a5cff);border:0;color:#fff;padding:12px 14px;border-radius:11px;font-weight:600;cursor:pointer}
+button.ghost{background:transparent;border:1px solid var(--line);color:var(--text);padding:12px 14px;border-radius:11px;cursor:pointer}
+.panel-title{margin:0 0 8px;font-size:1rem}#summary{white-space:pre-wrap;line-height:1.45}#raw{display:none;background:#0b0d16;padding:12px;border-radius:8px;font-size:12px;max-height:240px;overflow:auto}
+.toolbar{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px}
+.lang button{padding:6px 10px;font-size:.8rem}.ok{color:var(--ok)}.err{color:#ff8f8f}.empty{color:var(--muted);padding:12px 0}
+select,input{background:#0b0d16;border:1px solid var(--line);color:var(--text);padding:8px 10px;border-radius:8px}
+</style>
+</head>
+<body>
+<div class="shell">
+<aside class="nav" aria-label="Main">
+  <div class="brand" data-i18n="brand">UAOS Arranger Studio</div>
+  <div class="tag" id="verTag">…</div>
+  <button type="button" class="active" data-step="idea" data-i18n="nav_idea">1 · Idea</button>
+  <button type="button" data-step="understand" data-i18n="nav_understand">2 · Understand</button>
+  <button type="button" data-step="arrange" data-i18n="nav_arrange">3 · Arrange</button>
+  <button type="button" data-step="sequence" data-i18n="nav_sequence">4 · Sequence</button>
+  <button type="button" data-step="play" data-i18n="nav_play">5 · Play</button>
+  <button type="button" data-step="export" data-i18n="nav_export">6 · Export</button>
+  <hr style="border:0;border-top:1px solid var(--line);margin:12px 0"/>
+  <button type="button" id="btnDiag" data-i18n="nav_diag">Export diagnostics</button>
+  <button type="button" id="btnStop" data-i18n="nav_stop_app">Stop product</button>
+</aside>
+<main class="main">
+  <div class="toolbar lang">
+    <button type="button" class="ghost" data-lang="en">EN</button>
+    <button type="button" class="ghost" data-lang="de">DE</button>
+    <button type="button" class="ghost" data-lang="ar">AR</button>
+  </div>
+  <div class="hero">
+    <h1 data-i18n="title">Arranger Studio</h1>
+    <p class="muted" data-i18n="subtitle">From chords and melody to arrangement and MIDI export — on your PC, offline.</p>
+  </div>
+  <div class="journey" id="journey"></div>
+  <div class="card">
+    <h3 class="panel-title" data-i18n="actions">Actions</h3>
+    <div class="grid" id="actions"></div>
+  </div>
+  <div class="card">
+    <h3 class="panel-title" data-i18n="result">Result</h3>
+    <div id="summary" class="empty" data-i18n="empty">Choose an action to begin. No developer tools required.</div>
+    <pre id="raw"></pre>
+    <button type="button" class="ghost" id="btnToggleRaw" style="margin-top:8px" data-i18n="show_details">Show technical details</button>
+  </div>
+</main>
+</div>
+<script>
+const I18N={
+en:{brand:"UAOS Arranger Studio",title:"Arranger Studio",subtitle:"From chords and melody to arrangement and MIDI export — on your PC, offline.",
+nav_idea:"1 · Idea",nav_understand:"2 · Understand",nav_arrange:"3 · Arrange",nav_sequence:"4 · Sequence",nav_play:"5 · Play",nav_export:"6 · Export",
+nav_diag:"Export diagnostics",nav_stop_app:"Stop product",actions:"Actions",result:"Result",empty:"Choose an action to begin. No developer tools required.",show_details:"Show technical details",hide_details:"Hide technical details",
+demo_chords:"Open demo — Chords to arrangement",demo_melody:"Open demo — Melody to arrangement",new_project:"New project",save:"Save project",reopen:"Reopen last",play:"Play",stop:"Stop",export_midi:"Export MIDI",list_projects:"My projects"},
+de:{brand:"UAOS Arranger Studio",title:"Arranger Studio",subtitle:"Von Akkorden und Melodie zu Arrangement und MIDI-Export — offline auf Ihrem PC.",
+nav_idea:"1 · Idee",nav_understand:"2 · Verstehen",nav_arrange:"3 · Arrangieren",nav_sequence:"4 · Sequenz",nav_play:"5 · Play",nav_export:"6 · Export",
+nav_diag:"Diagnose exportieren",nav_stop_app:"Produkt beenden",actions:"Aktionen",result:"Ergebnis",empty:"Wählen Sie eine Aktion. Keine Entwicklertools nötig.",show_details:"Technische Details",hide_details:"Details ausblenden",
+demo_chords:"Demo — Akkorde zu Arrangement",demo_melody:"Demo — Melodie zu Arrangement",new_project:"Neues Projekt",save:"Projekt speichern",reopen:"Zuletzt öffnen",play:"Play",stop:"Stop",export_midi:"MIDI exportieren",list_projects:"Meine Projekte"},
+ar:{brand:"UAOS Arranger Studio",title:"استوديو التوزيع",subtitle:"من الأكوردات واللحن إلى التوزيع وتصدير MIDI — على جهازك دون اتصال.",
+nav_idea:"1 · الفكرة",nav_understand:"2 · الفهم",nav_arrange:"3 · التوزيع",nav_sequence:"4 · التسلسل",nav_play:"5 · تشغيل",nav_export:"6 · تصدير",
+nav_diag:"تصدير التشخيص",nav_stop_app:"إيقاف المنتج",actions:"إجراءات",result:"النتيجة",empty:"اختر إجراءً للبدء. لا حاجة لأدوات مطوّر.",show_details:"تفاصيل تقنية",hide_details:"إخفاء التفاصيل",
+demo_chords:"تجربة — أكوردات إلى توزيع",demo_melody:"تجربة — لحن إلى توزيع",new_project:"مشروع جديد",save:"حفظ المشروع",reopen:"إعادة فتح الأخير",play:"تشغيل",stop:"إيقاف",export_midi:"تصدير MIDI",list_projects:"مشاريعي"}
+};
+let lang="en", step="idea", currentProject=null, rawOn=false;
+const steps=["idea","understand","arrange","sequence","play","export"];
+function t(k){return (I18N[lang]||I18N.en)[k]||k}
+function applyI18n(){
+  document.querySelectorAll("[data-i18n]").forEach(el=>{el.textContent=t(el.getAttribute("data-i18n"))});
+  document.getElementById("htmlRoot").lang=lang;
+  document.getElementById("htmlRoot").dir=lang==="ar"?"rtl":"ltr";
+  renderJourney(); renderActions();
+}
+function renderJourney(){
+  document.getElementById("journey").innerHTML=steps.map(s=>`<span class="chip ${s===step?"on":""}">${t("nav_"+ (s==="idea"?"idea":s==="understand"?"understand":s==="arrange"?"arrange":s==="sequence"?"sequence":s==="play"?"play":"export")).replace(/^\d · /,"")}</span>`).join("");
+}
+function setSummary(human, data){
+  document.getElementById("summary").className="";
+  document.getElementById("summary").textContent=human;
+  document.getElementById("raw").textContent=JSON.stringify(data,null,2);
+}
+function setError(msg, data){
+  document.getElementById("summary").className="err";
+  document.getElementById("summary").textContent=msg;
+  document.getElementById("raw").textContent=JSON.stringify(data||{},null,2);
+}
+async function api(url, opts){
+  const r=await fetch(url,opts);
+  const j=await r.json();
+  if(!r.ok||j.ok===false) throw Object.assign(new Error(j.customerMessage||j.error||"Request failed"),{data:j});
+  return j;
+}
+function renderActions(){
+  const a=document.getElementById("actions");
+  const btns=[
+    ["demo_chords", async()=>{const d=await api("/api/sku/arranger-studio/demo/demo-01-chords-arrangement/open",{method:"POST"});currentProject=d.project;step="arrange";applyI18n();setSummary((d.demo?.title||"Demo")+" — " +(d.song?.length||0)+" sections ready.",d);}],
+    ["demo_melody", async()=>{const d=await api("/api/sku/arranger-studio/demo/demo-02-melody-arrangement/open",{method:"POST"});currentProject=d.project;step="arrange";applyI18n();setSummary((d.demo?.title||"Melody demo")+" opened. Hijaz context preserved in technical gates.",d);}],
+    ["new_project", async()=>{const d=await api("/api/sku/arranger-studio/project/new",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({title:"My Arrangement",tempo:96})});currentProject=d.project;step="idea";applyI18n();setSummary("New project created: "+(d.project?.title||"Untitled"),d);}],
+    ["save", async()=>{if(!currentProject){setError("Nothing to save yet. Open a demo or create a project first.");return;}const d=await api("/api/pilot/project/save",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(currentProject)});setSummary("Project saved ("+d.fileName+").",d);}],
+    ["reopen", async()=>{const d=await api("/api/pilot/project/autosave");currentProject=d.project;setSummary("Reopened: "+(d.project?.title||d.source),d);}],
+    ["play", async()=>{step="play";applyI18n();setSummary("Playback state: playing (local transport).",{ok:true,state:"playing"});}],
+    ["stop", async()=>{setSummary("Playback stopped.",{ok:true,state:"stopped"});}],
+    ["export_midi", async()=>{step="export";applyI18n();const d=await api("/api/sku/arranger-studio/export/midi",{method:"POST"});setSummary("MIDI exported: "+d.path+" ("+d.noteCount+" notes).",d);}],
+    ["list_projects", async()=>{const d=await api("/api/pilot/project/list");setSummary((d.projects?.length||0)+" saved project(s).",d);}]
+  ];
+  a.innerHTML="";
+  btns.forEach(([key,fn])=>{
+    const b=document.createElement("button");
+    b.className=key.startsWith("demo")||key==="export_midi"?"primary":"ghost";
+    b.textContent=t(key);
+    b.onclick=async()=>{try{await fn()}catch(e){setError(e.message,e.data)}};
+    a.appendChild(b);
+  });
+}
+document.querySelectorAll(".nav [data-step]").forEach(b=>b.onclick=()=>{
+  document.querySelectorAll(".nav [data-step]").forEach(x=>x.classList.remove("active"));
+  b.classList.add("active"); step=b.dataset.step; applyI18n();
+});
+document.querySelectorAll("[data-lang]").forEach(b=>b.onclick=()=>{lang=b.dataset.lang;applyI18n()});
+document.getElementById("btnToggleRaw").onclick=()=>{
+  rawOn=!rawOn; document.getElementById("raw").style.display=rawOn?"block":"none";
+  document.getElementById("btnToggleRaw").textContent=t(rawOn?"hide_details":"show_details");
+};
+document.getElementById("btnDiag").onclick=async()=>{try{const d=await api("/api/pilot/diagnostics");setSummary("Diagnostics exported: "+d.file+" (secrets redacted).",d)}catch(e){setError(e.message,e.data)}};
+document.getElementById("btnStop").onclick=async()=>{try{await api("/api/pilot/shutdown",{method:"POST"});setSummary("Product stopping. You can close this browser tab.",{ok:true})}catch(e){setError(e.message,e.data)}};
+(async()=>{try{const h=await api("/api/pilot/health");document.getElementById("verTag").textContent=h.version+" · local";}catch{document.getElementById("verTag").textContent="offline";}applyI18n();})();
+</script>
+</body></html>

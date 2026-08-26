@@ -1,0 +1,77 @@
+{
+  "generatedAt": "2026-08-05T11:06:58.374Z",
+  "results": [
+    {
+      "taskId": "TASK-01-00093-CAPABILITY_REGISTRY_CONTRACT",
+      "testCommand": "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00093-capability_registry_contract\\tests\\main.test.mjs",
+      "exitCode": 0,
+      "stdoutTail": "✔ validateRegistry accepts a well-formed registry (0.1197ms)\n✔ rejects a capability with an unknown entitlement state (0.2599ms)\n✔ rejects a registry with duplicate capability ids (0.0895ms)\n✔ rejects a registry with a missing productId (0.0842ms)\n✔ rejects a registry whose knownLimitations is not an array (0.0741ms)\n✔ schema documents the never-enabled-by-default and wrong-product-rejection guarantees (0.2016ms)\n✔ CapabilityRegistryError is a real, distinguishable error type (0.1387ms)\nℹ tests 10\nℹ suites 0\nℹ pass 10\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 67.4855"
+    },
+    {
+      "taskId": "TASK-01-00094-CAPABILITY_REGISTRY_IMPLEMENTATION",
+      "testCommand": "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00094-capability_registry_implementation\\tests\\main.test.mjs",
+      "exitCode": 0,
+      "stdoutTail": "✔ gated capability is enabled only in its required states (0.0917ms)\n✔ FULL PIPELINE: real manifest -> real entitlement resolution -> capability resolution -> deterministic snapshot (1.2663ms)\n✔ DETERMINISM: identical inputs (except createdAt/generatedAt) produce an identical snapshot content (0.1846ms)\n✔ SAVE + REOPEN round-trip via the real AtomicSave primitive preserves the snapshot exactly (3.0245ms)\n✔ rejects resolving an unknown capability id (0.3236ms)\n✔ rejects a manifest whose productId does not match the registry (0.1306ms)\n✔ failure-path: reopenState fails cleanly on a corrupted state file (2.3666ms)\nℹ tests 9\nℹ suites 0\nℹ pass 9\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 79.3274"
+    },
+    {
+      "taskId": "TASK-01-00095-CAPABILITY_REGISTRY_TESTS",
+      "testCommand": "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00095-capability_registry_tests\\tests\\main.test.mjs",
+      "exitCode": 0,
+      "stdoutTail": "✔ verify() smoke check (0.4858ms)\n✔ six-product lifecycle: each product resolves and persists its own independent capability snapshot (13.7578ms)\n✔ capability set correctly widens when entitlement upgrades from TRIAL_ACTIVE to LICENSED (0.1682ms)\n✔ cross-product isolation: reopening product A's state never resolves product B's manifest against it (0.6245ms)\n✔ failure-path: a sabotaged state save leaves the prior state untouched (inherits AtomicSave) (3.9951ms)\nℹ tests 5\nℹ suites 0\nℹ pass 5\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 88.398"
+    },
+    {
+      "taskId": "TASK-01-00096-CAPABILITY_REGISTRY_EVIDENCE",
+      "testCommand": "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00096-capability_registry_evidence\\tests\\main.test.mjs",
+      "exitCode": 0,
+      "stdoutTail": "✔ verify() smoke check (383.1563ms)\n✔ re-running the full feature test suite genuinely passes end-to-end (368.8057ms)\n✔ TEST HARNESS GUARD: zero discovered tests is FAIL (0.8972ms)\n✔ rollback/recovery procedure documents never-enabled-by-default and determinism guarantees (0.094ms)\nℹ tests 4\nℹ suites 0\nℹ pass 4\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 818.8098"
+    },
+    {
+      "taskId": "TASK-01-00121-INSTALLER_PACKAGING_CONTRACT",
+      "testCommand": "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00121-installer_packaging_contract\\tests\\main.test.mjs",
+      "exitCode": 0,
+      "stdoutTail": "✔ rejects an invalid SKU (0.1152ms)\n✔ rejects an invalid releaseChannel (0.1337ms)\n✔ rejects duplicate file paths (0.1109ms)\n✔ rejects a dangling executableRef (points at a file not in the inventory) (0.137ms)\n✔ rejects a dangling privacyStatementRef (0.1644ms)\n✔ schema documents the dangling-reference-rejection and deterministic-receipt guarantees (0.1802ms)\n✔ PackageManifestError is a real, distinguishable error type (0.0743ms)\nℹ tests 12\nℹ suites 0\nℹ pass 12\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 71.246"
+    },
+    {
+      "taskId": "TASK-01-00122-INSTALLER_PACKAGING_IMPLEMENTATION",
+      "testCommand": "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00122-installer_packaging_implementation\\tests\\main.test.mjs",
+      "exitCode": 0,
+      "stdoutTail": "✔ DETERMINISM: buildAcceptanceReceipt is a pure function of manifest content, independent of file ordering in the source object (7.839ms)\n✔ CHECKSUM MISMATCH: verifyManifestIntegrity rejects a file tampered after the manifest was built (2.6666ms)\n✔ MISSING FILE: verifyManifestIntegrity rejects a manifest referencing a file no longer on disk (2.7009ms)\n✔ WRONG PRODUCT/VERSION: assertMatchesExpected rejects a manifest built for a different product (2.2921ms)\n✔ WRONG PRODUCT/VERSION: assertMatchesExpected rejects a manifest built for a different version (2.0168ms)\n✔ failure-path: reopenManifest fails cleanly on a corrupted manifest file (4.4278ms)\n✔ a build missing a required document fails validation at manifest-build time, not silently later (2.0818ms)\nℹ tests 11\nℹ suites 0\nℹ pass 11\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 107.9466"
+    },
+    {
+      "taskId": "TASK-01-00123-INSTALLER_PACKAGING_TESTS",
+      "testCommand": "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00123-installer_packaging_tests\\tests\\main.test.mjs",
+      "exitCode": 0,
+      "stdoutTail": "✔ verify() smoke check (0.452ms)\n✔ six-product release lifecycle: each product builds, saves, reopens, and integrity-verifies its own independent manifest (32.6087ms)\n✔ acceptance receipts for two genuinely different products are never identical (4.4177ms)\n✔ failure-path: one product's tampered build is rejected while four others in the same batch accept cleanly (10.645ms)\n✔ failure-path: reopening a manifest and checking it against the WRONG build directory correctly detects the mismatch (12.6742ms)\nℹ tests 5\nℹ suites 0\nℹ pass 5\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 132.3093"
+    },
+    {
+      "taskId": "TASK-01-00124-INSTALLER_PACKAGING_EVIDENCE",
+      "testCommand": "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00124-installer_packaging_evidence\\tests\\main.test.mjs",
+      "exitCode": 0,
+      "stdoutTail": "✔ verify() smoke check (440.1744ms)\n✔ re-running the full feature test suite genuinely passes end-to-end (429.6417ms)\n✔ TEST HARNESS GUARD: zero discovered tests is FAIL (0.9043ms)\n✔ rollback/recovery procedure documents integrity-detection and determinism guarantees (0.1256ms)\nℹ tests 4\nℹ suites 0\nℹ pass 4\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 939.3455"
+    },
+    {
+      "taskId": "TASK-05-00521-PROJECT_WORKSPACE_CONTRACT",
+      "testCommand": "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-05-00521-project_workspace_contract\\tests\\main.test.mjs",
+      "exitCode": 0,
+      "stdoutTail": "✔ MALFORMED PROJECT: duplicate MIDI channel across tracks is rejected (0.1053ms)\n✔ MALFORMED PROJECT: section with endTick <= startTick is rejected (0.1184ms)\n✔ MALFORMED PROJECT: missing required truth labels is rejected — never silently allowed to skip the disclaimers (0.1005ms)\n✔ MALFORMED PROJECT: arrangementDraft:false is rejected — this feature never claims a finished arrangement (0.1352ms)\n✔ MALFORMED PROJECT: invalid tempoBpm is rejected (0.1573ms)\n✔ MALFORMED PROJECT: invalid timeSignature denominator is rejected (0.0997ms)\n✔ truth labels list includes the three required Creator disclaimers (0.0714ms)\nℹ tests 12\nℹ suites 0\nℹ pass 12\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 68.8173"
+    },
+    {
+      "taskId": "TASK-05-00522-PROJECT_WORKSPACE_IMPLEMENTATION",
+      "testCommand": "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-05-00522-project_workspace_implementation\\tests\\main.test.mjs",
+      "exitCode": 0,
+      "stdoutTail": "✔ EXPORT: exportStandardMidiFile produces a real, independently-parseable Standard MIDI File (6.9401ms)\n✔ EXPORT ROUND-TRIP: parsed note-on/note-off pairs match the original tick/pitch/velocity/channel exactly (0.3662ms)\n✔ DETERMINISM: identical logical projects assembled in a different insertion order export to byte-identical MIDI files (0.213ms)\n✔ INVALID MIDI EVENT: exporting a project with an out-of-range note is rejected at build time, not at export time (0.1294ms)\n✔ MALFORMED MIDI FILE: parseStandardMidiFile rejects a truncated byte stream (0.2211ms)\n✔ MALFORMED MIDI FILE: parseStandardMidiFile rejects a buffer missing the MThd header (0.1678ms)\n✔ MALFORMED MIDI FILE: parseStandardMidiFile rejects an invalid/corrupted status byte (0.1825ms)\nℹ tests 11\nℹ suites 0\nℹ pass 11\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 84.9237"
+    },
+    {
+      "taskId": "TASK-05-00523-PROJECT_WORKSPACE_TESTS",
+      "testCommand": "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-05-00523-project_workspace_tests\\tests\\main.test.mjs",
+      "exitCode": 0,
+      "stdoutTail": "✔ full arrangement draft: two sections, four roles (melody/chord/bass/drums), chord symbols (0.9118ms)\n✔ CLOSE/REOPEN: a full arrangement survives save -> close -> reopen with every event intact (3.2057ms)\n✔ REAL SMF EXPORT: a full arrangement exports to a Standard MIDI File that independently parses back with the correct event count per track (6.6063ms)\n✔ MULTI-PROJECT ISOLATION: two independently-built arrangements never collide on disk, and musically distinct arrangements never export identical bytes (3.8237ms)\n✔ FAILURE PATH: reopening a genuinely corrupted project file fails cleanly instead of returning a broken project (2.2791ms)\n✔ FAILURE PATH: adding a note event to a nonexistent track is rejected rather than silently creating one (0.2057ms)\n✔ TRUTH LABELS: every arrangement produced by this feature explicitly disclaims musical quality and professional-grade output (0.1438ms)\nℹ tests 8\nℹ suites 0\nℹ pass 8\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 89.6537"
+    },
+    {
+      "taskId": "TASK-05-00524-PROJECT_WORKSPACE_EVIDENCE",
+      "testCommand": "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-05-00524-project_workspace_evidence\\tests\\main.test.mjs",
+      "exitCode": 0,
+      "stdoutTail": "✔ verify() smoke check (387.6268ms)\n✔ re-running the full feature test suite genuinely passes end-to-end (377.9434ms)\n✔ TEST HARNESS GUARD: zero discovered tests is FAIL (0.8211ms)\n✔ rollback/recovery procedure documents truth labels and determinism guarantees (0.0962ms)\nℹ tests 4\nℹ suites 0\nℹ pass 4\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 833.9069"
+    }
+  ]
+}

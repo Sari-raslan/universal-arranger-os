@@ -1,0 +1,35 @@
+{
+  "taskId": "TASK-00-00041-EVIDENCE_CONTRACT_ENFORCEMENT_CONTRACT",
+  "agentId": "NODE_LOCAL_WORKER-0011",
+  "startedAt": "2026-08-04T20:47:04.910Z",
+  "endedAt": "2026-08-04T20:47:05.030Z",
+  "status": "PASS",
+  "tests": [
+    {
+      "command": "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-00-00041-evidence_contract_enforcement_contract\\tests\\main.test.mjs",
+      "exitCode": 0,
+      "stdoutTail": "✔ TASK-00-00041-EVIDENCE_CONTRACT_ENFORCEMENT_CONTRACT verify (0.4768ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 65.2554\n"
+    }
+  ],
+  "sha256": "7EA807269728645F8D81A6A8B419B977E8F768CDC89AB8FAC50F146059F8B45D",
+  "allowedPathsUsed": [
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-00-00041-evidence_contract_enforcement_contract",
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-00-00041-evidence_contract_enforcement_contract\\src\\evidence_contract_enforcement_co.mjs",
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-00-00041-evidence_contract_enforcement_contract\\tests\\main.test.mjs"
+  ],
+  "truthStatements": [
+    "Technical WAV success does not prove musical quality",
+    "Fixtures are not product content",
+    "Studio Offline Render is not Real-time DSP",
+    "KORG WRITE_UNSUPPORTED",
+    "No auto adoption of Kids/Teen/Pricing",
+    "Commander not activated"
+  ],
+  "ownerFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-00-00041-evidence_contract_enforcement_contract\\src\\evidence_contract_enforcement_co.mjs",
+  "phase": "DEFINE",
+  "gate": null,
+  "noPush": true,
+  "noMerge": true,
+  "noDeploy": true,
+  "commanderActivated": false
+}

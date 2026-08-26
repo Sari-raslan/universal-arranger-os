@@ -1,0 +1,12 @@
+PROGRAM=Voice / Melody-to-MIDI
+WHAT_THIS_IS=Offline melody notes/WAV analysis → Neutral IR → SMF module.
+DELIVERY_TYPE=MODULE (WORKFLOW)
+START_HERE=PRODUCT/RUN_ACCEPTED_DEMO.mjs
+HOW_TO_OPEN=From repo root: node final-owner-delivery/10-voice-melody-midi/PRODUCT/RUN_ACCEPTED_DEMO.mjs
+WHAT_TO_TEST=Notes→SMF roundtrip offline; mic gate preserved.
+ACCEPTANCE_STATUS=FINAL_ACCEPTANCE_PASS
+KNOWN_LIMITATIONS=Not perfect transcription | Microphone path hardware-gated
+EXTERNAL_GATES=HARDWARE_REQUIRED:microphone
+FINAL_MUSICAL_ACCEPTANCE_DEFERRED=NO
+PUBLIC_RELEASE=NO
+CLASSIFICATION=PRIVATE_OWNER_DELIVERY_PACKAGE

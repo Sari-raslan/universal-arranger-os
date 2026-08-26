@@ -1,55 +1,74 @@
 {
-  "factoryVersion": "1.0.0",
-  "factoryRoot": "C:/keyboard-manager-clean/uaos-agent-factory",
-  "worktreeRoot": "C:/UAOS_AGENT_FACTORY_WORKTREES",
-  "artifactRoot": "C:/keyboard-manager-clean/uaos-agent-factory/state/artifacts",
-  "buildCacheRoot": "C:/keyboard-manager-clean/uaos-agent-factory/state/build-cache",
-  "dashboardHost": "127.0.0.1",
-  "dashboardPort": 17321,
-  "resourcePolicy": {
-    "ramFreeGe12": { "maxHeavyWriters": 2, "maxLightReviewers": 2 },
-    "ramFreeGe7": { "maxHeavyWriters": 2, "maxLightReviewers": 2 },
-    "ramFreeGe4": { "maxHeavyWriters": 1, "maxLightReviewers": 2 },
-    "ramFreeLt4": { "maxHeavyWriters": 0, "maxLightReviewers": 1, "pauseHeavy": true },
-    "diskMinGb": { "C": 10 },
-    "diskCriticalGb": 2
-  },
-  "lanePriority": { "singy": 45, "arranger": 35, "library": 20 },
-  "lanes": {
-    "singy": {
-      "repoRoot": "C:/keyboard-manager-clean/uaos-worktrees/uaos-singy-final-product",
-      "integrationBranch": "factory/singy-integration",
-      "productName": "UAOS Singy"
-    },
-    "arranger": {
-      "repoRoot": "C:/keyboard-manager-clean/uaos-real-product",
-      "integrationBranch": "factory/arranger-integration",
-      "productName": "UAOS Arranger Studio"
-    },
-    "library": {
-      "repoRoot": "C:/keyboard-manager-clean/uaos-real-product",
-      "integrationBranch": "factory/library-integration",
-      "productName": "UAOS Library Factory Studio",
-      "note": "Shares uaos-real-product source; isolated via factory worktrees and path allowlists"
-    }
-  },
-  "forbiddenCommands": [
-    "git push",
-    "gh release",
-    "npm publish",
-    "vercel deploy",
-    "netlify deploy",
-    "firebase deploy",
-    "git reset --hard",
-    "git clean -fd",
-    "git stash"
-  ],
-  "safety": {
-    "allowDeploy": false,
-    "allowPayment": false,
-    "allowKorgWriter": false,
-    "allowUsb": false,
-    "allowSysEx": false,
-    "localhostOnly": true
-  }
+    "factoryVersion":  "1.0.0",
+    "factoryRoot":  "C:/keyboard-manager-clean/uaos-agent-factory",
+    "worktreeRoot":  "C:/UAOS_AGENT_FACTORY_WORKTREES",
+    "artifactRoot":  "C:/keyboard-manager-clean/uaos-agent-factory/state/artifacts",
+    "buildCacheRoot":  "C:/keyboard-manager-clean/uaos-agent-factory/state/build-cache",
+    "dashboardHost":  "127.0.0.1",
+    "dashboardPort":  17321,
+    "resourcePolicy":  {
+                           "ramFreeGe12":  {
+                                               "maxHeavyWriters":  1,
+                                               "maxLightReviewers":  2
+                                           },
+                           "ramFreeGe7":  {
+                                              "maxHeavyWriters":  1,
+                                              "maxLightReviewers":  2
+                                          },
+                           "ramFreeGe4":  {
+                                              "maxHeavyWriters":  1,
+                                              "maxLightReviewers":  2
+                                          },
+                           "ramFreeLt4":  {
+                                              "maxHeavyWriters":  0,
+                                              "maxLightReviewers":  1,
+                                              "pauseHeavy":  true
+                                          },
+                           "diskMinGb":  {
+                                             "C":  10
+                                         },
+                           "diskCriticalGb":  2
+                       },
+    "lanePriority":  {
+                         "singy":  45,
+                         "arranger":  35,
+                         "library":  20
+                     },
+    "lanes":  {
+                  "singy":  {
+                                "repoRoot":  "C:/keyboard-manager-clean/uaos-worktrees/uaos-singy-final-product",
+                                "integrationBranch":  "factory/singy-integration",
+                                "productName":  "UAOS Singy"
+                            },
+                  "arranger":  {
+                                   "repoRoot":  "C:/keyboard-manager-clean/uaos-real-product",
+                                   "integrationBranch":  "factory/arranger-integration",
+                                   "productName":  "UAOS Arranger Studio"
+                               },
+                  "library":  {
+                                  "repoRoot":  "C:/keyboard-manager-clean/uaos-real-product",
+                                  "integrationBranch":  "factory/library-integration",
+                                  "productName":  "UAOS Library Factory Studio",
+                                  "note":  "Shares uaos-real-product source; isolated via factory worktrees and path allowlists"
+                              }
+              },
+    "forbiddenCommands":  [
+                              "git push",
+                              "gh release",
+                              "npm publish",
+                              "vercel deploy",
+                              "netlify deploy",
+                              "firebase deploy",
+                              "git reset --hard",
+                              "git clean -fd",
+                              "git stash"
+                          ],
+    "safety":  {
+                   "allowDeploy":  false,
+                   "allowPayment":  false,
+                   "allowKorgWriter":  false,
+                   "allowUsb":  false,
+                   "allowSysEx":  false,
+                   "localhostOnly":  true
+               }
 }

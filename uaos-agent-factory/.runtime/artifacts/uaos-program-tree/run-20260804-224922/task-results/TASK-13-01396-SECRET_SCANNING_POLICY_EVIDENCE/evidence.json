@@ -1,0 +1,35 @@
+{
+  "taskId": "TASK-13-01396-SECRET_SCANNING_POLICY_EVIDENCE",
+  "agentId": "NODE_LOCAL_WORKER-0047",
+  "startedAt": "2026-08-04T20:49:34.336Z",
+  "endedAt": "2026-08-04T20:49:34.459Z",
+  "status": "PASS",
+  "tests": [
+    {
+      "command": "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-13-01396-secret_scanning_policy_evidence\\tests\\main.test.mjs",
+      "exitCode": 0,
+      "stdoutTail": "✔ TASK-13-01396-SECRET_SCANNING_POLICY_EVIDENCE verify (0.5163ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 70.1603\n"
+    }
+  ],
+  "sha256": "16626C59591CBBCF6B11BA88F81091F5FD703F90D66C7F480F7B148EE57F810D",
+  "allowedPathsUsed": [
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-13-01396-secret_scanning_policy_evidence",
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-13-01396-secret_scanning_policy_evidence\\src\\secret_scanning_policy_evidence.mjs",
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-13-01396-secret_scanning_policy_evidence\\tests\\main.test.mjs"
+  ],
+  "truthStatements": [
+    "Technical WAV success does not prove musical quality",
+    "Fixtures are not product content",
+    "Studio Offline Render is not Real-time DSP",
+    "KORG WRITE_UNSUPPORTED",
+    "No auto adoption of Kids/Teen/Pricing",
+    "Commander not activated"
+  ],
+  "ownerFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-13-01396-secret_scanning_policy_evidence\\src\\secret_scanning_policy_evidence.mjs",
+  "phase": "EVIDENCE",
+  "gate": null,
+  "noPush": true,
+  "noMerge": true,
+  "noDeploy": true,
+  "commanderActivated": false
+}

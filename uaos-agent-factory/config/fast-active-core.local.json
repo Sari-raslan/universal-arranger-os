@@ -1,0 +1,57 @@
+{
+    "version":  1,
+    "mode":  "FAST_ACTIVE_CORE",
+    "generatedAt":  "2026-08-18T11:37:01.0054722+02:00",
+    "canonicalRoot":  "C:\\keyboard-manager-clean",
+    "activeRootsFile":  "C:\\ProgramData\\UAOS\\FastActiveCore\\ACTIVE_ROOTS.txt",
+    "archiveExcludeRootsFile":  "C:\\ProgramData\\UAOS\\FastActiveCore\\ARCHIVE_EXCLUDE_ROOTS.txt",
+    "regenerableRootsFile":  "C:\\ProgramData\\UAOS\\FastActiveCore\\REGENERABLE_ROOTS.txt",
+    "oldFailedRootsFile":  "C:\\ProgramData\\UAOS\\FastActiveCore\\OLD_FAILED_ROOTS.txt",
+    "limits":  {
+                   "maxHeavyWriters":  1,
+                   "maxLightReviewersScouts":  2,
+                   "scanBatchSize":  1000,
+                   "hashMode":  "CHANGED_ONLY",
+                   "nodeMaxOldSpaceMB":  4096,
+                   "buildParallelJobs":  2,
+                   "ramFreePauseHeavyGB":  4,
+                   "cpuSustainedThrottlePercent":  85,
+                   "packagingDiskFreeFloorGB":  20
+               },
+    "rules":  [
+                  "one writer per worktree",
+                  "dirty registered git worktrees always active",
+                  "rescue/quarantine/LAN/failed/legacy excluded from daily scans",
+                  "no delete or move of archive data",
+                  "hash changed files and critical manifests only during normal work",
+                  "full estate hash only for explicit migration/verification"
+              ],
+    "totals":  {
+                   "KEEP_ACTIVE":  {
+                                       "bytes":  28270030854,
+                                       "human":  "26,33 GB",
+                                       "files":  380919,
+                                       "roots":  21
+                                   },
+                   "KEEP_ARCHIVE":  {
+                                        "bytes":  461103814087,
+                                        "human":  "429,44 GB",
+                                        "files":  1078546,
+                                        "roots":  534
+                                    },
+                   "REGENERABLE":  {
+                                       "bytes":  3547662631,
+                                       "human":  "3,30 GB",
+                                       "files":  21627,
+                                       "roots":  10
+                                   },
+                   "OLD_FAILED":  {
+                                      "bytes":  43541981662,
+                                      "human":  "40,55 GB",
+                                      "files":  22824,
+                                      "roots":  13
+                                  }
+               },
+    "allInventoryBytes":  536463489234,
+    "allInventoryHuman":  "499,62 GB"
+}

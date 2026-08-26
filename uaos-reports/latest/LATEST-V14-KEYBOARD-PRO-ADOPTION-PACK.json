@@ -1,0 +1,58 @@
+{
+    "product":  "PRODUCT-SINGY_KEYBOARD_PRO",
+    "status":  "ADOPTION_PACK_READY_WITH_GAPS",
+    "sourceRepository":  "C:\\keyboard-manager-clean\\uaos-real-product",
+    "sourceWorktree":  "C:\\UAOS_AGENT_FACTORY_WORKTREES\\arranger-integration",
+    "validationWorktree":  "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-v14-adoption\\keyboard-pro-415db512",
+    "branch":  "factory/arranger-integration",
+    "fullCommit":  "415db5123bf6f1851cca284f92fb8e3478ffd967",
+    "targetRepository":  "C:\\keyboard-manager-clean\\uaos-real-product",
+    "targetBaseline":  "882f6ca695b4c8df6f0f9968b65b5710d0c55346",
+    "featureCoverage":  {
+                            "ArrangerStudio":  "PASS",
+                            "GenerateMySet":  "PARTIAL_DRY_RUN",
+                            "KeyboardConverters":  "MISSING",
+                            "MagicSetBuilder":  "PASS",
+                            "SetDoctor":  "PASS",
+                            "Catalog":  "PASS",
+                            "Preview":  "PASS",
+                            "ProjectFormat":  "PASS",
+                            "SafeExport":  "PASS"
+                        },
+    "hardwareSafetyExclusions":  [
+                                     "Real KORG Writer",
+                                     "USB Write",
+                                     "Hardware Load",
+                                     "SysEx",
+                                     "Commercial KORG-ready Claims"
+                                 ],
+    "tests":  {
+                  "npmCi":  0,
+                  "test:arranger-foundation":  0,
+                  "check":  0,
+                  "build:desktop":  0
+              },
+    "missingPieces":  [
+                          "Keyboard Converters product",
+                          "Generate My Set beyond dry-run"
+                      ],
+    "moduleInventory":  [
+                            "apps/desktop/src/uaos-live/arranger/**",
+                            "packages/magic-set/**",
+                            "packages/set-doctor/**",
+                            "apps/desktop/src/uaos-live/generate-my-set/**"
+                        ],
+    "packagingPrerequisites":  [
+                                   "electron-builder Arranger Studio config",
+                                   "exclude hardware writer binaries"
+                               ],
+    "candidateCommitMessages":  [
+                                    "Adopt Arranger Integration A-100 Keyboard Pro foundations",
+                                    "Keep hardware write paths disabled"
+                                ],
+    "rollbackPlan":  "Do not apply patches; remove keyboard-pro-415db512 worktree",
+    "integrationOrder":  4,
+    "proposedPatches":  [
+                            "patches/keyboard-pro/001-adopt-arranger-integration-foundations.patch"
+                        ]
+}

@@ -1,0 +1,26 @@
+{
+  "generatedAt": "2026-08-05T11:12:00.000Z",
+  "chain": "Chain B - Installer Packaging / Package Manifest Validation",
+  "tasks": [
+    "TASK-01-00121-INSTALLER_PACKAGING_CONTRACT",
+    "TASK-01-00122-INSTALLER_PACKAGING_IMPLEMENTATION",
+    "TASK-01-00123-INSTALLER_PACKAGING_TESTS",
+    "TASK-01-00124-INSTALLER_PACKAGING_EVIDENCE"
+  ],
+  "realBehaviorProven": [
+    "buildManifestFromDirectory() recursively discovers every regular file in a real build directory (reusing Batch 4's discoverRegularFiles) and computes a real SHA256 checksum per file, deterministically ordered by relativePath.",
+    "validatePackageManifest() rejects a manifest whose knownLimitationsRef/privacyStatementRef/executableRef points at a file not actually present in the inventory (dangling-reference rejection) at BUILD time, not discovered later.",
+    "verifyManifestIntegrity() re-hashes every file on disk against the manifest's recorded checksum and rejects both tampering (checksum mismatch) and missing files.",
+    "assertMatchesExpected() rejects a manifest built for the wrong productId or version before acceptance proceeds.",
+    "buildAcceptanceReceipt() is a deterministic pure function of manifest content (order-independent, no wall-clock) -- proven via a reversed-file-order equality test.",
+    "Full lifecycle proven across all 6 real commercial products (library-factory, keyboard-pro, creator, studio-pro, singy-kids, singy-teen): build -> save (Batch 1 AtomicSave) -> reopen -> verify -> receipt.",
+    "Realistic batch failure-path proven: 5 products built together, 1 tampered after manifest-build, correctly and independently rejected while the other 4 accept cleanly."
+  ],
+  "reuseOverReimplementation": [
+    "validateRelativePath imported directly from Batch 4's export_import_user_data_contract.mjs",
+    "discoverRegularFiles imported directly from Batch 4's export_import_user_data_implemen.mjs",
+    "atomicSaveSync imported directly from Batch 1's atomic_save_implementation.mjs"
+  ],
+  "testCounts": { "contract": 12, "implementation": 11, "tests": 5, "evidence": 4, "total": 32 },
+  "allEvidenceStatus": "PASS"
+}

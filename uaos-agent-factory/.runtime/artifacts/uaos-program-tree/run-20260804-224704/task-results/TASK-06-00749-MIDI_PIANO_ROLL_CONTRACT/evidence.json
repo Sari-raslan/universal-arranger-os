@@ -1,0 +1,35 @@
+{
+  "taskId": "TASK-06-00749-MIDI_PIANO_ROLL_CONTRACT",
+  "agentId": "NODE_LOCAL_WORKER-0160",
+  "startedAt": "2026-08-04T20:47:11.470Z",
+  "endedAt": "2026-08-04T20:47:11.594Z",
+  "status": "PASS",
+  "tests": [
+    {
+      "command": "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-06-00749-midi_piano_roll_contract\\tests\\main.test.mjs",
+      "exitCode": 0,
+      "stdoutTail": "✔ TASK-06-00749-MIDI_PIANO_ROLL_CONTRACT verify (0.5151ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 64.3875\n"
+    }
+  ],
+  "sha256": "5A52E073D77EEF21E28421A3E7D6629ADF4621F382EB72518E97459BAF7BF6B5",
+  "allowedPathsUsed": [
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-06-00749-midi_piano_roll_contract",
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-06-00749-midi_piano_roll_contract\\src\\midi_piano_roll_contract.mjs",
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-06-00749-midi_piano_roll_contract\\tests\\main.test.mjs"
+  ],
+  "truthStatements": [
+    "Technical WAV success does not prove musical quality",
+    "Fixtures are not product content",
+    "Studio Offline Render is not Real-time DSP",
+    "KORG WRITE_UNSUPPORTED",
+    "No auto adoption of Kids/Teen/Pricing",
+    "Commander not activated"
+  ],
+  "ownerFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-06-00749-midi_piano_roll_contract\\src\\midi_piano_roll_contract.mjs",
+  "phase": "DEFINE",
+  "gate": null,
+  "noPush": true,
+  "noMerge": true,
+  "noDeploy": true,
+  "commanderActivated": false
+}

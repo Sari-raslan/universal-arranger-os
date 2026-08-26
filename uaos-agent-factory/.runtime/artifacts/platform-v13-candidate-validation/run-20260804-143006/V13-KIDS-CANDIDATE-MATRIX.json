@@ -1,0 +1,50 @@
+{
+    "product":  "PRODUCT-SINGY_KIDS",
+    "decision":  "MULTIPLE_CANDIDATES_OWNER_REQUIRED",
+    "autoSelected":  false,
+    "sharedGaps":  [
+                       "Safe Chat",
+                       "Instrument Learning",
+                       "Story to Song",
+                       "Operetta Builder",
+                       "Music Learning"
+                   ],
+    "candidates":  [
+                       {
+                           "risks":  "named Kids V13 features missing; mixed Teen/cashflow",
+                           "branch":  "factory/singy-rc1-r7-3-auto-load-local-kontakt-piano-tonal-core",
+                           "path":  "C:\\UAOS_AGENT_FACTORY_WORKTREES\\singy-integration",
+                           "head":  "c0f1c58",
+                           "missing_parts":  [
+                                                 "Safe Chat",
+                                                 "Story to Song",
+                                                 "Operetta",
+                                                 "Instrument Learning"
+                                             ],
+                           "feature_coverage":  "Child safety partial, Parent controls partial, Age edition, i18n partial; engine/R7 depth",
+                           "tests":  "large singy suite",
+                           "recommended_role":  "ENGINE_INTEGRATION_LEAD",
+                           "score":  74,
+                           "dirty_count":  17,
+                           "candidate":  "singy-integration"
+                       },
+                       {
+                           "risks":  "engine may lag R7; dual Kids+Teen tree",
+                           "branch":  "factory/singy-kids-teen-commercial-rc2",
+                           "path":  "C:\\UAOS_AGENT_FACTORY_WORKTREES\\singy-kids-teen-commercial-rc2",
+                           "head":  "57d70df",
+                           "missing_parts":  [
+                                                 "Safe Chat",
+                                                 "Story to Song",
+                                                 "Operetta",
+                                                 "Instrument Learning"
+                                             ],
+                           "feature_coverage":  "commercial Kids packaging + partial safety/parent/age/i18n",
+                           "tests":  "commercial-rc2 + kids tests",
+                           "recommended_role":  "COMMERCIAL_PACKAGING_LEAD",
+                           "score":  78,
+                           "dirty_count":  16,
+                           "candidate":  "singy-kids-teen-commercial-rc2"
+                       }
+                   ]
+}

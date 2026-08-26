@@ -1,0 +1,38 @@
+{
+  "status": "UAOS_V8_CURSOR_MULTI_AGENT_GATE_ORCHESTRATION_PASS",
+  "overallState": "UAOS_V8_DEPENDENCY_INSTALL_REQUIRED",
+  "executionMode": "OWNED_LOCAL_WORKER_PROCESSES",
+  "generatedAt": "2026-08-04T06:01:31.167Z",
+  "startedAt": "2026-08-04T06:01:22.977Z",
+  "runId": "run-20260804-080122-v8",
+  "runDir": "C:\\keyboard-manager-clean\\uaos-agent-factory\\.runtime\\artifacts\\platform-v8-execution-gates\\run-20260804-080122-v8",
+  "v7Baseline": {
+    "status": "UAOS_V7_ISOLATED_WORKTREE_MATERIALIZATION_PASS",
+    "worktrees": 25,
+    "sourceBlocked": 6,
+    "ownerDecisionsPending": 12,
+    "worktreeRoot": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-staging-v6",
+    "preflightPath": "C:\\keyboard-manager-clean\\uaos-agent-factory\\.runtime\\artifacts\\platform-worktree-materialization\\run-20260804-074400-v7\\TASK-EXECUTION-PREFLIGHT.json"
+  },
+  "concurrency": {
+    "heavy": 4,
+    "light": 4,
+    "freeGb": 14.41
+  },
+  "counts": {
+    "tasksAudited": 25,
+    "gatePass": 0,
+    "gatePartialOrSkipped": 25,
+    "dependencyRequired": 10,
+    "testFail": 0,
+    "blockedSource": 6,
+    "ownerDecisions": 12
+  },
+  "claims": "Original repositories unchanged by policy; gates executed only in isolated V7 worktrees.",
+  "truthfulNotes": [
+    "V8 does not claim product implementation, musical quality, or commercial readiness.",
+    "Six source-blocked product tasks remain BLOCKED.",
+    "Twelve owner price decisions remain OWNER_NOT_APPROVED.",
+    "Missing dependencies were classified; install commands were not executed."
+  ]
+}

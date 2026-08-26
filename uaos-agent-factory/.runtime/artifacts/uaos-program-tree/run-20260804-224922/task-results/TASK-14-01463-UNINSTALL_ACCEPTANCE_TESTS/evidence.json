@@ -1,0 +1,35 @@
+{
+  "taskId": "TASK-14-01463-UNINSTALL_ACCEPTANCE_TESTS",
+  "agentId": "NODE_LOCAL_WORKER-0051",
+  "startedAt": "2026-08-04T20:49:34.507Z",
+  "endedAt": "2026-08-04T20:49:34.626Z",
+  "status": "PASS",
+  "tests": [
+    {
+      "command": "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-14-01463-uninstall_acceptance_tests\\tests\\main.test.mjs",
+      "exitCode": 0,
+      "stdoutTail": "✔ TASK-14-01463-UNINSTALL_ACCEPTANCE_TESTS verify (0.5167ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 66.8944\n"
+    }
+  ],
+  "sha256": "11B6B174CB1845B9A6787D53F0EC453D92824F4671D394FDD932D2F4DA6AD763",
+  "allowedPathsUsed": [
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-14-01463-uninstall_acceptance_tests",
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-14-01463-uninstall_acceptance_tests\\src\\uninstall_acceptance_tests.mjs",
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-14-01463-uninstall_acceptance_tests\\tests\\main.test.mjs"
+  ],
+  "truthStatements": [
+    "Technical WAV success does not prove musical quality",
+    "Fixtures are not product content",
+    "Studio Offline Render is not Real-time DSP",
+    "KORG WRITE_UNSUPPORTED",
+    "No auto adoption of Kids/Teen/Pricing",
+    "Commander not activated"
+  ],
+  "ownerFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-14-01463-uninstall_acceptance_tests\\src\\uninstall_acceptance_tests.mjs",
+  "phase": "TEST",
+  "gate": null,
+  "noPush": true,
+  "noMerge": true,
+  "noDeploy": true,
+  "commanderActivated": false
+}

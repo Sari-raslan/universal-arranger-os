@@ -1,0 +1,38 @@
+{
+  "id": "TASK-07-00926-CURRICULUM_VERSIONING_IMPLEMENTATION",
+  "epicId": "EPIC-07-0008-SINGY_CORE_FULL_TREE",
+  "domain": "07-SINGY-CORE",
+  "title": "Curriculum versioning implementation",
+  "phase": "IMPLEMENT",
+  "releaseTrain": "R1-STABLE-COMMERCIAL",
+  "state": "READY",
+  "priority": 21,
+  "estimateMinutesMin": 60,
+  "estimateMinutesMax": 240,
+  "inputs": [],
+  "acceptanceCriteria": [
+    "Curriculum versioning implementation contract file exists",
+    "Unit assertions pass for Curriculum versioning implementation",
+    "Evidence JSON written with SHA256"
+  ],
+  "tests": [
+    "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-07-00926-curriculum_versioning_implementation\\tests\\main.test.mjs"
+  ],
+  "evidence": [
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-07-00926-curriculum_versioning_implementation/evidence/result.json"
+  ],
+  "allowedPaths": [
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-07-00926-curriculum_versioning_implementation",
+    "C:\\keyboard-manager-clean\\uaos-agent-factory\\.runtime\\artifacts\\uaos-program-tree\\TASK-07-00926-CURRICULUM_VERSIONING_IMPLEMENTATION"
+  ],
+  "ownerFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-07-00926-curriculum_versioning_implementation\\src\\curriculum_versioning_implementa.mjs",
+  "worktree": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-07-00926-curriculum_versioning_implementation",
+  "gate": null,
+  "blockedReason": null,
+  "rc1Critical": false,
+  "claims": [],
+  "lease": null,
+  "heartbeats": [],
+  "createdAt": "2026-08-04T20:47:04.334Z",
+  "updatedAt": "2026-08-04T20:49:27.368Z"
+}

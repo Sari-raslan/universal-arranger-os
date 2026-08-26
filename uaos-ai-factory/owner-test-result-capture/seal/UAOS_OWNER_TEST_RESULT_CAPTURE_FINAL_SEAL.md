@@ -10,4 +10,4 @@ KORG Writer: BLOCKED
 .STY/.SET generated: NO
 USB: NO
 PA3X: NO
-Commit hash if committed: PENDING
+Commit hash if committed: d8f6870982f7ea4a442b794705e3a003c1879af9

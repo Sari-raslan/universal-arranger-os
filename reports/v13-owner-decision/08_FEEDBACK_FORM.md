@@ -1,0 +1,17 @@
+# Pilot Feedback Form (concise)
+
+1. INSTALL_SUCCESS (Y/N)
+2. FIRST_START_SUCCESS (Y/N)
+3. TIME_TO_FIRST_RESULT (seconds or estimate)
+4. WORKFLOW_COMPLETED (which)
+5. CRASH_OR_ERROR (Y/N + text)
+6. CONFUSION_POINTS (free text)
+7. OUTPUT_USEFUL (1–5)
+8. OUTPUT_QUALITY (1–5)
+9. WOULD_USE_AGAIN (Y/N)
+10. WOULD_PAY (Y/N)
+11. EXPECTED_PRICE (EUR)
+12. TOP_MISSING_ITEM
+13. OVERALL_SCORE_1_TO_10
+
+Optional: attach Diagnostics export from app.

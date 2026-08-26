@@ -1,0 +1,106 @@
+{
+  "v19FullSha": "3fa65b47f0f328ab43b23467fc838eedc1eafd75",
+  "v20FullSha": "be7fbc04f803791d3087a2e7a4e5dadab6880ed2",
+  "currentHead": "c9b19673a7f054053e43cadbb2925711e844fdef",
+  "ancestorOk": true,
+  "commitBetween": [
+    "be7fbc04f803791d3087a2e7a4e5dadab6880ed2|UAOS Local Factory|uaos-local-factory@local|2026-08-04T21:16:28+02:00|Track live agent availability and writer eligibility"
+  ],
+  "filesChanged": [
+    "reports/UAOS_COMMANDER_LIVE_AGENT_AVAILABILITY_READY.json",
+    "reports/UAOS_COMMANDER_PHASE10_BUILD.txt",
+    "reports/UAOS_COMMANDER_PHASE10_FOCUSED_TEST_LOG.txt",
+    "reports/UAOS_COMMANDER_PHASE10_LINT.txt",
+    "reports/UAOS_COMMANDER_PHASE10_TEST_LOG.txt",
+    "reports/UAOS_COMMANDER_PHASE10_TYPECHECK.txt",
+    "src/main/buildInfo.generated.json",
+    "src/main/chat/AgentRouter.ts",
+    "src/main/chat/autoRouting.ts",
+    "src/main/grounding/ProjectGroundingService.ts",
+    "src/main/index.ts",
+    "src/main/ipc/handlers.ts",
+    "src/main/state/AgentRuntimeHealth.ts",
+    "src/main/state/ChatAgentDirectory.ts",
+    "tests/acceptance/phase10-live-agent-availability.test.ts",
+    "tests/acceptance/project-grounding.test.ts"
+  ],
+  "secretHits": [],
+  "chatOnlyOk": true,
+  "defaultModeChatOnly": true,
+  "tests": {
+    "lint": {
+      "exitCode": 0,
+      "pass": true,
+      "command": "npm run lint"
+    },
+    "typecheck": {
+      "exitCode": 0,
+      "pass": true,
+      "command": "npm run typecheck"
+    },
+    "test-focused": {
+      "exitCode": 0,
+      "pass": true,
+      "command": "node node_modules\\vitest\\vitest.mjs run --reporter=verbose tests/acceptance/phase10-live-agent-availability.test.ts tests/acceptance/project-grounding.test.ts"
+    },
+    "test-full": {
+      "exitCode": 1,
+      "pass": false,
+      "command": "npm test"
+    },
+    "build": {
+      "exitCode": 0,
+      "pass": true,
+      "command": "npm run build"
+    }
+  },
+  "classification": "COMMANDER_BASELINE_RECONCILED_WITH_NONBLOCKING_WIP",
+  "chatOnly": true,
+  "resetPerformed": false,
+  "packagePerformed": false,
+  "note": "Detached audit WT at be7fbc04; originals unmodified. Full suite may include nonblocking WIP failures while focused chat/routing + lint/typecheck/build pass. Concurrent Commander advance to c9b19673a7f054053e43cadbb2925711e844fdef during V21 by UAOS Local Factory; not produced by V21; originals otherwise HEAD-stable.",
+  "duringV21ConcurrentHead": "c9b19673a7f054053e43cadbb2925711e844fdef",
+  "v20BaselineStillAncestor": true,
+  "v21CausedCommanderCommit": false,
+  "baselineAudited": "be7fbc04f803791d3087a2e7a4e5dadab6880ed2",
+  "focusedGates": {
+    "lint": true,
+    "typecheck": true,
+    "focusedRoutingChatTests": true,
+    "build": true,
+    "chatOnlyIntact": true,
+    "status": "PASS"
+  },
+  "fullSuite": {
+    "status": "FAIL",
+    "testFilesFailed": 2,
+    "testsFailed": 9,
+    "testFilesPassed": 48,
+    "testsPassed": 555,
+    "skippedFiles": 2,
+    "skippedTests": 4,
+    "failedFiles": [
+      "tests/acceptance/phase6-conversation-ui-packaged-proof.test.ts",
+      "tests/acceptance/pre-extraction-gate.test.ts"
+    ],
+    "failedTests": [
+      "phase6-conversation-ui-packaged-proof > packaged/built renderer includes copy tools and grouped sidebar",
+      "pre-extraction-gate > embeds the exact same mutex name as preExtractionGateConstants.ts",
+      "pre-extraction-gate > embeds the exact same focus window title as preExtractionGateConstants.ts",
+      "pre-extraction-gate > embeds a focus-request message id that numerically matches preExtractionGateConstants.ts",
+      "pre-extraction-gate > acquires the mutex in .onInit, strictly before InitPluginsDir/.onGUIInit and any extraction instruction",
+      "pre-extraction-gate > is a single bounded acquisition attempt — no retry/poll loop anywhere in the template",
+      "pre-extraction-gate > a detected secondary Quits inside .onInit, before it could ever reach the extraction Section",
+      "pre-extraction-gate > the secondary path only does a best-effort FindWindow+SendMessage — no shell/exec/eval",
+      "pre-extraction-gate > SendMessage to the primary window uses a bounded timeout, never an indefinite wait"
+    ],
+    "categories": [
+      "portable.nsi pre-extraction-gate packaging",
+      "packaged conversation UI proof"
+    ],
+    "nonblocking": true,
+    "didNotChangeCoordinatorStatus": true
+  },
+  "rerunCompleteAudit": false,
+  "originalCommanderRepoModified": false
+}

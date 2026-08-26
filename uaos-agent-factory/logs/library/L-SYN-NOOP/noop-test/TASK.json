@@ -1,0 +1,45 @@
+{
+  "id": "L-SYN-GENERIC",
+  "lane": "library",
+  "title": "Synthetic",
+  "priority": 1,
+  "status": "ready",
+  "dependsOn": [
+    "L-001"
+  ],
+  "humanGate": false,
+  "retryLimit": 2,
+  "timeoutMinutes": 5,
+  "allowedPaths": [
+    "UAOS_GENERIC_MARKER.txt"
+  ],
+  "forbiddenPaths": [
+    "node_modules/**"
+  ],
+  "commands": {
+    "tests": []
+  },
+  "artifactsExpected": [],
+  "localSyntheticAction": "noop-pass",
+  "localSyntheticPath": "UAOS_GENERIC_MARKER.txt",
+  "result": null,
+  "updatedAt": "2026-08-14T14:49:09.466Z",
+  "allowIntegratorDispatch": false,
+  "blockingReason": null,
+  "nextRetryAt": null,
+  "retryCount": 0,
+  "worktreePath": "D:\\UAOS_AGENT_FACTORY_BUILD\\synthetic-repos\\iso-2026-07-22T09-58-49-887Z-l-syn-generic\\task",
+  "writerRole": "cursor-local",
+  "lastAttemptAt": "2026-07-22T06:55:17.617Z",
+  "runnerCommandHash": "2ca25be048bb10e2",
+  "lastExitCode": 1,
+  "lastError": "WRITER_FAIL",
+  "taskBranch": "factory/library-l-syn-generic",
+  "taskBaseCommit": "7d5ca544d35d10d9f0a64a11603d9f476c285851",
+  "claimedBaseAt": "2026-07-22T09:59:26.936Z",
+  "integrationStatus": "INTEGRATED",
+  "allowNoOpPass": true,
+  "synthetic": true,
+  "nextAutomaticRetry": null,
+  "generatedAt": "2026-08-14T14:49:10.202Z"
+}

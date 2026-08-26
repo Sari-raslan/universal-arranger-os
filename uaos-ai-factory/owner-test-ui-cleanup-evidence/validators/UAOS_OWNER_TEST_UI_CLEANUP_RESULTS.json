@@ -1,59 +1,63 @@
-{
-  "checks": {
-    "build_pass": {
-      "pass": true,
-      "detail": "local URL responses after build"
-    },
-    "mojibake_repaired": {
-      "pass": true,
-      "detail": "known mojibake tokens absent"
-    },
-    "old_strict_no_deploy_wording_removed": {
-      "pass": true,
-      "detail": "old strict terms absent"
-    },
-    "relaxed_product_mode_wording_present": {
-      "pass": true,
-      "detail": "approval-gate wording"
-    },
-    "korg_writer_blocked_text_remains": {
-      "pass": true,
-      "detail": "KORG Writer block"
-    },
-    "sty_set_blocked_text_remains": {
-      "pass": true,
-      "detail": ".STY/.SET block"
-    },
-    "usb_pa3x_blocked_text_remains": {
-      "pass": true,
-      "detail": "USB/PA3X blocks"
-    },
-    "no_deploy_executed": {
-      "pass": true,
-      "detail": "no deploy commands"
-    },
-    "no_push_executed": {
-      "pass": true,
-      "detail": "no push command"
-    },
-    "no_korg_writer": {
-      "pass": true,
-      "detail": "blocked state recorded"
-    },
-    "no_blocked_korg_files_in_run_folder": {
-      "pass": true,
-      "detail": ""
-    },
-    "no_usb_pa3x_payment_activation": {
-      "pass": true,
-      "detail": "blocked actions absent"
-    },
-    "no_false_claim_strings": {
-      "pass": true,
-      "detail": "claim strings absent"
-    }
-  },
-  "errors": [],
-  "pass": true,
-  "validator": "uaos_owner_test_ui_cleanup_validator.py"
+﻿{
+    "checks":  {
+                   "build_pass":  {
+                                      "pass":  true,
+                                      "detail":  "local URL responses after build"
+                                  },
+                   "mojibake_repaired":  {
+                                             "pass":  true,
+                                             "detail":  "known mojibake tokens absent"
+                                         },
+                   "old_strict_no_deploy_wording_removed":  {
+                                                                "pass":  true,
+                                                                "detail":  "old strict terms absent"
+                                                            },
+                   "relaxed_product_mode_wording_present":  {
+                                                                "pass":  true,
+                                                                "detail":  "approval-gate wording"
+                                                            },
+                   "korg_writer_blocked_text_remains":  {
+                                                            "pass":  true,
+                                                            "detail":  "KORG Writer block"
+                                                        },
+                   "sty_set_blocked_text_remains":  {
+                                                        "pass":  true,
+                                                        "detail":  ".STY/.SET block"
+                                                    },
+                   "usb_pa3x_blocked_text_remains":  {
+                                                         "pass":  true,
+                                                         "detail":  "USB/PA3X blocks"
+                                                     },
+                   "no_deploy_executed":  {
+                                              "pass":  true,
+                                              "detail":  "no deploy commands"
+                                          },
+                   "no_push_executed":  {
+                                            "pass":  true,
+                                            "detail":  "no push command"
+                                        },
+                   "no_korg_writer":  {
+                                          "pass":  true,
+                                          "detail":  "blocked state recorded"
+                                      },
+                   "no_blocked_korg_files_in_run_folder":  {
+                                                               "pass":  true,
+                                                               "detail":  ""
+                                                           },
+                   "no_usb_pa3x_payment_activation":  {
+                                                          "pass":  true,
+                                                          "detail":  "blocked actions absent"
+                                                      },
+                   "no_false_claim_strings":  {
+                                                  "pass":  true,
+                                                  "detail":  "claim strings absent"
+                                              }
+               },
+    "errors":  [
+
+               ],
+    "pass":  true,
+    "validator":  "uaos_owner_test_ui_cleanup_validator.py",
+    "commit_hash":  "fd895a4d3224390f9f8f05008fdbfc99fbd14a67",
+    "pushed":  false
 }

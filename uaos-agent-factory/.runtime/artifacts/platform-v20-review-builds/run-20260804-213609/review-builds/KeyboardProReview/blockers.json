@@ -1,0 +1,60 @@
+{
+  "status": "KEYBOARD_V20_OWNER_REVIEW_BUILD_READY_INTERNAL_FORMAT_ONLY",
+  "assertions": 11,
+  "pass": 11,
+  "fail": 0,
+  "steps": [
+    {
+      "name": "korg_blocked",
+      "ok": true
+    },
+    {
+      "name": "inspect",
+      "ok": true
+    },
+    {
+      "name": "conv_1",
+      "ok": true
+    },
+    {
+      "name": "conv_2",
+      "ok": true
+    },
+    {
+      "name": "same_input_hash",
+      "ok": true
+    },
+    {
+      "name": "deterministic_manifest_names",
+      "ok": true
+    },
+    {
+      "name": "cancel",
+      "ok": true
+    },
+    {
+      "name": "resume",
+      "ok": true
+    },
+    {
+      "name": "unknown_or_fail",
+      "ok": true
+    },
+    {
+      "name": "source_unchanged",
+      "ok": true
+    },
+    {
+      "name": "no_port",
+      "ok": true
+    }
+  ],
+  "korg": {
+    "mode": "INSPECT_ONLY",
+    "write": "WRITE_UNSUPPORTED",
+    "gate": "OWNER_FORMAT_CONTRACT_REQUIRED"
+  },
+  "usb": false,
+  "hardware": false,
+  "sysex": false
+}

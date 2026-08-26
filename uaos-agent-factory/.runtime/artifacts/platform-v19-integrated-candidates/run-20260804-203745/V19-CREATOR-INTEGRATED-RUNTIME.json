@@ -1,0 +1,183 @@
+{
+    "status":  "CREATOR_V19_INTEGRATED_RUNTIME_CANDIDATE_READY",
+    "secondary":  [
+                      "CREATOR_V19_MUSICAL_QUALITY_UNPROVEN"
+                  ],
+    "claims":  {
+                   "professionalAutomaticArrangement":  false,
+                   "humanMusicalTasteProven":  false,
+                   "advancedHarmonyComplete":  false,
+                   "musicalBrainComplete":  false,
+                   "voiceToMidiProductionAccuracy":  false,
+                   "goldenSequencerCommercialReady":  false
+               },
+    "assertions":  22,
+    "pass":  22,
+    "fail":  0,
+    "steps":  [
+                  {
+                      "name":  "valid_v2",
+                      "ok":  true
+                  },
+                  {
+                      "name":  "1.create_project",
+                      "ok":  true,
+                      "phase":  "step"
+                  },
+                  {
+                      "name":  "four_roles",
+                      "ok":  true
+                  },
+                  {
+                      "name":  "2.add_roles",
+                      "ok":  true,
+                      "phase":  "step"
+                  },
+                  {
+                      "name":  "note_added",
+                      "ok":  true
+                  },
+                  {
+                      "name":  "3.add_midi_notes",
+                      "ok":  true,
+                      "phase":  "step"
+                  },
+                  {
+                      "name":  "sections",
+                      "ok":  true
+                  },
+                  {
+                      "name":  "4.add_sections",
+                      "ok":  true,
+                      "phase":  "step"
+                  },
+                  {
+                      "name":  "prog_ok",
+                      "ok":  true
+                  },
+                  {
+                      "name":  "5.chord_progression",
+                      "ok":  true,
+                      "phase":  "step"
+                  },
+                  {
+                      "name":  "draft",
+                      "ok":  true
+                  },
+                  {
+                      "name":  "6.arrangement_draft",
+                      "ok":  true,
+                      "phase":  "step"
+                  },
+                  {
+                      "name":  "ordered",
+                      "ok":  true
+                  },
+                  {
+                      "name":  "foundation_only",
+                      "ok":  true
+                  },
+                  {
+                      "name":  "7.deterministic_sequence",
+                      "ok":  true,
+                      "phase":  "step"
+                  },
+                  {
+                      "name":  "saved",
+                      "ok":  true
+                  },
+                  {
+                      "name":  "8.save",
+                      "ok":  true,
+                      "phase":  "step"
+                  },
+                  {
+                      "name":  "closed",
+                      "ok":  true
+                  },
+                  {
+                      "name":  "9.close_runtime",
+                      "ok":  true,
+                      "phase":  "step"
+                  },
+                  {
+                      "name":  "reopen_valid",
+                      "ok":  true
+                  },
+                  {
+                      "name":  "10.reopen",
+                      "ok":  true,
+                      "phase":  "step"
+                  },
+                  {
+                      "name":  "rt_tracks",
+                      "ok":  true
+                  },
+                  {
+                      "name":  "rt_notes",
+                      "ok":  true
+                  },
+                  {
+                      "name":  "rt_seq",
+                      "ok":  true
+                  },
+                  {
+                      "name":  "11.round_trip",
+                      "ok":  true,
+                      "phase":  "step"
+                  },
+                  {
+                      "name":  "edited",
+                      "ok":  true
+                  },
+                  {
+                      "name":  "undo",
+                      "ok":  true
+                  },
+                  {
+                      "name":  "redo",
+                      "ok":  true
+                  },
+                  {
+                      "name":  "12.edit_undo_redo",
+                      "ok":  true,
+                      "phase":  "step"
+                  },
+                  {
+                      "name":  "playing",
+                      "ok":  true
+                  },
+                  {
+                      "name":  "paused",
+                      "ok":  true
+                  },
+                  {
+                      "name":  "13.transport_transitions",
+                      "ok":  true,
+                      "phase":  "step"
+                  },
+                  {
+                      "name":  "stopped",
+                      "ok":  true
+                  },
+                  {
+                      "name":  "14.global_stop",
+                      "ok":  true,
+                      "phase":  "step"
+                  },
+                  {
+                      "name":  "migrated",
+                      "ok":  true
+                  },
+                  {
+                      "name":  "mig_valid",
+                      "ok":  true
+                  },
+                  {
+                      "name":  "15.migration_fixture",
+                      "ok":  true,
+                      "phase":  "step"
+                  }
+              ],
+    "globalStopVisible":  true
+}

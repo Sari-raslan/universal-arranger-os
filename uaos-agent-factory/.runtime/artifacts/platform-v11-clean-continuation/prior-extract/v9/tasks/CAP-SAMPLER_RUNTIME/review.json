@@ -1,0 +1,61 @@
+{
+  "id": "CAP-SAMPLER_RUNTIME",
+  "lane": "A",
+  "taskStatus": "TEST_FAIL",
+  "hydrationStatus": "DEPENDENCY_READY",
+  "hydration": {
+    "exitCode": 0,
+    "durationMs": 4680,
+    "timedOut": false,
+    "lockChanged": false,
+    "packageJsonChanged": false,
+    "sizeBeforeBytes": 256401,
+    "sizeAfterBytes": 125704644,
+    "hashesBefore": {
+      "packageJsonSha256": "c417dd184bc45cf46c52115548d430851a69a40d2ff20bb093da365d8067ad52",
+      "lockfileSha256": "467c4b7e3af198fc93ce0d8e53902579c36b031b530cfd482dcdda2c22f8e163"
+    },
+    "hashesAfter": {
+      "packageJsonSha256": "c417dd184bc45cf46c52115548d430851a69a40d2ff20bb093da365d8067ad52",
+      "lockfileSha256": "467c4b7e3af198fc93ce0d8e53902579c36b031b530cfd482dcdda2c22f8e163"
+    },
+    "needsLifecycleReview": true
+  },
+  "supply": {
+    "ok": true,
+    "state": "SUPPLY_CHAIN_PREFLIGHT_PASS",
+    "packageManager": "npm",
+    "lockfile": "package-lock.json",
+    "hashes": {
+      "packageJsonSha256": "c417dd184bc45cf46c52115548d430851a69a40d2ff20bb093da365d8067ad52",
+      "lockfileSha256": "467c4b7e3af198fc93ce0d8e53902579c36b031b530cfd482dcdda2c22f8e163"
+    },
+    "rejected": [],
+    "rcFiles": [],
+    "lifecycleScripts": [],
+    "needsLifecycleReview": true,
+    "findings": [],
+    "checkedAt": "2026-08-04T06:25:32.201Z"
+  },
+  "preflight": {
+    "worktreeExists": true,
+    "expectedHead": "7f845c4a5d1483317161ea1e00a64b36ea739c69",
+    "actualHead": "7f845c4a5d1483317161ea1e00a64b36ea739c69",
+    "headMatches": true,
+    "sizeBeforeBytes": 256401,
+    "freeDiskGb": 25.17
+  },
+  "declaredResults": [
+    {
+      "gate": "check",
+      "status": "TEST_FAIL",
+      "command": "npm run check",
+      "script": "node packages/sampler/samplerFoundation.test.cjs && node packages/sampler/voiceLifecycle.p0005.test.cjs && node packages/library-build/transactionalBuild.p0006.test.cjs && node packages/local-preview-server/localServer.p0007.test.cjs && node packages/sampler-library-adapter/samplerLibraryAdapter.local004.test.cjs && node apps/desktop/src/library-status/libraryStatus.local005.test.cjs && node packages/local-support-bundle/localSupportBundle.local006.test.cjs",
+      "exitCode": 1,
+      "durationMs": 291,
+      "timedOut": false
+    }
+  ],
+  "sizeAfterBytes": 125704644,
+  "completedAt": "2026-08-04T06:25:37.773Z"
+}

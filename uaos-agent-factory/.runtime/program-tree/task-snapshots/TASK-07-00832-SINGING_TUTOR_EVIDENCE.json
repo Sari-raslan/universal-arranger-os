@@ -1,0 +1,38 @@
+{
+  "id": "TASK-07-00832-SINGING_TUTOR_EVIDENCE",
+  "epicId": "EPIC-07-0008-SINGY_CORE_FULL_TREE",
+  "domain": "07-SINGY-CORE",
+  "title": "Singing tutor evidence",
+  "phase": "EVIDENCE",
+  "releaseTrain": "R1-STABLE-COMMERCIAL",
+  "state": "READY",
+  "priority": 23,
+  "estimateMinutesMin": 30,
+  "estimateMinutesMax": 120,
+  "inputs": [],
+  "acceptanceCriteria": [
+    "Singing tutor evidence contract file exists",
+    "Unit assertions pass for Singing tutor evidence",
+    "Evidence JSON written with SHA256"
+  ],
+  "tests": [
+    "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-07-00832-singing_tutor_evidence\\tests\\main.test.mjs"
+  ],
+  "evidence": [
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-07-00832-singing_tutor_evidence/evidence/result.json"
+  ],
+  "allowedPaths": [
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-07-00832-singing_tutor_evidence",
+    "C:\\keyboard-manager-clean\\uaos-agent-factory\\.runtime\\artifacts\\uaos-program-tree\\TASK-07-00832-SINGING_TUTOR_EVIDENCE"
+  ],
+  "ownerFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-07-00832-singing_tutor_evidence\\src\\singing_tutor_evidence.mjs",
+  "worktree": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-07-00832-singing_tutor_evidence",
+  "gate": null,
+  "blockedReason": null,
+  "rc1Critical": false,
+  "claims": [],
+  "lease": null,
+  "heartbeats": [],
+  "createdAt": "2026-08-04T20:47:04.332Z",
+  "updatedAt": "2026-08-04T20:49:22.085Z"
+}

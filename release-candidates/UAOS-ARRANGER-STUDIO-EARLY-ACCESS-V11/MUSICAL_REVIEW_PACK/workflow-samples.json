@@ -1,0 +1,340 @@
+[
+  {
+    "workflowId": "wf-02-open-demo-01",
+    "ok": true,
+    "result": {
+      "ok": true,
+      "demo": {
+        "id": "demo-01-chords-arrangement",
+        "title": "Chords to Arrangement",
+        "rights": "UAOS_IN_HOUSE_ORIGINAL",
+        "chord": "Cm",
+        "style": "Oriental Pop",
+        "maqam": "Nahawand",
+        "tempo": 96,
+        "workflow": "chords → arrangement"
+      },
+      "project": {
+        "schema": "uaos.musical-session-memory/v1",
+        "projectId": "demo-01-chords-arrangement",
+        "title": "Chords to Arrangement",
+        "tempo": 96,
+        "meter": "4/4",
+        "keyCenter": "Cm",
+        "arrangement": {
+          "sections": [
+            {
+              "section": "Intro",
+              "bars": 4,
+              "chord": "Cm",
+              "style": "Oriental Pop"
+            },
+            {
+              "section": "Main A",
+              "bars": 8,
+              "chord": "Cm",
+              "style": "Oriental Pop"
+            },
+            {
+              "section": "Main B",
+              "bars": 8,
+              "chord": "Ab",
+              "style": "Oriental Pop"
+            },
+            {
+              "section": "Break",
+              "bars": 2,
+              "chord": "Bb",
+              "style": "Oriental Pop"
+            },
+            {
+              "section": "Ending",
+              "bars": 4,
+              "chord": "Cm",
+              "style": "Oriental Pop"
+            }
+          ]
+        },
+        "mixerSnapshot": {
+          "channels": []
+        },
+        "updatedAt": "2026-08-25T07:39:24.041Z"
+      },
+      "song": [
+        {
+          "section": "Intro",
+          "bars": 4,
+          "chord": "Cm",
+          "style": "Oriental Pop"
+        },
+        {
+          "section": "Main A",
+          "bars": 8,
+          "chord": "Cm",
+          "style": "Oriental Pop"
+        },
+        {
+          "section": "Main B",
+          "bars": 8,
+          "chord": "Ab",
+          "style": "Oriental Pop"
+        },
+        {
+          "section": "Break",
+          "bars": 2,
+          "chord": "Bb",
+          "style": "Oriental Pop"
+        },
+        {
+          "section": "Ending",
+          "bars": 4,
+          "chord": "Cm",
+          "style": "Oriental Pop"
+        }
+      ],
+      "intelligenceOk": true,
+      "pipelineOk": true,
+      "sha256": "d5b88f2b9e50f334311f52994e0522b5c8a69cb686276727f3cb2cc37adbf0be"
+    },
+    "outputArtifact": "d5b88f2b9e50f334311f52994e0522b5c8a69cb686276727f3cb2cc37adbf0be",
+    "sha256": "d5b88f2b9e50f334311f52994e0522b5c8a69cb686276727f3cb2cc37adbf0be",
+    "durationMs": 195
+  },
+  {
+    "workflowId": "wf-03-open-demo-02",
+    "ok": true,
+    "result": {
+      "ok": true,
+      "demo": {
+        "id": "demo-02-melody-arrangement",
+        "title": "Melody to Arrangement Edit",
+        "rights": "UAOS_IN_HOUSE_ORIGINAL",
+        "melody": "60,61,64,65",
+        "variant": "hijaz",
+        "tempo": 96,
+        "workflow": "melody → arrangement/edit"
+      },
+      "project": {
+        "schema": "uaos.musical-session-memory/v1",
+        "projectId": "demo-02-melody-arrangement",
+        "title": "Melody to Arrangement Edit",
+        "tempo": 96,
+        "meter": "4/4",
+        "keyCenter": "C",
+        "arrangement": {
+          "sections": [
+            {
+              "name": "Intro",
+              "bars": 1
+            },
+            {
+              "name": "Verse",
+              "bars": 2
+            },
+            {
+              "name": "Chorus",
+              "bars": 2
+            }
+          ]
+        },
+        "mixerSnapshot": {
+          "channels": []
+        },
+        "melody": "60,61,64,65",
+        "updatedAt": "2026-08-25T07:39:24.198Z"
+      },
+      "pipeline": {
+        "ok": true,
+        "voices": [
+          "kick",
+          "hat",
+          "snare",
+          "bass",
+          "lead",
+          "chord"
+        ]
+      },
+      "gates": {
+        "ok": true,
+        "tonalContextPreservation": true,
+        "melodyChordCompatibility": 1,
+        "harmonicCompatibility": true,
+        "sectionContinuity": true,
+        "styleChangeWithoutUnrequestedReharmonization": true,
+        "arrangementContextPreservation": true,
+        "noObviousOutOfScaleCollisions": true,
+        "details": {
+          "tonal": {
+            "ok": true,
+            "score": 100,
+            "sourceFamily": "maqam-hijaz",
+            "candidateFamily": "maqam-hijaz",
+            "preserved": [
+              0,
+              1,
+              4,
+              5,
+              7,
+              8
+            ],
+            "missing": [],
+            "foreign": [],
+            "melodyChordCompatibility": 1,
+            "unrequestedReharmonization": false,
+            "tonalContextPreserved": true,
+            "harmonicCompatibility": true,
+            "styleChangeWithoutUnrequestedReharmonization": true
+          },
+          "continuity": {
+            "ok": true,
+            "sectionCount": 3,
+            "uniqueNames": 3,
+            "zeroBarSections": 0,
+            "musicalQualityClaim": false
+          },
+          "context": {
+            "ok": true,
+            "missing": [],
+            "orderOk": true,
+            "musicalQualityClaim": false
+          },
+          "scale": {
+            "ok": true,
+            "collisions": [],
+            "collisionCount": 0,
+            "musicalQualityClaim": false
+          }
+        },
+        "musicalQualityClaim": false,
+        "ownerMusicalQualityPass": false
+      },
+      "musicalQualityPass": false,
+      "sha256": "459c2f4a4ba6e9ca311ee477f741eeae34257dc3a8e633416bb158df941c75a0"
+    },
+    "outputArtifact": "459c2f4a4ba6e9ca311ee477f741eeae34257dc3a8e633416bb158df941c75a0",
+    "sha256": "459c2f4a4ba6e9ca311ee477f741eeae34257dc3a8e633416bb158df941c75a0",
+    "durationMs": 156
+  },
+  {
+    "workflowId": "wf-04-open-demo-03",
+    "ok": true,
+    "result": {
+      "ok": true,
+      "demo": {
+        "id": "demo-03-export-reopen",
+        "title": "Arrangement MIDI Export & Reopen",
+        "rights": "UAOS_IN_HOUSE_ORIGINAL",
+        "tempo": 100,
+        "bars": 2,
+        "workflow": "arrangement → MIDI export → reopen"
+      },
+      "export": {
+        "ok": true,
+        "sha256": "b7422b10a807864b93c306026b0fcbefdc65320d6d4a357bc9bf5a9aeb353c3d",
+        "noteCount": 8
+      },
+      "reopen": {
+        "bytesLength": 100,
+        "noteCount": 8,
+        "ok": true
+      },
+      "sha256": "2e586d70e2a6445fda19d5ff36c3c7150a8032ca0ae301bff3e95c7923dfdcd0"
+    },
+    "outputArtifact": "2e586d70e2a6445fda19d5ff36c3c7150a8032ca0ae301bff3e95c7923dfdcd0",
+    "sha256": "2e586d70e2a6445fda19d5ff36c3c7150a8032ca0ae301bff3e95c7923dfdcd0",
+    "durationMs": 73
+  },
+  {
+    "workflowId": "wf-08-arrangement",
+    "ok": true,
+    "result": {
+      "ok": true,
+      "engine": {
+        "ok": true,
+        "section": "Intro",
+        "tempo": 96
+      },
+      "song": [
+        {
+          "section": "Intro",
+          "bars": 4,
+          "chord": "Cm",
+          "style": "Oriental Pop"
+        },
+        {
+          "section": "Main A",
+          "bars": 8,
+          "chord": "Cm",
+          "style": "Oriental Pop"
+        },
+        {
+          "section": "Main B",
+          "bars": 8,
+          "chord": "Ab",
+          "style": "Oriental Pop"
+        },
+        {
+          "section": "Break",
+          "bars": 2,
+          "chord": "Bb",
+          "style": "Oriental Pop"
+        },
+        {
+          "section": "Ending",
+          "bars": 4,
+          "chord": "Cm",
+          "style": "Oriental Pop"
+        }
+      ],
+      "plan": {
+        "groove": "arabic-khaleeji",
+        "harmony": "maqam-inspired",
+        "tempo": 92,
+        "instrumentation": [
+          "oud",
+          "qanun",
+          "arabic-percussion",
+          "strings"
+        ],
+        "emotion": "expressive",
+        "sections": [
+          {
+            "name": "Intro",
+            "bars": 4
+          },
+          {
+            "name": "Verse",
+            "bars": 8
+          },
+          {
+            "name": "Chorus",
+            "bars": 8
+          },
+          {
+            "name": "Bridge",
+            "bars": 4
+          },
+          {
+            "name": "Final Chorus",
+            "bars": 8
+          }
+        ],
+        "exportTargets": [
+          "MIDI",
+          "STYLE",
+          "STY",
+          "SET",
+          "MusicXML"
+        ]
+      },
+      "intelligenceOk": true,
+      "pipelineOk": true,
+      "v13Mixer": "READ_ONLY_DEPENDENCY",
+      "musicalQualityPass": false,
+      "capabilityId": "uaos.arranger-studio.e2e/v1"
+    },
+    "outputArtifact": "23c2248c5f0a084602978e62e6308b010acaa0043e0b638b667bd982075f7097",
+    "sha256": "23c2248c5f0a084602978e62e6308b010acaa0043e0b638b667bd982075f7097",
+    "durationMs": 165
+  }
+]

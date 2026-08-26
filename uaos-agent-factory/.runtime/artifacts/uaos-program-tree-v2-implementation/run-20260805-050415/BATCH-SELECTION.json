@@ -1,0 +1,68 @@
+{
+  "generatedAt": "2026-08-05T05:04:56.039Z",
+  "verticalSliceCandidates": [
+    {
+      "product": "studio-pro",
+      "domain": "06-STUDIO-PRO",
+      "readyCount": 31,
+      "rc1CriticalReadyCount": 31,
+      "gatedReadyCount": 0
+    },
+    {
+      "product": "creator",
+      "domain": "05-CREATOR",
+      "readyCount": 27,
+      "rc1CriticalReadyCount": 27,
+      "gatedReadyCount": 0
+    },
+    {
+      "product": "library-factory",
+      "domain": "02-LIBRARY-FACTORY",
+      "readyCount": 26,
+      "rc1CriticalReadyCount": 26,
+      "gatedReadyCount": 0
+    },
+    {
+      "product": "keyboard-pro",
+      "domain": "03-KEYBOARD-PRO",
+      "readyCount": 18,
+      "rc1CriticalReadyCount": 18,
+      "gatedReadyCount": 1
+    },
+    {
+      "product": "singy-kids",
+      "domain": "08-SINGY-KIDS",
+      "readyCount": 16,
+      "rc1CriticalReadyCount": 16,
+      "gatedReadyCount": 0
+    },
+    {
+      "product": "singy-teen",
+      "domain": "09-SINGY-TEEN",
+      "readyCount": 14,
+      "rc1CriticalReadyCount": 14,
+      "gatedReadyCount": 0
+    }
+  ],
+  "selectedVerticalSliceProduct": "studio-pro",
+  "selectionReason": "studio-pro has the most genuinely-ready rc1Critical tasks (31) among the six products, with 0 of its ready tasks carrying an external gate, and its ready 'Project system contract' + 'Offline render contract' tasks map directly onto the mission's own Studio example (generated legal WAV/MIDI -> timeline edit -> save -> reopen -> offline WAV render).",
+  "selectedBatch": {
+    "sharedProjectIdentity": {
+      "priorityHit": "#3 product identity and versioning",
+      "chain": ["TASK-01-00057-SHARED_PROJECT_IDENTITY_CONTRACT", "TASK-01-00058-SHARED_PROJECT_IDENTITY_IMPLEMENTATION", "TASK-01-00059-SHARED_PROJECT_IDENTITY_TESTS", "TASK-01-00060-SHARED_PROJECT_IDENTITY_EVIDENCE"]
+    },
+    "recovery": {
+      "priorityHit": "#2 atomic save and recovery (continues Batch 1's Atomic Save primitive)",
+      "chain": ["TASK-01-00073-RECOVERY_CONTRACT", "TASK-01-00074-RECOVERY_IMPLEMENTATION", "TASK-01-00075-RECOVERY_TESTS", "TASK-01-00076-RECOVERY_EVIDENCE"]
+    },
+    "studioProVerticalSlice": {
+      "priorityHit": "#7 one complete product vertical slice",
+      "chain": ["TASK-06-00653-PROJECT_SYSTEM_CONTRACT", "TASK-06-00654-PROJECT_SYSTEM_IMPLEMENTATION", "TASK-06-00655-PROJECT_SYSTEM_TESTS", "TASK-06-00656-PROJECT_SYSTEM_EVIDENCE"],
+      "pipelineStages": "INPUT (procedurally-generated legal sine-wave WAV + a MIDI-like note list, no copyrighted/sourced content) -> VALIDATION (WAV/MIDI structural checks) -> PROCESSING (timeline clip placement/edit) -> SAVE (via Batch 1's real AtomicSave primitive) -> CLOSE (dispose in-memory session) -> REOPEN (load project JSON back from disk) -> OUTPUT (real offline, non-realtime WAV render: sample-accurate summation of timeline clips into one PCM buffer) -> FAILURE RECOVERY (corrupted project file detected and handled via this batch's own Recovery primitive) -> EVIDENCE."
+    }
+  },
+  "prioritiesNotAttemptedThisBatch": [
+    "#4 license verification foundation and #5 trial-state foundation: deferred to a future batch — cryptographic license verification deserves its own dedicated review rather than being squeezed in alongside 8 other tasks.",
+    "#6 no-autoplay contract: deferred — Global Stop (the paired primitive) already shipped in Batch 1; No-autoplay was not re-selected this round to keep the batch at 12 tasks total."
+  ]
+}

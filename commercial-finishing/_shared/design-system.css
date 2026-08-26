@@ -1,0 +1,37 @@
+/* UAOS / AE Platform Master Design System — recovered from uaos-official-brand.css */
+:root {
+  --uaos-ink: #02030a;
+  --uaos-blue: #008cff;
+  --uaos-cyan: #00d4ff;
+  --uaos-violet: #5b2cff;
+  --uaos-purple: #8f00ff;
+  --uaos-magenta: #f000ff;
+  --uaos-text: #f8f8ff;
+  --uaos-muted: #b8c3dc;
+  --uaos-border: rgba(129, 105, 255, 0.34);
+  --font-display: "Segoe UI", Tahoma, sans-serif;
+  --font-body: "Segoe UI", Tahoma, sans-serif;
+  --radius: 16px;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--uaos-text);
+  background:
+    radial-gradient(circle at 12% 8%, rgba(240,0,255,.16), transparent 28rem),
+    radial-gradient(circle at 88% 14%, rgba(0,140,255,.18), transparent 30rem),
+    linear-gradient(145deg, #02030a 0%, #070819 48%, #02030a 100%);
+}
+a { color: var(--uaos-cyan); }
+.wrap { max-width: 1100px; margin: 0 auto; padding: 28px 20px 64px; }
+.hero { padding: 48px 0 28px; border-bottom: 1px solid var(--uaos-border); }
+.hero h1 { margin: 0 0 8px; font-size: clamp(1.8rem, 4vw, 2.6rem); }
+.eyebrow { color: var(--uaos-cyan); letter-spacing: .08em; text-transform: uppercase; font-size: .75rem; }
+.badge { display: inline-block; padding: 6px 10px; border-radius: 999px; border: 1px solid var(--uaos-border); color: var(--uaos-muted); font-size: .8rem; }
+.card { background: rgba(8,10,28,.74); border: 1px solid var(--uaos-border); border-radius: var(--radius); padding: 18px; margin: 16px 0; }
+.grid { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+.muted { color: var(--uaos-muted); line-height: 1.55; }
+.cta { display: inline-block; margin-top: 12px; padding: 12px 18px; border-radius: 12px; background: linear-gradient(135deg, var(--uaos-violet), var(--uaos-blue)); color: white; text-decoration: none; font-weight: 700; }
+[dir="rtl"] { text-align: right; }
+.limit { border-color: rgba(240,0,255,.35); }

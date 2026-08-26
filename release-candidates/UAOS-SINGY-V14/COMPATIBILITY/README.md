@@ -1,0 +1,1 @@
+# Rights\n\nUNCLEARED_SHIPPED_ASSETS=0\n

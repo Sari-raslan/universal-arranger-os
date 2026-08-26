@@ -1,0 +1,52 @@
+{
+  "PROGRAM": "Library / Sampler / Golden Set Factory",
+  "RESULT": "FINAL_ACCEPTANCE_PASS",
+  "steps": [
+    {
+      "ok": true,
+      "step": "ARTIFACT",
+      "capabilityId": "uaos.library.sampler-finalize/v1"
+    },
+    {
+      "ok": true,
+      "step": "LAUNCH"
+    },
+    {
+      "ok": true,
+      "step": "CORE WORKFLOW"
+    },
+    {
+      "ok": true,
+      "step": "OUTPUT"
+    },
+    {
+      "ok": true,
+      "step": "SAVE/EXPORT"
+    },
+    {
+      "ok": true,
+      "step": "ERROR/RECOVERY"
+    },
+    {
+      "ok": true,
+      "step": "CLOSE"
+    },
+    {
+      "ok": true,
+      "step": "ORPHANS",
+      "note": "no audio copied"
+    },
+    {
+      "ok": true,
+      "step": "FINAL EVIDENCE"
+    }
+  ],
+  "failed": [],
+  "at": "2026-08-25T06:50:04.706Z",
+  "PUBLIC_RELEASE": false,
+  "PAYMENT_CHANGED": false,
+  "COMMANDER_TOUCHED": false,
+  "TASKS_JSON_WRITTEN": false,
+  "CURRENT_ACCEPTANCE_INDEX": "11/11",
+  "evidenceSha256": "ad3f41cc198ba0f877b98a18e12fad45cd5881afd02b59a57db508e4ee863567"
+}

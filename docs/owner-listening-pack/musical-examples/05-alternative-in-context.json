@@ -1,0 +1,79 @@
+{
+  "id": "05-alternative-in-context",
+  "title": "Alternative B — in-context Hijaz fill",
+  "SOURCE_INPUT": "Same Hijaz melody and maqam-compatible harmony as 01-04/06. Style/fill change only.",
+  "EXPECTED_CAPABILITY": "A style alternative that preserves tonal context. No unrequested reharmonization to major.",
+  "ACTUAL_ACTIONS": [
+    "Score alternative against Hijaz pitch set",
+    "Reject major-pop rewrite",
+    "Arrange arabic-khaleeji-fill at 92 BPM with Hijaz color voicings",
+    "Render independent sketch"
+  ],
+  "WAV_PATH": "C:\\keyboard-manager-clean\\docs\\owner-listening-pack\\musical-examples\\05-alternative-in-context.wav",
+  "DURATION": 13.167392290249433,
+  "SAMPLE_RATE": 44100,
+  "SHA256": "13be9b796483ae687803223e96197569a5ac0bd60df0dad16a243e15216dbadd",
+  "SOURCE_COMMIT": "5aeac11779bd678ca3c80d16144e302a5eb5d9f6",
+  "SETTINGS": {
+    "variant": "alternative-in-context",
+    "tempo": 92,
+    "groove": "arabic-khaleeji-fill",
+    "harmony": "maqam-inspired",
+    "sections": [
+      {
+        "name": "Intro",
+        "bars": 1
+      },
+      {
+        "name": "Verse",
+        "bars": 2
+      },
+      {
+        "name": "Chorus",
+        "bars": 2
+      }
+    ],
+    "uniqueMidiCount": 16,
+    "uniqueOnsetCount": 40,
+    "voices": [
+      "kick",
+      "hat",
+      "snare",
+      "bass",
+      "lead",
+      "chord"
+    ],
+    "scoring": {
+      "ok": true,
+      "score": 100,
+      "sourceFamily": "maqam-hijaz",
+      "candidateFamily": "maqam-hijaz",
+      "preserved": [
+        0,
+        1,
+        4,
+        5,
+        7,
+        8
+      ],
+      "missing": [],
+      "foreign": [],
+      "melodyChordCompatibility": 1,
+      "unrequestedReharmonization": false,
+      "tonalContextPreserved": true,
+      "harmonicCompatibility": true,
+      "styleChangeWithoutUnrequestedReharmonization": true
+    }
+  },
+  "WHAT_OWNER_SHOULD_LISTEN_FOR": "Same Hijaz tune as 04, denser fill/voicing, not a C-major rewrite. Compare OLD 05 vs this file.",
+  "KNOWN_LIMITATIONS": [
+    "Offline oscillator sketch, not a sampled library and not real-time DSP.",
+    "Not Musical Brain quality PASS.",
+    "Original UAOS sketch — not product catalog content and not a licensed song."
+  ],
+  "musicalQualityPass": false,
+  "musicalQualityClaim": false,
+  "sineFixture": false,
+  "technicalFixtureUsedAsMusicalProof": false,
+  "OWNER_RELISTEN_REQUIRED": "EXAMPLE_05_ONLY"
+}

@@ -1,0 +1,24 @@
+{
+    "blockers":  [
+                     {
+                         "detail":  "Required commit 6cde73d is not an object in C:\\keyboard-manager-clean. Present in UAOS Commander only. Hard gate stop before clean worktree execution.",
+                         "id":  "BASELINE_COMMIT_NOT_FOUND",
+                         "severity":  "CRITICAL"
+                     },
+                     {
+                         "detail":  "No V10 sparse dependency closure artifacts found",
+                         "id":  "V10_ARTIFACTS_MISSING",
+                         "severity":  "HIGH"
+                     },
+                     {
+                         "detail":  "CAP-ARRANGER_STUDIO, CAP-GENERATE_MY_SET, CAP-KEYBOARD_CONVERTERS, CAP-LIBRARY_BUILDER, CAP-LIBRARY_CATALOG, CAP-LIBRARY_PLAYER, CAP-MAGIC_SET_BUILDER, CAP-SAMPLER_RUNTIME, CAP-SET_DOCTOR, PRODUCT-SINGY_SAMPLER_PLAYER",
+                         "id":  "V9_DECLARED_GATE_FAILURES",
+                         "severity":  "HIGH"
+                     },
+                     {
+                         "detail":  "PRODUCT-SINGY_CREATOR, PRODUCT-SINGY_KEYBOARD_PRO, PRODUCT-SINGY_KIDS, PRODUCT-SINGY_STUDIO_PRO, PRODUCT-SINGY_TEEN, PRODUCT-UAOS_LIBRARY_FACTORY",
+                         "id":  "SOURCE_BLOCKED_PRODUCTS",
+                         "severity":  "HIGH"
+                     }
+                 ]
+}

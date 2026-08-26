@@ -1,0 +1,35 @@
+{
+  "taskId": "TASK-12-01329-CHECKOUT_INTEGRATION_PREP_CONTRACT",
+  "agentId": "NODE_LOCAL_WORKER-0232",
+  "startedAt": "2026-08-04T20:47:14.614Z",
+  "endedAt": "2026-08-04T20:47:14.739Z",
+  "status": "PASS",
+  "tests": [
+    {
+      "command": "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-12-01329-checkout_integration_prep_contract\\tests\\main.test.mjs",
+      "exitCode": 0,
+      "stdoutTail": "✔ TASK-12-01329-CHECKOUT_INTEGRATION_PREP_CONTRACT verify (0.5075ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 66.7636\n"
+    }
+  ],
+  "sha256": "90680AC3669B43DAC2F132BF553F1E8D6C5619DE86EA23E1B7DA37F17A716259",
+  "allowedPathsUsed": [
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-12-01329-checkout_integration_prep_contract",
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-12-01329-checkout_integration_prep_contract\\src\\checkout_integration_prep_contra.mjs",
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-12-01329-checkout_integration_prep_contract\\tests\\main.test.mjs"
+  ],
+  "truthStatements": [
+    "Technical WAV success does not prove musical quality",
+    "Fixtures are not product content",
+    "Studio Offline Render is not Real-time DSP",
+    "KORG WRITE_UNSUPPORTED",
+    "No auto adoption of Kids/Teen/Pricing",
+    "Commander not activated"
+  ],
+  "ownerFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-12-01329-checkout_integration_prep_contract\\src\\checkout_integration_prep_contra.mjs",
+  "phase": "DEFINE",
+  "gate": null,
+  "noPush": true,
+  "noMerge": true,
+  "noDeploy": true,
+  "commanderActivated": false
+}

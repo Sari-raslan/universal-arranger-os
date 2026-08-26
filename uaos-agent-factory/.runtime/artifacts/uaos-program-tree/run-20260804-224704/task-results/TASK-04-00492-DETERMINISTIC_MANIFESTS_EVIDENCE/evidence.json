@@ -1,0 +1,35 @@
+{
+  "taskId": "TASK-04-00492-DETERMINISTIC_MANIFESTS_EVIDENCE",
+  "agentId": "NODE_LOCAL_WORKER-0078",
+  "startedAt": "2026-08-04T20:47:46.710Z",
+  "endedAt": "2026-08-04T20:47:46.832Z",
+  "status": "PASS",
+  "tests": [
+    {
+      "command": "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-04-00492-deterministic_manifests_evidence\\tests\\main.test.mjs",
+      "exitCode": 0,
+      "stdoutTail": "✔ TASK-04-00492-DETERMINISTIC_MANIFESTS_EVIDENCE verify (0.6404ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 65.5688\n"
+    }
+  ],
+  "sha256": "B2B9C500336119E1ACD966C46F881DC03DEF8D3B3CD53F47C7A1F67FBED762C3",
+  "allowedPathsUsed": [
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-04-00492-deterministic_manifests_evidence",
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-04-00492-deterministic_manifests_evidence\\src\\deterministic_manifests_evidence.mjs",
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-04-00492-deterministic_manifests_evidence\\tests\\main.test.mjs"
+  ],
+  "truthStatements": [
+    "Technical WAV success does not prove musical quality",
+    "Fixtures are not product content",
+    "Studio Offline Render is not Real-time DSP",
+    "KORG WRITE_UNSUPPORTED",
+    "No auto adoption of Kids/Teen/Pricing",
+    "Commander not activated"
+  ],
+  "ownerFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-04-00492-deterministic_manifests_evidence\\src\\deterministic_manifests_evidence.mjs",
+  "phase": "EVIDENCE",
+  "gate": null,
+  "noPush": true,
+  "noMerge": true,
+  "noDeploy": true,
+  "commanderActivated": false
+}

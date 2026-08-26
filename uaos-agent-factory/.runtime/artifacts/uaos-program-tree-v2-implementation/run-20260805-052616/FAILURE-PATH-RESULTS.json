@@ -1,0 +1,136 @@
+{
+  "generatedAt": "2026-08-05T05:47:44.022Z",
+  "totalTests": 94,
+  "totalFailurePathTests": 45,
+  "results": [
+    {
+      "taskId": "TASK-01-00129-VERSIONING_CONTRACT",
+      "totalTestCount": 12,
+      "failurePathTestCount": 7,
+      "failurePathTestTitles": [
+        "isValidProductId accepts SKU-safe ids and rejects the rest",
+        "rejects an invalid productId",
+        "rejects an invalid version",
+        "rejects a non-positive buildNumber",
+        "rejects buildMetadata with disallowed characters (e.g. injection-style content)",
+        "rejects an unparseable generatedAt",
+        "compareVersions/isCompatible reject malformed version strings rather than guessing"
+      ]
+    },
+    {
+      "taskId": "TASK-01-00130-VERSIONING_IMPLEMENTATION",
+      "totalTestCount": 10,
+      "failurePathTestCount": 4,
+      "failurePathTestTitles": [
+        "isManifestCompatible: wrong product -> false, even if version would otherwise match",
+        "generateManifest rejects an invalid productId",
+        "failure-path: reopenManifest fails cleanly on a corrupted file rather than returning partial data",
+        "failure-path: saveProject-equivalent save failure leaves a prior manifest untouched"
+      ]
+    },
+    {
+      "taskId": "TASK-01-00131-VERSIONING_TESTS",
+      "totalTestCount": 4,
+      "failurePathTestCount": 1,
+      "failurePathTestTitles": [
+        "failure-path: a sabotaged save for one product does not affect the other five"
+      ]
+    },
+    {
+      "taskId": "TASK-01-00132-VERSIONING_EVIDENCE",
+      "totalTestCount": 6,
+      "failurePathTestCount": 1,
+      "failurePathTestTitles": [
+        "TEST HARNESS GUARD: zero discovered tests is treated as FAIL, not PASS"
+      ]
+    },
+    {
+      "taskId": "TASK-01-00105-SIGNED_LICENSES_CONTRACT",
+      "totalTestCount": 10,
+      "failurePathTestCount": 5,
+      "failurePathTestTitles": [
+        "rejects an invalid productId or sku",
+        "rejects an unparseable issuedAt",
+        "rejects a non-null, unparseable expiresAt",
+        "rejects a receipt with a missing signatureBase64",
+        "schema documents the offline and tamper-rejection guarantees"
+      ]
+    },
+    {
+      "taskId": "TASK-01-00106-SIGNED_LICENSES_IMPLEMENTATION",
+      "totalTestCount": 15,
+      "failurePathTestCount": 12,
+      "failurePathTestTitles": [
+        "CRYPTO GUARD: no hardcoded key material is embedded anywhere in this implementation file",
+        "CRYPTO GUARD: no network access anywhere in this implementation file",
+        "TIME BOUNDARY: one millisecond before expiry is valid",
+        "TIME BOUNDARY: exactly at the expiry instant is valid (inclusive boundary)",
+        "TIME BOUNDARY: one millisecond after expiry is invalid",
+        "TIME GUARD: verifying an expiring license without an injected now throws rather than silently reading the system clock",
+        "CRYPTO GUARD: a tampered payload (one field changed after signing) fails verification",
+        "CRYPTO GUARD: a tampered signature (bit-flipped) fails verification",
+        "CRYPTO GUARD: verifying with the WRONG public key fails, even for an otherwise-valid receipt",
+        "a receipt correctly signed for a DIFFERENT product is rejected (WRONG_PRODUCT), signature itself is genuinely valid",
+        "a receipt correctly signed for a DIFFERENT sku is rejected (WRONG_SKU)",
+        "malformed base64 signature bytes are rejected cleanly, not a crash"
+      ]
+    },
+    {
+      "taskId": "TASK-01-00107-SIGNED_LICENSES_TESTS",
+      "totalTestCount": 4,
+      "failurePathTestCount": 2,
+      "failurePathTestTitles": [
+        "cross-product isolation: a receipt reopened for product A never verifies for product B, even with the correct vendor key",
+        "failure-path: receipts issued by an untrusted/rogue keypair never verify against the real vendor public key"
+      ]
+    },
+    {
+      "taskId": "TASK-01-00108-SIGNED_LICENSES_EVIDENCE",
+      "totalTestCount": 4,
+      "failurePathTestCount": 1,
+      "failurePathTestTitles": [
+        "TEST HARNESS GUARD: zero discovered tests is FAIL"
+      ]
+    },
+    {
+      "taskId": "TASK-02-00197-USER_SUPPLIED_WAV_INGESTION_CONTRACT",
+      "totalTestCount": 11,
+      "failurePathTestCount": 6,
+      "failurePathTestTitles": [
+        "rejects a non-UUID entryId",
+        "rejects a malformed sha256",
+        "rejects an unsupported channel count",
+        "rejects a negative durationSeconds",
+        "rejects a catalog with the wrong productId",
+        "rejects a catalog whose entries is not an array"
+      ]
+    },
+    {
+      "taskId": "TASK-02-00198-USER_SUPPLIED_WAV_INGESTION_IMPLEMENTATI",
+      "totalTestCount": 9,
+      "failurePathTestCount": 4,
+      "failurePathTestTitles": [
+        "failure-path: ingestWavFile rejects a structurally invalid WAV file, no entry is produced",
+        "failure-path: addEntryToCatalog rejects duplicate content (same sha256) even under a different filename",
+        "failure-path: reopenCatalog fails cleanly on a corrupted catalog file",
+        "failure-path: a sabotaged catalog save leaves any prior catalog untouched (inherits AtomicSave guarantee)"
+      ]
+    },
+    {
+      "taskId": "TASK-02-00199-USER_SUPPLIED_WAV_INGESTION_TESTS",
+      "totalTestCount": 5,
+      "failurePathTestCount": 1,
+      "failurePathTestTitles": [
+        "failure-path: one malformed file in a batch is rejected without losing the other real ingestions"
+      ]
+    },
+    {
+      "taskId": "TASK-02-00200-USER_SUPPLIED_WAV_INGESTION_EVIDENCE",
+      "totalTestCount": 4,
+      "failurePathTestCount": 1,
+      "failurePathTestTitles": [
+        "TEST HARNESS GUARD: zero discovered tests is FAIL"
+      ]
+    }
+  ]
+}

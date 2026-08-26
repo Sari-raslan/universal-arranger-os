@@ -1,0 +1,33 @@
+# How to open or run — Arranger Studio
+
+## Delivery type
+WORKFLOW / HYBRID
+
+## Primary entry point
+```
+From repo root: node final-owner-delivery/05-arranger-studio/PRODUCT/RUN_ACCEPTED_DEMO.mjs
+```
+
+## Full acceptance queue (all 11)
+From repo root:
+```
+node scripts/run-final-acceptance-queue.mjs
+```
+
+## Targeted tests
+From repo root:
+```
+npm test
+```
+
+## Product source (canonical, not moved)
+- backend/src/render/arrangerStudioE2e.js
+
+## Evidence
+- reports/final-acceptance/05-Arranger_Studio.json
+- evidence SHA256: 00dc4bb56173e9908c8c74639323b628b30eb79f0bbc06353854de57f151cf45
+
+## Source commit
+5aeac11779bd678ca3c80d16144e302a5eb5d9f6
+
+PUBLIC_RELEASE=NO · COMMANDER_EXCLUDED=YES

@@ -1,0 +1,34 @@
+{
+  "generatedAt": "2026-08-05T05:35:00.000Z",
+  "continuityNote": "Verified live TASKS.json/CURRENT-EXECUTION-STATE.json before selecting: DONE=20, RETRY_READY=316, matching the cited Batch 2 numbers exactly. No stale-count issue this time.",
+  "leafOnlyFinding": "Computed transitive downstream count for all 316 currently-ready tasks: 0/316 have any downstream dependent beyond their own 4-task (CONTRACT/IMPLEMENT/TEST/EVIDENCE) chain. Every currently-ready chain is leaf-only under DEPENDENCIES.json as it exists today - this is a structural property of the current graph, not a selection shortcut. Documented per the mission's own allowance ('unless one is required to complete a real end-to-end slice').",
+  "chainA": {
+    "label": "Shared commercial identity/versioning foundation",
+    "candidatesConsidered": ["TASK-01-00109-PRODUCT_IDS_CONTRACT", "TASK-01-00129-VERSIONING_CONTRACT"],
+    "tieScore": 72,
+    "selected": "TASK-01-00129-VERSIONING_CONTRACT",
+    "chain": ["TASK-01-00129-VERSIONING_CONTRACT", "TASK-01-00130-VERSIONING_IMPLEMENTATION", "TASK-01-00131-VERSIONING_TESTS", "TASK-01-00132-VERSIONING_EVIDENCE"],
+    "selectionReason": "Tied on unlockScore with Product IDs. Chosen because a real 'product/version manifest' (required behavioral proof: deterministic manifest generation) naturally combines BOTH a SKU-safe product identifier AND a semver version in one document, so this feature's real implementation covers the full required-proof list (valid/invalid product identifiers, semver comparison, compatibility decisions, manifest generation) rather than only half of it. Product IDs alone would not have covered semver comparison/compatibility; Versioning alone naturally extends to cover product-id validation as part of the manifest."
+  },
+  "chainB": {
+    "label": "Offline license verification or trial/entitlement state (pick higher-unlock)",
+    "candidatesConsidered": ["TASK-01-00105-SIGNED_LICENSES_CONTRACT", "TASK-01-00101-OFFLINE_TRIAL_CONTRACT"],
+    "tieScore": 72,
+    "selected": "TASK-01-00105-SIGNED_LICENSES_CONTRACT",
+    "chain": ["TASK-01-00105-SIGNED_LICENSES_CONTRACT", "TASK-01-00106-SIGNED_LICENSES_IMPLEMENTATION", "TASK-01-00107-SIGNED_LICENSES_TESTS", "TASK-01-00108-SIGNED_LICENSES_EVIDENCE"],
+    "selectionReason": "Tied on unlockScore with Offline Trial. Chosen as more foundational: Chain C's own 'licensed' trial state (per the mission's own Chain-C description) is naturally defined in terms of 'does a valid signed license exist', so License Verification is a logical prerequisite for a future Trial/Entitlement batch to build on, not the reverse. Offline Trial State is deferred to a future batch, not abandoned.",
+    "notSelectedThisBatch": ["TASK-01-00101-OFFLINE_TRIAL_CONTRACT (Offline trial/entitlement state) — deferred to keep this batch at 12 tasks with full depth."]
+  },
+  "chainC_verticalSlice": {
+    "productScoresSummary": "See PRODUCT-VERTICAL-SLICE-SCORES.json for full detail. Ranked: studio-pro(30 ready rc1, 0 gated) > creator(27) > library-factory(26) > keyboard-pro(18, 1 gated) > singy-kids(16) > singy-teen(14).",
+    "rawTopScore": "studio-pro",
+    "selected": "library-factory",
+    "selectionReason": "The mission explicitly warns against automatically re-selecting Studio Pro merely because Batch 2 used it. studio-pro's raw score is only marginally ahead of library-factory (30 vs 26 ready rc1Critical tasks, both 0 gated) - not a decisive lead. library-factory offers a genuinely different, non-overlapping input-to-output slice (content ingestion/cataloging vs. Batch 2's audio project/timeline/render), and has direct synergy with this batch's own Chain A (product/version manifest generation) and a Library-domain license-ledger concept adjacent to Chain B. This is a deliberate, justified deviation from the raw top score, not an arbitrary pick.",
+    "chain": ["TASK-02-00197-USER_SUPPLIED_WAV_INGESTION_CONTRACT", "TASK-02-00198-USER_SUPPLIED_WAV_INGESTION_IMPLEMENTATI", "TASK-02-00199-USER_SUPPLIED_WAV_INGESTION_TESTS", "TASK-02-00200-USER_SUPPLIED_WAV_INGESTION_EVIDENCE"],
+    "pipelineStages": "INPUT (a user-supplied WAV file, real PCM data, generated in-test — never sourced/commercial content) -> VALIDATION (real WAV/PCM structural checks reusing the Batch-2 Studio decodeWav-equivalent logic, reimplemented locally per this task's own file-ownership boundary) -> METADATA EXTRACTION (duration, sample rate, channel count) -> SHA256 INVENTORY (content-hash based dedup/provenance) -> CATALOG ENTRY (mapping record) -> ATOMIC SAVE (Batch 1's AtomicSave) -> CLOSE/REOPEN -> MISSING-SOURCE RECOVERY (source file deleted after ingestion; catalog entry must detect and report, not silently succeed) -> MANIFEST OUTPUT (deterministic catalog manifest, integrating with Chain A's version-manifest primitive)."
+  },
+  "totalTasksSelected": 12,
+  "chainsUsed": 3,
+  "fileConflictCheck": "Every selected task has its own dedicated worktree directory under C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\ - see FILE-OWNERSHIP-PLAN.json for the verified zero-conflict check.",
+  "gatedTasksExcluded": "Confirmed all 12 selected tasks have gate: null in TASKS.json - none are Owner/Legal/Content/Format/Hardware/Payment/Deploy gated."
+}

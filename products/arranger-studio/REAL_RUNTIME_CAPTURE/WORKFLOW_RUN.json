@@ -1,0 +1,1433 @@
+{
+  "ok": true,
+  "total": 20,
+  "pass": 20,
+  "fail": 0,
+  "p0": 0,
+  "p1": 0,
+  "results": [
+    {
+      "workflowId": "wf-01-new-project",
+      "ok": true,
+      "result": {
+        "ok": true,
+        "project": {
+          "schema": "uaos.musical-session-memory/v1",
+          "projectId": "arranger-1787643563845",
+          "title": "WF01",
+          "tempo": 96,
+          "meter": "4/4",
+          "keyCenter": "C",
+          "arrangement": {
+            "sections": [
+              {
+                "name": "Intro",
+                "bars": 4,
+                "chord": "Cm"
+              },
+              {
+                "name": "Main A",
+                "bars": 8,
+                "chord": "Cm"
+              },
+              {
+                "name": "Main B",
+                "bars": 8,
+                "chord": "Ab"
+              },
+              {
+                "name": "Break",
+                "bars": 2,
+                "chord": "Bb"
+              },
+              {
+                "name": "Ending",
+                "bars": 4,
+                "chord": "Cm"
+              }
+            ]
+          },
+          "mixerSnapshot": {
+            "channels": []
+          },
+          "updatedAt": "2026-08-25T07:39:23.845Z"
+        },
+        "sections": [
+          {
+            "section": "Intro",
+            "bars": 4,
+            "chord": "Cm",
+            "style": "Oriental Pop"
+          },
+          {
+            "section": "Main A",
+            "bars": 8,
+            "chord": "Cm",
+            "style": "Oriental Pop"
+          },
+          {
+            "section": "Main B",
+            "bars": 8,
+            "chord": "Ab",
+            "style": "Oriental Pop"
+          },
+          {
+            "section": "Break",
+            "bars": 2,
+            "chord": "Bb",
+            "style": "Oriental Pop"
+          },
+          {
+            "section": "Ending",
+            "bars": 4,
+            "chord": "Cm",
+            "style": "Oriental Pop"
+          }
+        ],
+        "sku": "uaos-arranger-studio-early-access",
+        "capabilityId": "uaos.sku.arranger-studio/v1",
+        "sha256": "1514fa1d5ba4a47f40b8ca504ad0fe4f6faf6c141af5cecd064af621a33ebb64"
+      },
+      "outputArtifact": "1514fa1d5ba4a47f40b8ca504ad0fe4f6faf6c141af5cecd064af621a33ebb64",
+      "sha256": "1514fa1d5ba4a47f40b8ca504ad0fe4f6faf6c141af5cecd064af621a33ebb64",
+      "durationMs": 1
+    },
+    {
+      "workflowId": "wf-02-open-demo-01",
+      "ok": true,
+      "result": {
+        "ok": true,
+        "demo": {
+          "id": "demo-01-chords-arrangement",
+          "title": "Chords to Arrangement",
+          "rights": "UAOS_IN_HOUSE_ORIGINAL",
+          "chord": "Cm",
+          "style": "Oriental Pop",
+          "maqam": "Nahawand",
+          "tempo": 96,
+          "workflow": "chords → arrangement"
+        },
+        "project": {
+          "schema": "uaos.musical-session-memory/v1",
+          "projectId": "demo-01-chords-arrangement",
+          "title": "Chords to Arrangement",
+          "tempo": 96,
+          "meter": "4/4",
+          "keyCenter": "Cm",
+          "arrangement": {
+            "sections": [
+              {
+                "section": "Intro",
+                "bars": 4,
+                "chord": "Cm",
+                "style": "Oriental Pop"
+              },
+              {
+                "section": "Main A",
+                "bars": 8,
+                "chord": "Cm",
+                "style": "Oriental Pop"
+              },
+              {
+                "section": "Main B",
+                "bars": 8,
+                "chord": "Ab",
+                "style": "Oriental Pop"
+              },
+              {
+                "section": "Break",
+                "bars": 2,
+                "chord": "Bb",
+                "style": "Oriental Pop"
+              },
+              {
+                "section": "Ending",
+                "bars": 4,
+                "chord": "Cm",
+                "style": "Oriental Pop"
+              }
+            ]
+          },
+          "mixerSnapshot": {
+            "channels": []
+          },
+          "updatedAt": "2026-08-25T07:39:24.041Z"
+        },
+        "song": [
+          {
+            "section": "Intro",
+            "bars": 4,
+            "chord": "Cm",
+            "style": "Oriental Pop"
+          },
+          {
+            "section": "Main A",
+            "bars": 8,
+            "chord": "Cm",
+            "style": "Oriental Pop"
+          },
+          {
+            "section": "Main B",
+            "bars": 8,
+            "chord": "Ab",
+            "style": "Oriental Pop"
+          },
+          {
+            "section": "Break",
+            "bars": 2,
+            "chord": "Bb",
+            "style": "Oriental Pop"
+          },
+          {
+            "section": "Ending",
+            "bars": 4,
+            "chord": "Cm",
+            "style": "Oriental Pop"
+          }
+        ],
+        "intelligenceOk": true,
+        "pipelineOk": true,
+        "sha256": "d5b88f2b9e50f334311f52994e0522b5c8a69cb686276727f3cb2cc37adbf0be"
+      },
+      "outputArtifact": "d5b88f2b9e50f334311f52994e0522b5c8a69cb686276727f3cb2cc37adbf0be",
+      "sha256": "d5b88f2b9e50f334311f52994e0522b5c8a69cb686276727f3cb2cc37adbf0be",
+      "durationMs": 195
+    },
+    {
+      "workflowId": "wf-03-open-demo-02",
+      "ok": true,
+      "result": {
+        "ok": true,
+        "demo": {
+          "id": "demo-02-melody-arrangement",
+          "title": "Melody to Arrangement Edit",
+          "rights": "UAOS_IN_HOUSE_ORIGINAL",
+          "melody": "60,61,64,65",
+          "variant": "hijaz",
+          "tempo": 96,
+          "workflow": "melody → arrangement/edit"
+        },
+        "project": {
+          "schema": "uaos.musical-session-memory/v1",
+          "projectId": "demo-02-melody-arrangement",
+          "title": "Melody to Arrangement Edit",
+          "tempo": 96,
+          "meter": "4/4",
+          "keyCenter": "C",
+          "arrangement": {
+            "sections": [
+              {
+                "name": "Intro",
+                "bars": 1
+              },
+              {
+                "name": "Verse",
+                "bars": 2
+              },
+              {
+                "name": "Chorus",
+                "bars": 2
+              }
+            ]
+          },
+          "mixerSnapshot": {
+            "channels": []
+          },
+          "melody": "60,61,64,65",
+          "updatedAt": "2026-08-25T07:39:24.198Z"
+        },
+        "pipeline": {
+          "ok": true,
+          "voices": [
+            "kick",
+            "hat",
+            "snare",
+            "bass",
+            "lead",
+            "chord"
+          ]
+        },
+        "gates": {
+          "ok": true,
+          "tonalContextPreservation": true,
+          "melodyChordCompatibility": 1,
+          "harmonicCompatibility": true,
+          "sectionContinuity": true,
+          "styleChangeWithoutUnrequestedReharmonization": true,
+          "arrangementContextPreservation": true,
+          "noObviousOutOfScaleCollisions": true,
+          "details": {
+            "tonal": {
+              "ok": true,
+              "score": 100,
+              "sourceFamily": "maqam-hijaz",
+              "candidateFamily": "maqam-hijaz",
+              "preserved": [
+                0,
+                1,
+                4,
+                5,
+                7,
+                8
+              ],
+              "missing": [],
+              "foreign": [],
+              "melodyChordCompatibility": 1,
+              "unrequestedReharmonization": false,
+              "tonalContextPreserved": true,
+              "harmonicCompatibility": true,
+              "styleChangeWithoutUnrequestedReharmonization": true
+            },
+            "continuity": {
+              "ok": true,
+              "sectionCount": 3,
+              "uniqueNames": 3,
+              "zeroBarSections": 0,
+              "musicalQualityClaim": false
+            },
+            "context": {
+              "ok": true,
+              "missing": [],
+              "orderOk": true,
+              "musicalQualityClaim": false
+            },
+            "scale": {
+              "ok": true,
+              "collisions": [],
+              "collisionCount": 0,
+              "musicalQualityClaim": false
+            }
+          },
+          "musicalQualityClaim": false,
+          "ownerMusicalQualityPass": false
+        },
+        "musicalQualityPass": false,
+        "sha256": "459c2f4a4ba6e9ca311ee477f741eeae34257dc3a8e633416bb158df941c75a0"
+      },
+      "outputArtifact": "459c2f4a4ba6e9ca311ee477f741eeae34257dc3a8e633416bb158df941c75a0",
+      "sha256": "459c2f4a4ba6e9ca311ee477f741eeae34257dc3a8e633416bb158df941c75a0",
+      "durationMs": 156
+    },
+    {
+      "workflowId": "wf-04-open-demo-03",
+      "ok": true,
+      "result": {
+        "ok": true,
+        "demo": {
+          "id": "demo-03-export-reopen",
+          "title": "Arrangement MIDI Export & Reopen",
+          "rights": "UAOS_IN_HOUSE_ORIGINAL",
+          "tempo": 100,
+          "bars": 2,
+          "workflow": "arrangement → MIDI export → reopen"
+        },
+        "export": {
+          "ok": true,
+          "sha256": "b7422b10a807864b93c306026b0fcbefdc65320d6d4a357bc9bf5a9aeb353c3d",
+          "noteCount": 8
+        },
+        "reopen": {
+          "bytesLength": 100,
+          "noteCount": 8,
+          "ok": true
+        },
+        "sha256": "2e586d70e2a6445fda19d5ff36c3c7150a8032ca0ae301bff3e95c7923dfdcd0"
+      },
+      "outputArtifact": "2e586d70e2a6445fda19d5ff36c3c7150a8032ca0ae301bff3e95c7923dfdcd0",
+      "sha256": "2e586d70e2a6445fda19d5ff36c3c7150a8032ca0ae301bff3e95c7923dfdcd0",
+      "durationMs": 73
+    },
+    {
+      "workflowId": "wf-05-chords",
+      "ok": true,
+      "result": {
+        "ok": true,
+        "output": [
+          {
+            "section": "Intro",
+            "bars": 4,
+            "chord": "Cm",
+            "style": "Oriental Pop"
+          },
+          {
+            "section": "Main A",
+            "bars": 8,
+            "chord": "Cm",
+            "style": "Oriental Pop"
+          },
+          {
+            "section": "Main B",
+            "bars": 8,
+            "chord": "Ab",
+            "style": "Oriental Pop"
+          },
+          {
+            "section": "Break",
+            "bars": 2,
+            "chord": "Bb",
+            "style": "Oriental Pop"
+          },
+          {
+            "section": "Ending",
+            "bars": 4,
+            "chord": "Cm",
+            "style": "Oriental Pop"
+          }
+        ],
+        "sha256": "b5bee9075d8d163b7093484fd708387c0bc006a1f34d8f3fc20a74e37ee06cbc"
+      },
+      "outputArtifact": "b5bee9075d8d163b7093484fd708387c0bc006a1f34d8f3fc20a74e37ee06cbc",
+      "sha256": "b5bee9075d8d163b7093484fd708387c0bc006a1f34d8f3fc20a74e37ee06cbc",
+      "durationMs": 0
+    },
+    {
+      "workflowId": "wf-06-melody",
+      "ok": true,
+      "result": {
+        "ok": true,
+        "output": {
+          "peakNormalized": 0.86,
+          "uniqueMidiCount": 16,
+          "uniqueOnsetCount": 36,
+          "voices": [
+            "kick",
+            "hat",
+            "snare",
+            "bass",
+            "lead",
+            "chord"
+          ],
+          "musicalQualityPass": false,
+          "musicalQualityClaim": false,
+          "testTone": false,
+          "sineFixture": false
+        },
+        "sha256": "02f8d5c41fcc33b80cdfd5772fb1fcf8ddc57d6abb060b006a23c9f77012d4cc"
+      },
+      "outputArtifact": "02f8d5c41fcc33b80cdfd5772fb1fcf8ddc57d6abb060b006a23c9f77012d4cc",
+      "sha256": "02f8d5c41fcc33b80cdfd5772fb1fcf8ddc57d6abb060b006a23c9f77012d4cc",
+      "durationMs": 197
+    },
+    {
+      "workflowId": "wf-07-drums",
+      "ok": true,
+      "result": {
+        "ok": true,
+        "sequencer": {
+          "ok": true,
+          "running": true,
+          "position": 1,
+          "steps": [
+            {
+              "step": 1,
+              "kick": true,
+              "snare": false,
+              "hat": true,
+              "bass": true
+            },
+            {
+              "step": 2,
+              "kick": false,
+              "snare": false,
+              "hat": false,
+              "bass": false
+            },
+            {
+              "step": 3,
+              "kick": false,
+              "snare": false,
+              "hat": true,
+              "bass": false
+            },
+            {
+              "step": 4,
+              "kick": false,
+              "snare": false,
+              "hat": false,
+              "bass": false
+            },
+            {
+              "step": 5,
+              "kick": true,
+              "snare": true,
+              "hat": true,
+              "bass": true
+            },
+            {
+              "step": 6,
+              "kick": false,
+              "snare": false,
+              "hat": false,
+              "bass": false
+            },
+            {
+              "step": 7,
+              "kick": false,
+              "snare": false,
+              "hat": true,
+              "bass": false
+            },
+            {
+              "step": 8,
+              "kick": false,
+              "snare": false,
+              "hat": false,
+              "bass": false
+            },
+            {
+              "step": 9,
+              "kick": true,
+              "snare": false,
+              "hat": true,
+              "bass": true
+            },
+            {
+              "step": 10,
+              "kick": false,
+              "snare": false,
+              "hat": false,
+              "bass": false
+            },
+            {
+              "step": 11,
+              "kick": false,
+              "snare": false,
+              "hat": true,
+              "bass": false
+            },
+            {
+              "step": 12,
+              "kick": false,
+              "snare": false,
+              "hat": false,
+              "bass": false
+            },
+            {
+              "step": 13,
+              "kick": true,
+              "snare": true,
+              "hat": true,
+              "bass": true
+            },
+            {
+              "step": 14,
+              "kick": false,
+              "snare": false,
+              "hat": false,
+              "bass": false
+            },
+            {
+              "step": 15,
+              "kick": false,
+              "snare": false,
+              "hat": true,
+              "bass": false
+            },
+            {
+              "step": 16,
+              "kick": false,
+              "snare": false,
+              "hat": false,
+              "bass": false
+            }
+          ]
+        },
+        "transport": {
+          "state": "stopped",
+          "tempo": 100,
+          "position": 0,
+          "loop": true,
+          "musicalQualityPass": false
+        },
+        "sketchOk": true,
+        "midiOk": true,
+        "commercialReady": false,
+        "musicalQualityPass": false,
+        "capabilityId": "uaos.golden-sequencer.e2e/v1"
+      },
+      "outputArtifact": "1385f4fbda485b567775ca936ccb381d49766048df38fe4147b7b5dde43ee446",
+      "sha256": "1385f4fbda485b567775ca936ccb381d49766048df38fe4147b7b5dde43ee446",
+      "durationMs": 154
+    },
+    {
+      "workflowId": "wf-08-arrangement",
+      "ok": true,
+      "result": {
+        "ok": true,
+        "engine": {
+          "ok": true,
+          "section": "Intro",
+          "tempo": 96
+        },
+        "song": [
+          {
+            "section": "Intro",
+            "bars": 4,
+            "chord": "Cm",
+            "style": "Oriental Pop"
+          },
+          {
+            "section": "Main A",
+            "bars": 8,
+            "chord": "Cm",
+            "style": "Oriental Pop"
+          },
+          {
+            "section": "Main B",
+            "bars": 8,
+            "chord": "Ab",
+            "style": "Oriental Pop"
+          },
+          {
+            "section": "Break",
+            "bars": 2,
+            "chord": "Bb",
+            "style": "Oriental Pop"
+          },
+          {
+            "section": "Ending",
+            "bars": 4,
+            "chord": "Cm",
+            "style": "Oriental Pop"
+          }
+        ],
+        "plan": {
+          "groove": "arabic-khaleeji",
+          "harmony": "maqam-inspired",
+          "tempo": 92,
+          "instrumentation": [
+            "oud",
+            "qanun",
+            "arabic-percussion",
+            "strings"
+          ],
+          "emotion": "expressive",
+          "sections": [
+            {
+              "name": "Intro",
+              "bars": 4
+            },
+            {
+              "name": "Verse",
+              "bars": 8
+            },
+            {
+              "name": "Chorus",
+              "bars": 8
+            },
+            {
+              "name": "Bridge",
+              "bars": 4
+            },
+            {
+              "name": "Final Chorus",
+              "bars": 8
+            }
+          ],
+          "exportTargets": [
+            "MIDI",
+            "STYLE",
+            "STY",
+            "SET",
+            "MusicXML"
+          ]
+        },
+        "intelligenceOk": true,
+        "pipelineOk": true,
+        "v13Mixer": "READ_ONLY_DEPENDENCY",
+        "musicalQualityPass": false,
+        "capabilityId": "uaos.arranger-studio.e2e/v1"
+      },
+      "outputArtifact": "23c2248c5f0a084602978e62e6308b010acaa0043e0b638b667bd982075f7097",
+      "sha256": "23c2248c5f0a084602978e62e6308b010acaa0043e0b638b667bd982075f7097",
+      "durationMs": 165
+    },
+    {
+      "workflowId": "wf-09-section-change",
+      "ok": true,
+      "result": {
+        "ok": true,
+        "output": [
+          {
+            "section": "Intro",
+            "bars": 4,
+            "chord": "Cm",
+            "style": "Oriental Pop"
+          },
+          {
+            "section": "Main A",
+            "bars": 8,
+            "chord": "Dm",
+            "style": "Oriental Pop"
+          },
+          {
+            "section": "Main B",
+            "bars": 8,
+            "chord": "Ab",
+            "style": "Oriental Pop"
+          },
+          {
+            "section": "Break",
+            "bars": 2,
+            "chord": "Bb",
+            "style": "Oriental Pop"
+          },
+          {
+            "section": "Ending",
+            "bars": 4,
+            "chord": "Cm",
+            "style": "Oriental Pop"
+          }
+        ],
+        "sha256": "8d0aae3af0e010ebab39324fef51fbf74503a024134c2646e194bc8d73e266b7"
+      },
+      "outputArtifact": "8d0aae3af0e010ebab39324fef51fbf74503a024134c2646e194bc8d73e266b7",
+      "sha256": "8d0aae3af0e010ebab39324fef51fbf74503a024134c2646e194bc8d73e266b7",
+      "durationMs": 1
+    },
+    {
+      "workflowId": "wf-10-sequencing",
+      "ok": true,
+      "result": {
+        "ok": true,
+        "transport": {
+          "state": "stopped",
+          "tempo": 104,
+          "position": 0,
+          "loop": true,
+          "musicalQualityPass": false
+        }
+      },
+      "outputArtifact": "e85a5d47c7f77f97e3dafc973c3982616208eea25a112f0e0ea49f2c47e0a397",
+      "sha256": "e85a5d47c7f77f97e3dafc973c3982616208eea25a112f0e0ea49f2c47e0a397",
+      "durationMs": 0
+    },
+    {
+      "workflowId": "wf-11-transpose",
+      "ok": true,
+      "result": {
+        "ok": true,
+        "output": [
+          {
+            "section": "Intro",
+            "bars": 4,
+            "chord": "Dm",
+            "style": "Oriental Pop"
+          },
+          {
+            "section": "Main A",
+            "bars": 8,
+            "chord": "Dm",
+            "style": "Oriental Pop"
+          },
+          {
+            "section": "Main B",
+            "bars": 8,
+            "chord": "Ab",
+            "style": "Oriental Pop"
+          },
+          {
+            "section": "Break",
+            "bars": 2,
+            "chord": "Bb",
+            "style": "Oriental Pop"
+          },
+          {
+            "section": "Ending",
+            "bars": 4,
+            "chord": "Dm",
+            "style": "Oriental Pop"
+          }
+        ]
+      },
+      "outputArtifact": "420bdbfa0654da681b95ff86ba784801950df3a82fe79836d304929fe5b62f08",
+      "sha256": "420bdbfa0654da681b95ff86ba784801950df3a82fe79836d304929fe5b62f08",
+      "durationMs": 0
+    },
+    {
+      "workflowId": "wf-12-quantize",
+      "ok": true,
+      "result": {
+        "ok": true,
+        "sequencer": {
+          "ok": true,
+          "running": true,
+          "position": 1,
+          "steps": [
+            {
+              "step": 1,
+              "kick": true,
+              "snare": false,
+              "hat": true,
+              "bass": true
+            },
+            {
+              "step": 2,
+              "kick": false,
+              "snare": false,
+              "hat": false,
+              "bass": false
+            },
+            {
+              "step": 3,
+              "kick": false,
+              "snare": false,
+              "hat": true,
+              "bass": false
+            },
+            {
+              "step": 4,
+              "kick": false,
+              "snare": false,
+              "hat": false,
+              "bass": false
+            },
+            {
+              "step": 5,
+              "kick": true,
+              "snare": true,
+              "hat": true,
+              "bass": true
+            },
+            {
+              "step": 6,
+              "kick": false,
+              "snare": false,
+              "hat": false,
+              "bass": false
+            },
+            {
+              "step": 7,
+              "kick": false,
+              "snare": false,
+              "hat": true,
+              "bass": false
+            },
+            {
+              "step": 8,
+              "kick": false,
+              "snare": false,
+              "hat": false,
+              "bass": false
+            },
+            {
+              "step": 9,
+              "kick": true,
+              "snare": false,
+              "hat": true,
+              "bass": true
+            },
+            {
+              "step": 10,
+              "kick": false,
+              "snare": false,
+              "hat": false,
+              "bass": false
+            },
+            {
+              "step": 11,
+              "kick": false,
+              "snare": false,
+              "hat": true,
+              "bass": false
+            },
+            {
+              "step": 12,
+              "kick": false,
+              "snare": false,
+              "hat": false,
+              "bass": false
+            },
+            {
+              "step": 13,
+              "kick": true,
+              "snare": true,
+              "hat": true,
+              "bass": true
+            },
+            {
+              "step": 14,
+              "kick": false,
+              "snare": false,
+              "hat": false,
+              "bass": false
+            },
+            {
+              "step": 15,
+              "kick": false,
+              "snare": false,
+              "hat": true,
+              "bass": false
+            },
+            {
+              "step": 16,
+              "kick": false,
+              "snare": false,
+              "hat": false,
+              "bass": false
+            }
+          ]
+        },
+        "transport": {
+          "state": "stopped",
+          "tempo": 100,
+          "position": 0,
+          "loop": true,
+          "musicalQualityPass": false
+        },
+        "sketchOk": true,
+        "midiOk": true,
+        "commercialReady": false,
+        "musicalQualityPass": false,
+        "capabilityId": "uaos.golden-sequencer.e2e/v1"
+      },
+      "outputArtifact": "097815111b4717ea83aa7f7dd02f2a1a7c1cbdfa747970bf24033eb449607f28",
+      "sha256": "097815111b4717ea83aa7f7dd02f2a1a7c1cbdfa747970bf24033eb449607f28",
+      "durationMs": 144
+    },
+    {
+      "workflowId": "wf-13-edit",
+      "ok": true,
+      "result": {
+        "ok": true,
+        "workspace": {
+          "schema": "uaos.creator.workspace/v1",
+          "project": {
+            "schema": "uaos.musical-session-memory/v1",
+            "projectId": "creator-1787643564932",
+            "title": "WF13 Edit",
+            "tempo": 100,
+            "meter": "4/4",
+            "keyCenter": "C",
+            "arrangement": {
+              "sections": [
+                {
+                  "name": "Intro",
+                  "bars": 4,
+                  "chord": "Cm"
+                },
+                {
+                  "name": "Main A",
+                  "bars": 8,
+                  "chord": "Cm"
+                },
+                {
+                  "name": "Main B",
+                  "bars": 8,
+                  "chord": "Ab"
+                },
+                {
+                  "name": "Break",
+                  "bars": 2,
+                  "chord": "Bb"
+                },
+                {
+                  "name": "Ending",
+                  "bars": 4,
+                  "chord": "Cm"
+                }
+              ]
+            },
+            "mixerSnapshot": {
+              "channels": []
+            },
+            "updatedAt": "2026-08-25T07:39:24.932Z"
+          },
+          "tracks": [
+            {
+              "id": "drums",
+              "kind": "sequencer"
+            },
+            {
+              "id": "bass",
+              "kind": "harmony"
+            },
+            {
+              "id": "chords",
+              "kind": "harmony"
+            },
+            {
+              "id": "export",
+              "kind": "midi-smf"
+            }
+          ],
+          "midi": {
+            "ok": true,
+            "noteCount": 8,
+            "bytesSha256": "b7422b10a807864b93c306026b0fcbefdc65320d6d4a357bc9bf5a9aeb353c3d"
+          },
+          "commercialReady": false,
+          "musicalQualityPass": false
+        },
+        "sha256": "ecf1c80b8f9c50548ed525387160a56f5eec37b302e312c9a8341e9e13affbfc",
+        "capabilityId": "uaos.creator.workspace/v1"
+      },
+      "outputArtifact": "ecf1c80b8f9c50548ed525387160a56f5eec37b302e312c9a8341e9e13affbfc",
+      "sha256": "ecf1c80b8f9c50548ed525387160a56f5eec37b302e312c9a8341e9e13affbfc",
+      "durationMs": 72
+    },
+    {
+      "workflowId": "wf-14-play",
+      "ok": true,
+      "result": {
+        "ok": true,
+        "transport": {
+          "state": "playing",
+          "tempo": 96,
+          "position": 0,
+          "loop": true,
+          "musicalQualityPass": false
+        }
+      },
+      "outputArtifact": "c28d50a28e6665c4191d5885d5de3b349d40a59fd31c5f9c7891a596528a8ba3",
+      "sha256": "c28d50a28e6665c4191d5885d5de3b349d40a59fd31c5f9c7891a596528a8ba3",
+      "durationMs": 0
+    },
+    {
+      "workflowId": "wf-15-stop",
+      "ok": true,
+      "result": {
+        "ok": true,
+        "transport": {
+          "state": "stopped",
+          "tempo": 96,
+          "position": 0,
+          "loop": true,
+          "musicalQualityPass": false
+        }
+      },
+      "outputArtifact": "fce7128009160048d70bdba99861ba2e36392fb8b8d3a10919c65a13c064d0b5",
+      "sha256": "fce7128009160048d70bdba99861ba2e36392fb8b8d3a10919c65a13c064d0b5",
+      "durationMs": 0
+    },
+    {
+      "workflowId": "wf-16-save",
+      "ok": true,
+      "result": {
+        "ok": true,
+        "project": {
+          "schema": "uaos.musical-session-memory/v1",
+          "projectId": "untitled",
+          "title": "WF16",
+          "tempo": 96,
+          "meter": "4/4",
+          "keyCenter": "C",
+          "arrangement": {
+            "sections": []
+          },
+          "mixerSnapshot": {
+            "channels": []
+          },
+          "updatedAt": "2026-08-25T07:39:25.004Z"
+        },
+        "sha256": "86dd2675e2354549c1c7e493f2eecc6b0e396ca64ddf498832e819d25eb28ef6"
+      },
+      "outputArtifact": "86dd2675e2354549c1c7e493f2eecc6b0e396ca64ddf498832e819d25eb28ef6",
+      "sha256": "86dd2675e2354549c1c7e493f2eecc6b0e396ca64ddf498832e819d25eb28ef6",
+      "durationMs": 0
+    },
+    {
+      "workflowId": "wf-17-midi-export",
+      "ok": true,
+      "result": {
+        "ok": true,
+        "draft": {
+          "ok": true,
+          "format": "uaos-midi-draft-json",
+          "ppq": 480,
+          "tempo": 100,
+          "events": [
+            {
+              "time": 0,
+              "type": "section",
+              "section": "Intro",
+              "chord": "Cm",
+              "bars": 4
+            },
+            {
+              "time": 16,
+              "type": "section",
+              "section": "Main A",
+              "chord": "Cm",
+              "bars": 8
+            },
+            {
+              "time": 48,
+              "type": "section",
+              "section": "Main B",
+              "chord": "Ab",
+              "bars": 8
+            },
+            {
+              "time": 80,
+              "type": "section",
+              "section": "Break",
+              "chord": "Bb",
+              "bars": 2
+            },
+            {
+              "time": 88,
+              "type": "section",
+              "section": "Ending",
+              "chord": "Cm",
+              "bars": 4
+            }
+          ]
+        },
+        "noteEvents": [
+          {
+            "midi": 24,
+            "startTick": 0,
+            "durationTicks": 1680,
+            "velocity": 74,
+            "channel": 1
+          },
+          {
+            "midi": 36,
+            "startTick": 0,
+            "durationTicks": 1536,
+            "velocity": 55,
+            "channel": 2
+          },
+          {
+            "midi": 39,
+            "startTick": 16,
+            "durationTicks": 1536,
+            "velocity": 55,
+            "channel": 2
+          },
+          {
+            "midi": 43,
+            "startTick": 32,
+            "durationTicks": 1536,
+            "velocity": 55,
+            "channel": 2
+          },
+          {
+            "midi": 24,
+            "startTick": 1920,
+            "durationTicks": 1680,
+            "velocity": 74,
+            "channel": 1
+          },
+          {
+            "midi": 36,
+            "startTick": 1920,
+            "durationTicks": 1536,
+            "velocity": 55,
+            "channel": 2
+          },
+          {
+            "midi": 39,
+            "startTick": 1936,
+            "durationTicks": 1536,
+            "velocity": 55,
+            "channel": 2
+          },
+          {
+            "midi": 43,
+            "startTick": 1952,
+            "durationTicks": 1536,
+            "velocity": 55,
+            "channel": 2
+          }
+        ],
+        "bytes": {
+          "type": "Buffer",
+          "data": [
+            77,
+            84,
+            104,
+            100,
+            0,
+            0,
+            0,
+            6,
+            0,
+            0,
+            0,
+            1,
+            1,
+            224,
+            77,
+            84,
+            114,
+            107,
+            0,
+            0,
+            0,
+            78,
+            0,
+            255,
+            81,
+            3,
+            9,
+            39,
+            192,
+            0,
+            145,
+            24,
+            74,
+            0,
+            146,
+            36,
+            55,
+            16,
+            146,
+            39,
+            55,
+            16,
+            146,
+            43,
+            55,
+            139,
+            96,
+            130,
+            36,
+            64,
+            16,
+            130,
+            39,
+            64,
+            16,
+            130,
+            43,
+            64,
+            112,
+            129,
+            24,
+            64,
+            129,
+            112,
+            145,
+            24,
+            74,
+            0,
+            146,
+            36,
+            55,
+            16,
+            146,
+            39,
+            55,
+            16,
+            146,
+            43,
+            55,
+            139,
+            96,
+            130,
+            36,
+            64,
+            16,
+            130,
+            39,
+            64,
+            16,
+            130,
+            43,
+            64,
+            112,
+            129,
+            24,
+            64,
+            0,
+            255,
+            47,
+            0
+          ]
+        },
+        "parsed": {
+          "ok": true,
+          "validHeader": true,
+          "headerLength": 6,
+          "format": 0,
+          "trackCount": 1,
+          "division": 480,
+          "ppq": 480,
+          "notes": 8,
+          "noteEvents": [
+            {
+              "midi": 36,
+              "startTick": 0,
+              "durationTicks": 1536,
+              "velocity": 55,
+              "channel": 2
+            },
+            {
+              "midi": 39,
+              "startTick": 16,
+              "durationTicks": 1536,
+              "velocity": 55,
+              "channel": 2
+            },
+            {
+              "midi": 43,
+              "startTick": 32,
+              "durationTicks": 1536,
+              "velocity": 55,
+              "channel": 2
+            },
+            {
+              "midi": 24,
+              "startTick": 0,
+              "durationTicks": 1680,
+              "velocity": 74,
+              "channel": 1
+            },
+            {
+              "midi": 36,
+              "startTick": 1920,
+              "durationTicks": 1536,
+              "velocity": 55,
+              "channel": 2
+            },
+            {
+              "midi": 39,
+              "startTick": 1936,
+              "durationTicks": 1536,
+              "velocity": 55,
+              "channel": 2
+            },
+            {
+              "midi": 43,
+              "startTick": 1952,
+              "durationTicks": 1536,
+              "velocity": 55,
+              "channel": 2
+            },
+            {
+              "midi": 24,
+              "startTick": 1920,
+              "durationTicks": 1680,
+              "velocity": 74,
+              "channel": 1
+            }
+          ],
+          "controllers": 0,
+          "programChanges": 0,
+          "tempoEvents": 1,
+          "sysexEvents": 0,
+          "level": "READ"
+        },
+        "ir": {
+          "ok": true,
+          "ir": {
+            "schema": "uaos.neutral-ir/v1",
+            "family": "midi",
+            "tempoEvents": 1,
+            "notes": 8,
+            "noteEvents": [
+              {
+                "midi": 36,
+                "startTick": 0,
+                "durationTicks": 1536,
+                "velocity": 55,
+                "channel": 2
+              },
+              {
+                "midi": 39,
+                "startTick": 16,
+                "durationTicks": 1536,
+                "velocity": 55,
+                "channel": 2
+              },
+              {
+                "midi": 43,
+                "startTick": 32,
+                "durationTicks": 1536,
+                "velocity": 55,
+                "channel": 2
+              },
+              {
+                "midi": 24,
+                "startTick": 0,
+                "durationTicks": 1680,
+                "velocity": 74,
+                "channel": 1
+              },
+              {
+                "midi": 36,
+                "startTick": 1920,
+                "durationTicks": 1536,
+                "velocity": 55,
+                "channel": 2
+              },
+              {
+                "midi": 39,
+                "startTick": 1936,
+                "durationTicks": 1536,
+                "velocity": 55,
+                "channel": 2
+              },
+              {
+                "midi": 43,
+                "startTick": 1952,
+                "durationTicks": 1536,
+                "velocity": 55,
+                "channel": 2
+              },
+              {
+                "midi": 24,
+                "startTick": 1920,
+                "durationTicks": 1680,
+                "velocity": 74,
+                "channel": 1
+              }
+            ],
+            "controllers": 0,
+            "programChanges": 0,
+            "ppq": 480,
+            "musicalQualityClaim": false
+          },
+          "level": "NORMALIZE_TO_UAOS_IR"
+        },
+        "musicalQualityPass": false,
+        "commercialReady": false,
+        "hardwareVerified": false,
+        "capabilityId": "uaos.creator.golden-sequencer-midi/v1"
+      },
+      "outputArtifact": "a669593aaf7a66f04d1d7f01887fb8775ddaa5a2c0e6b6a697dbd1a49be56553",
+      "sha256": "a669593aaf7a66f04d1d7f01887fb8775ddaa5a2c0e6b6a697dbd1a49be56553",
+      "durationMs": 71
+    },
+    {
+      "workflowId": "wf-18-midi-reopen",
+      "ok": true,
+      "result": {
+        "ok": true,
+        "noteCount": 8,
+        "bytes": 100
+      },
+      "outputArtifact": "418b65e37daef841bf57e8955e0b04a0daf61e1093a52c56d0e4049405f3dfc3",
+      "sha256": "418b65e37daef841bf57e8955e0b04a0daf61e1093a52c56d0e4049405f3dfc3",
+      "durationMs": 60
+    },
+    {
+      "workflowId": "wf-19-malformed-input",
+      "ok": true,
+      "result": {
+        "ok": true,
+        "recovered": true,
+        "errorCode": "DEMO_NOT_FOUND"
+      },
+      "outputArtifact": "65bc2c80ed1142c913e6f248db4048c06456e52e37879105880b97c97f6588cf",
+      "sha256": "65bc2c80ed1142c913e6f248db4048c06456e52e37879105880b97c97f6588cf",
+      "durationMs": 0
+    },
+    {
+      "workflowId": "wf-20-recovery-close",
+      "ok": true,
+      "result": {
+        "ok": true,
+        "surface": 4,
+        "bundleSha256": "f2edb5daa3e49ba632b4fb92846492492ca7cdc6ec48e8db9991be3a4fc93624",
+        "contentEngine": "af831c8f676696ac9c8f1e3e5eceb2ed6163f5425662f4f840712a3f40cc4281"
+      },
+      "outputArtifact": "f2edb5daa3e49ba632b4fb92846492492ca7cdc6ec48e8db9991be3a4fc93624",
+      "sha256": "f2edb5daa3e49ba632b4fb92846492492ca7cdc6ec48e8db9991be3a4fc93624",
+      "durationMs": 119
+    }
+  ],
+  "summarySha256": "16d9975d5922432c5a5142d423590b8b357ee29665f7ed43747c9098a9f0b057"
+}

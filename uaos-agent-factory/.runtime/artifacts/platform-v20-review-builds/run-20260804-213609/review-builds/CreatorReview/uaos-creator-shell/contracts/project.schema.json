@@ -1,0 +1,16 @@
+{
+  "title": "UAOS Creator Project Contract",
+  "schemaVersion": "uaos.creator.project/v1",
+  "required": ["schemaVersion", "projectId", "name", "createdAt", "updatedAt", "tracks", "assets"],
+  "properties": {
+    "schemaVersion": { "const": "uaos.creator.project/v1" },
+    "projectId": { "type": "string", "minLength": 1 },
+    "name": { "type": "string" },
+    "createdAt": { "type": "string", "format": "date-time" },
+    "updatedAt": { "type": "string", "format": "date-time" },
+    "tracks": { "type": "array" },
+    "assets": { "type": "array" },
+    "featureFlags": { "type": "object" },
+    "entitlements": { "type": "object" }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "taskId": "TASK-01-00147-LOCALIZATION_ENGLISH_TESTS",
+  "agentId": "NODE_LOCAL_WORKER-0033",
+  "pid": 54292,
+  "startedAt": "2026-08-04T20:47:32.984Z",
+  "status": "FAILED",
+  "endedAt": "2026-08-04T20:47:33.179Z",
+  "exitCode": 1,
+  "stdoutTail": "",
+  "stderrTail": "<anonymous_script>:32824\r\n      \"releaseTrain\"\r\n\r\nSyntaxError: Expected ':' after property name in JSON at position 1507328 (line 32824 column 21)\r\n    at JSON.parse (<anonymous>)\r\n    at readJson (file:///C:/keyboard-manager-clean/uaos-agent-factory/src/uaos-program-tree-worker.mjs:17:35)\r\n    at file:///C:/keyboard-manager-clean/uaos-agent-factory/src/uaos-program-tree-worker.mjs:31:18\r\n    at ModuleJob.run (node:internal/modules/esm/module_job:439:25)\r\n    at async node:internal/modules/esm/loader:643:26\r\n    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)\r\n\r\nNode.js v24.18.0\r\n"
+}

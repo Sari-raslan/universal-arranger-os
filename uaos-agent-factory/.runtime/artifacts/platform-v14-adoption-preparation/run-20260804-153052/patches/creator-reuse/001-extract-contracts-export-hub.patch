@@ -1,0 +1,8 @@
+# PREPARED PATCH — NOT APPLIED
+Source-Commit: 8a149267b5ecaae65d7a9a6c79d94bfd60ec64da
+Target-Repository: FUTURE Creator candidate worktree
+Target-Baseline: TBD after Creator greenfield/reuse wave
+Preconditions: Creator product shell exists; do not treat library-l-130 as Creator
+Tests-Required: contract + export unit tests
+Rollback: discard patch
+Changed-Files: packages/core/** packages/export-hub/** (copy/adapt only)

@@ -1,0 +1,63 @@
+{
+  "STATUS": "UAOS_PROGRAM_TREE_V1_COMPLETE_AND_AUTONOMOUS_EXECUTION_STARTED",
+  "OVERALL": "UAOS_FULL_PORTFOLIO_TASK_GRAPH_READY_EXECUTION_IN_PROGRESS",
+  "at": "2026-08-04T20:47:53.241Z",
+  "runDir": "C:\\keyboard-manager-clean\\uaos-agent-factory\\.runtime\\artifacts\\uaos-program-tree\\run-20260804-224704",
+  "wave0": {
+    "evidenceMatch": true,
+    "schemaOk": true,
+    "dagOk": true,
+    "readyAfterPromote": 320,
+    "promoted": 0
+  },
+  "dispatch": {
+    "dispatched": 1100,
+    "completed": 983,
+    "failed": 117,
+    "waves": 4
+  },
+  "dispatchWaves": [
+    {
+      "wave": 1,
+      "dispatched": 320,
+      "completed": 295,
+      "failed": 25,
+      "readyAtStart": 320
+    },
+    {
+      "wave": 2,
+      "dispatched": 295,
+      "completed": 259,
+      "failed": 36,
+      "readyAtStart": 295
+    },
+    {
+      "wave": 3,
+      "dispatched": 259,
+      "completed": 226,
+      "failed": 33,
+      "readyAtStart": 259
+    },
+    {
+      "wave": 4,
+      "dispatched": 226,
+      "completed": 203,
+      "failed": 23,
+      "readyAtStart": 226
+    }
+  ],
+  "stillReady": 0,
+  "blockedPreserved": 503,
+  "dashboardPid": 38264,
+  "commander": "COMMANDER_INTEGRATION_CONTRACT_READY_NOT_ACTIVATED",
+  "safety": {
+    "push": false,
+    "merge": false,
+    "deploy": false,
+    "priorWorktreesReadOnly": true
+  },
+  "evidence": {
+    "zipPath": "C:\\keyboard-manager-clean\\uaos-agent-factory\\.runtime\\artifacts\\uaos-program-tree\\run-20260804-224704\\UAOS-PROGRAM-TREE-EVIDENCE-20260804-224753.zip",
+    "sha256": "016475A413F197E7675C73436F3579E33D382A0143A93CDCC68B3E0BBAD2F8E9"
+  }
+}

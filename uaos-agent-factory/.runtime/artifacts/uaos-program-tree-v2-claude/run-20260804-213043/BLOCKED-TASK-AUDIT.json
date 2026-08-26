@@ -1,0 +1,566 @@
+{
+  "staleDependencyBlocks": [
+    {
+      "id": "TASK-06-00725-REAL_TIME_DSP_CONTRACT",
+      "domain": "06-STUDIO-PRO",
+      "predecessors": [],
+      "predecessorStates": []
+    }
+  ],
+  "validDependencyBlockCount": 240,
+  "gateBlocks": [
+    {
+      "id": "TASK-02-00297-COMMERCIAL_CONTENT_ACQUISITION_CONTRACT",
+      "domain": "02-LIBRARY-FACTORY",
+      "state": "OWNER_GATE",
+      "gate": "OWNER_GATE",
+      "blockedReason": "Owner content approval required"
+    },
+    {
+      "id": "TASK-02-00301-PUBLIC_DOMAIN_CONTENT_PIPELINE_CONTRACT",
+      "domain": "02-LIBRARY-FACTORY",
+      "state": "BLOCKED_BY_CONTENT",
+      "gate": "CONTENT_GATE",
+      "blockedReason": "License evidence required"
+    },
+    {
+      "id": "TASK-02-00305-CONTRIBUTOR_PIPELINE_CONTRACT",
+      "domain": "02-LIBRARY-FACTORY",
+      "state": "BLOCKED_BY_LEGAL",
+      "gate": "LEGAL_GATE",
+      "blockedReason": "Contributor legal terms required"
+    },
+    {
+      "id": "TASK-02-00313-OWNER_CONTENT_APPROVAL_CONTRACT",
+      "domain": "02-LIBRARY-FACTORY",
+      "state": "OWNER_GATE",
+      "gate": "OWNER_GATE",
+      "blockedReason": "Owner content selection required"
+    },
+    {
+      "id": "TASK-03-00369-YAMAHA_INSPECTION_CONTRACT",
+      "domain": "03-KEYBOARD-PRO",
+      "state": "BLOCKED_BY_FORMAT",
+      "gate": "FORMAT_GATE",
+      "blockedReason": "Yamaha format contract pending"
+    },
+    {
+      "id": "TASK-03-00373-ROLAND_INSPECTION_CONTRACT",
+      "domain": "03-KEYBOARD-PRO",
+      "state": "BLOCKED_BY_FORMAT",
+      "gate": "FORMAT_GATE",
+      "blockedReason": "Roland format contract pending"
+    },
+    {
+      "id": "TASK-03-00377-KETRON_INSPECTION_CONTRACT",
+      "domain": "03-KEYBOARD-PRO",
+      "state": "BLOCKED_BY_FORMAT",
+      "gate": "FORMAT_GATE",
+      "blockedReason": "Ketron format contract pending"
+    },
+    {
+      "id": "TASK-03-00401-PROPRIETARY_FORMAT_CONTRACTS_CONTRACT",
+      "domain": "03-KEYBOARD-PRO",
+      "state": "OWNER_GATE",
+      "gate": "OWNER_GATE",
+      "blockedReason": "Owner format contract required"
+    },
+    {
+      "id": "TASK-03-00405-WRITER_RESEARCH_CONTRACT",
+      "domain": "03-KEYBOARD-PRO",
+      "state": "BLOCKED_BY_FORMAT",
+      "gate": "FORMAT_GATE",
+      "blockedReason": "Writer unsupported until format gate"
+    },
+    {
+      "id": "TASK-03-00409-KORG_WRITER_CONTRACT",
+      "domain": "03-KEYBOARD-PRO",
+      "state": "BLOCKED_BY_FORMAT",
+      "gate": "FORMAT_GATE",
+      "blockedReason": "WRITE_UNSUPPORTED until owner contract"
+    },
+    {
+      "id": "TASK-03-00413-USB_TRANSPORT_CONTRACT",
+      "domain": "03-KEYBOARD-PRO",
+      "state": "BLOCKED_BY_HARDWARE",
+      "gate": "HARDWARE_GATE",
+      "blockedReason": "Hardware gate"
+    },
+    {
+      "id": "TASK-03-00417-SYSEX_CONTRACT",
+      "domain": "03-KEYBOARD-PRO",
+      "state": "BLOCKED_BY_HARDWARE",
+      "gate": "HARDWARE_GATE",
+      "blockedReason": "SysEx blocked until hardware gate"
+    },
+    {
+      "id": "TASK-03-00421-HARDWARE_VERIFICATION_CONTRACT",
+      "domain": "03-KEYBOARD-PRO",
+      "state": "BLOCKED_BY_HARDWARE",
+      "gate": "HARDWARE_GATE",
+      "blockedReason": "Hardware verification gate"
+    },
+    {
+      "id": "TASK-03-00425-DEVICE_SPECIFIC_ACCEPTANCE_CONTRACT",
+      "domain": "03-KEYBOARD-PRO",
+      "state": "BLOCKED_BY_HARDWARE",
+      "gate": "HARDWARE_GATE",
+      "blockedReason": "Device acceptance gate"
+    },
+    {
+      "id": "TASK-04-00509-VENDOR_SPECIFIC_ADAPTERS_CONTRACT",
+      "domain": "04-KEYBOARD-CONVERTERS",
+      "state": "BLOCKED_BY_FORMAT",
+      "gate": "FORMAT_GATE",
+      "blockedReason": "Vendor adapters gated"
+    },
+    {
+      "id": "TASK-04-00513-WRITER_ADAPTERS_CONTRACT",
+      "domain": "04-KEYBOARD-CONVERTERS",
+      "state": "BLOCKED_BY_FORMAT",
+      "gate": "FORMAT_GATE",
+      "blockedReason": "Writer adapters gated"
+    },
+    {
+      "id": "TASK-04-00517-HARDWARE_DELIVERY_ADAPTERS_CONTRACT",
+      "domain": "04-KEYBOARD-CONVERTERS",
+      "state": "BLOCKED_BY_HARDWARE",
+      "gate": "HARDWARE_GATE",
+      "blockedReason": "Hardware delivery gated"
+    },
+    {
+      "id": "TASK-05-00561-VOICE_TO_MELODY_CONTRACT",
+      "domain": "05-CREATOR",
+      "state": "OWNER_GATE",
+      "gate": "OWNER_GATE",
+      "blockedReason": "Owner musical review required"
+    },
+    {
+      "id": "TASK-05-00605-MUSICAL_BRAIN_CONTRACT",
+      "domain": "05-CREATOR",
+      "state": "OWNER_GATE",
+      "gate": "OWNER_GATE",
+      "blockedReason": "Musical quality unproven"
+    },
+    {
+      "id": "TASK-05-00613-MUSICAL_CRITIC_CONTRACT",
+      "domain": "05-CREATOR",
+      "state": "OWNER_GATE",
+      "gate": "OWNER_GATE",
+      "blockedReason": "Owner taste review required"
+    },
+    {
+      "id": "TASK-05-00625-PRODUCTION_PREVIEW_CONTRACT",
+      "domain": "05-CREATOR",
+      "state": "OWNER_GATE",
+      "gate": "OWNER_GATE",
+      "blockedReason": "Owner listening required"
+    },
+    {
+      "id": "TASK-05-00645-OWNER_MUSICAL_REVIEW_LOOPS_CONTRACT",
+      "domain": "05-CREATOR",
+      "state": "OWNER_GATE",
+      "gate": "OWNER_GATE",
+      "blockedReason": "Owner listening and taste review"
+    },
+    {
+      "id": "TASK-05-00649-TASTE_DATASETS_AND_REVIEW_RECEIPTS_CONTR",
+      "domain": "05-CREATOR",
+      "state": "OWNER_GATE",
+      "gate": "OWNER_GATE",
+      "blockedReason": "Taste datasets require owner"
+    },
+    {
+      "id": "TASK-06-00729-ASIO_CONTRACT",
+      "domain": "06-STUDIO-PRO",
+      "state": "BLOCKED_BY_HARDWARE",
+      "gate": "HARDWARE_GATE",
+      "blockedReason": "ASIO hardware gate"
+    },
+    {
+      "id": "TASK-06-00733-AUDIO_DEVICE_MANAGEMENT_CONTRACT",
+      "domain": "06-STUDIO-PRO",
+      "state": "BLOCKED_BY_HARDWARE",
+      "gate": "HARDWARE_GATE",
+      "blockedReason": "Device management gated"
+    },
+    {
+      "id": "TASK-06-00737-RECORDING_CONTRACT",
+      "domain": "06-STUDIO-PRO",
+      "state": "BLOCKED_BY_HARDWARE",
+      "gate": "HARDWARE_GATE",
+      "blockedReason": "Recording gated"
+    },
+    {
+      "id": "TASK-07-00917-OPTIONAL_CLOUD_MODEL_ADAPTERS_CONTRACT",
+      "domain": "07-SINGY-CORE",
+      "state": "OWNER_GATE",
+      "gate": "OWNER_GATE",
+      "blockedReason": "Cloud adapters owner gate"
+    },
+    {
+      "id": "TASK-08-00929-PARENT_GATE_CONTRACT",
+      "domain": "08-SINGY-KIDS",
+      "state": "OWNER_GATE",
+      "gate": "OWNER_GATE",
+      "blockedReason": "Kids OWNER_DECISION_REQUIRED"
+    },
+    {
+      "id": "TASK-08-00997-CONTENT_PACKS_CONTRACT",
+      "domain": "08-SINGY-KIDS",
+      "state": "BLOCKED_BY_CONTENT",
+      "gate": "CONTENT_GATE",
+      "blockedReason": "Content packs need license evidence"
+    },
+    {
+      "id": "TASK-08-01001-SUBSCRIPTION_AND_FAMILY_LICENSING_CONTRA",
+      "domain": "08-SINGY-KIDS",
+      "state": "OWNER_GATE",
+      "gate": "OWNER_GATE",
+      "blockedReason": "Pricing OWNER_NOT_APPROVED"
+    },
+    {
+      "id": "TASK-08-01005-CHILD_PRIVACY_COMPLIANCE_CONTRACT",
+      "domain": "08-SINGY-KIDS",
+      "state": "BLOCKED_BY_LEGAL",
+      "gate": "LEGAL_GATE",
+      "blockedReason": "Legal review required"
+    },
+    {
+      "id": "TASK-09-01009-GUIDED_MUSIC_PROJECTS_CONTRACT",
+      "domain": "09-SINGY-TEEN",
+      "state": "OWNER_GATE",
+      "gate": "OWNER_GATE",
+      "blockedReason": "Teen OWNER_DECISION_REQUIRED"
+    },
+    {
+      "id": "TASK-09-01029-RECORDING_FUNDAMENTALS_CONTRACT",
+      "domain": "09-SINGY-TEEN",
+      "state": "BLOCKED_BY_HARDWARE",
+      "gate": "HARDWARE_GATE",
+      "blockedReason": "Recording hardware gate"
+    },
+    {
+      "id": "TASK-09-01073-CLOUD_SHARING_ARCHITECTURE_CONTRACT",
+      "domain": "09-SINGY-TEEN",
+      "state": "OWNER_GATE",
+      "gate": "OWNER_GATE",
+      "blockedReason": "Cloud sharing owner gate"
+    },
+    {
+      "id": "TASK-09-01077-TEEN_PRIVACY_AND_MODERATION_CONTRACT",
+      "domain": "09-SINGY-TEEN",
+      "state": "BLOCKED_BY_LEGAL",
+      "gate": "LEGAL_GATE",
+      "blockedReason": "Teen privacy legal gate"
+    },
+    {
+      "id": "TASK-09-01081-SUBSCRIPTION_AND_EDUCATION_LICENSING_CON",
+      "domain": "09-SINGY-TEEN",
+      "state": "OWNER_GATE",
+      "gate": "OWNER_GATE",
+      "blockedReason": "Pricing OWNER_NOT_APPROVED"
+    },
+    {
+      "id": "TASK-10-01085-PUBLIC_DOMAIN_SOURCE_DISCOVERY_CONTRACT",
+      "domain": "10-CONTENT-ASSETS",
+      "state": "BLOCKED_BY_CONTENT",
+      "gate": "CONTENT_GATE",
+      "blockedReason": "No fictional licenses; evidence required"
+    },
+    {
+      "id": "TASK-10-01089-PERMISSIVE_LICENSE_VERIFICATION_CONTRACT",
+      "domain": "10-CONTENT-ASSETS",
+      "state": "BLOCKED_BY_LEGAL",
+      "gate": "LEGAL_GATE",
+      "blockedReason": "License verification required"
+    },
+    {
+      "id": "TASK-10-01093-LICENSE_EVIDENCE_CONTRACT",
+      "domain": "10-CONTENT-ASSETS",
+      "state": "BLOCKED_BY_LEGAL",
+      "gate": "LEGAL_GATE",
+      "blockedReason": "License evidence required"
+    },
+    {
+      "id": "TASK-10-01097-ATTRIBUTION_CONTRACT",
+      "domain": "10-CONTENT-ASSETS",
+      "state": "BLOCKED_BY_LEGAL",
+      "gate": "LEGAL_GATE",
+      "blockedReason": "Attribution evidence required"
+    },
+    {
+      "id": "TASK-10-01105-INSTRUMENT_RECORDING_CONTRACT",
+      "domain": "10-CONTENT-ASSETS",
+      "state": "BLOCKED_BY_HARDWARE",
+      "gate": "HARDWARE_GATE",
+      "blockedReason": "Recording hardware"
+    },
+    {
+      "id": "TASK-10-01117-QUALITY_REVIEW_CONTRACT",
+      "domain": "10-CONTENT-ASSETS",
+      "state": "OWNER_GATE",
+      "gate": "OWNER_GATE",
+      "blockedReason": "Owner quality review"
+    },
+    {
+      "id": "TASK-10-01121-OUD_ASSET_PIPELINE_CONTRACT",
+      "domain": "10-CONTENT-ASSETS",
+      "state": "BLOCKED_BY_CONTENT",
+      "gate": "CONTENT_GATE",
+      "blockedReason": "No fabricated content"
+    },
+    {
+      "id": "TASK-10-01125-QANUN_ASSET_PIPELINE_CONTRACT",
+      "domain": "10-CONTENT-ASSETS",
+      "state": "BLOCKED_BY_CONTENT",
+      "gate": "CONTENT_GATE",
+      "blockedReason": "No fabricated content"
+    },
+    {
+      "id": "TASK-10-01129-NEY_ASSET_PIPELINE_CONTRACT",
+      "domain": "10-CONTENT-ASSETS",
+      "state": "BLOCKED_BY_CONTENT",
+      "gate": "CONTENT_GATE",
+      "blockedReason": "No fabricated content"
+    },
+    {
+      "id": "TASK-10-01133-DARBUKA_ASSET_PIPELINE_CONTRACT",
+      "domain": "10-CONTENT-ASSETS",
+      "state": "BLOCKED_BY_CONTENT",
+      "gate": "CONTENT_GATE",
+      "blockedReason": "No fabricated content"
+    },
+    {
+      "id": "TASK-10-01137-ORIENTAL_PERCUSSION_PIPELINE_CONTRACT",
+      "domain": "10-CONTENT-ASSETS",
+      "state": "BLOCKED_BY_CONTENT",
+      "gate": "CONTENT_GATE",
+      "blockedReason": "No fabricated content"
+    },
+    {
+      "id": "TASK-10-01141-PIANO_ASSET_PIPELINE_CONTRACT",
+      "domain": "10-CONTENT-ASSETS",
+      "state": "BLOCKED_BY_CONTENT",
+      "gate": "CONTENT_GATE",
+      "blockedReason": "No fabricated content"
+    },
+    {
+      "id": "TASK-10-01145-STRINGS_ASSET_PIPELINE_CONTRACT",
+      "domain": "10-CONTENT-ASSETS",
+      "state": "BLOCKED_BY_CONTENT",
+      "gate": "CONTENT_GATE",
+      "blockedReason": "No fabricated content"
+    },
+    {
+      "id": "TASK-10-01149-DRUMS_ASSET_PIPELINE_CONTRACT",
+      "domain": "10-CONTENT-ASSETS",
+      "state": "BLOCKED_BY_CONTENT",
+      "gate": "CONTENT_GATE",
+      "blockedReason": "No fabricated content"
+    },
+    {
+      "id": "TASK-10-01157-KIDS_CURRICULUM_MEDIA_CONTRACT",
+      "domain": "10-CONTENT-ASSETS",
+      "state": "OWNER_GATE",
+      "gate": "OWNER_GATE",
+      "blockedReason": "Kids decision required"
+    },
+    {
+      "id": "TASK-10-01161-TEEN_PROJECTS_MEDIA_CONTRACT",
+      "domain": "10-CONTENT-ASSETS",
+      "state": "OWNER_GATE",
+      "gate": "OWNER_GATE",
+      "blockedReason": "Teen decision required"
+    },
+    {
+      "id": "TASK-10-01165-OPERETTA_CONTENT_CONTRACT",
+      "domain": "10-CONTENT-ASSETS",
+      "state": "BLOCKED_BY_CONTENT",
+      "gate": "CONTENT_GATE",
+      "blockedReason": "Content gate"
+    },
+    {
+      "id": "TASK-10-01169-LEGAL_CONTENT_LEDGER_CONTRACT",
+      "domain": "10-CONTENT-ASSETS",
+      "state": "BLOCKED_BY_LEGAL",
+      "gate": "LEGAL_GATE",
+      "blockedReason": "Legal ledger required"
+    },
+    {
+      "id": "TASK-10-01173-COMMERCIAL_PACKAGE_APPROVAL_CONTRACT",
+      "domain": "10-CONTENT-ASSETS",
+      "state": "OWNER_GATE",
+      "gate": "OWNER_GATE",
+      "blockedReason": "Commercial package owner approval"
+    },
+    {
+      "id": "TASK-11-01185-PRICING_CONTRACT",
+      "domain": "11-COMMERCIAL-PLATFORM",
+      "state": "OWNER_GATE",
+      "gate": "OWNER_GATE",
+      "blockedReason": "12x OWNER_NOT_APPROVED"
+    },
+    {
+      "id": "TASK-11-01205-PAYMENTS_ACTIVATION_CONTRACT",
+      "domain": "11-COMMERCIAL-PLATFORM",
+      "state": "OWNER_GATE",
+      "gate": "OWNER_GATE",
+      "blockedReason": "Payment activation owner gate; no auto activate"
+    },
+    {
+      "id": "TASK-11-01209-VAT_HANDLING_CONTRACT",
+      "domain": "11-COMMERCIAL-PLATFORM",
+      "state": "BLOCKED_BY_LEGAL",
+      "gate": "LEGAL_GATE",
+      "blockedReason": "VAT legal gate"
+    },
+    {
+      "id": "TASK-11-01217-REFUND_POLICY_CONTRACT",
+      "domain": "11-COMMERCIAL-PLATFORM",
+      "state": "OWNER_GATE",
+      "gate": "OWNER_GATE",
+      "blockedReason": "Owner policy gate"
+    },
+    {
+      "id": "TASK-11-01249-EULA_CONTRACT",
+      "domain": "11-COMMERCIAL-PLATFORM",
+      "state": "BLOCKED_BY_LEGAL",
+      "gate": "LEGAL_GATE",
+      "blockedReason": "Legal gate"
+    },
+    {
+      "id": "TASK-11-01253-TERMS_CONTRACT",
+      "domain": "11-COMMERCIAL-PLATFORM",
+      "state": "BLOCKED_BY_LEGAL",
+      "gate": "LEGAL_GATE",
+      "blockedReason": "Legal gate"
+    },
+    {
+      "id": "TASK-11-01261-FOUNDER_LAUNCH_CONTRACT",
+      "domain": "11-COMMERCIAL-PLATFORM",
+      "state": "OWNER_GATE",
+      "gate": "OWNER_GATE",
+      "blockedReason": "Owner final launch gate"
+    },
+    {
+      "id": "TASK-11-01265-CLOSED_BETA_CONTRACT",
+      "domain": "11-COMMERCIAL-PLATFORM",
+      "state": "OWNER_GATE",
+      "gate": "OWNER_GATE",
+      "blockedReason": "Owner beta gate"
+    },
+    {
+      "id": "TASK-11-01269-EARLY_ACCESS_CONTRACT",
+      "domain": "11-COMMERCIAL-PLATFORM",
+      "state": "OWNER_GATE",
+      "gate": "OWNER_GATE",
+      "blockedReason": "Owner early access gate"
+    },
+    {
+      "id": "TASK-11-01273-STABLE_RELEASE_CONTRACT",
+      "domain": "11-COMMERCIAL-PLATFORM",
+      "state": "OWNER_GATE",
+      "gate": "OWNER_GATE",
+      "blockedReason": "Owner stable release gate"
+    },
+    {
+      "id": "TASK-11-01277-BUNDLES_CONTRACT",
+      "domain": "11-COMMERCIAL-PLATFORM",
+      "state": "OWNER_GATE",
+      "gate": "OWNER_GATE",
+      "blockedReason": "Pricing unapproved"
+    },
+    {
+      "id": "TASK-11-01281-EDUCATIONAL_PLANS_CONTRACT",
+      "domain": "11-COMMERCIAL-PLATFORM",
+      "state": "OWNER_GATE",
+      "gate": "OWNER_GATE",
+      "blockedReason": "Pricing unapproved"
+    },
+    {
+      "id": "TASK-11-01285-FAMILY_PLANS_CONTRACT",
+      "domain": "11-COMMERCIAL-PLATFORM",
+      "state": "OWNER_GATE",
+      "gate": "OWNER_GATE",
+      "blockedReason": "Pricing unapproved"
+    },
+    {
+      "id": "TASK-12-01297-KIDS_PAGE_CONTRACT",
+      "domain": "12-WEBSITE-DELIVERY",
+      "state": "OWNER_GATE",
+      "gate": "OWNER_GATE",
+      "blockedReason": "Kids decision required"
+    },
+    {
+      "id": "TASK-12-01301-TEEN_PAGE_CONTRACT",
+      "domain": "12-WEBSITE-DELIVERY",
+      "state": "OWNER_GATE",
+      "gate": "OWNER_GATE",
+      "blockedReason": "Teen decision required"
+    },
+    {
+      "id": "TASK-12-01321-PRICING_PAGE_CONTRACT",
+      "domain": "12-WEBSITE-DELIVERY",
+      "state": "OWNER_GATE",
+      "gate": "OWNER_GATE",
+      "blockedReason": "Pricing unapproved"
+    },
+    {
+      "id": "TASK-12-01373-LEGAL_PAGES_CONTRACT",
+      "domain": "12-WEBSITE-DELIVERY",
+      "state": "BLOCKED_BY_LEGAL",
+      "gate": "LEGAL_GATE",
+      "blockedReason": "Legal pages gated"
+    },
+    {
+      "id": "TASK-13-01397-EULA_DRAFTING_CONTRACT",
+      "domain": "13-SECURITY-LEGAL",
+      "state": "BLOCKED_BY_LEGAL",
+      "gate": "LEGAL_GATE",
+      "blockedReason": "Legal drafting"
+    },
+    {
+      "id": "TASK-13-01401-PRIVACY_POLICY_DRAFTING_CONTRACT",
+      "domain": "13-SECURITY-LEGAL",
+      "state": "BLOCKED_BY_LEGAL",
+      "gate": "LEGAL_GATE",
+      "blockedReason": "Legal drafting"
+    },
+    {
+      "id": "TASK-13-01405-CHILD_PRIVACY_COMPLIANCE_FRAMEWORK_CONTR",
+      "domain": "13-SECURITY-LEGAL",
+      "state": "BLOCKED_BY_LEGAL",
+      "gate": "LEGAL_GATE",
+      "blockedReason": "Legal gate"
+    },
+    {
+      "id": "TASK-13-01409-CONTENT_LICENSE_COMPLIANCE_AUDITS_CONTRA",
+      "domain": "13-SECURITY-LEGAL",
+      "state": "BLOCKED_BY_LEGAL",
+      "gate": "LEGAL_GATE",
+      "blockedReason": "No fictional licenses"
+    },
+    {
+      "id": "TASK-13-01413-EXPORT_CONTROL_REVIEW_CONTRACT",
+      "domain": "13-SECURITY-LEGAL",
+      "state": "BLOCKED_BY_LEGAL",
+      "gate": "LEGAL_GATE",
+      "blockedReason": "Legal gate"
+    },
+    {
+      "id": "TASK-14-01493-RELEASE_SIGNING_CONTRACT",
+      "domain": "14-QA-RELEASE-OPERATIONS",
+      "state": "OWNER_GATE",
+      "gate": "OWNER_GATE",
+      "blockedReason": "Signing owner gate"
+    },
+    {
+      "id": "TASK-15-01601-COMMANDER_ACTIVATION_CONTRACT",
+      "domain": "15-COMMANDER-FUTURE-ADAPTER",
+      "state": "OWNER_GATE",
+      "gate": "OWNER_GATE",
+      "blockedReason": "COMMANDER_INTEGRATION_CONTRACT_READY_NOT_ACTIVATED; do not open Commander repo"
+    }
+  ]
+}

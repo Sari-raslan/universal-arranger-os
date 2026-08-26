@@ -1,0 +1,35 @@
+{
+  "taskId": "TASK-00-00021-ALLOWED_PATH_VALIDATION_CONTRACT",
+  "agentId": "NODE_LOCAL_WORKER-0006",
+  "startedAt": "2026-08-04T20:47:04.583Z",
+  "endedAt": "2026-08-04T20:47:04.749Z",
+  "status": "PASS",
+  "tests": [
+    {
+      "command": "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-00-00021-allowed_path_validation_contract\\tests\\main.test.mjs",
+      "exitCode": 0,
+      "stdoutTail": "✔ TASK-00-00021-ALLOWED_PATH_VALIDATION_CONTRACT verify (0.52ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 74.4045\n"
+    }
+  ],
+  "sha256": "AC665342463D559FF4454A8A5FD2FEB6445DE056D14CD82F10696FFFE2602D96",
+  "allowedPathsUsed": [
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-00-00021-allowed_path_validation_contract",
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-00-00021-allowed_path_validation_contract\\src\\allowed_path_validation_contract.mjs",
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-00-00021-allowed_path_validation_contract\\tests\\main.test.mjs"
+  ],
+  "truthStatements": [
+    "Technical WAV success does not prove musical quality",
+    "Fixtures are not product content",
+    "Studio Offline Render is not Real-time DSP",
+    "KORG WRITE_UNSUPPORTED",
+    "No auto adoption of Kids/Teen/Pricing",
+    "Commander not activated"
+  ],
+  "ownerFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-00-00021-allowed_path_validation_contract\\src\\allowed_path_validation_contract.mjs",
+  "phase": "DEFINE",
+  "gate": null,
+  "noPush": true,
+  "noMerge": true,
+  "noDeploy": true,
+  "commanderActivated": false
+}

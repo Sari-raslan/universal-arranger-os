@@ -1,0 +1,115 @@
+{
+  "workflowId": "wf-03-open-demo-02",
+  "ok": true,
+  "result": {
+    "ok": true,
+    "demo": {
+      "id": "demo-02-melody-arrangement",
+      "title": "Melody to Arrangement Edit",
+      "rights": "UAOS_IN_HOUSE_ORIGINAL",
+      "melody": "60,61,64,65",
+      "variant": "hijaz",
+      "tempo": 96,
+      "workflow": "melody → arrangement/edit"
+    },
+    "project": {
+      "schema": "uaos.musical-session-memory/v1",
+      "projectId": "demo-02-melody-arrangement",
+      "title": "Melody to Arrangement Edit",
+      "tempo": 96,
+      "meter": "4/4",
+      "keyCenter": "C",
+      "arrangement": {
+        "sections": [
+          {
+            "name": "Intro",
+            "bars": 1
+          },
+          {
+            "name": "Verse",
+            "bars": 2
+          },
+          {
+            "name": "Chorus",
+            "bars": 2
+          }
+        ]
+      },
+      "mixerSnapshot": {
+        "channels": []
+      },
+      "melody": "60,61,64,65",
+      "updatedAt": "2026-08-25T07:39:24.198Z"
+    },
+    "pipeline": {
+      "ok": true,
+      "voices": [
+        "kick",
+        "hat",
+        "snare",
+        "bass",
+        "lead",
+        "chord"
+      ]
+    },
+    "gates": {
+      "ok": true,
+      "tonalContextPreservation": true,
+      "melodyChordCompatibility": 1,
+      "harmonicCompatibility": true,
+      "sectionContinuity": true,
+      "styleChangeWithoutUnrequestedReharmonization": true,
+      "arrangementContextPreservation": true,
+      "noObviousOutOfScaleCollisions": true,
+      "details": {
+        "tonal": {
+          "ok": true,
+          "score": 100,
+          "sourceFamily": "maqam-hijaz",
+          "candidateFamily": "maqam-hijaz",
+          "preserved": [
+            0,
+            1,
+            4,
+            5,
+            7,
+            8
+          ],
+          "missing": [],
+          "foreign": [],
+          "melodyChordCompatibility": 1,
+          "unrequestedReharmonization": false,
+          "tonalContextPreserved": true,
+          "harmonicCompatibility": true,
+          "styleChangeWithoutUnrequestedReharmonization": true
+        },
+        "continuity": {
+          "ok": true,
+          "sectionCount": 3,
+          "uniqueNames": 3,
+          "zeroBarSections": 0,
+          "musicalQualityClaim": false
+        },
+        "context": {
+          "ok": true,
+          "missing": [],
+          "orderOk": true,
+          "musicalQualityClaim": false
+        },
+        "scale": {
+          "ok": true,
+          "collisions": [],
+          "collisionCount": 0,
+          "musicalQualityClaim": false
+        }
+      },
+      "musicalQualityClaim": false,
+      "ownerMusicalQualityPass": false
+    },
+    "musicalQualityPass": false,
+    "sha256": "459c2f4a4ba6e9ca311ee477f741eeae34257dc3a8e633416bb158df941c75a0"
+  },
+  "outputArtifact": "459c2f4a4ba6e9ca311ee477f741eeae34257dc3a8e633416bb158df941c75a0",
+  "sha256": "459c2f4a4ba6e9ca311ee477f741eeae34257dc3a8e633416bb158df941c75a0",
+  "durationMs": 156
+}

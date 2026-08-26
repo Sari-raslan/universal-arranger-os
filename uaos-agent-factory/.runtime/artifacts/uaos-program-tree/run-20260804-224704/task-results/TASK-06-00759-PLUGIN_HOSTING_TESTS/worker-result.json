@@ -1,0 +1,11 @@
+{
+  "taskId": "TASK-06-00759-PLUGIN_HOSTING_TESTS",
+  "agentId": "NODE_LOCAL_WORKER-0133",
+  "pid": 55992,
+  "startedAt": "2026-08-04T20:47:37.191Z",
+  "status": "FAILED",
+  "endedAt": "2026-08-04T20:47:37.429Z",
+  "exitCode": 1,
+  "stdoutTail": "",
+  "stderrTail": "<anonymous_script>:53780\r\n        \"C:\\\\UAOS_AGE\r\n\r\nSyntaxError: Unterminated string in JSON at position 2482176 (line 53780 column 22)\r\n    at JSON.parse (<anonymous>)\r\n    at readJson (file:///C:/keyboard-manager-clean/uaos-agent-factory/src/uaos-program-tree-worker.mjs:17:35)\r\n    at file:///C:/keyboard-manager-clean/uaos-agent-factory/src/uaos-program-tree-worker.mjs:31:18\r\n    at ModuleJob.run (node:internal/modules/esm/module_job:439:25)\r\n    at async node:internal/modules/esm/loader:643:26\r\n    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)\r\n\r\nNode.js v24.18.0\r\n"
+}

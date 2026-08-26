@@ -1,0 +1,77 @@
+{
+  "generatedAt": "2026-08-05T05:20:02.692Z",
+  "results": [
+    {
+      "taskId": "TASK-01-00057-SHARED_PROJECT_IDENTITY_CONTRACT",
+      "testCommand": "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00057-shared_project_identity_contract\\tests\\main.test.mjs",
+      "exitCode": 0,
+      "stdoutTail": "✔ verify() smoke check (0.609ms)\n✔ accepts a well-formed identity (0.9571ms)\n✔ isValidProjectId accepts real crypto.randomUUID() output and rejects garbage (0.0787ms)\n✔ isValidFormatVersion accepts strict semver only (0.0706ms)\n✔ compareFormatVersions orders correctly across major/minor/patch (0.1108ms)\n✔ rejects a non-UUID id (0.2514ms)\n✔ rejects an unknown productId (0.0955ms)\n✔ rejects a non-semver formatVersion (0.6097ms)\n✔ rejects an unparseable createdAt (0.3394ms)\n✔ compareFormatVersions rejects invalid input rather than returning a misleading result (0.1844ms)\nℹ tests 10\nℹ suites 0\nℹ pass 10\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 83.5937\n"
+    },
+    {
+      "taskId": "TASK-01-00058-SHARED_PROJECT_IDENTITY_IMPLEMENTATION",
+      "testCommand": "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00058-shared_project_identity_implementation\\tests\\main.test.mjs",
+      "exitCode": 0,
+      "stdoutTail": "✔ verify() smoke check (1.3612ms)\n✔ createProjectIdentity mints a valid, unique identity (0.1568ms)\n✔ createProjectIdentity produces 1000 unique ids with no collisions (real randomness, not a fixture) (2.6126ms)\n✔ migrateFormatVersion upgrades formatVersion and preserves the original id (0.1729ms)\n✔ createProjectIdentity rejects an unknown productId (0.305ms)\n✔ migrateFormatVersion refuses a downgrade (0.1318ms)\n✔ migrateFormatVersion rejects a malformed target version (0.1308ms)\nℹ tests 7\nℹ suites 0\nℹ pass 7\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 73.5414\n"
+    },
+    {
+      "taskId": "TASK-01-00059-SHARED_PROJECT_IDENTITY_TESTS",
+      "testCommand": "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00059-shared_project_identity_tests\\tests\\main.test.mjs",
+      "exitCode": 0,
+      "stdoutTail": "✔ verify() smoke check (0.4761ms)\n✔ mints and atomically persists an identity for all six products, and every one reads back valid (4.5504ms)\n✔ every product gets a distinct id (no accidental sharing across products) (2.4588ms)\n✔ failure-path: if the manifest save fails, no partial manifest is left on disk (2.4839ms)\nℹ tests 4\nℹ suites 0\nℹ pass 4\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 79.0926\n"
+    },
+    {
+      "taskId": "TASK-01-00060-SHARED_PROJECT_IDENTITY_EVIDENCE",
+      "testCommand": "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00060-shared_project_identity_evidence\\tests\\main.test.mjs",
+      "exitCode": 0,
+      "stdoutTail": "✔ verify() smoke check (375.0037ms)\n✔ re-running the full feature test suite genuinely passes end-to-end (365.7227ms)\n✔ a genuinely failing child test file is detected as FAIL, not swallowed as PASS (118.9613ms)\n✔ rollback/recovery procedure documents immutability, no-downgrade, and recovery fallback (0.2685ms)\nℹ tests 4\nℹ suites 0\nℹ pass 4\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 927.307\n"
+    },
+    {
+      "taskId": "TASK-01-00073-RECOVERY_CONTRACT",
+      "testCommand": "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00073-recovery_contract\\tests\\main.test.mjs",
+      "exitCode": 0,
+      "stdoutTail": "✔ verify() smoke check (0.5557ms)\n✔ matchOrphanTempFilename extracts the original basename from a real AtomicSave temp-file name (0.0944ms)\n✔ matchOrphanTempFilename returns null for anything not matching the convention (0.0739ms)\n✔ accepts valid options (0.0871ms)\n✔ rejects non-object options (0.2715ms)\n✔ rejects a missing or empty dir (0.0965ms)\n✔ schema documents the never-promote-an-orphan guarantee (0.1307ms)\nℹ tests 7\nℹ suites 0\nℹ pass 7\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 67.7887\n"
+    },
+    {
+      "taskId": "TASK-01-00074-RECOVERY_IMPLEMENTATION",
+      "testCommand": "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00074-recovery_implementation\\tests\\main.test.mjs",
+      "exitCode": 0,
+      "stdoutTail": "✔ verify() smoke check (0.4733ms)\n✔ a directory with no orphans is a safe no-op (1.405ms)\n✔ an orphan whose real target already exists (crash happened AFTER a successful rename by a retried attempt) is discarded (9.9547ms)\n✔ an orphan whose real target is MISSING (crash happened BEFORE the rename ever completed) is quarantined, never promoted (1.1191ms)\n✔ unrelated files that merely look similar are never mistaken for orphans (1.4084ms)\n✔ rejects an invalid options shape (0.525ms)\n✔ a nonexistent directory fails cleanly rather than silently reporting no orphans (0.8561ms)\nℹ tests 7\nℹ suites 0\nℹ pass 7\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 83.7113\n"
+    },
+    {
+      "taskId": "TASK-01-00075-RECOVERY_TESTS",
+      "testCommand": "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00075-recovery_tests\\tests\\main.test.mjs",
+      "exitCode": 0,
+      "stdoutTail": "✔ verify() smoke check (0.4634ms)\n✔ recovers a realistic mixed directory: redundant orphans discarded, dangling orphan quarantined, all real projects intact (32.652ms)\n✔ recovery is idempotent: running it a second time on an already-recovered directory is a no-op (10.0127ms)\n✔ failure-path scale test: 50 orphans, all target-missing, are all quarantined without any data loss or crash (45.4383ms)\nℹ tests 4\nℹ suites 0\nℹ pass 4\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 157.6409\n"
+    },
+    {
+      "taskId": "TASK-01-00076-RECOVERY_EVIDENCE",
+      "testCommand": "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00076-recovery_evidence\\tests\\main.test.mjs",
+      "exitCode": 0,
+      "stdoutTail": "✔ verify() smoke check (436.5787ms)\n✔ re-running the full feature test suite genuinely passes end-to-end (442.1877ms)\n✔ a genuinely failing child test file is detected as FAIL, not swallowed as PASS (116.4538ms)\n✔ rollback/recovery procedure documents safe-default quarantine and idempotency (0.2573ms)\nℹ tests 4\nℹ suites 0\nℹ pass 4\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 1059.5692\n"
+    },
+    {
+      "taskId": "TASK-06-00653-PROJECT_SYSTEM_CONTRACT",
+      "testCommand": "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-06-00653-project_system_contract\\tests\\main.test.mjs",
+      "exitCode": 0,
+      "stdoutTail": "✔ verify() smoke check (0.5699ms)\n✔ validateSampleRate accepts only the allowed rates (0.6574ms)\n✔ validateTrackId accepts non-empty strings only (0.0929ms)\n✔ validateClip accepts a well-formed clip (0.2819ms)\n✔ validateProject accepts a well-formed project with tracks and clips (0.1195ms)\n✔ validateClip rejects a negative startSample (0.2415ms)\n✔ validateClip rejects a missing samplesBase64 (0.1024ms)\n✔ validateProject rejects an unsupported sampleRate (0.0878ms)\n✔ validateProject rejects a track with a bad id (0.1088ms)\n✔ validateProject rejects a project whose tracks is not an array (0.1611ms)\nℹ tests 10\nℹ suites 0\nℹ pass 10\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 65.6461\n"
+    },
+    {
+      "taskId": "TASK-06-00654-PROJECT_SYSTEM_IMPLEMENTATION",
+      "testCommand": "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-06-00654-project_system_implementation\\tests\\main.test.mjs",
+      "exitCode": 0,
+      "stdoutTail": "✔ verify() smoke check (0.8527ms)\n✔ encodeWav/decodeWav round-trips sample data exactly (1.6799ms)\n✔ generateTestTone produces a real, non-silent, bounded waveform (0.1675ms)\n✔ project lifecycle: create -> add track -> add clip -> validates (0.2029ms)\n✔ SAVE + REOPEN round-trip via the real AtomicSave primitive preserves every sample (4.0415ms)\n✔ regression: base64ToInt16Array is safe against Node Buffer pool aliasing (small buffers share one underlying ArrayBuffer) (0.306ms)\n✔ OUTPUT: renderOffline mixes overlapping clips by real per-sample summation, with clamping on overflow (0.2451ms)\n✔ OUTPUT: non-overlapping clips are placed at their correct sample offsets untouched (0.209ms)\n✔ failure-path: decodeWav rejects a truncated/corrupt WAV rather than returning garbage (0.2996ms)\n✔ failure-path: decodeWav rejects a non-WAV buffer (0.165ms)\n✔ failure-path: decodeWav rejects a buffer shorter than a minimal header (0.0958ms)\n✔ failure-path: reopenProject rejects a corrupted (truncated JSON) project file with a clear error, not silent garbage (3.278ms)\n✔ failure recovery: a crash-orphaned AtomicSave temp file next to the project does not prevent a clean reopen (4.1437ms)\n✔ addTrack rejects a duplicate track id (0.0951ms)\n✔ addClip rejects a clip on a nonexistent track (0.0828ms)\nℹ tests 15\nℹ suites 0\nℹ pass 15\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 87.6875\n"
+    },
+    {
+      "taskId": "TASK-06-00655-PROJECT_SYSTEM_TESTS",
+      "testCommand": "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-06-00655-project_system_tests\\tests\\main.test.mjs",
+      "exitCode": 0,
+      "stdoutTail": "✔ verify() smoke check (0.456ms)\n✔ FULL VERTICAL SLICE: input -> validation -> processing -> save -> close -> reopen -> output -> failure recovery -> evidence (11.1536ms)\n✔ failure-path: a project file corrupted AFTER a successful save is rejected on reopen, never silently rendered (2.5907ms)\n✔ offline render output never claims musical/commercial quality — it is pipeline-mechanics proof only (0.2823ms)\nℹ tests 4\nℹ suites 0\nℹ pass 4\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 84.1664\n"
+    },
+    {
+      "taskId": "TASK-06-00656-PROJECT_SYSTEM_EVIDENCE",
+      "testCommand": "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-06-00656-project_system_evidence\\tests\\main.test.mjs",
+      "exitCode": 0,
+      "stdoutTail": "✔ verify() smoke check (396.9845ms)\n✔ re-running the full vertical-slice test suite genuinely passes end-to-end (395.2429ms)\n✔ a genuinely failing child test file is detected as FAIL, not swallowed as PASS (117.1294ms)\n✔ rollback/recovery procedure documents crash recovery integration and the truth-statement scope boundaries (0.1773ms)\nℹ tests 4\nℹ suites 0\nℹ pass 4\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 976.9014\n"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+    "recommendation":  "KEEP_L130",
+    "moduleMixNote":  "Optionally reuse B LICENSE_LEDGER acquisition module only",
+    "candidates":  [
+                       {
+                           "branch":  "factory/library-l-130",
+                           "id":  "library-l-130",
+                           "recheckCheckExit":  0,
+                           "strength":  "transactional build/journal/lock/sampler adapter/studio",
+                           "expectedMatch":  true,
+                           "repo":  "uaos-real-product",
+                           "path":  "C:\\UAOS_AGENT_FACTORY_WORKTREES\\library-l-130",
+                           "status":  "ADOPTABLE_SOURCE",
+                           "head":  "8a149267b5ecaae65d7a9a6c79d94bfd60ec64da"
+                       },
+                       {
+                           "headDriftCommits":  45,
+                           "branch":  "uaos/open-library-factory-v3-20260723_185921",
+                           "id":  "open-library-factory-v3",
+                           "weakness":  "no transactional library-build stack; dirty; owner listening gate",
+                           "strength":  "open acquisition + LICENSE_LEDGER",
+                           "expectedPinned":  "1d1de6d580b9b9b3d6b39345d95e72a1d2532ae3",
+                           "repo":  "keyboard-manager-clean",
+                           "path":  "C:\\UAOS-WT\\uaos-open-library-factory-v3-20260723_185921",
+                           "relation":  "UNRELATED_DIFFERENT_GIT_REPO",
+                           "head":  "ecb40dd552c9259bc41fcee861f22c1fe679b4ae",
+                           "expectedIsAncestor":  true
+                       }
+                   ]
+}

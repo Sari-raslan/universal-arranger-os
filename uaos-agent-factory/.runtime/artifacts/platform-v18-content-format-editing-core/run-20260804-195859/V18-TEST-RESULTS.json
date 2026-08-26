@@ -1,0 +1,76 @@
+{
+    "pass":  7,
+    "fail":  0,
+    "results":  [
+                    {
+                        "lane":  "library",
+                        "name":  "content.test",
+                        "command":  "node packages\\uaos-v18-library-content\\content.test.cjs",
+                        "cwd":  "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-v18-execution\\library-content-readiness",
+                        "exitCode":  0,
+                        "startedAt":  "2026-08-04T17:59:01.3488795Z",
+                        "endedAt":  "2026-08-04T17:59:01.4207865Z",
+                        "durationMs":  69
+                    },
+                    {
+                        "lane":  "keyboard-formats",
+                        "name":  "format.test",
+                        "command":  "node packages\\uaos-v18-format-contracts\\format.test.cjs",
+                        "cwd":  "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-v18-execution\\keyboard-format-contracts",
+                        "exitCode":  0,
+                        "startedAt":  "2026-08-04T17:59:01.5754603Z",
+                        "endedAt":  "2026-08-04T17:59:01.6349458Z",
+                        "durationMs":  59
+                    },
+                    {
+                        "lane":  "converters",
+                        "name":  "phase3.test",
+                        "command":  "node phase3.test.cjs",
+                        "cwd":  "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-v18-execution\\keyboard-converters-phase3\\packages\\keyboard-converters-phase3",
+                        "exitCode":  0,
+                        "startedAt":  "2026-08-04T17:59:02.5722360Z",
+                        "endedAt":  "2026-08-04T17:59:02.7108995Z",
+                        "durationMs":  138
+                    },
+                    {
+                        "lane":  "creator",
+                        "name":  "phase4.test",
+                        "command":  "node tests\\phase4.test.cjs",
+                        "cwd":  "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-v18-execution\\creator-phase4-arrangement-sequencer\\uaos-creator-shell",
+                        "exitCode":  0,
+                        "startedAt":  "2026-08-04T17:59:03.2932618Z",
+                        "endedAt":  "2026-08-04T17:59:03.3700374Z",
+                        "durationMs":  76
+                    },
+                    {
+                        "lane":  "creator",
+                        "name":  "build",
+                        "command":  "node scripts\\build-shell.cjs",
+                        "cwd":  "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-v18-execution\\creator-phase4-arrangement-sequencer\\uaos-creator-shell",
+                        "exitCode":  0,
+                        "startedAt":  "2026-08-04T17:59:03.3710363Z",
+                        "endedAt":  "2026-08-04T17:59:03.4272979Z",
+                        "durationMs":  56
+                    },
+                    {
+                        "lane":  "studio",
+                        "name":  "editing.test",
+                        "command":  "node tests\\editing.test.cjs",
+                        "cwd":  "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-v18-execution\\studio-e40-audio-midi-editing",
+                        "exitCode":  0,
+                        "startedAt":  "2026-08-04T17:59:03.9305620Z",
+                        "endedAt":  "2026-08-04T17:59:03.9979865Z",
+                        "durationMs":  66
+                    },
+                    {
+                        "lane":  "migration",
+                        "name":  "migration.test",
+                        "command":  "node tests\\migration.test.cjs",
+                        "cwd":  "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-v18-execution\\shared-migration-stabilization",
+                        "exitCode":  0,
+                        "startedAt":  "2026-08-04T17:59:04.0047137Z",
+                        "endedAt":  "2026-08-04T17:59:04.0703854Z",
+                        "durationMs":  65
+                    }
+                ]
+}

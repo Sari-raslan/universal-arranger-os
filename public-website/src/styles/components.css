@@ -403,6 +403,51 @@
   color: var(--color-text);
 }
 
+.productGrid {
+  display: grid;
+  gap: var(--space-4);
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.homeCard {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  height: 100%;
+}
+
+.homeCard .btn {
+  margin-top: auto;
+  align-self: flex-start;
+}
+
+.proofLine,
+.heroNote,
+.ctaLine {
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+  line-height: 1.45;
+}
+
+.productPage .block {
+  margin-top: var(--space-5);
+}
+
+.faqList dt {
+  font-weight: 700;
+  margin-top: var(--space-3);
+}
+
+.faqList dd {
+  margin: var(--space-1) 0 0;
+  color: var(--color-text-muted);
+}
+
+.pointList.numbered {
+  list-style: decimal;
+  padding-inline-start: 1.25rem;
+}
+
 @media (max-width: 640px) {
   .productCard {
     flex-direction: column;

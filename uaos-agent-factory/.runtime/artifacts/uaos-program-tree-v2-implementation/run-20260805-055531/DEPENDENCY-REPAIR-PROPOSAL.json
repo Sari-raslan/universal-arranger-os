@@ -1,0 +1,141 @@
+{
+  "generatedAt": "2026-08-05T05:57:21.792Z",
+  "method": "Static analysis of every currently-DONE task's real production ownerFile source, grepping for relative imports of the form `from '../../task-XXX/src/...'` that reach into a sibling capability's worktree. Each match is objectively verifiable (grep-reproducible) evidence of criterion #6 (required artifact from the predecessor) from the repair rules. This deliberately does NOT infer any edge from task titles/topic similarity alone, per the mission's explicit prohibition.",
+  "scopeNote": "This proposal is intentionally narrow: it only adds edges between tasks that are ALREADY DONE (batches 1-3), so applying it corrects the graph's documented architecture without unblocking/reblocking anything currently in flight. It does not attempt to retroactively invent edges for the 313 not-yet-implemented READY tasks, since no comparable objective evidence (real source imports) can exist for code that has not been written yet.",
+  "candidateEdgeCount": 8,
+  "candidateEdges": [
+    {
+      "from": "TASK-01-00066-ATOMIC_SAVE_IMPLEMENTATION",
+      "to": "TASK-01-00059-SHARED_PROJECT_IDENTITY_TESTS",
+      "type": "BLOCKS",
+      "fromExists": true,
+      "toExists": true,
+      "fromState": "DONE",
+      "toState": "DONE",
+      "isSelfDep": false
+    },
+    {
+      "from": "TASK-01-00066-ATOMIC_SAVE_IMPLEMENTATION",
+      "to": "TASK-01-00075-RECOVERY_TESTS",
+      "type": "BLOCKS",
+      "fromExists": true,
+      "toExists": true,
+      "fromState": "DONE",
+      "toState": "DONE",
+      "isSelfDep": false
+    },
+    {
+      "from": "TASK-01-00066-ATOMIC_SAVE_IMPLEMENTATION",
+      "to": "TASK-01-00107-SIGNED_LICENSES_TESTS",
+      "type": "BLOCKS",
+      "fromExists": true,
+      "toExists": true,
+      "fromState": "DONE",
+      "toState": "DONE",
+      "isSelfDep": false
+    },
+    {
+      "from": "TASK-01-00066-ATOMIC_SAVE_IMPLEMENTATION",
+      "to": "TASK-01-00130-VERSIONING_IMPLEMENTATION",
+      "type": "BLOCKS",
+      "fromExists": true,
+      "toExists": true,
+      "fromState": "DONE",
+      "toState": "DONE",
+      "isSelfDep": false
+    },
+    {
+      "from": "TASK-01-00066-ATOMIC_SAVE_IMPLEMENTATION",
+      "to": "TASK-02-00198-USER_SUPPLIED_WAV_INGESTION_IMPLEMENTATI",
+      "type": "BLOCKS",
+      "fromExists": true,
+      "toExists": true,
+      "fromState": "DONE",
+      "toState": "DONE",
+      "isSelfDep": false
+    },
+    {
+      "from": "TASK-01-00066-ATOMIC_SAVE_IMPLEMENTATION",
+      "to": "TASK-06-00654-PROJECT_SYSTEM_IMPLEMENTATION",
+      "type": "BLOCKS",
+      "fromExists": true,
+      "toExists": true,
+      "fromState": "DONE",
+      "toState": "DONE",
+      "isSelfDep": false
+    },
+    {
+      "from": "TASK-01-00074-RECOVERY_IMPLEMENTATION",
+      "to": "TASK-06-00654-PROJECT_SYSTEM_IMPLEMENTATION",
+      "type": "BLOCKS",
+      "fromExists": true,
+      "toExists": true,
+      "fromState": "DONE",
+      "toState": "DONE",
+      "isSelfDep": false
+    },
+    {
+      "from": "TASK-01-00058-SHARED_PROJECT_IDENTITY_IMPLEMENTATION",
+      "to": "TASK-06-00655-PROJECT_SYSTEM_TESTS",
+      "type": "BLOCKS",
+      "fromExists": true,
+      "toExists": true,
+      "fromState": "DONE",
+      "toState": "DONE",
+      "isSelfDep": false
+    }
+  ],
+  "allEndpointsDone": true,
+  "allEndpointsExist": true,
+  "noSelfDeps": true,
+  "evidenceLog": [
+    {
+      "from": "TASK-01-00066-ATOMIC_SAVE_IMPLEMENTATION",
+      "to": "TASK-01-00059-SHARED_PROJECT_IDENTITY_TESTS",
+      "evidence": "TASK-01-00059-SHARED_PROJECT_IDENTITY_TESTS's ownerFile (shared_project_identity_tests.mjs) contains a static relative import reaching into task-01-00066-atomic_save_implementation/src/, i.e. real production code depends on that module.",
+      "criterion": "#6 required artifact from the predecessor"
+    },
+    {
+      "from": "TASK-01-00066-ATOMIC_SAVE_IMPLEMENTATION",
+      "to": "TASK-01-00075-RECOVERY_TESTS",
+      "evidence": "TASK-01-00075-RECOVERY_TESTS's ownerFile (recovery_tests.mjs) contains a static relative import reaching into task-01-00066-atomic_save_implementation/src/, i.e. real production code depends on that module.",
+      "criterion": "#6 required artifact from the predecessor"
+    },
+    {
+      "from": "TASK-01-00066-ATOMIC_SAVE_IMPLEMENTATION",
+      "to": "TASK-01-00107-SIGNED_LICENSES_TESTS",
+      "evidence": "TASK-01-00107-SIGNED_LICENSES_TESTS's ownerFile (signed_licenses_tests.mjs) contains a static relative import reaching into task-01-00066-atomic_save_implementation/src/, i.e. real production code depends on that module.",
+      "criterion": "#6 required artifact from the predecessor"
+    },
+    {
+      "from": "TASK-01-00066-ATOMIC_SAVE_IMPLEMENTATION",
+      "to": "TASK-01-00130-VERSIONING_IMPLEMENTATION",
+      "evidence": "TASK-01-00130-VERSIONING_IMPLEMENTATION's ownerFile (versioning_implementation.mjs) contains a static relative import reaching into task-01-00066-atomic_save_implementation/src/, i.e. real production code depends on that module.",
+      "criterion": "#6 required artifact from the predecessor"
+    },
+    {
+      "from": "TASK-01-00066-ATOMIC_SAVE_IMPLEMENTATION",
+      "to": "TASK-02-00198-USER_SUPPLIED_WAV_INGESTION_IMPLEMENTATI",
+      "evidence": "TASK-02-00198-USER_SUPPLIED_WAV_INGESTION_IMPLEMENTATI's ownerFile (user_supplied_wav_ingestion_impl.mjs) contains a static relative import reaching into task-01-00066-atomic_save_implementation/src/, i.e. real production code depends on that module.",
+      "criterion": "#6 required artifact from the predecessor"
+    },
+    {
+      "from": "TASK-01-00066-ATOMIC_SAVE_IMPLEMENTATION",
+      "to": "TASK-06-00654-PROJECT_SYSTEM_IMPLEMENTATION",
+      "evidence": "TASK-06-00654-PROJECT_SYSTEM_IMPLEMENTATION's ownerFile (project_system_implementation.mjs) contains a static relative import reaching into task-01-00066-atomic_save_implementation/src/, i.e. real production code depends on that module.",
+      "criterion": "#6 required artifact from the predecessor"
+    },
+    {
+      "from": "TASK-01-00074-RECOVERY_IMPLEMENTATION",
+      "to": "TASK-06-00654-PROJECT_SYSTEM_IMPLEMENTATION",
+      "evidence": "TASK-06-00654-PROJECT_SYSTEM_IMPLEMENTATION's ownerFile (project_system_implementation.mjs) contains a static relative import reaching into task-01-00074-recovery_implementation/src/, i.e. real production code depends on that module.",
+      "criterion": "#6 required artifact from the predecessor"
+    },
+    {
+      "from": "TASK-01-00058-SHARED_PROJECT_IDENTITY_IMPLEMENTATION",
+      "to": "TASK-06-00655-PROJECT_SYSTEM_TESTS",
+      "evidence": "TASK-06-00655-PROJECT_SYSTEM_TESTS's ownerFile (project_system_tests.mjs) contains a static relative import reaching into task-01-00058-shared_project_identity_implementation/src/, i.e. real production code depends on that module.",
+      "criterion": "#6 required artifact from the predecessor"
+    }
+  ]
+}

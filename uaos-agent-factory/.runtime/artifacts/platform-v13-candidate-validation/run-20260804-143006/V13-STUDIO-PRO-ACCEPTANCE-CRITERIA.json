@@ -1,0 +1,44 @@
+{
+    "acceptance":  [
+                       {
+                           "phase":  0,
+                           "id":  "AC-SP-01",
+                           "text":  "Project format schema versioned and tested round-trip"
+                       },
+                       {
+                           "phase":  1,
+                           "id":  "AC-SP-02",
+                           "text":  "Timeline creates/loads multitrack project without data loss"
+                       },
+                       {
+                           "phase":  2,
+                           "id":  "AC-SP-03",
+                           "text":  "Global player transport + mixer master bus audible path with deterministic test harness (no mock-as-quality)"
+                       },
+                       {
+                           "phase":  3,
+                           "id":  "AC-SP-04",
+                           "text":  "Audio clip + MIDI clip edit/undo/redo"
+                       },
+                       {
+                           "phase":  4,
+                           "id":  "AC-SP-05",
+                           "text":  "Sampler runtime loads validated library package offline"
+                       },
+                       {
+                           "phase":  5,
+                           "id":  "AC-SP-06",
+                           "text":  "Musical brain can propose structure without mutating timeline unless accepted"
+                       },
+                       {
+                           "phase":  6,
+                           "id":  "AC-SP-07",
+                           "text":  "Stem + MIDI export produce hashable artifacts"
+                       },
+                       {
+                           "phase":  7,
+                           "id":  "AC-SP-08",
+                           "text":  "Owner review pack without pricing activation"
+                       }
+                   ]
+}

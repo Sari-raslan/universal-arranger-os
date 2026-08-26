@@ -1,0 +1,180 @@
+{
+  "pass": 2,
+  "fail": 0,
+  "creator": {
+    "status": "CREATOR_V21_TECHNICAL_ARRANGEMENT_PREVIEW_READY",
+    "secondary": [
+      "CREATOR_V21_MUSICAL_QUALITY_UNPROVEN"
+    ],
+    "assertions": 13,
+    "pass": 13,
+    "fail": 0,
+    "steps": [
+      {
+        "name": "melody-only_no_clip",
+        "ok": true
+      },
+      {
+        "name": "melody-only_not_silent",
+        "ok": true
+      },
+      {
+        "name": "chords-only_no_clip",
+        "ok": true
+      },
+      {
+        "name": "chords-only_not_silent",
+        "ok": true
+      },
+      {
+        "name": "bass-only_no_clip",
+        "ok": true
+      },
+      {
+        "name": "bass-only_not_silent",
+        "ok": true
+      },
+      {
+        "name": "drums-only_no_clip",
+        "ok": true
+      },
+      {
+        "name": "drums-only_not_silent",
+        "ok": true
+      },
+      {
+        "name": "combined-technical-preview_no_clip",
+        "ok": true
+      },
+      {
+        "name": "combined-technical-preview_not_silent",
+        "ok": true
+      },
+      {
+        "name": "cancel",
+        "ok": true
+      },
+      {
+        "name": "silent_detect",
+        "ok": true
+      },
+      {
+        "name": "deterministic_preview",
+        "ok": true
+      }
+    ],
+    "fixtures": {
+      "melody-only": {
+        "wav": "D71E6879761FAF32D5A18941002BFCC7D1F9680AD476994BE2412A07F6B6FD94",
+        "receiptSha": "15B62CFF1E05D718D459ADC009F3E26F56ACFE82DA6B9E4606459011730AED10",
+        "analysis": {
+          "peak": 0.2999999999497604,
+          "rms": 0.10854160598838837,
+          "clippingCount": 0,
+          "silent": false,
+          "nonSilentSamples": 71975
+        }
+      },
+      "chords-only": {
+        "wav": "B50D41B25A6BEAC3C0CA494DD66367886C0E51227E931D55D4B2BC3611D4469E",
+        "receiptSha": "69FBCF6455C40214B3CEA982D7371E16F6BB4CFDFE64E46B2F196AB85C2455AE",
+        "analysis": {
+          "peak": 0.44906126537893615,
+          "rms": 0.09064479258470412,
+          "clippingCount": 0,
+          "silent": false,
+          "nonSilentSamples": 47978
+        }
+      },
+      "bass-only": {
+        "wav": "1CBE2D3867D1683A693BAA280D173E04EDA35B942B7648B5E6CF3D2E41242C45",
+        "receiptSha": "3F5B17069E1906D71760BF2F085683B0351E7984A3941D62E5AA77514578F75F",
+        "analysis": {
+          "peak": 0.19999999990467418,
+          "rms": 0.08982609394272116,
+          "clippingCount": 0,
+          "silent": false,
+          "nonSilentSamples": 95943
+        }
+      },
+      "drums-only": {
+        "wav": "2EA97D518345B8D2A4DFB7D38AF707BD480DC7F51A2FDA0977A2B0CF92952B71",
+        "receiptSha": "64D9A99B0D32E25B9A6D4583978BFC569918E50EE39A665993C50BF89CA669CD",
+        "analysis": {
+          "peak": 0.0625,
+          "rms": 0.004943005546528129,
+          "clippingCount": 0,
+          "silent": false,
+          "nonSilentSamples": 1434
+        }
+      },
+      "combined-technical-preview": {
+        "wav": "9098E2077566C0AA6090E706C51940AD424A0671FD37A4A7DDE3EE51207FA22D",
+        "receiptSha": "89EC9EE46DFA7051E9383BDCA46B81AA239F937C9D5164DD67F9C5E5CD8661BD",
+        "analysis": {
+          "peak": 0.8108463918828477,
+          "rms": 0.1675974997887598,
+          "clippingCount": 0,
+          "silent": false,
+          "nonSilentSamples": 95959
+        }
+      }
+    },
+    "musicalTruth": "OWNER_LISTENING_AND_TASTE_REVIEW_REQUIRED",
+    "autoplay": false
+  },
+  "studio": {
+    "status": "STUDIO_PRO_V21_E50_OFFLINE_RENDER_CORE_READY",
+    "secondary": [
+      "FUTURE_TECHNICAL_PHASE_REQUIRED"
+    ],
+    "assertions": 9,
+    "pass": 9,
+    "fail": 0,
+    "steps": [
+      {
+        "name": "silent_project",
+        "ok": true
+      },
+      {
+        "name": "single_note",
+        "ok": true
+      },
+      {
+        "name": "multi",
+        "ok": true
+      },
+      {
+        "name": "mute",
+        "ok": true
+      },
+      {
+        "name": "cancel",
+        "ok": true
+      },
+      {
+        "name": "interrupt_cleanup",
+        "ok": true
+      },
+      {
+        "name": "tmp_gone",
+        "ok": true
+      },
+      {
+        "name": "deterministic_render",
+        "ok": true
+      },
+      {
+        "name": "save_open",
+        "ok": true
+      }
+    ],
+    "deterministicHash": "243168451E825C1F557964033D80EB71F1B29D4B07299AD4AB424E03919D78AB",
+    "claims": {
+      "asio": "NOT_IMPLEMENTED",
+      "realtimeDsp": "NOT_IMPLEMENTED",
+      "recording": "NOT_IMPLEMENTED",
+      "kontakt": "NOT_INTEGRATED"
+    }
+  }
+}

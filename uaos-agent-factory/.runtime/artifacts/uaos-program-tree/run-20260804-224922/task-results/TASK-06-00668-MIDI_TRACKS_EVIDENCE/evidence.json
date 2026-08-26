@@ -1,0 +1,35 @@
+{
+  "taskId": "TASK-06-00668-MIDI_TRACKS_EVIDENCE",
+  "agentId": "NODE_LOCAL_WORKER-0055",
+  "startedAt": "2026-08-04T20:49:30.321Z",
+  "endedAt": "2026-08-04T20:49:30.447Z",
+  "status": "PASS",
+  "tests": [
+    {
+      "command": "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-06-00668-midi_tracks_evidence\\tests\\main.test.mjs",
+      "exitCode": 0,
+      "stdoutTail": "✔ TASK-06-00668-MIDI_TRACKS_EVIDENCE verify (0.4972ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 70.6757\n"
+    }
+  ],
+  "sha256": "FD4DDEBBF0AB2D37E029913AD5090C2A010DF45CDE7D70C09B03C4D00D9C2DC4",
+  "allowedPathsUsed": [
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-06-00668-midi_tracks_evidence",
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-06-00668-midi_tracks_evidence\\src\\midi_tracks_evidence.mjs",
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-06-00668-midi_tracks_evidence\\tests\\main.test.mjs"
+  ],
+  "truthStatements": [
+    "Technical WAV success does not prove musical quality",
+    "Fixtures are not product content",
+    "Studio Offline Render is not Real-time DSP",
+    "KORG WRITE_UNSUPPORTED",
+    "No auto adoption of Kids/Teen/Pricing",
+    "Commander not activated"
+  ],
+  "ownerFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-06-00668-midi_tracks_evidence\\src\\midi_tracks_evidence.mjs",
+  "phase": "EVIDENCE",
+  "gate": null,
+  "noPush": true,
+  "noMerge": true,
+  "noDeploy": true,
+  "commanderActivated": false
+}

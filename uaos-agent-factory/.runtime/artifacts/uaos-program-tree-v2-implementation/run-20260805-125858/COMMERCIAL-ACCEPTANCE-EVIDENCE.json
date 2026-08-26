@@ -1,0 +1,20 @@
+{
+  "generatedAt": "2026-08-05T17:05:00.000Z",
+  "chain": "Chain B - Commercial Readiness Gates (Commercial Acceptance Harness)",
+  "status": "IMPLEMENTED_IN_BATCH_6",
+  "priorStatus": "NOT_SELECTED_IN_BATCH_5 (see Batch 5's own COMMERCIAL-ACCEPTANCE-EVIDENCE.json)",
+  "tasks": ["TASK-11-01257-COMMERCIAL_READINESS_GATES_CONTRACT", "TASK-11-01258-COMMERCIAL_READINESS_GATES_IMPLEMENTATIO", "TASK-11-01259-COMMERCIAL_READINESS_GATES_TESTS", "TASK-11-01260-COMMERCIAL_READINESS_GATES_EVIDENCE"],
+  "realBehaviorProven": [
+    "decideAcceptance() derives PASS/PARTIAL/FAIL entirely from the submitted evidence bundle's individual fields -- there is no single pre-set status shortcut field anywhere in the schema or the decision logic.",
+    "All 15 mission rules implemented and independently tested: critical security failure, critical data loss, zero real tests, missing executable, checksum mismatch, corrupted-license-accepted, missing failure-path evidence (severity-escalated when tests are already failing), fixture-only content (truth limitation, not auto-FAIL), technical-WAV/offline-render/KORG-write fabricated-proof rejection, documentation-cannot-override-failing-runtime, skipped-test severity classification, known-limitations always carried into the receipt, and evidence-path normalization/traversal rejection.",
+    "Every finding (critical or non-critical) carries a rule id, a human-readable reason, and the evidence paths it came from -- never a bare boolean.",
+    "receiptSha256 is a deterministic pure function of the decision content only, proven via two independently-decided identical bundles producing an identical hash, and two genuinely different bundles (clean vs really-tampered package) never colliding.",
+    "Integration tests build REAL release packages (reusing Batch 5's Installer Packaging build+verify pipeline) across all 6 commercial products and derive checksum-mismatch evidence from a genuine tamper plus a real verifyManifestIntegrity failure, not a hand-typed value."
+  ],
+  "reuseOverReimplementation": [
+    "validateRelativePath imported directly from Batch 4's export_import_user_data_contract.mjs for evidence-path safety",
+    "buildReleaseTreeFor/buildManifestFromDirectory/verifyManifestIntegrity imported directly from Batch 5's Installer Packaging feature for the integration test suite's real-package evidence"
+  ],
+  "testCounts": { "contract": 8, "implementation": 19, "tests": 6, "evidence": 4, "total": 37 },
+  "allEvidenceStatus": "PASS"
+}

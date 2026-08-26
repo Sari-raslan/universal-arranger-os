@@ -1,0 +1,50 @@
+{
+  "generatedAt": "2026-08-05T16:45:00.000Z",
+  "chains": [
+    {
+      "chain": "A - Product Runtime Identity (About/Version/License Runtime State)",
+      "tasks": ["TASK-01-00133-ABOUT_SCREEN_CONTRACT", "TASK-01-00134-ABOUT_SCREEN_IMPLEMENTATION", "TASK-01-00135-ABOUT_SCREEN_TESTS", "TASK-01-00136-ABOUT_SCREEN_EVIDENCE"],
+      "ownedFiles": [
+        "task-01-00133-about_screen_contract/src/about_screen_contract.mjs",
+        "task-01-00134-about_screen_implementation/src/about_screen_implementation.mjs",
+        "task-01-00135-about_screen_tests/src/about_screen_tests.mjs",
+        "task-01-00136-about_screen_evidence/src/about_screen_evidence.mjs"
+      ],
+      "importsFromPriorBatches": [
+        "task-01-00161-product_manifest_implementation (or equivalent Versioning/manifest module, read-only)",
+        "task-01-00098-entitlements_implementation (read-only)",
+        "task-01-00094-capability_registry_implementati (read-only)",
+        "task-01-00066-atomic_save_implementation (read-only)"
+      ]
+    },
+    {
+      "chain": "B - Commercial Acceptance Harness (Commercial Readiness Gates)",
+      "tasks": ["TASK-11-01257-COMMERCIAL_READINESS_GATES_CONTRACT", "TASK-11-01258-COMMERCIAL_READINESS_GATES_IMPLEMENTATIO", "TASK-11-01259-COMMERCIAL_READINESS_GATES_TESTS", "TASK-11-01260-COMMERCIAL_READINESS_GATES_EVIDENCE"],
+      "ownedFiles": [
+        "task-11-01257-commercial_readiness_gates_contract/src/commercial_readiness_gates_contr.mjs",
+        "task-11-01258-commercial_readiness_gates_implementatio/src/commercial_readiness_gates_implementat.mjs",
+        "task-11-01259-commercial_readiness_gates_tests/src/commercial_readiness_gates_tests.mjs",
+        "task-11-01260-commercial_readiness_gates_evidence/src/commercial_readiness_gates_evidence.mjs"
+      ],
+      "importsFromPriorBatches": [
+        "task-01-00122-installer_packaging_implementation (verifyManifestIntegrity/buildAcceptanceReceipt, read-only)"
+      ]
+    },
+    {
+      "chain": "C - Singy Kids Offline Vertical Slice (Offline Lessons)",
+      "tasks": ["TASK-08-00981-OFFLINE_LESSONS_CONTRACT", "TASK-08-00982-OFFLINE_LESSONS_IMPLEMENTATION", "TASK-08-00983-OFFLINE_LESSONS_TESTS", "TASK-08-00984-OFFLINE_LESSONS_EVIDENCE"],
+      "ownedFiles": [
+        "task-08-00981-offline_lessons_contract/src/offline_lessons_contract.mjs",
+        "task-08-00982-offline_lessons_implementation/src/offline_lessons_implementation.mjs",
+        "task-08-00983-offline_lessons_tests/src/offline_lessons_tests.mjs",
+        "task-08-00984-offline_lessons_evidence/src/offline_lessons_evidence.mjs"
+      ],
+      "importsFromPriorBatches": [
+        "task-01-00066-atomic_save_implementation (read-only)"
+      ]
+    }
+  ],
+  "conflictCheck": "All 12 owned files are unique to this batch's 12 worktrees (see WORKTREE-MANIFEST.json, uniqueWorktreeCount=12=taskCount). Cross-batch imports are read-only references to already-DONE, already-tested modules from Batches 1, 4, and 5 -- none of those files are written by this batch.",
+  "zeroConflicts": true,
+  "priorWorktreesUntouched": "V1-V21 and all Batch 1-5 worktrees are read-only inputs; none written by Batch 6."
+}

@@ -1,0 +1,35 @@
+{
+  "taskId": "TASK-11-01228-DOWNLOAD_ENTITLEMENT_EVIDENCE",
+  "agentId": "NODE_LOCAL_WORKER-0151",
+  "startedAt": "2026-08-04T20:47:49.838Z",
+  "endedAt": "2026-08-04T20:47:49.956Z",
+  "status": "PASS",
+  "tests": [
+    {
+      "command": "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-11-01228-download_entitlement_evidence\\tests\\main.test.mjs",
+      "exitCode": 0,
+      "stdoutTail": "✔ TASK-11-01228-DOWNLOAD_ENTITLEMENT_EVIDENCE verify (0.5208ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 67.5767\n"
+    }
+  ],
+  "sha256": "88ABF20E1AA563F68C7D9070E40FB7CD73710DD7DAE4DB5C9122F1CEE1AF7742",
+  "allowedPathsUsed": [
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-11-01228-download_entitlement_evidence",
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-11-01228-download_entitlement_evidence\\src\\download_entitlement_evidence.mjs",
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-11-01228-download_entitlement_evidence\\tests\\main.test.mjs"
+  ],
+  "truthStatements": [
+    "Technical WAV success does not prove musical quality",
+    "Fixtures are not product content",
+    "Studio Offline Render is not Real-time DSP",
+    "KORG WRITE_UNSUPPORTED",
+    "No auto adoption of Kids/Teen/Pricing",
+    "Commander not activated"
+  ],
+  "ownerFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-11-01228-download_entitlement_evidence\\src\\download_entitlement_evidence.mjs",
+  "phase": "EVIDENCE",
+  "gate": null,
+  "noPush": true,
+  "noMerge": true,
+  "noDeploy": true,
+  "commanderActivated": false
+}

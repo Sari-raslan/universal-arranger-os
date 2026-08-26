@@ -1,0 +1,50 @@
+{
+  "status": "CREATOR_V20_OWNER_REVIEW_BUILD_READY",
+  "secondary": [
+    "CREATOR_V20_MUSICAL_QUALITY_UNPROVEN"
+  ],
+  "assertions": 7,
+  "pass": 7,
+  "fail": 0,
+  "steps": [
+    {
+      "name": "run1_reopen",
+      "ok": true
+    },
+    {
+      "name": "run1_stop",
+      "ok": true
+    },
+    {
+      "name": "run2_reopen",
+      "ok": true
+    },
+    {
+      "name": "run2_stop",
+      "ok": true
+    },
+    {
+      "name": "invalid_note",
+      "ok": true
+    },
+    {
+      "name": "migration",
+      "ok": true
+    },
+    {
+      "name": "corrupt_reject",
+      "ok": true
+    }
+  ],
+  "truth": {
+    "voiceToMidi": "CONTRACT_ONLY_NOT_PRODUCTION_IMPLEMENTED",
+    "advancedHarmony": "PARTIAL_RULE_BASED_FOUNDATION",
+    "arrangementBrain": "DRAFT_CORE_ONLY",
+    "goldenSequencer": "FOUNDATION_RUNTIME_PROVEN",
+    "musicalBrain": "NOT_PRODUCTION_COMPLETE",
+    "humanMusicalTaste": "UNPROVEN"
+  },
+  "autoplay": false,
+  "microphone": "DENIED",
+  "network": "DISABLED"
+}

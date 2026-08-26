@@ -1,0 +1,36 @@
+{
+  "PAYMENT_STATUS": "OWNER_APPROVAL_REQUIRED",
+  "PAYMENT_ACTIVE": false,
+  "CHECKOUT_ACTIVE": false,
+  "NO_SUBSCRIPTION_FIRST_PILOT": true,
+  "pricePlaceholders": {
+    "ARRANGER": "EUR49 (owner may set 49|HOLD)",
+    "MIDI_TOOLKIT": "EUR39",
+    "SINGY": "EUR29"
+  },
+  "skuMetadata": [
+    {
+      "PRODUCT_SKU": "uaos-arranger-studio-founding-pilot",
+      "PRODUCT_NAME": "UAOS Arranger Studio — Founding Pilot"
+    },
+    {
+      "PRODUCT_SKU": "uaos-midi-toolkit-founding-pilot",
+      "PRODUCT_NAME": "UAOS MIDI Toolkit — Founding Pilot"
+    },
+    {
+      "PRODUCT_SKU": "singy-founding-pilot",
+      "PRODUCT_NAME": "Singy — Founding Pilot"
+    }
+  ],
+  "checkoutCopy": {
+    "success": "Thank you. Founding pilot license confirmed. Delivery instructions follow.",
+    "cancel": "Checkout cancelled. No charge.",
+    "error": "Payment could not be completed. No charge recorded. Contact support."
+  },
+  "orderConfirmationCopy": "Your founding pilot order is confirmed. You will receive the verified ZIP and SHA256.",
+  "deliveryWorkflow": "After payment confirmation → deliver verified ZIP + SHA256 + Start filename",
+  "refundWorkflow": "Per owner-approved refund policy — not activated",
+  "supportWorkflow": "Feedback form + best-effort support template",
+  "taxDisplayRequirements": "Show tax treatment only after owner jurisdiction/imprint data — do not invent VAT rate",
+  "providersActivated": []
+}

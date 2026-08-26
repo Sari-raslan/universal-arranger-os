@@ -1,0 +1,72 @@
+{
+  "gates": [
+    {
+      "gate": "D1_MANIFEST_PARSE",
+      "status": "PASS",
+      "details": [
+        {
+          "file": "electron-builder.json",
+          "status": "PASS"
+        },
+        {
+          "file": "package-lock.json",
+          "status": "PASS"
+        },
+        {
+          "file": "package.json",
+          "status": "PASS"
+        }
+      ]
+    },
+    {
+      "gate": "D2_JAVASCRIPT_SYNTAX",
+      "status": "PASS",
+      "details": [
+        {
+          "file": "scripts\\s090r1-capture-failing-baseline.cjs",
+          "status": "PASS",
+          "exitCode": 0,
+          "stderr": ""
+        },
+        {
+          "file": "scripts\\uaos-commercial-readiness-v1.cjs",
+          "status": "PASS",
+          "exitCode": 0,
+          "stderr": ""
+        },
+        {
+          "file": "scripts\\uaos-final-owner-release-v1.cjs",
+          "status": "PASS",
+          "exitCode": 0,
+          "stderr": ""
+        },
+        {
+          "file": "scripts\\uaos-owner-acceptance-session-v1.cjs",
+          "status": "PASS",
+          "exitCode": 0,
+          "stderr": ""
+        }
+      ]
+    },
+    {
+      "gate": "D3_TYPESCRIPT_NO_EMIT",
+      "status": "SKIPPED_PREREQ_MISSING",
+      "reason": "NO_TSCONFIG"
+    },
+    {
+      "gate": "D4_ESLINT_EXISTING_CONFIG",
+      "status": "SKIPPED_PREREQ_MISSING",
+      "reason": "NO_ESLINT_CONFIG"
+    },
+    {
+      "gate": "D5_NODE_TEST_DISCOVERY",
+      "status": "PROPOSAL_ONLY",
+      "proposals": []
+    },
+    {
+      "gate": "D6_IMPORT_SMOKE",
+      "status": "SKIPPED_DEFAULT_FORBIDDEN",
+      "reason": "Import may execute side effects; not proven pure."
+    }
+  ]
+}

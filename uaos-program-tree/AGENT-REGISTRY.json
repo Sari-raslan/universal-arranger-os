@@ -1,0 +1,41 @@
+{
+  "schema": "uaos.agent-registry/v1",
+  "generatedAt": "2026-08-04T20:47:04.346Z",
+  "clients": [
+    {
+      "type": "CURSOR_SUBAGENT",
+      "status": "ENABLED",
+      "maxParallel": 4
+    },
+    {
+      "type": "CODEX_LOCAL",
+      "status": "ENABLED",
+      "maxParallel": 2
+    },
+    {
+      "type": "NODE_LOCAL_WORKER",
+      "status": "ENABLED",
+      "maxParallel": 8
+    },
+    {
+      "type": "POWERSHELL_LOCAL_WORKER",
+      "status": "ENABLED",
+      "maxParallel": 4
+    },
+    {
+      "type": "TEST_REVIEW_AGENT",
+      "status": "ENABLED",
+      "maxParallel": 2
+    },
+    {
+      "type": "HUMAN_REVIEW",
+      "status": "ENABLED",
+      "maxParallel": 1
+    },
+    {
+      "type": "FUTURE_UAOS_COMMANDER",
+      "status": "CONTRACT_READY_NOT_ACTIVATED",
+      "maxParallel": 0
+    }
+  ]
+}

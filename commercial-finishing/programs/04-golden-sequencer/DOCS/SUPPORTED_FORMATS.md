@@ -1,0 +1,4 @@
+# Supported formats
+
+- SMF
+- WAV

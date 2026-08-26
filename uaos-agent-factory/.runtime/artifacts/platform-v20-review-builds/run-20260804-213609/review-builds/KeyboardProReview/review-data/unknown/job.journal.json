@@ -1,0 +1,48 @@
+{
+  "schemaVersion": "uaos.converter.job/v17",
+  "jobId": "49b2ec12-aba3-4de1-a55f-150904241e72",
+  "status": "failed",
+  "mode": "convert",
+  "inputSnapshot": {
+    "formatId": "korg.sty",
+    "schemaVersion": "nope"
+  },
+  "inputHash": "873f7c09bfc995ec152a15703c03b86e570f71c516c1ae9ba4ab6e76119d69b9",
+  "outputDir": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-v20-review\\keyboard-review-build\\review-data\\unknown\\out",
+  "stagingDir": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-v20-review\\keyboard-review-build\\review-data\\unknown\\out\\.staging",
+  "createdAt": "2026-08-04T19:22:48.347Z",
+  "warnings": [],
+  "errors": [
+    {
+      "code": "UNSUPPORTED_FORMAT",
+      "formatId": "korg.sty",
+      "reason": "PROPRIETARY_WRITER_BANNED"
+    }
+  ],
+  "receipt": null,
+  "resumeToken": "3d88fab2-df2a-4413-b6b6-e4e61f060c7a",
+  "sourceSnapshotHash": "873f7c09bfc995ec152a15703c03b86e570f71c516c1ae9ba4ab6e76119d69b9",
+  "targetStagingHash": null,
+  "progress": {
+    "percent": 10,
+    "checkpoint": "pre-validate"
+  },
+  "audit": [
+    {
+      "at": "2026-08-04T19:22:48.347Z",
+      "event": "created"
+    },
+    {
+      "at": "2026-08-04T19:22:48.348Z",
+      "event": "to:running"
+    },
+    {
+      "at": "2026-08-04T19:22:48.349Z",
+      "event": "to:failed"
+    }
+  ],
+  "locks": {
+    "job": false,
+    "outputs": []
+  }
+}

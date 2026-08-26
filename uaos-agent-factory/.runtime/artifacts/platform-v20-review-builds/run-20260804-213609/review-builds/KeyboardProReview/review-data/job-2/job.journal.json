@@ -1,0 +1,65 @@
+{
+  "schemaVersion": "uaos.converter.job/v17",
+  "jobId": "1488e8f0-b295-4e92-b9d0-f6b909ad8114",
+  "status": "completed",
+  "mode": "convert",
+  "inputSnapshot": {
+    "schemaVersion": "uaos.project/v1",
+    "formatId": "uaos.project/v1",
+    "kind": "uaos.project",
+    "projectId": "343d8eef-cebe-4667-98d4-d1516d55b77b",
+    "name": "V20 Fixture",
+    "tracks": [
+      {
+        "trackId": "t1",
+        "kind": "midi",
+        "name": "Piano"
+      }
+    ]
+  },
+  "inputHash": "adb52425a04a3c591e8dcd299676e1fff0134957a85cf61f6a661d0677acf011",
+  "outputDir": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-v20-review\\keyboard-review-build\\review-data\\job-2\\out",
+  "stagingDir": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-v20-review\\keyboard-review-build\\review-data\\job-2\\out\\.staging",
+  "createdAt": "2026-08-04T19:22:48.319Z",
+  "warnings": [],
+  "errors": [],
+  "receipt": {
+    "schemaVersion": "uaos.converter.receipt/v17",
+    "jobId": "1488e8f0-b295-4e92-b9d0-f6b909ad8114",
+    "at": "2026-08-04T19:22:48.328Z",
+    "sha256Manifest": {
+      "1488e8f0-conversion-report.json": "acd800a4015b9d5cf3c1310bb69b5a165d74dc01da12aefb315813d0b75e7864",
+      "1488e8f0-converted.project.json": "dec90bc95ba2955736bed5685096827033d29aefa8b865e78940c0558f898f2c",
+      "1488e8f0-dryrun.graph.json": "246744d009f5fc18eccd42f1f162a26a70c560d4b97adb12b0b5fb374495a2e3",
+      "1488e8f0-mapping.plan.json": "9750f27a7e7f0c8265c08604aaae153546a72b2ace7773f101a43657cbe2195a",
+      "1488e8f0-source.manifest.json": "8a1b2cf0aa5ce8139c99f76eab83d1d3b6aced263a349395ce376b8d3acea779"
+    },
+    "inputHash": "adb52425a04a3c591e8dcd299676e1fff0134957a85cf61f6a661d0677acf011"
+  },
+  "resumeToken": "23c86da4-bcab-45f4-9e2f-4334545e6f75",
+  "sourceSnapshotHash": "adb52425a04a3c591e8dcd299676e1fff0134957a85cf61f6a661d0677acf011",
+  "targetStagingHash": "3f9186372828fa935f958aa0b8db5d3bc010fd32ac252bdee29be64d05204487",
+  "progress": {
+    "percent": 100,
+    "checkpoint": "completed"
+  },
+  "audit": [
+    {
+      "at": "2026-08-04T19:22:48.319Z",
+      "event": "created"
+    },
+    {
+      "at": "2026-08-04T19:22:48.320Z",
+      "event": "to:running"
+    },
+    {
+      "at": "2026-08-04T19:22:48.329Z",
+      "event": "to:completed"
+    }
+  ],
+  "locks": {
+    "job": false,
+    "outputs": []
+  },
+  "receiptHash": "1cba707672e8cda26f075e0bc340c4fc207bff8ede4fdfc865fac1e7882b657a"
+}

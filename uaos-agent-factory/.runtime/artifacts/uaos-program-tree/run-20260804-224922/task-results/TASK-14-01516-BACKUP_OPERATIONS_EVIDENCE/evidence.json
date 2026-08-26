@@ -1,0 +1,35 @@
+{
+  "taskId": "TASK-14-01516-BACKUP_OPERATIONS_EVIDENCE",
+  "agentId": "NODE_LOCAL_WORKER-0020",
+  "startedAt": "2026-08-04T20:49:36.048Z",
+  "endedAt": "2026-08-04T20:49:36.169Z",
+  "status": "PASS",
+  "tests": [
+    {
+      "command": "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-14-01516-backup_operations_evidence\\tests\\main.test.mjs",
+      "exitCode": 0,
+      "stdoutTail": "✔ TASK-14-01516-BACKUP_OPERATIONS_EVIDENCE verify (0.516ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 65.9849\n"
+    }
+  ],
+  "sha256": "41D7C07271C3C4B2D7B2A905705A84F5D461EFB8B5C3612A66C8698487373F24",
+  "allowedPathsUsed": [
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-14-01516-backup_operations_evidence",
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-14-01516-backup_operations_evidence\\src\\backup_operations_evidence.mjs",
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-14-01516-backup_operations_evidence\\tests\\main.test.mjs"
+  ],
+  "truthStatements": [
+    "Technical WAV success does not prove musical quality",
+    "Fixtures are not product content",
+    "Studio Offline Render is not Real-time DSP",
+    "KORG WRITE_UNSUPPORTED",
+    "No auto adoption of Kids/Teen/Pricing",
+    "Commander not activated"
+  ],
+  "ownerFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-14-01516-backup_operations_evidence\\src\\backup_operations_evidence.mjs",
+  "phase": "EVIDENCE",
+  "gate": null,
+  "noPush": true,
+  "noMerge": true,
+  "noDeploy": true,
+  "commanderActivated": false
+}

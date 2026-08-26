@@ -1,0 +1,18 @@
+{
+  "title": "UAOS Studio Project Schema v1",
+  "schemaVersion": "uaos.studio.project/v1",
+  "required": ["schemaVersion", "projectId", "version", "name", "createdAt", "updatedAt", "tracks", "assets", "recovery"],
+  "properties": {
+    "schemaVersion": { "const": "uaos.studio.project/v1" },
+    "projectId": { "type": "string" },
+    "version": { "type": "integer", "minimum": 1 },
+    "name": { "type": "string" },
+    "createdAt": { "type": "string" },
+    "updatedAt": { "type": "string" },
+    "tracks": { "type": "array" },
+    "assets": { "type": "array" },
+    "recovery": { "type": "object" },
+    "readOnlyCompat": { "type": "object" },
+    "undoBoundary": { "type": "object" }
+  }
+}

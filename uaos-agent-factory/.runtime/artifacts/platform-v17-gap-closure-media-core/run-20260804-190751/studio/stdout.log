@@ -1,0 +1,13 @@
+PASS transport transitions + global stop
+PASS invalid transition rejection
+PASS seek + loop
+PASS event ordering
+PASS scheduler cancellation
+PASS seek rescheduling
+PASS mixer routing/gain/pan/mute/solo/master
+PASS invalid route rejection
+PASS clipping detection
+PASS state serialization
+PASS save/open round-trip
+PASS migration
+{"status":"PASS","suite":"STUDIO-E30-PLAYBACK-MIXER","failures":0}

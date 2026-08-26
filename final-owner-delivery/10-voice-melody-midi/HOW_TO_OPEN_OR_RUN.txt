@@ -1,0 +1,33 @@
+# How to open or run — Voice / Melody-to-MIDI
+
+## Delivery type
+MODULE / WORKFLOW
+
+## Primary entry point
+```
+From repo root: node final-owner-delivery/10-voice-melody-midi/PRODUCT/RUN_ACCEPTED_DEMO.mjs
+```
+
+## Full acceptance queue (all 11)
+From repo root:
+```
+node scripts/run-final-acceptance-queue.mjs
+```
+
+## Targeted tests
+From repo root:
+```
+npm test
+```
+
+## Product source (canonical, not moved)
+- backend/src/perception/voiceMelodyFinalize.js
+
+## Evidence
+- reports/final-acceptance/10-Voice_Melody_to_MIDI.json
+- evidence SHA256: 65cb880a2531347d78ce2f3a879b5b698c215715b942aa4640adb5b4cb0f4462
+
+## Source commit
+5aeac11779bd678ca3c80d16144e302a5eb5d9f6
+
+PUBLIC_RELEASE=NO · COMMANDER_EXCLUDED=YES

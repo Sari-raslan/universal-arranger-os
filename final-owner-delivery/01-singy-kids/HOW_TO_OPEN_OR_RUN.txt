@@ -1,0 +1,36 @@
+# How to open or run — Singy Kids
+
+## Delivery type
+MODULE / WORKFLOW
+
+## Primary entry point
+```
+From repo root: node final-owner-delivery/01-singy-kids/PRODUCT/RUN_ACCEPTED_DEMO.mjs
+```
+
+## Full acceptance queue (all 11)
+From repo root:
+```
+node scripts/run-final-acceptance-queue.mjs
+```
+
+## Targeted tests
+From repo root:
+```
+npm test
+```
+
+## Product source (canonical, not moved)
+- backend/src/singy/exerciseRunner.js
+- backend/src/singy/offlineLesson.js
+- backend/src/session/musicalSessionMemory.js
+- backend/src/session/memoryStorage.js
+
+## Evidence
+- reports/final-acceptance/01-Singy_Kids.json
+- evidence SHA256: 0804f77ff350d6e4a30984942814b633027970d0cbf5c8f4dd3b3656558fbc4f
+
+## Source commit
+5aeac11779bd678ca3c80d16144e302a5eb5d9f6
+
+PUBLIC_RELEASE=NO · COMMANDER_EXCLUDED=YES

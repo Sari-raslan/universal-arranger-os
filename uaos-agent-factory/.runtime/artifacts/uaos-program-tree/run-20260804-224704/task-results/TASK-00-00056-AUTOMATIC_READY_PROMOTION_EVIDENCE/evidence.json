@@ -1,0 +1,35 @@
+{
+  "taskId": "TASK-00-00056-AUTOMATIC_READY_PROMOTION_EVIDENCE",
+  "agentId": "NODE_LOCAL_WORKER-0012",
+  "startedAt": "2026-08-04T20:47:43.518Z",
+  "endedAt": "2026-08-04T20:47:43.639Z",
+  "status": "PASS",
+  "tests": [
+    {
+      "command": "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-00-00056-automatic_ready_promotion_evidence\\tests\\main.test.mjs",
+      "exitCode": 0,
+      "stdoutTail": "✔ TASK-00-00056-AUTOMATIC_READY_PROMOTION_EVIDENCE verify (0.5231ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 67.9888\n"
+    }
+  ],
+  "sha256": "CD08A7DE9A9087C3F15B108C0E68BA28C484E6B6E988CD0238B1BA3BE56B3026",
+  "allowedPathsUsed": [
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-00-00056-automatic_ready_promotion_evidence",
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-00-00056-automatic_ready_promotion_evidence\\src\\automatic_ready_promotion_eviden.mjs",
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-00-00056-automatic_ready_promotion_evidence\\tests\\main.test.mjs"
+  ],
+  "truthStatements": [
+    "Technical WAV success does not prove musical quality",
+    "Fixtures are not product content",
+    "Studio Offline Render is not Real-time DSP",
+    "KORG WRITE_UNSUPPORTED",
+    "No auto adoption of Kids/Teen/Pricing",
+    "Commander not activated"
+  ],
+  "ownerFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-00-00056-automatic_ready_promotion_evidence\\src\\automatic_ready_promotion_eviden.mjs",
+  "phase": "EVIDENCE",
+  "gate": null,
+  "noPush": true,
+  "noMerge": true,
+  "noDeploy": true,
+  "commanderActivated": false
+}

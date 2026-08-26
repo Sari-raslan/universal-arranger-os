@@ -1,0 +1,35 @@
+{
+  "taskId": "TASK-05-00525-MIDI_TRACKS_CONTRACT",
+  "agentId": "NODE_LOCAL_WORKER-0006",
+  "startedAt": "2026-08-04T20:49:22.248Z",
+  "endedAt": "2026-08-04T20:49:22.382Z",
+  "status": "PASS",
+  "tests": [
+    {
+      "command": "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-05-00525-midi_tracks_contract\\tests\\main.test.mjs",
+      "exitCode": 0,
+      "stdoutTail": "✔ TASK-05-00525-MIDI_TRACKS_CONTRACT verify (0.5568ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 74.7035\n"
+    }
+  ],
+  "sha256": "CC84324ECEB99489DA75D78BA2800540EA87AD3167AADCDA51C84AB9E31C5992",
+  "allowedPathsUsed": [
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-05-00525-midi_tracks_contract",
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-05-00525-midi_tracks_contract\\src\\midi_tracks_contract.mjs",
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-05-00525-midi_tracks_contract\\tests\\main.test.mjs"
+  ],
+  "truthStatements": [
+    "Technical WAV success does not prove musical quality",
+    "Fixtures are not product content",
+    "Studio Offline Render is not Real-time DSP",
+    "KORG WRITE_UNSUPPORTED",
+    "No auto adoption of Kids/Teen/Pricing",
+    "Commander not activated"
+  ],
+  "ownerFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-05-00525-midi_tracks_contract\\src\\midi_tracks_contract.mjs",
+  "phase": "DEFINE",
+  "gate": null,
+  "noPush": true,
+  "noMerge": true,
+  "noDeploy": true,
+  "commanderActivated": false
+}

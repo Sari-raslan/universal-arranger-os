@@ -1,0 +1,11 @@
+{
+  "taskId": "TASK-06-00786-RECOVERY_IMPLEMENTATION",
+  "agentId": "NODE_LOCAL_WORKER-0161",
+  "pid": 49932,
+  "startedAt": "2026-08-04T20:47:25.650Z",
+  "status": "FAILED",
+  "endedAt": "2026-08-04T20:47:25.859Z",
+  "exitCode": 1,
+  "stdoutTail": "",
+  "stderrTail": "<anonymous_script>:56976\r\n      \"worktree\": \"C:\\\\UAOS_AGENT_FACTORY_WORKTREES\\\\uaos-program-execution\\\\task-14-01499-artifact_registry_\r\n\r\nSyntaxError: Unterminated string in JSON at position 2646016 (line 56976 column 110)\r\n    at JSON.parse (<anonymous>)\r\n    at readJson (file:///C:/keyboard-manager-clean/uaos-agent-factory/src/uaos-program-tree-worker.mjs:17:35)\r\n    at file:///C:/keyboard-manager-clean/uaos-agent-factory/src/uaos-program-tree-worker.mjs:31:18\r\n    at ModuleJob.run (node:internal/modules/esm/module_job:439:25)\r\n    at async node:internal/modules/esm/loader:643:26\r\n    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)\r\n\r\nNode.js v24.18.0\r\n"
+}

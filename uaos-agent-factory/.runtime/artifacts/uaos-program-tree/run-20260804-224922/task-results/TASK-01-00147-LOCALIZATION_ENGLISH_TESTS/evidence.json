@@ -1,0 +1,35 @@
+{
+  "taskId": "TASK-01-00147-LOCALIZATION_ENGLISH_TESTS",
+  "agentId": "NODE_LOCAL_WORKER-0058",
+  "startedAt": "2026-08-04T20:49:24.897Z",
+  "endedAt": "2026-08-04T20:49:25.028Z",
+  "status": "PASS",
+  "tests": [
+    {
+      "command": "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00147-localization_english_tests\\tests\\main.test.mjs",
+      "exitCode": 0,
+      "stdoutTail": "✔ TASK-01-00147-LOCALIZATION_ENGLISH_TESTS verify (0.5035ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 74.7183\n"
+    }
+  ],
+  "sha256": "202B0FF05E2522ECBA647F2B127AE972288B26F84B1C5CFC54DF324A7696A9CC",
+  "allowedPathsUsed": [
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00147-localization_english_tests",
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00147-localization_english_tests\\src\\localization_english_tests.mjs",
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00147-localization_english_tests\\tests\\main.test.mjs"
+  ],
+  "truthStatements": [
+    "Technical WAV success does not prove musical quality",
+    "Fixtures are not product content",
+    "Studio Offline Render is not Real-time DSP",
+    "KORG WRITE_UNSUPPORTED",
+    "No auto adoption of Kids/Teen/Pricing",
+    "Commander not activated"
+  ],
+  "ownerFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00147-localization_english_tests\\src\\localization_english_tests.mjs",
+  "phase": "TEST",
+  "gate": null,
+  "noPush": true,
+  "noMerge": true,
+  "noDeploy": true,
+  "commanderActivated": false
+}

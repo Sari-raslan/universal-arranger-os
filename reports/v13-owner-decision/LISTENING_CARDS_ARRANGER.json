@@ -1,0 +1,64 @@
+{
+  "ARRANGER_MUSIC": "OWNER_DECISION_REQUIRED",
+  "launcher": "reports/v13-owner-decision/START-ARRANGER-FINAL-LISTENING.bat",
+  "frozenZip": "UAOS_ARRANGER_STUDIO_FOUNDING_PILOT_V11.zip",
+  "frozenZipSha256": "c133294dbf7498c6004fcc28ec1afa4e4f1e5df00a24043b60f407e56ffe5388",
+  "allEvidenceExists": true,
+  "items": [
+    {
+      "NUMBER": 1,
+      "ID": "A1",
+      "FILE": "demo-01-chords-arrangement (Oriental Pop / Nahawand)",
+      "DURATION": "20–40s",
+      "WHAT_TO_LISTEN_FOR": "Chords → arrangement: Intro→Main A→Main B→Break→Ending continuity; Cm/Ab/Bb motion feels intentional",
+      "SHA256": "d5b88f2b9e50f334311f52994e0522b5c8a69cb686276727f3cb2cc37adbf0be",
+      "EXACT_OPEN_PLAY_PATH": "release-candidates/UAOS-ARRANGER-STUDIO-EARLY-ACCESS-V11 → START-UAOS-ARRANGER-STUDIO.bat → open demo-01 / Chords to Arrangement",
+      "EVIDENCE_FILE": "release-candidates/UAOS-ARRANGER-STUDIO-EARLY-ACCESS-V11/MUSICAL_REVIEW_PACK/workflow-samples.json",
+      "EXISTS": true
+    },
+    {
+      "NUMBER": 2,
+      "ID": "A2",
+      "FILE": "demo-02-melody-arrangement (Hijaz 60,61,64,65)",
+      "DURATION": "15–30s",
+      "WHAT_TO_LISTEN_FOR": "Melody → arrangement: Hijaz tonal context preserved; lead/chord compatibility; no out-of-scale collisions",
+      "SHA256": "459c2f4a4ba6e9ca311ee477f741eeae34257dc3a8e633416bb158df941c75a0",
+      "EXACT_OPEN_PLAY_PATH": "same START → open demo-02 / Melody to Arrangement Edit",
+      "EVIDENCE_FILE": "…/MUSICAL_REVIEW_PACK/workflow-samples.json (wf-03)",
+      "EXISTS": true
+    },
+    {
+      "NUMBER": 3,
+      "ID": "A3",
+      "FILE": "arrangement intelligence (arabic-khaleeji / different tonal context)",
+      "DURATION": "20–40s",
+      "WHAT_TO_LISTEN_FOR": "Different musical/tonal context coherent; section continuity; no random reharmonization feel",
+      "SHA256": "23c2248c5f0a084602978e62e6308b010acaa0043e0b638b667bd982075f7097",
+      "EXACT_OPEN_PLAY_PATH": "same START → run arrangement / studio demo path (wf-08)",
+      "EVIDENCE_FILE": "…/MUSICAL_REVIEW_PACK/workflow-samples.json (wf-08)",
+      "EXISTS": true
+    },
+    {
+      "NUMBER": 4,
+      "ID": "A4",
+      "FILE": "demo-03 MIDI export & reopen",
+      "DURATION": "10–20s",
+      "WHAT_TO_LISTEN_FOR": "Final export integrity: notes survive export→reopen; usable MIDI draft",
+      "SHA256": "b7422b10a807864b93c306026b0fcbefdc65320d6d4a357bc9bf5a9aeb353c3d",
+      "EXACT_OPEN_PLAY_PATH": "same START → Export / demo-03 Arrangement MIDI Export & Reopen",
+      "EVIDENCE_FILE": "…/MUSICAL_REVIEW_PACK/workflow-samples.json (wf-04)",
+      "EXISTS": true
+    },
+    {
+      "NUMBER": 5,
+      "ID": "A5",
+      "FILE": "demo-01 section continuity spot-check (Main A → Main B → Break)",
+      "DURATION": "15s",
+      "WHAT_TO_LISTEN_FOR": "Transitions feel planned, not cut/paste collisions",
+      "SHA256": "d5b88f2b9e50f334311f52994e0522b5c8a69cb686276727f3cb2cc37adbf0be",
+      "EXACT_OPEN_PLAY_PATH": "same START → re-open demo-01; focus only on Main A→B→Break transitions",
+      "EVIDENCE_FILE": "same as A1",
+      "EXISTS": true
+    }
+  ]
+}

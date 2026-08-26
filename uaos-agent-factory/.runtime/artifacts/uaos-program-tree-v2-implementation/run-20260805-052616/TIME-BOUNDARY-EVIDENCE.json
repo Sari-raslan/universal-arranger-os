@@ -1,0 +1,14 @@
+{
+  "generatedAt": "2026-08-05T05:46:39.468Z",
+  "note": "Time-dependent logic exists only in the Signed Licenses IMPLEMENTATION/TESTS tasks (expiry checks). No Trial/Entitlement chain was selected this batch.",
+  "results": [
+    {
+      "taskId": "TASK-01-00106-SIGNED_LICENSES_IMPLEMENTATION",
+      "note": "Contains explicit before/exactly-at/after expiry boundary tests and an injected-clock requirement (no system clock read internally); see test titles in TEST-RESULTS.json stdoutTail."
+    },
+    {
+      "taskId": "TASK-01-00107-SIGNED_LICENSES_TESTS",
+      "note": "Contains explicit before/exactly-at/after expiry boundary tests and an injected-clock requirement (no system clock read internally); see test titles in TEST-RESULTS.json stdoutTail."
+    }
+  ]
+}

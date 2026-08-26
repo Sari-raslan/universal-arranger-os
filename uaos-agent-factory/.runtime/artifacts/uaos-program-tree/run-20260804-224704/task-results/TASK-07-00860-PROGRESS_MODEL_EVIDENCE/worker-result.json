@@ -1,0 +1,11 @@
+{
+  "taskId": "TASK-07-00860-PROGRESS_MODEL_EVIDENCE",
+  "agentId": "NODE_LOCAL_WORKER-0120",
+  "pid": 55084,
+  "startedAt": "2026-08-04T20:47:48.474Z",
+  "status": "FAILED",
+  "endedAt": "2026-08-04T20:47:48.672Z",
+  "exitCode": 1,
+  "stdoutTail": "",
+  "stderrTail": "<anonymous_script>:39500\r\n  \r\n\r\nSyntaxError: Expected double-quoted property name in JSON at position 1810432 (line 39500 column 3)\r\n    at JSON.parse (<anonymous>)\r\n    at readJson (file:///C:/keyboard-manager-clean/uaos-agent-factory/src/uaos-program-tree-worker.mjs:17:35)\r\n    at file:///C:/keyboard-manager-clean/uaos-agent-factory/src/uaos-program-tree-worker.mjs:31:18\r\n    at ModuleJob.run (node:internal/modules/esm/module_job:439:25)\r\n    at async node:internal/modules/esm/loader:643:26\r\n    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)\r\n\r\nNode.js v24.18.0\r\n"
+}

@@ -1,0 +1,28 @@
+{
+  "generatedAt": "2026-08-05T10:50:00.000Z",
+  "continuityVerification": "Read live TASKS.json before selecting: REAL_DONE=44, RETRY_READY=310 - matches cited Batch 4 numbers exactly.",
+  "releaseBridgeSummary": "See COMMERCIAL-RELEASE-BRIDGE-AUDIT.json. Extended Batch 4's source-import methodology to all 44 currently-DONE tasks (Batch 4's own new capabilities had never been scanned for their own cross-imports). Found 6 new evidence-based edges (Entitlements->Signed Licenses+Atomic Save, Export/Import->Atomic Save, Inspector->Atomic Save+Recovery, plus one intra-Inspector edge). All 6 applied, all between already-DONE tasks, 0 state changes resulted (as predicted).",
+  "chainA": {
+    "label": "Shared Product Capability State",
+    "selected": "TASK-01-00093-CAPABILITY_REGISTRY_CONTRACT",
+    "chain": ["TASK-01-00093-CAPABILITY_REGISTRY_CONTRACT", "TASK-01-00094-CAPABILITY_REGISTRY_IMPLEMENTATION", "TASK-01-00095-CAPABILITY_REGISTRY_TESTS", "TASK-01-00096-CAPABILITY_REGISTRY_EVIDENCE"],
+    "selectionReason": "Literal match for 'Product capability registry', the mission's first-listed Chain A option. 01-SHARED-PLATFORM (multi-product), rc1Critical, 0 gate. Real behavior: register capabilities deterministically, resolve enable/disable from Batch 4's real Entitlements state, expose product identity/version via Batch 3's real Versioning manifest, produce a deterministic snapshot, save/reopen via Batch 1's AtomicSave."
+  },
+  "chainB": {
+    "label": "Package Manifest Validation or Commercial Acceptance Harness",
+    "literalTaskAvailability": "Neither 'Package Manifest Validation' nor 'Commercial Acceptance Harness' exists as a literally-named genuinely-READY task in the current graph.",
+    "selected": "TASK-01-00121-INSTALLER_PACKAGING_CONTRACT",
+    "chain": ["TASK-01-00121-INSTALLER_PACKAGING_CONTRACT", "TASK-01-00122-INSTALLER_PACKAGING_IMPLEMENTATION", "TASK-01-00123-INSTALLER_PACKAGING_TESTS", "TASK-01-00124-INSTALLER_PACKAGING_EVIDENCE"],
+    "selectionReason": "The nearest genuinely-ready real shared chain to the mission's priority #1 (Package Manifest Validation): a real installer package fundamentally IS a validated manifest (product ID, SKU, version, file inventory with checksums, required docs, license/trial metadata). Implemented to fulfill the mission's full 'Expected package-manifest behavior' list. Commercial Acceptance Harness (priority #2) was considered but not selected — see COMMERCIAL-ACCEPTANCE-EVIDENCE.json for the explicit NOT_SELECTED_IN_BATCH_5 marker and reasoning; a real, non-status-string-only acceptance harness that genuinely consumes test/package evidence is substantial scope on its own and would exceed this batch's 8-12 task budget alongside Chain A and Chain C."
+  },
+  "chainC_verticalSlice": {
+    "selected": "creator",
+    "chain": ["TASK-05-00521-PROJECT_WORKSPACE_CONTRACT", "TASK-05-00522-PROJECT_WORKSPACE_IMPLEMENTATION", "TASK-05-00523-PROJECT_WORKSPACE_TESTS", "TASK-05-00524-PROJECT_WORKSPACE_EVIDENCE"],
+    "selectionReason": "Mission explicitly prefers Creator unless gated/unsafe; confirmed 0 gated tasks in Creator's ready set. 'Project workspace contract' is a literal match for 'Creator Project Workspace' from the mission's own Chain C framing.",
+    "pipelineStages": "INPUT (create project, define tempo/time signature) -> VALIDATION (project schema) -> EDIT (add MIDI tracks, note events, chord symbols, sections, assign melody/chord/bass/drum roles) -> ARRANGEMENT DRAFT (maintain a section/role arrangement structure) -> SAVE (Batch 1 AtomicSave) -> CLOSE -> REOPEN -> MIDI EXPORT (real, parseable Standard MIDI File, not just a byte-count check) -> FAILURE RECOVERY (malformed project/invalid MIDI event rejection; previous project preserved after a failed save) -> EVIDENCE.",
+    "truthLabels": ["ARRANGEMENT_DRAFT_CORE", "MUSICAL_QUALITY_UNPROVEN", "PROFESSIONAL_ARRANGEMENT_NOT_GUARANTEED"]
+  },
+  "totalTasksSelected": 12,
+  "chainsUsed": 3,
+  "gatedTasksExcluded": "Confirmed all 12 selected tasks have gate: null in TASKS.json."
+}

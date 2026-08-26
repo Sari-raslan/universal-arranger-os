@@ -1,0 +1,20 @@
+{
+  "generatedAt": "2026-08-16T18:00:35.303Z",
+  "status": "PASS",
+  "mode": "BATCH_6_DISK_TRUTH_RECONCILIATION_AND_INDEPENDENT_VERIFICATION",
+  "referenceState": {
+    "done": 56,
+    "ready": 307,
+    "cumulativeRealAssertions": 423,
+    "run": "C:\\keyboard-manager-clean\\uaos-agent-factory\\.runtime\\artifacts\\uaos-program-tree-v2-implementation\\run-20260805-104443"
+  },
+  "diskState": {
+    "done": 68,
+    "ready": 304,
+    "cumulativeRealAssertions": 536,
+    "run": "C:\\keyboard-manager-clean\\uaos-agent-factory\\.runtime\\artifacts\\uaos-program-tree-v2-implementation\\run-20260805-125858"
+  },
+  "explanation": "Batch 5 reference was 56 DONE / 307 READY / 423 cumulative assertions. Disk is 68 DONE / 304 READY / 536 cumulative assertions because run-20260805-125858 already completed the exact Batch 6 scope.",
+  "centralStateChangedThisRun": false,
+  "testDiscoveryCorrection": "False positive in the takeover verifier was corrected from broad /test(/ matching to line-leading declarations; production source was not changed."
+}

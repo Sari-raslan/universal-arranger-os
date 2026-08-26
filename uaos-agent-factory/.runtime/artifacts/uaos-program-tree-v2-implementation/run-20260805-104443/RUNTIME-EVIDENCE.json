@@ -1,0 +1,89 @@
+{
+  "generatedAt": "2026-08-05T11:06:58.374Z",
+  "results": [
+    {
+      "taskId": "TASK-01-00093-CAPABILITY_REGISTRY_CONTRACT",
+      "ownerFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00093-capability_registry_contract\\src\\capability_registry_contract.mjs",
+      "ownerFileSha256": "b6b9c422b415c098120ada994134c60f87b86e9298ecf812693227d21842ff4e",
+      "ownerFileBytes": 4155,
+      "note": "Real capability/registry schema + validators. 10/10 passing."
+    },
+    {
+      "taskId": "TASK-01-00094-CAPABILITY_REGISTRY_IMPLEMENTATION",
+      "ownerFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00094-capability_registry_implementation\\src\\capability_registry_implementati.mjs",
+      "ownerFileSha256": "3071d8865ff6e60b0981b01962e8fc33a74281a4c9d3b6a9c84e001f62820851",
+      "ownerFileBytes": 4233,
+      "note": "Real capability resolution consuming Batch 3 Versioning + Batch 4 Entitlements, deterministic snapshot, AtomicSave persistence. 9/9 passing."
+    },
+    {
+      "taskId": "TASK-01-00095-CAPABILITY_REGISTRY_TESTS",
+      "ownerFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00095-capability_registry_tests\\src\\capability_registry_tests.mjs",
+      "ownerFileSha256": "bf23f331f74e921bcae21e6be01016f22b9b6a463189b259a38e9df4e425dee4",
+      "ownerFileBytes": 1580,
+      "note": "Real 6-product lifecycle, entitlement-upgrade capability-widening, cross-product isolation. 5/5 passing."
+    },
+    {
+      "taskId": "TASK-01-00096-CAPABILITY_REGISTRY_EVIDENCE",
+      "ownerFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00096-capability_registry_evidence\\src\\capability_registry_evidence.mjs",
+      "ownerFileSha256": "26ca2631ad21f452070a483a2ce62dcfbc6921e8a0b9e717fa548476852ce917",
+      "ownerFileBytes": 5535,
+      "note": "Aggregates+re-verifies end-to-end. 4/4 passing."
+    },
+    {
+      "taskId": "TASK-01-00121-INSTALLER_PACKAGING_CONTRACT",
+      "ownerFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00121-installer_packaging_contract\\src\\installer_packaging_contract.mjs",
+      "ownerFileSha256": "d8e5569f17e61585dbf1df30e96f5394fc30297976ccafb4aeac701026713977",
+      "ownerFileBytes": 5219,
+      "note": "Batch5 ChainB"
+    },
+    {
+      "taskId": "TASK-01-00122-INSTALLER_PACKAGING_IMPLEMENTATION",
+      "ownerFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00122-installer_packaging_implementation\\src\\installer_packaging_implementati.mjs",
+      "ownerFileSha256": "4a268b4d679eedfbc47b9663fcb36ffcc1806e30bc8a3ed447a19bf4dc00fddd",
+      "ownerFileBytes": 5117,
+      "note": "Batch5 ChainB"
+    },
+    {
+      "taskId": "TASK-01-00123-INSTALLER_PACKAGING_TESTS",
+      "ownerFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00123-installer_packaging_tests\\src\\installer_packaging_tests.mjs",
+      "ownerFileSha256": "363c91889332ff23b2695909b404f56fa0b53cd0d610a84acd08afc58bf34a31",
+      "ownerFileBytes": 1893,
+      "note": "Batch5 ChainB"
+    },
+    {
+      "taskId": "TASK-01-00124-INSTALLER_PACKAGING_EVIDENCE",
+      "ownerFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00124-installer_packaging_evidence\\src\\installer_packaging_evidence.mjs",
+      "ownerFileSha256": "0c233d75345fcd42f6257430eb1cc07c772b399e756481acb9f58c7fad99ad6a",
+      "ownerFileBytes": 5568,
+      "note": "Batch5 ChainB"
+    },
+    {
+      "taskId": "TASK-05-00521-PROJECT_WORKSPACE_CONTRACT",
+      "ownerFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-05-00521-project_workspace_contract\\src\\project_workspace_contract.mjs",
+      "ownerFileSha256": "35dc133e671471c06b04ba8f2d40fe28a7525308979bd3272531fb7d4c004416",
+      "ownerFileBytes": 8781,
+      "note": "Batch5 ChainC"
+    },
+    {
+      "taskId": "TASK-05-00522-PROJECT_WORKSPACE_IMPLEMENTATION",
+      "ownerFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-05-00522-project_workspace_implementation\\src\\project_workspace_implementation.mjs",
+      "ownerFileSha256": "9b96c3666c7036603b2eeb38c0d59931d39568368a46f1abd4386af3b482a922",
+      "ownerFileBytes": 8874,
+      "note": "Batch5 ChainC"
+    },
+    {
+      "taskId": "TASK-05-00523-PROJECT_WORKSPACE_TESTS",
+      "ownerFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-05-00523-project_workspace_tests\\src\\project_workspace_tests.mjs",
+      "ownerFileSha256": "697edffdcacaabf2037d92f941d1d3d5508bc47b25194e91639ac4782ff800c9",
+      "ownerFileBytes": 2949,
+      "note": "Batch5 ChainC"
+    },
+    {
+      "taskId": "TASK-05-00524-PROJECT_WORKSPACE_EVIDENCE",
+      "ownerFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-05-00524-project_workspace_evidence\\src\\project_workspace_evidence.mjs",
+      "ownerFileSha256": "8b47ec4f7e19c4a04c66f848f3a61ddefb783f2483f3f817759b8875c58646b8",
+      "ownerFileBytes": 5863,
+      "note": "Batch5 ChainC"
+    }
+  ]
+}

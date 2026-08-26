@@ -1,0 +1,1500 @@
+{
+  "generatedAt": "2026-08-04T06:01:31.169Z",
+  "results": [
+    {
+      "id": "CAP-ADVANCED_HARMONY",
+      "kind": "CAPABILITY_FOUNDATION",
+      "factoryLane": "singy",
+      "worktreePath": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-staging-v6\\task-001-cap-advanced_harmony",
+      "branch": "factory/platform-staging/cap-advanced-harmony",
+      "headBefore": "f0122b83ea874f0be4328c5c69edd83d3cbb2baa",
+      "headAfter": "f0122b83ea874f0be4328c5c69edd83d3cbb2baa",
+      "agentId": "v8-worker-cap-advanced-harmony",
+      "packageName": "uaos-real-product",
+      "packageManager": "npm",
+      "dependency": {
+        "state": "DEPENDENCY_INSTALL_REQUIRED",
+        "hasNodeModules": false,
+        "missingModules": [
+          "@vitejs/plugin-react",
+          "@wasm-audio-decoders/flac",
+          "pitchy",
+          "react",
+          "react-dom",
+          "vite",
+          "cross-env",
+          "electron",
+          "electron-builder"
+        ],
+        "suggestedCommand": "npm ci",
+        "packageManager": "npm",
+        "lockfile": "package-lock.json"
+      },
+      "declaredGates": [],
+      "gateResults": [],
+      "taskStatus": "NO_DECLARED_SAFE_GATES",
+      "stopReason": "NO_DECLARED_SAFE_GATES",
+      "before": {
+        "path": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-staging-v6\\task-001-cap-advanced_harmony",
+        "branch": "factory/platform-staging/cap-advanced-harmony",
+        "head": "f0122b83ea874f0be4328c5c69edd83d3cbb2baa",
+        "trackedStatus": [],
+        "untrackedOutputs": [],
+        "porcelainAll": [],
+        "capturedAt": "2026-08-04T06:01:23.757Z"
+      },
+      "after": {
+        "path": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-staging-v6\\task-001-cap-advanced_harmony",
+        "branch": "factory/platform-staging/cap-advanced-harmony",
+        "head": "f0122b83ea874f0be4328c5c69edd83d3cbb2baa",
+        "trackedStatus": [],
+        "untrackedOutputs": [],
+        "porcelainAll": [],
+        "capturedAt": "2026-08-04T06:01:23.891Z"
+      },
+      "completedAt": "2026-08-04T06:01:23.892Z"
+    },
+    {
+      "id": "CAP-ARRANGEMENT_BRAIN",
+      "kind": "CAPABILITY_FOUNDATION",
+      "factoryLane": "singy",
+      "worktreePath": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-staging-v6\\task-002-cap-arrangement_brain",
+      "branch": "factory/platform-staging/cap-arrangement-brain",
+      "headBefore": "f0122b83ea874f0be4328c5c69edd83d3cbb2baa",
+      "headAfter": "f0122b83ea874f0be4328c5c69edd83d3cbb2baa",
+      "agentId": "v8-worker-cap-arrangement-brain",
+      "packageName": "uaos-real-product",
+      "packageManager": "npm",
+      "dependency": {
+        "state": "DEPENDENCY_INSTALL_REQUIRED",
+        "hasNodeModules": false,
+        "missingModules": [
+          "@vitejs/plugin-react",
+          "@wasm-audio-decoders/flac",
+          "pitchy",
+          "react",
+          "react-dom",
+          "vite",
+          "cross-env",
+          "electron",
+          "electron-builder"
+        ],
+        "suggestedCommand": "npm ci",
+        "packageManager": "npm",
+        "lockfile": "package-lock.json"
+      },
+      "declaredGates": [],
+      "gateResults": [],
+      "taskStatus": "NO_DECLARED_SAFE_GATES",
+      "stopReason": "NO_DECLARED_SAFE_GATES",
+      "before": {
+        "path": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-staging-v6\\task-002-cap-arrangement_brain",
+        "branch": "factory/platform-staging/cap-arrangement-brain",
+        "head": "f0122b83ea874f0be4328c5c69edd83d3cbb2baa",
+        "trackedStatus": [],
+        "untrackedOutputs": [],
+        "porcelainAll": [],
+        "capturedAt": "2026-08-04T06:01:24.044Z"
+      },
+      "after": {
+        "path": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-staging-v6\\task-002-cap-arrangement_brain",
+        "branch": "factory/platform-staging/cap-arrangement-brain",
+        "head": "f0122b83ea874f0be4328c5c69edd83d3cbb2baa",
+        "trackedStatus": [],
+        "untrackedOutputs": [],
+        "porcelainAll": [],
+        "capturedAt": "2026-08-04T06:01:24.186Z"
+      },
+      "completedAt": "2026-08-04T06:01:24.187Z"
+    },
+    {
+      "id": "CAP-ARRANGER_STUDIO",
+      "kind": "CAPABILITY_FOUNDATION",
+      "factoryLane": "arranger",
+      "worktreePath": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-staging-v6\\task-003-cap-arranger_studio",
+      "branch": "factory/platform-staging/cap-arranger-studio",
+      "headBefore": "415db5123bf6f1851cca284f92fb8e3478ffd967",
+      "headAfter": "415db5123bf6f1851cca284f92fb8e3478ffd967",
+      "agentId": "v8-worker-cap-arranger-studio",
+      "packageName": "uaos-real-product",
+      "packageManager": "npm",
+      "dependency": {
+        "state": "DEPENDENCY_INSTALL_REQUIRED",
+        "hasNodeModules": false,
+        "missingModules": [
+          "@vitejs/plugin-react",
+          "pitchy",
+          "react",
+          "react-dom",
+          "vite",
+          "cross-env",
+          "electron",
+          "electron-builder"
+        ],
+        "suggestedCommand": "npm ci",
+        "packageManager": "npm",
+        "lockfile": "package-lock.json"
+      },
+      "declaredGates": [
+        {
+          "gate": "check",
+          "weight": "light",
+          "unsafe": false
+        }
+      ],
+      "gateResults": [
+        {
+          "gate": "check",
+          "weight": "light",
+          "status": "DEPENDENCY_INSTALL_REQUIRED",
+          "command": "node packages/sampler/samplerFoundation.test.cjs && node packages/sampler/voiceLifecycle.p0005.test.cjs && node packages/library-build/transactionalBuild.p0006.test.cjs && node packages/local-preview-server/localServer.p0007.test.cjs && node packages/sampler-library-adapter/samplerLibraryAdapter.local004.test.cjs && node apps/desktop/src/library-status/libraryStatus.local005.test.cjs && node packages/local-support-bundle/localSupportBundle.local006.test.cjs",
+          "suggestedCommand": "npm ci",
+          "exitCode": null,
+          "durationMs": 0,
+          "stdout": "",
+          "stderr": "Missing node_modules or required packages; install not executed by V8 policy."
+        }
+      ],
+      "taskStatus": "DEPENDENCY_INSTALL_REQUIRED",
+      "stopReason": null,
+      "before": {
+        "path": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-staging-v6\\task-003-cap-arranger_studio",
+        "branch": "factory/platform-staging/cap-arranger-studio",
+        "head": "415db5123bf6f1851cca284f92fb8e3478ffd967",
+        "trackedStatus": [],
+        "untrackedOutputs": [],
+        "porcelainAll": [],
+        "capturedAt": "2026-08-04T06:01:24.343Z"
+      },
+      "after": {
+        "path": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-staging-v6\\task-003-cap-arranger_studio",
+        "branch": "factory/platform-staging/cap-arranger-studio",
+        "head": "415db5123bf6f1851cca284f92fb8e3478ffd967",
+        "trackedStatus": [],
+        "untrackedOutputs": [],
+        "porcelainAll": [],
+        "capturedAt": "2026-08-04T06:01:24.490Z"
+      },
+      "completedAt": "2026-08-04T06:01:24.491Z"
+    },
+    {
+      "id": "CAP-CHORD_SUGGESTION",
+      "kind": "CAPABILITY_FOUNDATION",
+      "factoryLane": "singy",
+      "worktreePath": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-staging-v6\\task-004-cap-chord_suggestion",
+      "branch": "factory/platform-staging/cap-chord-suggestion",
+      "headBefore": "f0122b83ea874f0be4328c5c69edd83d3cbb2baa",
+      "headAfter": "f0122b83ea874f0be4328c5c69edd83d3cbb2baa",
+      "agentId": "v8-worker-cap-chord-suggestion",
+      "packageName": "uaos-real-product",
+      "packageManager": "npm",
+      "dependency": {
+        "state": "DEPENDENCY_INSTALL_REQUIRED",
+        "hasNodeModules": false,
+        "missingModules": [
+          "@vitejs/plugin-react",
+          "@wasm-audio-decoders/flac",
+          "pitchy",
+          "react",
+          "react-dom",
+          "vite",
+          "cross-env",
+          "electron",
+          "electron-builder"
+        ],
+        "suggestedCommand": "npm ci",
+        "packageManager": "npm",
+        "lockfile": "package-lock.json"
+      },
+      "declaredGates": [],
+      "gateResults": [],
+      "taskStatus": "NO_DECLARED_SAFE_GATES",
+      "stopReason": "NO_DECLARED_SAFE_GATES",
+      "before": {
+        "path": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-staging-v6\\task-004-cap-chord_suggestion",
+        "branch": "factory/platform-staging/cap-chord-suggestion",
+        "head": "f0122b83ea874f0be4328c5c69edd83d3cbb2baa",
+        "trackedStatus": [],
+        "untrackedOutputs": [],
+        "porcelainAll": [],
+        "capturedAt": "2026-08-04T06:01:24.647Z"
+      },
+      "after": {
+        "path": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-staging-v6\\task-004-cap-chord_suggestion",
+        "branch": "factory/platform-staging/cap-chord-suggestion",
+        "head": "f0122b83ea874f0be4328c5c69edd83d3cbb2baa",
+        "trackedStatus": [],
+        "untrackedOutputs": [],
+        "porcelainAll": [],
+        "capturedAt": "2026-08-04T06:01:24.789Z"
+      },
+      "completedAt": "2026-08-04T06:01:24.790Z"
+    },
+    {
+      "id": "CAP-CLASSROOM_MANAGEMENT",
+      "kind": "CAPABILITY_FOUNDATION",
+      "factoryLane": "singy",
+      "worktreePath": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-staging-v6\\task-005-cap-classroom_management",
+      "branch": "factory/platform-staging/cap-classroom-management",
+      "headBefore": "f0122b83ea874f0be4328c5c69edd83d3cbb2baa",
+      "headAfter": "f0122b83ea874f0be4328c5c69edd83d3cbb2baa",
+      "agentId": "v8-worker-cap-classroom-management",
+      "packageName": "uaos-real-product",
+      "packageManager": "npm",
+      "dependency": {
+        "state": "DEPENDENCY_INSTALL_REQUIRED",
+        "hasNodeModules": false,
+        "missingModules": [
+          "@vitejs/plugin-react",
+          "@wasm-audio-decoders/flac",
+          "pitchy",
+          "react",
+          "react-dom",
+          "vite",
+          "cross-env",
+          "electron",
+          "electron-builder"
+        ],
+        "suggestedCommand": "npm ci",
+        "packageManager": "npm",
+        "lockfile": "package-lock.json"
+      },
+      "declaredGates": [],
+      "gateResults": [],
+      "taskStatus": "NO_DECLARED_SAFE_GATES",
+      "stopReason": "NO_DECLARED_SAFE_GATES",
+      "before": {
+        "path": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-staging-v6\\task-005-cap-classroom_management",
+        "branch": "factory/platform-staging/cap-classroom-management",
+        "head": "f0122b83ea874f0be4328c5c69edd83d3cbb2baa",
+        "trackedStatus": [],
+        "untrackedOutputs": [],
+        "porcelainAll": [],
+        "capturedAt": "2026-08-04T06:01:24.939Z"
+      },
+      "after": {
+        "path": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-staging-v6\\task-005-cap-classroom_management",
+        "branch": "factory/platform-staging/cap-classroom-management",
+        "head": "f0122b83ea874f0be4328c5c69edd83d3cbb2baa",
+        "trackedStatus": [],
+        "untrackedOutputs": [],
+        "porcelainAll": [],
+        "capturedAt": "2026-08-04T06:01:25.070Z"
+      },
+      "completedAt": "2026-08-04T06:01:25.071Z"
+    },
+    {
+      "id": "CAP-GENERATE_MY_SET",
+      "kind": "CAPABILITY_FOUNDATION",
+      "factoryLane": "arranger",
+      "worktreePath": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-staging-v6\\task-006-cap-generate_my_set",
+      "branch": "factory/platform-staging/cap-generate-my-set",
+      "headBefore": "415db5123bf6f1851cca284f92fb8e3478ffd967",
+      "headAfter": "415db5123bf6f1851cca284f92fb8e3478ffd967",
+      "agentId": "v8-worker-cap-generate-my-set",
+      "packageName": "uaos-real-product",
+      "packageManager": "npm",
+      "dependency": {
+        "state": "DEPENDENCY_INSTALL_REQUIRED",
+        "hasNodeModules": false,
+        "missingModules": [
+          "@vitejs/plugin-react",
+          "pitchy",
+          "react",
+          "react-dom",
+          "vite",
+          "cross-env",
+          "electron",
+          "electron-builder"
+        ],
+        "suggestedCommand": "npm ci",
+        "packageManager": "npm",
+        "lockfile": "package-lock.json"
+      },
+      "declaredGates": [
+        {
+          "gate": "check",
+          "weight": "light",
+          "unsafe": false
+        }
+      ],
+      "gateResults": [
+        {
+          "gate": "check",
+          "weight": "light",
+          "status": "DEPENDENCY_INSTALL_REQUIRED",
+          "command": "node packages/sampler/samplerFoundation.test.cjs && node packages/sampler/voiceLifecycle.p0005.test.cjs && node packages/library-build/transactionalBuild.p0006.test.cjs && node packages/local-preview-server/localServer.p0007.test.cjs && node packages/sampler-library-adapter/samplerLibraryAdapter.local004.test.cjs && node apps/desktop/src/library-status/libraryStatus.local005.test.cjs && node packages/local-support-bundle/localSupportBundle.local006.test.cjs",
+          "suggestedCommand": "npm ci",
+          "exitCode": null,
+          "durationMs": 0,
+          "stdout": "",
+          "stderr": "Missing node_modules or required packages; install not executed by V8 policy."
+        }
+      ],
+      "taskStatus": "DEPENDENCY_INSTALL_REQUIRED",
+      "stopReason": null,
+      "before": {
+        "path": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-staging-v6\\task-006-cap-generate_my_set",
+        "branch": "factory/platform-staging/cap-generate-my-set",
+        "head": "415db5123bf6f1851cca284f92fb8e3478ffd967",
+        "trackedStatus": [],
+        "untrackedOutputs": [],
+        "porcelainAll": [],
+        "capturedAt": "2026-08-04T06:01:25.225Z"
+      },
+      "after": {
+        "path": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-staging-v6\\task-006-cap-generate_my_set",
+        "branch": "factory/platform-staging/cap-generate-my-set",
+        "head": "415db5123bf6f1851cca284f92fb8e3478ffd967",
+        "trackedStatus": [],
+        "untrackedOutputs": [],
+        "porcelainAll": [],
+        "capturedAt": "2026-08-04T06:01:25.359Z"
+      },
+      "completedAt": "2026-08-04T06:01:25.360Z"
+    },
+    {
+      "id": "CAP-GLOBAL_PLAYER_MIXER",
+      "kind": "CAPABILITY_FOUNDATION",
+      "factoryLane": "singy",
+      "worktreePath": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-staging-v6\\task-007-cap-global_player_mixer",
+      "branch": "factory/platform-staging/cap-global-player-mixer",
+      "headBefore": "f0122b83ea874f0be4328c5c69edd83d3cbb2baa",
+      "headAfter": "f0122b83ea874f0be4328c5c69edd83d3cbb2baa",
+      "agentId": "v8-worker-cap-global-player-mixer",
+      "packageName": "uaos-real-product",
+      "packageManager": "npm",
+      "dependency": {
+        "state": "DEPENDENCY_INSTALL_REQUIRED",
+        "hasNodeModules": false,
+        "missingModules": [
+          "@vitejs/plugin-react",
+          "@wasm-audio-decoders/flac",
+          "pitchy",
+          "react",
+          "react-dom",
+          "vite",
+          "cross-env",
+          "electron",
+          "electron-builder"
+        ],
+        "suggestedCommand": "npm ci",
+        "packageManager": "npm",
+        "lockfile": "package-lock.json"
+      },
+      "declaredGates": [],
+      "gateResults": [],
+      "taskStatus": "NO_DECLARED_SAFE_GATES",
+      "stopReason": "NO_DECLARED_SAFE_GATES",
+      "before": {
+        "path": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-staging-v6\\task-007-cap-global_player_mixer",
+        "branch": "factory/platform-staging/cap-global-player-mixer",
+        "head": "f0122b83ea874f0be4328c5c69edd83d3cbb2baa",
+        "trackedStatus": [],
+        "untrackedOutputs": [],
+        "porcelainAll": [],
+        "capturedAt": "2026-08-04T06:01:25.521Z"
+      },
+      "after": {
+        "path": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-staging-v6\\task-007-cap-global_player_mixer",
+        "branch": "factory/platform-staging/cap-global-player-mixer",
+        "head": "f0122b83ea874f0be4328c5c69edd83d3cbb2baa",
+        "trackedStatus": [],
+        "untrackedOutputs": [],
+        "porcelainAll": [],
+        "capturedAt": "2026-08-04T06:01:25.657Z"
+      },
+      "completedAt": "2026-08-04T06:01:25.658Z"
+    },
+    {
+      "id": "CAP-GOLDEN_SEQUENCER",
+      "kind": "CAPABILITY_FOUNDATION",
+      "factoryLane": "singy",
+      "worktreePath": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-staging-v6\\task-008-cap-golden_sequencer",
+      "branch": "factory/platform-staging/cap-golden-sequencer",
+      "headBefore": "f0122b83ea874f0be4328c5c69edd83d3cbb2baa",
+      "headAfter": "f0122b83ea874f0be4328c5c69edd83d3cbb2baa",
+      "agentId": "v8-worker-cap-golden-sequencer",
+      "packageName": "uaos-real-product",
+      "packageManager": "npm",
+      "dependency": {
+        "state": "DEPENDENCY_INSTALL_REQUIRED",
+        "hasNodeModules": false,
+        "missingModules": [
+          "@vitejs/plugin-react",
+          "@wasm-audio-decoders/flac",
+          "pitchy",
+          "react",
+          "react-dom",
+          "vite",
+          "cross-env",
+          "electron",
+          "electron-builder"
+        ],
+        "suggestedCommand": "npm ci",
+        "packageManager": "npm",
+        "lockfile": "package-lock.json"
+      },
+      "declaredGates": [],
+      "gateResults": [],
+      "taskStatus": "NO_DECLARED_SAFE_GATES",
+      "stopReason": "NO_DECLARED_SAFE_GATES",
+      "before": {
+        "path": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-staging-v6\\task-008-cap-golden_sequencer",
+        "branch": "factory/platform-staging/cap-golden-sequencer",
+        "head": "f0122b83ea874f0be4328c5c69edd83d3cbb2baa",
+        "trackedStatus": [],
+        "untrackedOutputs": [],
+        "porcelainAll": [],
+        "capturedAt": "2026-08-04T06:01:25.810Z"
+      },
+      "after": {
+        "path": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-staging-v6\\task-008-cap-golden_sequencer",
+        "branch": "factory/platform-staging/cap-golden-sequencer",
+        "head": "f0122b83ea874f0be4328c5c69edd83d3cbb2baa",
+        "trackedStatus": [],
+        "untrackedOutputs": [],
+        "porcelainAll": [],
+        "capturedAt": "2026-08-04T06:01:25.951Z"
+      },
+      "completedAt": "2026-08-04T06:01:25.952Z"
+    },
+    {
+      "id": "CAP-INSTRUMENT_LEARNING",
+      "kind": "CAPABILITY_FOUNDATION",
+      "factoryLane": "singy",
+      "worktreePath": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-staging-v6\\task-009-cap-instrument_learning",
+      "branch": "factory/platform-staging/cap-instrument-learning",
+      "headBefore": "f0122b83ea874f0be4328c5c69edd83d3cbb2baa",
+      "headAfter": "f0122b83ea874f0be4328c5c69edd83d3cbb2baa",
+      "agentId": "v8-worker-cap-instrument-learning",
+      "packageName": "uaos-real-product",
+      "packageManager": "npm",
+      "dependency": {
+        "state": "DEPENDENCY_INSTALL_REQUIRED",
+        "hasNodeModules": false,
+        "missingModules": [
+          "@vitejs/plugin-react",
+          "@wasm-audio-decoders/flac",
+          "pitchy",
+          "react",
+          "react-dom",
+          "vite",
+          "cross-env",
+          "electron",
+          "electron-builder"
+        ],
+        "suggestedCommand": "npm ci",
+        "packageManager": "npm",
+        "lockfile": "package-lock.json"
+      },
+      "declaredGates": [],
+      "gateResults": [],
+      "taskStatus": "NO_DECLARED_SAFE_GATES",
+      "stopReason": "NO_DECLARED_SAFE_GATES",
+      "before": {
+        "path": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-staging-v6\\task-009-cap-instrument_learning",
+        "branch": "factory/platform-staging/cap-instrument-learning",
+        "head": "f0122b83ea874f0be4328c5c69edd83d3cbb2baa",
+        "trackedStatus": [],
+        "untrackedOutputs": [],
+        "porcelainAll": [],
+        "capturedAt": "2026-08-04T06:01:26.101Z"
+      },
+      "after": {
+        "path": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-staging-v6\\task-009-cap-instrument_learning",
+        "branch": "factory/platform-staging/cap-instrument-learning",
+        "head": "f0122b83ea874f0be4328c5c69edd83d3cbb2baa",
+        "trackedStatus": [],
+        "untrackedOutputs": [],
+        "porcelainAll": [],
+        "capturedAt": "2026-08-04T06:01:26.238Z"
+      },
+      "completedAt": "2026-08-04T06:01:26.239Z"
+    },
+    {
+      "id": "CAP-KEYBOARD_CONVERTERS",
+      "kind": "CAPABILITY_FOUNDATION",
+      "factoryLane": "arranger",
+      "worktreePath": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-staging-v6\\task-010-cap-keyboard_converters",
+      "branch": "factory/platform-staging/cap-keyboard-converters",
+      "headBefore": "415db5123bf6f1851cca284f92fb8e3478ffd967",
+      "headAfter": "415db5123bf6f1851cca284f92fb8e3478ffd967",
+      "agentId": "v8-worker-cap-keyboard-converters",
+      "packageName": "uaos-real-product",
+      "packageManager": "npm",
+      "dependency": {
+        "state": "DEPENDENCY_INSTALL_REQUIRED",
+        "hasNodeModules": false,
+        "missingModules": [
+          "@vitejs/plugin-react",
+          "pitchy",
+          "react",
+          "react-dom",
+          "vite",
+          "cross-env",
+          "electron",
+          "electron-builder"
+        ],
+        "suggestedCommand": "npm ci",
+        "packageManager": "npm",
+        "lockfile": "package-lock.json"
+      },
+      "declaredGates": [
+        {
+          "gate": "check",
+          "weight": "light",
+          "unsafe": false
+        }
+      ],
+      "gateResults": [
+        {
+          "gate": "check",
+          "weight": "light",
+          "status": "DEPENDENCY_INSTALL_REQUIRED",
+          "command": "node packages/sampler/samplerFoundation.test.cjs && node packages/sampler/voiceLifecycle.p0005.test.cjs && node packages/library-build/transactionalBuild.p0006.test.cjs && node packages/local-preview-server/localServer.p0007.test.cjs && node packages/sampler-library-adapter/samplerLibraryAdapter.local004.test.cjs && node apps/desktop/src/library-status/libraryStatus.local005.test.cjs && node packages/local-support-bundle/localSupportBundle.local006.test.cjs",
+          "suggestedCommand": "npm ci",
+          "exitCode": null,
+          "durationMs": 0,
+          "stdout": "",
+          "stderr": "Missing node_modules or required packages; install not executed by V8 policy."
+        }
+      ],
+      "taskStatus": "DEPENDENCY_INSTALL_REQUIRED",
+      "stopReason": null,
+      "before": {
+        "path": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-staging-v6\\task-010-cap-keyboard_converters",
+        "branch": "factory/platform-staging/cap-keyboard-converters",
+        "head": "415db5123bf6f1851cca284f92fb8e3478ffd967",
+        "trackedStatus": [],
+        "untrackedOutputs": [],
+        "porcelainAll": [],
+        "capturedAt": "2026-08-04T06:01:26.391Z"
+      },
+      "after": {
+        "path": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-staging-v6\\task-010-cap-keyboard_converters",
+        "branch": "factory/platform-staging/cap-keyboard-converters",
+        "head": "415db5123bf6f1851cca284f92fb8e3478ffd967",
+        "trackedStatus": [],
+        "untrackedOutputs": [],
+        "porcelainAll": [],
+        "capturedAt": "2026-08-04T06:01:26.525Z"
+      },
+      "completedAt": "2026-08-04T06:01:26.526Z"
+    },
+    {
+      "id": "CAP-LIBRARY_BUILDER",
+      "kind": "CAPABILITY_FOUNDATION",
+      "factoryLane": "library",
+      "worktreePath": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-staging-v6\\task-011-cap-library_builder",
+      "branch": "factory/platform-staging/cap-library-builder",
+      "headBefore": "7f845c4a5d1483317161ea1e00a64b36ea739c69",
+      "headAfter": "7f845c4a5d1483317161ea1e00a64b36ea739c69",
+      "agentId": "v8-worker-cap-library-builder",
+      "packageName": "uaos-real-product",
+      "packageManager": "npm",
+      "dependency": {
+        "state": "DEPENDENCY_INSTALL_REQUIRED",
+        "hasNodeModules": false,
+        "missingModules": [
+          "@vitejs/plugin-react",
+          "vite",
+          "react",
+          "react-dom",
+          "pitchy",
+          "electron",
+          "electron-builder",
+          "cross-env"
+        ],
+        "suggestedCommand": "npm ci",
+        "packageManager": "npm",
+        "lockfile": "package-lock.json"
+      },
+      "declaredGates": [
+        {
+          "gate": "check",
+          "weight": "light",
+          "unsafe": false
+        }
+      ],
+      "gateResults": [
+        {
+          "gate": "check",
+          "weight": "light",
+          "status": "DEPENDENCY_INSTALL_REQUIRED",
+          "command": "node packages/sampler/samplerFoundation.test.cjs && node packages/sampler/voiceLifecycle.p0005.test.cjs && node packages/library-build/transactionalBuild.p0006.test.cjs && node packages/local-preview-server/localServer.p0007.test.cjs && node packages/sampler-library-adapter/samplerLibraryAdapter.local004.test.cjs && node apps/desktop/src/library-status/libraryStatus.local005.test.cjs && node packages/local-support-bundle/localSupportBundle.local006.test.cjs",
+          "suggestedCommand": "npm ci",
+          "exitCode": null,
+          "durationMs": 0,
+          "stdout": "",
+          "stderr": "Missing node_modules or required packages; install not executed by V8 policy."
+        }
+      ],
+      "taskStatus": "DEPENDENCY_INSTALL_REQUIRED",
+      "stopReason": null,
+      "before": {
+        "path": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-staging-v6\\task-011-cap-library_builder",
+        "branch": "factory/platform-staging/cap-library-builder",
+        "head": "7f845c4a5d1483317161ea1e00a64b36ea739c69",
+        "trackedStatus": [],
+        "untrackedOutputs": [],
+        "porcelainAll": [],
+        "capturedAt": "2026-08-04T06:01:26.673Z"
+      },
+      "after": {
+        "path": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-staging-v6\\task-011-cap-library_builder",
+        "branch": "factory/platform-staging/cap-library-builder",
+        "head": "7f845c4a5d1483317161ea1e00a64b36ea739c69",
+        "trackedStatus": [],
+        "untrackedOutputs": [],
+        "porcelainAll": [],
+        "capturedAt": "2026-08-04T06:01:26.815Z"
+      },
+      "completedAt": "2026-08-04T06:01:26.816Z"
+    },
+    {
+      "id": "CAP-LIBRARY_CATALOG",
+      "kind": "CAPABILITY_FOUNDATION",
+      "factoryLane": "library",
+      "worktreePath": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-staging-v6\\task-012-cap-library_catalog",
+      "branch": "factory/platform-staging/cap-library-catalog",
+      "headBefore": "7f845c4a5d1483317161ea1e00a64b36ea739c69",
+      "headAfter": "7f845c4a5d1483317161ea1e00a64b36ea739c69",
+      "agentId": "v8-worker-cap-library-catalog",
+      "packageName": "uaos-real-product",
+      "packageManager": "npm",
+      "dependency": {
+        "state": "DEPENDENCY_INSTALL_REQUIRED",
+        "hasNodeModules": false,
+        "missingModules": [
+          "@vitejs/plugin-react",
+          "vite",
+          "react",
+          "react-dom",
+          "pitchy",
+          "electron",
+          "electron-builder",
+          "cross-env"
+        ],
+        "suggestedCommand": "npm ci",
+        "packageManager": "npm",
+        "lockfile": "package-lock.json"
+      },
+      "declaredGates": [
+        {
+          "gate": "check",
+          "weight": "light",
+          "unsafe": false
+        }
+      ],
+      "gateResults": [
+        {
+          "gate": "check",
+          "weight": "light",
+          "status": "DEPENDENCY_INSTALL_REQUIRED",
+          "command": "node packages/sampler/samplerFoundation.test.cjs && node packages/sampler/voiceLifecycle.p0005.test.cjs && node packages/library-build/transactionalBuild.p0006.test.cjs && node packages/local-preview-server/localServer.p0007.test.cjs && node packages/sampler-library-adapter/samplerLibraryAdapter.local004.test.cjs && node apps/desktop/src/library-status/libraryStatus.local005.test.cjs && node packages/local-support-bundle/localSupportBundle.local006.test.cjs",
+          "suggestedCommand": "npm ci",
+          "exitCode": null,
+          "durationMs": 0,
+          "stdout": "",
+          "stderr": "Missing node_modules or required packages; install not executed by V8 policy."
+        }
+      ],
+      "taskStatus": "DEPENDENCY_INSTALL_REQUIRED",
+      "stopReason": null,
+      "before": {
+        "path": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-staging-v6\\task-012-cap-library_catalog",
+        "branch": "factory/platform-staging/cap-library-catalog",
+        "head": "7f845c4a5d1483317161ea1e00a64b36ea739c69",
+        "trackedStatus": [],
+        "untrackedOutputs": [],
+        "porcelainAll": [],
+        "capturedAt": "2026-08-04T06:01:26.971Z"
+      },
+      "after": {
+        "path": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-staging-v6\\task-012-cap-library_catalog",
+        "branch": "factory/platform-staging/cap-library-catalog",
+        "head": "7f845c4a5d1483317161ea1e00a64b36ea739c69",
+        "trackedStatus": [],
+        "untrackedOutputs": [],
+        "porcelainAll": [],
+        "capturedAt": "2026-08-04T06:01:27.115Z"
+      },
+      "completedAt": "2026-08-04T06:01:27.117Z"
+    },
+    {
+      "id": "CAP-LIBRARY_PLAYER",
+      "kind": "CAPABILITY_FOUNDATION",
+      "factoryLane": "library",
+      "worktreePath": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-staging-v6\\task-013-cap-library_player",
+      "branch": "factory/platform-staging/cap-library-player",
+      "headBefore": "7f845c4a5d1483317161ea1e00a64b36ea739c69",
+      "headAfter": "7f845c4a5d1483317161ea1e00a64b36ea739c69",
+      "agentId": "v8-worker-cap-library-player",
+      "packageName": "uaos-real-product",
+      "packageManager": "npm",
+      "dependency": {
+        "state": "DEPENDENCY_INSTALL_REQUIRED",
+        "hasNodeModules": false,
+        "missingModules": [
+          "@vitejs/plugin-react",
+          "vite",
+          "react",
+          "react-dom",
+          "pitchy",
+          "electron",
+          "electron-builder",
+          "cross-env"
+        ],
+        "suggestedCommand": "npm ci",
+        "packageManager": "npm",
+        "lockfile": "package-lock.json"
+      },
+      "declaredGates": [
+        {
+          "gate": "check",
+          "weight": "light",
+          "unsafe": false
+        }
+      ],
+      "gateResults": [
+        {
+          "gate": "check",
+          "weight": "light",
+          "status": "DEPENDENCY_INSTALL_REQUIRED",
+          "command": "node packages/sampler/samplerFoundation.test.cjs && node packages/sampler/voiceLifecycle.p0005.test.cjs && node packages/library-build/transactionalBuild.p0006.test.cjs && node packages/local-preview-server/localServer.p0007.test.cjs && node packages/sampler-library-adapter/samplerLibraryAdapter.local004.test.cjs && node apps/desktop/src/library-status/libraryStatus.local005.test.cjs && node packages/local-support-bundle/localSupportBundle.local006.test.cjs",
+          "suggestedCommand": "npm ci",
+          "exitCode": null,
+          "durationMs": 0,
+          "stdout": "",
+          "stderr": "Missing node_modules or required packages; install not executed by V8 policy."
+        }
+      ],
+      "taskStatus": "DEPENDENCY_INSTALL_REQUIRED",
+      "stopReason": null,
+      "before": {
+        "path": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-staging-v6\\task-013-cap-library_player",
+        "branch": "factory/platform-staging/cap-library-player",
+        "head": "7f845c4a5d1483317161ea1e00a64b36ea739c69",
+        "trackedStatus": [],
+        "untrackedOutputs": [],
+        "porcelainAll": [],
+        "capturedAt": "2026-08-04T06:01:27.273Z"
+      },
+      "after": {
+        "path": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-staging-v6\\task-013-cap-library_player",
+        "branch": "factory/platform-staging/cap-library-player",
+        "head": "7f845c4a5d1483317161ea1e00a64b36ea739c69",
+        "trackedStatus": [],
+        "untrackedOutputs": [],
+        "porcelainAll": [],
+        "capturedAt": "2026-08-04T06:01:27.412Z"
+      },
+      "completedAt": "2026-08-04T06:01:27.413Z"
+    },
+    {
+      "id": "CAP-MAGIC_SET_BUILDER",
+      "kind": "CAPABILITY_FOUNDATION",
+      "factoryLane": "arranger",
+      "worktreePath": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-staging-v6\\task-014-cap-magic_set_builder",
+      "branch": "factory/platform-staging/cap-magic-set-builder",
+      "headBefore": "415db5123bf6f1851cca284f92fb8e3478ffd967",
+      "headAfter": "415db5123bf6f1851cca284f92fb8e3478ffd967",
+      "agentId": "v8-worker-cap-magic-set-builder",
+      "packageName": "uaos-real-product",
+      "packageManager": "npm",
+      "dependency": {
+        "state": "DEPENDENCY_INSTALL_REQUIRED",
+        "hasNodeModules": false,
+        "missingModules": [
+          "@vitejs/plugin-react",
+          "pitchy",
+          "react",
+          "react-dom",
+          "vite",
+          "cross-env",
+          "electron",
+          "electron-builder"
+        ],
+        "suggestedCommand": "npm ci",
+        "packageManager": "npm",
+        "lockfile": "package-lock.json"
+      },
+      "declaredGates": [
+        {
+          "gate": "check",
+          "weight": "light",
+          "unsafe": false
+        }
+      ],
+      "gateResults": [
+        {
+          "gate": "check",
+          "weight": "light",
+          "status": "DEPENDENCY_INSTALL_REQUIRED",
+          "command": "node packages/sampler/samplerFoundation.test.cjs && node packages/sampler/voiceLifecycle.p0005.test.cjs && node packages/library-build/transactionalBuild.p0006.test.cjs && node packages/local-preview-server/localServer.p0007.test.cjs && node packages/sampler-library-adapter/samplerLibraryAdapter.local004.test.cjs && node apps/desktop/src/library-status/libraryStatus.local005.test.cjs && node packages/local-support-bundle/localSupportBundle.local006.test.cjs",
+          "suggestedCommand": "npm ci",
+          "exitCode": null,
+          "durationMs": 0,
+          "stdout": "",
+          "stderr": "Missing node_modules or required packages; install not executed by V8 policy."
+        }
+      ],
+      "taskStatus": "DEPENDENCY_INSTALL_REQUIRED",
+      "stopReason": null,
+      "before": {
+        "path": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-staging-v6\\task-014-cap-magic_set_builder",
+        "branch": "factory/platform-staging/cap-magic-set-builder",
+        "head": "415db5123bf6f1851cca284f92fb8e3478ffd967",
+        "trackedStatus": [],
+        "untrackedOutputs": [],
+        "porcelainAll": [],
+        "capturedAt": "2026-08-04T06:01:27.591Z"
+      },
+      "after": {
+        "path": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-staging-v6\\task-014-cap-magic_set_builder",
+        "branch": "factory/platform-staging/cap-magic-set-builder",
+        "head": "415db5123bf6f1851cca284f92fb8e3478ffd967",
+        "trackedStatus": [],
+        "untrackedOutputs": [],
+        "porcelainAll": [],
+        "capturedAt": "2026-08-04T06:01:27.731Z"
+      },
+      "completedAt": "2026-08-04T06:01:27.732Z"
+    },
+    {
+      "id": "CAP-MULTITRACK_STUDIO",
+      "kind": "CAPABILITY_FOUNDATION",
+      "factoryLane": "singy",
+      "worktreePath": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-staging-v6\\task-015-cap-multitrack_studio",
+      "branch": "factory/platform-staging/cap-multitrack-studio",
+      "headBefore": "f0122b83ea874f0be4328c5c69edd83d3cbb2baa",
+      "headAfter": "f0122b83ea874f0be4328c5c69edd83d3cbb2baa",
+      "agentId": "v8-worker-cap-multitrack-studio",
+      "packageName": "uaos-real-product",
+      "packageManager": "npm",
+      "dependency": {
+        "state": "DEPENDENCY_INSTALL_REQUIRED",
+        "hasNodeModules": false,
+        "missingModules": [
+          "@vitejs/plugin-react",
+          "@wasm-audio-decoders/flac",
+          "pitchy",
+          "react",
+          "react-dom",
+          "vite",
+          "cross-env",
+          "electron",
+          "electron-builder"
+        ],
+        "suggestedCommand": "npm ci",
+        "packageManager": "npm",
+        "lockfile": "package-lock.json"
+      },
+      "declaredGates": [],
+      "gateResults": [],
+      "taskStatus": "NO_DECLARED_SAFE_GATES",
+      "stopReason": "NO_DECLARED_SAFE_GATES",
+      "before": {
+        "path": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-staging-v6\\task-015-cap-multitrack_studio",
+        "branch": "factory/platform-staging/cap-multitrack-studio",
+        "head": "f0122b83ea874f0be4328c5c69edd83d3cbb2baa",
+        "trackedStatus": [],
+        "untrackedOutputs": [],
+        "porcelainAll": [],
+        "capturedAt": "2026-08-04T06:01:27.877Z"
+      },
+      "after": {
+        "path": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-staging-v6\\task-015-cap-multitrack_studio",
+        "branch": "factory/platform-staging/cap-multitrack-studio",
+        "head": "f0122b83ea874f0be4328c5c69edd83d3cbb2baa",
+        "trackedStatus": [],
+        "untrackedOutputs": [],
+        "porcelainAll": [],
+        "capturedAt": "2026-08-04T06:01:28.014Z"
+      },
+      "completedAt": "2026-08-04T06:01:28.015Z"
+    },
+    {
+      "id": "CAP-OPERETTA_BUILDER",
+      "kind": "CAPABILITY_FOUNDATION",
+      "factoryLane": "singy",
+      "worktreePath": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-staging-v6\\task-016-cap-operetta_builder",
+      "branch": "factory/platform-staging/cap-operetta-builder",
+      "headBefore": "f0122b83ea874f0be4328c5c69edd83d3cbb2baa",
+      "headAfter": "f0122b83ea874f0be4328c5c69edd83d3cbb2baa",
+      "agentId": "v8-worker-cap-operetta-builder",
+      "packageName": "uaos-real-product",
+      "packageManager": "npm",
+      "dependency": {
+        "state": "DEPENDENCY_INSTALL_REQUIRED",
+        "hasNodeModules": false,
+        "missingModules": [
+          "@vitejs/plugin-react",
+          "@wasm-audio-decoders/flac",
+          "pitchy",
+          "react",
+          "react-dom",
+          "vite",
+          "cross-env",
+          "electron",
+          "electron-builder"
+        ],
+        "suggestedCommand": "npm ci",
+        "packageManager": "npm",
+        "lockfile": "package-lock.json"
+      },
+      "declaredGates": [],
+      "gateResults": [],
+      "taskStatus": "NO_DECLARED_SAFE_GATES",
+      "stopReason": "NO_DECLARED_SAFE_GATES",
+      "before": {
+        "path": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-staging-v6\\task-016-cap-operetta_builder",
+        "branch": "factory/platform-staging/cap-operetta-builder",
+        "head": "f0122b83ea874f0be4328c5c69edd83d3cbb2baa",
+        "trackedStatus": [],
+        "untrackedOutputs": [],
+        "porcelainAll": [],
+        "capturedAt": "2026-08-04T06:01:28.166Z"
+      },
+      "after": {
+        "path": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-staging-v6\\task-016-cap-operetta_builder",
+        "branch": "factory/platform-staging/cap-operetta-builder",
+        "head": "f0122b83ea874f0be4328c5c69edd83d3cbb2baa",
+        "trackedStatus": [],
+        "untrackedOutputs": [],
+        "porcelainAll": [],
+        "capturedAt": "2026-08-04T06:01:28.307Z"
+      },
+      "completedAt": "2026-08-04T06:01:28.308Z"
+    },
+    {
+      "id": "CAP-SAFE_CHAT",
+      "kind": "CAPABILITY_FOUNDATION",
+      "factoryLane": "singy",
+      "worktreePath": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-staging-v6\\task-017-cap-safe_chat",
+      "branch": "factory/platform-staging/cap-safe-chat",
+      "headBefore": "f0122b83ea874f0be4328c5c69edd83d3cbb2baa",
+      "headAfter": "f0122b83ea874f0be4328c5c69edd83d3cbb2baa",
+      "agentId": "v8-worker-cap-safe-chat",
+      "packageName": "uaos-real-product",
+      "packageManager": "npm",
+      "dependency": {
+        "state": "DEPENDENCY_INSTALL_REQUIRED",
+        "hasNodeModules": false,
+        "missingModules": [
+          "@vitejs/plugin-react",
+          "@wasm-audio-decoders/flac",
+          "pitchy",
+          "react",
+          "react-dom",
+          "vite",
+          "cross-env",
+          "electron",
+          "electron-builder"
+        ],
+        "suggestedCommand": "npm ci",
+        "packageManager": "npm",
+        "lockfile": "package-lock.json"
+      },
+      "declaredGates": [],
+      "gateResults": [],
+      "taskStatus": "NO_DECLARED_SAFE_GATES",
+      "stopReason": "NO_DECLARED_SAFE_GATES",
+      "before": {
+        "path": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-staging-v6\\task-017-cap-safe_chat",
+        "branch": "factory/platform-staging/cap-safe-chat",
+        "head": "f0122b83ea874f0be4328c5c69edd83d3cbb2baa",
+        "trackedStatus": [],
+        "untrackedOutputs": [],
+        "porcelainAll": [],
+        "capturedAt": "2026-08-04T06:01:28.469Z"
+      },
+      "after": {
+        "path": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-staging-v6\\task-017-cap-safe_chat",
+        "branch": "factory/platform-staging/cap-safe-chat",
+        "head": "f0122b83ea874f0be4328c5c69edd83d3cbb2baa",
+        "trackedStatus": [],
+        "untrackedOutputs": [],
+        "porcelainAll": [],
+        "capturedAt": "2026-08-04T06:01:28.626Z"
+      },
+      "completedAt": "2026-08-04T06:01:28.628Z"
+    },
+    {
+      "id": "CAP-SAMPLER_RUNTIME",
+      "kind": "CAPABILITY_FOUNDATION",
+      "factoryLane": "library",
+      "worktreePath": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-staging-v6\\task-018-cap-sampler_runtime",
+      "branch": "factory/platform-staging/cap-sampler-runtime",
+      "headBefore": "7f845c4a5d1483317161ea1e00a64b36ea739c69",
+      "headAfter": "7f845c4a5d1483317161ea1e00a64b36ea739c69",
+      "agentId": "v8-worker-cap-sampler-runtime",
+      "packageName": "uaos-real-product",
+      "packageManager": "npm",
+      "dependency": {
+        "state": "DEPENDENCY_INSTALL_REQUIRED",
+        "hasNodeModules": false,
+        "missingModules": [
+          "@vitejs/plugin-react",
+          "vite",
+          "react",
+          "react-dom",
+          "pitchy",
+          "electron",
+          "electron-builder",
+          "cross-env"
+        ],
+        "suggestedCommand": "npm ci",
+        "packageManager": "npm",
+        "lockfile": "package-lock.json"
+      },
+      "declaredGates": [
+        {
+          "gate": "check",
+          "weight": "light",
+          "unsafe": false
+        }
+      ],
+      "gateResults": [
+        {
+          "gate": "check",
+          "weight": "light",
+          "status": "DEPENDENCY_INSTALL_REQUIRED",
+          "command": "node packages/sampler/samplerFoundation.test.cjs && node packages/sampler/voiceLifecycle.p0005.test.cjs && node packages/library-build/transactionalBuild.p0006.test.cjs && node packages/local-preview-server/localServer.p0007.test.cjs && node packages/sampler-library-adapter/samplerLibraryAdapter.local004.test.cjs && node apps/desktop/src/library-status/libraryStatus.local005.test.cjs && node packages/local-support-bundle/localSupportBundle.local006.test.cjs",
+          "suggestedCommand": "npm ci",
+          "exitCode": null,
+          "durationMs": 0,
+          "stdout": "",
+          "stderr": "Missing node_modules or required packages; install not executed by V8 policy."
+        }
+      ],
+      "taskStatus": "DEPENDENCY_INSTALL_REQUIRED",
+      "stopReason": null,
+      "before": {
+        "path": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-staging-v6\\task-018-cap-sampler_runtime",
+        "branch": "factory/platform-staging/cap-sampler-runtime",
+        "head": "7f845c4a5d1483317161ea1e00a64b36ea739c69",
+        "trackedStatus": [],
+        "untrackedOutputs": [],
+        "porcelainAll": [],
+        "capturedAt": "2026-08-04T06:01:28.794Z"
+      },
+      "after": {
+        "path": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-staging-v6\\task-018-cap-sampler_runtime",
+        "branch": "factory/platform-staging/cap-sampler-runtime",
+        "head": "7f845c4a5d1483317161ea1e00a64b36ea739c69",
+        "trackedStatus": [],
+        "untrackedOutputs": [],
+        "porcelainAll": [],
+        "capturedAt": "2026-08-04T06:01:28.929Z"
+      },
+      "completedAt": "2026-08-04T06:01:28.929Z"
+    },
+    {
+      "id": "CAP-SET_DOCTOR",
+      "kind": "CAPABILITY_FOUNDATION",
+      "factoryLane": "arranger",
+      "worktreePath": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-staging-v6\\task-019-cap-set_doctor",
+      "branch": "factory/platform-staging/cap-set-doctor",
+      "headBefore": "415db5123bf6f1851cca284f92fb8e3478ffd967",
+      "headAfter": "415db5123bf6f1851cca284f92fb8e3478ffd967",
+      "agentId": "v8-worker-cap-set-doctor",
+      "packageName": "uaos-real-product",
+      "packageManager": "npm",
+      "dependency": {
+        "state": "DEPENDENCY_INSTALL_REQUIRED",
+        "hasNodeModules": false,
+        "missingModules": [
+          "@vitejs/plugin-react",
+          "pitchy",
+          "react",
+          "react-dom",
+          "vite",
+          "cross-env",
+          "electron",
+          "electron-builder"
+        ],
+        "suggestedCommand": "npm ci",
+        "packageManager": "npm",
+        "lockfile": "package-lock.json"
+      },
+      "declaredGates": [
+        {
+          "gate": "check",
+          "weight": "light",
+          "unsafe": false
+        }
+      ],
+      "gateResults": [
+        {
+          "gate": "check",
+          "weight": "light",
+          "status": "DEPENDENCY_INSTALL_REQUIRED",
+          "command": "node packages/sampler/samplerFoundation.test.cjs && node packages/sampler/voiceLifecycle.p0005.test.cjs && node packages/library-build/transactionalBuild.p0006.test.cjs && node packages/local-preview-server/localServer.p0007.test.cjs && node packages/sampler-library-adapter/samplerLibraryAdapter.local004.test.cjs && node apps/desktop/src/library-status/libraryStatus.local005.test.cjs && node packages/local-support-bundle/localSupportBundle.local006.test.cjs",
+          "suggestedCommand": "npm ci",
+          "exitCode": null,
+          "durationMs": 0,
+          "stdout": "",
+          "stderr": "Missing node_modules or required packages; install not executed by V8 policy."
+        }
+      ],
+      "taskStatus": "DEPENDENCY_INSTALL_REQUIRED",
+      "stopReason": null,
+      "before": {
+        "path": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-staging-v6\\task-019-cap-set_doctor",
+        "branch": "factory/platform-staging/cap-set-doctor",
+        "head": "415db5123bf6f1851cca284f92fb8e3478ffd967",
+        "trackedStatus": [],
+        "untrackedOutputs": [],
+        "porcelainAll": [],
+        "capturedAt": "2026-08-04T06:01:29.085Z"
+      },
+      "after": {
+        "path": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-staging-v6\\task-019-cap-set_doctor",
+        "branch": "factory/platform-staging/cap-set-doctor",
+        "head": "415db5123bf6f1851cca284f92fb8e3478ffd967",
+        "trackedStatus": [],
+        "untrackedOutputs": [],
+        "porcelainAll": [],
+        "capturedAt": "2026-08-04T06:01:29.238Z"
+      },
+      "completedAt": "2026-08-04T06:01:29.238Z"
+    },
+    {
+      "id": "CAP-SONG_STRUCTURE",
+      "kind": "CAPABILITY_FOUNDATION",
+      "factoryLane": "singy",
+      "worktreePath": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-staging-v6\\task-020-cap-song_structure",
+      "branch": "factory/platform-staging/cap-song-structure",
+      "headBefore": "f0122b83ea874f0be4328c5c69edd83d3cbb2baa",
+      "headAfter": "f0122b83ea874f0be4328c5c69edd83d3cbb2baa",
+      "agentId": "v8-worker-cap-song-structure",
+      "packageName": "uaos-real-product",
+      "packageManager": "npm",
+      "dependency": {
+        "state": "DEPENDENCY_INSTALL_REQUIRED",
+        "hasNodeModules": false,
+        "missingModules": [
+          "@vitejs/plugin-react",
+          "@wasm-audio-decoders/flac",
+          "pitchy",
+          "react",
+          "react-dom",
+          "vite",
+          "cross-env",
+          "electron",
+          "electron-builder"
+        ],
+        "suggestedCommand": "npm ci",
+        "packageManager": "npm",
+        "lockfile": "package-lock.json"
+      },
+      "declaredGates": [],
+      "gateResults": [],
+      "taskStatus": "NO_DECLARED_SAFE_GATES",
+      "stopReason": "NO_DECLARED_SAFE_GATES",
+      "before": {
+        "path": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-staging-v6\\task-020-cap-song_structure",
+        "branch": "factory/platform-staging/cap-song-structure",
+        "head": "f0122b83ea874f0be4328c5c69edd83d3cbb2baa",
+        "trackedStatus": [],
+        "untrackedOutputs": [],
+        "porcelainAll": [],
+        "capturedAt": "2026-08-04T06:01:29.388Z"
+      },
+      "after": {
+        "path": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-staging-v6\\task-020-cap-song_structure",
+        "branch": "factory/platform-staging/cap-song-structure",
+        "head": "f0122b83ea874f0be4328c5c69edd83d3cbb2baa",
+        "trackedStatus": [],
+        "untrackedOutputs": [],
+        "porcelainAll": [],
+        "capturedAt": "2026-08-04T06:01:29.529Z"
+      },
+      "completedAt": "2026-08-04T06:01:29.530Z"
+    },
+    {
+      "id": "CAP-STORY_TO_SONG",
+      "kind": "CAPABILITY_FOUNDATION",
+      "factoryLane": "singy",
+      "worktreePath": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-staging-v6\\task-021-cap-story_to_song",
+      "branch": "factory/platform-staging/cap-story-to-song",
+      "headBefore": "f0122b83ea874f0be4328c5c69edd83d3cbb2baa",
+      "headAfter": "f0122b83ea874f0be4328c5c69edd83d3cbb2baa",
+      "agentId": "v8-worker-cap-story-to-song",
+      "packageName": "uaos-real-product",
+      "packageManager": "npm",
+      "dependency": {
+        "state": "DEPENDENCY_INSTALL_REQUIRED",
+        "hasNodeModules": false,
+        "missingModules": [
+          "@vitejs/plugin-react",
+          "@wasm-audio-decoders/flac",
+          "pitchy",
+          "react",
+          "react-dom",
+          "vite",
+          "cross-env",
+          "electron",
+          "electron-builder"
+        ],
+        "suggestedCommand": "npm ci",
+        "packageManager": "npm",
+        "lockfile": "package-lock.json"
+      },
+      "declaredGates": [],
+      "gateResults": [],
+      "taskStatus": "NO_DECLARED_SAFE_GATES",
+      "stopReason": "NO_DECLARED_SAFE_GATES",
+      "before": {
+        "path": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-staging-v6\\task-021-cap-story_to_song",
+        "branch": "factory/platform-staging/cap-story-to-song",
+        "head": "f0122b83ea874f0be4328c5c69edd83d3cbb2baa",
+        "trackedStatus": [],
+        "untrackedOutputs": [],
+        "porcelainAll": [],
+        "capturedAt": "2026-08-04T06:01:29.674Z"
+      },
+      "after": {
+        "path": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-staging-v6\\task-021-cap-story_to_song",
+        "branch": "factory/platform-staging/cap-story-to-song",
+        "head": "f0122b83ea874f0be4328c5c69edd83d3cbb2baa",
+        "trackedStatus": [],
+        "untrackedOutputs": [],
+        "porcelainAll": [],
+        "capturedAt": "2026-08-04T06:01:29.805Z"
+      },
+      "completedAt": "2026-08-04T06:01:29.806Z"
+    },
+    {
+      "id": "CAP-STUDENT_PROGRESS",
+      "kind": "CAPABILITY_FOUNDATION",
+      "factoryLane": "singy",
+      "worktreePath": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-staging-v6\\task-022-cap-student_progress",
+      "branch": "factory/platform-staging/cap-student-progress",
+      "headBefore": "f0122b83ea874f0be4328c5c69edd83d3cbb2baa",
+      "headAfter": "f0122b83ea874f0be4328c5c69edd83d3cbb2baa",
+      "agentId": "v8-worker-cap-student-progress",
+      "packageName": "uaos-real-product",
+      "packageManager": "npm",
+      "dependency": {
+        "state": "DEPENDENCY_INSTALL_REQUIRED",
+        "hasNodeModules": false,
+        "missingModules": [
+          "@vitejs/plugin-react",
+          "@wasm-audio-decoders/flac",
+          "pitchy",
+          "react",
+          "react-dom",
+          "vite",
+          "cross-env",
+          "electron",
+          "electron-builder"
+        ],
+        "suggestedCommand": "npm ci",
+        "packageManager": "npm",
+        "lockfile": "package-lock.json"
+      },
+      "declaredGates": [],
+      "gateResults": [],
+      "taskStatus": "NO_DECLARED_SAFE_GATES",
+      "stopReason": "NO_DECLARED_SAFE_GATES",
+      "before": {
+        "path": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-staging-v6\\task-022-cap-student_progress",
+        "branch": "factory/platform-staging/cap-student-progress",
+        "head": "f0122b83ea874f0be4328c5c69edd83d3cbb2baa",
+        "trackedStatus": [],
+        "untrackedOutputs": [],
+        "porcelainAll": [],
+        "capturedAt": "2026-08-04T06:01:29.953Z"
+      },
+      "after": {
+        "path": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-staging-v6\\task-022-cap-student_progress",
+        "branch": "factory/platform-staging/cap-student-progress",
+        "head": "f0122b83ea874f0be4328c5c69edd83d3cbb2baa",
+        "trackedStatus": [],
+        "untrackedOutputs": [],
+        "porcelainAll": [],
+        "capturedAt": "2026-08-04T06:01:30.091Z"
+      },
+      "completedAt": "2026-08-04T06:01:30.092Z"
+    },
+    {
+      "id": "CAP-VOICE_TO_MELODY",
+      "kind": "CAPABILITY_FOUNDATION",
+      "factoryLane": "singy",
+      "worktreePath": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-staging-v6\\task-023-cap-voice_to_melody",
+      "branch": "factory/platform-staging/cap-voice-to-melody",
+      "headBefore": "f0122b83ea874f0be4328c5c69edd83d3cbb2baa",
+      "headAfter": "f0122b83ea874f0be4328c5c69edd83d3cbb2baa",
+      "agentId": "v8-worker-cap-voice-to-melody",
+      "packageName": "uaos-real-product",
+      "packageManager": "npm",
+      "dependency": {
+        "state": "DEPENDENCY_INSTALL_REQUIRED",
+        "hasNodeModules": false,
+        "missingModules": [
+          "@vitejs/plugin-react",
+          "@wasm-audio-decoders/flac",
+          "pitchy",
+          "react",
+          "react-dom",
+          "vite",
+          "cross-env",
+          "electron",
+          "electron-builder"
+        ],
+        "suggestedCommand": "npm ci",
+        "packageManager": "npm",
+        "lockfile": "package-lock.json"
+      },
+      "declaredGates": [],
+      "gateResults": [],
+      "taskStatus": "NO_DECLARED_SAFE_GATES",
+      "stopReason": "NO_DECLARED_SAFE_GATES",
+      "before": {
+        "path": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-staging-v6\\task-023-cap-voice_to_melody",
+        "branch": "factory/platform-staging/cap-voice-to-melody",
+        "head": "f0122b83ea874f0be4328c5c69edd83d3cbb2baa",
+        "trackedStatus": [],
+        "untrackedOutputs": [],
+        "porcelainAll": [],
+        "capturedAt": "2026-08-04T06:01:30.244Z"
+      },
+      "after": {
+        "path": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-staging-v6\\task-023-cap-voice_to_melody",
+        "branch": "factory/platform-staging/cap-voice-to-melody",
+        "head": "f0122b83ea874f0be4328c5c69edd83d3cbb2baa",
+        "trackedStatus": [],
+        "untrackedOutputs": [],
+        "porcelainAll": [],
+        "capturedAt": "2026-08-04T06:01:30.379Z"
+      },
+      "completedAt": "2026-08-04T06:01:30.379Z"
+    },
+    {
+      "id": "CAP-VOICE_TO_MIDI",
+      "kind": "CAPABILITY_FOUNDATION",
+      "factoryLane": "singy",
+      "worktreePath": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-staging-v6\\task-024-cap-voice_to_midi",
+      "branch": "factory/platform-staging/cap-voice-to-midi",
+      "headBefore": "f0122b83ea874f0be4328c5c69edd83d3cbb2baa",
+      "headAfter": "f0122b83ea874f0be4328c5c69edd83d3cbb2baa",
+      "agentId": "v8-worker-cap-voice-to-midi",
+      "packageName": "uaos-real-product",
+      "packageManager": "npm",
+      "dependency": {
+        "state": "DEPENDENCY_INSTALL_REQUIRED",
+        "hasNodeModules": false,
+        "missingModules": [
+          "@vitejs/plugin-react",
+          "@wasm-audio-decoders/flac",
+          "pitchy",
+          "react",
+          "react-dom",
+          "vite",
+          "cross-env",
+          "electron",
+          "electron-builder"
+        ],
+        "suggestedCommand": "npm ci",
+        "packageManager": "npm",
+        "lockfile": "package-lock.json"
+      },
+      "declaredGates": [],
+      "gateResults": [],
+      "taskStatus": "NO_DECLARED_SAFE_GATES",
+      "stopReason": "NO_DECLARED_SAFE_GATES",
+      "before": {
+        "path": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-staging-v6\\task-024-cap-voice_to_midi",
+        "branch": "factory/platform-staging/cap-voice-to-midi",
+        "head": "f0122b83ea874f0be4328c5c69edd83d3cbb2baa",
+        "trackedStatus": [],
+        "untrackedOutputs": [],
+        "porcelainAll": [],
+        "capturedAt": "2026-08-04T06:01:30.518Z"
+      },
+      "after": {
+        "path": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-staging-v6\\task-024-cap-voice_to_midi",
+        "branch": "factory/platform-staging/cap-voice-to-midi",
+        "head": "f0122b83ea874f0be4328c5c69edd83d3cbb2baa",
+        "trackedStatus": [],
+        "untrackedOutputs": [],
+        "porcelainAll": [],
+        "capturedAt": "2026-08-04T06:01:30.653Z"
+      },
+      "completedAt": "2026-08-04T06:01:30.654Z"
+    },
+    {
+      "id": "PRODUCT-SINGY_SAMPLER_PLAYER",
+      "kind": "PRODUCT_ASSEMBLY",
+      "factoryLane": "library",
+      "worktreePath": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-staging-v6\\task-028-product-singy_sampler_player",
+      "branch": "factory/platform-staging/product-singy-sampler-player",
+      "headBefore": "7f845c4a5d1483317161ea1e00a64b36ea739c69",
+      "headAfter": "7f845c4a5d1483317161ea1e00a64b36ea739c69",
+      "agentId": "v8-worker-product-singy-sampler-player",
+      "packageName": "uaos-real-product",
+      "packageManager": "npm",
+      "dependency": {
+        "state": "DEPENDENCY_INSTALL_REQUIRED",
+        "hasNodeModules": false,
+        "missingModules": [
+          "@vitejs/plugin-react",
+          "vite",
+          "react",
+          "react-dom",
+          "pitchy",
+          "electron",
+          "electron-builder",
+          "cross-env"
+        ],
+        "suggestedCommand": "npm ci",
+        "packageManager": "npm",
+        "lockfile": "package-lock.json"
+      },
+      "declaredGates": [
+        {
+          "gate": "check",
+          "weight": "light",
+          "unsafe": false
+        }
+      ],
+      "gateResults": [
+        {
+          "gate": "check",
+          "weight": "light",
+          "status": "DEPENDENCY_INSTALL_REQUIRED",
+          "command": "node packages/sampler/samplerFoundation.test.cjs && node packages/sampler/voiceLifecycle.p0005.test.cjs && node packages/library-build/transactionalBuild.p0006.test.cjs && node packages/local-preview-server/localServer.p0007.test.cjs && node packages/sampler-library-adapter/samplerLibraryAdapter.local004.test.cjs && node apps/desktop/src/library-status/libraryStatus.local005.test.cjs && node packages/local-support-bundle/localSupportBundle.local006.test.cjs",
+          "suggestedCommand": "npm ci",
+          "exitCode": null,
+          "durationMs": 0,
+          "stdout": "",
+          "stderr": "Missing node_modules or required packages; install not executed by V8 policy."
+        }
+      ],
+      "taskStatus": "DEPENDENCY_INSTALL_REQUIRED",
+      "stopReason": null,
+      "before": {
+        "path": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-staging-v6\\task-028-product-singy_sampler_player",
+        "branch": "factory/platform-staging/product-singy-sampler-player",
+        "head": "7f845c4a5d1483317161ea1e00a64b36ea739c69",
+        "trackedStatus": [],
+        "untrackedOutputs": [],
+        "porcelainAll": [],
+        "capturedAt": "2026-08-04T06:01:30.797Z"
+      },
+      "after": {
+        "path": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\platform-staging-v6\\task-028-product-singy_sampler_player",
+        "branch": "factory/platform-staging/product-singy-sampler-player",
+        "head": "7f845c4a5d1483317161ea1e00a64b36ea739c69",
+        "trackedStatus": [],
+        "untrackedOutputs": [],
+        "porcelainAll": [],
+        "capturedAt": "2026-08-04T06:01:30.937Z"
+      },
+      "completedAt": "2026-08-04T06:01:30.938Z"
+    }
+  ]
+}

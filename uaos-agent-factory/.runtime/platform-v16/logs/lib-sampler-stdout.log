@@ -1,0 +1,23 @@
+
+> uaos-real-product@1.0.0 test:sampler
+> node packages/sampler/samplerFoundation.test.cjs && node packages/sampler/voiceLifecycle.p0005.test.cjs
+
+{"status":"PASS","presets":1,"samples":2,"zones":2,"wavParser":"PASS","invalidUnsupported":"PASS","zoneEditing":"PASS","loopAdsrDrum":"PASS","voiceEngine":"PASS","allNotesOffPanic":"PASS","memory":{"pass":"PASS","blocked":"PASS","automaticDeletion":false},"undoRedo":"PASS","deepReadback":"PASS","manifestMapping":"PASS","ownerFilesModified":0,"ownerFilesCopied":0}
+PASS one-shot: early note-off does not stop
+PASS one-shot: natural end stops voice
+PASS one-shot: panic stops
+PASS one-shot: choke from closed hat
+PASS choke: kick does not choke hi-hat
+PASS choke: independent groups continue
+PASS choke: rapid retrigger leaves no orphans
+PASS sustain: second C4 note-off does not kill both
+PASS sustain: older note-off does not stop newer retrigger
+PASS sustain pedal: deferred releases only sustained voices
+PASS polyphony steal clears indexes
+PASS rapid retrigger: independent voice ids
+PASS round robin advances across retrigger
+PASS fallback: orphaned continuous voice stops at timeout
+PASS fallback: natural end does not double-stop
+PASS dispose cancels timers
+PASS cleanup is idempotent
+{"status":"PASS","suite":"P0-005","failures":0}

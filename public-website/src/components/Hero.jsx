@@ -1,8 +1,7 @@
 import { useLanguage } from '../i18n/LanguageContext.jsx';
-import SingyMark from './SingyMark.jsx';
 import WaveBackground from './WaveBackground.jsx';
 
-export default function Hero() {
+export default function Hero({ onNavigate }) {
   const { t } = useLanguage();
 
   return (
@@ -14,14 +13,17 @@ export default function Hero() {
           <h1 className="heroTitle">{t.hero.title}</h1>
           <p className="heroSubtitle">{t.hero.subtitle}</p>
           <div className="heroActions">
-            <a className="btn btnPrimary" href={`#${t.kids.id}`}>{t.hero.ctaKids}</a>
-            <a className="btn btnGhost" href={`#${t.teen.id}`}>{t.hero.ctaTeen}</a>
+            <button type="button" className="btn btnPrimary" onClick={() => onNavigate('/products/arranger-studio/')}>
+              {t.hero.ctaArranger}
+            </button>
+            <button type="button" className="btn btnGhost" onClick={() => onNavigate('/products/midi-toolkit/')}>
+              {t.hero.ctaMidi}
+            </button>
+            <button type="button" className="btn btnGhost" onClick={() => onNavigate('/products/singy/')}>
+              {t.hero.ctaSingy}
+            </button>
           </div>
-        </div>
-        <div className="heroVisual">
-          <div className="glassOrb">
-            <SingyMark title={t.hero.markAlt} />
-          </div>
+          <p className="heroNote">{t.cta.pilot} · {t.cta.noPrice}</p>
         </div>
       </div>
     </section>

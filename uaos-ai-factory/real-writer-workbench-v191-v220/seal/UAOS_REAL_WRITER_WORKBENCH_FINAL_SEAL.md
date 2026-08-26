@@ -36,5 +36,6 @@ PA3X readiness claim: NO
 
 Validator result: PASS
 
-Commit hash if committed: PENDING
+Commit hash if committed: fb9d91f15d9782aad1036023230802920db50405
+
 

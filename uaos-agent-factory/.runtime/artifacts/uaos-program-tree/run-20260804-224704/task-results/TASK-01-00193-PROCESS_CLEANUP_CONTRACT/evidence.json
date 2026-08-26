@@ -1,0 +1,35 @@
+{
+  "taskId": "TASK-01-00193-PROCESS_CLEANUP_CONTRACT",
+  "agentId": "NODE_LOCAL_WORKER-0049",
+  "startedAt": "2026-08-04T20:47:06.648Z",
+  "endedAt": "2026-08-04T20:47:06.775Z",
+  "status": "PASS",
+  "tests": [
+    {
+      "command": "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00193-process_cleanup_contract\\tests\\main.test.mjs",
+      "exitCode": 0,
+      "stdoutTail": "✔ TASK-01-00193-PROCESS_CLEANUP_CONTRACT verify (0.5159ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 69.6944\n"
+    }
+  ],
+  "sha256": "EE3485443EEF1F82348448788197F784F6494583DCF6D8B56E93A42482CD3116",
+  "allowedPathsUsed": [
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00193-process_cleanup_contract",
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00193-process_cleanup_contract\\src\\process_cleanup_contract.mjs",
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00193-process_cleanup_contract\\tests\\main.test.mjs"
+  ],
+  "truthStatements": [
+    "Technical WAV success does not prove musical quality",
+    "Fixtures are not product content",
+    "Studio Offline Render is not Real-time DSP",
+    "KORG WRITE_UNSUPPORTED",
+    "No auto adoption of Kids/Teen/Pricing",
+    "Commander not activated"
+  ],
+  "ownerFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00193-process_cleanup_contract\\src\\process_cleanup_contract.mjs",
+  "phase": "DEFINE",
+  "gate": null,
+  "noPush": true,
+  "noMerge": true,
+  "noDeploy": true,
+  "commanderActivated": false
+}

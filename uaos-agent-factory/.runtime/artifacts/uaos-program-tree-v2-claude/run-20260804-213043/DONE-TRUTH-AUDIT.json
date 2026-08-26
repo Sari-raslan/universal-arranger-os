@@ -1,0 +1,31 @@
+{
+  "method": "Deterministic full census (not sampling): read ownerFile of every DONE task (1284/1284) and checked for the auto-generator marker string CONTRACT_STUB_EXECUTED.",
+  "totalDoneTasks": 1284,
+  "markerOnlySyntheticCount": 1284,
+  "genuineImplementationCount": 0,
+  "byDomain": {
+    "00-ORCHESTRATION": 56,
+    "01-SHARED-PLATFORM": 140,
+    "02-LIBRARY-FACTORY": 104,
+    "03-KEYBOARD-PRO": 72,
+    "04-KEYBOARD-CONVERTERS": 80,
+    "05-CREATOR": 108,
+    "06-STUDIO-PRO": 124,
+    "07-SINGY-CORE": 132,
+    "08-SINGY-KIDS": 64,
+    "09-SINGY-TEEN": 56,
+    "10-CONTENT-ASSETS": 16,
+    "11-COMMERCIAL-PLATFORM": 60,
+    "12-WEBSITE-DELIVERY": 76,
+    "13-SECURITY-LEGAL": 20,
+    "14-QA-RELEASE-OPERATIONS": 112,
+    "15-COMMANDER-FUTURE-ADAPTER": 64
+  },
+  "rootCause": "GENERATION-RECEIPT.json + LATEST-RUN.json show TASKS.json was generated at 2026-08-04T20:47:04Z and the entire DONE wave was auto-executed by 2026-08-04T20:50:04Z (~3 minutes) for 1284 tasks. Each ownerFile is a template that defines a self-referential contract object (status: CONTRACT_STUB_EXECUTED) and a verify() function that only checks its own hardcoded fields exist. Each test file imports that same module and asserts those same hardcoded fields. No task inspected performs, calls, or tests any actual product functionality (no audio DSP, no sampler code, no age-band content logic, no evidence-index recovery logic, etc).",
+  "sampleEvidence": [
+    "TASK-00-00001-RECOVER_V15_V21_EVIDENCE_INDEX_CONTRACT (DEFINE, 00-ORCHESTRATION): stub verify() checks its own contract object fields only.",
+    "TASK-06-00762-SAMPLER_INTEGRATION_IMPLEMENTATION (IMPLEMENT, 06-STUDIO-PRO, rc1Critical): identical stub template, no sampler code.",
+    "TASK-01-00162-SUPPORT_BUNDLE_IMPLEMENTATION (IMPLEMENT, 01-SHARED-PLATFORM): identical stub template, no support-bundle logic."
+  ],
+  "verdict": "Per TRUTH RULES (exit code 0 is not acceptance; do not preserve an inflated DONE count; reopen marker-only/synthetic/implementation-missing tasks), all 1284 currently-DONE tasks fail the DONE bar and are marker-only. None constitute real Commercial RC1 progress on Library Factory, Keyboard Pro, Creator, Studio Pro, Singy Kids, or Singy Teen."
+}

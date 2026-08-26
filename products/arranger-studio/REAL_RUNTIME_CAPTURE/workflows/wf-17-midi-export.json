@@ -1,0 +1,365 @@
+{
+  "workflowId": "wf-17-midi-export",
+  "ok": true,
+  "result": {
+    "ok": true,
+    "draft": {
+      "ok": true,
+      "format": "uaos-midi-draft-json",
+      "ppq": 480,
+      "tempo": 100,
+      "events": [
+        {
+          "time": 0,
+          "type": "section",
+          "section": "Intro",
+          "chord": "Cm",
+          "bars": 4
+        },
+        {
+          "time": 16,
+          "type": "section",
+          "section": "Main A",
+          "chord": "Cm",
+          "bars": 8
+        },
+        {
+          "time": 48,
+          "type": "section",
+          "section": "Main B",
+          "chord": "Ab",
+          "bars": 8
+        },
+        {
+          "time": 80,
+          "type": "section",
+          "section": "Break",
+          "chord": "Bb",
+          "bars": 2
+        },
+        {
+          "time": 88,
+          "type": "section",
+          "section": "Ending",
+          "chord": "Cm",
+          "bars": 4
+        }
+      ]
+    },
+    "noteEvents": [
+      {
+        "midi": 24,
+        "startTick": 0,
+        "durationTicks": 1680,
+        "velocity": 74,
+        "channel": 1
+      },
+      {
+        "midi": 36,
+        "startTick": 0,
+        "durationTicks": 1536,
+        "velocity": 55,
+        "channel": 2
+      },
+      {
+        "midi": 39,
+        "startTick": 16,
+        "durationTicks": 1536,
+        "velocity": 55,
+        "channel": 2
+      },
+      {
+        "midi": 43,
+        "startTick": 32,
+        "durationTicks": 1536,
+        "velocity": 55,
+        "channel": 2
+      },
+      {
+        "midi": 24,
+        "startTick": 1920,
+        "durationTicks": 1680,
+        "velocity": 74,
+        "channel": 1
+      },
+      {
+        "midi": 36,
+        "startTick": 1920,
+        "durationTicks": 1536,
+        "velocity": 55,
+        "channel": 2
+      },
+      {
+        "midi": 39,
+        "startTick": 1936,
+        "durationTicks": 1536,
+        "velocity": 55,
+        "channel": 2
+      },
+      {
+        "midi": 43,
+        "startTick": 1952,
+        "durationTicks": 1536,
+        "velocity": 55,
+        "channel": 2
+      }
+    ],
+    "bytes": {
+      "type": "Buffer",
+      "data": [
+        77,
+        84,
+        104,
+        100,
+        0,
+        0,
+        0,
+        6,
+        0,
+        0,
+        0,
+        1,
+        1,
+        224,
+        77,
+        84,
+        114,
+        107,
+        0,
+        0,
+        0,
+        78,
+        0,
+        255,
+        81,
+        3,
+        9,
+        39,
+        192,
+        0,
+        145,
+        24,
+        74,
+        0,
+        146,
+        36,
+        55,
+        16,
+        146,
+        39,
+        55,
+        16,
+        146,
+        43,
+        55,
+        139,
+        96,
+        130,
+        36,
+        64,
+        16,
+        130,
+        39,
+        64,
+        16,
+        130,
+        43,
+        64,
+        112,
+        129,
+        24,
+        64,
+        129,
+        112,
+        145,
+        24,
+        74,
+        0,
+        146,
+        36,
+        55,
+        16,
+        146,
+        39,
+        55,
+        16,
+        146,
+        43,
+        55,
+        139,
+        96,
+        130,
+        36,
+        64,
+        16,
+        130,
+        39,
+        64,
+        16,
+        130,
+        43,
+        64,
+        112,
+        129,
+        24,
+        64,
+        0,
+        255,
+        47,
+        0
+      ]
+    },
+    "parsed": {
+      "ok": true,
+      "validHeader": true,
+      "headerLength": 6,
+      "format": 0,
+      "trackCount": 1,
+      "division": 480,
+      "ppq": 480,
+      "notes": 8,
+      "noteEvents": [
+        {
+          "midi": 36,
+          "startTick": 0,
+          "durationTicks": 1536,
+          "velocity": 55,
+          "channel": 2
+        },
+        {
+          "midi": 39,
+          "startTick": 16,
+          "durationTicks": 1536,
+          "velocity": 55,
+          "channel": 2
+        },
+        {
+          "midi": 43,
+          "startTick": 32,
+          "durationTicks": 1536,
+          "velocity": 55,
+          "channel": 2
+        },
+        {
+          "midi": 24,
+          "startTick": 0,
+          "durationTicks": 1680,
+          "velocity": 74,
+          "channel": 1
+        },
+        {
+          "midi": 36,
+          "startTick": 1920,
+          "durationTicks": 1536,
+          "velocity": 55,
+          "channel": 2
+        },
+        {
+          "midi": 39,
+          "startTick": 1936,
+          "durationTicks": 1536,
+          "velocity": 55,
+          "channel": 2
+        },
+        {
+          "midi": 43,
+          "startTick": 1952,
+          "durationTicks": 1536,
+          "velocity": 55,
+          "channel": 2
+        },
+        {
+          "midi": 24,
+          "startTick": 1920,
+          "durationTicks": 1680,
+          "velocity": 74,
+          "channel": 1
+        }
+      ],
+      "controllers": 0,
+      "programChanges": 0,
+      "tempoEvents": 1,
+      "sysexEvents": 0,
+      "level": "READ"
+    },
+    "ir": {
+      "ok": true,
+      "ir": {
+        "schema": "uaos.neutral-ir/v1",
+        "family": "midi",
+        "tempoEvents": 1,
+        "notes": 8,
+        "noteEvents": [
+          {
+            "midi": 36,
+            "startTick": 0,
+            "durationTicks": 1536,
+            "velocity": 55,
+            "channel": 2
+          },
+          {
+            "midi": 39,
+            "startTick": 16,
+            "durationTicks": 1536,
+            "velocity": 55,
+            "channel": 2
+          },
+          {
+            "midi": 43,
+            "startTick": 32,
+            "durationTicks": 1536,
+            "velocity": 55,
+            "channel": 2
+          },
+          {
+            "midi": 24,
+            "startTick": 0,
+            "durationTicks": 1680,
+            "velocity": 74,
+            "channel": 1
+          },
+          {
+            "midi": 36,
+            "startTick": 1920,
+            "durationTicks": 1536,
+            "velocity": 55,
+            "channel": 2
+          },
+          {
+            "midi": 39,
+            "startTick": 1936,
+            "durationTicks": 1536,
+            "velocity": 55,
+            "channel": 2
+          },
+          {
+            "midi": 43,
+            "startTick": 1952,
+            "durationTicks": 1536,
+            "velocity": 55,
+            "channel": 2
+          },
+          {
+            "midi": 24,
+            "startTick": 1920,
+            "durationTicks": 1680,
+            "velocity": 74,
+            "channel": 1
+          }
+        ],
+        "controllers": 0,
+        "programChanges": 0,
+        "ppq": 480,
+        "musicalQualityClaim": false
+      },
+      "level": "NORMALIZE_TO_UAOS_IR"
+    },
+    "musicalQualityPass": false,
+    "commercialReady": false,
+    "hardwareVerified": false,
+    "capabilityId": "uaos.creator.golden-sequencer-midi/v1"
+  },
+  "outputArtifact": "a669593aaf7a66f04d1d7f01887fb8775ddaa5a2c0e6b6a697dbd1a49be56553",
+  "sha256": "a669593aaf7a66f04d1d7f01887fb8775ddaa5a2c0e6b6a697dbd1a49be56553",
+  "durationMs": 71
+}

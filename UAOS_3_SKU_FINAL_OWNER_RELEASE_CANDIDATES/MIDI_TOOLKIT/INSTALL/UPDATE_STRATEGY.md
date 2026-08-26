@@ -1,0 +1,1 @@
+# Update strategy\n\n1. Keep DATA\\ folder\n2. Replace PRODUCT/RUNTIME from new ZIP\n3. Do not delete DATA\\projects\n4. Version shown in-app\n

@@ -1,0 +1,14 @@
+{
+    "name":  "uaos-creator-shell-foundation",
+    "version":  "0.15.0",
+    "private":  true,
+    "description":  "UAOS Creator Shell Foundation (V15) — contracts and shell only; advanced features NOT implemented",
+    "type":  "commonjs",
+    "scripts":  {
+                    "test":  "node tests/foundation.test.cjs \u0026\u0026 node tests/phase2.test.cjs \u0026\u0026 node tests/phase3.test.cjs",
+                    "test:phase2":  "node tests/phase2.test.cjs",
+                    "check":  "node tests/foundation.test.cjs \u0026\u0026 node tests/phase2.test.cjs \u0026\u0026 node tests/phase3.test.cjs",
+                    "build":  "node scripts/build-shell.cjs",
+                    "test:phase3":  "node tests/phase3.test.cjs"
+                }
+}

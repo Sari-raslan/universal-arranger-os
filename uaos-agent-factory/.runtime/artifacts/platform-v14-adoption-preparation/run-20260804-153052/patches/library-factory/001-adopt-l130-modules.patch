@@ -1,0 +1,9 @@
+# PREPARED PATCH — NOT APPLIED
+Source-Commit: 8a149267b5ecaae65d7a9a6c79d94bfd60ec64da
+Target-Repository: C:\keyboard-manager-clean\uaos-real-product
+Target-Baseline: 882f6ca695b4c8df6f0f9968b65b5710d0c55346
+Preconditions: owner adoption gate; clean target; no hardware paths
+Tests-Required: npm run check; build:desktop
+Rollback: discard patch; originals untouched
+Changed-Files: packages/library-build/** packages/library-factory-studio/** packages/sampler*/** packages/uinst*/** packages/preview-player/** packages/owner-library/**
+NOTE: Content is a preparation manifest. Actual diff to be generated at adoption gate.

@@ -1,0 +1,53 @@
+{
+  "schema": "uaos.products/v1",
+  "generatedAt": "2026-08-04T20:47:04.345Z",
+  "products": [
+    {
+      "id": "library-factory",
+      "domain": "02-LIBRARY-FACTORY",
+      "rc1Target": "USER_SUPPLIED_CONTENT_ONLY",
+      "adoption": "OWNER_ADOPTION_APPROVAL_REQUIRED"
+    },
+    {
+      "id": "keyboard-pro",
+      "domain": "03-KEYBOARD-PRO",
+      "rc1Target": "INTERNAL_FORMAT_AND_INSPECTION",
+      "adoption": "OWNER_ADOPTION_APPROVAL_REQUIRED",
+      "korg": "INSPECT_ONLY_WRITE_UNSUPPORTED"
+    },
+    {
+      "id": "keyboard-converters",
+      "domain": "04-KEYBOARD-CONVERTERS",
+      "rc1Target": "INTERNAL_CONVERSION_RECEIPTS"
+    },
+    {
+      "id": "creator",
+      "domain": "05-CREATOR",
+      "rc1Target": "LIMITED_MIDI_COMPOSER_AND_ARRANGEMENT_DRAFT",
+      "musicalQuality": "MUSICAL_QUALITY_UNPROVEN"
+    },
+    {
+      "id": "studio-pro",
+      "domain": "06-STUDIO-PRO",
+      "rc1Target": "OFFLINE_AUDIO_MIDI_EDITOR",
+      "realtimeDsp": "REAL_TIME_DSP_NOT_IMPLEMENTED"
+    },
+    {
+      "id": "singy-core",
+      "domain": "07-SINGY-CORE",
+      "rc1Target": "SHARED_SAFE_TUTOR_FOUNDATION"
+    },
+    {
+      "id": "singy-kids",
+      "domain": "08-SINGY-KIDS",
+      "rc1Target": "PARENT_SUPERVISED_OFFLINE_EDUCATION",
+      "decision": "OWNER_DECISION_REQUIRED"
+    },
+    {
+      "id": "singy-teen",
+      "domain": "09-SINGY-TEEN",
+      "rc1Target": "OFFLINE_GUIDED_MUSIC_PROJECTS",
+      "decision": "OWNER_DECISION_REQUIRED"
+    }
+  ]
+}

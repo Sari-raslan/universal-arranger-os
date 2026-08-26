@@ -1,0 +1,38 @@
+{
+  "id": "TASK-05-00545-ARRANGEMENT_GRAPH_CONTRACT",
+  "epicId": "EPIC-05-0006-CREATOR_FULL_TREE",
+  "domain": "05-CREATOR",
+  "title": "Arrangement graph contract",
+  "phase": "DEFINE",
+  "releaseTrain": "RC1-COMMERCIAL-EARLY-ACCESS",
+  "state": "READY",
+  "priority": 8,
+  "estimateMinutesMin": 30,
+  "estimateMinutesMax": 90,
+  "inputs": [],
+  "acceptanceCriteria": [
+    "Schema for Arrangement graph exists",
+    "Allowed paths documented",
+    "No ambiguous human-only steps"
+  ],
+  "tests": [
+    "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-05-00545-arrangement_graph_contract\\tests\\main.test.mjs"
+  ],
+  "evidence": [
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-05-00545-arrangement_graph_contract/evidence/result.json"
+  ],
+  "allowedPaths": [
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-05-00545-arrangement_graph_contract",
+    "C:\\keyboard-manager-clean\\uaos-agent-factory\\.runtime\\artifacts\\uaos-program-tree\\TASK-05-00545-ARRANGEMENT_GRAPH_CONTRACT"
+  ],
+  "ownerFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-05-00545-arrangement_graph_contract\\src\\arrangement_graph_contract.mjs",
+  "worktree": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-05-00545-arrangement_graph_contract",
+  "gate": null,
+  "blockedReason": null,
+  "rc1Critical": true,
+  "claims": [],
+  "lease": null,
+  "heartbeats": [],
+  "createdAt": "2026-08-04T20:47:04.327Z",
+  "updatedAt": "2026-08-04T20:49:22.085Z"
+}

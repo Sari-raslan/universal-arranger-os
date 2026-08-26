@@ -1,0 +1,102 @@
+{
+  "updatedAt": "2026-08-14T14:50:13.661Z",
+  "factoryStatus": "unknown",
+  "supervisorPid": null,
+  "dashboardUrl": "http://127.0.0.1:17321",
+  "resources": {
+    "checkedAt": "2026-08-14T14:50:13.661Z",
+    "ram": {
+      "freeGb": 8.1,
+      "totalGb": 31.21
+    },
+    "disks": {
+      "C": 62.75,
+      "D": 62.75,
+      "E": 62.75
+    },
+    "limits": {
+      "maxHeavyWriters": 2,
+      "maxLightReviewers": 2
+    },
+    "diskWarnings": [],
+    "pauseFactory": false,
+    "pausePackagingDrives": []
+  },
+  "lanes": {
+    "singy": {
+      "productName": "UAOS Singy",
+      "repoRoot": "C:\\keyboard-manager-clean\\uaos-worktrees\\uaos-singy-final-product",
+      "repoRepositoryStatus": "RESOLVED",
+      "currentTask": "S-110",
+      "currentTitle": "OWNER HUMAN GATE",
+      "currentStatus": "pending",
+      "executor": null,
+      "writer": null,
+      "writerPid": null,
+      "executionMode": null,
+      "taskWorktree": null,
+      "taskBranch": null,
+      "claimId": null,
+      "logFile": null,
+      "passed": 12,
+      "total": 15,
+      "blockers": [
+        {
+          "id": "S-100",
+          "status": "blocked",
+          "result": "BLOCKED_CLEAN_MACHINE_NOT_PROVEN"
+        }
+      ]
+    },
+    "arranger": {
+      "productName": "UAOS Arranger Studio",
+      "repoRoot": "C:\\keyboard-manager-clean\\uaos-real-product",
+      "repoRepositoryStatus": "RESOLVED",
+      "currentTask": "A-120",
+      "currentTitle": "OWNER GATE",
+      "currentStatus": "pending",
+      "executor": null,
+      "writer": null,
+      "writerPid": null,
+      "executionMode": null,
+      "taskWorktree": null,
+      "taskBranch": null,
+      "claimId": null,
+      "logFile": null,
+      "passed": 11,
+      "total": 14,
+      "blockers": [
+        {
+          "id": "A-110",
+          "status": "blocked",
+          "result": "BLOCKED_CLEAN_MACHINE_NOT_PROVEN"
+        }
+      ]
+    },
+    "library": {
+      "productName": "UAOS Library Factory Studio",
+      "repoRoot": "C:\\keyboard-manager-clean\\uaos-real-product",
+      "repoRepositoryStatus": "RESOLVED",
+      "currentTask": "L-140",
+      "currentTitle": "OWNER GATE",
+      "currentStatus": "pending",
+      "executor": null,
+      "writer": null,
+      "writerPid": null,
+      "executionMode": null,
+      "taskWorktree": null,
+      "taskBranch": null,
+      "claimId": null,
+      "logFile": null,
+      "passed": 13,
+      "total": 16,
+      "blockers": [
+        {
+          "id": "L-130",
+          "status": "blocked",
+          "result": "BLOCKED_CLEAN_MACHINE_NOT_PROVEN"
+        }
+      ]
+    }
+  }
+}

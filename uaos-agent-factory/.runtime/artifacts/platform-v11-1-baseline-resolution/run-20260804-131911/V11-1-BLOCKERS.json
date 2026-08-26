@@ -1,0 +1,24 @@
+{
+    "blockers":  [
+                     {
+                         "detail":  "No platform V10 sparse-dependency-closure artifacts",
+                         "id":  "V10_NOT_RUN_OR_EVIDENCE_NOT_FOUND",
+                         "severity":  "HIGH"
+                     },
+                     {
+                         "detail":  "12 OWNER_NOT_APPROVED unchanged",
+                         "id":  "OWNER_DECISIONS_PENDING",
+                         "severity":  "MEDIUM"
+                     },
+                     {
+                         "detail":  "found=0 missing=3 multi=3 invalid=0",
+                         "id":  "SOURCE_DISCOVERY_REQUIRED",
+                         "severity":  "HIGH"
+                     },
+                     {
+                         "detail":  "43 unknown dirty files; do not block clean worktrees",
+                         "id":  "PLATFORM_WIP_UNKNOWN_OWNER_REVIEW",
+                         "severity":  "LOW"
+                     }
+                 ]
+}

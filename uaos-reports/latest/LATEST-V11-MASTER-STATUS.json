@@ -1,0 +1,57 @@
+{
+    "taskId":  "UAOS-PLATFORM-AUTOMATION-011-CLEAN-BASELINE-CONTINUATION",
+    "coordinatorStatus":  "UAOS_V11_BASELINE_COMMIT_NOT_FOUND",
+    "overallState":  "UAOS_V11_BASELINE_INTEGRITY_FAIL",
+    "orchestrationPassClaim":  "NOT_GRANTED",
+    "os":  "Windows_NT",
+    "host":  "BOSS",
+    "repository":  "C:\\keyboard-manager-clean",
+    "requiredBaseline":  "6cde73d",
+    "baselineFoundInRepo":  false,
+    "baselineFoundInCommander":  true,
+    "commanderHead":  "6cde73d1fcdcf90bd86d76768dd96614d985f642",
+    "commanderRepository":  "C:\\Users\\ssare\\Desktop\\UAOS Commander",
+    "originalHead":  "2c5ef5219e44b8066d1d42e9109107d6971c87b5",
+    "originalBranch":  "website/singy-kids-teen-launch-prep",
+    "originalWorkingTreeIntegrity":  "PRODUCT_WIP_PRESERVED",
+    "dirtyFilesClassified":  117,
+    "tasksAudited":  31,
+    "tasksAlreadyVerified":  15,
+    "tasksImplemented":  0,
+    "tasksPartiallyImplemented":  10,
+    "tasksSourceBlocked":  6,
+    "testPass":  0,
+    "testFail":  0,
+    "testFailPriorV9":  10,
+    "sourceFound":  0,
+    "sourceMissing":  6,
+    "blocked":  "BASELINE_COMMIT_NOT_FOUND + prior V9 declared gate failures + 6 source-blocked products",
+    "ownerDecisions":  "OWNER_NOT_APPROVED_x12_UNCHANGED",
+    "integrationCandidates":  [
+
+                              ],
+    "priorPhases":  {
+                        "v7":  "UAOS_V7_ISOLATED_WORKTREE_MATERIALIZATION_PASS",
+                        "v8":  "UAOS_V8_DEPENDENCY_INSTALL_REQUIRED",
+                        "v9":  "UAOS_V9_TEST_OR_BUILD_FAILURES_PRESENT",
+                        "v10":  "MISSING"
+                    },
+    "worktreesCreated":  [
+
+                         ],
+    "commitPushMergeDeploy":  false,
+    "haltReason":  "Required commit 6cde73d is not an object in C:\\keyboard-manager-clean. Present in UAOS Commander only. Hard gate stop before clean worktree execution.",
+    "runRoot":  "C:\\keyboard-manager-clean\\uaos-agent-factory\\.runtime\\artifacts\\platform-v11-clean-continuation\\run-20260804-120742",
+    "truthCategoryCounts":  {
+                                "IMPLEMENTED_AND_VERIFIED":  15,
+                                "IMPLEMENTED_NOT_VERIFIED":  0,
+                                "PARTIALLY_IMPLEMENTED":  10,
+                                "NOT_IMPLEMENTED":  0,
+                                "SOURCE_BLOCKED":  6,
+                                "OWNER_REQUIRED":  0,
+                                "LEGAL_REQUIRED":  0,
+                                "MUSICAL_REVIEW_REQUIRED":  0
+                            },
+    "evidencePack":  "C:\\keyboard-manager-clean\\uaos-agent-factory\\.runtime\\artifacts\\platform-v11-clean-continuation\\run-20260804-120742\\UAOS-V11-EVIDENCE-20260804-120742.zip",
+    "evidenceSha256":  "B8D8C7AEF469A5E8827A601C047FBC4DE5AC6CB8A2ADCDA4C06A042D316B540A"
+}

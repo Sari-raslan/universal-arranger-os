@@ -1,0 +1,24 @@
+{
+  "schema": "uaos.commander-event/v1",
+  "type": "object",
+  "required": [
+    "eventId",
+    "type",
+    "taskId",
+    "at"
+  ],
+  "properties": {
+    "type": {
+      "enum": [
+        "TASK_CLAIMED",
+        "HEARTBEAT",
+        "PROGRESS",
+        "EVIDENCE",
+        "RESULT",
+        "LEASE_EXPIRED",
+        "QUEUE_PAUSED",
+        "QUEUE_RESUMED"
+      ]
+    }
+  }
+}

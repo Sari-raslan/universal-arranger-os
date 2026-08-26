@@ -1,0 +1,38 @@
+{
+  "id": "TASK-14-01516-BACKUP_OPERATIONS_EVIDENCE",
+  "epicId": "EPIC-14-0015-QA_RELEASE_OPERATIONS",
+  "domain": "14-QA-RELEASE-OPERATIONS",
+  "title": "Backup operations evidence",
+  "phase": "EVIDENCE",
+  "releaseTrain": "R1-STABLE-COMMERCIAL",
+  "state": "READY",
+  "priority": 10,
+  "estimateMinutesMin": 30,
+  "estimateMinutesMax": 120,
+  "inputs": [],
+  "acceptanceCriteria": [
+    "Backup operations evidence contract file exists",
+    "Unit assertions pass for Backup operations evidence",
+    "Evidence JSON written with SHA256"
+  ],
+  "tests": [
+    "node --test C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-14-01516-backup_operations_evidence\\tests\\main.test.mjs"
+  ],
+  "evidence": [
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-14-01516-backup_operations_evidence/evidence/result.json"
+  ],
+  "allowedPaths": [
+    "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-14-01516-backup_operations_evidence",
+    "C:\\keyboard-manager-clean\\uaos-agent-factory\\.runtime\\artifacts\\uaos-program-tree\\TASK-14-01516-BACKUP_OPERATIONS_EVIDENCE"
+  ],
+  "ownerFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-14-01516-backup_operations_evidence\\src\\backup_operations_evidence.mjs",
+  "worktree": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-14-01516-backup_operations_evidence",
+  "gate": null,
+  "blockedReason": null,
+  "rc1Critical": true,
+  "claims": [],
+  "lease": null,
+  "heartbeats": [],
+  "createdAt": "2026-08-04T20:47:04.342Z",
+  "updatedAt": "2026-08-04T20:49:34.917Z"
+}

@@ -1,0 +1,101 @@
+{
+  "workflowId": "wf-02-open-demo-01",
+  "ok": true,
+  "result": {
+    "ok": true,
+    "demo": {
+      "id": "demo-01-chords-arrangement",
+      "title": "Chords to Arrangement",
+      "rights": "UAOS_IN_HOUSE_ORIGINAL",
+      "chord": "Cm",
+      "style": "Oriental Pop",
+      "maqam": "Nahawand",
+      "tempo": 96,
+      "workflow": "chords → arrangement"
+    },
+    "project": {
+      "schema": "uaos.musical-session-memory/v1",
+      "projectId": "demo-01-chords-arrangement",
+      "title": "Chords to Arrangement",
+      "tempo": 96,
+      "meter": "4/4",
+      "keyCenter": "Cm",
+      "arrangement": {
+        "sections": [
+          {
+            "section": "Intro",
+            "bars": 4,
+            "chord": "Cm",
+            "style": "Oriental Pop"
+          },
+          {
+            "section": "Main A",
+            "bars": 8,
+            "chord": "Cm",
+            "style": "Oriental Pop"
+          },
+          {
+            "section": "Main B",
+            "bars": 8,
+            "chord": "Ab",
+            "style": "Oriental Pop"
+          },
+          {
+            "section": "Break",
+            "bars": 2,
+            "chord": "Bb",
+            "style": "Oriental Pop"
+          },
+          {
+            "section": "Ending",
+            "bars": 4,
+            "chord": "Cm",
+            "style": "Oriental Pop"
+          }
+        ]
+      },
+      "mixerSnapshot": {
+        "channels": []
+      },
+      "updatedAt": "2026-08-25T07:39:24.041Z"
+    },
+    "song": [
+      {
+        "section": "Intro",
+        "bars": 4,
+        "chord": "Cm",
+        "style": "Oriental Pop"
+      },
+      {
+        "section": "Main A",
+        "bars": 8,
+        "chord": "Cm",
+        "style": "Oriental Pop"
+      },
+      {
+        "section": "Main B",
+        "bars": 8,
+        "chord": "Ab",
+        "style": "Oriental Pop"
+      },
+      {
+        "section": "Break",
+        "bars": 2,
+        "chord": "Bb",
+        "style": "Oriental Pop"
+      },
+      {
+        "section": "Ending",
+        "bars": 4,
+        "chord": "Cm",
+        "style": "Oriental Pop"
+      }
+    ],
+    "intelligenceOk": true,
+    "pipelineOk": true,
+    "sha256": "d5b88f2b9e50f334311f52994e0522b5c8a69cb686276727f3cb2cc37adbf0be"
+  },
+  "outputArtifact": "d5b88f2b9e50f334311f52994e0522b5c8a69cb686276727f3cb2cc37adbf0be",
+  "sha256": "d5b88f2b9e50f334311f52994e0522b5c8a69cb686276727f3cb2cc37adbf0be",
+  "durationMs": 195
+}

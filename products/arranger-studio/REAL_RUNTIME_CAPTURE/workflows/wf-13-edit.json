@@ -1,0 +1,81 @@
+{
+  "workflowId": "wf-13-edit",
+  "ok": true,
+  "result": {
+    "ok": true,
+    "workspace": {
+      "schema": "uaos.creator.workspace/v1",
+      "project": {
+        "schema": "uaos.musical-session-memory/v1",
+        "projectId": "creator-1787643564932",
+        "title": "WF13 Edit",
+        "tempo": 100,
+        "meter": "4/4",
+        "keyCenter": "C",
+        "arrangement": {
+          "sections": [
+            {
+              "name": "Intro",
+              "bars": 4,
+              "chord": "Cm"
+            },
+            {
+              "name": "Main A",
+              "bars": 8,
+              "chord": "Cm"
+            },
+            {
+              "name": "Main B",
+              "bars": 8,
+              "chord": "Ab"
+            },
+            {
+              "name": "Break",
+              "bars": 2,
+              "chord": "Bb"
+            },
+            {
+              "name": "Ending",
+              "bars": 4,
+              "chord": "Cm"
+            }
+          ]
+        },
+        "mixerSnapshot": {
+          "channels": []
+        },
+        "updatedAt": "2026-08-25T07:39:24.932Z"
+      },
+      "tracks": [
+        {
+          "id": "drums",
+          "kind": "sequencer"
+        },
+        {
+          "id": "bass",
+          "kind": "harmony"
+        },
+        {
+          "id": "chords",
+          "kind": "harmony"
+        },
+        {
+          "id": "export",
+          "kind": "midi-smf"
+        }
+      ],
+      "midi": {
+        "ok": true,
+        "noteCount": 8,
+        "bytesSha256": "b7422b10a807864b93c306026b0fcbefdc65320d6d4a357bc9bf5a9aeb353c3d"
+      },
+      "commercialReady": false,
+      "musicalQualityPass": false
+    },
+    "sha256": "ecf1c80b8f9c50548ed525387160a56f5eec37b302e312c9a8341e9e13affbfc",
+    "capabilityId": "uaos.creator.workspace/v1"
+  },
+  "outputArtifact": "ecf1c80b8f9c50548ed525387160a56f5eec37b302e312c9a8341e9e13affbfc",
+  "sha256": "ecf1c80b8f9c50548ed525387160a56f5eec37b302e312c9a8341e9e13affbfc",
+  "durationMs": 72
+}

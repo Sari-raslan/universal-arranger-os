@@ -1,0 +1,31 @@
+Finish only the Export/Import User Data IMPLEMENTATION phase.
+
+The contract source and contract tests are read-only authoritative inputs.
+Recover and improve the existing partial implementation source; do not discard correct work blindly.
+Replace the placeholder implementation test with real node:test behavior tests.
+
+Required export behavior:
+- explicit source root;
+- recursive regular-file inventory;
+- normalized safe relative paths;
+- SHA256 per file;
+- deterministic manifest ordering and receipt;
+- transactional package write;
+- source is never modified;
+- UTF-8 and binary preservation;
+- product/version metadata.
+
+Required import behavior:
+- validate before any destination write;
+- reject absolute, drive-qualified, traversal, duplicate-normalized paths;
+- reject missing entries and unexpected entries in strict mode;
+- checksum verification;
+- staging then atomic commit;
+- rollback on failure;
+- preserve pre-existing destination data on failure;
+- deterministic import receipt.
+
+No archive dependency is required; a safe directory package plus manifest is valid.
+Use only Node built-ins.
+Tests must cover success and failure behavior, not constants.
+Do not edit any file except the two editable files supplied by Aider.

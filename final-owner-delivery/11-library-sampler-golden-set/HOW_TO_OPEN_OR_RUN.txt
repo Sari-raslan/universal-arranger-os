@@ -1,0 +1,33 @@
+# How to open or run — Library / Sampler / Golden Set Factory
+
+## Delivery type
+LIBRARY / CONTENT_PACK
+
+## Primary entry point
+```
+From repo root: node final-owner-delivery/11-library-sampler-golden-set/PRODUCT/RUN_ACCEPTED_DEMO.mjs
+```
+
+## Full acceptance queue (all 11)
+From repo root:
+```
+node scripts/run-final-acceptance-queue.mjs
+```
+
+## Targeted tests
+From repo root:
+```
+npm test
+```
+
+## Product source (canonical, not moved)
+- backend/src/library/librarySamplerFinalize.js
+
+## Evidence
+- reports/final-acceptance/11-Library_Sampler_Golden_Set_Factory.json
+- evidence SHA256: ad3f41cc198ba0f877b98a18e12fad45cd5881afd02b59a57db508e4ee863567
+
+## Source commit
+5aeac11779bd678ca3c80d16144e302a5eb5d9f6
+
+PUBLIC_RELEASE=NO · COMMANDER_EXCLUDED=YES

@@ -1,0 +1,89 @@
+{
+  "generatedAt": "2026-08-05T10:32:06.767Z",
+  "results": [
+    {
+      "taskId": "TASK-01-00097-ENTITLEMENTS_CONTRACT",
+      "ownerFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00097-entitlements_contract\\src\\entitlements_contract.mjs",
+      "ownerFileSha256": "da0e6c3a2f7e2ac5d661f366ee7398a1a55361f988ebe8a3e7172c6b80fbfa7c",
+      "ownerFileBytes": 3725,
+      "note": "Real 7-state entitlement schema + validators. 9/9 passing."
+    },
+    {
+      "taskId": "TASK-01-00098-ENTITLEMENTS_IMPLEMENTATION",
+      "ownerFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00098-entitlements_implementation\\src\\entitlements_implementation.mjs",
+      "ownerFileSha256": "fbd37a5a4118416e10f66e8c37af3fec2cbb2a31c59aaff5cd35f0ac8c9d12f2",
+      "ownerFileBytes": 2920,
+      "note": "Real trial+license resolver using Batch 3 Signed Licenses; all 7 states covered incl. license-restores-entitlement, time boundaries, purity guard. 14/14 passing."
+    },
+    {
+      "taskId": "TASK-01-00099-ENTITLEMENTS_TESTS",
+      "ownerFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00099-entitlements_tests\\src\\entitlements_tests.mjs",
+      "ownerFileSha256": "d744814cb42103527ad9b30555189db486c5dd11527706fcca20025f5f25a4bc",
+      "ownerFileBytes": 1718,
+      "note": "Real day-by-day trial lifecycle simulation across 6 products + AtomicSave snapshot persistence. 6/6 passing."
+    },
+    {
+      "taskId": "TASK-01-00100-ENTITLEMENTS_EVIDENCE",
+      "ownerFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00100-entitlements_evidence\\src\\entitlements_evidence.mjs",
+      "ownerFileSha256": "b737e849f66d61bc1f3b07394ad188b916f0354cb8b697f5e091e7405c7ffe19",
+      "ownerFileBytes": 5314,
+      "note": "Aggregates+re-verifies end-to-end. 4/4 passing."
+    },
+    {
+      "taskId": "TASK-01-00165-EXPORT_IMPORT_USER_DATA_CONTRACT",
+      "ownerFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00165-export_import_user_data_contract\\src\\export_import_user_data_contract.mjs",
+      "ownerFileSha256": "fa0da685e3e58c069dd6bc82ae429aa484c3f8f3280dd709c5e805da09890bee",
+      "ownerFileBytes": 5077,
+      "note": "Untouched from prior session (already correct). Re-verified 12/12 passing."
+    },
+    {
+      "taskId": "TASK-01-00166-EXPORT_IMPORT_USER_DATA_IMPLEMENTATION",
+      "ownerFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00166-export_import_user_data_implementation\\src\\export_import_user_data_implemen.mjs",
+      "ownerFileSha256": "b67fe091767e5a16ccfceb6e1a9bca50a1a0e1adfbbe0a0bedfa71605d467de7",
+      "ownerFileBytes": 11308,
+      "note": "Recovered from a broken prior-session/Aider partial edit (missing import, non-functional staging). Rewritten: recursive discovery w/ symlink rejection, staged+tracked-rollback transactional import, strict-mode expected-entry checks, deterministic receipts. 20/20 passing (1 environment skip: no symlink privilege on this host)."
+    },
+    {
+      "taskId": "TASK-01-00167-EXPORT_IMPORT_USER_DATA_TESTS",
+      "ownerFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00167-export_import_user_data_tests\\src\\export_import_user_data_tests.mjs",
+      "ownerFileSha256": "fc2e5e2554995b4fe5047f0706c612f2786858f0b6364a51ed67ee106c522a31",
+      "ownerFileBytes": 1854,
+      "note": "Real full lifecycle across a realistic multi-file project tree, migrate-to-fresh-machine scenario, strict-mode restore-into-existing-install, missing-entry and corrupted-archive rejection. 6/6 passing."
+    },
+    {
+      "taskId": "TASK-01-00168-EXPORT_IMPORT_USER_DATA_EVIDENCE",
+      "ownerFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-01-00168-export_import_user_data_evidence\\src\\export_import_user_data_evidence.mjs",
+      "ownerFileSha256": "eaec4b1c92574e5b6c66e99e37c1228f6d082f1ae9489b1377085fb470c18cd4",
+      "ownerFileBytes": 6407,
+      "note": "Aggregates+re-verifies end-to-end, correctly distinguishes legitimate environment-skips from real discovery failures. 5/5 passing."
+    },
+    {
+      "taskId": "TASK-03-00337-INSPECTOR_CONTRACT",
+      "ownerFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-03-00337-inspector_contract\\src\\inspector_contract.mjs",
+      "ownerFileSha256": "709879c0b198446479d6447dd3821de6f177333c79b3fe1d3107f1278b68bf26",
+      "ownerFileBytes": 4772,
+      "note": "Real project/finding/repair-action schema + validators. 10/10 passing."
+    },
+    {
+      "taskId": "TASK-03-00338-INSPECTOR_IMPLEMENTATION",
+      "ownerFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-03-00338-inspector_implementation\\src\\inspector_implementation.mjs",
+      "ownerFileSha256": "46492e11c0cbdf55898cdb7e6f56d7dc260761627355438c5e962d49a21f1b5d",
+      "ownerFileBytes": 7244,
+      "note": "Real deterministic inspection/repair-plan/apply/save/reopen/receipt/recovery pipeline, verified by re-inspecting the repaired project (0 remaining findings). 11/11 passing."
+    },
+    {
+      "taskId": "TASK-03-00339-INSPECTOR_TESTS",
+      "ownerFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-03-00339-inspector_tests\\src\\inspector_tests.mjs",
+      "ownerFileSha256": "1f8dff6c5c48763ce71c6535644b1cbd61b0296e3a14848b4fe9bc9206454ede",
+      "ownerFileBytes": 1557,
+      "note": "Full vertical-slice acceptance test on a realistic 5-preset messy project, covering every declared pipeline stage. 5/5 passing."
+    },
+    {
+      "taskId": "TASK-03-00340-INSPECTOR_EVIDENCE",
+      "ownerFile": "C:\\UAOS_AGENT_FACTORY_WORKTREES\\uaos-program-execution\\task-03-00340-inspector_evidence\\src\\inspector_evidence.mjs",
+      "ownerFileSha256": "58b0f5743773013070da092cceb06ae64e71dac2171c5d486f32ae5fdbb5758c",
+      "ownerFileBytes": 5538,
+      "note": "Aggregates+re-verifies end-to-end. 4/4 passing."
+    }
+  ]
+}

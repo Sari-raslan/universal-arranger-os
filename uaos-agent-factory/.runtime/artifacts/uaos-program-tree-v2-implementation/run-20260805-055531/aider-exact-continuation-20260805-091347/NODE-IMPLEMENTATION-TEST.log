@@ -1,0 +1,69 @@
+✖ exportUserData should correctly export files (0.5406ms)
+✖ importArchive should correctly import files (0.1168ms)
+✖ importArchive should reject absolute paths (0.6014ms)
+✖ importArchive should reject duplicate paths (0.138ms)
+✖ importArchive should reject missing entries (0.1223ms)
+✔ verify() should return correct result (0.1187ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 1
+ℹ fail 5
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 64.9012
+
+✖ failing tests:
+
+test at main.test.mjs:5:1
+✖ exportUserData should correctly export files (0.5406ms)
+  ReferenceError: path is not defined
+      at TestContext.<anonymous> (file:///C:/UAOS_AGENT_FACTORY_WORKTREES/uaos-program-execution/task-01-00166-export_import_user_data_implementation/tests/main.test.mjs:6:22)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1325:25)
+      at Test.start (node:internal/test_runner/test:1191:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:385:17)
+
+test at main.test.mjs:16:1
+✖ importArchive should correctly import files (0.1168ms)
+  ReferenceError: path is not defined
+      at TestContext.<anonymous> (file:///C:/UAOS_AGENT_FACTORY_WORKTREES/uaos-program-execution/task-01-00166-export_import_user_data_implementation/tests/main.test.mjs:17:22)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1325:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:911:18)
+      at Test.postRun (node:internal/test_runner/test:1465:19)
+      at Test.run (node:internal/test_runner/test:1390:12)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:385:3)
+
+test at main.test.mjs:38:1
+✖ importArchive should reject absolute paths (0.6014ms)
+  ReferenceError: path is not defined
+      at TestContext.<anonymous> (file:///C:/UAOS_AGENT_FACTORY_WORKTREES/uaos-program-execution/task-01-00166-export_import_user_data_implementation/tests/main.test.mjs:39:22)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1325:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:911:18)
+      at Test.postRun (node:internal/test_runner/test:1465:19)
+      at Test.run (node:internal/test_runner/test:1390:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:911:7)
+
+test at main.test.mjs:50:1
+✖ importArchive should reject duplicate paths (0.138ms)
+  ReferenceError: path is not defined
+      at TestContext.<anonymous> (file:///C:/UAOS_AGENT_FACTORY_WORKTREES/uaos-program-execution/task-01-00166-export_import_user_data_implementation/tests/main.test.mjs:51:22)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1325:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:911:18)
+      at Test.postRun (node:internal/test_runner/test:1465:19)
+      at Test.run (node:internal/test_runner/test:1390:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:911:7)
+
+test at main.test.mjs:62:1
+✖ importArchive should reject missing entries (0.1223ms)
+  ReferenceError: path is not defined
+      at TestContext.<anonymous> (file:///C:/UAOS_AGENT_FACTORY_WORKTREES/uaos-program-execution/task-01-00166-export_import_user_data_implementation/tests/main.test.mjs:63:22)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1325:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:911:18)
+      at Test.postRun (node:internal/test_runner/test:1465:19)
+      at Test.run (node:internal/test_runner/test:1390:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:911:7)

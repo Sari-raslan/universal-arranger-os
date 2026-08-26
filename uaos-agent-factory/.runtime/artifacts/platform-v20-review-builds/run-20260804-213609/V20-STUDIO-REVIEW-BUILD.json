@@ -1,0 +1,54 @@
+{
+  "status": "STUDIO_V20_OWNER_REVIEW_BUILD_READY_DOMAIN_RUNTIME",
+  "secondary": [
+    "STUDIO_V20_DSP_NOT_IMPLEMENTED"
+  ],
+  "assertions": 8,
+  "pass": 8,
+  "fail": 0,
+  "steps": [
+    {
+      "name": "run1_state",
+      "ok": true
+    },
+    {
+      "name": "run1_stop",
+      "ok": true
+    },
+    {
+      "name": "run2_state",
+      "ok": true
+    },
+    {
+      "name": "run2_stop",
+      "ok": true
+    },
+    {
+      "name": "invalid_route",
+      "ok": true
+    },
+    {
+      "name": "migration",
+      "ok": true
+    },
+    {
+      "name": "corrupt",
+      "ok": true
+    },
+    {
+      "name": "autosave_recovery",
+      "ok": true
+    }
+  ],
+  "truth": {
+    "realtimeDsp": "NOT_IMPLEMENTED",
+    "asio": "NOT_IMPLEMENTED",
+    "recording": "NOT_IMPLEMENTED",
+    "kontakt": "NOT_INTEGRATED",
+    "pluginHosting": "NOT_IMPLEMENTED",
+    "productionExport": "NOT_IMPLEMENTED"
+  },
+  "autoplay": false,
+  "microphone": "DENIED",
+  "network": "DISABLED"
+}

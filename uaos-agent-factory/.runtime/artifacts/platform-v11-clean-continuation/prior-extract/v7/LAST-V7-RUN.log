@@ -1,0 +1,62 @@
+﻿UAOS V7 Worktree Materialization and Execution Preflight - 2026-08-04T07:44:00.4766030+02:00
+[07:44:00] [INFO] UAOS V7 sparse worktree materialization and execution preflight started.
+[07:44:00] [INFO] V7 materializes only task-owned and shared configuration paths from committed HEAD.
+[07:44:00] [WARN] Safety: no live queue, dispatch, dependency installation, tests, commit, push, deploy, payment, public release, USB, hardware, KORG writer, or SysEx.
+[07:44:00] [PASS] Node: C:\Program Files\nodejs\node.exe
+[07:44:00] [PASS] Git: C:\Program Files\Git\cmd\git.exe
+[07:44:00] [PASS] Repository: C:\keyboard-manager-clean
+[07:44:00] [PASS] Latest valid V6 output: C:\keyboard-manager-clean\uaos-agent-factory\.runtime\artifacts\platform-isolated-worktree-preparation\run-20260804-072337-v6
+[07:44:00] [INFO] Worktree drive free space: 43.92 GB
+[07:44:00] [INFO] 1/3 Engine and Git transaction tests started...
+
+===== V7 ENGINE TESTS OUTPUT =====
+✔ 1 safety contract passes (0.6198ms)
+✔ 2 dispatch enabled is rejected (0.2ms)
+✔ 3 reset enabled is rejected (0.0822ms)
+✔ 4 materialization must be enabled (0.0808ms)
+✔ 5 execution token required (0.0846ms)
+✔ 6 execution token passes (0.0498ms)
+✔ 7 worktree parser reads path branch and head (0.894ms)
+✔ 8 ownership scopes split and dedupe (0.2061ms)
+✔ 9 absolute and parent scopes are rejected (0.109ms)
+✔ 10 sparse patterns include common scope and target (284.2186ms)
+✔ 11 root wildcard maps to all root content (258.8993ms)
+✔ 12 excessive patterns are rejected (256.6324ms)
+✔ 13 valid no-checkout worktree passes (390.7233ms)
+✔ 14 wrong branch prefix blocks (405.4427ms)
+✔ 15 changed branch head blocks (390.6064ms)
+✔ 16 missing worktree blocks (262.5427ms)
+✔ 17 duplicate task worktree blocks second entry (498.5647ms)
+✔ 18 invalid V6 status rejected (0.3271ms)
+✔ 19 preflight preserves source blocker and owner counts (390.5449ms)
+✔ 20 sparse materialization writes only selected and common files (788.8627ms)
+✔ 21 original dirty file and status survive unchanged (825.8202ms)
+✔ 22 branch and worktree HEAD stay fixed (785.9459ms)
+✔ 23 already materialized clean worktree is reused (1097.2339ms)
+✔ 24 changed materialized worktree blocks before mutation (880.264ms)
+✔ 25 all tasks must pass before any materialization (558.169ms)
+✔ 26 transaction failure rolls prior task back to no-checkout (1016.0845ms)
+✔ 27 no commits are created (801.6109ms)
+✔ 28 package preflight lists commands without executing them (785.5452ms)
+✔ 29 no package json is truthful (765.2641ms)
+✔ 30 result never dispatches agents (774.5406ms)
+✔ 31 output bundle contains all evidence files (775.1306ms)
+✔ 32 evidence manifest hashes generated files (787.4504ms)
+ℹ tests 32
+ℹ suites 0
+ℹ pass 32
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 13851.5626
+
+[07:44:14] [PASS] 1/3 Engine tests passed: 32/32.
+[07:44:14] [INFO] 2/3 Sparse materialization and task preflight started...
+
+===== V7 MATERIALIZATION OUTPUT =====
+{"status":"UAOS_ONE_MASTER_LAUNCHER_V7_ISOLATED_WORKTREE_MATERIALIZATION_AND_EXECUTION_PREFLIGHT_PASS","overallState":"UAOS_V7_WORKTREES_MATERIALIZED_EXECUTION_PREFLIGHT_READY_NOT_DISPATCHED","outputRoot":"C:\\keyboard-manager-clean\\uaos-agent-factory\\.runtime\\artifacts\\platform-worktree-materialization\\run-20260804-074400-v7","report":"C:\\keyboard-manager-clean\\uaos-agent-factory\\.runtime\\artifacts\\platform-worktree-materialization\\run-20260804-074400-v7\\ISOLATED-WORKTREE-MATERIALIZATION-AR.md","tasks":25,"materialized":25,"reused":0,"executionPreflightReady":25,"sourceBlocked":6,"ownerDecisions":12,"dispatchCount":0}
+
+[07:44:26] [PASS] 2/3 Materialized=25; reused=0; execution-preflight-ready=25.
+[07:44:26] [INFO] 3/3 Publishing reports and evidence...
+[07:44:26] [PASS] Desktop reports updated: C:\Users\ssare\Desktop\UAOS-LATEST-REPORTS
